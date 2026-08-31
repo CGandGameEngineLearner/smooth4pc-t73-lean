@@ -1,564 +1,553 @@
-# T73 SPC4 Counterexample Candidate Proof
+# T73 SPC4 counterexample candidate proof
 
 **Status:** `CANDIDATE_PROOF_PENDING_INDEPENDENT_REVIEW`
 
-## 1. Notation and dependency ledger
+## 1. Conditional theorem, scope, and notation
 
-Work over ℚ[[h]]. Let ᵉ be the two-gate tangle category with the frozen
-`P_86 -> P_88` boundary convention, and let `M_R` be the MWW coefficient
-bimodule of the actual balanced coefficient `R`. Its zeroth coefficient trace
-is
+This document proves a conditional implication. It does not report an
+unconditional counterexample, a formally verified counterexample, or external
+acceptance.
+
+> **Conditional theorem.** Let \(X=X(41,189,73)\). Assume the external
+> geometric and functorial premises **E1--E12** listed in Section 15. Then the
+> MWW lasagna module of \(X\) over \(\mathbb Q\) contains a nonzero homogeneous
+> class of quantum degree \(494\). Hence \(X\) is not diffeomorphic to the
+> standard \(S^4\). If one also assumes the Cappell--Shaneson homotopy-sphere
+> theorem in the form **E13**, then \(X\) is a conditional counterexample to
+> smooth four-dimensional Poincare.
+
+Every assertion has exactly one status:
+
+| tag | exact meaning |
+|---|---|
+| **[P] `proved_in_document`** | follows here from previously displayed hypotheses and equations |
+| **[F] `finite_verified`** | exact finite calculation with a named recomputation path |
+| **[E] `external_theorem`** | geometric, functorial, or field-coefficient premise kept as an explicit hypothesis |
+
+A certificate status never substitutes for an **[E]** premise.
+
+Let \(\mathcal A\) be the two-gate tangle category with the fixed
+\(P_{86}\to P_{88}\) boundary convention. For every finite cabled state \(s\),
+keep three types visible:
 
 \[
-HH_0(\mathcal A;M_R)=
-\left(\bigoplus_{T\in\operatorname{Ob}\mathcal A}M_R(T,T)\right)
-/\langle\text{left--right action relations}\rangle .
+C_s \xrightarrow{\Phi_s} \mathcal W_s
+    \xrightarrow{\operatorname{Sh}_s} E_s,
+\qquad \Theta_s:=\operatorname{Sh}_s\Phi_s.
 \tag{1.1}
 \]
 
-Every premise below is labelled as one of:
+Here \(C_s\) is the actual MWW cabled module, \(\mathcal W_s\) is the module
+after core attachment, and \(E_s\) is the fixed-weight endpoint space. The
+final quotient is a quotient of \(\bigoplus_s C_s\), not of endpoint spaces.
 
-| tag | meaning |
-|---|---|
-| **[E]** | external geometric or functorial theorem premise; it remains a visible Lean parameter until formalized |
-| **[F]** | finite calculation independently recomputed from pinned data |
-| **[D]** | primary-source theorem or definition, checked against the cited text |
+<a id="balanced-hattori-coefficient"></a>
+## 2. Balanced Hattori coefficient
 
-A certificate status is never used as the sole justification for an
-implication. The machine-readable classification is frozen in
-`audit/t73_proof_dependency_manifest.json`.
-
-Primary documentary anchors are MWW's one-handle and coefficient-trace
-formulas (`D:/tmp/r6/mww_handle_src/1handles.tex:242-299,420-430`), BPW's
-vertical-to-horizontal trace (`D:/tmp/r6/bpw_src/shadows/vertical.tex:11-58`),
-and BHPW strictification
-(`D:/tmp/r6/agents/finite_type_leading/bphw_1903_src/sections/equivalence.tex:468-493`).
-
-## 2. Balanced Hattori coefficient and the diagonal class (v_T)
-
-Let
+Let \(U=U_{(0,5)}:P_{86}\to P_{88}\) be the physical oriented cup. Cutting
+the actual transported framed annuli gives open part \(B\sqcup B^\vee\) and
+227 split circles. The required input **[E1]** is the action- and
+grading-compatible family
 
 \[
-U=U_{(0,5)}:P_{86}\longrightarrow P_{88}
-\]
-
-be the physical oriented cup. The actual coefficient is the two boundary
-components of one transported framed annulus. After the Hattori cut, its open
-parts are an invertible tangle `B` and its framed pivotal dual, and the closed
-part consists of 227 split circles. The load-bearing geometric input **[E]** is
-the action-compatible, grading-preserving family
-
-\[
-H_{T,T'}:
-M_R(T,T')\xrightarrow{\cong}
+H_{T,T'}:M_R(T,T')\xrightarrow{\cong}
 \operatorname{Hom}_{\mathcal A}(B\circ T,B\circ T')
 \otimes_{\mathbb Q}A^{\otimes227},
 \qquad A=\mathbb Q[X]/(X^2).
 \tag{2.1}
 \]
 
-This is a two-sided identification using `B` and its dual. It is not the false
-one-sided formula `M_R(T,T') = Hom(T,BT')`, and it does not require a
-fictitious 2-morphism `1 -> B`.
+This is two-sided. It is not
+\(M_R(T,T')=\operatorname{Hom}(T,BT')\), and it uses no fictitious mate
+\(\mathbf1\to B\). MWW supplies the ambient one-handle/HH\(_0\) formula
+(`D:/tmp/r6/mww_handle_src/1handles.tex:242-299,420-430`), not this
+candidate-specific balanced identification; (2.1) therefore remains **E1**.
 
-Choose
+<a id="actual-diagonal-class"></a>
+## 3. Actual diagonal class
+
+Choose a categorical inverse and set
 
 \[
-T=B^{-1}\circ U,
-\qquad B\circ T=U.
-\tag{2.2}
+T=B^{-1}\circ U,\qquad B\circ T=U.
+\tag{3.1}
 \]
 
-Define the correctly typed diagonal element
+Define
 
 \[
 v_T=H_{T,T}^{-1}
 \left(\operatorname{Id}_{B\circ T}\otimes X^{\otimes227}\right)
 \in M_R(T,T).
-\tag{2.3}
-\]
-
-Here `X^(tensor 227)` means 227 separate circle labels; it is never the
-vanishing algebra product `X^227`. Since the identity chain map and every
-circle label `X` are closed, `v_T` is closed. Its image in (1.1) is denoted
-`[v_T]`.
-
-Compatibility of (2.1) with the two MWW actions sends both action composites
-to ordinary left and right composition by `B(f)`. Their difference is an
-ordinary commutator, so `[v_T]` is a legitimate coefficient-`HH_0` class. This
-balanced Hattori equivalence is an **[E]** premise until the transported
-annulus and its 88 open rectangles are formalized.
-
-## 3. Vertical--horizontal trace, strict functoriality, and the shadow (u)
-
-BPW's vertical-to-horizontal construction **[D]**, applied through (2.1),
-sends `[v_T]` to
-
-\[
-\operatorname{Id}_{B\circ T}\otimes X^{\otimes227}
-=\operatorname{Id}_{U}\otimes X^{\otimes227}.
-\tag{3.1}
-\]
-
-For `A=\mathbb Q[X]/(X^2)`, the counit is
-
-\[
-\epsilon(1)=0,\qquad \epsilon(X)=1.
-\]
-
-Hence the 227 actual caps give
-
-\[
-(\operatorname{Id}_U\otimes\epsilon^{\otimes227})
-(\operatorname{Id}_U\otimes X^{\otimes227})
-=\operatorname{Id}_U.
 \tag{3.2}
 \]
 
-Strict BHPW functoriality **[E]/[D]** then gives, in the fixed endpoint block,
+Here \(X^{\otimes227}\) means separate labels, never the vanishing product
+\(X^{227}\). Under **E1**, (3.2) is a cycle and determines
+\([v_T]_{\mathrm{coeff}}\) in
 
 \[
-qAKh_h(\operatorname{Sh}[v_T])(1)
-=U_h(1)=u+O(h),
-\qquad u=e_0-e_5,
+HH_0(\mathcal A;M_R)=
+\left(\bigoplus_{S}M_R(S,S)\right)/\langle fg-gf\rangle.
 \tag{3.3}
 \]
 
-with
+The identity-to-trace construction is MWW's Chern/Hattori class
+(`D:/tmp/r6/mww_handle_src/1handles.tex:783-787`). Binding (3.2) to the actual
+transported-annulus class is the separate premise **[E2]**.
+
+<a id="vertical-horizontal-trace"></a>
+## 4. Vertical-horizontal trace
+
+BPW's vertical trace and natural functor to horizontal trace send
+\(p\xrightarrow{\alpha}Fp\) to \(\operatorname{Sh}[p,\alpha]\)
+(`D:/tmp/r6/bpw_src/shadows/vertical.tex:11-58`). The candidate application
+**[E3]** is
 
 \[
-Q(88,86)=qHH_0(A_{88}^{86},A_{88}^{86})\cong M_1(88).
-\tag{3.4}
-\]
-
-Equations (3.1)--(3.4) are a typed statement about the actual cup. The vector
-calculation alone cannot replace the geometric Hattori and strict-functoriality
-premises.
-
-## 4. The (q=494) grading ledger
-
-The grading arithmetic is finite **[F]**. The identity closure contributes
-quantum degree `-44`; the 227 distinct `X` labels contribute `+227`. Thus
-
-\[
-q_{\rm raw}=-44+227=183.
+[v_T]_{\mathrm{coeff}}\longmapsto
+\operatorname{Id}_{U}\otimes X^{\otimes227}.
 \tag{4.1}
 \]
 
-The MWW one-handle shift is
+Since \(\epsilon(X)=1\), the 227 counits send this to \(\operatorname{Id}_U\).
+Denote the resulting one-handle trace class by \([v_T]_{1h}\). In its base
+endpoint coordinates,
 
 \[
-p_y+p_z=44+271=315,
-\]
-
-so the one-handle class has degree `498`. At the relevant cabled summand,
-`\alpha=0`, `r=e_{m_2}+e_{r_{xy}}`, and `|r|=2`; for `N=2` the shift is `-4`.
-Consequently
-
-\[
-\deg[v_T]=(0,183+315-4)=(0,494).
+\operatorname{Sh}_{1h}([v_T]_{1h})=u+O(h),
+\qquad u=e_0-e_5\in E_{s_0}=Q(88,86)=M_1(88).
 \tag{4.2}
 \]
 
-All later maps use this same rational MWW normalization. The deformation
-terms `O(h)` change deformation order, not the underlying absolute quantum
-grading.
+The counit evaluation is **[P]** after **E3**; identification with the actual
+cup is still external.
 
-## 5. The (-59072) point-push cubic and the \(\xi\) retraction
+<a id="strict-functoriality"></a>
+## 5. Strict functoriality and grading ledger
 
-Put `h=q-1`, `t=q^(-2)`, and `\varepsilon=t-1`. The exact 45,360-letter
-point-push calculation gives **[F]**
+BHPW states strict functoriality for tangle cobordisms
+(`D:/tmp/r6/agents/finite_type_leading/bphw_1903_src/sections/equivalence.tex:468-487`).
+Its use for every foam, sign, endpoint adapter, and core-attachment movie here
+is retained as **[E4]**; the broader foam scope is separately noted at
+`D:/tmp/r6/agents/finite_type_leading/bphw_1903_src/sections/equivalence.tex:489-493`.
+
+The arithmetic is exact **[F1]**:
 
 \[
-[\varepsilon^3]\,\ell(\rho(W)-I)u=7384.
+-44+227=183,\quad44+271=315,\quad183+315=498.
 \tag{5.1}
 \]
 
-Since
+Thus \([v_T]_{1h}\) has quantum degree 498. At
+\(s_0=(\alpha=0,r=e_{m_2}+e_{r_{xy}})\), \(|r|=2\), so the \(N=2\) cabled
+shift is \(-4\). The cabled representative
 
 \[
-\varepsilon=-2h+3h^2-4h^3+O(h^4),
-\]
-
-we obtain
-
-\[
-[h^3]\,\ell(\rho_h(W)-I)u=(-2)^3\,7384=-59072\ne0.
+\widetilde v_{s_0}\in C_{s_0}
 \tag{5.2}
 \]
 
-The input in (5.2) is `[v_T]`, through its shadow `u`. It is not
+has degree \(498-4=494\). The coefficient class, one-handle class, cabled
+representative, and final quotient class are distinct objects. Premises
+**E3--E4** include the typed cabled binding
 
 \[
-\xi=\eta_R[T_0]-s_{\rm inv}\eta_R[T_1].
+\Theta_{s_0}(\widetilde v_{s_0})=u+O(h).
+\tag{5.4}
 \]
 
-For that auxiliary difference, the shadow already contains one factor
-`(\rho_h(W)-I)`:
+<a id="point-push-cubic"></a>
+## 6. Point-push cubic
+
+Put \(h=q-1\), \(t=q^{-2}\), and \(\varepsilon=t-1\). The finite word audit
+supplies **[F2]**
 
 \[
-\Phi_h\operatorname{Sh}(\xi)=(\rho_h(W)-I)u.
-\]
-
-Applying the same relative detector introduces a second factor, so
-
-\[
-\Delta_h(\xi)=\ell(\rho_h(W)-I)^2u=O(h^6),
-\qquad \Delta_3(\xi)=0.
-\tag{5.3}
-\]
-
-The recomputation is in
-`D:/tmp/r6/eta_t1_delta3_reaudit/recompute_eta_t1_delta3.py`; the typed
-distinction is recorded in
-`D:/tmp/r6/eta_t1_delta3_reaudit/ETA_T1_DELTA3_DECISION.md`.
-
-## 6. The fixed source (M_1(88)) and relative degree \(\nu=0\)
-
-The actual source is the whole fixed-weight module `M_1(88)`, never
-`M_0(88)`. For every canonical cabled state write
-
-\[
-V_s^{\rm can}=M_1(88)\otimes F_s,
+f(\varepsilon):=\ell(\rho(W)-I)u
+=7384\varepsilon^3+O(\varepsilon^4),
 \tag{6.1}
 \]
 
-where `F_s` contains only the subsequently added Frobenius factors. Define
-the relative defect
+including vanishing coefficients in degrees 0, 1, and 2. It does not prove
+the operator assertion \(\rho(W)-I=O(\varepsilon^3)\) on every endpoint
+space. Since \(\varepsilon=-2h+3h^2-4h^3+O(h^4)\), **[P]**
 
 \[
-\nu=\#\{\text{labels }1\text{ in }F_s\}.
+[h^3]f(\varepsilon(h))=(-2)^3\,7384=-59072\ne0.
 \tag{6.2}
 \]
 
-The mandatory endpoint defect inside `M_1(88)` is not counted. Thus the whole
-base module, in particular `u=e_0-e_5` and its cubic image, sits in relative
-degree `\nu=0`.
+Recompute with
 
-At constant order,
+```powershell
+python -B D:\tmp\r6\eta_t1_delta3_reaudit\recompute_eta_t1_delta3.py --write
+```
 
-\[
-\Delta(X)=X\otimes X,
-\qquad
-\Delta(1)=1\otimes X+X\otimes1.
-\tag{6.3}
-\]
+and see
+`D:/tmp/r6/eta_t1_delta3_reaudit/ETA_T1_DELTA3_DECISION.md#2-exact-raw-word-calculation`.
+The input is \([v_T]_{\mathrm{coeff}}\), not
+\(\xi=\eta_R[T_0]-s_{\rm inv}\eta_R[T_1]\). The latter already contains one
+\((\rho(W)-I)\); the same detector introduces its square, whose first nonzero
+\(\varepsilon\)-term has degree six, so \(\delta_3(\xi)=0\) **[F2]**.
 
-Consequently dotted `psi1` and dotted sphere maps add only `X` labels and
-preserve `\nu=0`; undotted `psi0` and undotted sphere maps add exactly one new
-`1` and land in `\nu=1`. The canonical row is defined to vanish on every
-`\nu\ge1` summand. Physical-copy permutations preserve `\nu`, so they cannot
-return an undotted image to the detected head. This is the whole-source typed
-argument; the inadmissible `M_0/XX` control is outside its domain.
+<a id="relative-nu-ledger"></a>
+## 7. Intrinsic relative defect ledger
 
-The primary Frobenius formulas are in
-`D:/tmp/r6/agents/finite_type_leading/bphw_1903_src/sections/preliminaries.tex:610-633`;
-the endpoint audit is
-`D:/tmp/r6/agents/qhh_naturality_hostile/HOSTILE_FULL_DOMAIN_DESCENT_AUDIT.md:44-93,140-145`.
-
-## 7. The full beta/psi cocone
-
-Let `n_s` be the physical owner/sign copy-count vector at state `s`, and let
-`a` be an occupied-copy orbit of the relative `\nu=0` row. Set
+For a physical-copy word \(x\in E_s\), let \(d_s(x)\) be its total number of
+labels \(1\), and let \(b_s\) be the mandatory state baseline fixed before any
+old/new factorization. Define
 
 \[
-O(n_s,a)=\prod_{i,\pm}{n_{s,i}^{\pm}\choose a_i^{\pm}}.
+\nu_s(x)=d_s(x)-b_s.
 \tag{7.1}
 \]
 
-Reynolds averaging is over physical cable copies, never over the `2` or `42`
-internal gate passages. For an edge `s->t`, normalize the dual row by
+This is intrinsic to material-copy data, not the label count in a chosen
+factor \(F_s\). The head \(u\) has \(\nu_{s_0}=0\). At constant order,
 
 \[
-d(s,t;a)=\frac{O(n_t,a)}{O(n_s,a)}.
+\Delta(X)=X\otimes X,\qquad
+\Delta(1)=1\otimes X+X\otimes1.
 \tag{7.2}
 \]
 
-The factors telescope:
+Premise **[E5]** binds actual maps to this ledger: dotted psi/sphere
+insertions preserve \(\nu=0\), undotted insertions increase it by one, and
+the constant row vanishes on \(\nu\ge1\). Formula (7.2) proves the canonical
+algebra **[P]**; its actual-map binding is **E5**. No \(M_0(88)\) source is
+introduced.
+
+<a id="beta-psi-cocone"></a>
+## 8. Constant beta/psi cocone and Reynolds normalization
+
+At state \(s\), let
 
 \[
-d(s,t;a)d(t,r;a)=d(s,r;a),
-\tag{7.3}
-\]
-
-and reverse edges use the reciprocal. This covers every finite cable state
-and both lattice directions.
-
-Let `\lambda_s:V_s^{\rm actual}->\mathbb Q` be the transported normalized
-row. On the entire typed source, the required two-handle equations are
-
-\[
-\lambda_s\circ\beta_s(b)=\lambda_s,
-\qquad
-\lambda_t\circ\psi_e^{[0]}=0,
-\qquad
-\lambda_t\circ\psi_e^{[1]}=\lambda_s.
-\tag{7.4}
-\]
-
-The permutation part follows from Reynolds invariance and (6.2). A labelled
-pure-braid residual is `I+O(h)` on the fixed-weight endpoint qHH module, so,
-after multiplication by `W-I=O(h^3)`, it first affects order `h^4` and not the
-cubic functional. Equation (7.4) is the claimed whole-source cocone premise
-**[E]**; the orbit algebra (7.1)--(7.3) is the part to be proved in Lean.
-
-The MWW relations are in
-`D:/tmp/r6/mww_handle_src/kirby.tex:265-283,331-345`; a typed local audit is
-`D:/tmp/r6/agents/qhh_naturality_hostile/TYPED_PSI_REYNOLDS_ENDPOINT_THEOREM.md`.
-
-## 8. The fixed-(Y) HJ basis and direct-(Q) sphere cocone
-
-The next input **[E]** is a pairwise-disjoint determinant-one sphere system in
-one fixed `Y=\partial W_2`, with its owner-point and framing data. The HJ basis
-criterion is anchored in
-`D:/tmp/r6/agents/hj_scope_hostile/hj_v3_source/version_23_RM.tex:644-674`.
-Its concrete fixed-`Y`/direct-`Q` instantiation for this candidate remains an
-external theorem premise until formalized and independently reviewed.
-
-For each state choose an actual framed equivalence
-
-\[
-Q_s:V_s^{\rm actual}\xrightarrow{\cong}V_s^{\rm can}
+G_s=\prod_i(S_{k_{s,i}^-}\times S_{k_{s,i}^+}),\qquad
+O_s(a)=\prod_{i,\pm}{k_{s,i}^{\pm}\choose a_i^{\pm}}.
 \tag{8.1}
 \]
 
-directly at that vertex. For a signed sphere edge `e:s->t` and dot choice
-`d\in\{0,1\}`, define
+Reynolds averaging uses physical cable copies, never the 2 or 42 internal
+gate passages. On a transported present orbit use dual factor
+\(O_t(a)/O_s(a)\). If \(O_s(a)=0\), the orbit is absent and gives no source
+equation. If \(O_s(a)>0\) but \(O_t(a)=0\), define the target row there as
+zero and check compatibility directly; never divide by zero. Present-orbit
+ratios telescope:
 
 \[
-C_e^d=Q_t^{-1}
-\bigl(\operatorname{Id}_{\rm persistent}\otimes T_e^d\bigr)Q_s,
+\frac{O_t(a)}{O_s(a)}\frac{O_r(a)}{O_t(a)}
+=\frac{O_r(a)}{O_s(a)}.
 \tag{8.2}
 \]
-
-where
-
-\[
-T_e^0=\Delta^{b_e-1}(1),
-\qquad
-T_e^1=\Delta^{b_e-1}(X).
-\]
-
-If `E_b=\epsilon^{\otimes b}`, then the Frobenius identities are
-
-\[
-E_b\Delta^{b-1}(1)=0,
-\qquad
-E_b\Delta^{b-1}(X)=1.
-\tag{8.3}
-\]
-
-Transporting the canonical counit row through (8.1) yields the full-source
-sphere equations
-
-\[
-\lambda_t\circ C_e^0=0,
-\qquad
-\lambda_t\circ C_e^1=\lambda_s
-\tag{8.4}
-\]
-
-for all three spheres and their signed directions.
-
-Because each `Q_s` is a vertex potential rather than a path-defined choice,
-intermediate equivalences cancel on every composite. Disjoint split trees,
-coassociativity, and (7.3) give sphere/sphere, sphere/psi, and psi/psi
-flatness. A pure braid inserted on only one route would not be a vertex
-coboundary and is explicitly excluded by this construction; endpoint
-permutation alone would not suffice.
-
-## 9. Changing-endpoint naturality: \(\Phi\), \(W\), and \(K\)
-
-For every finite cable state `s`, let `\Phi_s` be the MWW core-attachment
-comparison, let `W_s(h)` be the transported point-push operator, and let
-`C_e(h):V_s->V_t` be any beta, psi, or signed sphere edge. The required
-whole-source squares are
-
-\[
-\Phi_t C_e^{\rm cabled}=C_e^{W_2}\Phi_s,
-\qquad
-W_t(h)C_e(h)=C_e(h)W_s(h).
-\tag{9.1}
-\]
-
-MWW's core-attachment diagram supplies the first general comparison
-(`D:/tmp/r6/mww_handle_src/kirby.tex:650-684`). Identifying the concrete
-direct-`Q` maps, endpoint coordinates, and strict signs with (9.1) is an
-external theorem premise **[E]**, not a certificate inference.
-
-Write
-
-\[
-W_s(h)-I=h^3K_s+O(h^4).
-\tag{9.2}
-\]
-
-Taking the cubic coefficient of the second square gives
-
-\[
-K_tC_{e,0}=C_{e,0}K_s
-\tag{9.3}
-\]
-
-on the entire source. BHPW's strictification is anchored in
-`D:/tmp/r6/agents/finite_type_leading/bphw_1903_src/sections/equivalence.tex:468-493`;
-its application to every foam used here remains part of the named
-strict-functoriality premise.
-
-Define the cubic scalar family, on the fixed absolute grading, by
-
-\[
-\kappa_s(x)=
-[h^3]\,\lambda_s(h)(\rho_h(W_s)-I)\Phi_h\operatorname{Sh}_s(x).
-\tag{9.4}
-\]
-
-Equations (7.4), (8.4), and (9.3) imply
-
-\[
-\kappa_s\beta_s(b)=\kappa_s,
-\quad
-\kappa_t\psi_e^{[0]}=0,
-\quad
-\kappa_t\psi_e^{[1]}=\kappa_s,
-\tag{9.5}
-\]
-
-and, for each signed sphere edge,
-
-\[
-\kappa_tC_e^0=0,
-\qquad
-\kappa_tC_e^1=\kappa_s.
-\tag{9.6}
-\]
-
-These are linear-map identities, not tests on `[v_T]` alone.
-
-## 10. The MWW quotient universal property
 
 Let
 
 \[
-\mathcal V=\bigoplus_s V_s
+B_s^{\mathrm{actual}}(b):C_s\to C_s,
+\qquad
+\Psi_e^{d,\mathrm{actual}}:C_s\to C_t
 \]
 
-over every finite cabled state in both lattice directions. Let
-`\mathcal R_{2h}` be spanned by
+be the actual cabled beta and psi maps, with endpoint maps
+\(\widehat\beta_s(b)\) and \(\widehat\psi_e^d\). Let
+\(\lambda_s:E_s\to\mathbb Q\) be the **constant-order** Reynolds row. The
+whole-source premise **[E6]** includes the typed shadow equations
 
 \[
-\beta_s(b)x-x,
+\Theta_sB_s^{\mathrm{actual}}(b)=\widehat\beta_s(b)\Theta_s,
 \qquad
-\psi_e^{[0]}x,
-\qquad
-\psi_e^{[1]}x-x,
+\Theta_t\Psi_e^{d,\mathrm{actual}}=\widehat\psi_e^d\Theta_s,
+\tag{8.3}
+\]
+
+the leading endpoint action
+
+\[
+\widehat\beta_s(b)=P_s(b)+O(h),
+\tag{8.4}
+\]
+
+where \(P_s(b)\) is the physical-copy permutation, and the constant equations
+
+\[
+\lambda_sP_s(b)=\lambda_s,
+\qquad \lambda_t\widehat\psi_{e,0}^{\,0}=0,
+\qquad \lambda_t\widehat\psi_{e,0}^{\,1}=\lambda_s.
+\tag{8.5}
+\]
+
+for every finite state, physical-copy beta element, oriented psi edge in both
+directions, and source vector. No exact finite-\(h\) pure-braid cocone is
+claimed. Beta compatibility at cubic order comes from Reynolds invariance,
+not a \(K\)-intertwiner.
+
+<a id="fixed-y-hj-basis"></a>
+## 9. Fixed-Y HJ basis
+
+HJ's basis criterion is at
+`D:/tmp/r6/agents/hj_scope_hostile/hj_v3_source/version_23_RM.tex:644-674`.
+The displayed matrix is unimodular, \(|\det|=1\), **[F3]**. The row-major
+orientation pinned in `AuditArithmetic.lean` gives \(+1\); the alternate
+column/orientation convention in the local HJ audit gives \(-1\). Only
+unimodularity is used. The
+candidate premise **[E7]** is stronger: in one fixed \(Y=\partial W_2\), the
+three spheres are simultaneously embedded, pairwise disjoint, represent the
+basis, carry the required relative-link, owner-point, orientation, framing,
+and sign data, and satisfy the HJ replacement hypotheses.
+
+HJ alone does not give direct-Q. Candidate-specific open locations remain in
+`D:/tmp/r6/agents/unimodular_easy_spheres/FINAL_CHOSEN_HJ_BASIS_TOPOLOGY_AUDIT.md`
+under `Gate 2`, `Gate 3`, `Gate 5`, and conditional `Gate 6`; these are
+unresolved boundaries, not supporting theorem citations.
+
+<a id="direct-q-sphere-cocone"></a>
+## 10. Direct-Q sphere cocone
+
+Keep the actual maps fixed. For a signed sphere edge \(e:s\to t\), write
+
+\[
+C_e^{d,\mathrm{actual}}:C_s\to C_t,\qquad
+\widehat C_e^d:E_s\to E_t.
 \tag{10.1}
 \]
 
-for all states, owner braids, edges, and source vectors. Let
-`\mathcal R_{3h}` be spanned, for all three spheres and all source vectors,
-by
+Let \(Q_s:E_s\xrightarrow{\cong}E_s^{\rm can}\), and write the canonical
+target as \(E_s^{\rm can}=P_s^{\rm persistent}\otimes F_s\). Define insertion
+**operators**, not elements used as maps,
 
 \[
-C_e^0x,
-\qquad C_e^1x-x.
+\iota_e^0(x)=x\otimes\Delta^{b_e-1}(1),\qquad
+\iota_e^1(x)=x\otimes\Delta^{b_e-1}(X).
 \tag{10.2}
 \]
 
-These are the `N=2` MWW relations
-(`D:/tmp/r6/mww_handle_src/kirby.tex:331-378,459-489,705-759`). Define
-`\kappa:\mathcal V->\mathbb Q` by restriction to the statewise rows.
-Equations (9.5)--(9.6) give
+The direct-Q premise **[E8]** consists of two separate typed equations:
+
+\[
+Q_t\widehat C_e^dQ_s^{-1}
+=\operatorname{Id}_{\rm persistent}\otimes\iota_e^d,
+\tag{10.3}
+\]
+
+\[
+\Theta_t C_e^{d,\mathrm{actual}}
+=\widehat C_e^d\Theta_s.
+\tag{10.4}
+\]
+
+It packages the fixed-\(Y\), relative-link, owner-point, sign, and
+factorization data; it is not implied by HJ. For
+\(E_b=\epsilon^{\otimes b}\), **[P]**
+
+\[
+E_b\Delta^{b-1}(1)=0,\qquad E_b\Delta^{b-1}(X)=1.
+\tag{10.5}
+\]
+
+Under **E5--E8**, this gives the whole-source constant equations
+
+\[
+\lambda_t\widehat C_e^0=0,
+\qquad \lambda_t\widehat C_e^1=\lambda_s.
+\tag{10.6}
+\]
+
+The six stored selected scalar zeros do not prove (10.6). The missing
+whole-source object is identified at
+`D:/tmp/r6/agents/qhh_naturality_hostile/HOSTILE_FULL_DOMAIN_DESCENT_AUDIT.md#9-minimum-missing-equations-and-object`.
+Only constant/cubic path coherence is required; no exact finite-\(h\) path
+claim is made.
+
+<a id="changing-endpoint-naturality"></a>
+## 11. Typed changing-endpoint naturality and cubic family
+
+For each psi or sphere edge, (10.4) is the typed shadow square. MWW supplies
+the abstract core-attachment comparison because the lower cobordism is the
+upper surface union added cores
+(`D:/tmp/r6/mww_handle_src/kirby.tex:650-684`); its simultaneous candidate
+instantiation remains **E8**.
+
+Let \(R_s(h):E_s\to E_s\) be the point-push operator--the unique occurrence
+of the \(W\)-word operator in the chain. For changing-endpoint psi/sphere
+edges, premise **[E9]** is
+
+\[
+R_t(h)\widehat C_e(h)=\widehat C_e(h)R_s(h),
+\qquad R_s(h)-I=h^3K_s+O(h^4)
+\tag{11.1}
+\]
+
+on the whole typed space. The scalar audit (6.1) does not prove the second
+operator statement. Extracting the cubic term gives **[P]**
+
+\[
+K_t\widehat C_{e,0}=\widehat C_{e,0}K_s.
+\tag{11.2}
+\]
+
+Use (11.2) only for changing-endpoint psi/sphere maps; beta uses Reynolds.
+Extend \(\lambda_s\) coefficientwise to
+\(\widehat\lambda_s:E_s[[h]]\to\mathbb Q[[h]]\). Define the cubic endpoint
+row by the actual group average
+
+\[
+\kappa_s^E(y)=
+[h^3]\frac1{|G_s|}\sum_{g\in G_s}
+\widehat\lambda_s\bigl((R_s(h)-I)\widehat\beta_s(g)(h)y\bigr),
+\tag{11.3}
+\]
+
+and on the actual cabled module set \(\kappa_s=\kappa_s^E\Theta_s\).
+Reindexing the finite permutation sum proves invariance under \(G_s\). For a
+full beta element, (8.4) says that the remaining pure part is \(I+O(h)\);
+combined with (11.1), it cannot change the cubic coefficient. Thus no
+\(K\)-beta equation is used. Under **E5--E9**, (8.3)--(8.5), (10.6), (11.2), the orbit
+normalizations, and constant/cubic path coherence separately give **[P]**
+
+\[
+\kappa_s(B_s^{\mathrm{actual}}(b)x-x)=0,
+\tag{11.4a}
+\]
+
+\[
+\kappa_t(\Psi_e^{0,\mathrm{actual}}x)=0,
+\qquad
+\kappa_t(\Psi_e^{1,\mathrm{actual}}x)-\kappa_s(x)=0,
+\tag{11.4b}
+\]
+
+\[
+\kappa_t(C_e^{0,\mathrm{actual}}x)=0,
+\qquad
+\kappa_t(C_e^{1,\mathrm{actual}}x)-\kappa_s(x)=0.
+\tag{11.4c}
+\]
+
+These hold for all beta, psi, and sphere generators in their distinct typed
+domains.
+
+<a id="mww-quotient"></a>
+## 12. Exhaustive MWW quotient and descent
+
+Let \(\mathcal C=\bigoplus_sC_s\). Let \(\mathcal R_{2h}\) be spanned by
+all beta differences and actual undotted/dotted psi relations, and let
+\(\mathcal R_{3h}\) be spanned by all
+
+\[
+C_{e,\rm sphere}^{0,\mathrm{actual}}x,\qquad
+C_{e,\rm sphere}^{1,\mathrm{actual}}x-x.
+\tag{12.1}
+\]
+
+Quantifiers range over every finite state, owner braid, oriented edge, and
+source vector. Their completeness and quotient universal property are
+**[E10]**, sourced in
+`D:/tmp/r6/mww_handle_src/kirby.tex:331-378,459-489,705-759`.
+
+Define \(\kappa:\mathcal C\to\mathbb Q\) statewise. Equation (11.4) proves
+**[P]**, conditional on **E5--E10**, that
 
 \[
 \mathcal R_{2h}+\mathcal R_{3h}\subseteq\ker\kappa.
 \]
 
-The quotient universal property therefore supplies a unique
+Thus **[P]** there is a unique
 
 \[
-\bar\kappa:
-\mathcal V/(\mathcal R_{2h}+\mathcal R_{3h})\longrightarrow\mathbb Q.
-\tag{10.3}
+\bar\kappa:\mathcal C/(\mathcal R_{2h}+\mathcal R_{3h})\to\mathbb Q,
+\qquad \kappa=\bar\kappa\pi,
+\tag{12.2}
 \]
 
-For the balanced diagonal class,
+where \(\pi\) is the quotient map.
+
+At \(s_0\), each active owner has one negative and one positive physical
+copy, so the finite permutation quotient is trivial. The pure remainder is
+\(I+O(h)\) by **E6** and cannot change the cubic term under **E9**. Therefore
+the Reynolds definition retains the exact finite value (6.2):
 
 \[
-\bar\kappa(q[v_T])=-59072\ne0.
-\tag{10.4}
+\bar\kappa(\pi(\widetilde v_{s_0}))=-59072\ne0.
+\tag{12.3}
 \]
 
-Thus `q[v_T]` is nonzero and remains homogeneous of absolute quantum degree
-494. Selected scalar receipts alone would not establish (10.3); its
-whole-source quantifiers come from the premises and equations stated above.
+Therefore **[P]** \(\pi(\widetilde v_{s_0})\ne0\) in quantum degree 494.
+This is conditional algebra from exhaustive cocone equations; it is not a
+claim that those candidate-specific equations were internally proved.
 
-## 11. The four-handle map and the standard-(S^4) comparison
+<a id="four-handle-comparison"></a>
+## 13. Four-handle comparison
 
-MWW proves that a four-handle induces an isomorphism
-(`D:/tmp/r6/mww_handle_src/kirby.tex:418-426`). The graded version used here is
-the external premise that this isomorphism preserves the same absolute
-bigrading as (4.2). It therefore carries `q[v_T]` to a nonzero class
+MWW states that a four-handle induces an isomorphism
+(`D:/tmp/r6/mww_handle_src/kirby.tex:418-426`). Premise **[E11]** is
+the exact rational, grading statement: this is an isomorphism of bidegree
+\((0,0)\). It preserves the nonzero quantum-494 class; it does not move that
+class to bidegree \((0,0)\).
 
-\[
-z_{494}\in\mathcal S^2_{0,494}(X(41,189,73);\mathbb Q).
-\tag{11.1}
-\]
+<a id="standard-s4-control"></a>
+## 14. Standard-S4 control and conclusion
 
-The standard-sphere computation is
-
-\[
-\mathcal S^2_0(S^4;\mathbb Z)\cong\mathbb Z
-\]
-
-concentrated in bidegree `(0,0)`
-(`D:/tmp/r6/mww_handle_src/kirby.tex:428-431`). Hence
+MWW gives the integral computation concentrated in bidegree zero
+(`D:/tmp/r6/mww_handle_src/kirby.tex:428-431`). The rational statement used
+here is explicitly premise **[E12]**, not an unproved base-change inference:
 
 \[
 \mathcal S^2_{0,q}(S^4;\mathbb Q)=0\qquad(q\ne0).
-\tag{11.2}
+\tag{14.1}
 \]
 
-Since `494 != 0`, graded diffeomorphism invariance makes (11.1) incompatible
-with a diffeomorphism to `S^4`. Conditional on all named external inputs,
+Premise **E12** also includes graded diffeomorphism invariance. Combining
+(12.3), the bidegree-\((0,0)\) four-handle isomorphism, and (14.1) proves
+**[P]**, under **E1--E12**, that
 
 \[
 X(41,189,73)\not\cong_{\rm diff}S^4.
-\tag{11.3}
+\tag{14.2}
 \]
 
-Together with the separately checked Cappell--Shaneson determinant conditions
-and the external homotopy-sphere implication, this is a candidate
-counterexample to smooth four-dimensional Poincare.
+Separately, **[E13]** is the Cappell--Shaneson theorem that the finite-verified
+conditions \(\det A=\det(A-I)=1\) for the pinned matrix imply that
+\(X(41,189,73)\) is a homotopy sphere. With **E13**, (14.2) is a conditional
+SPC4 counterexample.
 
-## 12. Remaining formalization and external-review status
+## 15. Dependency and source/evidence table
 
-**Status: `CANDIDATE_PROOF_PENDING_INDEPENDENT_REVIEW`.**
+| ID | status | role and anchor | unresolved boundary |
+|---|---|---|---|
+| E1 balanced Hattori | **[E] `external_theorem`** | ambient formula: `D:/tmp/r6/mww_handle_src/1handles.tex:242-299,420-430` | candidate \(B\sqcup B^\vee+227\) identification not proved there |
+| E2 diagonal binding | **[E]** | Hattori identity: `D:/tmp/r6/mww_handle_src/1handles.tex:783-787` | candidate inverse image remains a premise |
+| E3 BPW trace/cup | **[E]** | `D:/tmp/r6/bpw_src/shadows/vertical.tex:11-58` | actual 227-cap movie is extra |
+| E4 strict scope | **[E]** | `D:/tmp/r6/agents/finite_type_leading/bphw_1903_src/sections/equivalence.tex:468-493` | exact foam scope remains explicit |
+| F1 degree | **[F] `finite_verified`** | `AuditArithmetic.lean:87-91` | geometric grading compatibility is in E1/E4 |
+| F2 scalar | **[F]** | `D:/tmp/r6/eta_t1_delta3_reaudit/ETA_T1_DELTA3_DECISION.md#2-exact-raw-word-calculation` | scalar, not global operator valuation |
+| E5 intrinsic \(\nu\) | **[E]** | algebra: `D:/tmp/r6/agents/finite_type_leading/bphw_1903_src/sections/preliminaries.tex:610-633` | actual-map binding is candidate-specific |
+| E6 beta/psi | **[E]** | MWW: `D:/tmp/r6/mww_handle_src/kirby.tex:265-345` | whole-domain equations remain premises |
+| E7 fixed-Y HJ | **[E]** | HJ: `D:/tmp/r6/agents/hj_scope_hostile/hj_v3_source/version_23_RM.tex:644-674` | local audit Gates 2,3,5,6 remain open/conditional |
+| F3 determinant | **[F]** | `AuditArithmetic.lean:59-60` | determinant implies neither E7 nor E8 |
+| E8 direct-Q/shadow | **[E]** | MWW core square: `D:/tmp/r6/mww_handle_src/kirby.tex:650-684` | HJ does not prove the factorization |
+| E9 cubic naturality | **[E]** | diagnostic: `D:/tmp/r6/agents/qhh_naturality_hostile/HOSTILE_FULL_DOMAIN_DESCENT_AUDIT.md#6-is-pure-braid-ioh-enough` | F2 does not prove the operator premise |
+| E10 complete MWW quotient | **[E]** | `D:/tmp/r6/mww_handle_src/kirby.tex:459-489,705-759` | completeness is required on all actual cabled summands |
+| E11 graded four-handle | **[E]** | `D:/tmp/r6/mww_handle_src/kirby.tex:418-426` | rational bidegree-\((0,0)\) form stays explicit |
+| E12 rational S4 and graded diffeomorphism | **[E]** | integral anchor: `D:/tmp/r6/mww_handle_src/kirby.tex:428-431` | rational field-coefficient statement is a premise, not an inferred base change |
+| E13 CS bridge | **[E]** | determinant data: `AuditArithmetic.lean` | homotopy-sphere bridge is external |
+| P1 descent | **[P] `proved_in_document`** | Sections 11--12 | conditional on E5--E10 |
+| P2 nonstandard | **[P]** | Sections 13--14 | conditional on E1--E12 |
 
-This document proves internally that:
+The 13 explicit HTML anchors above exactly match the manifest consumer IDs.
 
-- the complete cocone equations annihilate every displayed MWW generator;
-- annihilation gives a quotient functional;
-- the value `-59072` makes the quotient class nonzero;
-- a nonzero degree-494 class, four-handle graded invariance, and the standard
-  `S^4` support theorem imply non-diffeomorphism.
+## 16. Honest closing status
 
-Finite verified inputs **[F]** are the point-push coefficient and nonzero
-integer, the grading arithmetic, and the relevant determinant arithmetic.
+Finite arithmetic and the scalar are **[F]**. Frobenius, Reynolds-ratio,
+coefficient-extraction, and quotient deductions are **[P]**. Geometric
+typing, exhaustive cocones, changing-endpoint operator data, and rational
+final comparison are **[E]**. Therefore the status remains
 
-The following remain visible external theorem premises **[E]/[D]**:
+```text
+CANDIDATE_PROOF_PENDING_INDEPENDENT_REVIEW
+```
 
-- the balanced Hattori equivalence (2.1) and its action compatibility;
-- BPW vertical-to-horizontal trace and the 227 actual counits;
-- strict BHPW functoriality in the exact cobordism scope used here;
-- a fixed-`Y`, pairwise-disjoint determinant-one HJ basis for this candidate;
-- direct-`Q` state equivalences, flat squares, and whole-source cocone maps;
-- the typed `\Phi/W` squares at every finite state;
-- the graded four-handle comparison, standard-`S^4` computation, and graded
-  diffeomorphism invariance.
-
-Lean may kernel-check the finite Frobenius/Reynolds algebra, cubic conjugation,
-universal-property deductions, and the final conditional implication. Until
-the geometric premises are also formalized or imported from a trusted
-library, a zero-`sorry` build proves only a conditional theorem. It does not
-justify `FORMALLY_VERIFIED_COUNTEREXAMPLE` or external acceptance.
+Even zero-`sorry` Lean proves only the conditional implication unless
+**E1--E13** are formalized or imported from trusted libraries. This document
+claims neither formal verification nor external acceptance.
