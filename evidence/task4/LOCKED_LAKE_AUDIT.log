@@ -1,0 +1,52 @@
+event=acquire pid=5515 acquire_utc=2026-08-31T05:24:45Z lockdir=/root/autodl-tmp/smooth4pc_t73_lean_build_20260831/.locked_lake.lock git_path=/root/autodl-tmp/smooth4pc_t73_lean_build_20260831/no-git-bin/git
+event=command_start pid=5515 lake=/root/autodl-tmp/lean/elan/toolchains/leanprover--lean4---v4.32.1/bin/lake argc=3 arg=env arg=lean arg=Smoke.lean
+event=command_exit pid=5515 exit=0 utc=2026-08-31T05:24:49Z
+event=release pid=5515 acquire_utc=2026-08-31T05:24:45Z release_utc=2026-08-31T05:24:49Z exit=0
+event=acquire pid=11078 acquire_utc=2026-08-31T08:03:21Z lockdir=/root/autodl-tmp/smooth4pc_t73_lean_build_20260831/.locked_lake.lock git_path=/root/autodl-tmp/smooth4pc_t73_lean_build_20260831/no-git-bin/git
+event=command_start pid=11078 lake=/root/autodl-tmp/lean/elan/toolchains/leanprover--lean4---v4.32.1/bin/lake argc=3 arg=env arg=lean arg=Smooth4PC/Interfaces.lean
+event=command_exit pid=11078 exit=1 utc=2026-08-31T08:03:28Z
+event=release pid=11078 acquire_utc=2026-08-31T08:03:21Z release_utc=2026-08-31T08:03:28Z exit=1
+event=acquire pid=11450 acquire_utc=2026-08-31T08:15:58Z lockdir=/root/autodl-tmp/smooth4pc_t73_lean_build_20260831/.locked_lake.lock git_path=/root/autodl-tmp/smooth4pc_t73_lean_build_20260831/no-git-bin/git
+event=command_start pid=11450 lake=/root/autodl-tmp/lean/elan/toolchains/leanprover--lean4---v4.32.1/bin/lake argc=3 arg=env arg=lean arg=Smooth4PC/Interfaces.lean
+event=command_exit pid=11450 exit=0 utc=2026-08-31T08:16:04Z
+event=release pid=11450 acquire_utc=2026-08-31T08:15:58Z release_utc=2026-08-31T08:16:04Z exit=0
+event=acquire pid=11496 acquire_utc=2026-08-31T08:16:20Z lockdir=/root/autodl-tmp/smooth4pc_t73_lean_build_20260831/.locked_lake.lock git_path=/root/autodl-tmp/smooth4pc_t73_lean_build_20260831/no-git-bin/git
+event=command_start pid=11496 lake=/root/autodl-tmp/lean/elan/toolchains/leanprover--lean4---v4.32.1/bin/lake argc=3 arg=env arg=lean arg=AuditType.lean
+event=command_exit pid=11496 exit=1 utc=2026-08-31T08:16:21Z
+event=release pid=11496 acquire_utc=2026-08-31T08:16:20Z release_utc=2026-08-31T08:16:21Z exit=1
+event=acquire pid=11553 acquire_utc=2026-08-31T08:17:08Z lockdir=/root/autodl-tmp/smooth4pc_t73_lean_build_20260831/.locked_lake.lock git_path=/root/autodl-tmp/smooth4pc_t73_lean_build_20260831/no-git-bin/git
+event=command_start pid=11553 lake=/root/autodl-tmp/lean/elan/toolchains/leanprover--lean4---v4.32.1/bin/lake argc=5 arg=env arg=lean arg=-o arg=.lake/build/lib/lean/Smooth4PC/Interfaces.olean arg=Smooth4PC/Interfaces.lean
+event=command_exit pid=11553 exit=0 utc=2026-08-31T08:17:15Z
+event=release pid=11553 acquire_utc=2026-08-31T08:17:08Z release_utc=2026-08-31T08:17:15Z exit=0
+event=acquire pid=11597 acquire_utc=2026-08-31T08:17:28Z lockdir=/root/autodl-tmp/smooth4pc_t73_lean_build_20260831/.locked_lake.lock git_path=/root/autodl-tmp/smooth4pc_t73_lean_build_20260831/no-git-bin/git
+event=command_start pid=11597 lake=/root/autodl-tmp/lean/elan/toolchains/leanprover--lean4---v4.32.1/bin/lake argc=3 arg=env arg=lean arg=AuditType.lean
+event=command_exit pid=11597 exit=1 utc=2026-08-31T08:17:33Z
+event=release pid=11597 acquire_utc=2026-08-31T08:17:28Z release_utc=2026-08-31T08:17:33Z exit=1
+event=acquire pid=11840 acquire_utc=2026-08-31T08:23:15Z lockdir=/root/autodl-tmp/smooth4pc_t73_lean_build_20260831/.locked_lake.lock git_path=/root/autodl-tmp/smooth4pc_t73_lean_build_20260831/no-git-bin/git
+event=command_start pid=11840 lake=/root/autodl-tmp/lean/elan/toolchains/leanprover--lean4---v4.32.1/bin/lake argc=3 arg=env arg=lean arg=AuditType.lean
+event=command_exit pid=11840 exit=1 utc=2026-08-31T08:23:20Z
+event=release pid=11840 acquire_utc=2026-08-31T08:23:15Z release_utc=2026-08-31T08:23:20Z exit=1
+event=acquire pid=11950 acquire_utc=2026-08-31T08:25:29Z lockdir=/root/autodl-tmp/smooth4pc_t73_lean_build_20260831/.locked_lake.lock git_path=/root/autodl-tmp/smooth4pc_t73_lean_build_20260831/no-git-bin/git
+event=command_start pid=11950 lake=/root/autodl-tmp/lean/elan/toolchains/leanprover--lean4---v4.32.1/bin/lake argc=3 arg=env arg=lean arg=AuditType.lean
+event=command_exit pid=11950 exit=1 utc=2026-08-31T08:25:33Z
+event=release pid=11950 acquire_utc=2026-08-31T08:25:29Z release_utc=2026-08-31T08:25:33Z exit=1
+event=acquire pid=12119 acquire_utc=2026-08-31T08:28:23Z lockdir=/root/autodl-tmp/smooth4pc_t73_lean_build_20260831/.locked_lake.lock git_path=/root/autodl-tmp/smooth4pc_t73_lean_build_20260831/no-git-bin/git
+event=command_start pid=12119 lake=/root/autodl-tmp/lean/elan/toolchains/leanprover--lean4---v4.32.1/bin/lake argc=3 arg=env arg=lean arg=AuditType.lean
+event=command_exit pid=12119 exit=1 utc=2026-08-31T08:28:28Z
+event=release pid=12119 acquire_utc=2026-08-31T08:28:23Z release_utc=2026-08-31T08:28:28Z exit=1
+event=acquire pid=12194 acquire_utc=2026-08-31T08:29:34Z lockdir=/root/autodl-tmp/smooth4pc_t73_lean_build_20260831/.locked_lake.lock git_path=/root/autodl-tmp/smooth4pc_t73_lean_build_20260831/no-git-bin/git
+event=command_start pid=12194 lake=/root/autodl-tmp/lean/elan/toolchains/leanprover--lean4---v4.32.1/bin/lake argc=3 arg=env arg=lean arg=AuditType.lean
+event=command_exit pid=12194 exit=0 utc=2026-08-31T08:29:40Z
+event=release pid=12194 acquire_utc=2026-08-31T08:29:34Z release_utc=2026-08-31T08:29:40Z exit=0
+event=acquire pid=12238 acquire_utc=2026-08-31T08:29:58Z lockdir=/root/autodl-tmp/smooth4pc_t73_lean_build_20260831/.locked_lake.lock git_path=/root/autodl-tmp/smooth4pc_t73_lean_build_20260831/no-git-bin/git
+event=command_start pid=12238 lake=/root/autodl-tmp/lean/elan/toolchains/leanprover--lean4---v4.32.1/bin/lake argc=3 arg=env arg=lean arg=AuditType.lean
+event=command_exit pid=12238 exit=0 utc=2026-08-31T08:30:03Z
+event=release pid=12238 acquire_utc=2026-08-31T08:29:58Z release_utc=2026-08-31T08:30:03Z exit=0
+event=acquire pid=12755 acquire_utc=2026-08-31T08:49:04Z lockdir=/root/autodl-tmp/smooth4pc_t73_lean_build_20260831/.locked_lake.lock git_path=/root/autodl-tmp/smooth4pc_t73_lean_build_20260831/no-git-bin/git
+event=command_start pid=12755 lake=/root/autodl-tmp/lean/elan/toolchains/leanprover--lean4---v4.32.1/bin/lake argc=5 arg=env arg=lean arg=-o arg=.lake/build/lib/lean/Smooth4PC/Interfaces.olean arg=Smooth4PC/Interfaces.lean
+event=command_exit pid=12755 exit=0 utc=2026-08-31T08:49:12Z
+event=release pid=12755 acquire_utc=2026-08-31T08:49:04Z release_utc=2026-08-31T08:49:12Z exit=0
+event=acquire pid=12803 acquire_utc=2026-08-31T08:49:29Z lockdir=/root/autodl-tmp/smooth4pc_t73_lean_build_20260831/.locked_lake.lock git_path=/root/autodl-tmp/smooth4pc_t73_lean_build_20260831/no-git-bin/git
+event=command_start pid=12803 lake=/root/autodl-tmp/lean/elan/toolchains/leanprover--lean4---v4.32.1/bin/lake argc=3 arg=env arg=lean arg=AuditType.lean
+event=command_exit pid=12803 exit=0 utc=2026-08-31T08:49:34Z
+event=release pid=12803 acquire_utc=2026-08-31T08:49:29Z release_utc=2026-08-31T08:49:34Z exit=0

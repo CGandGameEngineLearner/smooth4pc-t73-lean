@@ -1,0 +1,14 @@
+* text=auto eol=lf
+data/GLOBAL_FALSIFICATION_CHAIN_CERT.json binary
+evidence/task3/** binary
+.gitattributes text eol=lf
+AuditType.lean text eol=lf
+Smooth4PC/Interfaces.lean text eol=lf
+audit/interface_manifest.json text eol=lf
+audit/lean_type_dump.txt text eol=lf
+scripts/audit_declarations.py text eol=lf
+scripts/audit_theorem_type.py text eol=lf
+scripts/verify_task4_receipt.py text eol=lf
+tests/test_interface_audit.py text eol=lf
+evidence/task4/*.json text eol=lf
+evidence/task4/*.log text eol=lf

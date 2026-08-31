@@ -1,0 +1,134 @@
+{
+  "schema": "smooth4pc_t73_task4_remote_receipt/v1",
+  "created_utc": "2026-08-31T09:23:42Z",
+  "epistemic_status": "INTERFACE_SURFACE_FROZEN_ONLY",
+  "not_a_claim": "No conditional proof theorem or unconditional Smooth4PC counterexample theorem exists at Task4.",
+  "authority_worktree": "D:/toffee_code_in_Cursor/smooth4pc-t73-lean/.worktrees/formalize-t73",
+  "remote_sandbox": "/root/autodl-tmp/smooth4pc_t73_lean_build_20260831",
+  "toolchain": {
+    "lean": "4.32.1",
+    "lean_commit": "f054605aea4b840552cca2e725580bffd1e1b704",
+    "lake": "5.0.0-src+f054605",
+    "mathlib_commit": "520045ab14e26149ee970e2e617ca04b09bde5d6",
+    "mathlib_tree": "b701c3b42faf7960b44e01a1359800f5ec35cbf8"
+  },
+  "remote_runs": {
+    "interfaces_command": "./scripts/locked_lake.sh env lean -o .lake/build/lib/lean/Smooth4PC/Interfaces.olean Smooth4PC/Interfaces.lean",
+    "interfaces_acquire_utc": "2026-08-31T08:49:04Z",
+    "interfaces_exit": 0,
+    "audit_type_command": "./scripts/locked_lake.sh env lean AuditType.lean",
+    "audit_type_acquire_utc": "2026-08-31T08:49:29Z",
+    "audit_type_exit": 0,
+    "locked_lake_audit_log_sha256": "644279757565BD41B89B529F493FF6C7E8BE2215BFB9193AB1210C5299D10E12"
+  },
+  "local_gates": {
+    "theorem_type_gate": "PASS",
+    "declaration_gate": "PASS",
+    "full_unittest_count": 36,
+    "full_unittest_status": "PASS"
+  },
+  "files": {
+    ".gitattributes": {
+      "sha256": "EF74D832B9588019B7BA9C2C272681B7E25680B9C75BD3ABD6D4EC3D51D959BD",
+      "bytes": 501
+    },
+    "Smooth4PC/CertificateData.lean": {
+      "sha256": "04C3D3FD29201A79FD2141907F8F846AEFED05D179050DF9D8937D3378727A2E",
+      "bytes": 1001
+    },
+    "Smooth4PC/Arithmetic.lean": {
+      "sha256": "C42ECEF1EC183AA3E823242E882BA25AC18158801939AB2691927B73C6FF810C",
+      "bytes": 504
+    },
+    "Smooth4PC/Interfaces.lean": {
+      "sha256": "37B1BD5FE147E6BEC38D6A7210DE6126795C849B1939E4693E8D60E5281DA6D9",
+      "bytes": 9833
+    },
+    "AuditType.lean": {
+      "sha256": "38D61AC9589E0D03A5199147274D070A850FAF314EC7ECF51D3AA22F68D484DD",
+      "bytes": 2452
+    },
+    "data/GLOBAL_FALSIFICATION_CHAIN_CERT.json": {
+      "sha256": "8B4A0B39ABABD7CFA284E67189A8AF4E60473F88CADC8722A1ABA8321B72EB86",
+      "bytes": 3545
+    },
+    "audit/interface_manifest.json": {
+      "sha256": "32E49D60C481735F0431DD54B7EA47CBEA5DB83819333BE25CD776B74B6CF5AC",
+      "bytes": 292620
+    },
+    "audit/lean_type_dump.txt": {
+      "sha256": "DA76485228B80D5AA6C5E50BAF12E83A62FAD6F4D713D0E9A7A09CF0D6BCAA02",
+      "bytes": 288194
+    },
+    "evidence/task4/LOCKED_LAKE_AUDIT.log": {
+      "sha256": "644279757565BD41B89B529F493FF6C7E8BE2215BFB9193AB1210C5299D10E12",
+      "bytes": 6914
+    },
+    "scripts/audit_declarations.py": {
+      "sha256": "BD9C60B5025E0CC570C19E7BA7A463278DDB1753F08D8BBD830F334B2AA858A6",
+      "bytes": 4097
+    },
+    "scripts/audit_theorem_type.py": {
+      "sha256": "189723C94F71A919B9B4276CACA7097A3BE4F0A5C65348A2E68F44C438E3DB30",
+      "bytes": 5959
+    },
+    "scripts/verify_task4_receipt.py": {
+      "sha256": "43712E8081529E88C2D8E3B7E9F5748FB5C3660979AC66ACC03D8560D21B37AE",
+      "bytes": 3547
+    },
+    "tests/test_interface_audit.py": {
+      "sha256": "2C358C49F915FC23689F076DAF4FA3C55F1D82B34C803BA62D66D65B97EE68DD",
+      "bytes": 27166
+    },
+    "lakefile.toml": {
+      "sha256": "C1999195B676FED260F87EC541423C1A65E4CF06BC250D7ADB769C67A045DCFF",
+      "bytes": 125
+    },
+    "lean-toolchain": {
+      "sha256": "8E3538E0AB5F81A3EE04927D8838C8C674E0E112838B4B3CE87EC218143276AF",
+      "bytes": 25
+    },
+    "scripts/locked_lake.sh": {
+      "sha256": "303428886EE782E112AFFAD572C05D510EC9DDAB852197A0A2B2BB1E0418078C",
+      "bytes": 3250
+    }
+  },
+  "remote_verified_files": {
+    "Smooth4PC/CertificateData.lean": {
+      "sha256": "04C3D3FD29201A79FD2141907F8F846AEFED05D179050DF9D8937D3378727A2E",
+      "bytes": 1001
+    },
+    "Smooth4PC/Arithmetic.lean": {
+      "sha256": "C42ECEF1EC183AA3E823242E882BA25AC18158801939AB2691927B73C6FF810C",
+      "bytes": 504
+    },
+    "Smooth4PC/Interfaces.lean": {
+      "sha256": "37B1BD5FE147E6BEC38D6A7210DE6126795C849B1939E4693E8D60E5281DA6D9",
+      "bytes": 9833
+    },
+    "AuditType.lean": {
+      "sha256": "38D61AC9589E0D03A5199147274D070A850FAF314EC7ECF51D3AA22F68D484DD",
+      "bytes": 2452
+    },
+    "audit/lean_type_dump.txt": {
+      "sha256": "DA76485228B80D5AA6C5E50BAF12E83A62FAD6F4D713D0E9A7A09CF0D6BCAA02",
+      "bytes": 288194
+    },
+    "evidence/task4/LOCKED_LAKE_AUDIT.log": {
+      "sha256": "644279757565BD41B89B529F493FF6C7E8BE2215BFB9193AB1210C5299D10E12",
+      "bytes": 6914
+    },
+    "lakefile.toml": {
+      "sha256": "C1999195B676FED260F87EC541423C1A65E4CF06BC250D7ADB769C67A045DCFF",
+      "bytes": 125
+    },
+    "lean-toolchain": {
+      "sha256": "8E3538E0AB5F81A3EE04927D8838C8C674E0E112838B4B3CE87EC218143276AF",
+      "bytes": 25
+    },
+    "scripts/locked_lake.sh": {
+      "sha256": "303428886EE782E112AFFAD572C05D510EC9DDAB852197A0A2B2BB1E0418078C",
+      "bytes": 3250
+    }
+  }
+}
