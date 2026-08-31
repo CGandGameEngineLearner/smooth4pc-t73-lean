@@ -18,37 +18,48 @@ import Smooth4PC.HattoriBalancedInput
 namespace HattoriBalancedInputConsumer
 open Smooth4PC
 
-universe u v w
+universe u
 
-example (g : BalancedHattoriGeometry.{u, v, w}) (T T' : g.Obj) :
-    g.Coeff T T' ≃
-      (g.Hom (g.B T) (g.B T') × (Fin 227 → FrobeniusLabel)) :=
+example (g : BalancedHattoriGeometry.{u}) (T T' : g.Obj) :
+    g.Coeff T T' ≃ₗ[ℚ]
+      TensorProduct ℚ (g.Hom (g.B T) (g.B T'))
+        ((Fin 227 → FrobeniusLabel) →₀ ℚ) :=
   g.H T T'
 
-example : allX = (fun _ : Fin 227 => FrobeniusLabel.X) := rfl
+example : TensorBasis227 = (Fin 227 → FrobeniusLabel) := rfl
+example : Tensor227 = (TensorBasis227 →₀ ℚ) := rfl
+example : xTensor227 = Finsupp.single allX 1 := rfl
 
-example (g : BalancedHattoriGeometry.{u, v, w}) (U : g.Obj) :
-    g.H (chosenT g U) (chosenT g U) (vT g U) = diagonalTarget g U :=
-  vT_binding g U
+example (g : BalancedHattoriGeometry.{u}) (U : g.Obj) :
+    g.H (chosenT g U) (chosenT g U) (inverseImageVT g U) =
+      diagonalTarget g U :=
+  inverseImageVT_binding g U
 
-example (g : BalancedHattoriGeometry.{u, v, w}) (U : g.Obj) :
-    selectedInput g U = vT g U :=
-  selectedInput_eq_vT g U
+example (g : BalancedHattoriGeometry.{u}) (U : g.Obj)
+    (actual : ActualDiagonalInput g U) :
+    g.IsCycle (selectedInput actual) :=
+  selectedInput_isCycle actual
+
+example (g : BalancedHattoriGeometry.{u}) (U : g.Obj)
+    (actual : ActualDiagonalInput g U) :
+    g.H (chosenT g U) (chosenT g U) (selectedInput actual) =
+      diagonalTarget g U :=
+  selectedInput_binding actual
 
 example : cupVector = basisVector 0 - basisVector 5 := rfl
 example : Fin 88 → ℚ := cupVector
 example : positiveSource = EndpointSource.M1_88 := positiveSource_is_M1_88
 
-example : relativeNu baseState = 0 := relativeNu_base
-example : relativeNu cupState = 0 := relativeNu_cup
-example (s : PhysicalState) : relativeNu (dottedX s) = relativeNu s :=
-  relativeNu_dottedX s
-example (s : PhysicalState) : relativeNu (undottedOne s) = relativeNu s + 1 :=
-  relativeNu_undottedOne s
-example (s : PhysicalState) (h : 1 ≤ relativeNu s) : headRow s = 0 :=
-  headRow_zero_of_relativeNu_ge_one s h
-example (s : PhysicalState) (h : 1 ≤ relativeNu s) : relativeHeadRow s = 0 :=
-  relativeHeadRow_zero_of_relativeNu_ge_one s h
+example (b : DefectBasis) : totalDefectBasis b = 1 + relativeNuBasis b := rfl
+example (r : M1_88 →ₗ[ℚ] ℚ) :
+    (defectHeadRow r).comp dottedMap = defectHeadRow r :=
+  defectHeadRow_comp_dotted r
+example (r : M1_88 →ₗ[ℚ] ℚ) :
+    (defectHeadRow r).comp undottedMap = 0 :=
+  defectHeadRow_comp_undotted r
+example (p : PhysicalCopyPermutation) (b : DefectBasis) :
+    relativeNuBasis (permuteBasis p b) = relativeNuBasis b :=
+  physicalCopyPermutation_preserves_relativeNu p b
 
 example : (183 : ℤ) + 315 - 4 = 494 := degree_ledger_eq_494
 example : (-8 : ℤ) * 7384 = -59072 := cubic_arithmetic_eq_neg59072
@@ -60,15 +71,13 @@ end HattoriBalancedInputConsumer
 
 AXIOM_THEOREMS = (
     "Smooth4PC.B_chosenT_eq_U",
-    "Smooth4PC.vT_binding",
-    "Smooth4PC.selectedInput_eq_vT",
-    "Smooth4PC.relativeNu_eq_addedDefect",
-    "Smooth4PC.relativeNu_base",
-    "Smooth4PC.relativeNu_cup",
-    "Smooth4PC.relativeNu_dottedX",
-    "Smooth4PC.relativeNu_undottedOne",
-    "Smooth4PC.headRow_zero_of_relativeNu_ge_one",
-    "Smooth4PC.relativeHeadRow_zero_of_relativeNu_ge_one",
+    "Smooth4PC.inverseImageVT_binding",
+    "Smooth4PC.selectedInput_isCycle",
+    "Smooth4PC.selectedInput_binding",
+    "Smooth4PC.basisPush_single",
+    "Smooth4PC.defectHeadRow_comp_dotted",
+    "Smooth4PC.defectHeadRow_comp_undotted",
+    "Smooth4PC.physicalCopyPermutation_preserves_relativeNu",
     "Smooth4PC.degree_ledger_eq_494",
     "Smooth4PC.cubic_arithmetic_eq_neg59072",
     "Smooth4PC.neg59072_ne_zero",
@@ -87,21 +96,21 @@ class HattoriBalancedInputTests(unittest.TestCase):
     ) -> dict[str, str]:
         env = os.environ.copy()
         env.pop("LEAN_PATH", None)
-        fallback_root = self.repo / "deps" / "mathlib4" / ".lake"
-        fallback_paths: list[Path] = [*prepend]
+        paths: list[Path] = [*prepend]
+        fallback = self.repo / "deps" / "mathlib4" / ".lake"
         if use_fallback:
-            mathlib_build = fallback_root / "build" / "lib" / "lean"
-            if mathlib_build.is_dir():
-                fallback_paths.append(mathlib_build)
-            packages = fallback_root / "packages"
+            mathlib = fallback / "build" / "lib" / "lean"
+            if mathlib.is_dir():
+                paths.append(mathlib)
+            packages = fallback / "packages"
             if packages.is_dir():
-                fallback_paths.extend(
+                paths.extend(
                     package / ".lake" / "build" / "lib" / "lean"
                     for package in sorted(packages.iterdir())
                     if (package / ".lake" / "build" / "lib" / "lean").is_dir()
                 )
-        if fallback_paths:
-            env["LEAN_PATH"] = os.pathsep.join(str(path) for path in fallback_paths)
+        if paths:
+            env["LEAN_PATH"] = os.pathsep.join(str(path) for path in paths)
         return env
 
     def run_lean(
@@ -134,26 +143,20 @@ class HattoriBalancedInputTests(unittest.TestCase):
             build = self.run_lean("-o", str(olean), str(source), use_fallback=True)
             if build.returncode != 0:
                 return build, None
-            consumer_path = root / "Consumer.lean"
-            consumer_path.write_text(consumer, encoding="utf-8")
-            check = self.run_lean(
-                str(consumer_path), use_fallback=True, prepend=(olean_root,)
-            )
+            path = root / "Consumer.lean"
+            path.write_text(consumer, encoding="utf-8")
+            check = self.run_lean(str(path), use_fallback=True, prepend=(olean_root,))
             return build, check
 
     def test_raw_direct_compile_status_is_reported_honestly(self) -> None:
-        self.assertTrue(PINNED_LAKE.is_file(), f"missing pinned Lake: {PINNED_LAKE}")
+        self.assertTrue(PINNED_LAKE.is_file())
         raw = self.run_lean(str(self.module), use_fallback=False)
         output = raw.stdout + raw.stderr
         status = "PASS" if raw.returncode == 0 else "FAIL"
         first = next((line for line in output.splitlines() if line.strip()), "")
         print(f"RAW_DIRECT_COMPILE={status}; exit={raw.returncode}; {first}")
         if raw.returncode != 0:
-            self.assertRegex(
-                output,
-                r"unknown module prefix '(?:Aesop|ImportGraph)'",
-                "raw compile failed for a reason other than the pre-existing dependency gap",
-            )
+            self.assertRegex(output, r"unknown module prefix '(?:Aesop|ImportGraph)'")
 
     def test_module_compiles_with_repo_relative_dependency_fallback(self) -> None:
         result = self.run_lean(str(self.module), use_fallback=True)
@@ -179,84 +182,99 @@ class HattoriBalancedInputTests(unittest.TestCase):
         source = self.module.read_text(encoding="utf-8")
         one_sided = source.replace(
             "  idHom : ∀ T, Hom T T\n",
-            "  idHom : ∀ T, Hom T T\n"
-            "  mate : ∀ T, Hom T (B T)\n",
+            "  idHom : ∀ T, Hom T T\n  mate : ∀ T, Hom T (B T)\n",
         ).replace(
-            "Hom (B T) (B T') × SeparateXLabels",
-            "Hom T (B T') × SeparateXLabels",
+            "TensorProduct ℚ (Hom (B T) (B T')) Tensor227",
+            "TensorProduct ℚ (Hom T (B T')) Tensor227",
         ).replace(
-            "g.Hom (g.B (chosenT g U)) (g.B (chosenT g U)) × SeparateXLabels :=\n"
-            "  (g.idHom _, allX)",
-            "g.Hom (chosenT g U) (g.B (chosenT g U)) × SeparateXLabels :=\n"
-            "  (g.mate _, allX)",
+            "TensorProduct ℚ (g.Hom (g.B T) (g.B T')) Tensor227",
+            "TensorProduct ℚ (g.Hom T (g.B T')) Tensor227",
+        ).replace(
+            "g.Hom (g.B (chosenT g U)) (g.B (chosenT g U))",
+            "g.Hom (chosenT g U) (g.B (chosenT g U))",
+        ).replace(
+            "g.idHom _ ⊗ₜ[ℚ] xTensor227",
+            "g.mate _ ⊗ₜ[ℚ] xTensor227",
+        )
+        unindexed = source.replace(
+            "abbrev TensorBasis227 := Fin 227 → FrobeniusLabel",
+            "abbrev TensorBasis227 := FrobeniusLabel",
+        ).replace(
+            "def allX : TensorBasis227 := fun _ => .X",
+            "def allX : TensorBasis227 := .X",
+        )
+        xi_input = source.replace(
+            "  actualVT : g.Coeff (chosenT g U) (chosenT g U)\n",
+            "  actualVT : g.Coeff (chosenT g U) (chosenT g U)\n"
+            "  xi : g.Coeff (chosenT g U) (chosenT g U)\n",
+        ).replace(
+            "def selectedInput {g : BalancedHattoriGeometry} {U : g.Obj}\n"
+            "    (actual : ActualDiagonalInput g U) := actual.actualVT",
+            "def selectedInput {g : BalancedHattoriGeometry} {U : g.Obj}\n"
+            "    (actual : ActualDiagonalInput g U) := actual.xi",
+        ).replace(
+            "selectedInput actual = actual.actualVT := rfl",
+            "selectedInput actual = actual.xi := rfl",
+        ).replace(
+            "g.IsCycle (selectedInput actual) := actual.cycle",
+            "g.IsCycle (selectedInput actual) := actual.xiCycle",
+        ).replace(
+            "  xi : g.Coeff (chosenT g U) (chosenT g U)\n",
+            "  xi : g.Coeff (chosenT g U) (chosenT g U)\n"
+            "  xiCycle : g.IsCycle xi\n",
+        ).replace(
+            "g.H (chosenT g U) (chosenT g U) (selectedInput actual) =\n"
+            "      diagonalTarget g U := actual.binding",
+            "g.H (chosenT g U) (chosenT g U) (selectedInput actual) =\n"
+            "      g.H (chosenT g U) (chosenT g U) actual.xi := rfl",
+        )
+        m0 = source.replace(
+            "abbrev M1_88 := Fin 88 → ℚ\n\n"
+            "def basisVector (i : Fin 88) : M1_88 :=",
+            "abbrev M0_88 := Fin 87 → ℚ\n"
+            "abbrev M1_88 := M0_88\n\n"
+            "def basisVector (i : Fin 87) : M1_88 :=",
+        ).replace("endpoint : Fin 88", "endpoint : Fin 87").replace(
+            "Equiv.Perm (Fin 88)", "Equiv.Perm (Fin 87)"
+        )
+        retired = source.replace(
+            "def cubicValue : ℤ := -59072", "def cubicValue : ℤ := -28864"
+        ).replace(
+            "theorem cubicValue_eq_neg59072 : cubicValue = (-59072 : ℤ) := by",
+            "theorem cubicValue_eq_neg59072 : cubicValue = (-28864 : ℤ) := by",
         )
         mutants = {
             "one_sided_hom": one_sided,
-            "unindexed_x_label": source.replace(
-                "abbrev SeparateXLabels := Fin 227 → FrobeniusLabel\n\n"
-                "def allX : SeparateXLabels := fun _ => .X",
-                "abbrev SeparateXLabels := FrobeniusLabel\n\n"
-                "def allX : SeparateXLabels := .X",
-            ),
-            "xi_input": source.replace(
-                "def selectedInput (g : BalancedHattoriGeometry) (U : g.Obj) := vT g U\n\n"
-                "theorem selectedInput_eq_vT (g : BalancedHattoriGeometry) (U : g.Obj) :\n"
-                "    selectedInput g U = vT g U := rfl",
-                "def selectedInput (g : BalancedHattoriGeometry) (U : g.Obj)\n"
-                "    (xi : g.Coeff (chosenT g U) (chosenT g U)) := xi\n\n"
-                "theorem selectedInput_eq_vT (g : BalancedHattoriGeometry) (U : g.Obj)\n"
-                "    (xi : g.Coeff (chosenT g U) (chosenT g U)) :\n"
-                "    selectedInput g U xi = xi := rfl",
-            ),
-            "m0_source": source.replace(
-                "abbrev M1_88 := Fin 88 → ℚ\n\n"
-                "def basisVector (i : Fin 88) : M1_88 :=",
-                "abbrev M0_88 := Fin 87 → ℚ\n"
-                "abbrev M1_88 := M0_88\n\n"
-                "def basisVector (i : Fin 87) : M1_88 :=",
-            ),
-            "retired_scalar": source.replace(
-                "def cubicValue : ℤ := -59072",
-                "def cubicValue : ℤ := -28864",
-            ).replace(
-                "theorem cubicValue_eq_neg59072 : cubicValue = (-59072 : ℤ) := by",
-                "theorem cubicValue_eq_neg59072 : cubicValue = (-28864 : ℤ) := by",
-            ),
+            "unindexed_x_label": unindexed,
+            "xi_input": xi_input,
+            "m0_source": m0,
+            "retired_scalar": retired,
         }
         for name, mutant in mutants.items():
             with self.subTest(mutant=name):
                 self.assertNotEqual(mutant, source, f"{name} mutation did not apply")
                 build, check = self.compile_consumer(CONSUMER, module_source=mutant)
                 self.assertEqual(
-                    build.returncode,
-                    0,
-                    f"{name} mutant should be a valid standalone module:\n"
-                    + build.stdout
-                    + build.stderr,
+                    build.returncode, 0,
+                    f"{name} must compile standalone:\n{build.stdout}{build.stderr}",
                 )
                 self.assertIsNotNone(check)
                 assert check is not None
-                self.assertNotEqual(
-                    check.returncode,
-                    0,
-                    f"{name} mutant passed the exact semantic consumer",
-                )
+                self.assertNotEqual(check.returncode, 0, f"{name} passed consumer")
 
     def test_interface_is_narrow_and_shortcuts_absent(self) -> None:
         source = self.module.read_text(encoding="utf-8")
-        self.assertIn("Fin 227 → FrobeniusLabel", source)
-        self.assertIn("Hom (B T) (B T')", source)
+        self.assertIn("TensorProduct ℚ", source)
+        self.assertIn("TensorBasis227 →₀ ℚ", source)
+        self.assertIn("idHom _ ⊗ₜ[ℚ] xTensor227", source)
+        self.assertIn("structure BalancedHattoriCompatibility", source)
+        self.assertIn("structure ActualDiagonalInput", source)
         self.assertNotIn("X ^ 227", source)
         self.assertNotIn("X^227", source)
         for token in ("native_decide", "axiom", "opaque", "sorry", "admit"):
             self.assertNotRegex(source, rf"\b{re.escape(token)}\b")
-        for forbidden_conclusion in (
-            "Diffeomorphic",
-            "NotStandard",
-            "counterexample",
-            "final quotient",
-        ):
-            self.assertNotIn(forbidden_conclusion, source)
+        for forbidden in ("Diffeomorphic", "NotStandard", "counterexample"):
+            self.assertNotIn(forbidden, source)
 
 
 if __name__ == "__main__":

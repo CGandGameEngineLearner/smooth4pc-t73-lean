@@ -2,68 +2,113 @@ import Mathlib
 
 namespace Smooth4PC
 
-/-! A narrow typed interface for the balanced Hattori input.
-
-The transported-annulus geometry is data in `BalancedHattoriGeometry`.  This
-module proves only consequences of those typed fields and elementary defect
-and integer arithmetic.
--/
+noncomputable section
 
 inductive FrobeniusLabel where
   | one
   | X
   deriving DecidableEq, Repr
 
-/-- The 227 labels are independent indexed tensor factors. -/
-abbrev SeparateXLabels := Fin 227 → FrobeniusLabel
+/-- Basis of the 227 separate Frobenius tensor factors. -/
+abbrev TensorBasis227 := Fin 227 → FrobeniusLabel
 
-def allX : SeparateXLabels := fun _ => .X
+/-- Free-module basis model of the 227-fold tensor factor. -/
+abbrev Tensor227 := TensorBasis227 →₀ ℚ
 
-universe u v w
+def allX : TensorBasis227 := fun _ => .X
 
-/-- Visible geometric inputs for the two-sided balanced Hattori cut. -/
+def xTensor227 : Tensor227 := Finsupp.single allX 1
+
+universe u
+
+/-- Object-level and linear data supplied by the balanced geometric cut. -/
 structure BalancedHattoriGeometry where
   Obj : Type u
-  Hom : Obj → Obj → Type v
-  Coeff : Obj → Obj → Type w
+  Hom : Obj → Obj → ModuleCat ℚ
+  Coeff : Obj → Obj → ModuleCat ℚ
   B : Obj → Obj
   BInv : Obj → Obj
+  BDual : Obj → Obj
   B_BInv : ∀ T, B (BInv T) = T
   BInv_B : ∀ T, BInv (B T) = T
+  BInvDualBinding : ∀ T, BInv T = BDual T
   idHom : ∀ T, Hom T T
-  H : ∀ T T', Coeff T T' ≃
-    (Hom (B T) (B T') × SeparateXLabels)
+  BMap : ∀ {T T'}, Hom T T' →ₗ[ℚ] Hom (B T) (B T')
+  BMap_id : ∀ T, BMap (idHom T) = idHom (B T)
+  IsCycle : ∀ {T T'}, Coeff T T' → Prop
+  H : ∀ T T', Coeff T T' ≃ₗ[ℚ]
+    TensorProduct ℚ (Hom (B T) (B T')) Tensor227
 
-def chosenT (g : BalancedHattoriGeometry) (U : g.Obj) : g.Obj :=
-  g.BInv U
+abbrev HattoriTarget (g : BalancedHattoriGeometry) (T T' : g.Obj) :=
+  TensorProduct ℚ (g.Hom (g.B T) (g.B T')) Tensor227
+
+/-- Explicit two-sided actions and the two naturality squares.  These are
+geometric inputs, not conclusions of this module. -/
+structure BalancedHattoriCompatibility (g : BalancedHattoriGeometry) where
+  coeffLeft : ∀ {S T T'},
+    g.Hom S T →ₗ[ℚ] (g.Coeff T T' →ₗ[ℚ] g.Coeff S T')
+  coeffRight : ∀ {T T' U},
+    g.Hom T' U →ₗ[ℚ] (g.Coeff T T' →ₗ[ℚ] g.Coeff T U)
+  targetLeftByB : ∀ {S T T'},
+    g.Hom (g.B S) (g.B T) →ₗ[ℚ]
+      (HattoriTarget g T T' →ₗ[ℚ] HattoriTarget g S T')
+  targetRightByB : ∀ {T T' U},
+    g.Hom (g.B T') (g.B U) →ₗ[ℚ]
+      (HattoriTarget g T T' →ₗ[ℚ] HattoriTarget g T U)
+  leftNaturality : ∀ {S T T'} (f : g.Hom S T) (x : g.Coeff T T'),
+    g.H S T' (coeffLeft f x) = targetLeftByB (g.BMap f) (g.H T T' x)
+  rightNaturality : ∀ {T T' U} (f : g.Hom T' U) (x : g.Coeff T T'),
+    g.H T U (coeffRight f x) = targetRightByB (g.BMap f) (g.H T T' x)
+
+def chosenT (g : BalancedHattoriGeometry) (U : g.Obj) : g.Obj := g.BInv U
 
 theorem B_chosenT_eq_U (g : BalancedHattoriGeometry) (U : g.Obj) :
     g.B (chosenT g U) = U :=
   g.B_BInv U
 
 def diagonalTarget (g : BalancedHattoriGeometry) (U : g.Obj) :
-    g.Hom (g.B (chosenT g U)) (g.B (chosenT g U)) × SeparateXLabels :=
-  (g.idHom _, allX)
+    HattoriTarget g (chosenT g U) (chosenT g U) :=
+  g.idHom _ ⊗ₜ[ℚ] xTensor227
 
-def vT (g : BalancedHattoriGeometry) (U : g.Obj) :
+/-- Definitional inverse image only; it is not asserted to be the actual
+transported-annulus cycle. -/
+def inverseImageVT (g : BalancedHattoriGeometry) (U : g.Obj) :
     g.Coeff (chosenT g U) (chosenT g U) :=
   (g.H (chosenT g U) (chosenT g U)).symm (diagonalTarget g U)
 
-theorem vT_binding (g : BalancedHattoriGeometry) (U : g.Obj) :
-    g.H (chosenT g U) (chosenT g U) (vT g U) = diagonalTarget g U :=
-  Equiv.apply_symm_apply _ _
+theorem inverseImageVT_binding (g : BalancedHattoriGeometry) (U : g.Obj) :
+    g.H (chosenT g U) (chosenT g U) (inverseImageVT g U) =
+      diagonalTarget g U :=
+  LinearEquiv.apply_symm_apply _ _
 
-def selectedInput (g : BalancedHattoriGeometry) (U : g.Obj) := vT g U
+/-- The actual diagonal, its cycle witness, and its geometric Hattori binding
+are external input data. -/
+structure ActualDiagonalInput (g : BalancedHattoriGeometry) (U : g.Obj) where
+  actualVT : g.Coeff (chosenT g U) (chosenT g U)
+  cycle : g.IsCycle actualVT
+  binding : g.H (chosenT g U) (chosenT g U) actualVT = diagonalTarget g U
 
-theorem selectedInput_eq_vT (g : BalancedHattoriGeometry) (U : g.Obj) :
-    selectedInput g U = vT g U := rfl
+def selectedInput {g : BalancedHattoriGeometry} {U : g.Obj}
+    (actual : ActualDiagonalInput g U) := actual.actualVT
 
-/-! ### Positive endpoint source -/
+theorem selectedInput_eq_actualVT {g : BalancedHattoriGeometry} {U : g.Obj}
+    (actual : ActualDiagonalInput g U) :
+    selectedInput actual = actual.actualVT := rfl
+
+theorem selectedInput_isCycle {g : BalancedHattoriGeometry} {U : g.Obj}
+    (actual : ActualDiagonalInput g U) :
+    g.IsCycle (selectedInput actual) := actual.cycle
+
+theorem selectedInput_binding {g : BalancedHattoriGeometry} {U : g.Obj}
+    (actual : ActualDiagonalInput g U) :
+    g.H (chosenT g U) (chosenT g U) (selectedInput actual) =
+      diagonalTarget g U := actual.binding
+
+/-! ### Positive endpoint source and defect-graded module -/
 
 abbrev M1_88 := Fin 88 → ℚ
 
-def basisVector (i : Fin 88) : M1_88 :=
-  fun j => if j = i then 1 else 0
+def basisVector (i : Fin 88) : M1_88 := fun j => if j = i then 1 else 0
 
 def cupVector : M1_88 := basisVector 0 - basisVector 5
 
@@ -75,86 +120,93 @@ def positiveSource : EndpointSource := .M1_88
 
 theorem positiveSource_is_M1_88 : positiveSource = EndpointSource.M1_88 := rfl
 
-/-! ### Intrinsic relative defect -/
+structure DefectBasis where
+  endpoint : Fin 88
+  addedOneCount : Nat
+  addedXCount : Nat
+  deriving DecidableEq, Repr
 
-structure PhysicalState where
-  addedLabels : List FrobeniusLabel
-  deriving Repr
+def relativeNuBasis (b : DefectBasis) : Nat := b.addedOneCount
 
-def mandatoryDefect : Nat := 1
+def totalDefectBasis (b : DefectBasis) : Nat := 1 + b.addedOneCount
 
-def addedDefect : List FrobeniusLabel → Nat
-  | [] => 0
-  | .one :: rest => 1 + addedDefect rest
-  | .X :: rest => addedDefect rest
+abbrev DefectModule := DefectBasis →₀ ℚ
 
-def totalDefect (s : PhysicalState) : Nat :=
-  mandatoryDefect + addedDefect s.addedLabels
+def dottedBasis (b : DefectBasis) : DefectBasis :=
+  { b with addedXCount := b.addedXCount + 1 }
 
-def relativeNu (s : PhysicalState) : Nat :=
-  totalDefect s - mandatoryDefect
+def undottedBasis (b : DefectBasis) : DefectBasis :=
+  { b with addedOneCount := b.addedOneCount + 1 }
 
-def baseState : PhysicalState := ⟨[]⟩
+def basisPush (f : DefectBasis → DefectBasis) : DefectModule →ₗ[ℚ] DefectModule :=
+  (Finsupp.lsum ℚ) (fun b => Finsupp.lsingle (f b))
 
-def cupState : PhysicalState := baseState
+theorem basisPush_single (f : DefectBasis → DefectBasis)
+    (b : DefectBasis) (c : ℚ) :
+    basisPush f (Finsupp.single b c) = Finsupp.single (f b) c := by
+  classical
+  simp [basisPush]
 
-def dottedX (s : PhysicalState) : PhysicalState :=
-  ⟨.X :: s.addedLabels⟩
+def dottedMap : DefectModule →ₗ[ℚ] DefectModule := basisPush dottedBasis
 
-def undottedOne (s : PhysicalState) : PhysicalState :=
-  ⟨.one :: s.addedLabels⟩
+def undottedMap : DefectModule →ₗ[ℚ] DefectModule := basisPush undottedBasis
 
-theorem relativeNu_eq_addedDefect (s : PhysicalState) :
-    relativeNu s = addedDefect s.addedLabels := by
-  simp [relativeNu, totalDefect, mandatoryDefect]
+/-- A head row with arbitrary endpoint seed, supported exactly at relative
+defect zero. -/
+def defectHeadRow (baseRow : M1_88 →ₗ[ℚ] ℚ) : DefectModule →ₗ[ℚ] ℚ :=
+  (Finsupp.lsum ℚ) (fun b =>
+    if relativeNuBasis b = 0 then
+      (baseRow (basisVector b.endpoint)) • LinearMap.id
+    else 0)
 
-theorem relativeNu_base : relativeNu baseState = 0 := by
+theorem defectHeadRow_comp_dotted (baseRow : M1_88 →ₗ[ℚ] ℚ) :
+    (defectHeadRow baseRow).comp dottedMap = defectHeadRow baseRow := by
+  classical
+  apply Finsupp.lhom_ext'
+  intro b
+  apply LinearMap.ext
+  intro c
+  simp [defectHeadRow, dottedMap, basisPush_single, dottedBasis,
+    relativeNuBasis]
   rfl
 
-theorem relativeNu_cup : relativeNu cupState = 0 := by
-  rfl
+theorem defectHeadRow_comp_undotted (baseRow : M1_88 →ₗ[ℚ] ℚ) :
+    (defectHeadRow baseRow).comp undottedMap = 0 := by
+  classical
+  apply Finsupp.lhom_ext'
+  intro b
+  apply LinearMap.ext
+  intro c
+  simp [defectHeadRow, undottedMap, basisPush_single, undottedBasis,
+    relativeNuBasis]
 
-theorem relativeNu_dottedX (s : PhysicalState) :
-    relativeNu (dottedX s) = relativeNu s := by
-  simp [relativeNu_eq_addedDefect, dottedX, addedDefect]
+structure PhysicalCopyPermutation where
+  endpointPerm : Equiv.Perm (Fin 88)
 
-theorem relativeNu_undottedOne (s : PhysicalState) :
-    relativeNu (undottedOne s) = relativeNu s + 1 := by
-  simp [relativeNu_eq_addedDefect, undottedOne, addedDefect, Nat.add_comm]
+def permuteBasis (p : PhysicalCopyPermutation) (b : DefectBasis) : DefectBasis :=
+  { b with endpoint := p.endpointPerm b.endpoint }
 
-def headRow (s : PhysicalState) : ℚ :=
-  if relativeNu s = 0 then 1 else 0
+def physicalCopyPermutationMap (p : PhysicalCopyPermutation) :
+    DefectModule →ₗ[ℚ] DefectModule :=
+  basisPush (permuteBasis p)
 
-theorem headRow_zero_of_relativeNu_ge_one (s : PhysicalState)
-    (h : 1 ≤ relativeNu s) : headRow s = 0 := by
-  simp [headRow, Nat.ne_of_gt h]
-
-def cupCoordinateRow : M1_88 →ₗ[ℚ] ℚ where
-  toFun v := v 0 - v 5
-  map_add' _ _ := by simp; ring
-  map_smul' _ _ := by simp; ring
-
-def relativeHeadRow (s : PhysicalState) : M1_88 →ₗ[ℚ] ℚ :=
-  if relativeNu s = 0 then cupCoordinateRow else 0
-
-theorem relativeHeadRow_zero_of_relativeNu_ge_one (s : PhysicalState)
-    (h : 1 ≤ relativeNu s) : relativeHeadRow s = 0 := by
-  simp [relativeHeadRow, Nat.ne_of_gt h]
+theorem physicalCopyPermutation_preserves_relativeNu
+    (p : PhysicalCopyPermutation) (b : DefectBasis) :
+    relativeNuBasis (permuteBasis p b) = relativeNuBasis b := rfl
 
 /-! ### Exact finite arithmetic -/
 
 def cubicValue : ℤ := -59072
 
-theorem degree_ledger_eq_494 : (183 : ℤ) + 315 - 4 = 494 := by
-  norm_num
+theorem degree_ledger_eq_494 : (183 : ℤ) + 315 - 4 = 494 := by norm_num
 
 theorem cubic_arithmetic_eq_neg59072 : (-8 : ℤ) * 7384 = -59072 := by
   norm_num
 
-theorem neg59072_ne_zero : (-59072 : ℤ) ≠ 0 := by
-  norm_num
+theorem neg59072_ne_zero : (-59072 : ℤ) ≠ 0 := by norm_num
 
-theorem cubicValue_eq_neg59072 : cubicValue = (-59072 : ℤ) := by
-  rfl
+theorem cubicValue_eq_neg59072 : cubicValue = (-59072 : ℤ) := by rfl
+
+end
 
 end Smooth4PC
