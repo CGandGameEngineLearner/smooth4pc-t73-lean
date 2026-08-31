@@ -59,6 +59,50 @@ def iteratedDelta : Nat → FrobeniusBasis → List TensorWord
     iteratedDelta 2 basis = delta basis := by
   cases basis <;> rfl
 
+/-- Splitting a nonempty word increases its tensor length by exactly one. -/
+theorem splitHead_word_length {word output : TensorWord} (hword : word ≠ [])
+    (houtput : output ∈ splitHead word) : output.length = word.length + 1 := by
+  cases word with
+  | nil => exact (hword rfl).elim
+  | cons head tail =>
+      cases head <;> simp [splitHead, delta] at houtput <;>
+        rcases houtput with rfl | rfl <;> simp
+
+/-- Repeated splitting raises a common positive word length by the step count. -/
+theorem iterateSplit_word_length (steps base : Nat) (words : List TensorWord)
+    (hbase : ∀ word ∈ words, word.length = base) (hpositive : 0 < base) :
+    ∀ word ∈ iterateSplit steps words, word.length = base + steps := by
+  induction steps generalizing base words with
+  | zero => simpa [iterateSplit] using hbase
+  | succ steps ih =>
+      intro word hword
+      have hnext :
+          ∀ next ∈ words.flatMap splitHead, next.length = base + 1 := by
+        intro next hnextMem
+        simp only [List.mem_flatMap] at hnextMem
+        rcases hnextMem with ⟨prior, hprior, hnextPrior⟩
+        have hpriorLength := hbase prior hprior
+        have hpriorNe : prior ≠ [] := by
+          intro hEmpty
+          subst prior
+          simp at hpriorLength
+          omega
+        rw [splitHead_word_length hpriorNe hnextPrior, hpriorLength]
+      have hrec := ih (base + 1) (words.flatMap splitHead) hnext (by omega)
+        word (by simpa [iterateSplit] using hword)
+      omega
+
+/-- Every recursive coproduct summand has exactly the requested leaf count. -/
+theorem iteratedDelta_word_length (b : Nat) (basis : FrobeniusBasis)
+    {word : TensorWord} (hword : word ∈ iteratedDelta b basis) :
+    word.length = b := by
+  cases b with
+  | zero => simp [iteratedDelta] at hword
+  | succ steps =>
+      have hlength := iterateSplit_word_length steps 1 [[basis]] (by simp) (by omega)
+        word (by simpa [iteratedDelta] using hword)
+      omega
+
 @[simp] theorem epsilonWords_splitHead (word : TensorWord) :
     epsilonWords (splitHead word) = epsilonTensor word := by
   cases word with
@@ -102,69 +146,94 @@ theorem epsilon_iteratedDelta_X_eq_one (b : Nat) (hb : 0 < b) :
       rw [iteratedDelta, epsilonWords_iterateSplit]
       simp [epsilonWords, epsilonTensor, epsilon]
 
-/-- The pre-counit direct sum of a persistent module over all tensor words. -/
-abbrev TensorTarget (C : Type*) [Zero C] := TensorWord →₀ C
+/-- A tensor word carrying a kernel-checked proof of its exact leaf count. -/
+abbrev FixedTensorWord (b : Nat) := {word : TensorWord // word.length = b}
+
+/-- The pre-counit direct sum over tensor words of one fixed leaf count. -/
+abbrev TensorTarget (C : Type*) [Zero C] (b : Nat) := FixedTensorWord b →₀ C
+
+/-- Package every recursive coproduct summand with its exact-length proof. -/
+def fixedIteratedDelta (b : Nat) (basis : FrobeniusBasis) :
+    List (FixedTensorWord b) :=
+  (iteratedDelta b basis).attach.map fun word =>
+    ⟨word.1, iteratedDelta_word_length b basis word.2⟩
+
+/-- Counit evaluation of a finite list of fixed-length tensor words. -/
+def fixedEpsilonWords {b : Nat} (words : List (FixedTensorWord b)) : ℚ :=
+  (words.map fun word => epsilonTensor word.1).sum
+
+theorem fixedEpsilonWords_fixedIteratedDelta (b : Nat) (basis : FrobeniusBasis) :
+    fixedEpsilonWords (fixedIteratedDelta b basis) =
+      epsilonWords (iteratedDelta b basis) := by
+  simp [fixedEpsilonWords, fixedIteratedDelta, epsilonWords]
 
 noncomputable section
 
-/--
-The raw insertion map.  It inserts one copy of `value` at every tensor word in
-the recursive coproduct support; no counit is evaluated here.
+/-
+The raw insertion map.  It inserts one copy of `value` at every fixed-length
+tensor word in the recursive coproduct support; no counit is evaluated here.
 -/
 def canonicalInsertion {C : Type*} [AddCommGroup C] [Module ℚ C]
-    (b : Nat) (basis : FrobeniusBasis) : C →ₗ[ℚ] TensorTarget C := by
+    (b : Nat) (basis : FrobeniusBasis) : C →ₗ[ℚ] TensorTarget C b := by
   classical
-  exact ((iteratedDelta b basis).map (fun word => Finsupp.lsingle word)).sum
+  exact ((fixedIteratedDelta b basis).map
+    (fun word : FixedTensorWord b => Finsupp.lsingle word)).sum
 
 /-- The target augmentation row, evaluated only after the raw insertion. -/
 def targetCounitRow {C : Type*} [AddCommGroup C] [Module ℚ C]
-    (row : C →ₗ[ℚ] ℚ) : TensorTarget C →ₗ[ℚ] ℚ := by
+    (b : Nat) (row : C →ₗ[ℚ] ℚ) : TensorTarget C b →ₗ[ℚ] ℚ := by
   classical
-  exact (Finsupp.lsum ℚ) (fun word => (epsilonTensor word) • row)
+  exact (Finsupp.lsum ℚ) (fun word => (epsilonTensor word.1) • row)
 
-/-- Evaluation of a raw insertion is the finite tensor-word counit sum. -/
-theorem targetRow_comp_insertion {C : Type*} [AddCommGroup C] [Module ℚ C]
-    (row : C →ₗ[ℚ] ℚ) (b : Nat) (basis : FrobeniusBasis) :
-    (targetCounitRow row).comp (canonicalInsertion b basis) =
-      (epsilonWords (iteratedDelta b basis)) • row := by
+theorem targetRow_comp_fixedWords {C : Type*} [AddCommGroup C] [Module ℚ C]
+    (row : C →ₗ[ℚ] ℚ) (b : Nat) (words : List (FixedTensorWord b)) :
+    (targetCounitRow b row).comp
+        ((words.map fun word => Finsupp.lsingle word).sum) =
+      (fixedEpsilonWords words) • row := by
   classical
-  let words := iteratedDelta b basis
-  change (targetCounitRow row).comp
-      ((words.map fun word => Finsupp.lsingle word).sum) =
-    (epsilonWords words) • row
   induction words with
   | nil =>
       ext value
-      simp [targetCounitRow, epsilonWords]
+      simp [targetCounitRow, fixedEpsilonWords]
   | cons word words ih =>
       ext value
       have ihValue := LinearMap.congr_fun ih value
-      change targetCounitRow row
+      change targetCounitRow b row
           (Finsupp.single word value +
             ((words.map fun next => Finsupp.lsingle next).sum value)) =
-        ((epsilonWords (word :: words)) • row) value
-      rw [(targetCounitRow row).map_add]
+        ((fixedEpsilonWords (word :: words)) • row) value
+      rw [(targetCounitRow b row).map_add]
       have hsingle :
-          targetCounitRow row (Finsupp.single word value) =
-            epsilonTensor word * row value := by
+          targetCounitRow b row (Finsupp.single word value) =
+            epsilonTensor word.1 * row value := by
         simp [targetCounitRow]
       rw [hsingle]
-      change _ + (targetCounitRow row).comp
+      change _ + (targetCounitRow b row).comp
           ((words.map fun next => Finsupp.lsingle next).sum) value = _
       rw [ihValue]
-      simp [epsilonWords, add_mul]
+      simp [fixedEpsilonWords, add_mul]
+
+/-- Evaluation of a raw insertion is the recursive tensor-word counit sum. -/
+theorem targetRow_comp_insertion {C : Type*} [AddCommGroup C] [Module ℚ C]
+    (row : C →ₗ[ℚ] ℚ) (b : Nat) (basis : FrobeniusBasis) :
+    (targetCounitRow b row).comp (canonicalInsertion b basis) =
+      (epsilonWords (iteratedDelta b basis)) • row := by
+  rw [show canonicalInsertion b basis =
+      ((fixedIteratedDelta b basis).map
+        fun word : FixedTensorWord b => Finsupp.lsingle word).sum by rfl]
+  rw [targetRow_comp_fixedWords, fixedEpsilonWords_fixedIteratedDelta]
 
 /-- The raw undotted insertion is killed by the target row on the whole source. -/
 theorem targetRow_undotted_eq_zero {C : Type*} [AddCommGroup C] [Module ℚ C]
     (row : C →ₗ[ℚ] ℚ) (b : Nat) (hb : 0 < b) :
-    (targetCounitRow row).comp (canonicalInsertion b .one) = 0 := by
+    (targetCounitRow b row).comp (canonicalInsertion b .one) = 0 := by
   rw [targetRow_comp_insertion, epsilon_iteratedDelta_one_eq_zero b hb]
   simp
 
 /-- The raw dotted insertion pulls the target row back to the source row. -/
 theorem targetRow_dotted_eq_source {C : Type*} [AddCommGroup C] [Module ℚ C]
     (row : C →ₗ[ℚ] ℚ) (b : Nat) (hb : 0 < b) :
-    (targetCounitRow row).comp (canonicalInsertion b .X) = row := by
+    (targetCounitRow b row).comp (canonicalInsertion b .X) = row := by
   rw [targetRow_comp_insertion, epsilon_iteratedDelta_X_eq_one b hb]
   simp
 
@@ -174,19 +243,20 @@ def actualSourceRow {Vs C : Type*}
     (Qs : Vs ≃ₗ[ℚ] C) (row : C →ₗ[ℚ] ℚ) : Vs →ₗ[ℚ] ℚ :=
   row.comp Qs.toLinearMap
 
-/-- Pull the pre-counit target row back through explicit target coordinates. -/
+/-- Pull the fixed-leaf pre-counit row back through explicit target coordinates. -/
 def actualTargetRow {Vt C : Type*}
     [AddCommGroup Vt] [Module ℚ Vt] [AddCommGroup C] [Module ℚ C]
-    (Qt : Vt ≃ₗ[ℚ] TensorTarget C) (row : C →ₗ[ℚ] ℚ) : Vt →ₗ[ℚ] ℚ :=
-  (targetCounitRow row).comp Qt.toLinearMap
+    (b : Nat) (Qt : Vt ≃ₗ[ℚ] TensorTarget C b)
+    (row : C →ₗ[ℚ] ℚ) : Vt →ₗ[ℚ] ℚ :=
+  (targetCounitRow b row).comp Qt.toLinearMap
 
-/-- Conjugate the raw insertion through distinct source and target coordinates. -/
+/-- Conjugate the raw fixed-leaf insertion through source and target coordinates. -/
 def conjugatedInsertion {Vs Vt C : Type*}
     [AddCommGroup Vs] [Module ℚ Vs]
     [AddCommGroup Vt] [Module ℚ Vt]
     [AddCommGroup C] [Module ℚ C]
-    (Qs : Vs ≃ₗ[ℚ] C) (Qt : Vt ≃ₗ[ℚ] TensorTarget C)
-    (b : Nat) (basis : FrobeniusBasis) : Vs →ₗ[ℚ] Vt :=
+    (Qs : Vs ≃ₗ[ℚ] C) (b : Nat) (Qt : Vt ≃ₗ[ℚ] TensorTarget C b)
+    (basis : FrobeniusBasis) : Vs →ₗ[ℚ] Vt :=
   Qt.symm.toLinearMap.comp
     ((canonicalInsertion b basis).comp Qs.toLinearMap)
 
@@ -195,9 +265,10 @@ theorem directQ_undotted_row_eq_zero {Vs Vt C : Type*}
     [AddCommGroup Vs] [Module ℚ Vs]
     [AddCommGroup Vt] [Module ℚ Vt]
     [AddCommGroup C] [Module ℚ C]
-    (Qs : Vs ≃ₗ[ℚ] C) (Qt : Vt ≃ₗ[ℚ] TensorTarget C)
-    (row : C →ₗ[ℚ] ℚ) (b : Nat) (hb : 0 < b) :
-    (actualTargetRow Qt row).comp (conjugatedInsertion Qs Qt b .one) = 0 := by
+    (Qs : Vs ≃ₗ[ℚ] C) (b : Nat) (Qt : Vt ≃ₗ[ℚ] TensorTarget C b)
+    (row : C →ₗ[ℚ] ℚ) (hb : 0 < b) :
+    (actualTargetRow b Qt row).comp
+        (conjugatedInsertion Qs b Qt .one) = 0 := by
   ext value
   have hvalue := LinearMap.congr_fun (targetRow_undotted_eq_zero row b hb) (Qs value)
   simpa [actualTargetRow, conjugatedInsertion] using hvalue
@@ -207,10 +278,10 @@ theorem directQ_dotted_row_eq_source {Vs Vt C : Type*}
     [AddCommGroup Vs] [Module ℚ Vs]
     [AddCommGroup Vt] [Module ℚ Vt]
     [AddCommGroup C] [Module ℚ C]
-    (Qs : Vs ≃ₗ[ℚ] C) (Qt : Vt ≃ₗ[ℚ] TensorTarget C)
-    (row : C →ₗ[ℚ] ℚ) (b : Nat) (hb : 0 < b) :
-    (actualTargetRow Qt row).comp (conjugatedInsertion Qs Qt b .X) =
-      actualSourceRow Qs row := by
+    (Qs : Vs ≃ₗ[ℚ] C) (b : Nat) (Qt : Vt ≃ₗ[ℚ] TensorTarget C b)
+    (row : C →ₗ[ℚ] ℚ) (hb : 0 < b) :
+    (actualTargetRow b Qt row).comp
+        (conjugatedInsertion Qs b Qt .X) = actualSourceRow Qs row := by
   ext value
   have hvalue := LinearMap.congr_fun (targetRow_dotted_eq_source row b hb) (Qs value)
   simpa [actualTargetRow, actualSourceRow, conjugatedInsertion] using hvalue

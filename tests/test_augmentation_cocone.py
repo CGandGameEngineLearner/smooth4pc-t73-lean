@@ -20,10 +20,10 @@ namespace AugmentationConsumer
 
 open Smooth4PC
 
-abbrev Target := TensorTarget ℚ
+abbrev Target (b : Nat) := TensorTarget ℚ b
 
 def qSource : ℚ ≃ₗ[ℚ] ℚ := LinearEquiv.refl ℚ ℚ
-def qTarget : Target ≃ₗ[ℚ] Target := LinearEquiv.refl ℚ Target
+def qTarget (b : Nat) : Target b ≃ₗ[ℚ] Target b := LinearEquiv.refl ℚ (Target b)
 def testRow : ℚ →ₗ[ℚ] ℚ := LinearMap.id
 
 example (b : Nat) (hb : 0 < b) :
@@ -38,15 +38,15 @@ example (basis : FrobeniusBasis) : iteratedDelta 2 basis = delta basis :=
   iteratedDelta_two_eq_delta basis
 
 example (b : Nat) (hb : 0 < b) :
-    (actualTargetRow qTarget testRow).comp
-        (conjugatedInsertion qSource qTarget b .one) = 0 :=
-  directQ_undotted_row_eq_zero qSource qTarget testRow b hb
+    (actualTargetRow b (qTarget b) testRow).comp
+        (conjugatedInsertion qSource b (qTarget b) .one) = 0 :=
+  directQ_undotted_row_eq_zero qSource b (qTarget b) testRow hb
 
 example (b : Nat) (hb : 0 < b) :
-    (actualTargetRow qTarget testRow).comp
-        (conjugatedInsertion qSource qTarget b .X) =
+    (actualTargetRow b (qTarget b) testRow).comp
+        (conjugatedInsertion qSource b (qTarget b) .X) =
       actualSourceRow qSource testRow :=
-  directQ_dotted_row_eq_source qSource qTarget testRow b hb
+  directQ_dotted_row_eq_source qSource b (qTarget b) testRow hb
 
 section CubicEdge
 
@@ -72,6 +72,7 @@ AXIOM_THEOREMS = (
     "Smooth4PC.epsilon_iteratedDelta_one_eq_zero",
     "Smooth4PC.epsilon_iteratedDelta_X_eq_one",
     "Smooth4PC.iteratedDelta_two_eq_delta",
+    "Smooth4PC.iteratedDelta_word_length",
     "Smooth4PC.directQ_undotted_row_eq_zero",
     "Smooth4PC.directQ_dotted_row_eq_source",
     "Smooth4PC.physicalCopyOrbitRatio_telescope",
@@ -123,6 +124,8 @@ class AugmentationCoconeTests(unittest.TestCase):
             env=self.lean_environment(use_fallback, prepend=prepend),
             capture_output=True,
             text=True,
+            encoding="utf-8",
+            errors="replace",
             check=False,
         )
 
@@ -188,11 +191,17 @@ class AugmentationCoconeTests(unittest.TestCase):
         self.assertIn("iterateSplit", iterated_block)
         self.assertIn("iteratedDelta_two_eq_delta", source)
 
-        self.assertRegex(source, r"abbrev TensorTarget.*TensorWord →₀ C")
+        self.assertIn(
+            "abbrev FixedTensorWord (b : Nat) := {word : TensorWord // word.length = b}",
+            source,
+        )
+        self.assertRegex(source, r"abbrev TensorTarget.*FixedTensorWord b →₀ C")
+        self.assertIn("iteratedDelta_word_length", source)
         insertion_block = source[
             source.index("def canonicalInsertion") : source.index("def targetCounitRow")
         ]
         self.assertIn("Finsupp.lsingle", insertion_block)
+        self.assertIn("FixedTensorWord", insertion_block)
         self.assertNotIn("epsilon", insertion_block)
         row_block = source[
             source.index("def targetCounitRow") : source.index("theorem targetRow_comp_insertion")
@@ -243,6 +252,38 @@ class AugmentationCoconeTests(unittest.TestCase):
         self.assertRegex(
             result.stdout + result.stderr,
             r"(?i)type mismatch|application type mismatch|function expected",
+        )
+
+    def test_unindexed_all_length_target_consumer_is_rejected(self) -> None:
+        mutant = r"""
+import Smooth4PC.AugmentationCocone
+
+noncomputable section
+namespace UnindexedTargetMutant
+open Smooth4PC
+
+abbrev AllLengthTarget := TensorWord →₀ ℚ
+def qSource : ℚ ≃ₗ[ℚ] ℚ := LinearEquiv.refl ℚ ℚ
+def qAll : AllLengthTarget ≃ₗ[ℚ] AllLengthTarget :=
+  LinearEquiv.refl ℚ AllLengthTarget
+def row : ℚ →ₗ[ℚ] ℚ := LinearMap.id
+
+example (b : Nat) (hb : 0 < b) :
+    (actualTargetRow b qAll row).comp
+        (conjugatedInsertion qSource b qAll .X) =
+      actualSourceRow qSource row :=
+  directQ_dotted_row_eq_source qSource b qAll row hb
+
+end UnindexedTargetMutant
+"""
+        build, result = self.compile_import_consumer(mutant)
+        self.assertEqual(build.returncode, 0, build.stdout + build.stderr)
+        self.assertIsNotNone(result)
+        assert result is not None
+        self.assertNotEqual(result.returncode, 0, "unindexed target mutant compiled")
+        self.assertRegex(
+            result.stdout + result.stderr,
+            r"(?i)type mismatch|application type mismatch|failed to synthesize",
         )
 
     def test_negative_edge_control_and_canonical_cubic_edge_are_exposed(self) -> None:
