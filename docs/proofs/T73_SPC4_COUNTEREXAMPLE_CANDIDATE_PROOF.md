@@ -9,7 +9,9 @@ unconditional counterexample, a formally verified counterexample, or external
 acceptance.
 
 > **Conditional theorem.** Let \(X=X(41,189,73)\). Assume the external
-> geometric and functorial premises **E1--E12** listed in Section 15. Then the
+> geometric and functorial premises **E1--E12** listed in Section 15. Section 9
+> proves the weak sphere-basis deduction from the E7 handle-realization input.
+> Then the
 > MWW lasagna module of \(X\) over \(\mathbb Q\) contains a nonzero homogeneous
 > class of quantum degree \(494\). Hence \(X\) is not diffeomorphic to the
 > standard \(S^4\). If one also assumes the Cappell--Shaneson homotopy-sphere
@@ -89,6 +91,18 @@ This is two-sided. It is not
 \(\mathbf1\to B\). MWW supplies the ambient one-handle/HH\(_0\) formula
 (`D:/tmp/r6/mww_handle_src/1handles.tex:242-299,420-430`), not this
 candidate-specific balanced identification; (2.1) therefore remains **E1**.
+
+One relative movie would suffice: if a single framed isotopy of the actual
+coefficient \(R\), fixed on every insertion disk, ends at
+\(B\sqcup B^\vee\sqcup U^{227}\), extending it by identities on \(T,T'\)
+produces every \(H_{T,T'}\); gluing locality and strict functoriality then give
+both action squares. The remaining E1 datum is therefore finite, not an
+infinite family. It is still unproved. The incidence ledger does not determine
+the relative framed mapping-class element: an unseen pure ribbon braid can
+preserve endpoints, component counts, individual annuli, and the framing
+integer while changing the open class from \(w_{73}F_\Omega\) to
+\(H w_{73}F_\Omega\). Thus the actual relative movie, or a complete
+mapping-class proof excluding such \(H\), remains required.
 
 <a id="actual-diagonal-class"></a>
 ## 3. Actual diagonal class
@@ -355,26 +369,53 @@ map. No reverse psi operator is defined, and no exact finite-\(h\) pure-braid
 cocone is claimed.
 
 <a id="fixed-y-hj-basis"></a>
-## 9. Fixed-Y HJ basis
+## 9. The actual fixed-Y sphere basis (weak E7)
 
-HJ's basis criterion is at
-`D:/tmp/r6/agents/hj_scope_hostile/hj_v3_source/version_23_RM.tex:644-674`.
-The displayed matrix is unimodular, \(|\det|=1\), **[F3]**. The row-major
-orientation pinned in `AuditArithmetic.lean` gives \(+1\); the alternate
-column/orientation convention in the local HJ audit gives \(-1\). Only
-unimodularity is used. The
-candidate premise **[E7]** is stronger: in one fixed \(Y=\partial W_2\), the
-three spheres are simultaneously embedded, pairwise disjoint, represent the
-basis, carry the required relative-link, owner-point, orientation, framing,
-and sign data, and satisfy the HJ replacement hypotheses.
+The weak existence/basis deduction needs neither the synthetic owner matrix
+nor HJ. Premise **E7** is now narrowed to the assertion that the delivered
+smooth handle presentation is the actual punctured candidate, has exactly
+three 3-handles after
+\(W_2\), no 4-handle in the punctured presentation, and outgoing boundary
+\(S^3\) (`D:/tmp/s4pc_ruler/ENGINE/kirby_master/cs_presentation.py:9-14,66-76`
+and `D:/tmp/s4pc_ruler/ENGINE/out/t73_eps0.erkmo.json:179-199,285-289`).
+Turn the cobordism
 
-HJ alone does not give direct-Q. Candidate-specific open locations remain in
-`D:/tmp/r6/agents/unimodular_easy_spheres/FINAL_CHOSEN_HJ_BASIS_TOPOLOGY_AUDIT.md`
-under `Gate 2`, `Gate 3`, `Gate 5`, and conditional `Gate 6`; these are
-unresolved boundaries, not supporting theorem citations.
+\[
+Y=\partial W_2\longrightarrow S^3
+\]
+
+upside down. It is a cobordism from \(S^3\) obtained by attaching exactly
+three 1-handles, so **[P]**
+
+\[
+Y\cong \#_3(S^1\times S^2).
+\tag{9.1}
+\]
+
+The three actual 3-handle attaching spheres are the belt spheres of those
+dual 1-handles. Consequently they already are a simultaneous, smoothly
+embedded, pairwise-disjoint basis of
+\(H_2^{\rm sph}(Y;\mathbb Z)\cong\mathbb Z^3\). Coorientations can be chosen
+independently and the 3-handle attaching framing is unique. Thus **[P]** the
+basis conclusion follows from the E7 handle-realization premise. The cited
+builder/ERKMO bytes record the handle counts but do not by themselves prove
+that realization; certificate status is not used as its proof.
+
+It does **not** supply simple endpoint maps. The historical synthetic
+K1/K2/th2/C3 construction is not used here: its 63-source tree construction
+is obstructed by \(\det[K1,K2,th2]=189\) and
+\(\det[K1,K2,th3]=-40\). All owner-coordinate, direct-Q, and map-level claims
+remain in E8.
 
 <a id="direct-q-sphere-cocone"></a>
 ## 10. Direct-Q sphere cocone
+
+For the easy hemisphere \(\Delta_+\), MWW already proves the split-unknot cap
+formula on every cabled summand
+(`D:/tmp/r6/mww_handle_src/kirby.tex:613-648`): undotted is zero and dotted is
+the identity. The maps below are therefore the hard
+\(\Phi^{-1}\Psi_{\Delta_-}\Phi\), equivalently the actual \(\Sigma_-\) maps of
+`kirby.tex:650-684`.
 
 Keep the actual maps fixed. For a signed sphere edge \(e:s\to t\), write
 
@@ -408,8 +449,11 @@ Q_t\widehat C_e^dQ_s^{-1}
 \tag{10.4}
 \]
 
-It packages the fixed-\(Y\), relative-link, owner-point, sign, and
-factorization data; it is not implied by HJ. For
+It packages the state-dependent endpoint coordinates, owner-copy ordering,
+sign, \(\Sigma_-\) factorization, and mixed-square data. The final boundary
+link is empty, so no old-link-relative premise remains; nevertheless a
+boundary diffeomorphism standardizing the spheres need not extend over
+\(W_2\), and does not identify the state-dependent \(\Sigma_-\) maps. For
 \(E_b=\epsilon^{\otimes b}\), **[P]**
 
 \[
@@ -431,7 +475,8 @@ Together with the canonical orbit-row definition (8.3), this gives **[P]**
 For a sphere edge, the target orbit rows use the same formula (8.3), with the
 typed zero extension and \(E_b\) supplied by (10.2). Premise **E8** includes
 the actual sphere/sphere and sphere/psi mixed-square bindings whenever two
-routes reach the same state. Under **E5--E8**, translating (10.6) through
+routes reach the same state. Under **E5**, **E6**, the proved Section 9 basis,
+and **E8**, translating (10.6) through
 (10.3)--(10.4) gives the whole-source actual constant equations
 
 \[
@@ -532,7 +577,8 @@ finite scalar to the family:
 \tag{11.5}
 \]
 
-Under **E5--E9**, (8.3)--(8.7), (10.6)--(10.7), (11.2)--(11.2b), the orbit
+Under **E5**, **E6**, **E8**, and **E9**, (8.3)--(8.7),
+(10.6)--(10.7), (11.2)--(11.2b), the orbit
 normalizations, and constant/cubic path coherence separately give **[P]**
 
 \[
@@ -587,7 +633,7 @@ symmetric; no reverse psi map is added. Their completeness and quotient universa
 `D:/tmp/r6/mww_handle_src/kirby.tex:331-378,459-489,705-759`.
 
 Define \(\kappa:\mathcal C\to\mathbb Q\) statewise. Equations (11.6a)--(11.6c) prove
-**[P]**, conditional on **E5--E10**, that
+**[P]**, conditional on **E5**, **E6**, and **E8--E10**, that
 
 \[
 \mathcal R_{2h}+\mathcal R_{3h}\subseteq\ker\kappa.
@@ -660,7 +706,7 @@ checked in `AuditArithmetic.lean`.
 
 | ID | status | role and anchor | unresolved boundary |
 |---|---|---|---|
-| E1 balanced Hattori | **[E] `external_theorem`** | ambient formula: `D:/tmp/r6/mww_handle_src/1handles.tex:242-299,420-430` | candidate \(B\sqcup B^\vee+227\) identification, typed invertibility, and framed \(B^\vee=B^{-1}\) binding are not proved there |
+| E1 balanced Hattori | **[E] `external_theorem`** | ambient formula: `D:/tmp/r6/mww_handle_src/1handles.tex:242-299,420-430` | reduced to one actual relative framed movie; incidence/framing data do not determine its mapping-class class |
 | E2 diagonal binding | **[E]** | Hattori identity: `D:/tmp/r6/mww_handle_src/1handles.tex:783-787` | candidate inverse image remains a premise |
 | E3 BPW trace/cup/state binding | **[E]** | `D:/tmp/r6/bpw_src/shadows/vertical.tex:11-58` | actual 227-cap movie and \(s_0=(0,e_{m_2}+e_{r_{xy}})\) binding are extra |
 | E4 strict scope | **[E]** | `D:/tmp/r6/agents/finite_type_leading/bphw_1903_src/sections/equivalence.tex:468-493` | exact foam scope remains explicit |
@@ -668,30 +714,33 @@ checked in `AuditArithmetic.lean`.
 | F2 scalar | **[F]** | `D:/tmp/r6/eta_t1_delta3_reaudit/ETA_T1_DELTA3_DECISION.md#2-exact-raw-word-calculation` | scalar, not global operator valuation |
 | E5 intrinsic \(\nu\) | **[E]** | algebra: `D:/tmp/r6/agents/finite_type_leading/bphw_1903_src/sections/preliminaries.tex:610-633` | actual-map binding is candidate-specific |
 | E6 beta/psi | **[E]** | MWW: `D:/tmp/r6/mww_handle_src/kirby.tex:265-345` | whole-domain equations remain premises |
-| E7 fixed-Y HJ | **[E]** | HJ: `D:/tmp/r6/agents/hj_scope_hostile/hj_v3_source/version_23_RM.tex:644-674` | local audit Gates 2,3,5,6 remain open/conditional |
-| F3 determinant | **[F]** | `AuditArithmetic.lean:59-60` | determinant implies neither E7 nor E8 |
-| E8 direct-Q/shadow | **[E]** | MWW core square: `D:/tmp/r6/mww_handle_src/kirby.tex:650-684` | HJ does not prove the factorization |
+| E7 actual handle realization / fixed-Y basis | **[E]** | declared handle data: `D:/tmp/s4pc_ruler/ENGINE/kirby_master/cs_presentation.py:9-14,66-76`, `D:/tmp/s4pc_ruler/ENGINE/out/t73_eps0.erkmo.json:179-199,285-289`; basis deduction: Section 9 | realization remains external; once granted, existence/basis is proved and no simple map follows |
+| F3 synthetic determinant | **[F]** | `AuditArithmetic.lean:59-60` | historical check, not consumed by the revised proof; implies no map statement |
+| E8 direct-Q/shadow | **[E]** | easy hemisphere: `D:/tmp/r6/mww_handle_src/kirby.tex:613-648`; hard map/core square: `:650-684` | exact residual is whole-source factorization of \(\Phi^{-1}\Psi_{\Delta_-}\Phi\), plus coherent \(\Theta_s,Q_s\) |
 | E9 cubic naturality | **[E]** | diagnostic: `D:/tmp/r6/agents/qhh_naturality_hostile/HOSTILE_FULL_DOMAIN_DESCENT_AUDIT.md#6-is-pure-braid-ioh-enough` | F2 proves neither the global operator valuation nor the normalized Reynolds-edge identities (11.2b) |
 | E10 complete MWW quotient | **[E]** | `D:/tmp/r6/mww_handle_src/kirby.tex:459-489,705-759` | completeness is required on all raw state summands |
 | E11 graded four-handle | **[E]** | `D:/tmp/r6/mww_handle_src/kirby.tex:418-426` | rational bidegree-\((0,0)\) form stays explicit |
 | E12 rational S4 and graded diffeomorphism | **[E]** | grading/invariant: `D:/tmp/r6/mww_handle_src/kirby.tex:8-57`; field scope: `D:/tmp/r6/mww_handle_src/1handles.tex:15-20`, `D:/tmp/r6/mww_handle_src/introduction.tex:128-134`; four/S4: `D:/tmp/r6/mww_handle_src/kirby.tex:418-431` | direct rational statement remains a premise, not an inferred base change |
 | E13 CS bridge | **[E]** | `D:/tmp/r6/QSC/kpr/cs_2404.05096.txt:128-151`; finite determinants: `AuditArithmetic.lean` | homotopy-sphere bridge is external |
-| P1 descent | **[P] `proved_in_document`** | Sections 11--12 | conditional on E5--E10 |
+| P1 descent | **[P] `proved_in_document`** | Sections 11--12 | conditional on E5, E6, E8--E10; Section 9 supplies the basis deduction from E7 |
 | P2 nonstandard | **[P]** | Sections 13--14 | conditional on E1--E12 |
 
-The 13 explicit HTML anchors above exactly match the manifest consumer IDs.
+The 13 explicit HTML anchors above match the manifest consumer IDs. The
+manifest is the frozen v1 allocation; this revised proof splits its coarse E7
+owner/direct-Q clause between the narrowed E7 realization input and E8.
 
 ## 16. Honest closing status
 
-Finite arithmetic and the scalar are **[F]**. Frobenius, Reynolds-ratio,
-coefficient-extraction, and quotient deductions are **[P]**. Geometric
-typing, exhaustive cocones, changing-endpoint operator data, and rational
-final comparison are **[E]**. Therefore the status remains
+Finite arithmetic and the scalar are **[F]**. The weak fixed-Y sphere basis,
+Frobenius, Reynolds-ratio, coefficient-extraction, and quotient deductions are
+**[P]**. Balanced coefficient typing, the hard hemisphere cocone,
+changing-endpoint operator data, and the rational final comparison remain
+**[E]**. Therefore the status remains
 
 ```text
 CANDIDATE_PROOF_PENDING_INDEPENDENT_REVIEW
 ```
 
-Even zero-`sorry` Lean proves only the conditional implication unless
-**E1--E13** are formalized or imported from trusted libraries. This document
+Even zero-`sorry` Lean proves only the conditional implication unless the
+remaining **E1--E13** premises are proved. This document
 claims neither formal verification nor external acceptance.
