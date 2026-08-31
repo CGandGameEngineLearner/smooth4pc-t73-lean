@@ -65,7 +65,16 @@ endpoint spaces.
 Let \(U=U_{(0,5)}:P_{86}\to P_{88}\) be the physical oriented cup. Cutting
 the actual transported framed annuli gives open part \(B\sqcup B^\vee\) and
 227 split circles. The required input **[E1]** is the action- and
-grading-compatible family
+grading-compatible family together with a typed automorphism
+
+\[
+B\in\operatorname{Aut}_{\mathcal A}(P_{88}),\qquad
+B^{-1}B=BB^{-1}=\operatorname{Id}_{P_{88}},\qquad B^\vee=B^{-1},
+\tag{2.0}
+\]
+
+where the last equality is the chosen framed pivotal identification. The
+coefficient equivalence is
 
 \[
 H_{T,T'}:M_R(T,T')\xrightarrow{\cong}
@@ -465,6 +474,23 @@ K_t\widehat D_{e,0}=\widehat D_{e,0}K_s.
 \tag{11.2}
 \]
 
+The groups of physical copies differ across a changing-state edge, so (11.2)
+alone does not move \(\mathsf R_t^0\) through \(\widehat D_{e,0}\). Premise
+**E9** also contains the normalized row-level cubic identities
+
+\[
+\lambda_tK_t\mathsf R_t^0\widehat D_{e,0}^{,0}=0,
+\qquad
+\lambda_tK_t\mathsf R_t^0\widehat D_{e,0}^{,1}
+=\lambda_sK_s\mathsf R_s^0.
+\tag{11.2b}
+\]
+
+They hold on the whole source for every forward psi edge and every signed
+sphere edge, with the orbit factors and absent-orbit convention of (8.3)
+included. Equation (11.2b) is an external changing-state premise, not a
+consequence of the constant counit identities or of selected scalar receipts.
+
 Use (11.2) only for changing-endpoint psi/sphere maps; beta uses Reynolds.
 Extend \(\lambda_s\) coefficientwise to
 \(\widehat\lambda_s:E_s[[h]]\to\mathbb Q[[h]]\). Define the cubic endpoint
@@ -506,7 +532,7 @@ finite scalar to the family:
 \tag{11.5}
 \]
 
-Under **E5--E9**, (8.3)--(8.7), (10.6)--(10.7), (11.2), the orbit
+Under **E5--E9**, (8.3)--(8.7), (10.6)--(10.7), (11.2)--(11.2b), the orbit
 normalizations, and constant/cubic path coherence separately give **[P]**
 
 \[
@@ -634,7 +660,7 @@ checked in `AuditArithmetic.lean`.
 
 | ID | status | role and anchor | unresolved boundary |
 |---|---|---|---|
-| E1 balanced Hattori | **[E] `external_theorem`** | ambient formula: `D:/tmp/r6/mww_handle_src/1handles.tex:242-299,420-430` | candidate \(B\sqcup B^\vee+227\) identification not proved there |
+| E1 balanced Hattori | **[E] `external_theorem`** | ambient formula: `D:/tmp/r6/mww_handle_src/1handles.tex:242-299,420-430` | candidate \(B\sqcup B^\vee+227\) identification, typed invertibility, and framed \(B^\vee=B^{-1}\) binding are not proved there |
 | E2 diagonal binding | **[E]** | Hattori identity: `D:/tmp/r6/mww_handle_src/1handles.tex:783-787` | candidate inverse image remains a premise |
 | E3 BPW trace/cup/state binding | **[E]** | `D:/tmp/r6/bpw_src/shadows/vertical.tex:11-58` | actual 227-cap movie and \(s_0=(0,e_{m_2}+e_{r_{xy}})\) binding are extra |
 | E4 strict scope | **[E]** | `D:/tmp/r6/agents/finite_type_leading/bphw_1903_src/sections/equivalence.tex:468-493` | exact foam scope remains explicit |
@@ -645,7 +671,7 @@ checked in `AuditArithmetic.lean`.
 | E7 fixed-Y HJ | **[E]** | HJ: `D:/tmp/r6/agents/hj_scope_hostile/hj_v3_source/version_23_RM.tex:644-674` | local audit Gates 2,3,5,6 remain open/conditional |
 | F3 determinant | **[F]** | `AuditArithmetic.lean:59-60` | determinant implies neither E7 nor E8 |
 | E8 direct-Q/shadow | **[E]** | MWW core square: `D:/tmp/r6/mww_handle_src/kirby.tex:650-684` | HJ does not prove the factorization |
-| E9 cubic naturality | **[E]** | diagnostic: `D:/tmp/r6/agents/qhh_naturality_hostile/HOSTILE_FULL_DOMAIN_DESCENT_AUDIT.md#6-is-pure-braid-ioh-enough` | F2 does not prove the operator premise |
+| E9 cubic naturality | **[E]** | diagnostic: `D:/tmp/r6/agents/qhh_naturality_hostile/HOSTILE_FULL_DOMAIN_DESCENT_AUDIT.md#6-is-pure-braid-ioh-enough` | F2 proves neither the global operator valuation nor the normalized Reynolds-edge identities (11.2b) |
 | E10 complete MWW quotient | **[E]** | `D:/tmp/r6/mww_handle_src/kirby.tex:459-489,705-759` | completeness is required on all raw state summands |
 | E11 graded four-handle | **[E]** | `D:/tmp/r6/mww_handle_src/kirby.tex:418-426` | rational bidegree-\((0,0)\) form stays explicit |
 | E12 rational S4 and graded diffeomorphism | **[E]** | grading/invariant: `D:/tmp/r6/mww_handle_src/kirby.tex:8-57`; field scope: `D:/tmp/r6/mww_handle_src/1handles.tex:15-20`, `D:/tmp/r6/mww_handle_src/introduction.tex:128-134`; four/S4: `D:/tmp/r6/mww_handle_src/kirby.tex:418-431` | direct rational statement remains a premise, not an inferred base change |
