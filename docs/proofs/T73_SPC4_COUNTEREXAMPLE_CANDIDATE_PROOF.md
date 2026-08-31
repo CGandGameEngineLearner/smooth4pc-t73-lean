@@ -778,3 +778,73 @@ procedural, status.
 
 Consequently the displayed implication is a sound conditional theorem, but
 the current mathematics does **not** establish an SPC4 counterexample.
+
+## 18. Relative-lift no-go and the only viable escape
+
+Let a relative marked mapping-class group (G_{m rel}) act on a module (V)
+through (ho), and let
+
+[
+pi:G_{m rel}	woheadrightarrow G_{m coarse},qquad K=kerpi.
+]
+
+Here (G_{m coarse}) retains the incidence, endpoint permutation, pair
+linking, framing totals, Peiffer augmentation, and the matrix (D), while
+(K) contains the pure-braid/point-push information forgotten by those data.
+
+**No-go theorem.** If a row (lambdain V^*) is invariant under (K), or
+factors through the coinvariants (V_K), then for every (Win K) and every
+(uin V),
+
+[
+lambda(ho(W)-I)u=0.
+	ag{18.1}
+]
+
+Indeed (lambdaho(W)=lambda); equivalently,
+((ho(W)-I)u) is zero in (V_K). More generally, any construction that is
+claimed to depend only on the coarse datum and to give the same answer for
+every relative lift must annihilate the complete (K)-relation span.
+
+For T73, the point-push (W) has identity endpoint permutation and zero
+recorded pair-linking/framing totals, but its full Artin word is nontrivial.
+Thus it lies in the kernel of the coarse E1/E8 records, while
+
+[
+[h^3],ell(ho_h(W)-I)u=-59072.
+	ag{18.2}
+]
+
+Equation (18.2) proves that this kernel is not harmless presentation noise.
+In particular, any proposed descent that declares every unseen relative lift
+irrelevant while keeping a fixed (u,ell) is incompatible with the computed
+signal.
+
+There is one valid escape: **equivariant transport, not invariance**. For a
+fully marked movie (a:p	o q) with induced isomorphism (R_a), transport all
+data together,
+
+[
+W_q=R_aW_pR_a^{-1},qquad
+u_q=R_au_p,qquad
+ell_q=ell_pR_a^{-1}.
+	ag{18.3}
+]
+
+Then
+
+[
+ell_q(W_q-I)u_q=ell_p(W_p-I)u_p.
+	ag{18.4}
+]
+
+The same covariance must hold statewise for every psi/sphere edge and for the
+MWW (Phi/Theta) maps. Loop holonomy is harmless only when it transports all
+of these objects coherently.
+
+This escape does not close the current proof. The fiber of the coarse record
+need not be one connected torsor: locally knotted carriers can share all
+recorded coarse data without being related by a relative ambient movie. Hence
+one must still construct at least one complete marked E1 movie and a coherent
+E8/E9 edge family in the actual component. Torsor language removes gauge
+choice after those objects exist; it cannot manufacture them.
