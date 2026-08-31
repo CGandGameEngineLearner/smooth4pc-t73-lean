@@ -1,6 +1,6 @@
 {
-  "schema": "smooth4pc_t73_isolated_lean_audit_environment/v1",
-  "recorded_at": "2026-08-31T13:40:54+09:00",
+  "schema": "smooth4pc_t73_isolated_lean_audit_environment/v2",
+  "recorded_at": "2026-08-31T14:07:11+09:00",
   "local_authority_worktree": "D:\\toffee_code_in_Cursor\\smooth4pc-t73-lean\\.worktrees\\formalize-t73",
   "remote_no_git_sandbox": "/root/autodl-tmp/smooth4pc_t73_lean_build_20260831",
   "toolchain": {
@@ -8,7 +8,7 @@
     "lake": "Lake version 5.0.0-src+f054605 (Lean version 4.32.1)",
     "lean_toolchain": "leanprover/lean4:v4.32.1"
   },
-  "mathlib_source_observation": {
+  "mathlib_source_before": {
     "path": "/root/autodl-tmp/lean/mathlib4",
     "commit": "520045ab14e26149ee970e2e617ca04b09bde5d6",
     "tree": "b701c3b42faf7960b44e01a1359800f5ec35cbf8",
@@ -16,10 +16,41 @@
     "porcelain_entry_count": 126,
     "porcelain_z_sha256": "10670fad9f60f4da6cc3afdc16c8d169e37d983cd904b88111eb0a692fc64f35"
   },
+  "mathlib_source_after": {
+    "path": "/root/autodl-tmp/lean/mathlib4",
+    "commit": "520045ab14e26149ee970e2e617ca04b09bde5d6",
+    "tree": "b701c3b42faf7960b44e01a1359800f5ec35cbf8",
+    "dirty": true,
+    "porcelain_entry_count": 126,
+    "porcelain_z_sha256": "10670fad9f60f4da6cc3afdc16c8d169e37d983cd904b88111eb0a692fc64f35",
+    "identical_to_before": true
+  },
   "dependency_policy": {
     "lake_update_forbidden": true,
     "source_mathlib_must_not_be_modified": true,
-    "copy": "tracked files at the pinned commit plus existing build/package artifacts, with all Git metadata removed",
-    "copy_mode": "recursive read-only before smoke"
+    "copy": "tracked files at the pinned commit plus existing build artifacts and tar-filtered packages; no Git metadata was ever created in the clean sandbox",
+    "copy_mode": "pinned local-path manifests and recursive read-only mode installed before the first Lake invocation",
+    "writable_regular_or_directory_count": 0,
+    "symlink_count": 3,
+    "symlink_escape_count": 0
+  },
+  "clean_replay": {
+    "archived_noncompliant_sandbox": "/root/autodl-tmp/smooth4pc_t73_lean_build_20260831_task1_noncompliant_20260831",
+    "single_writer_lock_sha256": "52ba8a7895c09e90e5b0e10747b957e60590142789a76abbc3310edc2b1cd185",
+    "authorized_upload_count": 5,
+    "transfer_receipt_commit": "f9c6f28aa887116699c11723627a697214f225a1",
+    "lake_invocation_count": 1,
+    "smoke_exit_code": 0,
+    "smoke_sha256": "f2c8b18069a9da675681be6f7ef3adea441f1248514e89fc04adfa2a70eb14f0",
+    "git_invocation_log_bytes": 0,
+    "git_metadata_count": 0,
+    "remote_manifest_sha256": "18626c843723880e29b86433203972cf4e244d8fd902caa520c9b26513a40819",
+    "clean_replay_certificate_sha256": "937ab1aa870753502a889e1cac020c6cc23800ec3dca1733b28c7b244a553106",
+    "local_evidence": "evidence/task1/clean_replay"
+  },
+  "retained_noncompliant_attempt": {
+    "evidence_commit": "3d255537856cf11e6461c2dec75d378c008c22e9",
+    "local_evidence": "evidence/task1/noncompliant_attempt",
+    "old_remote_manifest_sha256": "daa9549749680e165c217952660766e25ebaa61007ac5377b95cd79bc9aac8dc"
   }
 }

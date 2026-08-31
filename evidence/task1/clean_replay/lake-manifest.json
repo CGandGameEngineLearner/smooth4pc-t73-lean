@@ -1,0 +1,90 @@
+{
+ "version": "1.2.0",
+ "packagesDir": ".lake/packages",
+ "packages": [
+  {
+   "type": "path",
+   "scope": "",
+   "name": "mathlib",
+   "manifestFile": "lake-manifest.json",
+   "inherited": false,
+   "dir": "deps/mathlib4",
+   "configFile": "lakefile.lean"
+  },
+  {
+   "type": "path",
+   "scope": "leanprover-community",
+   "name": "plausible",
+   "manifestFile": "lake-manifest.json",
+   "inherited": true,
+   "dir": "deps/mathlib4/.lake/packages/plausible",
+   "configFile": "lakefile.toml"
+  },
+  {
+   "type": "path",
+   "scope": "leanprover-community",
+   "name": "LeanSearchClient",
+   "manifestFile": "lake-manifest.json",
+   "inherited": true,
+   "dir": "deps/mathlib4/.lake/packages/LeanSearchClient",
+   "configFile": "lakefile.toml"
+  },
+  {
+   "type": "path",
+   "scope": "leanprover-community",
+   "name": "importGraph",
+   "manifestFile": "lake-manifest.json",
+   "inherited": true,
+   "dir": "deps/mathlib4/.lake/packages/importGraph",
+   "configFile": "lakefile.toml"
+  },
+  {
+   "type": "path",
+   "scope": "leanprover-community",
+   "name": "proofwidgets",
+   "manifestFile": "lake-manifest.json",
+   "inherited": true,
+   "dir": "deps/mathlib4/.lake/packages/proofwidgets",
+   "configFile": "lakefile.lean"
+  },
+  {
+   "type": "path",
+   "scope": "leanprover-community",
+   "name": "aesop",
+   "manifestFile": "lake-manifest.json",
+   "inherited": true,
+   "dir": "deps/mathlib4/.lake/packages/aesop",
+   "configFile": "lakefile.toml"
+  },
+  {
+   "type": "path",
+   "scope": "leanprover-community",
+   "name": "Qq",
+   "manifestFile": "lake-manifest.json",
+   "inherited": true,
+   "dir": "deps/mathlib4/.lake/packages/Qq",
+   "configFile": "lakefile.toml"
+  },
+  {
+   "type": "path",
+   "scope": "leanprover-community",
+   "name": "batteries",
+   "manifestFile": "lake-manifest.json",
+   "inherited": true,
+   "dir": "deps/mathlib4/.lake/packages/batteries",
+   "configFile": "lakefile.toml"
+  },
+  {
+   "type": "path",
+   "scope": "leanprover",
+   "name": "Cli",
+   "manifestFile": "lake-manifest.json",
+   "inherited": true,
+   "dir": "deps/mathlib4/.lake/packages/Cli",
+   "configFile": "lakefile.toml"
+  }
+ ],
+ "name": "smooth4pc_t73_lean_audit",
+ "lakeDir": ".lake",
+ "fixedToolchain": true
+}

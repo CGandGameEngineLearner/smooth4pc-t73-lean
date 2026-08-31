@@ -1,0 +1,59 @@
+{
+  "schema": "smooth4pc_t73_task1_clean_replay_certificate/v1",
+  "verdict": "PASS",
+  "target": "/root/autodl-tmp/smooth4pc_t73_lean_build_20260831",
+  "archived_noncompliant_attempt": "/root/autodl-tmp/smooth4pc_t73_lean_build_20260831_task1_noncompliant_20260831",
+  "authorized_upload_count": 5,
+  "uploaded_preupload_sha256": {
+    "ENVIRONMENT.json": "1AFF47A7D717E6A1B8A06959D1EDA02B69487FB861C94243DF9D77D61B9142FD",
+    "Smoke.lean": "629A6F82A84E1516BE65A0213968566158705CF1CECC976B55591F041B495A41",
+    "lakefile.toml": "C1999195B676FED260F87EC541423C1A65E4CF06BC250D7ADB769C67A045DCFF",
+    "lean-toolchain": "8E3538E0AB5F81A3EE04927D8838C8C674E0E112838B4B3CE87EC218143276AF"
+  },
+  "snapshot_manifest_sha256": "cb548a80bff264731452e89720b6a3ad93a9552c956fe3bd429f3cd60060d6cb",
+  "mathlib_before": {
+    "commit": "520045ab14e26149ee970e2e617ca04b09bde5d6",
+    "tree": "b701c3b42faf7960b44e01a1359800f5ec35cbf8",
+    "dirty_count": "126",
+    "dirty_status_sha256": "10670fad9f60f4da6cc3afdc16c8d169e37d983cd904b88111eb0a692fc64f35"
+  },
+  "mathlib_after": {
+    "commit": "520045ab14e26149ee970e2e617ca04b09bde5d6",
+    "tree": "b701c3b42faf7960b44e01a1359800f5ec35cbf8",
+    "dirty_count": "126",
+    "dirty_status_sha256": "10670fad9f60f4da6cc3afdc16c8d169e37d983cd904b88111eb0a692fc64f35"
+  },
+  "mathlib_before_after_identical": true,
+  "gates": {
+    "lake_invocation_count": 1,
+    "smoke_exit": 0,
+    "git_metadata_count": 0,
+    "git_forbidden_log_bytes": 0,
+    "mathlib_writable_nonlink_count": 0,
+    "mathlib_symlink_count": 3,
+    "mathlib_symlink_escape_count": 0,
+    "lock_mode": "444",
+    "lock_owner": "root:root"
+  },
+  "evidence_sha256": {
+    "LOCK": "52ba8a7895c09e90e5b0e10747b957e60590142789a76abbc3310edc2b1cd185",
+    "ENVIRONMENT.json": "1aff47a7d717e6a1b8a06959d1eda02b69487fb861c94243df9d77d61b9142fd",
+    "Smoke.lean": "629a6f82a84e1516be65a0213968566158705cf1cecc976b55591f041b495a41",
+    "lakefile.toml": "c1999195b676fed260f87ec541423c1a65e4cf06bc250d7adb769c67a045dcff",
+    "lean-toolchain": "8e3538e0ab5f81a3ee04927d8838c8c674e0e112838b4b3ce87ec218143276af",
+    "SNAPSHOT_MANIFEST.sha256": "cb548a80bff264731452e89720b6a3ad93a9552c956fe3bd429f3cd60060d6cb",
+    "lake-manifest.json": "5ef05242ca4d1434d173584133a7bc0947e138e4df06244b1a2aeb9d795a1705",
+    "deps/mathlib4/lake-manifest.json": "aae4b3cb94b7101842bf8fe3dd4c716ebc9911dac6d064593fd8920850e2cc37",
+    "logs/MATHLIB_BEFORE.txt": "ecd9892730c9d343cea9c1df600533acd45a2616d1fb9d1b9026bc98e7f5fc2c",
+    "logs/MATHLIB_AFTER.txt": "ecd9892730c9d343cea9c1df600533acd45a2616d1fb9d1b9026bc98e7f5fc2c",
+    "logs/MATHLIB_READONLY_PROVENANCE.txt": "15c0f99ee6ef52b890505861b39bea527b7a2fdb5abaac4082a405ebe0a8afcf",
+    "logs/MATHLIB_PACKAGE_PINS.json": "5ccb269ac78cfd3f69211a81f5929fe82c90cac7fb4ef6360f4582f45fca0150",
+    "logs/TOOLCHAIN.txt": "82cd3c02011a6dcd70a53b418a7f28467b627a46fdc4aacb34262e2ff22f7e3a",
+    "logs/PRELAKE_CERT.txt": "5e4b825a0764e6e70c17ea26508cbad63839c2e8438067a4397d2d3fefd6e1cb",
+    "logs/LAKE_INVOCATION_COUNTER": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865",
+    "logs/GIT_FORBIDDEN.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "logs/smoke.log": "f2c8b18069a9da675681be6f7ef3adea441f1248514e89fc04adfa2a70eb14f0",
+    "logs/SANDBOX_AUDIT.txt": "8078a0de115583a2e49629ed45fe8a5945b5f9a9db63bbeccfe50a0786a533e0",
+    "no-git-bin/git": "6b7a2f3453f8f131a88cf86c93942c06be44d46da243d6edfbce396aa852de80"
+  }
+}

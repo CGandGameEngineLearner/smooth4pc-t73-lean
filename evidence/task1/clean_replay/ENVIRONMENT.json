@@ -1,0 +1,25 @@
+{
+  "schema": "smooth4pc_t73_isolated_lean_audit_environment/v1",
+  "recorded_at": "2026-08-31T13:40:54+09:00",
+  "local_authority_worktree": "D:\\toffee_code_in_Cursor\\smooth4pc-t73-lean\\.worktrees\\formalize-t73",
+  "remote_no_git_sandbox": "/root/autodl-tmp/smooth4pc_t73_lean_build_20260831",
+  "toolchain": {
+    "lean": "Lean (version 4.32.1, x86_64-unknown-linux-gnu, commit f054605aea4b840552cca2e725580bffd1e1b704, Release)",
+    "lake": "Lake version 5.0.0-src+f054605 (Lean version 4.32.1)",
+    "lean_toolchain": "leanprover/lean4:v4.32.1"
+  },
+  "mathlib_source_observation": {
+    "path": "/root/autodl-tmp/lean/mathlib4",
+    "commit": "520045ab14e26149ee970e2e617ca04b09bde5d6",
+    "tree": "b701c3b42faf7960b44e01a1359800f5ec35cbf8",
+    "dirty": true,
+    "porcelain_entry_count": 126,
+    "porcelain_z_sha256": "10670fad9f60f4da6cc3afdc16c8d169e37d983cd904b88111eb0a692fc64f35"
+  },
+  "dependency_policy": {
+    "lake_update_forbidden": true,
+    "source_mathlib_must_not_be_modified": true,
+    "copy": "tracked files at the pinned commit plus existing build/package artifacts, with all Git metadata removed",
+    "copy_mode": "recursive read-only before smoke"
+  }
+}

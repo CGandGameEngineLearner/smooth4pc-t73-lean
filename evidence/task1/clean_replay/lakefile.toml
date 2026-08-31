@@ -1,0 +1,7 @@
+name = "smooth4pc_t73_lean_audit"
+version = "0.1.0"
+defaultTargets = []
+
+[[require]]
+name = "mathlib"
+path = "deps/mathlib4"
