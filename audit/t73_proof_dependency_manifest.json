@@ -1,0 +1,160 @@
+{
+  "schema": "smooth4pc_t73_proof_dependency_manifest/v1",
+  "overall_status": "CANDIDATE_PROOF_PENDING_INDEPENDENT_REVIEW",
+  "invariants": {
+    "input": "v_T, not xi",
+    "balanced_coefficient": "M_R(T,T') = Hom(BT,BT') tensor A^(tensor 227)",
+    "source": "M_1(88)",
+    "relative_nu": 0,
+    "cubic_value": -59072,
+    "final_q": 494,
+    "edge_braid_model": "vertex_potential_conjugation"
+  },
+  "dependencies": {
+    "balanced_hattori_equivalence": {
+      "status": "external_theorem",
+      "lean_role": "explicit_parameter",
+      "source_paths": [
+        "docs/superpowers/specs/2026-08-31-t73-counterexample-proof-consolidation-design.md#proof-normal-form"
+      ],
+      "claim": "The balanced Hattori cut identifies the coefficient space with the two-sided boundary Hom-space and 227 separate Frobenius-algebra circle factors.",
+      "consumers": [
+        "proof_section:balanced-hattori-coefficient"
+      ]
+    },
+    "actual_diagonal_class": {
+      "status": "external_theorem",
+      "lean_role": "explicit_parameter",
+      "source_paths": [
+        "docs/superpowers/specs/2026-08-31-t73-counterexample-proof-consolidation-design.md#proof-normal-form"
+      ],
+      "claim": "The inverse balanced equivalence sends the identity on BT with 227 separate X labels to the typed class v_T in M_R(T,T).",
+      "consumers": [
+        "proof_section:actual-diagonal-class"
+      ]
+    },
+    "nu0_binding": {
+      "status": "external_theorem",
+      "lean_role": "explicit_parameter",
+      "source_paths": [
+        "docs/superpowers/specs/2026-08-31-t73-counterexample-proof-consolidation-design.md#proof-normal-form"
+      ],
+      "claim": "On the fixed one-handle source, the mandatory endpoint defect is relative nu zero; dotted maps preserve that head and undotted maps raise it.",
+      "consumers": [
+        "proof_section:relative-nu-ledger"
+      ]
+    },
+    "point_push_cubic": {
+      "status": "finite_verified",
+      "lean_role": "derived_theorem",
+      "source_paths": [
+        "data/GLOBAL_FALSIFICATION_CHAIN_CERT.json",
+        "Smooth4PC/CertificateData.lean",
+        "AuditArithmetic.lean"
+      ],
+      "claim": "The exact point-push calculation evaluates the cubic row on the transported cup vector as -59072, which is nonzero.",
+      "consumers": [
+        "proof_section:point-push-cubic"
+      ]
+    },
+    "beta_psi_cocone": {
+      "status": "external_theorem",
+      "lean_role": "explicit_parameter",
+      "source_paths": [
+        "docs/superpowers/specs/2026-08-31-t73-counterexample-proof-consolidation-design.md#proof-normal-form"
+      ],
+      "claim": "The Reynolds-counit row annihilates the beta and undotted psi relations and agrees across every dotted psi relation on the whole source.",
+      "consumers": [
+        "proof_section:beta-psi-cocone"
+      ]
+    },
+    "fixed_y_hj_basis": {
+      "status": "external_theorem",
+      "lean_role": "explicit_parameter",
+      "source_paths": [
+        "docs/superpowers/specs/2026-08-31-t73-counterexample-proof-consolidation-design.md#proof-normal-form"
+      ],
+      "claim": "A single fixed partial W2 contains a pairwise-disjoint determinant-one HJ sphere basis with the required framed owner-point identifications.",
+      "consumers": [
+        "proof_section:fixed-y-hj-basis"
+      ]
+    },
+    "direct_q_sphere_cocone": {
+      "status": "external_theorem",
+      "lean_role": "explicit_parameter",
+      "source_paths": [
+        "docs/superpowers/specs/2026-08-31-t73-counterexample-proof-consolidation-design.md#proof-normal-form"
+      ],
+      "claim": "Vertex-potential direct-Q equivalences conjugate every signed sphere edge to the canonical split tree, giving the undotted-zero and dotted-identity cocone equations on the whole source.",
+      "consumers": [
+        "proof_section:direct-q-sphere-cocone"
+      ]
+    },
+    "phi_w_naturality": {
+      "status": "external_theorem",
+      "lean_role": "explicit_parameter",
+      "source_paths": [
+        "docs/superpowers/specs/2026-08-31-t73-counterexample-proof-consolidation-design.md#proof-normal-form"
+      ],
+      "claim": "The changing-endpoint Phi comparison and W conjugation squares commute for every source vector and induce the corresponding cubic K square.",
+      "consumers": [
+        "proof_section:changing-endpoint-naturality"
+      ]
+    },
+    "bpw_vertical_horizontal_trace": {
+      "status": "external_theorem",
+      "lean_role": "explicit_parameter",
+      "source_paths": [
+        "docs/superpowers/specs/2026-08-31-t73-counterexample-proof-consolidation-design.md#proof-normal-form"
+      ],
+      "claim": "The BPW vertical-to-horizontal trace with 227 counits carries the balanced diagonal class to the actual cup vector in the fixed one-handle source.",
+      "consumers": [
+        "proof_section:vertical-horizontal-trace"
+      ]
+    },
+    "bhpw_strict_functoriality": {
+      "status": "external_theorem",
+      "lean_role": "explicit_parameter",
+      "source_paths": [
+        "docs/superpowers/specs/2026-08-31-t73-counterexample-proof-consolidation-design.md#proof-normal-form"
+      ],
+      "claim": "Strict BHPW functoriality identifies the required composed cobordism maps without an unresolved projective sign or scalar.",
+      "consumers": [
+        "proof_section:strict-functoriality"
+      ]
+    },
+    "mww_handle_core_formulas": {
+      "status": "external_theorem",
+      "lean_role": "explicit_parameter",
+      "source_paths": [
+        "docs/superpowers/specs/2026-08-31-t73-counterexample-proof-consolidation-design.md#proof-normal-form"
+      ],
+      "claim": "The MWW handle formulas and core-attachment diagram give the complete beta, psi, and three-handle relation sources and their quotient universal properties.",
+      "consumers": [
+        "proof_section:mww-quotient"
+      ]
+    },
+    "four_handle_isomorphism": {
+      "status": "external_theorem",
+      "lean_role": "explicit_parameter",
+      "source_paths": [
+        "docs/superpowers/specs/2026-08-31-t73-counterexample-proof-consolidation-design.md#proof-normal-form"
+      ],
+      "claim": "The MWW four-handle map is an absolute-bigrading-preserving isomorphism and transports the surviving degree-494 class.",
+      "consumers": [
+        "proof_section:four-handle-comparison"
+      ]
+    },
+    "s4_bigraded_control": {
+      "status": "external_theorem",
+      "lean_role": "explicit_parameter",
+      "source_paths": [
+        "docs/superpowers/specs/2026-08-31-t73-counterexample-proof-consolidation-design.md#proof-normal-form"
+      ],
+      "claim": "The standard four-sphere module over the rationals is one-dimensional in bidegree (0,0) and vanishes in every nonzero quantum degree.",
+      "consumers": [
+        "proof_section:standard-s4-control"
+      ]
+    }
+  }
+}
