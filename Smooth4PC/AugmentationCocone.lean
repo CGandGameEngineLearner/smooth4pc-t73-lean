@@ -1,16 +1,15 @@
 import Mathlib.Algebra.Module.LinearMap.Basic
 import Mathlib.Algebra.Module.Equiv.Basic
-import Mathlib.Algebra.BigOperators.GroupWithZero.Finset
-import Mathlib.Data.Fintype.Basic
-import Mathlib.Data.List.OfFn
+import Mathlib.Data.Nat.Choose.Basic
 import Mathlib.Data.Rat.BigOperators
+import Mathlib.LinearAlgebra.Finsupp.LSum
 
 namespace Smooth4PC
 
 /-!
-This module proves only the finite augmentation algebra used by the candidate
-argument.  It does not assert the actual T73 geometric premises that would
-identify concrete sphere or psi movies with these abstract maps.
+This module proves only the finite augmentation and conjugation algebra used by
+the candidate argument.  It does not assert the actual T73 geometric premises
+that would identify concrete sphere or psi movies with these abstract maps.
 -/
 
 /-- The basis `(1, X)` of the rank-two Frobenius module. -/
@@ -19,213 +18,402 @@ inductive FrobeniusBasis where
   | X
   deriving DecidableEq, Repr
 
-/-- A tensor word with exactly `b` ordered Frobenius factors. -/
-abbrev TensorWord (b : Nat) := Fin b → FrobeniusBasis
+/-- An ordered tensor word in the basis `(1, X)`. -/
+abbrev TensorWord := List FrobeniusBasis
 
-/-- The tensor word `X ⊗ ... ⊗ X`, represented without an algebra power. -/
-def allX (b : Nat) : TensorWord b := fun _ => .X
-
-/-- The tensor word with one `1` at `i` and `X` at every other factor. -/
-def oneAt {b : Nat} (i : Fin b) : TensorWord b :=
-  fun j => if j = i then .one else .X
-
-/-- The Frobenius counit on the basis. -/
+/-- The Frobenius counit on basis elements. -/
 def epsilon : FrobeniusBasis → ℚ
   | .one => 0
   | .X => 1
 
-/-- Apply the counit independently to all factors of one tensor word. -/
-def epsilonTensor {b : Nat} (word : TensorWord b) : ℚ :=
-  ∏ i, epsilon (word i)
+/-- Apply the counit to every tensor factor and multiply the results. -/
+def epsilonTensor (word : TensorWord) : ℚ :=
+  (word.map epsilon).prod
 
-/--
-The normal-form support of the `(b-1)`-fold iterated coproduct.  The coproduct
-of `1` has one `1` in each possible position; the coproduct of `X` is all `X`.
--/
-def iteratedDelta (b : Nat) : FrobeniusBasis → List (TensorWord b)
-  | .one => List.ofFn fun i : Fin b => oneAt i
-  | .X => [allX b]
-
-/-- The rank-two coproduct `Delta`, as the two-factor case. -/
-def delta : FrobeniusBasis → List (TensorWord 2) := iteratedDelta 2
-
-/-- Extend `epsilon^b` linearly over a finite list of tensor words. -/
-def epsilonWords {b : Nat} (words : List (TensorWord b)) : ℚ :=
+/-- Extend tensor-word counit evaluation linearly over a finite support list. -/
+def epsilonWords (words : List TensorWord) : ℚ :=
   (words.map epsilonTensor).sum
 
-@[simp] theorem epsilonTensor_allX (b : Nat) : epsilonTensor (allX b) = 1 := by
-  simp [epsilonTensor, allX, epsilon]
+/-- The genuine rank-two coproduct on basis elements. -/
+def delta : FrobeniusBasis → List TensorWord
+  | .one => [[.one, .X], [.X, .one]]
+  | .X => [[.X, .X]]
 
-@[simp] theorem epsilonTensor_oneAt {b : Nat} (i : Fin b) : epsilonTensor (oneAt i) = 0 := by
-  classical
-  change (∏ j ∈ Finset.univ, epsilon (oneAt i j)) = 0
-  apply Finset.prod_eq_zero (Finset.mem_univ i)
-  simp [oneAt, epsilon]
+/-- Split the first tensor factor by `delta`; the empty tensor is left fixed. -/
+def splitHead : TensorWord → List TensorWord
+  | [] => [[]]
+  | basis :: tail => (delta basis).map (fun head => head ++ tail)
 
-/-- `epsilon^b (Delta^(b-1)(1)) = 0` for every positive number of leaves. -/
-theorem epsilon_iteratedDelta_one_eq_zero (b : Nat) (_hb : 0 < b) :
+/-- Recursively apply `splitHead` to every summand. -/
+def iterateSplit : Nat → List TensorWord → List TensorWord
+  | 0, words => words
+  | steps + 1, words => iterateSplit steps (words.flatMap splitHead)
+
+/-- The `(b-1)`-fold recursive coproduct, with `b=0` deliberately unsupported. -/
+def iteratedDelta : Nat → FrobeniusBasis → List TensorWord
+  | 0, _ => []
+  | b + 1, basis => iterateSplit b [[basis]]
+
+/-- The first recursive split is definitionally the declared binary coproduct. -/
+@[simp] theorem iteratedDelta_two_eq_delta (basis : FrobeniusBasis) :
+    iteratedDelta 2 basis = delta basis := by
+  cases basis <;> rfl
+
+@[simp] theorem epsilonWords_splitHead (word : TensorWord) :
+    epsilonWords (splitHead word) = epsilonTensor word := by
+  cases word with
+  | nil => simp [epsilonWords, splitHead, epsilonTensor]
+  | cons basis tail =>
+      cases basis <;> simp [epsilonWords, splitHead, delta, epsilonTensor, epsilon]
+
+@[simp] theorem epsilonWords_flatMap_splitHead (words : List TensorWord) :
+    epsilonWords (words.flatMap splitHead) = epsilonWords words := by
+  induction words with
+  | nil => simp [epsilonWords]
+  | cons word words ih =>
+      rw [epsilonWords] at ih ⊢
+      rw [List.flatMap_cons, List.map_append, List.sum_append]
+      rw [show (List.map epsilonTensor (splitHead word)).sum = epsilonTensor word by
+        simpa [epsilonWords] using epsilonWords_splitHead word]
+      rw [ih]
+      simp [epsilonWords]
+
+@[simp] theorem epsilonWords_iterateSplit (steps : Nat) (words : List TensorWord) :
+    epsilonWords (iterateSplit steps words) = epsilonWords words := by
+  induction steps generalizing words with
+  | zero => rfl
+  | succ steps ih => simp [iterateSplit, ih]
+
+/-- `epsilon^b (Delta^(b-1)(1)) = 0` for every positive `b`. -/
+theorem epsilon_iteratedDelta_one_eq_zero (b : Nat) (hb : 0 < b) :
     epsilonWords (iteratedDelta b .one) = 0 := by
-  simp [epsilonWords, iteratedDelta, Function.comp_def]
+  cases b with
+  | zero => omega
+  | succ steps =>
+      rw [iteratedDelta, epsilonWords_iterateSplit]
+      simp [epsilonWords, epsilonTensor, epsilon]
 
-/-- `epsilon^b (Delta^(b-1)(X)) = 1` for every positive number of leaves. -/
-theorem epsilon_iteratedDelta_X_eq_one (b : Nat) (_hb : 0 < b) :
+/-- `epsilon^b (Delta^(b-1)(X)) = 1` for every positive `b`. -/
+theorem epsilon_iteratedDelta_X_eq_one (b : Nat) (hb : 0 < b) :
     epsilonWords (iteratedDelta b .X) = 1 := by
-  simp [epsilonWords, iteratedDelta]
+  cases b with
+  | zero => omega
+  | succ steps =>
+      rw [iteratedDelta, epsilonWords_iterateSplit]
+      simp [epsilonWords, epsilonTensor, epsilon]
 
-/-- The canonical insertion after applying the counit on all new factors. -/
-def canonicalInsertion {V : Type*} [AddCommGroup V] [Module ℚ V]
-    (b : Nat) (basis : FrobeniusBasis) : V →ₗ[ℚ] V :=
-  (epsilonWords (iteratedDelta b basis)) • LinearMap.id
+/-- The pre-counit direct sum of a persistent module over all tensor words. -/
+abbrev TensorTarget (C : Type*) [Zero C] := TensorWord →₀ C
 
-/-- Pull a canonical row back through an explicit vertex equivalence. -/
-def transportedRow {V C : Type*}
-    [AddCommGroup V] [Module ℚ V] [AddCommGroup C] [Module ℚ C]
-    (Q : V ≃ₗ[ℚ] C) (row : C →ₗ[ℚ] ℚ) : V →ₗ[ℚ] ℚ :=
-  row.comp Q.toLinearMap
+noncomputable section
 
-/-- Conjugate a canonical insertion by explicit source and target coordinates. -/
+/--
+The raw insertion map.  It inserts one copy of `value` at every tensor word in
+the recursive coproduct support; no counit is evaluated here.
+-/
+def canonicalInsertion {C : Type*} [AddCommGroup C] [Module ℚ C]
+    (b : Nat) (basis : FrobeniusBasis) : C →ₗ[ℚ] TensorTarget C := by
+  classical
+  exact ((iteratedDelta b basis).map (fun word => Finsupp.lsingle word)).sum
+
+/-- The target augmentation row, evaluated only after the raw insertion. -/
+def targetCounitRow {C : Type*} [AddCommGroup C] [Module ℚ C]
+    (row : C →ₗ[ℚ] ℚ) : TensorTarget C →ₗ[ℚ] ℚ := by
+  classical
+  exact (Finsupp.lsum ℚ) (fun word => (epsilonTensor word) • row)
+
+/-- Evaluation of a raw insertion is the finite tensor-word counit sum. -/
+theorem targetRow_comp_insertion {C : Type*} [AddCommGroup C] [Module ℚ C]
+    (row : C →ₗ[ℚ] ℚ) (b : Nat) (basis : FrobeniusBasis) :
+    (targetCounitRow row).comp (canonicalInsertion b basis) =
+      (epsilonWords (iteratedDelta b basis)) • row := by
+  classical
+  let words := iteratedDelta b basis
+  change (targetCounitRow row).comp
+      ((words.map fun word => Finsupp.lsingle word).sum) =
+    (epsilonWords words) • row
+  induction words with
+  | nil =>
+      ext value
+      simp [targetCounitRow, epsilonWords]
+  | cons word words ih =>
+      ext value
+      have ihValue := LinearMap.congr_fun ih value
+      change targetCounitRow row
+          (Finsupp.single word value +
+            ((words.map fun next => Finsupp.lsingle next).sum value)) =
+        ((epsilonWords (word :: words)) • row) value
+      rw [(targetCounitRow row).map_add]
+      have hsingle :
+          targetCounitRow row (Finsupp.single word value) =
+            epsilonTensor word * row value := by
+        simp [targetCounitRow]
+      rw [hsingle]
+      change _ + (targetCounitRow row).comp
+          ((words.map fun next => Finsupp.lsingle next).sum) value = _
+      rw [ihValue]
+      simp [epsilonWords, add_mul]
+
+/-- The raw undotted insertion is killed by the target row on the whole source. -/
+theorem targetRow_undotted_eq_zero {C : Type*} [AddCommGroup C] [Module ℚ C]
+    (row : C →ₗ[ℚ] ℚ) (b : Nat) (hb : 0 < b) :
+    (targetCounitRow row).comp (canonicalInsertion b .one) = 0 := by
+  rw [targetRow_comp_insertion, epsilon_iteratedDelta_one_eq_zero b hb]
+  simp
+
+/-- The raw dotted insertion pulls the target row back to the source row. -/
+theorem targetRow_dotted_eq_source {C : Type*} [AddCommGroup C] [Module ℚ C]
+    (row : C →ₗ[ℚ] ℚ) (b : Nat) (hb : 0 < b) :
+    (targetCounitRow row).comp (canonicalInsertion b .X) = row := by
+  rw [targetRow_comp_insertion, epsilon_iteratedDelta_X_eq_one b hb]
+  simp
+
+/-- Pull the canonical source row back through explicit source coordinates. -/
+def actualSourceRow {Vs C : Type*}
+    [AddCommGroup Vs] [Module ℚ Vs] [AddCommGroup C] [Module ℚ C]
+    (Qs : Vs ≃ₗ[ℚ] C) (row : C →ₗ[ℚ] ℚ) : Vs →ₗ[ℚ] ℚ :=
+  row.comp Qs.toLinearMap
+
+/-- Pull the pre-counit target row back through explicit target coordinates. -/
+def actualTargetRow {Vt C : Type*}
+    [AddCommGroup Vt] [Module ℚ Vt] [AddCommGroup C] [Module ℚ C]
+    (Qt : Vt ≃ₗ[ℚ] TensorTarget C) (row : C →ₗ[ℚ] ℚ) : Vt →ₗ[ℚ] ℚ :=
+  (targetCounitRow row).comp Qt.toLinearMap
+
+/-- Conjugate the raw insertion through distinct source and target coordinates. -/
 def conjugatedInsertion {Vs Vt C : Type*}
     [AddCommGroup Vs] [Module ℚ Vs]
     [AddCommGroup Vt] [Module ℚ Vt]
     [AddCommGroup C] [Module ℚ C]
-    (Qs : Vs ≃ₗ[ℚ] C) (Qt : Vt ≃ₗ[ℚ] C)
+    (Qs : Vs ≃ₗ[ℚ] C) (Qt : Vt ≃ₗ[ℚ] TensorTarget C)
     (b : Nat) (basis : FrobeniusBasis) : Vs →ₗ[ℚ] Vt :=
   Qt.symm.toLinearMap.comp
-    ((canonicalInsertion (V := C) b basis).comp Qs.toLinearMap)
+    ((canonicalInsertion b basis).comp Qs.toLinearMap)
 
-/-- The conjugated undotted row vanishes on the whole source. -/
+/-- The conjugated undotted cocone equation holds on the entire actual source. -/
 theorem directQ_undotted_row_eq_zero {Vs Vt C : Type*}
     [AddCommGroup Vs] [Module ℚ Vs]
     [AddCommGroup Vt] [Module ℚ Vt]
     [AddCommGroup C] [Module ℚ C]
-    (Qs : Vs ≃ₗ[ℚ] C) (Qt : Vt ≃ₗ[ℚ] C)
+    (Qs : Vs ≃ₗ[ℚ] C) (Qt : Vt ≃ₗ[ℚ] TensorTarget C)
     (row : C →ₗ[ℚ] ℚ) (b : Nat) (hb : 0 < b) :
-    (transportedRow Qt row).comp (conjugatedInsertion Qs Qt b .one) = 0 := by
-  ext x
-  simp [transportedRow, conjugatedInsertion, canonicalInsertion,
-    epsilon_iteratedDelta_one_eq_zero b hb]
+    (actualTargetRow Qt row).comp (conjugatedInsertion Qs Qt b .one) = 0 := by
+  ext value
+  have hvalue := LinearMap.congr_fun (targetRow_undotted_eq_zero row b hb) (Qs value)
+  simpa [actualTargetRow, conjugatedInsertion] using hvalue
 
-/-- The conjugated dotted row is the source row on the whole source. -/
+/-- The conjugated dotted cocone equation holds on the entire actual source. -/
 theorem directQ_dotted_row_eq_source {Vs Vt C : Type*}
     [AddCommGroup Vs] [Module ℚ Vs]
     [AddCommGroup Vt] [Module ℚ Vt]
     [AddCommGroup C] [Module ℚ C]
-    (Qs : Vs ≃ₗ[ℚ] C) (Qt : Vt ≃ₗ[ℚ] C)
+    (Qs : Vs ≃ₗ[ℚ] C) (Qt : Vt ≃ₗ[ℚ] TensorTarget C)
     (row : C →ₗ[ℚ] ℚ) (b : Nat) (hb : 0 < b) :
-    (transportedRow Qt row).comp (conjugatedInsertion Qs Qt b .X) =
-      transportedRow Qs row := by
-  ext x
-  simp [transportedRow, conjugatedInsertion, canonicalInsertion,
-    epsilon_iteratedDelta_X_eq_one b hb]
+    (actualTargetRow Qt row).comp (conjugatedInsertion Qs Qt b .X) =
+      actualSourceRow Qs row := by
+  ext value
+  have hvalue := LinearMap.congr_fun (targetRow_dotted_eq_source row b hb) (Qs value)
+  simpa [actualTargetRow, actualSourceRow, conjugatedInsertion] using hvalue
 
-/-- Ratio of target to source physical-copy orbit sizes. -/
-def physicalCopyOrbitRatio (source target : ℚ) : ℚ :=
-  target / source
+/-! ### Physical-copy orbit normalization -/
 
-/-- Physical-copy orbit normalizations telescope along a finite two-edge path. -/
+/-- Product of ownerwise binomial orbit sizes from copy counts and occupancies. -/
+def orbitSize : List Nat → List Nat → Nat
+  | [], [] => 1
+  | copies :: copyTail, occupied :: occupiedTail =>
+      Nat.choose copies occupied * orbitSize copyTail occupiedTail
+  | _, _ => 0
+
+/-- An orbit is present exactly when its binomial-product size is nonzero. -/
+def orbitPresent (copyCounts occupancy : List Nat) : Prop :=
+  orbitSize copyCounts occupancy ≠ 0
+
+/-- Ratio of target and source orbit sizes, with absent orbits mapped to zero. -/
+def physicalCopyOrbitRatio
+    (sourceCopies targetCopies occupancy : List Nat) : ℚ :=
+  by
+    classical
+    exact
+      if orbitPresent sourceCopies occupancy ∧ orbitPresent targetCopies occupancy then
+        (orbitSize targetCopies occupancy : ℚ) /
+          (orbitSize sourceCopies occupancy : ℚ)
+      else
+        0
+
+/-- Any absent source or target orbit has zero normalization by definition. -/
+theorem physicalCopyOrbitRatio_absent
+    (sourceCopies targetCopies occupancy : List Nat)
+    (hAbsent : ¬ orbitPresent sourceCopies occupancy ∨
+      ¬ orbitPresent targetCopies occupancy) :
+    physicalCopyOrbitRatio sourceCopies targetCopies occupancy = 0 := by
+  rcases hAbsent with hSource | hTarget
+  · simp [physicalCopyOrbitRatio, hSource]
+  · simp [physicalCopyOrbitRatio, hTarget]
+
+/-- Present physical-copy orbit ratios telescope across two consecutive edges. -/
 theorem physicalCopyOrbitRatio_telescope
-    (source middle target : ℚ) (_hsource : source ≠ 0) (hmiddle : middle ≠ 0) :
-    physicalCopyOrbitRatio source middle * physicalCopyOrbitRatio middle target =
-      physicalCopyOrbitRatio source target := by
-  simp only [physicalCopyOrbitRatio, div_eq_mul_inv]
+    (sourceCopies middleCopies targetCopies occupancy : List Nat)
+    (hSource : orbitPresent sourceCopies occupancy)
+    (hMiddle : orbitPresent middleCopies occupancy)
+    (hTarget : orbitPresent targetCopies occupancy) :
+    physicalCopyOrbitRatio sourceCopies middleCopies occupancy *
+        physicalCopyOrbitRatio middleCopies targetCopies occupancy =
+      physicalCopyOrbitRatio sourceCopies targetCopies occupancy := by
+  have hMiddleRat : (orbitSize middleCopies occupancy : ℚ) ≠ 0 :=
+    Nat.cast_ne_zero.mpr hMiddle
+  simp only [physicalCopyOrbitRatio, hSource, hMiddle, hTarget, and_self, if_true,
+    div_eq_mul_inv]
   calc
-    middle * source⁻¹ * (target * middle⁻¹) =
-        (middle * middle⁻¹) * (target * source⁻¹) := by ac_rfl
-    _ = target * source⁻¹ := by simp [hmiddle]
+    (orbitSize middleCopies occupancy : ℚ) *
+          (orbitSize sourceCopies occupancy : ℚ)⁻¹ *
+        ((orbitSize targetCopies occupancy : ℚ) *
+          (orbitSize middleCopies occupancy : ℚ)⁻¹) =
+      ((orbitSize middleCopies occupancy : ℚ) *
+          (orbitSize middleCopies occupancy : ℚ)⁻¹) *
+        ((orbitSize targetCopies occupancy : ℚ) *
+          (orbitSize sourceCopies occupancy : ℚ)⁻¹) := by ac_rfl
+    _ = (orbitSize targetCopies occupancy : ℚ) *
+        (orbitSize sourceCopies occupancy : ℚ)⁻¹ := by simp [hMiddleRat]
 
-/-- Product of successive orbit ratios along an arbitrary finite path. -/
-def physicalCopyPathRatio : ℚ → List ℚ → ℚ
+/-- Product of orbit ratios along a finite sequence of physical-copy states. -/
+def physicalCopyPathRatio (occupancy : List Nat) :
+    List Nat → List (List Nat) → ℚ
   | _, [] => 1
   | source, next :: rest =>
-      physicalCopyOrbitRatio source next * physicalCopyPathRatio next rest
+      physicalCopyOrbitRatio source next occupancy *
+        physicalCopyPathRatio occupancy next rest
 
-/-- Last orbit size reached by a finite path, with the source for an empty path. -/
-def physicalCopyPathEndpoint : ℚ → List ℚ → ℚ
+/-- Last physical-copy state reached by a path, or its source for an empty path. -/
+def physicalCopyPathEndpoint : List Nat → List (List Nat) → List Nat
   | source, [] => source
   | _, next :: rest => physicalCopyPathEndpoint next rest
 
-/-- Physical-copy orbit ratios telescope along every finite state path. -/
+/-- The endpoint of a nonempty state path is one of its listed target states. -/
+theorem physicalCopyPathEndpoint_mem :
+    ∀ (source : List Nat) (targets : List (List Nat)),
+      targets ≠ [] → physicalCopyPathEndpoint source targets ∈ targets
+  | _, [], hTargets => (hTargets rfl).elim
+  | _, [target], _ => by simp [physicalCopyPathEndpoint]
+  | _, target :: next :: rest, _ => by
+      apply List.mem_cons_of_mem
+      exact physicalCopyPathEndpoint_mem target (next :: rest) (by simp)
+
+/-- Present states have a present endpoint along any finite state path. -/
+theorem physicalCopyPathEndpoint_present
+    (occupancy source : List Nat) (targets : List (List Nat))
+    (hSource : orbitPresent source occupancy)
+    (hTargets : ∀ target ∈ targets, orbitPresent target occupancy) :
+    orbitPresent (physicalCopyPathEndpoint source targets) occupancy := by
+  cases targets with
+  | nil => simpa [physicalCopyPathEndpoint] using hSource
+  | cons target rest =>
+      apply hTargets
+      exact physicalCopyPathEndpoint_mem source (target :: rest) (by simp)
+
+/-- Present orbit ratios telescope along every finite physical-copy state path. -/
 theorem physicalCopyOrbitRatio_path_telescope
-    (source : ℚ) (targets : List ℚ) (hsource : source ≠ 0)
-    (htargets : ∀ target ∈ targets, target ≠ 0) :
-    physicalCopyPathRatio source targets =
-      physicalCopyOrbitRatio source (physicalCopyPathEndpoint source targets) := by
+    (occupancy source : List Nat) (targets : List (List Nat))
+    (hSource : orbitPresent source occupancy)
+    (hTargets : ∀ target ∈ targets, orbitPresent target occupancy) :
+    physicalCopyPathRatio occupancy source targets =
+      physicalCopyOrbitRatio source
+        (physicalCopyPathEndpoint source targets) occupancy := by
   induction targets generalizing source with
   | nil =>
+      have hSourceRat : (orbitSize source occupancy : ℚ) ≠ 0 :=
+        Nat.cast_ne_zero.mpr hSource
       simp [physicalCopyPathRatio, physicalCopyPathEndpoint,
-        physicalCopyOrbitRatio, hsource]
+        physicalCopyOrbitRatio, hSource, hSourceRat]
   | cons middle rest ih =>
-      have hmiddle : middle ≠ 0 := htargets middle (by simp)
-      have hrest : ∀ target ∈ rest, target ≠ 0 := by
-        intro target htarget
-        exact htargets target (by simp [htarget])
+      have hMiddle : orbitPresent middle occupancy := hTargets middle (by simp)
+      have hRest : ∀ target ∈ rest, orbitPresent target occupancy := by
+        intro target hTarget
+        exact hTargets target (by simp [hTarget])
       rw [physicalCopyPathRatio, physicalCopyPathEndpoint]
-      rw [ih middle hmiddle hrest]
+      rw [ih middle hMiddle hRest]
       exact physicalCopyOrbitRatio_telescope source middle
-        (physicalCopyPathEndpoint middle rest) hsource hmiddle
+        (physicalCopyPathEndpoint middle rest) occupancy hSource hMiddle
+        (physicalCopyPathEndpoint_present occupancy middle rest hMiddle hRest)
 
-/-- The edge map supplied by source and target vertex potentials. -/
-def vertexEdge {Vs Vt C : Type*}
-    [AddCommGroup Vs] [Module ℚ Vs]
-    [AddCommGroup Vt] [Module ℚ Vt]
-    [AddCommGroup C] [Module ℚ C]
-    (Qs : Vs ≃ₗ[ℚ] C) (Qt : Vt ≃ₗ[ℚ] C) : Vs →ₗ[ℚ] Vt :=
-  Qt.symm.toLinearMap.comp Qs.toLinearMap
+/-! ### Cubic conjugation and flatness -/
 
-/-- Transport one canonical cubic operator to a vertex. -/
+/-- Transport an endomorphism from canonical coordinates to an actual vertex. -/
 def transportedCubic {V C : Type*}
     [AddCommGroup V] [Module ℚ V]
     [AddCommGroup C] [Module ℚ C]
     (Q : V ≃ₗ[ℚ] C) (K : C →ₗ[ℚ] C) : V →ₗ[ℚ] V :=
   Q.symm.toLinearMap.comp (K.comp Q.toLinearMap)
 
-/-- Vertex-potential conjugation gives cubic naturality on the whole source. -/
-theorem vertexPotential_cubic_naturality {Vs Vt C : Type*}
+/-- Conjugate a typed canonical edge through independent vertex coordinates. -/
+def conjugatedEdge {Vs Vt Cs Ct : Type*}
+    [AddCommGroup Vs] [Module ℚ Vs]
+    [AddCommGroup Vt] [Module ℚ Vt]
+    [AddCommGroup Cs] [Module ℚ Cs]
+    [AddCommGroup Ct] [Module ℚ Ct]
+    (Qs : Vs ≃ₗ[ℚ] Cs) (Qt : Vt ≃ₗ[ℚ] Ct)
+    (D : Cs →ₗ[ℚ] Ct) : Vs →ₗ[ℚ] Vt :=
+  Qt.symm.toLinearMap.comp (D.comp Qs.toLinearMap)
+
+/-- Canonical cubic naturality transports through the two vertex equivalences. -/
+theorem vertexPotential_cubic_naturality {Vs Vt Cs Ct : Type*}
+    [AddCommGroup Vs] [Module ℚ Vs]
+    [AddCommGroup Vt] [Module ℚ Vt]
+    [AddCommGroup Cs] [Module ℚ Cs]
+    [AddCommGroup Ct] [Module ℚ Ct]
+    (Qs : Vs ≃ₗ[ℚ] Cs) (Qt : Vt ≃ₗ[ℚ] Ct)
+    (D : Cs →ₗ[ℚ] Ct) (Ks : Cs →ₗ[ℚ] Cs) (Kt : Ct →ₗ[ℚ] Ct)
+    (hK : Kt.comp D = D.comp Ks) :
+    (transportedCubic Qt Kt).comp (conjugatedEdge Qs Qt D) =
+      (conjugatedEdge Qs Qt D).comp (transportedCubic Qs Ks) := by
+  ext value
+  have hValue := LinearMap.congr_fun hK (Qs value)
+  simpa [transportedCubic, conjugatedEdge] using hValue
+
+/-- A pure coordinate coboundary edge, with no canonical edge factor. -/
+def pureVertexEdge {Vs Vt C : Type*}
     [AddCommGroup Vs] [Module ℚ Vs]
     [AddCommGroup Vt] [Module ℚ Vt]
     [AddCommGroup C] [Module ℚ C]
-    (Qs : Vs ≃ₗ[ℚ] C) (Qt : Vt ≃ₗ[ℚ] C) (K : C →ₗ[ℚ] C) :
-    (transportedCubic Qt K).comp (vertexEdge Qs Qt) =
-      (vertexEdge Qs Qt).comp (transportedCubic Qs K) := by
-  ext x
-  simp [transportedCubic, vertexEdge]
+    (Qs : Vs ≃ₗ[ℚ] C) (Qt : Vt ≃ₗ[ℚ] C) : Vs →ₗ[ℚ] Vt :=
+  Qt.symm.toLinearMap.comp Qs.toLinearMap
 
-/-- The product of vertex-coboundary edges around a triangle is the identity. -/
-theorem vertexPotential_loop_flat {V0 V1 V2 C : Type*}
+/-- Pure vertex-coboundary edges have identity holonomy around a triangle. -/
+theorem pureVertexCoboundary_triangle_flat {V0 V1 V2 C : Type*}
     [AddCommGroup V0] [Module ℚ V0]
     [AddCommGroup V1] [Module ℚ V1]
     [AddCommGroup V2] [Module ℚ V2]
     [AddCommGroup C] [Module ℚ C]
     (Q0 : V0 ≃ₗ[ℚ] C) (Q1 : V1 ≃ₗ[ℚ] C) (Q2 : V2 ≃ₗ[ℚ] C) :
-    (vertexEdge Q2 Q0).comp
-        ((vertexEdge Q1 Q2).comp (vertexEdge Q0 Q1)) = LinearMap.id := by
-  ext x
-  simp [vertexEdge]
+    (pureVertexEdge Q2 Q0).comp
+        ((pureVertexEdge Q1 Q2).comp (pureVertexEdge Q0 Q1)) = LinearMap.id := by
+  ext value
+  simp [pureVertexEdge]
 
-/-- A concrete edge-local twist used only as a negative algebraic control. -/
+/-- A concrete local twist used only as a negative algebraic control. -/
 def edgeLocalTwist : ℚ →ₗ[ℚ] ℚ := -LinearMap.id
 
 theorem edgeLocalTwist_ne_id : edgeLocalTwist ≠ LinearMap.id := by
   intro h
-  have h1 := congrArg (fun f : ℚ →ₗ[ℚ] ℚ => f 1) h
+  have h1 := congrArg (fun map : ℚ →ₗ[ℚ] ℚ => map 1) h
   have hne : (-1 : ℚ) ≠ 1 := by decide
   apply hne
   simpa [edgeLocalTwist] using h1
 
 /--
 Two identity edges and one local twist cannot arise from a common family of
-vertex potentials.  This distinguishes an arbitrary edge decoration from a
-globally flat vertex coboundary; it is not an actual geometric braid claim.
+pure vertex potentials.  This is not an actual geometric braid claim.
 -/
 theorem edgeLocalTwist_not_vertexCoboundary :
     ¬ ∃ Q0 Q1 Q2 : ℚ ≃ₗ[ℚ] ℚ,
-      vertexEdge Q0 Q1 = LinearMap.id ∧
-      vertexEdge Q1 Q2 = LinearMap.id ∧
-      vertexEdge Q2 Q0 = edgeLocalTwist := by
+      pureVertexEdge Q0 Q1 = LinearMap.id ∧
+      pureVertexEdge Q1 Q2 = LinearMap.id ∧
+      pureVertexEdge Q2 Q0 = edgeLocalTwist := by
   rintro ⟨Q0, Q1, Q2, h01, h12, h20⟩
-  have hloop := vertexPotential_loop_flat Q0 Q1 Q2
+  have hloop := pureVertexCoboundary_triangle_flat Q0 Q1 Q2
   rw [h01, h12, h20] at hloop
   apply edgeLocalTwist_ne_id
   simpa using hloop
+
+end
 
 end Smooth4PC
