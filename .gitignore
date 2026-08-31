@@ -1,0 +1,8 @@
+.worktrees/
+.lake/
+build/
+*.olean
+*.ilean
+__pycache__/
+audit_tmp/
+

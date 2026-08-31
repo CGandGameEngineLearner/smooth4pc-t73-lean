@@ -1,0 +1,120 @@
+{
+  "schema": "t73_global_falsification_chain_candidate/v1",
+  "frozen_inputs_sha256": {
+    "cup": "4AF3D190D603502FCEDCB796D0C16BC9B691C2231B451B627E734816237DC513",
+    "beta_psi": "CF37121D5E2F204A253E0B5DBA1AF8377D005A0E056676EF1286BCE17F12BC0C",
+    "closed_beta_psi": "460F069575BF35D10D17AAFAFBD4228CBD6DD52DB00D97AF6721467E8BB0DF52",
+    "degree": "EBDB1FA25B38257714F7B1A09F4367A574CA939412645E17F2048BEAE929C1B2",
+    "th1_receipt": "EE620E6B085A5F9E1C73CFDD1AD04FC0682CEC74DA3DBF8AFE70DD19C038E3A0",
+    "th1_scalar": "287720E2A7C93EA6281EBC3DA504F4353FB98DED16517C3CD6A1FE564BB92565",
+    "th2_receipt": "4D1B627C0343A1C464319704EAFADCA127902A2E4E90CF1C283004359B7ADC24",
+    "th2_scalar": "99B0CF003E6FE51990A05EBD8F4AE07E2B46CD39AAD8C6FDA3F2440CB810757A",
+    "thxy": "EABF67C0D1AE309F0281297710A283B8ED5A11D88C8E810837932313F4C53227",
+    "family_formula": "17C5B39600D4DFD15480A6F8C36B4D188805707075D968FA5993AF01DEA162D4",
+    "hj_source": "974CE1C240BFE0E6624817ED5EF45E5F162901AD1BA56D26B509AE59F27CF529",
+    "hj_relative": "4AF70BFF5C14ABFDDEDF836F13D72AEDCAD9B1AAD7CC25C6176E54D872AFED99",
+    "mww_kirby": "55DDAD567FAE2C321B26DD21BA8F45C1B62EECF57DAF52B6F24EA76B3D3056C1"
+  },
+  "retired_inputs": [
+    "all pre-hardening TH1/TH2 geometry receipts",
+    "THXY certs before EABF67C0...",
+    "historical-sphere NOT_RECOVERABLE reports as terminal verdicts",
+    "permutation-shadow rank-86 kill as an actual coend conclusion"
+  ],
+  "candidate": {
+    "matrix_A": [
+      [
+        0,
+        269,
+        1240
+      ],
+      [
+        0,
+        41,
+        189
+      ],
+      [
+        1,
+        0,
+        32
+      ]
+    ],
+    "matrix_storage": "row-major, frozen in FAMILY_SPHERE_FORMULA_CERT.json",
+    "det_A": 1,
+    "matrix_A_minus_I": [
+      [
+        -1,
+        269,
+        1240
+      ],
+      [
+        0,
+        40,
+        189
+      ],
+      [
+        1,
+        0,
+        31
+      ]
+    ],
+    "det_A_minus_I": 1,
+    "construction": "Cappell-Shaneson homotopy sphere X(41,189,73)"
+  },
+  "chain": {
+    "one_handle": {
+      "actual_cap_h3": -59072,
+      "nonzero": true,
+      "ordinary_HH0_cubic_balanced": true
+    },
+    "beta_psi": {
+      "all_levels_h3": "PASS",
+      "psi0": 0,
+      "psi1": 1
+    },
+    "degree": [
+      0,
+      494
+    ],
+    "sphere_columns": [
+      [
+        -1311,
+        8608,
+        -1
+      ],
+      [
+        -189,
+        1241,
+        0
+      ],
+      [
+        41,
+        -269,
+        1
+      ]
+    ],
+    "sphere_det": 1,
+    "sphere_scalar_pairs": {
+      "TH1": {
+        "incoming_h3": -59072,
+        "C_Sigma0_input_h3": 0,
+        "C_(Sigma1-Id)_input_h3": 0
+      },
+      "TH2": {
+        "incoming_h3": -59072,
+        "C_Sigma0_input_h3": 0,
+        "C_(Sigma1-Id)_input_h3": 0
+      },
+      "THXY": {
+        "C_Sigma0_input_h3": 0,
+        "C_(Sigma1-Id)_input_h3": 0
+      }
+    },
+    "HJ_replacement": "source hypotheses and embedded-disjoint Z-basis gate matched by frozen candidate inputs",
+    "four_handle": "MWW four-handle map preserves the class",
+    "S4_control": "S_0^2(S4;Q)=Q, concentrated in bidegree (0,0)"
+  },
+  "logical_consequence_if_hostile_passes": "a nonzero q=494 class survives the complete handle quotient for the homotopy sphere; S4 has no such class, hence X(41,189,73) is not diffeomorphic to S4",
+  "verdict": "CANDIDATE_CLOSED_PENDING_HOSTILE",
+  "not_yet": "FINAL_SPC4_FALSIFICATION"
+}
