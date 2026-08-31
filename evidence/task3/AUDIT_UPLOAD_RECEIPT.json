@@ -1,0 +1,14 @@
+{
+  "schema": "smooth4pc_t73_task3_exact_data_upload_receipt/v1",
+  "recorded_at": "2026-08-31T15:56:31+09:00",
+  "destination": "root@connect.nmb2.seetacloud.com:/root/autodl-tmp/smooth4pc_t73_lean_build_20260831/AuditArithmetic.lean",
+  "authorized_upload_count": 1,
+  "uploaded_file": "AuditArithmetic.lean",
+  "preupload_sha256": "85E1A7CBD1EEA56CCF24AA6136E5F90503FA1089E18AA48BCBE6FA3438768D37",
+  "remote_replaced_sha256": "72CF534500F1F6BBBE1E0A083400537E65366FD3278D0622C2AEE5D7CAEB0143",
+  "remote_verified_sha256": "85E1A7CBD1EEA56CCF24AA6136E5F90503FA1089E18AA48BCBE6FA3438768D37",
+  "main_certificate_sha256_before": "04C3D3FD29201A79FD2141907F8F846AEFED05D179050DF9D8937D3378727A2E",
+  "main_certificate_sha256_after": "04C3D3FD29201A79FD2141907F8F846AEFED05D179050DF9D8937D3378727A2E",
+  "task3_run_manifest_sha256": "121AD27A90D9BE103FD491EC37C2B0070B81E6AFE0A968C7FAA551416744E25E",
+  "policy": "Exactly one source file was uploaded. The synchronized data attack modified only a remote isolated copy under the authorized sandbox."
+}

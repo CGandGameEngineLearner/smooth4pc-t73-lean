@@ -1,0 +1,2 @@
+tests/fixtures/arithmetic_mutants/det_implementation_mutant.lean:12:72: error: unsolved goals
+⊢ False

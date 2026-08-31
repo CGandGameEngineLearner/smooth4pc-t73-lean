@@ -1,0 +1,45 @@
+{
+  "acquire_utc": "2026-08-31T06:52:46Z",
+  "command": "lake env lean AuditArithmetic.lean",
+  "diagnostic_lines": [
+    6,
+    10,
+    14
+  ],
+  "evidence_sha256": {
+    "audit": "31e2a10f4f48c944bd05ffe0ade6f470fc013bdd9a14152a509545d4c43e1a4f",
+    "exit": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865",
+    "stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout": "18fe3fcbb85ace9a2ba3115e5fc3bdc6721c2846170c6c159d8b552c3936059e"
+  },
+  "exit_code": 1,
+  "expected": "nonzero at named theorem with unsolved proposition",
+  "false_red_scan": "PASS",
+  "git_path": "/root/autodl-tmp/smooth4pc_t73_lean_build_20260831/audit_tmp/task3_exact_attack_20260831_7c1e/no-git-bin/git",
+  "group": "exact_data_sync_mutant",
+  "isolated_attack": {
+    "audit_sha256": "85e1a7cbd1eea56ccf24aa6136e5f90503fa1089e18aa48bcbe6fa3438768d37",
+    "determinants": [
+      1,
+      1,
+      1
+    ],
+    "isolated_certificate_sha256": "f2a4878cbb74686d40f117c903d1ea0b92dc8bf02f52d950ae6bcbeeb50727cf",
+    "main_certificate_sha256_after": "04c3d3fd29201a79fd2141907f8f846aefed05d179050df9d8937d3378727a2e",
+    "main_certificate_sha256_before": "04c3d3fd29201a79fd2141907f8f846aefed05d179050df9d8937d3378727a2e",
+    "matrix_a_entry_0_1": 269,
+    "sandbox": "/root/autodl-tmp/smooth4pc_t73_lean_build_20260831/audit_tmp/task3_exact_attack_20260831_7c1e"
+  },
+  "lockdir": "/root/autodl-tmp/smooth4pc_t73_lean_build_20260831/audit_tmp/task3_exact_attack_20260831_7c1e/.locked_lake.lock",
+  "pid": 9218,
+  "release_utc": "2026-08-31T06:52:50Z",
+  "schema": "smooth4pc_t73_task3_run_receipt/v2",
+  "source": "AuditArithmetic.lean",
+  "theorems": [
+    "exactData_matrixA",
+    "exactData_matrixAMinusI",
+    "exactData_sphereColumns"
+  ],
+  "unsolved_proposition": "False",
+  "verdict": "PASS"
+}

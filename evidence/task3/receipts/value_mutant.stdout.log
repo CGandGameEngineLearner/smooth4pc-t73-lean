@@ -1,0 +1,2 @@
+tests/fixtures/arithmetic_mutants/value_mutant.lean:8:59: error: unsolved goals
+⊢ False

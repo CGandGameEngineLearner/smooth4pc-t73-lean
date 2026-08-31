@@ -1,0 +1,28 @@
+{
+  "acquire_utc": "2026-08-31T06:50:22Z",
+  "command": "lake env lean tests/fixtures/arithmetic_mutants/value_mutant.lean",
+  "diagnostic_lines": [
+    8
+  ],
+  "evidence_sha256": {
+    "audit": "4f6cb73e80aef80e5efaebe488e514b600e512942eaf61fc001ff03ce05035cb",
+    "exit": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865",
+    "stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout": "b77ad7dfb9891f278dbb7fac75c070f2746d84d3999cd2f44f1fd71d1d982a08"
+  },
+  "exit_code": 1,
+  "expected": "nonzero at named theorem with unsolved proposition",
+  "false_red_scan": "PASS",
+  "git_path": "/root/autodl-tmp/smooth4pc_t73_lean_build_20260831/no-git-bin/git",
+  "group": "value_mutant",
+  "lockdir": "/root/autodl-tmp/smooth4pc_t73_lean_build_20260831/.locked_lake.lock",
+  "pid": 9046,
+  "release_utc": "2026-08-31T06:50:26Z",
+  "schema": "smooth4pc_t73_task3_run_receipt/v2",
+  "source": "tests/fixtures/arithmetic_mutants/value_mutant.lean",
+  "theorems": [
+    "valueMutant_h3_should_fail"
+  ],
+  "unsolved_proposition": "False",
+  "verdict": "PASS"
+}

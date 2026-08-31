@@ -2,6 +2,51 @@ import Smooth4PC.Arithmetic
 
 namespace Smooth4PC
 
+theorem exactData_matrixA :
+    matrixA = [[0, 269, 1240], [0, 41, 189], [1, 0, 32]] := by
+  norm_num [matrixA]
+
+theorem exactData_matrixAMinusI :
+    matrixAMinusI = [[-1, 269, 1240], [0, 40, 189], [1, 0, 31]] := by
+  norm_num [matrixAMinusI]
+
+theorem exactData_sphereColumns :
+    sphereColumns = [[-1311, 8608, -1], [-189, 1241, 0], [41, -269, 1]] := by
+  norm_num [sphereColumns]
+
+theorem exactData_oneHandleActualCapH3 : oneHandleActualCapH3 = -59072 := by
+  norm_num [oneHandleActualCapH3]
+
+theorem exactData_degree : degree = [0, 494] := by
+  norm_num [degree]
+
+theorem exactData_detAExpected : detAExpected = 1 := by
+  norm_num [detAExpected]
+
+theorem exactData_detAMinusIExpected : detAMinusIExpected = 1 := by
+  norm_num [detAMinusIExpected]
+
+theorem exactData_sphereDetExpected : sphereDetExpected = 1 := by
+  norm_num [sphereDetExpected]
+
+theorem exactData_th1Sigma0Scalar : th1Sigma0Scalar = 0 := by
+  norm_num [th1Sigma0Scalar]
+
+theorem exactData_th1Sigma1MinusIdScalar : th1Sigma1MinusIdScalar = 0 := by
+  norm_num [th1Sigma1MinusIdScalar]
+
+theorem exactData_th2Sigma0Scalar : th2Sigma0Scalar = 0 := by
+  norm_num [th2Sigma0Scalar]
+
+theorem exactData_th2Sigma1MinusIdScalar : th2Sigma1MinusIdScalar = 0 := by
+  norm_num [th2Sigma1MinusIdScalar]
+
+theorem exactData_thxySigma0Scalar : thxySigma0Scalar = 0 := by
+  norm_num [thxySigma0Scalar]
+
+theorem exactData_thxySigma1MinusIdScalar : thxySigma1MinusIdScalar = 0 := by
+  norm_num [thxySigma1MinusIdScalar]
+
 theorem matrixA_rowMajor_entry_0_1 : matrixEntry matrixA 0 1 = 269 := by
   norm_num [matrixEntry, matrixA]
 

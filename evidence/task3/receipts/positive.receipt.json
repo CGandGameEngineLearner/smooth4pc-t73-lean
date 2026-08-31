@@ -1,0 +1,19 @@
+{
+  "acquire_utc": "2026-08-31T06:49:59Z",
+  "command": "lake env lean AuditArithmetic.lean",
+  "evidence_sha256": {
+    "audit": "752d2fe377f52b305ca17203fb0aa596647ee085fffdafeb16edb2adfcc706be",
+    "exit": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    "stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "exit_code": 0,
+  "expected": "exit 0",
+  "git_path": "/root/autodl-tmp/smooth4pc_t73_lean_build_20260831/no-git-bin/git",
+  "group": "positive",
+  "lockdir": "/root/autodl-tmp/smooth4pc_t73_lean_build_20260831/.locked_lake.lock",
+  "pid": 8908,
+  "release_utc": "2026-08-31T06:50:04Z",
+  "schema": "smooth4pc_t73_task3_run_receipt/v2",
+  "verdict": "PASS"
+}

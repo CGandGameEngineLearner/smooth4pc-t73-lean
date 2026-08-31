@@ -1,0 +1,6 @@
+AuditArithmetic.lean:6:60: error: unsolved goals
+⊢ False
+AuditArithmetic.lean:10:67: error: unsolved goals
+⊢ False
+AuditArithmetic.lean:14:75: error: unsolved goals
+⊢ False

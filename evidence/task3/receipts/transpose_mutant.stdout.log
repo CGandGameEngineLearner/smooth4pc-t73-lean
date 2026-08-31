@@ -1,0 +1,2 @@
+tests/fixtures/arithmetic_mutants/transpose_mutant.lean:9:52: error: unsolved goals
+⊢ False

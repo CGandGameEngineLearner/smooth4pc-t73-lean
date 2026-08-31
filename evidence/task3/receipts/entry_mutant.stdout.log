@@ -1,0 +1,2 @@
+tests/fixtures/arithmetic_mutants/entry_mutant.lean:8:69: error: unsolved goals
+⊢ False

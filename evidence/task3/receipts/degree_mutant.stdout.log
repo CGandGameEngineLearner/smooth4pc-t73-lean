@@ -1,0 +1,2 @@
+tests/fixtures/arithmetic_mutants/degree_mutant.lean:7:70: error: unsolved goals
+⊢ False
