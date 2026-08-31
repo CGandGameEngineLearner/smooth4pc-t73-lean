@@ -1,0 +1,5 @@
+COMMAND=lake env lean Smoke.lean
+MODE=pinned-path-manifest-readonly-mathlib-git-forbidden-no-lake-update
+START_UTC=2026-08-31T04:52:06Z
+EXIT_CODE=0
+END_UTC=2026-08-31T04:52:13Z
