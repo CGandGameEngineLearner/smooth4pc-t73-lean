@@ -479,9 +479,9 @@ alone does not move \(\mathsf R_t^0\) through \(\widehat D_{e,0}\). Premise
 **E9** also contains the normalized row-level cubic identities
 
 \[
-\lambda_tK_t\mathsf R_t^0\widehat D_{e,0}^{,0}=0,
+\lambda_tK_t\mathsf R_t^0\widehat D_{e,0}^{0}=0,
 \qquad
-\lambda_tK_t\mathsf R_t^0\widehat D_{e,0}^{,1}
+\lambda_tK_t\mathsf R_t^0\widehat D_{e,0}^{1}
 =\lambda_sK_s\mathsf R_s^0.
 \tag{11.2b}
 \]
