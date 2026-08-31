@@ -1,0 +1,7 @@
+scripts/locked_lake.sh: OK
+logs/LOCKED_LAKE_AUDIT.log: OK
+logs/LOCKED_LAKE_RUN_STDOUT.log: OK
+logs/LOCKED_LAKE_RUN_STDERR.log: OK
+logs/LOCKED_LAKE_WRAPPER_EXIT: OK
+logs/GIT_FORBIDDEN.log: OK
+logs/LOCKED_LAKE_RUN_RECEIPT.json: OK

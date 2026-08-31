@@ -15,5 +15,17 @@
     "test_bytes": 2616,
     "test_sha256": "D956FFB02BA5D0BCD9D453330DCB78A8F8AB4C4D2CBBAF9AB3E30C1B377A44F8"
   },
+  "local_archive": {
+    "root": "evidence/task1/locked_lake/remote",
+    "relative_paths_preserved": true,
+    "remote_manifest": "LOCKED_LAKE_RUN_MANIFEST.sha256",
+    "remote_manifest_sha256": "D88CC1E44622A68E7A999104485095C8216ED58E3701C38313431B5D25492BF5",
+    "direct_replay_command": "sha256sum -c LOCKED_LAKE_RUN_MANIFEST.sha256",
+    "direct_replay_output": "DIRECT_SHA256_REPLAY.log",
+    "direct_replay_output_sha256": "AE7BFBE60C319A827D601A2463D6474D9139BCB84C7C0F93782B48E89E4A9E1A",
+    "verified_rows": 7,
+    "mismatch_count": 0,
+    "flattened_duplicates_retained": false
+  },
   "policy": "Upload only scripts/locked_lake.sh. Do not upload the test or receipt."
 }
