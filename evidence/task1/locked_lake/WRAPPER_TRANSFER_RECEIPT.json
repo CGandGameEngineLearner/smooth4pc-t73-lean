@@ -1,0 +1,19 @@
+{
+  "schema": "smooth4pc_t73_locked_lake_transfer_receipt/v1",
+  "recorded_at": "2026-08-31T14:23:00+09:00",
+  "destination": "root@connect.nmb2.seetacloud.com:/root/autodl-tmp/smooth4pc_t73_lean_build_20260831/scripts/locked_lake.sh",
+  "authorized_upload_count": 1,
+  "preupload": {
+    "file": "scripts/locked_lake.sh",
+    "bytes": 3250,
+    "sha256": "303428886EE782E112AFFAD572C05D510EC9DDAB852197A0A2B2BB1E0418078C"
+  },
+  "local_test": {
+    "command": "wsl.exe -d Ubuntu-24.04 -- bash -lc 'bash tests/test_locked_lake.sh'",
+    "result": "PASS",
+    "test_file": "tests/test_locked_lake.sh",
+    "test_bytes": 2616,
+    "test_sha256": "D956FFB02BA5D0BCD9D453330DCB78A8F8AB4C4D2CBBAF9AB3E30C1B377A44F8"
+  },
+  "policy": "Upload only scripts/locked_lake.sh. Do not upload the test or receipt."
+}

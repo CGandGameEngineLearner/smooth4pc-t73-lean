@@ -1,0 +1,31 @@
+{
+  "schema": "smooth4pc_t73_locked_lake_remote_run_receipt/v1",
+  "verdict": "PASS",
+  "command": "lake env lean Smoke.lean",
+  "wrapper": {
+    "path": "scripts/locked_lake.sh",
+    "bytes": 3250,
+    "sha256": "303428886ee782e112affad572c05d510ec9ddab852197a0a2b2bb1e0418078c"
+  },
+  "lock": {
+    "pid": 5515,
+    "acquire_utc": "2026-08-31T05:24:45Z",
+    "release_utc": "2026-08-31T05:24:49Z",
+    "lockdir": "/root/autodl-tmp/smooth4pc_t73_lean_build_20260831/.locked_lake.lock",
+    "released": true
+  },
+  "git": {
+    "command_v": "/root/autodl-tmp/smooth4pc_t73_lean_build_20260831/no-git-bin/git",
+    "expected_stub": "/root/autodl-tmp/smooth4pc_t73_lean_build_20260831/no-git-bin/git",
+    "invocation_log_bytes": 0
+  },
+  "lake_exit": 0,
+  "wrapper_exit": 0,
+  "evidence_sha256": {
+    "logs/LOCKED_LAKE_AUDIT.log": "224db46324f47971151a2149ea32e4fefd7afb6762bf007c438e073a24de3e02",
+    "logs/LOCKED_LAKE_RUN_STDOUT.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "logs/LOCKED_LAKE_RUN_STDERR.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "logs/LOCKED_LAKE_WRAPPER_EXIT": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    "logs/GIT_FORBIDDEN.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}
