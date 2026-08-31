@@ -2,7 +2,7 @@
 -- Source certificate SHA256: 8B4A0B39ABABD7CFA284E67189A8AF4E60473F88CADC8722A1ABA8321B72EB86
 -- Regenerate with scripts/generate_certificate_data.py; do not edit.
 
-namespace Smooth4PC.CertificateData
+namespace Smooth4PC
 
 def sourceCertificateSha256 : String := "8B4A0B39ABABD7CFA284E67189A8AF4E60473F88CADC8722A1ABA8321B72EB86"
 def matrixA : List (List Int) := [[0, 269, 1240], [0, 41, 189], [1, 0, 32]]
@@ -20,4 +20,4 @@ def th2Sigma1MinusIdScalar : Int := 0
 def thxySigma0Scalar : Int := 0
 def thxySigma1MinusIdScalar : Int := 0
 
-end Smooth4PC.CertificateData
+end Smooth4PC

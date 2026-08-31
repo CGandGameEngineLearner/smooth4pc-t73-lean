@@ -135,7 +135,7 @@ def render_lean(data: dict[str, Any], source_sha256: str) -> bytes:
         f"-- Source certificate SHA256: {source_sha256}",
         "-- Regenerate with scripts/generate_certificate_data.py; do not edit.",
         "",
-        "namespace Smooth4PC.CertificateData",
+        "namespace Smooth4PC",
         "",
         f'def sourceCertificateSha256 : String := "{source_sha256}"',
         f"def matrixA : List (List Int) := {_lean_int_matrix(data['matrix_a'])}",
@@ -162,7 +162,7 @@ def render_lean(data: dict[str, Any], source_sha256: str) -> bytes:
         "def thxySigma1MinusIdScalar : Int := "
         + _lean_int(data["thxy_sigma1_minus_id_scalar"]),
         "",
-        "end Smooth4PC.CertificateData",
+        "end Smooth4PC",
         "",
     ]
     return "\n".join(lines).encode("utf-8")
