@@ -3,6 +3,17 @@
   "recorded_at": "2026-08-31T14:07:11+09:00",
   "local_authority_worktree": "D:\\toffee_code_in_Cursor\\smooth4pc-t73-lean\\.worktrees\\formalize-t73",
   "remote_no_git_sandbox": "/root/autodl-tmp/smooth4pc_t73_lean_build_20260831",
+  "global_falsification_certificate": {
+    "path": "data/GLOBAL_FALSIFICATION_CHAIN_CERT.json",
+    "sha256": "8B4A0B39ABABD7CFA284E67189A8AF4E60473F88CADC8722A1ABA8321B72EB86",
+    "bytes": 3545,
+    "role": "frozen science certificate bound by the local authority worktree"
+  },
+  "environment_history": {
+    "preupload_environment_sha256": "1AFF47A7D717E6A1B8A06959D1EDA02B69487FB861C94243DF9D77D61B9142FD",
+    "post_run_environment_v2_sha256": "4EF0CC4FC64A96A1178DE255A0BC87CFA00D7EEC729EDE59388F443C2906EF8D",
+    "post_run_augmentation": "Local-only authority augmentation added after the clean remote replay to bind the frozen science certificate. The five-file remote snapshot, TRANSFER_RECEIPT, remote manifests, and smoke evidence are unchanged; no remote file was modified and Smoke was not rerun."
+  },
   "toolchain": {
     "lean": "Lean (version 4.32.1, x86_64-unknown-linux-gnu, commit f054605aea4b840552cca2e725580bffd1e1b704, Release)",
     "lake": "Lake version 5.0.0-src+f054605 (Lean version 4.32.1)",
