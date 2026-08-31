@@ -744,3 +744,37 @@ CANDIDATE_PROOF_PENDING_INDEPENDENT_REVIEW
 Even zero-`sorry` Lean proves only the conditional implication unless the
 remaining **E1--E13** premises are proved. This document
 claims neither formal verification nor external acceptance.
+
+## 17. Decisive post-audit boundary
+
+The subsequent premise attacks give the following mathematical, rather than
+procedural, status.
+
+1. **E1 is reduced but open.** One relative framed Hattori movie would generate
+   the entire off-diagonal family and both action squares. The existing
+   incidence/word ledger does not determine its relative mapping-class class;
+   a pure ribbon braid is invisible to the recorded counts and framing integer.
+
+2. **Weak E7 is a conditional deduction.** If the delivered punctured smooth
+   handle realization really has exactly the declared three 3-handles to
+   (S^3), its actual attaching spheres are the belt-sphere basis after turning
+   the cobordism upside down. The serialized object declares, but does not
+   geometrically construct, those attaching spheres.
+
+3. **E8 is the decisive unresolved map.** MWW computes the easy
+   (Delta_+) hemisphere. No existing artifact proves that the hard
+   (Phi^{-1}Psi_{Delta_-}Phi) map on every actual cabled state is a
+   split-tree operator up to one coherent vertex transport. A Peiffer word and
+   the unimodular matrix (I-Lambda^2A) do not supply the missing embedded,
+   framed actual-to-canonical corridors; knotting a carrier preserves those
+   algebraic data and destroys a product-annulus conclusion.
+
+4. **Two proposed shortcuts fail.** Unimodularity of the ordinary
+   (3)-to-(2) boundary matrix does not imply clean geometric (2/3)-handle
+   cancellation; group-ring/intersection and embedded-slide data are missing.
+   Restricting to quantum degree (494) is not a finite computation, because
+   dotted psi stabilization and the three-handle lift lattice remain in the
+   same normalized degree.
+
+Consequently the displayed implication is a sound conditional theorem, but
+the current mathematics does **not** establish an SPC4 counterexample.
