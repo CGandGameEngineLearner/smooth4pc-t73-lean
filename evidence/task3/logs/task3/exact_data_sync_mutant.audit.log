@@ -1,0 +1,4 @@
+event=acquire pid=9218 acquire_utc=2026-08-31T06:52:46Z lockdir=/root/autodl-tmp/smooth4pc_t73_lean_build_20260831/audit_tmp/task3_exact_attack_20260831_7c1e/.locked_lake.lock git_path=/root/autodl-tmp/smooth4pc_t73_lean_build_20260831/audit_tmp/task3_exact_attack_20260831_7c1e/no-git-bin/git
+event=command_start pid=9218 lake=/root/autodl-tmp/lean/elan/toolchains/leanprover--lean4---v4.32.1/bin/lake argc=3 arg=env arg=lean arg=AuditArithmetic.lean
+event=command_exit pid=9218 exit=1 utc=2026-08-31T06:52:50Z
+event=release pid=9218 acquire_utc=2026-08-31T06:52:46Z release_utc=2026-08-31T06:52:50Z exit=1

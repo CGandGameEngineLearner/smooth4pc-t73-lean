@@ -1,0 +1,17 @@
+{
+  "schema": "smooth4pc_t73_task3_transfer_receipt/v1",
+  "recorded_at": "2026-08-31T15:05:12+09:00",
+  "destination": "root@connect.nmb2.seetacloud.com:/root/autodl-tmp/smooth4pc_t73_lean_build_20260831/",
+  "authorized_upload_count": 8,
+  "files": [
+    {"path": "Smooth4PC/CertificateData.lean", "bytes": 1001, "sha256": "04C3D3FD29201A79FD2141907F8F846AEFED05D179050DF9D8937D3378727A2E"},
+    {"path": "Smooth4PC/Arithmetic.lean", "bytes": 504, "sha256": "C42ECEF1EC183AA3E823242E882BA25AC18158801939AB2691927B73C6FF810C"},
+    {"path": "AuditArithmetic.lean", "bytes": 1475, "sha256": "72CF534500F1F6BBBE1E0A083400537E65366FD3278D0622C2AEE5D7CAEB0143"},
+    {"path": "tests/fixtures/arithmetic_mutants/degree_mutant.lean", "bytes": 216, "sha256": "2472C4F26FC6D27D2FCABE85257922D7EADE8B184BFCF2707089999594CD3F60"},
+    {"path": "tests/fixtures/arithmetic_mutants/det_implementation_mutant.lean", "bytes": 363, "sha256": "41E0E4617CE2F22557615B753F6BC164FA91169BA67780945BC0233CBBDDACCF"},
+    {"path": "tests/fixtures/arithmetic_mutants/entry_mutant.lean", "bytes": 276, "sha256": "4E0A205ED38849DD245513CFED7B970F9ADD2EBC9D8005CF291158C6B25C9CBA"},
+    {"path": "tests/fixtures/arithmetic_mutants/transpose_mutant.lean", "bytes": 326, "sha256": "9E14E9FC54D18ED84999AEE68F3AECCC697C1081FB4584B65F8039A03A83C612"},
+    {"path": "tests/fixtures/arithmetic_mutants/value_mutant.lean", "bytes": 273, "sha256": "9D812AB336CA5968B994BB36C62B27E09A57B660EA959FF10938E4D19A0471DE"}
+  ],
+  "policy": "Upload exactly these eight files. Do not upload this receipt or an additional manifest."
+}

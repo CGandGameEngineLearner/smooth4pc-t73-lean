@@ -101,7 +101,8 @@ class ArithmeticAuditTests(unittest.TestCase):
         cls.generator = cls.repo / "scripts" / "generate_certificate_data.py"
         cls.generated_checker = cls.repo / "scripts" / "check_generated_data.py"
         cls.certificate = cls.repo / "data" / "GLOBAL_FALSIFICATION_CHAIN_CERT.json"
-        cls.task3_evidence = cls.repo / "evidence" / "task3" / "receipts"
+        cls.task3_root = cls.repo / "evidence" / "task3"
+        cls.task3_evidence = cls.task3_root / "logs" / "task3"
 
     def run_script(
         self, script: Path, *args: object, cwd: Path | None = None
@@ -262,16 +263,23 @@ class ArithmeticAuditTests(unittest.TestCase):
         self.assertNotEqual(attacked_exit, 0)
         self.assertIn("exact-data gate: FAIL", attacked_message)
 
-    def test_task3_minimal_receipt_set_and_upload_record(self) -> None:
+    def test_task3_evidence_tree_and_upload_records(self) -> None:
         expected_files = {
             f"{group}.{suffix}"
             for group in TASK3_GROUPS
-            for suffix in ("receipt.json", "stdout.log")
+            for suffix in (
+                "audit.log",
+                "stdout.log",
+                "stderr.log",
+                "exit",
+                "receipt.json",
+            )
         }
+        expected_files.add("TASK3_RUN_MANIFEST.sha256")
         actual_files = {path.name for path in self.task3_evidence.glob("*")}
         self.assertEqual(actual_files, expected_files)
 
-        upload_receipt_path = self.task3_evidence.parent / "AUDIT_UPLOAD_RECEIPT.json"
+        upload_receipt_path = self.task3_root / "AUDIT_UPLOAD_RECEIPT.json"
         self.assertTrue(upload_receipt_path.is_file(), f"missing {upload_receipt_path}")
         upload_receipt = json.loads(upload_receipt_path.read_text(encoding="utf-8"))
         self.assertEqual(upload_receipt["authorized_upload_count"], 1)
@@ -293,6 +301,31 @@ class ArithmeticAuditTests(unittest.TestCase):
             EXPECTED_TASK3_MANIFEST_SHA256,
         )
 
+        transfer_path = self.task3_root / "TASK3_TRANSFER_RECEIPT.json"
+        transfer = json.loads(transfer_path.read_text(encoding="utf-8"))
+        transferred = {row["path"]: row for row in transfer["files"]}
+        for group, (source_path, _, _) in TASK3_GROUPS.items():
+            if group in ("positive", "exact_data_sync_mutant"):
+                continue
+            row = transferred[source_path]
+            source = self.repo / source_path
+            self.assertEqual(source.stat().st_size, row["bytes"])
+            self.assertEqual(
+                hashlib.sha256(source.read_bytes()).hexdigest().upper(),
+                row["sha256"],
+            )
+
+        manifest = self.task3_evidence / "TASK3_RUN_MANIFEST.sha256"
+        self.assertEqual(
+            hashlib.sha256(manifest.read_bytes()).hexdigest().upper(),
+            EXPECTED_TASK3_MANIFEST_SHA256,
+        )
+        for line in manifest.read_text(encoding="utf-8").splitlines():
+            digest, relative = line.split("  ", 1)
+            artifact = self.task3_root / relative
+            self.assertTrue(artifact.is_file(), f"missing manifest artifact {artifact}")
+            self.assertEqual(hashlib.sha256(artifact.read_bytes()).hexdigest(), digest)
+
     def test_task3_locked_receipts_and_raw_diagnostics(self) -> None:
         evidence = self.task3_evidence
         self.assertTrue(evidence.is_dir(), f"missing {evidence}")
@@ -304,6 +337,11 @@ class ArithmeticAuditTests(unittest.TestCase):
                 stdout = (evidence / f"{group}.stdout.log").read_text(
                     encoding="utf-8"
                 )
+                stderr_path = evidence / f"{group}.stderr.log"
+                exit_path = evidence / f"{group}.exit"
+                audit_path = evidence / f"{group}.audit.log"
+                stderr = stderr_path.read_text(encoding="utf-8")
+                exit_text = exit_path.read_text(encoding="utf-8")
                 self.assertEqual(
                     receipt["schema"], "smooth4pc_t73_task3_run_receipt/v2"
                 )
@@ -314,6 +352,18 @@ class ArithmeticAuditTests(unittest.TestCase):
                 self.assertIn(".locked_lake.lock", receipt["lockdir"])
                 self.assertTrue(receipt["git_path"].endswith("/no-git-bin/git"))
                 self.assertIn(source_path, receipt["command"])
+                self.assertEqual(int(exit_text.strip()), expected_exit)
+                self.assertEqual(stderr, "")
+                for key, path in {
+                    "stdout": evidence / f"{group}.stdout.log",
+                    "stderr": stderr_path,
+                    "exit": exit_path,
+                    "audit": audit_path,
+                }.items():
+                    self.assertEqual(
+                        hashlib.sha256(path.read_bytes()).hexdigest(),
+                        receipt["evidence_sha256"][key],
+                    )
 
                 if theorems is None:
                     self.assertEqual(stdout, "")

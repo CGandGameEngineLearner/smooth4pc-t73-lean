@@ -1,0 +1,4 @@
+event=acquire pid=8997 acquire_utc=2026-08-31T06:50:13Z lockdir=/root/autodl-tmp/smooth4pc_t73_lean_build_20260831/.locked_lake.lock git_path=/root/autodl-tmp/smooth4pc_t73_lean_build_20260831/no-git-bin/git
+event=command_start pid=8997 lake=/root/autodl-tmp/lean/elan/toolchains/leanprover--lean4---v4.32.1/bin/lake argc=3 arg=env arg=lean arg=tests/fixtures/arithmetic_mutants/entry_mutant.lean
+event=command_exit pid=8997 exit=1 utc=2026-08-31T06:50:17Z
+event=release pid=8997 acquire_utc=2026-08-31T06:50:13Z release_utc=2026-08-31T06:50:17Z exit=1
