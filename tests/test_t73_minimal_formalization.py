@@ -29,9 +29,23 @@ AXIOM_THEOREMS = (
     "Smooth4PC.T73.sphereRelation_le_ker",
     "Smooth4PC.T73.descendedSphereRow_comp_quotient",
     "Smooth4PC.T73.sphereClass_ne_zero",
+    "Smooth4PC.DiagonalShadow.cyclicRelation_le_ker",
+    "Smooth4PC.DiagonalShadow.descendedRow_comp_quotient",
+    "Smooth4PC.CoefficientBimoduleMorphism.cyclicRelation_le_comap",
+    "Smooth4PC.ShadowMorphism.descendedRow_naturality",
+    "Smooth4PC.T73.aMinusIInverse_left",
+    "Smooth4PC.T73.aMinusIInverse_right",
+    "Smooth4PC.T73.aMinusICokernel_eq_zero",
+    "Smooth4PC.T73.hTwoMinusIInverse_left",
+    "Smooth4PC.T73.hTwoMinusIInverse_right",
+    "Smooth4PC.T73.hTwoMinusICokernel_eq_zero",
+    "Smooth4PC.T73.t73CSLinearObstructionsVanish",
+    "Smooth4PC.T73.t73IsHomotopySphere_of_topology",
+    "Smooth4PC.T73.s4DegreeZero_of_reduction",
     "Smooth4PC.T73.conditionalNotStandard",
     "Smooth4PC.T73.conditionalIsHomotopySphere",
     "Smooth4PC.T73.conditionalCounterexample",
+    "Smooth4PC.T73.conditionalCounterexample_of_topology",
 )
 FOUNDATIONAL_AXIOMS = {"propext", "Quot.sound", "Classical.choice"}
 SPHERE_CONSUMER = r"""
@@ -86,6 +100,10 @@ class T73FiniteFormalizationTests(unittest.TestCase):
         cls.conditional = cls.repo / "Smooth4PC" / "T73Conditional.lean"
         cls.sphere_quotient = cls.repo / "Smooth4PC" / "T73SphereQuotient.lean"
         cls.split_movie = cls.repo / "Smooth4PC" / "T73SplitMovie.lean"
+        cls.coefficient_trace = cls.repo / "Smooth4PC" / "CoefficientTrace.lean"
+        cls.cs_algebra = cls.repo / "Smooth4PC" / "T73CSAlgebra.lean"
+        cls.cs_topology = cls.repo / "Smooth4PC" / "T73CSTopology.lean"
+        cls.s4_control = cls.repo / "Smooth4PC" / "T73S4Control.lean"
         cls.audit = cls.repo / "T73Audit.lean"
         cls.lake = resolve_lake()
 
@@ -157,6 +175,13 @@ class T73FiniteFormalizationTests(unittest.TestCase):
         self.assertTrue(
             self.split_movie.is_file(), "missing Smooth4PC/T73SplitMovie.lean"
         )
+        for path in (
+            self.coefficient_trace,
+            self.cs_algebra,
+            self.cs_topology,
+            self.s4_control,
+        ):
+            self.assertTrue(path.is_file(), f"missing {path.name}")
         self.assertTrue(self.audit.is_file(), "missing T73Audit.lean")
 
         finite_source = self.finite.read_text(encoding="utf-8")
@@ -164,6 +189,10 @@ class T73FiniteFormalizationTests(unittest.TestCase):
         conditional_source = self.conditional.read_text(encoding="utf-8")
         sphere_quotient_source = self.sphere_quotient.read_text(encoding="utf-8")
         split_movie_source = self.split_movie.read_text(encoding="utf-8")
+        coefficient_trace_source = self.coefficient_trace.read_text(encoding="utf-8")
+        cs_algebra_source = self.cs_algebra.read_text(encoding="utf-8")
+        cs_topology_source = self.cs_topology.read_text(encoding="utf-8")
+        s4_control_source = self.s4_control.read_text(encoding="utf-8")
         audit_source = self.audit.read_text(encoding="utf-8")
         for token in (
             "sorry",
@@ -182,6 +211,10 @@ class T73FiniteFormalizationTests(unittest.TestCase):
                 + conditional_source
                 + sphere_quotient_source
                 + split_movie_source
+                + coefficient_trace_source
+                + cs_algebra_source
+                + cs_topology_source
+                + s4_control_source
                 + audit_source,
                 rf"\b{re.escape(token)}\b",
                 f"forbidden Lean token: {token}",
@@ -216,7 +249,13 @@ class T73FiniteFormalizationTests(unittest.TestCase):
             arithmetic_olean = olean_root / "Smooth4PC" / "Arithmetic.olean"
             interfaces = self.repo / "Smooth4PC" / "Interfaces.lean"
             interfaces_olean = olean_root / "Smooth4PC" / "Interfaces.olean"
+            coefficient_trace_olean = (
+                olean_root / "Smooth4PC" / "CoefficientTrace.olean"
+            )
             finite_olean = olean_root / "Smooth4PC" / "T73Finite.olean"
+            cs_algebra_olean = olean_root / "Smooth4PC" / "T73CSAlgebra.olean"
+            cs_topology_olean = olean_root / "Smooth4PC" / "T73CSTopology.olean"
+            s4_control_olean = olean_root / "Smooth4PC" / "T73S4Control.olean"
             sphere_quotient_olean = (
                 olean_root / "Smooth4PC" / "T73SphereQuotient.olean"
             )
@@ -228,10 +267,14 @@ class T73FiniteFormalizationTests(unittest.TestCase):
                 (certificate_data, certificate_data_olean),
                 (arithmetic, arithmetic_olean),
                 (interfaces, interfaces_olean),
+                (self.coefficient_trace, coefficient_trace_olean),
                 (self.finite, finite_olean),
+                (self.external, external_olean),
+                (self.cs_algebra, cs_algebra_olean),
+                (self.cs_topology, cs_topology_olean),
+                (self.s4_control, s4_control_olean),
                 (self.split_movie, split_movie_olean),
                 (self.sphere_quotient, sphere_quotient_olean),
-                (self.external, external_olean),
                 (self.conditional, conditional_olean),
             ):
                 build = self.run_lean(source, olean_root, target)

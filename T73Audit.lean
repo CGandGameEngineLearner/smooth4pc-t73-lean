@@ -1,5 +1,7 @@
 import Smooth4PC.T73Conditional
 import Smooth4PC.T73SphereQuotient
+import Smooth4PC.T73S4Control
+import Smooth4PC.CoefficientTrace
 
 open Lean Elab Command Meta
 
@@ -29,9 +31,23 @@ def finiteAuditDeclarations : List Name := [
   `Smooth4PC.T73.sphereRelation_le_ker,
   `Smooth4PC.T73.descendedSphereRow_comp_quotient,
   `Smooth4PC.T73.sphereClass_ne_zero,
+  `Smooth4PC.DiagonalShadow.cyclicRelation_le_ker,
+  `Smooth4PC.DiagonalShadow.descendedRow_comp_quotient,
+  `Smooth4PC.CoefficientBimoduleMorphism.cyclicRelation_le_comap,
+  `Smooth4PC.ShadowMorphism.descendedRow_naturality,
+  `Smooth4PC.T73.aMinusIInverse_left,
+  `Smooth4PC.T73.aMinusIInverse_right,
+  `Smooth4PC.T73.aMinusICokernel_eq_zero,
+  `Smooth4PC.T73.hTwoMinusIInverse_left,
+  `Smooth4PC.T73.hTwoMinusIInverse_right,
+  `Smooth4PC.T73.hTwoMinusICokernel_eq_zero,
+  `Smooth4PC.T73.t73CSLinearObstructionsVanish,
+  `Smooth4PC.T73.t73IsHomotopySphere_of_topology,
+  `Smooth4PC.T73.s4DegreeZero_of_reduction,
   `Smooth4PC.T73.conditionalNotStandard,
   `Smooth4PC.T73.conditionalIsHomotopySphere,
-  `Smooth4PC.T73.conditionalCounterexample
+  `Smooth4PC.T73.conditionalCounterexample,
+  `Smooth4PC.T73.conditionalCounterexample_of_topology
 ]
 
 elab "dumpT73Finite" : command => do
@@ -69,8 +85,22 @@ dumpT73Finite
 #print axioms sphereRelation_le_ker
 #print axioms descendedSphereRow_comp_quotient
 #print axioms sphereClass_ne_zero
+#print axioms Smooth4PC.DiagonalShadow.cyclicRelation_le_ker
+#print axioms Smooth4PC.DiagonalShadow.descendedRow_comp_quotient
+#print axioms Smooth4PC.CoefficientBimoduleMorphism.cyclicRelation_le_comap
+#print axioms Smooth4PC.ShadowMorphism.descendedRow_naturality
+#print axioms aMinusIInverse_left
+#print axioms aMinusIInverse_right
+#print axioms aMinusICokernel_eq_zero
+#print axioms hTwoMinusIInverse_left
+#print axioms hTwoMinusIInverse_right
+#print axioms hTwoMinusICokernel_eq_zero
+#print axioms t73CSLinearObstructionsVanish
+#print axioms t73IsHomotopySphere_of_topology
+#print axioms s4DegreeZero_of_reduction
 #print axioms conditionalNotStandard
 #print axioms conditionalIsHomotopySphere
 #print axioms conditionalCounterexample
+#print axioms conditionalCounterexample_of_topology
 
 end Smooth4PC.T73

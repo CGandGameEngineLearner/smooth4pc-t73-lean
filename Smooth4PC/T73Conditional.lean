@@ -1,4 +1,4 @@
-import Smooth4PC.T73External
+import Smooth4PC.T73CSTopology
 
 namespace Smooth4PC.T73
 
@@ -49,5 +49,13 @@ theorem conditionalCounterexample {u : Universe}
     (geom : ExternalGeometry u) (cs : CSExternalGeometry u) :
     u.IsHomotopySphere u.candidate ∧ ¬ u.Diffeomorphic u.candidate u.S4 :=
   ⟨conditionalIsHomotopySphere cs, conditionalNotStandard geom⟩
+
+/-- The joined conclusion with all candidate-specific Cappell--Shaneson
+lattice algebra discharged internally. -/
+theorem conditionalCounterexample_of_topology {u : TopologicalUniverse}
+    (geom : ExternalGeometry u.toUniverse) (topology : CSTopologyData u) :
+    u.toUniverse.IsHomotopySphere u.toUniverse.candidate ∧
+      ¬ u.toUniverse.Diffeomorphic u.toUniverse.candidate u.toUniverse.S4 :=
+  ⟨t73IsHomotopySphere_of_topology topology, conditionalNotStandard geom⟩
 
 end Smooth4PC.T73
