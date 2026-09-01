@@ -60,8 +60,9 @@ cabled-quotient/core-attachment isomorphism. These maps are distinct from the
 raw endpoint shadow.
 
 For a cut tangle \(R_s\), MWW's one-handle theorem gives an isomorphism
-\(\Gamma_s\) from its coefficient \(HH_0\) to the unshifted raw summand. When a
-coefficient quantum shadow \(\mathsf S_s\) is supplied, define
+\(\Gamma_s\) from its coefficient \(HH_0\) to the unshifted raw summand.  For
+every finite cabled state, take the coefficient quantum shadow
+\(\mathsf S_s\) supplied by the BPW/BHPW quantum-Hochschild shadow and define
 
 \[
 C_s \xrightarrow{\ \Gamma_s^{-1}\ }
@@ -71,15 +72,69 @@ HH_0(\mathcal A_s;M_{R_s})
 \tag{1.2}
 \]
 
-The arrows in (1.2) include the one-handle and displayed cabled grading
-normalizations; Section 5 writes them numerically at \(s_0\).
+Here \(\mathsf S_s\) is an actual map, not an assumed Morita equivalence.
+Let \(\mathcal A_s\) be the product of the gate tangle categories and let
+\(M_{R_s}\) be MWW's coefficient bimodule.  The balanced cut boundary makes
+\(R_s\) an endo-1-morphism \(F_{R_s}\), and pivotal closure gives, for all
+objects \(T,T'\), the natural component identification
 
-Section 5 constructs (1.2) at the selected state. Sections 7--11 construct the
-specific divided rows needed on the quotient; no unrestricted all-state raw
-shadow theorem is assumed. Below the superscript is suppressed:
-\(\Theta_s\) always means the raw map, not a map already descended through the
-cabled quotient. The final presentation starts from \(\bigoplus_s C_s\), not
-from endpoint spaces.
+\[
+\chi_{T,T'}:
+M_{R_s}(T,T')
+=\operatorname{Kh}_2(R_s\cup T'\cup\overline T)
+\xrightarrow{\cong}
+2\operatorname{Hom}(T,F_{R_s}T'),
+\tag{1.2a}
+\]
+
+with the displayed MWW grading shift.  Under \(\chi\), the two MWW gluing
+actions are respectively \(F_{R_s}(f)\circ m\) and \(m\circ f\).  Thus a
+diagonal element \(m\in M_{R_s}(T,T)\) is a vertical-trace component, and the
+universal vertical-to-horizontal trace kills exactly the coefficient
+relations \(F_{R_s}(f)m-mf\).  This constructs \(\mathsf S_s\) on the full
+coefficient \(HH_0\), without requiring cup diagrams to generate all tangle
+objects or requiring \(\mathsf S_s\) to be injective.  For crossing tangles,
+use the strict Khovanov complex and the induced Lefschetz preshadow in the
+homotopy category.  The construction is first made in the quantum trace and
+then specialized/completed at \(q=1+h\); ordinary \(HH_0\) is not silently
+identified with the quantum trace.
+
+The component formula and its action compatibility are the closure definition
+of the Chen--Khovanov tangle bimodule
+(BPW `homology/chen-khovanov.tex:53-92,290-303`) applied to MWW's
+three-ball category and gluing bimodule
+(`1handles.tex:240-299`).  No additive-generation assertion is used.
+
+The arrows in (1.2) include the one-handle and displayed cabled grading
+normalizations; Section 5 writes them numerically at \(s_0\).  BPW's
+vertical-to-horizontal natural functor (shadows/vertical.tex:26-58),
+functoriality of the horizontal trace (shadows/functoriality.tex:170-206),
+its quantum universal form (shadows/graded.tex:101-110), and the definition
+of the annular functor as
+\(qHH_0\circ qhTr(F_{\rm CK})\)
+(quantum/qannulus.tex:195-210) make the coefficient shadow functorial for
+arbitrary horizontal-trace morphisms, including split and dotted surface
+maps.  BHPW supplies strict functoriality for the underlying ordinary tangle
+cobordisms (equivalence.tex:468-487).
+
+Apply this composite to every cut component used in \(\Gamma_s\).  MWW's
+one-handle cobordism construction (1handles.tex:320-413) proves that after
+projection to the colimit the result is independent of the chosen cuts and
+annihilates the source colimit relations.  Consequently, for every ordinary
+state-changing surface map
+\(\Psi_e:C_s\to C_t\), the whole-source square
+
+\[
+\Theta_t^{\rm raw}\Psi_e=F_e^{\rm end}\Theta_s^{\rm raw},
+\tag{1.3}
+\]
+
+where \(F_e^{\rm end}\) is the induced endpoint-shadow map.  Equation (1.3)
+does not assert that \(\Theta_s\) is injective or that an endpoint calculation
+by itself proves a relation in \(C_s\); it supplies only the naturality needed
+to pull an endpoint row back to the actual MWW source.  Below the superscript
+is suppressed.  The final presentation still starts from
+\(\bigoplus_s C_s\), not from endpoint spaces.
 
 <a id="balanced-hattori-coefficient"></a>
 ## 2. Balanced Hattori coefficient
@@ -665,14 +720,35 @@ theorem **[E7]**.
 
 For each chosen sphere \(j\), all noninvertible critical points lie in new
 material factors; the old one-cup block travels by identity cylinders.
-Invertible mixed transports have constant map \(I\), and their \(O(h)\)
-correction cannot affect an incoming \(O(h^3)\) row at order three.
-
-For \(b_j\) new factors, the two constant maps of the same actual surface are
+Do not declare the remaining mixed braid or ambient-isotopy transport to be
+the identity.  Write \(E_a^{\rm act}\) for the endpoint-shadow target of
+\(\Theta_a:C_a\to E_a^{\rm act}\).  For every material-labelled cabled state
+\(a\), fix once and for all the full actual-to-canonical transport
+\(\widetilde Q_a(h)\), and denote its constant term by
 
 \[
-F_{j,0}^{(0)}=\operatorname{Id}_{old}\otimes U_j,\qquad
-F_{j,1}^{(0)}=\operatorname{Id}_{old}\otimes D_j,
+Q_{a,0}:E_a^{\rm act}\xrightarrow{\cong}E_a^{\rm can}.
+\]
+
+induced by the whole-boundary diffeomorphism of Section 9 followed by the
+positive-permutation/owner-collar standardization with the frozen labels,
+basepoints, total factor order and product framings.  Any nontrivial pure
+braid is retained inside \(\widetilde Q_a(h)\); it is not declared trivial.
+The two dot choices for one sphere use the same actual surface and hence the
+same source and target transports.
+
+Let
+\(\Psi^{\rm raw}_{j,n,s}:C_s\to C_{t_j}\), \(n=0,1\), be the raw
+state component of the actual MWW map for the zero- and one-dot versions of
+sphere \(j\).  The induced maps after the beta/psi quotient will be denoted
+\(\bar\Psi_{j,n}:W_1\to W_1\).  For \(b_j\) new factors, the constant
+endpoint-shadow maps of the same actual surface are
+
+\[
+F_{j,0}^{(0)}=Q_{t_j,0}^{-1}
+ (\operatorname{Id}_{old}\otimes U_j)Q_{s,0},\qquad
+F_{j,1}^{(0)}=Q_{t_j,0}^{-1}
+ (\operatorname{Id}_{old}\otimes D_j)Q_{s,0},
 \tag{10.1}
 \]
 
@@ -692,36 +768,78 @@ E_j(U_j)=0,\qquad E_j(D_j)=1.
 \tag{10.3}
 \]
 
-Let \(s\) be the incoming state and \(t_j\) the target state for sphere \(j\).
-The precisely typed whole-source equations are
+The whole-source naturality (1.3), applied to the two actual sphere movies,
+is
 
 \[
-\boxed{
-\lambda_{t_j}^{(3)}F_{j,0}^{(0)}=0,\qquad
-\lambda_{t_j}^{(3)}F_{j,1}^{(0)}=\lambda_s^{(3)}.}
+Q_{t_j,0}\Theta_{t_j}\Psi^{\rm raw}_{j,n,s}
+=(\operatorname{Id}_{old}\otimes T_{j,n})Q_{s,0}\Theta_s,
+\qquad T_{j,0}=U_j,\quad T_{j,1}=D_j.
+\]
+
+This square uses MWW's one-handle cobordism functoriality and three-handle
+comparison square together with BPW/BHPW shadow naturality; it is not inferred
+from a scalar test.  Let \(r_s\) be the canonical old-factor divided row and
+define rows on the actual MWW source summands by
+
+\[
+\lambda_s^{(3)}=r_sQ_{s,0}\Theta_s,\qquad
+\lambda_{t_j}^{(3)}=(r_s\otimes E_j)Q_{t_j,0}\Theta_{t_j}.
+\]
+
+The target row is closure by the same actual W2 core disks appearing in
+MWW's comparison square.  Substitution of the naturality square and (10.3)
+now gives, on every vector of \(C_s\),
+
+\[
+\lambda_{t_j}^{(3)}\Psi^{\rm raw}_{j,0,s}=0,\qquad
+\lambda_{t_j}^{(3)}\Psi^{\rm raw}_{j,1,s}=\lambda_s^{(3)}.
 \tag{10.4}
 \]
 
-The complete chosen surface maps are **[F]**; equations (10.4) are the
-whole-source consequences **[P]**. They imply the three scalar pairs
-\(0/0,0/0,0/0\) and are bound to the complete chosen surfaces, not an
-abstract split-tree certificate. This closes former E8 at divided order three
-only; no full-\(q\) sphere matrix is claimed. The complete geometry and
-whole-source map derivation is colocated as
-`T73_EVIDENCE_E8_CHOSEN_SPHERES.md`.
+Thus (10.4) reduces exactly to (10.3), without treating \(\Theta_s\) as
+injective or replacing \(C_s\) by an endpoint module.  This is an
+identity of linear maps, not a check on \(v_T\) alone.  The three stored scalar
+pairs \(0/0,0/0,0/0\) are only consequences of this whole-source statement.
+
+The same disjoint-product interchange squares with every beta and psi movie
+show that the direct-sum raw families preserve \(\mathcal R_{2h}\); hence they
+induce the displayed \(\bar\Psi_{j,n}\) on \(W_1\).  The raw row family in
+(10.4) is the one already descended in Section 8.  Applying the quotient
+universal property therefore gives the actual \(W_1\)-level equations
+
+\[
+\boxed{
+\ell_1\bar\Psi_{j,0}=0,\qquad
+\ell_1(\bar\Psi_{j,1}-\operatorname{Id})=0.}
+\tag{10.5}
+\]
+
+The arbitrary positive new--new split-tree algebra, including the coordinate
+conjugation above, is kernel-checked in `Smooth4PC/T73SplitMovie.lean`; the
+actual-movie and MWW identifications remain the geometric/published inputs.
+No full-\(q\) sphere matrix is claimed or needed for the divided cubic.
 
 <a id="changing-endpoint-naturality"></a>
 ## 11. Divided cubic compatibility
 
-The top-cell projector acts only on the old factor. Equations (10.1) are
-identity on that factor and therefore commute with the projector, point-push
-operator and selected cap row at constant order. Positive transport corrections
-start at \(h^4\) after multiplication by the old \(h^3\) anomaly.
+In canonical endpoint coordinates the maps in (10.1) act by the identity on the old
+factor.  Thus they commute there with the top-cell projector, point-push
+operator and selected cap row.  Conjugating back by the fixed statewise
+\(\widetilde Q_a(h)\)'s and pulling back through \(\Theta_a\) gives the
+corresponding actual-source statement; it does not
+discard a mixed or pure braid.  Positive transport corrections start at
+\(h^4\) after multiplication by the old \(h^3\) anomaly.
 
-Thus (8.1)--(8.3) and the typed equations (10.4) are exactly the
-changing-endpoint identities consumed by the divided functional. No independent
-E9 premise remains. This statement is \(h^3\)-only and does not assert exact
-full-series edge conjugacy.
+Thus (8.1)--(8.3) and the typed equations (10.4)--(10.5) are exactly the
+changing-endpoint identities consumed by the divided functional.  The
+standardization \(Q_{a,0}\) is defined independently at each state from the
+frozen total factor order, not recursively from a path.  Independent
+operations occupy disjoint product charts, their canonical inner maps commute
+by interchange, and BHPW strict functoriality transports that interchange to
+the actual square.  Hence no edge-local pure-braid holonomy is silently
+discarded.  This statement is \(h^3\)-only and does not assert exact
+full-series edge conjugacy or that a nontrivial pure braid is the identity.
 
 <a id="mww-quotient"></a>
 ## 12. Exhaustive MWW quotient and descent
@@ -732,7 +850,7 @@ relation subspaces. E10 retains only the external completeness and quotient
 universal property.
 
 Define \(\Lambda_3:\mathcal C\to\mathbb Q\) by Sections 7--11. Equations
-(8.1)--(8.3) prove \(\mathcal R_{2h}\subseteq\ker\Lambda_3\), and (10.4)
+(8.1)--(8.3) prove \(\mathcal R_{2h}\subseteq\ker\Lambda_3\), and (10.5)
 proves \(\mathcal R_{3h}\subseteq\ker\Lambda_3\). Hence **[P]**, conditional
 only on E10,
 
