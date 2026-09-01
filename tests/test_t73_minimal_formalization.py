@@ -19,6 +19,11 @@ AXIOM_THEOREMS = (
     "Smooth4PC.T73.computedDegree_ne_zero",
     "Smooth4PC.T73.undottedRow_eq_zero",
     "Smooth4PC.T73.dottedRow_eq_source",
+    "Smooth4PC.T73.SphereChart.ell_comp_undotted_eq_zero",
+    "Smooth4PC.T73.SphereChart.ell_comp_dottedMinusId_eq_zero",
+    "Smooth4PC.T73.sphereRelation_le_ker",
+    "Smooth4PC.T73.descendedSphereRow_comp_quotient",
+    "Smooth4PC.T73.sphereClass_ne_zero",
     "Smooth4PC.T73.conditionalNotStandard",
     "Smooth4PC.T73.conditionalIsHomotopySphere",
     "Smooth4PC.T73.conditionalCounterexample",
@@ -74,6 +79,7 @@ class T73FiniteFormalizationTests(unittest.TestCase):
         cls.finite = cls.repo / "Smooth4PC" / "T73Finite.lean"
         cls.external = cls.repo / "Smooth4PC" / "T73External.lean"
         cls.conditional = cls.repo / "Smooth4PC" / "T73Conditional.lean"
+        cls.sphere_quotient = cls.repo / "Smooth4PC" / "T73SphereQuotient.lean"
         cls.audit = cls.repo / "T73Audit.lean"
         cls.lake = resolve_lake()
 
@@ -138,11 +144,16 @@ class T73FiniteFormalizationTests(unittest.TestCase):
         self.assertTrue(
             self.conditional.is_file(), "missing Smooth4PC/T73Conditional.lean"
         )
+        self.assertTrue(
+            self.sphere_quotient.is_file(),
+            "missing Smooth4PC/T73SphereQuotient.lean",
+        )
         self.assertTrue(self.audit.is_file(), "missing T73Audit.lean")
 
         finite_source = self.finite.read_text(encoding="utf-8")
         external_source = self.external.read_text(encoding="utf-8")
         conditional_source = self.conditional.read_text(encoding="utf-8")
+        sphere_quotient_source = self.sphere_quotient.read_text(encoding="utf-8")
         audit_source = self.audit.read_text(encoding="utf-8")
         for token in (
             "sorry",
@@ -156,7 +167,11 @@ class T73FiniteFormalizationTests(unittest.TestCase):
             "run_tac",
         ):
             self.assertNotRegex(
-                finite_source + external_source + conditional_source + audit_source,
+                finite_source
+                + external_source
+                + conditional_source
+                + sphere_quotient_source
+                + audit_source,
                 rf"\b{re.escape(token)}\b",
                 f"forbidden Lean token: {token}",
             )
@@ -182,12 +197,27 @@ class T73FiniteFormalizationTests(unittest.TestCase):
             augmentation_olean = (
                 olean_root / "Smooth4PC" / "AugmentationCocone.olean"
             )
+            certificate_data = self.repo / "Smooth4PC" / "CertificateData.lean"
+            certificate_data_olean = (
+                olean_root / "Smooth4PC" / "CertificateData.olean"
+            )
+            arithmetic = self.repo / "Smooth4PC" / "Arithmetic.lean"
+            arithmetic_olean = olean_root / "Smooth4PC" / "Arithmetic.olean"
+            interfaces = self.repo / "Smooth4PC" / "Interfaces.lean"
+            interfaces_olean = olean_root / "Smooth4PC" / "Interfaces.olean"
             finite_olean = olean_root / "Smooth4PC" / "T73Finite.olean"
+            sphere_quotient_olean = (
+                olean_root / "Smooth4PC" / "T73SphereQuotient.olean"
+            )
             external_olean = olean_root / "Smooth4PC" / "T73External.olean"
             conditional_olean = olean_root / "Smooth4PC" / "T73Conditional.olean"
             for source, target in (
                 (augmentation, augmentation_olean),
+                (certificate_data, certificate_data_olean),
+                (arithmetic, arithmetic_olean),
+                (interfaces, interfaces_olean),
                 (self.finite, finite_olean),
+                (self.sphere_quotient, sphere_quotient_olean),
                 (self.external, external_olean),
                 (self.conditional, conditional_olean),
             ):

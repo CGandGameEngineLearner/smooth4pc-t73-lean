@@ -1,4 +1,5 @@
 import Smooth4PC.T73Conditional
+import Smooth4PC.T73SphereQuotient
 
 open Lean Elab Command Meta
 
@@ -18,6 +19,11 @@ def finiteAuditDeclarations : List Name := [
   `Smooth4PC.T73.computedDegree_ne_zero,
   `Smooth4PC.T73.undottedRow_eq_zero,
   `Smooth4PC.T73.dottedRow_eq_source,
+  `Smooth4PC.T73.SphereChart.ell_comp_undotted_eq_zero,
+  `Smooth4PC.T73.SphereChart.ell_comp_dottedMinusId_eq_zero,
+  `Smooth4PC.T73.sphereRelation_le_ker,
+  `Smooth4PC.T73.descendedSphereRow_comp_quotient,
+  `Smooth4PC.T73.sphereClass_ne_zero,
   `Smooth4PC.T73.conditionalNotStandard,
   `Smooth4PC.T73.conditionalIsHomotopySphere,
   `Smooth4PC.T73.conditionalCounterexample
@@ -48,6 +54,11 @@ dumpT73Finite
 #print axioms computedDegree_ne_zero
 #print axioms undottedRow_eq_zero
 #print axioms dottedRow_eq_source
+#print axioms SphereChart.ell_comp_undotted_eq_zero
+#print axioms SphereChart.ell_comp_dottedMinusId_eq_zero
+#print axioms sphereRelation_le_ker
+#print axioms descendedSphereRow_comp_quotient
+#print axioms sphereClass_ne_zero
 #print axioms conditionalNotStandard
 #print axioms conditionalIsHomotopySphere
 #print axioms conditionalCounterexample
