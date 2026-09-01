@@ -19,6 +19,11 @@ AXIOM_THEOREMS = (
     "Smooth4PC.T73.computedDegree_ne_zero",
     "Smooth4PC.T73.undottedRow_eq_zero",
     "Smooth4PC.T73.dottedRow_eq_source",
+    "Smooth4PC.T73.epsilonWords_splitTreeWords",
+    "Smooth4PC.T73.splitTree_wholeSource_undotted_eq_zero",
+    "Smooth4PC.T73.splitTree_wholeSource_dotted_eq_source",
+    "Smooth4PC.T73.splitTree_directQ_undotted_row_eq_zero",
+    "Smooth4PC.T73.splitTree_directQ_dotted_row_eq_source",
     "Smooth4PC.T73.SphereChart.ell_comp_undotted_eq_zero",
     "Smooth4PC.T73.SphereChart.ell_comp_dottedMinusId_eq_zero",
     "Smooth4PC.T73.sphereRelation_le_ker",
@@ -80,6 +85,7 @@ class T73FiniteFormalizationTests(unittest.TestCase):
         cls.external = cls.repo / "Smooth4PC" / "T73External.lean"
         cls.conditional = cls.repo / "Smooth4PC" / "T73Conditional.lean"
         cls.sphere_quotient = cls.repo / "Smooth4PC" / "T73SphereQuotient.lean"
+        cls.split_movie = cls.repo / "Smooth4PC" / "T73SplitMovie.lean"
         cls.audit = cls.repo / "T73Audit.lean"
         cls.lake = resolve_lake()
 
@@ -148,12 +154,16 @@ class T73FiniteFormalizationTests(unittest.TestCase):
             self.sphere_quotient.is_file(),
             "missing Smooth4PC/T73SphereQuotient.lean",
         )
+        self.assertTrue(
+            self.split_movie.is_file(), "missing Smooth4PC/T73SplitMovie.lean"
+        )
         self.assertTrue(self.audit.is_file(), "missing T73Audit.lean")
 
         finite_source = self.finite.read_text(encoding="utf-8")
         external_source = self.external.read_text(encoding="utf-8")
         conditional_source = self.conditional.read_text(encoding="utf-8")
         sphere_quotient_source = self.sphere_quotient.read_text(encoding="utf-8")
+        split_movie_source = self.split_movie.read_text(encoding="utf-8")
         audit_source = self.audit.read_text(encoding="utf-8")
         for token in (
             "sorry",
@@ -171,6 +181,7 @@ class T73FiniteFormalizationTests(unittest.TestCase):
                 + external_source
                 + conditional_source
                 + sphere_quotient_source
+                + split_movie_source
                 + audit_source,
                 rf"\b{re.escape(token)}\b",
                 f"forbidden Lean token: {token}",
@@ -209,6 +220,7 @@ class T73FiniteFormalizationTests(unittest.TestCase):
             sphere_quotient_olean = (
                 olean_root / "Smooth4PC" / "T73SphereQuotient.olean"
             )
+            split_movie_olean = olean_root / "Smooth4PC" / "T73SplitMovie.olean"
             external_olean = olean_root / "Smooth4PC" / "T73External.olean"
             conditional_olean = olean_root / "Smooth4PC" / "T73Conditional.olean"
             for source, target in (
@@ -217,6 +229,7 @@ class T73FiniteFormalizationTests(unittest.TestCase):
                 (arithmetic, arithmetic_olean),
                 (interfaces, interfaces_olean),
                 (self.finite, finite_olean),
+                (self.split_movie, split_movie_olean),
                 (self.sphere_quotient, sphere_quotient_olean),
                 (self.external, external_olean),
                 (self.conditional, conditional_olean),

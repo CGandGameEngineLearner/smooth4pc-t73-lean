@@ -19,6 +19,11 @@ def finiteAuditDeclarations : List Name := [
   `Smooth4PC.T73.computedDegree_ne_zero,
   `Smooth4PC.T73.undottedRow_eq_zero,
   `Smooth4PC.T73.dottedRow_eq_source,
+  `Smooth4PC.T73.epsilonWords_splitTreeWords,
+  `Smooth4PC.T73.splitTree_wholeSource_undotted_eq_zero,
+  `Smooth4PC.T73.splitTree_wholeSource_dotted_eq_source,
+  `Smooth4PC.T73.splitTree_directQ_undotted_row_eq_zero,
+  `Smooth4PC.T73.splitTree_directQ_dotted_row_eq_source,
   `Smooth4PC.T73.SphereChart.ell_comp_undotted_eq_zero,
   `Smooth4PC.T73.SphereChart.ell_comp_dottedMinusId_eq_zero,
   `Smooth4PC.T73.sphereRelation_le_ker,
@@ -54,6 +59,11 @@ dumpT73Finite
 #print axioms computedDegree_ne_zero
 #print axioms undottedRow_eq_zero
 #print axioms dottedRow_eq_source
+#print axioms epsilonWords_splitTreeWords
+#print axioms splitTree_wholeSource_undotted_eq_zero
+#print axioms splitTree_wholeSource_dotted_eq_source
+#print axioms splitTree_directQ_undotted_row_eq_zero
+#print axioms splitTree_directQ_dotted_row_eq_source
 #print axioms SphereChart.ell_comp_undotted_eq_zero
 #print axioms SphereChart.ell_comp_dottedMinusId_eq_zero
 #print axioms sphereRelation_le_ker

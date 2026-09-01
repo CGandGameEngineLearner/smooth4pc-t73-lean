@@ -1,4 +1,4 @@
-import Smooth4PC.T73Finite
+import Smooth4PC.T73SplitMovie
 import Smooth4PC.Interfaces
 
 namespace Smooth4PC.T73
@@ -12,29 +12,28 @@ structure SphereChart (W : QMod) (ell : W →ₗ[ℚ] ℚ) where
   Old : QMod
   Source : QMod
   Target : QMod
-  newFactors : Nat
-  newFactors_pos : 0 < newFactors
+  tree : PositiveNewNewSplitTree
   sourceCoords : Source ≃ₗ[ℚ] Old
-  targetCoords : Target ≃ₗ[ℚ] TensorTarget Old newFactors
+  targetCoords : Target ≃ₗ[ℚ] TensorTarget Old tree.leafCount
   oldRow : Old →ₗ[ℚ] ℚ
   sourceInto : Source →ₗ[ℚ] W
   targetInto : Target →ₗ[ℚ] W
   ell_source : ell.comp sourceInto = actualSourceRow sourceCoords oldRow
   ell_target : ell.comp targetInto =
-    actualTargetRow newFactors targetCoords oldRow
+    actualTargetRow tree.leafCount targetCoords oldRow
 
 /-- The undotted sphere relation in the ambient state sum. -/
 def SphereChart.undottedRelation {W : QMod} {ell : W →ₗ[ℚ] ℚ}
     (chart : SphereChart W ell) : chart.Source →ₗ[ℚ] W :=
   chart.targetInto.comp
-    (conjugatedInsertion chart.sourceCoords chart.newFactors chart.targetCoords .one)
+    (conjugatedSplitTreeInsertion chart.sourceCoords chart.tree chart.targetCoords .one)
 
 /-- The once-dotted map minus the identity-cylinder source term. -/
 def SphereChart.dottedMinusIdRelation
     {W : QMod} {ell : W →ₗ[ℚ] ℚ}
     (chart : SphereChart W ell) : chart.Source →ₗ[ℚ] W :=
   chart.targetInto.comp
-      (conjugatedInsertion chart.sourceCoords chart.newFactors chart.targetCoords .X) -
+      (conjugatedSplitTreeInsertion chart.sourceCoords chart.tree chart.targetCoords .X) -
     chart.sourceInto
 
 theorem SphereChart.ell_comp_undotted_eq_zero
@@ -43,11 +42,11 @@ theorem SphereChart.ell_comp_undotted_eq_zero
     ell.comp chart.undottedRelation = 0 := by
   ext x
   have hTarget := LinearMap.congr_fun chart.ell_target
-    ((conjugatedInsertion chart.sourceCoords chart.newFactors
+    ((conjugatedSplitTreeInsertion chart.sourceCoords chart.tree
       chart.targetCoords .one) x)
   have hCanonical := LinearMap.congr_fun
-    (directQ_undotted_row_eq_zero chart.sourceCoords chart.newFactors
-      chart.targetCoords chart.oldRow chart.newFactors_pos) x
+    (splitTree_directQ_undotted_row_eq_zero chart.sourceCoords chart.tree
+      chart.targetCoords chart.oldRow) x
   simpa [SphereChart.undottedRelation] using hTarget.trans hCanonical
 
 theorem SphereChart.ell_comp_dottedMinusId_eq_zero
@@ -56,39 +55,39 @@ theorem SphereChart.ell_comp_dottedMinusId_eq_zero
     ell.comp chart.dottedMinusIdRelation = 0 := by
   ext x
   have hTarget := LinearMap.congr_fun chart.ell_target
-    ((conjugatedInsertion chart.sourceCoords chart.newFactors
+    ((conjugatedSplitTreeInsertion chart.sourceCoords chart.tree
       chart.targetCoords .X) x)
   have hSource := LinearMap.congr_fun chart.ell_source x
   have hCanonical := LinearMap.congr_fun
-    (directQ_dotted_row_eq_source chart.sourceCoords chart.newFactors
-      chart.targetCoords chart.oldRow chart.newFactors_pos) x
+    (splitTree_directQ_dotted_row_eq_source chart.sourceCoords chart.tree
+      chart.targetCoords chart.oldRow) x
   have ht :
       ell (chart.targetInto
-        ((conjugatedInsertion chart.sourceCoords chart.newFactors
+        ((conjugatedSplitTreeInsertion chart.sourceCoords chart.tree
           chart.targetCoords .X) x)) =
-        actualTargetRow chart.newFactors chart.targetCoords chart.oldRow
-          ((conjugatedInsertion chart.sourceCoords chart.newFactors
+        actualTargetRow chart.tree.leafCount chart.targetCoords chart.oldRow
+          ((conjugatedSplitTreeInsertion chart.sourceCoords chart.tree
             chart.targetCoords .X) x) := by
     simpa using hTarget
   have hs : ell (chart.sourceInto x) =
       actualSourceRow chart.sourceCoords chart.oldRow x := by
     simpa using hSource
   have hc :
-      actualTargetRow chart.newFactors chart.targetCoords chart.oldRow
-          ((conjugatedInsertion chart.sourceCoords chart.newFactors
+      actualTargetRow chart.tree.leafCount chart.targetCoords chart.oldRow
+          ((conjugatedSplitTreeInsertion chart.sourceCoords chart.tree
             chart.targetCoords .X) x) =
         actualSourceRow chart.sourceCoords chart.oldRow x := by
     simpa using hCanonical
   change ell
       (chart.targetInto
-        ((conjugatedInsertion chart.sourceCoords chart.newFactors
+        ((conjugatedSplitTreeInsertion chart.sourceCoords chart.tree
           chart.targetCoords .X) x) - chart.sourceInto x) = 0
   calc
     _ = ell (chart.targetInto
-          ((conjugatedInsertion chart.sourceCoords chart.newFactors
+          ((conjugatedSplitTreeInsertion chart.sourceCoords chart.tree
             chart.targetCoords .X) x)) - ell (chart.sourceInto x) := ell.map_sub _ _
-    _ = actualTargetRow chart.newFactors chart.targetCoords chart.oldRow
-          ((conjugatedInsertion chart.sourceCoords chart.newFactors
+    _ = actualTargetRow chart.tree.leafCount chart.targetCoords chart.oldRow
+          ((conjugatedSplitTreeInsertion chart.sourceCoords chart.tree
             chart.targetCoords .X) x) -
         actualSourceRow chart.sourceCoords chart.oldRow x := by rw [ht, hs]
     _ = 0 := by rw [hc]; simp
