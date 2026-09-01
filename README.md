@@ -62,3 +62,7 @@ This repository therefore makes the full argument, Lean sources, exact inputs
 and replay instructions publicly inspectable now. If the work receives
 substantive mathematical scrutiny and assistance, I intend to prepare a
 conventional preprint and submit it through the appropriate scholarly channel.
+
+## License
+
+The repository is released under the [MIT License](LICENSE).
