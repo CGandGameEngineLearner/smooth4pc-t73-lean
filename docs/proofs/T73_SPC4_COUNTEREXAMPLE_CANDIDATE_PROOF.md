@@ -9,7 +9,8 @@ unconditional counterexample, a formally verified counterexample, or external
 acceptance.
 
 > **Conditional theorem.** Let \(X=X(41,189,73)\). Assume the external
-> geometric and functorial premises **E1--E12** listed in Section 15. Section 9
+> geometric and functorial premises **E3--E12** listed in Section 15. Sections
+> 2--3 discharge the balanced Hattori input E1/E2; Section 9
 > proves the weak sphere-basis deduction from the E7 handle-realization input.
 > Then the
 > MWW lasagna module of \(X\) over \(\mathbb Q\) contains a nonzero homogeneous
@@ -64,14 +65,61 @@ endpoint spaces.
 <a id="balanced-hattori-coefficient"></a>
 ## 2. Balanced Hattori coefficient
 
-Let \(U=U_{(0,5)}:P_{86}\to P_{88}\) be the physical oriented cup. Cutting
-the actual transported framed annuli gives open part \(B\sqcup B^\vee\) and
-227 split circles. The required input **[E1]** is the action- and
-grading-compatible family together with a typed automorphism
+Let \(U=U_{(0,5)}:P_{86}\to P_{88}\) be the physical oriented cup. For each
+selected owner, MWW's \(K_i(1,1)\) is the pair of oppositely oriented
+boundaries of one actual framed tubular annulus. Cut those annuli at the
+matched \(y/z\) gate fibers and use the fixed \(z\)-wickets.
+
+Each \(y\)-touching connector is the pair of long sides of a literal annulus
+subrectangle. Adding its \(z\)-wicket and its prescribed noncrossing
+\(y\)-boundary chord gives a properly embedded disk. Distinct connectors give
+disjoint subrectangles, and the boundary chords do not interleave. Thus the 44
+disks on each side are simultaneous. They standardize the paired paths to a
+motion of 44 wickets, whose induced 88-endpoint framed tangle is denoted
+\(B_{\rm act}\). Reversing the motion is its inverse. The 227 \(z\)-\(z\)
+subrectangles close to pairwise-disjoint product-framed disks, hence to an
+ordered split \(U^{227}\).
+
+The connector classification is checked directly against the actual
+2,126,291-crossing Gauss order in
+`D:/tmp/t73_actual_cable_unit/ACTUAL_PD_CABLE_UNIT_CERT.json`; it recovers
+exactly 88 \(y\)-\(z\) and 227 \(z\)-\(z\) connectors. Simultaneous disk
+embeddedness follows from their being literal subrectangles of the actual
+framed annuli, not from a certificate status field. The proof does not name
+the open braid word or the unknown framing integer. Any hidden
+pure braid or full twist remains inside \(B_{\rm act}\) and is not forgotten.
+
+The framing supplies a global product parametrization of each tubular annulus.
+Choose the gate cuts as product fibers. The product coordinate between the
+west and east disk systems is a framed isotopy fixed on the insertion disks
+and their endpoint collars; isotopy extension gives one relative movie
 
 \[
-B\in\operatorname{Aut}_{\mathcal A}(P_{88}),\qquad
-B^{-1}B=BB^{-1}=\operatorname{Id}_{P_{88}},\qquad B^\vee=B^{-1},
+\mathfrak h:
+R\simeq_{\rm rel}
+B_{\rm act}\sqcup B_{\rm act}^{\vee}\sqcup U^{227}.
+\tag{2.h}
+\]
+
+Reversing the product coordinate and the boundary orientation gives the
+framed pivotal adapter
+
+\[
+\vartheta:B_{\rm act}^{\vee}\xrightarrow{\cong}B_{\rm act}^{-1}.
+\tag{2.p}
+\]
+
+Thus the west/east standardizations are not two independently chosen units:
+they are the source and target of the same annulus motion. Integral framing
+twists alter that motion but preserve (2.h)--(2.p).
+
+Consequently **[P]**, using strict functoriality E4, the actual cut supplies
+the action- and grading-compatible family together with a typed automorphism
+
+\[
+B_{\rm act}\in\operatorname{Aut}_{\mathcal A}(P_{88}),\qquad
+B_{\rm act}^{-1}B_{\rm act}=B_{\rm act}B_{\rm act}^{-1}
+=\operatorname{Id}_{P_{88}},\qquad B_{\rm act}^\vee=B_{\rm act}^{-1},
 \tag{2.0}
 \]
 
@@ -80,52 +128,69 @@ coefficient equivalence is
 
 \[
 H_{T,T'}:M_R(T,T')\xrightarrow{\cong}
-\operatorname{Hom}_{\mathcal A}(B\circ T,B\circ T')
+\left(
+\operatorname{Hom}_{\mathcal A}(B_{\rm act}\circ T,B_{\rm act}\circ T')
+\{-44\}
+\right)
 \otimes_{\mathbb Q}A^{\otimes227},
 \qquad A=\mathbb Q[X]/(X^2).
 \tag{2.1}
 \]
 
-This is two-sided. It is not
-\(M_R(T,T')=\operatorname{Hom}(T,BT')\), and it uses no fictitious mate
-\(\mathbf1\to B\). MWW supplies the ambient one-handle/HH\(_0\) formula
-(`D:/tmp/r6/mww_handle_src/1handles.tex:242-299,420-430`), not this
-candidate-specific balanced identification; (2.1) therefore remains **E1**.
-
-One relative movie would suffice: if a single framed isotopy of the actual
-coefficient \(R\), fixed on every insertion disk, ends at
-\(B\sqcup B^\vee\sqcup U^{227}\), extending it by identities on \(T,T'\)
-produces every \(H_{T,T'}\); gluing locality and strict functoriality then give
-both action squares. The remaining E1 datum is therefore finite, not an
-infinite family. It is still unproved. The incidence ledger does not determine
-the relative framed mapping-class element: an unseen pure ribbon braid can
-preserve endpoints, component counts, individual annuli, and the framing
-integer while changing the open class from \(w_{73}F_\Omega\) to
-\(H w_{73}F_\Omega\). Thus the actual relative movie, or a complete
-mapping-class proof excluding such \(H\), remains required.
+Use the convention
+\(M_R(T,T')=\operatorname{KhR}_2(R\cup T'\cup\overline T)\), compatible with
+\(\operatorname{Hom}(T,T')=\operatorname{KhR}_2(T'\cup\overline T)\).
+Extending the literal annulus cut by identities on \(T,T'\) identifies the
+source with
+\((B_{\rm act}T')\cup\overline{(B_{\rm act}T)}\sqcup U^{227}\).
+The shift \(\{-44\}\) removes the built-in \(p(N-1)=44\) normalization of
+\(\operatorname{Hom}_{\mathcal A}\), so (2.1) is the raw closure grading.
+Field monoidality gives (2.1), and gluing locality gives both MWW action
+squares. This is two-sided. It is not
+\(M_R(T,T')=\operatorname{Hom}(T,B_{\rm act}T')\), and it uses no fictitious
+mate \(\mathbf1\to B_{\rm act}\). The ambient formulas are at
+`D:/tmp/r6/mww_handle_src/1handles.tex:173-229,242-299,420-430`.
 
 <a id="actual-diagonal-class"></a>
 ## 3. Actual diagonal class
 
-Choose a categorical inverse and set
+Let \(W:P_{88}\to P_{88}\) be the physical point-push braid. Choose the
+categorical inverse of \(B_{\rm act}\) and set
 
 \[
-T=B^{-1}\circ U,\qquad B\circ T=U.
+T_1=B_{\rm act}^{-1}\circ U,
+\qquad
+T_0=B_{\rm act}^{-1}\circ W\circ U.
 \tag{3.1}
 \]
 
-Define
+Then, without any commutation assumption,
 
 \[
-v_T=H_{T,T}^{-1}
-\left(\operatorname{Id}_{B\circ T}\otimes X^{\otimes227}\right)
-\in M_R(T,T).
+B_{\rm act}T_1=U,
+\qquad
+B_{\rm act}T_0=WU.
+\tag{3.1b}
+\]
+
+For \(i=0,1\), define the diagonal representative and its coefficient-trace
+class
+
+\[
+v_i=H_{T_i,T_i}^{-1}
+\left(\operatorname{Id}_{B_{\rm act}T_i}\otimes X^{\otimes227}\right)
+\in M_R(T_i,T_i),
+\qquad
+\eta_R[T_i]=[v_i]\in HH_0(\mathcal A;M_R).
 \tag{3.2}
 \]
 
+The selected input is \(T=T_1\) and \(v_T=v_1\), so
+\([v_T]_{\rm coeff}=\eta_R[T_1]\).
+
 Here \(X^{\otimes227}\) means separate labels, never the vanishing product
-\(X^{227}\). Under **E1**, (3.2) is a cycle and determines
-\([v_T]_{\mathrm{coeff}}\) in
+\(X^{227}\). Since \(M_R\) is already \(\operatorname{KhR}_2\) homology,
+both \(v_i\) are homogeneous elements/classes **[P]** in
 
 \[
 HH_0(\mathcal A;M_R)=
@@ -134,8 +199,9 @@ HH_0(\mathcal A;M_R)=
 \]
 
 The identity-to-trace construction is MWW's Chern/Hattori class
-(`D:/tmp/r6/mww_handle_src/1handles.tex:783-787`). Binding (3.2) to the actual
-transported-annulus class is the separate premise **[E2]**.
+(`D:/tmp/r6/mww_handle_src/1handles.tex:783-787`). The literal Section 2
+equivalence binds both classes in (3.2) to the actual transported-annulus
+coefficient **[P]**.
 
 <a id="vertical-horizontal-trace"></a>
 ## 4. Vertical-horizontal trace
@@ -146,8 +212,11 @@ BPW's vertical trace and natural functor to horizontal trace send
 **[E3]** is
 
 \[
-[v_T]_{\mathrm{coeff}}\longmapsto
-\operatorname{Id}_{U}\otimes X^{\otimes227}.
+\eta_R[T_1]\longmapsto
+\operatorname{Id}_{U}\otimes X^{\otimes227},
+\qquad
+\eta_R[T_0]\longmapsto
+\operatorname{Id}_{WU}\otimes X^{\otimes227}.
 \tag{4.1}
 \]
 
@@ -159,6 +228,16 @@ endpoint coordinates,
 \operatorname{Sh}_{1h}([v_T]_{1h})=u+O(h),
 \qquad u=e_0-e_5\in E_{s_0}=Q(88,86)=M_1(88).
 \tag{4.2}
+\]
+
+In the same strict endpoint coordinates, functoriality of the physical braid
+\(W\) gives
+
+\[
+\Phi_h\operatorname{Sh}(\eta_R[T_0])=\rho_h(W)u+O(h),
+\qquad
+\Phi_h\operatorname{Sh}(\eta_R[T_1])=u+O(h).
+\tag{4.3}
 \]
 
 The counit evaluation is **[P]** after **E3**; identification with the actual
@@ -688,7 +767,7 @@ base-change inference:
 
 Premise **E12** also includes graded diffeomorphism invariance. Combining
 (12.3), the bidegree-\((0,0)\) four-handle isomorphism, and (14.1) proves
-**[P]**, under **E1--E12**, that
+**[P]**, under **E3--E12**, that
 
 \[
 X(41,189,73)\not\cong_{\rm diff}S^4.
@@ -706,8 +785,8 @@ checked in `AuditArithmetic.lean`.
 
 | ID | status | role and anchor | unresolved boundary |
 |---|---|---|---|
-| E1 balanced Hattori | **[E] `external_theorem`** | ambient formula: `D:/tmp/r6/mww_handle_src/1handles.tex:242-299,420-430` | reduced to one actual relative framed movie; incidence/framing data do not determine its mapping-class class |
-| E2 diagonal binding | **[E]** | Hattori identity: `D:/tmp/r6/mww_handle_src/1handles.tex:783-787` | candidate inverse image remains a premise |
+| E1 balanced Hattori | **[P] `proved_in_document`** | actual paired-annulus disk system: Section 2 and `D:/tmp/t73_actual_cable_unit/ACTUAL_PD_CABLE_UNIT_CERT.json`; MWW formulas: `D:/tmp/r6/mww_handle_src/1handles.tex:173-229,242-299,420-430` | the unknown braid/framing is retained inside \(B_{\rm act}\), not identified or discarded |
+| E2 diagonal binding | **[P]** | Section 3; Hattori identity: `D:/tmp/r6/mww_handle_src/1handles.tex:783-787` | selected input is \(T_1=B_{\rm act}^{-1}U\), never \(\xi\) |
 | E3 BPW trace/cup/state binding | **[E]** | `D:/tmp/r6/bpw_src/shadows/vertical.tex:11-58` | actual 227-cap movie and \(s_0=(0,e_{m_2}+e_{r_{xy}})\) binding are extra |
 | E4 strict scope | **[E]** | `D:/tmp/r6/agents/finite_type_leading/bphw_1903_src/sections/equivalence.tex:468-493` | exact foam scope remains explicit |
 | F1 degree | **[F] `finite_verified`** | `D:/tmp/r6/agents/finite_type_leading/ORDINARY_SHADOW_HATTORI_CHAIN_RESULT.md:100-115`; `D:/tmp/r6/grading_attack/ledger/Q494_SPHERE_GRADING_LEDGER.md:45-60`; `AuditArithmetic.lean:87-91` | actual state binding is in E3 |
@@ -723,26 +802,27 @@ checked in `AuditArithmetic.lean`.
 | E12 rational S4 and graded diffeomorphism | **[E]** | grading/invariant: `D:/tmp/r6/mww_handle_src/kirby.tex:8-57`; field scope: `D:/tmp/r6/mww_handle_src/1handles.tex:15-20`, `D:/tmp/r6/mww_handle_src/introduction.tex:128-134`; four/S4: `D:/tmp/r6/mww_handle_src/kirby.tex:418-431` | direct rational statement remains a premise, not an inferred base change |
 | E13 CS bridge | **[E]** | `D:/tmp/r6/QSC/kpr/cs_2404.05096.txt:128-151`; finite determinants: `AuditArithmetic.lean` | homotopy-sphere bridge is external |
 | P1 descent | **[P] `proved_in_document`** | Sections 11--12 | conditional on E5, E6, E8--E10; Section 9 supplies the basis deduction from E7 |
-| P2 nonstandard | **[P]** | Sections 13--14 | conditional on E1--E12 |
+| P2 nonstandard | **[P]** | Sections 13--14 | conditional on E3--E12 |
 
 The 13 explicit HTML anchors above match the manifest consumer IDs. The
-manifest is the frozen v1 allocation; this revised proof splits its coarse E7
+manifest is the frozen v1 allocation: this revised proof discharges its E1/E2
+inputs by the actual paired-annulus argument, and splits its coarse E7
 owner/direct-Q clause between the narrowed E7 realization input and E8.
 
 ## 16. Honest closing status
 
-Finite arithmetic and the scalar are **[F]**. The weak fixed-Y sphere basis,
-Frobenius, Reynolds-ratio, coefficient-extraction, and quotient deductions are
-**[P]**. Balanced coefficient typing, the hard hemisphere cocone,
-changing-endpoint operator data, and the rational final comparison remain
-**[E]**. Therefore the status remains
+Finite arithmetic and the scalar are **[F]**. The balanced coefficient input,
+weak fixed-Y sphere-basis deduction, Frobenius, Reynolds-ratio,
+coefficient-extraction, and quotient deductions are **[P]**. The hard
+hemisphere cocone, changing-endpoint operator data, and rational final
+comparison remain **[E]**. Therefore the status remains
 
 ```text
 CANDIDATE_PROOF_PENDING_INDEPENDENT_REVIEW
 ```
 
 Even zero-`sorry` Lean proves only the conditional implication unless the
-remaining **E1--E13** premises are proved. This document
+remaining **E3--E13** premises are proved. This document
 claims neither formal verification nor external acceptance.
 
 ## 17. Decisive post-audit boundary
@@ -750,29 +830,29 @@ claims neither formal verification nor external acceptance.
 The subsequent premise attacks give the following mathematical, rather than
 procedural, status.
 
-1. **E1 is reduced but open.** One relative framed Hattori movie would generate
-   the entire off-diagonal family and both action squares. The existing
-   incidence/word ledger does not determine its relative mapping-class class;
-   a pure ribbon braid is invisible to the recorded counts and framing integer.
+1. **E1 is closed without naming the braid.** The actual paired annulus
+   subrectangles give simultaneous proper disks, hence an unknown but genuine
+   wicket-braid unit \(B_{\rm act}\), its pivotal inverse, and 227 split disk
+   factors. Hidden pure-braid/framing data remain inside \(B_{\rm act}\).
 
 2. **Weak E7 is a conditional deduction.** If the delivered punctured smooth
    handle realization really has exactly the declared three 3-handles to
-   (S^3), its actual attaching spheres are the belt-sphere basis after turning
+   \(S^3\), its actual attaching spheres are the belt-sphere basis after turning
    the cobordism upside down. The serialized object declares, but does not
    geometrically construct, those attaching spheres.
 
 3. **E8 is the decisive unresolved map.** MWW computes the easy
-   (Delta_+) hemisphere. No existing artifact proves that the hard
-   (Phi^{-1}Psi_{Delta_-}Phi) map on every actual cabled state is a
+   \(\Delta_+\) hemisphere. No existing artifact proves that the hard
+   \(\Phi^{-1}\Psi_{\Delta_-}\Phi\) map on every actual cabled state is a
    split-tree operator up to one coherent vertex transport. A Peiffer word and
-   the unimodular matrix (I-Lambda^2A) do not supply the missing embedded,
+   the unimodular matrix \(I-\Lambda^2A\) does not supply the missing embedded,
    framed actual-to-canonical corridors; knotting a carrier preserves those
    algebraic data and destroys a product-annulus conclusion.
 
 4. **Two proposed shortcuts fail.** Unimodularity of the ordinary
-   (3)-to-(2) boundary matrix does not imply clean geometric (2/3)-handle
+   \(3\)-to-\(2\) boundary matrix does not imply clean geometric \(2/3\)-handle
    cancellation; group-ring/intersection and embedded-slide data are missing.
-   Restricting to quantum degree (494) is not a finite computation, because
+   Restricting to quantum degree \(494\) is not a finite computation, because
    dotted psi stabilization and the three-handle lift lattice remain in the
    same normalized degree.
 
@@ -781,70 +861,72 @@ the current mathematics does **not** establish an SPC4 counterexample.
 
 ## 18. Relative-lift no-go and the only viable escape
 
-Let a relative marked mapping-class group (G_{m rel}) act on a module (V)
-through (ho), and let
+Let a relative marked mapping-class group \(G_{\rm rel}\) act on a module \(V\)
+through \(\rho\), and let
 
-[
-pi:G_{m rel}	woheadrightarrow G_{m coarse},qquad K=kerpi.
-]
+\[
+\pi:G_{\rm rel}\twoheadrightarrow G_{\rm coarse},\qquad K=\ker\pi.
+\]
 
-Here (G_{m coarse}) retains the incidence, endpoint permutation, pair
-linking, framing totals, Peiffer augmentation, and the matrix (D), while
-(K) contains the pure-braid/point-push information forgotten by those data.
+Here \(G_{\rm coarse}\) retains the incidence, endpoint permutation, pair
+linking, framing totals, Peiffer augmentation, and the matrix \(D\), while
+\(K\) contains the pure-braid/point-push information forgotten by those data.
 
-**No-go theorem.** If a row (lambdain V^*) is invariant under (K), or
-factors through the coinvariants (V_K), then for every (Win K) and every
-(uin V),
+**No-go theorem.** If a row \(\lambda\in V^*\) is invariant under \(K\), or
+factors through the coinvariants \(V_K\), then for every \(W\in K\) and every
+\(u\in V\),
 
-[
-lambda(ho(W)-I)u=0.
-	ag{18.1}
-]
+\[
+\lambda(\rho(W)-I)u=0.
+\tag{18.1}
+\]
 
-Indeed (lambdaho(W)=lambda); equivalently,
-((ho(W)-I)u) is zero in (V_K). More generally, any construction that is
+Indeed \(\lambda\rho(W)=\lambda\); equivalently,
+\((\rho(W)-I)u\) is zero in \(V_K\). More generally, any construction that is
 claimed to depend only on the coarse datum and to give the same answer for
-every relative lift must annihilate the complete (K)-relation span.
+every relative lift must annihilate the complete \(K\)-relation span.
 
-For T73, the point-push (W) has identity endpoint permutation and zero
+For T73, the point-push \(W\) has identity endpoint permutation and zero
 recorded pair-linking/framing totals, but its full Artin word is nontrivial.
-Thus it lies in the kernel of the coarse E1/E8 records, while
+Thus it lies in the kernel of the coarse E8 records, while
 
-[
-[h^3],ell(ho_h(W)-I)u=-59072.
-	ag{18.2}
-]
+\[
+[h^3]\,\ell(\rho_h(W)-I)u=-59072.
+\tag{18.2}
+\]
 
 Equation (18.2) proves that this kernel is not harmless presentation noise.
 In particular, any proposed descent that declares every unseen relative lift
-irrelevant while keeping a fixed (u,ell) is incompatible with the computed
+irrelevant while keeping a fixed \(u,\ell\) is incompatible with the computed
 signal.
 
 There is one valid escape: **equivariant transport, not invariance**. For a
-fully marked movie (a:p	o q) with induced isomorphism (R_a), transport all
+fully marked movie \(a:p\to q\) with induced isomorphism \(R_a\), transport all
 data together,
 
-[
-W_q=R_aW_pR_a^{-1},qquad
-u_q=R_au_p,qquad
-ell_q=ell_pR_a^{-1}.
-	ag{18.3}
-]
+\[
+W_q=R_aW_pR_a^{-1},\qquad
+u_q=R_au_p,\qquad
+\ell_q=\ell_pR_a^{-1}.
+\tag{18.3}
+\]
 
 Then
 
-[
-ell_q(W_q-I)u_q=ell_p(W_p-I)u_p.
-	ag{18.4}
-]
+\[
+\ell_q(W_q-I)u_q=\ell_p(W_p-I)u_p.
+\tag{18.4}
+\]
 
 The same covariance must hold statewise for every psi/sphere edge and for the
-MWW (Phi/Theta) maps. Loop holonomy is harmless only when it transports all
+MWW \(\Phi/\Theta\) maps. Loop holonomy is harmless only when it transports all
 of these objects coherently.
 
-This escape does not close the current proof. The fiber of the coarse record
+Section 2 avoids this no-go for E1 by retaining the unknown relative lift
+inside \(B_{\rm act}\); it never asks the kernel to act trivially. The escape
+does not close E8/E9. The fiber of the coarse record
 need not be one connected torsor: locally knotted carriers can share all
 recorded coarse data without being related by a relative ambient movie. Hence
-one must still construct at least one complete marked E1 movie and a coherent
-E8/E9 edge family in the actual component. Torsor language removes gauge
-choice after those objects exist; it cannot manufacture them.
+one must still construct a coherent E8/E9 edge family in the actual component.
+Torsor language removes gauge choice after those objects exist; it cannot
+manufacture them.
