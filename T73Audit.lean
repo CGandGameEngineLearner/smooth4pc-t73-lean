@@ -1,4 +1,4 @@
-import Smooth4PC.T73Finite
+import Smooth4PC.T73Conditional
 
 open Lean Elab Command Meta
 
@@ -17,7 +17,10 @@ def finiteAuditDeclarations : List Name := [
   `Smooth4PC.T73.computedDegree_eq_494,
   `Smooth4PC.T73.computedDegree_ne_zero,
   `Smooth4PC.T73.undottedRow_eq_zero,
-  `Smooth4PC.T73.dottedRow_eq_source
+  `Smooth4PC.T73.dottedRow_eq_source,
+  `Smooth4PC.T73.conditionalNotStandard,
+  `Smooth4PC.T73.conditionalIsHomotopySphere,
+  `Smooth4PC.T73.conditionalCounterexample
 ]
 
 elab "dumpT73Finite" : command => do
@@ -45,5 +48,8 @@ dumpT73Finite
 #print axioms computedDegree_ne_zero
 #print axioms undottedRow_eq_zero
 #print axioms dottedRow_eq_source
+#print axioms conditionalNotStandard
+#print axioms conditionalIsHomotopySphere
+#print axioms conditionalCounterexample
 
 end Smooth4PC.T73

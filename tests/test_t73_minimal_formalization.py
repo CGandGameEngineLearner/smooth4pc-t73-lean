@@ -19,6 +19,9 @@ AXIOM_THEOREMS = (
     "Smooth4PC.T73.computedDegree_ne_zero",
     "Smooth4PC.T73.undottedRow_eq_zero",
     "Smooth4PC.T73.dottedRow_eq_source",
+    "Smooth4PC.T73.conditionalNotStandard",
+    "Smooth4PC.T73.conditionalIsHomotopySphere",
+    "Smooth4PC.T73.conditionalCounterexample",
 )
 FOUNDATIONAL_AXIOMS = {"propext", "Quot.sound", "Classical.choice"}
 SPHERE_CONSUMER = r"""
@@ -69,6 +72,8 @@ class T73FiniteFormalizationTests(unittest.TestCase):
     def setUpClass(cls) -> None:
         cls.repo = Path(__file__).resolve().parents[1]
         cls.finite = cls.repo / "Smooth4PC" / "T73Finite.lean"
+        cls.external = cls.repo / "Smooth4PC" / "T73External.lean"
+        cls.conditional = cls.repo / "Smooth4PC" / "T73Conditional.lean"
         cls.audit = cls.repo / "T73Audit.lean"
         cls.lake = resolve_lake()
 
@@ -127,9 +132,17 @@ class T73FiniteFormalizationTests(unittest.TestCase):
 
     def test_finite_module_exists_and_builds(self) -> None:
         self.assertTrue(self.finite.is_file(), "missing Smooth4PC/T73Finite.lean")
+        self.assertTrue(
+            self.external.is_file(), "missing Smooth4PC/T73External.lean"
+        )
+        self.assertTrue(
+            self.conditional.is_file(), "missing Smooth4PC/T73Conditional.lean"
+        )
         self.assertTrue(self.audit.is_file(), "missing T73Audit.lean")
 
         finite_source = self.finite.read_text(encoding="utf-8")
+        external_source = self.external.read_text(encoding="utf-8")
+        conditional_source = self.conditional.read_text(encoding="utf-8")
         audit_source = self.audit.read_text(encoding="utf-8")
         for token in (
             "sorry",
@@ -143,10 +156,15 @@ class T73FiniteFormalizationTests(unittest.TestCase):
             "run_tac",
         ):
             self.assertNotRegex(
-                finite_source + audit_source,
+                finite_source + external_source + conditional_source + audit_source,
                 rf"\b{re.escape(token)}\b",
                 f"forbidden Lean token: {token}",
             )
+
+        self.assertIn("(geom : ExternalGeometry u)", conditional_source)
+        self.assertIn("(cs : CSExternalGeometry u)", conditional_source)
+        self.assertNotRegex(conditional_source, r"\btheorem\s+notStandard\b")
+        self.assertNotRegex(conditional_source, r"\btheorem\s+counterexample\b")
 
         self.assertIn("substitutionLinear ^ 3 * cubicBase", finite_source)
         self.assertIn(
@@ -165,9 +183,13 @@ class T73FiniteFormalizationTests(unittest.TestCase):
                 olean_root / "Smooth4PC" / "AugmentationCocone.olean"
             )
             finite_olean = olean_root / "Smooth4PC" / "T73Finite.olean"
+            external_olean = olean_root / "Smooth4PC" / "T73External.olean"
+            conditional_olean = olean_root / "Smooth4PC" / "T73Conditional.olean"
             for source, target in (
                 (augmentation, augmentation_olean),
                 (self.finite, finite_olean),
+                (self.external, external_olean),
+                (self.conditional, conditional_olean),
             ):
                 build = self.run_lean(source, olean_root, target)
                 self.assertEqual(build.returncode, 0, build.stdout + build.stderr)
@@ -184,6 +206,9 @@ class T73FiniteFormalizationTests(unittest.TestCase):
             self.assertEqual(audit.returncode, 0, output)
         self.assertIn("T73_TYPE|Smooth4PC.T73.computedCubic", output)
         self.assertIn("T73_BODY|Smooth4PC.T73.matrixAMinusI", output)
+        self.assertIn(
+            "T73_TYPE|Smooth4PC.T73.conditionalNotStandard", output
+        )
         self.assertNotIn("sorryAx", output)
         self.assertNotIn("Lean.ofReduceBool", output)
         self.assert_axiom_reports(output)
