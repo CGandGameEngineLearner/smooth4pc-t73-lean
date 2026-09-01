@@ -1,0 +1,96 @@
+T73_TYPE|Smooth4PC.T73.det3|Matrix3 → ℤ
+T73_BODY|Smooth4PC.T73.det3|fun matrix =>
+  have a := matrix 0 0;
+  have b := matrix 0 1;
+  have c := matrix 0 2;
+  have d := matrix 1 0;
+  have e := matrix 1 1;
+  have f := matrix 1 2;
+  have g := matrix 2 0;
+  have h := matrix 2 1;
+  have i := matrix 2 2;
+  HAdd.hAdd.{0, 0, 0} (HSub.hSub.{0, 0, 0} (HMul.hMul.{0, 0, 0} a (HSub.hSub.{0, 0, 0} (HMul.hMul.{0, 0, 0} e i) (HMul.hMul.{0, 0, 0} f h))) (HMul.hMul.{0, 0, 0} b (HSub.hSub.{0, 0, 0} (HMul.hMul.{0, 0, 0} d i) (HMul.hMul.{0, 0, 0} f g)))) (HMul.hMul.{0, 0, 0} c (HSub.hSub.{0, 0, 0} (HMul.hMul.{0, 0, 0} d h) (HMul.hMul.{0, 0, 0} e g)))
+T73_TYPE|Smooth4PC.T73.matrixAMinusI|Matrix3
+T73_BODY|Smooth4PC.T73.matrixAMinusI|fun row column => HSub.hSub.{0, 0, 0} (matrixA row column) (identityEntry row column)
+T73_TYPE|Smooth4PC.T73.computedCubic|ℤ
+T73_BODY|Smooth4PC.T73.computedCubic|HMul.hMul.{0, 0, 0} (HPow.hPow.{0, 0, 0} substitutionLinear 3) cubicBase
+T73_TYPE|Smooth4PC.T73.computedDegree|ℤ
+T73_BODY|Smooth4PC.T73.computedDegree|HAdd.hAdd.{0, 0, 0} (HAdd.hAdd.{0, 0, 0} (HAdd.hAdd.{0, 0, 0} degreeMinus44 degreePlus227) degreePlus315) degreeMinus4
+T73_TYPE|Smooth4PC.T73.detA_eq_one|Eq.{1} detA 1
+T73_TYPE|Smooth4PC.T73.detAMinusI_eq_one|Eq.{1} detAMinusI 1
+T73_TYPE|Smooth4PC.T73.sphereDet_eq_one|Eq.{1} sphereDet 1
+T73_TYPE|Smooth4PC.T73.computedCubic_eq_neg59072|Eq.{1} computedCubic (-59072)
+T73_TYPE|Smooth4PC.T73.computedCubic_ne_zero|Ne.{1} computedCubic 0
+T73_TYPE|Smooth4PC.T73.computedDegree_eq_494|Eq.{1} computedDegree 494
+T73_TYPE|Smooth4PC.T73.computedDegree_ne_zero|Ne.{1} computedDegree 0
+T73_TYPE|Smooth4PC.T73.undottedRow_eq_zero|∀ {C : Type u_1} [inst : AddCommGroup.{u_1} C] [inst_1 : _root_.Module.{0, u_1} ℚ C] (row : LinearMap.{0, 0, u_1, 0} (RingHom.id.{0} ℚ) C ℚ) (b : ℕ), LT.lt.{0} 0 b → Eq.{u_1 + 1} (targetCounitRow.{u_1} b row ∘ₗ canonicalInsertion.{u_1} b FrobeniusBasis.one) 0
+T73_TYPE|Smooth4PC.T73.dottedRow_eq_source|∀ {C : Type u_1} [inst : AddCommGroup.{u_1} C] [inst_1 : _root_.Module.{0, u_1} ℚ C] (row : LinearMap.{0, 0, u_1, 0} (RingHom.id.{0} ℚ) C ℚ) (b : ℕ), LT.lt.{0} 0 b → Eq.{u_1 + 1} (targetCounitRow.{u_1} b row ∘ₗ canonicalInsertion.{u_1} b FrobeniusBasis.X) row
+T73_TYPE|Smooth4PC.T73.epsilonWords_splitTreeWords|∀ (tree : PositiveNewNewSplitTree) (basis : FrobeniusBasis), Eq.{1} (epsilonWords (splitTreeWords tree basis)) (epsilon basis)
+T73_TYPE|Smooth4PC.T73.splitTree_wholeSource_undotted_eq_zero|∀ {C : Type u_1} [inst : AddCommGroup.{u_1} C] [inst_1 : _root_.Module.{0, u_1} ℚ C] (tree : PositiveNewNewSplitTree) (row : LinearMap.{0, 0, u_1, 0} (RingHom.id.{0} ℚ) C ℚ), Eq.{u_1 + 1} (targetCounitRow.{u_1} tree.leafCount row ∘ₗ splitTreeInsertion.{u_1} tree FrobeniusBasis.one) 0
+T73_TYPE|Smooth4PC.T73.splitTree_wholeSource_dotted_eq_source|∀ {C : Type u_1} [inst : AddCommGroup.{u_1} C] [inst_1 : _root_.Module.{0, u_1} ℚ C] (tree : PositiveNewNewSplitTree) (row : LinearMap.{0, 0, u_1, 0} (RingHom.id.{0} ℚ) C ℚ), Eq.{u_1 + 1} (targetCounitRow.{u_1} tree.leafCount row ∘ₗ splitTreeInsertion.{u_1} tree FrobeniusBasis.X) row
+T73_TYPE|Smooth4PC.T73.splitTree_directQ_undotted_row_eq_zero|∀ {Vs : Type u_1} {Vt : Type u_2} {C : Type u_3} [inst : AddCommGroup.{u_1} Vs] [inst_1 : _root_.Module.{0, u_1} ℚ Vs] [inst_2 : AddCommGroup.{u_2} Vt] [inst_3 : _root_.Module.{0, u_2} ℚ Vt] [inst_4 : AddCommGroup.{u_3} C] [inst_5 : _root_.Module.{0, u_3} ℚ C] (Qs : LinearEquiv.{0, 0, u_1, u_3} (RingHom.id.{0} ℚ) Vs C) (tree : PositiveNewNewSplitTree) (Qt : LinearEquiv.{0, 0, u_2, u_3} (RingHom.id.{0} ℚ) Vt (TensorTarget.{u_3} C tree.leafCount)) (row : LinearMap.{0, 0, u_3, 0} (RingHom.id.{0} ℚ) C ℚ), Eq.{u_1 + 1} (actualTargetRow.{u_2, u_3} tree.leafCount Qt row ∘ₗ conjugatedSplitTreeInsertion.{u_1, u_2, u_3} Qs tree Qt FrobeniusBasis.one) 0
+T73_TYPE|Smooth4PC.T73.splitTree_directQ_dotted_row_eq_source|∀ {Vs : Type u_1} {Vt : Type u_2} {C : Type u_3} [inst : AddCommGroup.{u_1} Vs] [inst_1 : _root_.Module.{0, u_1} ℚ Vs] [inst_2 : AddCommGroup.{u_2} Vt] [inst_3 : _root_.Module.{0, u_2} ℚ Vt] [inst_4 : AddCommGroup.{u_3} C] [inst_5 : _root_.Module.{0, u_3} ℚ C] (Qs : LinearEquiv.{0, 0, u_1, u_3} (RingHom.id.{0} ℚ) Vs C) (tree : PositiveNewNewSplitTree) (Qt : LinearEquiv.{0, 0, u_2, u_3} (RingHom.id.{0} ℚ) Vt (TensorTarget.{u_3} C tree.leafCount)) (row : LinearMap.{0, 0, u_3, 0} (RingHom.id.{0} ℚ) C ℚ), Eq.{u_1 + 1} (actualTargetRow.{u_2, u_3} tree.leafCount Qt row ∘ₗ conjugatedSplitTreeInsertion.{u_1, u_2, u_3} Qs tree Qt FrobeniusBasis.X) (actualSourceRow.{u_1, u_3} Qs row)
+T73_TYPE|Smooth4PC.T73.SphereChart.ell_comp_undotted_eq_zero|∀ {W : QMod} {ell : LinearMap.{0, 0, 0, 0} (RingHom.id.{0} ℚ) ↑W ℚ} (chart : SphereChart W ell), Eq.{1} (ell ∘ₗ chart.undottedRelation) 0
+T73_TYPE|Smooth4PC.T73.SphereChart.ell_comp_dottedMinusId_eq_zero|∀ {W : QMod} {ell : LinearMap.{0, 0, 0, 0} (RingHom.id.{0} ℚ) ↑W ℚ} (chart : SphereChart W ell), Eq.{1} (ell ∘ₗ chart.dottedMinusIdRelation) 0
+T73_TYPE|Smooth4PC.T73.sphereRelation_le_ker|∀ {u : AuditUniverse} {W : QMod} {ell : LinearMap.{0, 0, 0, 0} (RingHom.id.{0} ℚ) ↑W ℚ} (spheres : SphereTriple u W ell), LE.le.{0} (sphereRelation spheres) (LinearMap.ker.{0, 0, 0, 0} ell)
+T73_TYPE|Smooth4PC.T73.descendedSphereRow_comp_quotient|∀ {u : AuditUniverse} {W : QMod} {ell : LinearMap.{0, 0, 0, 0} (RingHom.id.{0} ℚ) ↑W ℚ} (spheres : SphereTriple u W ell), Eq.{1} (descendedSphereRow spheres ∘ₗ sphereQuotientMap spheres) ell
+T73_TYPE|Smooth4PC.T73.sphereClass_ne_zero|∀ {u : AuditUniverse} {W : QMod} {ell : LinearMap.{0, 0, 0, 0} (RingHom.id.{0} ℚ) ↑W ℚ} (spheres : SphereTriple u W ell) (x : ↑W), Ne.{1} (ell x) 0 → Ne.{1} ((sphereQuotientMap spheres) x) 0
+T73_TYPE|Smooth4PC.DiagonalShadow.cyclicRelation_le_ker|∀ {C : SmallQLinearCategory} {B : CoefficientBimodule C} (shadow : DiagonalShadow B), LE.le.{0} (cyclicRelation B) (LinearMap.ker.{0, 0, 0, 0} shadow.rawRow)
+T73_TYPE|Smooth4PC.DiagonalShadow.descendedRow_comp_quotient|∀ {C : SmallQLinearCategory} {B : CoefficientBimodule C} (shadow : DiagonalShadow B), Eq.{1} (shadow.descendedRow ∘ₗ coefficientHH0Quotient B) shadow.rawRow
+T73_TYPE|Smooth4PC.CoefficientBimoduleMorphism.cyclicRelation_le_comap|∀ {C : SmallQLinearCategory} {B D : CoefficientBimodule C} (F : CoefficientBimoduleMorphism B D), LE.le.{0} (cyclicRelation B) (Submodule.comap.{0, 0, 0, 0} F.rawMap (cyclicRelation D))
+T73_TYPE|Smooth4PC.ShadowMorphism.descendedRow_naturality|∀ {C : SmallQLinearCategory} {B D : CoefficientBimodule C} {source : DiagonalShadow B} {target : DiagonalShadow D} (F : ShadowMorphism source target), Eq.{1} (target.descendedRow ∘ₗ F.toBimoduleMorphism.hh0Map) source.descendedRow
+T73_TYPE|Smooth4PC.quotientLinearEquiv_apply_mk|∀ {A : Type u_1} {B : Type u_2} [inst : AddCommGroup.{u_1} A] [inst_1 : _root_.Module.{0, u_1} ℚ A] [inst_2 : AddCommGroup.{u_2} B] [inst_3 : _root_.Module.{0, u_2} ℚ B] (R : Submodule.{0, u_1} ℚ A) (S : Submodule.{0, u_2} ℚ B) (f : LinearMap.{0, 0, u_1, u_2} (RingHom.id.{0} ℚ) A B) (g : LinearMap.{0, 0, u_2, u_1} (RingHom.id.{0} ℚ) B A) (hf : LE.le.{u_1} R (Submodule.comap.{0, 0, u_1, u_2} f S)) (hg : LE.le.{u_2} S (Submodule.comap.{0, 0, u_2, u_1} g R)) (hgf : ∀ (a : A), Membership.mem.{u_1, u_1} R (HSub.hSub.{u_1, u_1, u_1} (g (f a)) a)) (hfg : ∀ (b : B), Membership.mem.{u_2, u_2} S (HSub.hSub.{u_2, u_2, u_2} (f (g b)) b)) (a : A), Eq.{u_2 + 1} ((quotientLinearEquiv.{u_1, u_2} R S f g hf hg hgf hfg) (Submodule.Quotient.mk.{0, u_1} a)) (Submodule.Quotient.mk.{0, u_2} (f a))
+T73_TYPE|Smooth4PC.quotientLinearEquiv_symm_apply_mk|∀ {A : Type u_1} {B : Type u_2} [inst : AddCommGroup.{u_1} A] [inst_1 : _root_.Module.{0, u_1} ℚ A] [inst_2 : AddCommGroup.{u_2} B] [inst_3 : _root_.Module.{0, u_2} ℚ B] (R : Submodule.{0, u_1} ℚ A) (S : Submodule.{0, u_2} ℚ B) (f : LinearMap.{0, 0, u_1, u_2} (RingHom.id.{0} ℚ) A B) (g : LinearMap.{0, 0, u_2, u_1} (RingHom.id.{0} ℚ) B A) (hf : LE.le.{u_1} R (Submodule.comap.{0, 0, u_1, u_2} f S)) (hg : LE.le.{u_2} S (Submodule.comap.{0, 0, u_2, u_1} g R)) (hgf : ∀ (a : A), Membership.mem.{u_1, u_1} R (HSub.hSub.{u_1, u_1, u_1} (g (f a)) a)) (hfg : ∀ (b : B), Membership.mem.{u_2, u_2} S (HSub.hSub.{u_2, u_2, u_2} (f (g b)) b)) (b : B), Eq.{u_1 + 1} ((LinearEquiv.symm.{0, 0, u_1, u_2} (quotientLinearEquiv.{u_1, u_2} R S f g hf hg hgf hfg)) (Submodule.Quotient.mk.{0, u_2} b)) (Submodule.Quotient.mk.{0, u_1} (g b))
+T73_TYPE|Smooth4PC.T73.aMinusIInverse_left|∀ (v : CSLattice), Eq.{1} (aMinusIInverse (aMinusIMap v)) v
+T73_TYPE|Smooth4PC.T73.aMinusIInverse_right|∀ (v : CSLattice), Eq.{1} (aMinusIMap (aMinusIInverse v)) v
+T73_TYPE|Smooth4PC.T73.aMinusICokernel_eq_zero|∀ (x : HasQuotient.Quotient.{0, 0} CSLattice (LinearMap.range.{0, 0, 0, 0} aMinusIMap)), Eq.{1} x 0
+T73_TYPE|Smooth4PC.T73.hTwoMinusIInverse_left|∀ (v : CSLattice), Eq.{1} (hTwoMinusIInverse (hTwoMinusIMap v)) v
+T73_TYPE|Smooth4PC.T73.hTwoMinusIInverse_right|∀ (v : CSLattice), Eq.{1} (hTwoMinusIMap (hTwoMinusIInverse v)) v
+T73_TYPE|Smooth4PC.T73.hTwoMinusICokernel_eq_zero|∀ (x : HasQuotient.Quotient.{0, 0} CSLattice (LinearMap.range.{0, 0, 0, 0} hTwoMinusIMap)), Eq.{1} x 0
+T73_TYPE|Smooth4PC.T73.t73CSLinearObstructionsVanish|Function.Bijective.{1, 1} ⇑aMinusIMap ∧ Function.Bijective.{1, 1} ⇑hTwoMinusIMap
+T73_TYPE|Smooth4PC.T73.t73IsHomotopySphere_of_topology|∀ {u : TopologicalUniverse}, CSTopologyData u → u.IsHomotopySphere u.candidate
+T73_TYPE|Smooth4PC.T73.s4DegreeZero_of_reduction|∀ {u : Universe} (data : S4ReductionData u) (q : ℤ), Ne.{1} q 0 → ∀ (x : ↑(u.G u.S4 q)), Eq.{1} x 0
+T73_TYPE|Smooth4PC.T73.conditionalNotStandard|∀ {u : Universe} (geom : ExternalGeometry u), ¬u.Diffeomorphic u.candidate u.S4
+T73_TYPE|Smooth4PC.T73.conditionalIsHomotopySphere|∀ {u : Universe}, CSExternalGeometry u → u.IsHomotopySphere u.candidate
+T73_TYPE|Smooth4PC.T73.conditionalCounterexample|∀ {u : Universe} (geom : ExternalGeometry u), CSExternalGeometry u → u.IsHomotopySphere u.candidate ∧ ¬u.Diffeomorphic u.candidate u.S4
+T73_TYPE|Smooth4PC.T73.conditionalCounterexample_of_topology|∀ {u : TopologicalUniverse} (geom : ExternalGeometry u.toUniverse), CSTopologyData u → u.IsHomotopySphere u.candidate ∧ ¬u.Diffeomorphic u.candidate u.S4
+'Smooth4PC.T73.detA_eq_one' depends on axioms: [propext, Quot.sound]
+'Smooth4PC.T73.detAMinusI_eq_one' depends on axioms: [propext, Quot.sound]
+'Smooth4PC.T73.sphereDet_eq_one' depends on axioms: [propext, Quot.sound]
+'Smooth4PC.T73.computedCubic_eq_neg59072' depends on axioms: [propext, Quot.sound]
+'Smooth4PC.T73.computedCubic_ne_zero' depends on axioms: [propext, Quot.sound]
+'Smooth4PC.T73.computedDegree_eq_494' depends on axioms: [propext]
+'Smooth4PC.T73.computedDegree_ne_zero' depends on axioms: [propext]
+'Smooth4PC.T73.undottedRow_eq_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Smooth4PC.T73.dottedRow_eq_source' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Smooth4PC.T73.epsilonWords_splitTreeWords' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Smooth4PC.T73.splitTree_wholeSource_undotted_eq_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Smooth4PC.T73.splitTree_wholeSource_dotted_eq_source' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Smooth4PC.T73.splitTree_directQ_undotted_row_eq_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Smooth4PC.T73.splitTree_directQ_dotted_row_eq_source' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Smooth4PC.T73.SphereChart.ell_comp_undotted_eq_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Smooth4PC.T73.SphereChart.ell_comp_dottedMinusId_eq_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Smooth4PC.T73.sphereRelation_le_ker' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Smooth4PC.T73.descendedSphereRow_comp_quotient' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Smooth4PC.T73.sphereClass_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Smooth4PC.DiagonalShadow.cyclicRelation_le_ker' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Smooth4PC.DiagonalShadow.descendedRow_comp_quotient' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Smooth4PC.CoefficientBimoduleMorphism.cyclicRelation_le_comap' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Smooth4PC.ShadowMorphism.descendedRow_naturality' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Smooth4PC.quotientLinearEquiv_apply_mk' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Smooth4PC.quotientLinearEquiv_symm_apply_mk' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Smooth4PC.T73.aMinusIInverse_left' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Smooth4PC.T73.aMinusIInverse_right' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Smooth4PC.T73.aMinusICokernel_eq_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Smooth4PC.T73.hTwoMinusIInverse_left' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Smooth4PC.T73.hTwoMinusIInverse_right' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Smooth4PC.T73.hTwoMinusICokernel_eq_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Smooth4PC.T73.t73CSLinearObstructionsVanish' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Smooth4PC.T73.t73IsHomotopySphere_of_topology' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Smooth4PC.T73.s4DegreeZero_of_reduction' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Smooth4PC.T73.conditionalNotStandard' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Smooth4PC.T73.conditionalIsHomotopySphere' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Smooth4PC.T73.conditionalCounterexample' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Smooth4PC.T73.conditionalCounterexample_of_topology' depends on axioms: [propext, Classical.choice, Quot.sound]
