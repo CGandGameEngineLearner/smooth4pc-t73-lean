@@ -1,8 +1,10 @@
 .worktrees/
 .lake/
+deps/
 build/
 *.olean
 *.ilean
 __pycache__/
+.pytest_cache/
 audit_tmp/
 

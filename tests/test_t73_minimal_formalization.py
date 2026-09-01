@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import json
 import os
 import re
 import shutil
@@ -93,6 +94,37 @@ def resolve_lake() -> Path:
     raise FileNotFoundError("lake was not found via T73_LAKE, PATH, or ~/.elan")
 
 
+def resolve_mathlib(repo: Path) -> Path:
+    configured = os.environ.get("T73_MATHLIB")
+    if configured:
+        candidate = Path(configured).expanduser()
+    else:
+        manifest = json.loads(
+            (repo / "lake-manifest.json").read_text(encoding="utf-8")
+        )
+        entry = next(
+            package for package in manifest["packages"] if package["name"] == "mathlib"
+        )
+        if entry["type"] == "path":
+            candidate = repo / entry["dir"]
+        elif entry["type"] == "git":
+            candidate = (
+                repo
+                / manifest.get("packagesDir", ".lake/packages")
+                / entry["name"]
+            )
+            if entry.get("subDir"):
+                candidate /= entry["subDir"]
+        else:
+            raise RuntimeError(f"unsupported mathlib source: {entry['type']}")
+
+    if not candidate.is_dir():
+        raise FileNotFoundError(
+            f"mathlib is not materialized at {candidate}; run `lake update`"
+        )
+    return candidate.resolve()
+
+
 class T73FiniteFormalizationTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
@@ -109,16 +141,24 @@ class T73FiniteFormalizationTests(unittest.TestCase):
         cls.quotient_equiv = cls.repo / "Smooth4PC" / "QuotientEquiv.lean"
         cls.audit = cls.repo / "T73Audit.lean"
         cls.lake = resolve_lake()
+        cls.mathlib = resolve_mathlib(cls.repo)
 
     def lean_environment(self, olean_root: Path) -> dict[str, str]:
         env = os.environ.copy()
         env.pop("LEAN_PATH", None)
-        mathlib = self.repo / "deps" / "mathlib4"
-        paths = [olean_root, mathlib / ".lake" / "build" / "lib" / "lean"]
-        packages = mathlib / ".lake" / "packages"
+        mathlib = self.mathlib
+        root_packages = self.repo / ".lake" / "packages"
+        if root_packages.is_dir():
+            package_roots = sorted(root_packages.iterdir())
+        else:
+            package_roots = [mathlib]
+            nested_packages = mathlib / ".lake" / "packages"
+            if nested_packages.is_dir():
+                package_roots.extend(sorted(nested_packages.iterdir()))
+        paths = [olean_root]
         paths.extend(
             package / ".lake" / "build" / "lib" / "lean"
-            for package in sorted(packages.iterdir())
+            for package in package_roots
             if (package / ".lake" / "build" / "lib" / "lean").is_dir()
         )
         env["LEAN_PATH"] = os.pathsep.join(str(path) for path in paths)
