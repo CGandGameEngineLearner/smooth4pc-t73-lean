@@ -53,13 +53,13 @@ def matrixAMinusI : Matrix3 := fun row column =>
 def sphereColumns : Matrix3 := fun row column =>
   match row.val, column.val with
   | 0, 0 => -1311
-  | 0, 1 => 8608
-  | 0, 2 => -1
-  | 1, 0 => -189
+  | 0, 1 => -189
+  | 0, 2 => 41
+  | 1, 0 => 8608
   | 1, 1 => 1241
-  | 1, 2 => 0
-  | 2, 0 => 41
-  | 2, 1 => -269
+  | 1, 2 => -269
+  | 2, 0 => -1
+  | 2, 1 => 0
   | 2, 2 => 1
   | _, _ => 0
 
