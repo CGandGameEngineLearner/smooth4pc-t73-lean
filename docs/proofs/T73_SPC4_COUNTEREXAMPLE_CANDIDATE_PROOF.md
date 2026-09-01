@@ -9,8 +9,10 @@ unconditional counterexample, a formally verified counterexample, or external
 acceptance.
 
 > **Conditional theorem.** Let \(X=X(41,189,73)\). Assume the external
-> geometric and functorial premises **E3--E12** listed in Section 15. Sections
-> 2--3 discharge the balanced Hattori input E1/E2; Section 9
+> geometric and functorial premises **E4--E12** listed in Section 15. Sections
+> 2--3 discharge the balanced Hattori input E1/E2; Section 4 constructs the
+> coefficient quantum-trace comparison and its divided cubic functional;
+> Section 5 constructs the selected raw-state binding E3. Section 9
 > proves the weak sphere-basis deduction from the E7 handle-realization input.
 > Then the
 > MWW lasagna module of \(X\) over \(\mathbb Q\) contains a nonzero homogeneous
@@ -47,20 +49,30 @@ K(r-\alpha^-,r+\alpha^+)\cup L,\eta^r;
 This is the \(N=2\) specialization of MWW's summand in
 `D:/tmp/r6/mww_handle_src/kirby.tex:320-345`; it is not itself the cabled
 quotient. Let \(\iota_s:C_s\to\mathcal C_{\rm cabled}\) be the summand
-inclusion followed by the cabled quotient map. For every state keep three
-types visible:
+inclusion followed by the cabled quotient map, and let \(\Phi\) be MWW's
+cabled-quotient/core-attachment isomorphism. These maps are distinct from the
+raw endpoint shadow.
+
+For a cut tangle \(R_s\), MWW's one-handle theorem gives an isomorphism
+\(\Gamma_s\) from its coefficient \(HH_0\) to the unshifted raw summand. When a
+coefficient quantum shadow \(\mathsf S_s\) is supplied, define
 
 \[
-C_s \xrightarrow{\Phi_s:=\Phi\iota_s} \mathcal W_s
-    \xrightarrow{\operatorname{Sh}_s} E_s,
-\qquad \Theta_s:=\operatorname{Sh}_s\Phi_s.
+C_s \xrightarrow{\ \Gamma_s^{-1}\ }
+HH_0(\mathcal A_s;M_{R_s})
+\xrightarrow{\ \mathsf S_s\ }E_s,
+\qquad \Theta_s^{\rm raw}:=\mathsf S_s\Gamma_s^{-1}.
 \tag{1.2}
 \]
 
-Here \(\Phi\) is MWW's cabled-quotient/core-attachment comparison,
-\(\mathcal W_s\) is its state target, and \(E_s\) is the fixed-weight endpoint
-space. The final presentation starts from \(\bigoplus_s C_s\), not from
-endpoint spaces.
+The arrows in (1.2) include the one-handle and displayed cabled grading
+normalizations; Section 5 writes them numerically at \(s_0\).
+
+Section 5 constructs (1.2) at the selected state. E6 and E8, not E3, require
+a coherent family of such raw shadows compatible with every beta, psi, and
+sphere map. Below the superscript is suppressed: \(\Theta_s\) always means this
+raw map, not a map already descended through the cabled quotient. The final
+presentation starts from \(\bigoplus_s C_s\), not from endpoint spaces.
 
 <a id="balanced-hattori-coefficient"></a>
 ## 2. Balanced Hattori coefficient
@@ -208,8 +220,8 @@ coefficient **[P]**.
 
 BPW's vertical trace and natural functor to horizontal trace send
 \(p\xrightarrow{\alpha}Fp\) to \(\operatorname{Sh}[p,\alpha]\)
-(`D:/tmp/r6/bpw_src/shadows/vertical.tex:11-58`). The candidate application
-**[E3]** is
+(`D:/tmp/r6/bpw_src/shadows/vertical.tex:11-58`). Applying that theorem to the
+literal Section 2 representable coefficient gives the ordinary trace **[P]**
 
 \[
 \eta_R[T_1]\longmapsto
@@ -221,27 +233,108 @@ BPW's vertical trace and natural functor to horizontal trace send
 \]
 
 Since \(\epsilon(X)=1\), the 227 counits send this to \(\operatorname{Id}_U\).
-Denote the resulting one-handle trace class by \([v_T]_{1h}\). In its base
-endpoint coordinates,
+Denote the resulting one-handle trace class by \([v_T]_{1h}\).
+
+The generic endpoint comparison is obtained without identifying the internal
+grading with a scalar. Let \(\zeta\) be the quantum-trace parameter,
+\(R_\zeta=\mathbb Q[\zeta,\zeta^{-1}]\), and use the quantum degree as the
+pregrading while retaining the homological degree separately. Define
 
 \[
-\operatorname{Sh}_{1h}([v_T]_{1h})=u+O(h),
-\qquad u=e_0-e_5\in E_{s_0}=Q(88,86)=M_1(88).
-\tag{4.2}
+ q\!\operatorname{Tr}_\zeta(\mathcal A;M_R)=
+ \frac{\displaystyle\bigoplus_T M_R(T,T)\otimes R_\zeta}
+ {\left\langle
+ M_R(1,f)m-\zeta^{|f|_q}M_R(f,1)m
+ \right\rangle},
+ \tag{4.2}
 \]
 
-In the same strict endpoint coordinates, functoriality of the physical braid
-\(W\) gives
+where \(f:S\to T\) is homogeneous and \(m\in M_R(T,S)\). Both displayed
+terms are diagonal. Right-exact base change of this explicit cokernel gives
 
 \[
-\Phi_h\operatorname{Sh}(\eta_R[T_0])=\rho_h(W)u+O(h),
-\qquad
-\Phi_h\operatorname{Sh}(\eta_R[T_1])=u+O(h).
-\tag{4.3}
+ q\!\operatorname{Tr}_\zeta(\mathcal A;M_R)
+ \otimes_{R_\zeta}R_\zeta/(\zeta-1)
+ \cong HH_0(\mathcal A;M_R).
+ \tag{4.3}
 \]
 
-The counit evaluation is **[P]** after **E3**; identification with the actual
-cup is still external.
+This is the MWW enriched coefficient coend itself: the underlying bigraded
+Hom spaces, coefficient spaces, and gluing actions are unchanged, and only
+the scalar \(\zeta^{|f|_q}\) specializes to one.
+
+There is a concrete quantum shadow on (4.2). If
+
+\[
+ H_{T,S}(m)=\sum_j a_j\otimes z_j,
+ \qquad a_j:B_{\rm act}T\to B_{\rm act}S,
+\]
+
+set
+
+\[
+ \mathsf S_\zeta([m])=
+ \sum_j\epsilon^{\otimes227}(z_j)\,
+ \mathsf Q\!\left(\operatorname{tr}_\zeta(a_j)\right).
+ \tag{4.4}
+\]
+
+Here \(\mathsf Q\) is BPW's quantum vertical-to-horizontal trace followed by
+the strict BHPW endpoint functor. The two E1 action squares send the two terms
+of a relation in (4.2) to
+
+\[
+ \operatorname{tr}_\zeta(B_{\rm act}f\circ a_j)
+ \quad\text{and}\quad
+ \zeta^{|f|_q}\operatorname{tr}_\zeta(a_j\circ B_{\rm act}f),
+\]
+
+which agree by the defining quantum-trace relation
+(`D:/tmp/r6/bpw_src/traces/graded.tex:90-108`). Thus (4.4) is a map on the
+coefficient quotient, not a \(K_0\)-only evaluation. BHPW's strict endpoint
+functor and natural Chern square identify its target with the actual weight-86
+quantum \(HH_0\) modules
+(`D:/tmp/r6/agents/finite_type_leading/bphw_1903_src/sections/intro.tex:386-421`;
+`D:/tmp/r6/bpw_src/quantum/qannulus.tex:289-309`).
+
+Complete at \(\zeta=1+h\). The selected identity and the 227 counits give
+
+\[
+\mathsf S_h([v_T]_{1h})=u_h,
+\qquad u_h\bmod h=u=e_0-e_5\in Q(88,86)=M_1(88).
+\tag{4.5}
+\]
+
+Fix the normalized Artin-word endpoint operator \(\rho_h(W)\) and normalized
+cap \(\widehat C(h)\). This is a chosen linear postcomposition on the fixed
+endpoint target; equality with any projectively normalized cabling map is not
+used here. Since every pure generator is \(I+O(h)\) and \(W\in\Gamma_3\),
+
+\[
+\rho_h(W)-I\in h^3\operatorname{End}(Q(88,86)[[h]])
+\tag{4.6}
+\]
+
+on the entire endpoint module. Hence
+
+\[
+ \mathcal D_h=\widehat C(h)(\rho_h(W)-I)\mathsf S_h
+\]
+
+has image in \(h^3\mathbb Q[[h]]\). Divide the whole map by \(h^3\), reduce
+modulo \(h\), and use (4.3). This gives an ordinary individual-class
+functional
+
+\[
+ \mathcal D_3:HH_0(\mathcal A;M_R)\longrightarrow\mathbb Q.
+\tag{4.7}
+\]
+
+Lift independence follows because two lifts differ by \(hy\), whose divided
+values differ by \(h\mathcal D'_h(y)\). Therefore the coefficient-level
+ordinary-cyclic/generic-endpoint bridge and 227 counits are **[P]**. Section 5
+constructs its selected raw-state binding E3; the global strict foam scope
+remains E4.
 
 <a id="strict-functoriality"></a>
 ## 5. Strict functoriality and grading ledger
@@ -267,29 +360,65 @@ and
 `AuditArithmetic.lean:87-91` checks the last subtraction. Thus
 \([v_T]_{1h}\) has quantum degree 498.
 
-The candidate-specific assertion that the actual lift occurs at
-\(s_0=(\alpha=0,r=e_{m_2}+e_{r_{xy}})\), hence \(|r|=2\), is included in
-**E3** rather than inferred from this arithmetic. At that state the \(N=2\)
-cabled shift is the finite-verified \(-4\). The raw-state representative
+The actual coefficient boundary has one negative and one positive cable on
+each of \(m_2\) and \(r_{xy}\), and no others. In MWW's notation
 
 \[
-\widetilde v_{s_0}\in C_{s_0}
+k^-=r-\alpha^-,\qquad k^+=r+\alpha^+.
+\]
+
+Thus **[P]** the unique state is
+
+\[
+s_0=(\alpha=0,r=e_{m_2}+e_{r_{xy}}),\qquad |r|=2.
 \tag{5.2}
 \]
 
-has degree \(498-4=494\). The coefficient class, one-handle class, raw-state
-representative, and final quotient class are distinct objects. Premises
-**E3--E4** include the typed cabled binding
+Let
 
 \[
-\Theta_{s_0}(\widetilde v_{s_0})=u+O(h).
+\Gamma_{s_0}:HH_0(\mathcal A;M_R)\xrightarrow{\cong}
+\mathcal S^2_0\!\left(W_1;K(r,r),\eta^r;\mathbb Q\right),
+\qquad \deg_q\Gamma_{s_0}=315
+\tag{5.3}
+\]
+
+be the literal gluing isomorphism in MWW's one-handle theorem
+(`D:/tmp/r6/mww_handle_src/1handles.tex:242-299`). Define the named raw element
+
+\[
+\widetilde v_{s_0}:=
+\Gamma_{s_0}(\eta_R[T_1])\{-4\}\in C_{s_0}.
 \tag{5.4}
 \]
+
+This is the labelled filling resealed through the actual one-handles, not a
+preimage selected from surjectivity. The cabled shift is forced by MWW's
+formula
+
+\[
+(1-N)(2|r|+|\alpha|)=(1-2)(4)=-4,
+\]
+
+so \(\widetilde v_{s_0}\) has degree \(498-4=494\). Equations (4.4)--(4.5)
+and (5.3) give **[P]**, under the already separate strict-functoriality scope
+E4,
+
+\[
+\Theta_{s_0}^{\rm raw}(\widetilde v_{s_0})=u_h,
+\qquad u_h\bmod h=u=e_0-e_5.
+\tag{5.5}
+\]
+
+The coefficient class, one-handle class, shifted raw-state representative,
+and final quotient class remain distinct objects. Equation (5.5) does not
+claim that the raw shadow has descended through beta/psi; that responsibility
+belongs to E6.
 
 <a id="point-push-cubic"></a>
 ## 6. Point-push cubic
 
-Put \(h=q-1\), \(t=q^{-2}\), and \(\varepsilon=t-1\). The finite word audit
+Put \(h=\zeta-1\), \(t=\zeta^{-2}\), and \(\varepsilon=t-1\). The finite word audit
 supplies **[F2]**
 
 \[
@@ -298,9 +427,10 @@ f(\varepsilon):=\ell(\rho(W)-I)u
 \tag{6.1}
 \]
 
-including vanishing coefficients in degrees 0, 1, and 2. It does not prove
-the operator assertion \(\rho(W)-I=O(\varepsilon^3)\) on every endpoint
-space. Since \(\varepsilon=-2h+3h^2-4h^3+O(h^4)\), **[P]**
+including vanishing coefficients in degrees 0, 1, and 2. The finite audit alone
+does not prove an operator assertion; the whole-module divisibility used in
+Section 4 follows separately from \(W\in\Gamma_3\) and the pure-generator
+filtration. Since \(\varepsilon=-2h+3h^2-4h^3+O(h^4)\), **[P]**
 
 \[
 [h^3]f(\varepsilon(h))=(-2)^3\,7384=-59072\ne0.
@@ -645,7 +775,8 @@ At the base state fix
 
 There is one positive and one negative physical copy of each active owner,
 so the relevant constant Reynolds projector fixes the seed row. Premise
-**E3** gives \(\Theta_{s_0}(\widetilde v_{s_0})=u+O(h)\). Premise **E9**
+Sections 4--5 give
+\(\Theta_{s_0}(\widetilde v_{s_0})=u+O(h)\). Premise **E9**
 gives \(W_{s_0}-I=O(h^3)\), so the \(O(h)\) shadow correction begins in
 order four after applying \(W_{s_0}-I\). Consequently (6.1)--(6.2) bind the
 finite scalar to the family:
@@ -767,7 +898,7 @@ base-change inference:
 
 Premise **E12** also includes graded diffeomorphism invariance. Combining
 (12.3), the bidegree-\((0,0)\) four-handle isomorphism, and (14.1) proves
-**[P]**, under **E3--E12**, that
+**[P]**, under **E4--E12**, that
 
 \[
 X(41,189,73)\not\cong_{\rm diff}S^4.
@@ -787,26 +918,28 @@ checked in `AuditArithmetic.lean`.
 |---|---|---|---|
 | E1 balanced Hattori | **[P] `proved_in_document`** | actual paired-annulus disk system: Section 2 and `D:/tmp/t73_actual_cable_unit/ACTUAL_PD_CABLE_UNIT_CERT.json`; MWW formulas: `D:/tmp/r6/mww_handle_src/1handles.tex:173-229,242-299,420-430` | the unknown braid/framing is retained inside \(B_{\rm act}\), not identified or discarded |
 | E2 diagonal binding | **[P]** | Section 3; Hattori identity: `D:/tmp/r6/mww_handle_src/1handles.tex:783-787` | selected input is \(T_1=B_{\rm act}^{-1}U\), never \(\xi\) |
-| E3 BPW trace/cup/state binding | **[E]** | `D:/tmp/r6/bpw_src/shadows/vertical.tex:11-58` | actual 227-cap movie and \(s_0=(0,e_{m_2}+e_{r_{xy}})\) binding are extra |
+| E3 selected raw-state binding | **[P] `proved_in_document`** | state and named representative: Section 5; MWW one-handle isomorphism `D:/tmp/r6/mww_handle_src/1handles.tex:242-299`; state formula `D:/tmp/r6/mww_handle_src/kirby.tex:320-345` | quotient descent is not hidden here; it remains in E6/E8 |
 | E4 strict scope | **[E]** | `D:/tmp/r6/agents/finite_type_leading/bphw_1903_src/sections/equivalence.tex:468-493` | exact foam scope remains explicit |
-| F1 degree | **[F] `finite_verified`** | `D:/tmp/r6/agents/finite_type_leading/ORDINARY_SHADOW_HATTORI_CHAIN_RESULT.md:100-115`; `D:/tmp/r6/grading_attack/ledger/Q494_SPHERE_GRADING_LEDGER.md:45-60`; `AuditArithmetic.lean:87-91` | actual state binding is in E3 |
+| F1 degree | **[F] `finite_verified`** | `D:/tmp/r6/agents/finite_type_leading/ORDINARY_SHADOW_HATTORI_CHAIN_RESULT.md:100-115`; `D:/tmp/r6/grading_attack/ledger/Q494_SPHERE_GRADING_LEDGER.md:45-60`; `AuditArithmetic.lean:87-91` | \(-44+227+315-4=494\), with the state binding proved in Section 5 |
 | F2 scalar | **[F]** | `D:/tmp/r6/eta_t1_delta3_reaudit/ETA_T1_DELTA3_DECISION.md#2-exact-raw-word-calculation` | scalar, not global operator valuation |
 | E5 intrinsic \(\nu\) | **[E]** | algebra: `D:/tmp/r6/agents/finite_type_leading/bphw_1903_src/sections/preliminaries.tex:610-633` | actual-map binding is candidate-specific |
 | E6 beta/psi | **[E]** | MWW: `D:/tmp/r6/mww_handle_src/kirby.tex:265-345` | whole-domain equations remain premises |
 | E7 actual handle realization / fixed-Y basis | **[E]** | declared handle data: `D:/tmp/s4pc_ruler/ENGINE/kirby_master/cs_presentation.py:9-14,66-76`, `D:/tmp/s4pc_ruler/ENGINE/out/t73_eps0.erkmo.json:179-199,285-289`; basis deduction: Section 9 | realization remains external; once granted, existence/basis is proved and no simple map follows |
 | F3 synthetic determinant | **[F]** | `AuditArithmetic.lean:59-60` | historical check, not consumed by the revised proof; implies no map statement |
 | E8 direct-Q/shadow | **[E]** | easy hemisphere: `D:/tmp/r6/mww_handle_src/kirby.tex:613-648`; hard map/core square: `:650-684` | exact residual is whole-source factorization of \(\Phi^{-1}\Psi_{\Delta_-}\Phi\), plus coherent \(\Theta_s,Q_s\) |
-| E9 cubic naturality | **[E]** | diagnostic: `D:/tmp/r6/agents/qhh_naturality_hostile/HOSTILE_FULL_DOMAIN_DESCENT_AUDIT.md#6-is-pure-braid-ioh-enough` | F2 proves neither the global operator valuation nor the normalized Reynolds-edge identities (11.2b) |
+| E9 cubic naturality | **[E]** | whole-endpoint \(h^3\) valuation: Section 4; diagnostic: `D:/tmp/r6/agents/qhh_naturality_hostile/HOSTILE_FULL_DOMAIN_DESCENT_AUDIT.md#6-is-pure-braid-ioh-enough` | the normalized changing-state/Reynolds-edge identities (11.2b) remain unproved |
 | E10 complete MWW quotient | **[E]** | `D:/tmp/r6/mww_handle_src/kirby.tex:459-489,705-759` | completeness is required on all raw state summands |
 | E11 graded four-handle | **[E]** | `D:/tmp/r6/mww_handle_src/kirby.tex:418-426` | rational bidegree-\((0,0)\) form stays explicit |
 | E12 rational S4 and graded diffeomorphism | **[E]** | grading/invariant: `D:/tmp/r6/mww_handle_src/kirby.tex:8-57`; field scope: `D:/tmp/r6/mww_handle_src/1handles.tex:15-20`, `D:/tmp/r6/mww_handle_src/introduction.tex:128-134`; four/S4: `D:/tmp/r6/mww_handle_src/kirby.tex:418-431` | direct rational statement remains a premise, not an inferred base change |
 | E13 CS bridge | **[E]** | `D:/tmp/r6/QSC/kpr/cs_2404.05096.txt:128-151`; finite determinants: `AuditArithmetic.lean` | homotopy-sphere bridge is external |
 | P1 descent | **[P] `proved_in_document`** | Sections 11--12 | conditional on E5, E6, E8--E10; Section 9 supplies the basis deduction from E7 |
-| P2 nonstandard | **[P]** | Sections 13--14 | conditional on E3--E12 |
+| P2 nonstandard | **[P]** | Sections 13--14 | conditional on E4--E12 |
 
 The 13 explicit HTML anchors above match the manifest consumer IDs. The
 manifest is the frozen v1 allocation: this revised proof discharges its E1/E2
-inputs by the actual paired-annulus argument, and splits its coarse E7
+inputs and the coefficient part formerly assigned to E3 by the
+paired-annulus/quantum-trace argument, and
+splits its coarse E7
 owner/direct-Q clause between the narrowed E7 realization input and E8.
 
 ## 16. Honest closing status
@@ -822,7 +955,7 @@ CANDIDATE_PROOF_PENDING_INDEPENDENT_REVIEW
 ```
 
 Even zero-`sorry` Lean proves only the conditional implication unless the
-remaining **E3--E13** premises are proved. This document
+remaining **E4--E13** premises are proved. This document
 claims neither formal verification nor external acceptance.
 
 ## 17. Decisive post-audit boundary
@@ -841,7 +974,13 @@ procedural, status.
    the cobordism upside down. The serialized object declares, but does not
    geometrically construct, those attaching spheres.
 
-3. **E8 is the decisive unresolved map.** MWW computes the easy
+3. **E3 is closed at the raw-state level.** The coefficient quantum trace, its
+   specialization to ordinary MWW \(HH_0\), the individual endpoint map, the
+   divided cubic functional, and the named degree-494 representative in the
+   forced state \(s_0\) are constructed. This does not assert beta/psi or
+   sphere descent; those are E6 and E8.
+
+4. **E8 is the decisive three-handle map.** MWW computes the easy
    \(\Delta_+\) hemisphere. No existing artifact proves that the hard
    \(\Phi^{-1}\Psi_{\Delta_-}\Phi\) map on every actual cabled state is a
    split-tree operator up to one coherent vertex transport. A Peiffer word and
@@ -849,12 +988,21 @@ procedural, status.
    framed actual-to-canonical corridors; knotting a carrier preserves those
    algebraic data and destroys a product-annulus conclusion.
 
-4. **Two proposed shortcuts fail.** Unimodularity of the ordinary
+5. **Two proposed shortcuts fail.** Unimodularity of the ordinary
    \(3\)-to-\(2\) boundary matrix does not imply clean geometric \(2/3\)-handle
    cancellation; group-ring/intersection and embedded-slide data are missing.
    Restricting to quantum degree \(494\) is not a finite computation, because
    dotted psi stabilization and the three-handle lift lattice remain in the
    same normalized degree.
+
+6. **The old early-psi kill does not apply.** The current selected seam
+   \(U_{(0,5)}\) joins an \(r_{xy}\) endpoint to an \(m_2\) endpoint. Removing
+   either owner destroys that cross-owner cup; in endpoint weights the proposed
+   lower blocks are \(Q(84,86)=0\) and \(Q(4,86)=0\). An owner-local
+   \(\psi^{[0]}\) ribbon and owner beta cannot create this connectivity. Thus
+   the historical \(u_\Omega\in\operatorname{im}\psi^{[0]}\) result concerns a
+   different input and is retired for \(v_T\). Full E6 image membership remains
+   open.
 
 Consequently the displayed implication is a sound conditional theorem, but
 the current mathematics does **not** establish an SPC4 counterexample.
