@@ -1,0 +1,56 @@
+{
+  "component_arc_ranges": {
+    "gate_y": {"count": 470, "lower": 1, "upper": 470},
+    "gate_z": {"count": 3088, "lower": 471, "upper": 3558},
+    "r_xy": {"count": 1892, "lower": 3559, "upper": 5450},
+    "r_yz": {"count": 1880, "lower": 5451, "upper": 7330},
+    "r_zx": {"count": 2, "lower": 7331, "upper": 7332},
+    "m_2": {"count": 739344, "lower": 7333, "upper": 746676},
+    "m_3": {"count": 3505896, "lower": 746677, "upper": 4252572},
+    "mu(r_xy)": {"count": 2, "lower": 4252573, "upper": 4252574},
+    "mu(r_yz)": {"count": 2, "lower": 4252575, "upper": 4252576},
+    "mu(r_zx)": {"count": 2, "lower": 4252577, "upper": 4252578},
+    "mu(m_2)": {"count": 2, "lower": 4252579, "upper": 4252580},
+    "mu(m_3)": {"count": 2, "lower": 4252581, "upper": 4252582}
+  },
+  "gate_aligned_basepoints": {
+    "r_xy": {
+      "allowed_gate_basepoint_count": 3,
+      "chosen_arc_position": 2,
+      "gate_candidate_count": 12
+    },
+    "r_yz": {
+      "allowed_gate_basepoint_count": 6,
+      "chosen_arc_position": 2,
+      "gate_candidate_count": 12
+    },
+    "m_2": {
+      "allowed_gate_basepoint_count": 3,
+      "chosen_arc_position": 2,
+      "gate_candidate_count": 933
+    },
+    "m_3": {
+      "allowed_gate_basepoint_count": 3,
+      "chosen_arc_position": 2,
+      "gate_candidate_count": 4380
+    }
+  },
+  "mutual_crossings_over_under": {
+    "r_xy>r_yz": 16,
+    "r_xy>m_2": 336,
+    "r_xy>m_3": 1512,
+    "r_yz>m_2": 336,
+    "r_yz>m_3": 1512,
+    "m_2>m_3": 608786
+  },
+  "mutual_height_failures": 0,
+  "mutual_height_order": ["r_xy", "r_yz", "m_2", "m_3"],
+  "pd_bytes": 78577492,
+  "pd_crossings": 2126291,
+  "pd_path": "D:/tmp/s4pc_ruler/DIAGRAM/out/t73_reduced_billiard.pd.json",
+  "pd_sha256": "e6912a64457557469e5c691b4d57abdbbf4c45adb05492777c574223d0c06f8a",
+  "schema": "t73_global_descending_exact_replay/v1",
+  "self_crossing_over_first_failures": 0,
+  "self_crossings": {"r_xy": 9, "r_yz": 3, "m_2": 64631, "m_3": 1445582},
+  "verdict": "PASS"
+}

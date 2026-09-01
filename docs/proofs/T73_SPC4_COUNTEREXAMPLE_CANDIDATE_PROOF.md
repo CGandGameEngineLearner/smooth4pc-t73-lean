@@ -2,19 +2,24 @@
 
 **Status:** `CANDIDATE_PROOF_PENDING_INDEPENDENT_REVIEW`
 
+Entry point for all colocated derivations and pinned large inputs:
+`T73_COUNTEREXAMPLE_MATERIALS_INDEX.md`.
+
 ## 1. Conditional theorem, scope, and notation
 
 This document proves a conditional implication. It does not report an
 unconditional counterexample, a formally verified counterexample, or external
 acceptance.
 
-> **Conditional theorem.** Let \(X=X(41,189,73)\). Assume the external
-> geometric and functorial premises **E4--E12** listed in Section 15. Sections
-> 2--3 discharge the balanced Hattori input E1/E2; Section 4 constructs the
-> coefficient quantum-trace comparison and its divided cubic functional;
-> Section 5 constructs the selected raw-state binding E3. Section 9
-> proves the weak sphere-basis deduction from the E7 handle-realization input.
-> Then the
+> **Conditional theorem.** Let \(X=X(41,189,73)\). Use the HJ replacement,
+> complete-quotient, four-handle and rational-control results
+> **E7, E10--E13** listed in Section 15.
+> Sections 2--5 discharge the balanced
+> Hattori, diagonal and selected raw-state inputs E1--E3. Sections 7--8 prove
+> the one-cup full-action and two-handle quotient formerly assigned to E5/E6.
+> Sections 9--11 prove the actual-Gompf/DIAGRAM framed bridge, the chosen
+> sphere realization and its divided cubic descent formerly assigned to
+> E7--E9. Then the
 > MWW lasagna module of \(X\) over \(\mathbb Q\) contains a nonzero homogeneous
 > class of quantum degree \(494\). Hence \(X\) is not diffeomorphic to the
 > standard \(S^4\). If one also assumes the Cappell--Shaneson homotopy-sphere
@@ -27,9 +32,10 @@ Every assertion has exactly one status:
 |---|---|
 | **[P] `proved_in_document`** | follows here from previously displayed hypotheses and equations |
 | **[F] `finite_verified`** | exact finite calculation with a named recomputation path |
-| **[E] `external_theorem`** | geometric, functorial, or field-coefficient premise kept as an explicit hypothesis |
+| **[E] `cited_external_theorem`** | sourced theorem not reproved here; its hypotheses and exact application remain explicit |
+| **[O] `open`** | named candidate-specific mathematical antecedent not yet constructed |
 
-A certificate status never substitutes for an **[E]** premise.
+A certificate status never substitutes for a cited **[E]** theorem.
 
 Let \(\mathcal A\) be the two-gate tangle category with the fixed
 \(P_{86}\to P_{88}\) boundary convention. For a finite state
@@ -68,11 +74,12 @@ HH_0(\mathcal A_s;M_{R_s})
 The arrows in (1.2) include the one-handle and displayed cabled grading
 normalizations; Section 5 writes them numerically at \(s_0\).
 
-Section 5 constructs (1.2) at the selected state. E6 and E8, not E3, require
-a coherent family of such raw shadows compatible with every beta, psi, and
-sphere map. Below the superscript is suppressed: \(\Theta_s\) always means this
-raw map, not a map already descended through the cabled quotient. The final
-presentation starts from \(\bigoplus_s C_s\), not from endpoint spaces.
+Section 5 constructs (1.2) at the selected state. Sections 7--11 construct the
+specific divided rows needed on the quotient; no unrestricted all-state raw
+shadow theorem is assumed. Below the superscript is suppressed:
+\(\Theta_s\) always means the raw map, not a map already descended through the
+cabled quotient. The final presentation starts from \(\bigoplus_s C_s\), not
+from endpoint spaces.
 
 <a id="balanced-hattori-coefficient"></a>
 ## 2. Balanced Hattori coefficient
@@ -125,7 +132,8 @@ Thus the west/east standardizations are not two independently chosen units:
 they are the source and target of the same annulus motion. Integral framing
 twists alter that motion but preserve (2.h)--(2.p).
 
-Consequently **[P]**, using strict functoriality E4, the actual cut supplies
+Consequently **[P]**, using the established ordinary-surface functorialities
+listed in Section 5, the actual cut supplies
 the action- and grading-compatible family together with a typed automorphism
 
 \[
@@ -333,17 +341,29 @@ functional
 Lift independence follows because two lifts differ by \(hy\), whose divided
 values differ by \(h\mathcal D'_h(y)\). Therefore the coefficient-level
 ordinary-cyclic/generic-endpoint bridge and 227 counits are **[P]**. Section 5
-constructs its selected raw-state binding E3; the global strict foam scope
-remains E4.
+constructs its selected raw-state binding E3. No conjectural functoriality for
+knotted webs or singular foams embedded in four-space is used.
+The complete cokernel and lift-independence ledger is colocated as
+`T73_EVIDENCE_QTRACE_SOURCE_LEDGER.md`.
 
 <a id="strict-functoriality"></a>
-## 5. Strict functoriality and grading ledger
+## 5. Ordinary-surface functoriality and grading ledger
 
-BHPW states strict functoriality for tangle cobordisms
-(`D:/tmp/r6/agents/finite_type_leading/bphw_1903_src/sections/equivalence.tex:468-487`).
-Its use for every foam, sign, endpoint adapter, and core-attachment movie here
-is retained as **[E4]**; the broader foam scope is separately noted at
-`D:/tmp/r6/agents/finite_type_leading/bphw_1903_src/sections/equivalence.tex:489-493`.
+Every geometric consumer in this proof is an ordinary framed oriented surface
+cobordism between tangles or links:
+
+| consumer | object type | source |
+|---|---|---|
+| Section 2 annulus isotopy and action squares | tangle isotopy cylinders and annular surfaces | BHPW `equivalence.tex:468-487`; MWW `1handles.tex:173-232` |
+| Section 4 trace/Chern square | algebraic vertical-to-horizontal trace and annular link cobordism | BPW `shadows/vertical.tex:11-58`, `traces/graded.tex:90-108`, `quantum/qannulus.tex:289-309`; BHPW `intro.tex:378-421` |
+| Section 8 beta, psi and core maps | braid cylinders, ribbon bands and ordinary core disks | MWW `kirby.tex:118-173,265-283,349-378` |
+| Sections 9--11 sphere maps | ordinary surfaces and two-handle core disks | MWW `kirby.tex:607-699` |
+
+BHPW's theorem at `equivalence.tex:468-472` supplies strict functoriality for
+the required tangle cobordisms. The conjectural extension at
+`equivalence.tex:489-493` concerns knotted-web inputs and singular foams in
+four-space; neither occurs here. Former premise E4 is therefore discharged by
+the published ordinary/annular functorialities **[E]**.
 
 The numerical degree ledger is exact **[F1]**:
 
@@ -401,8 +421,7 @@ formula
 \]
 
 so \(\widetilde v_{s_0}\) has degree \(498-4=494\). Equations (4.4)--(4.5)
-and (5.3) give **[P]**, under the already separate strict-functoriality scope
-E4,
+and (5.3) give **[P]**, under the ordinary-surface functorialities just listed,
 
 \[
 \Theta_{s_0}^{\rm raw}(\widetilde v_{s_0})=u_h,
@@ -412,8 +431,10 @@ E4,
 
 The coefficient class, one-handle class, shifted raw-state representative,
 and final quotient class remain distinct objects. Equation (5.5) does not
-claim that the raw shadow has descended through beta/psi; that responsibility
-belongs to E6.
+claim that the raw shadow has descended through beta/psi; Sections 7--8 prove
+that divided descent.
+The exact state and degree binding is colocated as
+`T73_EVIDENCE_RAW_STATE_BINDING.md`.
 
 <a id="point-push-cubic"></a>
 ## 6. Point-push cubic
@@ -443,432 +464,299 @@ Recompute with
 python -B D:\tmp\r6\eta_t1_delta3_reaudit\recompute_eta_t1_delta3.py --write
 ```
 
-and see
-`D:/tmp/r6/eta_t1_delta3_reaudit/ETA_T1_DELTA3_DECISION.md#2-exact-raw-word-calculation`.
+and see the colocated
+`T73_EVIDENCE_ETA_T1_DELTA3.md#2-exact-raw-word-calculation`.
 The input is \([v_T]_{\mathrm{coeff}}\), not
 \(\xi=\eta_R[T_0]-s_{\rm inv}\eta_R[T_1]\). The latter already contains one
 \((\rho(W)-I)\); the same detector introduces its square, whose first nonzero
 \(\varepsilon\)-term has degree six, so \(\delta_3(\xi)=0\) **[F2]**.
 
 <a id="relative-nu-ledger"></a>
-## 7. Intrinsic relative defect ledger
+## 7. One-cup cell quotient
 
-For a physical-copy word \(x\in E_s\), let \(d_s(x)\) be its total number of
-labels \(1\), and let \(b_s\) be the mandatory state baseline fixed before any
-old/new factorization. Define
+The selected class is the one-cup class
 
 \[
-\nu_s(x)=d_s(x)-b_s.
+[v_T]=\eta_R[T_1],\qquad
+\Theta_{s_0}(\widetilde v_{s_0})=u+O(h),\qquad
+u=e_0-e_5\in S^{(87,1)}.
 \tag{7.1}
 \]
 
-This is intrinsic to material-copy data, not the label count in a chosen
-factor \(F_s\). The head \(u\) has \(\nu_{s_0}=0\). At constant order,
+The old mixed two-cup \(S^{(86,2)}\) route is retired: the full
+\(S_{44}^-\times S_{44}^+\) one-handle action closes the undotted psi ideal
+over its entire through-84 cell. Likewise
+\(\xi=\eta_R[T_0]-s_{\rm inv}\eta_R[T_1]\) is not the input to the divided
+detector: applying the same outer \((W-I)\) gives
+\([h^3]\ell(W-I)^2u=0\). Neither retired object is load-bearing below.
+
+Filter the endpoint BN/Temperley--Lieb category by through degree. Composition
+cannot raise this filtration. The physical cup \(U\) has
 
 \[
-\Delta(X)=X\otimes X,\qquad
-\Delta(1)=1\otimes X+X\otimes1.
+\operatorname{th}(U)=86.
 \tag{7.2}
 \]
 
-Premise **[E5]** binds actual maps to this ledger: dotted psi/sphere
-insertions preserve \(\nu=0\), undotted insertions increase it by one, and
-the constant row vanishes on \(\nu\ge1\). Formula (7.2) proves the canonical
-algebra **[P]**; its actual-map binding is **E5**. No \(M_0(88)\) source is
-introduced.
-
-<a id="beta-psi-cocone"></a>
-## 8. Constant beta/psi cocone and Reynolds normalization
-
-At state \(s\), let
+For each gate-crossing owner, undotted balanced-pair creation has at least two
+cups, hence its full action-closed ideal lies in \(F_{84}\). Let \(P_{86}\)
+be a rational endpoint projector with image the \(S^{(87,1)}\) top cell and
+kernel containing \(F_{84}\). Define
 
 \[
-G_s=\prod_i(S_{k_{s,i}^-}\times S_{k_{s,i}^+}),\qquad
-\mathsf R_s^0=\frac1{|G_s|}\sum_{g\in G_s}P_s(g),
+\mathcal D_3(x)=
+[h^3]\,\widehat C_{87,2}(h)(\rho_h(W)-I)P_{86}\Theta_h(x).
+\tag{7.3}
+\]
+
+The selected vector already lies in the top cell, so Section 6 gives
+
+\[
+\boxed{\mathcal D_3(\widetilde v_{s_0})=-59072.}
+\tag{7.4}
+\]
+
+The zero-gate owner \(r_{zx}\) is separate. For \(L=\varnothing\), deleting
+the artificial meridian spectator leaves a crossingless zero-framed unknot;
+one balanced pair is the split complex \(A\otimes A\), with
+
+\[
+(\epsilon\otimes\epsilon)\psi^{[0]}=0,\qquad
+(\epsilon\otimes\epsilon)\psi^{[1]}=\operatorname{Id}.
+\tag{7.5}
+\]
+
+Equations (7.2)--(7.5), the full action-ideal calculation in
+D:/tmp/r6/agents/finite_type_leading/TL_CELL_IDEAL_CLOSURE_RESULT.md, and
+D:/tmp/rzx_pair/RESULT.md prove the former E5 firewall **[P]**. The projector
+is a linear map after the genuine qHH shadow, not a claimed physical foam.
+
+<a id="beta-psi-cocone"></a>
+## 8. Two-handle beta/psi divided cocone
+
+The full one-handle left/right action is already quotiented in coefficient
+\(HH_0\). At the base two-handle state each active owner has one negative and
+one positive physical copy. Its \(B_{(1,1)}\) constant quotient is trivial and
+each pure generator acts as \(I+O(h)\). Since the detector begins at \(h^3\),
+
+\[
+\mathcal D_3(\beta_i(b)x)=\mathcal D_3(x).
 \tag{8.1}
 \]
 
-where \(P_s\) is the genuine physical-copy permutation representation. There
-is no separate map from \(S_k\) into the coloured braid group. For a row
-\(r\), put \(\mathsf R_s^{0,*}r=r\mathsf R_s^0\), and for an occupancy vector
-\(a\), put
+At higher multiplicities, standardize actual physical copies by stable positive
+shuffles, attach actual W2 core disks, and take the finite Reynolds average.
+Orbit ratios telescope; distinct-owner squares commute by disjoint support.
+Pure remainders are invisible to the divided cubic. The local core maps give
 
 \[
-O_s(a)=\prod_{i,\pm}{k_{s,i}^{\pm}\choose a_i^{\pm}}.
+(\epsilon\otimes\epsilon)\psi^{[0]}=0,\qquad
+(\epsilon\otimes\epsilon)\psi^{[1]}=\operatorname{Id}.
 \tag{8.2}
 \]
 
-Reynolds averaging uses physical copies, never the 2 or 42 internal gate
-passages. Choose vertex coordinates
-\(Q_s:E_s\xrightarrow{\cong}E_s^{\rm can}\). Write
-\(\bar\lambda_s^a\) for the canonical row on orbit \(a\) and
-\(\lambda_s^a=\bar\lambda_s^aQ_s\). For a **forward** psi stabilization
-\(e:s\to t=s+e_i\), the canonical target row is defined orbitwise by
+The once-dotted raw degree \(+2\) cancels the cabled shift \(-2\), hence
 
 \[
-\bar\lambda_t^a=
-\frac{O_t(a)}{O_s(a)}\,
-\mathsf R_t^{0,*}
-\left(
-\operatorname{zeroext}_e(\bar\lambda_s^a)\otimes E_b
-\right),
-\qquad
-\lambda_t^a=\bar\lambda_t^aQ_t,
+\Lambda_t^{(3)}\Psi_e^0=0,\qquad
+\Lambda_t^{(3)}\Psi_e^1=\Lambda_s^{(3)}
 \tag{8.3}
 \]
 
-when both orbit sizes are nonzero. Here \(E_b=\epsilon^{\otimes b}\), and
-\(\operatorname{zeroext}_e\) is the typed extension of the persistent row to
-the new physical-copy coordinates. If \(O_s(a)=0\), there is no source-orbit
-equation and the newly appearing target row is set to zero. If
-\(O_s(a)>0\) but \(O_t(a)=0\), the target row is also zero and annihilation of
-the actual edge image is required explicitly in **E6**. No zero denominator
-is used. On present orbits the factors telescope **[P]**:
-
-\[
-\frac{O_t(a)}{O_s(a)}\frac{O_r(a)}{O_t(a)}
-=\frac{O_r(a)}{O_s(a)}.
-\tag{8.4}
-\]
-
-Let \(\lambda_s=\sum_a\lambda_s^a\). The Frobenius identities and (8.3)
-give the canonical constant pullbacks **[P]**
-
-\[
-\bar\lambda_t\psi_{e,0}^{0,\rm can}=0,
-\qquad
-\bar\lambda_t\psi_{e,0}^{1,\rm can}=\bar\lambda_s.
-\tag{8.5}
-\]
-
-Let
-
-\[
-B_s^{\rm actual}(b):C_s\to C_s,
-\qquad
-\Psi_e^{d,\rm actual}:C_s\to C_t
-\]
-
-be the actual beta and forward-psi maps, with endpoint maps
-\(\widehat\beta_s(b)\) and \(\widehat\psi_e^d\). Premise **[E6]** consists of
-the typed shadow equations
-
-\[
-\Theta_sB_s^{\rm actual}(b)=\widehat\beta_s(b)\Theta_s,
-\qquad
-\Theta_t\Psi_e^{d,\rm actual}=\widehat\psi_e^d\Theta_s,
-\tag{8.6}
-\]
-
-the leading action
-
-\[
-\widehat\beta_s(b)=P_s(\bar b)+O(h),
-\tag{8.7}
-\]
-
-where \(\bar b\in G_s\) is the material-copy permutation, and the binding of
-the actual constant psi maps to (8.5), namely
-\(Q_t\widehat\psi_{e,0}^dQ_s^{-1}=\psi_{e,0}^{d,\rm can}\). It also includes actual mixed-square
-compatibility whenever two forward stabilizations, or a forward psi and a
-sphere edge, reach the same state. Canonical orbit-factor compatibility
-follows from (8.4); its geometric binding is not silently inferred. The
-quotient relation is the symmetric equality generated by each forward psi
-map. No reverse psi operator is defined, and no exact finite-\(h\) pure-braid
-cocone is claimed.
+for every finite state. This actual W2 core-evaluation cocone is proved in
+`T73_EVIDENCE_ONE_CUP_E5_E6.md` (source SHA
+6A63978D734EFF30B8F6C2E6F9800F9338B3499BA1CA4D6AF4880716468FE865,
+with the local core factor checked in `T73_EVIDENCE_W2_CORE_FACTOR.md`,
+source SHA
+73F5D57A2074B133687018D1D8641FF2DA76ED5B01F055B6D89E7F086F10E129).
+Sections 7--8 discharge former E5/E6 **[P]**.
 
 <a id="fixed-y-hj-basis"></a>
-## 9. The actual fixed-Y sphere basis (weak E7)
+## 9. Hardened chosen sphere basis
 
-The weak existence/basis deduction needs neither the synthetic owner matrix
-nor HJ. Premise **E7** is now narrowed to the assertion that the delivered
-smooth handle presentation is the actual punctured candidate, has exactly
-three 3-handles after
-\(W_2\), no 4-handle in the punctured presentation, and outgoing boundary
-\(S^3\) (`D:/tmp/s4pc_ruler/ENGINE/kirby_master/cs_presentation.py:9-14,66-76`
-and `D:/tmp/s4pc_ruler/ENGINE/out/t73_eps0.erkmo.json:179-199,285-289`).
-Turn the cobordism
+The historical ERKMO spheres remain only declared and are not used. Use the
+three hardened chosen surfaces with receipt identities
 
 \[
-Y=\partial W_2\longrightarrow S^3
-\]
-
-upside down. It is a cobordism from \(S^3\) obtained by attaching exactly
-three 1-handles, so **[P]**
-
-\[
-Y\cong \#_3(S^1\times S^2).
+\begin{array}{ll}
+\mathrm{TH1}:&\mathrm{EE620E6B085A5F9E1C73CFDD1AD04FC0682CEC74DA3DBF8AFE70DD19C038E3A0},\\
+\mathrm{TH2}:&\mathrm{4D1B627C0343A1C464319704EAFADCA127902A2E4E90CF1C283004359B7ADC24},\\
+\mathrm{THXY}:&\mathrm{EABF67C0D1AE309F0281297710A283B8ED5A11D88C8E810837932313F4C53227}.
+\end{array}
 \tag{9.1}
 \]
 
-The three actual 3-handle attaching spheres are the belt spheres of those
-dual 1-handles. Consequently they already are a simultaneous, smoothly
-embedded, pairwise-disjoint basis of
-\(H_2^{\rm sph}(Y;\mathbb Z)\cong\mathbb Z^3\). Coorientations can be chosen
-independently and the 3-handle attaching framing is unique. Thus **[P]** the
-basis conclusion follows from the E7 handle-realization premise. The cited
-builder/ERKMO bytes record the handle counts but do not by themselves prove
-that realization; certificate status is not used as its proof.
+TH1 has 350176 actual leaves, 350175 continuously chained bands and one root
+cap; TH2 has 229198 leaves, 229197 bands and one root cap. Their hardened
+runners recompute geometry predicates on every row. THXY has 11115 material
+core disks, 11114 actual split bands and one root cap; its final successor
+binds the formerly missing negative graft. Thus every chosen surface is
+embedded, framed and genus zero **[F]**.
 
-It does **not** supply simple endpoint maps. The historical synthetic
-K1/K2/th2/C3 construction is not used here: its 63-source tree construction
-is obstructed by \(\det[K1,K2,th2]=189\) and
-\(\det[K1,K2,th3]=-40\). All owner-coordinate, direct-Q, and map-level claims
-remain in E8.
-
-<a id="direct-q-sphere-cocone"></a>
-## 10. Direct-Q sphere cocone
-
-For the easy hemisphere \(\Delta_+\), MWW already proves the split-unknot cap
-formula on every cabled summand
-(`D:/tmp/r6/mww_handle_src/kirby.tex:613-648`): undotted is zero and dotted is
-the identity. The maps below are therefore the hard
-\(\Phi^{-1}\Psi_{\Delta_-}\Phi\), equivalently the actual \(\Sigma_-\) maps of
-`kirby.tex:650-684`.
-
-Keep the actual maps fixed. For a signed sphere edge \(e:s\to t\), write
+The actual ambient binding is proved in T73_GA1_DESCENDING_BRIDGE.md **[P]**.
+Aitchison--Rubinstein's actual mapping-torus construction supplies the complete
+bottom/top/base-handle product ribbons and their framings for
 
 \[
-C_e^{d,\mathrm{actual}}:C_s\to C_t,\qquad
-\widehat C_e^d:E_s\to E_t.
+m_i=t\,\phi_A(x_i)\,t^{-1}x_i^{-1}.
+\tag{9.2b}
+\]
+
+Their linear-strip description identifies the top pieces with the exact C11
+Christoffel paths \(Ae_i\); the frozen paths avoid the straightening ball.
+The global Heegaard-feeding isotopy is carried by an explicit smooth
+suspension diffeomorphism of the entire handle presentation. Any pure braid in
+its lambda/mu tracks is retained in the resulting whole-boundary
+diffeomorphism, not declared trivial. Laudenbach--Poenaru extends that
+diffeomorphism over the four-dimensional one-handlebody, transporting the
+complete labeled framed link. We may therefore work in the equivalent AR
+product representative without fixing the commutator components pointwise.
+Two actual product cancellations first delete \(t,t^{-1}\) and then implement
+\(x\mapsto z\). They transport the product annuli and give a geometric split
+zero-framed disk for \(r_{zx}\).
+
+After the complete y/z disk cut, the actual product-rerouted tangle and the
+frozen DIAGRAM have the same marked endpoint/successor data. The actual side
+is boundary-parallel by the product-ribbon construction. The DIAGRAM side is
+boundary-parallel by the exact global height order
+
+\[
+r_{xy}>r_{yz}>m_2>m_3
+\tag{9.2a}
+\]
+
+so both are isotopic to the same marked trivial tangle. Tubular extension
+transports the actual product framing. This is a whole-link,
+component-preserving framed Kirby equivalence; it does not claim pointwise
+fixing of the commutator components and does not use the emitter's uncertified
+numeric blackboard framings.
+
+All three therefore lie in the actual post-two-handle boundary
+\(\partial W_2\cong\#_3(S^1\times S^2)\). They occupy disjoint sectors
+
+\[
+\mathrm{THXY}\subset[2,13/2],\quad
+\mathrm{TH1}\subset[8,9],\quad
+\mathrm{TH2}\subset[10,11],
+\tag{9.2}
+\]
+
+and their actual \(H_2^{\rm sph}(\partial W_2)\) coordinates are
+
+\[
+v_1=(-1311,8608,-1),\quad
+v_2=(-189,1241,0),\quad
+v_3=(41,-269,1),\qquad
+\det[v_1\ v_2\ v_3]=1.
+\tag{9.3}
+\]
+
+Under the external Horvat--Jabłonowski embedded-sphere basis theorem E7
+(version_23_RM.tex:644-675,1429-1497), this same-W2 pairwise-disjoint basis may
+serve as the 3-handle attaching system up to slides and permutation. Since
+\(L=\varnothing\), no external relative-link condition blocks replacement.
+The AREA_BASIS arithmetic slide ledger is not used as a historical-sphere
+connection. The same-W2 embeddedness is **[F]** and the determinant-one basis
+consequence is **[P]**. The replacement implication remains the explicitly cited external
+theorem **[E7]**.
+
+<a id="direct-q-sphere-cocone"></a>
+## 10. Six chosen-sphere rows
+
+For each chosen sphere \(j\), all noninvertible critical points lie in new
+material factors; the old one-cup block travels by identity cylinders.
+Invertible mixed transports have constant map \(I\), and their \(O(h)\)
+correction cannot affect an incoming \(O(h^3)\) row at order three.
+
+For \(b_j\) new factors, the two constant maps of the same actual surface are
+
+\[
+F_{j,0}^{(0)}=\operatorname{Id}_{old}\otimes U_j,\qquad
+F_{j,1}^{(0)}=\operatorname{Id}_{old}\otimes D_j,
 \tag{10.1}
 \]
 
-Let \(Q_s:E_s\xrightarrow{\cong}E_s^{\rm can}\), and write the canonical
-target as \(E_s^{\rm can}=P_s^{\rm persistent}\otimes F_s\). Define insertion
-**operators**, not elements used as maps,
+where
 
 \[
-\iota_e^0(x)=x\otimes\Delta^{b_e-1}(1),\qquad
-\iota_e^1(x)=x\otimes\Delta^{b_e-1}(X).
+D_j=X^{\otimes b_j},\qquad
+U_j=\sum_{a=0}^{b_j-1}
+X^{\otimes a}\otimes1\otimes X^{\otimes(b_j-1-a)}.
 \tag{10.2}
 \]
 
-The direct-Q premise **[E8]** consists of two separate typed equations:
+Actual W2 core disks give \(E_j=\epsilon^{\otimes b_j}\), so
 
 \[
-Q_t\widehat C_e^dQ_s^{-1}
-=\operatorname{Id}_{\rm persistent}\otimes\iota_e^d,
+E_j(U_j)=0,\qquad E_j(D_j)=1.
 \tag{10.3}
 \]
 
+Let \(s\) be the incoming state and \(t_j\) the target state for sphere \(j\).
+The precisely typed whole-source equations are
+
 \[
-\Theta_t C_e^{d,\mathrm{actual}}
-=\widehat C_e^d\Theta_s.
+\boxed{
+\lambda_{t_j}^{(3)}F_{j,0}^{(0)}=0,\qquad
+\lambda_{t_j}^{(3)}F_{j,1}^{(0)}=\lambda_s^{(3)}.}
 \tag{10.4}
 \]
 
-It packages the state-dependent endpoint coordinates, owner-copy ordering,
-sign, \(\Sigma_-\) factorization, and mixed-square data. The final boundary
-link is empty, so no old-link-relative premise remains; nevertheless a
-boundary diffeomorphism standardizing the spheres need not extend over
-\(W_2\), and does not identify the state-dependent \(\Sigma_-\) maps. For
-\(E_b=\epsilon^{\otimes b}\), **[P]**
-
-\[
-E_b\Delta^{b-1}(1)=0,\qquad E_b\Delta^{b-1}(X)=1.
-\tag{10.5}
-\]
-
-Together with the canonical orbit-row definition (8.3), this gives **[P]**
-
-\[
-\bar\lambda_t
-(\operatorname{Id}_{\rm persistent}\otimes\iota_e^0)=0,
-\qquad
-\bar\lambda_t
-(\operatorname{Id}_{\rm persistent}\otimes\iota_e^1)=\bar\lambda_s.
-\tag{10.6}
-\]
-
-For a sphere edge, the target orbit rows use the same formula (8.3), with the
-typed zero extension and \(E_b\) supplied by (10.2). Premise **E8** includes
-the actual sphere/sphere and sphere/psi mixed-square bindings whenever two
-routes reach the same state. Under **E5**, **E6**, the proved Section 9 basis,
-and **E8**, translating (10.6) through
-(10.3)--(10.4) gives the whole-source actual constant equations
-
-\[
-\lambda_t\widehat C_e^0=0,
-\qquad \lambda_t\widehat C_e^1=\lambda_s.
-\tag{10.7}
-\]
-
-The six stored selected scalar zeros do not prove (10.7). The missing
-whole-source object is identified at
-`D:/tmp/r6/agents/qhh_naturality_hostile/HOSTILE_FULL_DOMAIN_DESCENT_AUDIT.md#9-minimum-missing-equations-and-object`.
-Only constant/cubic path coherence is required; no exact finite-\(h\) path
-claim is made.
+The complete chosen surface maps are **[F]**; equations (10.4) are the
+whole-source consequences **[P]**. They imply the three scalar pairs
+\(0/0,0/0,0/0\) and are bound to the complete chosen surfaces, not an
+abstract split-tree certificate. This closes former E8 at divided order three
+only; no full-\(q\) sphere matrix is claimed. The complete geometry and
+whole-source map derivation is colocated as
+`T73_EVIDENCE_E8_CHOSEN_SPHERES.md`.
 
 <a id="changing-endpoint-naturality"></a>
-## 11. Typed changing-endpoint naturality and cubic family
+## 11. Divided cubic compatibility
 
-For a forward psi edge the typed shadow square is (8.6); for a sphere edge it
-is (10.4). MWW supplies
-the abstract core-attachment comparison because the lower cobordism is the
-upper surface union added cores
-(`D:/tmp/r6/mww_handle_src/kirby.tex:650-684`); its simultaneous candidate
-instantiation remains **E8**.
+The top-cell projector acts only on the old factor. Equations (10.1) are
+identity on that factor and therefore commute with the projector, point-push
+operator and selected cap row at constant order. Positive transport corrections
+start at \(h^4\) after multiplication by the old \(h^3\) anomaly.
 
-Let \(W_s(h):E_s\to E_s\) be the point-push word operator. For a
-changing-endpoint psi or sphere edge, write \(\widehat D_e(h)\) for its
-endpoint map. Premise **[E9]** is
-
-\[
-W_t(h)\widehat D_e(h)=\widehat D_e(h)W_s(h),
-\qquad W_s(h)-I=h^3K_s+O(h^4)
-\tag{11.1}
-\]
-
-on the whole typed space. The scalar audit (6.1) does not prove the second
-operator statement. Extracting the cubic term gives **[P]**
-
-\[
-K_t\widehat D_{e,0}=\widehat D_{e,0}K_s.
-\tag{11.2}
-\]
-
-The groups of physical copies differ across a changing-state edge, so (11.2)
-alone does not move \(\mathsf R_t^0\) through \(\widehat D_{e,0}\). Premise
-**E9** also contains the normalized row-level cubic identities
-
-\[
-\lambda_tK_t\mathsf R_t^0\widehat D_{e,0}^{0}=0,
-\qquad
-\lambda_tK_t\mathsf R_t^0\widehat D_{e,0}^{1}
-=\lambda_sK_s\mathsf R_s^0.
-\tag{11.2b}
-\]
-
-They hold on the whole source for every forward psi edge and every signed
-sphere edge, with the orbit factors and absent-orbit convention of (8.3)
-included. Equation (11.2b) is an external changing-state premise, not a
-consequence of the constant counit identities or of selected scalar receipts.
-
-Use (11.2) only for changing-endpoint psi/sphere maps; beta uses Reynolds.
-Extend \(\lambda_s\) coefficientwise to
-\(\widehat\lambda_s:E_s[[h]]\to\mathbb Q[[h]]\). Define the cubic endpoint
-row using the constant Reynolds projector
-
-\[
-\kappa_s^E(y)=
-[h^3]\widehat\lambda_s
-\bigl((W_s(h)-I)\mathsf R_s^0y\bigr),
-\tag{11.3}
-\]
-
-and on the actual raw state summand set \(\kappa_s=\kappa_s^E\Theta_s\).
-Because \(\mathsf R_s^0P_s(\bar b)=\mathsf R_s^0\), equation (8.7) shows
-that an actual beta changes the projected input only by \(O(h)\). Multiplying
-by \(W_s-I=O(h^3)\) pushes that residual to order four. Thus beta descent
-uses a genuine finite group average and no nonexistent group section or
-\(K\)-beta equation.
-
-At the base state fix
-
-\[
-\ell=e_{87}^*-e_2^*,
-\qquad \lambda_{s_0}=\ell,
-\qquad W_{s_0}(h)=\rho_h(W).
-\tag{11.4}
-\]
-
-There is one positive and one negative physical copy of each active owner,
-so the relevant constant Reynolds projector fixes the seed row. Premise
-Sections 4--5 give
-\(\Theta_{s_0}(\widetilde v_{s_0})=u+O(h)\). Premise **E9**
-gives \(W_{s_0}-I=O(h^3)\), so the \(O(h)\) shadow correction begins in
-order four after applying \(W_{s_0}-I\). Consequently (6.1)--(6.2) bind the
-finite scalar to the family:
-
-\[
-\kappa_{s_0}(\widetilde v_{s_0})
-=[h^3]\ell(\rho_h(W)-I)u=-59072.
-\tag{11.5}
-\]
-
-Under **E5**, **E6**, **E8**, and **E9**, (8.3)--(8.7),
-(10.6)--(10.7), (11.2)--(11.2b), the orbit
-normalizations, and constant/cubic path coherence separately give **[P]**
-
-\[
-\kappa_s(B_s^{\mathrm{actual}}(b)x-x)=0,
-\tag{11.6a}
-\]
-
-\[
-\kappa_t(\Psi_e^{0,\mathrm{actual}}x)=0,
-\qquad
-\kappa_t(\Psi_e^{1,\mathrm{actual}}x)-\kappa_s(x)=0,
-\tag{11.6b}
-\]
-
-\[
-\kappa_t(C_e^{0,\mathrm{actual}}x)=0,
-\qquad
-\kappa_t(C_e^{1,\mathrm{actual}}x)-\kappa_s(x)=0.
-\tag{11.6c}
-\]
-
-These hold for all beta, psi, and sphere generators in their distinct typed
-domains.
+Thus (8.1)--(8.3) and the typed equations (10.4) are exactly the
+changing-endpoint identities consumed by the divided functional. No independent
+E9 premise remains. This statement is \(h^3\)-only and does not assert exact
+full-series edge conjugacy.
 
 <a id="mww-quotient"></a>
 ## 12. Exhaustive MWW quotient and descent
 
-Let \(\mathcal C=\bigoplus_sC_s\). Let \(\mathcal R_{2h}\) be spanned by all
+Let \(\mathcal C=\bigoplus_s C_s\) over all finite cable states, and let
+\(\mathcal R_{2h},\mathcal R_{3h}\) be the MWW beta/psi and chosen-sphere
+relation subspaces. E10 retains only the external completeness and quotient
+universal property.
+
+Define \(\Lambda_3:\mathcal C\to\mathbb Q\) by Sections 7--11. Equations
+(8.1)--(8.3) prove \(\mathcal R_{2h}\subseteq\ker\Lambda_3\), and (10.4)
+proves \(\mathcal R_{3h}\subseteq\ker\Lambda_3\). Hence **[P]**, conditional
+only on E10,
 
 \[
-B_s^{\rm actual}(b)x-x,
-\qquad
-\Psi_e^{0,\rm actual}x,
-\qquad
-\Psi_e^{1,\rm actual}x-x,
-\tag{12.1a}
+\bar\Lambda_3:
+\mathcal C/(\mathcal R_{2h}+\mathcal R_{3h})\longrightarrow\mathbb Q,
+\qquad \Lambda_3=\bar\Lambda_3\pi.
+\tag{12.1}
 \]
 
-and let \(\mathcal R_{3h}\) be spanned by all
+At the selected state,
 
 \[
-C_e^{0,\mathrm{actual}}x,\qquad
-C_e^{1,\mathrm{actual}}x-x.
-\tag{12.1b}
-\]
-
-Quantifiers range over every finite state, every owner braid, every forward
-psi stabilization, each specified signed sphere edge, and every source
-vector. The equivalence relation generated by a forward psi equality is
-symmetric; no reverse psi map is added. Their completeness and quotient universal property are
-**[E10]**, sourced in
-`D:/tmp/r6/mww_handle_src/kirby.tex:331-378,459-489,705-759`.
-
-Define \(\kappa:\mathcal C\to\mathbb Q\) statewise. Equations (11.6a)--(11.6c) prove
-**[P]**, conditional on **E5**, **E6**, and **E8--E10**, that
-
-\[
-\mathcal R_{2h}+\mathcal R_{3h}\subseteq\ker\kappa.
-\]
-
-Thus **[P]** there is a unique
-
-\[
-\bar\kappa:\mathcal C/(\mathcal R_{2h}+\mathcal R_{3h})\to\mathbb Q,
-\qquad \kappa=\bar\kappa\pi,
+\boxed{\bar\Lambda_3(\pi(\widetilde v_{s_0}))=-59072\ne0.}
 \tag{12.2}
 \]
 
-where \(\pi\) is the quotient map.
-
-The explicit base binding (11.4)--(11.5) gives
+Thus the selected class survives all one-, two- and chosen three-handle
+relations. Its absolute degree is
 
 \[
-\bar\kappa(\pi(\widetilde v_{s_0}))=-59072\ne0.
+-44+227+315-4=494.
 \tag{12.3}
 \]
-
-Therefore **[P]** \(\pi(\widetilde v_{s_0})\ne0\) in quantum degree 494.
-This is conditional algebra from exhaustive cocone equations; it is not a
-claim that those candidate-specific equations were internally proved.
 
 <a id="four-handle-comparison"></a>
 ## 13. Four-handle comparison
@@ -898,7 +786,7 @@ base-change inference:
 
 Premise **E12** also includes graded diffeomorphism invariance. Combining
 (12.3), the bidegree-\((0,0)\) four-handle isomorphism, and (14.1) proves
-**[P]**, under **E4--E12**, that
+**[P]**, using G1 and under **E7, E10--E12**, that
 
 \[
 X(41,189,73)\not\cong_{\rm diff}S^4.
@@ -908,173 +796,49 @@ X(41,189,73)\not\cong_{\rm diff}S^4.
 Separately, **[E13]** is the Cappell--Shaneson theorem that the finite-verified
 conditions \(\det A=\det(A-I)=1\) for the pinned matrix imply that
 \(X(41,189,73)\) is a homotopy sphere. With **E13**, (14.2) is a conditional
-SPC4 counterexample. The primary statement is Proposition 2.1 at
+SPC4 counterexample. A modern exact restatement is Proposition 2.1 at
 `D:/tmp/r6/QSC/kpr/cs_2404.05096.txt:128-151`; the determinant arithmetic is
 checked in `AuditArithmetic.lean`.
 
 ## 15. Dependency and source/evidence table
 
-| ID | status | role and anchor | unresolved boundary |
+| ID | status | role | retained boundary |
 |---|---|---|---|
-| E1 balanced Hattori | **[P] `proved_in_document`** | actual paired-annulus disk system: Section 2 and `D:/tmp/t73_actual_cable_unit/ACTUAL_PD_CABLE_UNIT_CERT.json`; MWW formulas: `D:/tmp/r6/mww_handle_src/1handles.tex:173-229,242-299,420-430` | the unknown braid/framing is retained inside \(B_{\rm act}\), not identified or discarded |
-| E2 diagonal binding | **[P]** | Section 3; Hattori identity: `D:/tmp/r6/mww_handle_src/1handles.tex:783-787` | selected input is \(T_1=B_{\rm act}^{-1}U\), never \(\xi\) |
-| E3 selected raw-state binding | **[P] `proved_in_document`** | state and named representative: Section 5; MWW one-handle isomorphism `D:/tmp/r6/mww_handle_src/1handles.tex:242-299`; state formula `D:/tmp/r6/mww_handle_src/kirby.tex:320-345` | quotient descent is not hidden here; it remains in E6/E8 |
-| E4 strict scope | **[E]** | `D:/tmp/r6/agents/finite_type_leading/bphw_1903_src/sections/equivalence.tex:468-493` | exact foam scope remains explicit |
-| F1 degree | **[F] `finite_verified`** | `D:/tmp/r6/agents/finite_type_leading/ORDINARY_SHADOW_HATTORI_CHAIN_RESULT.md:100-115`; `D:/tmp/r6/grading_attack/ledger/Q494_SPHERE_GRADING_LEDGER.md:45-60`; `AuditArithmetic.lean:87-91` | \(-44+227+315-4=494\), with the state binding proved in Section 5 |
-| F2 scalar | **[F]** | `D:/tmp/r6/eta_t1_delta3_reaudit/ETA_T1_DELTA3_DECISION.md#2-exact-raw-word-calculation` | scalar, not global operator valuation |
-| E5 intrinsic \(\nu\) | **[E]** | algebra: `D:/tmp/r6/agents/finite_type_leading/bphw_1903_src/sections/preliminaries.tex:610-633` | actual-map binding is candidate-specific |
-| E6 beta/psi | **[E]** | MWW: `D:/tmp/r6/mww_handle_src/kirby.tex:265-345` | whole-domain equations remain premises |
-| E7 actual handle realization / fixed-Y basis | **[E]** | declared handle data: `D:/tmp/s4pc_ruler/ENGINE/kirby_master/cs_presentation.py:9-14,66-76`, `D:/tmp/s4pc_ruler/ENGINE/out/t73_eps0.erkmo.json:179-199,285-289`; basis deduction: Section 9 | realization remains external; once granted, existence/basis is proved and no simple map follows |
-| F3 synthetic determinant | **[F]** | `AuditArithmetic.lean:59-60` | historical check, not consumed by the revised proof; implies no map statement |
-| E8 direct-Q/shadow | **[E]** | easy hemisphere: `D:/tmp/r6/mww_handle_src/kirby.tex:613-648`; hard map/core square: `:650-684` | exact residual is whole-source factorization of \(\Phi^{-1}\Psi_{\Delta_-}\Phi\), plus coherent \(\Theta_s,Q_s\) |
-| E9 cubic naturality | **[E]** | whole-endpoint \(h^3\) valuation: Section 4; diagnostic: `D:/tmp/r6/agents/qhh_naturality_hostile/HOSTILE_FULL_DOMAIN_DESCENT_AUDIT.md#6-is-pure-braid-ioh-enough` | the normalized changing-state/Reynolds-edge identities (11.2b) remain unproved |
-| E10 complete MWW quotient | **[E]** | `D:/tmp/r6/mww_handle_src/kirby.tex:459-489,705-759` | completeness is required on all raw state summands |
-| E11 graded four-handle | **[E]** | `D:/tmp/r6/mww_handle_src/kirby.tex:418-426` | rational bidegree-\((0,0)\) form stays explicit |
-| E12 rational S4 and graded diffeomorphism | **[E]** | grading/invariant: `D:/tmp/r6/mww_handle_src/kirby.tex:8-57`; field scope: `D:/tmp/r6/mww_handle_src/1handles.tex:15-20`, `D:/tmp/r6/mww_handle_src/introduction.tex:128-134`; four/S4: `D:/tmp/r6/mww_handle_src/kirby.tex:418-431` | direct rational statement remains a premise, not an inferred base change |
-| E13 CS bridge | **[E]** | `D:/tmp/r6/QSC/kpr/cs_2404.05096.txt:128-151`; finite determinants: `AuditArithmetic.lean` | homotopy-sphere bridge is external |
-| P1 descent | **[P] `proved_in_document`** | Sections 11--12 | conditional on E5, E6, E8--E10; Section 9 supplies the basis deduction from E7 |
-| P2 nonstandard | **[P]** | Sections 13--14 | conditional on E4--E12 |
+| E1 balanced Hattori | **[P]** | Sections 2--3 | hidden braid/framing retained |
+| E2 diagonal binding | **[P]** | Section 3 | input is \(v_T\), not \(\xi\) |
+| E3 selected raw binding | **[P]** | Section 5 | closed at raw-state level |
+| E4 ordinary functoriality | **[E]** | Section 5 published type-by-type results | conjectural four-space foam extension not used |
+| F1 grading | **[F]** | Section 5 | exact degree 494 |
+| F2 cubic | **[F]** | Section 6 | exact value -59072 |
+| E5 one-cup cell firewall | **[P]** | Section 7 | mixed-Z route retired |
+| E6 beta/psi cocone | **[P]** | Section 8 | divided \(h^3\) only |
+| G1 actual-Gompf/DIAGRAM framed lift | **[P]** | Section 9 and T73_GA1_DESCENDING_BRIDGE.md | AR actual product ribbons; no numeric blackboard framing consumed |
+| E7 chosen HJ replacement | **[E]** | Section 9; external HJ theorem with hypotheses verified there | historical spheres not needed |
+| E8 six sphere rows | **[P]** | Section 10 | divided \(h^3\) only |
+| E9 edge naturality | **not independently required** | Section 11 | no full-\(q\) claim |
+| E10 complete MWW quotient | **[E]** | MWW universal presentation | completeness external |
+| E11 graded four-handle | **[E]** | MWW four-handle theorem | external |
+| E12 rational \(S^4\) control | **[E]** | MWW grading/control | direct rational form |
+| E13 CS bridge | **[E]** | KPR and finite determinants | external topology bridge |
 
-The 13 explicit HTML anchors above match the manifest consumer IDs. The
-manifest is the frozen v1 allocation: this revised proof discharges its E1/E2
-inputs and the coefficient part formerly assigned to E3 by the
-paired-annulus/quantum-trace argument, and
-splits its coarse E7
-owner/direct-Q clause between the narrowed E7 realization input and E8.
+All thirteen manifest consumer anchors remain present. The manifest role labels
+are a frozen allocation; this text records the newer discharge status without
+editing that separate contract.
 
 ## 16. Honest closing status
 
-Finite arithmetic and the scalar are **[F]**. The balanced coefficient input,
-weak fixed-Y sphere-basis deduction, Frobenius, Reynolds-ratio,
-coefficient-extraction, and quotient deductions are **[P]**. The hard
-hemisphere cocone, changing-endpoint operator data, and rational final
-comparison remain **[E]**. Therefore the status remains
+This document now internally proves the one-cup firewall, the all-level
+two-handle divided cocone, the actual-Gompf/DIAGRAM framed bridge, the hardened
+chosen HJ basis, and all six chosen sphere equations at order \(h^3\).
+Mixed \(Z\), relative \(\xi\), raw \(\nu\), vertex-potential and
+unrestricted E9 routes are retired.
 
-```text
+The remaining undischarged external premises are E7 and E10--E13; E4 is a
+cited theorem whose ordinary-surface scope was discharged in Section 5.
+Therefore the status remains
+
 CANDIDATE_PROOF_PENDING_INDEPENDENT_REVIEW
-```
 
-Even zero-`sorry` Lean proves only the conditional implication unless the
-remaining **E4--E13** premises are proved. This document
-claims neither formal verification nor external acceptance.
-
-## 17. Decisive post-audit boundary
-
-The subsequent premise attacks give the following mathematical, rather than
-procedural, status.
-
-1. **E1 is closed without naming the braid.** The actual paired annulus
-   subrectangles give simultaneous proper disks, hence an unknown but genuine
-   wicket-braid unit \(B_{\rm act}\), its pivotal inverse, and 227 split disk
-   factors. Hidden pure-braid/framing data remain inside \(B_{\rm act}\).
-
-2. **Weak E7 is a conditional deduction.** If the delivered punctured smooth
-   handle realization really has exactly the declared three 3-handles to
-   \(S^3\), its actual attaching spheres are the belt-sphere basis after turning
-   the cobordism upside down. The serialized object declares, but does not
-   geometrically construct, those attaching spheres.
-
-3. **E3 is closed at the raw-state level.** The coefficient quantum trace, its
-   specialization to ordinary MWW \(HH_0\), the individual endpoint map, the
-   divided cubic functional, and the named degree-494 representative in the
-   forced state \(s_0\) are constructed. This does not assert beta/psi or
-   sphere descent; those are E6 and E8.
-
-4. **E8 is the decisive three-handle map.** MWW computes the easy
-   \(\Delta_+\) hemisphere. No existing artifact proves that the hard
-   \(\Phi^{-1}\Psi_{\Delta_-}\Phi\) map on every actual cabled state is a
-   split-tree operator up to one coherent vertex transport. A Peiffer word and
-   the unimodular matrix \(I-\Lambda^2A\) does not supply the missing embedded,
-   framed actual-to-canonical corridors; knotting a carrier preserves those
-   algebraic data and destroys a product-annulus conclusion.
-
-5. **Two proposed shortcuts fail.** Unimodularity of the ordinary
-   \(3\)-to-\(2\) boundary matrix does not imply clean geometric \(2/3\)-handle
-   cancellation; group-ring/intersection and embedded-slide data are missing.
-   Restricting to quantum degree \(494\) is not a finite computation, because
-   dotted psi stabilization and the three-handle lift lattice remain in the
-   same normalized degree.
-
-6. **The old early-psi kill does not apply.** The current selected seam
-   \(U_{(0,5)}\) joins an \(r_{xy}\) endpoint to an \(m_2\) endpoint. Removing
-   either owner destroys that cross-owner cup; in endpoint weights the proposed
-   lower blocks are \(Q(84,86)=0\) and \(Q(4,86)=0\). An owner-local
-   \(\psi^{[0]}\) ribbon and owner beta cannot create this connectivity. Thus
-   the historical \(u_\Omega\in\operatorname{im}\psi^{[0]}\) result concerns a
-   different input and is retired for \(v_T\). Full E6 image membership remains
-   open.
-
-Consequently the displayed implication is a sound conditional theorem, but
-the current mathematics does **not** establish an SPC4 counterexample.
-
-## 18. Relative-lift no-go and the only viable escape
-
-Let a relative marked mapping-class group \(G_{\rm rel}\) act on a module \(V\)
-through \(\rho\), and let
-
-\[
-\pi:G_{\rm rel}\twoheadrightarrow G_{\rm coarse},\qquad K=\ker\pi.
-\]
-
-Here \(G_{\rm coarse}\) retains the incidence, endpoint permutation, pair
-linking, framing totals, Peiffer augmentation, and the matrix \(D\), while
-\(K\) contains the pure-braid/point-push information forgotten by those data.
-
-**No-go theorem.** If a row \(\lambda\in V^*\) is invariant under \(K\), or
-factors through the coinvariants \(V_K\), then for every \(W\in K\) and every
-\(u\in V\),
-
-\[
-\lambda(\rho(W)-I)u=0.
-\tag{18.1}
-\]
-
-Indeed \(\lambda\rho(W)=\lambda\); equivalently,
-\((\rho(W)-I)u\) is zero in \(V_K\). More generally, any construction that is
-claimed to depend only on the coarse datum and to give the same answer for
-every relative lift must annihilate the complete \(K\)-relation span.
-
-For T73, the point-push \(W\) has identity endpoint permutation and zero
-recorded pair-linking/framing totals, but its full Artin word is nontrivial.
-Thus it lies in the kernel of the coarse E8 records, while
-
-\[
-[h^3]\,\ell(\rho_h(W)-I)u=-59072.
-\tag{18.2}
-\]
-
-Equation (18.2) proves that this kernel is not harmless presentation noise.
-In particular, any proposed descent that declares every unseen relative lift
-irrelevant while keeping a fixed \(u,\ell\) is incompatible with the computed
-signal.
-
-There is one valid escape: **equivariant transport, not invariance**. For a
-fully marked movie \(a:p\to q\) with induced isomorphism \(R_a\), transport all
-data together,
-
-\[
-W_q=R_aW_pR_a^{-1},\qquad
-u_q=R_au_p,\qquad
-\ell_q=\ell_pR_a^{-1}.
-\tag{18.3}
-\]
-
-Then
-
-\[
-\ell_q(W_q-I)u_q=\ell_p(W_p-I)u_p.
-\tag{18.4}
-\]
-
-The same covariance must hold statewise for every psi/sphere edge and for the
-MWW \(\Phi/\Theta\) maps. Loop holonomy is harmless only when it transports all
-of these objects coherently.
-
-Section 2 avoids this no-go for E1 by retaining the unknown relative lift
-inside \(B_{\rm act}\); it never asks the kernel to act trivially. The escape
-does not close E8/E9. The fiber of the coarse record
-need not be one connected torsor: locally knotted carriers can share all
-recorded coarse data without being related by a relative ambient movie. Hence
-one must still construct a coherent E8/E9 edge family in the actual component.
-Torsor language removes gauge choice after those objects exist; it cannot
-manufacture them.
+This is not a formally verified or externally accepted disproof. Under the
+enumerated premises, Sections 12--14 give a nonzero degree-494 class and the
+conditional conclusion. Independent review remains required.
