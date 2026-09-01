@@ -33,6 +33,8 @@ AXIOM_THEOREMS = (
     "Smooth4PC.DiagonalShadow.descendedRow_comp_quotient",
     "Smooth4PC.CoefficientBimoduleMorphism.cyclicRelation_le_comap",
     "Smooth4PC.ShadowMorphism.descendedRow_naturality",
+    "Smooth4PC.quotientLinearEquiv_apply_mk",
+    "Smooth4PC.quotientLinearEquiv_symm_apply_mk",
     "Smooth4PC.T73.aMinusIInverse_left",
     "Smooth4PC.T73.aMinusIInverse_right",
     "Smooth4PC.T73.aMinusICokernel_eq_zero",
@@ -104,6 +106,7 @@ class T73FiniteFormalizationTests(unittest.TestCase):
         cls.cs_algebra = cls.repo / "Smooth4PC" / "T73CSAlgebra.lean"
         cls.cs_topology = cls.repo / "Smooth4PC" / "T73CSTopology.lean"
         cls.s4_control = cls.repo / "Smooth4PC" / "T73S4Control.lean"
+        cls.quotient_equiv = cls.repo / "Smooth4PC" / "QuotientEquiv.lean"
         cls.audit = cls.repo / "T73Audit.lean"
         cls.lake = resolve_lake()
 
@@ -180,6 +183,7 @@ class T73FiniteFormalizationTests(unittest.TestCase):
             self.cs_algebra,
             self.cs_topology,
             self.s4_control,
+            self.quotient_equiv,
         ):
             self.assertTrue(path.is_file(), f"missing {path.name}")
         self.assertTrue(self.audit.is_file(), "missing T73Audit.lean")
@@ -193,6 +197,7 @@ class T73FiniteFormalizationTests(unittest.TestCase):
         cs_algebra_source = self.cs_algebra.read_text(encoding="utf-8")
         cs_topology_source = self.cs_topology.read_text(encoding="utf-8")
         s4_control_source = self.s4_control.read_text(encoding="utf-8")
+        quotient_equiv_source = self.quotient_equiv.read_text(encoding="utf-8")
         audit_source = self.audit.read_text(encoding="utf-8")
         for token in (
             "sorry",
@@ -215,6 +220,7 @@ class T73FiniteFormalizationTests(unittest.TestCase):
                 + cs_algebra_source
                 + cs_topology_source
                 + s4_control_source
+                + quotient_equiv_source
                 + audit_source,
                 rf"\b{re.escape(token)}\b",
                 f"forbidden Lean token: {token}",
@@ -252,6 +258,7 @@ class T73FiniteFormalizationTests(unittest.TestCase):
             coefficient_trace_olean = (
                 olean_root / "Smooth4PC" / "CoefficientTrace.olean"
             )
+            quotient_equiv_olean = olean_root / "Smooth4PC" / "QuotientEquiv.olean"
             finite_olean = olean_root / "Smooth4PC" / "T73Finite.olean"
             cs_algebra_olean = olean_root / "Smooth4PC" / "T73CSAlgebra.olean"
             cs_topology_olean = olean_root / "Smooth4PC" / "T73CSTopology.olean"
@@ -268,6 +275,7 @@ class T73FiniteFormalizationTests(unittest.TestCase):
                 (arithmetic, arithmetic_olean),
                 (interfaces, interfaces_olean),
                 (self.coefficient_trace, coefficient_trace_olean),
+                (self.quotient_equiv, quotient_equiv_olean),
                 (self.finite, finite_olean),
                 (self.external, external_olean),
                 (self.cs_algebra, cs_algebra_olean),

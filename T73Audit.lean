@@ -2,6 +2,7 @@ import Smooth4PC.T73Conditional
 import Smooth4PC.T73SphereQuotient
 import Smooth4PC.T73S4Control
 import Smooth4PC.CoefficientTrace
+import Smooth4PC.QuotientEquiv
 
 open Lean Elab Command Meta
 
@@ -35,6 +36,8 @@ def finiteAuditDeclarations : List Name := [
   `Smooth4PC.DiagonalShadow.descendedRow_comp_quotient,
   `Smooth4PC.CoefficientBimoduleMorphism.cyclicRelation_le_comap,
   `Smooth4PC.ShadowMorphism.descendedRow_naturality,
+  `Smooth4PC.quotientLinearEquiv_apply_mk,
+  `Smooth4PC.quotientLinearEquiv_symm_apply_mk,
   `Smooth4PC.T73.aMinusIInverse_left,
   `Smooth4PC.T73.aMinusIInverse_right,
   `Smooth4PC.T73.aMinusICokernel_eq_zero,
@@ -89,6 +92,8 @@ dumpT73Finite
 #print axioms Smooth4PC.DiagonalShadow.descendedRow_comp_quotient
 #print axioms Smooth4PC.CoefficientBimoduleMorphism.cyclicRelation_le_comap
 #print axioms Smooth4PC.ShadowMorphism.descendedRow_naturality
+#print axioms Smooth4PC.quotientLinearEquiv_apply_mk
+#print axioms Smooth4PC.quotientLinearEquiv_symm_apply_mk
 #print axioms aMinusIInverse_left
 #print axioms aMinusIInverse_right
 #print axioms aMinusICokernel_eq_zero

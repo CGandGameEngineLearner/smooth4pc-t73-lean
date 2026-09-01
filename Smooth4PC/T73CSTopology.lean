@@ -16,15 +16,24 @@ def TopologicalUniverse.SimplyConnected
     (u : TopologicalUniverse) (M : u.toUniverse.Manifold) : Prop :=
   @SimplyConnectedSpace (u.Carrier M) (u.topology M)
 
-noncomputable def TopologicalUniverse.SingularH2
-    (u : TopologicalUniverse) (M : u.toUniverse.Manifold) : ModuleCat Int := by
+noncomputable def TopologicalUniverse.SingularH
+    (u : TopologicalUniverse) (M : u.toUniverse.Manifold) (n : Nat) :
+    ModuleCat Int := by
   letI : TopologicalSpace (u.Carrier M) := u.topology M
-  exact ((AlgebraicTopology.singularHomologyFunctor (ModuleCat Int) 2).obj
+  exact ((AlgebraicTopology.singularHomologyFunctor (ModuleCat Int) n).obj
     (ModuleCat.of Int Int)).obj (TopCat.of (u.Carrier M))
 
 def TopologicalUniverse.H2Zero
     (u : TopologicalUniverse) (M : u.toUniverse.Manifold) : Prop :=
-  CategoryTheory.Limits.IsZero (u.SingularH2 M)
+  CategoryTheory.Limits.IsZero (u.SingularH M 2)
+
+/-- The actual integral singular-homology profile of a four-sphere. -/
+def TopologicalUniverse.IntegralHomologyFourSphere
+    (u : TopologicalUniverse) (M : u.toUniverse.Manifold) : Prop :=
+  Nonempty (u.SingularH M 0 ≅ ModuleCat.of Int Int) ∧
+    Nonempty (u.SingularH M 4 ≅ ModuleCat.of Int Int) ∧
+      ∀ n : Nat, n ≠ 0 → n ≠ 4 →
+        CategoryTheory.Limits.IsZero (u.SingularH M n)
 
 /-- The genuinely topological remainder of the Cappell--Shaneson argument.
 All candidate-specific lattice calculations have been removed from this
@@ -33,13 +42,13 @@ structure CSTopologyData (u : TopologicalUniverse) where
   vanKampen :
     Function.Surjective aMinusIMap →
       u.SimplyConnected u.toUniverse.candidate
-  wangMayerVietoris :
+  wangMayerVietorisPoincare :
     Function.Injective aMinusIMap →
       Function.Surjective hTwoMinusIMap →
-        u.H2Zero u.toUniverse.candidate
+        u.IntegralHomologyFourSphere u.toUniverse.candidate
   hurewiczWhitehead :
     u.SimplyConnected u.toUniverse.candidate →
-      u.H2Zero u.toUniverse.candidate →
+      u.IntegralHomologyFourSphere u.toUniverse.candidate →
         u.toUniverse.IsHomotopySphere u.toUniverse.candidate
 
 theorem t73IsHomotopySphere_of_topology {u : TopologicalUniverse}
@@ -47,7 +56,7 @@ theorem t73IsHomotopySphere_of_topology {u : TopologicalUniverse}
     u.toUniverse.IsHomotopySphere u.toUniverse.candidate :=
   topology.hurewiczWhitehead
     (topology.vanKampen aMinusIMap_surjective)
-    (topology.wangMayerVietoris aMinusIEquiv.injective
+    (topology.wangMayerVietorisPoincare aMinusIEquiv.injective
       hTwoMinusIMap_surjective)
 
 end Smooth4PC.T73
