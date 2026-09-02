@@ -19,6 +19,10 @@ encoded by the repository. It does not, by itself, certify that every
 geometric input has been formalized. The exact boundary is visible in
 [`Smooth4PC/T73External.lean`](Smooth4PC/T73External.lean).
 
+## PDF for public review
+
+[PDF prepared for public review](paper/T73_SPC4_CANDIDATE_FALSIFICATION_20260902.pdf)
+
 ## Start here
 
 1. Read [`docs/INDEPENDENT_REVIEW.md`](docs/INDEPENDENT_REVIEW.md) for the

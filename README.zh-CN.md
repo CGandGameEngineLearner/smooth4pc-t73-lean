@@ -15,6 +15,10 @@ Cappell--Shaneson 流形 `X(41,189,73)` 是一个与标准 `S^4` 不微分同胚
 输入都已经形式化。精确边界见
 [`Smooth4PC/T73External.lean`](Smooth4PC/T73External.lean)。
 
+## 公开审阅 PDF
+
+[用于公开审阅的 PDF 文件](paper/T73_SPC4_CANDIDATE_FALSIFICATION_20260902.pdf)
+
 ## 从哪里开始
 
 1. 阅读 [`docs/INDEPENDENT_REVIEW.md`](docs/INDEPENDENT_REVIEW.md)：三步证明链、
