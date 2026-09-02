@@ -23,7 +23,7 @@ Their byte identities are pinned below and in
 |---|---|---|
 | [T73_EVIDENCE_QTRACE_SOURCE_LEDGER.md](T73_EVIDENCE_QTRACE_SOURCE_LEDGER.md) | 99913F0AF70CF5FF650492C2740F98B7053FEBBB58212DA32B506D863836EA84 | coefficient q-trace and divided functional |
 | [T73_EVIDENCE_RAW_STATE_BINDING.md](T73_EVIDENCE_RAW_STATE_BINDING.md) | BCBFBC9F8A5350D323EC2876352EC25C6690E5BB6AD4F2C264441BA4D73CDEF6 | actual selected raw state and degree |
-| [T73_EVIDENCE_ETA_T1_DELTA3.md](T73_EVIDENCE_ETA_T1_DELTA3.md) | 96E20A5D75B3A6B3587267BF2052A79845E378F96901351B5DC52BB5D16EF183 | v_T versus xi and the exact cubic |
+| [T73_EVIDENCE_ETA_T1_DELTA3.md](T73_EVIDENCE_ETA_T1_DELTA3.md) | `98504438F1FF47E576195DF2C01F168C92B048B0E309D8634BAFA18873F62A35` | v_T versus xi and the corrected exact cubic |
 | [T73_EVIDENCE_ONE_CUP_E5_E6.md](T73_EVIDENCE_ONE_CUP_E5_E6.md) | 6A63978D734EFF30B8F6C2E6F9800F9338B3499BA1CA4D6AF4880716468FE865 | complete one-/two-handle divided quotient |
 | [T73_EVIDENCE_W2_CORE_FACTOR.md](T73_EVIDENCE_W2_CORE_FACTOR.md) | 73F5D57A2074B133687018D1D8641FF2DA76ED5B01F055B6D89E7F086F10E129 | local core/counit factorization |
 | [T73_EVIDENCE_E8_CHOSEN_SPHERES.md](T73_EVIDENCE_E8_CHOSEN_SPHERES.md) | C33AF1FCAE8F0056A75D1841E1151786C2EBB756AD8A768C4E3E6704274E2B43 | chosen-sphere geometry and whole-source rows |
@@ -58,7 +58,8 @@ https://math.berkeley.edu/~kirby/papers/Gordon%20and%20Kirby%20%28editors%29%20-
 ## Scope firewall
 
 - Carrying class: v_T=eta_R[T_1], not xi and not mixed Z.
-- Exact value: D_3(v_T)=-59072.
+- Exact value under the collar/Burau endpoint table: D_3(v_T)=2624.
+- Endpoint coordinate authority: `data/B88_POSITION_TO_PASSAGE_TABLE.json`.
 - Final quantum degree: 494.
 - The proof is at the divided h^3 coefficient; it does not claim full-q
   sphere matrices.

@@ -20,7 +20,7 @@ physical W2 movie giving such a full-q L_h:         ABSENT
 reason:                                             endpoint cap != core attachment
 leading divided cubic D_3 factors through Phi:      YES, with extra cocone data
 is that leading factorization automatic from cap?: NO
-selected value after leading factorization:         -59072
+selected value after leading factorization:         2624
 Z leading value in epsilon normalization:            -16
 sphere/full final quotient:                          NOT ADDRESSED
 ```
@@ -236,7 +236,7 @@ needed for (3.1)--(3.3); they do not furnish a full-q movie.
 The selected value remains
 
 \[
-L_3\Phi\iota_{s_0}(\widetilde v_{s_0})=-59072.
+L_3\Phi\iota_{s_0}(\widetilde v_{s_0})=2624.
 \tag{3.4}
 \]
 

@@ -107,3 +107,31 @@ whole-old-source divided rows
 - the earlier end-to-end `HOLE` verdict was tied to the incorrect short G1
   bridge; after replacement by the AR product-ribbon proof, a fresh full-chain
   independent review is still required.
+
+## Erratum — 2026-09-02 endpoint-coordinate unification
+
+The historical base value above records the 2 September public draft and is
+not the current value.  That draft paired the THXY-indexed vector
+`e_0-e_5` with the collar-indexed covector `e_87^*-e_2^*`.  The cabled word
+uses the collar convention.  The unique derived position table now maps the
+same physical cup to collar positions `(2,87)`, so the current pair is
+
+```text
+u   = e_2 - e_87
+ell = e_87^* - e_2^*
+```
+
+The exact replay gives
+
+```text
+ell (rho(W)-I) u, epsilon^0..6 = [0,0,0,-328,14596,-410246,9595271]
+ell (rho(W)-I) u, h^0..6       = [0,0,0,2624,221728,11760112,520583560]
+D_3(eta_R[T_1])                = 2624
+D_3(xi)                        = 0
+```
+
+The nonvanishing status is unchanged, but the number remains conditional on
+the frozen collar word and therefore on A1.  The position-table SHA-256 is
+`119C7E9E74AE6C820DA72A84CDFD5D445D81E6C3AACCC209C25D37C323961508`;
+the public receipt SHA-256 is
+`7C681B99492A5C34B3B8A7EC8B7269E3FD67CD989728C2D4A1C619A63387A722`.

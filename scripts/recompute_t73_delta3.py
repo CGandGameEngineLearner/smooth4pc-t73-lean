@@ -19,6 +19,7 @@ from typing import Any
 
 HERE = Path(__file__).resolve().parent
 DEFAULT_INPUT = HERE.parent / "data" / "T73_DELTA3_PUBLIC_INPUT.json"
+DEFAULT_RECEIPT = HERE.parent / "data" / "T73_DELTA3_PUBLIC_RECEIPT.json"
 
 
 def sha256_bytes(data: bytes) -> str:
@@ -310,6 +311,12 @@ def build_receipt(input_path: Path) -> dict[str, Any]:
         raise ValueError("unexpected Burau convention")
     if data["endpoint_model"]["parameter_substitution"] != "t=q^-2; h=q-1":
         raise ValueError("unexpected parameter substitution")
+    position_table_path = input_path.parent / "B88_POSITION_TO_PASSAGE_TABLE.json"
+    if not position_table_path.is_file():
+        raise ValueError("missing B88 position-to-passage table")
+    position_table_sha = sha256_bytes(position_table_path.read_bytes())
+    if position_table_sha != data["endpoint_model"]["position_table_sha256"]:
+        raise ValueError("B88 position-to-passage table SHA mismatch")
 
     b44, _ = build_oriented_b44(data)
     b88 = cable_word(b44)
@@ -336,6 +343,11 @@ def build_receipt(input_path: Path) -> dict[str, Any]:
     return {
         "schema": "t73_delta3_public_receipt/v1",
         "input_sha256": sha256_bytes(input_bytes),
+        "endpoint_model": {
+            "u_terms": data["endpoint_model"]["u_terms"],
+            "ell_terms": data["endpoint_model"]["ell_terms"],
+            "position_table_sha256": position_table_sha,
+        },
         "derived_words": {
             "B44_length": len(b44),
             "B44_sha256": canonical_sha(b44),
@@ -368,6 +380,7 @@ def print_text(receipt: dict[str, Any]) -> None:
     print(f"B44_SHA256={words['B44_sha256']}")
     print(f"B88_LENGTH={words['B88_length']}")
     print(f"B88_SHA256={words['B88_sha256']}")
+    print(f"POSITION_TABLE_SHA256={receipt['endpoint_model']['position_table_sha256']}")
     print(
         "ELL_RHOW_MINUS_I_U_EPS="
         + json.dumps(eps["ell_(rhoW-I)_u_degrees_0_to_6"], separators=(",", ":"))
@@ -389,8 +402,23 @@ def main() -> None:
     parser.add_argument("--input", type=Path, default=DEFAULT_INPUT)
     parser.add_argument("--json", action="store_true", help="print the receipt as JSON")
     parser.add_argument("--check", action="store_true", help="accepted for CI readability")
+    parser.add_argument(
+        "--write-receipt",
+        type=Path,
+        nargs="?",
+        const=DEFAULT_RECEIPT,
+        help="write the exact JSON receipt (default: data/T73_DELTA3_PUBLIC_RECEIPT.json)",
+    )
     args = parser.parse_args()
     receipt = build_receipt(args.input.resolve())
+    if args.write_receipt is not None:
+        output_path = args.write_receipt.resolve()
+        output_path.parent.mkdir(parents=True, exist_ok=True)
+        output_path.write_text(
+            json.dumps(receipt, ensure_ascii=False, indent=2, sort_keys=True) + "\n",
+            encoding="utf-8",
+            newline="\n",
+        )
     if args.json:
         print(json.dumps(receipt, ensure_ascii=False, indent=2, sort_keys=True))
     else:

@@ -109,19 +109,19 @@ The selected representative satisfies
 
 \[
 Sh_h([v]_h)=u_h,
-\qquad u_h\bmod h=e_0-e_5.
+\qquad u_h\bmod h=e_2-e_{87}.
 \]
 
 The direct raw-word evaluation gives
 
 \[
-D_h([v]_h)=-59072h^3+O(h^4),
-\qquad D_3([v])=-59072.
+D_h([v]_h)=2624h^3+O(h^4),
+\qquad D_3([v])=2624.
 \]
 
 Consequently `[v]` is nonzero in ordinary MWW `HH_0`.  Moreover, if a
 nonzero `a(h)` annihilated `[v]_h`, applying `D_h` would give
-`a(h)(-59072h^3+O(h^4))=0` in the domain `R_h`, impossible.  Hence the cyclic
+`a(h)(2624h^3+O(h^4))=0` in the domain `R_h`, impossible.  Hence the cyclic
 submodule `R_h[v]_h` is torsion-free; over the DVR `R_h` it is free rank one.
 This proves the selected flat lift as a consequence of the detector rather
 than assuming flatness to build it.

@@ -14,7 +14,7 @@ theorem exactData_sphereColumns :
     sphereColumns = [[-1311, 8608, -1], [-189, 1241, 0], [41, -269, 1]] := by
   norm_num [sphereColumns]
 
-theorem exactData_oneHandleActualCapH3 : oneHandleActualCapH3 = -59072 := by
+theorem exactData_oneHandleActualCapH3 : oneHandleActualCapH3 = 2624 := by
   norm_num [oneHandleActualCapH3]
 
 theorem exactData_degree : degree = [0, 494] := by
@@ -60,7 +60,7 @@ theorem det_sphereColumns_eq_one : det3 sphereColumns = 1 := by
   norm_num [det3, sphereColumns]
 
 theorem cubic_factor_times_epsilon_eq_h3 :
-    (-8 : Int) * 7384 = oneHandleActualCapH3 := by
+    (-8 : Int) * (-328) = oneHandleActualCapH3 := by
   norm_num [oneHandleActualCapH3]
 
 theorem oneHandleActualCapH3_ne_zero : oneHandleActualCapH3 ≠ 0 := by

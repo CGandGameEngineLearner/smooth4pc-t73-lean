@@ -59,13 +59,17 @@ python -I -B scripts/recompute_t73_delta3.py --check
 ```
 
 The script reconstructs the registered point-push word from primitive crossing
-rows, rebuilds its two-cable action and performs exact truncated-polynomial
-arithmetic. Its input does not contain `7384` or `-59072` as expected values.
+rows, checks the SHA-pinned B88 position-to-passage table, rebuilds the
+two-cable action and performs exact truncated-polynomial arithmetic. Its input
+does not contain the expected cubic as a result field.
 The bearing output is:
 
 ```text
-ELL_RHOW_MINUS_I_U_EPS=[0,0,0,7384,-660412,34814626,-1365512573]
-DELTA3_ETA_T1=-59072
+POSITION_TABLE_SHA256=119C7E9E74AE6C820DA72A84CDFD5D445D81E6C3AACCC209C25D37C323961508
+ELL_RHOW_MINUS_I_U_EPS=[0,0,0,-328,14596,-410246,9595271]
+ELL_RHOW_MINUS_I_SQUARED_U_EPS=[0,0,0,0,0,0,-102729600]
+DELTA3_ETA_T1=2624
+DELTA3_XI=0
 VERIFY=PASS
 ```
 
@@ -101,5 +105,20 @@ It does not turn those interfaces into kernel-checked differential topology.
 Their published sources, exact scope and candidate-specific evidence are
 listed in `docs/INDEPENDENT_REVIEW.md`.
 
-For a clean replay certificate with exact commands, exit codes, hashes and raw
-axiom output, see `docs/proofs/PUBLIC_RELEASE_CLEAN_REPLAY_20260901.md`.
+For the erratum compilation and complete axiom output, see
+`docs/proofs/QSTAR_R8_LEAN_COMPILE_RECEIPT_20260903.md` and
+`docs/proofs/QSTAR_R8_T73AUDIT_RAW_20260903.txt`.  The earlier fresh-clone
+record remains at `docs/proofs/PUBLIC_RELEASE_CLEAN_REPLAY_20260901.md`.
+
+## 8. Build the review paper
+
+With Tectonic 0.17.0 or later on `PATH`, the same command works on Windows,
+Linux, and macOS:
+
+```text
+cd paper && tectonic t73_candidate.tex --outdir build --keep-logs
+```
+
+On Windows, `powershell -ExecutionPolicy Bypass -File paper/build.ps1` uses the
+pinned local Tectonic binary when present, checks the LaTeX log, and copies the
+accepted PDF to `paper/T73_SPC4_CANDIDATE_FALSIFICATION_20260902.pdf`.

@@ -8,17 +8,17 @@ script SHA：`AD2C722BF44BFD69E00B27F1B3537910FF3EAA6FDAB8985ED1C13B00E8C6F362`
 
 ```text
 313/313 outer leaves consume actual owner/corridor subarcs: PASS
-313 owner connectors embedded:                           PASS theorem-level
+313 owner connectors PL self-check:                      PASS; actual embedding NOT CERTIFIED
 312 macro bands full PL/new-new/hash chained:            PASS
 10802 corridor split events actual embedded source:      PASS by pinned corridor theorem
 12247 root bigons + final cap consume macro root:         PASS
-complete genus-zero THXY chosen sphere:                  PASS
+Euler characteristic / genus-zero combinatorics:        PASS; actual sphere NOT CERTIFIED
 
 constant H0 new-only map / I2:                           PASS
 closed-cap scalar pair at h3:                            0 / 0, PASS
 P3-free semantic whitelist:                              NOT NEEDED FOR h3
 
-chosen TH1/TH2/THXY simultaneous HJ basis:               PASS
+chosen class determinant:                                PASS; simultaneous actual HJ basis NOT CERTIFIED
 ```
 
 ## 1. identity与测试
@@ -37,7 +37,9 @@ root、Euler、map及scalar字段未回退。
 PRODUCT `other_311_actual_owner_cables`逐项读actual carrier segment、copy/lane、
 orientation与framing。每个connector消费source hash并输出对应macro leaf hash。
 
-honest routes逐条self-free。独立重算313 connectors之间有30932枚projection
+honest routes逐条self-free。旧字段把未缩放的 `53360` 当成 scaled12 上界；
+正确值是 `640704`，因此 `all_macro_routes_outside_old_projection_box=false`。
+本件不再声称这些routes整体位于old projection box之外。独立重算313 connectors之间有30932枚projection
 hits，但313枚private D2 lanes全唯一；这些是不同radial sheets的投影交叉，不是
 3D intersections。connector是invertible mixed transport；即使绕old factor，
 WEAK_ALL_EDGE theorem给constant `H=I`、positive part `O(h)`，不影响h3。
@@ -123,9 +125,11 @@ TH1  sector [8,9];
 TH2  sector [10,11].
 ```
 
-各自embedded，区间严格不交；class matrix determinant为1。当前路线
+class matrix determinant为1；但在old projection box字段纠正后，三张曲面的
+actual embedded/disjoint绑定不再由本件认证，须作为候选特有前件另审。当前路线
 `L=empty`，无需历史K/CUT-relative equivalence。HJ v3 Theorem5.3遂允许这套
 NEW CHOSEN basis替代历史三柄system。三张map都绑定各自同一chosen surface。
 
-因此THXY这腿与global chosen-basis gate可升PASS；不认领历史movie，也不声称
-full-q series。
+因此本件只保留组合结构与 determinant 的 PASS；THXY actual embedding、三张曲面
+simultaneous HJ basis 与对应 sphere-map 绑定均维持 NOT CERTIFIED。不认领历史movie，
+也不声称full-q series。

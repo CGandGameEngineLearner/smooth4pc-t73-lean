@@ -12,20 +12,21 @@ selected final class:                              v_T = eta_R[T1]
 relative xi as input to the same D3:               NOT the final class
 full P44 left/right one-handle action:              ALREADY QUOTIENTED IN HH0
 two-handle beta, all finite cable levels at h3:     KILLED BY COCONE
-psi0 action-closed ideal through bound:             <=84
+independently low-cell terms through bound:          <=84
 selected one-cup cell through degree:               86
+psi0/psi1 images through degree:                    86 (same cup count)
 psi1 compatibility:                                CORE RETRACTION / IDENTITY
 actual divided quotient functional:                CONSTRUCTED
-functional value on [v_T]:                         -59072
+functional value on [v_T]:                         2624
 nonzero after one+two-handle quotient:              PROVED
 generic t=3 rank used as proof:                     NO
 sphere/full four-manifold conclusion:               NOT CLAIMED
 ```
 
-The earlier mixed two-cup class fails because the action-closed `psi0` ideal
-fills its entire through-84 cell.  The one-cup class lies in the next cell,
-through degree 86.  Temperley--Lieb composition cannot raise through degree,
-so the same failure mechanism cannot reach it.
+The one-cup class has through degree 86.  Through degree controls only terms
+that are independently known to lie in the through-84 subspace.  The two
+`psi` images both retain through degree 86 and the same cup count; their
+distinction comes from the core counit, not from this filtration.
 
 ## 1. Objects and the input-confusion firewall
 
@@ -54,7 +55,7 @@ Its coefficient trace class is
 and its endpoint shadow is the cup vector
 
 \[
-Sh([v_T])=u=e_0-e_5\in S^{(87,1)}.
+Sh([v_T])=u=e_2-e_{87}\in S^{(87,1)}.
 \tag{1.2}
 \]
 
@@ -73,7 +74,7 @@ The selected shadow already lies in the top cell, so inserting `P_86` does
 not change its value.  The exact raw-word calculation gives
 
 \[
-\boxed{\mathcal D_3([v_T])=-59072.}
+\boxed{\mathcal D_3([v_T])=2624.}
 \tag{1.4}
 \]
 
@@ -94,7 +95,7 @@ Applying the **same** detector (1.3) gives
 \tag{1.6}
 \]
 
-because `W-I=O(h^3)`.  The number `-59072` can also be read from `xi` by the
+because `W-I=O(h^3)`.  The number `2624` can also be read from `xi` by the
 different plain-shadow functional `[h3] C Sh`, but that is not (1.3).
 
 Therefore the final class for the present quotient proof is `[v_T]`, not
@@ -139,49 +140,29 @@ independence after specialization is the cokernel argument in the Rees source
 ledger.  Hence (1.4), an exact nonzero integer, replaces the old generic
 `t=3` rank as the nonvanishing proof.
 
-## 3. The through-degree firewall against psi0
+## 3. What the through-degree filtration does and does not prove
 
 Filter the oriented Temperley--Lieb/BN endpoint category by through degree.
-Composition on either side cannot increase through degree.  The one-cup tangle
-`U` has
+Composition on either side cannot increase through degree, and the one-cup
+tangle `U` has
 
 \[
 \operatorname{th}(U)=86.
 \tag{3.1}
 \]
 
-An `rxy` balanced pair creation adds four y endpoints and necessarily creates
-at least two cups.  Its image therefore has through degree at most 84.  An
-`m2` creation adds more paired passages and has an equal or lower bound.  Thus
+If a relation term is independently shown to lie in `F_{84}`, then its whole
+action-closed ideal remains in `F_{84}` and is killed by the top-cell
+projection.  That elementary observation is useful for genuine low-cell
+terms, but it does not distinguish the two balanced-pair maps.  Both
+`\psi_i^{[0]}` and `\psi_i^{[1]}` preserve through degree 86 and add the same
+one-cup factor.  Their different evaluations in (4.2) come from the two actual
+core counits.
 
-\[
-\operatorname{th}
-\left(\mathcal C\,\operatorname{im}\psi_i^{[0]}\,\mathcal C\right)
-\le84
-\tag{3.2}
-\]
-
-for every gate-crossing owner `i` (`rxy`, `ryz`, `m2`, `m3`).  Because
-left/right actions preserve the filtration, (3.2) holds for their
-**action-closed** psi0 ideals, not merely their initial columns.
-
-The zero-gate owner `rzx` is a separate local factor and must not be smuggled
-into (3.2).  For `L=empty`, its added balanced pair is the split complex
-`A tensor A`.  Its two core counits satisfy (4.2) on the whole factor, so
-`rzx-psi0` is zero and `rzx-psi1` has a left inverse.  Hence it also cannot
-kill the base class, but for the Frobenius/core reason rather than a drop in
-through degree (`D:/tmp/rzx_pair/RESULT.md`).
-
-Let
-
-\[
-\operatorname{gr}_{86}=F_{86}/F_{84}.
-\]
-
-The shadow of `[v_T]` is the nonzero standard vector `e0-e5` in the
-`S^(87,1)` top cell of `gr86`.  Every psi0 image maps to zero in this quotient.
-This is precisely why the full-sign-parabolic calculation that kills
-`S^(86,2)` does not kill the one-cup class.
+The shadow of `[v_T]` is the nonzero collar-coordinate vector `e2-e87` in the
+`S^(87,1)` top cell.  Its proposed descent through the full `psi` relation
+space therefore uses the all-state counit identities of Section 4 and the
+candidate-specific cocone binding, not a claimed drop to through degree 84.
 
 The insertion of `P_86` in (1.3) is essential.  A literal diagrammatic cap on
 the unprojected endpoint module can retain lower-turnback components; the cap
@@ -263,7 +244,7 @@ whose base row is (1.3).  In particular,
 
 \[
 \boxed{
-\overline{\mathcal D}_3([v_T])=-59072\ne0.}
+\overline{\mathcal D}_3([v_T])=2624\ne0.}
 \tag{5.3}
 \]
 
@@ -290,9 +271,9 @@ sphere relations still have to be annihilated by the same functional.
 What is now proved:
 
 - full one-handle `HH_0` descent;
-- full action-closed psi0 exclusion by through degree;
+- low-cell filtration only where a term is independently in `F_84`;
 - all-level beta/psi leading cocone;
-- exact nonzero quotient value `-59072` on `[v_T]`.
+- exact nonzero quotient value `2624` on `[v_T]`.
 
 What is not proved:
 

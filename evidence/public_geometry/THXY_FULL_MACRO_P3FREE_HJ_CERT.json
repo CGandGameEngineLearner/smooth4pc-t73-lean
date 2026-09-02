@@ -59443,7 +59443,7 @@
     "negative_graft_target_geometry_sha256": "b8836368a0fa4d024ba8b37515852e7d6be33f9cf5ac2d04592467ef6c6c6710",
     "root_output_geometry_sha256": "b816a71f253f17cf3887f210be81b96666ac57df83c3e718a8fc30cc7068a85d",
     "all_noninvertible_events_new_new": true,
-    "old_projection_box_upper_x_scaled12": 53360
+    "old_projection_box_upper_x_scaled12": 640704
   },
   "full_surface": {
     "macro_split_event_count": 312,
@@ -59494,7 +59494,7 @@
   },
   "embeddedness": {
     "all_macro_routes_self_intersection_free": true,
-    "all_macro_routes_outside_old_projection_box": true,
+    "all_macro_routes_outside_old_projection_box": false,
     "inter_band_intersections": 0,
     "reason_inter_band": "312 distinct private rational movie slabs",
     "TH1_TH2_sector_disjoint": true

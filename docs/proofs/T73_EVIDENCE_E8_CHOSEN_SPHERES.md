@@ -46,7 +46,7 @@ All three hashes were recomputed and match.  I also reran:
 test_exhaustive_geometry_runner.py: 9/9 PASS
 test_thxy_full_macro_successor.py:  PASS
 global_falsification_chain_audit.py:
-  ONE_HANDLE_H3=-59072
+  ONE_HANDLE_H3=2624
   SPHERE_SCALARS=0,0;0,0;0,0
   SPHERE_DET=1
   VERIFY=PASS
@@ -192,7 +192,7 @@ This section deliberately uses the current final class
 \[
 v_T=\eta_R[T_1],
 \qquad
-\mathcal D_3(v_T)=-59072,
+\mathcal D_3(v_T)=2624,
 \]
 
 not the retired statement that the same outer detector evaluates `xi`.

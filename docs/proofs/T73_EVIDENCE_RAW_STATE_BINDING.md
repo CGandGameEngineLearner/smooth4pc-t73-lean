@@ -7,9 +7,9 @@ actual state s0=(alpha=0,r=e_m2+e_rxy):       CONSTRUCTED
 named raw representative tilde(v)_s0:         CONSTRUCTED
 not obtained from Phi surjectivity:           YES
 core-attachment movie:                        EXPLICIT MWW CORE DISKS
-Theta_s0(tilde(v))=u_h, u_h mod h=e0-e5:      PROVED
+Theta_s0(tilde(v))=u_h, u_h mod h=e2-e87:     CANDIDATE-SPECIFIC / NOT CERTIFIED
 raw degree 498 -> cabled degree 494:           PROVED
-remaining E3 premise:                         NONE (strict foam scope remains E4)
+remaining endpoint premise:                   HATTORI ACTUAL BINDING / U TYPING
 ```
 
 ## 1. Exact raw summand
@@ -55,7 +55,7 @@ Cut `K(r,r)` along the y/z belt spheres.  In the summand with standard z
 wickets and seam
 
 \[
-T_1=B_{act}^{-1}U_{(0,5)},
+T_1=B_{act}^{-1}U_{(2,87)},
 \]
 
 the actual balanced Hattori equivalence gives the explicit homology element
@@ -135,12 +135,16 @@ each z-only cap applies `epsilon(X)=1`.  Consequently
 =Sh_{s0}\Phi\iota_{s0}(\widetilde v_{s0})
 =u_h,
 \qquad
-u_h\bmod h=e_0-e_5\in Q(88,86)=M_1(88).
+u_h\bmod h=e_2-e_{87}\in Q(88,86)=M_1(88).
 \tag{4}
 \]
 
-This is equality for the named filling (3), not a claim that `Phi` is
-surjective and therefore has some suitable preimage.
+The endpoint positions in (4) are read from
+`data/B88_POSITION_TO_PASSAGE_TABLE.json`, the same collar table used by the
+Artin word.  The assertion that this endpoint shadow is the image of the
+actual Hattori filling remains a candidate-specific premise; the table fixes
+the coordinates but does not construct the geometric equivalence.  This is
+not a claim that `Phi` is surjective and therefore has some suitable preimage.
 
 ## 5. Degree ledger
 

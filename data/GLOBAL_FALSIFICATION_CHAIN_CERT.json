@@ -63,7 +63,7 @@
   },
   "chain": {
     "one_handle": {
-      "actual_cap_h3": -59072,
+      "actual_cap_h3": 2624,
       "nonzero": true,
       "ordinary_HH0_cubic_balanced": true
     },
@@ -96,12 +96,12 @@
     "sphere_det": 1,
     "sphere_scalar_pairs": {
       "TH1": {
-        "incoming_h3": -59072,
+        "incoming_h3": 2624,
         "C_Sigma0_input_h3": 0,
         "C_(Sigma1-Id)_input_h3": 0
       },
       "TH2": {
-        "incoming_h3": -59072,
+        "incoming_h3": 2624,
         "C_Sigma0_input_h3": 0,
         "C_(Sigma1-Id)_input_h3": 0
       },

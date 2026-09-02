@@ -63,7 +63,7 @@ EXPECTED_ENTRIES = {
             "Smooth4PC/CertificateData.lean",
             "AuditArithmetic.lean",
         ],
-        "The exact point-push calculation evaluates the cubic row on the transported cup vector as -59072, which is nonzero.",
+        "The exact point-push calculation evaluates the cubic row on the collar-indexed transported cup vector as 2624, which is nonzero.",
         "proof_section:point-push-cubic",
     ),
     "beta_psi_cocone": dependency(
@@ -135,7 +135,7 @@ EXPECTED_INVARIANTS = {
     "balanced_coefficient": "M_R(T,T') = Hom(BT,BT') tensor A^(tensor 227)",
     "source": "M_1(88)",
     "relative_nu": 0,
-    "cubic_value": -59072,
+    "cubic_value": 2624,
     "final_q": 494,
     "edge_braid_model": "vertex_potential_conjugation",
 }

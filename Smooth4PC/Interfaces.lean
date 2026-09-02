@@ -63,7 +63,7 @@ structure OneHandleInterface (u : AuditUniverse) (W0 : QMod) where
   rawCap : HHRaw →ₗ[ℚ] ℚ
   rawCapBinding : u.IsActualCapAtOrder traceAnomalyOrder rawCap
   rawCapKillsHH0 : ∀ x : HHRaw, x ∈ hh0Relation → rawCap x = 0
-  rawCapChosen : rawCap chosenRaw = (-59072 : ℚ)
+  rawCapChosen : rawCap chosenRaw = (2624 : ℚ)
 
 /-- Beta/psi descent exposes exact generators; Task 5 proves the kernel inclusion by span. -/
 structure BetaPsiInterface (u : AuditUniverse) (W0 W1 : QMod) (ell0 : W0 →ₗ[ℚ] ℚ) where

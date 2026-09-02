@@ -364,7 +364,7 @@ Complete at \(\zeta=1+h\). The selected identity and the 227 counits give
 
 \[
 \mathsf S_h([v_T]_{1h})=u_h,
-\qquad u_h\bmod h=u=e_0-e_5\in Q(88,86)=M_1(88).
+\qquad u_h\bmod h=u=e_2-e_{87}\in Q(88,86)=M_1(88).
 \tag{4.5}
 \]
 
@@ -480,7 +480,7 @@ and (5.3) give **[P]**, under the ordinary-surface functorialities just listed,
 
 \[
 \Theta_{s_0}^{\rm raw}(\widetilde v_{s_0})=u_h,
-\qquad u_h\bmod h=u=e_0-e_5.
+\qquad u_h\bmod h=u=e_2-e_{87}.
 \tag{5.5}
 \]
 
@@ -499,7 +499,7 @@ supplies **[F2]**
 
 \[
 f(\varepsilon):=\ell(\rho(W)-I)u
-=7384\varepsilon^3+O(\varepsilon^4),
+=-328\varepsilon^3+O(\varepsilon^4),
 \tag{6.1}
 \]
 
@@ -509,7 +509,7 @@ Section 4 follows separately from \(W\in\Gamma_3\) and the pure-generator
 filtration. Since \(\varepsilon=-2h+3h^2-4h^3+O(h^4)\), **[P]**
 
 \[
-[h^3]f(\varepsilon(h))=(-2)^3\,7384=-59072\ne0.
+[h^3]f(\varepsilon(h))=(-2)^3(-328)=2624\ne0.
 \tag{6.2}
 \]
 
@@ -534,7 +534,7 @@ The selected class is the one-cup class
 \[
 [v_T]=\eta_R[T_1],\qquad
 \Theta_{s_0}(\widetilde v_{s_0})=u+O(h),\qquad
-u=e_0-e_5\in S^{(87,1)}.
+u=e_2-e_{87}\in S^{(87,1)}.
 \tag{7.1}
 \]
 
@@ -567,7 +567,7 @@ kernel containing \(F_{84}\). Define
 The selected vector already lies in the top cell, so Section 6 gives
 
 \[
-\boxed{\mathcal D_3(\widetilde v_{s_0})=-59072.}
+\boxed{\mathcal D_3(\widetilde v_{s_0})=2624.}
 \tag{7.4}
 \]
 
@@ -864,7 +864,7 @@ only on E10,
 At the selected state,
 
 \[
-\boxed{\bar\Lambda_3(\pi(\widetilde v_{s_0}))=-59072\ne0.}
+\boxed{\bar\Lambda_3(\pi(\widetilde v_{s_0}))=2624\ne0.}
 \tag{12.2}
 \]
 
@@ -924,7 +924,7 @@ checked in `AuditArithmetic.lean`.
 | E3 selected raw binding | **[P]** | Section 5 | closed at raw-state level |
 | E4 ordinary functoriality | **[E]** | Section 5 published type-by-type results | conjectural four-space foam extension not used |
 | F1 grading | **[F]** | Section 5 | exact degree 494 |
-| F2 cubic | **[F]** | Section 6 | exact value -59072 |
+| F2 cubic | **[F]** | Section 6 | exact value 2624 |
 | E5 one-cup cell firewall | **[P]** | Section 7 | mixed-Z route retired |
 | E6 beta/psi cocone | **[P]** | Section 8 | divided \(h^3\) only |
 | G1 actual-Gompf/DIAGRAM framed lift | **[P]** | Section 9 and T73_GA1_DESCENDING_BRIDGE.md | AR actual product ribbons; no numeric blackboard framing consumed |

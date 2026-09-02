@@ -8,11 +8,18 @@ counterexample is the Cappell--Shaneson manifold `X(41,189,73)`, claimed to be
 a homotopy four-sphere not diffeomorphic to the standard `S^4`.
 
 The proposed distinguishing class has quantum degree `494`. Its divided cubic
-detector evaluates to `-59072`, whereas the corresponding degree of the
+detector evaluates to `2624`, whereas the corresponding degree of the
 standard four-sphere module is zero. The finite calculation and the abstract
 quotient implication are checked in Lean; the candidate-specific geometric
 identifications and the cited topology theorems remain explicit inputs rather
 than hidden axioms.
+
+**Erratum (2 September 2026).** The former value `-59072` was wrong because
+the endpoint vector and covector were read from two different index tables.
+After both are expressed in the collar table used by the braid word, the exact
+value is `+2624`, which is still nonzero. Both the numerical detector and the
+proposed disproof remain conditional on the uncertified assumptions stated in
+the paper; I am continuing to work on those premises.
 
 That distinction matters: a successful Lean build verifies the implication
 encoded by the repository. It does not, by itself, certify that every
@@ -44,7 +51,7 @@ The proof manuscript itself is
 - expected axiom reports: `38`
 - allowed reported axioms: `propext`, `Classical.choice`, `Quot.sound`
 - `sorryAx`: absent
-- expected detector value: `-59072`
+- expected detector value: `2624`
 
 The committed `lake-manifest.json` pins all Lean dependencies. Build products,
 local dependency copies and old probe files are not part of the source tree.

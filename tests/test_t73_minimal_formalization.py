@@ -14,7 +14,7 @@ AXIOM_THEOREMS = (
     "Smooth4PC.T73.detA_eq_one",
     "Smooth4PC.T73.detAMinusI_eq_one",
     "Smooth4PC.T73.sphereDet_eq_one",
-    "Smooth4PC.T73.computedCubic_eq_neg59072",
+    "Smooth4PC.T73.computedCubic_eq_2624",
     "Smooth4PC.T73.computedCubic_ne_zero",
     "Smooth4PC.T73.computedDegree_eq_494",
     "Smooth4PC.T73.computedDegree_ne_zero",

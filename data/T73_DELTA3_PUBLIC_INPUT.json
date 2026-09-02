@@ -3941,13 +3941,14 @@
       ]
     ],
     "parameter_substitution": "t=q^-2; h=q-1",
+    "position_table_sha256": "119C7E9E74AE6C820DA72A84CDFD5D445D81E6C3AACCC209C25D37C323961508",
     "u_terms": [
       [
-        0,
+        2,
         1
       ],
       [
-        5,
+        87,
         -1
       ]
     ],
@@ -3970,7 +3971,7 @@
       ],
       "anchor_control": "when W=I the two framing-corrected objects coincide and xi_Omega=0",
       "beta_coinvariant_signal": "PASS_MOD_P_FOR_ALL_168_ORIENTED_CROSS_CHOICES",
-      "choose": "U1=one oriented cross-owner cup, e.g. W1^- index0 to W3^+ index5",
+      "choose": "U1=the physical cross-owner cup mapped by B88_POSITION_TO_PASSAGE_TABLE.json to collar positions 2 (r_xy letter 3 negative) and 87 (m_2 letter 310 positive)",
       "degree_in_current_MR": [
         0,
         498
@@ -3980,7 +3981,7 @@
         "T1=F_Omega^-1 W^-1 U1"
       ],
       "kappa_W_needed": false,
-      "psi_through_degree": "psi_rxy pair creation adds two cups/four y endpoints, hence its TL ideal has through degree at most84 and cannot meet the through86 S^(87,1) cell",
+      "psi_through_degree": "psi pair creation preserves the old through degree 86 while adding a Frobenius cup factor; psi0 and psi1 are distinguished only after the W2 core counit, not by a through-degree drop",
       "relative_class": "xi_Omega=eta_Rw[F_Omega^-1 U1] - s_inv*eta_Rw[F_Omega^-1 W^-1 U1], where s_inv is the finite signed braid-cancellation calibration",
       "same_coend": true,
       "same_degree": true,
@@ -3993,7 +3994,7 @@
         "T1=W^-1 U1"
       ]
     },
-    "source_extract_sha256": "DD02DBE1990231D4C5AFA773491CC1CD8AA0CC834AC6CE61508C8C75F105E7D1",
+    "source_extract_sha256": "058E89634B496C642CE6C8F7A0B5C946018BAF2048E4C1B6E3EEE95F51741533",
     "coefficient_word": [
       "W",
       "F"
