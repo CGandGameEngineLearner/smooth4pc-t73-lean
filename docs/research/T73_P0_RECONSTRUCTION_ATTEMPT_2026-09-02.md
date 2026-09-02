@@ -20,9 +20,13 @@ The official AMS page for Aitchison--Rubinstein,
 *Fibered knots and involutions on homotopy spheres*, Contemporary Mathematics
 35 (1984), pp. 1--74, DOI
 [10.1090/conm/035/780575](https://doi.org/10.1090/conm/035/780575), confirms
-the chapter metadata.  The chapter PDF redirects to institutional access in
-the present environment.  Therefore the page-specific paraphrases in the
-historical repository note were not treated as independently checked proof.
+the chapter metadata.  A public scan of the complete volume is available from
+[Robion Kirby's Berkeley archive](https://math.berkeley.edu/~kirby/papers/Gordon%20and%20Kirby%20%28editors%29%20-%20Four-manifold%20theory%20%28Durham%29%20-%20MR0780574.pdf).
+It is a 519-page, unencrypted PDF with SHA-256
+`6F7E95B8266876774667AD40EA3DE964B165680D6789A34E49BF598C3AE04DF0`,
+matching the historical ledger.  Thus the AR page-specific construction can
+now be independently audited; it still must be converted into the
+parameterized whole-link witness required below.
 
 Laudenbach--Poenaru, *A note on 4-dimensional handlebodies*,
 [Numdam scan](https://www.numdam.org/item/BSMF_1972__100__337_0/), was checked

@@ -38,8 +38,8 @@ def check() -> None:
     require(paper_text, "Conditional trace-73 theorem", paper)
     require(paper_text, r"P0 & \Open", paper)
     require(paper_text, r"P1/C & \Open", paper)
-    require(paper_text, r"P2/E7 & \Open", paper)
-    require(paper_text, r"P2/E10/S & \Open", paper)
+    require(paper_text, r"P2/E7 & \Partial", paper)
+    require(paper_text, r"P2/E10/S & \Partial", paper)
     require(paper_text, "They have not been discharged", paper)
 
     reject(paper_text, "the smooth four-dimensional Poincare conjecture is false", paper)

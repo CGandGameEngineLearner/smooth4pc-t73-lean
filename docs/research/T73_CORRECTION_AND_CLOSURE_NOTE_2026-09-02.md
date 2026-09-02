@@ -1,5 +1,11 @@
 # Trace-73 correction and closure research note (2026-09-02)
 
+> Later update on the same date: the P2 rows below describe the retired
+> explicit-sphere route.  `T73_S_RELATIVE_STANDARD_SYSTEM_2026-09-02.md`
+> proves the implication `P0 + symmetric-monoidal C => S` using HJ relative
+> sphere-system uniqueness and MWW's intrinsic local module action.  P2 is
+> therefore `PARTIAL` while P0/C are open, not an independent `OPEN` input.
+
 ## Purpose
 
 This note supersedes the unconditional interpretation recorded in commit

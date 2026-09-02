@@ -71,13 +71,14 @@ Artin--Magnus certificate and the pure-braid Andreadakis theorem establish a
 third-order property of the public braid.  We prove an abstract obstruction:
 if the compact word ledger is realized by the required framed Kirby
 presentation, if the Burau functional is identified with the specified
-rational $N=2$ Manolescu--Walker--Wedrich coefficient trace, and if the
-recorded owner lifts realize the actual three-handle maps, then the candidate
-is a homotopy sphere not diffeomorphic to $S^4$.  These three
-candidate-specific identifications remain open and are stated explicitly as
-hypotheses.  The Lean development checks the finite and quotient algebra; it
-does not construct the external geometry or formalize four-dimensional
-differential topology.
+rational $N=2$ Manolescu--Walker--Wedrich coefficient trace in the required
+symmetric-monoidal form, then the candidate is a homotopy sphere not
+diffeomorphic to $S^4$, subject also to the stated final identifications.  A
+relative complete-sphere argument shows that the three-handle closure then
+follows without an independent sphere-movie hypothesis.  The Kirby and
+coefficient-trace identifications remain open.  The Lean development checks
+the finite and quotient algebra; it does not construct the external geometry
+or formalize four-dimensional differential topology.
 \end{abstract}
 
 \maketitle
@@ -119,9 +120,10 @@ We investigate whether the public finite class can be constructed for the
 standard-form Cappell--Shaneson parameter $(41,189,73)$.  Compact
 product-ribbon, point-push, owner-lift and Nielsen ledgers replace parts of
 the unavailable historical data, but they do not by themselves give an
-embedded framed Kirby equivalence, the candidate-specific quantum-trace map,
-or embedded attaching spheres with their actual MWW hemisphere maps.  The
-paper therefore separates the conditional theorem from these comparison
+embedded framed Kirby equivalence or the candidate-specific quantum-trace
+map.  Once those are supplied in a relative monoidal form, a standard sphere
+system disjoint from the detector gives the three-handle closure.  The paper
+therefore separates the conditional theorem from the remaining comparison
 gaps.
 
 \subsection*{Contributions}
@@ -134,9 +136,9 @@ missing framed-embedding/Kirby equivalence.
 \item We identify the local checked R-matrix with the public Burau blocks and
 prove a full-entry third-order statement, while isolating the missing
 candidate-specific MWW-to-endpoint comparison and simultaneous transport.
-\item We give integral owner lifts, a Nielsen ledger, and the required
-core-counit algebra, while isolating the missing embedded sphere movies and
-their MWW coordinate maps.
+\item We use the relative uniqueness of complete sphere systems and MWW's
+intrinsic local module action to derive the three-handle closure from P0 and
+the symmetric-monoidal form of C, without TH-sized sphere movies.
 \item We provide executable ledgers, mutation tests and a kernel-checked Lean
 algebraic core.
 \end{enumerate}
@@ -237,24 +239,28 @@ The public compact Aitchison--Rubinstein product-ribbon ledger is a labelled
 and framed handle presentation of $\Sigma_A^0$.  Its two product
 cancellations give the registered genus-two words, and its six-sweep tubular
 point-push induces the public 44- and 88-strand braids on all oriented cable
-states.
+states.  The detector collar is contained in a specified boundary $3$-ball
+$B$, and the presentation has three $3$-handles followed by one final
+$4$-handle.
 \end{hypothesis}
 
 \begin{hypothesis}[Coefficient comparison, C]\label{hyp:P1}
-The completed MWW coefficient quantum trace admits a grading-preserving
-natural map to the BPW/BHPW weight-one endpoint representation.  Under this
-map the point-push action is the public Burau representation, and the divided
-cubic row descends through every beta and psi relation.  Its selected value is
-$-59072$ up to an invertible convention unit, and hence is nonzero in quantum
-degree $494$.
+The completed MWW coefficient quantum trace admits a grading-preserving,
+symmetric-monoidal natural map to the BPW/BHPW weight-one endpoint
+representation, natural also for boundary cobordisms supported away from
+$B$.  Under this map the point-push action is the public Burau
+representation, and the divided cubic row descends through every beta and psi
+relation.  Its selected value is $-59072$ up to an invertible convention
+unit, and hence is nonzero in quantum degree $494$.
 \end{hypothesis}
 
-\begin{hypothesis}[Three-handle closure, S]\label{hyp:P2}
-The three compact owner lifts admit a complete embedded framed sphere system.
-For each sphere the target row composed with the MWW undotted map is zero and
-with the once-dotted map is the source row.  Hence the divided detector
-descends through the complete three-handle coequalizer.
-\end{hypothesis}
+\begin{theorem}[Relative three-handle consequence, S]\label{hyp:P2}
+Under Hypotheses~\ref{hyp:P0} and \ref{hyp:P1}, the three $3$-handles may be
+attached along a complete sphere system disjoint from $B$.  For each sphere
+the detector kills the undotted MWW relation and identifies the once-dotted
+map with the source term.  Hence the divided detector descends through the
+complete three-handle coequalizer.
+\end{theorem}
 
 \begin{hypothesis}[Candidate-level final identifications, P3]\label{hyp:P3}
 MWW's three-/four-handle formulas identify the final quotient with
@@ -266,8 +272,8 @@ candidate-specific identifications asserted here.
 \end{hypothesis}
 
 \begin{theorem}[Conditional trace-73 theorem]\label{thm:joined}
-Assume Hypotheses~\ref{hyp:P0}, \ref{hyp:P1}, \ref{hyp:P2}, and
-\ref{hyp:P3}.  Then the resulting trace-73 candidate satisfies
+Assume Hypotheses~\ref{hyp:P0}, \ref{hyp:P1}, and \ref{hyp:P3}.  Then the
+resulting trace-73 candidate satisfies
 \[
 \Sigma_A^0\simeq S^4
 \quad\text{and}\quad
@@ -277,8 +283,8 @@ Assume Hypotheses~\ref{hyp:P0}, \ref{hyp:P1}, \ref{hyp:P2}, and
 
 \begin{proof}[Proof of Theorem~\ref{thm:joined}]
 Hypotheses~\ref{hyp:P0} and \ref{hyp:P3} and the Cappell--Shaneson
-criterion give the homotopy-sphere assertion.  Hypotheses~\ref{hyp:P1} and
-\ref{hyp:P2} instantiate the maps and rows in Theorem~\ref{thm:A}; its
+criterion give the homotopy-sphere assertion.  Hypothesis~\ref{hyp:P1} and
+Theorem~\ref{hyp:P2} instantiate the maps and rows in Theorem~\ref{thm:A}; its
 selected class is nonzero in quantum degree $494$.  MWW's four-handle
 isomorphism preserves this degree, while the same degree of the standard
 $S^4$ module vanishes.  Diffeomorphism invariance and
@@ -536,50 +542,62 @@ Hypothesis~\ref{hyp:P1}.
 
 \section{Three-handle sphere closure}
 
-In owner order $(m_2,m_3,r_{xy},r_{yz},r_{zx})$, the cellular boundary is
+We prove Theorem~\ref{hyp:P2}.  Remove the final $4$-handle and call the
+remaining handlebody $W_3$.  Its boundary is $S^3$.  Reversing the three
+$3$-handles attaches three three-dimensional $1$-handles to $S^3$, and hence
 \[
-\partial_2=
-\begin{pmatrix}40&189&0&0&0\\269&1271&0&0&0\end{pmatrix}.
+\partial W_2\cong\#^3(S^1\times S^2).
 \]
-The first minor has determinant $-1$, so its kernel is generated by the last
-three owners.  The unique lifts of the columns in \eqref{eq:spherecols} are
-\[
-(0,0,-1311,8608,-1),\quad
-(0,0,-189,1241,0),\quad
-(0,0,41,-269,1).
-\]
-A 32-step Nielsen ledger realizes their unimodular matrix algebraically by
-permutations, orientation reversals and formal sphere slides.  This does not
-construct embedded, framed, pairwise-disjoint spheres in the actual boundary.
-Horvat--Jab\l{}onowski's Theorem 5.3 additionally requires the candidate
-boundary, handle-count, irreducibility and spherical-basis hypotheses
-\cite{HorvatJablonowski2025}; these have not been instantiated from a public
-embedded presentation.
+The actual attaching sphere system has connected complement, since sphere
+surgery on it gives the connected boundary of $W_3$.
 
-Under Hypothesis~\ref{hyp:P2}, let $\Sigma_j$ be one chosen sphere with small
-disk removed.  MWW's raw
-three-handle maps attach $\Sigma_j$ with zero or one dot and then the signed
-parallel core disks specified by its owner lift.  The target detector row
-closes the new cable components by those same core counits.  Hence the
-complete composite foam should be the old detector surface disjoint union an
-undotted or once-dotted sphere.  This conclusion also requires the actual
-pivotal adapters, foam signs, normal-level choices and qHH0 coordinate maps;
-strict functoriality does not select them.  Once they are supplied,
+Fix the detector ball $B$ from P0.  Choose a small ball in the connected
+complement of the actual attaching system.  Since any two
+orientation-preserving embedded $3$-balls in a connected oriented
+$3$-manifold are ambient isotopic, the actual system may first be isotoped
+off the fixed ball $B$.  Choose the standard three
+nonseparating spheres in the complement of $B$.  Their complement is
+connected and their classes form the standard basis of
+$H_2^{\mathrm{sph}}(\partial W_2)$.  Horvat--Jab\l{}onowski's Theorem 5.3
+identifies this system with the actual attaching system up to permutation,
+$3$--$3$ handle slides and isotopy \cite{HorvatJablonowski2025}.  Applying
+their relative uniqueness lemma to
+$Q=\partial W_2\setminus\operatorname{Int}B$ makes the isotopies fixed on
+$\partial B$.  The additional boundary slides become tubings to the
+inessential sphere $\partial B$ after the ball is restored and are removed by
+a local isotopy.  Thus the $3$-handles may be represented by standard spheres
+without moving the detector.
+
+MWW's intrinsic reformulation of a $3$-handle quotient uses the local module
+action of $\mathcal S^2_0(S^2\times D^2)$.  At $N=2$, let $A_0$ denote the
+essential sphere with one dot and $A_1$ the undotted sphere.  The quotient
+relations are
 \[
-\operatorname{ev}(S^2)=0,\qquad
-\operatorname{ev}(\dot S^2)=1.
+A_0=1,\qquad A_1=0.
 \]
-the displayed equations give the desired core-counit algebra.  The stable
-movie generator explicitly records the actual MWW transport as open.
-Therefore the claim that all six candidate-specific sphere relations lie in
-the kernel remains Hypothesis~\ref{hyp:P2}.
+The symmetric-monoidal naturality required in C applies because the standard
+spheres lie outside $B$.  For every element $v$ in the complete source,
+\[
+\ell(vA_0)=\ell(v)\operatorname{ev}(\dot S^2)=\ell(v),
+\qquad
+\ell(vA_1)=\ell(v)\operatorname{ev}(S^2)=0.
+\]
+These are whole-source equations.  Hence the detector annihilates the full
+relation submodule for each of the three standard spheres and descends through
+the iterated MWW coequalizer.  This proves Theorem~\ref{hyp:P2} from P0 and C.
+
+The owner lifts, the 32-step Nielsen ledger and the split-tree Lean lemmas are
+compatible optional coordinate models, but they are not needed for this
+relative proof.  Candidate-level S is therefore not an independent open
+input; it remains unavailable only because P0 and the full monoidal form of C
+are not yet instantiated.
 
 \section{Final identifications}
 
 MWW Theorem 3.10 identifies the iterated quotient with the module after the
 three-handles, and Proposition 3.4 says the final four-handle induces a
-bidegree-$(0,0)$ isomorphism \cite{ManolescuWalkerWedrich2023}.  If P1 and
-P2 have produced the specified selected class, it remains nonzero in
+bidegree-$(0,0)$ isomorphism \cite{ManolescuWalkerWedrich2023}.  If C and
+Theorem~\ref{hyp:P2} have produced the specified selected class, it remains nonzero in
 \[
 \mathcal S^2_{0,(0,494),0}(\Sigma_A^0;\Q).
 \]
@@ -589,8 +607,9 @@ The intrinsic definition transports lasagna fillings under diffeomorphisms
 and gives grading-preserving equivalences.  Finally, Iwaki's Proposition 2.1
 and \eqref{eq:determinants} prove that the genuine Cappell--Shaneson manifold
 $\Sigma_A^0$ is a homotopy sphere \cite{Iwaki2024}.  Applying these general
-results to the proposed compact presentation and quotient requires P0--P3;
-the general results do not close those joins.
+results to the proposed compact presentation and quotient requires P0, C and
+the candidate-level final identifications; the general results do not close
+those joins.
 
 \section{Formalization boundary}
 
@@ -621,7 +640,9 @@ The geometric interfaces contain, among others, the predicates
 \end{center}
 These are predicate fields of the ambient universe rather than definitions
 of smooth topology.  The present paper does not supply their mathematical
-instances: P0, C, and S state missing candidate-level data.  It would be
+instances: P0 and C still state missing candidate-level data, while the S
+fields follow mathematically only after those hypotheses are instantiated.
+It would be
 incorrect to call the Lean development a formalization of four-dimensional
 differential topology or an unconditional proof.
 
@@ -645,8 +666,8 @@ Item & Verdict & Reason \\
 \midrule
 P0 & \Open & Word and braid ledgers do not construct the embedded framed Kirby equivalence. \\
 P1/C & \Open & Cubic order and the ordinary representable-coefficient reduction are proved, but the actual product bimodule equivalence, its completed lift and simultaneous transport are missing. \\
-P2/E7 & \Open & Owner homology lifts do not construct the required embedded disjoint spheres or verify the HJ hypotheses. \\
-P2/E10/S & \Open & Core-counit algebra is proved conditionally; the actual MWW hemisphere maps and coordinate transports are missing. \\
+P2/E7 & \Partial & HJ and the relative complete-system lemma give standard attaching spheres disjoint from the detector once the P0 handle pattern and detector ball are instantiated. \\
+P2/E10/S & \Partial & MWW's intrinsic local module action and monoidal C imply the complete sphere relations; no independent sphere movie remains, but P0/C are open. \\
 P3/E11 & \Partial & MWW Proposition 3.4 is general; its candidate-level input depends on P1/P2. \\
 P3/E12 & \Partial & The standard $S^4$ support is known, conditional on matching the grading and invariant. \\
 P3/E13 & \Partial & Iwaki's criterion applies to $\Sigma_A^0$, conditional on P0 identifying the presentation. \\
@@ -712,9 +733,10 @@ complete-sphere closure in Hypothesis S.
 The finite calculation and exact Magnus certificate provide a reproducible
 cubic-order signal for the public braid, and the Lean development verifies
 the abstract nonvanishing chain.  A counterexample conclusion would follow
-from Theorem~\ref{thm:joined}, but P0, C, and S remain open: the present data
-do not identify an embedded framed Kirby presentation, a genuine MWW
-coefficient functional, or the actual three-handle sphere maps.  The paper
+from Theorem~\ref{thm:joined}, but P0 and C remain open: the present data do
+not identify an embedded framed Kirby presentation or a genuine monoidal MWW
+coefficient functional.  The relative sphere theorem makes S a consequence
+of those inputs rather than an independent hypothesis.  The paper
 therefore establishes a conditional theorem and a precise closure programme,
 not a disproof of the smooth four-dimensional Poincare conjecture.
 
@@ -751,9 +773,10 @@ P2 & \texttt{THXY\_FULL\_MACRO\_P3FREE\_HJ\_CERT.json} & \hash{EABF67C0D1AE309F0
 
 The same values and candidate paths are machine-readable in
 \path{audit/geometric_evidence_manifest.json}.  These objects are not
-included.  Any proof of Hypotheses P0--P2 must either recover them or provide
-public constructions that genuinely replace their geometric and functorial
-roles.
+included.  Any proof of P0 and C must either recover the corresponding objects
+or provide public constructions that genuinely replace their geometric and
+functorial roles.  The historical P2 objects are no longer required by the
+relative sphere argument.
 
 \section{Correspondence with the Lean fields}
 

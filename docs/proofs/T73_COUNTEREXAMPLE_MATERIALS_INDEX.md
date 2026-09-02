@@ -1,6 +1,6 @@
 # T73 counterexample candidate materials index
 
-**Status:** `CONDITIONAL PROJECT; P0/C/S REMAIN OPEN`
+**Status:** `CONDITIONAL PROJECT; P0/C OPEN, S DERIVED FROM THEM`
 
 > The compact artifacts retain valid finite results but do not replace every
 > geometric and functorial role of the unavailable large inputs.  The
@@ -28,7 +28,7 @@ repository, but every load-bearing one is pinned below by path and SHA-256.
    compact presentation of the same Cappell--Shaneson manifold.
 6. [T73_CUBIC_NATURALITY_PROGRAM.md](T73_CUBIC_NATURALITY_PROGRAM.md)
    Kernel-checked cubic transport algebra and a 32-step public sphere-slide
-   construction; actual MWW movie charts remain the next gate.
+   construction; retained as an optional coordinate model.
 7. [T73_COMPACT_MWW_COMPARISON.md](T73_COMPACT_MWW_COMPARISON.md)
    Compact balanced-cable count, Hattori coefficient normal form and
    kernel-checked local R-matrix/Burau comparison.
@@ -36,16 +36,14 @@ repository, but every load-bearing one is pinned below by path and SHA-256.
    Relative standard-sphere replacement and the `b=1` MWW/Frobenius movie
    calculation away from the detector collar.
 9. [T73_CLOSURE_BLOCKER_AUDIT.md](T73_CLOSURE_BLOCKER_AUDIT.md)
-   Final distinction between the compact layers now discharged and the two
-   unavailable coefficient/signed-movie comparison theorems that prevent an
-   unconditional conclusion.
+   Final distinction between the discharged general layers and the P0/C
+   candidate joins that prevent an unconditional conclusion.
 10. [T73_THEOREM_C_DERIVATION.md](T73_THEOREM_C_DERIVATION.md)
     Typed construction of the MWW-to-quantum-horizontal-trace endpoint
     comparison and its exact remaining statewise cable-coherence square.
 11. [T73_THEOREM_S_DERIVATION.md](T73_THEOREM_S_DERIVATION.md)
-    Decomposition-independent core-counit closure proof reducing all signed
-    three-handle maps to undotted/dotted sphere evaluation, conditional only
-    on Theorem C's statewise coherence.
+    Relative standard-sphere and intrinsic module-action proof deriving S
+    from P0 and the symmetric-monoidal form of C.
 12. [T73_EXTERNAL_GEOMETRY_DISCHARGE.md](T73_EXTERNAL_GEOMETRY_DISCHARGE.md)
     Field-by-field assignment of the compact comparison and published
     topology results to `ExternalGeometry` and `CSExternalGeometry`.
@@ -78,9 +76,9 @@ identities.
 |---|---|---|
 | D:/tmp/t73_actual_cable_unit/ACTUAL_PD_CABLE_UNIT_CERT.json | 7F3D3618D6A790A9B60EE8085B647AC2AB742E1BC9C15841F1BEF015034217B5 | large exact paired-annulus/cable certificate |
 | PRODUCT_NORMAL_CHRISTOFFEL_THXY_MOVIE.json (historical path not recorded in the public input) | DE1AC479699EC79DE76D4265993DE437493A3AAA6CABB636F98998644BF3181C | action-compatible Hattori movie required by the Burau--MWW comparison |
-| D:/tmp/r6/matrix_attack/th12_actualization/TH1_EXHAUSTIVE_ALL_ROW_GEOMETRY.json | EE620E6B085A5F9E1C73CFDD1AD04FC0682CEC74DA3DBF8AFE70DD19C038E3A0 | exhaustive TH1 geometry |
-| D:/tmp/r6/matrix_attack/th12_actualization/TH2_EXHAUSTIVE_ALL_ROW_GEOMETRY.json | 4D1B627C0343A1C464319704EAFADCA127902A2E4E90CF1C283004359B7ADC24 | exhaustive TH2 geometry |
-| D:/tmp/r6/fullw_tangent_coend/generators/THXY_FULL_MACRO_P3FREE_HJ_CERT.json | EABF67C0D1AE309F0281297710A283B8ED5A11D88C8E810837932313F4C53227 | exhaustive THXY geometry |
+| D:/tmp/r6/matrix_attack/th12_actualization/TH1_EXHAUSTIVE_ALL_ROW_GEOMETRY.json | EE620E6B085A5F9E1C73CFDD1AD04FC0682CEC74DA3DBF8AFE70DD19C038E3A0 | historical explicit-sphere route; not required by relative S |
+| D:/tmp/r6/matrix_attack/th12_actualization/TH2_EXHAUSTIVE_ALL_ROW_GEOMETRY.json | 4D1B627C0343A1C464319704EAFADCA127902A2E4E90CF1C283004359B7ADC24 | historical explicit-sphere route; not required by relative S |
+| D:/tmp/r6/fullw_tangent_coend/generators/THXY_FULL_MACRO_P3FREE_HJ_CERT.json | EABF67C0D1AE309F0281297710A283B8ED5A11D88C8E810837932313F4C53227 | historical explicit-sphere route; not required by relative S |
 | D:/tmp/t73_g1_literature/four_manifold_theory_1984.pdf | 6F7E95B8266876774667AD40EA3DE964B165680D6789A34E49BF598C3AE04DF0 | 31 MB primary Aitchison--Rubinstein volume |
 
 Primary public source for the last item:

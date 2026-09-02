@@ -1,11 +1,12 @@
 # Final closure blocker audit
 
-**Status:** `CURRENT -- P0, C AND S REMAIN OPEN`
+**Status:** `CURRENT -- P0 AND C OPEN; S FOLLOWS CONDITIONALLY`
 
 The proposed derivations in `T73_THEOREM_C_DERIVATION.md` and
 `T73_THEOREM_S_DERIVATION.md` did not resolve the candidate-level joins.  The
-ordinary representable-coefficient reduction inside C has since been proved,
-but the actual product bimodule equivalence and sphere maps remain open.
+ordinary representable-coefficient reduction inside C has since been proved.
+The relative standard-sphere theorem removes S as an independent input, but
+the actual product bimodule equivalence remains open.
 
 This audit follows the constructive attempts to replace every unavailable
 large artifact by compact public data.  It records what is now proved and the
@@ -72,28 +73,18 @@ only item 4.  Once a genuine two-sided product Hattori equivalence is supplied,
 the ordinary representable reduction is no longer a blocker; its
 quantum/completed lift still is.
 
-## Missing theorem S: signed three-handle movie comparison
+## Theorem S is conditional on P0 and monoidal C
 
-For each of the three lifted sphere classes one needs actual source and target
-maps satisfying, in the same coordinates as theorem C,
+HJ Theorem 5.3 and its relative complete-system lemma allow the three
+attaching spheres to be replaced by the standard system in
+`#3(S1 x S2)` outside the detector ball supplied by P0.  MWW's intrinsic
+module-action formula then imposes `A0=1` for the one-dotted sphere and
+`A1=0` for the undotted sphere.  Symmetric monoidality of C gives these two
+identities on the whole source.
 
-\[
-Q_t\sigma^0Q_s^{-1}=Id_{old}\otimes U+O(h),
-\qquad
-Q_t\sigma^1Q_s^{-1}=Id_{old}\otimes D+O(h).
-\]
-
-The owner lifts and stable-copy ledger determine counts and labels but not:
-
-- pivotal adapters for the two orientation reversals;
-- signs for the seven negative sphere slides;
-- foam maps for the 49 expanded signed slide bands;
-- the actual degree-zero endpoint permutation in qHH0 coordinates;
-- simultaneous transport of `W`, the cup vector and the cap covector.
-
-The HJ theorem identifies embedded sphere systems up to slides, but it does
-not compute these link-homology maps.  MWW gives the coequalizer once the maps
-are known, but does not calculate them for this handlebody.
+Thus no signed slide-band, pivotal-adapter or endpoint-permutation certificate
+is independently required for S.  Candidate-level S remains partial only
+because P0 and the full monoidal C comparison are not instantiated.
 
 ## Negative controls
 
@@ -111,8 +102,8 @@ The proof can resume if either of the following is supplied:
 
 1. a published theorem constructing C and proving its five compatibility
    properties for MWW coefficient modules; or
-2. explicit chain/foam maps for the compact Hattori coefficient and the 32
-   signed sphere moves, from which C and S can be checked directly.
+2. explicit chain/foam maps for the compact Hattori coefficient proving the
+   full monoidal C comparison.
 
-Until both C and S are proved, `ExternalGeometry` has no legitimate
+Until P0 and C are proved, `ExternalGeometry` has no legitimate
 candidate-specific inhabitant and the paper must remain conditional.

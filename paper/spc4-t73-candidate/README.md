@@ -4,7 +4,9 @@ This directory contains an English `amsart` conditional preprint about the
 trace-73 Cappell--Shaneson candidate.  Exact Artin--Magnus expansion and the
 pure-braid Andreadakis equality verify a cubic-order statement for the public
 braid, but the candidate-level Kirby, MWW comparison, and three-handle joins
-remain explicit hypotheses.
+are not all closed.  The relative standard-sphere theorem now derives the
+three-handle join from P0 and the symmetric-monoidal form of C, so it is not an
+independent hypothesis.
 
 ## Build
 
@@ -63,6 +65,7 @@ not instantiate the actual product Hattori bimodule equivalence or its
 quantum/completed lift.
 
 It is expected to report the historical objects as missing.  Their absence is
-still relevant to P0/P2; the compact ledgers do not presently replace the
-missing embedded geometric certificates.  Names and SHA-256 values remain in
-`audit/geometric_evidence_manifest.json` and Appendix A for provenance.
+still relevant to P0 and the old explicit-sphere route.  The relative
+standard-sphere proof no longer consumes the TH1/TH2/THXY files.  Names and
+SHA-256 values remain in `audit/geometric_evidence_manifest.json` and Appendix
+A for provenance.

@@ -33,7 +33,7 @@ has an actual raw lift but is contained in the full action-closed two-cup
 | E3 coefficient q-trace and raw-state binding | OPEN as an MWW comparison | the public ledger asserts the comparison, but the coefficient-category/Hattori inputs and candidate-specific naturality proof are not publicly replayable |
 | E5/E6 one-/two-handle beta/psi quotient | OPEN as a candidate-specific MWW quotient | general quotient algebra and divided-cubic identities are recorded; actual MWW maps and the comparison detector are not identified from public inputs |
 | G1 actual-Gompf/DIAGRAM framed lift | OPEN / PUBLIC WITNESSES MISSING | `docs/proofs/T73_GA1_DESCENDING_BRIDGE.md`; the builder, full PD, cut/framing records and move data are not published |
-| E8 three chosen sphere rows | OPEN / PUBLIC WITNESSES MISSING | `T73_EVIDENCE_E8_CHOSEN_SPHERES.md`; the three claimed exhaustive geometry objects are referenced by hash but unavailable |
+| E8 three chosen sphere rows | NOT REQUIRED BY RELATIVE ROUTE | the historical objects are unavailable, but HJ relative uniqueness plus monoidal C replaces this explicit-sphere route |
 
 The E5/E6 proof uses the one-cup through-86 cell, the ordinary divided
 functional, beta's `O(h)` defect against `W-I=O(h^3)`, and split-injectivity of

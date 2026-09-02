@@ -1,92 +1,71 @@
-# Theorem S: decomposition-independent sphere closure
+# Theorem S: relative standard-sphere consequence
 
-**Status:** `OPEN -- PROPOSED CONSEQUENCE OF C PLUS CANDIDATE SPHERE MAPS`
+**Status:** `DISCHARGED AS AN IMPLICATION P0 + MONOIDAL C => S`
 
-> Correction.  A unimodular owner lattice and a formal Nielsen program do not
-> construct embedded disjoint framed spheres in the actual two-handlebody
-> boundary.  The whole-surface argument below also presupposes the actual MWW
-> hemisphere maps, pivotal adapters, foam signs and simultaneous endpoint
-> transports.  General strict functoriality does not create these maps.
+Candidate-level S is `PARTIAL` while P0 and C are open.  It is no longer an
+independent sphere-movie hypothesis.
 
 ## Statement
 
-Assume the statewise comparison maps and rows from Theorem C commute with
-MWW beta/psi maps.  For each of the three compact sphere classes, the MWW
-undotted sphere map is killed by the target row and the once-dotted sphere map
-pulls the target row back to the source row.  The conclusion is independent
-of a decomposition into sphere slides, bands and pivotal adapters.
+Assume:
 
-## Embedded sphere system
+1. P0 gives the actual trace-73 handle presentation, with three 3-handles,
+   one final 4-handle, and the detector supported in a boundary 3-ball `B`;
+2. C gives a symmetric-monoidal coefficient-trace comparison natural for
+   boundary cobordisms supported away from `B`.
 
-The compact Kirby boundary map has kernel basis
-`(rxy,ryz,rzx)`.  The unique owner lifts are
+Then the divided detector descends through all three MWW three-handle
+coequalizers.
 
-\[
-(0,0,-1311,8608,-1),\quad
-(0,0,-189,1241,0),\quad
-(0,0,41,-269,1).
-\]
+## Relative complete sphere system
 
-The 32-step Nielsen ledger realizes their unimodular coordinate matrix by
-permutations, orientation reversals and sphere slides of the standard
-complete sphere system in `#^3(S^1 x S^2)`.  Every move preserves embeddedness,
-normal framing and pairwise disjointness.  Horvat--Jab\l{}onowski's theorem
-identifies the resulting system with the actual three-handle attaching
-system up to the same moves.
+Remove the final 4-handle and call the remaining handlebody `W3`.  Its
+boundary is `S3`.  Reversing the three 3-handles attaches three
+three-dimensional 1-handles, so
 
-## Whole-surface argument
+```text
+partial W2 ~= #3(S1 x S2).
+```
 
-Fix one oriented chosen sphere `S_j`.  In MWW's notation write it as the union
-of a planar surface `Sigma_j` in the one-handle boundary and the signed
-parallel two-handle core disks prescribed by its owner lift.  Let `J_j` be a
-small oriented equator and let the two hemispheres be `Delta_+` and `Delta_-`.
+Choose the standard three nonseparating spheres outside `B`.  Their classes
+form a basis of spherical second homology and their complement is connected.
+Horvat--Jablonowski Theorem 5.3 identifies them with the actual attaching
+system up to permutation, 3--3 handle slides and isotopy.  Their relative
+complete-system lemma, applied after deleting `B`, keeps the boundary of the
+deleted ball fixed.  Boundary slides over that sphere become tubings to an
+inessential sphere after `B` is restored and are removed by local isotopy.
 
-The target row from Theorem C closes every new cable component using the same
-parallel two-handle core counit disk that appears in MWW's comparison square.
-Therefore the composite of the raw sphere movie with the target row is, as an
-oriented foam, the disjoint product of:
+Thus the handles can be attached along the standard system without changing
+the detector inside `B`.
 
-1. the old detector surface; and
-2. the complete sphere `S_j`, carrying zero or one dot.
+## Intrinsic MWW closure
 
-This description uses the complete surface, not a chosen sequence of Morse
-events.  Any permutations, negative slides, orientation reversals and
-pivotal adapters introduced by a decomposition occur in inverse pairs when
-the surface is closed with its own core disks.  BHPW strict functoriality and
-bicolored isotopy identify every such decomposition with the same closed
-foam map.
+MWW's intrinsic module-action form of the three-handle theorem imposes, at
+`N=2`,
 
-For the rank-two Frobenius theory,
+```text
+A0 = 1   (one-dotted essential sphere),
+A1 = 0   (undotted essential sphere).
+```
 
-\[
-\operatorname{ev}(S^2)=0,
-\qquad
-\operatorname{ev}(S^2\text{ with one dot})=1.
-\]
+Because the standard spheres are disjoint from `B`, symmetric monoidality of
+C gives on the whole source
 
-Consequently, on the complete MWW source,
+```text
+lambda(v A0) = lambda(v) ev(dotted S2) = lambda(v),
+lambda(v A1) = lambda(v) ev(S2) = 0.
+```
 
-\[
-\lambda_{t_j}\Psi_{j,0}=0,
-\qquad
-\lambda_{t_j}\Psi_{j,1}=\lambda_s.
-\]
+Hence the detector annihilates every MWW relation for each sphere and descends
+through the iterated coequalizer.
 
-These are exactly the two relations in the `N=2` specialization of MWW
-Theorem 3.10.  Applying them to all three spheres and taking the quotient
-gives the required `q12` descent.
+## Scope
 
-## Why no separate sign certificate remains
+No TH1/TH2/THXY geometry file, signed slide decomposition, pivotal-adapter
+ledger or endpoint permutation is used.  The optional owner lifts and
+split-tree Lean algebra are compatible coordinate models but are not
+load-bearing.
 
-The 49 signed slide bands and two orientation reversals are one method of
-presenting the embedded spheres.  They are not additional inputs to the foam
-map: strict functoriality assigns the map to the complete oriented cobordism.
-Since the final closed component is the same dotted or undotted sphere, its
-evaluation fixes the sign.  Thus Theorem S requires no TH-sized row replay.
-
-## Dependency
-
-The only retained hypothesis is Theorem C's statewise cable coherence.  It is
-needed because the target row must be defined on the complete beta/psi
-quotient before the core-counit closure can be applied.  Once C is complete,
-S follows without a further candidate-specific scalar or matrix computation.
+The remaining work is exactly P0 and the full monoidal form of C.  See
+`docs/research/T73_S_RELATIVE_STANDARD_SYSTEM_2026-09-02.md` for the
+primary-source audit and detailed boundary conditions.

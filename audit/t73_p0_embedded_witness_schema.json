@@ -19,7 +19,9 @@
     "matrix",
     "straightening_model",
     "product_annulus_parametrizations",
-    "whole_link_embedding_map"
+    "whole_link_embedding_map",
+    "handle_counts",
+    "boundary_after_three_handles"
   ],
   "required_cancellation_fields": [
     "t_hcs_local_movie",
@@ -29,6 +31,7 @@
   ],
   "required_detector_collar_fields": [
     "collar_parametrization",
+    "containing_three_ball",
     "inverse_image_44_wickets",
     "label_order",
     "induced_b44_word",

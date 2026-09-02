@@ -65,8 +65,8 @@ load-bearing comparison or geometric instance is absent.
 |---|---|---|
 | P0: frozen diagram is the Cappell--Shaneson handlebody | **OPEN** | the full PD, builder, framing/cut data and a labelled Kirby/isotopy ledger are absent |
 | P1: truncated Burau cubic is an MWW lasagna evaluation | **OPEN** | the script computes a finite Burau scalar, but no public comparison theorem identifies it with the one-handle/HH0/cabled-quotient functional |
-| P2/E7: chosen spheres are valid 3-handle attachments | **OPEN** | Horvat--Jablonowski gives a criterion; the candidate-specific boundary decomposition, irreducibility, handle count, embedded spheres and spherical basis are absent |
-| P2/E10: `q01,q12` are the MWW quotients | **OPEN** | MWW gives the general formulas; the actual candidate maps and all required relations are not publicly bound to them |
+| P2/E7: chosen spheres are valid 3-handle attachments | **PARTIAL** | HJ plus the relative complete-system lemma gives a standard system outside the detector ball once P0 supplies the actual handle pattern and ball |
+| P2/E10: `q01,q12` are the MWW quotients | **PARTIAL** | MWW's local module-action formula and symmetric-monoidal C imply the three-handle relations; P0 and C remain uninstantiated |
 | P3/E11: four-handle transport | **PARTIAL** | MWW Proposition 3.4 is applicable only after the preceding identification and grading data are supplied |
 | P3/E12: standard-sphere control | **PARTIAL** | MWW Corollary 3.5 computes the genuine lasagna module, but the Lean functor `G` is still abstract |
 | P3/E13: homotopy-sphere criterion | **PARTIAL** | the determinant criterion and matrix arithmetic are available; identifying the frozen detector manifold with \(\Sigma_A^\varepsilon\) is P0 |
@@ -164,31 +164,23 @@ criterion: under their boundary and handle-count hypotheses, a pairwise
 disjoint embedded sphere system representing an integral basis can replace
 the actual 3-handle attaching system up to permutation and 3--3 slides.
 
-The theorem does not prove the candidate-specific hypotheses. The repository
-does not include the TH1, TH2 and THXY witnesses that are claimed to establish
-embeddedness, common ambient boundary, disjointness, framing and homology
-coordinates. The displayed determinant is only the last arithmetic step; it
-does not construct the spheres or identify their classes in
-`H_2^sph(partial W2)`.
-
-For E7 to pass, the three geometry files and their deterministic replay code
-must be published, and the replay must derive (rather than accept as status
-fields):
-
-- smooth embedded genus-zero surfaces in one identified `partial W2`;
-- pairwise disjointness and normal framings;
-- the three integral homology coordinates;
-- `partial W2` and handle-count hypotheses required by the HJ theorem;
-- compatibility of 3--3 slides with the exact MWW relations used later.
+The explicit owner-coordinate route still lacks the TH1, TH2 and THXY
+witnesses.  It is no longer load-bearing.  Once P0 supplies the actual handle
+pattern and a detector ball, reversing the three 3-handles gives
+`partial W2 ~= #3(S1 x S2)`.  HJ Theorem 5.3 and its relative
+complete-system lemma then provide a standard attaching system disjoint from
+that ball.  Thus E7 is a proved consequence of P0, rather than an independent
+large-certificate requirement.
 
 ## P2/E10: actual MWW maps
 
-MWW supplies the general coequalizer and handle-decomposition formulas. The
-remaining candidate-specific claim is that the selected geometric movies
-induce the six maps whose divided-cubic rows are asserted in Section 10 of the
-candidate proof. This requires the actual surfaces from E7 and a complete
-naturality/transport binding. Constant-term tensor formulas cannot be used as
-a substitute for that binding.
+MWW supplies both the coequalizer and an intrinsic local module-action
+description.  At `N=2` the local relations set the one-dotted essential sphere
+to the identity and the undotted sphere to zero.  For the relative standard
+system outside the detector ball, these equations follow on the whole source
+from the symmetric-monoidal naturality required in C.  Therefore S introduces
+no independent signed-movie input; it remains partial only while P0/C are
+open.
 
 ## P3: general theorems and candidate-specific joins
 
@@ -209,14 +201,16 @@ still requires P0.
 
 ## Minimal honest route to closure
 
-1. Publish the P0--P2 objects under `evidence/geometric/` (Git LFS or a release
-   archive is acceptable) together with generators and schemas.
+1. Publish or reconstruct the P0 embedded witness and the actual monoidal C
+   coefficient comparison under `evidence/geometric/`, together with
+   generators and schemas.
 2. Make a clean replay start from the matrix and convention choices, generate
    the full framed labelled presentation, and reproduce every pinned hash.
 3. Emit a compact, independently checkable Kirby/isotopy ledger rather than
    only a terminal `PASS` receipt.
-4. Prove the Burau--MWW comparison on the full coefficient category and the
-   complete beta/psi and sphere relation systems.
+4. Prove the Burau--MWW comparison on the full coefficient category, including
+   beta/psi naturality and monoidality away from the detector ball; S then
+   follows from the relative theorem.
 5. Generate the `ExternalGeometry` data from that replay boundary. Keep the
    published topology theorems as named external results unless they are
    genuinely formalized.
