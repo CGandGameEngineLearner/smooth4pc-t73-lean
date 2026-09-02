@@ -1,0 +1,371 @@
+{
+  "actual_framed_link": {
+    "component_parametrizations": {
+      "h_CS": {
+        "framing": "untwisted product framing epsilon=0",
+        "geometric_passages": {
+          "t": 1
+        },
+        "parametrization": "boundary of the section surgery disk D^2 times S^1"
+      },
+      "m_i": {
+        "base_handle_arcs": [
+          "lambda_i",
+          "mu_i"
+        ],
+        "bottom_spine": "C_i(s)=Q+s e_i in T^3=R^3/Z^3",
+        "core_formula": "C_i^- union lambda_i union psi_A(C_i)^+ union mu_i",
+        "indices": [
+          1,
+          2,
+          3
+        ],
+        "top_spine": "psi_A(C_i), pulled back to the linear A(C_i) by the mapping-torus diffeomorphism F"
+      },
+      "r_xy_r_yz_r_zx": {
+        "framing": "zero product framing of the T^3 2-handles",
+        "oriented_words": {
+          "r_xy": "[x,y]",
+          "r_yz": "[y,z]",
+          "r_zx": "[z,x]"
+        },
+        "parametrization": "boundaries of the three standard dual 2-cells of the coordinate-spine Heegaard splitting"
+      }
+    },
+    "normal_fields": {
+      "base_rectangles": "product normals on lambda_i times I and mu_i times I",
+      "coordinate_strips": "push the coordinate axes in the universal cover in direction (1,1,1)",
+      "image_strips": "linearity of A keeps the two boundary components parallel",
+      "source": "Aitchison-Rubinstein pp. 16-17"
+    },
+    "owner_and_cocore_labels": [
+      "h_CS",
+      "m_1",
+      "m_2",
+      "m_3",
+      "r_xy",
+      "r_yz",
+      "r_zx"
+    ],
+    "pairwise_disjointness_certificate": {
+      "rule": "AR pages 5-6 choose pairwise disjoint disks D_i, cones C_i, and distinct product-normal levels; all lambda_i/mu_i rectangles are disjoint",
+      "simultaneous": true
+    }
+  },
+  "ambient_triangulation": {
+    "base_handle": "mapping-torus 1-handle t",
+    "fiber": "T^3=R^3/Z^3 with coordinate-spine genus-three Heegaard splitting",
+    "kind": "exact smooth AR handle charts with canonical PL approximation",
+    "pl_realization_rule": "triangulate the compact product charts after choosing pairwise disjoint rational normal levels"
+  },
+  "ar_provenance": {
+    "boundary_after_three_handles": "S^3, capped by the final 4-handle",
+    "handle_counts": {
+      "after_two_cancellations": {
+        "h0": 1,
+        "h1": 2,
+        "h2": 5,
+        "h3": 3,
+        "h4": 1
+      },
+      "before_cancellation": {
+        "h0": 1,
+        "h1": 4,
+        "h2": 7,
+        "h3": 3,
+        "h4": 1
+      }
+    },
+    "matrix": [
+      [
+        0,
+        269,
+        1240
+      ],
+      [
+        0,
+        41,
+        189
+      ],
+      [
+        1,
+        0,
+        32
+      ]
+    ],
+    "matrix_bridge": {
+      "AR_parameters": {
+        "lambda": 83,
+        "m": 713,
+        "n": -902,
+        "p": -105,
+        "trace": 73
+      },
+      "C_AR": [
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          713,
+          83,
+          0
+        ],
+        [
+          -902,
+          -105,
+          -10
+        ]
+      ],
+      "R": [
+        [
+          71,
+          -466,
+          1
+        ],
+        [
+          -610,
+          4004,
+          -7
+        ],
+        [
+          1,
+          -7,
+          -2
+        ]
+      ],
+      "det_R": 1,
+      "determinants": {
+        "det_A": 1,
+        "det_A_minus_I": 1,
+        "det_C_AR": 1,
+        "det_C_AR_minus_I": 1
+      },
+      "identity": "C_AR * R = R * A"
+    },
+    "primary_source": {
+      "chapter_pages": [
+        1,
+        74
+      ],
+      "sha256": "6F7E95B8266876774667AD40EA3DE964B165680D6789A34E49BF598C3AE04DF0",
+      "url": "https://math.berkeley.edu/~kirby/papers/Gordon%20and%20Kirby%20%28editors%29%20-%20Four-manifold%20theory%20%28Durham%29%20-%20MR0780574.pdf"
+    },
+    "product_annulus_parametrizations": {
+      "annulus": "A_i^- union (lambda_i times I) union psi_A(A_i)^+ union (mu_i times I)",
+      "core": "C_i^- union lambda_i union psi_A(C_i)^+ union mu_i",
+      "source_pages": [
+        5,
+        6,
+        7,
+        16,
+        17
+      ]
+    },
+    "section_framing_transport": "det(R)=1, so the fiber derivative lies in connected GL^+(3,R) and preserves the canonical epsilon=0 framing class",
+    "straightening_model": {
+      "handlebody_map": "psi_A from AR Lemma 3.1 and minimal straightening Lemma 3.2",
+      "linear_map": "phi_A induced by A on T^3, straightened to the identity on the section ball",
+      "mapping_torus_diffeomorphism": "F([x,u]_{phi_A})=[rho_u phi_A^{-1}(x),u]_{psi_A}",
+      "relative_section_ball": true,
+      "word_chart_translation": "all three lifted top spines share initial point A(Q); translate the top fiber simultaneously by -A(Q), extend over its collar, and choose a cyclic start on each closed core"
+    },
+    "whole_link_embedding_map": "pull back the complete simultaneous AR handle link and all framing annuli by F"
+  },
+  "cancellation_movie": {
+    "all_component_transport": {
+      "m_2": {
+        "exponent_sums": {
+          "x": 0,
+          "y": 40,
+          "z": 269
+        },
+        "length": 311,
+        "prefix": [
+          "z",
+          "z",
+          "z",
+          "z",
+          "z",
+          "z",
+          "y",
+          "z",
+          "z",
+          "z",
+          "z",
+          "z"
+        ],
+        "sha256": "E7175C5B3B116EB094C1B78A79589D5B8F8691885BC90EB05695805962DB98C9",
+        "suffix": [
+          "z",
+          "z",
+          "y",
+          "z",
+          "z",
+          "z",
+          "z",
+          "z",
+          "z",
+          "y",
+          "z",
+          "Y"
+        ]
+      },
+      "m_3": {
+        "exponent_sums": {
+          "x": 0,
+          "y": 189,
+          "z": 1271
+        },
+        "length": 1460,
+        "prefix": [
+          "z",
+          "z",
+          "z",
+          "z",
+          "z",
+          "z",
+          "y",
+          "z",
+          "z",
+          "z",
+          "z",
+          "z"
+        ],
+        "sha256": "5AA58E32EA1805FCDEF3DE496A602996CA470C53774E30D32A4C4362A65A06A4",
+        "suffix": [
+          "z",
+          "z",
+          "z",
+          "y",
+          "z",
+          "z",
+          "z",
+          "z",
+          "z",
+          "z",
+          "z",
+          "y"
+        ]
+      },
+      "r_xy": {
+        "exponent_sums": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "length": 4,
+        "prefix": [
+          "z",
+          "y",
+          "Z",
+          "Y"
+        ],
+        "sha256": "2FFBE4266A2BAE1664E459BDBD0A16749EF09FA6DF57FADA0BA96F31CED6DE14",
+        "suffix": [
+          "z",
+          "y",
+          "Z",
+          "Y"
+        ]
+      },
+      "r_yz": {
+        "exponent_sums": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "length": 4,
+        "prefix": [
+          "y",
+          "z",
+          "Y",
+          "Z"
+        ],
+        "sha256": "6F26A580A650D52C2C9380D5C1E95C0E9FF04E019A327F5700B2695F2D7B2710",
+        "suffix": [
+          "y",
+          "z",
+          "Y",
+          "Z"
+        ]
+      },
+      "r_zx_actual_image": {
+        "free_word_after_x_cancellation": [],
+        "geometric_scope": "the actual AR component transported through both cancellations; no split-unknot conclusion is inferred from the empty word"
+      }
+    },
+    "normal_field_transport": "all slides use the displayed product rectangles; the product normal acquires zero relative twist",
+    "t_hcs_local_movie": {
+      "operation": "slide every other 2-handle over h_CS along its product rectangle and cancel",
+      "pair": [
+        "t",
+        "h_CS"
+      ],
+      "relative_twist": 0,
+      "source": "AR p. 7 complementary 1/2-handle pair"
+    },
+    "x_m1_local_movie": {
+      "operation": "slide all other x-passages over m_1, replace x by z, and cancel the complementary pair",
+      "pair": [
+        "x",
+        "m_1"
+      ],
+      "precondition": "A e_1=e_3, hence m_1=z x^-1 after the base cancellation",
+      "relative_twist": 0
+    }
+  },
+  "detector_collar": {
+    "collar_parametrization": "standard D^2 times I collar in the y/z disk-cut boundary ball",
+    "containing_three_ball": "a regular neighborhood of the selected 44 wicket arcs, disjoint from the standard relative 3-handle spheres",
+    "framing_return": "choose the pure point-push extension to be identity to first order near every returned puncture; each product normal, not only the total writhe, returns",
+    "hattori_counts": {
+      "closed_z_circles": 227,
+      "p_y": 44,
+      "p_z": 271
+    },
+    "induced_b44_word": {
+      "length": 11340,
+      "permutation": "identity",
+      "sha256": "7C2D2F792C2672221A76CAF08A71F560AF0CB7654B4D537C00FAD00B16EFA187",
+      "writhe": 0
+    },
+    "inverse_image_44_wickets": {
+      "m_2_y_passages": 42,
+      "r_xy_y_passages": 2,
+      "total": 44
+    },
+    "label_order": "public wickets 1,...,44 in the six-sweep schema",
+    "simultaneous_cabling_rule": "apply the ambient collar isotopy to every oriented normal copy at once"
+  },
+  "independent_checks": [
+    {
+      "input_sha256": "6F7E95B8266876774667AD40EA3DE964B165680D6789A34E49BF598C3AE04DF0",
+      "status": "PASS",
+      "verifier": "public AR scan SHA-256"
+    },
+    {
+      "input_sha256": "EC1D71003931DC300BD5AC240D07DC22BA16ABD260FE3F4FCCE402F143926403",
+      "status": "PASS",
+      "verifier": "matrix bridge C_AR*R=R*A"
+    },
+    {
+      "input_sha256": "BA45C92B6A5605CB259F29E3550BC367C0783BBA9206E2633582B2ABE81DE1BC",
+      "status": "PASS",
+      "verifier": "generate_t73_compact_kirby_ledger.py"
+    },
+    {
+      "input_sha256": "81765489EE2B1594271ED378D1D458C1A00C3C69975742815AD24AEDC89D2B1D",
+      "status": "PASS",
+      "verifier": "verify_t73_compact_point_push.py"
+    },
+    {
+      "input_sha256": "04507506DC577384BC4C04765CCB212C1481DC71810C6AB3232F1AB690F16909",
+      "status": "PASS",
+      "verifier": "T73_DELTA3_PUBLIC_INPUT.json bytes"
+    }
+  ],
+  "schema": "t73_p0_embedded_framed_link_witness/v1",
+  "witness_sha256": "AA9328EA3C7A53B937C97A02D611850D0E8EEAF87C68756C04B013A486F6F112"
+}

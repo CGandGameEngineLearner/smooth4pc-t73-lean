@@ -2,8 +2,8 @@
 
 **Status:** `DISCHARGED AS AN IMPLICATION P0 + MONOIDAL C => S`
 
-Candidate-level S is `PARTIAL` while P0 and C are open.  It is no longer an
-independent sphere-movie hypothesis.
+Candidate-level S is `PARTIAL` while C is open.  P0 is discharged, and S is no
+longer an independent sphere-movie hypothesis.
 
 ## Statement
 

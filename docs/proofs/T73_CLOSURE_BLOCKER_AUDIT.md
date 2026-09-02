@@ -1,6 +1,6 @@
 # Final closure blocker audit
 
-**Status:** `CURRENT -- P0 AND C OPEN; S FOLLOWS CONDITIONALLY`
+**Status:** `CURRENT -- P0 DISCHARGED; C OPEN; S FOLLOWS FROM C`
 
 The proposed derivations in `T73_THEOREM_C_DERIVATION.md` and
 `T73_THEOREM_S_DERIVATION.md` did not resolve the candidate-level joins.  The
@@ -10,8 +10,7 @@ the actual product bimodule equivalence remains open.
 
 This audit follows the constructive attempts to replace every unavailable
 large artifact by compact public data.  It records what is now proved and the
-two theorems that still cannot be obtained from the repository or the cited
-literature.
+single candidate comparison C that remains open.
 
 ## Publicly discharged finite and algebraic layers
 
@@ -19,8 +18,8 @@ The following statements now have executable public evidence:
 
 1. six affine sweeps generate all 252 collar factors and the pinned
    44-strand pure braid;
-2. the compact generator gives the registered reduced `m2/m3` words and a
-   product-framing-name ledger, but not the whole embedded framed link;
+2. the public AR product witness gives the simultaneous embedded framed link,
+   matrix bridge, two cancellations and detector ball;
 3. the selected balanced cable has `p_y=44`, `p_z=271`, 88 oriented open
    endpoints and 227 closed circle factors;
 4. the local normalized weight-one R-matrix is the exact unreduced Burau
@@ -84,7 +83,7 @@ identities on the whole source.
 
 Thus no signed slide-band, pivotal-adapter or endpoint-permutation certificate
 is independently required for S.  Candidate-level S remains partial only
-because P0 and the full monoidal C comparison are not instantiated.
+because the full monoidal C comparison is not instantiated.
 
 ## Negative controls
 
@@ -105,5 +104,5 @@ The proof can resume if either of the following is supplied:
 2. explicit chain/foam maps for the compact Hattori coefficient proving the
    full monoidal C comparison.
 
-Until P0 and C are proved, `ExternalGeometry` has no legitimate
+Until C is proved, `ExternalGeometry` has no legitimate
 candidate-specific inhabitant and the paper must remain conditional.

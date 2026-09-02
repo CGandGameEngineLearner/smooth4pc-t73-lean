@@ -1,13 +1,14 @@
 # Geometric instantiation audit
 
-**Status:** `SUPERSEDED BY THE COMPACT C/S CLOSURE`
+**Status:** `CURRENT -- P0 DISCHARGED BY AR REPLACEMENT; C OPEN`
 
 > This file audits the retired strategy that attempted to recover the
 > historical full PD and TH artifacts.  The compact product-ribbon,
 > coefficient-trace and whole-sphere proofs in
 > `docs/proofs/T73_EXTERNAL_GEOMETRY_DISCHARGE.md` do not use those objects.
-> The OPEN verdicts below remain correct for the historical route but are no
-> longer premises of the main paper.
+> The historical frozen-PD verdict remains open, but that route is retired.
+> The public AR product witness now discharges P0 for the replacement
+> presentation used by the paper.
 
 This audit concerns the step from the kernel-checked conditional theorem to a
 candidate-specific geometric instance. It does not re-audit the published
@@ -22,8 +23,8 @@ open boundary:
 | construction | result | retained boundary |
 |---|---|---|
 | compact six-sweep point-push generator | **DISCHARGED** for the local collar: regenerates all 252 rows and the pinned 44-strand word | does not itself identify a global Kirby link |
-| compact Aitchison--Rubinstein product-ribbon ledger | **PARTIAL**: publicly constructs the candidate manifold, product framings, cancellations and reduced words without the historical PD | actual MWW coefficient/Hattori binding to the collar remains open |
-| 32-step Nielsen sphere ledger plus cubic-jet algebra | **DISCHARGED** for existence of the determinant-one disjoint sphere basis and for `Id+O(h)` cubic invariance | the actual MWW source/target movie charts for the 32 moves remain open |
+| public Aitchison--Rubinstein product witness | **DISCHARGED**: constructs the simultaneous embedded framed link, two cancellations and actual detector ball from the public AR source | actual MWW coefficient/Hattori binding to the collar remains open |
+| relative standard-sphere theorem | **DISCHARGED as P0 + monoidal C => S** | candidate S remains partial while C is open |
 
 Thus a revised proof may retire the historical PD rather than recover it.
 It may not retire the candidate-specific coefficient naturality or the MWW
@@ -31,11 +32,11 @@ sphere-map naturality.
 
 ## Result
 
-At commit `cb7f684`, the repository does not contain enough public data to
-construct or independently verify an inhabitant of `ExternalGeometry`. The
-published source contains hashes and summaries for the load-bearing geometric
-objects, but not their bytes. A SHA-256 digest authenticates bytes once they
-are supplied; it cannot establish a theorem about unavailable bytes.
+The repository now contains enough public data to discharge P0 through the
+replacement AR construction.  It still does not contain the actual monoidal
+coefficient comparison needed to construct an inhabitant of
+`ExternalGeometry`.  Historical hashes alone remain non-evidence for the
+retired route.
 
 Consequently, the strongest supported result remains the conditional theorem
 in `Smooth4PC/T73Conditional.lean`. In particular, a synthetic Lean instance
@@ -48,10 +49,9 @@ Run the availability audit with:
 python -B scripts/check_geometric_evidence.py
 ```
 
-The expected result for the public repository as released is a nonzero exit
-status and `MISSING` for the P0--P2 witness artifacts. The required names,
-historical locations and hashes are recorded in
-`audit/geometric_evidence_manifest.json`.
+The expected result remains `MISSING` for the retired historical artifacts.
+That output no longer measures P0: the replacement witness is
+`audit/t73_ar_product_witness.json` and has its own deterministic replay.
 
 ## Ordered verdicts
 
@@ -63,28 +63,28 @@ load-bearing comparison or geometric instance is absent.
 
 | priority / item | verdict | public boundary |
 |---|---|---|
-| P0: frozen diagram is the Cappell--Shaneson handlebody | **OPEN** | the full PD, builder, framing/cut data and a labelled Kirby/isotopy ledger are absent |
+| P0: replacement AR presentation is the Cappell--Shaneson handlebody | **DISCHARGED** | public AR scan, parameterized product-annulus witness, exact matrix bridge, two geometric cancellations and embedded collar |
+| historical frozen diagram identity | **OPEN / RETIRED** | the full PD and builder remain absent and are not used |
 | P1: truncated Burau cubic is an MWW lasagna evaluation | **OPEN** | the script computes a finite Burau scalar, but no public comparison theorem identifies it with the one-handle/HH0/cabled-quotient functional |
-| P2/E7: chosen spheres are valid 3-handle attachments | **PARTIAL** | HJ plus the relative complete-system lemma gives a standard system outside the detector ball once P0 supplies the actual handle pattern and ball |
-| P2/E10: `q01,q12` are the MWW quotients | **PARTIAL** | MWW's local module-action formula and symmetric-monoidal C imply the three-handle relations; P0 and C remain uninstantiated |
-| P3/E11: four-handle transport | **PARTIAL** | MWW Proposition 3.4 is applicable only after the preceding identification and grading data are supplied |
-| P3/E12: standard-sphere control | **PARTIAL** | MWW Corollary 3.5 computes the genuine lasagna module, but the Lean functor `G` is still abstract |
-| P3/E13: homotopy-sphere criterion | **PARTIAL** | the determinant criterion and matrix arithmetic are available; identifying the frozen detector manifold with \(\Sigma_A^\varepsilon\) is P0 |
+| P2/E7: chosen spheres are valid 3-handle attachments | **DISCHARGED** | P0 supplies the handle pattern/ball; HJ plus the relative complete-system lemma gives the standard system outside it |
+| P2/E10: `q01,q12` are the MWW quotients | **PARTIAL** | MWW's local module-action formula and symmetric-monoidal C imply the three-handle relations; C remains uninstantiated |
+| P3/E11: four-handle transport | **DISCHARGED** | P0 fixes the handle decomposition and MWW Proposition 3.4 gives the grading-preserving isomorphism |
+| P3/E12: standard-sphere control | **DISCHARGED** | MWW Corollary 3.5 computes the genuine module concentrated in bidegree zero |
+| P3/E13: homotopy-sphere criterion | **DISCHARGED** | P0 identifies the replacement presentation and the determinant criterion applies |
 
-No item in this ordered list is presently `DISCHARGED` as a complete
-candidate-specific geometric instance.
+The remaining open candidate-specific comparison is P1/C.
 
 ## Field-by-field allocation
 
 | Lean obligation | What would discharge it | Current result |
 |---|---|---|
-| `x0`, `ell0`, `ell0_x0` | A public construction of the selected MWW raw class and detector on the actual cut Kirby presentation | Open: the arithmetic value is reproducible, but the source collar braid and its binding to the full PD diagram are absent |
+| `x0`, `ell0`, `ell0_x0` | A public construction of the selected MWW raw class and detector on the actual cut presentation | Open: P0 supplies the collar, but the MWW/Hattori binding is absent |
 | `q01`, `ell1_comp_q01` | The complete candidate-specific beta/psi presentation and proof that the detector annihilates every relation | Open as geometry: only derived ledgers and abstract quotient algebra are public |
-| `q12`, `ell2_comp_q12` | The three actual attaching spheres (or an HJ-valid replacement) and their two MWW maps on the complete source | Open: the three exhaustive geometry witnesses are absent |
-| `transport`, `fourIso` | The published handle-decomposition/four-handle theorems applied to the same identified handlebody | General theorem available; candidate identification still depends on P0--P2 |
+| `q12`, `ell2_comp_q12` | An HJ-valid replacement and the two MWW relations on the complete source | Derived from P0 and symmetric-monoidal C; partial while C is open |
+| `transport`, `fourIso` | The published handle-decomposition/four-handle theorems applied to the same identified module | General theorem available; candidate identification now depends on C |
 | `s4DegreeZero` | The rational, grading-preserving `S^4` computation | Supported by the published MWW result, but still external to Lean |
 | `diffeomorphismEquiv` | Graded diffeomorphism invariance of the same lasagna module | Supported as a general external theorem |
-| `matrixConditionsToHomotopySphere` | The Cappell--Shaneson criterion applied to the identified matrix | Mathematically supplied by Iwaki, Proposition 2.1; external to Lean |
+| `matrixConditionsToHomotopySphere` | The Cappell--Shaneson criterion applied to the identified matrix | Discharged mathematically by P0 plus Iwaki, Proposition 2.1; external to Lean |
 
 The last row does not depend on the detector. For the displayed matrix,
 `det(A-I)=1`, so the standard Cappell--Shaneson construction is a homotopy
@@ -112,8 +112,8 @@ the missing PD file. It cannot replace that input. Likewise,
 `T73_DELTA3_PUBLIC_INPUT.json` is intentionally only a result-free arithmetic
 projection and does not determine the full Kirby link.
 
-Even after the bytes are published, review must check two mathematical joins
-that a hash test cannot decide:
+The public AR replacement now checks the two mathematical joins that the old
+hash test could not decide:
 
 - the locally straightened representative of the linear torus map and the
   Aitchison--Rubinstein product-annulus framing must be transported through
@@ -122,8 +122,9 @@ that a hash test cannot decide:
   owner/cocore labels and chosen longitudes needed by the detector and later
   sphere calculations.
 
-Until those joins are written as explicit maps/moves or independently proved,
-P0 remains an antecedent rather than a constructed instance.
+They are written as the mapping-torus diffeomorphism, product-annulus normal
+fields, simultaneous cancellation bands and embedded collar in the P0
+discharge proof.  The historical PD route remains unverified but unused.
 
 ## P1: comparison with the MWW invariant
 
@@ -179,8 +180,7 @@ description.  At `N=2` the local relations set the one-dotted essential sphere
 to the identity and the undotted sphere to zero.  For the relative standard
 system outside the detector ball, these equations follow on the whole source
 from the symmetric-monoidal naturality required in C.  Therefore S introduces
-no independent signed-movie input; it remains partial only while P0/C are
-open.
+no independent signed-movie input; it remains partial only while C is open.
 
 ## P3: general theorems and candidate-specific joins
 

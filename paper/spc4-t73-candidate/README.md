@@ -3,10 +3,10 @@
 This directory contains an English `amsart` conditional preprint about the
 trace-73 Cappell--Shaneson candidate.  Exact Artin--Magnus expansion and the
 pure-braid Andreadakis equality verify a cubic-order statement for the public
-braid, but the candidate-level Kirby, MWW comparison, and three-handle joins
-are not all closed.  The relative standard-sphere theorem now derives the
-three-handle join from P0 and the symmetric-monoidal form of C, so it is not an
-independent hypothesis.
+braid.  The public AR product witness closes the candidate-level Kirby
+identification, and the relative standard-sphere theorem derives the
+three-handle join from the symmetric-monoidal form of C.  The remaining open
+core is the candidate-level MWW coefficient comparison C.
 
 ## Build
 
@@ -47,16 +47,19 @@ The paper/evidence consistency gate is:
 python -B scripts/check_t73_claim_boundary.py
 ```
 
-A proposed P0 replacement can be checked for the required embedded-witness
-structure with:
+A public P0 replacement can be regenerated and checked with:
 
 ```text
-python -B scripts/check_t73_p0_embedded_witness.py PATH_TO_WITNESS.json
+python -B scripts/generate_t73_ar_product_witness.py --check \
+  --source-pdf PATH_TO_PUBLIC_AR_SCAN
+python -B scripts/check_t73_p0_embedded_witness.py \
+  audit/t73_ar_product_witness.json
+python -I -B tests/test_t73_ar_product_witness.py -v
 ```
 
-The compact word ledger is deliberately rejected by this checker because it
-does not contain component parametrizations, normal fields, cancellation
-movies, or an ambient detector-collar embedding.
+The compact word ledger alone is deliberately rejected; the AR witness adds
+the simultaneous component parametrizations, normal fields, cancellation
+movies and ambient detector-collar embedding.
 
 The ordinary representable-coefficient reduction used inside the proposed C
 comparison is proved in `Smooth4PC/RepresentableCoefficient.lean`; its
@@ -64,8 +67,8 @@ standalone axiom report is `T73RepresentableAudit.lean`.  This theorem does
 not instantiate the actual product Hattori bimodule equivalence or its
 quantum/completed lift.
 
-It is expected to report the historical objects as missing.  Their absence is
-still relevant to P0 and the old explicit-sphere route.  The relative
-standard-sphere proof no longer consumes the TH1/TH2/THXY files.  Names and
-SHA-256 values remain in `audit/geometric_evidence_manifest.json` and Appendix
-A for provenance.
+The availability script still reports the historical objects as missing.
+They are retired: the public AR replacement discharges P0, and the relative
+standard-sphere proof does not consume TH1/TH2/THXY.  Names and SHA-256 values
+remain in `audit/geometric_evidence_manifest.json` and Appendix A for
+provenance.

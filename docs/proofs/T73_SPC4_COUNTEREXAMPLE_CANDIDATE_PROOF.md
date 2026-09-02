@@ -1,6 +1,11 @@
 # T73 historical candidate proof
 
-**Status:** `SUPERSEDED BY THE COMPACT THEOREM C/S DERIVATION`
+**Status:** `HISTORICAL; CURRENT PAPER HAS P0/P3 DISCHARGED AND C OPEN`
+
+> The current proof allocation is the LaTeX paper and the research notes for
+> the public AR P0 witness, the coefficient comparison C, and relative S.
+> Historical G1/TH artifacts and the old status table below are not
+> load-bearing.
 
 OPEN entries below document the retired large-certificate route.
 

@@ -1,102 +1,57 @@
 # Compact Aitchison--Rubinstein presentation
 
-**Status:** `PARTIAL -- WORD/FRAMING-NAME LEDGER; EMBEDDED KIRBY EQUIVALENCE OPEN`
+**Status:** `DISCHARGED FOR THE REPLACEMENT PRESENTATION`
 
-> The compact generator proves word-level and product-normal bookkeeping.  It
-> does not output an embedded framed link or a labelled Kirby/isotopy ledger,
-> so it does not discharge P0.
+The historical 2,126,291-crossing PD is retired.  The paper instead defines
+the handle presentation directly from the public Aitchison--Rubinstein
+product construction and embeds the detector collar in that presentation.
 
-This note constructs a public replacement for the unavailable historical
-2,126,291-crossing planar diagram.  It defines the candidate directly from
-the Aitchison--Rubinstein linear product-ribbon construction and retains
-product framings throughout.  It does not claim byte equality with the
-historical PD file.
+## Public objects
 
-## Public replay
+- primary scan: the Berkeley copy of *Four-Manifold Theory*, SHA-256
+  `6F7E95B8266876774667AD40EA3DE964B165680D6789A34E49BF598C3AE04DF0`;
+- witness: `audit/t73_ar_product_witness.json`;
+- generator/verifier: `scripts/generate_t73_ar_product_witness.py`;
+- detailed proof: `docs/research/T73_P0_AR_PRODUCT_DISCHARGE_2026-09-02.md`.
 
 Run:
 
 ```text
-python -B scripts/generate_t73_compact_kirby_ledger.py --check
-python -I -B tests/test_t73_compact_kirby_ledger.py -v
+python -B scripts/generate_t73_ar_product_witness.py --check \
+  --source-pdf PATH_TO_PUBLIC_AR_SCAN
+python -B scripts/check_t73_p0_embedded_witness.py \
+  audit/t73_ar_product_witness.json
+python -I -B tests/test_t73_ar_product_witness.py -v
 ```
 
-The current ledger identity is
+## Construction boundary
 
-```text
-BA45C92B6A5605CB259F29E3550BC367C0783BBA9206E2633582B2ABE81DE1BC
-```
+AR pp. 5--7 give the simultaneous embedded mapping-torus attaching circles
+and their framing annuli.  Pages 8--12 give the coordinate-spine torus model
+and handlebody-preserving representative.  Pages 16--17 give the parallel
+strip normal field.  A mapping-torus diffeomorphism pulls the whole
+construction back to the linear map induced by the displayed matrix.
 
-## Construction
+The two geometric cancellations are `(t,h_CS)` and `(x,m_1)`.  The first is
+the complementary pair identified by AR; the second uses `A e_1=e_3` and the
+single geometric `x` passage of `m_1=z x^-1`.  All other components and normal
+fields are transported by product bands.
 
-Let
+The public word ledger is now used only as the exact projection of this actual
+embedded construction.  In particular, the empty post-cancellation word of
+`r_zx` is not promoted to a split-unknot claim.
 
-\[
-A=\begin{pmatrix}0&269&1240\\0&41&189\\1&0&32\end{pmatrix}.
-\]
+## Detector collar
 
-For the coordinate circle `x_j`, the straight segment from the origin to
-`A e_j` crosses the integer coordinate faces at rational times
+After cutting the remaining `y,z` handles, a regular neighborhood of the 42
+`m_2` and two `r_xy` y-passages is a standard 3-ball with 44 labelled
+wickets.  The public pure braid is realized there by the mapping-class
+interpretation of the braid group and isotopy extension.  This constructs the
+actual collar used by the replacement proof; it does not identify the
+historical PD collar.
 
-\[
-t=\frac{k}{(Ae_j)_i}.
-\]
+## Retained gap
 
-Ordering these events gives the linear Christoffel word for the top edge of
-the Aitchison--Rubinstein product annulus.  A fixed product perturbation
-orders coincident events with the terminal axis first and the remaining axes
-in descending cyclic order.  The complete mapping-torus attaching word is
-
-\[
-m_j=t\,\phi_A(x_j)\,t^{-1}x_j^{-1}.
-\]
-
-The normal is the product-annulus normal from the construction, not a
-blackboard integer.
-
-Cancel `(t,h_CS)` using the product pair.  Because `Ae_1=e_3`, the remaining
-word `m_1=z x^{-1}` is a second product cancelling pair.  Its cancellation
-replaces `x` by `z` on every surviving ribbon.  The two nested product bigons
-in `r_zx=[z,z]` give a split unknot with zero relative framing.
-
-The generator independently obtains
-
-```text
-m_2: length 311, exponent sums (y,z)=(40,269)
-m_3: length 1460, exponent sums (y,z)=(189,1271)
-r_zx: empty reduced word plus its transported zero-framed product disk
-```
-
-These are precisely the registered reduced word data.  If the word-level
-construction is lifted to simultaneous parameterized Aitchison--Rubinstein
-product ribbons, the resulting genus-two handle presentation is a framed
-presentation of the Cappell--Shaneson manifold `Sigma_A^0`.  The public
-generator does not construct that lift.
-
-## Local detector collar
-
-`T73_COMPACT_POINT_PUSH_BRIDGE.md` independently defines the 44-strand
-collar braid as six explicit sweeps.  A braid word is an actual framed tangle
-morphism in the cabled one-handle category, so the compact presentation no
-longer needs to extract that morphism from a planar PD projection.
-
-What is still required is a coefficient-level binding: the selected balanced
-copies of `r_xy` and `m_2`, their cut objects, the Hattori rectangle and both
-left/right action squares must identify the actual MWW coefficient bimodule
-with this compact collar model.  The compact word identities alone do not
-prove those naturality squares.
-
-## Consequences
-
-The following word-level facts no longer depend on the historical PD bytes:
-
-1. the displayed matrix determines the abstract Cappell--Shaneson
-   construction;
-2. the ledger consistently names the product framing convention;
-3. the formal cancellations and reduced gate words are public and replayable;
-4. the local point-push word is a public abstract braid/tangle morphism.
-
-The remaining P0 join is the parameterized whole-link/product-normal lift and
-the embedding of the local braid collar into it.  The subsequent P1 join is
-the actual coefficient/Hattori binding.  See
-`audit/t73_p0_embedded_witness_schema.json`.
+P0 is discharged.  C still must identify the actual cut coefficient bimodule
+of this product presentation with the completed representable endpoint model,
+including both actions, grading/completion and simultaneous transport.

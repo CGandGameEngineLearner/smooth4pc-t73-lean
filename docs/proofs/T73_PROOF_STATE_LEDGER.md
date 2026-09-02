@@ -1,7 +1,7 @@
 # T73 proof state ledger
 
-**Current authority:** the compact closure chain ending in
-`T73_EXTERNAL_GEOMETRY_DISCHARGE.md`.  Entries below describing unavailable
+**Current authority:** the conditional paper together with the current P0, C,
+and relative-S research notes.  Entries below describing unavailable
 historical PD/TH objects are recovery history, not current premises.
 
 **Updated:** 2026-09-01 (Asia/Tokyo)
@@ -32,7 +32,8 @@ has an actual raw lift but is contained in the full action-closed two-cup
 | E2 selected diagonal class | PARTIAL | finite algebra is recorded, but its action-compatible geometric binding uses the missing E1 artifact |
 | E3 coefficient q-trace and raw-state binding | OPEN as an MWW comparison | the public ledger asserts the comparison, but the coefficient-category/Hattori inputs and candidate-specific naturality proof are not publicly replayable |
 | E5/E6 one-/two-handle beta/psi quotient | OPEN as a candidate-specific MWW quotient | general quotient algebra and divided-cubic identities are recorded; actual MWW maps and the comparison detector are not identified from public inputs |
-| G1 actual-Gompf/DIAGRAM framed lift | OPEN / PUBLIC WITNESSES MISSING | `docs/proofs/T73_GA1_DESCENDING_BRIDGE.md`; the builder, full PD, cut/framing records and move data are not published |
+| P0 replacement AR framed lift | DISCHARGED | public AR scan, `audit/t73_ar_product_witness.json`, deterministic generator, two product cancellations and embedded detector ball |
+| historical G1/DIAGRAM identity | OPEN / RETIRED | the builder and full PD remain unavailable and are not used |
 | E8 three chosen sphere rows | NOT REQUIRED BY RELATIVE ROUTE | the historical objects are unavailable, but HJ relative uniqueness plus monoidal C replaces this explicit-sphere route |
 
 The E5/E6 proof uses the one-cup through-86 cell, the ordinary divided
@@ -40,19 +41,16 @@ functional, beta's `O(h)` defect against `W-I=O(h^3)`, and split-injectivity of
 the dotted direct system after quotienting the undotted image. It does not use
 the retired owner-only mixed-Z model.
 
-The first G1 PASS was premature: it treated `Ae_i` as the complete attaching
-circle and was correctly overturned. The final proof uses the full
-`m_i=t phi_A(x_i) t^-1 x_i^-1` object. Aitchison--Rubinstein pages 5--7
-construct its bottom/top/base-handle product ribbon, and page 17 constructs
-the actual linear-`A` strips and their product framings. The suspension
-diffeomorphism transports the whole labeled framed presentation. It may carry
-a nontrivial pure braid; this is not declared zero. Its boundary map extends
-over the four-dimensional one-handlebody by Laudenbach--Poenaru, so the actual
-presentation is diffeomorphic to the transported product representative.
-Only then do the two product cancellations give `t->empty` and `x->z`;
-nested product bigons give the actual zero-framed `r_zx` disk. The
-transported product tangle and the exhaustive global-descending DIAGRAM
-tangle are isotopic to the same marked boundary-parallel reference tangle.
+The first G1 PASS was premature because it treated `Ae_i` as a complete
+attaching circle.  The replacement proof instead uses the full
+`m_i=t phi_A(x_i) t^-1 x_i^-1` object.  Aitchison--Rubinstein pp. 5--7
+construct its bottom/top/base-handle product ribbon, and pp. 16--17 construct
+the product normal.  The mapping-torus diffeomorphism transports the whole
+labelled framed presentation.  The two product cancellations give
+`t->empty` and `x->z`, after which the detector collar is defined in a
+standard regular-neighborhood ball.  The empty free word of `r_zx` is not
+used to infer a split disk.  No comparison with the historical DIAGRAM is
+claimed.
 Framing is transported from the actual AR annuli, not inferred from the
 emitter's discarded blackboard winding.
 

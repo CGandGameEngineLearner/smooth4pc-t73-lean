@@ -1,6 +1,6 @@
 # Compact public point-push bridge
 
-**Status:** `DISCHARGED for the local collar braid; global P0 remains OPEN`
+**Status:** `DISCHARGED IN THE PUBLIC AR REPLACEMENT COLLAR`
 
 This note replaces the 252 primitive `r_xy/m_2` crossing rows by a compact,
 independently executable six-sweep schema.  It does not use the missing full
@@ -91,13 +91,9 @@ the base balanced state the induced 88-endpoint braid is the public cabled
 word provided the collar-label identification in the P0 witness agrees with
 the public wicket order.
 
-This result by itself does **not** identify the ambient four-manifold.  The
-remaining global theorem must
-construct a component- and framing-preserving map from the
-Aitchison--Rubinstein product-ribbon handle presentation to a reduced Kirby
-presentation containing this collar, and must show that the induced endpoint
-transport carries the selected source vector, cap covector and point-push
-operator simultaneously.  `T73_COMPACT_AR_PRESENTATION.md` supplies only the
-word-level part of that proposed join; the required embedded witness is
-specified by `audit/t73_p0_embedded_witness_schema.json`.  No claim about the
-missing full PD bytes is made.
+The ambient join is supplied by the replacement AR witness
+`audit/t73_ar_product_witness.json`: after the two product cancellations, the
+42 `m_2` and two `r_xy` y-passages have a standard regular-neighborhood ball,
+and this punctured-disk braid is embedded there.  The simultaneous endpoint
+transport required by the MWW comparison remains part of C.  No claim about
+the missing full PD bytes is made.

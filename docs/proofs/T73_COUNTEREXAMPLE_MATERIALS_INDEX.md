@@ -1,6 +1,6 @@
 # T73 counterexample candidate materials index
 
-**Status:** `CONDITIONAL PROJECT; P0/C OPEN, S DERIVED FROM THEM`
+**Status:** `CONDITIONAL PROJECT; P0 DISCHARGED, C OPEN, S DERIVED`
 
 > The compact artifacts retain valid finite results but do not replace every
 > geometric and functorial role of the unavailable large inputs.  The
@@ -24,8 +24,8 @@ repository, but every load-bearing one is pinned below by path and SHA-256.
    Public six-sweep regeneration of all 252 local point-push factors and the
    resulting 44-strand braid; this discharges the local collar input only.
 5. [T73_COMPACT_AR_PRESENTATION.md](T73_COMPACT_AR_PRESENTATION.md)
-   Public AR-side product-ribbon word and framing ledger for a replacement
-   compact presentation of the same Cappell--Shaneson manifold.
+   Public AR product-annulus witness, matrix bridge, two geometric
+   cancellations and embedded detector ball for the replacement presentation.
 6. [T73_CUBIC_NATURALITY_PROGRAM.md](T73_CUBIC_NATURALITY_PROGRAM.md)
    Kernel-checked cubic transport algebra and a 32-step public sphere-slide
    construction; retained as an optional coordinate model.
@@ -36,8 +36,8 @@ repository, but every load-bearing one is pinned below by path and SHA-256.
    Relative standard-sphere replacement and the `b=1` MWW/Frobenius movie
    calculation away from the detector collar.
 9. [T73_CLOSURE_BLOCKER_AUDIT.md](T73_CLOSURE_BLOCKER_AUDIT.md)
-   Final distinction between the discharged general layers and the P0/C
-   candidate joins that prevent an unconditional conclusion.
+   Final distinction between the discharged P0/S layers and the remaining C
+   candidate join that prevents an unconditional conclusion.
 10. [T73_THEOREM_C_DERIVATION.md](T73_THEOREM_C_DERIVATION.md)
     Typed construction of the MWW-to-quantum-horizontal-trace endpoint
     comparison and its exact remaining statewise cable-coherence square.

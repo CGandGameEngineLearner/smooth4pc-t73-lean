@@ -2,6 +2,12 @@
 
 Date: 2026-09-02
 
+> Superseded later the same date by
+> `T73_P0_AR_PRODUCT_DISCHARGE_2026-09-02.md`.  The non-reconstructability
+> result below remains valid for word ledgers; the later proof adds the actual
+> simultaneous AR product-annulus embedding and discharges P0 for the
+> replacement presentation.
+
 ## Result
 
 The six-sweep data define a genuine abstract 44-strand braid in a standard

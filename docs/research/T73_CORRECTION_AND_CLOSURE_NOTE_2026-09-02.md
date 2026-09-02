@@ -6,6 +6,12 @@
 > sphere-system uniqueness and MWW's intrinsic local module action.  P2 is
 > therefore `PARTIAL` while P0/C are open, not an independent `OPEN` input.
 
+> A subsequent update,
+> `T73_P0_AR_PRODUCT_DISCHARGE_2026-09-02.md`, uses the public AR scan and a
+> parameterized simultaneous product-annulus witness to discharge P0 for the
+> replacement presentation.  The P0 `OPEN` row below applies only to the
+> retired frozen-PD route.
+
 ## Purpose
 
 This note supersedes the unconditional interpretation recorded in commit

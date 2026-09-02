@@ -3,7 +3,7 @@
 **Status:** `PARTIAL -- DERIVED FROM P0 AND MONOIDAL C`
 
 This note records the compact replacement for the unavailable TH1/TH2/THXY
-objects.  It does not instantiate P0 or C.
+objects.  P0 is instantiated by the public AR witness; C remains open.
 
 ## Geometry relative to the detector
 
