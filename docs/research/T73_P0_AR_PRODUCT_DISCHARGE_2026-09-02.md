@@ -1,5 +1,13 @@
 # P0 discharge by the public Aitchison--Rubinstein product construction
 
+> **Retracted after the paper-only braid audit.** This note constructs the AR
+> product link and separately realizes the frozen public pure braid in a
+> standard punctured disk. It does not identify the latter with the braid
+> induced by the selected passages of the former. Isotopy extension realizes
+> a chosen braid but does not prove equality with a pre-existing
+> relative-endpoint tangle. P0 therefore remains **OPEN**; see
+> T73_P0_PUBLIC_BRAID_AUDIT_2026-09-02.md.
+
 Date: 2026-09-02
 
 ## Verdict

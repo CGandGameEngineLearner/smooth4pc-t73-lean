@@ -58,7 +58,10 @@ python -I -B tests/test_t73_ar_product_witness.py -v
 The compact word ledger alone is deliberately insufficient.  The AR witness
 adds symbolic simultaneous component parametrizations, normal fields and
 cancellation data, but no independently checkable ambient embedding theorem
-for the framed detector collar in the actual reduced Kirby link.
+for the framed detector collar in the actual reduced Kirby link.  Moreover,
+the public 11340-letter word is regenerated from crossing rows whose
+provenance is the unavailable historical planar diagram; it is not derived
+as the relative-endpoint braid of the selected AR passages.
 
 The ordinary representable-coefficient reduction used inside the proposed C
 comparison is proved in `Smooth4PC/RepresentableCoefficient.lean`; its

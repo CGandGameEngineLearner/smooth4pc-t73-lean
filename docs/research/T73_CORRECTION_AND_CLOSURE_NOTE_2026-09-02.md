@@ -2,7 +2,7 @@
 
 > **Paper-only audit correction.** The later “discharge” updates below
 > overstate what their compact witnesses prove. The current allocation is
-> P0 **PARTIAL**, C **OPEN**, and S **OPEN**. See
+> P0 **OPEN**, C **OPEN**, and S **OPEN**. See
 > T73_COMPLETION_AUDIT_2026-09-02.md. In particular, symbolic JSON
 > coordinates do not prove an ambient framed embedding, abstract
 > beta/psi/Hattori algebra does not identify the actual candidate MWW maps,

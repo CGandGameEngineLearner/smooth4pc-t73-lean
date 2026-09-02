@@ -28,7 +28,7 @@ def check() -> None:
         r"\begin{theorem}[Conditional trace-73 theorem]\label{thm:joined}",
         paper,
     )
-    require(paper_text, r"P0 & \Partial", paper)
+    require(paper_text, r"P0 & \Open", paper)
     require(paper_text, r"P1/C & \Open", paper)
     require(paper_text, r"P2/E7 & \Partial", paper)
     require(paper_text, r"P2/E10/S & \Open", paper)
@@ -40,6 +40,7 @@ def check() -> None:
 
     reject(paper_text, r"\begin{theorem}[Main theorem]\label{thm:joined}", paper)
     reject(paper_text, r"P0 & \Discharged", paper)
+    reject(paper_text, r"P0 & \Partial", paper)
     reject(paper_text, r"P1/C & \Discharged", paper)
     reject(paper_text, r"P2/E10/S & \Discharged", paper)
     reject(paper_text, "gives a counterexample to the smooth", paper)
