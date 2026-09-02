@@ -120,12 +120,14 @@ def generate_ledger() -> dict[str, Any]:
         "movies": movies,
         "combinatorial_old_label_permutation": "identity",
         "actual_mww_transport_status": (
-            "OPEN: the stable label order does not determine pivotal adapters, "
-            "foam signs or the actual qHH0 source/target coordinate maps"
+            "RETIRED_NOT_LOAD_BEARING: this stable label ledger does not "
+            "determine pivotal adapters, foam signs or actual qHH0 coordinate "
+            "maps; relative HJ spheres plus MWW local module action replace "
+            "this explicit-movie route"
         ),
         "cubic_consequence": (
-            "if the actual MWW transports have identity degree-zero term, "
-            "CubicJet makes their higher corrections invisible"
+            "historical conditional coordinate check only; not used by the "
+            "relative three-handle proof"
         ),
     }
     ledger["ledger_sha256"] = canonical_sha(ledger)

@@ -23,6 +23,10 @@ class CompactHattoriBindingTests(unittest.TestCase):
         self.assertEqual(ledger["z_z_circle_factors"], 227)
         self.assertEqual(ledger["B44"]["length"], 11340)
         self.assertEqual(ledger["B88"]["length"], 45360)
+        self.assertEqual(
+            ledger["required_simultaneous_transport"]["status"],
+            "DISCHARGED_BY_PUBLIC_REPLACEMENT_COORDINATES",
+        )
 
     def test_count_mutation_is_detectable(self) -> None:
         ledger = self.module.verify()

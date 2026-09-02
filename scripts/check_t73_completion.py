@@ -42,6 +42,14 @@ def check() -> None:
     load_script("generate_t73_ar_product_witness").verify_committed(p0_witness)
     load_script("generate_t73_c_comparison_witness").verify_committed(c_witness)
     load_script("check_t73_claim_boundary").check()
+    hattori = load_script("verify_t73_compact_hattori_binding").verify()
+    if hattori["required_simultaneous_transport"]["status"] != (
+        "DISCHARGED_BY_PUBLIC_REPLACEMENT_COORDINATES"
+    ):
+        raise AssertionError("live Hattori verifier still reports an open transport")
+    sphere_movies = load_script("generate_t73_stable_sphere_movies").generate_ledger()
+    if "RETIRED_NOT_LOAD_BEARING" not in sphere_movies["actual_mww_transport_status"]:
+        raise AssertionError("historical sphere movie route is not marked retired")
 
     paper_text = paper.read_text(encoding="utf-8")
     require(paper_text, "A trace-73 Cappell--Shaneson homotopy 4-sphere", paper)

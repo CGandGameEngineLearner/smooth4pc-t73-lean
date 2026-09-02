@@ -21,7 +21,9 @@ class StableSphereMovieTests(unittest.TestCase):
         self.assertEqual(
             ledger["combinatorial_old_label_permutation"], "identity"
         )
-        self.assertIn("OPEN", ledger["actual_mww_transport_status"])
+        self.assertIn(
+            "RETIRED_NOT_LOAD_BEARING", ledger["actual_mww_transport_status"]
+        )
         self.assertEqual(
             [movie["leaf_count"] for movie in ledger["movies"]],
             [9920, 1430, 311],

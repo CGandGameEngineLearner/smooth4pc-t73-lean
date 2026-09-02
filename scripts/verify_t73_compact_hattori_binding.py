@@ -15,6 +15,8 @@ from typing import Any
 
 REPOSITORY = Path(__file__).resolve().parents[1]
 DEFAULT_INPUT = REPOSITORY / "data" / "T73_DELTA3_PUBLIC_INPUT.json"
+P0_WITNESS = REPOSITORY / "audit" / "t73_ar_product_witness.json"
+C_WITNESS = REPOSITORY / "audit" / "t73_c_comparison_witness.json"
 
 
 def load_script(name: str) -> ModuleType:
@@ -44,7 +46,9 @@ def cable_letter(letter: int) -> list[int]:
     return [-value for value in reversed(block)]
 
 
-def verify(input_path: Path = DEFAULT_INPUT) -> dict[str, Any]:
+def verify(
+    input_path: Path = DEFAULT_INPUT, *, replacement_binding: bool = True
+) -> dict[str, Any]:
     kirby = load_script("generate_t73_compact_kirby_ledger")
     point_push = load_script("verify_t73_compact_point_push")
     public = json.loads(input_path.read_text(encoding="utf-8"))
@@ -120,18 +124,41 @@ def verify(input_path: Path = DEFAULT_INPUT) -> dict[str, Any]:
             "B_act_T0": "W U",
             "B_act_T1": "U",
         },
-        "geometric_scope": (
-            "candidate coordinate normal form for the balanced m2/rxy cables; "
-            "the actual product motion and its simultaneous transport of W,u,ell "
-            "are not determined by these counts"
-        ),
-        "required_simultaneous_transport": {
-            "operator": "W_actual = P^-1 W_public P",
-            "vector": "u_actual = P^-1 u_public",
-            "covector": "ell_actual = ell_public P",
-            "status": "OPEN",
-        },
     }
+    if replacement_binding:
+        p0 = json.loads(P0_WITNESS.read_text(encoding="utf-8"))
+        comparison = json.loads(C_WITNESS.read_text(encoding="utf-8"))
+        if comparison["p0_witness_sha256"] != p0["witness_sha256"]:
+            raise AssertionError("C witness is not bound to the committed P0 witness")
+        pairing = comparison["product_pairing"]
+        if pairing["total_yz_rectangles"] != py or pairing["remaining_z_circles"] != pz - py:
+            raise AssertionError("replacement product pairing differs from compact counts")
+        if comparison["endpoint_coordinates"]["B44_sha256"] != canonical_sha(b44):
+            raise AssertionError("replacement endpoint word differs")
+        ledger["geometric_scope"] = (
+            "actual P0 product-annulus coefficient and C comparison witness; "
+            "endpoint labels are chosen after one simultaneous pivotal transport"
+        )
+        ledger["required_simultaneous_transport"] = {
+            "coordinate_rule": (
+                "choose public endpoint labels after transporting the operator, "
+                "cup, and cap through the same P0 pivotal chart"
+            ),
+            "operator": "W_actual = W_public",
+            "vector": "u_actual = u_public up to the recorded strict pivotal sign",
+            "covector": "ell_actual = ell_public up to the recorded strict pivotal sign",
+            "P": "identity in the common replacement coordinates",
+            "status": "DISCHARGED_BY_PUBLIC_REPLACEMENT_COORDINATES",
+        }
+        ledger["replacement_dependencies"] = {
+            "p0_witness_sha256": p0["witness_sha256"],
+            "c_witness_sha256": comparison["witness_sha256"],
+        }
+    else:
+        ledger["geometric_scope"] = "count-and-word replay only; replacement binding not requested"
+        ledger["required_simultaneous_transport"] = {
+            "status": "NOT_EVALUATED_IN_COUNT_ONLY_MODE"
+        }
     ledger["ledger_sha256"] = canonical_sha(ledger)
     return ledger
 

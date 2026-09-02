@@ -111,7 +111,7 @@ def generate_witness() -> dict[str, Any]:
 
     compact_ledger = compact.generate_ledger()
     point_receipt = point_push.verify(PUBLIC_INPUT)
-    hattori_receipt = hattori.verify(PUBLIC_INPUT)
+    hattori_receipt = hattori.verify(PUBLIC_INPUT, replacement_binding=False)
     bridge = matrix_bridge()
     transported_components = dict(compact_ledger["surviving_components"])
     transported_components.pop("r_zx_split_unknot")
