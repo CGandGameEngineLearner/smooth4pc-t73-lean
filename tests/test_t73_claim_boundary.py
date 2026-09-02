@@ -18,16 +18,16 @@ def load_checker():
 
 
 class ClaimBoundaryTest(unittest.TestCase):
-    def test_current_paper_matches_replacement_witnesses(self) -> None:
+    def test_current_paper_retains_open_candidate_joins(self) -> None:
         load_checker().check()
 
-    def test_reintroduced_open_claim_is_rejected(self) -> None:
+    def test_unconditional_claim_is_rejected(self) -> None:
         checker = load_checker()
         source = Path("mutant.tex")
         with self.assertRaises(AssertionError):
             checker.reject(
-                "C remains open",
-                "C remains open",
+                "gives a counterexample to the smooth",
+                "gives a counterexample to the smooth",
                 source,
             )
 

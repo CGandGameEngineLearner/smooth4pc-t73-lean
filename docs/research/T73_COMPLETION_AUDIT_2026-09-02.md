@@ -1,48 +1,43 @@
-# Trace-73 completion audit
+# Trace-73 paper-only completion audit
 
 Date: 2026-09-02
 
-## Result
+## Corrected result
 
-All load-bearing mathematical items P0, C, S and P3 are discharged in the
-paper.  The smooth four-dimensional Poincare conclusion is therefore stated
-unconditionally in the paper.
+The earlier same-day claim that every load-bearing item was discharged is
+retracted. A paper-only audit leaves three candidate-specific joins:
 
-Lean remains deliberately narrower: its exported theorem still takes
-`ExternalGeometry` and `CSExternalGeometry` arguments.  The paper supplies
-those inputs mathematically; it does not claim that Lean formalizes smooth
-four-manifold topology or skein-lasagna functoriality.
-
-## Requirement-by-requirement evidence
-
-| requirement | evidence | verdict |
+| item | verdict | remaining obligation |
 |---|---|---|
-| P0 actual manifold and collar | public AR scan; parameterized P0 witness; Section 6 | **DISCHARGED** |
-| C actual MWW comparison | 44 product rectangles, representable trace theorem, completed BPW/BHPW shadow, divided beta/psi cocone; Section 7 | **DISCHARGED** |
-| S three-handle closure | relative HJ system and intrinsic MWW local module action; Section 8 | **DISCHARGED** |
-| P3 final joins | MWW three/four-handle formulas, standard-S4 support, Iwaki criterion; Section 9 | **DISCHARGED** |
-| paper proof completeness | explicit proofs in Sections 3 and 6--9; status table has no OPEN/PARTIAL row | **DISCHARGED** |
-| Lean scope honesty | `T73Conditional.lean` retains both external structures; new algebra has foundational axioms only | **DISCHARGED** |
+| P0 | **PARTIAL** | Construct the framed detector ball and six-sweep collar as an embedded object in the actual reduced Kirby handlebody, with a checkable ambient identification. |
+| C | **OPEN** | Construct the candidate MWW chain/foam coefficient maps and prove the required Hattori identification and all-state naturality, not merely the abstract beta/psi algebra. |
+| S | **OPEN** | Produce a sphere replacement fixed near the detector and bind its hemisphere maps to the actual MWW coequalizer maps. |
 
-## Negative statements retained
+P3 consists mainly of general cited theorems and bookkeeping, but its
+candidate application remains conditional on P0, C, and S. Only the standard
+S4 support statement is discharged without those joins.
 
-1. The historical full PD and TH files remain unavailable and unused.
-2. The endpoint cap is not identified with the four W2 core disks.
-3. The proof descends the divided cubic through W2; it does not claim a full-q
-   W2 endpoint functional.
-4. The Lean kernel does not check the cited smooth topology or link-homology
-   functoriality.
+## Why the compact witnesses do not close the theorem
 
-These are scope boundaries, not remaining assumptions in the mathematical
-theorem.
+The AR JSON witness records parametrizations, framings, words, and hashes.
+It is not an ambient embedding or Kirby-equivalence theorem. The product
+Hattori witness records the expected algebraic shape but does not construct
+the actual MWW maps for the candidate. Horvat--Jablonowski v3 contains a
+relative uniqueness result, but the manuscript does not derive a move
+sequence fixed on the specified detector ball or identify the resulting
+hemisphere cobordisms.
 
-## Final gates
+The committed m2 word has length 311 and remains length 311 after linear and
+cyclic free reduction. A reported length 309 therefore reflects a different
+convention or input; this discrepancy is not the load-bearing obstruction.
 
-```text
-python -B scripts/generate_t73_ar_product_witness.py --check --source-pdf AR.pdf
-python -B scripts/generate_t73_c_comparison_witness.py --check
-python -I -B tests/test_t73_ar_product_witness.py -v
-python -I -B tests/test_t73_c_comparison_witness.py -v
-python -I -B tests/test_t73_claim_boundary.py -v
-python -I -B tests/test_t73_completion.py -v
-```
+## Formal boundary
+
+The controlling Lean theorem remains conditional:
+
+    ExternalGeometry -> CSExternalGeometry ->
+    IsHomotopySphere candidate /\ not Diffeomorphic candidate S4.
+
+The Lean algebra does not construct either external structure. Passing the
+repository claim-boundary gate confirms this honest allocation; it is not a
+mathematical completion certificate.

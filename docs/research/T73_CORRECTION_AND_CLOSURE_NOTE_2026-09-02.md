@@ -1,5 +1,14 @@
 # Trace-73 correction and closure research note (2026-09-02)
 
+> **Paper-only audit correction.** The later “discharge” updates below
+> overstate what their compact witnesses prove. The current allocation is
+> P0 **PARTIAL**, C **OPEN**, and S **OPEN**. See
+> T73_COMPLETION_AUDIT_2026-09-02.md. In particular, symbolic JSON
+> coordinates do not prove an ambient framed embedding, abstract
+> beta/psi/Hattori algebra does not identify the actual candidate MWW maps,
+> and the relative sphere argument has not been made fixed on the detector
+> ball.
+
 > Later update on the same date: the P2 rows below describe the retired
 > explicit-sphere route.  `T73_S_RELATIVE_STANDARD_SYSTEM_2026-09-02.md`
 > proves the implication `P0 + symmetric-monoidal C => S` using HJ relative
