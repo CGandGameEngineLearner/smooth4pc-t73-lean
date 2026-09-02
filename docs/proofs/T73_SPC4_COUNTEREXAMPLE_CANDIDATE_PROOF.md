@@ -52,8 +52,8 @@ K(r-\alpha^-,r+\alpha^+)\cup L,\eta^r;
 \tag{1.1}
 \]
 
-This is the \(N=2\) specialization of MWW's summand in
-`D:/tmp/r6/mww_handle_src/kirby.tex:320-345`; it is not itself the cabled
+This is the \(N=2\) specialization of MWW's summand in the handle-presentation
+section of [arXiv:2206.04616](https://arxiv.org/abs/2206.04616); it is not itself the cabled
 quotient. Let \(\iota_s:C_s\to\mathcal C_{\rm cabled}\) be the summand
 inclusion followed by the cabled quotient map, and let \(\Phi\) be MWW's
 cabled-quotient/core-attachment isomorphism. These maps are distinct from the
@@ -156,7 +156,7 @@ ordered split \(U^{227}\).
 
 The connector classification is checked directly against the actual
 2,126,291-crossing Gauss order in
-`D:/tmp/t73_actual_cable_unit/ACTUAL_PD_CABLE_UNIT_CERT.json`; it recovers
+[`ACTUAL_PD_CABLE_UNIT_CERT.json`](../../evidence/public_geometry/ACTUAL_PD_CABLE_UNIT_CERT.json); it recovers
 exactly 88 \(y\)-\(z\) and 227 \(z\)-\(z\) connectors. Simultaneous disk
 embeddedness follows from their being literal subrectangles of the actual
 framed annuli, not from a certificate status field. The proof does not name
@@ -223,8 +223,8 @@ The shift \(\{-44\}\) removes the built-in \(p(N-1)=44\) normalization of
 Field monoidality gives (2.1), and gluing locality gives both MWW action
 squares. This is two-sided. It is not
 \(M_R(T,T')=\operatorname{Hom}(T,B_{\rm act}T')\), and it uses no fictitious
-mate \(\mathbf1\to B_{\rm act}\). The ambient formulas are at
-`D:/tmp/r6/mww_handle_src/1handles.tex:173-229,242-299,420-430`.
+mate \(\mathbf1\to B_{\rm act}\). The ambient formulas are in the one-handle
+section of [arXiv:2206.04616](https://arxiv.org/abs/2206.04616).
 
 <a id="actual-diagonal-class"></a>
 ## 3. Actual diagonal class
@@ -273,8 +273,8 @@ HH_0(\mathcal A;M_R)=
 \tag{3.3}
 \]
 
-The identity-to-trace construction is MWW's Chern/Hattori class
-(`D:/tmp/r6/mww_handle_src/1handles.tex:783-787`). The literal Section 2
+The identity-to-trace construction is MWW's Chern/Hattori class in
+[arXiv:2206.04616](https://arxiv.org/abs/2206.04616). The literal Section 2
 equivalence binds both classes in (3.2) to the actual transported-annulus
 coefficient **[P]**.
 
@@ -283,7 +283,7 @@ coefficient **[P]**.
 
 BPW's vertical trace and natural functor to horizontal trace send
 \(p\xrightarrow{\alpha}Fp\) to \(\operatorname{Sh}[p,\alpha]\)
-(`D:/tmp/r6/bpw_src/shadows/vertical.tex:11-58`). Applying that theorem to the
+([arXiv:1605.03523](https://arxiv.org/abs/1605.03523)). Applying that theorem to the
 literal Section 2 representable coefficient gives the ordinary trace **[P]**
 
 \[
@@ -352,13 +352,13 @@ of a relation in (4.2) to
  \zeta^{|f|_q}\operatorname{tr}_\zeta(a_j\circ B_{\rm act}f),
 \]
 
-which agree by the defining quantum-trace relation
-(`D:/tmp/r6/bpw_src/traces/graded.tex:90-108`). Thus (4.4) is a map on the
+which agree by the defining quantum-trace relation in
+[arXiv:1605.03523](https://arxiv.org/abs/1605.03523). Thus (4.4) is a map on the
 coefficient quotient, not a \(K_0\)-only evaluation. BHPW's strict endpoint
 functor and natural Chern square identify its target with the actual weight-86
 quantum \(HH_0\) modules
-(`D:/tmp/r6/agents/finite_type_leading/bphw_1903_src/sections/intro.tex:386-421`;
-`D:/tmp/r6/bpw_src/quantum/qannulus.tex:289-309`).
+([arXiv:1903.12194](https://arxiv.org/abs/1903.12194);
+[arXiv:1605.03523](https://arxiv.org/abs/1605.03523)).
 
 Complete at \(\zeta=1+h\). The selected identity and the 227 counits give
 
@@ -429,9 +429,9 @@ The numerical degree ledger is exact **[F1]**:
 
 The raw \(-44\), 227 labels, one-handle shift \(+315=44+271\), and later
 shift \(-4\) are independently itemized at
-`D:/tmp/r6/agents/finite_type_leading/ORDINARY_SHADOW_HATTORI_CHAIN_RESULT.md:100-115`
+[`ORDINARY_SHADOW_HATTORI_CHAIN_RESULT.md`](../../evidence/public_geometry/source_notes/ORDINARY_SHADOW_HATTORI_CHAIN_RESULT.md)
 and
-`D:/tmp/r6/grading_attack/ledger/Q494_SPHERE_GRADING_LEDGER.md:45-60`;
+[`Q494_SPHERE_GRADING_LEDGER.md`](../../evidence/public_geometry/source_notes/Q494_SPHERE_GRADING_LEDGER.md);
 `AuditArithmetic.lean:87-91` checks the last subtraction. Thus
 \([v_T]_{1h}\) has quantum degree 498.
 
@@ -459,7 +459,7 @@ Let
 \]
 
 be the literal gluing isomorphism in MWW's one-handle theorem
-(`D:/tmp/r6/mww_handle_src/1handles.tex:242-299`). Define the named raw element
+([arXiv:2206.04616](https://arxiv.org/abs/2206.04616)). Define the named raw element
 
 \[
 \widetilde v_{s_0}:=
@@ -516,7 +516,7 @@ filtration. Since \(\varepsilon=-2h+3h^2-4h^3+O(h^4)\), **[P]**
 Recompute with
 
 ```powershell
-python -B D:\tmp\r6\eta_t1_delta3_reaudit\recompute_eta_t1_delta3.py --write
+python -I -B scripts/recompute_t73_delta3.py --check
 ```
 
 and see the colocated
@@ -582,7 +582,7 @@ one balanced pair is the split complex \(A\otimes A\), with
 \]
 
 Equations (7.2)--(7.5), the full action-ideal calculation in
-D:/tmp/r6/agents/finite_type_leading/TL_CELL_IDEAL_CLOSURE_RESULT.md, and
+[`TL_CELL_IDEAL_CLOSURE_RESULT.md`](../../evidence/public_geometry/source_notes/TL_CELL_IDEAL_CLOSURE_RESULT.md), and
 D:/tmp/rzx_pair/RESULT.md prove the former E5 firewall **[P]**. The projector
 is a linear map after the genuine qHH shadow, not a claimed physical foam.
 
@@ -879,8 +879,8 @@ relations. Its absolute degree is
 <a id="four-handle-comparison"></a>
 ## 13. Four-handle comparison
 
-MWW states that a four-handle induces an isomorphism
-(`D:/tmp/r6/mww_handle_src/kirby.tex:418-426`). Premise **[E11]** is
+MWW states that a four-handle induces an isomorphism in
+[arXiv:2206.04616](https://arxiv.org/abs/2206.04616). Premise **[E11]** is
 the exact rational, grading statement: this is an isomorphism of bidegree
 \((0,0)\). It preserves the nonzero quantum-494 class; it does not move that
 class to bidegree \((0,0)\).
@@ -888,12 +888,9 @@ class to bidegree \((0,0)\).
 <a id="standard-s4-control"></a>
 ## 14. Standard-S4 control and conclusion
 
-MWW gives the integral computation concentrated in bidegree zero
-(`D:/tmp/r6/mww_handle_src/kirby.tex:428-431`). MWW defines the invariant and
-its bigrading at `D:/tmp/r6/mww_handle_src/kirby.tex:8-57`, and explicitly
-works over a field for the one-handle reduction at
-`D:/tmp/r6/mww_handle_src/1handles.tex:15-20` and
-`D:/tmp/r6/mww_handle_src/introduction.tex:128-134`. The direct rational
+MWW gives the integral computation concentrated in bidegree zero and defines
+the invariant, its bigrading and the field-valued one-handle reduction in
+[arXiv:2206.04616](https://arxiv.org/abs/2206.04616). The direct rational
 statement used here is nevertheless premise **[E12]**, not an unproved
 base-change inference:
 
@@ -915,7 +912,7 @@ Separately, **[E13]** is the Cappell--Shaneson theorem that the finite-verified
 conditions \(\det A=\det(A-I)=1\) for the pinned matrix imply that
 \(X(41,189,73)\) is a homotopy sphere. With **E13**, (14.2) is a conditional
 SPC4 counterexample. A modern exact restatement is Proposition 2.1 at
-`D:/tmp/r6/QSC/kpr/cs_2404.05096.txt:128-151`; the determinant arithmetic is
+Iwaki, Proposition 2.1 ([arXiv:2404.05096](https://arxiv.org/abs/2404.05096)); the determinant arithmetic is
 checked in `AuditArithmetic.lean`.
 
 ## 15. Dependency and source/evidence table

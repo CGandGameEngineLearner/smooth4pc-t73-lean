@@ -166,6 +166,29 @@ integers `7384` and `-59072`.  The script reconstructs both words, checks their
 hashes and computes the truncated polynomial profile before printing
 `DELTA3_ETA_T1=-59072`.
 
+## Public geometry evidence
+
+The first public commit omitted several load-bearing finite certificates that
+the proof documents named only by machine-local paths and SHA-256.  Those
+exact bytes are now under
+[`evidence/public_geometry/`](../evidence/public_geometry/), including the E1
+cable certificate, the complete 2,126,291-crossing PD input, the G1 cut and
+framing records, and the TH1/TH2/THXY chosen-sphere certificates and hostile
+re-audits.
+
+From a clone, run:
+
+```text
+python -I -B scripts/verify_public_geometry_evidence.py
+```
+
+This verifies all bundled identities and independently recomputes the
+global-descending result from the full PD.  The chosen-sphere JSON files are
+now inspectable rather than represented by six scalars and hashes alone.  The
+repository still does not claim to regenerate their entire upstream
+hundreds-of-megabytes construction trees; that boundary is stated in the
+bundle README and must not be confused with Lean verification.
+
 ## Convention-legality audit
 
 The legality rules were frozen in commit `cf4a990` before the detailed L2/L3

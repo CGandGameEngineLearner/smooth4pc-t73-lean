@@ -33,7 +33,7 @@ k^+=r+\alpha^+=r.
 Thus the raw boundary link in `partial W1` is exactly one negative and one
 positive framed physical copy of `m2`, and one negative and one positive copy
 of `rxy`.  It is the actual link whose gate cut was checked directly in
-`D:/tmp/t73_actual_cable_unit/ACTUAL_PD_CABLE_UNIT_CERT.json`.
+[`ACTUAL_PD_CABLE_UNIT_CERT.json`](../../evidence/public_geometry/ACTUAL_PD_CABLE_UNIT_CERT.json).
 
 For `N=2`, MWW's raw state summand is
 
@@ -164,13 +164,13 @@ not reset the absolute lasagna grading to zero.
 
 ## 6. Sources and boundary
 
-- raw state/cabled relation: `D:/tmp/r6/mww_handle_src/kirby.tex:320-357`;
+- raw state/cabled relation: MWW, *Skein lasagna modules and handle decompositions*, handle-presentation section;
 - literal core-disk definition of `Phi`: `kirby.tex:359-378`;
-- one-handle gluing representative: `D:/tmp/r6/mww_handle_src/1handles.tex:242-293`;
-- vertical-horizontal trace: `D:/tmp/r6/bpw_src/shadows/vertical.tex:11-58`;
+- one-handle gluing representative: MWW, one-handle section;
+- vertical-horizontal trace: BPW, vertical trace section;
 - exact degree evidence:
-  `D:/tmp/r6/agents/finite_type_leading/ORDINARY_SHADOW_HATTORI_CHAIN_RESULT.md:100-115`
-  and `D:/tmp/r6/grading_attack/ledger/Q494_SPHERE_GRADING_LEDGER.md:45-60`.
+  [`ORDINARY_SHADOW_HATTORI_CHAIN_RESULT.md`](../../evidence/public_geometry/source_notes/ORDINARY_SHADOW_HATTORI_CHAIN_RESULT.md)
+  and [`Q494_SPHERE_GRADING_LEDGER.md`](../../evidence/public_geometry/source_notes/Q494_SPHERE_GRADING_LEDGER.md).
 
 The construction closes E3.  It still uses the globally stated strict foam
 functoriality E4 for equality of the two composite movies; no additional raw

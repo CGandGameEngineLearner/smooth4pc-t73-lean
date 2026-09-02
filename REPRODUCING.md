@@ -69,7 +69,18 @@ DELTA3_ETA_T1=-59072
 VERIFY=PASS
 ```
 
-## 5. Check the convention freeze
+## 5. Verify the public geometry evidence
+
+Before that, verify the public geometry evidence and recompute the
+2,126,291-crossing global-descending certificate:
+
+```text
+python -I -B scripts/verify_public_geometry_evidence.py
+```
+
+The command must end with `GLOBAL_DESCENDING=PASS` and `VERIFY=PASS`.
+
+## 6. Check the convention freeze
 
 The legality criteria were committed before the detailed convention search:
 
@@ -82,7 +93,7 @@ The command must exit `0`. The two records are:
 - `docs/proofs/QSTAR_R7_LEGALITY_CRITERIA_PRESEARCH_20260901.md`
 - `docs/proofs/QSTAR_R7_LEGALITY_ADJUDICATION_20260901.md`
 
-## 6. Interpret the result correctly
+## 7. Interpret the result correctly
 
 Compilation verifies the finite algebra and the implication from the
 `ExternalGeometry` and Cappell--Shaneson interfaces to the final conclusion.

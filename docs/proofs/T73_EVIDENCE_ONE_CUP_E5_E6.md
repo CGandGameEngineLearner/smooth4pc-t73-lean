@@ -307,15 +307,15 @@ one-handle action calculation.
 ## Sources
 
 - Full action ideal and through-degree firewall:
-  `D:/tmp/r6/agents/finite_type_leading/TL_CELL_IDEAL_CLOSURE_RESULT.md:27-68,150-191`.
+  [`TL_CELL_IDEAL_CLOSURE_RESULT.md`](../../evidence/public_geometry/source_notes/TL_CELL_IDEAL_CLOSURE_RESULT.md).
 - Coefficient qTrace and divided detector:
   `D:/tmp/mr_rees_construct/MR_REES_QUANTUM_TRACE_SOURCE_LEDGER.md:26-125`.
 - Input distinction `v_T` versus `xi`:
-  `D:/tmp/r6/eta_t1_delta3_reaudit/ETA_T1_DELTA3_DECISION.md`.
+  [`ETA_T1_DELTA3_DECISION.md`](../../evidence/public_geometry/source_notes/ETA_T1_DELTA3_DECISION.md).
 - Physical base class and degree:
   `D:/tmp/raw_state_binding/RAW_STATE_BINDING_RESULT.md` and
-  `D:/tmp/r6/agents/finite_type_leading/ORDINARY_SHADOW_HATTORI_CHAIN_RESULT.md:92-115`.
+  [`ORDINARY_SHADOW_HATTORI_CHAIN_RESULT.md`](../../evidence/public_geometry/source_notes/ORDINARY_SHADOW_HATTORI_CHAIN_RESULT.md).
 - Leading W2 core quotient factorization:
   `D:/tmp/w2_core_factor/RESULT.md`.
 - MWW beta/psi/core relations:
-  `D:/tmp/r6/mww_handle_src/kirby.tex:240-283,331-369`.
+  Manolescu--Walker--Wedrich, [arXiv:2206.04616](https://arxiv.org/abs/2206.04616), handle-presentation section.

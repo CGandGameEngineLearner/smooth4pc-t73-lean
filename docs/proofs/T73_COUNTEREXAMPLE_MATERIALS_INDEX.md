@@ -2,9 +2,10 @@
 
 **Status:** CANDIDATE_PROOF_PENDING_INDEPENDENT_REVIEW
 
-This file is the entry point. The mathematical derivations are now colocated
-in this Git proof directory. Very large finite certificates remain outside the
-repository, but every load-bearing one is pinned below by path and SHA-256.
+This file is the entry point. The mathematical derivations and the formerly
+machine-local load-bearing certificates are now colocated in the repository.
+Their byte identities are pinned below and in
+[`evidence/public_geometry/SHA256SUMS`](../../evidence/public_geometry/SHA256SUMS).
 
 ## Core proof
 
@@ -35,17 +36,23 @@ objects. Their repository byte hashes differ because Git normalizes line
 endings and the filenames are new; the table records the original source
 identities.
 
-## Large pinned inputs not copied into Git
+## Colocated finite inputs
 
-| object | SHA-256 | reason retained externally |
+| repository object | SHA-256 | role |
 |---|---|---|
-| D:/tmp/t73_actual_cable_unit/ACTUAL_PD_CABLE_UNIT_CERT.json | 7F3D3618D6A790A9B60EE8085B647AC2AB742E1BC9C15841F1BEF015034217B5 | large exact paired-annulus/cable certificate |
-| D:/tmp/r6/matrix_attack/th12_actualization/TH1_EXHAUSTIVE_ALL_ROW_GEOMETRY.json | EE620E6B085A5F9E1C73CFDD1AD04FC0682CEC74DA3DBF8AFE70DD19C038E3A0 | exhaustive TH1 geometry |
-| D:/tmp/r6/matrix_attack/th12_actualization/TH2_EXHAUSTIVE_ALL_ROW_GEOMETRY.json | 4D1B627C0343A1C464319704EAFADCA127902A2E4E90CF1C283004359B7ADC24 | exhaustive TH2 geometry |
-| D:/tmp/r6/fullw_tangent_coend/generators/THXY_FULL_MACRO_P3FREE_HJ_CERT.json | EABF67C0D1AE309F0281297710A283B8ED5A11D88C8E810837932313F4C53227 | exhaustive THXY geometry |
-| D:/tmp/t73_g1_literature/four_manifold_theory_1984.pdf | 6F7E95B8266876774667AD40EA3DE964B165680D6789A34E49BF598C3AE04DF0 | 31 MB primary Aitchison--Rubinstein volume |
+| [ACTUAL_PD_CABLE_UNIT_CERT.json](../../evidence/public_geometry/ACTUAL_PD_CABLE_UNIT_CERT.json) | 7F3D3618D6A790A9B60EE8085B647AC2AB742E1BC9C15841F1BEF015034217B5 | exact paired-annulus/cable certificate |
+| [TH1_EXHAUSTIVE_ALL_ROW_GEOMETRY.json](../../evidence/public_geometry/TH1_EXHAUSTIVE_ALL_ROW_GEOMETRY.json) | EE620E6B085A5F9E1C73CFDD1AD04FC0682CEC74DA3DBF8AFE70DD19C038E3A0 | exhaustive TH1 receipt |
+| [TH2_EXHAUSTIVE_ALL_ROW_GEOMETRY.json](../../evidence/public_geometry/TH2_EXHAUSTIVE_ALL_ROW_GEOMETRY.json) | 4D1B627C0343A1C464319704EAFADCA127902A2E4E90CF1C283004359B7ADC24 | exhaustive TH2 receipt |
+| [THXY_FULL_MACRO_P3FREE_HJ_CERT.json](../../evidence/public_geometry/THXY_FULL_MACRO_P3FREE_HJ_CERT.json) | EABF67C0D1AE309F0281297710A283B8ED5A11D88C8E810837932313F4C53227 | THXY full-coordinate certificate |
+| [t73_reduced_billiard.pd.json](../../evidence/public_geometry/t73_reduced_billiard.pd.json) | E6912A64457557469E5C691B4D57ABDBBF4C45ADB05492777C574223D0C06F8A | 2,126,291-crossing input to the global-descending replay |
 
-Primary public source for the last item:
+Run `python -I -B scripts/verify_public_geometry_evidence.py` from a clone to
+verify every bundled SHA and recompute the global-descending result from the
+full PD.  The three chosen-sphere receipts can now be inspected directly;
+their much larger upstream construction trees are not silently represented as
+part of this repository.
+
+Primary public source for the Aitchison--Rubinstein construction:
 https://math.berkeley.edu/~kirby/papers/Gordon%20and%20Kirby%20%28editors%29%20-%20Four-manifold%20theory%20%28Durham%29%20-%20MR0780574.pdf
 
 ## Scope firewall

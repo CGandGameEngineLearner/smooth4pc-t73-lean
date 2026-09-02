@@ -24,7 +24,7 @@ has an actual raw lift but is contained in the full action-closed two-cup
 
 | layer | current status | current evidence |
 |---|---|---|
-| E1 paired-annulus Hattori coefficient | PROVED | `ACTUAL_PD_CABLE_UNIT_CERT.json`, SHA `7F3D3618D6A790A9B60EE8085B647AC2AB742E1BC9C15841F1BEF015034217B5` |
+| E1 paired-annulus Hattori coefficient | PROVED | [`ACTUAL_PD_CABLE_UNIT_CERT.json`](../../evidence/public_geometry/ACTUAL_PD_CABLE_UNIT_CERT.json), SHA `7F3D3618D6A790A9B60EE8085B647AC2AB742E1BC9C15841F1BEF015034217B5` |
 | E2 selected diagonal class | PROVED | main proof Sections 2--3 |
 | E3 coefficient q-trace and raw-state binding | PROVED | `MR_REES_QUANTUM_TRACE_SOURCE_LEDGER.md`, SHA `99913F0AF70CF5FF650492C2740F98B7053FEBBB58212DA32B506D863836EA84`; `RAW_STATE_BINDING_RESULT.md`, SHA `BCBFBC9F8A5350D323EC2876352EC25C6690E5BB6AD4F2C264441BA4D73CDEF6` |
 | E5/E6 one-/two-handle beta/psi quotient | PROVED at divided cubic | `T73_EVIDENCE_ONE_CUP_E5_E6.md`, source SHA `6A63978D734EFF30B8F6C2E6F9800F9338B3499BA1CA4D6AF4880716468FE865` |
@@ -70,15 +70,15 @@ The early `OPEN` files are historical diagnostics, not the latest state.
 ```text
 TH1 geometry
 EE620E6B085A5F9E1C73CFDD1AD04FC0682CEC74DA3DBF8AFE70DD19C038E3A0
-  D:/tmp/r6/matrix_attack/th12_actualization/TH1_EXHAUSTIVE_ALL_ROW_GEOMETRY.json
+  evidence/public_geometry/TH1_EXHAUSTIVE_ALL_ROW_GEOMETRY.json
 
 TH2 geometry
 4D1B627C0343A1C464319704EAFADCA127902A2E4E90CF1C283004359B7ADC24
-  D:/tmp/r6/matrix_attack/th12_actualization/TH2_EXHAUSTIVE_ALL_ROW_GEOMETRY.json
+  evidence/public_geometry/TH2_EXHAUSTIVE_ALL_ROW_GEOMETRY.json
 
 THXY geometry
 EABF67C0D1AE309F0281297710A283B8ED5A11D88C8E810837932313F4C53227
-  D:/tmp/r6/fullw_tangent_coend/generators/THXY_FULL_MACRO_P3FREE_HJ_CERT.json
+  evidence/public_geometry/THXY_FULL_MACRO_P3FREE_HJ_CERT.json
 ```
 
 The three chosen spheres lie in one actual `W2`, in mutually disjoint movie

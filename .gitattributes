@@ -1,6 +1,7 @@
 * text=auto eol=lf
 data/GLOBAL_FALSIFICATION_CHAIN_CERT.json binary
 evidence/task3/** binary
+evidence/public_geometry/** -text
 .gitattributes text eol=lf
 AuditType.lean text eol=lf
 Smooth4PC/Interfaces.lean text eol=lf

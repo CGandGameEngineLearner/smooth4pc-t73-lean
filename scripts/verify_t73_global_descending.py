@@ -215,8 +215,11 @@ def main() -> None:
         "pd",
         nargs="?",
         type=Path,
-        default=Path(
-            r"D:\tmp\s4pc_ruler\DIAGRAM\out\t73_reduced_billiard.pd.json"
+        default=(
+            Path(__file__).resolve().parents[1]
+            / "evidence"
+            / "public_geometry"
+            / "t73_reduced_billiard.pd.json"
         ),
     )
     args = parser.parse_args()

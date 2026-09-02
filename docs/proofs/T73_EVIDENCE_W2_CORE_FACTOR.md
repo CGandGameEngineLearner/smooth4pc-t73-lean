@@ -280,14 +280,14 @@ Therefore the answer to the core question is:
 ## Sources
 
 - MWW cabled relations and `Phi`:
-  `D:/tmp/r6/mww_handle_src/kirby.tex:240-283,320-378`.
+  Manolescu--Walker--Wedrich, [arXiv:2206.04616](https://arxiv.org/abs/2206.04616), handle-presentation section.
 - Exact endpoint cap type and cubic:
-  `D:/tmp/r6/fullw_tangent_coend/hostile/ACTUAL_CAP_POSTCOMPOSITION_DECISION.md:1-151`.
+  [`ACTUAL_CAP_POSTCOMPOSITION_DECISION.md`](../../evidence/public_geometry/source_notes/ACTUAL_CAP_POSTCOMPOSITION_DECISION.md).
 - Named `s0` representative and four-core movie:
   `D:/tmp/raw_state_binding/RAW_STATE_BINDING_RESULT.md:1-139`.
 - Why reverse ribbon is not two core counits:
   `D:/tmp/anchored_cap_cocone/PSI_RESULT.md:1-130`.
 - Base beta order statement:
-  `D:/tmp/r6/agents/c3_exact_hostile_audit/BASE_BETA_MULTIPLICITY_REAUDIT.md:1-78`.
+  [`BASE_BETA_MULTIPLICITY_REAUDIT.md`](../../evidence/public_geometry/source_notes/BASE_BETA_MULTIPLICITY_REAUDIT.md).
 - Cubic common-target/core-counit construction and explicit full-q boundary:
-  `D:/tmp/r6/fullw_tangent_coend/main/ALL_LEVEL_REYNOLDS_FOAM_FAMILY_DECISION.md:1-180`.
+  [`ALL_LEVEL_REYNOLDS_FOAM_FAMILY_DECISION.md`](../../evidence/public_geometry/source_notes/ALL_LEVEL_REYNOLDS_FOAM_FAMILY_DECISION.md).

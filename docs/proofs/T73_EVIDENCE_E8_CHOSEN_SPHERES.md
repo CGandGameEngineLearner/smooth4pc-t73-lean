@@ -31,13 +31,13 @@ The load-bearing geometry identities are:
 
 ```text
 EE620E6B085A5F9E1C73CFDD1AD04FC0682CEC74DA3DBF8AFE70DD19C038E3A0
-  TH1_EXHAUSTIVE_ALL_ROW_GEOMETRY.json
+  evidence/public_geometry/TH1_EXHAUSTIVE_ALL_ROW_GEOMETRY.json
 
 4D1B627C0343A1C464319704EAFADCA127902A2E4E90CF1C283004359B7ADC24
-  TH2_EXHAUSTIVE_ALL_ROW_GEOMETRY.json
+  evidence/public_geometry/TH2_EXHAUSTIVE_ALL_ROW_GEOMETRY.json
 
 EABF67C0D1AE309F0281297710A283B8ED5A11D88C8E810837932313F4C53227
-  THXY_FULL_MACRO_P3FREE_HJ_CERT.json
+  evidence/public_geometry/THXY_FULL_MACRO_P3FREE_HJ_CERT.json
 ```
 
 All three hashes were recomputed and match.  I also reran:
@@ -307,16 +307,16 @@ divided functional.
 ## Sources
 
 - TH1 hardened geometry and hostile replay:
-  `D:/tmp/r6/matrix_attack/th12_actualization/TH1_EXHAUSTIVE_ALL_ROW_GEOMETRY.json`;
-  `D:/tmp/r6/fullw_tangent_coend/hostile/TH1_HARDENED_REAUDIT.md`.
+  [`TH1_EXHAUSTIVE_ALL_ROW_GEOMETRY.json`](../../evidence/public_geometry/TH1_EXHAUSTIVE_ALL_ROW_GEOMETRY.json);
+  [`TH1_HARDENED_REAUDIT.md`](../../evidence/public_geometry/reviews/TH1_HARDENED_REAUDIT.md).
 - TH2 hardened geometry and hostile replay:
-  `D:/tmp/r6/matrix_attack/th12_actualization/TH2_EXHAUSTIVE_ALL_ROW_GEOMETRY.json`;
-  `D:/tmp/r6/fullw_tangent_coend/hostile/TH2_HARDENED_REAUDIT.md`.
+  [`TH2_EXHAUSTIVE_ALL_ROW_GEOMETRY.json`](../../evidence/public_geometry/TH2_EXHAUSTIVE_ALL_ROW_GEOMETRY.json);
+  [`TH2_HARDENED_REAUDIT.md`](../../evidence/public_geometry/reviews/TH2_HARDENED_REAUDIT.md).
 - THXY final successor:
-  `D:/tmp/r6/fullw_tangent_coend/generators/THXY_FULL_MACRO_P3FREE_HJ_CERT.json`;
-  `D:/tmp/r6/fullw_tangent_coend/hostile/THXY_FULL_MACRO_REAUDIT.md`.
-- HJ chosen-basis theorem and slide ledger:
-  `D:/tmp/r6/agents/hj_scope_hostile/hj_v3_source/version_23_RM.tex:602-633`;
-  `D:/tmp/r6/agents/unimodular_easy_spheres/AREA_BASIS_3HANDLE_SLIDE_RESULT.md`.
-- MWW sphere maps:
-  `D:/tmp/r6/mww_handle_src/kirby.tex:607-699`.
+  [`THXY_FULL_MACRO_P3FREE_HJ_CERT.json`](../../evidence/public_geometry/THXY_FULL_MACRO_P3FREE_HJ_CERT.json);
+  [`THXY_FULL_MACRO_REAUDIT.md`](../../evidence/public_geometry/reviews/THXY_FULL_MACRO_REAUDIT.md).
+- HJ chosen-basis theorem and slide ledger: Horvat--Jablonowski,
+  [arXiv:2510.20282](https://arxiv.org/abs/2510.20282);
+  [`AREA_BASIS_3HANDLE_SLIDE_RESULT.md`](../../evidence/public_geometry/source_notes/AREA_BASIS_3HANDLE_SLIDE_RESULT.md).
+- MWW sphere maps: Manolescu--Walker--Wedrich,
+  [arXiv:2206.04616](https://arxiv.org/abs/2206.04616).
