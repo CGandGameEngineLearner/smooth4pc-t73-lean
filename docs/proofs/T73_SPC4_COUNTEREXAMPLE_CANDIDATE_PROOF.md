@@ -1,6 +1,6 @@
 # T73 historical candidate proof
 
-**Status:** `HISTORICAL; CURRENT PAPER HAS P0/P3 DISCHARGED AND C OPEN`
+**Status:** `HISTORICAL; CURRENT PAPER DISCHARGES P0/C/S/P3`
 
 > The current proof allocation is the LaTeX paper and the research notes for
 > the public AR P0 witness, the coefficient comparison C, and relative S.

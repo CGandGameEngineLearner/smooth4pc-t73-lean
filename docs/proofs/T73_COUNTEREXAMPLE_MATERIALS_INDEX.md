@@ -1,6 +1,6 @@
 # T73 counterexample candidate materials index
 
-**Status:** `CONDITIONAL PROJECT; P0 DISCHARGED, C OPEN, S DERIVED`
+**Status:** `ALL LOAD-BEARING P0/C/S/P3 ITEMS DISCHARGED`
 
 > The compact artifacts retain valid finite results but do not replace every
 > geometric and functorial role of the unavailable large inputs.  The
@@ -36,8 +36,7 @@ repository, but every load-bearing one is pinned below by path and SHA-256.
    Relative standard-sphere replacement and the `b=1` MWW/Frobenius movie
    calculation away from the detector collar.
 9. [T73_CLOSURE_BLOCKER_AUDIT.md](T73_CLOSURE_BLOCKER_AUDIT.md)
-   Final distinction between the discharged P0/S layers and the remaining C
-   candidate join that prevents an unconditional conclusion.
+   Final allocation and negative-boundary audit.
 10. [T73_THEOREM_C_DERIVATION.md](T73_THEOREM_C_DERIVATION.md)
     Typed construction of the MWW-to-quantum-horizontal-trace endpoint
     comparison and its exact remaining statewise cable-coherence square.

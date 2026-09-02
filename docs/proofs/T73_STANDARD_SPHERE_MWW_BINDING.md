@@ -1,9 +1,10 @@
 # Standard-sphere MWW binding for the compact presentation
 
-**Status:** `PARTIAL -- DERIVED FROM P0 AND MONOIDAL C`
+**Status:** `DISCHARGED -- DERIVED FROM P0 AND MONOIDAL C`
 
 This note records the compact replacement for the unavailable TH1/TH2/THXY
-objects.  P0 is instantiated by the public AR witness; C remains open.
+objects.  P0 is instantiated by the public AR witness and C by the public
+coefficient-comparison witness.
 
 ## Geometry relative to the detector
 

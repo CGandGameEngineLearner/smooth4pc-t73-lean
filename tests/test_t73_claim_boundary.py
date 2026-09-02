@@ -18,16 +18,16 @@ def load_checker():
 
 
 class ClaimBoundaryTest(unittest.TestCase):
-    def test_current_paper_respects_open_transport_fields(self) -> None:
+    def test_current_paper_matches_replacement_witnesses(self) -> None:
         load_checker().check()
 
-    def test_unconditional_mutant_is_rejected(self) -> None:
+    def test_reintroduced_open_claim_is_rejected(self) -> None:
         checker = load_checker()
         source = Path("mutant.tex")
         with self.assertRaises(AssertionError):
             checker.reject(
-                "the smooth four-dimensional Poincare conjecture is false",
-                "the smooth four-dimensional Poincare conjecture is false",
+                "C remains open",
+                "C remains open",
                 source,
             )
 

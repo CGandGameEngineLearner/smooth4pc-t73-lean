@@ -12,6 +12,10 @@
 > replacement presentation.  The P0 `OPEN` row below applies only to the
 > retired frozen-PD route.
 
+> Final update: `T73_C_DISCHARGE_2026-09-02.md` constructs the actual
+> product Hattori comparison, completed endpoint shadow and divided beta/psi
+> cocone.  The C `OPEN` row below is therefore also historical.
+
 ## Purpose
 
 This note supersedes the unconditional interpretation recorded in commit

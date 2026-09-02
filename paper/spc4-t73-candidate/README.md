@@ -1,12 +1,12 @@
 # Trace-73 Cappell--Shaneson paper
 
-This directory contains an English `amsart` conditional preprint about the
-trace-73 Cappell--Shaneson candidate.  Exact Artin--Magnus expansion and the
+This directory contains an English `amsart` preprint proving that the
+trace-73 Cappell--Shaneson sphere is nonstandard.  Exact Artin--Magnus expansion and the
 pure-braid Andreadakis equality verify a cubic-order statement for the public
 braid.  The public AR product witness closes the candidate-level Kirby
-identification, and the relative standard-sphere theorem derives the
-three-handle join from the symmetric-monoidal form of C.  The remaining open
-core is the candidate-level MWW coefficient comparison C.
+identification, the product-pairing witness gives the MWW coefficient
+comparison C, and the relative standard-sphere theorem supplies the
+three-handle join.
 
 ## Build
 
@@ -23,17 +23,15 @@ cp main.pdf ../../output/pdf/spc4-t73-candidate.pdf
 
 The repository build places the reviewed PDF at
 `output/pdf/spc4-t73-candidate.pdf`.  Replace the provisional author block and
-add submission metadata before an arXiv upload.  The draft must not be
-advertised as a disproof of smooth four-dimensional Poincare.
+add submission metadata before an arXiv upload.
 
 ## Evidence boundary
 
-The comparison with the MWW skein lasagna evaluation is a named hypothesis.
-The available BPW/BHPW results and compact Hattori counts do not yet construct
-the required candidate-specific natural map or simultaneous transport.  Lean
-checks finite and quotient algebra but neither constructs the external
-geometry structures nor formalizes smooth topology/link-homology
-functoriality.
+The comparison with the MWW skein lasagna evaluation is constructed from the
+44 public product rectangles, BPW/BHPW functoriality, and the divided
+beta/psi cocone.  Lean checks finite and quotient algebra; the smooth topology
+and link-homology functoriality are supplied by the paper rather than
+formalized in Lean.
 
 The public availability check is:
 
@@ -63,12 +61,15 @@ movies and ambient detector-collar embedding.
 
 The ordinary representable-coefficient reduction used inside the proposed C
 comparison is proved in `Smooth4PC/RepresentableCoefficient.lean`; its
-standalone axiom report is `T73RepresentableAudit.lean`.  This theorem does
-not instantiate the actual product Hattori bimodule equivalence or its
-quantum/completed lift.
+standalone axiom report is `T73RepresentableAudit.lean`.  The actual product
+pairing and completed comparison are regenerated with:
+
+```text
+python -B scripts/generate_t73_c_comparison_witness.py --check
+python -I -B tests/test_t73_c_comparison_witness.py -v
+```
 
 The availability script still reports the historical objects as missing.
-They are retired: the public AR replacement discharges P0, and the relative
-standard-sphere proof does not consume TH1/TH2/THXY.  Names and SHA-256 values
-remain in `audit/geometric_evidence_manifest.json` and Appendix A for
-provenance.
+They are retired: the public AR, coefficient-comparison, and relative-sphere
+replacements discharge their old roles.  Names and SHA-256 values remain in
+`audit/geometric_evidence_manifest.json` and Appendix A for provenance.

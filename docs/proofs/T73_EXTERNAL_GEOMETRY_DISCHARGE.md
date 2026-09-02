@@ -1,16 +1,16 @@
 # ExternalGeometry field-by-field discharge
 
-**Status:** `PARTIAL -- P0/P3 AND RELATIVE S SUPPLIED; C OPEN`
+**Status:** `MATHEMATICALLY DISCHARGED -- LEAN REMAINS PARAMETRIC`
 
-> This file records a field allocation, not a Lean instance.  The public AR
-> witness now supplies P0, published general theorems supply P3, and relative
-> S follows from monoidal C.  The actual MWW coefficient comparison C remains
-> open, so the complete external structures are not instantiated.
+> This file records a mathematical field allocation, not a Lean construction
+> of smooth topology.  The public AR witness supplies P0, the product Hattori
+> comparison supplies C, relative S supplies the three-handle fields, and
+> published general theorems supply P3.
 
-This note lists the mathematical fields used by
+This note lists the mathematical instances of the fields used by
 `Smooth4PC/T73External.lean` for the compact trace-73 presentation.  It does
-not instantiate the remaining C fields and does not claim that skein lasagna
-modules or smooth four-manifold topology have been formalized in Lean.
+not claim that skein lasagna modules or smooth four-manifold topology have
+been formalized in Lean.
 
 ## Ambient universe
 

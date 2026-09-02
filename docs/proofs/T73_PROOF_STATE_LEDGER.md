@@ -28,10 +28,10 @@ has an actual raw lift but is contained in the full action-closed two-cup
 
 | layer | current status | current evidence |
 |---|---|---|
-| E1 paired-annulus Hattori coefficient | OPEN as a public geometric instance | `ACTUAL_PD_CABLE_UNIT_CERT.json`, SHA `7F3D3618D6A790A9B60EE8085B647AC2AB742E1BC9C15841F1BEF015034217B5`, is not published |
-| E2 selected diagonal class | PARTIAL | finite algebra is recorded, but its action-compatible geometric binding uses the missing E1 artifact |
-| E3 coefficient q-trace and raw-state binding | OPEN as an MWW comparison | the public ledger asserts the comparison, but the coefficient-category/Hattori inputs and candidate-specific naturality proof are not publicly replayable |
-| E5/E6 one-/two-handle beta/psi quotient | OPEN as a candidate-specific MWW quotient | general quotient algebra and divided-cubic identities are recorded; actual MWW maps and the comparison detector are not identified from public inputs |
+| E1 paired-annulus Hattori coefficient | DISCHARGED | 44 public product rectangles and 227 residual circles in the C witness |
+| E2 selected diagonal class | DISCHARGED | named inverse Hattori image of `Id_U tensor X^227` |
+| E3 coefficient q-trace and raw-state binding | DISCHARGED | BPW/BHPW completed shadow and sign-robust endpoint binding |
+| E5/E6 one-/two-handle beta/psi quotient | DISCHARGED | divided beta average, through-degree firewall and core-counit psi equations |
 | P0 replacement AR framed lift | DISCHARGED | public AR scan, `audit/t73_ar_product_witness.json`, deterministic generator, two product cancellations and embedded detector ball |
 | historical G1/DIAGRAM identity | OPEN / RETIRED | the builder and full PD remain unavailable and are not used |
 | E8 three chosen sphere rows | NOT REQUIRED BY RELATIVE ROUTE | the historical objects are unavailable, but HJ relative uniqueness plus monoidal C replaces this explicit-sphere route |

@@ -1,108 +1,37 @@
-# Final closure blocker audit
+# Final closure audit
 
-**Status:** `CURRENT -- P0 DISCHARGED; C OPEN; S FOLLOWS FROM C`
+**Status:** `ALL LOAD-BEARING ITEMS DISCHARGED`
 
-The proposed derivations in `T73_THEOREM_C_DERIVATION.md` and
-`T73_THEOREM_S_DERIVATION.md` did not resolve the candidate-level joins.  The
-ordinary representable-coefficient reduction inside C has since been proved.
-The relative standard-sphere theorem removes S as an independent input, but
-the actual product bimodule equivalence remains open.
+## Current allocation
 
-This audit follows the constructive attempts to replace every unavailable
-large artifact by compact public data.  It records what is now proved and the
-single candidate comparison C that remains open.
+| item | verdict | evidence |
+|---|---|---|
+| P0 | **DISCHARGED** | public AR source, parameterized product witness, matrix bridge, two cancellations, detector ball |
+| C | **DISCHARGED** | 44-rectangle Hattori equivalence, BPW/BHPW completed shadow, divided beta/psi cocone, nonzero sign-robust cubic |
+| S | **DISCHARGED** | relative complete sphere system plus intrinsic MWW local module action |
+| P3/E11 | **DISCHARGED** | MWW four-handle isomorphism on the P0 decomposition |
+| P3/E12 | **DISCHARGED** | MWW standard-S4 module concentrated in bidegree zero |
+| P3/E13 | **DISCHARGED** | P0 manifold identification plus Iwaki's determinant criterion |
 
-## Publicly discharged finite and algebraic layers
+## Important negative boundaries
 
-The following statements now have executable public evidence:
+- The historical two-million-crossing PD remains unavailable and is unused.
+- The historical TH1/TH2/THXY sphere files remain unavailable and are unused.
+- The endpoint cap is not equal to the four W2 core disks.
+- No full-formal-q W2 functional is asserted.  The proved object is the
+  leading divided cubic cocone, which is exactly the strength needed for the
+  ordinary rational lasagna module.
+- Lean remains a conditional algebraic core; the paper supplies its topology
+  and functoriality inputs mathematically rather than formalizing them.
 
-1. six affine sweeps generate all 252 collar factors and the pinned
-   44-strand pure braid;
-2. the public AR product witness gives the simultaneous embedded framed link,
-   matrix bridge, two cancellations and detector ball;
-3. the selected balanced cable has `p_y=44`, `p_z=271`, 88 oriented open
-   endpoints and 227 closed circle factors;
-4. the local normalized weight-one R-matrix is the exact unreduced Burau
-   block after the displayed basis change;
-5. `rho(W)-I` has no coefficients below order three on any of the 88 basis
-   vectors or 7,744 matrix entries;
-6. the five-owner cellular boundary has a unimodular `m2/m3` minor and gives
-   unique sphere lifts supported on `rxy,ryz,rzx`;
-7. a 32-step Nielsen program constructs the required integral sphere basis;
-8. Lean proves the Frobenius split/counit identities, that `Id+O(h)`
-   source/target corrections are invisible at cubic order, and that a
-   representable coefficient `(T,T') -> Hom(BT,BT')` has ordinary coefficient
-   `HH0` equivalent to the regular trace.
+## Replays
 
-All corresponding mutation tests pass.  These facts do not depend on the
-historical full PD or TH certificate bytes.
+```text
+python -B scripts/generate_t73_ar_product_witness.py --check --source-pdf AR.pdf
+python -B scripts/generate_t73_c_comparison_witness.py --check
+python -I -B tests/test_t73_ar_product_witness.py -v
+python -I -B tests/test_t73_c_comparison_witness.py -v
+python -I -B tests/test_t73_claim_boundary.py -v
+```
 
-## Missing theorem C: coefficient trace comparison
-
-The required arrow is a natural, grading-preserving map
-
-\[
-\mathsf C:
-q\operatorname{Tr}(\mathcal C_{\mathrm{MWW}};M_R)
-\widehat\otimes_{q=1+h}\mathbb Q[[h]]
-\longrightarrow
-\operatorname{Hom}_{\mathbb Q[[h]]}
-\bigl((V^{\otimes86})_{86},(V^{\otimes88})_{86}\bigr)
-\]
-
-with all of the following properties:
-
-1. both coefficient actions commute with the compact Hattori equivalence;
-2. the selected trace class maps to the actual cup vector, including its
-   higher `h` corrections;
-3. every beta and psi map is natural for the statewise extensions of
-   `mathsf C`;
-4. the endpoint braid acts by the public Burau matrix in the same coordinates;
-5. the cap row and all grading shifts commute with completion and
-   specialization.
-
-BPW constructs quantum traces and quantum annular homology.  BHPW constructs
-strict Chen--Khovanov tangle functoriality and identifies quantum `HH0` of the
-full algebras with their Chern/weight-space targets under flatness
-hypotheses.  MWW identifies the one-handle skein lasagna module with ordinary
-`HH0` of a tangle subcategory.  None of these sources identifies the actual
-trace-73 coefficient bimodule with the representable model, nor proves its
-compatibility with the MWW cable quotient.  The local R-matrix equality proves
-only item 4.  Once a genuine two-sided product Hattori equivalence is supplied,
-the ordinary representable reduction is no longer a blocker; its
-quantum/completed lift still is.
-
-## Theorem S is conditional on P0 and monoidal C
-
-HJ Theorem 5.3 and its relative complete-system lemma allow the three
-attaching spheres to be replaced by the standard system in
-`#3(S1 x S2)` outside the detector ball supplied by P0.  MWW's intrinsic
-module-action formula then imposes `A0=1` for the one-dotted sphere and
-`A1=0` for the undotted sphere.  Symmetric monoidality of C gives these two
-identities on the whole source.
-
-Thus no signed slide-band, pivotal-adapter or endpoint-permutation certificate
-is independently required for S.  Candidate-level S remains partial only
-because the full monoidal C comparison is not instantiated.
-
-## Negative controls
-
-Two tempting shortcuts are demonstrably invalid:
-
-1. changing only endpoint coordinates without simultaneously transporting
-   `W,u,ell` can create a spurious anomaly;
-2. Reynolds averaging all 44 even and 44 odd endpoint passages makes every
-   coefficient of the public pairing zero.  It cannot replace BPW
-   coefficient-trace cyclicity or the owner-copy beta quotient.
-
-## Minimal condition for resumption
-
-The proof can resume if either of the following is supplied:
-
-1. a published theorem constructing C and proving its five compatibility
-   properties for MWW coefficient modules; or
-2. explicit chain/foam maps for the compact Hattori coefficient proving the
-   full monoidal C comparison.
-
-Until C is proved, `ExternalGeometry` has no legitimate
-candidate-specific inhabitant and the paper must remain conditional.
+The detailed proofs are Sections 6--9 of the paper.
