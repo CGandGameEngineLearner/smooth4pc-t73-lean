@@ -1,0 +1,133 @@
+{
+  "schema": "smooth4pc_t73_geometric_evidence_manifest/v1",
+  "policy": "An item passes only when its bytes are available and its SHA-256 matches. A hash or prose summary alone is not a geometric witness.",
+  "items": [
+    {
+      "id": "p0_cs_builder",
+      "priority": "P0",
+      "role": "deterministic builder from the Cappell--Shaneson matrix and cancellation choices",
+      "sha256": "B20BDFF6FBF2A0E629083E2E62DD1DDF9172A4E8893311CE122FFC4FEB388DFA",
+      "paths": [
+        "evidence/geometric/cs_presentation.py",
+        "D:/tmp/s4pc_ruler/ENGINE/kirby_master/cs_presentation.py"
+      ]
+    },
+    {
+      "id": "p0_cs_builder_input",
+      "priority": "P0",
+      "role": "frozen builder input for the trace-73 presentation",
+      "sha256": "6DF4D7906ADB18BA2D3237D4B49F8985A5B18D8C39FF522AD6498F2369803FCB",
+      "paths": [
+        "evidence/geometric/t73_eps0.erkmo.json",
+        "D:/tmp/s4pc_ruler/ENGINE/out/t73_eps0.erkmo.json"
+      ]
+    },
+    {
+      "id": "p0_full_pd",
+      "priority": "P0",
+      "role": "full labelled reduced Kirby/PD diagram used by the global-descending and point-push claims",
+      "sha256": "E6912A64457557469E5C691B4D57ABDBBF4C45ADB05492777C574223D0C06F8A",
+      "paths": [
+        "evidence/geometric/t73_reduced_billiard.pd.json",
+        "D:/tmp/s4pc_ruler/DIAGRAM/out/t73_reduced_billiard.pd.json"
+      ]
+    },
+    {
+      "id": "p0_cut_object",
+      "priority": "P0",
+      "role": "gate, endpoint, component-owner and cyclic-successor binding",
+      "sha256": "4E1C4564ED98F30EAEB0A1AEAAD95ACAB5AD7B226C79B7D5BF3F259E8B56F541",
+      "paths": [
+        "evidence/geometric/CUT_OBJECT.json",
+        "D:/tmp/r6/agents/t73_cut/CUT_OBJECT.json"
+      ]
+    },
+    {
+      "id": "p0_support",
+      "priority": "P0",
+      "role": "support factorization used to identify the physical point-push sector",
+      "sha256": "2D9E4760F836D9E04E6E0024CAE03A3DBB49A74FF5D129756F25450B30F10F7C",
+      "paths": [
+        "evidence/geometric/BASE_INTERACTION_SUPPORT.json",
+        "D:/tmp/r6/four_path_attack/support_factorization/BASE_INTERACTION_SUPPORT.json"
+      ]
+    },
+    {
+      "id": "p0_normal_field",
+      "priority": "P0",
+      "role": "normal-field/framing movie binding",
+      "sha256": "B2E97EB0981036768B8F1C1D5EF16F8817EC1A7B951B6B32DBA2F9211FFD725A",
+      "paths": [
+        "evidence/geometric/NORMAL_FIELD_MOVIE_CERT.json",
+        "D:/tmp/r6/NORMAL_FIELD_MOVIE_CERT.json"
+      ]
+    },
+    {
+      "id": "p0_collar_braid",
+      "priority": "P0",
+      "role": "source artifact from which the public 65,606 point-push crossing rows were extracted",
+      "sha256": "13AED414447ED33057C99D340910B50109983CF36874C14ECE0E6A2834A12C24",
+      "paths": [
+        "evidence/geometric/T73_COLLAR_BRAID.json"
+      ]
+    },
+    {
+      "id": "p0_collar_generator",
+      "priority": "P0",
+      "role": "generator/verifier binding the collar braid to the full PD diagram",
+      "sha256": "9D93A6CB320200A906F461EF3131127EA40C80A9A7828128E6F2804808417056",
+      "paths": [
+        "evidence/geometric/verify_t73_collar_braid.py"
+      ]
+    },
+    {
+      "id": "p1_actual_cable",
+      "priority": "P1",
+      "role": "actual paired-annulus/cable and selected raw-state binding",
+      "sha256": "7F3D3618D6A790A9B60EE8085B647AC2AB742E1BC9C15841F1BEF015034217B5",
+      "paths": [
+        "evidence/geometric/ACTUAL_PD_CABLE_UNIT_CERT.json",
+        "D:/tmp/t73_actual_cable_unit/ACTUAL_PD_CABLE_UNIT_CERT.json"
+      ]
+    },
+    {
+      "id": "p1_hattori_movie",
+      "priority": "P1",
+      "role": "action-compatible Hattori movie used to identify the truncated Burau scalar with the selected one-handle raw class",
+      "sha256": "DE1AC479699EC79DE76D4265993DE437493A3AAA6CABB636F98998644BF3181C",
+      "paths": [
+        "evidence/geometric/PRODUCT_NORMAL_CHRISTOFFEL_THXY_MOVIE.json"
+      ]
+    },
+    {
+      "id": "p2_th1",
+      "priority": "P2",
+      "role": "complete TH1 embedded-sphere geometry witness",
+      "sha256": "EE620E6B085A5F9E1C73CFDD1AD04FC0682CEC74DA3DBF8AFE70DD19C038E3A0",
+      "paths": [
+        "evidence/geometric/TH1_EXHAUSTIVE_ALL_ROW_GEOMETRY.json",
+        "D:/tmp/r6/matrix_attack/th12_actualization/TH1_EXHAUSTIVE_ALL_ROW_GEOMETRY.json"
+      ]
+    },
+    {
+      "id": "p2_th2",
+      "priority": "P2",
+      "role": "complete TH2 embedded-sphere geometry witness",
+      "sha256": "4D1B627C0343A1C464319704EAFADCA127902A2E4E90CF1C283004359B7ADC24",
+      "paths": [
+        "evidence/geometric/TH2_EXHAUSTIVE_ALL_ROW_GEOMETRY.json",
+        "D:/tmp/r6/matrix_attack/th12_actualization/TH2_EXHAUSTIVE_ALL_ROW_GEOMETRY.json"
+      ]
+    },
+    {
+      "id": "p2_thxy",
+      "priority": "P2",
+      "role": "complete THXY embedded-sphere geometry witness",
+      "sha256": "EABF67C0D1AE309F0281297710A283B8ED5A11D88C8E810837932313F4C53227",
+      "paths": [
+        "evidence/geometric/THXY_FULL_MACRO_P3FREE_HJ_CERT.json",
+        "D:/tmp/r6/fullw_tangent_coend/generators/THXY_FULL_MACRO_P3FREE_HJ_CERT.json"
+      ]
+    }
+  ]
+}

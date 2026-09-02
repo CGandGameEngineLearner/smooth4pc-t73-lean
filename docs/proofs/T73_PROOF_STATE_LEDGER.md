@@ -1,5 +1,9 @@
 # T73 proof state ledger
 
+**Current authority:** the compact closure chain ending in
+`T73_EXTERNAL_GEOMETRY_DISCHARGE.md`.  Entries below describing unavailable
+historical PD/TH objects are recovery history, not current premises.
+
 **Updated:** 2026-09-01 (Asia/Tokyo)
 **Purpose:** recovery source of truth for the mathematical chain. Read this
 before rerunning any long sphere computation.
@@ -20,16 +24,16 @@ would introduce a second factor and starts in order six. The mixed-Z branch
 has an actual raw lift but is contained in the full action-closed two-cup
 `psi0` ideal and is retired as the carrying class.
 
-## Closed layers
+## Layer audit
 
 | layer | current status | current evidence |
 |---|---|---|
-| E1 paired-annulus Hattori coefficient | PROVED | `ACTUAL_PD_CABLE_UNIT_CERT.json`, SHA `7F3D3618D6A790A9B60EE8085B647AC2AB742E1BC9C15841F1BEF015034217B5` |
-| E2 selected diagonal class | PROVED | main proof Sections 2--3 |
-| E3 coefficient q-trace and raw-state binding | PROVED | `MR_REES_QUANTUM_TRACE_SOURCE_LEDGER.md`, SHA `99913F0AF70CF5FF650492C2740F98B7053FEBBB58212DA32B506D863836EA84`; `RAW_STATE_BINDING_RESULT.md`, SHA `BCBFBC9F8A5350D323EC2876352EC25C6690E5BB6AD4F2C264441BA4D73CDEF6` |
-| E5/E6 one-/two-handle beta/psi quotient | PROVED at divided cubic | `T73_EVIDENCE_ONE_CUP_E5_E6.md`, source SHA `6A63978D734EFF30B8F6C2E6F9800F9338B3499BA1CA4D6AF4880716468FE865` |
-| G1 actual-Gompf/DIAGRAM framed lift | PROVED | `docs/proofs/T73_GA1_DESCENDING_BRIDGE.md`; AR actual product-ribbon construction; two final hostile reviews PASS |
-| E8 three chosen sphere rows | PROVED at divided cubic | `T73_EVIDENCE_E8_CHOSEN_SPHERES.md`, source SHA `C33AF1FCAE8F0056A75D1841E1151786C2EBB756AD8A768C4E3E6704274E2B43` |
+| E1 paired-annulus Hattori coefficient | OPEN as a public geometric instance | `ACTUAL_PD_CABLE_UNIT_CERT.json`, SHA `7F3D3618D6A790A9B60EE8085B647AC2AB742E1BC9C15841F1BEF015034217B5`, is not published |
+| E2 selected diagonal class | PARTIAL | finite algebra is recorded, but its action-compatible geometric binding uses the missing E1 artifact |
+| E3 coefficient q-trace and raw-state binding | OPEN as an MWW comparison | the public ledger asserts the comparison, but the coefficient-category/Hattori inputs and candidate-specific naturality proof are not publicly replayable |
+| E5/E6 one-/two-handle beta/psi quotient | OPEN as a candidate-specific MWW quotient | general quotient algebra and divided-cubic identities are recorded; actual MWW maps and the comparison detector are not identified from public inputs |
+| G1 actual-Gompf/DIAGRAM framed lift | OPEN / PUBLIC WITNESSES MISSING | `docs/proofs/T73_GA1_DESCENDING_BRIDGE.md`; the builder, full PD, cut/framing records and move data are not published |
+| E8 three chosen sphere rows | OPEN / PUBLIC WITNESSES MISSING | `T73_EVIDENCE_E8_CHOSEN_SPHERES.md`; the three claimed exhaustive geometry objects are referenced by hash but unavailable |
 
 The E5/E6 proof uses the one-cup through-86 cell, the ordinary divided
 functional, beta's `O(h)` defect against `W-I=O(h^3)`, and split-injectivity of
