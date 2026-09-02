@@ -6,6 +6,7 @@ build/
 *.ilean
 __pycache__/
 .pytest_cache/
+.playwright-cli/
 audit_tmp/
 tmp/
 *.aux

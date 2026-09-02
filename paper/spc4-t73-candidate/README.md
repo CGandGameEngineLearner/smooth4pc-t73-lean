@@ -45,6 +45,17 @@ The paper/evidence consistency gate is:
 python -B scripts/check_t73_claim_boundary.py
 ```
 
+A proposed P0 replacement can be checked for the required embedded-witness
+structure with:
+
+```text
+python -B scripts/check_t73_p0_embedded_witness.py PATH_TO_WITNESS.json
+```
+
+The compact word ledger is deliberately rejected by this checker because it
+does not contain component parametrizations, normal fields, cancellation
+movies, or an ambient detector-collar embedding.
+
 It is expected to report the historical objects as missing.  Their absence is
 still relevant to P0/P2; the compact ledgers do not presently replace the
 missing embedded geometric certificates.  Names and SHA-256 values remain in

@@ -74,21 +74,22 @@ an unavailable large diagram.  It is a reproducible marked collar braid
 specified by six affine sweeps and one 40-step schedule.  Its cabling and
 Burau evaluation may be based on this compact object.
 
-More intrinsically, the six sweeps prescribe a loop of the `r_xy` product
-connector through the complement of the `m_2` product passages.  At every
-crossing row the moving wicket follows the declared left/right pure-generator
-chart, and between consecutive rows it follows the affine horizontal leg.
-The return wicket closes the loop with identity owner permutation and zero
-relative product-framing change.  Isotopy extension gives a framed ambient
-isotopy `Phi_t` of a tubular neighborhood of the two owner annuli.
+In a standard punctured disk, the six sweeps prescribe a loop with the pinned
+pure-braid word.  Promoting that abstract disk braid to a loop of the actual
+`r_xy` product connector through the complement of the actual `m_2` product
+passages requires an embedding of the disk/collar in the whole framed AR
+link.  The crossing rows do not contain this embedding.  Once it is supplied,
+isotopy extension gives a framed ambient isotopy `Phi_t` of the corresponding
+tubular neighborhood.
 
-For an arbitrary MWW cable state, apply `Phi_t` simultaneously to every
+For an arbitrary MWW cable state, one may then apply `Phi_t` simultaneously to every
 parallel physical copy.  This defines the statewise companion motion `W_s`.
 It is the full cabling of one base motion, not `W disjoint Id` on a preferred
 old subset.  Consequently physical-copy braids and undotted/dotted pair
 addition commute with the family `W_s` by ordinary cabling functoriality.  On
-the base balanced state the induced 88-endpoint braid is exactly the public
-cabled word.
+the base balanced state the induced 88-endpoint braid is the public cabled
+word provided the collar-label identification in the P0 witness agrees with
+the public wicket order.
 
 This result by itself does **not** identify the ambient four-manifold.  The
 remaining global theorem must
@@ -96,6 +97,7 @@ construct a component- and framing-preserving map from the
 Aitchison--Rubinstein product-ribbon handle presentation to a reduced Kirby
 presentation containing this collar, and must show that the induced endpoint
 transport carries the selected source vector, cap covector and point-push
-operator simultaneously.  `T73_COMPACT_AR_PRESENTATION.md` supplies the
-replacement global presentation used for that join.  No claim about the
+operator simultaneously.  `T73_COMPACT_AR_PRESENTATION.md` supplies only the
+word-level part of that proposed join; the required embedded witness is
+specified by `audit/t73_p0_embedded_witness_schema.json`.  No claim about the
 missing full PD bytes is made.

@@ -1,0 +1,44 @@
+{
+  "schema": "t73_p0_embedded_framed_link_witness/v1",
+  "purpose": "Required shape of a public P0 witness; this file is a schema, not a witness.",
+  "required_top_level_fields": [
+    "ambient_triangulation",
+    "actual_framed_link",
+    "ar_provenance",
+    "cancellation_movie",
+    "detector_collar",
+    "independent_checks"
+  ],
+  "required_actual_framed_link_fields": [
+    "component_parametrizations",
+    "pairwise_disjointness_certificate",
+    "normal_fields",
+    "owner_and_cocore_labels"
+  ],
+  "required_ar_provenance_fields": [
+    "matrix",
+    "straightening_model",
+    "product_annulus_parametrizations",
+    "whole_link_embedding_map"
+  ],
+  "required_cancellation_fields": [
+    "t_hcs_local_movie",
+    "x_m1_local_movie",
+    "all_component_transport",
+    "normal_field_transport"
+  ],
+  "required_detector_collar_fields": [
+    "collar_parametrization",
+    "inverse_image_44_wickets",
+    "label_order",
+    "induced_b44_word",
+    "simultaneous_cabling_rule"
+  ],
+  "forbidden_substitutes": [
+    "free_group_words_only",
+    "exponent_sums_only",
+    "framing_name_without_normal_field",
+    "matching_hash_without_available_bytes",
+    "local_braid_without_ambient_collar_embedding"
+  ]
+}

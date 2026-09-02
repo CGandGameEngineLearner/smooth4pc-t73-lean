@@ -67,10 +67,11 @@ m_3: length 1460, exponent sums (y,z)=(189,1271)
 r_zx: empty reduced word plus its transported zero-framed product disk
 ```
 
-These are precisely the registered reduced word data.  Since every step is
-performed on the Aitchison--Rubinstein product ribbons, the resulting
-genus-two handle presentation is, by construction, a framed presentation of
-the Cappell--Shaneson manifold `Sigma_A^0`.
+These are precisely the registered reduced word data.  If the word-level
+construction is lifted to simultaneous parameterized Aitchison--Rubinstein
+product ribbons, the resulting genus-two handle presentation is a framed
+presentation of the Cappell--Shaneson manifold `Sigma_A^0`.  The public
+generator does not construct that lift.
 
 ## Local detector collar
 
@@ -87,14 +88,15 @@ prove those naturality squares.
 
 ## Consequences
 
-The following facts no longer depend on the historical PD bytes:
+The following word-level facts no longer depend on the historical PD bytes:
 
-1. the candidate manifold is the standard Cappell--Shaneson construction for
-   the displayed matrix;
-2. the framings used by the replacement presentation are actual product
-   framings;
-3. the two cancellations and reduced gate words are public and replayable;
-4. the local point-push braid is a public actual tangle morphism.
+1. the displayed matrix determines the abstract Cappell--Shaneson
+   construction;
+2. the ledger consistently names the product framing convention;
+3. the formal cancellations and reduced gate words are public and replayable;
+4. the local point-push word is a public abstract braid/tangle morphism.
 
-The remaining P0/P1 join is the actual coefficient/Hattori binding, not the
-existence of a candidate manifold or a local braid.
+The remaining P0 join is the parameterized whole-link/product-normal lift and
+the embedding of the local braid collar into it.  The subsequent P1 join is
+the actual coefficient/Hattori binding.  See
+`audit/t73_p0_embedded_witness_schema.json`.
