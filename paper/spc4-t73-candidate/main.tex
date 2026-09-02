@@ -470,6 +470,28 @@ BHPW supplies strict integral tangle/foam functoriality
 $q\mapsto1+h$ is a rational localization followed by a Noetherian adic
 completion and is flat.
 
+The endpoint type must be stated carefully.  Put
+\[
+E_{86}=(V^{\otimes86})_{\lambda=86},\qquad
+E_{88}=(V^{\otimes88})_{\lambda=86}.
+\]
+Then $E_{86}$ has rank one and $E_{88}$ has rank $88$; after restriction to
+weight spaces the cup lies in
+$\operatorname{Hom}_{\Q[[h]]}(E_{86},E_{88})\cong E_{88}$.
+The tangle maps are $U_q(\mathfrak{sl}_2)$ intertwiners before this
+restriction.  It is therefore incorrect to place a ``weight-$86$ summand''
+on an intertwiner space itself.
+
+There is also no abstract obstruction at the representable-coefficient step.
+For a rational-linear autofunctor $B$, the coefficient bimodule
+$(T,T')\mapsto\operatorname{Hom}(BT,BT')$ is two-sided equivalent to the
+regular coefficient bimodule, and hence their coefficient $HH_0$ groups are
+linearly equivalent.  This quotient statement is kernel checked in
+\path{Smooth4PC/RepresentableCoefficient.lean}.  Its use here still
+requires the missing candidate-specific, action-compatible Hattori
+equivalence from $M_R$ to that representable model, as well as its
+$q$-deformed completed lift.
+
 On the weight-one subspace, the normalized checked R-matrix is
 \[
 \begin{pmatrix}1-q^{-2}&q^{-1}\\q^{-1}&0\end{pmatrix}.
@@ -622,7 +644,7 @@ independently checkable argument are both supplied.
 Item & Verdict & Reason \\
 \midrule
 P0 & \Open & Word and braid ledgers do not construct the embedded framed Kirby equivalence. \\
-P1/C & \Open & Cubic order is proved, but the actual product motion, simultaneous transport and MWW-to-qHH0 comparison are missing. \\
+P1/C & \Open & Cubic order and the ordinary representable-coefficient reduction are proved, but the actual product bimodule equivalence, its completed lift and simultaneous transport are missing. \\
 P2/E7 & \Open & Owner homology lifts do not construct the required embedded disjoint spheres or verify the HJ hypotheses. \\
 P2/E10/S & \Open & Core-counit algebra is proved conditionally; the actual MWW hemisphere maps and coordinate transports are missing. \\
 P3/E11 & \Partial & MWW Proposition 3.4 is general; its candidate-level input depends on P1/P2. \\

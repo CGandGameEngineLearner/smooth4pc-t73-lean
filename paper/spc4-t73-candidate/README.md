@@ -56,6 +56,12 @@ The compact word ledger is deliberately rejected by this checker because it
 does not contain component parametrizations, normal fields, cancellation
 movies, or an ambient detector-collar embedding.
 
+The ordinary representable-coefficient reduction used inside the proposed C
+comparison is proved in `Smooth4PC/RepresentableCoefficient.lean`; its
+standalone axiom report is `T73RepresentableAudit.lean`.  This theorem does
+not instantiate the actual product Hattori bimodule equivalence or its
+quantum/completed lift.
+
 It is expected to report the historical objects as missing.  Their absence is
 still relevant to P0/P2; the compact ledgers do not presently replace the
 missing embedded geometric certificates.  Names and SHA-256 values remain in

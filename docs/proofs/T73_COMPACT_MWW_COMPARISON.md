@@ -1,6 +1,11 @@
 # Compact Burau--MWW comparison
 
-**Status:** `SUPERSEDED BY THE COMPLETE THEOREM C DERIVATION`
+**Status:** `PARTIAL -- CANDIDATE PRODUCT BIMODULE EQUIVALENCE OPEN`
+
+The ordinary representable-coefficient reduction after a valid two-sided
+Hattori equivalence is now proved in
+`Smooth4PC/RepresentableCoefficient.lean`.  This note still does not construct
+that actual equivalence or its quantum/completed lift.
 
 This note collects the public compact replacement for the missing cable and
 Hattori artifacts.

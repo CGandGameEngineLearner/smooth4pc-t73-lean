@@ -10,6 +10,10 @@
 > bimodule to the specified qHH0/Chern summand.  See
 > `docs/research/T73_CORRECTION_AND_CLOSURE_NOTE_2026-09-02.md`.
 
+The ordinary representable-coefficient reduction used after Step 2 is now
+proved in `Smooth4PC/RepresentableCoefficient.lean`; it does not supply Step
+2 itself or its quantum/completed lift.
+
 ## Statement
 
 For the compact balanced `m2/rxy` coefficient, construct a graded map
@@ -19,12 +23,15 @@ For the compact balanced `m2/rxy` coefficient, construct a graded map
 q\operatorname{Tr}(\mathcal C;M_R)
 \widehat\otimes_{q=1+h}\mathbb Q[[h]]
 \longrightarrow
-\operatorname{Hom}_{U_q(\mathfrak{sl}_2)}
-(V^{\otimes86},V^{\otimes88})_{\lambda=86}
-\widehat\otimes\mathbb Q[[h]].
+\operatorname{Hom}_{\mathbb Q[[h]]}
+\bigl((V^{\otimes86})_{\lambda=86},
+      (V^{\otimes88})_{\lambda=86}\bigr).
 \]
 
-The target weight-one part is the public 88-dimensional endpoint module.
+The source weight space is one-dimensional and the target weight space is
+the public 88-dimensional endpoint module.  The underlying tangle maps are
+$U_q(\mathfrak{sl}_2)$ intertwiners; the displayed target is their restriction
+to the indicated weight spaces.
 
 ## Construction of the arrows
 

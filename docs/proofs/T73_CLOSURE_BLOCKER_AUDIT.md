@@ -1,25 +1,25 @@
 # Final closure blocker audit
 
-**Status:** `SUPERSEDED -- THEOREMS C AND S SUBSEQUENTLY DERIVED`
+**Status:** `CURRENT -- P0, C AND S REMAIN OPEN`
 
-The blockers recorded below were resolved by
-`T73_THEOREM_C_DERIVATION.md` and `T73_THEOREM_S_DERIVATION.md`.  This file is
-retained as the negative audit that forced the completed functorial-cabling
-and whole-sphere arguments.
+The proposed derivations in `T73_THEOREM_C_DERIVATION.md` and
+`T73_THEOREM_S_DERIVATION.md` did not resolve the candidate-level joins.  The
+ordinary representable-coefficient reduction inside C has since been proved,
+but the actual product bimodule equivalence and sphere maps remain open.
 
 This audit follows the constructive attempts to replace every unavailable
 large artifact by compact public data.  It records what is now proved and the
 two theorems that still cannot be obtained from the repository or the cited
 literature.
 
-## Publicly discharged finite and geometric layers
+## Publicly discharged finite and algebraic layers
 
 The following statements now have executable public evidence:
 
 1. six affine sweeps generate all 252 collar factors and the pinned
    44-strand pure braid;
-2. the compact AR product-ribbon generator gives the registered reduced
-   `m2/m3` words and product framing ledger;
+2. the compact generator gives the registered reduced `m2/m3` words and a
+   product-framing-name ledger, but not the whole embedded framed link;
 3. the selected balanced cable has `p_y=44`, `p_z=271`, 88 oriented open
    endpoints and 227 closed circle factors;
 4. the local normalized weight-one R-matrix is the exact unreduced Burau
@@ -29,8 +29,10 @@ The following statements now have executable public evidence:
 6. the five-owner cellular boundary has a unimodular `m2/m3` minor and gives
    unique sphere lifts supported on `rxy,ryz,rzx`;
 7. a 32-step Nielsen program constructs the required integral sphere basis;
-8. Lean proves the Frobenius split/counit identities and that `Id+O(h)`
-   source/target corrections are invisible at cubic order.
+8. Lean proves the Frobenius split/counit identities, that `Id+O(h)`
+   source/target corrections are invisible at cubic order, and that a
+   representable coefficient `(T,T') -> Hom(BT,BT')` has ordinary coefficient
+   `HH0` equivalent to the regular trace.
 
 All corresponding mutation tests pass.  These facts do not depend on the
 historical full PD or TH certificate bytes.
@@ -44,7 +46,8 @@ The required arrow is a natural, grading-preserving map
 q\operatorname{Tr}(\mathcal C_{\mathrm{MWW}};M_R)
 \widehat\otimes_{q=1+h}\mathbb Q[[h]]
 \longrightarrow
-V^{\otimes88}(86)\widehat\otimes\mathbb Q[[h]]
+\operatorname{Hom}_{\mathbb Q[[h]]}
+\bigl((V^{\otimes86})_{86},(V^{\otimes88})_{86}\bigr)
 \]
 
 with all of the following properties:
@@ -62,9 +65,12 @@ BPW constructs quantum traces and quantum annular homology.  BHPW constructs
 strict Chen--Khovanov tangle functoriality and identifies quantum `HH0` of the
 full algebras with their Chern/weight-space targets under flatness
 hypotheses.  MWW identifies the one-handle skein lasagna module with ordinary
-`HH0` of a tangle subcategory.  None of these sources states or proves the
-displayed composite for the MWW coefficient bimodule, nor its compatibility
-with the MWW cable quotient.  The local R-matrix equality proves only item 4.
+`HH0` of a tangle subcategory.  None of these sources identifies the actual
+trace-73 coefficient bimodule with the representable model, nor proves its
+compatibility with the MWW cable quotient.  The local R-matrix equality proves
+only item 4.  Once a genuine two-sided product Hattori equivalence is supplied,
+the ordinary representable reduction is no longer a blocker; its
+quantum/completed lift still is.
 
 ## Missing theorem S: signed three-handle movie comparison
 
