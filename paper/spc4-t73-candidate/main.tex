@@ -15,7 +15,7 @@
   linkcolor=blue!55!black,
   citecolor=blue!55!black,
   urlcolor=blue!55!black,
-  pdftitle={A trace-73 Cappell--Shaneson homotopy sphere detected by skein lasagna modules},
+  pdftitle={A conditional trace-73 Cappell--Shaneson obstruction pending geometric identification},
   pdfauthor={Anonymous repository audit}
 }
 
@@ -44,13 +44,12 @@
 \newcommand{\Discharged}{\textnormal{\textsc{Discharged}}}
 \newcommand{\hash}[2]{\shortstack[l]{\texttt{#1}\\\texttt{#2}}}
 
-\title[A trace-73 Cappell--Shaneson sphere]
-{A trace-73 Cappell--Shaneson homotopy 4-sphere\\
-detected by skein lasagna modules}
+\title[A conditional trace-73 obstruction]
+{A conditional skein-lasagna obstruction for a trace-73\\
+Cappell--Shaneson candidate, pending geometric identification}
 
 \author{Anonymous repository audit}
-\address{Draft prepared from the public repository at commit
-\texttt{cb7f684}}
+\address{Draft prepared from the public trace-73 repository}
 \email{Author information to be supplied before submission}
 \date{September 2, 2026}
 
@@ -61,22 +60,24 @@ skein lasagna module, Khovanov homology, formal verification}
 \begin{document}
 
 \begin{abstract}
-We study the trace-73 Cappell--Shaneson manifold associated with the matrix
+We study a proposed trace-73 Cappell--Shaneson construction associated with
+the matrix
 \[
 A=\begin{pmatrix}0&269&1240\\0&41&189\\1&0&32\end{pmatrix}.
 \]
-A compact product-ribbon presentation and a quantum-trace comparison identify
-a public finite calculation with a rational $N=2$ skein lasagna functional.
-Its value is the nonzero cubic scalar $-59072$ in quantum degree $494$.  We
-prove that this functional descends through the complete Manolescu--Walker--
-Wedrich beta/psi and three-handle quotients.  An exact Artin--Magnus
-certificate and the pure-braid Andreadakis theorem give the required cubic
-order on every physical cabling.  The four-handle theorem and standard-sphere
-computation then obstruct a diffeomorphism to $S^4$.  The finite matrix, Burau, physical-copy and
-sphere-lift calculations are reproducible; a Lean development checks their
-algebraic use and the nonvanishing argument.  The Lean code does not formalize
-smooth four-manifold topology, whose inputs are discharged in the text by
-published handle and functoriality theorems.
+A public finite calculation produces the nonzero cubic Burau scalar $-59072$
+in the grading convention corresponding to quantum degree $494$.  An exact
+Artin--Magnus certificate and the pure-braid Andreadakis theorem establish a
+third-order property of the public braid.  We prove an abstract obstruction:
+if the compact word ledger is realized by the required framed Kirby
+presentation, if the Burau functional is identified with the specified
+rational $N=2$ Manolescu--Walker--Wedrich coefficient trace, and if the
+recorded owner lifts realize the actual three-handle maps, then the candidate
+is a homotopy sphere not diffeomorphic to $S^4$.  These three
+candidate-specific identifications remain open and are stated explicitly as
+hypotheses.  The Lean development checks the finite and quotient algebra; it
+does not construct the external geometry or formalize four-dimensional
+differential topology.
 \end{abstract}
 
 \maketitle
@@ -114,33 +115,36 @@ attractive route to conclusion (ii): a nonzero class in a nonzero bidegree
 cannot be carried by a diffeomorphism to the lasagna module of $S^4$, which
 is concentrated in bidegree zero.
 
-We construct such a class for the standard-form Cappell--Shaneson parameter
-$(41,189,73)$.  The proof replaces unavailable historical planar and sphere
-certificates by compact product-ribbon, point-push, owner-lift and Nielsen
-ledgers.  Quantum horizontal trace functoriality identifies the endpoint
-calculation with the MWW coefficient trace, while a complete core-counit
-closure argument proves the three-handle relations.
+We investigate whether the public finite class can be constructed for the
+standard-form Cappell--Shaneson parameter $(41,189,73)$.  Compact
+product-ribbon, point-push, owner-lift and Nielsen ledgers replace parts of
+the unavailable historical data, but they do not by themselves give an
+embedded framed Kirby equivalence, the candidate-specific quantum-trace map,
+or embedded attaching spheres with their actual MWW hemisphere maps.  The
+paper therefore separates the conditional theorem from these comparison
+gaps.
 
 \subsection*{Contributions}
 
 The main contributions are as follows.
 \begin{enumerate}
-\item We give a compact framed Aitchison--Rubinstein presentation of
-$\Sigma_A^0$ and a six-sweep construction of its point-push braid.
-\item We construct the completed coefficient-trace comparison with the BPW/
-BHPW weight-one endpoint representation and identify its local matrices with
-the public Burau blocks.
-\item We prove the complete beta/psi and signed three-handle cocone equations,
-using simultaneous physical-copy transport and decomposition-independent
-dotted-sphere evaluation.
+\item We give a compact word-level Aitchison--Rubinstein ledger and a
+six-sweep construction of the public point-push braid, while isolating the
+missing framed-embedding/Kirby equivalence.
+\item We identify the local checked R-matrix with the public Burau blocks and
+prove a full-entry third-order statement, while isolating the missing
+candidate-specific MWW-to-endpoint comparison and simultaneous transport.
+\item We give integral owner lifts, a Nielsen ledger, and the required
+core-counit algebra, while isolating the missing embedded sphere movies and
+their MWW coordinate maps.
 \item We provide executable ledgers, mutation tests and a kernel-checked Lean
 algebraic core.
 \end{enumerate}
 
-Historical files referenced by earlier versions of the project are not used
-as evidence.  Their hashes are retained only as provenance; every
-load-bearing candidate-specific construction used below is regenerated by the
-compact public scripts.
+Historical files referenced by earlier versions of the project are not
+publicly available.  Their hashes are retained as provenance.  The compact
+scripts regenerate useful projections of the proposed geometry but do not
+yet regenerate every load-bearing candidate-specific construction.
 
 \section{The trace-73 Cappell--Shaneson candidate}
 
@@ -223,57 +227,57 @@ send $v$ to an element of $G(S^4,494)$, hence to zero, contradicting
 injectivity.
 \end{proof}
 
-\begin{theorem}[Main theorem]\label{thm:joined}
-For the matrix in \eqref{eq:A}, the compact product-ribbon
-Cappell--Shaneson manifold $\Sigma_A^0$ satisfies
-\[
-\Sigma_A^0\simeq S^4
-\quad\text{and}\quad
-\Sigma_A^0\not\cong_{\mathrm{diff}}S^4.
-\]
-In particular, the smooth four-dimensional Poincare conjecture is false.
-\end{theorem}
+The Lean theorem corresponding to Theorem~\ref{thm:A} accepts the input
+structures \texttt{ExternalGeometry} and \texttt{CSExternalGeometry}; no
+inhabitants of these structures are constructed in the repository.  We name
+the candidate-specific assumptions needed to instantiate them.
 
-The Lean theorem corresponding to Theorem~\ref{thm:A} still accepts the input
-structures \texttt{ExternalGeometry} and \texttt{CSExternalGeometry}.
-The present paper discharges those inputs mathematically rather than claiming
-that smooth topology or skein lasagna modules are formalized in Lean.  The
-four parts of the discharge are:
-
-\begin{proposition}[Compact geometric presentation, P0]\label{hyp:P0}
+\begin{hypothesis}[Compact geometric presentation, P0]\label{hyp:P0}
 The public compact Aitchison--Rubinstein product-ribbon ledger is a labelled
 and framed handle presentation of $\Sigma_A^0$.  Its two product
 cancellations give the registered genus-two words, and its six-sweep tubular
 point-push induces the public 44- and 88-strand braids on all oriented cable
 states.
-\end{proposition}
+\end{hypothesis}
 
-\begin{theorem}[Coefficient comparison, C]\label{hyp:P1}
+\begin{hypothesis}[Coefficient comparison, C]\label{hyp:P1}
 The completed MWW coefficient quantum trace admits a grading-preserving
 natural map to the BPW/BHPW weight-one endpoint representation.  Under this
 map the point-push action is the public Burau representation, and the divided
 cubic row descends through every beta and psi relation.  Its selected value is
 $-59072$ up to an invertible convention unit, and hence is nonzero in quantum
 degree $494$.
-\end{theorem}
+\end{hypothesis}
 
-\begin{theorem}[Three-handle closure, S]\label{hyp:P2}
+\begin{hypothesis}[Three-handle closure, S]\label{hyp:P2}
 The three compact owner lifts admit a complete embedded framed sphere system.
 For each sphere the target row composed with the MWW undotted map is zero and
 with the once-dotted map is the source row.  Hence the divided detector
 descends through the complete three-handle coequalizer.
-\end{theorem}
+\end{hypothesis}
 
-\begin{proposition}[Final identifications, P3]\label{hyp:P3}
+\begin{hypothesis}[Candidate-level final identifications, P3]\label{hyp:P3}
 MWW's three-/four-handle formulas identify the final quotient with
 $\mathcal S^2_{0,(0,494),0}(\Sigma_A^0;\mathbb Q)$.  The corresponding
 summand for $S^4$ is zero, and diffeomorphisms induce grading-preserving
 equivalences.  Moreover, $\det(A-I)=1$ makes $\Sigma_A^0$ a homotopy sphere.
-\end{proposition}
+The general published theorems supporting these statements are not the
+candidate-specific identifications asserted here.
+\end{hypothesis}
+
+\begin{theorem}[Conditional trace-73 theorem]\label{thm:joined}
+Assume Hypotheses~\ref{hyp:P0}, \ref{hyp:P1}, \ref{hyp:P2}, and
+\ref{hyp:P3}.  Then the resulting trace-73 candidate satisfies
+\[
+\Sigma_A^0\simeq S^4
+\quad\text{and}\quad
+\Sigma_A^0\not\cong_{\mathrm{diff}}S^4.
+\]
+\end{theorem}
 
 \begin{proof}[Proof of Theorem~\ref{thm:joined}]
-Propositions~\ref{hyp:P0} and \ref{hyp:P3} and the Cappell--Shaneson
-criterion give the homotopy-sphere assertion.  Theorems~\ref{hyp:P1} and
+Hypotheses~\ref{hyp:P0} and \ref{hyp:P3} and the Cappell--Shaneson
+criterion give the homotopy-sphere assertion.  Hypotheses~\ref{hyp:P1} and
 \ref{hyp:P2} instantiate the maps and rows in Theorem~\ref{thm:A}; its
 selected class is nonzero in quantum degree $494$.  MWW's four-handle
 isomorphism preserves this degree, while the same degree of the standard
@@ -349,11 +353,9 @@ up to the harmless global convention unit normalized in that theorem.
 
 \begin{proof}
 The script defines vector and covector operations in an 88-dimensional
-truncated polynomial representation.  Section 7 constructs the required MWW
-coefficient trace and its BPW/BHPW endpoint functor, proves that each local
-braid block is the displayed Burau block, and proves descent through the
-complete beta/psi quotient.  Applying that comparison to the selected Hattori
-class identifies the two cubic evaluations.
+truncated polynomial representation.  The displayed MWW equality is exactly
+the additional content of Hypothesis~\ref{hyp:P1}; it does not follow from
+the finite script or from the local Burau-block calculation.
 \end{proof}
 
 Thus the finite recomputation and the categorical comparison have distinct
@@ -393,7 +395,8 @@ relations, and transports the resulting nonzero class through the
 four-handle isomorphism.
 
 The formal algebra correctly captures the last sentence.  The next sections
-construct the geometric and functorial inputs used by that algebra.
+record partial constructions and the exact candidate-specific inputs still
+needed by that algebra.
 
 \section{Compact product-ribbon presentation}
 
@@ -417,18 +420,20 @@ has
 |m_3|&=1460, & [m_3]_{(y,z)}&=(189,1271).
 \end{aligned}
 \]
-The word $r_{zx}=[z,z]$ contracts through two product bigons to a split
-zero-framed unknot.  Thus the compact ledger is a framed genus-two handle
-presentation of $\Sigma_A^0$; no blackboard framing is used.
+The word $r_{zx}=[z,z]$ formally contracts through two product bigons.  If
+this word projection lifts to the claimed product-annulus embedding, it gives
+the desired framed genus-two presentation of $\Sigma_A^0$.  The current
+generator does not output an embedded framed link or a labelled ambient
+isotopy/Kirby-move ledger, so this lift remains Hypothesis~\ref{hyp:P0}.
 
 The point-push collar is generated by six affine sweeps, each with 42 pure
 crossing factors.  The generator regenerates all 252 public rows and the
 11,340-letter braid.  Its return wicket closes a framed loop of the
 $r_{xy}$ product connector through the complement of the $m_2$ passages.
-Isotopy extension gives one tubular ambient motion $\Phi_t$.  Applying
-$\Phi_t$ simultaneously to every parallel copy defines its functorial action
-on every MWW cable state; the base balanced state is the public 88-strand
-cabling.
+The rows alone do not construct a tubular ambient motion in the actual
+handlebody.  Such a motion $\Phi_t$, together with its simultaneous action on
+all parallel copies, must be extracted from a solution of P0 before the
+public 88-strand cabling can be identified with the candidate's MWW state.
 
 \section{The coefficient-trace comparison}
 
@@ -436,9 +441,9 @@ The compact words give
 \[
 p_y=42+2=44,\qquad p_z=269+2=271.
 \]
-Product subrectangles pair the 44 $y$ wickets with 44 $z$ passages; the
-remaining 227 passages close into ordered product circles.  Hence the cut
-coefficient has the two-sided Hattori form
+The counts suggest product subrectangles pairing the 44 $y$ wickets with 44
+$z$ passages and 227 remaining circles.  The desired cut coefficient would
+then have the two-sided Hattori form
 \[
 M_R(T,T')\cong
 \operatorname{Hom}(B_{act}T,B_{act}T')\{-44\}
@@ -466,10 +471,11 @@ On the weight-one subspace, the normalized checked R-matrix is
 \begin{pmatrix}1-q^{-2}&q^{-1}\\q^{-1}&0\end{pmatrix}.
 \]
 After conjugation by $\operatorname{diag}(1,q^{-1})$ and setting
-$t=q^{-2}$, this becomes the public Burau block.  The selected Hattori class
-maps to the cup vector and 227 $X$ labels; the core counits evaluate all
-labels to one.  Cup and cap corrections start in positive $h$ order and do
-not alter a cubic-leading pairing.
+$t=q^{-2}$, this becomes the public Burau block.  This is a valid local
+comparison.  It does not construct a map from the candidate's MWW coefficient
+trace to the specified qHH0/Chern summand, nor the single coordinate change
+$P$ that must transport the actual operator, source vector, and covector
+simultaneously.
 
 The compact word has zero writhe and identity permutation.  Direct evaluation
 of all 88 basis vectors proves
@@ -487,20 +493,20 @@ See \cite[Theorem 6.2]{Darne2021}.
 Every physical cabling is a group homomorphism and hence preserves the lower
 central series.  Since each local pure generator acts as $I+O(h)$, every
 statewise cabling satisfies $\rho_h(W_s)-I=O(h^3)$.
-The physical point-push $\Phi_t$ acts on complete cablings, so BPW's tangle
-action gives the statewise equations $Q_eW_s=W_tQ_e$ for every beta and psi
-edge.  Simultaneous transport of the operator, vector and row preserves their
-matrix coefficient exactly.  Ownerwise Reynolds normalization handles the
-finite copy orbits; pure residuals have identity degree-zero term.  Finally,
+If the missing candidate-specific map and simultaneous transport exist,
+BPW's tangle action gives statewise equations $Q_eW_s=W_tQ_e$ for the beta
+and psi edges.  General functoriality transports an identified action; it
+does not construct this missing arrow.  Finally,
 the core identities
 \[
 (\epsilon\otimes\epsilon)\Delta(1)=0,
 \qquad
 (\epsilon\otimes\epsilon)\Delta(X)=1
 \]
-give the undotted-zero and dotted-identity psi equations.  Therefore the cubic
-row descends through the complete MWW beta/psi quotient, with selected value
-\eqref{eq:burau} and absolute quantum degree 494.
+give the required Frobenius equations after the actual maps have been bound.
+Thus the public results prove the order-three and local algebraic parts of C,
+while the coefficient-trace comparison and complete beta/psi descent remain
+Hypothesis~\ref{hyp:P1}.
 
 \section{Three-handle sphere closure}
 
@@ -516,35 +522,38 @@ three owners.  The unique lifts of the columns in \eqref{eq:spherecols} are
 (0,0,-189,1241,0),\quad
 (0,0,41,-269,1).
 \]
-A 32-step Nielsen ledger realizes their unimodular matrix by permutations,
-orientation reversals and sphere slides of the standard complete system in
-$\#^3(S^1\times S^2)$.  Thus the resulting spheres are embedded, framed and
-pairwise disjoint.  Horvat--Jab\l{}onowski's Theorem 5.3 identifies them with
-the actual attaching system up to the same moves
-\cite{HorvatJablonowski2025}.
+A 32-step Nielsen ledger realizes their unimodular matrix algebraically by
+permutations, orientation reversals and formal sphere slides.  This does not
+construct embedded, framed, pairwise-disjoint spheres in the actual boundary.
+Horvat--Jab\l{}onowski's Theorem 5.3 additionally requires the candidate
+boundary, handle-count, irreducibility and spherical-basis hypotheses
+\cite{HorvatJablonowski2025}; these have not been instantiated from a public
+embedded presentation.
 
-Let $\Sigma_j$ be one chosen sphere with small disk removed.  MWW's raw
+Under Hypothesis~\ref{hyp:P2}, let $\Sigma_j$ be one chosen sphere with small
+disk removed.  MWW's raw
 three-handle maps attach $\Sigma_j$ with zero or one dot and then the signed
 parallel core disks specified by its owner lift.  The target detector row
 closes the new cable components by those same core counits.  Hence the
-complete composite foam is the old detector surface disjoint union an
-undotted or once-dotted sphere.  Strict functoriality makes this description
-independent of the chosen signed slide decomposition, and
+complete composite foam should be the old detector surface disjoint union an
+undotted or once-dotted sphere.  This conclusion also requires the actual
+pivotal adapters, foam signs, normal-level choices and qHH0 coordinate maps;
+strict functoriality does not select them.  Once they are supplied,
 \[
 \operatorname{ev}(S^2)=0,\qquad
 \operatorname{ev}(\dot S^2)=1.
 \]
-Physical-copy cross terms form transitive beta orbits and are handled by the
-same simultaneous transport and Reynolds normalization as above.  Therefore
-all six MWW sphere relations lie in the kernel of the cubic row, which
-descends through the complete three-handle coequalizer.
+the displayed equations give the desired core-counit algebra.  The stable
+movie generator explicitly records the actual MWW transport as open.
+Therefore the claim that all six candidate-specific sphere relations lie in
+the kernel remains Hypothesis~\ref{hyp:P2}.
 
 \section{Final identifications}
 
 MWW Theorem 3.10 identifies the iterated quotient with the module after the
 three-handles, and Proposition 3.4 says the final four-handle induces a
-bidegree-$(0,0)$ isomorphism \cite{ManolescuWalkerWedrich2023}.  Thus the
-selected class remains nonzero in
+bidegree-$(0,0)$ isomorphism \cite{ManolescuWalkerWedrich2023}.  If P1 and
+P2 have produced the specified selected class, it remains nonzero in
 \[
 \mathcal S^2_{0,(0,494),0}(\Sigma_A^0;\Q).
 \]
@@ -552,9 +561,10 @@ MWW Corollary 3.5 gives $\mathcal S^2_0(S^4)\cong\Z$, concentrated in
 bidegree $(0,0)$, so the corresponding rational degree-494 summand vanishes.
 The intrinsic definition transports lasagna fillings under diffeomorphisms
 and gives grading-preserving equivalences.  Finally, Iwaki's Proposition 2.1
-and \eqref{eq:determinants} prove that the compact manifold $\Sigma_A^0$ is a
-homotopy sphere \cite{Iwaki2024}.  This completes the proof of
-Theorem~\ref{thm:joined}.
+and \eqref{eq:determinants} prove that the genuine Cappell--Shaneson manifold
+$\Sigma_A^0$ is a homotopy sphere \cite{Iwaki2024}.  Applying these general
+results to the proposed compact presentation and quotient requires P0--P3;
+the general results do not close those joins.
 
 \section{Formalization boundary}
 
@@ -583,22 +593,21 @@ The geometric interfaces contain, among others, the predicates
 \texttt{IsActualHH0}, \quad \texttt{IsActualSphereMap},\\
 \texttt{IsActualMWWCoequalizer}, \quad \texttt{IsActualFourHandle}.
 \end{center}
-These are
-predicate fields of the ambient universe rather than definitions of smooth
-topology.  The present paper supplies their mathematical instances through
-the compact presentation, Theorems C and S, and the published MWW/Iwaki
-results.  It would nevertheless be incorrect to call the Lean development a
-formalization of four-dimensional differential topology.
+These are predicate fields of the ambient universe rather than definitions
+of smooth topology.  The present paper does not supply their mathematical
+instances: P0, C, and S state missing candidate-level data.  It would be
+incorrect to call the Lean development a formalization of four-dimensional
+differential topology or an unconditional proof.
 
 The audit reports that the printed theorem dependencies use only standard
 logical quotient principles and classical choice, with no \texttt{sorryAx}.
 This is a statement about kernel checking of the algebraic core.  The truth of
-the geometric inputs is established in Sections 5--8 of the paper, not by the
-Lean kernel.
+the geometric inputs is neither established by the Lean kernel nor by the
+partial constructions in Sections 5--8.
 
 \section{Status table and reproducibility ledger}
 
-The table records the final allocation of every formerly external layer.
+The table records the current allocation of every external layer.
 \Discharged\ means that a public generator or primary theorem and an
 independently checkable argument are both supplied.
 
@@ -608,21 +617,20 @@ independently checkable argument are both supplied.
 \toprule
 Item & Verdict & Reason \\
 \midrule
-P0 & \Discharged & Compact AR product-ribbon and point-push generators replace the unavailable historical PD. \\
-P1/C & \Discharged & Exact Artin--Magnus and Andreadakis certificates give order three on every cabling. \\
-P2/E7 & \Discharged & The owner lifts and Nielsen ledger construct a complete embedded sphere basis; HJ supplies replacement. \\
-P2/E10/S & \Discharged & Core-counit closure proves all six MWW sphere relations on the complete source. \\
-P3/E11 & \Discharged & MWW Proposition 3.4 gives the grading-preserving four-handle isomorphism. \\
-P3/E12 & \Discharged & MWW Corollary 3.5 makes the rational quantum-494 summand of $S^4$ zero. \\
-P3/E13 & \Discharged & The compact presentation is $\Sigma_A^0$ and Iwaki's determinant criterion applies. \\
+P0 & \Open & Word and braid ledgers do not construct the embedded framed Kirby equivalence. \\
+P1/C & \Open & Cubic order is proved, but the actual product motion, simultaneous transport and MWW-to-qHH0 comparison are missing. \\
+P2/E7 & \Open & Owner homology lifts do not construct the required embedded disjoint spheres or verify the HJ hypotheses. \\
+P2/E10/S & \Open & Core-counit algebra is proved conditionally; the actual MWW hemisphere maps and coordinate transports are missing. \\
+P3/E11 & \Partial & MWW Proposition 3.4 is general; its candidate-level input depends on P1/P2. \\
+P3/E12 & \Partial & The standard $S^4$ support is known, conditional on matching the grading and invariant. \\
+P3/E13 & \Partial & Iwaki's criterion applies to $\Sigma_A^0$, conditional on P0 identifying the presentation. \\
 \bottomrule
 \end{tabularx}
 \end{center}
 
-The historical availability script still reports the retired large files as
-absent.  They are not used by the proof.  The load-bearing replacements are
-the compact generators and theorem derivations listed in the repository
-materials index.
+The historical availability script reports the large files as absent.  The
+compact generators provide useful partial replacements but not the embedded
+geometry and functorial maps listed in the table.
 
 \section{Related work}
 
@@ -637,9 +645,10 @@ not a singularity or exoticness theorem.
 Manolescu--Neithalath and Manolescu--Walker--Wedrich provide the relevant
 handle calculus for skein lasagna modules
 \cite{ManolescuNeithalath2020,ManolescuWalkerWedrich2023}.  BPW quantum trace
-functoriality and the strict BHPW tangle theory supply the comparison with the
-weight-one endpoint representation
-\cite{BeliakovaPutyraWehrli2019,BeliakovaHogancampPutyraWehrli2023}.
+functoriality and the strict BHPW tangle theory provide general comparison
+tools \cite{BeliakovaPutyraWehrli2019,
+BeliakovaHogancampPutyraWehrli2023}; the candidate-specific comparison with
+the public endpoint coordinates remains open.
 
 Ren and Willis use Khovanov-theoretic skein lasagna methods to distinguish
 other exotic four-manifolds \cite{RenWillis2024}.  Their computations are
@@ -649,47 +658,47 @@ theorem.
 Horvat--Jab\l{}onowski's recent work gives a useful geometric criterion for
 recognizing three-handle attaching systems \cite{HorvatJablonowski2025}.
 It reduces the replacement problem to boundary, embeddedness, disjointness
-and homology-basis checks; the compact owner-lift and Nielsen ledgers establish
-those checks here.
+and homology-basis checks.  The compact owner-lift and Nielsen ledgers
+establish only the coordinate part of those checks.
 
 \section{Reproducibility and review}
 
-The proof can be replayed in the following order.
+The proved finite and conditional layers can be replayed in the following order.
 \begin{enumerate}
 \item Generate the compact Kirby, point-push, Hattori and owner-lift ledgers.
 \item Verify the full 88-dimensional order-three matrix statement and its
 mutation controls.
 \item Compile the Lean cubic, transported-pairing, Frobenius and quotient
 lemmas.
-\item Check Theorems C and S against the cited BPW/BHPW/MWW functoriality and
-handle formulas.
+\item Audit Hypotheses C and S against the cited BPW/BHPW/MWW functoriality
+and handle formulas.
 \item Compile the paper and compare the field-by-field allocation with
 \texttt{T73External.lean}.
 \end{enumerate}
 
-The historical large artifacts are deliberately excluded from this replay.
-Independent review should concentrate on the compact product-ribbon isotopy,
-the use of BPW's cabling functor in Theorem C, and the complete-sphere closure
-in Theorem S.
+The historical large artifacts are unavailable for this replay.
+Independent review should concentrate on the missing compact product-ribbon
+isotopy, the proposed BPW cabling comparison in Hypothesis C, and the
+complete-sphere closure in Hypothesis S.
 
 \section{Conclusion}
 
-The compact product-ribbon presentation identifies the manifold and its
-framings without the unavailable historical planar diagram.  Quantum trace
-functoriality identifies the public Burau calculation with a genuine MWW
-coefficient functional, and complete core-counit closure carries it through
-the three-handles.  Its nonzero quantum-494 class contradicts the support of
-the standard-sphere module under any hypothetical diffeomorphism.  Together
-with the Cappell--Shaneson determinant criterion, this proves
-Theorem~\ref{thm:joined}.
+The finite calculation and exact Magnus certificate provide a reproducible
+cubic-order signal for the public braid, and the Lean development verifies
+the abstract nonvanishing chain.  A counterexample conclusion would follow
+from Theorem~\ref{thm:joined}, but P0, C, and S remain open: the present data
+do not identify an embedded framed Kirby presentation, a genuine MWW
+coefficient functional, or the actual three-handle sphere maps.  The paper
+therefore establishes a conditional theorem and a precise closure programme,
+not a disproof of the smooth four-dimensional Poincare conjecture.
 
 \appendix
 
 \section{Retired historical objects}\label{app:hashes}
 
 The following table records historical artifacts cited by earlier project
-notes.  They are unavailable and are not used in the compact proof.  Their
-digests are retained solely for provenance.
+notes.  They are unavailable; the compact partial constructions do not yet
+replace every load-bearing role.  Their digests are retained for provenance.
 
 \begin{center}
 \scriptsize
@@ -715,8 +724,10 @@ P2 & \texttt{THXY\_FULL\_MACRO\_P3FREE\_HJ\_CERT.json} & \hash{EABF67C0D1AE309F0
 \end{center}
 
 The same values and candidate paths are machine-readable in
-\path{audit/geometric_evidence_manifest.json}.  None of these objects is
-required by Theorem~\ref{thm:joined}.
+\path{audit/geometric_evidence_manifest.json}.  These objects are not
+included.  Any proof of Hypotheses P0--P2 must either recover them or provide
+public constructions that genuinely replace their geometric and functorial
+roles.
 
 \section{Correspondence with the Lean fields}
 
@@ -738,8 +749,9 @@ Lean field & Mathematical obligation \\
 \end{tabularx}
 \end{center}
 
-The mathematical constructions in Sections 5--8 discharge exactly these
-fields.  The Lean theorem consumes no stronger statement.
+These are exactly the candidate-level obligations isolated in Sections 5--8.
+They have not been discharged.  The Lean theorem consumes no stronger
+statement, but it still requires them as structure fields.
 
 \bibliographystyle{amsplain}
 \bibliography{references}

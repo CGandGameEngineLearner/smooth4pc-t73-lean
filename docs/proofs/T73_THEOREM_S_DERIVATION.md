@@ -1,6 +1,12 @@
 # Theorem S: decomposition-independent sphere closure
 
-**Status:** `PROVED FROM THEOREM C -- no independent signed-movie premise`
+**Status:** `OPEN -- PROPOSED CONSEQUENCE OF C PLUS CANDIDATE SPHERE MAPS`
+
+> Correction.  A unimodular owner lattice and a formal Nielsen program do not
+> construct embedded disjoint framed spheres in the actual two-handlebody
+> boundary.  The whole-surface argument below also presupposes the actual MWW
+> hemisphere maps, pivotal adapters, foam signs and simultaneous endpoint
+> transports.  General strict functoriality does not create these maps.
 
 ## Statement
 
@@ -84,4 +90,3 @@ The only retained hypothesis is Theorem C's statewise cable coherence.  It is
 needed because the target row must be defined on the complete beta/psi
 quotient before the core-counit closure can be applied.  Once C is complete,
 S follows without a further candidate-specific scalar or matrix computation.
-

@@ -1,6 +1,11 @@
 # T73 counterexample candidate materials index
 
-**Status:** `COMPACT C/S CLOSURE PROVED; HISTORICAL LARGE INPUTS RETIRED`
+**Status:** `CONDITIONAL PROJECT; P0/C/S REMAIN OPEN`
+
+> The compact artifacts retain valid finite results but do not replace every
+> geometric and functorial role of the unavailable large inputs.  The
+> controlling correction is
+> `docs/research/T73_CORRECTION_AND_CLOSURE_NOTE_2026-09-02.md`.
 
 This file is the entry point. The mathematical derivations are now colocated
 in this Git proof directory. Very large finite certificates remain outside the

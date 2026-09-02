@@ -1,6 +1,14 @@
 # Theorem C: coefficient-trace comparison derivation
 
-**Status:** `PROVED -- public compact presentation and published functoriality`
+**Status:** `OPEN -- SUPERSEDED BY THE 2026-09-02 ADVERSARIAL AUDIT`
+
+> Correction.  The construction below is a proposed route, not a proof.  Step
+> 2 assumes the candidate-specific product Hattori equivalence and its
+> two-sided action naturality.  The public compact count does not determine
+> `B_act` or the simultaneous coordinate transport of `W,u,ell`.  Steps 3--4
+> cite general functors but do not construct a map from this coefficient
+> bimodule to the specified qHH0/Chern summand.  See
+> `docs/research/T73_CORRECTION_AND_CLOSURE_NOTE_2026-09-02.md`.
 
 ## Statement
 
@@ -170,6 +178,7 @@ motion begins in order three under an `I+O(h)` endpoint representation.  This
 supplies the uniform divisibility required above at every cable level, not
 only in the base 88-dimensional computation.
 
-This completes Theorem C.  Its construction is a composite of published
-functors and the public compact Hattori/cabling data; it introduces no new
-geometric hypothesis.
+If the missing product-bimodule equivalence, simultaneous transport and
+coefficient-trace comparison are constructed, the remaining local matrix and
+cubic-order calculations recorded here can be used in a proof of Theorem C.
+At present they do not complete it.

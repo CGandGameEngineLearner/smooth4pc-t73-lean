@@ -1,6 +1,10 @@
 # ExternalGeometry field-by-field discharge
 
-**Status:** `PROVED MATHEMATICALLY -- Lean remains a conditional algebraic core`
+**Status:** `RETRACTED -- EXTERNAL GEOMETRY STRUCTURES NOT INSTANTIATED`
+
+> This file records a proposed field allocation.  It must not be cited as a
+> discharge: P0, the MWW coefficient comparison, and the actual three-handle
+> maps remain open after adversarial review.
 
 This note instantiates every mathematical field used by
 `Smooth4PC/T73External.lean` for the compact trace-73 presentation.  It does

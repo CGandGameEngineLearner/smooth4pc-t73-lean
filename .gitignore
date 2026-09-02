@@ -7,4 +7,12 @@ build/
 __pycache__/
 .pytest_cache/
 audit_tmp/
-
+tmp/
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.toc
+texput.log
+paper/spc4-t73-candidate/main.pdf

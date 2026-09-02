@@ -1,6 +1,10 @@
 # Compact Aitchison--Rubinstein presentation
 
-**Status:** `PROVED P0 -- DETECTOR BINDING COMPLETED IN THEOREM C`
+**Status:** `PARTIAL -- WORD/FRAMING-NAME LEDGER; EMBEDDED KIRBY EQUIVALENCE OPEN`
+
+> The compact generator proves word-level and product-normal bookkeeping.  It
+> does not output an embedded framed link or a labelled Kirby/isotopy ledger,
+> so it does not discharge P0.
 
 This note constructs a public replacement for the unavailable historical
 2,126,291-crossing planar diagram.  It defines the candidate directly from
