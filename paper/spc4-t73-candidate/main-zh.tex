@@ -252,7 +252,7 @@ Burau 计算给出整数；定理~\ref{hyp:P1} 与第~\ref{sec:c-comparison} 节
 故有限重算与范畴比较各司其职：前者给出整数，后者使之成为四维流形不变量。
 
 \input{sec-finite-details-zh}
-\section{Lasagna 模与预期阻碍}
+\section{Lasagna 模与比较框架}
 
 我们仅回顾比较所需特征。对光滑紧定向四维流形 $W$ 与 framed link $L\subset\partial W$，skein lasagna 模 $\SN(W;L)$ 由 $W$ 中 decorated surface 生成，模来自 $\KhR_N$ cobordism 映射的局部关系 \cite{MorrisonWalkerWedrich2019,ManolescuWalkerWedrich2023}。
 
@@ -268,7 +268,7 @@ W_1\subset W_2\subset W_3\subset W_4,
 \item MWW 推论 3.5 给出 $\SN(S^4)\cong\Z$，集中在 bidegree $(0,0)$。
 \end{itemize}
 
-在 $N=2$ 时，bidegree $(0,494)$ 中的非零类因此阻碍与 $S^4$ 的微分同胚。预期证明在一柄阶段构造泛函，证明其消去二柄与三柄关系，并通过四柄同构运输所得非零类。
+在 $N=2$ 时，bidegree $(0,494)$ 中的非零类因此会阻碍与 $S^4$ 的微分同胚。预期证明在一柄阶段构造泛函，证明其消去二柄与三柄关系，并通过四柄同构运输所得非零类。
 
 形式代数正确捕获最后一句。下文证明 P0、C、S 所需几何识别。
 \section{Johnson 乘积-ribbon 表述与 P0}\label{sec:johnson-presentation}
@@ -864,7 +864,7 @@ Lean 字段 & 数学义务 \\
 \midrule
 \texttt{x0}, \texttt{ell0}, \texttt{ell0\_x0} & P1 比较与所选 genuine MWW 类。 \\
 \texttt{q01}, \texttt{ell1\_comp\_q01} & 完备二柄 beta/psi 商与下降。 \\
-\texttt{q12}, \texttt{ell2\_comp\_q12} & S 的反向 belt 球面、MWW 半球映射与完备 coequalizer。非未用的 E7「$B$ 已固定」断言。 \\
+\texttt{q12}, \texttt{ell2\_comp\_q12} & S 的反向 belt 球面、MWW 半球映射与完备 coequalizer。非 E7「$B$ 已固定」断言。 \\
 \texttt{transport}, \texttt{fourIso} & Johnson 替换 $X_J$ 的 E11，非 $\Sigma_A^0$。 \\
 \texttt{s4DegreeZero} & 计算的 \texttt{EmptyKhQ}(494)=0 与来自 \texttt{certify\_t73\_e12\_s4.py} 的 PL $S^4$ Euler 数据。同构 $G(B^4)\simeq G(S^4)$ 与 $\mathcal S^2_0(S^4)\cong\mathbb Z$ 为 MWW 命题~3.4 与推论~3.5，引用而非形式化。仅空 link Lean 实例。 \\
 \texttt{diffeomorphismEquiv} & lasagna 模的分次微分同胚不变性。 \\
@@ -873,7 +873,8 @@ Lean 字段 & 数学义务 \\
 \end{tabularx}
 \end{center}
 
-C3 与 P2/E7 为 Unused 而非 Open。Johnson 候选的 Lean \texttt{ExternalGeometry} 不可居。\texttt{T73S4Inhabitant.lean} 中的空 link 控制仅打包 \texttt{EmptyKhQ}。Lean 定理不消费更强陈述，并将外部拓扑记录为结构字段而非内部形式化。
+第~\ref{sec:johnson-presentation}--\ref{sec:final-identifications} 节已解除的几何输入仍待组装为 Lean 中 \texttt{ExternalGeometry} 的单一实例；对 Johnson 候选，该组装为 \Open。
+\texttt{T73S4Inhabitant.lean} 中的空 link 控制仅打包 \texttt{EmptyKhQ}。Lean 定理不消费更强陈述，并将外部拓扑记录为结构字段而非内部形式化。
 
 \bibliographystyle{amsplain}
 \bibliography{references}

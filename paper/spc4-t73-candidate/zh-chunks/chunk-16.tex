@@ -9,7 +9,7 @@ Lean field & Mathematical obligation \\
 \midrule
 \texttt{x0}, \texttt{ell0}, \texttt{ell0\_x0} & P1 comparison and the selected genuine MWW class. \\
 \texttt{q01}, \texttt{ell1\_comp\_q01} & Complete two-handle beta/psi quotient and descent. \\
-\texttt{q12}, \texttt{ell2\_comp\_q12} & Reversed belt spheres of S, MWW hemisphere maps, and complete coequalizer.  Not the unused E7 ``$B$ is fixed'' claim. \\
+\texttt{q12}, \texttt{ell2\_comp\_q12} & Reversed belt spheres of S, MWW hemisphere maps, and complete coequalizer.  Not the E7 ``$B$ is fixed'' claim. \\
 \texttt{transport}, \texttt{fourIso} & E11 for the Johnson replacement $X_J$, not $\Sigma_A^0$. \\
 \texttt{s4DegreeZero} & Computed \texttt{EmptyKhQ}(494)=0 and PL $S^4$ Euler data from \texttt{certify\_t73\_e12\_s4.py}.  The isomorphisms $G(B^4)\simeq G(S^4)$ and $\mathcal S^2_0(S^4)\cong\mathbb Z$ are MWW Proposition~3.4 and Corollary~3.5, cited not formalized.  Empty-link Lean inhabitant only. \\
 \texttt{diffeomorphismEquiv} & Graded diffeomorphism invariance of lasagna modules. \\
@@ -18,11 +18,13 @@ Lean field & Mathematical obligation \\
 \end{tabularx}
 \end{center}
 
-C3 and P2/E7 are Unused rather than Open.  Lean
-\texttt{ExternalGeometry} is uninhabited for the Johnson candidate.  The empty-link
-control in \texttt{T73S4Inhabitant.lean} packages only \texttt{EmptyKhQ}.  The Lean
-theorem consumes no stronger statement, and it records the
-external topology as structure fields rather than formalizing it internally.
+The geometric inputs discharged in Sections~\ref{sec:johnson-presentation}--\ref{sec:final-identifications}
+remain to be assembled into a single Lean inhabitant of
+\texttt{ExternalGeometry}; that assembly is \Open\ for the Johnson candidate.
+The empty-link control in \texttt{T73S4Inhabitant.lean} packages only
+\texttt{EmptyKhQ}.  The Lean theorem consumes no stronger statement, and it
+records the external topology as structure fields rather than formalizing it
+internally.
 
 \bibliographystyle{amsplain}
 \bibliography{references}
