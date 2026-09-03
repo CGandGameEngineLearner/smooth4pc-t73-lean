@@ -1,11 +1,11 @@
 # Reproducible P0 reconstruction pipeline
 
-This document records the strict P0 reconstruction protocol.  The current
-Johnson replacement passes every gate:
+This document records the strict P0 reconstruction protocol.  Geometric P0
+remains Open after P0a:
 
 ```text
-python3 scripts/certify_t73_p0_johnson.py --check
-P0_STATUS=PROVED_FOR_EXPLICIT_JOHNSON_REPLACEMENT_PRESENTATION
+python3 scripts/certify_t73_p0_johnson.py --check --skip-geometric-braid
+P0_STATUS=OPEN
 ```
 
 The older symbolic witness remains a rejected control; no identity with the

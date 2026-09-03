@@ -1,12 +1,16 @@
 {
+  "C1_status": "OPEN",
+  "C2_status": "OPEN",
+  "C_status": "OPEN",
   "coefficient_bimodule_equivalence": {
-    "F": "the framed west-to-east tangle formed by the 44 product rectangles",
-    "dual_boundary": "the opposite annulus boundary is the pivotal dual F^vee and cancels F under tangle duality",
-    "left_action_square": "gluing f:S->T before the source link equals precomposition by F(f) after the fixed product isotopy",
-    "ordinary_representable_reduction": "Smooth4PC/RepresentableCoefficient.lean",
-    "proof_rule": "isotopy invariance, pivotal tangle duality, disjoint-union Kunneth over Q, and associativity of gluing",
-    "right_action_square": "gluing g:T'->U after the source link equals postcomposition by F(g) after the fixed product isotopy",
+    "F": "OPEN: no framed west-to-east tangle of 44 product rectangles",
+    "dual_boundary": "OPEN: no dual annulus from an actual cut-link isotopy",
+    "left_action_square": "OPEN: paper diagram (17) left square is not certified",
+    "ordinary_representable_reduction": "Smooth4PC/RepresentableCoefficient.lean checks the abstract quotient after the maps exist",
+    "proof_rule": "isotopy invariance, pivotal tangle duality, disjoint-union Kunneth over Q, and associativity of gluing, after the isotopy exists",
+    "right_action_square": "OPEN: paper diagram (17) right square is not certified",
     "source": "M_R(T,T')=KhR_2(R union T' union mirror(T)) with the MWW shift",
+    "status": "OPEN: MWW Theorem 4.7 is not instantiated; counts 44 and 227 are not the map",
     "target": "Hom(F T,F T'){-44} tensor A^tensor227"
   },
   "divided_detector": {
@@ -23,21 +27,19 @@
     "cap_constant_terms": "e_87^* plus-or-minus e_2^*",
     "cup_constant_terms": "e_0 plus-or-minus e_5",
     "label_order": "P0 collar order doubled by the public cabling rule",
+    "mixed_index_variants_are_not_the_frozen_cubic": true,
     "public_normalization": {
-      "cap2_sign": -1,
-      "cup5_sign": -1,
-      "delta3": -59072
+      "delta3": 2624,
+      "source": "T73_DELTA3_PUBLIC_RECEIPT.json"
     },
     "sign_robust_cubic_values": {
-      "cup5_+1_cap2_+1": -53824,
-      "cup5_+1_cap2_-1": -53760,
-      "cup5_-1_cap2_+1": -59008,
-      "cup5_-1_cap2_-1": -59072
+      "historical_mixed_index_note": "cup/cap variants at indices 0,5 and 87,2 mixed two endpoint tables; they are not D3=2624",
+      "status": "NOT_USED_AS_FROZEN_CUBIC"
     }
   },
-  "p0_witness_sha256": "02CEDCE915EBFC2B3C0A88D10BEEB050F0D7DD828F6F11DC849DA83ED2BC05D2",
+  "p0_witness_sha256": "FF653CE41D102D1770E967417FDF8D4C5857E253C275BBB9381887E29D9BAC96",
   "product_pairing": {
-    "geometric_realization": "take the displayed one-edge subrectangles in the negative/positive parallel-copy product annuli from the P0 normal field",
+    "geometric_realization": "OPEN: pair_y_to_next_z is a cyclic-word pairing. It is not an isotopy of the actual cut link and does not exhibit 44 product rectangles in P0c annuli.",
     "m_2": {
       "disjointness_rule": "each pairing interval is one cyclic word edge and distinct pairs use distinct endpoints",
       "pair_count": 42,
@@ -691,5 +693,5 @@
     "through_degree_firewall": "a balanced pair on every positive-gate owner adds at least four y endpoints/two cups, so the action-closed undotted image has through degree <=84; r_zx is the unique zero-gate owner",
     "whole_source": true
   },
-  "witness_sha256": "6B574D3E062EE5D41D5D0F74C5C85CFC4BBFA773D335F00DF8107232EA1E1573"
+  "witness_sha256": "94F4D5DE9ED2342B32EDE3FEEA69F3EBE9BFDC5D5FD4432A9BD166FCBD46BC4C"
 }

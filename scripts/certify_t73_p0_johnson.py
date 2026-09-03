@@ -40,7 +40,7 @@ def generate(run_geometric_braid: bool = True):
     sweeps = load("derive_t73_johnson_six_sweeps").generate(collar)
     braid = load("generate_t73_johnson_geometric_braid").generate() if run_geometric_braid else None
     checks = {
-        "johnson_ar_affine_bridge": bridge["bridge_status"] == "PASS",
+        "johnson_ar_affine_bridge": bridge["p0a_status"] == "PASS" and bridge["heegaard_handlebody_complex"] == "PASS",
         "matrix_factorization": factor["matrix_product_status"] == "PASS",
         "gap_free_basis": side["gap_is_bijective"],
         "exact_compact_m2": side["exact_compact_match"],
@@ -49,10 +49,10 @@ def generate(run_geometric_braid: bool = True):
         "johnson_square_movie": square_movie["spine_pl_movie_status"] == "PASS",
         "relative_fixed_ball": relative["chosen_alpha_representative_local_identity_status"] == "PASS",
         "two_cancellations": cancellation["cancellation_status"] == "PASS",
-        "embedded_framed_collar": collar["pairwise_disjointness_status"].startswith("PASS") and collar["product_framing_status"] == "PASS",
-        "ar_passage_binding": collar["ar_passage_binding_status"].startswith("PASS"),
+        "embedded_framed_collar": collar["pairwise_disjointness_status"] == "PASS" and collar["product_framing_status"] == "PASS",
+        "ar_passage_binding": collar["ar_passage_binding_status"] == "PASS",
         "six_sweep_word": sweeps["verdict"] == "PASS",
-        "geometric_braid": braid is not None and braid["relative_endpoint_word_status"] == "PASS",
+        "geometric_braid": False,
         "noncircular_source_order": braid is not None and braid["independent_ar_derivation_status"] == "PASS_CODE_DEPENDENCY_SEPARATION",
     }
     passed = all(checks.values())

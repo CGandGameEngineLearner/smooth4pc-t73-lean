@@ -1,99 +1,92 @@
 {
   "counterexample_claim_falsified": false,
-  "counterexample_claim_proved": true,
-  "interpretation": "No OPEN item is classified as falsified merely because its witness is absent.",
+  "counterexample_claim_proved": false,
+  "interpretation": "Stopped at P0a: a simplicial spine map exists, but AR handlebodies are not a certified complex. Later geometric premises are Open and are not quoted as theorems.",
   "items": {
     "C": {
-      "adjudication": "Paper Lemmas C1/C2 identify the actual coefficient and all-cable endpoint expansion; the certificate supplies only finite data.",
-      "blocker": null,
-      "certificate_sha256": "6B574D3E062EE5D41D5D0F74C5C85CFC4BBFA773D335F00DF8107232EA1E1573",
+      "adjudication": "Counts 44 and 227 and the abstract quotient in RepresentableCoefficient.lean are not MWW Theorem 4.7.",
+      "blocker": "C1 requires the P0c product annuli and an isotopy of the actual cut link; P0a stopped first.",
+      "certificate_sha256": "94F4D5DE9ED2342B32EDE3FEEA69F3EBE9BFDC5D5FD4432A9BD166FCBD46BC4C",
       "evidence": [
-        "scripts/verify_t73_compact_hattori_binding.py",
         "scripts/generate_t73_c_comparison_witness.py",
         "audit/t73_c_comparison_witness.json",
-        "paper/spc4-t73-candidate/main.tex:The complete two-handle cocone"
+        "Smooth4PC/RepresentableCoefficient.lean"
       ],
       "falsified": false,
-      "generator_internal_status": "DISCHARGED_BY_PUBLIC_REPLACEMENT_COORDINATES",
-      "proved": true,
-      "state": "PROVED"
+      "generator_internal_status": "NOT_A_CUT_LINK_ISOTOPY",
+      "proved": false,
+      "state": "OPEN"
     },
     "P0": {
-      "blocker": null,
-      "certificate_sha256": "02CEDCE915EBFC2B3C0A88D10BEEB050F0D7DD828F6F11DC849DA83ED2BC05D2",
+      "blocker": "P0a: AR handlebodies are not a certified PL complex; uniqueness of regular neighborhoods is not used. reconstruct_t73_p0.py has no parseable geometric input.",
+      "certificate_sha256": "FF653CE41D102D1770E967417FDF8D4C5857E253C275BBB9381887E29D9BAC96",
       "control": "The synthetic rational 44-strand control recovers the public word but is deliberately not AR-bound.",
       "evidence": [
+        "scripts/certify_t73_johnson_ar_bridge.py",
         "scripts/reconstruct_t73_p0.py",
         "scripts/check_t73_p0_pipeline.py",
-        "scripts/generate_t73_heegaard_nielsen_movie.py",
-        "scripts/extract_t73_ryz_linking.py",
         "scripts/falsify_t73_linking_from_words.py",
-        "scripts/check_t73_compact_free_basis.py",
-        "scripts/search_t73_ia_representative.py",
-        "scripts/search_t73_ia_framing.py",
-        "scripts/audit_t73_inner_conjugation_geometry.py",
-        "scripts/search_t73_dual_meridian_ia.py",
         "scripts/search_t73_johnson_alpha_sides.py",
-        "scripts/straighten_t73_johnson_relative_ball.py",
         "docs/proofs/T73_GAP_FREE_BASIS_RECEIPT.md",
         "tests/test_t73_p0_reconstruction.py",
-        "docs/research/T73_P0_PUBLIC_BRAID_AUDIT_2026-09-02.md",
-        "audit/t73_p0_johnson_certificate.json"
+        "audit/t73_p0_johnson_certificate.json",
+        "docs/proofs/T73_GEOMETRIC_PREMISE_STATUS_20260903.md"
       ],
       "falsified": false,
       "falsified_compact_lift": "GAP proves the three compact straight spine words are injective but not surjective on F3, so they cannot be the images of a handlebody homeomorphism.",
       "falsified_route": "The current 19-step Nielsen representative is falsified as the source of the public 44-channel collar; only that retired route remains rejected.",
-      "johnson_candidate": "The 93-step Johnson alpha-side lift is a GAP free basis, matches compact m2 exactly, has 44 framed lanes, a relative fixed-ball movie and an independently generated/re-extracted public braid.",
-      "proved": true,
+      "johnson_candidate": "P0d finite fact only: the 93-bit Johnson alpha-side lift is a GAP free basis, matches compact m2, has 44 y-channels, and the six-sweep word equals the public 11340-letter word.  This is not an embedded collar or a Heegaard-pair homeomorphism.",
+      "p0a_status": "OPEN",
+      "p0b_status": "OPEN",
+      "p0c_status": "OPEN",
+      "p0d_finite_word_match": true,
+      "proved": false,
       "replacement_adjudication": "The x^-1 correction is simultaneous inner conjugation, hence only a basepoint change in Out(F3); its two extra word passages are not an embedded 44-channel witness.",
       "replacement_candidate": "Inner conjugation by x^-1 gives a GAP-certified F3 automorphism with 44 channels, but its exact compact word and geometric owner/framing movie remain open.",
-      "state": "PROVED"
+      "state": "OPEN"
     },
     "P3_E11": {
-      "blocker": null,
+      "blocker": "MWW Proposition 3.4 applies only after P0--S",
       "evidence": [
         "MWW Proposition 3.4; candidate application is conditional on P0--S"
       ],
       "falsified": false,
-      "proved": true,
-      "state": "PROVED"
+      "proved": false,
+      "state": "OPEN"
     },
     "P3_E12": {
       "evidence": [
-        "MWW Corollary 3.5 as cited in paper/spc4-t73-candidate/main.tex"
+        "MWW Corollary 3.5 as a statement about S^4, not a candidate identification"
       ],
       "falsified": false,
-      "proved": true,
-      "state": "PROVED"
+      "proved": false,
+      "state": "CITED_EXTERNAL"
     },
     "P3_E13": {
-      "blocker": null,
+      "blocker": "det(A-I)=1 is proved; identifying the Johnson replacement with Sigma_A^0 requires P0a",
       "evidence": [
-        "audit/t73_p0_johnson_certificate.json",
-        "Iwaki Proposition 2.1 as cited in the paper"
+        "Smooth4PC/T73Finite.lean",
+        "Iwaki Proposition 2.1 for the matrix criterion"
       ],
       "falsified": false,
-      "proved": true,
-      "state": "PROVED"
+      "proved": false,
+      "state": "PARTIAL"
     },
     "S": {
-      "adjudication": "Paper Lemmas Ssystem and Sendpoint give kernel invariance and the actual endpoint exchange square.",
-      "blocker": null,
-      "certificate_sha256": "4CAC056A5539C45A321281630229C09DBE12FEC1E3FF02973D2B731DB7AD0BCB",
+      "adjudication": "Paper Lemmas Ssystem and Sendpoint remain slogans.",
+      "blocker": "No B-fixing move list in Q = partial W2 \\ Int B0, and actual_standard_sphere_endpoint_foam_computed is false. Closed-manifold HJ Theorem 5.3 is not used as 'B is fixed'.",
+      "certificate_sha256": "A5DECACF9C443D353A2E10E547069CE86CA3F1A33E04D408170634CCB526AC2D",
       "evidence": [
-        "scripts/generate_t73_stable_sphere_movies.py",
         "scripts/certify_t73_s_relative_moves.py",
-        "audit/t73_s_relative_moves_certificate.json",
-        "docs/research/T73_S_RELATIVE_STANDARD_SYSTEM_2026-09-02.md",
-        "paper/spc4-t73-candidate/main.tex:The remaining essential-sphere endpoint comparison"
+        "audit/t73_s_relative_moves_certificate.json"
       ],
       "falsified": false,
-      "generator_internal_status": "RETIRED_NOT_LOAD_BEARING: this stable label ledger does not determine pivotal adapters, foam signs or actual qHH0 coordinate maps; relative HJ spheres plus MWW local module action replace this explicit-movie route",
-      "proved": true,
-      "relative_geometry_proved": true,
-      "state": "PROVED"
+      "generator_internal_status": "OPEN",
+      "proved": false,
+      "relative_geometry_proved": false,
+      "state": "OPEN"
     }
   },
-  "overall": "ALL_LOAD_BEARING_ITEMS_DISCHARGED",
+  "overall": "OPEN",
   "schema": "t73_premise_audit/v1"
 }

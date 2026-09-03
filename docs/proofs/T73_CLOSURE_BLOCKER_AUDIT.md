@@ -1,28 +1,29 @@
 # Final closure audit
 
-**Status:** `ALL LOAD-BEARING ITEMS DISCHARGED`
+**Status:** `OPEN` (stopped at P0a)
+
+See `docs/proofs/T73_GEOMETRIC_PREMISE_STATUS_20260903.md`.
 
 ## Current allocation
 
 | item | verdict | evidence |
 |---|---|---|
-| P0 | **DISCHARGED** | Paper Lemmas P0a--c plus the finite replacement braid |
-| C | **DISCHARGED** | Paper Lemmas C1/C2 plus the statewise cocone |
-| S | **DISCHARGED** | Paper Lemmas Ssystem/Sendpoint construct the total-kernel and endpoint maps |
-| P3/E11 | **DISCHARGED** | MWW four-handle isomorphism applied after P0/C/S |
-| P3/E12 | **DISCHARGED** | MWW standard-S4 module concentrated in bidegree zero |
-| P3/E13 | **DISCHARGED** | P0 manifold identification plus Iwaki's determinant criterion |
+| P0 | **OPEN** | Simplicial spine map exists; AR handlebodies are not a certified PL complex |
+| C | **OPEN** | No isotopy of the actual cut link; P0a failed first |
+| S | **OPEN** | No B-fixing move list and no endpoint foam movies |
+| P3/E11 | **OPEN** | MWW Proposition 3.4 applies only after P0--S |
+| P3/E12 | **CITED_EXTERNAL** | MWW Corollary 3.5 as a statement about S^4 |
+| P3/E13 | **PARTIAL** | det(A-I)=1 is proved; identifying the candidate with Sigma_A^0 requires P0a |
 
 ## Important negative boundaries
 
 - The historical two-million-crossing PD remains unavailable and is unused.
 - The historical TH1/TH2/THXY sphere files remain unavailable and are unused.
 - The endpoint cap is not equal to the four W2 core disks.
-- No full-formal-q W2 functional is asserted.  The proved object is the
-  leading divided cubic cocone, which is exactly the strength needed for the
-  ordinary rational lasagna module.
-- Lean remains a conditional algebraic core; the candidate topology and
-  functoriality inputs are supplied by paper lemmas, not Lean definitions.
+- No full-formal-q W2 functional is asserted.  The finite cubic `2624` is
+  computed; C and S remain Open, so there is no candidate-level cocone.
+- Lean remains a conditional algebraic core; `ExternalGeometry` has no
+  inhabitant.
 
 ## Replays
 
@@ -34,4 +35,5 @@ python -I -B tests/test_t73_c_comparison_witness.py -v
 python -I -B tests/test_t73_claim_boundary.py -v
 ```
 
-The detailed proofs are Sections 6--9 of the paper.
+Geometric identifications remain Open; see
+`docs/proofs/T73_GEOMETRIC_PREMISE_STATUS_20260903.md`.

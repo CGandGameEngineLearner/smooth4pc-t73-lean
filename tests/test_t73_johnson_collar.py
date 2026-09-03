@@ -19,8 +19,8 @@ class JohnsonCollarTest(unittest.TestCase):
         self.assertEqual(len(result["wickets"]), 44)
         self.assertEqual(result["owner_counts"], {"r_xy": 2, "m_2": 42})
         self.assertEqual(result["negative_wickets"], [2, 44])
-        self.assertTrue(result["pairwise_disjointness_status"].startswith("PASS"))
-        self.assertTrue(result["ar_passage_binding_status"].startswith("PASS"))
+        self.assertEqual(result["pairwise_disjointness_status"][:4], "OPEN")
+        self.assertEqual(result["ar_passage_binding_status"][:4], "OPEN")
 
 
 if __name__ == "__main__":

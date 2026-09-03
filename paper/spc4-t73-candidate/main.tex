@@ -65,18 +65,19 @@ the matrix
 \[
 A=\begin{pmatrix}0&269&1240\\0&41&189\\1&0&32\end{pmatrix}.
 \]
-A public finite calculation produces the nonzero cubic Burau scalar $-59072$
-in the grading convention corresponding to quantum degree $494$.  An exact
+A public finite calculation produces the nonzero cubic
+$D_3=2624$ in the grading convention corresponding to quantum degree $494$,
+matching Lean's \texttt{computedCubic\_eq\_2624}
+(\verb|computedCubic_eq_2624|).  An exact
 Artin--Magnus certificate and the pure-braid Andreadakis theorem establish a
-third-order property of the public braid.  We construct an explicit
-Johnson--Aitchison--Rubinstein replacement handle presentation, identify its
-actual MWW coefficient bimodule, prove the all-cable divided beta/psi
-cocone, and compute the three-handle endpoint maps.  The resulting nonzero
-degree-$494$ class obstructs a diffeomorphism to $S^4$.  No identification
+third-order property of the public braid.  The geometric identifications
+required to promote that scalar to a closed four-manifold class remain
+Open, beginning with the Johnson--Aitchison--Rubinstein Heegaard-pair
+homeomorphism (P0a).  No identification
 with the unavailable historical PD is claimed.  The Lean development checks
-the finite and quotient algebra; the geometric identifications are proved on
-paper.  Thus the result is unconditional at the mathematical level while
-the Lean theorem remains an implication from external geometry structures.
+the finite and quotient algebra and does not construct
+\texttt{ExternalGeometry}.  The result is therefore a conditional implication
+from those external structures.
 \end{abstract}
 
 \maketitle
@@ -117,24 +118,19 @@ is concentrated in bidegree zero.
 We investigate the public finite class for the standard-form
 Cappell--Shaneson parameter $(41,189,73)$.  Compact product-ribbon,
 point-push, owner-lift and Nielsen ledgers replace parts of the unavailable
-historical data.  A Johnson-generator replacement supplies the detector
-presentation; the paper proves the handlebody, MWW coefficient, and
-three-handle identifications separately.
+historical data.  A Johnson-generator replacement supplies a finite word; the paper does
+not prove the handlebody, MWW coefficient, or three-handle identifications.
 
 \subsection*{Contributions}
 
 The main contributions are as follows.
 \begin{enumerate}
-\item We construct a splitting-preserving Johnson lift and an exact
-six-sweep 44-channel word equal to the public 11340-letter word, and prove
-that it gives a valid replacement presentation of \(\Sigma_A^0\).
-\item We identify the actual two-sided Hattori bimodule and prove the
-all-state beta/psi naturality at divided cubic order.
-\item We use HJ and three-handle kernel invariance to choose a standard
-sphere system outside the detector, then prove the actual endpoint
-factorization for its six hemisphere maps.
+\item We record a splitting-preserving Johnson lift and an exact
+six-sweep 44-channel word equal to the public 11340-letter word.  This is a
+finite P0d fact; it does not supply an embedded replacement presentation of \(\Sigma_A^0\).
+\item Coefficient and three-handle identifications remain Open until P0a--c exist.
 \item We provide executable ledgers, mutation tests and a kernel-checked Lean
-algebraic core.
+algebraic core.  Lean does not construct a 4-manifold.
 \end{enumerate}
 
 Historical files referenced by earlier versions of the project are not
@@ -204,7 +200,7 @@ F:W_3\xrightarrow{\cong}G(X,494),
 \]
 such that
 \begin{align}
-\ell_0(x_0)&=-59072,\label{eq:value}\\
+\ell_0(x_0)&=2624,\label{eq:value}\\
 \ell_1q_{01}&=\ell_0,\label{eq:q01}\\
 \ell_2q_{12}&=\ell_1.\label{eq:q12}
 \end{align}
@@ -216,7 +212,7 @@ diffeomorphism $X\to S^4$ induces a linear isomorphism
 \begin{proof}
 Set $v=F(T(q_{12}(q_{01}(x_0))))$.  If $v=0$, injectivity of $F$ and $T$
 implies $q_{12}(q_{01}(x_0))=0$.  Applying $\ell_2$ and using
-\eqref{eq:q01}--\eqref{eq:q12} gives $-59072=0$, a contradiction.  Thus
+\eqref{eq:q01}--\eqref{eq:q12} gives $2624=0$, a contradiction.  Thus
 $v\ne0$.  If $X$ were diffeomorphic to $S^4$, the induced isomorphism would
 send $v$ to an element of $G(S^4,494)$, hence to zero, contradicting
 injectivity.
@@ -235,7 +231,9 @@ embedded detector ball and the stated cable attachments.
 \end{theorem}
 
 \begin{proof}
-See Theorem~\ref{thm:P0discharge}.
+This remains Open.  Theorem~\ref{thm:P0discharge} is a slogan: P0a fails
+because the AR handlebodies are not a certified complex, and later P0
+items are not quoted as theorems.
 \end{proof}
 
 \begin{theorem}[Coefficient comparison, C]\label{hyp:P1}
@@ -244,13 +242,15 @@ symmetric-monoidal natural map to the BPW/BHPW weight-one endpoint
 representation, natural also for boundary cobordisms supported away from
 $B$.  Under this map the point-push action is the public Burau
 representation, and the divided cubic row descends through every beta and psi
-relation.  Its selected value is $-59072$ in the public normalization; all
-strict pivotal sign variants are nonzero.  The class lies in quantum degree
-$494$.
+relation.  Its selected value is $2624$ in the frozen public receipt and in
+Lean theorem \texttt{computedCubic\_eq\_2624}; mixed-index Burau variants are
+nonzero but are not this cubic.  The class would lie in quantum degree
+$494$ after the maps exist.
 \end{theorem}
 
 \begin{proof}
-See Theorem~\ref{thm:Cdischarge}.
+This remains Open.  Lemma~\ref{lem:C1} is not an isotopy of the actual cut
+link, and P0a has already failed.
 \end{proof}
 
 \begin{theorem}[Relative three-handle closure, S]\label{hyp:P2}
@@ -262,7 +262,8 @@ complete three-handle coequalizer.
 \end{theorem}
 
 \begin{proof}
-See Theorem~\ref{thm:Sdischarge}.
+This remains Open.  Closed-manifold HJ Theorem~5.3 is not used to fix $B$.
+The endpoint foam flag remains false.
 \end{proof}
 
 \begin{theorem}[Final candidate identifications, P3]\label{hyp:P3}
@@ -276,26 +277,23 @@ equivalences.  Moreover, $\det(A-I)=1$ makes $\Sigma_A^0$ a homotopy sphere.
 See Section~\ref{sec:final-identifications}.
 \end{proof}
 
-\begin{theorem}[Trace-73 theorem]\label{thm:joined}
-The trace-73 Cappell--Shaneson sphere
-satisfies
+\begin{theorem}[Conditional trace-73 theorem]\label{thm:joined}
+If the geometric identifications P0a--c, C1--C2 and S were supplied as
+objects meeting the repository acceptance tests, then the trace-73
+Cappell--Shaneson sphere would satisfy
 \[
 \Sigma_A^0\simeq S^4
 \quad\text{and}\quad
 \Sigma_A^0\not\cong_{\mathrm{diff}}S^4.
 \]
+Those identifications are not supplied.  The theorem is therefore
+conditional, and no counterexample is claimed.
 \end{theorem}
 
 \begin{proof}[Proof of Theorem~\ref{thm:joined}]
-Theorems~\ref{hyp:P0} and \ref{hyp:P3}, together with the
-Cappell--Shaneson criterion give the homotopy-sphere assertion.
-Theorem~\ref{hyp:P1} supplies the coefficient comparison, and
-Theorem~\ref{hyp:P2} supplies the three-handle descent.  They instantiate
-Theorem~\ref{thm:A}, whose selected class is nonzero in quantum degree $494$.
-MWW's four-handle
-isomorphism preserves this degree, while the same degree of the standard
-$S^4$ module vanishes.  Diffeomorphism invariance and
-Theorem~\ref{thm:A} rule out a diffeomorphism to $S^4$.
+Theorem~\ref{thm:A} is proved as an implication.  Lean constructs no
+inhabitant of \texttt{ExternalGeometry}.  P0a is Open, so the remaining
+geometric hypotheses are not instantiated.
 \end{proof}
 
 \section{The finite computational layer}
@@ -347,21 +345,18 @@ covector are applied.
 Denote the resulting scalar by $\delta_3^{\Bur}$.  The independently
 reproduced public result is
 \begin{equation}\label{eq:burau}
-\delta_3^{\Bur}=-59072=(-2)^3\cdot 7384.
+\delta_3=2624=(-2)^3\cdot(-328).
 \end{equation}
-The public input does not contain either decimal literal $7384$ or $-59072$;
-the former is, however, stored as the constant \texttt{cubicBase} in the Lean
-finite layer.  Lean checks only the arithmetic
-$(-2)^3\cdot7384=-59072$ and never evaluates the 45,360-letter word.
+The public input does not contain the decimal literal $2624$;
+Lean stores \texttt{cubicBase}$=-328$ and proves
+\texttt{computedCubic\_eq\_2624}.  The 2~September draft value $-59072$ mixed
+two endpoint index tables and is retired.  Mixed-index Burau variants remain
+nonzero; they are not the frozen cubic.
 
 \begin{proposition}[Exact scope of the computation]\label{prop:scope}
 Equation~\eqref{eq:burau} is a statement about the specified truncated Burau
-model.  The script and JSON alone do not define the MWW invariant.  Under the
-coefficient-trace comparison of Theorem~\ref{hyp:P1}, however,
-\[
-\delta_3^{\MWW}=\delta_3^{\Bur}=-59072,
-\]
-up to the harmless global convention unit normalized in that theorem.
+model with the frozen collar endpoints.  The script and JSON alone do not
+define the MWW invariant.  Nonvanishing of $2624$ does not close C or S.
 \end{proposition}
 
 \begin{proof}
@@ -748,8 +743,9 @@ equivalent normal-field movie is logically necessary.
 
 This linking obstruction applies only to the retired 309-word comparison.
 The selected Johnson side-choice lift agrees with the compact $m_2$ word
-exactly and has relative $r_{yz}$ coefficient zero, so no such slide or
-linking input occurs in the P0 proof.
+exactly and has relative $r_{yz}$ coefficient zero as a finite P0d fact.
+After P0c, $\operatorname{lk}(m_2,r_{yz})$ must still be read from a reduced
+PD or normal-field movie; that object is absent.
 
 \subsection{The three geometric identifications}
 
@@ -766,22 +762,20 @@ Aitchison--Rubinstein.
 \end{lemma}
 
 \begin{proof}
-The inverse is \(v\mapsto(v+(1/2,1/2,1/2))/2\).  Thus the determinant \(8\)
-of the lift is compensated by the index-eight change from \(\mathbb Z^3\) to
-\((2\mathbb Z)^3\), and the induced map has degree one.  It sends the vertex
-\(0\) and its three unit coordinate loops to the AR vertex
-\((-1/2,-1/2,-1/2)\) and its three period-two coordinate loops.  It sends
-the translated vertex \((1/2,1/2,1/2)\) and translated loops to the dual AR
-spine based at \((1/2,1/2,1/2)\).  Since \(S\) is a homothety followed by a
-translation, it preserves comparisons of distances to the two spines.
-Johnson's distance-defined handlebodies are therefore carried to the
-closures of corresponding regular neighborhoods.  If the AR construction
-uses a different sufficiently small regular neighborhood of the same
-spines, uniqueness of regular neighborhoods gives an ambient isotopy
-relative to the spines.  Conjugating by
-\(S\) carries every selected \(\alpha_{ij}\) to a diffeomorphism of the AR
-Heegaard pair, and carries the protected ball and relative square movie with
-it.
+\texttt{scripts/certify\_t73\_johnson\_ar\_bridge.py} exhibits a Freudenthal
+triangulation of Johnson's period-one torus and the affine map $S$ as a
+simplex-by-simplex map onto a triangulation of the period-two torus.  Every
+1-simplex of $K_1$ and $K_2$ is carried onto the corresponding AR coordinate
+spine.  Because the linear part is $2I$, Euclidean distances scale by $2$, so
+Johnson's Voronoi handlebodies map onto Voronoi cells of those image spines.
+The protected metric ball of radius $1/196104$ about $0$ maps to the ball of
+radius $2/196104$ about $Q$.
+
+This does not prove the lemma.  The Aitchison--Rubinstein handlebodies used
+in the mapping-torus construction are not present as a certified PL
+neighborhood of those spines.  Uniqueness of regular neighborhoods is not
+used.  The Euclidean Voronoi surface is not a subcomplex of the triangulation.
+Status: Open.
 \end{proof}
 
 \begin{lemma}[The two framed cancellations]\label{lem:P0b}
@@ -792,24 +786,12 @@ section framing class \(\varepsilon=0\).
 \end{lemma}
 
 \begin{proof}
-Aitchison--Rubinstein construct \(h_{CS}\) with one transverse intersection
-with the belt sphere of \(t\); their product rectangle gives the cancelling
-framing.  The standard simultaneous cancellation slides every other
-\(t\)-passage across parallel copies of that rectangle before deleting the
-pair.  For the second pair, the selected Johnson homeomorphism has
-\(\psi_A(x)=z\).  After the first cancellation the actual \(m_1\) core is
-\(zx^{-1}\), hence meets the belt sphere of the \(x\)-handle once
-geometrically.  This equality is geometric: each adjacent inverse pair in
-the concatenated square movie lies in one product edge and bounds the
-canonical bigon in the regular neighborhood of the spine; tightening those
-bigons carries the embedded image of the \(x\)-edge to the \(z\)-edge.
-Its transported product annulus supplies the cancelling
-framing.  Sliding all other \(x\)-passages over parallel copies of this
-annulus implements \(x\mapsto z\) on the whole link and then deletes
-\((x,m_1)\).  Both operations use framed product bands, so the normal fields
-extend over the cancellation disks.  The section starts with the untwisted
-AR framing, and these orientation-preserving product transports do not
-change its class in \(\pi_1(SO(3))\).
+Word identities $\psi_A(x)=z$ and $m_1=zx^{-1}$ hold for the selected
+Johnson lift.  They are necessary and not sufficient.  No framed Kirby movie
+supplies geometric intersection with the belt sphere, a cancelling product
+band, or owner/normal transport of the whole labelled attaching link.
+\texttt{scripts/certify\_t73\_johnson\_cancellations.py} therefore records
+\texttt{cancellation\_status=OPEN}.  Status: Open.  Not used: P0a failed.
 \end{proof}
 
 \begin{lemma}[Compatibility with MWW cabling]\label{lem:P0c}
@@ -818,15 +800,10 @@ construction.
 \end{lemma}
 
 \begin{proof}
-For each surviving attaching component, choose the MWW tubular coordinate
-\(f_i:\nu(K_i)\to S^1\times D^2\) to be the coordinate defined by its
-transported AR framing annulus.  Restrict these coordinates to the selected
-passages and apply the framed tubular-neighborhood theorem relative to their
-endpoints.  This carries the annulus normal to the constant normal in the
-lane chart.  The displacement \(1/10000\) lies inside that chart, so it
-represents the same framing rather than a blackboard framing.  MWW define
-parallel cable copies using the chosen maps \(f_i\); hence the two framings
-coincide by construction.
+The 44 sample points $(2(i-1)-43)/100$ lie in the unit disk $D^2$.  They are
+not height-monotone polylines in an embedded ball $B\subset\partial W_2$, and
+they do not determine tubular coordinates $f_i:\nu(K_i)\to S^1\times D^2$.
+Status: Open.  Not used: P0a failed.
 \end{proof}
 
 \subsection{P0 conclusion}
@@ -838,65 +815,48 @@ asserted.
 \end{theorem}
 
 \begin{proof}
-Johnson's $\alpha_{ij}$ moves preserve the standard genus-three splitting.
-The exact transvection factorization and the recorded side choices give a
-representative of the matrix $A$.  The relative square movie fixes the ball
-of radius $1/196104$ in the Johnson model.
-GAP verifies the resulting spine images form a free basis, while direct word
-replay gives $\psi_A(x)=z$ and the exact compact $m_2$ word.
-Lemmas~\ref{lem:P0a} and \ref{lem:P0b} identify the ambient handlebody and
-the two framed cancellations.
-
-The product chart of the surviving $y$ handle supplies a candidate $B$ and
-the 44 distinct rational lanes described above.  Their owner and orientation
-data come from the replacement construction, and
-Lemma~\ref{lem:P0c} identifies their framing with the MWW framing.  The
-six-leg construction gives 252 pure factors, whose expanded and independently
-re-extracted Artin word agrees letter-for-letter with the public word; all
-endpoints and product normals return.  These are precisely the certificate
-level assertions above.  The historical PD is not used, and no
-historical-PD identity is claimed.
+P0a is Open, so this theorem is not proved.  The 93-bit word match, GAP
+free-basis check, 44 $y$-channels, and public 11340-letter agreement are
+retained as finite P0d facts only.
 \end{proof}
 
 \section{The coefficient-trace comparison}
 
-We construct the comparison required in C for the P0 replacement.  The
-numerical certificate is used only for the finite consequences of the maps.
+This section records the intended C argument.  It is not proved: P0a failed
+first, and there is no isotopy of the actual cut link.
 
 \subsection{The product Hattori equivalence}
 
-The compact words give
+The compact words give the letter counts
 \[
 p_y=42+2=44,\qquad p_z=269+2=271.
 \]
-More is true than this count.  In the cyclic $m_2$ word, every one of the 42
+In the cyclic $m_2$ word, every one of the 42
 $y/Y$ events is followed immediately by a distinct $z/Z$ event; the same
 holds for the two $y/Y$ events of $r_{xy}$.  The witness lists all 44 pairs.
-By Lemmas~\ref{lem:P0a}--\ref{lem:P0c}, the corresponding one-edge intervals
-on the actual P0 product annuli are
-pairwise-disjoint subrectangles.  Their removal leaves exactly 227 unpaired
-$z$ passages, closing to separate product circles between the two parallel
-annulus boundaries.
+Those pairs are a cyclic-word pattern.  They are not 44 product rectangles
+on P0c annuli, and they do not induce MWW Theorem~4.7.
 
+The intended maps, if the product isotopy existed, would be as follows.
 Let $\mathcal C$ be the pregraded rational tangle category with objects
-$T:P_{86}\to P_{88}$, and let $F$ be the framed west-to-east tangle formed by
-the 44 rectangles.  MWW's one-handle theorem identifies the cut coefficient
+$T:P_{86}\to P_{88}$, and let $F$ be the framed west-to-east tangle that
+would be formed by those rectangles.  MWW's one-handle theorem identifies the cut coefficient
 as
 \[
 M_R(T,T')=\KhR_2(R\cup T'\cup\overline T)
 \]
 with its displayed shift and gluing actions
-\cite[Theorem~4.7]{ManolescuWalkerWedrich2023}.  The fixed product isotopy,
-pivotal tangle duality, and K\"unneth over $\Q$ give graded isomorphisms
+\cite[Theorem~4.7]{ManolescuWalkerWedrich2023}.  If a product isotopy existed,
+pivotal tangle duality and K\"unneth over $\Q$ would give graded isomorphisms
 \begin{equation}\label{eq:HattoriActual}
 H_{T,T'}:M_R(T,T')\xrightarrow{\cong}
 \operatorname{Hom}_{\mathcal C}(FT,FT')\{-44\}
 \otimes A^{\otimes227},
 \qquad A=\Q[X]/(X^2).
 \end{equation}
-These maps form a coefficient-bimodule isomorphism.  Indeed, gluing
-$f:S\to T$ before the source link and then applying the fixed product isotopy
-is isotopic rel boundary to first applying the isotopy and precomposing by
+These maps would form a coefficient-bimodule isomorphism.  Indeed, gluing
+$f:S\to T$ before the source link and then applying the product isotopy
+would be isotopic rel boundary to first applying the isotopy and precomposing by
 $Ff$.  The right action is the same argument with postcomposition.  Thus both
 action squares are associativity of gluing for one simultaneous surface.  At
 the chain level the two squares are
@@ -921,16 +881,15 @@ C(FT,FU)\otimes C(S^1)^{\otimes227}.
 Here $C_R$ and $C$ are the strict Blanchet--Khovanov foam complexes.  Both
 composites in each square are the same glued foam after exchanging two
 disjoint collars.  BHPW strict functoriality removes the projective sign, and
-taking homology gives \eqref{eq:HattoriActual} and both MWW action squares.
-Thus \eqref{eq:HattoriActual} is induced by the P0 product-ribbon isotopy,
-not inferred from the numbers $44$ and $227$.
+taking homology would give \eqref{eq:HattoriActual} and both MWW action squares
+after the isotopy exists.  Equation~\eqref{eq:HattoriActual} is therefore not
+induced by a product-ribbon isotopy, and it is not inferred as a theorem from
+the numbers $44$ and $227$.
 
-Apply the 227 disjoint counits to \eqref{eq:HattoriActual}.  This is a
-homogeneous coefficient morphism.  The remaining coefficient
-$(T,T')\mapsto\operatorname{Hom}(FT,FT')$ is representable by the invertible
-tangle $F$ and hence is equivalent to the regular coefficient.  The ordinary
+If those maps existed, one would apply the 227 disjoint counits to
+\eqref{eq:HattoriActual}.  The ordinary
 quotient statement, including both cyclic-relation spans, is kernel checked
-in \path{Smooth4PC/RepresentableCoefficient.lean}.
+in \path{Smooth4PC/RepresentableCoefficient.lean} after the maps exist.
 
 \begin{lemma}[Actual coefficient bimodule]\label{lem:C1}
 For the P0 replacement, \eqref{eq:HattoriActual} is a natural isomorphism of
@@ -940,34 +899,9 @@ dimension-matched substitute.
 \end{lemma}
 
 \begin{proof}
-MWW Definition~4.5 defines the morphism space of the one-handle tangle
-category by the \(N=2\) link homology of
-\(T'\cup\overline T\), with its stated shift.  For the actual cut tangle
-\(R\), cut each transported framing annulus at its \(y\)- and \(z\)-disk
-passages.  Every selected \(y\)-passage is followed by its distinct
-\(z\)-passage along one annulus edge, giving one of the 44 disjoint product
-rectangles; each remaining \(z\)-strip closes between the two annulus
-boundaries, giving one of the 227 product circles.  This is an ambient
-product decomposition of the cut link.  It identifies
-\[
-R\cup T'\cup\overline T
-\cong (FT')\cup\overline{FT}\sqcup(S^1)^{\sqcup227}.
-\]
-At \(N=2\), the strict Blanchet foam complex is naturally equivalent to the
-\(\KhR_2\) tangle complex by BHPW Theorem~D.  Applying this equivalence,
-the displayed framed isotopy, and K\"unneth over \(\Q\) gives
-\eqref{eq:HattoriActual}.  The two diagrams (17) commute because on each
-side they are the same glued foam, with two disjoint collars interchanged.
-Thus the construction respects both MWW actions.
-
-After applying the 227 counits, BPW's canonical functor from the quantum
-vertical trace to the quantum horizontal trace applies to this same foam
-category.  BHPW strict functoriality and its flat-base
-qHH$_0$/Chern isomorphism identify the target with the stated
-\(U_q(\mathfrak{sl}_2)\) endpoint module.  Specializing \(q=1\) replaces the
-quantum cyclic relation by the ordinary MWW relation.  Hence
-\(\operatorname{Sh}_q\) is naturally attached to the actual coefficient
-bimodule.
+This is a slogan.  Counts $44$ and $227$ from the cyclic word pattern
+``$y$ then $z$'' do not supply an ambient isotopy of the actual cut link.
+Status: Open.  Not used: P0a failed.
 \end{proof}
 
 \subsection{Quantum trace and the endpoint map}
@@ -976,9 +910,8 @@ Set $R_q=\Q[q,q^{-1}]$.  The pregraded cyclic relation is
 \[
 L_f(m)=q^{|f|}R_f(m).
 \]
-By Lemma~\ref{lem:C1}, \eqref{eq:HattoriActual} and the counits are homogeneous
-coefficient morphisms, so they carry each such relation to the regular
-quantum vertical trace.  BPW's canonical vertical-to-horizontal functor and the BHPW strict
+By the intended Lemma~\ref{lem:C1}, \eqref{eq:HattoriActual} and the counits would be homogeneous
+coefficient morphisms.  That lemma is Open.  BPW's canonical vertical-to-horizontal functor and the BHPW strict
 tangle/foam functor give
 \begin{equation}\label{eq:actualShadow}
 \operatorname{Sh}_q:q\operatorname{Tr}(\mathcal C;M_R)
@@ -1059,15 +992,16 @@ D_3:HH_0(\mathcal C;M_R)\longrightarrow\Q.
 Positive-order corrections in the cup, cap, and basis change do not alter
 the cubic coefficient.
 
-The four possible strict pivotal signs give respectively
+The four mixed-index Burau sign variants
 \[
--53824,\quad -53760,\quad -59008,\quad -59072.
+-53824,\quad -53760,\quad -59008,\quad -59072
 \]
-All are nonzero; the last is the public normalization.  Hence
+are nonzero, but they are not the frozen cubic.  The frozen public receipt and
+Lean give
 \begin{equation}\label{eq:selectedD3}
-D_3([v_T])=-59072\ne0
+D_3([v_T])=2624\ne0
 \end{equation}
-in that normalization, without an unresolved sign premise.
+after the endpoint-indexing erratum.  Nonvanishing does not close C or S.
 
 \subsection{The complete two-handle cocone}
 
@@ -1091,10 +1025,13 @@ pure sign-preserving braid has identity permutation and hence constant term
 holds at every finite MWW level.  This statement concerns the endpoint
 representation only and does not assert the unknown symmetric-group
 factorization of the anti-parallel MWW beta action.
+The lemma is not applied to the candidate: Lemma~\ref{lem:C1} is Open.
 \end{proof}
 
-Only $D_3$ is asserted to descend.  The P0 normal fields provide arbitrarily
-many disjoint parallel levels.  We first type the construction at every MWW
+Only $D_3$ is asserted to descend after C1.  The remainder of this
+subsection is the intended C2 argument.  It is not proved: C1 is Open.
+
+If P0c existed, its normal fields would provide disjoint parallel levels.  We first type the construction at every MWW
 cable state.  In owner order $(m_2,m_3,r_{xy},r_{yz},r_{zx})$, put
 \[
 n_y=(42,189,2,2,0),\qquad n_z=(269,1271,2,2,0).
@@ -1182,8 +1119,8 @@ The finite pairing list, Johnson-P0 dependency, state formulas, four sign
 evaluations and mutation controls are regenerated in
 \path{audit/t73_c_comparison_witness.json}; its digest is
 \[
-\hash{6B574D3E062EE5D41D5D0F74C5C85CFC}
-     {4BBFA773D335F00DF8107232EA1E1573}.
+\hash{94F4D5DE9ED2342B32EDE3FEEA69F3EB}
+     {E9BFDC5D5FD4432A9BD166FCBD46BC4C}.
 \]
 
 \subsection{C conclusion and the degree-$494$ square}
@@ -1211,7 +1148,7 @@ $\operatorname{Id}_U\otimes X^{\otimes227}$.  Its successive degrees are
 -44+227=183,\qquad183+315=498,\qquad498-4=494.
 \]
 Diagram (28) sends it to a class $x_2$ satisfying
-$\overline D_3(x_2)=-59072\ne0$.
+$\overline D_3(x_2)=2624\ne0$ after the maps exist; those maps are Open.
 
 \begin{theorem}[Coefficient comparison C]\label{thm:Cdischarge}
 Hypothesis~\ref{hyp:P1} holds for the P0 replacement.  In particular, the
@@ -1219,10 +1156,7 @@ selected degree-$494$ class is nonzero after all MWW two-handle relations.
 \end{theorem}
 
 \begin{proof}
-Lemmas~\ref{lem:C1} and \ref{lem:C2}, (17),
-\eqref{eq:actualShadow}, and (26)--(27) give the actual MWW maps and
-relations.  The selected value and degree follow from
-\eqref{eq:selectedD3} and (28).
+Hypothesis~\ref{hyp:P1} is Open.  P0a failed, so C is not instantiated.
 \end{proof}
 
 \paragraph{C/S firewall.}
@@ -1233,7 +1167,8 @@ that is the separate calculation in Lemma~\ref{lem:Sendpoint}.
 
 \section{Three-handle sphere closure}
 
-We analyze S while keeping the detector collar fixed.  Remove the final $4$-handle and call the
+This section records the intended S argument.  Closed-manifold HJ
+Theorem~5.3 is not used to conclude that $B$ is fixed.  Remove the final $4$-handle and call the
 remaining handlebody $W_3$.  Its boundary is $S^3$.  Reversing the three
 $3$-handles attaches three three-dimensional $1$-handles to $S^3$, and hence
 \[
@@ -1262,13 +1197,12 @@ isomorphism \(\Phi\) of the target modules.  Hence their kernels agree.
 
 Choose a standard complete system
 \(\mathcal A=(A_1,A_2,A_3)\) in
-\(\partial W_2\setminus B\).  Its complement is connected and its classes
-form a basis of spherical second homology.  HJ Theorem~5.3, applied in the
-closed manifold \(\partial W_2\), relates it to the actual attaching system
-by the moves of Lemma~\ref{lem:Ssystem}.  We may therefore compute the
-three-handle kernel using \(\mathcal A\) without applying an ambient
-diffeomorphism to \(B\) or to the detector.  The relative move inventory
-below is retained for comparison but is not load-bearing.
+\(\partial W_2\setminus B\).  Closed-manifold HJ Theorem~5.3 is not used to
+conclude that $B$ is fixed.  The relative problem in
+$Q=\partial W_2\setminus\operatorname{Int} B_0$ is Open: no complete
+B-fixing move list, and no complete sphere system already in
+$\partial W_2\setminus B$ with an isotopy that is the identity on $B$, is
+supplied.  Status: Open.  Not used: P0a failed.
 
 Assuming P0 supplies such an outer ball, let $B_0$ be a slightly smaller
 concentric ball containing the 44-strand collar, and retain the notation $B$
@@ -1303,8 +1237,8 @@ The finite move inventory (four types, seven boundary components and five
 possible spotted-ball tubings) is regenerated in
 \path{audit/t73_s_relative_moves_certificate.json}, with digest
 \[
-\hash{4CAC056A5539C45A321281630229C09D}
-     {BE12FEC1E3FF02973D2B731DB7AD0BCB}.
+\hash{A5DECACF9C443D353A2E10E547069CE8}
+     {6CA3F1A33E04D408170634CCB526AC2D}.
 \]
 
 MWW's intrinsic reformulation of a $3$-handle quotient uses the local module
@@ -1351,9 +1285,10 @@ system \(\mathcal A\subset\partial W_2\setminus B\), while the detector in
 \end{proposition}
 
 \begin{proof}
-The first assertion follows from HJ Theorem~5.3 and
-Lemma~\ref{lem:Ssystem}.  Diagram (30) is MWW Theorem~3.7 applied to the
-standard system and gives the second assertion.
+Status: Open.  Closed-manifold HJ Theorem~5.3 is not used to fix $B$.
+The last row of (29) is not proved.  There is no B-fixing move list in
+$Q$ and no complete system already disjoint from $B$ with an isotopy that
+is the identity on $B$.  Not used: P0a failed.
 \end{proof}
 
 \subsection{The essential-sphere endpoint comparison}
@@ -1406,10 +1341,14 @@ The full mixed braid maps have the form \(P(I+O(h))\).  The permutation
 \(P\) has just been cancelled, and pre- or postcomposing a row beginning in
 order \(h^3\) with \(I+O(h)\) changes only order \(h^4\) and higher.
 Therefore the constant calculation (32) is exactly the calculation seen by
-the divided cubic row.  This proves the two whole-source identities.
+the divided cubic row.  This does not prove the lemma: no movie of $A_j$
+versus the detector sheet is supplied, and
+\texttt{actual\_standard\_sphere\_endpoint\_foam\_computed} remains false.
+Status: Open.  Not used: P0a failed.
 \end{proof}
 
-The proof supplies the previously missing endpoint exchange square
+The proof would supply the previously missing endpoint exchange square
+if the movie existed.
 \[
 \begin{array}{ccc}
 \mathcal S^2_0(W_2;J_j)&\longrightarrow&
@@ -1426,29 +1365,19 @@ Hypothesis~\ref{hyp:P2} holds for the P0 replacement.
 \end{theorem}
 
 \begin{proof}
-Proposition~\ref{thm:Sgeometry} reduces the total kernel to the standard
-system and to (31).  Lemma~\ref{lem:Sendpoint} proves those six equations.
-MWW Theorem~3.7 then gives the three successive coequalizer descents.
+Hypothesis~\ref{hyp:P2} is Open.  P0a failed, and no endpoint foam movie
+exists.
 \end{proof}
 
 \section{Final identifications}\label{sec:final-identifications}
 
 MWW Theorem 3.10 identifies the iterated quotient with the module after the
 three-handles, and Proposition 3.4 says the final four-handle induces a
-bidegree-$(0,0)$ isomorphism \cite{ManolescuWalkerWedrich2023}.  By
-Theorems~\ref{hyp:P0}--\ref{hyp:P2}, this is the handle decomposition of
-$\Sigma_A^0$, and the specified selected class
-remains nonzero in
-\[
-\mathcal S^2_{0,(0,494),0}(\Sigma_A^0;\Q).
-\]
-MWW Corollary 3.5 gives $\mathcal S^2_0(S^4)\cong\Z$, concentrated in
-bidegree $(0,0)$, so the corresponding rational degree-494 summand vanishes.
-The intrinsic definition transports lasagna fillings under diffeomorphisms
-and gives grading-preserving equivalences.  Finally, Iwaki's Proposition 2.1
-and \eqref{eq:determinants} prove that the genuine Cappell--Shaneson manifold
-$\Sigma_A^0$ is a homotopy sphere \cite{Iwaki2024}.  Together these results
-prove Theorem~\ref{hyp:P3}.
+bidegree-$(0,0)$ isomorphism \cite{ManolescuWalkerWedrich2023}.
+Theorems~\ref{hyp:P0}--\ref{hyp:P2} are Open, so this identification is not
+proved.  $\det(A-I)=1$ remains the finite homotopy-sphere criterion for the
+standard Cappell--Shaneson construction, not for an identified Johnson
+replacement 4-manifold.
 
 \section{Formalization boundary}
 
@@ -1485,13 +1414,13 @@ formalization of four-dimensional differential topology.
 The audit reports that the printed theorem dependencies use only standard
 logical quotient principles and classical choice, with no \texttt{sorryAx}.
 This is a statement about kernel checking of the algebraic core; the
-geometric instances are proved on paper rather than defined in Lean.
+geometric instances remain Open rather than defined in Lean.
 
 \section{Status table and reproducibility ledger}
 
 The table records the current allocation of every external layer.
-\Discharged\ means that a public generator or primary theorem and an
-independently checkable argument are both supplied.
+\Open\ means the named geometric object is absent.  \Partial\ means a finite
+or external fact is recorded without discharging the candidate identification.
 
 \begin{center}
 \small
@@ -1499,24 +1428,24 @@ independently checkable argument are both supplied.
 \toprule
 Item & Verdict & Reason \\
 \midrule
-P0a & \Discharged & Lemma~\ref{lem:P0a} promotes the affine spine map to a diffeomorphism of the complete Johnson/AR Heegaard pair. \\
-P0b & \Discharged & Lemma~\ref{lem:P0b} verifies both geometric Kirby cancellation criteria and transports the untwisted framing. \\
-P0c & \Discharged & Lemma~\ref{lem:P0c} identifies the lane normal with the tubular framing used in MWW cabling. \\
-P0d & \Discharged & For the explicit Johnson replacement, the 93-bit word search and independent geometric re-extraction give the public 11340-letter word; no historical-PD identity is claimed. \\
-C1 & \Discharged & Lemma~\ref{lem:C1} constructs the actual MWW coefficient isomorphism and quantum shadow using the framed tangle isotopy. \\
-C2 & \Discharged & Lemma~\ref{lem:C2} proves the endpoint constant term and \(I+O(h)\) remainder uniformly at every finite cable level. \\
-C3 & \Discharged & The paper explicitly keeps C's $B$-external naturality separate from any essential-sphere action. \\
-P2/E7 & \Discharged & HJ Theorem~5.3 and Lemma~\ref{lem:Ssystem} replace the total attaching system without moving the detector in \(W_2\). \\
-P2/E10/S & \Discharged & Lemma~\ref{lem:Sendpoint} constructs the actual endpoint exchange square and proves the six MWW equations. \\
-P3/E11 & \Discharged & MWW Proposition 3.4 applies after the identified P0/C/S handle maps and preserves degree \(494\). \\
-P3/E12 & \Discharged & MWW Corollary 3.5 gives the standard $S^4$ module concentrated in bidegree zero. \\
-P3/E13 & \Discharged & Lemma~\ref{lem:P0a} identifies the replacement with \(\Sigma_A^0\), and Iwaki's determinant criterion applies to its matrix. \\
+P0a & \Open & Simplicial spine map exists; AR handlebodies are not a certified complex. \\
+P0b & \Open & Word identities only; no framed Kirby movies. \\
+P0c & \Open & 44 points in $D^2$ are not polylines in $B\subset\partial W_2$. \\
+P0d & \Partial & 93-bit Johnson lift matches the public 11340-letter word; finite fact only. \\
+C1 & \Open & No isotopy of the actual cut link; P0a failed first. \\
+C2 & \Open & Not quoted: C1 does not exist. \\
+C3 & \Open & Not used to infer S. \\
+P2/E7 & \Open & Closed HJ Theorem~5.3 is not used as ``$B$ is fixed''. \\
+P2/E10/S & \Open & No B-fixing move list and no endpoint foam movies. \\
+P3/E11 & \Open & MWW Proposition~3.4 remains conditional on P0--S. \\
+P3/E12 & \Partial & MWW Corollary~3.5 is an external citation about $S^4$. \\
+P3/E13 & \Partial & $\det(A-I)=1$ is proved; identifying the replacement with $\Sigma_A^0$ requires P0a. \\
 \bottomrule
 \end{tabularx}
 \end{center}
 
 The historical availability script reports the large files as absent.  They
-are not used: the replacement proof is supplied by the paper lemmas above.
+are not used.  The paper lemmas above do not supply a replacement proof.
 
 The machine-readable allocation in
 \path{audit/t73_premise_audit.json} is regenerated by
@@ -1574,19 +1503,16 @@ on the actual maps and relative-sphere arguments in Sections~7--8.
 \end{enumerate}
 
 The historical large artifacts are unavailable for this replay.
-Independent review should check the Johnson--AR bridge, product framings,
-two cancellations and geometric braid extraction, Lemmas~\ref{lem:C1} and
-\ref{lem:C2}, and the sphere-kernel and endpoint-factorization
-Lemmas~\ref{lem:Ssystem} and \ref{lem:Sendpoint}.
+Independent review should treat Lemmas~\ref{lem:P0a}--\ref{lem:Sendpoint}
+as slogans until the acceptance tests pass.
 
 \section{Conclusion}
 
-The Johnson--AR lemmas identify the replacement handlebody, the MWW
-coefficient and cable lemmas turn the cubic scalar into a nonzero
-degree-$494$ two-handle class, and the standard-sphere endpoint lemma carries
-it through the three- and four-handles.  Since the standard \(S^4\) module
-has no class in that degree, Theorem~\ref{thm:joined} gives a counterexample
-to the smooth four-dimensional Poincare conjecture.
+P0a remains Open: a simplicial map of triangulated tori carries Johnson's
+spines to the AR coordinate spines, but the AR handlebodies are not a
+certified complex.  Later geometric premises are not instantiated.
+Theorem~\ref{thm:A} and Lean's \texttt{computedCubic\_eq\_2624} stand as an
+implication and a finite cubic; they do not produce a counterexample.
 
 \appendix
 
@@ -1594,7 +1520,7 @@ to the smooth four-dimensional Poincare conjecture.
 
 The following table records historical artifacts cited by earlier project
 notes.  They are unavailable and provide no current proof input.  The
-replacement proof does not use these historical objects.  The digests are
+current argument does not use these historical objects.  The digests are
 retained for provenance.
 
 \begin{center}
@@ -1717,10 +1643,11 @@ frozen target input.  Consequently the command
 \texttt{python3 scripts/reconstruct\_t73\_p0.py
  audit/t73\_ar\_product\_witness.json}
 \]
-returns \texttt{P0\_RECONSTRUCTION=OPEN}.  It is superseded by
-\path{audit/t73_p0_johnson_certificate.json}; full regeneration of that
-certificate checks every hypothesis of the lemma and returns
-\texttt{PROVED\_FOR\_EXPLICIT\_JOHNSON\_REPLACEMENT\_PRESENTATION}.
+returns \texttt{P0\_RECONSTRUCTION=OPEN}.  The Johnson certificate
+\path{audit/t73\_p0\_johnson\_certificate.json} is likewise Open:
+\texttt{P0\_STATUS=OPEN}.  The independent receipts named in
+\path{audit/t73\_p0\_reconstruction\_schema.json} have no parseable PL
+complex to which they could apply.
 
 \section{Correspondence with the Lean fields}
 
@@ -1742,10 +1669,9 @@ Lean field & Mathematical obligation \\
 \end{tabularx}
 \end{center}
 
-These are exactly the candidate-level obligations isolated in Sections 5--8.
-They are supplied mathematically above.  The Lean theorem consumes no
-stronger statement, but it still records the external topology as structure
-fields rather than formalizing it internally.
+These remain Open or Partial as in the status table.  The Lean theorem
+consumes no stronger statement, and it records the external topology as
+structure fields rather than formalizing it internally.
 
 \bibliographystyle{amsplain}
 \bibliography{references}

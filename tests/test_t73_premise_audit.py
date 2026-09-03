@@ -20,22 +20,18 @@ def load():
 class PremiseAuditTest(unittest.TestCase):
     def test_committed_audit_regenerates(self) -> None:
         module = load()
-        module.main if False else None
-        import json
-
-        committed = json.loads(module.COMMITTED.read_text())
+        committed = __import__("json").loads(module.COMMITTED.read_text())
         self.assertEqual(committed, module.generate())
 
-    def test_all_load_bearing_items_are_proved(self) -> None:
+    def test_load_bearing_geometry_is_open(self) -> None:
         audit = load().generate()
-        for key in ("C", "S"):
-            self.assertEqual(audit["items"][key]["state"], "PROVED")
-            self.assertTrue(audit["items"][key]["proved"])
+        for key in ("P0", "C", "S"):
+            self.assertEqual(audit["items"][key]["state"], "OPEN")
+            self.assertFalse(audit["items"][key]["proved"])
             self.assertFalse(audit["items"][key]["falsified"])
-        self.assertTrue(audit["items"]["P3_E12"]["proved"])
-        self.assertEqual(audit["items"]["P0"]["state"], "PROVED")
-        self.assertTrue(audit["items"]["P0"]["proved"])
-        self.assertTrue(audit["counterexample_claim_proved"])
+        self.assertFalse(audit["counterexample_claim_proved"])
+        self.assertEqual(audit["overall"], "OPEN")
+        self.assertNotIn("ALL_LOAD_BEARING_ITEMS_DISCHARGED", str(audit))
 
 
 if __name__ == "__main__":

@@ -16,9 +16,16 @@ class P0JohnsonCertificateTest(unittest.TestCase):
         module = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(module)
         result = module.generate(run_geometric_braid=False)
-        self.assertFalse(result["checks"]["geometric_braid"])
         self.assertEqual(result["P0_status"], "OPEN")
-        self.assertTrue(all(value for key, value in result["checks"].items() if key not in {"geometric_braid", "noncircular_source_order"}))
+        self.assertFalse(result["checks"]["johnson_ar_affine_bridge"])
+        self.assertFalse(result["checks"]["two_cancellations"])
+        self.assertFalse(result["checks"]["embedded_framed_collar"])
+        self.assertFalse(result["checks"]["ar_passage_binding"])
+        self.assertFalse(result["checks"]["geometric_braid"])
+        self.assertTrue(result["checks"]["six_sweep_word"])
+        self.assertTrue(result["checks"]["gap_free_basis"])
+        self.assertTrue(result["checks"]["exact_compact_m2"])
+        self.assertTrue(result["checks"]["forty_four_channels"])
 
 
 if __name__ == "__main__":

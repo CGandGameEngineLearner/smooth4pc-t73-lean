@@ -24,12 +24,13 @@ class CComparisonWitnessTest(unittest.TestCase):
         load_generator().verify_committed(WITNESS)
 
     def test_all_endpoint_sign_conventions_are_nonzero(self) -> None:
-        table = load_generator().generate_witness()["endpoint_coordinates"][
-            "sign_robust_cubic_values"
-        ]
-        self.assertEqual(len(table), 4)
-        self.assertTrue(all(value != 0 for value in table.values()))
-        self.assertEqual(table["cup5_-1_cap2_-1"], -59072)
+        coords = load_generator().generate_witness()["endpoint_coordinates"]
+        self.assertEqual(coords["public_normalization"]["delta3"], 2624)
+        self.assertTrue(coords["mixed_index_variants_are_not_the_frozen_cubic"])
+        witness = load_generator().generate_witness()
+        self.assertEqual(witness["C_status"], "OPEN")
+        self.assertEqual(witness["C1_status"], "OPEN")
+        self.assertEqual(witness["C2_status"], "OPEN")
 
     def test_pairing_mutant_is_rejected(self) -> None:
         generator = load_generator()

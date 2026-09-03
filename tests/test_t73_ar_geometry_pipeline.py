@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import importlib.util
 from pathlib import Path
+import shutil
 import unittest
 
 
@@ -42,16 +43,11 @@ class ARGeometryPipelineTest(unittest.TestCase):
         self.assertTrue(movie["all_intersection_pairings_identity"])
         self.assertTrue(movie["pl_realization_status"].startswith("OPEN"))
 
+    @unittest.skipUnless(shutil.which("gap"), "GAP is not installed")
     def test_pipeline_blocks_link_generation_until_pl_psi_exists(self) -> None:
         pipeline = load("check_t73_p0_pipeline").generate()
-        self.assertEqual(
-            pipeline["overall"],
-            "PROVED_FOR_EXPLICIT_JOHNSON_REPLACEMENT_PRESENTATION",
-        )
-        self.assertEqual(
-            pipeline["stages"]["T4_ar_attaching_link"]["state"],
-            "PASS",
-        )
+        self.assertEqual(pipeline["overall"], "OPEN")
+        self.assertFalse(pipeline["P0_proved"])
         self.assertEqual(pipeline["stages"]["T3d_route_thickening"]["state"], "PASS")
         self.assertEqual(
             pipeline["stages"]["T3e_nielsen_passage_comparison"]["state"],
@@ -64,7 +60,10 @@ class ARGeometryPipelineTest(unittest.TestCase):
         self.assertFalse(
             pipeline["stages"]["T3j_linking_nonidentifiability"]["word_ledger_determines_linking"]
         )
-        self.assertEqual(pipeline["stages"]["T2a_compact_free_basis"]["state"], "FAIL_NOT_FREE_BASIS")
+        self.assertIn(
+            pipeline["stages"]["T2a_compact_free_basis"]["state"],
+            ("FAIL_NOT_FREE_BASIS", "GAP_NOT_INSTALLED"),
+        )
         self.assertEqual(pipeline["stages"]["T2b_ia_44_channel_candidate"]["channels"], 44)
         self.assertFalse(pipeline["stages"]["T2b_ia_44_channel_candidate"]["exact_compact_match"])
         self.assertEqual(
@@ -80,7 +79,7 @@ class ARGeometryPipelineTest(unittest.TestCase):
         self.assertTrue(pipeline["stages"]["T2h_johnson_side_candidate"]["exact_compact_match"])
         self.assertEqual(pipeline["stages"]["T2i_johnson_relative_pl_movie"]["relative_state"], "PASS")
         self.assertEqual(pipeline["stages"]["T2i_johnson_relative_pl_movie"]["chosen_alpha_local_identity"], "PASS")
-        self.assertTrue(pipeline["P0_proved"])
+        self.assertFalse(pipeline["P0_proved"])
         self.assertFalse(pipeline["P0_falsified"])
 
     def test_unit_slide_templates_are_exact_and_local(self) -> None:

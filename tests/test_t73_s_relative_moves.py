@@ -16,9 +16,8 @@ class SRelativeMovesTest(unittest.TestCase):
         module = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(module)
         generated = module.generate()
-        self.assertEqual(
-            generated["verdict"], "PARTIAL_GEOMETRY_PASS_ENDPOINT_BINDING_OPEN"
-        )
+        self.assertEqual(generated["verdict"], "OPEN")
+        self.assertFalse(generated["checks"]["detector_fixed"])
         self.assertEqual(generated["relative_geometry"]["spotted_ball_boundary_count"], 7)
         self.assertEqual(generated["relative_geometry"]["maximum_spotted_ball_tubings"], 5)
         self.assertEqual(

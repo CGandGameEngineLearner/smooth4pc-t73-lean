@@ -13,6 +13,7 @@ from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
 PUBLIC_INPUT = ROOT / "data" / "T73_DELTA3_PUBLIC_INPUT.json"
+RECEIPT = ROOT / "data" / "T73_DELTA3_PUBLIC_RECEIPT.json"
 P0_WITNESS = ROOT / "audit" / "t73_p0_johnson_certificate.json"
 DEFAULT_OUTPUT = ROOT / "audit" / "t73_c_comparison_witness.json"
 
@@ -90,9 +91,6 @@ def endpoint_sign_table(recompute, data: dict[str, Any]) -> dict[str, int]:
 def generate_witness() -> dict[str, Any]:
     compact = load_script("generate_t73_compact_kirby_ledger")
     point_push = load_script("verify_t73_compact_point_push")
-    recompute = load_script("recompute_t73_delta3")
-
-    public = json.loads(PUBLIC_INPUT.read_text(encoding="utf-8"))
     p0 = json.loads(P0_WITNESS.read_text(encoding="utf-8"))
     johnson = load_script("search_t73_johnson_alpha_sides").generate()["known_candidate"]
     comparison = load_script("compare_t73_nielsen_passages")
@@ -115,12 +113,15 @@ def generate_witness() -> dict[str, Any]:
         raise AssertionError("closed z circle count differs")
 
     point_receipt = point_push.verify(PUBLIC_INPUT)
-    sign_table = endpoint_sign_table(recompute, public)
-    if sign_table["cup5_-1_cap2_-1"] != -59072:
-        raise AssertionError("public endpoint normalization differs")
+    frozen = json.loads(RECEIPT.read_text(encoding="utf-8"))["results"]["delta3_eta_R_T1"]
+    if frozen != 2624:
+        raise AssertionError("frozen public cubic is not Lean's computedCubic 2624")
 
     witness: dict[str, Any] = {
         "schema": "t73_candidate_c_comparison_witness/v2",
+        "C_status": "OPEN",
+        "C1_status": "OPEN",
+        "C2_status": "OPEN",
         "p0_witness_sha256": p0["certificate_sha256"],
         "product_pairing": {
             "m_2": m2_pairing,
@@ -128,19 +129,21 @@ def generate_witness() -> dict[str, Any]:
             "total_yz_rectangles": 44,
             "remaining_z_circles": 227,
             "geometric_realization": (
-                "take the displayed one-edge subrectangles in the negative/positive "
-                "parallel-copy product annuli from the P0 normal field"
+                "OPEN: pair_y_to_next_z is a cyclic-word pairing. It is not an "
+                "isotopy of the actual cut link and does not exhibit 44 product "
+                "rectangles in P0c annuli."
             ),
         },
         "coefficient_bimodule_equivalence": {
+            "status": "OPEN: MWW Theorem 4.7 is not instantiated; counts 44 and 227 are not the map",
             "source": "M_R(T,T')=KhR_2(R union T' union mirror(T)) with the MWW shift",
             "target": "Hom(F T,F T'){-44} tensor A^tensor227",
-            "F": "the framed west-to-east tangle formed by the 44 product rectangles",
-            "dual_boundary": "the opposite annulus boundary is the pivotal dual F^vee and cancels F under tangle duality",
-            "left_action_square": "gluing f:S->T before the source link equals precomposition by F(f) after the fixed product isotopy",
-            "right_action_square": "gluing g:T'->U after the source link equals postcomposition by F(g) after the fixed product isotopy",
-            "proof_rule": "isotopy invariance, pivotal tangle duality, disjoint-union Kunneth over Q, and associativity of gluing",
-            "ordinary_representable_reduction": "Smooth4PC/RepresentableCoefficient.lean",
+            "F": "OPEN: no framed west-to-east tangle of 44 product rectangles",
+            "dual_boundary": "OPEN: no dual annulus from an actual cut-link isotopy",
+            "left_action_square": "OPEN: paper diagram (17) left square is not certified",
+            "right_action_square": "OPEN: paper diagram (17) right square is not certified",
+            "proof_rule": "isotopy invariance, pivotal tangle duality, disjoint-union Kunneth over Q, and associativity of gluing, after the isotopy exists",
+            "ordinary_representable_reduction": "Smooth4PC/RepresentableCoefficient.lean checks the abstract quotient after the maps exist",
         },
         "selected_class": {
             "object": "T_1=F^-1 U",
@@ -165,8 +168,15 @@ def generate_witness() -> dict[str, Any]:
             "label_order": "P0 collar order doubled by the public cabling rule",
             "cup_constant_terms": "e_0 plus-or-minus e_5",
             "cap_constant_terms": "e_87^* plus-or-minus e_2^*",
-            "sign_robust_cubic_values": sign_table,
-            "public_normalization": {"cup5_sign": -1, "cap2_sign": -1, "delta3": -59072},
+            "sign_robust_cubic_values": {
+                "status": "NOT_USED_AS_FROZEN_CUBIC",
+                "historical_mixed_index_note": (
+                    "cup/cap variants at indices 0,5 and 87,2 mixed two endpoint "
+                    "tables; they are not D3=2624"
+                ),
+            },
+            "mixed_index_variants_are_not_the_frozen_cubic": True,
+            "public_normalization": {"source": "T73_DELTA3_PUBLIC_RECEIPT.json", "delta3": frozen},
             "B44_sha256": point_receipt["B44_sha256"],
         },
         "two_handle_naturality": {
@@ -253,7 +263,8 @@ def main() -> None:
         print(f"WITNESS_SHA256={witness['witness_sha256']}")
     elif args.check:
         witness = verify_committed(args.output)
-        print("T73_C_COMPARISON_WITNESS=PASS")
+        print("T73_C_COMPARISON_WITNESS=OPEN")
+        print(f"C_STATUS={witness['C_status']}")
         print(f"WITNESS_SHA256={witness['witness_sha256']}")
     else:
         print(json.dumps(generate_witness(), indent=2, sort_keys=True))

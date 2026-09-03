@@ -1,10 +1,11 @@
 # T73 proof state ledger
 
-**Current authority:** the conditional paper together with the current P0, C,
-and relative-S research notes.  Entries below describing unavailable
-historical PD/TH objects are recovery history, not current premises.
+**Current authority:** the conditional paper together with
+`docs/proofs/T73_GEOMETRIC_PREMISE_STATUS_20260903.md`.  Geometric P0, C, and
+S remain Open.  Entries below describing unavailable historical PD/TH objects
+are recovery history, not current premises.  Frozen cubic is `2624`.
 
-**Updated:** 2026-09-01 (Asia/Tokyo)
+**Updated:** 2026-09-03
 **Purpose:** recovery source of truth for the mathematical chain. Read this
 before rerunning any long sphere computation.
 
@@ -14,7 +15,7 @@ before rerunning any long sphere computation.
 class:        v_T = eta_R[T_1], T_1 = B_act^{-1} U_(0,5)
 not class:    xi
 not class:    mixed Z
-base value:   D_3(v_T) = -59072
+base value:   D_3(v_T) = 2624
 final degree: (homological, quantum) = (0,494)
 scope:        h^3 associated graded / ordinary divided functional
 ```
@@ -32,7 +33,7 @@ has an actual raw lift but is contained in the full action-closed two-cup
 | E2 selected diagonal class | PROVED | main proof Sections 2--3 |
 | E3 coefficient q-trace and raw-state binding | PROVED | `MR_REES_QUANTUM_TRACE_SOURCE_LEDGER.md`, SHA `99913F0AF70CF5FF650492C2740F98B7053FEBBB58212DA32B506D863836EA84`; `RAW_STATE_BINDING_RESULT.md`, SHA `BCBFBC9F8A5350D323EC2876352EC25C6690E5BB6AD4F2C264441BA4D73CDEF6` |
 | E5/E6 one-/two-handle beta/psi quotient | PROVED at divided cubic | `T73_EVIDENCE_ONE_CUP_E5_E6.md`, source SHA `6A63978D734EFF30B8F6C2E6F9800F9338B3499BA1CA4D6AF4880716468FE865` |
-| G1 actual-Gompf/DIAGRAM framed lift | PROVED | `docs/proofs/T73_GA1_DESCENDING_BRIDGE.md`; AR actual product-ribbon construction; two final hostile reviews PASS |
+| G1 actual-Gompf/DIAGRAM framed lift | OPEN | P0a failed: AR handlebodies are not a certified PL complex; uniqueness of regular neighborhoods is not used |
 | E8 three chosen sphere rows | PROVED at divided cubic | `T73_EVIDENCE_E8_CHOSEN_SPHERES.md`, source SHA `C33AF1FCAE8F0056A75D1841E1151786C2EBB756AD8A768C4E3E6704274E2B43` |
 
 The E5/E6 proof uses the one-cup through-86 cell, the ordinary divided
@@ -41,17 +42,10 @@ the dotted direct system after quotienting the undotted image. It does not use
 the retired owner-only mixed-Z model.
 
 The first G1 PASS was premature because it treated `Ae_i` as a complete
-attaching circle.  The replacement proof instead uses the full
-`m_i=t phi_A(x_i) t^-1 x_i^-1` object.  Aitchison--Rubinstein pp. 5--7
-construct its bottom/top/base-handle product ribbon, and pp. 16--17 construct
-the product normal.  The mapping-torus diffeomorphism transports the whole
-labelled framed presentation.  The two product cancellations give
-`t->empty` and `x->z`, after which the detector collar is defined in a
-standard regular-neighborhood ball.  The empty free word of `r_zx` is not
-used to infer a split disk.  No comparison with the historical DIAGRAM is
-claimed.
-Framing is transported from the actual AR annuli, not inferred from the
-emitter's discarded blackboard winding.
+attaching circle.  The later slogan used uniqueness of regular neighborhoods
+to place a detector ball after the word identities `t empty` and `x to z`.
+That identification is Open: there is no certified PL Heegaard-pair
+homeomorphism and no Kirby cancellation movie.
 
 ## Sphere evidence chronology
 

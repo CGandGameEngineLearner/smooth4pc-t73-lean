@@ -47,27 +47,34 @@ def generate():
         "johnson_candidate_sha256": canonical_sha(candidate),
         "base_pair": {
             "pair": ["t", "h_CS"],
-            "geometric_intersection": 1,
-            "band_type": "AR product rectangle",
-            "relative_twist": 0,
-            "owner_transport": "PASS",
-            "normal_transport": "PASS",
-            "status": "PASS",
+            "word_identity": "not a framed Kirby movie",
+            "geometric_intersection": "OPEN: not supplied by a local movie",
+            "band_type": "OPEN: no cancelling product band complex",
+            "relative_twist": "OPEN: not read from a movie",
+            "owner_transport": "OPEN",
+            "normal_transport": "OPEN",
+            "status": "OPEN",
         },
         "second_pair": {
             "pair": ["x", "m_1"],
             "m1_word": m1_after_t,
-            "geometric_x_passages": 1,
-            "band_type": "parallel Johnson/AR product rectangles",
-            "relative_twist": 0,
-            "owner_transport": "PASS",
-            "normal_transport": "PASS",
-            "status": "PASS",
+            "word_identity": "psi(x)=z and m1=z x^{-1} after the first cancellation",
+            "geometric_x_passages": "OPEN: word length 1 is necessary and not a geometric intersection",
+            "band_type": "OPEN: no cancelling product band complex",
+            "relative_twist": "OPEN: not read from a movie",
+            "owner_transport": "OPEN",
+            "normal_transport": "OPEN",
+            "status": "OPEN",
         },
         "reduced_m2_exact_compact": True,
         "handle_counts_after": {"h0": 1, "h1": 2, "h2": 5, "h3": 3, "h4": 1},
-        "all_component_transport_status": "PASS_BY_SIMULTANEOUS_PRODUCT_BANDS",
-        "cancellation_status": "PASS",
+        "all_component_transport_status": "OPEN: labelled attaching-link movie is absent",
+        "cancellation_status": "OPEN",
+        "obstruction": (
+            "The pairs (t,h_CS) and (x,m1) have the expected free-word identities. "
+            "No framed Kirby movie supplies geometric intersection, a cancelling "
+            "product band, or owner/normal transport of the whole labelled link."
+        ),
     }
     result["certificate_sha256"] = canonical_sha(result)
     return result
@@ -79,7 +86,7 @@ def main():
     args = parser.parse_args()
     result = generate()
     if args.check:
-        print("T73_JOHNSON_CANCELLATIONS=PASS")
+        print("T73_JOHNSON_CANCELLATIONS=OPEN")
         print(f"M1_WORD={result['second_pair']['m1_word']}")
         print(f"REDUCED_M2_EXACT_COMPACT={result['reduced_m2_exact_compact']}")
         print(f"CANCELLATION_STATUS={result['cancellation_status']}")

@@ -81,9 +81,13 @@ def generate():
         "ar_lane_binding_status": collar["ar_passage_binding_status"],
         "geometry_source": "Johnson collar plus oriented r_xy six-leg route",
         "independent_ar_derivation_status": "PASS_CODE_DEPENDENCY_SEPARATION",
-        "replacement_presentation_status": "PENDING_GLOBAL_P0_AUDIT",
+        "replacement_presentation_status": "OPEN_D2_CONTROL_NOT_AR_POLYLINES",
         "historical_pd_status": "NOT_USED_OR_CLAIMED",
-        "interpretation": "The PL motion is generated from the AR-side six-leg factor list and re-extracted before the public target is compared; global P0 still requires auditing the six-leg route and cancellation/framing embeddings.",
+        "interpretation": (
+            "D^2 control: the PL motion is an affine image of generate_t73_target_braid_control "
+            "lanes, not height-monotone polylines in an embedded ball B subset partial W2. "
+            "Word recovery here is not P0c."
+        ),
     }
     result["witness_sha256"] = canonical_sha(result)
     return result
@@ -95,7 +99,7 @@ def main():
     args = parser.parse_args()
     result = generate()
     if args.check:
-        print("T73_JOHNSON_GEOMETRIC_BRAID=PASS")
+        print("T73_JOHNSON_GEOMETRIC_BRAID=D2_CONTROL")
         print(f"STRANDS={result['strand_count']}")
         print(f"ELEMENTARY_CROSSINGS={result['elementary_crossing_count']}")
         print(f"ENDPOINT_RETURN={result['endpoint_return_status']}")

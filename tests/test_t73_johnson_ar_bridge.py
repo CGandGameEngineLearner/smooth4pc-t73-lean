@@ -19,7 +19,14 @@ class JohnsonARBridgeTest(unittest.TestCase):
         self.assertEqual(result["K1_vertex_image"], ["-1/2"] * 3)
         self.assertEqual(result["K2_vertex_image"], ["1/2"] * 3)
         self.assertTrue(result["orientation_preserving"])
-        self.assertEqual(result["bridge_status"], "PASS")
+        self.assertEqual(result["spine_one_complex_map"], "PASS")
+        self.assertEqual(result["ambient_simplicial_map"], "PASS")
+        self.assertEqual(result["johnson_tetrahedron_count"], 48)
+        self.assertEqual(len(result["johnson_spine_edges_scaled"]), 12)
+        self.assertEqual(result["ar_handlebody_as_certified_complex"], "OPEN")
+        self.assertFalse(result["uniqueness_of_regular_neighborhoods_used"])
+        self.assertEqual(result["p0a_status"], "OPEN")
+        self.assertEqual(result["bridge_status"], "OPEN")
 
 
 if __name__ == "__main__":

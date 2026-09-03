@@ -1,14 +1,13 @@
 # P0 reconstruction gate receipt
 
-This receipt records the reproducible strict P0 proof.  The current Johnson
-replacement is `PASS`; the OPEN outputs below are retained as rejected-route
-controls.
+This receipt records the strict P0 reconstruction protocol.  Geometric P0
+remains Open after P0a.  The OPEN outputs below include the current Johnson
+route and the retired Nielsen controls.
 
 ```text
-python3 scripts/certify_t73_p0_johnson.py --check
-T73_P0_JOHNSON_CERTIFICATE=PASS
-P0_STATUS=PROVED_FOR_EXPLICIT_JOHNSON_REPLACEMENT_PRESENTATION
-CERTIFICATE_SHA256=02CEDCE915EBFC2B3C0A88D10BEEB050F0D7DD828F6F11DC849DA83ED2BC05D2
+python3 scripts/certify_t73_p0_johnson.py --check --skip-geometric-braid
+T73_P0_JOHNSON_CERTIFICATE=OPEN
+P0_STATUS=OPEN
 ```
 
 The retired Nielsen stages report:

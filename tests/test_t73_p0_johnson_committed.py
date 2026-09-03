@@ -11,9 +11,9 @@ ROOT = Path(__file__).resolve().parents[1]
 class P0JohnsonCommittedTest(unittest.TestCase):
     def test_committed_certificate_has_every_required_gate(self):
         certificate = json.loads((ROOT / "audit" / "t73_p0_johnson_certificate.json").read_text())
-        self.assertEqual(certificate["verdict"], "PASS")
-        self.assertTrue(certificate["checks"])
-        self.assertTrue(all(certificate["checks"].values()))
+        self.assertEqual(certificate["verdict"], "OPEN")
+        self.assertEqual(certificate["P0_status"], "OPEN")
+        self.assertFalse(certificate["checks"]["embedded_framed_collar"])
         self.assertEqual(certificate["historical_pd_claim"], "NONE")
 
 

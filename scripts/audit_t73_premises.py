@@ -1,34 +1,20 @@
 #!/usr/bin/env python3
 """Audit the proof state of every load-bearing premise in the T73 paper.
 
-The audit distinguishes internal generator claims from candidate-level
-mathematical closure.  A passing conditional-boundary check is not treated as
-a completion certificate.
+Geometric items are Open until the named acceptance tests pass.  This program
+does not hardcode proved: true.
 """
 
 from __future__ import annotations
 
 import argparse
 import json
-import subprocess
-import sys
 from pathlib import Path
 from typing import Any
 
 
 ROOT = Path(__file__).resolve().parents[1]
 COMMITTED = ROOT / "audit" / "t73_premise_audit.json"
-
-
-def run_json(script: str) -> dict[str, Any]:
-    result = subprocess.run(
-        [sys.executable, str(ROOT / "scripts" / script)],
-        cwd=ROOT,
-        check=True,
-        text=True,
-        capture_output=True,
-    )
-    return json.loads(result.stdout)
 
 
 def require(text: str, needle: str, source: Path) -> None:
@@ -41,120 +27,130 @@ def generate() -> dict[str, Any]:
     paper_text = paper.read_text(encoding="utf-8")
     completion = ROOT / "docs" / "research" / "T73_COMPLETION_AUDIT_2026-09-02.md"
     completion_text = completion.read_text(encoding="utf-8")
-    hattori = run_json("verify_t73_compact_hattori_binding.py")
-    c_witness = run_json("generate_t73_c_comparison_witness.py")
-    spheres = run_json("generate_t73_stable_sphere_movies.py")
     p0_certificate = json.loads(
         (ROOT / "audit" / "t73_p0_johnson_certificate.json").read_text(encoding="utf-8")
+    )
+    c_witness = json.loads(
+        (ROOT / "audit" / "t73_c_comparison_witness.json").read_text(encoding="utf-8")
     )
     s_certificate = json.loads(
         (ROOT / "audit" / "t73_s_relative_moves_certificate.json").read_text(encoding="utf-8")
     )
 
     for marker in (
-        r"P0a & \Discharged",
-        r"C1 & \Discharged",
-        r"P2/E10/S & \Discharged",
-        r"P3/E11 & \Discharged",
-        r"P3/E12 & \Discharged",
-        r"P3/E13 & \Discharged",
+        r"P0a & \Open",
+        r"C1 & \Open",
+        r"P2/E10/S & \Open",
     ):
         require(paper_text, marker, paper)
-    for marker in ("| P0 | **DISCHARGED**", "| C | **DISCHARGED**", "| S | **DISCHARGED**"):
+    for marker in ("| P0 | **OPEN**", "| C | **OPEN**", "| S | **OPEN**"):
         require(completion_text, marker, completion)
 
+    p0_open = p0_certificate.get("verdict") != "PASS" or p0_certificate.get("P0_status") == "OPEN"
     items = {
         "P0": {
-            "state": "PROVED",
-            "proved": True,
+            "state": "OPEN",
+            "proved": False,
             "falsified": False,
             "evidence": [
+                "scripts/certify_t73_johnson_ar_bridge.py",
                 "scripts/reconstruct_t73_p0.py",
                 "scripts/check_t73_p0_pipeline.py",
-                "scripts/generate_t73_heegaard_nielsen_movie.py",
-                "scripts/extract_t73_ryz_linking.py",
                 "scripts/falsify_t73_linking_from_words.py",
-                "scripts/check_t73_compact_free_basis.py",
-                "scripts/search_t73_ia_representative.py",
-                "scripts/search_t73_ia_framing.py",
-                "scripts/audit_t73_inner_conjugation_geometry.py",
-                "scripts/search_t73_dual_meridian_ia.py",
                 "scripts/search_t73_johnson_alpha_sides.py",
-                "scripts/straighten_t73_johnson_relative_ball.py",
                 "docs/proofs/T73_GAP_FREE_BASIS_RECEIPT.md",
                 "tests/test_t73_p0_reconstruction.py",
-                "docs/research/T73_P0_PUBLIC_BRAID_AUDIT_2026-09-02.md",
                 "audit/t73_p0_johnson_certificate.json",
+                "docs/proofs/T73_GEOMETRIC_PREMISE_STATUS_20260903.md",
             ],
-            "blocker": None,
+            "blocker": (
+                "P0a: AR handlebodies are not a certified PL complex; uniqueness "
+                "of regular neighborhoods is not used. reconstruct_t73_p0.py has "
+                "no parseable geometric input."
+            ),
             "control": "The synthetic rational 44-strand control recovers the public word but is deliberately not AR-bound.",
             "falsified_route": "The current 19-step Nielsen representative is falsified as the source of the public 44-channel collar; only that retired route remains rejected.",
             "falsified_compact_lift": "GAP proves the three compact straight spine words are injective but not surjective on F3, so they cannot be the images of a handlebody homeomorphism.",
             "replacement_candidate": "Inner conjugation by x^-1 gives a GAP-certified F3 automorphism with 44 channels, but its exact compact word and geometric owner/framing movie remain open.",
             "replacement_adjudication": "The x^-1 correction is simultaneous inner conjugation, hence only a basepoint change in Out(F3); its two extra word passages are not an embedded 44-channel witness.",
-            "johnson_candidate": "The 93-step Johnson alpha-side lift is a GAP free basis, matches compact m2 exactly, has 44 framed lanes, a relative fixed-ball movie and an independently generated/re-extracted public braid.",
+            "johnson_candidate": (
+                "P0d finite fact only: the 93-bit Johnson alpha-side lift is a "
+                "GAP free basis, matches compact m2, has 44 y-channels, and the "
+                "six-sweep word equals the public 11340-letter word.  This is not "
+                "an embedded collar or a Heegaard-pair homeomorphism."
+            ),
             "certificate_sha256": p0_certificate["certificate_sha256"],
+            "p0a_status": "OPEN",
+            "p0b_status": "OPEN",
+            "p0c_status": "OPEN",
+            "p0d_finite_word_match": True,
         },
         "C": {
-            "state": "PROVED",
-            "proved": True,
+            "state": "OPEN",
+            "proved": False,
             "falsified": False,
-            "generator_internal_status": hattori["required_simultaneous_transport"]["status"],
+            "generator_internal_status": "NOT_A_CUT_LINK_ISOTOPY",
             "evidence": [
-                "scripts/verify_t73_compact_hattori_binding.py",
                 "scripts/generate_t73_c_comparison_witness.py",
                 "audit/t73_c_comparison_witness.json",
-                "paper/spc4-t73-candidate/main.tex:The complete two-handle cocone",
+                "Smooth4PC/RepresentableCoefficient.lean",
             ],
-            "blocker": None,
-            "adjudication": "Paper Lemmas C1/C2 identify the actual coefficient and all-cable endpoint expansion; the certificate supplies only finite data.",
+            "blocker": "C1 requires the P0c product annuli and an isotopy of the actual cut link; P0a stopped first.",
+            "adjudication": "Counts 44 and 227 and the abstract quotient in RepresentableCoefficient.lean are not MWW Theorem 4.7.",
             "certificate_sha256": c_witness["witness_sha256"],
         },
         "S": {
-            "state": "PROVED",
-            "proved": True,
+            "state": "OPEN",
+            "proved": False,
             "falsified": False,
-            "generator_internal_status": spheres["actual_mww_transport_status"],
+            "generator_internal_status": s_certificate.get("verdict"),
             "evidence": [
-                "scripts/generate_t73_stable_sphere_movies.py",
                 "scripts/certify_t73_s_relative_moves.py",
                 "audit/t73_s_relative_moves_certificate.json",
-                "docs/research/T73_S_RELATIVE_STANDARD_SYSTEM_2026-09-02.md",
-                "paper/spc4-t73-candidate/main.tex:The remaining essential-sphere endpoint comparison",
             ],
-            "relative_geometry_proved": True,
-            "blocker": None,
-            "adjudication": "Paper Lemmas Ssystem and Sendpoint give kernel invariance and the actual endpoint exchange square.",
+            "relative_geometry_proved": False,
+            "blocker": (
+                "No B-fixing move list in Q = partial W2 \\ Int B0, and "
+                "actual_standard_sphere_endpoint_foam_computed is false. "
+                "Closed-manifold HJ Theorem 5.3 is not used as 'B is fixed'."
+            ),
+            "adjudication": "Paper Lemmas Ssystem and Sendpoint remain slogans.",
             "certificate_sha256": s_certificate["certificate_sha256"],
         },
         "P3_E11": {
-            "state": "PROVED",
-            "proved": True,
+            "state": "OPEN",
+            "proved": False,
             "falsified": False,
-            "blocker": None,
+            "blocker": "MWW Proposition 3.4 applies only after P0--S",
             "evidence": ["MWW Proposition 3.4; candidate application is conditional on P0--S"],
         },
         "P3_E12": {
-            "state": "PROVED",
-            "proved": True,
+            "state": "CITED_EXTERNAL",
+            "proved": False,
             "falsified": False,
-            "evidence": ["MWW Corollary 3.5 as cited in paper/spc4-t73-candidate/main.tex"],
+            "evidence": ["MWW Corollary 3.5 as a statement about S^4, not a candidate identification"],
         },
         "P3_E13": {
-            "state": "PROVED",
-            "proved": True,
+            "state": "PARTIAL",
+            "proved": False,
             "falsified": False,
-            "blocker": None,
-            "evidence": ["audit/t73_p0_johnson_certificate.json", "Iwaki Proposition 2.1 as cited in the paper"],
+            "blocker": "det(A-I)=1 is proved; identifying the Johnson replacement with Sigma_A^0 requires P0a",
+            "evidence": ["Smooth4PC/T73Finite.lean", "Iwaki Proposition 2.1 for the matrix criterion"],
         },
     }
+    if not p0_open:
+        raise AssertionError("P0 certificate cannot be PASS while P0a remains Open")
     return {
         "schema": "t73_premise_audit/v1",
-        "overall": "ALL_LOAD_BEARING_ITEMS_DISCHARGED",
-        "counterexample_claim_proved": True,
+        "overall": "OPEN",
+        "counterexample_claim_proved": False,
         "counterexample_claim_falsified": False,
         "items": items,
-        "interpretation": "No OPEN item is classified as falsified merely because its witness is absent.",
+        "interpretation": (
+            "Stopped at P0a: a simplicial spine map exists, but AR handlebodies "
+            "are not a certified complex. Later geometric premises are Open and "
+            "are not quoted as theorems."
+        ),
     }
 
 
@@ -173,7 +169,7 @@ def main() -> None:
         committed = json.loads(COMMITTED.read_text(encoding="utf-8"))
         if committed != generated:
             raise AssertionError("committed premise audit differs from regenerated audit")
-        print("T73_PREMISE_AUDIT=PASS")
+        print("T73_PREMISE_AUDIT=OPEN")
         print(f"OVERALL={generated['overall']}")
         return
     if not args.write:

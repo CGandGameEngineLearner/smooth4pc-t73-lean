@@ -24,8 +24,6 @@ def canonical_sha(value: Any) -> str:
 def generate() -> dict[str, Any]:
     p0 = json.loads(P0.read_text(encoding="utf-8"))
     c = json.loads(C.read_text(encoding="utf-8"))
-    if p0["verdict"] != "PASS":
-        raise AssertionError("P0 certificate is not passing")
     if c["p0_witness_sha256"] != p0["certificate_sha256"]:
         raise AssertionError("C is not bound to the Johnson P0 certificate")
 
@@ -56,7 +54,7 @@ def generate() -> dict[str, Any]:
                     "replacement": "spotted-ball expansion followed by sphere slides",
                 },
             ],
-            "collar_motion": "IDENTITY_ON_B0",
+            "collar_motion": "OPEN: no B-fixing move list and no complete system already disjoint from B",
         },
         "mww_hemisphere_table": {
             "basis": ["1", "X"],
@@ -68,7 +66,7 @@ def generate() -> dict[str, Any]:
         "checks": {
             "seven_spotted_ball": spotted_ball_boundaries == 7,
             "at_most_five_tubings": boundary_copies - 1 == 5,
-            "detector_fixed": True,
+            "detector_fixed": False,
             "formal_target_rows_equal": True,
             "three_coequalizers": sphere_count == 3,
         },
@@ -85,11 +83,7 @@ def generate() -> dict[str, Any]:
             ),
         },
     }
-    result["verdict"] = (
-        "PARTIAL_GEOMETRY_PASS_ENDPOINT_BINDING_OPEN"
-        if all(result["checks"].values())
-        else "FAIL"
-    )
+    result["verdict"] = "OPEN"
     result["certificate_sha256"] = canonical_sha(result)
     return result
 

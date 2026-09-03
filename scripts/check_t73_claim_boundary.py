@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Check that the final paper claim is backed by explicit paper lemmas."""
+"""Check that the paper does not claim a discharged counterexample."""
 
 from __future__ import annotations
 
@@ -25,26 +25,26 @@ def check() -> None:
 
     require(
         paper_text,
-        r"\begin{theorem}[Trace-73 theorem]\label{thm:joined}",
+        r"\begin{theorem}[Conditional trace-73 theorem]\label{thm:joined}",
         paper,
     )
-    require(paper_text, r"P0a & \Discharged", paper)
-    require(paper_text, r"C1 & \Discharged", paper)
-    require(paper_text, r"P2/E7 & \Discharged", paper)
-    require(paper_text, r"P2/E10/S & \Discharged", paper)
-    require(paper_text, r"P3/E11 & \Discharged", paper)
-    require(paper_text, r"P3/E12 & \Discharged", paper)
-    require(paper_text, r"P3/E13 & \Discharged", paper)
-    require(paper_text, r"\begin{lemma}[Endpoint factorization for a standard sphere]", paper)
-    require(paper_text, "gives a counterexample", paper)
+    require(paper_text, r"P0a & \Open", paper)
+    require(paper_text, r"C1 & \Open", paper)
+    require(paper_text, r"P2/E10/S & \Open", paper)
+    require(paper_text, r"computedCubic_eq_2624", paper)
+    require(paper_text, "2624", paper)
 
-    reject(paper_text, r"\begin{theorem}[Conditional trace-73 theorem]", paper)
-    reject(paper_text, r"P2/E10/S & \Open", paper)
+    reject(paper_text, r"P0a & \Discharged", paper)
+    reject(paper_text, r"C1 & \Discharged", paper)
+    reject(paper_text, r"P2/E10/S & \Discharged", paper)
+    reject(paper_text, r"P0a & \Discharged", paper)
+    reject(paper_text, "gives a counterexample", paper)
+    reject(paper_text, r"\begin{theorem}[Trace-73 theorem]\label{thm:joined}", paper)
 
 
 def main() -> None:
     check()
-    print("T73_CLAIM_BOUNDARY=PASS")
+    print("T73_CLAIM_BOUNDARY=OPEN_GEOMETRY")
 
 
 if __name__ == "__main__":

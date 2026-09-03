@@ -79,20 +79,25 @@ def generate():
         "schema": "t73_johnson_ribbon_collar/v1",
         "johnson_candidate_sha256": canonical_sha(johnson),
         "relative_movie_sha256": relative["movie_sha256"],
-        "ambient_handle": "the reduced y one-handle D^2 times [-1,1]",
+        "ambient_handle": "OPEN: D^2 model is not an embedded ball in the reduced AR boundary",
         "containing_ball": {
-            "chart": "D^2 times [-1/2,1/2]",
-            "topological_type": "3-ball",
-            "disjoint_from_section_ball": True,
-            "orientation": "product orientation",
+            "chart": "unit disk D^2 with 44 rational sample points; not B subset partial W2",
+            "topological_type": "OPEN",
+            "disjoint_from_section_ball": "OPEN",
+            "orientation": "OPEN",
         },
         "wickets": wickets,
         "owner_counts": {"r_xy": 2, "m_2": 42},
         "negative_wickets": [entry["wicket"] for entry in wickets if entry["orientation"] < 0],
         "framing_push_epsilon": "1/10000",
-        "pairwise_disjointness_status": "PASS_BY_DISTINCT_RATIONAL_LANES",
-        "product_framing_status": "PASS",
-        "ar_passage_binding_status": "PASS_BY_EXACT_JOHNSON_M2_AND_STANDARD_RXY",
+        "pairwise_disjointness_status": "OPEN: 44 points in D^2 are not pairwise-disjoint polylines in B",
+        "product_framing_status": "OPEN: no tubular coordinates f_i : nu(K_i) -> S^1 x D^2",
+        "ar_passage_binding_status": "OPEN: word ownership is not an AR passage embedding",
+        "obstruction": (
+            "Lane points (2(i-1)-43)/100 lie in the unit disk. They are not "
+            "height-monotone polylines in an embedded 3-ball B in the reduced "
+            "AR handlebody boundary, and they do not carry transported MWW normals."
+        ),
     }
     result["collar_sha256"] = canonical_sha(result)
     return result
@@ -104,7 +109,7 @@ def main():
     args = parser.parse_args()
     result = generate()
     if args.check:
-        print("T73_JOHNSON_RIBBON_COLLAR=PASS")
+        print("T73_JOHNSON_RIBBON_COLLAR=OPEN")
         print(f"WICKETS={len(result['wickets'])}")
         print(f"OWNER_COUNTS={result['owner_counts']}")
         print(f"NEGATIVE_WICKETS={result['negative_wickets']}")

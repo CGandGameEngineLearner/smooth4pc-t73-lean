@@ -22,7 +22,7 @@ class JohnsonGeometricBraidTest(unittest.TestCase):
         self.assertEqual(result["relative_endpoint_word_status"], "PASS")
         self.assertEqual(result["historical_pd_status"], "NOT_USED_OR_CLAIMED")
         self.assertEqual(result["independent_ar_derivation_status"], "PASS_CODE_DEPENDENCY_SEPARATION")
-        self.assertEqual(result["replacement_presentation_status"], "PENDING_GLOBAL_P0_AUDIT")
+        self.assertEqual(result["replacement_presentation_status"], "OPEN_D2_CONTROL_NOT_AR_POLYLINES")
 
 
 if __name__ == "__main__":

@@ -50,7 +50,17 @@ def generate() -> dict[str, Any]:
         linking_value = None
     framing = load("audit_t73_ryz_framing").generate(linking_value)
     nonidentifiability = load("falsify_t73_linking_from_words").generate()
-    compact_basis = load("check_t73_compact_free_basis").run(timeout=300)
+    try:
+        compact_basis = load("check_t73_compact_free_basis").run(timeout=300)
+    except RuntimeError as exc:
+        if "GAP is not installed" not in str(exc):
+            raise
+        compact_basis = {
+            "compact_verdict": "GAP_NOT_INSTALLED",
+            "control_verdict": "GAP_NOT_INSTALLED",
+            "compact": {"gap_version": None},
+            "receipt_sha256": None,
+        }
     ia_representative = load("search_t73_ia_representative").generate(max_length=1)
     ia_movie = load("construct_t73_ia_to_compact_movie").generate()
     ia_band_schedule = load("generate_t73_ia_band_schedule").generate()
@@ -259,7 +269,7 @@ def generate() -> dict[str, Any]:
         "P0_proved": final_pass,
         "P0_falsified": False,
         "stages": stages,
-        "next_required_object": None if final_pass else "complete the Johnson P0 certificate",
+        "next_required_object": None if final_pass else "P0a PL/smooth homeomorphism of the Johnson and AR Heegaard handlebodies as certified complexes",
     }
 
 
@@ -269,7 +279,7 @@ def main() -> None:
     args = parser.parse_args()
     result = generate()
     if args.check:
-        print("T73_P0_PIPELINE=PASS")
+        print("T73_P0_PIPELINE=OPEN" if not result["P0_proved"] else "T73_P0_PIPELINE=PASS")
         print(f"OVERALL={result['overall']}")
         print(f"NEXT_REQUIRED_OBJECT={result['next_required_object']}")
     else:

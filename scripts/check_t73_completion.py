@@ -38,8 +38,8 @@ def check() -> None:
     load_script("check_t73_claim_boundary").check()
 
     paper_text = paper.read_text(encoding="utf-8")
-    require(paper_text, "gives a counterexample", paper)
-    require(paper_text, r"P2/E10/S & \Discharged", paper)
+    require(paper_text, r"P2/E10/S & \Open", paper)
+    require(paper_text, r"\begin{theorem}[Conditional trace-73 theorem]\label{thm:joined}", paper)
 
     conditional_text = conditional.read_text(encoding="utf-8")
     external_text = external.read_text(encoding="utf-8")
@@ -54,7 +54,7 @@ def check() -> None:
 
 def main() -> None:
     check()
-    print("T73_COMPLETION=PASS")
+    print("T73_COMPLETION=CONDITIONAL")
 
 
 if __name__ == "__main__":
