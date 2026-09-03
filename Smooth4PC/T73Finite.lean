@@ -76,13 +76,13 @@ theorem detAMinusI_eq_one : detAMinusI = 1 := by
 theorem sphereDet_eq_one : sphereDet = 1 := by
   norm_num [sphereDet, det3, sphereColumns]
 
-def cubicBase : Int := 7384
+def cubicBase : Int := -328
 def substitutionLinear : Int := -2
 
 /-- The cubic after substituting the linear coefficient. -/
 def computedCubic : Int := substitutionLinear ^ 3 * cubicBase
 
-theorem computedCubic_eq_neg59072 : computedCubic = -59072 := by
+theorem computedCubic_eq_2624 : computedCubic = 2624 := by
   norm_num [computedCubic, substitutionLinear, cubicBase]
 
 theorem computedCubic_ne_zero : computedCubic ≠ 0 := by

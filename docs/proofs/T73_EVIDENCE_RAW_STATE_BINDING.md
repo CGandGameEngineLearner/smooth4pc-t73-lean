@@ -7,9 +7,9 @@ actual state s0=(alpha=0,r=e_m2+e_rxy):       CONSTRUCTED
 named raw representative tilde(v)_s0:         CONSTRUCTED
 not obtained from Phi surjectivity:           YES
 core-attachment movie:                        EXPLICIT MWW CORE DISKS
-Theta_s0(tilde(v))=u_h, u_h mod h=e0-e5:      PROVED
+Theta_s0(tilde(v))=u_h, u_h mod h=e2-e87:     CANDIDATE-SPECIFIC / NOT CERTIFIED
 raw degree 498 -> cabled degree 494:           PROVED
-remaining E3 premise:                         NONE (strict foam scope remains E4)
+remaining endpoint premise:                   HATTORI ACTUAL BINDING / U TYPING
 ```
 
 ## 1. Exact raw summand
@@ -33,7 +33,7 @@ k^+=r+\alpha^+=r.
 Thus the raw boundary link in `partial W1` is exactly one negative and one
 positive framed physical copy of `m2`, and one negative and one positive copy
 of `rxy`.  It is the actual link whose gate cut was checked directly in
-`D:/tmp/t73_actual_cable_unit/ACTUAL_PD_CABLE_UNIT_CERT.json`.
+[`ACTUAL_PD_CABLE_UNIT_CERT.json`](../../evidence/public_geometry/ACTUAL_PD_CABLE_UNIT_CERT.json).
 
 For `N=2`, MWW's raw state summand is
 
@@ -55,7 +55,7 @@ Cut `K(r,r)` along the y/z belt spheres.  In the summand with standard z
 wickets and seam
 
 \[
-T_1=B_{act}^{-1}U_{(0,5)},
+T_1=B_{act}^{-1}U_{(2,87)},
 \]
 
 the actual balanced Hattori equivalence gives the explicit homology element
@@ -135,12 +135,16 @@ each z-only cap applies `epsilon(X)=1`.  Consequently
 =Sh_{s0}\Phi\iota_{s0}(\widetilde v_{s0})
 =u_h,
 \qquad
-u_h\bmod h=e_0-e_5\in Q(88,86)=M_1(88).
+u_h\bmod h=e_2-e_{87}\in Q(88,86)=M_1(88).
 \tag{4}
 \]
 
-This is equality for the named filling (3), not a claim that `Phi` is
-surjective and therefore has some suitable preimage.
+The endpoint positions in (4) are read from
+`data/B88_POSITION_TO_PASSAGE_TABLE.json`, the same collar table used by the
+Artin word.  The assertion that this endpoint shadow is the image of the
+actual Hattori filling remains a candidate-specific premise; the table fixes
+the coordinates but does not construct the geometric equivalence.  This is
+not a claim that `Phi` is surjective and therefore has some suitable preimage.
 
 ## 5. Degree ledger
 
@@ -164,13 +168,13 @@ not reset the absolute lasagna grading to zero.
 
 ## 6. Sources and boundary
 
-- raw state/cabled relation: `D:/tmp/r6/mww_handle_src/kirby.tex:320-357`;
+- raw state/cabled relation: MWW, *Skein lasagna modules and handle decompositions*, handle-presentation section;
 - literal core-disk definition of `Phi`: `kirby.tex:359-378`;
-- one-handle gluing representative: `D:/tmp/r6/mww_handle_src/1handles.tex:242-293`;
-- vertical-horizontal trace: `D:/tmp/r6/bpw_src/shadows/vertical.tex:11-58`;
+- one-handle gluing representative: MWW, one-handle section;
+- vertical-horizontal trace: BPW, vertical trace section;
 - exact degree evidence:
-  `D:/tmp/r6/agents/finite_type_leading/ORDINARY_SHADOW_HATTORI_CHAIN_RESULT.md:100-115`
-  and `D:/tmp/r6/grading_attack/ledger/Q494_SPHERE_GRADING_LEDGER.md:45-60`.
+  [`ORDINARY_SHADOW_HATTORI_CHAIN_RESULT.md`](../../evidence/public_geometry/source_notes/ORDINARY_SHADOW_HATTORI_CHAIN_RESULT.md)
+  and [`Q494_SPHERE_GRADING_LEDGER.md`](../../evidence/public_geometry/source_notes/Q494_SPHERE_GRADING_LEDGER.md).
 
 The construction closes E3.  It still uses the globally stated strict foam
 functoriality E4 for equality of the two composite movies; no additional raw

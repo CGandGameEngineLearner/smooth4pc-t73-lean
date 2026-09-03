@@ -1,19 +1,18 @@
 # Single-input decision: `delta_3(eta_R[T1])`
 
 Date: 2026-08-31
-Scope: the one number requested.  No repair of the remaining chain and no new
-input.
+Erratum: 2026-09-02
 
-## Binary verdict
+## Binary verdict after endpoint-index unification
 
 ```text
-delta_3(eta_R[T1]) = -59072 != 0
-delta_3(xi)         =      0
+delta_3(eta_R[T1]) = 2624 != 0
+delta_3(xi)         =    0
 
-INPUT-CONFUSION CHALLENGE: SURVIVED
+ENDPOINT-INDEX ERRATUM: NONZERO SURVIVES
 ```
 
-This is under the functional fixed in the request,
+The functional is defined once:
 
 \[
 \Delta_h(x)=\ell(\rho_h(W)-I)\Phi_h\operatorname{Sh}(x),
@@ -21,143 +20,117 @@ This is under the functional fixed in the request,
 \delta_3(x)=[h^3]\Delta_h(x).
 \]
 
-The Fable objection identifies a real notational trap, but its proposed value
-`0` for `eta_R[T1]` drops the **outer** factor `rho_h(W)-I` from this fixed
-definition.  A constant inner image does not make `Delta_h` constant.
+## 1. Erratum history
 
-## 1. Definition frozen independently of the old scalar
+`ERRATUM_HISTORY_BEGIN` The 2 September public draft reported `-59072`.
+That value mixed the THXY endpoint labels used for `u` with the collar/Burau
+labels used for `ell`.  The Artin word is generated in the collar coordinates,
+so the physical cup must first be translated by
+`data/B88_POSITION_TO_PASSAGE_TABLE.json`.  `ERRATUM_HISTORY_END`
 
-MWW's one-handle formula is the direct sum over inserted tangles modulo the two
-category actions (`mww_handle_src/1handles.tex:242-299`); its algebraic form is
-zeroth Hochschild homology, whose generators are diagonal trace classes and
-whose relation is `fg-gf` (`:420-429`).  The Chern/Hattori identity is the trace
-class of an identity (`:783-787`).  The vertical-to-horizontal source formula is
+The table binds the physical cup
 
-\[
-t^{Sh}(p\xrightarrow{\alpha}Fp)=Sh([p,\alpha])
-\]
+```text
+r_xy negative passage c_r_xy_neg:0000  -> B88 index 2;
+m_2  positive passage c_m_2_pos:0310   -> B88 index 87.
+```
 
-(`bpw_src/shadows/vertical.tex:11-18,26-50`).
-
-For this fixed coefficient, define `eta_R[T]` to be the MWW summand class of the
-fixed Hattori rectangle coefficient morphism at object `T`.  Its horizontal
-image is the identity on the composite coefficient tangle `B_Omega T`, together
-with the common `X^227` factor.  The instantiated Hattori identities are frozen
-at `PRODUCT_NORMAL_CHRISTOFFEL_THXY_MOVIE.json:748191-748219`; they are not read
-from the previous `-59072` computation.
-
-The noncommutative order is
+Thus, in the single coordinate convention used by the word and cap,
 
 \[
-B_\Omega=W F_\Omega,
-\quad T_0=F_\Omega^{-1}U_1,
-\quad T_1=F_\Omega^{-1}W^{-1}U_1.
-\]
-
-Therefore
-
-\[
-B_\Omega T_0=WU_1,
+u=e_2-e_{87},
 \qquad
-B_\Omega T_1=U_1.
+\ell=e_{87}^*-e_2^*.
 \]
 
-After the 227 common caps and the fixed one-defect identification,
+The source/target identification remains a candidate-specific geometric
+premise.  This erratum fixes only the finite endpoint coordinates.
+
+## 2. The two inputs remain distinct
+
+For the fixed coefficient, let `eta_R[T]` be the MWW coefficient-trace class
+of the Hattori identity at object `T`.  With
 
 \[
-\Phi_h Sh(\eta_R[T_1])=u+O(h),
-\qquad u=e_0-e_5.
+B_\Omega=WF_\Omega,
+\quad T_0=F_\Omega^{-1}U_1,
+\quad T_1=F_\Omega^{-1}W^{-1}U_1,
 \]
 
-The frozen strict normalization writes this as `u`.  If one keeps an unabsorbed
-projective movie sign instead, the answer below changes only by an overall
-sign, never to zero.
+we have `B_Omega T0 = W U1` and `B_Omega T1 = U1`.  The corrected endpoint
+binding is
+
+\[
+\Phi_h\operatorname{Sh}(\eta_R[T_1])=u+O(h).
+\]
 
 For
 
 \[
-\xi=\eta_R[T_0]-s_{inv}\eta_R[T_1],
+\xi=\eta_R[T_0]-s_{\mathrm{inv}}\eta_R[T_1],
 \]
 
-`s_inv` is exactly the cancellation-sign calibration.  Hence, using the same
-definition and sign convention,
+the same convention gives
 
 \[
-\Phi_h Sh(\xi)=(\rho_h(W)-I)u.
+\Phi_h\operatorname{Sh}(\xi)=(\rho_h(W)-I)u.
 \]
 
-Thus `eta_R[T1]` and `xi` are not the same input: the former has leading inner
-image `u`; the latter already has one factor `rho_h(W)-I`.
+Hence the detector applies one copy of `rho_h(W)-I` to `eta_R[T1]` and two
+copies to `xi`.
 
-## 2. Exact raw-word calculation
+## 3. Exact calculation
 
-The verifier reads the 45,360-letter B88 word directly from
-`T73_COLLAR_BRAID.json` and evaluates the unreduced Burau action with Python
-unbounded integers in `Z[epsilon]/(epsilon^7)`, where
-`epsilon=t-1`, `t=q^-2`, `h=q-1`.
-
-It obtains
+`scripts/recompute_t73_delta3.py` reconstructs the 45,360-letter B88 word
+from primitive crossing rows and evaluates the unreduced Burau action over
+`Z[epsilon]/(epsilon^7)`.  With the corrected `u` and the unchanged `ell` it
+computes
 
 ```text
 ell (rho(W)-I) u, epsilon degrees 0..6:
-  [0, 0, 0, 7384, -660412, 34814626, -1365512573]
+  [0, 0, 0, -328, 14596, -410246, 9595271]
 
 ell (rho(W)-I)^2 u, epsilon degrees 0..6:
-  [0, 0, 0, 0, 0, 0, -456576]
+  [0, 0, 0, 0, 0, 0, -102729600]
 ```
 
-Since `epsilon=-2h+3h^2-4h^3+...`,
+Because `epsilon=-2h+3h^2-4h^3+...`,
 
 \[
-[h^3]\ell(\rho_h(W)-I)u=(-2)^3\,7384=-59072,
+[h^3]\ell(\rho_h(W)-I)u=(-2)^3(-328)=2624,
 \]
 
-whereas the square starts in order six and therefore
+whereas the square starts in order six.  Therefore
 
 \[
-[h^3]\ell(\rho_h(W)-I)^2u=0.
-\]
-
-Consequently,
-
-\[
-\boxed{\delta_3(\eta_R[T_1])=-59072\ne0},
+\boxed{\delta_3(\eta_R[T_1])=2624\ne0},
 \qquad
 \boxed{\delta_3(\xi)=0}.
 \]
 
-The source of the confusion is now explicit: the **plain shadow cubic** of
-`xi` is also `-59072`, while `Delta_3(xi)` is zero.  The same matrix product
-occurs in two different expressions:
+The complete `h` profiles through degree six are
 
 ```text
-[h^3] ell Phi_h Sh(xi)       = -59072
-[h^3] ell (rho_h(W)-I)Phi_h Sh(eta_R[T1]) = -59072
-[h^3] ell (rho_h(W)-I)Phi_h Sh(xi)         = 0
+eta: [0, 0, 0, 2624, 221728, 11760112, 520583560]
+xi:  [0, 0, 0, 0, 0, 0, -6574694400]
 ```
 
-## 3. Reproduction
+## 4. Reproduction
 
 ```powershell
-python -B D:\tmp\r6\eta_t1_delta3_reaudit\recompute_eta_t1_delta3.py --write
+python -I -B scripts/recompute_t73_delta3.py --check --write-receipt
 ```
 
-Expected terminal output:
+The immutable outputs are:
 
 ```text
-VERIFY=PASS
-delta3(eta_R[T1])=-59072
-delta3(xi)=0
-plain_shadow_cubic(xi)=-59072
-BINARY=ALIVE_ON_THIS_INPUT-CONFUSION_QUESTION
+B88_POSITION_TO_PASSAGE_TABLE SHA256:
+  119C7E9E74AE6C820DA72A84CDFD5D445D81E6C3AACCC209C25D37C323961508
+
+T73_DELTA3_PUBLIC_RECEIPT.json SHA256:
+  7C681B99492A5C34B3B8A7EC8B7269E3FD67CD989728C2D4A1C619A63387A722
 ```
 
-Artifacts:
-
-```text
-41131EC1C15118F4251EBE1A54619D3887B3BE3FFD0A39FAA11F0086EE7B4499  recompute_eta_t1_delta3.py
-FE9AB4FAF27846F347D2F3BA005B30BF23442157A328CEF4C7DFB88F6D3B0BA7  ETA_T1_DELTA3_CERT.json
-```
-
-This verdict settles only the claimed input confusion.  It does not adjudicate
-any other descent, geometry, or full-chain premise.
+This decision settles the endpoint-coordinate arithmetic only.  It does not
+discharge the candidate-specific Hattori, two-handle, sphere-map, or closed
+four-manifold assumptions.

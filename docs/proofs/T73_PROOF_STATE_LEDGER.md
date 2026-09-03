@@ -28,13 +28,12 @@ has an actual raw lift but is contained in the full action-closed two-cup
 
 | layer | current status | current evidence |
 |---|---|---|
-| E1 paired-annulus Hattori coefficient | DISCHARGED | 44 public product rectangles and 227 residual circles in the C witness |
-| E2 selected diagonal class | DISCHARGED | named inverse Hattori image of `Id_U tensor X^227` |
-| E3 coefficient q-trace and raw-state binding | DISCHARGED | BPW/BHPW completed shadow and sign-robust endpoint binding |
-| E5/E6 one-/two-handle beta/psi quotient | DISCHARGED | divided beta average, through-degree firewall and core-counit psi equations |
-| P0 replacement AR framed lift | DISCHARGED | public AR scan, `audit/t73_ar_product_witness.json`, deterministic generator, two product cancellations and embedded detector ball |
-| historical G1/DIAGRAM identity | OPEN / RETIRED | the builder and full PD remain unavailable and are not used |
-| E8 three chosen sphere rows | NOT REQUIRED BY RELATIVE ROUTE | the historical objects are unavailable, but HJ relative uniqueness plus monoidal C replaces this explicit-sphere route |
+| E1 paired-annulus Hattori coefficient | PROVED | [`ACTUAL_PD_CABLE_UNIT_CERT.json`](../../evidence/public_geometry/ACTUAL_PD_CABLE_UNIT_CERT.json), SHA `7F3D3618D6A790A9B60EE8085B647AC2AB742E1BC9C15841F1BEF015034217B5` |
+| E2 selected diagonal class | PROVED | main proof Sections 2--3 |
+| E3 coefficient q-trace and raw-state binding | PROVED | `MR_REES_QUANTUM_TRACE_SOURCE_LEDGER.md`, SHA `99913F0AF70CF5FF650492C2740F98B7053FEBBB58212DA32B506D863836EA84`; `RAW_STATE_BINDING_RESULT.md`, SHA `BCBFBC9F8A5350D323EC2876352EC25C6690E5BB6AD4F2C264441BA4D73CDEF6` |
+| E5/E6 one-/two-handle beta/psi quotient | PROVED at divided cubic | `T73_EVIDENCE_ONE_CUP_E5_E6.md`, source SHA `6A63978D734EFF30B8F6C2E6F9800F9338B3499BA1CA4D6AF4880716468FE865` |
+| G1 actual-Gompf/DIAGRAM framed lift | PROVED | `docs/proofs/T73_GA1_DESCENDING_BRIDGE.md`; AR actual product-ribbon construction; two final hostile reviews PASS |
+| E8 three chosen sphere rows | PROVED at divided cubic | `T73_EVIDENCE_E8_CHOSEN_SPHERES.md`, source SHA `C33AF1FCAE8F0056A75D1841E1151786C2EBB756AD8A768C4E3E6704274E2B43` |
 
 The E5/E6 proof uses the one-cup through-86 cell, the ordinary divided
 functional, beta's `O(h)` defect against `W-I=O(h^3)`, and split-injectivity of
@@ -72,15 +71,15 @@ The early `OPEN` files are historical diagnostics, not the latest state.
 ```text
 TH1 geometry
 EE620E6B085A5F9E1C73CFDD1AD04FC0682CEC74DA3DBF8AFE70DD19C038E3A0
-  D:/tmp/r6/matrix_attack/th12_actualization/TH1_EXHAUSTIVE_ALL_ROW_GEOMETRY.json
+  evidence/public_geometry/TH1_EXHAUSTIVE_ALL_ROW_GEOMETRY.json
 
 TH2 geometry
 4D1B627C0343A1C464319704EAFADCA127902A2E4E90CF1C283004359B7ADC24
-  D:/tmp/r6/matrix_attack/th12_actualization/TH2_EXHAUSTIVE_ALL_ROW_GEOMETRY.json
+  evidence/public_geometry/TH2_EXHAUSTIVE_ALL_ROW_GEOMETRY.json
 
 THXY geometry
 EABF67C0D1AE309F0281297710A283B8ED5A11D88C8E810837932313F4C53227
-  D:/tmp/r6/fullw_tangent_coend/generators/THXY_FULL_MACRO_P3FREE_HJ_CERT.json
+  evidence/public_geometry/THXY_FULL_MACRO_P3FREE_HJ_CERT.json
 ```
 
 The three chosen spheres lie in one actual `W2`, in mutually disjoint movie
@@ -109,3 +108,31 @@ whole-old-source divided rows
 - the earlier end-to-end `HOLE` verdict was tied to the incorrect short G1
   bridge; after replacement by the AR product-ribbon proof, a fresh full-chain
   independent review is still required.
+
+## Erratum — 2026-09-02 endpoint-coordinate unification
+
+The historical base value above records the 2 September public draft and is
+not the current value.  That draft paired the THXY-indexed vector
+`e_0-e_5` with the collar-indexed covector `e_87^*-e_2^*`.  The cabled word
+uses the collar convention.  The unique derived position table now maps the
+same physical cup to collar positions `(2,87)`, so the current pair is
+
+```text
+u   = e_2 - e_87
+ell = e_87^* - e_2^*
+```
+
+The exact replay gives
+
+```text
+ell (rho(W)-I) u, epsilon^0..6 = [0,0,0,-328,14596,-410246,9595271]
+ell (rho(W)-I) u, h^0..6       = [0,0,0,2624,221728,11760112,520583560]
+D_3(eta_R[T_1])                = 2624
+D_3(xi)                        = 0
+```
+
+The nonvanishing status is unchanged, but the number remains conditional on
+the frozen collar word and therefore on A1.  The position-table SHA-256 is
+`119C7E9E74AE6C820DA72A84CDFD5D445D81E6C3AACCC209C25D37C323961508`;
+the public receipt SHA-256 is
+`7C681B99492A5C34B3B8A7EC8B7269E3FD67CD989728C2D4A1C619A63387A722`.

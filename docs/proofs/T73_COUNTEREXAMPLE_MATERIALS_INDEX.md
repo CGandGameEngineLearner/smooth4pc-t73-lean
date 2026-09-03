@@ -7,9 +7,10 @@
 > controlling correction is
 > `docs/research/T73_CORRECTION_AND_CLOSURE_NOTE_2026-09-02.md`.
 
-This file is the entry point. The mathematical derivations are now colocated
-in this Git proof directory. Very large finite certificates remain outside the
-repository, but every load-bearing one is pinned below by path and SHA-256.
+This file is the entry point. The mathematical derivations and the formerly
+machine-local load-bearing certificates are now colocated in the repository.
+Their byte identities are pinned below and in
+[`evidence/public_geometry/SHA256SUMS`](../../evidence/public_geometry/SHA256SUMS).
 
 ## Core proof
 
@@ -56,7 +57,7 @@ repository, but every load-bearing one is pinned below by path and SHA-256.
 |---|---|---|
 | [T73_EVIDENCE_QTRACE_SOURCE_LEDGER.md](T73_EVIDENCE_QTRACE_SOURCE_LEDGER.md) | 99913F0AF70CF5FF650492C2740F98B7053FEBBB58212DA32B506D863836EA84 | coefficient q-trace and divided functional |
 | [T73_EVIDENCE_RAW_STATE_BINDING.md](T73_EVIDENCE_RAW_STATE_BINDING.md) | BCBFBC9F8A5350D323EC2876352EC25C6690E5BB6AD4F2C264441BA4D73CDEF6 | actual selected raw state and degree |
-| [T73_EVIDENCE_ETA_T1_DELTA3.md](T73_EVIDENCE_ETA_T1_DELTA3.md) | 96E20A5D75B3A6B3587267BF2052A79845E378F96901351B5DC52BB5D16EF183 | v_T versus xi and the exact cubic |
+| [T73_EVIDENCE_ETA_T1_DELTA3.md](T73_EVIDENCE_ETA_T1_DELTA3.md) | `98504438F1FF47E576195DF2C01F168C92B048B0E309D8634BAFA18873F62A35` | v_T versus xi and the corrected exact cubic |
 | [T73_EVIDENCE_ONE_CUP_E5_E6.md](T73_EVIDENCE_ONE_CUP_E5_E6.md) | 6A63978D734EFF30B8F6C2E6F9800F9338B3499BA1CA4D6AF4880716468FE865 | complete one-/two-handle divided quotient |
 | [T73_EVIDENCE_W2_CORE_FACTOR.md](T73_EVIDENCE_W2_CORE_FACTOR.md) | 73F5D57A2074B133687018D1D8641FF2DA76ED5B01F055B6D89E7F086F10E129 | local core/counit factorization |
 | [T73_EVIDENCE_E8_CHOSEN_SPHERES.md](T73_EVIDENCE_E8_CHOSEN_SPHERES.md) | C33AF1FCAE8F0056A75D1841E1151786C2EBB756AD8A768C4E3E6704274E2B43 | chosen-sphere geometry and whole-source rows |
@@ -69,24 +70,30 @@ objects. Their repository byte hashes differ because Git normalizes line
 endings and the filenames are new; the table records the original source
 identities.
 
-## Large pinned inputs not copied into Git
+## Colocated finite inputs
 
-| object | SHA-256 | reason retained externally |
+| repository object | SHA-256 | role |
 |---|---|---|
-| D:/tmp/t73_actual_cable_unit/ACTUAL_PD_CABLE_UNIT_CERT.json | 7F3D3618D6A790A9B60EE8085B647AC2AB742E1BC9C15841F1BEF015034217B5 | large exact paired-annulus/cable certificate |
-| PRODUCT_NORMAL_CHRISTOFFEL_THXY_MOVIE.json (historical path not recorded in the public input) | DE1AC479699EC79DE76D4265993DE437493A3AAA6CABB636F98998644BF3181C | action-compatible Hattori movie required by the Burau--MWW comparison |
-| D:/tmp/r6/matrix_attack/th12_actualization/TH1_EXHAUSTIVE_ALL_ROW_GEOMETRY.json | EE620E6B085A5F9E1C73CFDD1AD04FC0682CEC74DA3DBF8AFE70DD19C038E3A0 | historical explicit-sphere route; not required by relative S |
-| D:/tmp/r6/matrix_attack/th12_actualization/TH2_EXHAUSTIVE_ALL_ROW_GEOMETRY.json | 4D1B627C0343A1C464319704EAFADCA127902A2E4E90CF1C283004359B7ADC24 | historical explicit-sphere route; not required by relative S |
-| D:/tmp/r6/fullw_tangent_coend/generators/THXY_FULL_MACRO_P3FREE_HJ_CERT.json | EABF67C0D1AE309F0281297710A283B8ED5A11D88C8E810837932313F4C53227 | historical explicit-sphere route; not required by relative S |
-| D:/tmp/t73_g1_literature/four_manifold_theory_1984.pdf | 6F7E95B8266876774667AD40EA3DE964B165680D6789A34E49BF598C3AE04DF0 | 31 MB primary Aitchison--Rubinstein volume |
+| [ACTUAL_PD_CABLE_UNIT_CERT.json](../../evidence/public_geometry/ACTUAL_PD_CABLE_UNIT_CERT.json) | 7F3D3618D6A790A9B60EE8085B647AC2AB742E1BC9C15841F1BEF015034217B5 | exact paired-annulus/cable certificate |
+| [TH1_EXHAUSTIVE_ALL_ROW_GEOMETRY.json](../../evidence/public_geometry/TH1_EXHAUSTIVE_ALL_ROW_GEOMETRY.json) | EE620E6B085A5F9E1C73CFDD1AD04FC0682CEC74DA3DBF8AFE70DD19C038E3A0 | exhaustive TH1 receipt |
+| [TH2_EXHAUSTIVE_ALL_ROW_GEOMETRY.json](../../evidence/public_geometry/TH2_EXHAUSTIVE_ALL_ROW_GEOMETRY.json) | 4D1B627C0343A1C464319704EAFADCA127902A2E4E90CF1C283004359B7ADC24 | exhaustive TH2 receipt |
+| [THXY_FULL_MACRO_P3FREE_HJ_CERT.json](../../evidence/public_geometry/THXY_FULL_MACRO_P3FREE_HJ_CERT.json) | EABF67C0D1AE309F0281297710A283B8ED5A11D88C8E810837932313F4C53227 | THXY full-coordinate certificate |
+| [t73_reduced_billiard.pd.json](../../evidence/public_geometry/t73_reduced_billiard.pd.json) | E6912A64457557469E5C691B4D57ABDBBF4C45ADB05492777C574223D0C06F8A | 2,126,291-crossing input to the global-descending replay |
 
-Primary public source for the last item:
+Run `python -I -B scripts/verify_public_geometry_evidence.py` from a clone to
+verify every bundled SHA and recompute the global-descending result from the
+full PD.  The three chosen-sphere receipts can now be inspected directly;
+their much larger upstream construction trees are not silently represented as
+part of this repository.
+
+Primary public source for the Aitchison--Rubinstein construction:
 https://math.berkeley.edu/~kirby/papers/Gordon%20and%20Kirby%20%28editors%29%20-%20Four-manifold%20theory%20%28Durham%29%20-%20MR0780574.pdf
 
 ## Scope firewall
 
 - Carrying class: v_T=eta_R[T_1], not xi and not mixed Z.
-- Exact value: D_3(v_T)=-59072.
+- Exact value under the collar/Burau endpoint table: D_3(v_T)=2624.
+- Endpoint coordinate authority: `data/B88_POSITION_TO_PASSAGE_TABLE.json`.
 - Final quantum degree: 494.
 - The proof is at the divided h^3 coefficient; it does not claim full-q
   sphere matrices.

@@ -46,7 +46,7 @@ example (g : BalancedHattoriGeometry.{u}) (U : g.Obj)
       diagonalTarget g U :=
   selectedInput_binding actual
 
-example : cupVector = basisVector 0 - basisVector 5 := rfl
+example : cupVector = basisVector 2 - basisVector 87 := rfl
 example : Fin 88 → ℚ := cupVector
 example : positiveSource = EndpointSource.M1_88 := positiveSource_is_M1_88
 
@@ -62,9 +62,9 @@ example (p : PhysicalCopyPermutation) (b : DefectBasis) :
   physicalCopyPermutation_preserves_relativeNu p b
 
 example : (183 : ℤ) + 315 - 4 = 494 := degree_ledger_eq_494
-example : (-8 : ℤ) * 7384 = -59072 := cubic_arithmetic_eq_neg59072
-example : (-59072 : ℤ) ≠ 0 := neg59072_ne_zero
-example : cubicValue = (-59072 : ℤ) := cubicValue_eq_neg59072
+example : (-8 : ℤ) * (-328) = 2624 := cubic_arithmetic_eq_2624
+example : (2624 : ℤ) ≠ 0 := cubic2624_ne_zero
+example : cubicValue = (2624 : ℤ) := cubicValue_eq_2624
 
 end HattoriBalancedInputConsumer
 """
@@ -79,9 +79,9 @@ AXIOM_THEOREMS = (
     "Smooth4PC.defectHeadRow_comp_undotted",
     "Smooth4PC.physicalCopyPermutation_preserves_relativeNu",
     "Smooth4PC.degree_ledger_eq_494",
-    "Smooth4PC.cubic_arithmetic_eq_neg59072",
-    "Smooth4PC.neg59072_ne_zero",
-    "Smooth4PC.cubicValue_eq_neg59072",
+    "Smooth4PC.cubic_arithmetic_eq_2624",
+    "Smooth4PC.cubic2624_ne_zero",
+    "Smooth4PC.cubicValue_eq_2624",
 )
 
 
@@ -238,10 +238,10 @@ class HattoriBalancedInputTests(unittest.TestCase):
             "Equiv.Perm (Fin 88)", "Equiv.Perm (Fin 87)"
         )
         retired = source.replace(
-            "def cubicValue : ℤ := -59072", "def cubicValue : ℤ := -28864"
+            "def cubicValue : ℤ := 2624", "def cubicValue : ℤ := -28864"
         ).replace(
-            "theorem cubicValue_eq_neg59072 : cubicValue = (-59072 : ℤ) := by",
-            "theorem cubicValue_eq_neg59072 : cubicValue = (-28864 : ℤ) := by",
+            "theorem cubicValue_eq_2624 : cubicValue = (2624 : ℤ) := by",
+            "theorem cubicValue_eq_2624 : cubicValue = (-28864 : ℤ) := by",
         )
         mutants = {
             "one_sided_hom": one_sided,

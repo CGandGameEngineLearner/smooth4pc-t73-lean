@@ -1,0 +1,809 @@
+{
+  "coordinate_authority": "T73_COLLAR_BRAID.json/wickets",
+  "endpoint_binding": "HATTORI_Y_TANGLE.json/standard_z_contraction/component_ledger west Y_WICKET_PATH rows",
+  "positions": [
+    {
+      "endpoint_id": "ep:c_r_xy_neg:0002",
+      "index": 0,
+      "owner": "r_xy",
+      "passage_id": "pass:c_r_xy_neg:0002",
+      "sign": "neg",
+      "wicket": 1,
+      "word_letter": 1
+    },
+    {
+      "endpoint_id": "ep:c_r_xy_pos:0001",
+      "index": 1,
+      "owner": "r_xy",
+      "passage_id": "pass:c_r_xy_pos:0001",
+      "sign": "pos",
+      "wicket": 1,
+      "word_letter": 1
+    },
+    {
+      "endpoint_id": "ep:c_r_xy_neg:0000",
+      "index": 2,
+      "owner": "r_xy",
+      "passage_id": "pass:c_r_xy_neg:0000",
+      "sign": "neg",
+      "wicket": 2,
+      "word_letter": 3
+    },
+    {
+      "endpoint_id": "ep:c_r_xy_pos:0003",
+      "index": 3,
+      "owner": "r_xy",
+      "passage_id": "pass:c_r_xy_pos:0003",
+      "sign": "pos",
+      "wicket": 2,
+      "word_letter": 3
+    },
+    {
+      "endpoint_id": "ep:c_m_2_neg:0304",
+      "index": 4,
+      "owner": "m_2",
+      "passage_id": "pass:c_m_2_neg:0304",
+      "sign": "neg",
+      "wicket": 3,
+      "word_letter": 6
+    },
+    {
+      "endpoint_id": "ep:c_m_2_pos:0006",
+      "index": 5,
+      "owner": "m_2",
+      "passage_id": "pass:c_m_2_pos:0006",
+      "sign": "pos",
+      "wicket": 3,
+      "word_letter": 6
+    },
+    {
+      "endpoint_id": "ep:c_m_2_neg:0296",
+      "index": 6,
+      "owner": "m_2",
+      "passage_id": "pass:c_m_2_neg:0296",
+      "sign": "neg",
+      "wicket": 4,
+      "word_letter": 14
+    },
+    {
+      "endpoint_id": "ep:c_m_2_pos:0014",
+      "index": 7,
+      "owner": "m_2",
+      "passage_id": "pass:c_m_2_pos:0014",
+      "sign": "pos",
+      "wicket": 4,
+      "word_letter": 14
+    },
+    {
+      "endpoint_id": "ep:c_m_2_neg:0289",
+      "index": 8,
+      "owner": "m_2",
+      "passage_id": "pass:c_m_2_neg:0289",
+      "sign": "neg",
+      "wicket": 5,
+      "word_letter": 21
+    },
+    {
+      "endpoint_id": "ep:c_m_2_pos:0021",
+      "index": 9,
+      "owner": "m_2",
+      "passage_id": "pass:c_m_2_pos:0021",
+      "sign": "pos",
+      "wicket": 5,
+      "word_letter": 21
+    },
+    {
+      "endpoint_id": "ep:c_m_2_neg:0281",
+      "index": 10,
+      "owner": "m_2",
+      "passage_id": "pass:c_m_2_neg:0281",
+      "sign": "neg",
+      "wicket": 6,
+      "word_letter": 29
+    },
+    {
+      "endpoint_id": "ep:c_m_2_pos:0029",
+      "index": 11,
+      "owner": "m_2",
+      "passage_id": "pass:c_m_2_pos:0029",
+      "sign": "pos",
+      "wicket": 6,
+      "word_letter": 29
+    },
+    {
+      "endpoint_id": "ep:c_m_2_neg:0274",
+      "index": 12,
+      "owner": "m_2",
+      "passage_id": "pass:c_m_2_neg:0274",
+      "sign": "neg",
+      "wicket": 7,
+      "word_letter": 36
+    },
+    {
+      "endpoint_id": "ep:c_m_2_pos:0036",
+      "index": 13,
+      "owner": "m_2",
+      "passage_id": "pass:c_m_2_pos:0036",
+      "sign": "pos",
+      "wicket": 7,
+      "word_letter": 36
+    },
+    {
+      "endpoint_id": "ep:c_m_2_neg:0266",
+      "index": 14,
+      "owner": "m_2",
+      "passage_id": "pass:c_m_2_neg:0266",
+      "sign": "neg",
+      "wicket": 8,
+      "word_letter": 44
+    },
+    {
+      "endpoint_id": "ep:c_m_2_pos:0044",
+      "index": 15,
+      "owner": "m_2",
+      "passage_id": "pass:c_m_2_pos:0044",
+      "sign": "pos",
+      "wicket": 8,
+      "word_letter": 44
+    },
+    {
+      "endpoint_id": "ep:c_m_2_neg:0259",
+      "index": 16,
+      "owner": "m_2",
+      "passage_id": "pass:c_m_2_neg:0259",
+      "sign": "neg",
+      "wicket": 9,
+      "word_letter": 51
+    },
+    {
+      "endpoint_id": "ep:c_m_2_pos:0051",
+      "index": 17,
+      "owner": "m_2",
+      "passage_id": "pass:c_m_2_pos:0051",
+      "sign": "pos",
+      "wicket": 9,
+      "word_letter": 51
+    },
+    {
+      "endpoint_id": "ep:c_m_2_neg:0251",
+      "index": 18,
+      "owner": "m_2",
+      "passage_id": "pass:c_m_2_neg:0251",
+      "sign": "neg",
+      "wicket": 10,
+      "word_letter": 59
+    },
+    {
+      "endpoint_id": "ep:c_m_2_pos:0059",
+      "index": 19,
+      "owner": "m_2",
+      "passage_id": "pass:c_m_2_pos:0059",
+      "sign": "pos",
+      "wicket": 10,
+      "word_letter": 59
+    },
+    {
+      "endpoint_id": "ep:c_m_2_neg:0243",
+      "index": 20,
+      "owner": "m_2",
+      "passage_id": "pass:c_m_2_neg:0243",
+      "sign": "neg",
+      "wicket": 11,
+      "word_letter": 67
+    },
+    {
+      "endpoint_id": "ep:c_m_2_pos:0067",
+      "index": 21,
+      "owner": "m_2",
+      "passage_id": "pass:c_m_2_pos:0067",
+      "sign": "pos",
+      "wicket": 11,
+      "word_letter": 67
+    },
+    {
+      "endpoint_id": "ep:c_m_2_neg:0236",
+      "index": 22,
+      "owner": "m_2",
+      "passage_id": "pass:c_m_2_neg:0236",
+      "sign": "neg",
+      "wicket": 12,
+      "word_letter": 74
+    },
+    {
+      "endpoint_id": "ep:c_m_2_pos:0074",
+      "index": 23,
+      "owner": "m_2",
+      "passage_id": "pass:c_m_2_pos:0074",
+      "sign": "pos",
+      "wicket": 12,
+      "word_letter": 74
+    },
+    {
+      "endpoint_id": "ep:c_m_2_neg:0228",
+      "index": 24,
+      "owner": "m_2",
+      "passage_id": "pass:c_m_2_neg:0228",
+      "sign": "neg",
+      "wicket": 13,
+      "word_letter": 82
+    },
+    {
+      "endpoint_id": "ep:c_m_2_pos:0082",
+      "index": 25,
+      "owner": "m_2",
+      "passage_id": "pass:c_m_2_pos:0082",
+      "sign": "pos",
+      "wicket": 13,
+      "word_letter": 82
+    },
+    {
+      "endpoint_id": "ep:c_m_2_neg:0221",
+      "index": 26,
+      "owner": "m_2",
+      "passage_id": "pass:c_m_2_neg:0221",
+      "sign": "neg",
+      "wicket": 14,
+      "word_letter": 89
+    },
+    {
+      "endpoint_id": "ep:c_m_2_pos:0089",
+      "index": 27,
+      "owner": "m_2",
+      "passage_id": "pass:c_m_2_pos:0089",
+      "sign": "pos",
+      "wicket": 14,
+      "word_letter": 89
+    },
+    {
+      "endpoint_id": "ep:c_m_2_neg:0213",
+      "index": 28,
+      "owner": "m_2",
+      "passage_id": "pass:c_m_2_neg:0213",
+      "sign": "neg",
+      "wicket": 15,
+      "word_letter": 97
+    },
+    {
+      "endpoint_id": "ep:c_m_2_pos:0097",
+      "index": 29,
+      "owner": "m_2",
+      "passage_id": "pass:c_m_2_pos:0097",
+      "sign": "pos",
+      "wicket": 15,
+      "word_letter": 97
+    },
+    {
+      "endpoint_id": "ep:c_m_2_neg:0206",
+      "index": 30,
+      "owner": "m_2",
+      "passage_id": "pass:c_m_2_neg:0206",
+      "sign": "neg",
+      "wicket": 16,
+      "word_letter": 104
+    },
+    {
+      "endpoint_id": "ep:c_m_2_pos:0104",
+      "index": 31,
+      "owner": "m_2",
+      "passage_id": "pass:c_m_2_pos:0104",
+      "sign": "pos",
+      "wicket": 16,
+      "word_letter": 104
+    },
+    {
+      "endpoint_id": "ep:c_m_2_neg:0198",
+      "index": 32,
+      "owner": "m_2",
+      "passage_id": "pass:c_m_2_neg:0198",
+      "sign": "neg",
+      "wicket": 17,
+      "word_letter": 112
+    },
+    {
+      "endpoint_id": "ep:c_m_2_pos:0112",
+      "index": 33,
+      "owner": "m_2",
+      "passage_id": "pass:c_m_2_pos:0112",
+      "sign": "pos",
+      "wicket": 17,
+      "word_letter": 112
+    },
+    {
+      "endpoint_id": "ep:c_m_2_neg:0191",
+      "index": 34,
+      "owner": "m_2",
+      "passage_id": "pass:c_m_2_neg:0191",
+      "sign": "neg",
+      "wicket": 18,
+      "word_letter": 119
+    },
+    {
+      "endpoint_id": "ep:c_m_2_pos:0119",
+      "index": 35,
+      "owner": "m_2",
+      "passage_id": "pass:c_m_2_pos:0119",
+      "sign": "pos",
+      "wicket": 18,
+      "word_letter": 119
+    },
+    {
+      "endpoint_id": "ep:c_m_2_neg:0183",
+      "index": 36,
+      "owner": "m_2",
+      "passage_id": "pass:c_m_2_neg:0183",
+      "sign": "neg",
+      "wicket": 19,
+      "word_letter": 127
+    },
+    {
+      "endpoint_id": "ep:c_m_2_pos:0127",
+      "index": 37,
+      "owner": "m_2",
+      "passage_id": "pass:c_m_2_pos:0127",
+      "sign": "pos",
+      "wicket": 19,
+      "word_letter": 127
+    },
+    {
+      "endpoint_id": "ep:c_m_2_neg:0175",
+      "index": 38,
+      "owner": "m_2",
+      "passage_id": "pass:c_m_2_neg:0175",
+      "sign": "neg",
+      "wicket": 20,
+      "word_letter": 135
+    },
+    {
+      "endpoint_id": "ep:c_m_2_pos:0135",
+      "index": 39,
+      "owner": "m_2",
+      "passage_id": "pass:c_m_2_pos:0135",
+      "sign": "pos",
+      "wicket": 20,
+      "word_letter": 135
+    },
+    {
+      "endpoint_id": "ep:c_m_2_neg:0168",
+      "index": 40,
+      "owner": "m_2",
+      "passage_id": "pass:c_m_2_neg:0168",
+      "sign": "neg",
+      "wicket": 21,
+      "word_letter": 142
+    },
+    {
+      "endpoint_id": "ep:c_m_2_pos:0142",
+      "index": 41,
+      "owner": "m_2",
+      "passage_id": "pass:c_m_2_pos:0142",
+      "sign": "pos",
+      "wicket": 21,
+      "word_letter": 142
+    },
+    {
+      "endpoint_id": "ep:c_m_2_neg:0160",
+      "index": 42,
+      "owner": "m_2",
+      "passage_id": "pass:c_m_2_neg:0160",
+      "sign": "neg",
+      "wicket": 22,
+      "word_letter": 150
+    },
+    {
+      "endpoint_id": "ep:c_m_2_pos:0150",
+      "index": 43,
+      "owner": "m_2",
+      "passage_id": "pass:c_m_2_pos:0150",
+      "sign": "pos",
+      "wicket": 22,
+      "word_letter": 150
+    },
+    {
+      "endpoint_id": "ep:c_m_2_neg:0153",
+      "index": 44,
+      "owner": "m_2",
+      "passage_id": "pass:c_m_2_neg:0153",
+      "sign": "neg",
+      "wicket": 23,
+      "word_letter": 157
+    },
+    {
+      "endpoint_id": "ep:c_m_2_pos:0157",
+      "index": 45,
+      "owner": "m_2",
+      "passage_id": "pass:c_m_2_pos:0157",
+      "sign": "pos",
+      "wicket": 23,
+      "word_letter": 157
+    },
+    {
+      "endpoint_id": "ep:c_m_2_neg:0145",
+      "index": 46,
+      "owner": "m_2",
+      "passage_id": "pass:c_m_2_neg:0145",
+      "sign": "neg",
+      "wicket": 24,
+      "word_letter": 165
+    },
+    {
+      "endpoint_id": "ep:c_m_2_pos:0165",
+      "index": 47,
+      "owner": "m_2",
+      "passage_id": "pass:c_m_2_pos:0165",
+      "sign": "pos",
+      "wicket": 24,
+      "word_letter": 165
+    },
+    {
+      "endpoint_id": "ep:c_m_2_neg:0138",
+      "index": 48,
+      "owner": "m_2",
+      "passage_id": "pass:c_m_2_neg:0138",
+      "sign": "neg",
+      "wicket": 25,
+      "word_letter": 172
+    },
+    {
+      "endpoint_id": "ep:c_m_2_pos:0172",
+      "index": 49,
+      "owner": "m_2",
+      "passage_id": "pass:c_m_2_pos:0172",
+      "sign": "pos",
+      "wicket": 25,
+      "word_letter": 172
+    },
+    {
+      "endpoint_id": "ep:c_m_2_neg:0130",
+      "index": 50,
+      "owner": "m_2",
+      "passage_id": "pass:c_m_2_neg:0130",
+      "sign": "neg",
+      "wicket": 26,
+      "word_letter": 180
+    },
+    {
+      "endpoint_id": "ep:c_m_2_pos:0180",
+      "index": 51,
+      "owner": "m_2",
+      "passage_id": "pass:c_m_2_pos:0180",
+      "sign": "pos",
+      "wicket": 26,
+      "word_letter": 180
+    },
+    {
+      "endpoint_id": "ep:c_m_2_neg:0122",
+      "index": 52,
+      "owner": "m_2",
+      "passage_id": "pass:c_m_2_neg:0122",
+      "sign": "neg",
+      "wicket": 27,
+      "word_letter": 188
+    },
+    {
+      "endpoint_id": "ep:c_m_2_pos:0188",
+      "index": 53,
+      "owner": "m_2",
+      "passage_id": "pass:c_m_2_pos:0188",
+      "sign": "pos",
+      "wicket": 27,
+      "word_letter": 188
+    },
+    {
+      "endpoint_id": "ep:c_m_2_neg:0115",
+      "index": 54,
+      "owner": "m_2",
+      "passage_id": "pass:c_m_2_neg:0115",
+      "sign": "neg",
+      "wicket": 28,
+      "word_letter": 195
+    },
+    {
+      "endpoint_id": "ep:c_m_2_pos:0195",
+      "index": 55,
+      "owner": "m_2",
+      "passage_id": "pass:c_m_2_pos:0195",
+      "sign": "pos",
+      "wicket": 28,
+      "word_letter": 195
+    },
+    {
+      "endpoint_id": "ep:c_m_2_neg:0107",
+      "index": 56,
+      "owner": "m_2",
+      "passage_id": "pass:c_m_2_neg:0107",
+      "sign": "neg",
+      "wicket": 29,
+      "word_letter": 203
+    },
+    {
+      "endpoint_id": "ep:c_m_2_pos:0203",
+      "index": 57,
+      "owner": "m_2",
+      "passage_id": "pass:c_m_2_pos:0203",
+      "sign": "pos",
+      "wicket": 29,
+      "word_letter": 203
+    },
+    {
+      "endpoint_id": "ep:c_m_2_neg:0100",
+      "index": 58,
+      "owner": "m_2",
+      "passage_id": "pass:c_m_2_neg:0100",
+      "sign": "neg",
+      "wicket": 30,
+      "word_letter": 210
+    },
+    {
+      "endpoint_id": "ep:c_m_2_pos:0210",
+      "index": 59,
+      "owner": "m_2",
+      "passage_id": "pass:c_m_2_pos:0210",
+      "sign": "pos",
+      "wicket": 30,
+      "word_letter": 210
+    },
+    {
+      "endpoint_id": "ep:c_m_2_neg:0092",
+      "index": 60,
+      "owner": "m_2",
+      "passage_id": "pass:c_m_2_neg:0092",
+      "sign": "neg",
+      "wicket": 31,
+      "word_letter": 218
+    },
+    {
+      "endpoint_id": "ep:c_m_2_pos:0218",
+      "index": 61,
+      "owner": "m_2",
+      "passage_id": "pass:c_m_2_pos:0218",
+      "sign": "pos",
+      "wicket": 31,
+      "word_letter": 218
+    },
+    {
+      "endpoint_id": "ep:c_m_2_neg:0085",
+      "index": 62,
+      "owner": "m_2",
+      "passage_id": "pass:c_m_2_neg:0085",
+      "sign": "neg",
+      "wicket": 32,
+      "word_letter": 225
+    },
+    {
+      "endpoint_id": "ep:c_m_2_pos:0225",
+      "index": 63,
+      "owner": "m_2",
+      "passage_id": "pass:c_m_2_pos:0225",
+      "sign": "pos",
+      "wicket": 32,
+      "word_letter": 225
+    },
+    {
+      "endpoint_id": "ep:c_m_2_neg:0077",
+      "index": 64,
+      "owner": "m_2",
+      "passage_id": "pass:c_m_2_neg:0077",
+      "sign": "neg",
+      "wicket": 33,
+      "word_letter": 233
+    },
+    {
+      "endpoint_id": "ep:c_m_2_pos:0233",
+      "index": 65,
+      "owner": "m_2",
+      "passage_id": "pass:c_m_2_pos:0233",
+      "sign": "pos",
+      "wicket": 33,
+      "word_letter": 233
+    },
+    {
+      "endpoint_id": "ep:c_m_2_neg:0070",
+      "index": 66,
+      "owner": "m_2",
+      "passage_id": "pass:c_m_2_neg:0070",
+      "sign": "neg",
+      "wicket": 34,
+      "word_letter": 240
+    },
+    {
+      "endpoint_id": "ep:c_m_2_pos:0240",
+      "index": 67,
+      "owner": "m_2",
+      "passage_id": "pass:c_m_2_pos:0240",
+      "sign": "pos",
+      "wicket": 34,
+      "word_letter": 240
+    },
+    {
+      "endpoint_id": "ep:c_m_2_neg:0062",
+      "index": 68,
+      "owner": "m_2",
+      "passage_id": "pass:c_m_2_neg:0062",
+      "sign": "neg",
+      "wicket": 35,
+      "word_letter": 248
+    },
+    {
+      "endpoint_id": "ep:c_m_2_pos:0248",
+      "index": 69,
+      "owner": "m_2",
+      "passage_id": "pass:c_m_2_pos:0248",
+      "sign": "pos",
+      "wicket": 35,
+      "word_letter": 248
+    },
+    {
+      "endpoint_id": "ep:c_m_2_neg:0054",
+      "index": 70,
+      "owner": "m_2",
+      "passage_id": "pass:c_m_2_neg:0054",
+      "sign": "neg",
+      "wicket": 36,
+      "word_letter": 256
+    },
+    {
+      "endpoint_id": "ep:c_m_2_pos:0256",
+      "index": 71,
+      "owner": "m_2",
+      "passage_id": "pass:c_m_2_pos:0256",
+      "sign": "pos",
+      "wicket": 36,
+      "word_letter": 256
+    },
+    {
+      "endpoint_id": "ep:c_m_2_neg:0047",
+      "index": 72,
+      "owner": "m_2",
+      "passage_id": "pass:c_m_2_neg:0047",
+      "sign": "neg",
+      "wicket": 37,
+      "word_letter": 263
+    },
+    {
+      "endpoint_id": "ep:c_m_2_pos:0263",
+      "index": 73,
+      "owner": "m_2",
+      "passage_id": "pass:c_m_2_pos:0263",
+      "sign": "pos",
+      "wicket": 37,
+      "word_letter": 263
+    },
+    {
+      "endpoint_id": "ep:c_m_2_neg:0039",
+      "index": 74,
+      "owner": "m_2",
+      "passage_id": "pass:c_m_2_neg:0039",
+      "sign": "neg",
+      "wicket": 38,
+      "word_letter": 271
+    },
+    {
+      "endpoint_id": "ep:c_m_2_pos:0271",
+      "index": 75,
+      "owner": "m_2",
+      "passage_id": "pass:c_m_2_pos:0271",
+      "sign": "pos",
+      "wicket": 38,
+      "word_letter": 271
+    },
+    {
+      "endpoint_id": "ep:c_m_2_neg:0032",
+      "index": 76,
+      "owner": "m_2",
+      "passage_id": "pass:c_m_2_neg:0032",
+      "sign": "neg",
+      "wicket": 39,
+      "word_letter": 278
+    },
+    {
+      "endpoint_id": "ep:c_m_2_pos:0278",
+      "index": 77,
+      "owner": "m_2",
+      "passage_id": "pass:c_m_2_pos:0278",
+      "sign": "pos",
+      "wicket": 39,
+      "word_letter": 278
+    },
+    {
+      "endpoint_id": "ep:c_m_2_neg:0024",
+      "index": 78,
+      "owner": "m_2",
+      "passage_id": "pass:c_m_2_neg:0024",
+      "sign": "neg",
+      "wicket": 40,
+      "word_letter": 286
+    },
+    {
+      "endpoint_id": "ep:c_m_2_pos:0286",
+      "index": 79,
+      "owner": "m_2",
+      "passage_id": "pass:c_m_2_pos:0286",
+      "sign": "pos",
+      "wicket": 40,
+      "word_letter": 286
+    },
+    {
+      "endpoint_id": "ep:c_m_2_neg:0017",
+      "index": 80,
+      "owner": "m_2",
+      "passage_id": "pass:c_m_2_neg:0017",
+      "sign": "neg",
+      "wicket": 41,
+      "word_letter": 293
+    },
+    {
+      "endpoint_id": "ep:c_m_2_pos:0293",
+      "index": 81,
+      "owner": "m_2",
+      "passage_id": "pass:c_m_2_pos:0293",
+      "sign": "pos",
+      "wicket": 41,
+      "word_letter": 293
+    },
+    {
+      "endpoint_id": "ep:c_m_2_neg:0009",
+      "index": 82,
+      "owner": "m_2",
+      "passage_id": "pass:c_m_2_neg:0009",
+      "sign": "neg",
+      "wicket": 42,
+      "word_letter": 301
+    },
+    {
+      "endpoint_id": "ep:c_m_2_pos:0301",
+      "index": 83,
+      "owner": "m_2",
+      "passage_id": "pass:c_m_2_pos:0301",
+      "sign": "pos",
+      "wicket": 42,
+      "word_letter": 301
+    },
+    {
+      "endpoint_id": "ep:c_m_2_neg:0002",
+      "index": 84,
+      "owner": "m_2",
+      "passage_id": "pass:c_m_2_neg:0002",
+      "sign": "neg",
+      "wicket": 43,
+      "word_letter": 308
+    },
+    {
+      "endpoint_id": "ep:c_m_2_pos:0308",
+      "index": 85,
+      "owner": "m_2",
+      "passage_id": "pass:c_m_2_pos:0308",
+      "sign": "pos",
+      "wicket": 43,
+      "word_letter": 308
+    },
+    {
+      "endpoint_id": "ep:c_m_2_neg:0000",
+      "index": 86,
+      "owner": "m_2",
+      "passage_id": "pass:c_m_2_neg:0000",
+      "sign": "neg",
+      "wicket": 44,
+      "word_letter": 310
+    },
+    {
+      "endpoint_id": "ep:c_m_2_pos:0310",
+      "index": 87,
+      "owner": "m_2",
+      "passage_id": "pass:c_m_2_pos:0310",
+      "sign": "pos",
+      "wicket": 44,
+      "word_letter": 310
+    }
+  ],
+  "schema": "b88_position_to_passage_table/v1",
+  "sources": {
+    "HATTORI_Y_TANGLE.json": {
+      "bytes": 541621,
+      "sha256": "7E4573152427DE628A9A9C282B163F3F2B50EBDDD1BCE4594F8FC800266F424D"
+    },
+    "T73_COLLAR_BRAID.json": {
+      "bytes": 1786357,
+      "sha256": "13AED414447ED33057C99D340910B50109983CF36874C14ECE0E6A2834A12C24"
+    }
+  }
+}

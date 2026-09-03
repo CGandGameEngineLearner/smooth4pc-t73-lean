@@ -1,0 +1,788 @@
+{
+ "format": "ERKMO-1",
+ "object_id": "t73_eps0",
+ "provenance": {
+  "construction": "G10-sec2 mapping torus",
+  "A": [
+   [
+    0,
+    269,
+    1240
+   ],
+   [
+    0,
+    41,
+    189
+   ],
+   [
+    1,
+    0,
+    32
+   ]
+  ],
+  "c": 41,
+  "d": 189,
+  "n": 73,
+  "eps": 0,
+  "word_convention": "canonical power order (P2S stage2)"
+ },
+ "handles": {
+  "h0": [
+   {
+    "id": "h0",
+    "status": "PROVEN"
+   }
+  ],
+  "h1": [
+   {
+    "id": "y",
+    "status": "PROVEN"
+   },
+   {
+    "id": "z",
+    "status": "PROVEN"
+   }
+  ],
+  "h2": [
+   {
+    "id": "m_2",
+    "attaching": {
+     "precision": "WORD",
+     "word": [
+      [
+       "z",
+       269
+      ],
+      [
+       "y",
+       40
+      ]
+     ],
+     "word_compressed": true,
+     "embedding_status": "UNCERTIFIED"
+    },
+    "framing": {
+     "kind": "fiber_band",
+     "value": null,
+     "basis": "graph-annulus of phi over base interval"
+    },
+    "status": "WORD CANONICAL; embedding UNCERTIFIED (G-a)"
+   },
+   {
+    "id": "m_3",
+    "attaching": {
+     "precision": "WORD",
+     "word": [
+      [
+       "z",
+       1240
+      ],
+      [
+       "y",
+       189
+      ],
+      [
+       "z",
+       31
+      ]
+     ],
+     "word_compressed": true,
+     "embedding_status": "UNCERTIFIED"
+    },
+    "framing": {
+     "kind": "fiber_band",
+     "value": null,
+     "basis": "graph-annulus of phi over base interval"
+    },
+    "status": "WORD CANONICAL; embedding UNCERTIFIED (G-a)"
+   },
+   {
+    "id": "r_xy",
+    "attaching": {
+     "precision": "WORD",
+     "word": [
+      [
+       "z",
+       1
+      ],
+      [
+       "y",
+       1
+      ],
+      [
+       "z",
+       -1
+      ],
+      [
+       "y",
+       -1
+      ]
+     ],
+     "word_compressed": true,
+     "embedding_status": "PROVEN"
+    },
+    "framing": {
+     "kind": "fiber_convention_0",
+     "value": 0,
+     "basis": "[GS] T^3 fiber convention"
+    },
+    "status": "CONVENTION"
+   },
+   {
+    "id": "r_yz",
+    "attaching": {
+     "precision": "WORD",
+     "word": [
+      [
+       "y",
+       1
+      ],
+      [
+       "z",
+       1
+      ],
+      [
+       "y",
+       -1
+      ],
+      [
+       "z",
+       -1
+      ]
+     ],
+     "word_compressed": true,
+     "embedding_status": "PROVEN"
+    },
+    "framing": {
+     "kind": "fiber_convention_0",
+     "value": 0,
+     "basis": "[GS] T^3 fiber convention"
+    },
+    "status": "CONVENTION"
+   },
+   {
+    "id": "r_zx",
+    "attaching": {
+     "precision": "WORD",
+     "word": [],
+     "word_compressed": true,
+     "embedding_status": "PROVEN"
+    },
+    "framing": {
+     "kind": "fiber_convention_0",
+     "value": 0,
+     "basis": "[GS] T^3 fiber convention"
+    },
+    "status": "CONVENTION"
+   }
+  ],
+  "h3": [
+   {
+    "id": "th_1",
+    "attaching_level": "DECLARED",
+    "provenance": "fiber 2-handles x base 1-handle",
+    "status": "PROVEN (count)"
+   },
+   {
+    "id": "th_2",
+    "attaching_level": "DECLARED",
+    "provenance": "fiber 2-handles x base 1-handle",
+    "status": "PROVEN (count)"
+   },
+   {
+    "id": "th_3",
+    "attaching_level": "DECLARED",
+    "provenance": "fiber 2-handles x base 1-handle",
+    "status": "PROVEN (count)"
+   }
+  ],
+  "h4": []
+ },
+ "markers": [
+  {
+   "id": "mu(h_CS)",
+   "kind": "COCORE_MERIDIAN",
+   "of_handle": "FORMER:h_CS",
+   "word": [],
+   "encircles": [
+    {
+     "handle": "FORMER:m_1",
+     "strand": "ALL_THROUGH:FORMER_1H:t",
+     "mult": 2,
+     "note": "strand rerouted by cancel of m_1"
+    },
+    {
+     "handle": "m_2",
+     "strand": "ALL_THROUGH:FORMER_1H:t",
+     "mult": 2
+    },
+    {
+     "handle": "m_3",
+     "strand": "ALL_THROUGH:FORMER_1H:t",
+     "mult": 2
+    }
+   ],
+   "status": "LIVE"
+  },
+  {
+   "id": "mu(m_1)",
+   "kind": "COCORE_MERIDIAN",
+   "of_handle": "FORMER:m_1",
+   "word": [],
+   "encircles": [
+    {
+     "handle": "m_2",
+     "strand": "ALL_THROUGH:FORMER_1H:x",
+     "mult": 269
+    },
+    {
+     "handle": "m_3",
+     "strand": "ALL_THROUGH:FORMER_1H:x",
+     "mult": 1240
+    },
+    {
+     "handle": "r_xy",
+     "strand": "ALL_THROUGH:FORMER_1H:x",
+     "mult": 2
+    },
+    {
+     "handle": "r_zx",
+     "strand": "ALL_THROUGH:FORMER_1H:x",
+     "mult": 2
+    }
+   ],
+   "status": "LIVE"
+  },
+  {
+   "id": "mu(m_2)",
+   "kind": "COCORE_MERIDIAN",
+   "of_handle": "m_2",
+   "word": [],
+   "encircles": [
+    {
+     "handle": "m_2",
+     "strand": "ATTACHING_CIRCLE",
+     "mult": 1
+    }
+   ],
+   "status": "LIVE"
+  },
+  {
+   "id": "mu(m_3)",
+   "kind": "COCORE_MERIDIAN",
+   "of_handle": "m_3",
+   "word": [],
+   "encircles": [
+    {
+     "handle": "m_3",
+     "strand": "ATTACHING_CIRCLE",
+     "mult": 1
+    }
+   ],
+   "status": "LIVE"
+  }
+ ],
+ "boundary_map": {
+  "target": "S3",
+  "status": "ABSTRACT_DIFFEO_PROVEN",
+  "witness": "P2S Lemma B1 (standard-ball removal; no Perelman)",
+  "puncture": "standard ball in 0-handle interior (OBJECT_FREEZE)"
+ },
+ "epsilon_branch": {
+  "epsilon": 0,
+  "status": "BOUND",
+  "twist_deposit_rule": "[G10 Def 4.1]: eps=0 none; eps=1 one full twist on rerouted bundle at (t,h_CS) cancellation"
+ },
+ "vacuity_check": {
+  "checked": true,
+  "verdict": "NON_VACUOUS_APRIORI",
+  "basis": "OBJECT_FREEZE clause 2: surviving-cocore meridians are outside the removed ball; literal h_CS-belt objects are excluded by Theorem V"
+ },
+ "initial_state": {
+  "boundary_map": {
+   "puncture": "standard ball in 0-handle interior (OBJECT_FREEZE)",
+   "status": "ABSTRACT_DIFFEO_PROVEN",
+   "target": "S3",
+   "witness": "P2S Lemma B1 (standard-ball removal; no Perelman)"
+  },
+  "epsilon_branch": {
+   "epsilon": 0,
+   "status": "BOUND",
+   "twist_deposit_rule": "[G10 Def 4.1]: eps=0 none; eps=1 one full twist on rerouted bundle at (t,h_CS) cancellation"
+  },
+  "graveyard": {
+   "h1": {},
+   "h2": {}
+  },
+  "h0": [
+   {
+    "id": "h0",
+    "status": "PROVEN"
+   }
+  ],
+  "h1": {
+   "t": {
+    "status": "PROVEN"
+   },
+   "x": {
+    "status": "PROVEN"
+   },
+   "y": {
+    "status": "PROVEN"
+   },
+   "z": {
+    "status": "PROVEN"
+   }
+  },
+  "h2": {
+   "h_CS": {
+    "embedding_status": "PROVEN",
+    "framing": {
+     "basis": "[G10 Def 4.1] eps rel canonical section framing",
+     "kind": "eps_rel_section",
+     "value": 0
+    },
+    "status": "PROVEN/DEFINITIONAL",
+    "word": [
+     [
+      "t",
+      1
+     ]
+    ]
+   },
+   "m_1": {
+    "embedding_status": "PROVEN",
+    "framing": {
+     "basis": "graph-annulus of phi over base interval",
+     "kind": "fiber_band",
+     "value": null
+    },
+    "status": "PROVEN",
+    "word": [
+     [
+      "t",
+      1
+     ],
+     [
+      "z",
+      1
+     ],
+     [
+      "t",
+      -1
+     ],
+     [
+      "x",
+      -1
+     ]
+    ]
+   },
+   "m_2": {
+    "embedding_status": "UNCERTIFIED",
+    "framing": {
+     "basis": "graph-annulus of phi over base interval",
+     "kind": "fiber_band",
+     "value": null
+    },
+    "status": "WORD CANONICAL; embedding UNCERTIFIED (G-a)",
+    "word": [
+     [
+      "t",
+      1
+     ],
+     [
+      "x",
+      269
+     ],
+     [
+      "y",
+      41
+     ],
+     [
+      "t",
+      -1
+     ],
+     [
+      "y",
+      -1
+     ]
+    ]
+   },
+   "m_3": {
+    "embedding_status": "UNCERTIFIED",
+    "framing": {
+     "basis": "graph-annulus of phi over base interval",
+     "kind": "fiber_band",
+     "value": null
+    },
+    "status": "WORD CANONICAL; embedding UNCERTIFIED (G-a)",
+    "word": [
+     [
+      "t",
+      1
+     ],
+     [
+      "x",
+      1240
+     ],
+     [
+      "y",
+      189
+     ],
+     [
+      "z",
+      32
+     ],
+     [
+      "t",
+      -1
+     ],
+     [
+      "z",
+      -1
+     ]
+    ]
+   },
+   "r_xy": {
+    "embedding_status": "PROVEN",
+    "framing": {
+     "basis": "[GS] T^3 fiber convention",
+     "kind": "fiber_convention_0",
+     "value": 0
+    },
+    "status": "CONVENTION",
+    "word": [
+     [
+      "x",
+      1
+     ],
+     [
+      "y",
+      1
+     ],
+     [
+      "x",
+      -1
+     ],
+     [
+      "y",
+      -1
+     ]
+    ]
+   },
+   "r_yz": {
+    "embedding_status": "PROVEN",
+    "framing": {
+     "basis": "[GS] T^3 fiber convention",
+     "kind": "fiber_convention_0",
+     "value": 0
+    },
+    "status": "CONVENTION",
+    "word": [
+     [
+      "y",
+      1
+     ],
+     [
+      "z",
+      1
+     ],
+     [
+      "y",
+      -1
+     ],
+     [
+      "z",
+      -1
+     ]
+    ]
+   },
+   "r_zx": {
+    "embedding_status": "PROVEN",
+    "framing": {
+     "basis": "[GS] T^3 fiber convention",
+     "kind": "fiber_convention_0",
+     "value": 0
+    },
+    "status": "CONVENTION",
+    "word": [
+     [
+      "z",
+      1
+     ],
+     [
+      "x",
+      1
+     ],
+     [
+      "z",
+      -1
+     ],
+     [
+      "x",
+      -1
+     ]
+    ]
+   }
+  },
+  "h3": [
+   {
+    "attaching_level": "DECLARED",
+    "id": "th_1",
+    "provenance": "fiber 2-handles x base 1-handle",
+    "status": "PROVEN (count)"
+   },
+   {
+    "attaching_level": "DECLARED",
+    "id": "th_2",
+    "provenance": "fiber 2-handles x base 1-handle",
+    "status": "PROVEN (count)"
+   },
+   {
+    "attaching_level": "DECLARED",
+    "id": "th_3",
+    "provenance": "fiber 2-handles x base 1-handle",
+    "status": "PROVEN (count)"
+   }
+  ],
+  "h4": [],
+  "markers": {
+   "mu(h_CS)": {
+    "encircles": [
+     {
+      "handle": "h_CS",
+      "mult": 1,
+      "strand": "ATTACHING_CIRCLE"
+     }
+    ],
+    "kind": "COCORE_MERIDIAN",
+    "of_handle": "h_CS",
+    "resolution": null,
+    "status": "LIVE",
+    "word": []
+   },
+   "mu(m_1)": {
+    "encircles": [
+     {
+      "handle": "m_1",
+      "mult": 1,
+      "strand": "ATTACHING_CIRCLE"
+     }
+    ],
+    "kind": "COCORE_MERIDIAN",
+    "of_handle": "m_1",
+    "resolution": null,
+    "status": "LIVE",
+    "word": []
+   },
+   "mu(m_2)": {
+    "encircles": [
+     {
+      "handle": "m_2",
+      "mult": 1,
+      "strand": "ATTACHING_CIRCLE"
+     }
+    ],
+    "kind": "COCORE_MERIDIAN",
+    "of_handle": "m_2",
+    "resolution": null,
+    "status": "LIVE",
+    "word": []
+   },
+   "mu(m_3)": {
+    "encircles": [
+     {
+      "handle": "m_3",
+      "mult": 1,
+      "strand": "ATTACHING_CIRCLE"
+     }
+    ],
+    "kind": "COCORE_MERIDIAN",
+    "of_handle": "m_3",
+    "resolution": null,
+    "status": "LIVE",
+    "word": []
+   }
+  }
+ },
+ "move_log": [
+  {
+   "n": 1,
+   "move": {
+    "type": "CANCEL_1_2",
+    "level": "WORD",
+    "handles": [
+     "t",
+     "h_CS"
+    ],
+    "params": {
+     "geometric_once_basis": "PROVEN: section-parallel curve crosses the base 1-handle once and no fiber handle (P2S S3 instance 1, section structure)",
+     "epsilon_bookkeeping": {
+      "epsilon": 0,
+      "twist_deposit": "none (canonical straightening)",
+      "basis": "[G10 Def 4.1]"
+     }
+    }
+   },
+   "legality_basis": "[GS Ch.5]; geometric-once: PROVEN: section-parallel curve crosses the base 1-handle once and no fiber handle (P2S S3 instance 1, section structure)",
+   "marker_transform": [
+    {
+     "marker": "mu(h_CS)",
+     "action": "REROUTED",
+     "detail": {
+      "basis": "P2S-Instance1",
+      "now": "meridian of former 1-handle t position",
+      "bundle": {
+       "m_1": 2,
+       "m_2": 2,
+       "m_3": 2
+      }
+     }
+    },
+    {
+     "marker": "mu(m_1)",
+     "action": "CARRIED",
+     "detail": {}
+    },
+    {
+     "marker": "mu(m_2)",
+     "action": "CARRIED",
+     "detail": {}
+    },
+    {
+     "marker": "mu(m_3)",
+     "action": "CARRIED",
+     "detail": {}
+    }
+   ],
+   "framing_transform": {},
+   "certificate": {
+    "kind": "CANCEL_1_2",
+    "cancelled_word": [
+     [
+      "t",
+      1
+     ]
+    ],
+    "occurrence_index": 0,
+    "exponent": 1,
+    "substitution": {
+     "t": []
+    },
+    "strands_through_gen_at_cancel": {
+     "m_1": 2,
+     "m_2": 2,
+     "m_3": 2
+    }
+   },
+   "pre_checksum": "b6f464862aec543e100d630d19e2debcc08008308cda18c3a4e602d0a3b24ba3",
+   "post_checksum": "c7ad62547eff1f75ff3de678bef210450ccbb8d5ab46b30b8ee4b30366c142c4",
+   "timestamp": "2026-08-28T11:20:13+09:00"
+  },
+  {
+   "n": 2,
+   "move": {
+    "type": "CANCEL_1_2",
+    "level": "WORD",
+    "handles": [
+     "x",
+     "m_1"
+    ],
+    "params": {
+     "geometric_once_basis": "[GS Ch.4-5]+MINPOS[IMPORTED] (reduced-word letter count 1)",
+     "epsilon_bookkeeping": {
+      "epsilon": 0,
+      "twist_deposit": "none (canonical straightening)",
+      "basis": "[G10 Def 4.1]"
+     }
+    }
+   },
+   "legality_basis": "[GS Ch.5]; geometric-once: [GS Ch.4-5]+MINPOS[IMPORTED] (reduced-word letter count 1)",
+   "marker_transform": [
+    {
+     "marker": "mu(h_CS)",
+     "action": "ENCIRCLES_UPDATED",
+     "detail": {
+      "cause": "cancel_1_2(x,m_1)"
+     }
+    },
+    {
+     "marker": "mu(m_1)",
+     "action": "REROUTED",
+     "detail": {
+      "basis": "P2S-Instance1",
+      "now": "meridian of former 1-handle x position",
+      "bundle": {
+       "m_2": 269,
+       "m_3": 1240,
+       "r_xy": 2,
+       "r_zx": 2
+      }
+     }
+    },
+    {
+     "marker": "mu(m_2)",
+     "action": "CARRIED",
+     "detail": {}
+    },
+    {
+     "marker": "mu(m_3)",
+     "action": "CARRIED",
+     "detail": {}
+    }
+   ],
+   "framing_transform": {},
+   "certificate": {
+    "kind": "CANCEL_1_2",
+    "cancelled_word": [
+     [
+      "z",
+      1
+     ],
+     [
+      "x",
+      -1
+     ]
+    ],
+    "occurrence_index": 1,
+    "exponent": -1,
+    "substitution": {
+     "x": [
+      [
+       "z",
+       1
+      ]
+     ]
+    },
+    "strands_through_gen_at_cancel": {
+     "m_2": 269,
+     "m_3": 1240,
+     "r_xy": 2,
+     "r_zx": 2
+    }
+   },
+   "pre_checksum": "c7ad62547eff1f75ff3de678bef210450ccbb8d5ab46b30b8ee4b30366c142c4",
+   "post_checksum": "7e73d86047c8ae44aefbe9394d3beebda096452821931e44ab150ca58dc949c9",
+   "timestamp": "2026-08-28T11:20:13+09:00"
+  }
+ ],
+ "state_checksum": "7e73d86047c8ae44aefbe9394d3beebda096452821931e44ab150ca58dc949c9",
+ "graveyard": {
+  "h1": {
+   "t": {
+    "killed_by": 1
+   },
+   "x": {
+    "killed_by": 2
+   }
+  },
+  "h2": {
+   "h_CS": {
+    "killed_by": 1
+   },
+   "m_1": {
+    "killed_by": 2
+   }
+  }
+ }
+}

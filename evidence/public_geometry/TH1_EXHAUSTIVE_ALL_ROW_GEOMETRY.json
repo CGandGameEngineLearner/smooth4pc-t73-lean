@@ -1,0 +1,909 @@
+{
+  "schema": "t73_th1_exhaustive_all_row_geometry/v1",
+  "source_file": "D:\\tmp\\r6\\agents\\remaining_sphere_macros\\flat_actual_band_dag.py",
+  "source_sha256": "af062d4aad56db882d31737ff9eec3736d1614855277ee327f359fe988059521",
+  "exhaustive_transform_sha256": "b0820a46fd5c6e99025eadf0bc68fc724040561acd7b8555168e0978c6be933f",
+  "transformation": "replace the unique parent sample predicate by True; call unchanged flat_band_geometry on every row; delete the parallel generator-output hash and feed core.output_cycle_geometry_sha256 directly to the next band and root cap",
+  "inputs": {
+    "D:\\tmp\\r6\\agents\\remaining_sphere_macros\\remaining_sphere_macros.py": "7021dd0af3e355a327c961c8e8185bae895425a16d8b1224ebf5e46274d5fecb",
+    "D:\\tmp\\r6\\agents\\remaining_sphere_macros\\endpoint_hashed_band_dag.py": "b14e4029702543696fc5096ce730286aede7448469080918cbc3518451bd8988",
+    "D:\\tmp\\r6\\agents\\twisted_trace_anomaly\\PEIFFER_SPHERE_SEARCH_CERT.json": "fb710ccc05accee65c37d8ac83ee5e433fa0d4c843c1c556a705930a3822e414",
+    "D:\\tmp\\r6\\agents\\twisted_trace_anomaly\\CHRISTOFFEL_CORRIDOR_5401_RECURSIVE_CERT.json": "9f16d4753996782e8040f8bd8fccfaa1ad3d560019dfe3ed91810dbff7a32a6d",
+    "D:\\tmp\\r6\\agents\\other_sphere_transport\\M3_CHRISTOFFEL_CORRIDOR_CERT.json": "263827b0446eff32d1269e9c48cd17f48f95167c7cc5e6a1c5b1481c0bc94eb4",
+    "D:\\tmp\\s4pc_ruler\\DIAGRAM\\out\\t73_eps0_christoffel.erkmo.json": "a425baa7dc78f6f47af765b02cf0a9831d8ab779e8bfb340e1ddb3ed3f47a130"
+  },
+  "joint_support": {
+    "XI_OLD_BLOCK": [
+      -4,
+      -3
+    ],
+    "THXY": [
+      2,
+      "13/2"
+    ],
+    "TH1": [
+      8,
+      9
+    ],
+    "TH2": [
+      10,
+      11
+    ],
+    "pairwise_disjoint": true,
+    "same_owner_D2_collisions": 0
+  },
+  "sphere": {
+    "sphere": "TH1",
+    "actual_face_count": 350176,
+    "flat_band_count": 350175,
+    "band_rows": {
+      "row_count": 350175,
+      "ordered_ledger_sha256": "b306bebc1eeaba4b0e7d7f9deb0f9e56fc9063d3de74ac3efccbad47b4caa423",
+      "sample_rows": [
+        {
+          "band_id": "flat-band:TH1:000000",
+          "step": 0,
+          "left_boundary_id": "flat:TH1:leaf:000000",
+          "left_boundary_SLP_sha256": "61849254d06ef239cc2a16fefcdf9412640e1937dbf6cbac5bac2f6333f4da8e",
+          "left_cycle_geometry_sha256": "78a956081d7d1bda3fc0823a616b399adaf8df98ff833fdbeed085335573714e",
+          "left_attachment_subarc": {
+            "kind": "SYNTHETIC_FLAT_COMB_TERMINAL",
+            "tag": "finger:leaf:TH1:m2_corridor_forward:005400:conjugated-output",
+            "projection_endpoints_scaled12": [
+              [
+                643032,
+                150624
+              ],
+              [
+                643044,
+                150624
+              ]
+            ],
+            "spatial_height_interval": [
+              [
+                8404233,
+                1050529
+              ],
+              [
+                8404234,
+                1050529
+              ]
+            ],
+            "subarc_sha256": "8ead4633fdaec396aad34cab9c71d413557267b45ebd8cdd8958aee1dbb4b047"
+          },
+          "right_leaf_id": "leaf:TH1:m2_corridor_forward:005399",
+          "right_boundary_SLP_sha256": "acb80f74c2fc4adf329e5d77e0cef9e3c3df6cfa56c5a7739db3c015a8533a81",
+          "right_actual_owner_attachment_subarc_sha256": "f5f8126b48f2ee8f0930846ddf062b32c65dc58dd32f0509948b6850e3b59575",
+          "right_conjugator_finger_annulus_sha256": "35b5c3b03b5b04e88400f14d529ead396600541962be5fba95e81ea49475c06e",
+          "right_conjugated_output_subarc_sha256": "3bf07cea56d19fb010b119e71be00dfc0d5adb884df4495ae0914b575d7ef8e3",
+          "right_owner_global_D2_index": 119237,
+          "output_boundary_id": "flat:TH1:output:000001",
+          "output_boundary_SLP_sha256": "7eb91ec2bf406f80a22eecc66c839e874f1e47a206d62df7c22972f2362b3d8f",
+          "output_cycle_geometry_sha256": "7a125f9b267792a8862b32e1ad0bfc6d66d4a66b2409b188fc9e6eb308d7be43",
+          "output_terminal_subarc_sha256": "95f6848fce698aeb2e170da9ded6500dcf68f7cce81686676260346723fc5e8c",
+          "universal_coordinate_generator_instance_sha256": "5e4febf7677bfb8e8bada2e6f0fb808b1c18c7a987c63901aeebd2e5f8c3bcc7",
+          "spatial_slab": {
+            "sphere_base": 8,
+            "local_closed_numerator_interval": [
+              1,
+              2
+            ],
+            "local_denominator": 1050529,
+            "exact_global_height_interval": [
+              [
+                8404233,
+                1050529
+              ],
+              [
+                8404234,
+                1050529
+              ]
+            ],
+            "movie_time": null
+          },
+          "normal_transport": {
+            "left_degree_Omega2_Omega3": [
+              0,
+              0
+            ],
+            "right_degree_Omega2_Omega3": [
+              0,
+              0
+            ],
+            "output_degree_Omega2_Omega3": [
+              0,
+              0
+            ],
+            "relative_euler": 0,
+            "output_trivialization": "signed sum of input degrees"
+          },
+          "prior_band_disjointness": {
+            "previous_slab_upper": null,
+            "current_slab_lower": 1,
+            "strict_height_gap": true,
+            "right_owner_global_D2_index": 119237
+          },
+          "row_sha256": "af7383dbae35c577f85bfd84ce4462d3607c2a42396d01a6c626b68a3664fd88",
+          "sample_full_PL_coordinate_geometry": {
+            "left_attachment_subarc": {
+              "kind": "SYNTHETIC_FLAT_COMB_TERMINAL",
+              "tag": "finger:leaf:TH1:m2_corridor_forward:005400:conjugated-output",
+              "projection_endpoints_scaled12": [
+                [
+                  643032,
+                  150624
+                ],
+                [
+                  643044,
+                  150624
+                ]
+              ],
+              "spatial_height_interval": [
+                [
+                  8404233,
+                  1050529
+                ],
+                [
+                  8404234,
+                  1050529
+                ]
+              ],
+              "subarc_sha256": "8ead4633fdaec396aad34cab9c71d413557267b45ebd8cdd8958aee1dbb4b047"
+            },
+            "right_attachment_subarc": {
+              "kind": "SYNTHETIC_FLAT_COMB_TERMINAL",
+              "tag": "finger:leaf:TH1:m2_corridor_forward:005399:conjugated-output",
+              "projection_endpoints_scaled12": [
+                [
+                  643056,
+                  150624
+                ],
+                [
+                  643068,
+                  150624
+                ]
+              ],
+              "spatial_height_interval": [
+                [
+                  8404233,
+                  1050529
+                ],
+                [
+                  8404234,
+                  1050529
+                ]
+              ],
+              "subarc_sha256": "3bf07cea56d19fb010b119e71be00dfc0d5adb884df4495ae0914b575d7ef8e3"
+            },
+            "left_route_scaled12": [
+              [
+                643038,
+                150624
+              ],
+              [
+                643944,
+                151392
+              ]
+            ],
+            "right_route_scaled12": [
+              [
+                643062,
+                150624
+              ],
+              [
+                643800,
+                150624
+              ],
+              [
+                643800,
+                151440
+              ],
+              [
+                643944,
+                151440
+              ],
+              [
+                643944,
+                151392
+              ]
+            ],
+            "branch_point_scaled12": [
+              643944,
+              151392
+            ],
+            "output_terminal_subarc": {
+              "kind": "SYNTHETIC_FLAT_COMB_TERMINAL",
+              "tag": "TH1:flat-output:000001",
+              "projection_endpoints_scaled12": [
+                [
+                  643944,
+                  151392
+                ],
+                [
+                  643956,
+                  151392
+                ]
+              ],
+              "spatial_height_interval": [
+                [
+                  8404233,
+                  1050529
+                ],
+                [
+                  8404234,
+                  1050529
+                ]
+              ],
+              "subarc_sha256": "95f6848fce698aeb2e170da9ded6500dcf68f7cce81686676260346723fc5e8c"
+            },
+            "spatial_slab": {
+              "sphere_base": 8,
+              "local_closed_numerator_interval": [
+                1,
+                2
+              ],
+              "local_denominator": 1050529,
+              "exact_global_height_interval": [
+                [
+                  8404233,
+                  1050529
+                ],
+                [
+                  8404234,
+                  1050529
+                ]
+              ],
+              "movie_time": null
+            },
+            "left_projection_sweep": {
+              "old_link_projection_crossing_count": 0,
+              "old_link_projection_crossings_by_component": {},
+              "all_old_link_projection_crossings_band_over": true,
+              "three_dimensional_old_link_intersection_count": 0,
+              "polyline_self_intersections": [],
+              "reason": "synthetic terminal and its route lie outside the old-link bounding box"
+            },
+            "right_projection_sweep": {
+              "old_link_projection_crossing_count": 0,
+              "old_link_projection_crossings_by_component": {},
+              "all_old_link_projection_crossings_band_over": true,
+              "three_dimensional_old_link_intersection_count": 0,
+              "polyline_self_intersections": [],
+              "reason": "synthetic terminal and its route lie outside the old-link bounding box"
+            },
+            "left_right_projection_crossings": [
+              [
+                0,
+                1
+              ]
+            ],
+            "microheight_order": {
+              "left_whisker": [
+                2,
+                8
+              ],
+              "branch_core": [
+                4,
+                8
+              ],
+              "right_whisker": [
+                6,
+                8
+              ],
+              "right_over_left_at_every_mutual_projection_crossing": true,
+              "three_dimensional_mutual_intersection_count": 0
+            },
+            "core_coordinate_sha256": "2263145fbddfc519345f2162e79533fe7f5624eb6c2f089f3e469c566645b3ed",
+            "source_cycle_geometry_sha256": "78a956081d7d1bda3fc0823a616b399adaf8df98ff833fdbeed085335573714e",
+            "output_cycle_geometry_sha256": "7a125f9b267792a8862b32e1ad0bfc6d66d4a66b2409b188fc9e6eb308d7be43"
+          },
+          "sample_product_annulus": null
+        },
+        {
+          "band_id": "flat-band:TH1:000001",
+          "step": 1,
+          "left_boundary_id": "flat:TH1:output:000001",
+          "left_boundary_SLP_sha256": "7eb91ec2bf406f80a22eecc66c839e874f1e47a206d62df7c22972f2362b3d8f",
+          "left_cycle_geometry_sha256": "7a125f9b267792a8862b32e1ad0bfc6d66d4a66b2409b188fc9e6eb308d7be43",
+          "left_attachment_subarc": {
+            "kind": "SYNTHETIC_FLAT_COMB_TERMINAL",
+            "tag": "TH1:flat-output:000001",
+            "projection_endpoints_scaled12": [
+              [
+                643944,
+                151392
+              ],
+              [
+                643956,
+                151392
+              ]
+            ],
+            "spatial_height_interval": [
+              [
+                8404233,
+                1050529
+              ],
+              [
+                8404234,
+                1050529
+              ]
+            ],
+            "subarc_sha256": "95f6848fce698aeb2e170da9ded6500dcf68f7cce81686676260346723fc5e8c"
+          },
+          "right_leaf_id": "leaf:TH1:m2_corridor_forward:005398",
+          "right_boundary_SLP_sha256": "2e756744f4812f332c43d2f3d83bdf347067afa379b09c5d41542ca821c49e98",
+          "right_actual_owner_attachment_subarc_sha256": "6b5f09c42ba917778aa5efadba5884142642d9855647251428894498da30428f",
+          "right_conjugator_finger_annulus_sha256": "3e92818b5e81f6bc6aa46b60efc8e55c36dbf858b4edb41d5ffce144fdb17d63",
+          "right_conjugated_output_subarc_sha256": "4d3124ee4ed5bfb8ba223a5f0720c030ba84db584ceda5246dd534b1e333e39c",
+          "right_owner_global_D2_index": 119236,
+          "output_boundary_id": "flat:TH1:output:000002",
+          "output_boundary_SLP_sha256": "9702e8b7601f25a4f14fefc752b0a9deaaeaf5d103dec055816fd6937a5d64eb",
+          "output_cycle_geometry_sha256": "fe60a5a5bff152c9beeb448bc42e7386080bb90a7c6df73986176f827d01fd9b",
+          "output_terminal_subarc_sha256": "11649831f39a0655ac4df416e42156cd8bcbc0dcfa9790c7a9cb691f9bf13b6e",
+          "universal_coordinate_generator_instance_sha256": "48187b895b1d90790dd4a82b06102f73cfcd6ec36c3c32134e448cdeee03b1d3",
+          "spatial_slab": {
+            "sphere_base": 8,
+            "local_closed_numerator_interval": [
+              4,
+              5
+            ],
+            "local_denominator": 1050529,
+            "exact_global_height_interval": [
+              [
+                8404236,
+                1050529
+              ],
+              [
+                8404237,
+                1050529
+              ]
+            ],
+            "movie_time": null
+          },
+          "normal_transport": {
+            "left_degree_Omega2_Omega3": [
+              0,
+              0
+            ],
+            "right_degree_Omega2_Omega3": [
+              0,
+              0
+            ],
+            "output_degree_Omega2_Omega3": [
+              0,
+              0
+            ],
+            "relative_euler": 0,
+            "output_trivialization": "signed sum of input degrees"
+          },
+          "prior_band_disjointness": {
+            "previous_slab_upper": 2,
+            "current_slab_lower": 4,
+            "strict_height_gap": true,
+            "right_owner_global_D2_index": 119236
+          },
+          "row_sha256": "b488aad34006059c0d5afe9f2d8b8d104acad2f1cb40c1f14f19d2da045e1497",
+          "sample_full_PL_coordinate_geometry": {
+            "left_attachment_subarc": {
+              "kind": "SYNTHETIC_FLAT_COMB_TERMINAL",
+              "tag": "TH1:flat-output:000001",
+              "projection_endpoints_scaled12": [
+                [
+                  643944,
+                  151392
+                ],
+                [
+                  643956,
+                  151392
+                ]
+              ],
+              "spatial_height_interval": [
+                [
+                  8404233,
+                  1050529
+                ],
+                [
+                  8404234,
+                  1050529
+                ]
+              ],
+              "subarc_sha256": "95f6848fce698aeb2e170da9ded6500dcf68f7cce81686676260346723fc5e8c"
+            },
+            "right_attachment_subarc": {
+              "kind": "SYNTHETIC_FLAT_COMB_TERMINAL",
+              "tag": "finger:leaf:TH1:m2_corridor_forward:005398:conjugated-output",
+              "projection_endpoints_scaled12": [
+                [
+                  643080,
+                  150624
+                ],
+                [
+                  643092,
+                  150624
+                ]
+              ],
+              "spatial_height_interval": [
+                [
+                  8404236,
+                  1050529
+                ],
+                [
+                  8404237,
+                  1050529
+                ]
+              ],
+              "subarc_sha256": "4d3124ee4ed5bfb8ba223a5f0720c030ba84db584ceda5246dd534b1e333e39c"
+            },
+            "left_route_scaled12": [
+              [
+                643950,
+                151392
+              ],
+              [
+                643992,
+                151392
+              ]
+            ],
+            "right_route_scaled12": [
+              [
+                643086,
+                150624
+              ],
+              [
+                643800,
+                150624
+              ],
+              [
+                643800,
+                151440
+              ],
+              [
+                643992,
+                151440
+              ],
+              [
+                643992,
+                151392
+              ]
+            ],
+            "branch_point_scaled12": [
+              643992,
+              151392
+            ],
+            "output_terminal_subarc": {
+              "kind": "SYNTHETIC_FLAT_COMB_TERMINAL",
+              "tag": "TH1:flat-output:000002",
+              "projection_endpoints_scaled12": [
+                [
+                  643992,
+                  151392
+                ],
+                [
+                  644004,
+                  151392
+                ]
+              ],
+              "spatial_height_interval": [
+                [
+                  8404236,
+                  1050529
+                ],
+                [
+                  8404237,
+                  1050529
+                ]
+              ],
+              "subarc_sha256": "11649831f39a0655ac4df416e42156cd8bcbc0dcfa9790c7a9cb691f9bf13b6e"
+            },
+            "spatial_slab": {
+              "sphere_base": 8,
+              "local_closed_numerator_interval": [
+                4,
+                5
+              ],
+              "local_denominator": 1050529,
+              "exact_global_height_interval": [
+                [
+                  8404236,
+                  1050529
+                ],
+                [
+                  8404237,
+                  1050529
+                ]
+              ],
+              "movie_time": null
+            },
+            "left_projection_sweep": {
+              "old_link_projection_crossing_count": 0,
+              "old_link_projection_crossings_by_component": {},
+              "all_old_link_projection_crossings_band_over": true,
+              "three_dimensional_old_link_intersection_count": 0,
+              "polyline_self_intersections": [],
+              "reason": "synthetic terminal and its route lie outside the old-link bounding box"
+            },
+            "right_projection_sweep": {
+              "old_link_projection_crossing_count": 0,
+              "old_link_projection_crossings_by_component": {},
+              "all_old_link_projection_crossings_band_over": true,
+              "three_dimensional_old_link_intersection_count": 0,
+              "polyline_self_intersections": [],
+              "reason": "synthetic terminal and its route lie outside the old-link bounding box"
+            },
+            "left_right_projection_crossings": [],
+            "microheight_order": {
+              "left_whisker": [
+                2,
+                8
+              ],
+              "branch_core": [
+                4,
+                8
+              ],
+              "right_whisker": [
+                6,
+                8
+              ],
+              "right_over_left_at_every_mutual_projection_crossing": true,
+              "three_dimensional_mutual_intersection_count": 0
+            },
+            "core_coordinate_sha256": "d99f4b97f74f1d000584b3c03f7bc1f67a1421a8c80ad456ebe41d984f1e8c67",
+            "source_cycle_geometry_sha256": "7a125f9b267792a8862b32e1ad0bfc6d66d4a66b2409b188fc9e6eb308d7be43",
+            "output_cycle_geometry_sha256": "fe60a5a5bff152c9beeb448bc42e7386080bb90a7c6df73986176f827d01fd9b"
+          },
+          "sample_product_annulus": {
+            "boundary_subarc_sha256": "95f6848fce698aeb2e170da9ded6500dcf68f7cce81686676260346723fc5e8c",
+            "constant_projection_endpoints_scaled12": [
+              [
+                643944,
+                151392
+              ],
+              [
+                643956,
+                151392
+              ]
+            ],
+            "open_height_gap_numerators": [
+              2,
+              4
+            ],
+            "denominator": 1050529,
+            "strict_gap": true,
+            "product_annulus_intersections": 0,
+            "disjointness_reason": "unique branch x-coordinate for this ancestry plus open gap between consecutive slabs",
+            "annulus_sha256": "dd10da5192608fcc475dfec79dab6abde8f9bb616caafb51bc3c73b67108cbbd"
+          }
+        }
+      ],
+      "audit_kind": "band",
+      "full_coordinate_row_count": 350175,
+      "false_predicate_count": 0,
+      "material_output_stream_sha256": "fcdff96d3c6679a5b913984daeccc4c2af6a2a410ba0f0d07a1da263f252de23",
+      "last_output": {
+        "output_boundary_id": "flat:TH1:output:350175",
+        "output_boundary_SLP_sha256": "bd610c8d9b27314934570ba079496ad067ac24ea312034465f6968f4b1cdc238",
+        "output_cycle_geometry_sha256": "5f1285e6559c34f84dd2756ab591f67feba09d7cc46a0222a89aaf978a329c40",
+        "output_terminal_subarc_sha256": "32c4594cbec4157aed6192e9f99b8fd452d5b4d0002dd670810f2dec9b6f1085",
+        "spatial_slab": {
+          "sphere_base": 8,
+          "local_closed_numerator_interval": [
+            1050523,
+            1050524
+          ],
+          "local_denominator": 1050529,
+          "exact_global_height_interval": [
+            [
+              9454755,
+              1050529
+            ],
+            [
+              9454756,
+              1050529
+            ]
+          ],
+          "movie_time": null
+        }
+      },
+      "independently_recomputed_band_route_self_intersections": 0,
+      "independently_recomputed_band_mutual_projection_crossings": 1,
+      "independently_recomputed_band_old_projection_crossings": 0
+    },
+    "universal_static_band_lemma": {
+      "sphere": "TH1",
+      "band_index_domain": [
+        0,
+        350174
+      ],
+      "right_input": "output subarc of the leaf's product-normal conjugator finger-annulus; its input is the actual owner subarc at the global D2 coordinate",
+      "left_input_k0": "actual first leaf owner subarc",
+      "left_input_k_positive": "the exact terminal subarc emitted by band k-1",
+      "slab_formula": "[(3k+1)/(3B+4),(3k+2)/(3B+4)]",
+      "consecutive_gap_identity": "(3k+2) < (3(k+1)+1) with gap numerator 2",
+      "branch_x_formula_scaled12": "12*(xmax+256+offset)+24+96+48*(k+1)",
+      "branch_x_strictly_increasing": true,
+      "product_annulus": "terminal(k) x the open height gap to left-input(k+1); same projection subarc hash",
+      "owner_whisker": "from the actual 1/3..2/3 owner subarc to an outer column, then above the link box",
+      "conjugator_finger_annulus": "two fresh parallel gate tracks realize g and g^-1 in the leaf-private slab; ordered gate letters and track hashes are consumed per leaf",
+      "old_link_crossings": "finite projection sweep; every event is band-over because old link is below the slab",
+      "within_band_microheight_order": {
+        "left": [
+          2,
+          8
+        ],
+        "core": [
+          4,
+          8
+        ],
+        "right": [
+          6,
+          8
+        ]
+      },
+      "mutual_projection_crossings": "right over left by the strict microheight order",
+      "prior_band_disjointness": "strictly disjoint slabs; product annuli use distinct increasing branch-x values",
+      "same_owner_disjointness": "global owner-D2 index is injective across XI, THXY, TH1, TH2",
+      "normal_rule": "output degree is the signed sum of input Omega2/Omega3 degrees; relative Euler zero",
+      "denominator": 1050529,
+      "status": "UNIVERSAL_STATIC_COORDINATE_LEMMA_FOR_ALL_DECLARED_INDICES",
+      "lemma_sha256": "3b44afa08b17f8bb6fbffa2c03d54f231b433803379e08115f5017793bb513db"
+    },
+    "leaf_reduction_rows": {
+      "row_count": 350176,
+      "ordered_ledger_sha256": "a6af444ed6ac9a658428929acb4cc03b6628e3b0d7e22197b2a14c151837fbde",
+      "sample_rows": [
+        {
+          "leaf_index": 0,
+          "leaf_id": "leaf:TH1:m2_corridor_forward:005400",
+          "leaf_word_sha256": "e7483fca61a1fa38f425623972554402b70bb23d0fa9e9d809fc468afd6661d5",
+          "before_stack_length": 0,
+          "after_stack_length": 540,
+          "cancellation_pair_count": 0
+        },
+        {
+          "leaf_index": 1,
+          "leaf_id": "leaf:TH1:m2_corridor_forward:005399",
+          "leaf_word_sha256": "06d6b0df59f8114d5761e0310bc3e7d1b08f9e2e332555bcb459fbaacd6feda8",
+          "before_stack_length": 540,
+          "after_stack_length": 542,
+          "cancellation_pair_count": 270
+        }
+      ],
+      "audit_kind": "reduction",
+      "full_coordinate_row_count": 0,
+      "false_predicate_count": 0,
+      "material_output_stream_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "last_output": null,
+      "independently_recomputed_band_route_self_intersections": 0,
+      "independently_recomputed_band_mutual_projection_crossings": 0,
+      "independently_recomputed_band_old_projection_crossings": 0
+    },
+    "conjugator_finger_annulus_rows": {
+      "row_count": 350176,
+      "ordered_ledger_sha256": "960ca22717f226a5e9960cfb115f7b6b0797971c799d162b60c1c140f50cddc0",
+      "sample_rows": [
+        {
+          "leaf_index": 0,
+          "leaf_id": "leaf:TH1:m2_corridor_forward:005400",
+          "finger_annulus_sha256": "b153a830117119d1a467d4161a46d89e7cf871e41842de5566e8cc549ef48eb3",
+          "conjugator_word_sha256": "a10b35fc88905334ca7b329b8e86a1d8952af0f2382a56d5a5df29aabd17ef5b",
+          "conjugator_length": 268,
+          "owner_input_subarc_sha256": "02a2de729928e745010077ef38a1047743153e35d19307befec31a31b69f3eae",
+          "output_subarc_sha256": "8ead4633fdaec396aad34cab9c71d413557267b45ebd8cdd8958aee1dbb4b047"
+        },
+        {
+          "leaf_index": 1,
+          "leaf_id": "leaf:TH1:m2_corridor_forward:005399",
+          "finger_annulus_sha256": "35b5c3b03b5b04e88400f14d529ead396600541962be5fba95e81ea49475c06e",
+          "conjugator_word_sha256": "d354441708d081f70c46d0cb97462d0660530d2ac3ef16981866568f1c2da1e2",
+          "conjugator_length": 269,
+          "owner_input_subarc_sha256": "f5f8126b48f2ee8f0930846ddf062b32c65dc58dd32f0509948b6850e3b59575",
+          "output_subarc_sha256": "3bf07cea56d19fb010b119e71be00dfc0d5adb884df4495ae0914b575d7ef8e3"
+        }
+      ],
+      "audit_kind": "finger",
+      "full_coordinate_row_count": 0,
+      "false_predicate_count": 0,
+      "material_output_stream_sha256": "fcdff96d3c6679a5b913984daeccc4c2af6a2a410ba0f0d07a1da263f252de23",
+      "last_output": null,
+      "independently_recomputed_band_route_self_intersections": 0,
+      "independently_recomputed_band_mutual_projection_crossings": 0,
+      "independently_recomputed_band_old_projection_crossings": 0
+    },
+    "block_receipts": [
+      {
+        "block_id": "P_M2_POS",
+        "leaf_index_half_open": [
+          0,
+          5402
+        ],
+        "leaf_count": 5402,
+        "leaf_subroot_SLP_sha256": "bafb59816743905133beb2d187c541de20910bf401c1494f07bd7b0a02967110",
+        "streamed_reduced_output_word_sha256": "350d3aa89a70f80dcd08c19bdd8cc436dbde98b4ac7b1132d8b874ffde38afdc",
+        "streamed_reduced_output_word_length": 309
+      },
+      {
+        "block_id": "P_M3_POS",
+        "leaf_index_half_open": [
+          5402,
+          119286
+        ],
+        "leaf_count": 113884,
+        "leaf_subroot_SLP_sha256": "3db0de8a9666ce8474b8595c2b15a2dbc93e02e68070dfac0350690008fbecb3",
+        "streamed_reduced_output_word_sha256": "2811a013eca5792c060c886748233495627fac0edac4d2b9c87a539379e3e41c",
+        "streamed_reduced_output_word_length": 1462
+      },
+      {
+        "block_id": "P_M2_NEG",
+        "leaf_index_half_open": [
+          119286,
+          124688
+        ],
+        "leaf_count": 5402,
+        "leaf_subroot_SLP_sha256": "8bf4c7f635bdae2977262d6cc7e7589f0ef15337b1df778a11f1f408e472509d",
+        "streamed_reduced_output_word_sha256": "decb9fdfddee6bd76dc77580bbe2b7268348ba89a3dd977756dc764aaab506ea",
+        "streamed_reduced_output_word_length": 315
+      },
+      {
+        "block_id": "P_M3_NEG",
+        "leaf_index_half_open": [
+          124688,
+          238572
+        ],
+        "leaf_count": 113884,
+        "leaf_subroot_SLP_sha256": "1fa24b2fbdffc6ad7c744f01ecb84ee84eba636d266445c1b8ed8ddbe6b7acea",
+        "streamed_reduced_output_word_sha256": "d9a92c4bc149c661242cc9b3d557bb8b4b4b47a17323eb5606e15ceb791ee6af",
+        "streamed_reduced_output_word_length": 1466
+      },
+      {
+        "block_id": "BASE",
+        "leaf_index_half_open": [
+          238572,
+          238573
+        ],
+        "leaf_count": 1,
+        "leaf_subroot_SLP_sha256": "df141d40ec85c60b9d4e09418d4aefa5a351d4431602a53d3ae218e7d8dabebe",
+        "streamed_reduced_output_word_sha256": "97f1bc866957b032f6906d4a95df14946b78bc809c7c00a45e201daf9f362c7f",
+        "streamed_reduced_output_word_length": 4
+      },
+      {
+        "block_id": "INV_EMPTY",
+        "leaf_index_half_open": [
+          238573,
+          247181
+        ],
+        "leaf_count": 8608,
+        "leaf_subroot_SLP_sha256": "180a4a0c9e14c5d0e97c3104710ec37df9624d6935da42362a340f961b806e80",
+        "streamed_reduced_output_word_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "streamed_reduced_output_word_length": 0
+      },
+      {
+        "block_id": "INV_TRIVIAL",
+        "leaf_index_half_open": [
+          247181,
+          247183
+        ],
+        "leaf_count": 2,
+        "leaf_subroot_SLP_sha256": "7d64253ad5db20ad271a8994764a1d990e8f8dbe199bec54067e032b095f3dda",
+        "streamed_reduced_output_word_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "streamed_reduced_output_word_length": 0
+      },
+      {
+        "block_id": "INV_G3",
+        "leaf_index_half_open": [
+          247183,
+          248495
+        ],
+        "leaf_count": 1312,
+        "leaf_subroot_SLP_sha256": "e668277e22ea1318d2b7cddeb41ea74744a537c210b6110afb6841d6fd1010c8",
+        "streamed_reduced_output_word_sha256": "f4fe5558ecde1974c7d48430424985ed1243684ed40d773ba1347a0dff4c5aa5",
+        "streamed_reduced_output_word_length": 3542
+      },
+      {
+        "block_id": "INV_G2",
+        "leaf_index_half_open": [
+          248495,
+          299336
+        ],
+        "leaf_count": 50841,
+        "leaf_subroot_SLP_sha256": "8825dfb3963fab82df931d9673da4c79748908ebe6f320a6754553cf542da9f7",
+        "streamed_reduced_output_word_sha256": "18649b34a7c7bec7f354aa8165d2c74544f9ce571d3d5d4bb0f585a8129ce352",
+        "streamed_reduced_output_word_length": 3396
+      },
+      {
+        "block_id": "INV_G1",
+        "leaf_index_half_open": [
+          299336,
+          350176
+        ],
+        "leaf_count": 50840,
+        "leaf_subroot_SLP_sha256": "32be5c91d3d2e34087bb1f387a44b83d2feed844f3e7ec2a7154cf619e38bcf1",
+        "streamed_reduced_output_word_sha256": "b83751efd6be576645943bf1ba7b7b1bc2e513291ce145792a3bd701b9558691",
+        "streamed_reduced_output_word_length": 3100
+      }
+    ],
+    "root_boundary_SLP_sha256": "bd610c8d9b27314934570ba079496ad067ac24ea312034465f6968f4b1cdc238",
+    "root_cycle_geometry_sha256": "5f1285e6559c34f84dd2756ab591f67feba09d7cc46a0222a89aaf978a329c40",
+    "root_normal_degree_Omega2_Omega3": [
+      0,
+      0
+    ],
+    "root_cap": {
+      "input_root_boundary_id": "flat:TH1:output:350175",
+      "input_root_SLP_sha256": "bd610c8d9b27314934570ba079496ad067ac24ea312034465f6968f4b1cdc238",
+      "input_root_cycle_geometry_sha256": "5f1285e6559c34f84dd2756ab591f67feba09d7cc46a0222a89aaf978a329c40",
+      "input_terminal_subarc": {
+        "kind": "SYNTHETIC_FLAT_COMB_TERMINAL",
+        "tag": "TH1:flat-output:350175",
+        "projection_endpoints_scaled12": [
+          [
+            17452296,
+            151392
+          ],
+          [
+            17452308,
+            151392
+          ]
+        ],
+        "spatial_height_interval": [
+          [
+            9454755,
+            1050529
+          ],
+          [
+            9454756,
+            1050529
+          ]
+        ],
+        "subarc_sha256": "32c4594cbec4157aed6192e9f99b8fd452d5b4d0002dd670810f2dec9b6f1085"
+      },
+      "streaming_reduction_ledger_sha256": "a6af444ed6ac9a658428929acb4cc03b6628e3b0d7e22197b2a14c151837fbde",
+      "streaming_reduction_final_stack": [],
+      "expanded_root_letter_count": 657041664,
+      "nested_free_reduction_bigon_count": 328520832,
+      "bigon_generator": {
+        "algorithm": "stream leaves in the certified order; push a letter unless it cancels stack top; each pop emits one radial bigon",
+        "well_nested": "stack/LIFO pairing theorem",
+        "radial_level_formula": "bigon j occupies (2j+1,2j+2)/(2C+2) in the root-cap collar",
+        "pair_intersections": 0,
+        "reason": "LIFO intervals are nested or disjoint, never interleaved"
+      },
+      "root_cap_disk": {
+        "attachment_subarc_sha256": "32c4594cbec4157aed6192e9f99b8fd452d5b4d0002dd670810f2dec9b6f1085",
+        "normal_framing": 0,
+        "support": "outermost TH1 root-cap collar beyond every band slab"
+      },
+      "status": "PASS_SAME_FLAT_LEAF_STREAM_ROOT_AND_CAP",
+      "cap_sha256": "790dec2a77d5f75d5fe0455c1c4e4dfefdab972a47c9c0632bdf52a5c75b13e3"
+    },
+    "euler_ledger": {
+      "W2_core_disks": 350176,
+      "W1_flat_tree_bands": 350175,
+      "root_cap": 1,
+      "chi": 2,
+      "genus": 0
+    },
+    "status": "OPEN_EXPERIMENTAL_GEOMETRY_NOT_HOSTILE_AUDITED"
+  },
+  "audit_counts": {
+    "actual_full_carrier_leaves": 350176,
+    "finger_annuli": 350176,
+    "full_coordinate_band_rows": 350175,
+    "false_geometry_predicates": 0,
+    "independently_recomputed_band_route_self_intersections": 0,
+    "independently_recomputed_band_mutual_projection_crossings": 1,
+    "independently_recomputed_band_old_projection_crossings": 0,
+    "independently_recomputed_finger_route_self_intersections": 0,
+    "independently_recomputed_finger_old_projection_crossings": 491777890,
+    "finger_route_ledger_sha256": "f267dc6429461abcf54160d0ac982be58694f605e8e43adb0db13e13d4bd2c95"
+  },
+  "verdict": {
+    "EVERY_LEAF_ACTUAL_FULL_CARRIER": "PASS",
+    "EVERY_FINGER_PRODUCT_NORMAL_DISJOINT": "PASS",
+    "EVERY_BAND_FULL_PL_COORDINATES": "PASS",
+    "EVERY_BAND_GEOMETRY_PREDICATE_INDEPENDENTLY_RECOMPUTED": "PASS",
+    "EVERY_FINGER_ROUTE_INDEPENDENTLY_RECOMPUTED": "PASS",
+    "EVERY_BAND_NEW_NEW": "PASS_BY_COMPONENT_ANCESTRY",
+    "MATERIAL_STREAM_EQUALS_COMB_FOOT_STREAM": "PASS",
+    "ROOT_CAP_HASH_LINKED_TO_LAST_OUTPUT": "PASS"
+  }
+}

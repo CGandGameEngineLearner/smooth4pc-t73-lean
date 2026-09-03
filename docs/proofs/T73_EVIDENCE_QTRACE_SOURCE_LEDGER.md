@@ -31,16 +31,16 @@ internal W action on raw M_R:            NOT CLAIMED
 
 | ID | object/arrow | domain -> codomain | degree / ring | source |
 |---|---|---|---|---|
-| L1 | `C^pre` | objects are tangles `T:P86->P88`; morphisms are the pregraded form of the MWW/BHPW tangle category | bigraded over `Q` | MWW `D:/tmp/r6/mww_handle_src/1handles.tex:542-572`; pregraded/enriched translation `:610-623`; BPW `D:/tmp/r6/bpw_src/traces/graded.tex:70-85` |
-| L2 | actual coefficient `M_R(T,T')` | `C^op x C -> grVect_Q`; concretely `KhR(R union T' union bar(T))` with the MWW shift | homogeneous left/right gluing actions | MWW raw summands/actions `1handles.tex:242-299`; actual action-compatible Hattori family supplied by E1 and actual-PD unit certificate `D:/tmp/t73_actual_cable_unit/ACTUAL_PD_CABLE_UNIT_CERT.json` |
+| L1 | `C^pre` | objects are tangles `T:P86->P88`; morphisms are the pregraded form of the MWW/BHPW tangle category | bigraded over `Q` | MWW one-handle section; BPW graded-trace section; public sources are linked in `docs/INDEPENDENT_REVIEW.md` |
+| L2 | actual coefficient `M_R(T,T')` | `C^op x C -> grVect_Q`; concretely `KhR(R union T' union bar(T))` with the MWW shift | homogeneous left/right gluing actions | MWW raw summands/actions `1handles.tex:242-299`; actual action-compatible Hattori family supplied by E1 and [`ACTUAL_PD_CABLE_UNIT_CERT.json`](../../evidence/public_geometry/ACTUAL_PD_CABLE_UNIT_CERT.json) |
 | L3 | `R_q` | `Q[q,q^-1]` | `deg q=0` as coefficient; powers record internal degree in cyclicity | BPW `traces/graded.tex:90-115` |
 | L4 | `qTr_q(C,M_R)` | cokernel of `directsum_T M_R(T,T) tensor R_q` by `L_f(m)-q^|f| R_f(m)` | graded `R_q`-module | BPW universal quantum trace formula `traces/graded.tex:90-128`, pulled back along the E1 coefficient equivalence |
 | L5 | specialization | `qTr_q tensor_{R_q} R_q/(q-1) -> HH0(C;M_R)` | `q=1` | direct cokernel base change; ordinary MWW definition `1handles.tex:420-430` |
-| L6 | selected lift `[v]_q` | element of `qTr_q`; representative `H^-1(Id_U tensor X^tensor227)` at `T1=B_actual^-1 U` | homogeneous; one-handle quantum degree 498 before later cable shift | E1 actual Hattori construction; identity trace convention MWW `1handles.tex:783-787`; Frobenius `X`/counit BHPW `D:/tmp/r6/agents/finite_type_leading/bphw_1903_src/sections/preliminaries.tex:601-633` |
-| L7 | quantum vertical-horizontal shadow `Sh_q` | `qTr_q(C,M_R) -> Hom_qhTr((P86,Id),(P88,Id))` | degree zero after MWW shifts | ordinary vertical-horizontal construction BPW `D:/tmp/r6/bpw_src/shadows/vertical.tex:11-58`; quantum trace deformation `traces/graded.tex:118-135`; qvTr-to-qhTr realization `D:/tmp/r6/bpw_src/quantum/qannulus.tex:289-309` |
-| L8 | strict endpoint functor | the L7 Hom-space -> `Hom_{R_h}(E_86,E_88)` with `E_86=(V_h^tensor86)_86`, `E_88=(V_h^tensor88)_86` | `R_h=Q[[h]]`, `q=1+h` | weight modules/action BHPW `D:/tmp/r6/agents/finite_type_leading/bphw_1903_src/sections/intro.tex:280-299`; strict q-annular functor `:378-422`; exact endpoint typing `D:/tmp/r6/agents/finite_type_leading/QHH_ENDPOINT_S87_FUNCTIONAL_RESULT.md:1-48` |
-| L9 | `rho_h(W)-I` | `E_88 -> E_88` | degree zero; image lies in `h^3 E_88` | physical word/Gamma3 recomputation `D:/tmp/r6/AUD_B/AUD_B_REPORT.md:305-339`; group-filtration proof uses pure generators `I+O(h)` and `[I+O(h^p),I+O(h^q)]=I+O(h^(p+q))` |
-| L10 | normalized cap `C_hat_87,2(h)` | `E_88 -> E_86 ~= R_h` | normalized total degree zero; any original fixed degree is removed by its invertible q-shift | strict tangle action/functoriality BHPW `intro.tex:252-299`; actual cap typing and normalization `D:/tmp/r6/fullw_tangent_coend/hostile/ACTUAL_CAP_POSTCOMPOSITION_DECISION.md:34-91` |
+| L6 | selected lift `[v]_q` | element of `qTr_q`; representative `H^-1(Id_U tensor X^tensor227)` at `T1=B_actual^-1 U` | homogeneous; one-handle quantum degree 498 before later cable shift | E1 actual Hattori construction; MWW identity trace convention; BHPW Frobenius `X`/counit |
+| L7 | quantum vertical-horizontal shadow `Sh_q` | `qTr_q(C,M_R) -> Hom_qhTr((P86,Id),(P88,Id))` | degree zero after MWW shifts | BPW vertical/graded trace and q-annular construction; public sources linked in `docs/INDEPENDENT_REVIEW.md` |
+| L8 | strict endpoint functor | the L7 Hom-space -> `Hom_{R_h}(E_86,E_88)` with `E_86=(V_h^tensor86)_86`, `E_88=(V_h^tensor88)_86` | `R_h=Q[[h]]`, `q=1+h` | BHPW weight modules/action and strict q-annular functor; [`QHH_ENDPOINT_S87_FUNCTIONAL_RESULT.md`](../../evidence/public_geometry/source_notes/QHH_ENDPOINT_S87_FUNCTIONAL_RESULT.md) |
+| L9 | `rho_h(W)-I` | `E_88 -> E_88` | degree zero; image lies in `h^3 E_88` | physical word/Gamma3 recomputation [`AUD_B_REPORT.md`](../../evidence/public_geometry/source_notes/AUD_B_REPORT.md); group-filtration proof uses pure generators `I+O(h)` and `[I+O(h^p),I+O(h^q)]=I+O(h^(p+q))` |
+| L10 | normalized cap `C_hat_87,2(h)` | `E_88 -> E_86 ~= R_h` | normalized total degree zero; any original fixed degree is removed by its invertible q-shift | BHPW strict tangle action/functoriality; [`ACTUAL_CAP_POSTCOMPOSITION_DECISION.md`](../../evidence/public_geometry/source_notes/ACTUAL_CAP_POSTCOMPOSITION_DECISION.md) |
 | L11 | detector `D_h` | `qTr_h -> R_h`, `D_h=C_hat_87,2(h)(rho_h(W)-I)Sh_h` | `R_h`-linear, degree zero, divisible by `h^3` | composite of L7-L10 |
 | L12 | divided detector `D_3` | `HH0(C;M_R) -> Q` | coefficient of `h^3` | quotient/division proof below |
 
@@ -117,19 +117,19 @@ The selected representative satisfies
 
 \[
 Sh_h([v]_h)=u_h,
-\qquad u_h\bmod h=e_0-e_5.
+\qquad u_h\bmod h=e_2-e_{87}.
 \]
 
 The direct raw-word evaluation gives
 
 \[
-D_h([v]_h)=-59072h^3+O(h^4),
-\qquad D_3([v])=-59072.
+D_h([v]_h)=2624h^3+O(h^4),
+\qquad D_3([v])=2624.
 \]
 
 Consequently `[v]` is nonzero in ordinary MWW `HH_0`.  Moreover, if a
 nonzero `a(h)` annihilated `[v]_h`, applying `D_h` would give
-`a(h)(-59072h^3+O(h^4))=0` in the domain `R_h`, impossible.  Hence the cyclic
+`a(h)(2624h^3+O(h^4))=0` in the domain `R_h`, impossible.  Hence the cyclic
 submodule `R_h[v]_h` is torsion-free; over the DVR `R_h` it is free rank one.
 This proves the selected flat lift as a consequence of the detector rather
 than assuming flatness to build it.

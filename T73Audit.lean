@@ -16,7 +16,7 @@ def finiteAuditDeclarations : List Name := [
   `Smooth4PC.T73.detA_eq_one,
   `Smooth4PC.T73.detAMinusI_eq_one,
   `Smooth4PC.T73.sphereDet_eq_one,
-  `Smooth4PC.T73.computedCubic_eq_neg59072,
+  `Smooth4PC.T73.computedCubic_eq_2624,
   `Smooth4PC.T73.computedCubic_ne_zero,
   `Smooth4PC.T73.computedDegree_eq_494,
   `Smooth4PC.T73.computedDegree_ne_zero,
@@ -72,7 +72,7 @@ dumpT73Finite
 #print axioms detA_eq_one
 #print axioms detAMinusI_eq_one
 #print axioms sphereDet_eq_one
-#print axioms computedCubic_eq_neg59072
+#print axioms computedCubic_eq_2624
 #print axioms computedCubic_ne_zero
 #print axioms computedDegree_eq_494
 #print axioms computedDegree_ne_zero

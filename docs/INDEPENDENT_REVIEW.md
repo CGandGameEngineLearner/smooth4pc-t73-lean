@@ -24,7 +24,7 @@ quantum-Hochschild shadow are used to define a divided cubic detector; on the
 selected class the claimed value is
 
 \[
-(-2)^3\,7384=-59072\ne0,
+(-2)^3(-328)=2624\ne0,
 \qquad q=-44+227+315-4=494.
 \]
 
@@ -113,19 +113,16 @@ the [Four-manifold theory proceedings](https://math.berkeley.edu/~kirby/papers/G
 
 ## Lean compilation and axiom audit
 
-The tracked Lean sources at commit `cf4a990` were compiled twice.  The recorded
-run reports a fresh-output unittest (`2/2`), an independent module build
-(`14/14`), a direct run of [`T73Audit.lean`](../T73Audit.lean), and 38
-`#print axioms` reports.  The only reported axioms were `propext`,
-`Classical.choice` and `Quot.sound`; `sorryAx` was absent.  Commands, toolchain
-identities, hashes, elapsed times and dirty-dependency disclosure are in
-[`QSTAR_R7_LEAN_COMPILE_RECEIPT_20260901.md`](proofs/QSTAR_R7_LEAN_COMPILE_RECEIPT_20260901.md),
+The erratum Lean sources were compiled in a fresh temporary olean root and
+then audited by a direct run of [`T73Audit.lean`](../T73Audit.lean).  The
+recorded run reports `2/2` fresh-output tests and 38 `#print axioms` reports.
+The only reported axioms were `propext`, `Classical.choice` and `Quot.sound`;
+`sorryAx` was absent.  Commands, toolchain identities, hashes and
+dirty-dependency disclosure are in
+[`QSTAR_R8_LEAN_COMPILE_RECEIPT_20260903.md`](proofs/QSTAR_R8_LEAN_COMPILE_RECEIPT_20260903.md),
 with raw output in
-[`QSTAR_R7_T73AUDIT_RAW_20260901.txt`](proofs/QSTAR_R7_T73AUDIT_RAW_20260901.txt).
-The adjudication commit `9d75dcd` changed only documentation relative to that
-audited code state.  The later public-release commit changes documentation,
-dependency plumbing and adds a standalone recomputation script; its final
-source state is therefore recompiled from a fresh clone in
+[`QSTAR_R8_T73AUDIT_RAW_20260903.txt`](proofs/QSTAR_R8_T73AUDIT_RAW_20260903.txt).
+The earlier public-release source state was also recompiled from a fresh clone in
 [`PUBLIC_RELEASE_CLEAN_REPLAY_20260901.md`](proofs/PUBLIC_RELEASE_CLEAN_REPLAY_20260901.md).
 
 The principal executable audit is
@@ -141,11 +138,11 @@ The exact word calculation was independently reproduced using integer
 arithmetic in the truncated polynomial ring.  The checked profile begins
 
 ```text
-[0, 0, 0, 7384, -660412, 34814626, -1365512573]
+[0, 0, 0, -328, 14596, -410246, 9595271]
 ```
 
 for (\ell(\rho(W)-I)u) in the epsilon coordinate, giving
-([h^3]=-8\cdot7384=-59072); the same audit found the squared shell begins only
+([h^3]=-8\cdot(-328)=2624); the same audit found the squared shell begins only
 at order six.  The committed evidence, input identities and recomputation
 hashes are in
 [`T73_EVIDENCE_ETA_T1_DELTA3.md`](proofs/T73_EVIDENCE_ETA_T1_DELTA3.md).
@@ -164,9 +161,32 @@ python -I -B scripts/recompute_t73_delta3.py --check
 ```
 
 The input contains neither the expanded 11,340-/45,360-letter words nor the
-integers `7384` and `-59072`.  The script reconstructs both words, checks their
+integers `-328` and `2624`.  The script reconstructs both words, checks their
 hashes and computes the truncated polynomial profile before printing
-`DELTA3_ETA_T1=-59072`.
+`DELTA3_ETA_T1=2624`.
+
+## Public geometry evidence
+
+The first public commit omitted several load-bearing finite certificates that
+the proof documents named only by machine-local paths and SHA-256.  Those
+exact bytes are now under
+[`evidence/public_geometry/`](../evidence/public_geometry/), including the E1
+cable certificate, the complete 2,126,291-crossing PD input, the G1 cut and
+framing records, and the TH1/TH2/THXY chosen-sphere certificates and hostile
+re-audits.
+
+From a clone, run:
+
+```text
+python -I -B scripts/verify_public_geometry_evidence.py
+```
+
+This verifies all bundled identities and independently recomputes the
+global-descending result from the full PD.  The chosen-sphere JSON files are
+now inspectable rather than represented by six scalars and hashes alone.  The
+repository still does not claim to regenerate their entire upstream
+hundreds-of-megabytes construction trees; that boundary is stated in the
+bundle README and must not be confused with Lean verification.
 
 ## Convention-legality audit
 
@@ -178,8 +198,9 @@ The later adjudication is
 in commit `9d75dcd`.
 
 For L2, the registered point-push chronology is legal and gives first anomaly
-3 and value (-59072); the alternative source-sweep ordering reverses
-non-disjoint events and is not a legal serialization of that movie.  For the
+3 and value 2624.  With the corrected collar endpoints, the alternative
+source-sweep ordering has zero cubic coefficient and first anomaly at order
+4; it reverses non-disjoint events and is not a legal serialization.  For the
 22 enumerated L3 outputs, the result was `LEGAL=0`, `ILLEGAL=19`,
 `NOT ESTABLISHED=3`.  None is a verified legal standard-member nonzero collar,
 but this does **not** prove that no legal standard collar exists.  Membership

@@ -27,17 +27,17 @@ side.
 
 The source objects and their SHA-256 identities are:
 
-- D:/tmp/s4pc_ruler/ENGINE/kirby_master/cs_presentation.py
+- [`cs_presentation.py`](../../evidence/public_geometry/cs_presentation.py)
   B20BDFF6FBF2A0E629083E2E62DD1DDF9172A4E8893311CE122FFC4FEB388DFA
-- D:/tmp/s4pc_ruler/ENGINE/out/t73_eps0.erkmo.json
+- [`t73_eps0.erkmo.json`](../../evidence/public_geometry/t73_eps0.erkmo.json)
   6DF4D7906ADB18BA2D3237D4B49F8985A5B18D8C39FF522AD6498F2369803FCB
-- D:/tmp/r6/agents/t73_cut/CUT_OBJECT.json
+- [`CUT_OBJECT.json`](../../evidence/public_geometry/CUT_OBJECT.json)
   4E1C4564ED98F30EAEB0A1AEAAD95ACAB5AD7B226C79B7D5BF3F259E8B56F541
-- D:/tmp/r6/four_path_attack/support_factorization/BASE_INTERACTION_SUPPORT.json
+- [`BASE_INTERACTION_SUPPORT.json`](../../evidence/public_geometry/BASE_INTERACTION_SUPPORT.json)
   2D9E4760F836D9E04E6E0024CAE03A3DBB49A74FF5D129756F25450B30F10F7C
-- D:/tmp/r6/NORMAL_FIELD_MOVIE_CERT.json
+- [`NORMAL_FIELD_MOVIE_CERT.json`](../../evidence/public_geometry/NORMAL_FIELD_MOVIE_CERT.json)
   B2E97EB0981036768B8F1C1D5EF16F8817EC1A7B951B6B32DBA2F9211FFD725A
-- D:/tmp/s4pc_ruler/DIAGRAM/out/t73_reduced_billiard.pd.json
+- [`t73_reduced_billiard.pd.json`](../../evidence/public_geometry/t73_reduced_billiard.pd.json)
   E6912A64457557469E5C691B4D57ABDBBF4C45ADB05492777C574223D0C06F8A
 
 The PD traversal is recomputed in linear time by
@@ -203,7 +203,7 @@ cut disks or commutator components.
 The source is Laudenbach--Poenaru, A note on 4-dimensional handlebodies,
 Bulletin de la Societe Mathematique de France 100 (1972), 337--344. A modern
 statement using exactly this extension appears at
-D:/tmp/r6/agents/hj_scope_hostile/hj_v3_source/version_23_RM.tex:102-107.
+Horvat--Jablonowski, [arXiv:2510.20282](https://arxiv.org/abs/2510.20282).
 
 For
 

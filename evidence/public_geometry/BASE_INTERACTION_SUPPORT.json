@@ -1,0 +1,281 @@
+{
+  "source": "D:\\tmp\\s4pc_ruler\\DIAGRAM\\words_to_pd.py",
+  "diagram": "t73 reduced billiard base link (uncabled)",
+  "crossings_total": 2126291,
+  "component_ids": [
+    "gate_y",
+    "gate_z",
+    "r_xy",
+    "r_yz",
+    "r_zx",
+    "m_2",
+    "m_3",
+    "mu(r_xy)",
+    "mu(r_yz)",
+    "mu(r_zx)",
+    "mu(m_2)",
+    "mu(m_3)"
+  ],
+  "crossings_incident_per_component": {
+    "gate_y": 470,
+    "gate_z": 3088,
+    "m_2": 739344,
+    "m_3": 3505896,
+    "mu(m_2)": 2,
+    "mu(m_3)": 2,
+    "mu(r_xy)": 2,
+    "mu(r_yz)": 2,
+    "mu(r_zx)": 2,
+    "r_xy": 1892,
+    "r_yz": 1880,
+    "r_zx": 2
+  },
+  "crossings_per_component_pair": {
+    "gate_y|m_2": 84,
+    "gate_y|m_3": 378,
+    "gate_y|r_xy": 4,
+    "gate_y|r_yz": 4,
+    "gate_z|m_2": 538,
+    "gate_z|m_3": 2542,
+    "gate_z|r_xy": 4,
+    "gate_z|r_yz": 4,
+    "m_2|m_2": 64631,
+    "m_2|m_3": 608786,
+    "m_2|mu(m_2)": 2,
+    "m_2|r_xy": 336,
+    "m_2|r_yz": 336,
+    "m_3|m_3": 1445582,
+    "m_3|mu(m_3)": 2,
+    "m_3|r_xy": 1512,
+    "m_3|r_yz": 1512,
+    "mu(r_xy)|r_xy": 2,
+    "mu(r_yz)|r_yz": 2,
+    "mu(r_zx)|r_zx": 2,
+    "r_xy|r_xy": 9,
+    "r_xy|r_yz": 16,
+    "r_yz|r_yz": 3
+  },
+  "owner_word_lengths": {
+    "r_xy": 4,
+    "r_yz": 4,
+    "r_zx": 0,
+    "m_2": 311,
+    "m_3": 1460
+  },
+  "macro_interface_counts": {
+    "th1": {
+      "added_boundary_copies": 111608,
+      "gate_passages": 415526,
+      "cut_endpoints": 831052,
+      "warning": "macro arity only; using it as the physical map interface requires a proved corridor-cancellation/naturality theorem"
+    },
+    "th2": {
+      "added_boundary_copies": 1432,
+      "gate_passages": 3676,
+      "cut_endpoints": 7352,
+      "warning": "macro arity only; using it as the physical map interface requires a proved corridor-cancellation/naturality theorem"
+    },
+    "thxy": {
+      "added_boundary_copies": 313,
+      "gate_passages": 790,
+      "cut_endpoints": 1580,
+      "warning": "macro arity only; using it as the physical map interface requires a proved corridor-cancellation/naturality theorem"
+    }
+  },
+  "refined_interface_counts": {
+    "th1": {
+      "added_boundary_copies": 350176,
+      "gate_passages": 1369798,
+      "cut_endpoints": 2739596,
+      "warning": "current fully refined owner-copy interface; still omits movie crossings/bands and does not imply split spectator factorization"
+    },
+    "th2": {
+      "added_boundary_copies": 229198,
+      "gate_passages": 914740,
+      "cut_endpoints": 1829480,
+      "warning": "current fully refined owner-copy interface; still omits movie crossings/bands and does not imply split spectator factorization"
+    },
+    "thxy": {
+      "added_boundary_copies": 313,
+      "gate_passages": 790,
+      "cut_endpoints": 1580,
+      "warning": "current fully refined owner-copy interface; still omits movie crossings/bands and does not imply split spectator factorization"
+    }
+  },
+  "macro_parallel_context": {
+    "th1": {
+      "copy_multiplicities": {
+        "r_xy": 3,
+        "r_yz": 102995,
+        "r_zx": 8608,
+        "m_2": 4,
+        "m_3": 2
+      },
+      "parallelized_crossing_sites": 32291268204,
+      "by_pair": {
+        "gate_z|r_xy": 12,
+        "r_xy|r_xy": 81,
+        "r_xy|r_yz": 4943760,
+        "m_2|r_xy": 4032,
+        "m_3|r_xy": 9072,
+        "gate_y|r_xy": 12,
+        "gate_y|r_yz": 411980,
+        "gate_z|r_yz": 411980,
+        "r_yz|r_yz": 31823910075,
+        "m_2|r_yz": 138425280,
+        "m_3|r_yz": 311456880,
+        "gate_z|m_2": 2152,
+        "m_2|m_2": 1034096,
+        "m_2|m_3": 4870288,
+        "gate_y|m_2": 336,
+        "gate_z|m_3": 5084,
+        "m_3|m_3": 5782328,
+        "gate_y|m_3": 756
+      },
+      "warning": "exact for the frozen blackboard parallelization model only; not a topological lower bound"
+    },
+    "th2": {
+      "copy_multiplicities": {
+        "r_xy": 2,
+        "r_yz": 189,
+        "r_zx": 1241,
+        "m_2": 2,
+        "m_3": 2
+      },
+      "parallelized_crossing_sites": 9303791,
+      "by_pair": {
+        "gate_z|r_xy": 8,
+        "r_xy|r_xy": 36,
+        "r_xy|r_yz": 6048,
+        "m_2|r_xy": 1344,
+        "m_3|r_xy": 6048,
+        "gate_y|r_xy": 8,
+        "gate_y|r_yz": 756,
+        "gate_z|r_yz": 756,
+        "r_yz|r_yz": 107163,
+        "m_2|r_yz": 127008,
+        "m_3|r_yz": 571536,
+        "gate_z|m_2": 1076,
+        "m_2|m_2": 258524,
+        "m_2|m_3": 2435144,
+        "gate_y|m_2": 168,
+        "gate_z|m_3": 5084,
+        "m_3|m_3": 5782328,
+        "gate_y|m_3": 756
+      },
+      "warning": "exact for the frozen blackboard parallelization model only; not a topological lower bound"
+    },
+    "thxy": {
+      "copy_multiplicities": {
+        "r_xy": 3,
+        "r_yz": 41,
+        "r_zx": 269,
+        "m_2": 4,
+        "m_3": 0
+      },
+      "parallelized_crossing_sites": 1103164,
+      "by_pair": {
+        "gate_z|r_xy": 12,
+        "r_xy|r_xy": 81,
+        "r_xy|r_yz": 1968,
+        "m_2|r_xy": 4032,
+        "gate_y|r_xy": 12,
+        "gate_y|r_yz": 164,
+        "gate_z|r_yz": 164,
+        "r_yz|r_yz": 5043,
+        "m_2|r_yz": 55104,
+        "gate_z|m_2": 2152,
+        "m_2|m_2": 1034096,
+        "gate_y|m_2": 336
+      },
+      "warning": "exact for the frozen blackboard parallelization model only; not a topological lower bound"
+    }
+  },
+  "interaction_closures": {
+    "th1": {
+      "seeds": [
+        "m_2",
+        "m_3",
+        "r_xy",
+        "r_yz",
+        "r_zx"
+      ],
+      "closure": [
+        "gate_y",
+        "gate_z",
+        "m_2",
+        "m_3",
+        "mu(m_2)",
+        "mu(m_3)",
+        "mu(r_xy)",
+        "mu(r_yz)",
+        "mu(r_zx)",
+        "r_xy",
+        "r_yz",
+        "r_zx"
+      ]
+    },
+    "th2": {
+      "seeds": [
+        "m_3",
+        "r_yz",
+        "r_zx"
+      ],
+      "closure": [
+        "gate_y",
+        "gate_z",
+        "m_2",
+        "m_3",
+        "mu(m_2)",
+        "mu(m_3)",
+        "mu(r_xy)",
+        "mu(r_yz)",
+        "mu(r_zx)",
+        "r_xy",
+        "r_yz",
+        "r_zx"
+      ]
+    },
+    "thxy": {
+      "seeds": [
+        "m_2",
+        "r_xy",
+        "r_yz",
+        "r_zx"
+      ],
+      "closure": [
+        "gate_y",
+        "gate_z",
+        "m_2",
+        "m_3",
+        "mu(m_2)",
+        "mu(m_3)",
+        "mu(r_xy)",
+        "mu(r_yz)",
+        "mu(r_zx)",
+        "r_xy",
+        "r_yz",
+        "r_zx"
+      ]
+    },
+    "mixed_class": {
+      "seeds": [
+        "m_2",
+        "r_xy"
+      ],
+      "closure": [
+        "gate_y",
+        "gate_z",
+        "m_2",
+        "m_3",
+        "mu(m_2)",
+        "mu(m_3)",
+        "mu(r_xy)",
+        "mu(r_yz)",
+        "r_xy",
+        "r_yz"
+      ]
+    }
+  },
+  "scope_warning": "This is the exact interaction graph of the uncabled base diagram only. It does not instantiate a cabled sphere target or prove a tensor factorization."
+}

@@ -110,7 +110,7 @@ abbrev M1_88 := Fin 88 → ℚ
 
 def basisVector (i : Fin 88) : M1_88 := fun j => if j = i then 1 else 0
 
-def cupVector : M1_88 := basisVector 0 - basisVector 5
+def cupVector : M1_88 := basisVector 2 - basisVector 87
 
 inductive EndpointSource where
   | M1_88
@@ -196,16 +196,16 @@ theorem physicalCopyPermutation_preserves_relativeNu
 
 /-! ### Exact finite arithmetic -/
 
-def cubicValue : ℤ := -59072
+def cubicValue : ℤ := 2624
 
 theorem degree_ledger_eq_494 : (183 : ℤ) + 315 - 4 = 494 := by norm_num
 
-theorem cubic_arithmetic_eq_neg59072 : (-8 : ℤ) * 7384 = -59072 := by
+theorem cubic_arithmetic_eq_2624 : (-8 : ℤ) * (-328) = 2624 := by
   norm_num
 
-theorem neg59072_ne_zero : (-59072 : ℤ) ≠ 0 := by norm_num
+theorem cubic2624_ne_zero : (2624 : ℤ) ≠ 0 := by norm_num
 
-theorem cubicValue_eq_neg59072 : cubicValue = (-59072 : ℤ) := by rfl
+theorem cubicValue_eq_2624 : cubicValue = (2624 : ℤ) := by rfl
 
 end
 

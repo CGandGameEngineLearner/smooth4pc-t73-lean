@@ -553,7 +553,7 @@ class InterfaceAuditTests(unittest.TestCase):
         self.assertIn("rawCap : HHRaw →ₗ[ℚ] ℚ", source)
         self.assertIn("rawCapBinding : u.IsActualCapAtOrder traceAnomalyOrder rawCap", source)
         self.assertIn("rawCapKillsHH0", source)
-        self.assertIn("rawCapChosen : rawCap chosenRaw = (-59072 : ℚ)", source)
+        self.assertIn("rawCapChosen : rawCap chosenRaw = (2624 : ℚ)", source)
         self.assertIn("traceAnomalyOrderEq : traceAnomalyOrder = 3", source)
         self.assertIn("IsActualBetaRelation : ∀ {Level : Type} {Source W0 : QMod}, Level → (Source →ₗ[ℚ] W0) → Prop", source)
         self.assertIn("IsActualPsiRelation : ∀ {Source W0 : QMod}, PsiRelationKind → (Source →ₗ[ℚ] W0) → Prop", source)

@@ -1,0 +1,2336 @@
+\documentclass[10pt,reqno]{amsart}
+
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,longtable,array,tabularx}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{seqsplit}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+
+\geometry{letterpaper,margin=1in}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue!45!black,
+  citecolor=green!35!black,
+  urlcolor=blue!55!black,
+  pdftitle={An explicit degree-494 candidate class for the Cappell--Shaneson sphere X(41,189,73)},
+  pdfauthor={},
+  pdfsubject={A conditional skein-lasagna obstruction with exact finite computations}
+}
+
+\setlist[itemize]{leftmargin=2.1em,itemsep=2pt,topsep=4pt}
+\setlist[enumerate]{leftmargin=2.3em,itemsep=2pt,topsep=4pt}
+\lstset{
+  basicstyle=\ttfamily\small,
+  columns=fullflexible,
+  breaklines=true,
+  frame=single,
+  rulecolor=\color{black!25},
+  xleftmargin=0.4em,
+  xrightmargin=0.4em
+}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{claim}[theorem]{Claim}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{computation}[theorem]{Exact computation}
+\newtheorem{certifiedfact}{Certified finite fact}
+\renewcommand{\thecertifiedfact}{C\arabic{certifiedfact}}
+\crefname{certifiedfact}{Certified Fact}{Certified Facts}
+\newtheorem{assumption}{Assumption}
+\renewcommand{\theassumption}{A\arabic{assumption}}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{externalresult}{External Result}
+\renewcommand{\theexternalresult}{E\arabic{externalresult}}
+\crefname{externalresult}{External Result}{External Results}
+
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\N}{\mathbb N}
+\newcommand{\HH}{\operatorname{HH}}
+\newcommand{\KhR}{\operatorname{KhR}}
+\newcommand{\SLM}{\mathcal S}
+\newcommand{\im}{\operatorname{im}}
+\newcommand{\id}{\operatorname{id}}
+\newcommand{\Aut}{\operatorname{Aut}}
+\newcommand{\Span}{\operatorname{span}}
+\newcommand{\thdeg}{\operatorname{th}}
+\newcommand{\qTr}{q\!\operatorname{Tr}}
+\newcommand{\Sh}{\operatorname{Sh}}
+\newcommand{\Status}[1]{\par\smallskip\noindent\textit{Status: #1.}\par\smallskip}
+\newcommand{\ExternalStatus}{external theorem restatement}
+\newcommand{\CertifiedStatus}{candidate-specific; certified by exact computation}
+\newcommand{\UncertifiedStatus}{candidate-specific; not certified}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\Hash}[1]{{\ttfamily\footnotesize\seqsplit{#1}}}
+
+\title[An explicit degree-494 candidate class]{An explicit degree-494 candidate class for the\\
+Cappell--Shaneson sphere $X(41,189,73)$}
+\date{}
+\subjclass[2020]{Primary 57R60, 57K18; Secondary 57R56, 57K16}
+\keywords{smooth four-dimensional Poincar\'e conjecture, Cappell--Shaneson sphere,
+skein lasagna module, Khovanov homology, Hochschild trace, formal verification}
+
+\begin{document}
+
+\begin{abstract}
+We describe a candidate obstruction to the standardness of the
+Cappell--Shaneson homotopy sphere associated with the matrix
+\[
+  A=\begin{pmatrix}0&269&1240\\0&41&189\\1&0&32\end{pmatrix}.
+\]
+The finite part of the calculation is exact.  A $45{,}360$-letter cabled
+Artin word acts through the unreduced Burau representation on an
+$88$-dimensional module over $\Z[\eps]/(\eps^7)$.  A single detector gives
+\[
+  D_3(v_T)=2624,\qquad D_3(\xi)=0,
+\]
+and a separate grading calculation places the proposed class in quantum
+degree $494$.  We give all conventions, the generator matrices, the cabling
+map, immutable input hashes, an independently executable reconstruction, and
+the complete degree-three vector.
+
+The passage from this finite calculation to a closed four-manifold invariant
+is conditional.  We restate every external theorem with its complete
+hypotheses and collect the unresolved candidate-specific geometry into five
+numbered assumptions.  Under those assumptions the detector annihilates the one-, two-, and three-handle
+relations, so the degree-$494$ class survives in the rational
+$\mathfrak{sl}_2$ skein lasagna module.  Since the corresponding graded piece
+of the standard $4$-sphere vanishes, the assumptions imply that the candidate
+is not diffeomorphic to $S^4$.  The accompanying Lean development verifies
+the finite arithmetic and the abstract quotient implication, but deliberately
+does not instantiate the geometric assumptions.  Thus this paper is a
+self-contained account of a conditional candidate proof and a precise list of
+what an independent review must still establish.
+\end{abstract}
+
+\section*{Erratum to the 2 September public draft}
+
+The 2 September public draft reported $D_3(v_T)=-59072$.  That value mixed
+two endpoint coordinate systems: the vector $u$ used the THXY endpoint
+indices, whereas the covector $\ell$ used the collar indices that also label
+the cabled Artin word.  The two tables order the $m_2$ wickets in opposite
+directions.  In the collar table, the same physical cup has endpoints $2$
+and $87$, so
+\[
+  u=e_2-e_{87},\qquad \ell=e_{87}^*-e_2^*.
+\]
+With both objects in that one table, the exact calculation gives
+$[\varepsilon^3]\ell(\rho(W)-I)u=-328$ and hence
+$D_3(v_T)=(-2)^3(-328)=2624$.  The nonvanishing conclusion is unchanged.
+Using the THXY coordinates consistently gives $-2496$; this is a coordinate
+check, not a second geometric class.  The Lean literals, public receipt,
+Appendix~\ref{app:vector}, and Remark~\ref{rem:serialization} have been
+updated together.  The value $2624$ belongs to the currently frozen data.  If
+the unresolved framing record in Assumption~\ref{ass:G1} changes the collar
+word, the numerical value must be recomputed.  The superseded public PDF had
+SHA-256 prefix \texttt{8E621FD9}.
+
+\maketitle
+\tableofcontents
+
+\section{Introduction}
+
+The smooth four-dimensional Poincar\'e conjecture asks whether every smooth
+closed manifold homotopy equivalent to $S^4$ is diffeomorphic to $S^4$.  The
+Cappell--Shaneson construction supplies a concrete family of homotopy
+$4$-spheres from mapping tori of automorphisms of $T^3$.  Many members of this
+family have been proved standard, but the construction remains a useful test
+bed because the handle description is explicit enough to support exact
+calculation.
+
+This article studies the member denoted $X(41,189,73)$.  The notation refers
+to a standard-form Cappell--Shaneson matrix; the actual matrix is displayed in
+\cref{eq:A-matrix}.  The proposed obstruction uses the
+$\mathfrak{sl}_2$ skein lasagna module of Morrison--Walker--Wedrich and its
+handle-decomposition formulas.  Its logic has three steps.
+
+\begin{enumerate}
+\item Construct a class in the one-handle presentation and evaluate a divided
+  cubic detector on it.  The value is the nonzero integer $2624$ and the
+  class has quantum degree $494$.
+\item Prove, conditional on the stated geometric identifications, that the
+  same detector kills every two-handle relation and the six relations from a
+  chosen system of three attaching spheres.  Linear algebra then makes the
+  detector descend to the complete quotient.
+\item Use the published four-handle and standard-sphere statements to compare
+  the resulting degree-$494$ class with the degree-$494$ piece for $S^4$.
+\end{enumerate}
+
+The first step contains a large but elementary exact computation.  The second
+step contains the principal geometric risk.  The third step is short once its
+coefficient and grading hypotheses are stated correctly.  We do not blur
+these three levels.  In particular, a JSON receipt or a Lean structure field
+is never offered as a proof of a geometric assertion.
+
+\subsection{Status of the main statement}
+
+The main result of this paper is the conditional implication in
+\cref{thm:main-conditional}.  It is not an unconditional disproof of the
+smooth four-dimensional Poincar\'e conjecture.  The exact calculations can be
+reproduced from the public repository, while the assumptions marked
+``candidate-specific; not certified'' require independent geometric proof.
+This division is part of the mathematical statement, not a disclaimer added
+after it.
+
+\begin{theorem}[Conditional candidate obstruction]\label{thm:main-conditional}
+Assume \textup{A1--A5} below.  Then the rational
+$\mathfrak{sl}_2$ skein lasagna module of $X(41,189,73)$ contains a nonzero
+class in bidegree $(0,494)$.  Consequently
+\[
+  X(41,189,73)\not\cong_{\mathrm{diff}}S^4.
+\]
+Together with the Cappell--Shaneson homotopy-sphere criterion, the same
+assumptions imply a counterexample to the smooth four-dimensional Poincar\'e
+conjecture.
+\end{theorem}
+
+The proof appears in \cref{sec:final-descent}.  Most of the paper is devoted
+to making the words ``assume A1--A5'' completely explicit.
+
+\section{Assumption register and logical architecture}\label{sec:assumptions}
+
+Every load-bearing statement not proved in this paper and not obtained by an
+exact finite computation appears here.  The status labels have the following
+fixed meanings.
+
+\begin{itemize}
+\item \emph{External theorem restatement}: a published result is used with
+  no hypothesis removed and no conclusion strengthened.  The exact source
+  number and scope are restated in \cref{sec:external-results}.
+\item \emph{Candidate-specific; certified by exact computation}: the statement
+  is about immutable finite input and can be checked by a listed program using
+  exact integer or rational arithmetic.  The program does not certify any
+  extra geometric interpretation.
+\item \emph{Candidate-specific; not certified}: the statement identifies a
+  finite model, movie, collar, or surface with the actual geometric object
+  used by a published theorem.  This is a mathematical premise still needing
+  proof or independent review.
+\end{itemize}
+
+\subsection{Published inputs and exact finite facts}
+
+The proof invokes published results E1--E10, each restated with full hypotheses
+in \cref{sec:external-results}: the MWW one-, two-, three-, and four-handle
+formulas; the BHPW strict functoriality theorem; the BPW quantum-trace
+universal property; the Horvat--Jab\l onowski attaching-sphere theorem; the
+$B^4$ evaluation and smooth invariance of the skein lasagna module; and the
+Cappell--Shaneson homotopy-sphere criterion.  These are citations, not new
+hypotheses invented for the candidate.  The alternative van Kampen,
+Wang--Mayer--Vietoris, Poincar\'e-duality, Hurewicz, and Whitehead route is
+recorded separately as E11--E14.
+
+Two finite data statements are proved by exact replay rather than assumed.
+
+\begin{certifiedfact}[Cut and point-push input]\label{comp:finite-cut-input}
+\label{ass:finite-cut}
+The immutable planar-diagram input has SHA-256
+\Hash{E6912A64457557469E5C691B4D57ABDBF4C45ADB05492777C574223D0C06F8A}.
+Its exact traversal has $2{,}126{,}291$ crossings, $88$ cross-cut connectors,
+$227$ split circle factors, and the registered oriented point-push chronology.
+The reconstruction and the independent checks are given in
+\cref{sec:presentation-bridge,sec:exact-computation}.
+\end{certifiedfact}
+
+\begin{certifiedfact}[Chosen-sphere finite model]\label{comp:finite-spheres}
+\label{ass:chosen-sphere-data}
+The three public PL data sets describe connected, oriented, genus-zero
+combinatorial surface models.  Their class columns are
+\[
+(-1311,8608,-1)^T,\quad(-189,1241,0)^T,\quad(41,-269,1)^T,
+\]
+and the determinant of the resulting $3\times3$ matrix is $1$.  The row
+counts, Euler calculations, and determinant are recomputed in
+\cref{sec:three-handle-descent}.  The checker performs all-row PL
+self-intersection and slab-gap tests only for the comb bands.  It has no
+coordinates for the finger annuli, bigon, or cap, and therefore does not
+certify pairwise-disjoint embedded surfaces.  That geometric statement remains
+part of Assumption~\ref{ass:G4}.
+\end{certifiedfact}
+
+\subsection{The five outstanding assumptions}
+
+\begin{assumption}[Actual presentation and legal collar]\label{ass:G1}
+\label{ass:actual-presentation}\label{ass:serialization}\label{ass:collar}
+\label{ass:cs-topology}
+The frozen framed diagram is the actual reduced handle presentation of the
+Cappell--Shaneson surgery manifold associated with \cref{eq:A-matrix}.  Its
+attaching-component labels, product framings, normal fields, basepoints,
+registered point-push chronology, collar, and detector insertion disk are
+carried through one common framed movie.  The chronology is a legal linear
+extension of that movie; coordinate changes transport the operator, vector,
+shadow, covector, collar, basepoint, and insertion point simultaneously.
+The finite data of C1 are the finite model of this same geometric object, and
+the Cappell--Shaneson criterion E10 applies to its surgery description.
+\Status{\UncertifiedStatus}
+\end{assumption}
+
+\begin{assumption}[Coefficient, endpoint, filtration, and grading binding]\label{ass:G2}
+\label{ass:mww-one-handle}\label{ass:strict-functoriality}
+\label{ass:quantum-trace}\label{ass:hattori-binding}
+\label{ass:word-filtration}\label{ass:raw-state}
+The hypotheses of E1, E8, and E9 hold for the actual cut coefficient.  The paired
+annuli give the action-compatible Hattori class $\eta_R[T_1]$, whose endpoint
+shadow is $u=e_2-e_{87}$ in the module of \cref{def:endpoint-module}, with
+$u$ and $\ell$ read from the same collar position table.  The
+registered word is the actual point-push word and lies in the third
+pure-braid filtration term on the whole endpoint module.  Resealing the class
+gives $s_0=(0,e_{m_2}+e_{r_{xy}})$, and the four geometric grading
+contributions are $-44,+227,+315,-4$.
+\Status{\UncertifiedStatus}
+\end{assumption}
+
+\begin{assumption}[All-state two-handle cubic cocone]\label{ass:G3}
+\label{ass:mww-two-handle}\label{ass:two-handle-cocone}
+The MWW two-handle formula E2 applies to the actual framed attaching link and
+relative class.  For every finite cable state, the statewise divided-cubic
+rows use one common physical-copy target, one sign convention, and the actual
+core counits.  They satisfy the beta and psi equations
+\cref{eq:beta-cocone,eq:psi-cocone}, and the top-cell projection is compatible
+with those actual maps after the genuine quantum-trace shadow.
+\Status{\UncertifiedStatus}
+\end{assumption}
+
+\begin{assumption}[Actual chosen spheres and their maps]\label{ass:G4}
+\label{ass:chosen-sphere-binding}\label{ass:hj-replacement}
+\label{ass:mww-three-handle}\label{ass:sphere-map-model}
+The finite surfaces of C2 are embedded with the stated framings and class
+coordinates in one actual post-two-handle boundary, are pairwise disjoint,
+and meet every hypothesis of the Horvat--Jab\l onowski result E7.  The MWW
+three-handle results E3 and E4 apply to these spheres.  On the whole source, their
+actual undotted and once-dotted maps have the leading forms
+$\id_{\mathrm{old}}\otimes U_j$ and
+$\id_{\mathrm{old}}\otimes D_j$ after the fixed coordinate transports, and
+all positive-order transport corrections enter only in order at least $h^4$
+after multiplication by the cubic anomaly.
+\Status{\UncertifiedStatus}
+\end{assumption}
+
+\begin{assumption}[Rational graded closure and standard-sphere comparison]\label{ass:G5}
+\label{ass:four-handle}\label{ass:s4-rational}
+\label{ass:diffeo-invariance}\label{ass:four-handle-grading}
+The four-handle isomorphism E5 has bidegree $(0,0)$ in the convention of the
+selected class.  The integral $B^4$ and $S^4$ computations E5 and E6 extend to the
+rational coefficient convention so that
+\[
+\SLM^2_{0,q}(S^4;\Q)=0\qquad(q\ne0).
+\]
+The smooth-invariance isomorphism preserves that quantum grading.
+\Status{\UncertifiedStatus}
+\end{assumption}
+
+\begin{center}
+\begin{tabularx}{0.96\textwidth}{@{}l>{\raggedright\arraybackslash}X@{}}
+\toprule
+assumption & single question for independent review\\
+\midrule
+A1 & Is the based, framed movie---including collar and insertion point---the
+actual Cappell--Shaneson presentation?\\
+A2 & Does that actual coefficient produce the stated Hattori class, endpoint
+vector, whole-module filtration, raw state, and grading?\\
+A3 & Do the actual beta/psi maps form the all-state divided-cubic cocone?\\
+A4 & Are the finite surfaces the actual attaching-sphere basis, and do their
+whole-source maps have the stated leading Frobenius form?\\
+A5 & Do rational coefficients and the grading convention carry the class
+unchanged through the four-handle and $S^4$ comparison?\\
+\bottomrule
+\end{tabularx}
+\end{center}
+\section{Published results used, with their complete scope}\label{sec:external-results}
+
+This section records the mathematical content imported from the literature.
+The wording is a faithful restatement rather than a quotation.  In each case
+the hypotheses are at least those in the cited source, and the conclusion is
+not strengthened.  Candidate-specific identifications appear only in the
+separate assumptions of \cref{sec:assumptions}.
+
+\subsection{One- and two-handle formulas}
+
+\begin{externalresult}[MWW Theorem~4.7]\label{prop:mww-4.7}
+Let $k$ be a field, let $W_1=\natural^m(S^1\times B^3)$, and let
+$L\subset\partial W_1$ be a null-homologous framed link.  Suppose that $L$
+meets the belt sphere of the $i$th one-handle transversely in $2p_i$ points.
+Cutting along these belt spheres gives a tangle $R$ in the complement of
+paired balls in $S^3$.  Then the gluing map induces an isomorphism from the
+direct sum, over tangles $T_i$ with the prescribed boundary, of
+\[
+ \KhR_N\!\left(R\cup\bigsqcup_i(T_i\sqcup\overline{T_i});k\right)
+ \left\{\Bigl(\sum_i p_i\Bigr)(N-1)\right\}
+\]
+modulo the two gluing actions of the $3$-ball tangle categories, to
+$\SLM^N_0(W_1;L;k)$.  The source states that a global grading shift is omitted
+from this displayed presentation.
+\end{externalresult}
+
+\paragraph{Source and scope.}
+This is External Result~E1, reproduced with the field, null-homology,
+transversality, boundary, and grading-shift hypotheses that appear in MWW
+Theorem~4.7 \cite[Theorem~4.7]{MWW2023Handles}.  Its candidate-specific
+application is part of Assumption~\ref{ass:G2}; no such application is added
+to the external statement itself.
+
+\begin{externalresult}[MWW Definition~3.1 and Theorem~3.2]\label{prop:mww-3.2}
+Let $W$ be a smooth oriented four-manifold, let $L\subset\partial W$ be a
+framed link, and let $W'$ be obtained by attaching two-handles along a framed
+link $K\subset\partial W$ disjoint from $L$.  For every relative class
+$(\alpha,\eta)\in H_2^L(W';\Z)$, form the direct sum over $r\in\N^n$ of the
+cabled summands
+\[
+ \SLM^N_0\!\left(W;K(r-\alpha^-,r+\alpha^+)\cup L,\eta^r\right)
+ \{(1-N)(2|r|+|\alpha|)\}.
+\]
+Quotient by all signed-colour-preserving braid relations
+$\beta_i(b)v\sim v$ and all stabilization relations
+$\psi_i^{[d]}(v)\sim0$ for $d<N-1$ and
+$\psi_i^{[N-1]}(v)\sim v$.  Attaching the corresponding positive and
+negative parallel core disks defines an isomorphism from this cabled quotient
+to $\SLM^N_0(W';L;(\alpha,\eta))$.
+\end{externalresult}
+
+\paragraph{Source and scope.}
+This is exactly the scope of MWW Definition~3.1 and Theorem~3.2
+\cite[Definition~3.1 and Theorem~3.2]{MWW2023Handles}.  In particular, the
+anti-parallel braid relations are retained; we do not replace their braid
+groups by symmetric groups.
+
+\subsection{Three- and four-handle formulas}
+
+\begin{externalresult}[MWW Theorem~3.7]\label{prop:mww-3.7}
+Let $W$ be a smooth oriented four-manifold with boundary $Y$, let
+$S\subset Y$ be an embedded $2$-sphere disjoint from a framed link
+$L\subset Y$, and let $W'$ be obtained by attaching a three-handle along
+$S$.  Let $J$ be an oriented equator of $S$, and let $\Delta_+$ and
+$\Delta_-$ be the two hemispheres, pushed into $I\times Y$ and adjoined to
+$I\times L$.  For a fixed outgoing relative class $\alpha'$, take the direct
+sum over all incoming relative classes that reduce to $\alpha'$ modulo
+$[S]$.  Then the three-handle map to
+$\SLM^N_0(W';L';\alpha')$ is surjective, its kernel is the image of the
+difference of the two hemisphere maps, and the target is their coequalizer.
+\end{externalresult}
+
+\paragraph{Source and scope.}
+This is the precise content of MWW Theorem~3.7
+\cite[Theorem~3.7]{MWW2023Handles}.  The direct sum over relative classes is
+part of the theorem and is not suppressed here.
+
+\begin{externalresult}[MWW Theorem~3.10]\label{prop:mww-3.10}
+Suppose
+$W_1\subset W_2\subset W_3\subset W_4$ is a fixed handle decomposition in
+which $W_1=\natural^m(S^1\times B^3)$, $W_2$ is obtained by attaching
+two-handles along $K$, $W_3$ by attaching three-handles along
+$S_1,\ldots,S_p$, and $W_4$ by attaching four-handles.  Let
+$L\subset\partial W_4$ be a framed link, represent the spheres by genus-zero
+surfaces in $\partial W_1$ completed by two-handle cores, and fix a relative
+class $\alpha'$.  Then $\SLM^N_0(W_4;L;\alpha')$ is the quotient of the
+direct sum of the cabled modules over all lifts of $\alpha'$ by, for each
+three-handle sphere, the undotted through $(N-2)$-dotted relations equal to
+zero and the $(N-1)$-dotted relation equal to the identity.
+\end{externalresult}
+
+\paragraph{Source and scope.}
+This is MWW Theorem~3.10 with its handle-decomposition, surface-realization,
+link, and relative-class hypotheses \cite[Theorem~3.10]{MWW2023Handles}.
+For $N=2$ it yields one undotted relation and one once-dotted-minus-identity
+relation for each sphere.
+
+\begin{externalresult}[MWW Proposition~3.4 and Corollary~3.5]\label{prop:mww-3.4}
+For the empty boundary link, inclusion of a four-manifold into the result of a
+three-handle attachment induces a surjection on $\SLM^N_0$, while inclusion
+into the result of a four-handle attachment induces an isomorphism.  Over the
+integral coefficient convention of the source,
+$\SLM^N_0(S^4)\cong\Z$ and is concentrated in bidegree $(0,0)$.
+\end{externalresult}
+
+\paragraph{Source and scope.}
+This is MWW Proposition~3.4 and Corollary~3.5
+\cite[Proposition~3.4 and Corollary~3.5]{MWW2023Handles}.  The source
+uses the two-handlebody identification of
+Manolescu--Neithalath \cite[Proposition~2.1]{MN2022} in the handle formula.
+The source
+corollary is integral.  Its direct rational use is therefore isolated as
+Assumption~\ref{ass:s4-rational} rather than being strengthened here.
+
+\begin{externalresult}[Morrison--Walker--Wedrich Definition~5.4 and Example~5.6]\label{prop:mww-B4}
+For a smooth oriented four-manifold $W$ and a framed oriented link
+$L\subset\partial W$, the group $\SLM^N_0(W;L)$ is the bigraded abelian group
+generated by labelled lasagna fillings modulo multilinearity, replacement of
+an input ball by a filling with the same $\KhR_N$ evaluation, and isotopy
+relative to the boundary.  If $W=B^4$ and $L\subset S^3=\partial B^4$, the
+evaluation of fillings induces an isomorphism
+\begin{equation}\label{eq:B4-evaluation}
+\SLM^N_0(B^4;L)\xrightarrow{\cong}\KhR_N(S^3,L).
+\end{equation}
+\end{externalresult}
+
+\paragraph{Source and scope.}
+This is the invariant definition and $4$-ball evaluation in
+Morrison--Walker--Wedrich \cite[Definition~5.4 and Example~5.6]{MWW2022Invariants}.
+The source states the integral bigraded group.  Passage to the precise
+rational convention and its compatibility with the later handle maps remains
+visible in Assumption~\ref{ass:s4-rational}.
+
+\subsection{Replacement of the three attaching spheres}
+
+\begin{externalresult}[Horvat--Jab\l onowski Theorem~5.3]\label{prop:hj-theorem53}
+Let $W$ be a smooth compact connected four-manifold with nonempty connected
+boundary, equipped with a fixed handle decomposition without four-handles.
+Suppose the decomposition has $k$ three-handles and
+\[
+ \partial W_2\cong M'\#\bigl(\#_k(S^1\times S^2)\bigr),
+\]
+where $M'$ is irreducible.  For pairwise-disjoint smoothly embedded
+$2$-spheres $\Sigma_1,\ldots,\Sigma_k\subset\partial W_2$, the following are
+equivalent: they may be isotoped, up to permutation and three--three handle
+slides, to the actual attaching spheres; their exterior is connected; and
+their homology classes form a $\Z$-basis of
+$H_2^{\mathrm{sph}}(\partial W_2)$.  When these conditions hold, simultaneous
+surgery on the spheres produces a closed $3$-manifold diffeomorphic to $M'$.
+\end{externalresult}
+
+\paragraph{Source and scope.}
+This is the full statement of Theorem~5.3 in version~3 of
+Horvat--Jab\l onowski \cite[Theorem~5.3]{HorvatJablonowski2026}.  The boundary
+decomposition, irreducibility, number of spheres, pairwise disjointness, and
+fixed-handle-decomposition hypotheses are all retained.
+
+\subsection{Trace, functoriality, and the Cappell--Shaneson criterion}
+
+\begin{externalresult}[BPW Proposition~3.20 and Theorem~3.21]\label{prop:bpw-trace}
+For a locally pregraded endobicategory $(\mathcal C,\Sigma)$ with left duals,
+the quantum horizontal trace is universal among $\Sigma$-twisted quantum
+preshadows; if right duals also exist, it is a quantum shadow.  On the
+$2$-category of locally pregraded endobicategories with duals and
+degree-preserving structure maps, the quantum horizontal trace is a strict
+$2$-functor.
+\end{externalresult}
+
+\paragraph{Source and scope.}
+This combines, without enlarging either conclusion, BPW Proposition~3.20 and
+Theorem~3.21 \cite[Proposition~3.20 and Theorem~3.21]{BPW2018}.
+
+\begin{externalresult}[BHPW Theorem~4.6]\label{prop:bhpw}
+For an oriented tangle $T$, the homotopy type of the Blanchet--Khovanov
+bracket is an invariant of $T$ and is strictly functorial with respect to
+ordinary tangle cobordisms.  Under the stated BHPW equivalence from the foam
+category to the oriented Bar--Natan category, its image is isomorphic to the
+ordinary Khovanov bracket.
+\end{externalresult}
+
+\paragraph{Source and scope.}
+This is the strictification result in BHPW
+\cite[Theorem~4.6]{BHPW2023}.  The immediately following remark in the source
+labels the extension to knotted webs and four-dimensional singular foams as
+conjectural.  Those objects are excluded from Assumption~\ref{ass:strict-functoriality}.
+
+\begin{externalresult}[Iwaki Proposition~2.1]\label{prop:cs-criterion}
+Let $A\in\mathrm{SL}(3,\Z)$ and let $\Sigma_A^\epsilon$ be obtained from the
+mapping torus of the induced automorphism of $T^3$ by surgery on the canonical
+section circle with either of the two framing parities.  Then
+$\Sigma_A^\epsilon$ is a homotopy $4$-sphere if and only if
+$\det(A-I)=\pm1$.
+\end{externalresult}
+
+\paragraph{Source and scope.}
+This is Iwaki Proposition~2.1, which in turn cites the original
+Cappell--Shaneson construction \cite[Proposition~2.1]{Iwaki2025}.  The premise
+that our frozen handle diagram is this surgery manifold is not part of that
+theorem; it remains Assumption~\ref{ass:actual-presentation}.
+
+\subsection{Standard topology results represented in Lean}
+
+The next four items are not needed once Assumption~\ref{ass:cs-topology} is
+used, but they state the longer topology route represented in
+\path{T73CSTopology.lean}.  They are included because a reader auditing the
+Lean fields must know the exact external content behind those fields.
+
+\begin{externalresult}[Seifert--van Kampen theorem]\label{prop:van-kampen}
+Let $X=U\cup V$, where $U$, $V$, and $U\cap V$ are open and path connected,
+and choose a basepoint in $U\cap V$.  Then the diagram induced by inclusion
+\[
+\pi_1(U\cap V)\longrightarrow\pi_1(U),
+\qquad
+\pi_1(U\cap V)\longrightarrow\pi_1(V)
+\]
+is a pushout diagram of groups: $\pi_1(X)$ is the free product of
+$\pi_1(U)$ and $\pi_1(V)$ modulo the normal closure of the two images of each
+element of $\pi_1(U\cap V)$.
+\end{externalresult}
+
+\paragraph{Source and scope.}
+This is the standard based, path-connected form of van Kampen
+\cite[Section~1.2]{Hatcher2002}.  Applying it to the Cappell--Shaneson surgery
+still requires the geometric identification of the cover and of the map
+$A-I$; Lean stores that application as a field.
+
+\begin{externalresult}[Wang and Mayer--Vietoris exact sequences]\label{prop:wang-mv}
+For a fibration $F\to E\to S^1$ with monodromy $f:F\to F$, there is a long
+exact Wang sequence whose relevant portion is
+\[
+\cdots\to H_k(F)\xrightarrow{\,I-f_*\,}H_k(F)
+\longrightarrow H_k(E)\longrightarrow
+H_{k-1}(F)\xrightarrow{\,I-f_*\,}H_{k-1}(F)\to\cdots.
+\]
+For an excisive decomposition $X=A\cup B$, singular homology admits the long
+exact Mayer--Vietoris sequence
+\[
+\cdots\to H_k(A\cap B)\to H_k(A)\oplus H_k(B)
+\to H_k(X)\to H_{k-1}(A\cap B)\to\cdots,
+\]
+with the standard inclusion-induced maps and connecting homomorphism.
+\end{externalresult}
+
+\paragraph{Source and scope.}
+These are the ordinary singular-homology exact sequences
+\cite[Sections~2.2 and 4.2]{Hatcher2002}.  The candidate-specific claim that
+their maps are the matrices in \cref{eq:A-minus-I,eq:H2-map} is not part of
+the general theorem.
+
+\begin{externalresult}[Integral Poincar\'e duality]\label{prop:PD}
+If $M$ is a closed connected oriented topological $n$-manifold with
+fundamental class $[M]\in H_n(M;\Z)$, cap product with $[M]$ gives an
+isomorphism
+\[
+H^k(M;\Z)\xrightarrow{\cong}H_{n-k}(M;\Z)
+\]
+for every $k$.
+\end{externalresult}
+
+\paragraph{Source and scope.}
+This is the integral oriented form of Poincar\'e duality
+\cite[Section~3.3]{Hatcher2002}.  Closedness, connectedness, orientation, and
+the use of integral coefficients are retained.
+
+\begin{externalresult}[Hurewicz and Whitehead promotion]\label{prop:hurewicz-whitehead}
+If a path-connected space $X$ is $(n-1)$-connected for $n\ge2$, then
+$H_i(X;\Z)=0$ for $i<n$ and the Hurewicz map
+$\pi_n(X)\to H_n(X;\Z)$ is an isomorphism.  If a map between simply connected
+CW complexes induces an isomorphism on all integral homology groups, then it
+is a homotopy equivalence.
+\end{externalresult}
+
+\paragraph{Source and scope.}
+The first sentence is the Hurewicz theorem and the second is the homological
+form of Whitehead's theorem for simply connected CW complexes
+\cite[Sections~4.1--4.2]{Hatcher2002}.  Applied successively, they show that a
+simply connected CW complex with the integral homology of $S^4$ is homotopy
+equivalent to $S^4$.  The premise that the candidate has that topology is
+external to the abstract theorems.
+
+\begin{remark}[Why the short route is used]\label{rem:topology-tools}
+The final proof uses Iwaki Proposition~2.1 rather than silently rebuilding the
+Cappell--Shaneson calculation from these four results.  The longer route and
+its Lean fields remain in \cref{tab:crosswalk}; the displayed statements make
+clear that Lean does not prove their candidate-specific hypotheses.
+\end{remark}
+
+\section{The Cappell--Shaneson input}\label{sec:cs-input}
+
+\subsection{The matrix and its elementary invariants}
+
+\begin{definition}\label{def:A}
+Let
+\begin{equation}\label{eq:A-matrix}
+A=
+\begin{pmatrix}
+0&269&1240\\
+0&41&189\\
+1&0&32
+\end{pmatrix}
+\in M_3(\Z).
+\end{equation}
+The symbol $X(41,189,73)$ denotes the framed surgery presentation that is
+asserted in Assumption~\ref{ass:actual-presentation} to be the
+Cappell--Shaneson surgery manifold $\Sigma_A^\epsilon$.  The parameter $73$
+belongs to the historical standard-form naming convention; it is not an
+entry of \cref{eq:A-matrix}.
+\end{definition}
+
+\begin{computation}[The two determinant tests]\label{comp:determinants}
+The matrix $A$ has determinant $1$, and so does $A-I$.
+\end{computation}
+
+\begin{proof}
+Expansion along the first column of $A$ gives
+\begin{align}
+\det A
+ &=269\cdot189-1240\cdot41 \label{eq:detA-expand}\\
+ &=50841-50840=1. \label{eq:detA-value}
+\end{align}
+Moreover
+\begin{equation}\label{eq:A-minus-I}
+A-I=
+\begin{pmatrix}
+-1&269&1240\\
+0&40&189\\
+1&0&31
+\end{pmatrix}.
+\end{equation}
+Expanding along its first row gives
+\begin{align}
+\det(A-I)
+ &=(-1)(40\cdot31)-269(0\cdot31-189\cdot1)
+   +1240(0\cdot0-40\cdot1) \label{eq:detAmI-expand}\\
+ &=-1240+50841-49600=1. \label{eq:detAmI-value}
+\end{align}
+Every operation in \cref{eq:detA-expand,eq:detAmI-expand} is integer
+arithmetic.  The same identities are checked in Lean by
+\texttt{T73.detA\_eq\_one} and
+\texttt{T73.detAMinusI\_eq\_one}.
+\end{proof}
+
+\begin{computation}[Integral inverses]\label{comp:lattice-inverses}
+The endomorphisms $A-I$ on $H_1(T^3;\Z)$ and
+$(A^{-1})^T-I$ on $H_2(T^3;\Z)$ are integral automorphisms.
+\end{computation}
+
+\begin{proof}
+For $B=A-I$, define
+\begin{equation}\label{eq:B-inverse}
+B^{-1}_{\Z}=
+\begin{pmatrix}
+1240&-8339&1241\\
+189&-1271&189\\
+-40&269&-40
+\end{pmatrix}.
+\end{equation}
+Multiplying \cref{eq:A-minus-I} by \cref{eq:B-inverse} on either side gives
+the identity matrix.  For example, the first row of $BB^{-1}_{\Z}$ is
+\begin{align}
+(&-1240+269\cdot189-1240\cdot40,\notag\\
+ &8339-269\cdot1271+1240\cdot269,\notag\\
+ &-1241+269\cdot189-1240\cdot40)=(1,0,0),
+\end{align}
+and the other six entries are checked by the same integer multiplication.
+
+Since \cref{eq:detA-value} gives $A^{-1}\in M_3(\Z)$, direct inversion gives
+\begin{equation}\label{eq:H2-map}
+C=(A^{-1})^T-I=
+\begin{pmatrix}
+1311&189&-41\\
+-8608&-1241&269\\
+1&0&-1
+\end{pmatrix}.
+\end{equation}
+An integral inverse is
+\begin{equation}\label{eq:H2-inverse}
+C^{-1}_{\Z}=
+\begin{pmatrix}
+-1241&-189&40\\
+8339&1270&-269\\
+-1241&-189&39
+\end{pmatrix}.
+\end{equation}
+Again $CC^{-1}_{\Z}=C^{-1}_{\Z}C=I_3$.  These are the matrices used by
+\path{T73CSAlgebra.lean}; the Lean proofs expand all nine entries and close
+them by ring normalization.
+\end{proof}
+
+\begin{remark}[Long topology route]\label{rem:long-topology-route}
+The two inverses have the expected topological consequences once the mapping
+torus and surgery are identified.  Surjectivity of $A-I$ kills the natural
+coinvariant presentation of the fundamental group after surgery; bijectivity
+of $A-I$ and $(A^{-1})^T-I$ kills the intermediate homology in the Wang and
+Mayer--Vietoris sequences.  Poincar\'e duality then gives the homology profile
+of $S^4$.  Hurewicz and Whitehead promote simple connectivity plus that
+homology profile to a homotopy equivalence with $S^4$.  Those implications are
+represented by separate fields in \path{T73CSTopology.lean}; the field types
+are shown in \cref{tab:crosswalk}.  This paper uses the shorter published
+Cappell--Shaneson criterion instead, so no step of this longer route is needed
+to conceal an extra geometric premise.
+\end{remark}
+
+\begin{corollary}[Conditional homotopy-sphere conclusion]\label{cor:homotopy-sphere}
+Under Assumption~\ref{ass:G1} and External Result~E10,
+$X(41,189,73)$ is a homotopy $4$-sphere.
+\end{corollary}
+
+\begin{proof}
+By \cref{eq:detA-value}, $A\in\mathrm{SL}(3,\Z)$.  By
+\cref{eq:detAmI-value}, $\det(A-I)=1$.  Assumption~\ref{ass:G1}
+identifies the candidate with $\Sigma_A^\epsilon$; External Result~E10,
+namely \cref{prop:cs-criterion}, then gives the conclusion.
+\end{proof}
+
+\subsection{What the topology calculation does not prove}
+
+The determinant test proves no smooth standardness statement.  It identifies
+the surgery manifold as a homotopy sphere, conditional on the presentation
+binding.  The proposed obstruction below is needed precisely because the
+usual homotopy invariants do not distinguish the candidate from $S^4$.
+Conversely, a nonzero finite scalar attached only to the displayed matrix is
+not automatically a smooth invariant.  The handle and naturality assumptions
+are what connect the scalar to the closed manifold.
+
+\section{From the mapping torus to the frozen cut tangle}\label{sec:presentation-bridge}
+
+This section explains the geometry that Assumption~\ref{ass:actual-presentation}
+must bind.  Several steps are elementary or finite; the assertion that their
+composite is the actual framed Cappell--Shaneson handle presentation remains
+an assumption.
+
+\subsection{The mapping-torus relations}
+
+Let $x_1,x_2,x_3$ be the coordinate generators of
+$\pi_1(T^3)=\Z^3$ and let $t$ denote the base circle of the mapping torus.
+The mapping-torus presentation has relations
+\begin{equation}\label{eq:mapping-torus-relations}
+m_i=t\,\phi_A(x_i)\,t^{-1}x_i^{-1},\qquad i=1,2,3,
+\end{equation}
+where $\phi_A$ is induced by the column action of $A$.  Aitchison--Rubinstein
+describe each $m_i$ as the boundary of a product annulus assembled from a
+bottom coordinate arc, its top image, and two vertical connecting arcs
+\cite[pp.~5--9]{AitchisonRubinstein1984}.  The product annulus, rather than a
+blackboard writhe, specifies the framing used here.
+
+The first column of \cref{eq:A-matrix} is $e_3$, so
+$\phi_A(x_1)=x_3$.  After the section/base-handle cancellation,
+\cref{eq:mapping-torus-relations} gives
+\begin{equation}\label{eq:m1-after-first-cancel}
+m_1=x_3x_1^{-1}.
+\end{equation}
+Cancelling this complementary one--two handle pair identifies $x_1$ with
+$x_3$.  Under that substitution the three commutator components become
+\begin{equation}\label{eq:commutator-substitution}
+[x_1,x_2]\mapsto[x_3,x_2],\qquad
+[x_2,x_3]\mapsto[x_2,x_3],\qquad
+[x_3,x_1]\mapsto[x_3,x_3]=1.
+\end{equation}
+The last component bounds the two nested product bigons obtained by cancelling
+$x_3x_3x_3^{-1}x_3^{-1}$; it is a split zero-framed component in the product
+model.
+
+\begin{computation}[Reduced word data]\label{comp:reduced-words}
+The frozen integer word builder applies \cref{eq:mapping-torus-relations} and
+the two substitutions above to obtain a reduced word $m_2$ of length $311$
+with exponent sum $(40,269)$ in $(x_2,x_3)$, and a reduced word $m_3$ of
+length $1460$ with exponent sum $(189,1271)$.
+\end{computation}
+
+\begin{proof}
+The words are generated from the columns $Ae_2=(269,41,0)^T$ and
+$Ae_3=(1240,189,32)^T$ by the Christoffel-path convention in the public
+builder, followed by free reduction after $x_1=x_3$.  The checker
+\path{scripts/verify_public_geometry_evidence.py} regenerates the paths and
+their exponent sums from \path{evidence/public_geometry/cs_presentation.py}.
+Because the output is an integer word, both the length and the exponent sums
+are exact.  The statement that these paths are the transported top arcs of
+the actual framed product annuli is not a consequence of word equality and
+remains in Assumption~\ref{ass:actual-presentation}.
+\end{proof}
+
+\subsection{A relative descending criterion}
+
+\begin{lemma}[Relative global descending lemma]\label{lem:global-descending}
+Let $T$ be a marked tangle in a $3$-ball.  Suppose its boundary endpoints and
+pairing are fixed; its components carry a total order; on each component the
+branch encountered earlier from the marked initial point is over at every
+self-crossing; and at every mutual crossing an earlier component is over a
+later one.  Then $T$ is ambient-isotopic relative to the boundary to the
+boundary-parallel trivial tangle with the same marked endpoint pairing.
+\end{lemma}
+
+\begin{proof}
+Place the first component in a thin top layer.  Traverse it from the marked
+initial endpoint.  At a self-crossing, the already traversed branch lies over
+the untraversed branch; at a mutual crossing, the whole component lies over
+every later component.  The traversed arc can therefore be pushed into a
+boundary collar without crossing the remaining tangle.  Continuing produces
+a bridge disk disjoint from all later components.  Remove the first component
+and repeat.  Induction gives disjoint bridge disks for every component, hence
+an ambient isotopy relative to the boundary.  The fixed endpoint pairing
+determines the unique marked boundary-parallel target.
+\end{proof}
+
+\begin{computation}[Descending check for the frozen PD]\label{comp:descending}
+The exact traversal of the frozen $2{,}126{,}291$-crossing PD input satisfies
+the hypotheses of Lemma~\ref{lem:global-descending}.  The self-crossing counts
+for $(r_{xy},r_{yz},m_2,m_3,r_{zx})$ are
+\begin{equation}\label{eq:self-cross-counts}
+(9,3,64631,1445582,0),
+\end{equation}
+and every mutual crossing follows the strict component order
+\begin{equation}\label{eq:height-order}
+r_{xy}>r_{yz}>m_2>m_3.
+\end{equation}
+\end{computation}
+
+\begin{proof}
+The script \path{scripts/verify_t73_global_descending.py} reads every crossing,
+reconstructs the cyclic traversal including the closing connector, checks the
+over/under condition at every self-crossing, and checks
+\cref{eq:height-order} at every mutual crossing.  It recomputes the counts in
+\cref{eq:self-cross-counts} rather than trusting summary fields.  The input
+identity is the SHA-256 in Certified Fact~\ref{comp:finite-cut-input}.
+\end{proof}
+
+The descending lemma proves that the frozen cut tangle is trivial relative to
+its marked endpoints.  It does not prove that the tangle is the cut of the
+actual Aitchison--Rubinstein product presentation.  Assumption
+\ref{ass:actual-presentation} supplies that last whole-link, framing-preserving
+identification.  Laudenbach--Poenaru's theorem permits a boundary
+self-diffeomorphism of $\#_4(S^1\times S^2)$ to extend over the four-dimensional
+one-handlebody \cite{LaudenbachPoenaru1972}; it does not identify the finite
+diagram without the preceding geometric construction.
+
+\section{Coefficient traces and the selected Hattori class}\label{sec:hattori}
+
+\subsection{Coefficient Hochschild homology}
+
+\begin{definition}[Linear category and bimodule]\label{def:category-bimodule}
+Let $\mathcal C$ be a small $\Q$-linear category.  A coefficient bimodule
+$M$ assigns a vector space $M(T,T')$ to each ordered pair of objects and has
+commuting left and right actions
+\begin{equation}\label{eq:bimodule-actions}
+\mathcal C(S,T)\otimes M(T,T')\longrightarrow M(S,T'),
+\qquad
+M(T,T')\otimes\mathcal C(T',U)\longrightarrow M(T,U).
+\end{equation}
+Associativity and unit conditions are the usual ones.
+\end{definition}
+
+\begin{definition}[Coefficient trace]\label{def:coefficient-HH0}
+The coefficient zeroth Hochschild homology is
+\begin{equation}\label{eq:HH0}
+\HH_0(\mathcal C;M)=
+\left(\bigoplus_{T\in\operatorname{Ob}\mathcal C}M(T,T)\right)
+\Big/
+\Span_{\Q}\{f\cdot m-m\cdot f\},
+\end{equation}
+where $f:S\to T$ and $m\in M(T,S)$ range over every cyclically composable
+pair.  If $m\in M(T,T)$ is a diagonal cycle, its image in
+\cref{eq:HH0} is denoted $[m]_T$.  When $m$ is the identity-type element
+obtained from a representable coefficient, we call $[m]_T$ its
+\emph{Hattori class}.
+\end{definition}
+
+This definition is deliberately concrete.  It is the quotient implemented in
+\path{Smooth4PC/CoefficientTrace.lean}.  The quotient universal property is
+ordinary linear algebra: a linear map on the direct sum descends if and only
+if it kills every vector $f\cdot m-m\cdot f$.
+
+\begin{lemma}[Descent through the coefficient trace]\label{lem:HH0-descent}
+Let $r_T:M(T,T)\to V$ be a family of linear maps satisfying
+\begin{equation}\label{eq:cyclicity}
+r_S(f\cdot m)=r_T(m\cdot f)
+\end{equation}
+for all cyclically composable $f$ and $m$.  Then there is a unique linear map
+$\bar r:\HH_0(\mathcal C;M)\to V$ whose restriction to $M(T,T)$ is $r_T$.
+\end{lemma}
+
+\begin{proof}
+Let $r$ be the sum of the $r_T$ on the algebraic direct sum.  By
+\cref{eq:cyclicity},
+$r(f\cdot m-m\cdot f)=0$ for every generator of the relation space in
+\cref{eq:HH0}.  Hence that relation space lies in $\ker r$, so $r$ factors
+uniquely through the quotient.
+\end{proof}
+
+\subsection{The Frobenius factor and the diagonal element}
+
+\begin{definition}[Rank-two Frobenius algebra]\label{def:frobenius}
+Throughout the finite $\mathfrak{sl}_2$ calculation we use
+\begin{equation}\label{eq:frob-algebra}
+\mathsf A=\Q[X]/(X^2),\qquad
+\epsilon(1)=0,\qquad \epsilon(X)=1,
+\end{equation}
+with coproduct
+\begin{equation}\label{eq:frob-coproduct}
+\Delta(1)=1\otimes X+X\otimes1,\qquad
+\Delta(X)=X\otimes X.
+\end{equation}
+The $227$ labels below mean the tensor
+$X^{\otimes227}$, not the product $X^{227}=0$ in $\mathsf A$.
+\end{definition}
+
+\begin{definition}[Selected object and class]\label{def:vT}
+Let $U:P_{86}\to P_{88}$ be the physical oriented one-cup tangle.  Let
+$B_{\mathrm{act}}\in\Aut_{\mathcal C}(P_{88})$ be the automorphism in
+Assumption~\ref{ass:hattori-binding}, and set
+\begin{equation}\label{eq:T1}
+T_1=B_{\mathrm{act}}^{-1}U.
+\end{equation}
+The balanced coefficient equivalence is denoted
+\begin{equation}\label{eq:H-balanced}
+H_{T,T'}:M_R(T,T')\xrightarrow{\cong}
+\operatorname{Hom}_{\mathcal C}(B_{\mathrm{act}}T,B_{\mathrm{act}}T')
+\{-44\}\otimes\mathsf A^{\otimes227}.
+\end{equation}
+Define
+\begin{equation}\label{eq:vT}
+v_T=H_{T_1,T_1}^{-1}
+\bigl(\id_U\otimes X^{\otimes227}\bigr),
+\qquad
+\eta_R[T_1]=[v_T]_{T_1}\in\HH_0(\mathcal C;M_R).
+\end{equation}
+\end{definition}
+
+Equation~\eqref{eq:vT} defines the algebraic element once
+\cref{eq:H-balanced} is given.  The substantive geometric statement is that
+\cref{eq:H-balanced} is the coefficient equivalence arising from the actual
+paired-annulus cut, with compatible left and right actions.  That statement is
+Assumption~\ref{ass:hattori-binding}.
+
+For comparison with the earlier relative input, factor
+$B_{\mathrm{act}}=WF_\Omega$ and define
+\begin{equation}\label{eq:T0T1-factor}
+T_0=F_\Omega^{-1}U,\qquad
+T_1=F_\Omega^{-1}W^{-1}U.
+\end{equation}
+Then associativity, without any commutativity assumption, gives
+\begin{equation}\label{eq:BT0BT1}
+B_{\mathrm{act}}T_0=WU,\qquad B_{\mathrm{act}}T_1=U.
+\end{equation}
+The first equality follows from
+$WF_\Omega F_\Omega^{-1}U=WU$; the second follows from
+$WF_\Omega F_\Omega^{-1}W^{-1}U=U$.
+
+\begin{definition}[Relative class]\label{def:xi}
+Let $s_{\mathrm{inv}}\in\{\pm1\}$ be the strict functorial sign assigned to
+the fixed cancellation movie for $WW^{-1}$.  The relative class is
+\begin{equation}\label{eq:xi}
+\xi=\eta_R[T_0]-s_{\mathrm{inv}}\eta_R[T_1].
+\end{equation}
+It is not the selected input $\eta_R[T_1]$.
+\end{definition}
+
+\section{The endpoint module and the Burau action}\label{sec:endpoint}
+
+\subsection{The \texorpdfstring{$88$}{88}-dimensional module}
+
+\begin{definition}[Endpoint module]\label{def:endpoint-module}
+Let
+\begin{equation}\label{eq:R-eps}
+R_\eps=\Z[\eps]/(\eps^7),\qquad t=1+\eps,
+\end{equation}
+and let
+\begin{equation}\label{eq:E88}
+E_\eps=R_\eps^{88}=\bigoplus_{i=0}^{87}R_\eps e_i.
+\end{equation}
+One may identify this free module with the weight-$86$ subspace of the
+$88$-fold tensor power of the two-dimensional fundamental module: $e_i$
+corresponds to the tensor having the lower-weight basis vector in position
+$i$ and the upper-weight basis vector in every other position.  This explains
+the dimension $\binom{88}{1}=88$.  The identification of this algebraic model
+with the actual endpoint shadow is part of
+Assumption~\ref{ass:hattori-binding}.
+\end{definition}
+
+\begin{definition}[Unreduced Burau representation]\label{def:burau}
+For the Artin generator $\sigma_i$ of $B_{88}$, with $1\le i\le87$, define
+$\rho_t(\sigma_i)$ to be the identity off the span of
+$e_{i-1},e_i$ and to have the block
+\begin{equation}\label{eq:burau-positive}
+\rho_t(\sigma_i)\big|_{\langle e_{i-1},e_i\rangle}
+=
+\begin{pmatrix}1-t&t\\1&0\end{pmatrix}
+=
+\begin{pmatrix}-\eps&1+\eps\\1&0\end{pmatrix}.
+\end{equation}
+Its inverse has block
+\begin{equation}\label{eq:burau-negative}
+\rho_t(\sigma_i^{-1})\big|_{\langle e_{i-1},e_i\rangle}
+=
+\begin{pmatrix}0&1\\t^{-1}&1-t^{-1}\end{pmatrix},
+\end{equation}
+where
+\begin{equation}\label{eq:t-inverse}
+t^{-1}=1-\eps+\eps^2-\eps^3+\eps^4-\eps^5+\eps^6
+\quad\text{in }R_\eps.
+\end{equation}
+For a word $w=\sigma_{i_1}^{s_1}\cdots\sigma_{i_m}^{s_m}$ we use the left
+action
+\begin{equation}\label{eq:word-action-order}
+\rho_t(w)v=\rho_t(\sigma_{i_1}^{s_1})\cdots
+\rho_t(\sigma_{i_m}^{s_m})v.
+\end{equation}
+Thus an implementation acting in place on a column vector must traverse the
+stored letters from right to left.
+\end{definition}
+
+\begin{lemma}\label{lem:burau-inverse}
+The blocks in \cref{eq:burau-positive,eq:burau-negative} are mutual inverses
+over $R_\eps$.
+\end{lemma}
+
+\begin{proof}
+Direct multiplication gives
+\begin{equation}\label{eq:burau-inverse-check}
+\begin{pmatrix}1-t&t\\1&0\end{pmatrix}
+\begin{pmatrix}0&1\\t^{-1}&1-t^{-1}\end{pmatrix}
+=
+\begin{pmatrix}1&(1-t)+t-1\\0&1\end{pmatrix}=I_2.
+\end{equation}
+The reverse product is the same calculation.  Formula~\eqref{eq:t-inverse}
+is the geometric-series inverse of $1+\eps$ modulo $\eps^7$.
+\end{proof}
+
+\subsection{From primitive crossings to the cabled word}
+
+The public input stores $252$ primitive crossing rows, not the expanded
+$11{,}340$- or $45{,}360$-letter words.  Each row records a sign
+$s\in\{\pm1\}$, two paired-strand labels $1\le i<j\le44$, and one of two geometries.
+
+\begin{definition}[Row expansion]\label{def:row-expansion}
+For $i<j$ define the two signed pure-row words
+\begin{align}
+L_{ij}^{s}
+ &=\sigma_{j-1}\sigma_{j-2}\cdots\sigma_{i+1}
+   \sigma_i^{s}\sigma_i^{s}
+   \sigma_{i+1}^{-1}\cdots\sigma_{j-2}^{-1}\sigma_{j-1}^{-1},
+   \label{eq:L-row}\\
+R_{ij}^{s}
+ &=\sigma_i\sigma_{i+1}\cdots\sigma_{j-2}
+   \sigma_{j-1}^{s}\sigma_{j-1}^{s}
+   \sigma_{j-2}^{-1}\cdots\sigma_{i+1}^{-1}\sigma_i^{-1}.
+   \label{eq:R-row}
+\end{align}
+The $44$-strand word $B_{44}$ is obtained by taking the $R$ rows on segment
+$6$ in increasing horizontal coordinate, followed by the $L$ rows on segment
+$2$ in decreasing horizontal coordinate, and replacing each row by
+\cref{eq:L-row,eq:R-row}.
+\end{definition}
+
+\begin{definition}[Two-cabling]\label{def:cabling}
+The cabling homomorphism on letters is
+\begin{equation}\label{eq:cabling}
+c(\sigma_i)=\sigma_{2i}\sigma_{2i+1}\sigma_{2i-1}\sigma_{2i},
+\qquad
+c(\sigma_i^{-1})=c(\sigma_i)^{-1}.
+\end{equation}
+The $88$-strand word is $B_{88}=c(B_{44})$.
+\end{definition}
+
+The use of ``homomorphism'' in \cref{def:cabling} is algebraic: the code
+applies \cref{eq:cabling} letter by letter and reverses and changes signs for
+an inverse letter.  The geometric statement that this is the actual oriented
+cabling of the point-push movie belongs to
+Assumptions~\ref{ass:word-filtration} and \ref{ass:serialization}.
+
+\begin{computation}[Word identities]\label{comp:word-identities}
+The exact reconstruction gives
+\begin{equation}\label{eq:word-lengths}
+|B_{44}|=11340,\qquad |B_{88}|=45360.
+\end{equation}
+The canonical JSON SHA-256 values are, respectively,
+\begin{quote}
+\Hash{7C2D2F792C2672221A76CAF08A71F560AF0CB7654B4D537C00FAD00B16EFA187}
+\end{quote}
+and
+\begin{quote}
+\Hash{C13D0A3BA9B05F41A6D2C5B4AB12DDECDABEFC1883835891AD3BD2B8955B5FFB}.
+\end{quote}
+The first forty letters are
+\begin{align}
+B_{44}[0{:}40]&=(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,
+\notag\\[-2pt]
+&\qquad21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40),
+\label{eq:B44-first40}\\
+B_{88}[0{:}40]&=(2,3,1,2,4,5,3,4,6,7,5,6,8,9,7,8,10,11,9,10,
+\notag\\[-2pt]
+&\qquad12,13,11,12,14,15,13,14,16,17,15,16,18,19,17,18,20,21,19,20).
+\label{eq:B88-first40}
+\end{align}
+\end{computation}
+
+\begin{proof}
+The reconstruction is precisely Definitions~\ref{def:row-expansion} and
+\ref{def:cabling}.  Canonical JSON means UTF-8 encoding with sorted keys where
+applicable and list separators \texttt{,} and \texttt{:} without spaces.  The
+command in \cref{sec:reproduction} recomputes the two lengths, the two hashes,
+and the displayed prefixes from the primitive rows.  Neither expanded word is
+stored in the input.
+\end{proof}
+
+\section{The detector and the exact cubic}\label{sec:exact-computation}
+
+\subsection{One definition for both inputs}
+
+Let $R_h=\Q[h]/(h^7)$ and substitute
+\begin{equation}\label{eq:parameter-change}
+q=1+h,\qquad t=q^{-2},\qquad \eps=t-1.
+\end{equation}
+Let $\Sh_h$ denote the quantum trace shadow followed by the fixed endpoint
+identification, let $P_{86}$ be the rational projector onto the through-$86$
+top cell, and let $\widehat C(h)$ be the normalized endpoint cap row.  These
+maps are typed on the full endpoint target by Assumptions
+\ref{ass:hattori-binding} and \ref{ass:two-handle-cocone}.
+
+\begin{definition}[The detector]\label{def:detector}
+For a quantum trace class $x$, define the single series
+\begin{equation}\label{eq:D-h}
+\mathcal D_h(x)=
+\widehat C(h)\bigl(\rho_h(W)-I\bigr)P_{86}\Sh_h(x).
+\end{equation}
+Under Assumption~\ref{ass:word-filtration}, the image is contained in
+$h^3R_h$.  The divided cubic detector on the ordinary coefficient trace is
+\begin{equation}\label{eq:D3}
+D_3(\bar x)=\left.\frac{\mathcal D_h(x)}{h^3}\right|_{h=0},
+\end{equation}
+where $x$ is any quantum lift of $\bar x$.
+\end{definition}
+
+\begin{lemma}[Lift independence]\label{lem:lift-independence}
+Formula~\eqref{eq:D3} is independent of the quantum lift.
+\end{lemma}
+
+\begin{proof}
+If $x'$ and $x$ have the same specialization at $h=0$, then
+$x'-x=hy$.  Write $\mathcal D_h=h^3\mathcal D'_h$.  Linearity gives
+\begin{equation}\label{eq:lift-difference}
+\mathcal D'_h(x')-\mathcal D'_h(x)=h\mathcal D'_h(y),
+\end{equation}
+whose reduction modulo $h$ is zero.  Thus \cref{eq:D3} has the same value on
+$x$ and $x'$.
+\end{proof}
+
+\begin{lemma}[Specialization of the quantum trace]\label{lem:qtrace-specialization}
+Let $\qTr_q(\mathcal C;M)$ be the quotient of
+$\bigoplus_T M(T,T)\otimes\Q[q,q^{-1}]$ by
+\begin{equation}\label{eq:qtrace-relation}
+L_f(m)-q^{|f|}R_f(m).
+\end{equation}
+Then
+\begin{equation}\label{eq:qtrace-to-HH0}
+\qTr_q(\mathcal C;M)\otimes_{\Q[q,q^{-1}]}\Q[q,q^{-1}]/(q-1)
+\cong\HH_0(\mathcal C;M).
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Tensor product is right exact.  Applying it to the cokernel presentation of
+$\qTr_q$ replaces $q^{|f|}$ by $1$, so every generator
+\cref{eq:qtrace-relation} becomes $L_f(m)-R_f(m)$.  The resulting cokernel is
+exactly \cref{eq:HH0}.  No flatness assumption on $\qTr_q$ is needed.
+\end{proof}
+
+Under the endpoint normalization of the public input, the composite row
+$\widehat C(0)P_{86}$ is
+\begin{equation}\label{eq:ell}
+\ell=e_{87}^{*}-e_2^{*},
+\end{equation}
+and the selected shadow vector is
+\begin{equation}\label{eq:u}
+u=e_2-e_{87}.
+\end{equation}
+Here $e_i^*(e_j)=\delta_{ij}$.  Both formulas use the collar-coordinate table
+\path{data/B88_POSITION_TO_PASSAGE_TABLE.json}; its SHA-256 is
+\Hash{119C7E9E74AE6C820DA72A84CDFD5D445D81E6C3AACCC209C25D37C323961508}.
+In that table positions $2$ and $87$ are the negative copy of wicket $W_2$
+and the positive copy of wicket $W_{44}$, respectively.
+
+\subsection{The exact vector calculation}
+
+\begin{computation}[Burau difference on the selected vector]\label{comp:burau-vector}
+In $E_\eps$, the first nonzero coefficient of
+$(\rho_t(B_{88})-I)u$ occurs in degree $3$.  Its full coefficient vector is
+\begin{equation}\label{eq:eps3-vector-short}
+[\eps^3](\rho_t(B_{88})-I)u=(a_0,\ldots,a_{87})^T,
+\end{equation}
+where the $88$ integers $a_i$ are printed in
+\cref{app:vector}.  Contracting with \cref{eq:ell} gives
+\begin{equation}\label{eq:ell-eps-series}
+\ell(\rho_t(B_{88})-I)u
+=-328\eps^3+14596\eps^4-410246\eps^5+9595271\eps^6.
+\end{equation}
+\end{computation}
+
+\begin{proof}
+Start with the sparse column $u$ in \cref{eq:u}.  Traverse the letters of
+$B_{88}$ from right to left, applying \cref{eq:burau-positive} for a positive
+letter and \cref{eq:burau-negative} for a negative letter.  All polynomial
+products are reduced modulo $\eps^7$ after each operation.  Subtract the
+original column.  Finally take coordinate $87$ minus coordinate $2$ as in
+\cref{eq:ell}.  This deterministic algorithm is implemented in
+\texttt{scripts/recompute\_t73\_delta3.py}; it uses Python integers only.
+The input SHA-256 is
+\begin{quote}
+\Hash{0F0F4A568D966367313C29C25CEDDE4FD9ABAD32B9375519E9CDF9168AE0A764}.
+\end{quote}
+The program rejects a mismatch in the primitive-row hash, either word hash,
+the representation block, the cabling rule, or the Hattori word binding.
+Thus \cref{eq:ell-eps-series} is independently reimplementable from the
+formulas in this paper and the immutable primitive rows.
+\end{proof}
+
+\begin{lemma}[Parameter expansion]\label{lem:eps-of-h}
+In $\Z[h]/(h^7)$,
+\begin{equation}\label{eq:eps-h-expansion}
+\eps=(1+h)^{-2}-1=-2h+3h^2-4h^3+5h^4-6h^5+7h^6.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+The binomial series gives
+$(1+h)^{-2}=\sum_{k\ge0}(-1)^k(k+1)h^k$.
+Subtracting $1$ and truncating after degree $6$ yields
+\cref{eq:eps-h-expansion}.
+\end{proof}
+
+\begin{lemma}[Commutator order]\label{lem:commutator-order}
+Let $R$ be an $h$-adically filtered ring.  If
+$P=I+O(h^a)$ and $Q=I+O(h^b)$ are invertible matrices, then
+\begin{equation}\label{eq:commutator-order}
+PQP^{-1}Q^{-1}=I+O(h^{a+b}).
+\end{equation}
+Consequently, if every generator of a pure-braid subgroup acts as
+$I+O(h)$, then its $r$th lower-central subgroup acts as $I+O(h^r)$.
+\end{lemma}
+
+\begin{proof}
+Write $P=I+h^aP_0$ and $Q=I+h^bQ_0$.  Modulo $h^{a+b}$, the inverse series
+are $P^{-1}=I-h^aP_0+O(h^{2a})$ and
+$Q^{-1}=I-h^bQ_0+O(h^{2b})$.  Multiplication shows that all terms of order
+strictly below $a+b$ cancel in $PQP^{-1}Q^{-1}$.  The lower-central claim
+follows by induction from
+$\Gamma_{r+1}=[\Gamma_r,\Gamma_1]$.
+\end{proof}
+
+Lemma~\ref{lem:commutator-order} proves the filtration implication.  It does
+not prove that the geometric point-push word belongs to $\Gamma_3$; that
+membership and the identification of the word with the actual movie are the
+unproved parts of Assumption~\ref{ass:word-filtration}.
+
+\begin{proposition}[Selected value]\label{prop:D3-vT}
+Under Assumption~\ref{ass:hattori-binding}, the detector of
+\cref{def:detector} satisfies
+\begin{equation}\label{eq:D3-vT}
+D_3(\eta_R[T_1])=2624\ne0.
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Assumption~\ref{ass:hattori-binding} and \cref{eq:BT0BT1} identify the
+leading endpoint shadow of $\eta_R[T_1]$ with $u$.  By
+\cref{eq:ell-eps-series}, the coefficients below $\eps^3$ vanish.  Hence only
+the cubic term contributes to the coefficient of $h^3$.  By
+\cref{eq:eps-h-expansion}, $[h]\eps=-2$, so
+\begin{equation}\label{eq:D3-vT-calc}
+[h^3]\,(-328)\eps^3=(-328)(-2)^3=2624.
+\end{equation}
+The last integer is nonzero.
+\end{proof}
+
+\begin{computation}[The squared shell]\label{comp:squared-shell}
+Applying the same operator a second time gives
+\begin{equation}\label{eq:squared-series}
+\ell(\rho_t(B_{88})-I)^2u=-102729600\eps^6
+\quad\text{in }R_\eps.
+\end{equation}
+\end{computation}
+
+\begin{proof}
+Use the output column of \cref{comp:burau-vector} as the input to the same
+right-to-left word action, subtract that input column, and contract with the
+same covector \cref{eq:ell}.  This is the second calculation performed by the
+public script.  No second detector definition is introduced.
+\end{proof}
+
+\begin{computation}[The complete scalar profiles in the $h$ coordinate]\label{comp:h-profiles}
+Substitution of \cref{eq:eps-h-expansion} into
+\cref{eq:ell-eps-series,eq:squared-series} yields, through degree six,
+\begin{align}
+\ell(\rho_h(W)-I)u
+={}&2624h^3+221728h^4+11760112h^5
+\notag\\
+&+520583560h^6, \label{eq:eta-h-profile}\\
+\ell(\rho_h(W)-I)^2u
+={}&-6574694400h^6. \label{eq:xi-h-profile}
+\end{align}
+\end{computation}
+
+\begin{proof}
+Polynomial substitution in the quotient $\Z[h]/(h^7)$ is finite.  For
+example, the cubic coefficient of the first line is
+$(-328)(-2)^3=2624$.  For the second line,
+$\eps^6=(-2)^6h^6+O(h^7)=64h^6+O(h^7)$, and
+$-102729600\cdot64=-6574694400$.  Expanding the remaining powers and collecting
+coefficients gives \cref{eq:eta-h-profile}; the public script performs the
+same convolution with integer lists.
+\end{proof}
+
+\begin{proposition}[The relative input is killed]\label{prop:D3-xi}
+With $\xi$ defined by \cref{eq:xi} and with the same detector
+\cref{eq:D3},
+\begin{equation}\label{eq:D3-xi}
+D_3(\xi)=0.
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+The cancellation sign in \cref{def:xi} is chosen so that
+\begin{equation}\label{eq:xi-shadow}
+P_{86}\Sh_h(\xi)=(\rho_h(W)-I)u.
+\end{equation}
+Substitution of \cref{eq:xi-shadow} into the single definition
+\cref{eq:D-h} produces the square
+$\ell(\rho_h(W)-I)^2u$.  By \cref{eq:squared-series} it begins in order
+$\eps^6$, hence in order $h^6$.  Its $h^3$ coefficient is zero.
+\end{proof}
+
+\begin{remark}[Why the two values are not contradictory]\label{rem:vT-xi}
+The plain shadow coefficient $[h^3]\ell\Sh_h(\xi)$ equals $2624$, but that
+plain shadow is not $D_3(\xi)$.  The detector already contains the outer
+factor $\rho_h(W)-I$.  Thus the selected class $\eta_R[T_1]$ receives one
+factor and has value $2624$, whereas $\xi$ already contains one factor and
+the detector supplies a second, yielding zero in degree three.
+\end{remark}
+
+\section{The grading calculation}\label{sec:grading}
+
+\begin{proposition}[Quantum degree]\label{prop:degree-494}
+Under Assumption~\ref{ass:raw-state}, the selected raw class has quantum
+degree $494$.
+\end{proposition}
+
+\begin{proof}
+There are four contributions.  First, the $44$ paired boundary passages give
+the built-in Hom normalization $44(N-1)=44$ for $N=2$; the raw closure removes
+it, contributing
+\begin{equation}\label{eq:degree-minus44}
+d_1=-44.
+\end{equation}
+Second, the $227$ separately labelled factors $X^{\otimes227}$ each contribute
+$+1$ in the adopted convention:
+\begin{equation}\label{eq:degree-plus227}
+d_2=227.
+\end{equation}
+Third, the one-handle theorem contributes the sum of the $44$ $y$-pairs and
+$271=44+227$ $z$-pairs:
+\begin{equation}\label{eq:degree-plus315}
+d_3=44+271=315.
+\end{equation}
+Finally the selected cabled state has $\alpha=0$, $|r|=2$, and $N=2$, so the
+MWW cabled shift is
+\begin{equation}\label{eq:degree-minus4}
+d_4=(1-N)(2|r|+|\alpha|)=(-1)\cdot4=-4.
+\end{equation}
+Adding \cref{eq:degree-minus44,eq:degree-plus227,eq:degree-plus315,eq:degree-minus4}
+gives
+\begin{equation}\label{eq:degree-total}
+d_1+d_2+d_3+d_4=-44+227+315-4=494.
+\end{equation}
+\end{proof}
+
+The integer arithmetic in \cref{eq:degree-total} is checked in Lean.  Lean
+does not prove that these four integers are the correct geometric grading
+contributions for the actual filling; that binding is exactly why
+Assumption~\ref{ass:raw-state} remains visible.
+
+\section{Descent through the one- and two-handle relations}\label{sec:two-handle-descent}
+
+\subsection{The through-degree separation}
+
+Let $F_d$ denote the span of endpoint diagrams of through degree at most $d$.
+Composition on either side cannot increase through degree.  The selected cup
+$U$ has through degree $86$.  The maps $\psi_i^{[0]}$ and
+$\psi_i^{[1]}$ also preserve through degree $86$ and add the same one-cup
+factor.  Thus neither through degree nor cup count distinguishes their images.
+Their statewise distinction in Proposition~\ref{prop:beta-psi} comes from the
+core counit of Lemma~\ref{lem:counit-identities}.  The following elementary
+filtration lemma controls only relation terms that are independently known to
+lie in the low-cell subspace $F_{84}$.
+
+\begin{lemma}[Filtration argument]\label{lem:through-filtration}
+Suppose $P_{86}$ is a linear projector with image the through-$86$ top cell
+and kernel containing $F_{84}$.  If $I\subset F_{84}$ is closed under left and
+right endpoint composition, then $P_{86}(I)=0$.  In particular, no vector in
+$I$ can change $D_3(v_T)$.
+\end{lemma}
+
+\begin{proof}
+The inclusion $I\subset F_{84}\subset\ker P_{86}$ gives $P_{86}(I)=0$.
+The last statement follows by linearity of every map after $P_{86}$ in
+\cref{eq:D-h}.
+\end{proof}
+
+The point is not that a physical cap itself kills every lower cell.  It need
+not.  The projection is a linear postcomposition after the genuine quantum
+trace shadow.  Its compatibility with the actual cabled relations is part of
+Assumption~\ref{ass:two-handle-cocone}.
+
+\subsection{The local Frobenius calculation}
+
+For $b\ge1$, let $\Delta^{(b-1)}:\mathsf A\to\mathsf A^{\otimes b}$ be the
+iterated coproduct, with $\Delta^{(0)}=\id$.  Put
+\begin{align}
+D_b&=\Delta^{(b-1)}(X)=X^{\otimes b}, \label{eq:Db}\\
+U_b&=\Delta^{(b-1)}(1)
+=\sum_{a=0}^{b-1}X^{\otimes a}\otimes1\otimes
+X^{\otimes(b-1-a)}. \label{eq:Ub}
+\end{align}
+
+\begin{lemma}[Counit identities]\label{lem:counit-identities}
+For every $b\ge1$,
+\begin{equation}\label{eq:counit-identities}
+\epsilon^{\otimes b}(U_b)=0,
+\qquad
+\epsilon^{\otimes b}(D_b)=1.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Formula~\eqref{eq:frob-coproduct} implies
+$\Delta^{(b-1)}(X)=X^{\otimes b}$ by induction.  Applying
+$\epsilon^{\otimes b}$ gives $1^b=1$.  The corresponding induction for $1$
+gives the sum in \cref{eq:Ub}; every summand contains exactly one factor
+$1$, and $\epsilon(1)=0$.  Hence every summand evaluates to zero.
+\end{proof}
+
+\subsection{The cabled relation space}
+
+Let $\mathcal C_s$ be the raw summand at a finite cable state $s$ and set
+$\mathcal C_{\mathrm{raw}}=\bigoplus_s\mathcal C_s$.  The two-handle relation
+space $\mathcal R_{2h}$ is spanned by
+\begin{equation}\label{eq:two-handle-generators}
+\beta_i(b)x-x,\qquad \psi_i^{[0]}x,\qquad
+\psi_i^{[1]}x-x
+\end{equation}
+for every attaching component, state, admissible signed-colour-preserving braid, and source
+vector.
+
+\begin{proposition}[Cubic beta and psi equations]\label{prop:beta-psi}
+Under Assumptions~\ref{ass:word-filtration} and
+\ref{ass:two-handle-cocone}, the statewise rows $\Lambda_s^{(3)}$ satisfy
+\begin{align}
+\Lambda_s^{(3)}\beta_i(b)&=\Lambda_s^{(3)},
+\label{eq:beta-cocone}\\
+\Lambda_{s+e_i}^{(3)}\psi_i^{[0]}&=0,
+\qquad
+\Lambda_{s+e_i}^{(3)}\psi_i^{[1]}=\Lambda_s^{(3)}.
+\label{eq:psi-cocone}
+\end{align}
+Consequently $\mathcal R_{2h}\subseteq\ker\Lambda^{(3)}$.
+\end{proposition}
+
+\begin{proof}
+At the base multiplicity the constant signed-permutation quotient is trivial
+and a pure residual acts as $I+O(h)$.  Since
+$\rho_h(W)-I=O(h^3)$ on the whole endpoint module, postcomposition by a pure
+residual changes \cref{eq:D-h} only in order $h^4$.  This proves
+\cref{eq:beta-cocone} at divided cubic order.  Assumption
+\ref{ass:two-handle-cocone} supplies a common physical-copy target and the
+same statement at every finite multiplicity.
+
+For a forward pair addition, the two actual core counits act on the new
+Frobenius factors.  Under the actual-to-canonical identification in
+Assumption~\ref{ass:two-handle-cocone}, the undotted and once-dotted insertions
+are $U_b$ and $D_b$.  Lemma~\ref{lem:counit-identities} gives respectively
+$0$ and $1$.  The raw degree $+2$ of the once-dotted map cancels the target
+cabled shift $-2$, so the second equation has total degree zero.  This proves
+\cref{eq:psi-cocone}.  Applying the three equations to the generators in
+\cref{eq:two-handle-generators} gives the kernel inclusion.
+\end{proof}
+
+\begin{corollary}[Two-handle descent]\label{cor:two-handle-descent}
+There is a unique linear map
+\begin{equation}\label{eq:Lambda-two-handle}
+\overline\Lambda_{2h}^{(3)}:
+\mathcal C_{\mathrm{raw}}/\mathcal R_{2h}\longrightarrow\Q
+\end{equation}
+whose pullback is $\Lambda^{(3)}$.  On the selected class its value is
+$2624$.
+\end{corollary}
+
+\begin{proof}
+Proposition~\ref{prop:beta-psi} places the relation space in the kernel, so
+the quotient universal property gives \cref{eq:Lambda-two-handle}.  The
+selected base row is the detector of \cref{def:detector}; its value is
+\cref{eq:D3-vT}.
+\end{proof}
+
+\section{The chosen spheres and three-handle descent}\label{sec:three-handle-descent}
+
+\subsection{The finite homology calculation}
+
+The public data supplies three rooted PL surface constructions.  Their exact
+combinatorial sizes are
+\begin{center}
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+surface & leaves & pair-of-pants or split bands & root caps\\
+\midrule
+TH1 & 350176 & 350175 & 1\\
+TH2 & 229198 & 229197 & 1\\
+THXY & 11115 & 11114 & 1\\
+\bottomrule
+\end{tabular}
+\end{center}
+For THXY the band count includes $312$ macro bands and $5401+5401$ corridor
+split bands.  The finite checker visits every stored row and verifies the
+rooted ancestry, stored normal-framing fields, terminal boundary reduction,
+SHA identities, schema, determinant, and verdict strings.  Its geometric
+intersection test is narrower: only the comb bands have full coordinates for
+an all-row PL self-intersection and slab-gap calculation.  The finger annuli,
+bigon, and cap have no such coordinates in the public data.
+
+\begin{computation}[Euler characteristics of the stored surfaces]\label{comp:sphere-euler}
+Each of the three stored connected surfaces has Euler characteristic $2$.
+\end{computation}
+
+\begin{proof}
+The rooted construction begins with one disk for each leaf, attaches one
+$1$-handle for each band, and ends with one root cap.  Therefore
+\begin{align}
+\chi(\mathrm{TH1})&=350176-350175+1=2,\label{eq:chi-th1}\\
+\chi(\mathrm{TH2})&=229198-229197+1=2,\label{eq:chi-th2}\\
+\chi(\mathrm{THXY})&=11115-11114+1=2.\label{eq:chi-thxy}
+\end{align}
+The ancestry tree is connected and the orientation data is coherent.  Thus,
+within the supplied PL model, each surface is a genus-zero closed oriented
+surface.  This calculation does not by itself place the model in the actual
+$\partial W_2$; that is Assumption~\ref{ass:chosen-sphere-binding}.
+\end{proof}
+
+The stored comb-band coordinate sectors are respectively
+\begin{equation}\label{eq:sphere-sectors}
+\mathrm{THXY}\subset[2,13/2],\qquad
+\mathrm{TH1}\subset[8,9],\qquad
+\mathrm{TH2}\subset[10,11].
+\end{equation}
+The interval separation proves the stated slab-gap property for the stored
+comb bands.  It does not prove pairwise disjointness for the complete surfaces.
+Embedding the full models as disjoint surfaces in one actual post-two-handle
+boundary is Assumption~\ref{ass:chosen-sphere-binding}.
+
+\begin{computation}[Unimodular class matrix]\label{comp:sphere-det}
+Let the three claimed sphere classes be the columns of
+\begin{equation}\label{eq:sphere-matrix}
+S=
+\begin{pmatrix}
+-1311&-189&41\\
+8608&1241&-269\\
+-1&0&1
+\end{pmatrix}.
+\end{equation}
+Then $\det S=1$.
+\end{computation}
+
+\begin{proof}
+Expansion along the third row gives
+\begin{align}
+\det S
+&=(-1)(-40)+1(-39) \label{eq:sphere-det-expand}\\
+&=40-39=1. \label{eq:sphere-det-value}
+\end{align}
+Here the first relevant minor is
+$(-189)(-269)-41\cdot1241=-40$, and the third is
+$(-1311)1241-(-189)8608=-39$, with the cofactor signs already included in
+\cref{eq:sphere-det-expand}.  The same integer calculation is
+\path{T73.sphereDet_eq_one} in Lean.
+\end{proof}
+
+Under Certified Fact~\ref{comp:finite-spheres} and Assumption~\ref{ass:G4},
+the columns of $S$ are the classes of three pairwise-disjoint embedded spheres
+in the same $\partial W_2$.  External Result~E7 then permits them to replace the actual attaching
+spheres up to the operations in \cref{prop:hj-theorem53}.
+
+\subsection{The six leading maps}
+
+For a chosen sphere $j$, let $b_j>0$ be the number of newly created Frobenius tensor factors.
+Use the notation
+\begin{equation}\label{eq:UD-def}
+D_j=X^{\otimes b_j},\qquad
+U_j=\sum_{a=0}^{b_j-1}X^{\otimes a}\otimes1\otimes
+X^{\otimes(b_j-1-a)}.
+\end{equation}
+Let $Q_{s,0}$ and $Q_{t_j,0}$ be the constant terms of the full source and
+target coordinate transports.  The abstract leading model is
+\begin{align}
+F_{j,0}^{(0)}&=Q_{t_j,0}^{-1}
+(\id_{\mathrm{old}}\otimes U_j)Q_{s,0},
+\label{eq:sphere-undotted-map}\\
+F_{j,1}^{(0)}&=Q_{t_j,0}^{-1}
+(\id_{\mathrm{old}}\otimes D_j)Q_{s,0}.
+\label{eq:sphere-dotted-map}
+\end{align}
+
+\begin{lemma}[Abstract sphere rows]\label{lem:abstract-sphere-rows}
+Let $r$ be any row on the old factor and put
+$E_j=\epsilon^{\otimes b_j}$.  For the maps in
+\cref{eq:sphere-undotted-map,eq:sphere-dotted-map},
+\begin{equation}\label{eq:abstract-sphere-rows}
+(r\otimes E_j)F_{j,0}^{(0)}=0,
+\qquad
+(r\otimes E_j)F_{j,1}^{(0)}=r,
+\end{equation}
+after using the displayed coordinate equivalences.
+\end{lemma}
+
+\begin{proof}
+Coordinate conjugation cancels because the source and target rows are pulled
+back through the same $Q_{s,0}$ and $Q_{t_j,0}$.  What remains is
+$E_j(U_j)=0$ and $E_j(D_j)=1$, which is
+Lemma~\ref{lem:counit-identities}.
+\end{proof}
+
+Lemma~\ref{lem:abstract-sphere-rows} is an algebraic theorem.  It does not
+identify the abstract maps with the MWW cobordism maps.  That identification,
+on the whole source and for the actual chosen surfaces, is exactly
+Assumption~\ref{ass:sphere-map-model}.
+
+\begin{proposition}[Three-handle kernel equations]\label{prop:sphere-kernel}
+Under Assumption~\ref{ass:G4}, the descended two-handle row $\ell_1$ satisfies,
+for each $j\in\{\mathrm{TH1},\mathrm{TH2},\mathrm{THXY}\}$,
+\begin{equation}\label{eq:sphere-kernel}
+\ell_1\circ\Sigma_{j,0}=0,
+\qquad
+\ell_1\circ(\Sigma_{j,1}-\id)=0.
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Assumption~\ref{ass:sphere-map-model} gives the whole-source naturality
+square identifying the actual constant terms of $\Sigma_{j,0}$ and
+$\Sigma_{j,1}$ with \cref{eq:sphere-undotted-map,eq:sphere-dotted-map}.
+The old divided row begins in order $h^3$; the same assumption places every
+positive-order transport correction in order at least $h^4$ after
+composition.  Hence the divided cubic depends only on the constant maps.
+Lemma~\ref{lem:abstract-sphere-rows} then yields the two equations.
+\end{proof}
+
+\section{The complete quotient and the conditional conclusion}\label{sec:final-descent}
+
+Let $W_0$ be the one-handle coefficient trace, $W_1$ its quotient by all
+two-handle relations, and $W_2$ the quotient of $W_1$ by the six chosen-sphere
+relations.  Let $q_{01}:W_0\to W_1$ and $q_{12}:W_1\to W_2$ be the quotient
+maps.  Denote the selected class in $W_0$ by $x_0$.
+
+\begin{lemma}[A linear detector survives a quotient]\label{lem:quotient-detector}
+Let $V$ be a vector space, $R\subseteq V$ a subspace, and
+$\lambda:V\to\Q$ a linear map with $R\subseteq\ker\lambda$.  Then there is a
+unique $\bar\lambda:V/R\to\Q$ such that
+$\bar\lambda\circ\pi=\lambda$.  If $\lambda(x)\ne0$, then $\pi(x)\ne0$.
+\end{lemma}
+
+\begin{proof}
+Define $\bar\lambda(x+R)=\lambda(x)$.  If $x-y\in R$, then
+$\lambda(x)-\lambda(y)=0$, so the definition is independent of the
+representative.  Uniqueness follows from surjectivity of $\pi$.  Finally,
+$\pi(x)=0$ would imply $x\in R$ and hence $\lambda(x)=0$.
+\end{proof}
+
+\begin{proposition}[Nonzero class after all relation quotients]\label{prop:nonzero-W2}
+Under Assumptions~\ref{ass:G2}--\ref{ass:G4},
+there is a linear functional $\ell_2:W_2\to\Q$ such that
+\begin{equation}\label{eq:ell2-value}
+\ell_2(q_{12}q_{01}x_0)=2624.
+\end{equation}
+In particular, $q_{12}q_{01}x_0\ne0$.
+\end{proposition}
+
+\begin{proof}
+Lemma~\ref{lem:HH0-descent} first descends the quantum shadow detector through
+the coefficient trace.  Proposition~\ref{prop:beta-psi} and
+Lemma~\ref{lem:quotient-detector} descend it through $q_{01}$.  Proposition
+\ref{prop:sphere-kernel} and the same quotient lemma descend it through
+$q_{12}$.  At every stage the pullback agrees with the preceding row, so
+\cref{eq:D3-vT} gives \cref{eq:ell2-value}.  Nonvanishing follows from the
+last sentence of Lemma~\ref{lem:quotient-detector}.
+\end{proof}
+
+\begin{proposition}[Closed candidate class]\label{prop:closed-class}
+Under Assumptions~\ref{ass:G4} and \ref{ass:G5}, the class in
+\cref{prop:nonzero-W2} maps to a nonzero
+class
+\begin{equation}\label{eq:closed-class}
+z_{494}\in\SLM^2_{0,494}(X(41,189,73);\Q).
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Assumption~\ref{ass:G4}, through External Result~E4, identifies
+$W_2$ with the post-three-handle module after exactly the six displayed
+relations.  Assumption~\ref{ass:G5}, through External Result~E5, supplies a
+grading-preserving isomorphism after the four-handle attachment.  Isomorphisms preserve
+nonzero elements, and Proposition~\ref{prop:degree-494} supplies the quantum
+degree.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main-conditional}]
+Proposition~\ref{prop:closed-class} gives a nonzero element in quantum degree
+$494$.  By Assumption~\ref{ass:G5}, the same graded piece for $S^4$
+is zero.  If the candidate were diffeomorphic to $S^4$, the same assumption,
+together with External Result~E6, would give a grading-preserving linear
+isomorphism between these two pieces, which is impossible.  Thus the
+candidate is not diffeomorphic to $S^4$.  Corollary~\ref{cor:homotopy-sphere}
+supplies the homotopy-sphere conclusion.
+\end{proof}
+
+\begin{remark}[The $S^4$ control is a zero-to-zero control]\label{rem:s4-control}
+When the point-push word is replaced by the identity, the operator
+$\rho_h(W)-I$ vanishes and the endpoint detector sends the standard control
+to zero.  The published $S^4$ module is also zero in quantum degree $494$.
+Thus this control checks compatibility of two zeros; it is not a positive
+calibration that independently demonstrates the geometric binding of the
+candidate detector.
+\end{remark}
+
+\begin{remark}[Presentation and serialization dependence]\label{rem:serialization}
+The raw coefficient $[h^3]\ell(\rho_h(W)-I)u$ is a quantity of a based,
+labelled, oriented movie presentation.  Reordering the same crossing rows by
+the emitter's increasing-coordinate order produces a different series.  With
+the corrected collar endpoints its cubic coefficient is $0$ and its first
+nonzero coefficient is $663872h^4$.  That order reverses $168$ non-disjoint
+events and is not a legal serialization under Assumption
+\ref{ass:serialization}.  The former value $-58976$ used the same mixed
+endpoint coordinates as the superseded public value.  The calculation
+nevertheless shows why
+presentation independence cannot be inferred from the scalar alone: it must
+be proved through simultaneous transport of every part of the naturality
+square.
+\end{remark}
+
+\begin{remark}[Insertion-point dependence]\label{rem:insertion-point}
+The point-push operator and cap row are inserted at a specified collar and a
+specified point.  Moving the insertion point is harmless only if the move is
+accompanied by the corresponding trace/cyclicity and collar-isotopy square.
+That geometric statement is Assumption~\ref{ass:collar}.  The exact word
+calculation does not prove it.
+\end{remark}
+
+\section{A fully worked finite-dimensional example}\label{sec:toy-example}
+
+This section illustrates the entire algebraic mechanism on a small example.
+It is not a four-manifold calculation and supplies no evidence for any
+candidate-specific assumption.  Its purpose is to make the order of
+operations---word action, coefficient extraction, relation killing, quotient,
+and nonvanishing---checkable by hand.
+
+Let $R_0=\Q[\eps]/(\eps^4)$, $t=1+\eps$, and $E_0=R_0^3$ with basis
+$e_0,e_1,e_2$.  The two positive Burau generators are
+\begin{align}
+B_1&=
+\begin{pmatrix}
+-\eps&1+\eps&0\\
+1&0&0\\
+0&0&1
+\end{pmatrix},
+&
+B_2&=
+\begin{pmatrix}
+1&0&0\\
+0&-\eps&1+\eps\\
+0&1&0
+\end{pmatrix},
+\label{eq:toy-positive}\\
+B_1^{-1}&=
+\begin{pmatrix}
+0&1&0\\
+t^{-1}&1-t^{-1}&0\\
+0&0&1
+\end{pmatrix},
+&
+B_2^{-1}&=
+\begin{pmatrix}
+1&0&0\\
+0&0&1\\
+0&t^{-1}&1-t^{-1}
+\end{pmatrix},
+\label{eq:toy-negative}
+\end{align}
+where $t^{-1}=1-\eps+\eps^2-\eps^3$.
+
+Take the pure commutator word
+\begin{equation}\label{eq:toy-word}
+w_0=\sigma_1^2\sigma_2^2\sigma_1^{-2}\sigma_2^{-2}.
+\end{equation}
+Multiplying the eight matrices from left to right and reducing modulo
+$\eps^4$ gives
+\begin{equation}\label{eq:toy-product}
+\rho(w_0)=
+\begin{pmatrix}
+1-\eps^3&-\eps^2+\eps^3&\eps^2\\
+\eps^2&1&-\eps^2\\
+-\eps^2+2\eps^3&\eps^2-3\eps^3&1+\eps^3
+\end{pmatrix}.
+\end{equation}
+The equality can be checked by multiplying
+$B_1B_1B_2B_2B_1^{-1}B_1^{-1}B_2^{-1}B_2^{-1}$ using
+\cref{eq:toy-positive,eq:toy-negative}; no omitted matrix is involved.
+
+Let $u_0=e_0-e_1$ and let $\ell_0=e_0^*$.  Define the toy detector by the
+same pattern as \cref{def:detector}, but at order two:
+\begin{equation}\label{eq:toy-detector}
+d_2(v)=[\eps^2]\,\ell_0(\rho(w_0)-I)v.
+\end{equation}
+Reading the coefficient of $\eps^2$ from the first row of
+\cref{eq:toy-product} gives the complete detector matrix
+\begin{equation}\label{eq:toy-row}
+d_2=\begin{pmatrix}0&-1&1\end{pmatrix}.
+\end{equation}
+Therefore
+\begin{equation}\label{eq:toy-selected}
+d_2(u_0)=
+\begin{pmatrix}0&-1&1\end{pmatrix}
+\begin{pmatrix}1\\-1\\0\end{pmatrix}=1.
+\end{equation}
+
+Now model two relation maps by the columns
+\begin{equation}\label{eq:toy-relations}
+r_0=\begin{pmatrix}1\\0\\0\end{pmatrix},
+\qquad
+r_1=\begin{pmatrix}0\\1\\1\end{pmatrix},
+\qquad
+R=\begin{pmatrix}1&0\\0&1\\0&1\end{pmatrix}.
+\end{equation}
+The matrix product
+\begin{equation}\label{eq:toy-kernel-check}
+d_2R=\begin{pmatrix}0&0\end{pmatrix}
+\end{equation}
+is the complete kernel check.  Hence $d_2$ descends to
+$E_0/\im R$.  A concrete quotient coordinate is
+\begin{equation}\label{eq:toy-quotient}
+q:E_0\longrightarrow R_0,\qquad
+q(x_0,x_1,x_2)=-x_1+x_2,
+\end{equation}
+whose matrix is the same row as \cref{eq:toy-row}.  The relations vanish:
+$q(r_0)=q(r_1)=0$, while $q(u_0)=1$.  Thus the selected class is nonzero in
+the quotient.
+
+This toy example contains the exact logical skeleton of the candidate
+argument.  What it lacks is precisely the geometric content: there is no
+claim that the toy relation columns arise from handle maps or that its final
+quotient is a smooth invariant.
+
+\section{Formalization boundary}\label{sec:lean}
+
+The Lean development has two jobs.  First, it checks the finite arithmetic
+and the algebra of linear quotients.  Second, it fixes the exact type of the
+conditional implication so that a hidden strengthening of the conclusion or
+weakening of the premises is difficult.  It does not define smooth
+four-manifolds, skein lasagna modules, actual handle movies, or the geometric
+predicate that a stored surface is an attaching sphere.
+
+\subsection{What is kernel-checked}
+
+The following statements are proved from definitions in Lean.
+
+\begin{enumerate}
+\item The two determinant identities in \cref{comp:determinants}, the chosen
+  sphere determinant in \cref{comp:sphere-det}, the integer identity
+  $(-2)^3\cdot(-328)=2624$, and the grading sum $-44+227+315-4=494$.
+\item The coefficient-$\HH_0$ quotient, the fact that a cyclic shadow kills
+  its relation span, and the universal linear factorization through the
+  quotient.
+\item The Frobenius counit identities
+  $\epsilon^{\otimes b}(U_b)=0$ and
+  $\epsilon^{\otimes b}(D_b)=1$, including arbitrary positive split trees and
+  coordinate conjugation.
+\item The fact that six assumed sphere-map bindings place their relation
+  ranges in the kernel of the detector, and the induced nonzero-class
+  statement in the quotient.
+\item The implication from the stated external interfaces to
+  ``homotopy sphere and not diffeomorphic to $S^4$.''
+\end{enumerate}
+
+The $45{,}360$-letter matrix product is not executed by Lean.  It is executed
+by the independent exact Python program described in
+\cref{sec:exact-computation}.  Lean imports the final primitive integer
+$-328$ for the short substitution check.  This is why the Python computation
+and the Lean implication are complementary rather than redundant.
+
+\subsection{What is stored as a field}
+
+The core Lean theorem has the schematic form
+\begin{equation}\label{eq:lean-signature}
+\texttt{NotStandardInterfaces}\longrightarrow
+\neg\texttt{Diffeomorphic(candidate,S4)}.
+\end{equation}
+The interface contains the actual-$\HH_0$ binding, the actual detector row,
+the beta/psi maps, the three actual sphere maps, the MWW coequalizer and
+transport, the four-handle map, standard-sphere support, and diffeomorphism
+invariance.  Supplying a field of a structure is an assumption, not a proof
+of the field's geometric proposition.  In particular, compilation of
+\cref{eq:lean-signature} proves only that these fields imply the conclusion.
+
+\small
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.24\textwidth}
+>{\raggedright\arraybackslash}p{0.18\textwidth}
+>{\raggedright\arraybackslash}p{0.49\textwidth}@{}}
+\caption{External theorem, paper item, and Lean-field crosswalk.}
+\label{tab:crosswalk}\\
+\toprule
+External result & paper item & principal Lean field or definition\\
+\midrule
+\endfirsthead
+\toprule
+External result & paper item & principal Lean field or definition\\
+\midrule
+\endhead
+MWW Theorem 4.7 & E1; used in A2 &
+\path{OneHandleInterface.hh0Binding},
+\path{hh0Lift}, \path{hh0LiftCommutes}, \path{hh0LiftUnique}\\
+BHPW Theorem 4.6 & E9; used in A2 &
+candidate-side input to \path{OneHandleInterface.rawCapBinding} and the
+naturality fields of \path{SphereChart}\\
+BPW Proposition 3.20; Theorem 3.21 & E8; used in A2 &
+\path{OneHandleInterface.rawCap},
+\path{rawCapKillsHH0}; algebraic quotient in
+\path{CoefficientTrace.lean}\\
+MWW Definition 3.1; Theorem 3.2 & E2; used in A3 &
+\path{BetaPsiInterface.betaRelationBinding},
+\path{psi0Binding}, \path{psi1Binding}, \path{q01}\\
+Horvat--Jab\l onowski Theorem 5.3 & E7; used in A4 &
+\path{SphereMWWFamily.hjBinding} and
+\path{SphereTriple.hjBinding}\\
+MWW Theorem 3.7; Theorem 3.10 & E3--E4; used in A4 &
+\path{SphereMWWFamily.mwwCoequalizerBinding},
+\path{q12}, \path{mwwTransport}\\
+MWW Proposition 3.4 and Corollary 3.5 & E5; used in A5 &
+\path{FourHandleInterface.fourIso},
+\path{fourHandleBinding}\\
+MWW Definition 5.4 and Example 5.6 & E6; used in A5 &
+\path{S4ControlInterface.degreeSupport}; alternatively
+\path{S4ReductionData.evalB4} and \path{attach4}\\
+Iwaki Proposition 2.1 & E10; used in A1 &
+\path{CappellShanesonInterface.matrixConditionsToHomotopySphere}\\
+MWW smooth invariance & E6; used in A5 &
+\path{DiffeomorphismInvarianceInterface.preservesGradedObject}\\
+van Kampen theorem & E11 (alternative route) &
+\path{CSTopologyData.vanKampen}\\
+Wang and Mayer--Vietoris sequences & E12 (alternative route) &
+\path{CSTopologyData.wangMayerVietorisPoincare}\\
+Poincar\'e duality & E13 (alternative route) &
+\path{CSTopologyData.wangMayerVietorisPoincare}\\
+Hurewicz and Whitehead theorems & E14 (alternative route) &
+\path{CSTopologyData.hurewiczWhitehead}\\
+\bottomrule
+\end{longtable}
+\normalsize
+
+\subsection{Compilation and axioms}
+
+The recorded clean replay used Lean $4.32.1$ and mathlib commit
+\Hash{520045ab14e26149ee970e2e617ca04b09bde5d6}.  It compiled every audited
+project module in a fresh output root and then ran
+\path{lake lean T73Audit.lean}.  The file requests
+\texttt{\#print axioms} for $38$ declarations.  The recorded partition was
+two reports using only \texttt{propext}, five using
+\texttt{propext, Quot.sound}, and thirty-one using
+\texttt{propext, Classical.choice, Quot.sound}.  No report contained
+\texttt{sorryAx}.
+
+These are foundational dependencies from mathlib and quotient constructions;
+they do not certify the geometric interfaces.  A reader can reproduce both
+the compilation and the axiom scan using the commands in
+\cref{sec:reproduction}.
+
+\section{Reproduction}\label{sec:reproduction}
+
+The public repository is
+\begin{center}
+\url{https://github.com/toffee-desuwa/smooth4pc-t73-lean}.
+\end{center}
+This erratum revision is identified by the repository tag
+\texttt{v0.2-erratum1}.
+The commands below assume a fresh clone and Python~3.10 or later.
+
+\subsection{Reconstruct the detector}
+
+Run
+\begin{lstlisting}
+python -I -B scripts/recompute_t73_delta3.py --check
+\end{lstlisting}
+The expected bearing lines are
+\begin{lstlisting}
+INPUT_SHA256=0F0F4A568D966367313C29C25CEDDE4FD9ABAD32B9375519E9CDF9168AE0A764
+B44_LENGTH=11340
+B44_SHA256=7C2D2F792C2672221A76CAF08A71F560AF0CB7654B4D537C00FAD00B16EFA187
+B88_LENGTH=45360
+B88_SHA256=C13D0A3BA9B05F41A6D2C5B4AB12DDECDABEFC1883835891AD3BD2B8955B5FFB
+POSITION_TABLE_SHA256=119C7E9E74AE6C820DA72A84CDFD5D445D81E6C3AACCC209C25D37C323961508
+ELL_RHOW_MINUS_I_U_EPS=[0,0,0,-328,14596,-410246,9595271]
+ELL_RHOW_MINUS_I_SQUARED_U_EPS=[0,0,0,0,0,0,-102729600]
+DELTA3_ETA_T1=2624
+DELTA3_XI=0
+VERIFY=PASS
+\end{lstlisting}
+The script itself has SHA-256
+\Hash{27B6D1E11CF60FFD13E041B9836A36178EBDA62322FFB046523D55EB67F45CFD}.
+The canonical JSON receipt produced from the current input has
+SHA-256
+\Hash{7C681B99492A5C34B3B8A7EC8B7269E3FD67CD989728C2D4A1C619A63387A722}.
+
+\subsection{Verify the public geometric data}
+
+Run
+\begin{lstlisting}
+python -I -B scripts/verify_public_geometry_evidence.py
+\end{lstlisting}
+This command checks the $29$ bundled files, their SHA-256 identities, the
+chosen-sphere determinant, and the global-descending calculation from the
+full $2{,}126{,}291$-crossing PD input.  Passing this command certifies only
+the finite stored model.  It does not prove Assumptions
+\ref{ass:actual-presentation}, \ref{ass:chosen-sphere-binding}, or
+\ref{ass:sphere-map-model}.
+
+\subsection{Compile and inspect the Lean development}
+
+After installing \texttt{elan}, run
+\begin{lstlisting}
+lake update
+git diff --exit-code -- lake-manifest.json
+lake exe cache get
+python -B tests/test_t73_minimal_formalization.py -v
+lake lean T73Audit.lean
+\end{lstlisting}
+The Python test requires two passing tests, compiles the audited modules into
+a fresh temporary output root, requires exactly $38$ axiom reports, rejects
+any axiom outside
+\texttt{propext}, \texttt{Classical.choice}, and
+\texttt{Quot.sound}, and rejects \texttt{sorryAx}.
+
+\subsection{Build this paper}
+
+On Windows, with Tectonic~0.17.0 installed at the path recorded by
+\path{paper/build.ps1}, run
+\begin{lstlisting}[language=bash]
+powershell -ExecutionPolicy Bypass -File paper/build.ps1
+\end{lstlisting}
+On Linux or macOS with \texttt{tectonic} on \texttt{PATH}, the cross-platform
+one-line command is
+\begin{lstlisting}[language=bash]
+cd paper && tectonic t73_candidate.tex --outdir build --keep-logs
+\end{lstlisting}
+The Windows binary used for this draft is Tectonic~0.17.0 with SHA-256
+\Hash{99FFCFDBF1EBF8BDDA9E791942E3D06AEDB12463FDDC33F07DE6F5211C8BF08D}.
+
+\section{Review boundary}\label{sec:review-boundary}
+
+The finite computation is an ordinary, reproducible matrix calculation.  Its
+nonzero value is not the principal uncertainty.  The principal uncertainty
+is whether the stated coefficient, collar, cabled state, and sphere maps are
+the actual geometric maps to which the published quotient theorems apply.
+The most direct review strategy is therefore not to rerun the last integer
+multiplication first.  It is to attack Assumptions~A1--A5 as geometric
+statements, in particular the whole-source sphere-map binding in A4.
+
+\begin{remark}[No inference from filenames or certificates]\label{rem:no-certificate-proof}
+Names such as ``global descending certificate'', ``chosen sphere receipt'',
+or ``Hattori decision'' are locators for data.  They do not occur as premises
+of any proof in this article.  Whenever a finite file is used, the relevant
+mathematical content is stated explicitly and the replay command is given.
+Whenever a geometric conclusion is not derived from those finite data, it is
+an Assumption.
+\end{remark}
+
+\begin{remark}[The legality audit is bounded]\label{rem:legality-bounded}
+The pre-search legality criteria were committed at
+\texttt{cf4a990} before the detailed adjudication at
+\texttt{9d75dcd}.  Of the $22$ tested alternative standard-member collars,
+none was proved legal: $19$ were rejected and $3$ remained unestablished.
+This does not prove that every legal standard-member collar has zero detector.
+It shows only that the registered t73 chronology survives that bounded test.
+\end{remark}
+
+\section{How the five assumptions can be discharged or refuted}\label{sec:assumption-tests}
+
+The five assumptions are not generic requests for ``more justification.''
+Each has a definite proof object and a definite failure mode.  This section
+states both so that independent review can be adversarial rather than
+impressionistic.
+
+\subsection{A1: presentation and collar}
+
+To discharge A1, one must give a framed Kirby movie from the standard
+Cappell--Shaneson surgery construction for \cref{eq:A-matrix} to the frozen
+cut presentation.  The movie must transport every attaching-component label,
+normal framing, basepoint, collar coordinate, and the detector insertion disk.
+At each interchange of events, the two supports must be disjoint or an
+explicit movie move must be cited.  The final based labelled point-push word
+must be the registered word generated in \cref{def:row-expansion,def:cabling}.
+
+A1 is refuted by any forced change of framing, basepoint, insertion point, or
+event order that is not accompanied by the simultaneous coordinate transport
+of \cref{eq:simultaneous-coordinate}.  It is also refuted if two legal movies
+for the same fixed geometric input give different scalar series.  The existing
+legality audit rejects the known emitter ordering, but it is not a general
+uniqueness theorem for all legal collars.
+
+\subsection{A2: Hattori input and endpoint model}
+
+To discharge A2, one must construct the actual coefficient equivalence
+\cref{eq:H-balanced} from the paired annuli and prove both action-naturality
+squares.  Applying the quantum trace and the $227$ counits must then give the
+specific vector $u=e_2-e_{87}$, with the covector
+$\ell=e_{87}^*-e_2^*$ arising from the same collar position table.  The proof
+must also bind the actual word to the third pure-braid filtration term on the
+whole endpoint module and derive the four grading contributions from that
+same filling.
+
+A2 is refuted if the actual diagonal class maps to a different endpoint
+vector, if the cap row changes without simultaneous conjugation, if the word
+has a lower-order term on any endpoint vector, or if one grading contribution
+belongs to a different normalization.  Agreement of the single scalar
+$2624$ is not enough to rule out these failures.
+
+\subsection{A3: the all-state two-handle cocone}
+
+To discharge A3, one must define the statewise rows for every finite cable
+state and prove \cref{eq:beta-cocone,eq:psi-cocone} as equalities of linear
+maps on their full source spaces.  The common-target and sign choices must be
+compatible around every square of the cable-state graph.  A proof on the
+selected vector, a generic-rank computation, or a finite list of cable states
+does not establish A3.
+
+A3 is refuted by a single admissible braid or stabilization source vector on
+which one of those map equalities fails.  Such a counterexample would show
+that the detector does not descend through the MWW two-handle quotient even
+though its value on the base representative is nonzero.
+
+\subsection{A4: actual spheres and whole-source sphere maps}
+
+To discharge A4, the finite surfaces of C2 must first be embedded in one
+actual $\partial W_2$ with their framings, disjointness, and homology classes
+preserved.  The hypotheses of External Result E7 must then be verified for
+that same handle decomposition.  Finally, the two MWW cobordism maps for each
+sphere must be identified, on the whole source, with the conjugated leading
+maps \cref{eq:sphere-undotted-map,eq:sphere-dotted-map}; their positive-order
+transport terms must be shown not to enter the divided cubic.
+
+A4 is refuted if any chosen surface fails to bind to the actual boundary, if
+the replacement theorem's boundary decomposition or basis hypothesis fails,
+or if one actual sphere-map vector has a nonzero detector value contrary to
+\cref{eq:sphere-kernel}.  Because this is the last relation layer before the
+closed invariant, A4 is the most consequential unresolved point.
+
+\subsection{A5: rational coefficients and grading}
+
+To discharge A5, one must trace the coefficient functor from the integral
+$B^4$ evaluation and $S^4$ computation to the rational module used here,
+showing that tensoring introduces neither a Tor correction nor a grading
+change.  The four-handle isomorphism must be checked to have bidegree $(0,0)$,
+and the diffeomorphism-induced equivalence must preserve the same quantum
+grading.
+
+A5 is refuted if the rational degree-$494$ piece of $S^4$ is not zero in the
+chosen convention, or if either comparison map shifts degree.  Unlike A3 and
+A4, this question is largely a matter of matching published coefficient and
+grading conventions, so it should be settled before undertaking further large
+finite computations.
+
+\appendix
+
+\section{The complete degree-three endpoint vector}\label{app:vector}
+
+With the conventions of \cref{sec:endpoint}, the coefficient vector in
+\cref{eq:eps3-vector-short} is
+\begin{align}
+(a_0,\ldots,a_{87})={}&(
+-7052,-7052,164,164,332,332,324,324,316,316,308,308,\notag\\
+&300,300,292,292,284,284,276,276,268,268,260,260,\notag\\
+&252,252,244,244,236,236,228,228,220,220,212,212,\notag\\
+&204,204,196,196,188,188,180,180,172,172,164,164,\notag\\
+&156,156,148,148,140,140,132,132,124,124,116,116,\notag\\
+&108,108,100,100,92,92,84,84,76,76,68,68,\notag\\
+&60,60,52,52,44,44,36,36,28,28,20,20,\notag\\
+&12,12,-164,-164).
+\label{eq:full-88-vector}
+\end{align}
+The detector covector is $\ell=e_{87}^*-e_2^*$, so the contraction is visibly
+\begin{equation}\label{eq:vector-contraction}
+\ell(a_0,\ldots,a_{87})^T=a_{87}-a_2=-164-164=-328.
+\end{equation}
+The sum of the $88$ entries is zero, as expected for the unreduced Burau
+difference on the invariant total-coordinate functional; this is a check, not
+an input to \cref{eq:vector-contraction}.
+
+\section{The four grading contributions}\label{app:grading}
+
+For ease of audit, the four contributions of \cref{sec:grading} are collected
+without abbreviation:
+\begin{longtable}{@{}p{0.17\textwidth}p{0.45\textwidth}p{0.27\textwidth}@{}}
+\toprule
+term & source & calculation\\
+\midrule
+$-44$ & remove the $p(N-1)$ Hom normalization for $p=44$, $N=2$ & $-44(2-1)=-44$\\
+$+227$ & $227$ distinct Frobenius labels, each of degree $+1$ & $227\cdot1=227$\\
+$+315$ & one-handle gluing shift from $44$ $y$-pairs and $271=44+227$ $z$-pairs & $44+271=315$\\
+$-4$ & cabled shift for $N=2$, $\alpha=0$, $|r|=2$ & $(1-2)(2\cdot2+0)=-4$\\
+\midrule
+total & & $-44+227+315-4=494$\\
+\bottomrule
+\end{longtable}
+
+\section{Convention-legality criteria}\label{app:legality}
+
+A serialization is legal only if it describes the same framed handle
+presentation, the same oriented based cut tangle, the same labelled boundary
+pairing, the same normal field, and the same insertion point.  Its event order
+must be a linear extension of the geometric partial order.  Adjacent events
+may be exchanged only when their supports are disjoint and a strict
+interchange theorem applies.  Word replacement requires equality in the
+based labelled braid or tangle category; equality of closures, permutations,
+free-group words, or homology classes is insufficient.
+
+A coordinate change $P$ must act simultaneously:
+\begin{equation}\label{eq:simultaneous-coordinate}
+W'=PWP^{-1},\qquad u'=Pu,\qquad
+\ell'=\ell P^{-1},
+\end{equation}
+with the shadow, collar, basepoint, and insertion point transported in the
+same naturality square.  Under \cref{eq:simultaneous-coordinate},
+\begin{equation}\label{eq:coordinate-invariance}
+\ell'(W'-I)u'=\ell P^{-1}P(W-I)P^{-1}Pu=\ell(W-I)u.
+\end{equation}
+Thus coordinate invariance is proved when the simultaneous transport exists;
+it is not imposed by selecting the preferred numerical answer.
+
+A collar is legal only if it is an actual framed tubular collar of the fixed
+component and is isotopic to the registered collar relative to the boundary,
+basepoints, labels, old input balls, normal framing, and insertion point.  A
+nontrivial relative mapping-class element or an added framing twist changes
+the input.  These criteria were written before the detailed alternative
+collar outputs were opened.  Their use in the candidate geometry remains
+Assumption~\ref{ass:G1}.
+
+\section{Terminology}\label{app:glossary}
+
+\begin{description}
+\item[Actual map]
+A map induced by a specified geometric tangle or surface cobordism, as
+opposed to an abstract linear map having the desired source and target.
+\item[Candidate-specific binding]
+An identification between immutable finite data and the actual geometric
+object required by a published theorem.
+\item[Complete quotient]
+The quotient by all relation generators in the applicable MWW handle formula,
+not by a sampled finite subset.
+\item[Divided cubic]
+The reduction modulo $h$ of a map known on its whole domain to be divisible by
+$h^3$, as in \cref{eq:D3}.
+\item[Endpoint shadow]
+The image of a coefficient trace class under the quantum
+vertical-to-horizontal trace and the fixed endpoint functor.
+\item[Finite certificate]
+Immutable finite data plus a deterministic exact checker.  The term has no
+geometric force beyond the predicates actually recomputed.
+\item[Registered movie order]
+The oriented point-push chronology fixed in the public primitive input.  In
+standard mathematical language it is the chosen linear extension of the
+geometric event partial order.
+\item[Material factor]
+In the earlier project notes this meant a newly created Frobenius tensor
+factor.  The paper uses the latter standard phrase.
+\item[Reynolds average]
+The finite group average over physical-copy permutations.  It is used only in
+the assumed all-state beta/psi construction, not as an independent geometric
+theorem.
+\end{description}
+
+\bibliographystyle{amsplain}
+\bibliography{references}
+
+\end{document}
