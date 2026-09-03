@@ -25,9 +25,32 @@ mkdir -p ../../output/pdf
 cp main.pdf ../../output/pdf/spc4-t73-candidate.pdf
 ```
 
-The repository build places the reviewed PDF at
-`output/pdf/spc4-t73-candidate.pdf`.  Replace the provisional author block and
-add submission metadata before an arXiv upload.
+### Chinese edition (`main-zh.tex`)
+
+The Chinese manuscript mirrors the English `main.tex` section-for-section.
+Translated section files use the `-zh` suffix; body chunks live in
+`zh-chunks/chunk-*-zh.tex`.
+
+From the repository root in WSL (requires `lualatex` and `texlive-lang-chinese`):
+
+```text
+bash scripts/build_zh_paper.sh
+```
+
+Or manually:
+
+```text
+python3 -B scripts/assemble_main_zh.py
+cd paper/spc4-t73-candidate
+lualatex -interaction=nonstopmode main-zh.tex
+bibtex main-zh
+lualatex -interaction=nonstopmode main-zh.tex
+lualatex -interaction=nonstopmode main-zh.tex
+cp main-zh.pdf ../../output/pdf/spc4-t73-candidate-zh.pdf
+```
+
+The reviewed Chinese PDF is placed at
+`output/pdf/spc4-t73-candidate-zh.pdf`.
 
 The extended P0 audit also requires GAP.  The tested host uses GAP 4.12.1,
 installed on Ubuntu with `sudo apt-get install gap-core`.  GAP is used to test
