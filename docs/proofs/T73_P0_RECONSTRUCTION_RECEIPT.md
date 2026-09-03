@@ -3,7 +3,8 @@
 This receipt records the strict P0 reconstruction protocol.  Computational
 P0 is discharged for the explicit Johnson replacement.  C is discharged for
 the replacement collar.  S is discharged for the Johnson replacement
-reversed 1-handle picture.  P3 remains Open.
+reversed 1-handle picture.  The MWW four-handle layer is discharged.  The
+identification `X_J ≅ Sigma_A^0` remains Open.
 
 ```text
 python3 scripts/certify_t73_p0_johnson.py --check --skip-geometric-braid
@@ -136,5 +137,6 @@ control-layer strands to Johnson y-wickets in the certified handlebody pair.
 
 ## Paper build
 
-The paper states P0, C and S as discharged for the Johnson replacement.
-P3 remains Open.  Theorem `thm:joined` remains Conditional.
+The paper states P0, C, S and the MWW four-handle layer as discharged for
+the Johnson replacement.  The identification `X_J ≅ Sigma_A^0` remains Open.
+Theorem `thm:joined` remains Conditional.

@@ -32,10 +32,14 @@ def check() -> None:
     require(paper_text, r"C1 & \Discharged", paper)
     require(paper_text, r"C2 & \Discharged", paper)
     require(paper_text, r"P2/E10/S & \Discharged", paper)
+    require(paper_text, r"P3/E11 & \Discharged", paper)
+    require(paper_text, r"P3/E12 & \Discharged", paper)
+    require(paper_text, r"P3/E13 & \Partial", paper)
     require(paper_text, r"computedCubic_eq_2624", paper)
     require(paper_text, "2624", paper)
 
     reject(paper_text, r"P2/E10/S & \Open", paper)
+    reject(paper_text, r"P3/E11 & \Open", paper)
     reject(paper_text, "gives a counterexample", paper)
     reject(paper_text, r"\begin{theorem}[Trace-73 theorem]\label{thm:joined}", paper)
 

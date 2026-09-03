@@ -1,7 +1,8 @@
 # Geometric premise status, 3 September 2026
 
-P0, C and S are discharged for the explicit Johnson replacement. P3 remains
-Open. No counterexample is claimed.
+P0, C, S and the MWW four-handle layer are discharged for the explicit
+Johnson replacement. The identification \(X_J\cong\Sigma_A^0\) remains Open.
+No counterexample is claimed.
 
 ## Closed (finite or already-proved algebra)
 
@@ -48,17 +49,27 @@ This is not an isotopy of a cut link in `∂W_2`, and it is not a chain-level Bl
 
 This is not an identification with historical `∂W_2`, and it is not a triangulated 4-dimensional W2 lasagna movie.
 
-## Remaining holes (P3)
+## P3 (Johnson replacement four-handle picture)
+
+**Status: PASS** for the MWW four-handle layer of the Johnson replacement picture; **PARTIAL** for the homotopy-sphere identification.
+
+**Object that exists.** `scripts/certify_t73_p3_four_handle.py` takes the three reversed 1-handles of S, records a 1-3 cancellation along each belt sphere (dual-loop intersection 1, chart return missing every belt cube), and restores an S^3 containing the P0 cube. A PL 4-ball `I^4` of Euler characteristic 1 is attached along that S^3. MWW Proposition 3.4 supplies the empty-link isomorphism onto the closed picture `X_J`. MWW Corollary 3.5 kills the standard `S^4` summand in quantum degree 494. The Lean matrix is replayed: `det A = det(A-I) = 1`.
+
+This is not a triangulation of a 4-dimensional `W3`, and `X_J` is not identified with `Σ_A^0`.
+
+## Remaining holes
 
 | Premise | Status | Obstruction |
 |---|---|---|
 | Euclidean/mapping-torus identification | Open remark | Uniqueness of regular neighborhoods is not used; the Euclidean Voronoi surface is not a subcomplex |
 | P0d linking | Open | No reduced PD or normal-field movie after the collar |
-| S geometry | **PASS** | Johnson replacement reversed 1-handle picture: belt spheres miss the P0 cube, C1 leftover circles and C2 supports; dual loops pair to the identity; HJ 5.3 used only for kernel invariance, not to fix B |
-| S endpoint | **PASS** | b=0 foams by MWW Example 3.8; not a triangulated 4-dimensional W2 movie |
-| Counterexample | Open | Lean implication only; no `ExternalGeometry` instance; P3 Open |
+| S geometry | **PASS** | Johnson replacement reversed 1-handle picture |
+| S endpoint | **PASS** | b=0 foams by MWW Example 3.8 |
+| P3/E11--E12 | **PASS** | Four-handle picture `X_J` and MWW 3.5 about `S^4` |
+| P3/E13 identification | Open | `X_J` is not identified with `Σ_A^0` |
+| Counterexample | Open | Lean implication only; no `ExternalGeometry` instance |
 
-`audit/t73_premise_audit.json` records `overall=OPEN`, P0, C and S `proved: true`, and `proved: false` on P3. `counterexample_claim_proved` remains false.
+`audit/t73_premise_audit.json` records `overall=OPEN`, P0, C, S, P3/E11 and P3/E12 `proved: true`, P3/E13 `proved: false`. `counterexample_claim_proved` remains false.
 
 Current certificate digests:
 
@@ -68,5 +79,6 @@ Current certificate digests:
 - C2 `87BA1649CB27CCDB52E2D7092832C63548C0F3B27ACBFC570F3EF6949EDC1D49`
 - S `72A1AFA6BA914A4DA402CFDC9441C8255D903FFA4B3674043991C42B219A2D74`
 - S spheres `F3DC5242984F6D56C2D67F16AC8D8996DE40CC74B2BC1BB677963E8298398D2C`
+- P3 `B9ED5F7122D69D623F179089EE76B95468EA481863F04C270227E251EE07C7B2`
 - P0a pair `C1877B7696E7A44B5DEBE06BDCAC6CA712A83E49A07973107B7F1C4A728D4435`
 - B44 `7C2D2F792C2672221A76CAF08A71F560AF0CB7654B4D537C00FAD00B16EFA187`

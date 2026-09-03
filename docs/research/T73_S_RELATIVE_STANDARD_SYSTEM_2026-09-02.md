@@ -12,7 +12,8 @@ P0 + monoidal C + reversed belt spheres missing B  =>  S
 ```
 
 is **DISCHARGED** at Johnson-replacement strength.  HJ Theorem 5.3 is used
-only for kernel invariance, not to fix `B`.  P3 remains Open.
+only for kernel invariance, not to fix `B`.  The MWW four-handle layer is
+discharged for `X_J`.  The identification `X_J ≅ Sigma_A^0` remains Open.
 
 ## Sources checked
 
@@ -96,4 +97,5 @@ models, but are not load-bearing for this relative proof.
 
 Paper Lemmas Ssystem and Sendpoint discharge S for the Johnson replacement
 reversed picture.  Closed-manifold HJ Theorem 5.3 is used only for kernel
-invariance, not to conclude that `B` is fixed.  P3 remains Open.
+invariance, not to conclude that `B` is fixed.  The MWW four-handle layer
+is discharged for `X_J`.  The identification `X_J ≅ Sigma_A^0` remains Open.

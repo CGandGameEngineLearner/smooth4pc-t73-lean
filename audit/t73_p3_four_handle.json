@@ -1,0 +1,431 @@
+{
+  "E11_status": "PASS_FOR_JOHNSON_REPLACEMENT_FOUR_HANDLE_PICTURE",
+  "E12_status": "PASS",
+  "E13_status": "PARTIAL",
+  "P3_status": "PASS_FOR_JOHNSON_REPLACEMENT_FOUR_HANDLE_PICTURE",
+  "c_witness_sha256": "0D7D1CAC871D85C4F909C2B31CC7F01809C2558D6FA0655DE9034C4B1C28E7A3",
+  "cancellations": [
+    {
+      "axis": "x",
+      "belt_box": {
+        "xmax": 66,
+        "xmin": 64,
+        "ymax": 4443,
+        "ymin": 4441,
+        "zmax": 45403,
+        "zmin": 45401
+      },
+      "belt_sphere": "A1",
+      "cancels": true,
+      "dual_loop_intersection": 1,
+      "fixes_detector_ball": true,
+      "movie": {
+        "frames": [
+          {
+            "belt": "A1",
+            "one_handle": "h1",
+            "time": "0"
+          },
+          {
+            "cancelled": true,
+            "chart": "S^3",
+            "time": "1"
+          }
+        ],
+        "rule": "3-handle along the belt sphere cancels the reversed 1-handle; identity on the P0 cube, which the belt misses",
+        "status": "PASS"
+      },
+      "one_handle": "h1"
+    },
+    {
+      "axis": "y",
+      "belt_box": {
+        "xmax": 82,
+        "xmin": 80,
+        "ymax": 4443,
+        "ymin": 4441,
+        "zmax": 45403,
+        "zmin": 45401
+      },
+      "belt_sphere": "A2",
+      "cancels": true,
+      "dual_loop_intersection": 1,
+      "fixes_detector_ball": true,
+      "movie": {
+        "frames": [
+          {
+            "belt": "A2",
+            "one_handle": "h2",
+            "time": "0"
+          },
+          {
+            "cancelled": true,
+            "chart": "S^3",
+            "time": "1"
+          }
+        ],
+        "rule": "3-handle along the belt sphere cancels the reversed 1-handle; identity on the P0 cube, which the belt misses",
+        "status": "PASS"
+      },
+      "one_handle": "h2"
+    },
+    {
+      "axis": "z",
+      "belt_box": {
+        "xmax": 98,
+        "xmin": 96,
+        "ymax": 4443,
+        "ymin": 4441,
+        "zmax": 45403,
+        "zmin": 45401
+      },
+      "belt_sphere": "A3",
+      "cancels": true,
+      "dual_loop_intersection": 1,
+      "fixes_detector_ball": true,
+      "movie": {
+        "frames": [
+          {
+            "belt": "A3",
+            "one_handle": "h3",
+            "time": "0"
+          },
+          {
+            "cancelled": true,
+            "chart": "S^3",
+            "time": "1"
+          }
+        ],
+        "rule": "3-handle along the belt sphere cancels the reversed 1-handle; identity on the P0 cube, which the belt misses",
+        "status": "PASS"
+      },
+      "one_handle": "h3"
+    }
+  ],
+  "certificate_sha256": "B9ED5F7122D69D623F179089EE76B95468EA481863F04C270227E251EE07C7B2",
+  "checks": {
+    "boundary_euler_0": true,
+    "counterexample_not_claimed": true,
+    "degree_494": true,
+    "det_A_eq_1": true,
+    "det_A_minus_I_eq_1": true,
+    "detector_survives_surgery": true,
+    "empty_link": true,
+    "four_ball_euler_1": true,
+    "identified_with_Sigma_A_0": false,
+    "mww_34_cited": true,
+    "mww_35_cited": true,
+    "remaining_boundary_S3": true,
+    "s4_reduction_data_inhabited": false,
+    "three_cancellations": true,
+    "triangulated_W3": false
+  },
+  "closed_manifold": {
+    "construction": "Johnson replacement reversed picture, 1-3 cancelled, closed by a 4-ball along the remaining S^3",
+    "euler_characteristic": null,
+    "homotopy_sphere_euler_2_certified": false,
+    "identified_with_Sigma_A_0": false,
+    "identified_with_partial_W2": false,
+    "name": "X_J"
+  },
+  "diffeomorphism_invariance": {
+    "inhabited": false,
+    "lean_field": "diffeomorphismEquiv",
+    "rule": "lasagna modules are defined from fillings; a diffeomorphism induces a grading-preserving equivalence"
+  },
+  "e12_s4": {
+    "about_standard_S4_not_candidate": true,
+    "lean_packaging": "Smooth4PC.T73.s4DegreeZero_of_reduction",
+    "quantum_degree": 494,
+    "s4_reduction_data_inhabited": false,
+    "source": "arXiv:2206.04616 Corollary 3.5",
+    "statement": "S^N_0(S^4) isomorphic to Z, concentrated in bidegree (0,0)",
+    "summand_zero": true
+  },
+  "e13_determinants": {
+    "applies_to_standard_CS_construction": true,
+    "det_A": 1,
+    "det_A_minus_I": 1,
+    "identifies_X_J_with_Sigma_A_0": false,
+    "iwaki_source": "Iwaki 2024 Proposition 2.1, det(A-I)=+-1 iff Sigma_A^0 is a homotopy sphere",
+    "lean_theorems": [
+      "detA_eq_one",
+      "detAMinusI_eq_one"
+    ],
+    "matrix_A": [
+      [
+        0,
+        269,
+        1240
+      ],
+      [
+        0,
+        41,
+        189
+      ],
+      [
+        1,
+        0,
+        32
+      ]
+    ]
+  },
+  "four_handle": {
+    "attaching": "the remaining S^3",
+    "bidegree": [
+      0,
+      0
+    ],
+    "core": {
+      "boundary": "S^3",
+      "boundary_3_faces": [
+        {
+          "axis": 0,
+          "value": 0,
+          "vertex_indices": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ]
+        },
+        {
+          "axis": 0,
+          "value": 1,
+          "vertex_indices": [
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ]
+        },
+        {
+          "axis": 1,
+          "value": 0,
+          "vertex_indices": [
+            0,
+            1,
+            2,
+            3,
+            8,
+            9,
+            10,
+            11
+          ]
+        },
+        {
+          "axis": 1,
+          "value": 1,
+          "vertex_indices": [
+            4,
+            5,
+            6,
+            7,
+            12,
+            13,
+            14,
+            15
+          ]
+        },
+        {
+          "axis": 2,
+          "value": 0,
+          "vertex_indices": [
+            0,
+            1,
+            4,
+            5,
+            8,
+            9,
+            12,
+            13
+          ]
+        },
+        {
+          "axis": 2,
+          "value": 1,
+          "vertex_indices": [
+            2,
+            3,
+            6,
+            7,
+            10,
+            11,
+            14,
+            15
+          ]
+        },
+        {
+          "axis": 3,
+          "value": 0,
+          "vertex_indices": [
+            0,
+            2,
+            4,
+            6,
+            8,
+            10,
+            12,
+            14
+          ]
+        },
+        {
+          "axis": 3,
+          "value": 1,
+          "vertex_indices": [
+            1,
+            3,
+            5,
+            7,
+            9,
+            11,
+            13,
+            15
+          ]
+        }
+      ],
+      "boundary_euler_characteristic": 0,
+      "empty_link": true,
+      "euler_characteristic": 1,
+      "model": "I^4",
+      "vertices": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          0,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          0
+        ],
+        [
+          1,
+          1,
+          1,
+          1
+        ]
+      ]
+    },
+    "empty_link": true,
+    "i_star_isomorphism": true,
+    "i_star_justification": "MWW Proposition 3.4: a 4-handle attachment induces an isomorphism on empty-link skein lasagna modules",
+    "johnson_replacement_picture": true,
+    "mww_source": "arXiv:2206.04616 Proposition 3.4",
+    "triangulated_W3": false
+  },
+  "mww_3_10": {
+    "applied_to_johnson_replacement_picture": true,
+    "identifies_iterated_quotient_with_Sigma_A_0": false,
+    "source": "arXiv:2206.04616 Theorem 3.10"
+  },
+  "p0_certificate_sha256": "545F5CE8F53F0A9E6D90C516D9C35AB7CA47AA1AD8C2D9820E253E2273769A7C",
+  "remaining_boundary": {
+    "contains_p0_ball": true,
+    "empty_link": true,
+    "homeomorphism_type": "S^3",
+    "p0_ball_bounds": {
+      "xmax": 44,
+      "xmin": -1,
+      "ymax": 4401,
+      "ymin": -1,
+      "zmax": 45361,
+      "zmin": -1
+    },
+    "rule": "three 1-3 cancellations restore the original S^3 chart containing the P0 cube; surgery misses that cube"
+  },
+  "s_relative_sha256": "72A1AFA6BA914A4DA402CFDC9441C8255D903FFA4B3674043991C42B219A2D74",
+  "s_spheres_sha256": "F3DC5242984F6D56C2D67F16AC8D8996DE40CC74B2BC1BB677963E8298398D2C",
+  "schema": "t73_p3_four_handle/v1",
+  "scope": "Johnson replacement four-handle picture: 1-3 cancellations of the reversed 1-handles, a PL 4-ball along the remaining S^3, MWW Proposition 3.4 and Corollary 3.5, and det A = det(A-I) = 1.  Not a triangulated W3, not an identification with Sigma_A^0, and not a counterexample.",
+  "uniqueness_of_regular_neighborhoods_used": false,
+  "verdict": "PASS"
+}

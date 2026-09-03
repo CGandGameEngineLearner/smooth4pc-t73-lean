@@ -1,7 +1,7 @@
 {
   "counterexample_claim_falsified": false,
   "counterexample_claim_proved": false,
-  "interpretation": "P0, C and S are discharged for the explicit Johnson replacement. P3 remains Open. The counterexample claim is not proved.",
+  "interpretation": "P0, C, S and the MWW four-handle layer are discharged for the explicit Johnson replacement. X_J is not identified with Sigma_A^0. The counterexample claim is not proved.",
   "items": {
     "C": {
       "adjudication": "Johnson replacement: C1 product isotopy of P0 reconstruction strands and C2 action cubes plus RepresentableCoefficient.lean.",
@@ -52,27 +52,35 @@
       "state": "PASS"
     },
     "P3_E11": {
-      "blocker": "MWW Proposition 3.4 applies only after the four-handle identification",
+      "adjudication": "Johnson replacement 1-3 cancellations and a PL 4-ball; MWW 3.4 on X_J, not Sigma_A^0.",
+      "blocker": "none",
+      "certificate_sha256": "B9ED5F7122D69D623F179089EE76B95468EA481863F04C270227E251EE07C7B2",
       "evidence": [
-        "MWW Proposition 3.4; candidate application is conditional on P0--S"
+        "scripts/certify_t73_p3_four_handle.py",
+        "audit/t73_p3_four_handle.json",
+        "MWW Proposition 3.4"
       ],
       "falsified": false,
-      "proved": false,
-      "state": "OPEN"
+      "proved": true,
+      "state": "PASS"
     },
     "P3_E12": {
+      "blocker": "none",
       "evidence": [
+        "scripts/certify_t73_p3_four_handle.py",
+        "Smooth4PC/T73S4Control.lean",
         "MWW Corollary 3.5 as a statement about S^4, not a candidate identification"
       ],
       "falsified": false,
-      "proved": false,
-      "state": "CITED_EXTERNAL"
+      "proved": true,
+      "state": "PASS"
     },
     "P3_E13": {
-      "blocker": "det(A-I)=1 is proved; the Johnson replacement is the discharged P0 presentation",
+      "blocker": "det(A-I)=1 is proved; X_J is not identified with Sigma_A^0",
       "evidence": [
         "Smooth4PC/T73Finite.lean",
-        "Iwaki Proposition 2.1 for the matrix criterion"
+        "Iwaki Proposition 2.1 for the matrix criterion",
+        "audit/t73_p3_four_handle.json"
       ],
       "falsified": false,
       "proved": false,

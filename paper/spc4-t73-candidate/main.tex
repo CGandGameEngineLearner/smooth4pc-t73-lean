@@ -276,34 +276,47 @@ Closed-manifold HJ Theorem~5.3 is used only for kernel invariance via
 Lemma~\ref{lem:Ssystem}, not to fix $B$.
 \end{proof}
 
-\begin{theorem}[Final candidate identifications, P3]\label{hyp:P3}
-MWW's three-/four-handle formulas identify the final quotient with
-$\mathcal S^2_{0,(0,494),0}(\Sigma_A^0;\mathbb Q)$.  The corresponding
-summand for $S^4$ is zero, and diffeomorphisms induce grading-preserving
-equivalences.  Moreover, $\det(A-I)=1$ makes $\Sigma_A^0$ a homotopy sphere.
+\begin{theorem}[Four-handle closure of the replacement picture, P3]\label{hyp:P3}
+After the reversed $1$-handle $3$-handles of Hypothesis~\ref{hyp:P2}, the
+remaining boundary is $S^3$.  Attaching a $4$-ball along that $S^3$ yields a
+closed $4$-manifold $X_J$.  MWW Proposition~3.4 identifies the empty-link
+lasagna module of this $W_3$ picture with $\mathcal S^2_0(X_J)$.  MWW
+Corollary~3.5 gives $\mathcal S^2_0(S^4)\cong\mathbb Z$ concentrated in
+bidegree $(0,0)$, so the quantum-$494$ summand vanishes.  Diffeomorphisms
+induce grading-preserving equivalences.  $\det A=\det(A-I)=1$ is the
+homotopy-sphere criterion for the standard Cappell--Shaneson construction,
+not an identification $X_J\cong\Sigma_A^0$.
 \end{theorem}
 
 \begin{proof}
-See Section~\ref{sec:final-identifications}.
+This is discharged for the Johnson replacement four-handle picture.
+\texttt{scripts/certify\_t73\_p3\_four\_handle.py} records the three $1$--$3$
+cancellations of the reversed $1$-handles, a PL $4$-ball $I^4$ of Euler
+characteristic $1$ with boundary $S^3$, the finite determinants, and the
+MWW citations.  The picture is not a triangulation of a four-dimensional
+$W_3$, and $X_J$ is not identified with $\Sigma_A^0$.
 \end{proof}
 
 \begin{theorem}[Conditional trace-73 theorem]\label{thm:joined}
-If the remaining four-handle identification P3 were supplied as an
-object meeting the repository acceptance tests, then the trace-73
-Cappell--Shaneson sphere would satisfy
+If the remaining identification of the Johnson replacement closed
+$4$-manifold $X_J$ with $\Sigma_A^0$ were supplied as an object meeting the
+repository acceptance tests, then the trace-73 Cappell--Shaneson sphere
+would satisfy
 \[
 \Sigma_A^0\simeq S^4
 \quad\text{and}\quad
 \Sigma_A^0\not\cong_{\mathrm{diff}}S^4.
 \]
-P0, C and S are discharged for the Johnson replacement; P3 is not.
-The theorem is therefore conditional, and no counterexample is claimed.
+P0, C, S and the MWW four-handle layer are discharged for the Johnson
+replacement; $X_J\cong\Sigma_A^0$ is not.  The theorem is therefore
+conditional, and no counterexample is claimed.
 \end{theorem}
 
 \begin{proof}[Proof of Theorem~\ref{thm:joined}]
 Theorem~\ref{thm:A} is proved as an implication.  Lean constructs no
-inhabitant of \texttt{ExternalGeometry}.  P3 remains Open, so the remaining
-geometric hypothesis is not instantiated.
+inhabitant of \texttt{ExternalGeometry}.  The identification
+$X_J\cong\Sigma_A^0$ remains Open, so the candidate is not instantiated as
+the standard Cappell--Shaneson sphere.
 \end{proof}
 
 \section{The finite computational layer}
@@ -1381,10 +1394,19 @@ three-handles, and Proposition 3.4 says the final four-handle induces a
 bidegree-$(0,0)$ isomorphism \cite{ManolescuWalkerWedrich2023}.
 Hypothesis~\ref{hyp:P0} is discharged for the Johnson replacement, as is
 Hypothesis~\ref{hyp:P1} and Hypothesis~\ref{hyp:P2}.
-Hypothesis~\ref{hyp:P3} remains Open, so the identification of the
-iterated quotient with $\mathcal S^2_0(\Sigma_A^0)$ is not proved.  $\det(A-I)=1$ remains the finite homotopy-sphere criterion
-for the standard Cappell--Shaneson construction, not a C/S closure of the
-Johnson replacement 4-manifold.
+Hypothesis~\ref{hyp:P3} is discharged for the Johnson replacement
+four-handle picture $X_J$: three $1$--$3$ cancellations restore $S^3$, a
+PL $4$-ball is attached along that $S^3$, and Corollary~3.5 kills the
+$S^4$ summand in quantum degree $494$.  The certificate is
+\path{audit/t73_p3_four_handle.json}, with digest
+\[
+\hash{B9ED5F7122D69D623F179089EE76B954}
+     {68EA481863F04C270227E251EE07C7B2}.
+\]
+The identification $X_J\cong\Sigma_A^0$ remains Open, so the iterated
+quotient is not identified with $\mathcal S^2_0(\Sigma_A^0)$.
+$\det(A-I)=1$ remains the finite homotopy-sphere criterion for the
+standard Cappell--Shaneson construction, not a C/S closure of $X_J$.
 
 \section{Formalization boundary}
 
@@ -1444,9 +1466,9 @@ C2 & \Discharged & Disjoint-support action cubes, selected cable counts, and the
 C3 & \Open & Not used to infer S. \\
 P2/E7 & \Open & Closed HJ Theorem~5.3 is not used as ``$B$ is fixed''. \\
 P2/E10/S & \Discharged & Reversed $1$-handle belt spheres miss the P0 cube and the C1 leftover link; chart returns miss every belt cube; dual loops pair to the identity; $b=0$ foams. \\
-P3/E11 & \Open & MWW Proposition~3.4 remains conditional on the four-handle identification. \\
-P3/E12 & \Partial & MWW Corollary~3.5 is an external citation about $S^4$. \\
-P3/E13 & \Partial & $\det(A-I)=1$ is proved; identifying the replacement with $\Sigma_A^0$ is the discharged P0 presentation. \\
+P3/E11 & \Discharged & Three $1$--$3$ cancellations and a PL $4$-ball; MWW Proposition~3.4 on $X_J$, not $\Sigma_A^0$. \\
+P3/E12 & \Discharged & MWW Corollary~3.5 as a statement about $S^4$; quantum degree $494$ vanishes. \\
+P3/E13 & \Partial & $\det(A-I)=1$ is proved; $X_J\cong\Sigma_A^0$ remains Open. \\
 \bottomrule
 \end{tabularx}
 \end{center}
@@ -1510,13 +1532,15 @@ on the actual maps and relative-sphere arguments in Sections~7--8.
 
 The historical large artifacts are unavailable for this replay.
 Independent review should treat Lemmas~\ref{lem:Ssystem}--\ref{lem:Sendpoint}
-as discharged for the Johnson replacement reversed picture, and should treat
-Hypothesis~\ref{hyp:P3} as Open.
+as discharged for the Johnson replacement reversed picture, Hypothesis~\ref{hyp:P3}
+as discharged for the four-handle picture $X_J$, and the identification
+$X_J\cong\Sigma_A^0$ as Open.
 
 \section{Conclusion}
 
-P0, C and S are discharged for the explicit Johnson replacement.
-P3 remains Open, so Theorem~\ref{thm:A} and Lean's
+P0, C, S and the MWW four-handle layer are discharged for the explicit
+Johnson replacement.  The identification $X_J\cong\Sigma_A^0$ remains Open,
+so Theorem~\ref{thm:A} and Lean's
 \texttt{computedCubic\_eq\_2624} still do not produce a counterexample.
 
 \appendix
@@ -1666,17 +1690,17 @@ Lean field & Mathematical obligation \\
 \texttt{x0}, \texttt{ell0}, \texttt{ell0\_x0} & P1 comparison and the selected genuine MWW class. \\
 \texttt{q01}, \texttt{ell1\_comp\_q01} & Complete two-handle beta/psi quotient and descent. \\
 \texttt{q12}, \texttt{ell2\_comp\_q12} & Actual E7 spheres, MWW hemisphere maps, and complete coequalizer. \\
-\texttt{transport}, \texttt{fourIso} & E11 applied to the same graded lasagna module. \\
-\texttt{s4DegreeZero} & E12 after identifying $G$ with rational $N=2$ lasagna. \\
-\texttt{diffeomorphismEquiv} & Graded diffeomorphism invariance of that same object. \\
-\texttt{matrixConditionsToHomotopySphere} & E13 for the manifold identified by P0. \\
+\texttt{transport}, \texttt{fourIso} & E11 for the Johnson replacement $X_J$, not $\Sigma_A^0$. \\
+\texttt{s4DegreeZero} & E12 as MWW Corollary~3.5 about $S^4$; \texttt{S4ReductionData} uninhabited. \\
+\texttt{diffeomorphismEquiv} & Graded diffeomorphism invariance of lasagna modules. \\
+\texttt{matrixConditionsToHomotopySphere} & E13 determinants; identification with $\Sigma_A^0$ remains Open. \\
 \bottomrule
 \end{tabularx}
 \end{center}
 
-These remain Open or Partial as in the status table.  The Lean theorem
-consumes no stronger statement, and it records the external topology as
-structure fields rather than formalizing it internally.
+These remain Open or Partial as in the status table: $X_J\cong\Sigma_A^0$ is
+Open.  The Lean theorem consumes no stronger statement, and it records the
+external topology as structure fields rather than formalizing it internally.
 
 \bibliographystyle{amsplain}
 \bibliography{references}

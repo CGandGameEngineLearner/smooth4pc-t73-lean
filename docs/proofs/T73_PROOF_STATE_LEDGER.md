@@ -4,7 +4,8 @@
 `docs/proofs/T73_GEOMETRIC_PREMISE_STATUS_20260903.md`.  Computational P0
 is discharged for the Johnson replacement.  C is discharged for the
 replacement collar.  S is discharged for the Johnson replacement reversed
-1-handle picture.  P3 remains Open.  Entries
+1-handle picture.  The MWW four-handle layer is discharged.  The
+identification `X_J ≅ Sigma_A^0` remains Open.  Entries
 below describing unavailable historical PD/TH objects are recovery history,
 not current premises.  Frozen cubic is `2624`.
 
