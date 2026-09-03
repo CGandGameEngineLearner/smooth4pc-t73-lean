@@ -1,0 +1,154 @@
+\section{The complete degree-three endpoint vector}\label{app:vector}
+
+With the conventions of Section~\ref{sec:exact-algebra}, the coefficient
+vector $[\eps^3](\rho_t(B_{88})-I)u=(a_0,\ldots,a_{87})^T$ is
+\begin{align}
+(a_0,\ldots,a_{87})={}&(
+-7052,-7052,164,164,332,332,324,324,316,316,308,308,\notag\\
+&300,300,292,292,284,284,276,276,268,268,260,260,\notag\\
+&252,252,244,244,236,236,228,228,220,220,212,212,\notag\\
+&204,204,196,196,188,188,180,180,172,172,164,164,\notag\\
+&156,156,148,148,140,140,132,132,124,124,116,116,\notag\\
+&108,108,100,100,92,92,84,84,76,76,68,68,\notag\\
+&60,60,52,52,44,44,36,36,28,28,20,20,\notag\\
+&12,12,-164,-164).
+\end{align}
+The detector covector is $\ell=e_{87}^*-e_2^*$, so
+$\ell(a_0,\ldots,a_{87})^T=a_{87}-a_2=-164-164=-328$.
+The sum of the $88$ entries is zero, as expected for the unreduced Burau
+difference on the invariant total-coordinate functional.
+
+\section{The four grading contributions}\label{app:grading}
+
+\begin{center}
+\begin{tabular}{@{}p{0.17\textwidth}p{0.45\textwidth}p{0.27\textwidth}@{}}
+\toprule
+term & source & calculation\\
+\midrule
+$-44$ & remove the $p(N-1)$ Hom normalization for $p=44$, $N=2$ & $-44(2-1)=-44$\\
+$+227$ & $227$ distinct Frobenius labels, each of degree $+1$ & $227\cdot1=227$\\
+$+315$ & one-handle gluing shift from $44$ $y$-pairs and $271=44+227$ $z$-pairs & $44+271=315$\\
+$-4$ & cabled shift for $N=2$, $\alpha=0$, $|r|=2$ & $(1-2)(2\cdot2+0)=-4$\\
+\midrule
+total & & $-44+227+315-4=494$\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section{Convention-legality criteria}\label{app:legality}
+
+A serialization is legal only if it describes the same framed handle
+presentation, the same oriented based cut tangle, the same labelled boundary
+pairing, the same normal field, and the same insertion point.  Its event order
+must be a linear extension of the geometric partial order.  Adjacent events
+may be exchanged only when their supports are disjoint and a strict
+interchange theorem applies.  Word replacement requires equality in the
+based labelled braid or tangle category; equality of closures, permutations,
+free-group words, or homology classes is insufficient.
+
+A coordinate change $P$ must act simultaneously:
+\begin{equation}\label{eq:simultaneous-coordinate}
+W'=PWP^{-1},\qquad u'=Pu,\qquad
+\ell'=\ell P^{-1},
+\end{equation}
+with the shadow, collar, basepoint, and insertion point transported in the
+same naturality square.  Under \eqref{eq:simultaneous-coordinate},
+$\ell'(W'-I)u'=\ell(W-I)u$.  Thus coordinate invariance is proved when the
+simultaneous transport exists; it is not imposed by selecting the preferred
+numerical answer.
+
+A collar is legal only if it is an actual framed tubular collar of the fixed
+component and is isotopic to the registered collar relative to the boundary,
+basepoints, labels, old input balls, normal framing, and insertion point.
+These criteria were written before the detailed alternative collar outputs
+were opened.  Their use in the Johnson replacement is discharged by P0 and
+\texttt{scripts/reconstruct\_t73\_p0.py}, not by the unavailable historical
+PD.
+
+\section{Terminology}\label{app:glossary}
+
+\begin{description}
+\item[Actual map]
+A map induced by a specified geometric tangle or surface cobordism, as
+opposed to an abstract linear map having the desired source and target.
+\item[Candidate-specific binding]
+An identification between immutable finite data and the actual geometric
+object required by a published theorem.
+\item[Complete quotient]
+The quotient by all relation generators in the applicable MWW handle formula,
+not by a sampled finite subset.
+\item[Divided cubic]
+The reduction modulo $h$ of a map known on its whole domain to be divisible by
+$h^3$, as in \eqref{eq:D3}.
+\item[Endpoint shadow]
+The image of a coefficient trace class under the quantum
+vertical-to-horizontal trace and the fixed endpoint functor.
+\item[Finite certificate]
+Immutable finite data plus a deterministic exact checker.  The term has no
+geometric force beyond the predicates actually recomputed.
+\item[Registered movie order]
+The oriented point-push chronology fixed in the public primitive input.
+\item[Johnson replacement]
+The splitting-preserving $\alpha_{ij}$ lift, 93-bit side choice, and CS handle
+picture discharged by P0--P3/E13 in this paper.
+\end{description}
+
+\section{Extended reproduction commands}\label{sec:reproducibility-extended}
+
+The public repository is
+\begin{center}
+\url{https://github.com/toffee-desuwa/smooth4pc-t73-lean}.
+\end{center}
+The commands below assume a fresh clone and Python~3.10 or later.
+
+\subsection{Reconstruct the detector}
+
+\begin{verbatim}
+python -I -B scripts/recompute_t73_delta3.py --check
+\end{verbatim}
+Expected bearing lines include
+\texttt{B44\_LENGTH=11340},
+\texttt{DELTA3\_ETA\_T1=2624},
+\texttt{DELTA3\_XI=0}, and \texttt{VERIFY=PASS}.
+
+\subsection{Replay Johnson P0, C, S, and P3 certificates}
+
+\begin{verbatim}
+python3 scripts/certify_t73_p0_johnson.py --check
+python3 scripts/certify_t73_c1_cut_link.py --check
+python3 scripts/certify_t73_c2_comparison.py --check
+python3 scripts/certify_t73_s_relative_moves.py --check
+python3 scripts/certify_t73_p3_four_handle.py --check
+python -B scripts/certify_t73_e12_s4.py --check
+python -B scripts/certify_t73_e13_close.py --check
+python3 scripts/audit_t73_premises.py --check
+python -B scripts/check_t73_claim_boundary.py
+\end{verbatim}
+
+\subsection{Compile and inspect the Lean development}
+
+After installing \texttt{elan}, run
+\begin{verbatim}
+lake update
+lake exe cache get
+python -B tests/test_t73_minimal_formalization.py -v
+lake lean T73Audit.lean
+\end{verbatim}
+The Python test compiles the audited modules into a fresh temporary output
+root, requires exactly $38$ axiom reports, rejects any axiom outside
+\texttt{propext}, \texttt{Classical.choice}, and \texttt{Quot.sound}, and
+rejects \texttt{sorryAx}.
+
+\subsection{Build this paper}
+
+From \path{paper/spc4-t73-candidate}:
+\begin{verbatim}
+pdflatex -interaction=nonstopmode -halt-on-error main.tex
+bibtex main
+pdflatex -interaction=nonstopmode -halt-on-error main.tex
+pdflatex -interaction=nonstopmode -halt-on-error main.tex
+\end{verbatim}
+The reviewed PDF is copied to
+\path{output/pdf/spc4-t73-candidate.pdf}.  The retired manuscript
+\path{paper/t73_candidate.tex} remains in the repository as a historical
+ledger only; it is not the controlling document.

@@ -12,7 +12,7 @@ artifacts are not premises.  No counterexample is claimed.
 |---|---|---|
 | P0 replacement AR presentation | **DISCHARGED** | Johnson reconstruction recovers the public word; not historical-PD identity |
 | P1/C coefficient comparison | **DISCHARGED** | C1 product ribbons and C2 action cubes on the Johnson replacement collar |
-| P2/E7 attaching spheres | **OPEN** | Closed HJ Theorem 5.3 is not used as “B is fixed”; Lemmas 5.5 and 5.7 are not in arXiv:2510.20282 |
+| P2/E7 attaching spheres | **UNUSED** | Closed HJ Theorem 5.3 is not used as “B is fixed”; S uses the reversed belt-sphere picture. Lemmas 5.5 and 5.7 are not in arXiv:2510.20282 |
 | P2/E10/S three-handle quotient | **DISCHARGED** | Reversed 1-handle belt spheres miss the P0 cube and the C1 leftover link |
 | P3/E11 four-handle | **DISCHARGED** | 1-3 cancellations and a PL 4-ball; MWW 3.4 on `X_J` |
 | P3/E12 standard sphere | **DISCHARGED** | Empty-link Khovanov and PL \(S^4=I^4\cup_{S^3}I^4\); Lean empty-link `S4ReductionData` inhabited |

@@ -54,7 +54,8 @@ Theorem 5.3 is not used to conclude that `B` is fixed.
 
 This proves the geometric E10/S replacement from the reversed 1-handle
 picture and the detector-ball field of P0; no owner-coordinate columns or
-TH-sized sphere certificate is required.  P2/E7 stays Open.
+TH-sized sphere certificate is required.  P2/E7 is unused: S does not
+invoke the “B is fixed” reading of HJ Theorem 5.3.
 
 ## Intrinsic MWW three-handle relation
 

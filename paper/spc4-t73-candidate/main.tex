@@ -3,12 +3,18 @@
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
 \usepackage{microtype}
-\usepackage{mathtools}
-\usepackage{amssymb}
+\usepackage{amsmath,amssymb,mathtools}
 \usepackage{booktabs}
 \usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{listings}
 \usepackage{xcolor}
 \usepackage{hyperref}
+
+\lstset{
+  basicstyle=\ttfamily\small,
+  breaklines=true
+}
 
 \hypersetup{
   colorlinks=true,
@@ -28,6 +34,7 @@
 \newtheorem{hypothesis}[theorem]{Hypothesis}
 \theoremstyle{remark}
 \newtheorem{remark}[theorem]{Remark}
+\newtheorem{externalresult}[theorem]{External Result}
 
 \newcommand{\Q}{\mathbb{Q}}
 \newcommand{\Z}{\mathbb{Z}}
@@ -42,6 +49,7 @@
 \newcommand{\Open}{\textnormal{\textsc{Open}}}
 \newcommand{\Partial}{\textnormal{\textsc{Partial}}}
 \newcommand{\Discharged}{\textnormal{\textsc{Discharged}}}
+\newcommand{\Unused}{\textnormal{\textsc{Unused}}}
 \newcommand{\hash}[2]{\shortstack[l]{\texttt{#1}\\\texttt{#2}}}
 
 \title[A trace-73 obstruction]
@@ -77,7 +85,10 @@ picture (P3/E13).  No identification
 with the unavailable historical PD is claimed.  The Lean development checks
 the finite and quotient algebra and does not construct
 \texttt{ExternalGeometry}.  The result is therefore a conditional implication
-from those external structures.
+from those external structures.  This manuscript is self-contained: it
+records the published theorems used, the exact finite algebra, the retired
+September assumption register, and the reproduction commands formerly split
+across \path{paper/t73_candidate.tex}.
 \end{abstract}
 
 \maketitle
@@ -138,7 +149,9 @@ algebraic core.  Lean does not construct a 4-manifold.
 
 Historical files referenced by earlier versions of the project are not
 publicly available.  Their hashes are retained as provenance and are not
-replaced by narrative JSON fields or terminal status strings.
+replaced by narrative JSON fields or terminal status strings.  The file
+\path{paper/t73_candidate.tex} remains as a historical ledger only; the
+controlling manuscript is the present \path{main.tex}.
 
 \section{The trace-73 Cappell--Shaneson candidate}
 
@@ -261,7 +274,8 @@ on the Johnson replacement collar.
 This is discharged for the Johnson replacement collar.
 \texttt{scripts/certify\_t73\_c1\_cut\_link.py} and
 \texttt{scripts/certify\_t73\_c2\_comparison.py} supply the product
-isotopy and the comparison maps.  Hypothesis~\ref{hyp:P2} is discharged for the Johnson replacement.
+isotopy and the comparison maps.  Theorem~\ref{thm:Cdischarge}
+records the computational C result.
 \end{proof}
 
 \begin{theorem}[Relative three-handle closure, S]\label{hyp:P2}
@@ -353,6 +367,8 @@ to $X_J$.  The lasagna obstruction to a diffeomorphism with $S^4$ is not
 inhabited in Lean.
 \end{proof}
 
+\input{sec-published-results}
+
 \section{The finite computational layer}
 
 The public finite layer has three independent parts: lattice arithmetic, a
@@ -426,6 +442,8 @@ the finite script or from the local Burau-block calculation.
 Thus the finite recomputation and the categorical comparison have distinct
 roles: the former supplies the integer, while the latter makes it a
 four-manifold invariant.
+
+\input{sec-finite-details}
 
 \section{Lasagna modules and the intended obstruction}
 
@@ -787,22 +805,37 @@ input for this retired comparison.
 The extractor \path{scripts/extract_t73_ryz_linking.py} computes this integer
 from a labelled reduced-link PD ledger by halving the signed sum of mixed
 $m_2$--$r_{yz}$ crossings and requires the normal-field transport receipt.
-The actual reduced PD ledger is absent at the current revision.
-
-This absence cannot be repaired from the committed word/framing ledger.
-Indeed, two explicit local-clasp controls with identical component words and
-the same recorded component framings have mixed crossing sums $0$ and $2$,
-hence linking numbers $0$ and $1$.  The script
+Word and framing ledgers still do not determine the integer: two explicit
+local-clasp controls with identical component words and the same recorded
+component framings have mixed crossing sums $0$ and $2$, hence linking
+numbers $0$ and $1$.  The script
 \path{scripts/falsify_t73_linking_from_words.py} verifies both ledgers with
-the same extractor.  Thus the assertion that the current word data determine
-$\operatorname{lk}(m_2,r_{yz})$ is false; an embedded reduced-link diagram or
-equivalent normal-field movie is logically necessary.
+the same extractor.
 
-This linking obstruction applies only to the retired 309-word comparison.
-The selected Johnson side-choice lift agrees with the compact $m_2$ word
-exactly and has relative $r_{yz}$ coefficient zero as a finite P0d fact.
-After P0c, $\operatorname{lk}(m_2,r_{yz})$ must still be read from a reduced
-PD or normal-field movie; that object is absent.
+That obstruction applied to the retired 309-word comparison, which had no
+embedded PD.  The Johnson CS handle picture now supplies the missing object.
+\texttt{scripts/certify\_t73\_e13\_close.py} writes the labelled railroad PD
+\path{audit/t73_reduced_link_pd.json}, with digest
+\[
+\hash{E8C0B066D2FC2C7CD01C58BEE404B806}{3C72C6D7D3E2A937FE3ED99D9298F92A}.
+\]
+The extractor returns $\operatorname{lk}(m_2,r_{yz})=0$, and Lean
+\texttt{linkingM2Ryz\_eq\_zero} records the same integer.  This is not a
+historical-PD identity.
+
+\begin{lemma}[Railroad linking]\label{lem:P0d-link}
+The constructed railroad reduced PD of the Johnson CS handle picture
+satisfies $\operatorname{lk}(m_2,r_{yz})=0$.
+\end{lemma}
+
+\begin{proof}
+Replay \texttt{scripts/extract\_t73\_ryz\_linking.py} on
+\path{audit/t73_reduced_link_pd.json}.  The mixed $m_2$--$r_{yz}$ signed
+crossing sum is $0$, so the linking number is $0$.
+\texttt{scripts/certify\_t73\_e13\_close.py} rejects any other value, and
+\texttt{Smooth4PC/T73CertificateIndex.lean} proves
+\texttt{linkingM2Ryz\_eq\_zero} by reflection.  The word ledger is not used.
+\end{proof}
 
 \subsection{The three geometric identifications}
 
@@ -879,7 +912,8 @@ asserted.
 \texttt{scripts/reconstruct\_t73\_p0.py} accepts the Johnson reconstruction
 input and returns the public $11340$-letter word.  The 93-bit word match,
 GAP free-basis check and 44 $y$-channels remain as supporting finite facts.
-No historical-PD identity is asserted.
+Lemma~\ref{lem:P0d-link} supplies $\operatorname{lk}(m_2,r_{yz})=0$ from
+the railroad PD.  No historical-PD identity is asserted.
 \end{proof}
 
 \section{The coefficient-trace comparison}
@@ -1216,7 +1250,6 @@ $\operatorname{Id}_U\otimes X^{\otimes227}$.  Its successive degrees are
 \]
 Diagram (28) sends it to a class $x_2$ satisfying
 $\overline D_3(x_2)=2624\ne0$ on the Johnson replacement collar.
-Hypothesis~\ref{hyp:P2} is discharged for the Johnson replacement.
 
 \begin{theorem}[Coefficient comparison C]\label{thm:Cdischarge}
 Hypothesis~\ref{hyp:P1} holds for the P0 replacement.  In particular, the
@@ -1225,7 +1258,7 @@ selected degree-$494$ class is nonzero after all MWW two-handle relations.
 
 \begin{proof}
 This is discharged for the Johnson replacement collar by
-Lemmas~\ref{lem:C1} and~\ref{lem:C2}.  Hypothesis~\ref{hyp:P2} is discharged for the Johnson replacement.
+Lemmas~\ref{lem:C1} and~\ref{lem:C2}.
 \end{proof}
 
 \paragraph{C/S firewall.}
@@ -1502,6 +1535,8 @@ candidate geometric instances remain Open rather than defined in Lean.
 The table records the current allocation of every external layer.
 \Open\ means the named geometric object is absent.  \Partial\ means a finite
 or external fact is recorded without discharging the candidate identification.
+\Unused\ means the named claim is not an input to the Johnson replacement
+argument.
 
 \begin{center}
 \small
@@ -1512,11 +1547,12 @@ Item & Verdict & Reason \\
 P0a & \Discharged & Discrete Voronoi Heegaard pair with $S$ mapping Johnson onto AR. \\
 P0b & \Discharged & Local product $1/2$-handle cancellation movies of intersection $1$. \\
 P0c & \Discharged & 44 height-monotone strands in a triangulated 3-ball; reconstruction recovers the public word. \\
-P0d & \Partial & 93-bit Johnson lift matches the public 11340-letter word; finite fact only. \\
+P0d word & \Partial & 93-bit Johnson lift matches the public 11340-letter word; finite fact, not a historical-PD identity. \\
+P0d linking & \Discharged & Railroad PD \texttt{audit/t73\_reduced\_link\_pd.json}; $\operatorname{lk}(m_2,r_{yz})=0$ by Lemma~\ref{lem:P0d-link} and Lean \texttt{linkingM2Ryz\_eq\_zero}. \\
 C1 & \Discharged & P0 reconstruction strands with product-normal $z$-sides; pairing recovered from the PL ribbons. \\
 C2 & \Discharged & Disjoint-support action cubes, selected cable counts, and the Lean representable $HH_0$ reduction. \\
-C3 & \Open & Not used to infer S. \\
-P2/E7 & \Open & Closed HJ Theorem~5.3 is not used as ``$B$ is fixed''. \\
+C3 & \Unused & $B$-external naturality of C is a firewall; S uses Lemma~\ref{lem:Sendpoint}, not C3. \\
+P2/E7 & \Unused & Closed HJ Theorem~5.3 is not used as ``$B$ is fixed''; S uses the reversed belt-sphere picture and Lemma~\ref{lem:Ssystem}. \\
 P2/E10/S & \Discharged & Reversed $1$-handle belt spheres miss the P0 cube and the C1 leftover link; chart returns miss every belt cube; dual loops pair to the identity; $b=0$ foams. \\
 P3/E11 & \Discharged & Three $1$--$3$ cancellations and a PL $4$-ball; MWW Proposition~3.4 on $X_J$, not $\Sigma_A^0$. \\
 P3/E12 & \Discharged & Computed: empty-link rank over $\mathbb Q$, PL $I^4$ with $\chi=1$, glue $\chi=2$, degree $494$ (\texttt{scripts/certify\_t73\_e12\_s4.py}).  Cited: MWW Proposition~3.4 and Corollary~3.5 \cite{ManolescuWalkerWedrich2023}, arXiv:2206.04616; not proved here.  Not $X_J$.  Candidate \texttt{ExternalGeometry} uninhabited. \\
@@ -1534,6 +1570,8 @@ The machine-readable allocation in
 separately from candidate-level closure.  The C entry depends on
 Lemma~\ref{lem:C1} and equations (24)--(27), while S depends on
 Lemmas~\ref{lem:Ssystem} and \ref{lem:Sendpoint}.
+
+\input{sec-retired-assumptions}
 
 \section{Related work}
 
@@ -1732,6 +1770,8 @@ The independent receipts named in
 \path{audit/t73\_p0\_reconstruction\_schema.json} apply to that Johnson
 reconstruction, not to the older symbolic witness.
 
+\input{sec-appendices-extra}
+
 \section{Correspondence with the Lean fields}
 
 For readers checking the formal boundary, the principal allocation is:
@@ -1743,7 +1783,7 @@ Lean field & Mathematical obligation \\
 \midrule
 \texttt{x0}, \texttt{ell0}, \texttt{ell0\_x0} & P1 comparison and the selected genuine MWW class. \\
 \texttt{q01}, \texttt{ell1\_comp\_q01} & Complete two-handle beta/psi quotient and descent. \\
-\texttt{q12}, \texttt{ell2\_comp\_q12} & Actual E7 spheres, MWW hemisphere maps, and complete coequalizer. \\
+\texttt{q12}, \texttt{ell2\_comp\_q12} & Reversed belt spheres of S, MWW hemisphere maps, and complete coequalizer.  Not the unused E7 ``$B$ is fixed'' claim. \\
 \texttt{transport}, \texttt{fourIso} & E11 for the Johnson replacement $X_J$, not $\Sigma_A^0$. \\
 \texttt{s4DegreeZero} & Computed \texttt{EmptyKhQ}(494)=0 and PL $S^4$ Euler data from \texttt{certify\_t73\_e12\_s4.py}.  The isomorphisms $G(B^4)\simeq G(S^4)$ and $\mathcal S^2_0(S^4)\cong\mathbb Z$ are MWW Proposition~3.4 and Corollary~3.5, cited not formalized.  Empty-link Lean inhabitant only. \\
 \texttt{diffeomorphismEquiv} & Graded diffeomorphism invariance of lasagna modules. \\
@@ -1752,7 +1792,7 @@ Lean field & Mathematical obligation \\
 \end{tabularx}
 \end{center}
 
-These remain Open or Partial as in the status table: Lean
+C3 and P2/E7 are Unused rather than Open.  Lean
 \texttt{ExternalGeometry} is uninhabited for the Johnson candidate.  The empty-link
 control in \texttt{T73S4Inhabitant.lean} packages only \texttt{EmptyKhQ}.  The Lean
 theorem consumes no stronger statement, and it records the

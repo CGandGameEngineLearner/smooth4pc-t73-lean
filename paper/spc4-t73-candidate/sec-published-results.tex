@@ -1,0 +1,296 @@
+\section{Published results used, with their complete scope}\label{sec:published-results}
+
+This section records the mathematical content imported from the literature.
+The wording is a faithful restatement rather than a quotation.  In each case
+the hypotheses are at least those in the cited source, and the conclusion is
+not strengthened.  Candidate-specific identifications are supplied by
+Hypotheses~\ref{hyp:P0}--\ref{hyp:P3} or remain as uninhabited Lean fields;
+they are not added to the external statements themselves.
+
+\subsection{One- and two-handle formulas}
+
+\begin{externalresult}[MWW Theorem~4.7]\label{prop:mww-4.7}
+Let $k$ be a field, let $W_1=\natural^m(S^1\times B^3)$, and let
+$L\subset\partial W_1$ be a null-homologous framed link.  Suppose that $L$
+meets the belt sphere of the $i$th one-handle transversely in $2p_i$ points.
+Cutting along these belt spheres gives a tangle $R$ in the complement of
+paired balls in $S^3$.  Then the gluing map induces an isomorphism from the
+direct sum, over tangles $T_i$ with the prescribed boundary, of
+\[
+ \KhR_N\!\left(R\cup\bigsqcup_i(T_i\sqcup\overline{T_i});k\right)
+ \left\{\Bigl(\sum_i p_i\Bigr)(N-1)\right\}
+\]
+modulo the two gluing actions of the $3$-ball tangle categories, to
+$\SN(W_1;L;k)$.  The source states that a global grading shift is omitted
+from this displayed presentation.
+\end{externalresult}
+
+\paragraph{Source and scope.}
+This is External Result~E1, reproduced with the field, null-homology,
+transversality, boundary, and grading-shift hypotheses of
+Manolescu--Walker--Wedrich \cite[Theorem~4.7]{ManolescuWalkerWedrich2023}.
+Its candidate-specific application is the Johnson replacement collar of
+Hypothesis~\ref{hyp:P1}.
+
+\begin{externalresult}[MWW Definition~3.1 and Theorem~3.2]\label{prop:mww-3.2}
+Let $W$ be a smooth oriented four-manifold, let $L\subset\partial W$ be a
+framed link, and let $W'$ be obtained by attaching two-handles along a framed
+link $K\subset\partial W$ disjoint from $L$.  For every relative class
+$(\alpha,\eta)\in H_2^L(W';\Z)$, form the direct sum over $r\in\mathbb N^n$ of the
+cabled summands
+\[
+ \SN\!\left(W;K(r-\alpha^-,r+\alpha^+)\cup L,\eta^r\right)
+ \{(1-N)(2|r|+|\alpha|)\}.
+\]
+Quotient by all signed-colour-preserving braid relations
+$\beta_i(b)v\sim v$ and all stabilization relations
+$\psi_i^{[d]}(v)\sim0$ for $d<N-1$ and
+$\psi_i^{[N-1]}(v)\sim v$.  Attaching the corresponding positive and
+negative parallel core disks defines an isomorphism from this cabled quotient
+to $\SN(W';L;(\alpha,\eta))$.
+\end{externalresult}
+
+\paragraph{Source and scope.}
+This is exactly the scope of MWW Definition~3.1 and Theorem~3.2
+\cite[Definition~3.1 and Theorem~3.2]{ManolescuWalkerWedrich2023}.
+The anti-parallel braid relations are retained; we do not replace their
+braid groups by symmetric groups.
+
+\subsection{Three- and four-handle formulas}
+
+\begin{externalresult}[MWW Theorem~3.7]\label{prop:mww-3.7}
+Let $W$ be a smooth oriented four-manifold with boundary $Y$, let
+$S\subset Y$ be an embedded $2$-sphere disjoint from a framed link
+$L\subset Y$, and let $W'$ be obtained by attaching a three-handle along
+$S$.  Let $J$ be an oriented equator of $S$, and let $\Delta_+$ and
+$\Delta_-$ be the two hemispheres, pushed into $I\times Y$ and adjoined to
+$I\times L$.  For a fixed outgoing relative class $\alpha'$, take the direct
+sum over all incoming relative classes that reduce to $\alpha'$ modulo
+$[S]$.  Then the three-handle map to
+$\SN(W';L';\alpha')$ is surjective, its kernel is the image of the
+difference of the two hemisphere maps, and the target is their coequalizer.
+\end{externalresult}
+
+\paragraph{Source and scope.}
+This is MWW Theorem~3.7 \cite[Theorem~3.7]{ManolescuWalkerWedrich2023}.
+The direct sum over relative classes is part of the theorem.
+
+\begin{externalresult}[MWW Theorem~3.10]\label{prop:mww-3.10}
+Suppose
+$W_1\subset W_2\subset W_3\subset W_4$ is a fixed handle decomposition in
+which $W_1=\natural^m(S^1\times B^3)$, $W_2$ is obtained by attaching
+two-handles along $K$, $W_3$ by attaching three-handles along
+$S_1,\ldots,S_p$, and $W_4$ by attaching four-handles.  Let
+$L\subset\partial W_4$ be a framed link, represent the spheres by genus-zero
+surfaces in $\partial W_1$ completed by two-handle cores, and fix a relative
+class $\alpha'$.  Then $\SN(W_4;L;\alpha')$ is the quotient of the
+direct sum of the cabled modules over all lifts of $\alpha'$ by, for each
+three-handle sphere, the undotted through $(N-2)$-dotted relations equal to
+zero and the $(N-1)$-dotted relation equal to the identity.
+\end{externalresult}
+
+\paragraph{Source and scope.}
+This is MWW Theorem~3.10 with its handle-decomposition, surface-realization,
+link, and relative-class hypotheses
+\cite[Theorem~3.10]{ManolescuWalkerWedrich2023}.
+For $N=2$ it yields one undotted relation and one once-dotted-minus-identity
+relation for each sphere.
+
+\begin{externalresult}[MWW Proposition~3.4 and Corollary~3.5]\label{prop:mww-3.4}
+For the empty boundary link, inclusion of a four-manifold into the result of a
+three-handle attachment induces a surjection on $\SN$, while inclusion
+into the result of a four-handle attachment induces an isomorphism.  Over the
+integral coefficient convention of the source,
+$\SN(S^4)\cong\Z$ and is concentrated in bidegree $(0,0)$.
+\end{externalresult}
+
+\paragraph{Source and scope.}
+This is MWW Proposition~3.4 and Corollary~3.5
+\cite[Proposition~3.4 and Corollary~3.5]{ManolescuWalkerWedrich2023}.
+The source uses the two-handlebody identification of
+Manolescu--Neithalath \cite{ManolescuNeithalath2020} in the handle formula.
+The source corollary is integral.  The repository does not prove
+Proposition~3.4 or Corollary~3.5; Hypothesis~\ref{hyp:P3} cites them and
+separates the computed empty-link ranks from those citations.
+
+\begin{externalresult}[Morrison--Walker--Wedrich Definition~5.4 and Example~5.6]\label{prop:mww-B4}
+For a smooth oriented four-manifold $W$ and a framed oriented link
+$L\subset\partial W$, the group $\SN(W;L)$ is the bigraded abelian group
+generated by labelled lasagna fillings modulo multilinearity, replacement of
+an input ball by a filling with the same $\KhR_N$ evaluation, and isotopy
+relative to the boundary.  If $W=B^4$ and $L\subset S^3=\partial B^4$, the
+evaluation of fillings induces an isomorphism
+\begin{equation}\label{eq:B4-evaluation}
+\SN(B^4;L)\xrightarrow{\cong}\KhR_N(S^3,L).
+\end{equation}
+\end{externalresult}
+
+\paragraph{Source and scope.}
+This is the invariant definition and $4$-ball evaluation in
+Morrison--Walker--Wedrich
+\cite[Definition~5.4 and Example~5.6]{MorrisonWalkerWedrich2019}.
+The source states the integral bigraded group.  Lean
+\texttt{S4ReductionData} packages only the empty-link control on
+\texttt{EmptyKhQ}; it does not inhabit candidate \texttt{ExternalGeometry}.
+
+\subsection{Replacement of the three attaching spheres}
+
+\begin{externalresult}[Horvat--Jab\l onowski Theorem~5.3]\label{prop:hj-theorem53}
+Let $W$ be a smooth compact connected four-manifold with nonempty connected
+boundary, equipped with a fixed handle decomposition without four-handles.
+Suppose the decomposition has $k$ three-handles and
+\[
+ \partial W_2\cong M'\#\bigl(\#_k(S^1\times S^2)\bigr),
+\]
+where $M'$ is irreducible.  For pairwise-disjoint smoothly embedded
+$2$-spheres $\Sigma_1,\ldots,\Sigma_k\subset\partial W_2$, the following are
+equivalent: they may be isotoped, up to permutation and three--three handle
+slides, to the actual attaching spheres; their exterior is connected; and
+their homology classes form a $\Z$-basis of
+$H_2^{\mathrm{sph}}(\partial W_2)$.  When these conditions hold, simultaneous
+surgery on the spheres produces a closed $3$-manifold diffeomorphic to $M'$.
+\end{externalresult}
+
+\paragraph{Source and scope.}
+This is the full statement of Theorem~5.3 in
+Horvat--Jab\l onowski \cite[Theorem~5.3]{HorvatJablonowski2025}.
+The boundary decomposition, irreducibility, number of spheres, pairwise
+disjointness, and fixed-handle-decomposition hypotheses are all retained.
+Closed-manifold Theorem~5.3 is not used to conclude that the detector ball
+$B$ is fixed.  Hypothesis~\ref{hyp:P2} uses it only with
+Lemma~\ref{lem:Ssystem} for kernel invariance.  Lemmas~5.5 and~5.7 do not
+appear in that source and are not invoked.  Status of this use:
+\Unused.
+
+\subsection{Trace, functoriality, and the Cappell--Shaneson criterion}
+
+\begin{externalresult}[BPW Proposition~3.20 and Theorem~3.21]\label{prop:bpw-trace}
+For a locally pregraded endobicategory $(\mathcal C,\Sigma)$ with left duals,
+the quantum horizontal trace is universal among $\Sigma$-twisted quantum
+preshadows; if right duals also exist, it is a quantum shadow.  On the
+$2$-category of locally pregraded endobicategories with duals and
+degree-preserving structure maps, the quantum horizontal trace is a strict
+$2$-functor.
+\end{externalresult}
+
+\paragraph{Source and scope.}
+This combines, without enlarging either conclusion, Beliakova--Putyra--Wehrli
+Proposition~3.20 and Theorem~3.21
+\cite[Proposition~3.20 and Theorem~3.21]{BeliakovaPutyraWehrli2019}.
+
+\begin{externalresult}[BHPW Theorem~4.6]\label{prop:bhpw}
+For an oriented tangle $T$, the homotopy type of the Blanchet--Khovanov
+bracket is an invariant of $T$ and is strictly functorial with respect to
+ordinary tangle cobordisms.  Under the stated BHPW equivalence from the foam
+category to the oriented Bar--Natan category, its image is isomorphic to the
+ordinary Khovanov bracket.
+\end{externalresult}
+
+\paragraph{Source and scope.}
+This is the strictification result in Beliakova--Hogancamp--Putyra--Wehrli
+\cite[Theorem~4.6]{BeliakovaHogancampPutyraWehrli2023}.  The immediately
+following remark in the source labels the extension to knotted webs and
+four-dimensional singular foams as conjectural.  Those objects are excluded
+from Hypothesis~\ref{hyp:P1}.
+
+\begin{externalresult}[Iwaki Proposition~2.1]\label{prop:cs-criterion}
+Let $A\in\mathrm{SL}(3,\Z)$ and let $\Sigma_A^\varepsilon$ be obtained from the
+mapping torus of the induced automorphism of $T^3$ by surgery on the canonical
+section circle with either of the two framing parities.  Then
+$\Sigma_A^\varepsilon$ is a homotopy $4$-sphere if and only if
+$\det(A-I)=\pm1$.
+\end{externalresult}
+
+\paragraph{Source and scope.}
+This is Iwaki Proposition~2.1, citing the original Cappell--Shaneson
+construction \cite[Proposition~2.1]{Iwaki2024,CappellShaneson1976}.
+The identification of the Johnson picture $X_J$ with $\Sigma_A^0$ is
+Hypothesis~\ref{hyp:P0} together with P3/E13, not part of Iwaki's theorem.
+
+\subsection{Standard topology results represented in Lean}
+
+The next four items are not needed once Iwaki's criterion is applied to the
+identified surgery manifold.  They state the longer topology route represented
+in \path{Smooth4PC/T73CSTopology.lean}.  Lean stores their candidate-specific
+application as fields of \texttt{CSTopologyData}; no inhabitant of that
+structure is constructed.
+
+\begin{externalresult}[Seifert--van Kampen theorem]\label{prop:van-kampen}
+Let $X=U\cup V$, where $U$, $V$, and $U\cap V$ are open and path connected,
+and choose a basepoint in $U\cap V$.  Then the diagram induced by inclusion
+\[
+\pi_1(U\cap V)\longrightarrow\pi_1(U),
+\qquad
+\pi_1(U\cap V)\longrightarrow\pi_1(V)
+\]
+is a pushout diagram of groups: $\pi_1(X)$ is the free product of
+$\pi_1(U)$ and $\pi_1(V)$ modulo the normal closure of the two images of each
+element of $\pi_1(U\cap V)$.
+\end{externalresult}
+
+\paragraph{Source and scope.}
+This is the standard based, path-connected form of van Kampen
+\cite[Section~1.2]{Hatcher2002}.  Applying it to Cappell--Shaneson surgery
+still requires the geometric identification of the cover and of the map
+$A-I$.
+
+\begin{externalresult}[Wang and Mayer--Vietoris exact sequences]\label{prop:wang-mv}
+For a fibration $F\to E\to S^1$ with monodromy $f:F\to F$, there is a long
+exact Wang sequence whose relevant portion is
+\[
+\cdots\to H_k(F)\xrightarrow{\,I-f_*\,}H_k(F)
+\longrightarrow H_k(E)\longrightarrow
+H_{k-1}(F)\xrightarrow{\,I-f_*\,}H_{k-1}(F)\to\cdots.
+\]
+For an excisive decomposition $X=A\cup B$, singular homology admits the long
+exact Mayer--Vietoris sequence
+\[
+\cdots\to H_k(A\cap B)\to H_k(A)\oplus H_k(B)
+\to H_k(X)\to H_{k-1}(A\cap B)\to\cdots,
+\]
+with the standard inclusion-induced maps and connecting homomorphism.
+\end{externalresult}
+
+\paragraph{Source and scope.}
+These are the ordinary singular-homology exact sequences
+\cite[Sections~2.2 and 4.2]{Hatcher2002}.  The candidate-specific claim that
+their maps are the matrices in \eqref{eq:A-minus-I} and \eqref{eq:H2-map}
+is not part of the general theorem.
+
+\begin{externalresult}[Integral Poincar\'e duality]\label{prop:PD}
+If $M$ is a closed connected oriented topological $n$-manifold with
+fundamental class $[M]\in H_n(M;\Z)$, cap product with $[M]$ gives an
+isomorphism
+\[
+H^k(M;\Z)\xrightarrow{\cong}H_{n-k}(M;\Z)
+\]
+for every $k$.
+\end{externalresult}
+
+\paragraph{Source and scope.}
+This is the integral oriented form of Poincar\'e duality
+\cite[Section~3.3]{Hatcher2002}.  Closedness, connectedness, orientation, and
+integral coefficients are retained.
+
+\begin{externalresult}[Hurewicz and Whitehead promotion]\label{prop:hurewicz-whitehead}
+If a path-connected space $X$ is $(n-1)$-connected for $n\ge2$, then
+$H_i(X;\Z)=0$ for $i<n$ and the Hurewicz map
+$\pi_n(X)\to H_n(X;\Z)$ is an isomorphism.  If a map between simply connected
+CW complexes induces an isomorphism on all integral homology groups, then it
+is a homotopy equivalence.
+\end{externalresult}
+
+\paragraph{Source and scope.}
+The first sentence is the Hurewicz theorem and the second is the homological
+form of Whitehead's theorem for simply connected CW complexes
+\cite[Sections~4.1--4.2]{Hatcher2002}.  Applied successively, they show that a
+simply connected CW complex with the integral homology of $S^4$ is homotopy
+equivalent to $S^4$.  The premise that the candidate has that topology is
+external to the abstract theorems.
+
+\begin{remark}[Why the short route is used]\label{rem:topology-tools}
+The homotopy-sphere conclusion for $\Sigma_A^0$ uses Iwaki
+Proposition~2.1 rather than silently rebuilding the Cappell--Shaneson
+calculation from these four results.  The longer route remains as Lean
+fields of \texttt{CSTopologyData}; those fields are uninhabited.
+\end{remark}

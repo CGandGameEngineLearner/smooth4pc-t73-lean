@@ -1,13 +1,16 @@
 # Trace-73 Cappell--Shaneson paper
 
-This directory contains an English `amsart` preprint for a
+This directory contains the **controlling** English `amsart` preprint for a
 skein-lasagna obstruction for a trace-73 Cappell--Shaneson sphere.  Exact
 Artin--Magnus expansion and the pure-braid Andreadakis equality verify a
 cubic-order statement for the public braid.  Geometric lemmas P0a--c and
 C1--C2, S, the MWW four-handle layer and the E13 CS handle picture are
 discharged for the Johnson replacement.  The identification
 \(X_J\cong\Sigma_A^0\) is that constructed CS handle picture.  No
-historical-PD identity is claimed.
+historical-PD identity is claimed.  The older manuscript
+`paper/t73_candidate.tex` (Assumptions A1--A5) is retained as a historical
+ledger only; its mathematical content is merged here under Hypotheses P0/C/S/P3
+and Section ``Retired assumption register''.
 
 ## Build
 
@@ -149,7 +152,9 @@ python3 scripts/audit_t73_premises.py --check
 It distinguishes generator-internal coordinate claims from candidate-level
 mathematical closure.  The committed result is `OVERALL=OPEN`: P0, C, S, the
 MWW four-handle layer and the E13 CS handle picture are discharged for the
-Johnson replacement, while Lean `ExternalGeometry` remains uninhabited.
+Johnson replacement, railroad linking is `lk(m2,r_yz)=0`, while Lean
+`ExternalGeometry` remains uninhabited. C3 and P2/E7 are unused, not missing
+proofs.
 
 The complete P0 replay is:
 

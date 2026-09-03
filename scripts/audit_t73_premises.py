@@ -51,8 +51,11 @@ def generate() -> dict[str, Any]:
 
     for marker in (
         r"P0a & \Discharged",
+        r"P0d linking & \Discharged",
         r"C1 & \Discharged",
         r"C2 & \Discharged",
+        r"C3 & \Unused",
+        r"P2/E7 & \Unused",
         r"P2/E10/S & \Discharged",
         r"P3/E11 & \Discharged",
         r"P3/E12 & \Discharged",

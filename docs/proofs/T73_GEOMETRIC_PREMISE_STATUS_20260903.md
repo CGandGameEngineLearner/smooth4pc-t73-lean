@@ -67,7 +67,9 @@ This is not a triangulation of a 4-dimensional `W3`. The P3 certificate itself d
 | Premise | Status | Obstruction |
 |---|---|---|
 | Euclidean/mapping-torus identification | Open remark | Uniqueness of regular neighborhoods is not used; the Euclidean Voronoi surface is not a subcomplex |
-| P0d linking | **PASS** | Railroad PD `audit/t73_reduced_link_pd.json`; `lk(m2,r_yz)=0` |
+| P0d linking | **PASS** | Railroad PD `audit/t73_reduced_link_pd.json`; `lk(m2,r_yz)=0`; Lean `linkingM2Ryz_eq_zero`; paper Lemma P0d-link |
+| C3 | Unused | Firewall only; S uses Sendpoint, not C naturality |
+| P2/E7 | Unused | Closed HJ 5.3 is not used as “B is fixed” |
 | S geometry | **PASS** | Johnson replacement reversed 1-handle picture |
 | S endpoint | **PASS** | b=0 foams by MWW Example 3.8 |
 | P3/E11--E12 | **PASS** | Four-handle picture `X_J` and MWW 3.5 about `S^4` |
