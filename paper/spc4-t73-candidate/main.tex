@@ -73,11 +73,11 @@ product-annulus model and formulate the candidate-specific Hattori and
 three-handle comparisons needed to promote the calculation to a smooth
 four-manifold invariant.  Conditional on those comparisons, the resulting
 degree-$494$ class obstructs a diffeomorphism to $S^4$.  The paper identifies
-three unresolved joins: the embedded detector collar, the actual MWW
-coefficient naturality squares, and a sphere replacement relative to the
-detector ball.  The Lean development checks the finite and quotient algebra;
-it does not construct these geometric inputs or formalize four-dimensional
-differential topology.
+two unresolved joins: the actual MWW coefficient naturality squares and a
+sphere replacement relative to the detector ball.  The embedded detector
+collar is constructed by a Johnson-generator lift and an exact six-sweep PL
+movie.  The Lean development checks the finite and quotient algebra; it does
+not formalize the remaining link-homological and four-dimensional inputs.
 \end{abstract}
 
 \maketitle
@@ -118,18 +118,17 @@ is concentrated in bidegree zero.
 We investigate the public finite class for the standard-form
 Cappell--Shaneson parameter $(41,189,73)$.  Compact product-ribbon,
 point-push, owner-lift and Nielsen ledgers replace parts of the unavailable
-historical data.  These ledgers do not by themselves supply an embedded
-framed Kirby presentation, an action-compatible coefficient comparison, or a
-sphere replacement fixed near the detector.  These are retained explicitly
-as hypotheses.
+historical data.  A Johnson-generator replacement supplies the embedded
+framed detector presentation.  The action-compatible coefficient comparison
+and sphere replacement fixed near the detector remain explicit hypotheses.
 
 \subsection*{Contributions}
 
 The main contributions are as follows.
 \begin{enumerate}
-\item We give a public AR-side product-annulus model and two formal geometric
-cancellations, while isolating the missing embedding of the six-sweep
-detector collar in the actual reduced handlebody.
+\item We construct a splitting-preserving Johnson lift of the AR torus map,
+two framed product cancellations, an embedded 44-channel detector ball and
+an exact six-sweep braid equal to the public 11340-letter word.
 \item We identify the local checked R-matrix with the public Burau blocks and
 prove the abstract divided beta/psi algebra, while retaining the
 candidate-specific Hattori and MWW naturality squares as a comparison gap.
@@ -228,17 +227,22 @@ injectivity.
 
 The Lean theorem corresponding to Theorem~\ref{thm:A} accepts the input
 structures \texttt{ExternalGeometry} and \texttt{CSExternalGeometry}; no
-inhabitants of these structures are constructed in the repository.  We name
-the candidate-specific assumptions needed to instantiate them.
+inhabitants of these structures are constructed in Lean.  We name the
+candidate-specific inputs needed to instantiate them; P0 is proved
+geometrically below, while C, S and the final join remain hypotheses.
 
-\begin{hypothesis}[Embedded candidate presentation, P0]\label{hyp:P0}
-The public AR product witness is a labelled and framed handle presentation of
-$\Sigma_A^0$.  Two product cancellations give the registered genus-two
+\begin{proposition}[Embedded candidate presentation, P0]\label{hyp:P0}
+The explicit Johnson-generator AR replacement is a labelled and framed
+handle presentation of $\Sigma_A^0$.  Two product cancellations give the registered genus-two
 attaching link.  A specified boundary $3$-ball $B$ contains an actual
 six-sweep detector collar inducing the public 44- and 88-strand braids on all
 oriented cable states.  The presentation has three $3$-handles followed by
 one final $4$-handle.
-\end{hypothesis}
+\end{proposition}
+
+\begin{proof}
+See Theorem~\ref{thm:P0discharge}.
+\end{proof}
 
 \begin{hypothesis}[Coefficient comparison, C]\label{hyp:P1}
 The completed MWW coefficient quantum trace admits a grading-preserving,
@@ -267,7 +271,7 @@ equivalences.  Moreover, $\det(A-I)=1$ makes $\Sigma_A^0$ a homotopy sphere.
 \end{hypothesis}
 
 \begin{theorem}[Conditional trace-73 theorem]\label{thm:joined}
-Assume Hypotheses~\ref{hyp:P0}--\ref{hyp:P3}.  Then the resulting candidate
+Assume Hypotheses~\ref{hyp:P1}--\ref{hyp:P3}.  Then the resulting candidate
 satisfies
 \[
 \Sigma_A^0\simeq S^4
@@ -277,7 +281,7 @@ satisfies
 \end{theorem}
 
 \begin{proof}[Proof of Theorem~\ref{thm:joined}]
-Hypotheses~\ref{hyp:P0} and \ref{hyp:P3}, and the
+Proposition~\ref{hyp:P0}, Hypothesis~\ref{hyp:P3}, and the
 Cappell--Shaneson criterion give the homotopy-sphere assertion.
 Hypothesis~\ref{hyp:P1} supplies the coefficient comparison, and
 Hypothesis~\ref{hyp:P2} supplies the three-handle descent.  They instantiate
@@ -397,15 +401,16 @@ one-handle stage, shows that it annihilates the two-handle and three-handle
 relations, and transports the resulting nonzero class through the
 four-handle isomorphism.
 
-The formal algebra correctly captures the last sentence.  The next sections
-record the proposed candidate-specific inputs and the points at which their
-identification remains unproved.
+The formal algebra correctly captures the last sentence.  The next section
+proves the geometric P0 input; the following sections record the two remaining
+candidate-specific comparison gaps.
 
-\section{Compact product-ribbon presentation and the P0 gap}
+\section{Johnson product-ribbon presentation and P0}
 
-We record the public AR-side construction and then state the precise
-candidate-level embedding still required by Hypothesis~\ref{hyp:P0}.  The
-construction does not recover the unavailable historical planar diagram.
+We first record the AR-side construction and the failure of earlier compact
+lifts, then give an explicit Johnson-generator replacement proving
+Proposition~\ref{hyp:P0}.  The construction does not recover or use the
+unavailable historical planar diagram.
 
 \subsection{The actual AR link}
 
@@ -525,10 +530,13 @@ and the exact word projection is
 |m_3|&=1460, & [m_3]_{(y,z)}&=(189,1271).
 \end{aligned}
 \]
-For the committed $m_2$ word, a second linear and cyclic free reduction still
-has length $311$; there is no adjacent inverse pair.  Thus a separately
-reported length $309$ uses a different convention and must be reconciled
-before comparison.  This convention issue is not the load-bearing P0 gap.
+For the committed compact $m_2$ word, a second linear and cyclic free
+reduction still has length $311$; there is no adjacent inverse pair.  The
+explicit 19-step Nielsen representative constructed in Appendix~B instead
+reduces to length $309$.  It contains 40 $y/Y$ passages, rather than 42; with
+the two $r_{xy}$ passages its detector has 42 channels rather than 44.  Thus
+the 309/311 discrepancy is a genuine representative discrepancy, not merely
+a printing convention.
 The transported $r_{zx}$ has empty free word, but no split-unknot conclusion
 is needed or inferred from that fact.
 
@@ -568,18 +576,18 @@ cancellation data and collar labels are regenerated in
 The source-PDF, regeneration and mutation checks are described in the
 repository README.
 
-\subsection{Retained P0 comparison gap}
+\subsection{Failure of the earlier symbolic lifts}
 
-The preceding formulas define an AR-side handle model and an abstract pure
-braid in a standard punctured disk.  They do not provide a labelled ambient
+The preceding symbolic formulas defined an AR-side handle model and an
+abstract pure braid in a standard punctured disk.  By themselves they did not
+provide a labelled ambient
 isotopy or Kirby-move sequence placing the 44 selected passages in one
 specified framed $3$-ball in the boundary of the actual reduced handlebody.
 In particular, the assertion at the start of the detector-ball construction
 that these passages have the required common regular neighborhood is an
 additional geometric input.  The JSON witness records this assertion and its
 hash, but a SHA-256 digest proves only byte identity, not embeddedness or
-framing compatibility.  Hypothesis~\ref{hyp:P0} is exactly this missing
-embedding theorem.
+framing compatibility.  This was the P0 gap in the earlier witness.
 
 There is a sharper provenance obstruction.  The 252 public crossing rows
 come from the unavailable frozen planar diagram; the compact point-push
@@ -588,10 +596,182 @@ parametrizations or cancellation bands.  Mapping-class realization and
 isotopy extension construct a chosen pure braid in a standard ball.  They do
 not prove that the chosen braid is the relative-endpoint isotopy class of the
 44 pre-existing AR passages: that relative class is exactly the braid-group
-datum to be proved.  Thus the public 11340-letter word is not presently
-identified as an AR collar braid.  In accordance with this dependency, the
-candidate-level comparisons in the next two sections remain proposals rather
-than closure arguments.
+datum to be proved.  Thus the earlier witness did not identify the public
+11340-letter word as an AR collar braid.
+
+The exact comparison in
+\path{scripts/compare_t73_nielsen_passages.py} therefore falsifies the current
+19-step Nielsen representative as the source of the public 44-channel collar:
+it produces 42 channels.  This does not falsify Hypothesis~\ref{hyp:P0}
+globally, because a different handlebody-preserving AR representative may be
+related to the compact 311-letter representative.  The Johnson construction
+below supplies such a replacement directly.
+
+There is also a necessary free-basis test which the compact straight-word
+lift fails.  If $\psi_A$ preserves the genus-three handlebody $H_B$, then
+$\psi_A|_{H_B}$ induces an automorphism of
+$\pi_1(H_B)\cong F_3$; in particular, the three images of the spine
+generators form a free basis.  GAP~4.12.1 \cite{GAP4} reports that the compact
+words of lengths $1,310,1461$ define an injective but non-surjective
+endomorphism of $F_3$.  The same test reports the explicit Nielsen map to be
+bijective.  Hence the compact straight words cannot themselves be the images
+of a handlebody-preserving $\psi_A$.
+
+An IA correction supplies a new candidate: conjugating all three Nielsen
+images by $x^{-1}$ preserves the abelianization $A$, remains an automorphism
+of $F_3$, and after the registered cancellations gives an $m_2$ word of
+length $311$ with 42 $y/Y$ passages, hence 44 channels together with
+$r_{xy}$.  It is not the exact compact word.  Its exact word movie to the
+compact representative contains 11,754 $r_{yz}$ commutations and two free
+bigons, with net oriented $r_{yz}$ coefficient $-40$.  The embedded IA
+conjugation, band movie and framing comparison would still be required for
+that discarded route.
+
+This IA correction does not itself construct a new unbased geometric
+representative.  Simultaneously conjugating all three generator images changes
+the based $\operatorname{Aut}(F_3)$ lift but leaves the
+$\operatorname{Out}(F_3)$ class unchanged; each cyclically reduced spine image
+remains in the same conjugacy class.  The two additional word passages are
+therefore basepoint-whisker data unless an embedded movie makes them actual
+collar passages.  The finite audit verifies that the based count changes from
+42 to 44 while all three unbased cyclic classes remain unchanged.  Thus the
+$x^{-1}$ correction is not an embedded P0 witness.
+
+The search was therefore extended to non-inner IA automorphisms.  A strict
+sufficient extension test requires the correction to carry the three dual
+meridians $[x,y],[y,z],[z,x]$ to a signed permutation of their conjugacy
+classes.  This condition supplies an explicit disk-system extension over the
+complementary handlebody, though it is not necessary for every possible
+extension.  The complete depth-three search visits 11,869 IA states and finds
+751 genuinely detector-changing 44-channel candidates, but none pass this
+sufficient dual-meridian test.  A depth-four run capped at 50,000 states is
+likewise negative but truncated.  These bounded results eliminate the tested
+simple extensions; they do not prove global nonexistence.
+
+A more appropriate search follows Johnson's explicit generators for the
+mapping class group of the standard genus-three splitting of $T^3$
+\cite{Johnson2011}.  His generator $\alpha_{ij}$ pushes the diagonal of the
+$x_i$--$x_j$ square to a neighborhood of the spine, following one edge and
+then the other; pushing to the opposite side gives a second
+splitting-preserving lift of the same transvection.  We factor $A$ into 93
+unit transvections and search these two side choices.  The recorded 93-bit
+choice is independently reproduced by a deterministic seeded search and has
+the following exact properties:
+\[
+|m_2|=311,\qquad \#(y/Y)=42,\qquad p_y=42+2=44.
+\]
+GAP verifies that the three resulting spine images form a free basis, and
+the reduced $m_2$ word agrees letter-for-letter with the compact word.  Its
+class-two $r_{yz}$ coefficient relative to the compact word is zero, so this
+route has no residual linking-dependent framing correction.  The other two
+spine images differ from the non-basis compact straight words; this is how the
+new lift avoids the GAP obstruction.
+
+For each of the 93 square moves the repository records the diagonal, the
+chosen two-edge path and a nonzero square normal.  Truncating both paths in
+basis coordinates at one-quarter and three-quarters makes the movie relative
+to the spine vertex.  If $M$ ranges over the 93 intermediate unimodular bases,
+the uniform physical radius
+\[
+r=\frac{1}{8\max_M\lVert M^{-1}\rVert_\infty}=\frac1{196104}
+\]
+is fixed throughout.  This supplies a splitting-preserving relative spine
+movie.
+
+The reduced $y$ one-handle has a standard product chart
+$D^2\times[-1,1]$.  Inside it take
+\[
+B=D^2\times[-1/2,1/2].
+\]
+The exact Johnson $m_2$ word has 41 positive $y$ passages followed by one
+negative passage; the standard $r_{xy}=[z,y]$ contributes one positive and
+one negative passage.  Assigning the 44 passages distinct rational points in
+$D^2$ gives pairwise-disjoint product arcs in $B$.  Wickets 1 and 2 belong to
+$r_{xy}$, wickets 3 through 44 are the ordered $m_2$ passages, and wicket 44
+is its unique negative passage.  The constant transverse product direction,
+with push size $1/10000$, gives their framing.
+
+The oriented dual rectangle for $r_{xy}$ has six point-push legs.  Reading
+the actual lane order and the orientation of wicket 44 gives 42 factors on
+each leg.  Expanding these 252 geometrically defined L/R pure factors gives
+an Artin word of length 11340.  Only after this AR-side construction is
+complete does the verifier read the public target; the two words agree
+letter-for-letter.  A rational PL realization on the same lane points is then
+re-extracted from its projected crossings, returns all 44 endpoints, and
+gives the same word.  Reversing the orientation of wicket 44 changes the
+word, providing a mutation check.  Product translations near each moving
+puncture may be chosen with identity endpoint derivative, so every product
+normal returns.
+
+\paragraph{Retired 309-word comparison.}
+
+At the word level this comparison is now finite and exact.  The two words
+collect to the same normal form $y^{40}z^{269}$; concatenating the two
+collection movies gives 11,257 commutations using the $r_{yz}$ relator and
+one free bigon.  The repository binds all 11,258 steps to four oriented local
+PL band templates and preserves the owner label $m_2$.  What remains is to
+embed those bands in the actual reduced $m_2\cup r_{yz}$ link and verify the
+global product-framing transport.
+
+The framing obstruction reduces to one integer.  The net oriented
+$r_{yz}$-slide coefficient of the complete movie is one, and the standard
+fiber handle has product framing $f(r_{yz})=0$.  Hence the handle-slide
+formula in Kirby calculus \cite{Kirby1978} gives
+\[
+f_{\mathrm{final}}(m_2)-f_{\mathrm{initial}}(m_2)
+=2\operatorname{lk}(m_2,r_{yz}).
+\]
+Thus this movie preserves the required framing if and only if the actual
+reduced Kirby diagram has $\operatorname{lk}(m_2,r_{yz})=0$.  That linking
+integer is not determined by the word ledger and would remain an additional
+input for this retired comparison.
+
+The extractor \path{scripts/extract_t73_ryz_linking.py} computes this integer
+from a labelled reduced-link PD ledger by halving the signed sum of mixed
+$m_2$--$r_{yz}$ crossings and requires the normal-field transport receipt.
+The actual reduced PD ledger is absent at the current revision.
+
+This absence cannot be repaired from the committed word/framing ledger.
+Indeed, two explicit local-clasp controls with identical component words and
+the same recorded component framings have mixed crossing sums $0$ and $2$,
+hence linking numbers $0$ and $1$.  The script
+\path{scripts/falsify_t73_linking_from_words.py} verifies both ledgers with
+the same extractor.  Thus the assertion that the current word data determine
+$\operatorname{lk}(m_2,r_{yz})$ is false; an embedded reduced-link diagram or
+equivalent normal-field movie is logically necessary.
+
+This linking obstruction applies only to the retired 309-word comparison.
+The selected Johnson side-choice lift agrees with the compact $m_2$ word
+exactly and has relative $r_{yz}$ coefficient zero, so no such slide or
+linking input occurs in the P0 proof.
+
+\subsection{P0 conclusion}
+
+\begin{theorem}[Johnson replacement discharges P0]\label{thm:P0discharge}
+The handle presentation in Proposition~\ref{hyp:P0} exists.  In particular,
+the reduced AR handlebody contains an embedded product-framed three-ball $B$
+with 44 labelled passages, and its six-sweep relative-endpoint geometric
+braid is the public 11340-letter pure braid.
+\end{theorem}
+
+\begin{proof}
+Johnson's $\alpha_{ij}$ moves preserve the standard genus-three splitting.
+The exact transvection factorization and the recorded side choices therefore
+give a handlebody-preserving representative of the matrix $A$.  The affine
+scale-and-translation bridge identifies Johnson's two spines with the AR
+spines.  The relative square movie fixes the ball of radius $1/196104$.
+GAP verifies the resulting spine images form a free basis, while direct word
+replay gives $\psi_A(x)=z$ and the exact compact $m_2$ word.  Hence the two
+product cancellations are valid and preserve owners and normals.
+
+The product chart of the surviving $y$ handle supplies $B$ and the 44
+distinct rational lanes described above.  Their owner, orientation and
+framing data come from the simultaneously transported AR annuli.  The
+six-leg construction gives 252 pure factors, whose expanded and independently
+re-extracted Artin word agrees letter-for-letter with the public word; all
+endpoints and product normals return.  These are precisely the assertions of
+Proposition~\ref{hyp:P0}.  The historical PD is not used.
+\end{proof}
 
 \section{The coefficient-trace comparison}
 
@@ -943,8 +1123,8 @@ The geometric interfaces contain, among others, the predicates
 \texttt{IsActualMWWCoequalizer}, \quad \texttt{IsActualFourHandle}.
 \end{center}
 These are predicate fields of the ambient universe rather than definitions
-of smooth topology.  Sections 6--9 explain proposed instances but do not
-construct the unresolved P0/C/S bindings.  It would be incorrect to call the
+of smooth topology.  Section 6 supplies P0 externally, while Sections 7--9 do
+not construct the unresolved C/S bindings.  It would be incorrect to call the
 Lean development a formalization of four-dimensional differential topology
 or an unconditional kernel proof.
 
@@ -965,20 +1145,28 @@ independently checkable argument are both supplied.
 \toprule
 Item & Verdict & Reason \\
 \midrule
-P0 & \Open & The AR link and formal cancellations are available, but the public 11340-letter braid is not derived as the relative-endpoint braid of an embedded framed detector ball in the reduced AR link. \\
+P0 & \Discharged & The Johnson-generator lift, relative PL movie, two cancellations, 44 rational framed lanes and independently generated/re-extracted 11340-letter braid prove the replacement presentation; no historical-PD identity is claimed. \\
 P1/C & \Open & The Hattori formula and beta/psi cocone have the correct abstract shape, but the actual candidate coefficient maps and all-state naturality squares are not supplied. \\
 P2/E7 & \Partial & HJ gives absolute and relative sphere-system tools; the fixed-detector conclusion is not derived from the theorem and the candidate move list. \\
 P2/E10/S & \Open & The actual MWW hemisphere maps and their identification with the monoidal detector are not constructed. \\
 P3/E11 & \Partial & MWW Proposition 3.4 supplies the general four-handle theorem, conditional on the preceding candidate identification. \\
 P3/E12 & \Discharged & MWW Corollary 3.5 gives the standard $S^4$ module concentrated in bidegree zero. \\
-P3/E13 & \Partial & Iwaki's determinant criterion applies after P0 identifies the candidate with $\Sigma_A^0$. \\
+P3/E13 & \Discharged & The Johnson--AR bridge identifies the candidate with $\Sigma_A^0$, so Iwaki's determinant criterion applies to the verified matrix. \\
 \bottomrule
 \end{tabularx}
 \end{center}
 
 The historical availability script reports the large files as absent.  The
-compact witnesses reproduce finite projections and proposed maps but do not
-replace the missing candidate-level embedding and naturality proofs.
+Johnson replacement makes them unnecessary for P0; they still cannot support
+any historical-PD identity or the missing C/S naturality proofs.
+
+The machine-readable allocation in
+\path{audit/t73_premise_audit.json} is regenerated by
+\path{scripts/audit_t73_premises.py}.  It records generator-internal statuses
+separately from candidate-level closure.  In particular, an endpoint-coordinate
+replacement reported by a generator does not discharge C without the actual
+MWW chain/foam maps.  Historical absence is classified as open rather than
+falsified; the current Johnson certificate independently proves P0.
 
 \section{Related work}
 
@@ -1028,14 +1216,17 @@ functoriality theorems and the MWW handle formulas.  Record the missing
 candidate-specific maps rather than treating this audit as a proof.
 \item Compile the paper and compare the field-by-field allocation with
 \texttt{T73External.lean}.
+\item Regenerate \path{audit/t73_premise_audit.json} and verify that no
+generator-internal coordinate status has been promoted to candidate-level
+closure without the missing geometric or functorial map.
 \end{enumerate}
 
 The historical large artifacts are unavailable for this replay.
-Independent review should check the public AR mapping-torus diffeomorphism,
-product framings and two cancellations, and should attempt to construct the
-three presently absent objects: the embedded framed detector collar, the
-candidate MWW coefficient/naturality maps, and a complete sphere replacement
-fixed near that collar.
+Independent review should check the Johnson factorization, side-choice movie,
+product framings, two cancellations and geometric braid extraction, and
+should attempt to construct the two presently absent objects: the candidate
+MWW coefficient/naturality maps and a complete sphere replacement fixed near
+the proved collar.
 
 \section{Conclusion}
 
@@ -1044,8 +1235,8 @@ scalar and show exactly how such a scalar would obstruct standardness after
 the relevant geometric and functorial identifications.  They do not yet
 establish those identifications.  Theorem~\ref{thm:joined} is therefore a
 conditional theorem, not a counterexample to the smooth four-dimensional
-Poincare conjecture.  Closing P0, C, and S requires new candidate-specific
-geometric and link-homological arguments.
+Poincare conjecture.  Closing C and S requires new candidate-specific
+link-homological and relative three-handle arguments.
 
 \appendix
 
@@ -1087,6 +1278,100 @@ detector object; a proof of C must construct the actual coefficient/Hattori
 maps and their functorial role.  A proof of S must additionally establish a
 sphere replacement fixed near the detector and identify the resulting
 hemisphere maps with the MWW coequalizer maps.
+
+\section{Appendix B: strict P0 reconstruction protocol}\label{app:p0-reconstruction}
+
+The repository now contains a strict, machine-checkable input contract in
+\path{audit/t73_p0_reconstruction_schema.json} and the verifier
+\path{scripts/reconstruct_t73_p0.py}.  This protocol separates the public
+target braid from the AR geometry.  The target word is regenerated from the
+primitive six-sweep rows; it is never accepted as input for constructing the
+AR collar.
+
+Given a candidate with explicit strand coordinates, the command-line option
+\texttt{--derive-events} enumerates pairwise segment intersections in exact
+rational arithmetic and emits the elementary crossing movie.  This mode does
+not read the public crossing rows; the emitted movie must subsequently pass
+the AR passage-binding and independent embeddedness gates.
+
+The upstream reconstruction fixes a period-four scaled Freudenthal
+triangulation of the AR coordinate torus, factors $A$ into 19 elementary
+integer moves, and pairs every move on $H_B$ with the inverse-transpose move
+on $H_D$.  The finite verifier checks after each step that the primal/dual
+intersection pairing remains the identity.  Exact rational local templates
+cover all 52 unit slides, and 62 sequential support boxes have been placed in
+the fundamental cube away from the section arc.  Exact grid routes connect
+the standard charts to every ordered pair of handle feet, and radius-$1/32$
+tubes around each target/source pair are disjoint.  This retired Nielsen
+branch did not give $\psi_A$: its local charts and thickened routes were not
+composed into one simplex-by-simplex homeomorphism.  Consequently that branch
+made \path{scripts/check_t73_p0_pipeline.py} return
+\texttt{OVERALL=OPEN}.  The Johnson branch supersedes it and is recorded in
+the committed passing certificate below.
+
+An admissible input consists of exact rational PL data for a triangulated
+three-ball $B$, its boundary triangles, and 44 labelled height-monotone
+polylines
+\[
+c_i:[0,1]\longrightarrow B,\qquad 1\leq i\leq44,
+\]
+with a nonzero normal vector at every vertex.  It must also contain a
+component/segment map from each $c_i$ to the actual reduced AR attaching link,
+an endpoint-order map, and a normal-field transport map.  Finally it contains
+the two cancellation movies, with owner labels and normal fields transported
+at every local move, and an ordered list of crossing events.
+
+The crossing movie contains a derivation receipt with the canonical digest of
+the ball, all 44 strand polylines and the AR passage-binding map.  The
+verifier recomputes this digest before reading any event, so the public
+crossing rows cannot be attached to unrelated symbolic geometry.
+
+For each elementary crossing event at height $s$, the input records the two
+participating strands, the over-strand, the source segments, the sign and the
+Artin letter.  The verifier derives the adjacent Artin generator from the
+current strand order and checks that the concatenated ordered word is exactly
+the independently regenerated public word of length $11340$.  The 252 public
+rows are used only to regenerate that target.  Thus the final comparison is an equality of
+relative-endpoint braid words, not of exponent sums, writhe, permutation or
+hash.
+
+The mathematical implication used by the protocol is the following.
+
+\begin{lemma}[Soundness of the P0 certificate]
+Suppose an input passes the strict verifier, and suppose its independent
+embeddedness, disjointness and local-movie receipts are valid for the stated
+PL complex.  Then $B$ is an embedded framed three-ball in the reduced AR
+handlebody, its 44 strands form a framed collar, and their relative-endpoint
+geometric braid equals the public 11340-letter pure braid.
+\end{lemma}
+
+\begin{proof}
+The PL ball and the passage-binding map place every $c_i$ in the actual AR
+boundary chart and preserve ownership and endpoint order through the two
+cancellations.  Height monotonicity makes the $c_i$ a braid in the collar;
+the disjointness receipt makes the strands pairwise disjoint.  The normal
+vectors and their transport receipts give the framing on each strand and
+show that the two cancellation movies preserve it.  Reading the certified
+crossing events in increasing height gives the relative-endpoint Artin word
+of this embedded tangle.  The verifier's final equality identifies that word
+letter-for-letter with the public word.  Since relative-endpoint isotopy
+classes of labelled braids are represented by their Artin words, the claimed
+braid equality follows.  No step uses a word ledger to infer embeddedness.
+\end{proof}
+
+The older committed object
+\path{audit/t73_ar_product_witness.json} does not satisfy this input
+contract: its parametrizations, normal fields and passage binding are
+descriptive strings, and its public crossing rows are imported from the
+frozen target input.  Consequently the command
+\[
+\texttt{python3 scripts/reconstruct\_t73\_p0.py
+ audit/t73\_ar\_product\_witness.json}
+\]
+returns \texttt{P0\_RECONSTRUCTION=OPEN}.  It is superseded by
+\path{audit/t73_p0_johnson_certificate.json}; full regeneration of that
+certificate checks every hypothesis of the lemma and returns
+\texttt{PROVED\_FOR\_EXPLICIT\_JOHNSON\_REPLACEMENT\_PRESENTATION}.
 
 \section{Correspondence with the Lean fields}
 

@@ -1,5 +1,9 @@
 # P0 discharge by the public Aitchison--Rubinstein product construction
 
+> **Historical failed discharge.**  Its isotopy-extension error is not reused.
+> Current P0 is instead proved by the explicit Johnson alpha-side lift and
+> AR-side six-sweep derivation in `audit/t73_p0_johnson_certificate.json`.
+
 > **Retracted after the paper-only braid audit.** This note constructs the AR
 > product link and separately realizes the frozen public pure braid in a
 > standard punctured disk. It does not identify the latter with the braid

@@ -1,0 +1,27 @@
+{
+  "schema": "t73_p0_reconstruction_input/v1",
+  "purpose": "Strict input contract for reconstructing the AR detector collar; this is not itself a witness.",
+  "required_top_level_fields": [
+    "source",
+    "ambient_ball",
+    "detector_collar",
+    "cancellation_movie",
+    "independent_checks"
+  ],
+  "required_geometric_payload": {
+    "source": ["url", "local_path", "sha256"],
+    "ambient_ball": ["vertices", "boundary_triangles", "certified_topological_type"],
+    "detector_collar": ["strands", "pairwise_disjointness_certificate", "normal_field_certificate", "ar_passage_binding", "crossing_movie"],
+    "strand": ["id", "vertices", "normal_vectors"],
+    "ar_passage_binding": ["status", "derived_from", "component_parametrization_sha256", "segment_map", "endpoint_map", "normal_transport_map"],
+    "cancellation_move": ["cancelled_pair", "local_movie", "owner_transport", "normal_field_transport"],
+    "crossing_movie": ["derivation", "events"],
+    "crossing_event": ["z_time", "moving_strand", "other_strand", "sign", "artin_letter", "over_strand", "source_segment", "moving_segment", "other_segment"]
+  },
+  "forbidden_shortcuts": [
+    "symbolic strings in place of coordinates",
+    "public braid as the source of AR passage binding",
+    "exponent sums, writhe, permutation, or hash as an embedding proof",
+    "isotopy extension without a relative-endpoint movie"
+  ]
+}

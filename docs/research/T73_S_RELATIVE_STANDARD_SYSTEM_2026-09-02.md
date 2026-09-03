@@ -14,7 +14,8 @@ P0 + monoidal C  =>  S
 ```
 
 is **DISCHARGED**.  Candidate-level S remains **PARTIAL**, rather than
-`DISCHARGED`, while P0 and C themselves are open.
+`DISCHARGED`: P0 is now supplied by the Johnson replacement, while the full
+symmetric-monoidal C comparison remains open.
 
 ## Sources checked
 

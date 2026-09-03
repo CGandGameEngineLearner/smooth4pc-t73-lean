@@ -1,0 +1,35 @@
+{
+  "P0_status": "PROVED_FOR_EXPLICIT_JOHNSON_REPLACEMENT_PRESENTATION",
+  "certificate_sha256": "02CEDCE915EBFC2B3C0A88D10BEEB050F0D7DD828F6F11DC849DA83ED2BC05D2",
+  "checks": {
+    "ar_passage_binding": true,
+    "embedded_framed_collar": true,
+    "exact_compact_m2": true,
+    "forty_four_channels": true,
+    "gap_free_basis": true,
+    "geometric_braid": true,
+    "johnson_ar_affine_bridge": true,
+    "johnson_square_movie": true,
+    "matrix_factorization": true,
+    "noncircular_source_order": true,
+    "relative_fixed_ball": true,
+    "six_sweep_word": true,
+    "two_cancellations": true,
+    "zero_relative_ryz_coefficient": true
+  },
+  "hashes": {
+    "cancellations": "9D8793CD650053E75AC8D6866DBBCA3F64C518E99DBEB1F853CBEA616E0F6A85",
+    "collar": "1ABD1B62D978C1BBA1D988DF3C9EA9ADC7CFA4291388C08E53646F7EEF2A0AF4",
+    "factorization": "FC7A6525E113C750A928068C4162EC8769006494917A3CDC63A16253D533C192",
+    "geometric_braid": "1AE07691F50AE6A9F0947C89E294D8CDBE242E89076A76FBFE59F93D98B991BF",
+    "johnson_ar_bridge": "553E8DE5D99A8718358243770C250A2491BC44CAD3F94777F2921CC4713F7EC7",
+    "relative_movie": "75D83C5FAA9C2B426C4207162B8380DF8B6BFC6648A5D481541F740ACB4EF342",
+    "side_candidate": "2A5283BE2ECD4ECCC90057C2C74A1D163CB4F3AD9BE2CB10480A9142CCBD7340",
+    "six_sweeps": "7BB5DD6A76DC484C5BC2C47C45041DAE6105C5F3A6B53977D5E0A88868C78071",
+    "square_movie": "DBE744C045104CE01860EC925C34A07CCB44C9B398CFB828AFE6562DBE050A19"
+  },
+  "historical_pd_claim": "NONE",
+  "mathematical_scope": "explicit Johnson alpha-side AR replacement; not byte identity with the unavailable historical PD",
+  "schema": "t73_p0_johnson_certificate/v1",
+  "verdict": "PASS"
+}

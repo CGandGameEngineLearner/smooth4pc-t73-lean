@@ -1,0 +1,13 @@
+{
+  "schema": "t73_reduced_link_pd/v1",
+  "purpose": "Input contract for extracting linking(m_2,r_yz) from an actual labelled reduced Kirby/PD diagram.",
+  "required_fields": ["components", "crossings", "normal_field_transport"],
+  "crossing_fields": ["over_owner", "under_owner", "sign", "over_segment", "under_segment"],
+  "required_components": ["m_2", "m_3", "r_xy", "r_yz", "r_zx"],
+  "forbidden_substitutes": [
+    "free-group words",
+    "abelianization",
+    "a claimed zero linking without labelled mixed crossings",
+    "blackboard framing without normal-field transport"
+  ]
+}

@@ -28,18 +28,18 @@ def check() -> None:
         r"\begin{theorem}[Conditional trace-73 theorem]\label{thm:joined}",
         paper,
     )
-    require(paper_text, r"P0 & \Open", paper)
+    require(paper_text, r"P0 & \Discharged", paper)
     require(paper_text, r"P1/C & \Open", paper)
     require(paper_text, r"P2/E7 & \Partial", paper)
     require(paper_text, r"P2/E10/S & \Open", paper)
     require(paper_text, r"P3/E11 & \Partial", paper)
     require(paper_text, r"P3/E12 & \Discharged", paper)
-    require(paper_text, r"P3/E13 & \Partial", paper)
+    require(paper_text, r"P3/E13 & \Discharged", paper)
     require(paper_text, "conditional theorem, not a counterexample", paper)
-    require(paper_text, "unresolved P0/C/S bindings", paper)
+    require(paper_text, "unresolved C/S bindings", paper)
 
     reject(paper_text, r"\begin{theorem}[Main theorem]\label{thm:joined}", paper)
-    reject(paper_text, r"P0 & \Discharged", paper)
+    reject(paper_text, r"P0 & \Open", paper)
     reject(paper_text, r"P0 & \Partial", paper)
     reject(paper_text, r"P1/C & \Discharged", paper)
     reject(paper_text, r"P2/E10/S & \Discharged", paper)

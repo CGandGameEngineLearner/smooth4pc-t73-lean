@@ -1,5 +1,11 @@
 # P0 audit: the public braid is not identified with an AR collar braid
 
+> **Historical audit, superseded.**  This verdict applies to the rejected
+> symbolic/frozen-PD route.  The explicit Johnson alpha-side replacement in
+> `audit/t73_p0_johnson_certificate.json` constructs the AR passage lanes and
+> independently generates/re-extracts the public braid, so current P0 is
+> discharged without claiming identity with the historical PD.
+
 Date: 2026-09-02
 
 ## Verdict

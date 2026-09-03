@@ -2,7 +2,8 @@
 """Compatibility gate for the honest conditional state of the paper.
 
 The historical filename is retained for callers.  Passing this gate does not
-mean that P0, C, or S has been mathematically completed.
+mean that C or S has been mathematically completed.  P0 is supplied by the
+explicit Johnson replacement certificate.
 """
 
 from __future__ import annotations
@@ -38,8 +39,8 @@ def check() -> None:
     load_script("check_t73_claim_boundary").check()
 
     paper_text = paper.read_text(encoding="utf-8")
-    require(paper_text, "three unresolved joins", paper)
-    require(paper_text, "Closing P0, C, and S requires new", paper)
+    require(paper_text, "two unresolved joins", paper)
+    require(paper_text, "Closing C and S requires new", paper)
 
     conditional_text = conditional.read_text(encoding="utf-8")
     external_text = external.read_text(encoding="utf-8")

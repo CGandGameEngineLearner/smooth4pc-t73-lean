@@ -1,5 +1,10 @@
 # P0 reconstruction attempt: from word ledgers to an embedded framed link
 
+> **Historical attempt.**  The final Johnson alpha-side construction in
+> `audit/t73_p0_johnson_certificate.json` supplies a new embedded replacement;
+> the non-reconstructability statements below remain valid for word ledgers
+> alone.
+
 Date: 2026-09-02
 
 > Superseded later the same date by
