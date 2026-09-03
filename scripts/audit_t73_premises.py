@@ -56,7 +56,7 @@ def generate() -> dict[str, Any]:
         r"\label{thm:Cdischarge}",
         r"\label{thm:Sdischarge}",
         r"\label{hyp:P3}",
-        r"C3 and P2/E7 are Unused",
+        r"that assembly is \Open\ for the Johnson candidate",
         r"\label{sec:final-identifications}",
     ):
         require(paper_text, marker, paper)

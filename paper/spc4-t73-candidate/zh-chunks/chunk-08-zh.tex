@@ -1,0 +1,104 @@
+\section{三柄球面闭包}\label{sec:s-closure}
+
+本节记录预期的 S 论证。闭流形 HJ 定理~5.3 不用于得出 $B$ 已固定。去掉最后的 $4$-柄，称剩余柄体为 $W_3$。其边界为 $S^3$。反向三个 $3$-柄即在 $S^3$ 上附着三个三维 $1$-柄，故
+\[
+\partial W_2\cong\#^3(S^1\times S^2).
+\]
+实际 attaching 球面系的补连通，因为在该系上球面 surgery 给出 $W_3$ 的连通边界。
+
+\begin{lemma}[更换完整球面系下的核不变性]
+\label{lem:Ssystem}
+令 \(\mathcal S\) 与 \(\mathcal A\) 为 \(\#^3(S^1\times S^2)\) 中的完整球面系。若它们经 isotopy、置换与球面 slide 相关，则自 \(\mathcal S^2_0(W_2)\) 出发的两个总 MWW 三柄映射的核一致。
+\end{lemma}
+
+\begin{proof}
+attaching 球面的 isotopy 给出同构的柄附着。置换仅重排不相交三柄。球面 slide 恰为 \(3\)--\(3\) 柄 slide。标准柄演算给出结果三柄配边之间的微分同胚，在其入射边界 $W_2$ 上为恒等。Skein-lasagna 映射的自然性因此给出 \(q_{\mathcal A}=\Phi q_{\mathcal S}\)，其中 \(\Phi\) 为目标模的同构。故它们的核一致。
+\end{proof}
+
+在 Johnson 替换反向 $1$-柄图景中选取标准完整系
+\(\mathcal A=(A_1,A_2,A_3)\)，已与 P0 重构立方体 $B$ 不相交。闭流形 HJ 定理~5.3 不用于得出 $B$ 已固定。
+它仅与引理~\ref{lem:Ssystem} 一起使用：任何其他完整系（含 going-up Kirby attaching 系）在闭流形中经 isotopy、置换与 slide 相关，故核一致。Horvat--Jab\l{}onowski 引理~5.5 与~5.7 不出现在 \cite{HorvatJablonowski2025} 中，亦未调用。
+在反向 $1$-柄图景中，三个 belt 球面避开 P0 立方体，
+dual 圈配对为恒等，$b=0$ 端点 foam，且与 C1 剩余 link 及 C2 支撑不相交。
+
+MWW 对 $3$-柄商的内在重述使用 $\mathcal S^2_0(S^2\times D^2)$ 的局部模作用。在 $N=2$ 时，令 $A_0$ 为带一个点的本质球面，$A_1$ 为无点球面。商关系为
+\[
+A_0=1,\qquad A_1=0.
+\]
+若 $J_j$ 为 $A_j$ 的赤道，MWW 的 K\"unneth 识别给出两半球映射的如下精确描述：
+\[
+\begin{array}{ccc}
+\mathcal S^2_0(W_2;J_j)&\xrightarrow{\ (\Psi_{\Delta^+},\Psi_{\Delta^-})\ }&
+\mathcal S^2_0(W_2)\oplus\mathcal S^2_0(W_2)\\
+\big\downarrow\wr&&\big\downarrow{\ell\oplus\ell}\\
+\mathcal S^2_0(W_2)\otimes\Q\{1,X\}
+&\xrightarrow{\ (\ell\circ(1\otimes\epsilon),\,\ell\circ\mu_{A_j})\ }&
+\Q\oplus\Q.
+\end{array}
+\tag{30}
+\]
+此处 $\epsilon(X)=1$，$\epsilon(1)=0$，而 $\mu_{A_j}(v\otimes X)=vA_0$、$\mu_{A_j}(v\otimes1)=vA_1$。因此 S 等价于两个全源恒等式
+\[
+\ell(vA_0)=\ell(v),\qquad \ell(vA_1)=0
+\quad\text{对每个 }v\text{ 及 }j=1,2,3.
+\tag{31}
+\]
+这将形式映射与 MWW 定理~3.7 中的 coequalizer 对等同，但不是实际本质球面的端点求值。
+
+\begin{proposition}[固定检测器的球面替换]\label{thm:Sgeometry}
+三柄总核可用 Johnson 替换反向 $1$-柄图景的标准 belt 球面系计算，该系避开 $B$，而 $B$ 中检测器保持固定。对此系，S 约化为六个方程 (31)。
+\end{proposition}
+
+\begin{proof}
+Johnson 替换的反向 $1$-柄图景放置三个避开 $B$ 的 belt 球面，dual 圈的柄段与 owner belt 球面相交一次，且坐标图返回避开每个 belt 立方体。闭流形 HJ 定理~5.3 将任何其他完整系在闭流形中经 isotopy 与此系相关；引理~\ref{lem:Ssystem}
+识别核。检测器留在那些 belt 球面避开的 $B$ 中。六个方程 (31) 于是为引理~\ref{lem:Sendpoint}。
+\end{proof}
+
+\subsection{本质球面端点比较}
+
+\begin{lemma}[标准球面的端点分解]\label{lem:Sendpoint}
+对每个 \(j\)、每个缆态及每个源元 \(v\)，\(\mu_{A_j}(v\otimes a)\) 实际端点像的常数项是 \(v\) 的旧检测器像与穿孔标准球面秩二 TQFT 映射的张量积。因此除法三次行满足
+\[
+\ell(vA_0)=\ell(v),\qquad \ell(vA_1)=0.
+\]
+\end{lemma}
+
+\begin{proof}
+使 \(A_j\) 与二柄余核横截，令 \(b_j\) 为核心圆盘数。MWW 定理~3.10 的证明将 \(\Delta^-\) 半球（在核心圆盘恢复之前）表示为从 \(A_j\) 删去那些圆盘及 \(\Delta^+\) 圆盘后得到的连通亏格零曲面。在一柄切割后选取 generic movie。因 \(A_j\) 与检测器片不相交，movie 的每个临界点完全属于两曲面之一。混合事件因此仅为可逆 Reidemeister/枢轴移动，在端点由缆 braid 表示；无混合 birth、saddle 或 death。
+
+在 \(q=1\) 时，引理~\ref{lem:C2} 将每个混合 braid 识别为张量范畴的对称性。birth、saddle 与 death 对该对称性的自然性将所有混合 braid 移到 movie 末端。同一端点置换与枢轴坐标图传输检测器行与曲面映射，故它们经同时共轭抵消。故实际常数映射为
+\[
+\operatorname{Id}_{\rm old}\otimes\Delta^{b_j-1}\quad(b_j>0),
+\]
+当 \(b_j=0\) 时为 \(\operatorname{Id}_{\rm old}\otimes\epsilon\)。
+恢复的二柄核心圆盘给出 \(b_j\) 个实际 counit。故对 \(b_j>0\)，
+\[
+\epsilon^{\otimes b_j}\Delta^{b_j-1}(1)=0,\qquad
+\epsilon^{\otimes b_j}\Delta^{b_j-1}(X)=1
+\tag{32}
+\]
+当 \(b_j=0\) 时解释为 \(\epsilon(1)=0,\epsilon(X)=1\)。
+\(1,X\) 基由 MWW 例~3.8 中 \(\Delta^+\) cap 归一化，BHPW strict 函子性防止 \(\Delta^-\) movie 中的独立符号。
+
+完整混合 braid 映射形如 \(P(I+O(h))\)。置换 \(P\) 刚被抵消，以 \(I+O(h)\) 预复合或后复合始于 \(h^3\) 阶的行仅改变到 \(h^4\) 阶及以上。故常数计算 (32) 正是除法三次行所见计算。三个 belt 球面避开 P0 立方体与 C1 剩余 $z$-圆，故 $b_j=0$，foam 为 MWW 例~3.8 的 counit。
+\end{proof}
+
+端点交换方块是引理~\ref{lem:Sendpoint} 的 $b=0$ counit。
+\[
+\begin{array}{ccc}
+\mathcal S^2_0(W_2;J_j)&\longrightarrow&
+\mathcal S^2_0(W_2)\oplus\mathcal S^2_0(W_2)\\
+\downarrow&&\downarrow\\
+\mathcal S^2_0(W_2)\otimes\Q\{1,X\}&\longrightarrow&\Q\oplus\Q,
+\end{array}
+\]
+其下映射为实际 counit 行及引理~\ref{lem:Sendpoint} 中 movie 分解的实际 \(A_j\)-作用。
+
+\begin{theorem}[相对三柄闭包 S]\label{thm:Sdischarge}
+假设~\ref{hyp:P2} 对 P0 替换成立。
+\end{theorem}
+
+\begin{proof}
+由引理~\ref{lem:Ssystem} 与~\ref{lem:Sendpoint} 及命题
+\ref{thm:Sgeometry}。
+\end{proof}

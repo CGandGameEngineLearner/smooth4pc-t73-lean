@@ -1,0 +1,264 @@
+\section{Johnson product-ribbon presentation and P0}\label{sec:johnson-presentation}
+
+We record the AR-side construction, summarize rejected compact lifts, and
+give the Johnson-generator replacement proving Hypothesis~\ref{hyp:P0}.
+
+\subsection{The actual AR link}
+
+Use the coordinate-spine genus-three Heegaard splitting of $T^3$ from
+Aitchison--Rubinstein \cite[pp.~5--12]{AitchisonRubinstein1984}; the complete
+volume is available in a
+\href{https://math.berkeley.edu/~kirby/papers/Gordon%20and%20Kirby%20%28editors%29%20-%20Four-manifold%20theory%20%28Durham%29%20-%20MR0780574.pdf}
+{public Berkeley scan}.  Let
+$C_i$ be the three coordinate spine circles with common base vertex $Q$, and
+let $A_i$ be pairwise-disjoint narrow disk neighborhoods away from $Q$.
+Write $t$ for the mapping-torus one-handle.  If $\psi_A$ is the
+handlebody-preserving representative supplied by their Lemma~3.1, the core
+of the $i$th mapping-torus two-handle is the embedded circle
+\begin{equation}\label{eq:ARcore}
+C_i^-\cup\lambda_i\cup\psi_A(C_i)^+\cup\mu_i,
+\end{equation}
+where $\lambda_i,\mu_i$ are the two arcs through $t$.  The framing annulus is
+constructed simultaneously as
+\begin{equation}\label{eq:ARannulus}
+A_i^-\cup(\lambda_i\times I)\cup\psi_A(A_i)^+
+       \cup(\mu_i\times I).
+\end{equation}
+The disks, cones and product levels in the AR construction are pairwise
+disjoint, so \eqref{eq:ARcore}--\eqref{eq:ARannulus} define the whole
+embedded framed link, not merely its words.
+
+The remaining three fiber two-handles are the standard dual two-cells of the
+coordinate-spine splitting.  After choosing orientations, denote their
+boundary curves by
+\[
+r_{xy}=[x,y],\qquad r_{yz}=[y,z],\qquad r_{zx}=[z,x].
+\]
+Their embeddings are defined by the dual cells and their framings are the
+fiber product framings.  The untwisted section-surgery handle $h_{CS}$ goes
+geometrically once over $t$.  Thus the starting handle counts are
+$(1,4,7,3,1)$ in indices $0,\ldots,4$: AR p.~8 removes one $3$- and the
+$4$-handle from the mapping torus and glues
+$S^2\times D^2=H^2\cup H^4$ in their place.
+
+For an independently checkable standard-form bridge, set
+\[
+C_{AR}=\begin{pmatrix}0&0&1\\713&83&0\\-902&-105&-10\end{pmatrix},
+\qquad
+R=\begin{pmatrix}71&-466&1\\-610&4004&-7\\1&-7&-2\end{pmatrix}.
+\]
+Direct multiplication gives
+\[
+\det R=1,\qquad C_{AR}R=RA,
+\]
+and both matrices have determinant one and determinant-one difference from
+the identity.  Hence the fiber diffeomorphism induced by $R$ transports the
+complete AR construction to the displayed matrix $A$.  Since
+$R\in GL^+(3,\mathbb R)$ and this group is connected, its derivative preserves
+the homotopy class of the canonical normal framing of the section circle; in
+particular, the untwisted choice $\varepsilon=0$ is preserved.
+
+\subsection{Return to the linear torus map}
+
+Let $\phi_A$ be the linear torus map, straightened to the identity on the
+section ball, and choose an isotopy $\rho_u$, $u\in[-1,1]$, from $\phi_A$ to
+$\psi_A$, stationary near its endpoints and relative to that ball.  Put
+$g_u=\rho_u\phi_A^{-1}$.  With mapping-torus convention
+$(x,-1)\sim(\phi(x),1)$, the formula
+\begin{equation}\label{eq:mappingtorusF}
+F([x,u]_{\phi_A})=[g_u(x),u]_{\psi_A}
+\end{equation}
+defines a diffeomorphism.  Indeed, $g_{-1}=\mathrm{id}$,
+$g_1=\psi_A\phi_A^{-1}$, and therefore
+$\psi_Ag_{-1}=g_1\phi_A$, which is precisely well-definedness at the seam.
+Endpoint stationarity makes \eqref{eq:mappingtorusF} smooth, and the family
+$g_u^{-1}$ gives its inverse.  It fixes the section ball.  Pulling the entire
+AR handle decomposition back by $F$ replaces the top cores by the linear
+images $\phi_A(C_i)$ and transports every component and framing annulus
+simultaneously.
+
+\subsection{Words and normal fields}
+
+Lift $C_i$ and $\phi_A(C_i)$ to the universal cover.  The three top lifts
+begin at the same point $A(Q)$.  Translate the whole top fiber by $-A(Q)$ and
+extend this translation over its collar.  It is isotopic to the identity and
+transports the entire link and its normal fields.  Since each attaching core
+is unbased, changing the first face crossing only cyclically permutes its
+word.  We may therefore take the top centerline to be the straight segment
+from $0$ to $Ae_i$; it crosses the $j$th integer faces at
+the rational times $k/(Ae_i)_j$.  A fixed arbitrarily small product
+perturbation orders simultaneous events.  Reading the two base arcs and the
+oppositely oriented bottom core gives exactly
+\begin{equation}\label{eq:actualword}
+m_i=t\phi_A(x_i)t^{-1}x_i^{-1}.
+\end{equation}
+This is the full event rule used by the public generator.
+
+The framing is equally explicit.  AR push the coordinate axes in the
+universal cover in direction $(1,1,1)$; the resulting strips have parallel
+boundary components, and linearity of $A$ preserves this property on their
+images \cite[pp.~16--17]{AitchisonRubinstein1984}.  Together with the
+$\lambda_i/\mu_i$ rectangles, these strips are the normal fields in
+\eqref{eq:ARannulus}.  Thus no blackboard integer is substituted for a
+framing.
+
+\subsection{The two cancellations}
+
+Aitchison--Rubinstein identify $(t,h_{CS})$ as a complementary geometric
+one/two-handle pair \cite[p.~7]{AitchisonRubinstein1984}.  Slide every other
+two-handle passage over $h_{CS}$ along its product rectangle and cancel; this
+removes the $t,t^{-1}$ passages with zero relative twist.
+
+Now $Ae_1=e_3$, so the actual curve $m_1$ becomes $zx^{-1}$ and has one
+geometric passage over the $x$ one-handle.  Thus $(x,m_1)$ is another
+complementary pair.  Sliding every other $x$ passage over $m_1$ along parallel
+product bands replaces $x$ by $z$ and cancels the pair.  All labels and
+normal fields move with the bands.  The resulting counts are $(1,2,5,3,1)$,
+and the exact word projection is
+\[
+\begin{aligned}
+|m_2|&=311, & [m_2]_{(y,z)}&=(40,269),\\
+|m_3|&=1460, & [m_3]_{(y,z)}&=(189,1271).
+\end{aligned}
+\]
+For the committed compact $m_2$ word, a second linear and cyclic free
+reduction still has length $311$; there is no adjacent inverse pair.  The
+explicit 19-step Nielsen representative constructed in Appendix~B instead
+reduces to length $309$.  It contains 40 $y/Y$ passages, rather than 42; with
+the two $r_{xy}$ passages its detector has 42 channels rather than 44.  Thus
+the 309/311 discrepancy is a genuine representative discrepancy, not merely
+a printing convention.
+The transported $r_{zx}$ has empty free word, but no split-unknot conclusion
+is needed or inferred from that fact.
+
+\subsection{The actual detector ball}
+
+Cut the remaining genus-two handlebody along its $y,z$ disk system.  The
+selected $m_2/r_{xy}$ state has 42 $y$ passages from $m_2$ and two from
+$r_{xy}$.  At distinct product-normal levels, a regular neighborhood of these
+44 passages is a standard three-ball $B$ containing a punctured-disk collar.
+The six affine sweeps specify a pure 44-strand braid in this collar.  The
+mapping-class interpretation of the braid group realizes it by an isotopy of
+the punctured disk, and isotopy extension gives an ambient isotopy of $B$.
+Choose the extension to be the identity to first order near every returned
+puncture at its terminal time.  Hence each product normal returns, not merely
+the total writhe.  The motion acts on every oriented normal copy
+simultaneously.  Reconstruction of the $252$ crossing factors gives
+$|B_{44}|=11340$ with $\operatorname{perm}(B_{44})=1$ and
+$\operatorname{wr}(B_{44})=0$.
+
+\begin{remark}[Rejected compact lifts]
+Earlier symbolic lifts, including a 19-step Nielsen representative and
+bounded IA corrections, fail channel count, free-basis, or embedded-collar
+tests.  Appendix~\ref{app:retired-routes} records the falsified routes.
+\end{remark}
+
+\subsection{Johnson replacement}
+
+Johnson's splitting-preserving generators for the genus-three splitting of
+$T^3$ \cite{Johnson2011} give a more appropriate search space.  His generator
+$\alpha_{ij}$ pushes the diagonal of the $x_i$--$x_j$ square to a
+neighborhood of the spine; pushing to the opposite side gives a second lift of
+the same transvection.  Factoring $A$ into $93$ unit transvections and choosing
+a $93$-bit side pattern yields
+\[
+|m_2|=311,\qquad \#(y/Y)=42,\qquad p_y=42+2=44,
+\]
+with the three spine images forming a free basis of $F_3$ and the reduced
+$m_2$ word agreeing with the compact word.  The class-two $r_{yz}$ coefficient
+relative to the compact word is zero.
+
+For each square move we record the diagonal, a two-edge path, and a square
+normal.  Truncating both paths at one-quarter and three-quarters makes the
+movie relative to the spine vertex.  If $M$ ranges over the $93$ intermediate
+unimodular bases, the uniform radius
+\[
+r=\frac{1}{8\max_M\lVert M^{-1}\rVert_\infty}=\frac1{196104}
+\]
+is fixed throughout.
+
+In the standard product chart $D^2\times[-1,1]$ for the reduced $y$
+one-handle, take $B=D^2\times[-1/2,1/2]$.  The Johnson $m_2$ word has $41$
+positive $y$ passages and one negative passage; $r_{xy}=[z,y]$ contributes one
+positive and one negative passage.  Distinct rational points in $D^2$ give
+pairwise-disjoint product arcs with constant transverse framing.  The oriented
+dual rectangle for $r_{xy}$ has six point-push legs; expanding the resulting
+$252$ geometric L/R factors gives an Artin word of length $11340$, which
+agrees with the independently regenerated public word.
+
+\begin{lemma}[Railroad linking]\label{lem:P0d-link}
+The railroad reduced planar diagram of the Johnson CS handle picture satisfies
+$\operatorname{lk}(m_2,r_{yz})=0$.
+\end{lemma}
+
+\begin{proof}
+The mixed $m_2$--$r_{yz}$ signed crossing sum in the labelled reduced PD is
+$0$, so the linking number vanishes.  By the Kirby handle-slide formula
+\cite{Kirby1978}, this is the framing condition required for the product
+cancellations above.
+\end{proof}
+
+\subsection{The three geometric identifications}
+
+\begin{lemma}[Johnson--AR handlebody bridge]\label{lem:P0a}
+The affine map
+\[
+S:\mathbb R^3/\mathbb Z^3\longrightarrow
+\mathbb R^3/(2\mathbb Z)^3,\qquad
+S(u)=2u-(1/2,1/2,1/2),
+\]
+is an orientation-preserving diffeomorphism carrying Johnson's standard
+genus-three Heegaard pair to the coordinate-spine pair used by
+Aitchison--Rubinstein.
+\end{lemma}
+
+\begin{proof}
+There is a Freudenthal triangulation of Johnson's period-one torus on which
+the affine map $S$ is a simplex-by-simplex map onto a triangulation of the
+period-two torus, carrying each Johnson spine $1$-simplex onto the
+corresponding AR coordinate spine.  Because the linear part is $2I$,
+Euclidean distances scale by $2$, so Johnson's Voronoi handlebodies map onto
+Voronoi cells of the image spines.  The protected ball of radius
+$1/196104$ about $0$ maps to the ball of radius $2/196104$ about $Q$.  A
+discrete Voronoi Heegaard pair on a $384$-tetrahedron torus is certified, and
+$T(v)=v-(1,1,1)$ carries the Johnson pair onto it.
+\end{proof}
+
+\begin{lemma}[The two framed cancellations]\label{lem:P0b}
+In the Johnson--AR replacement, the pairs \((t,h_{CS})\) and \((x,m_1)\)
+satisfy the geometric Kirby \(1/2\)-cancellation criterion.  The
+cancellations transport the whole labelled attaching link and preserve the
+section framing class \(\varepsilon=0\).
+\end{lemma}
+
+\begin{proof}
+For the selected Johnson lift, $\psi_A(x)=z$ and $m_1=zx^{-1}$.  Each pair
+admits a local product $1/2$-handle cancellation of geometric intersection
+$1$ that transports the labelled attaching link and preserves
+$\varepsilon=0$.
+\end{proof}
+
+\begin{lemma}[Compatibility with MWW cabling]\label{lem:P0c}
+The framing on the 44 Johnson lanes is the framing used by the MWW cable
+construction.
+\end{lemma}
+
+\begin{proof}
+The $44$ Johnson six-sweep strands are realized as height-monotone
+polylines in a triangulated $3$-ball with constant product normals, bound to
+the Johnson $y$-wickets in the certified handlebody pair.  Reconstruction
+recovers the public $11340$-letter word.
+\end{proof}
+
+\subsection{P0 conclusion}\label{sec:p0-conclusion}
+
+\begin{theorem}[Johnson replacement discharges P0]\label{thm:P0discharge}
+Hypothesis~\ref{hyp:P0} holds for the Johnson replacement presentation.
+\end{theorem}
+
+\begin{proof}
+Lemmas~\ref{lem:P0a}--\ref{lem:P0c} and~\ref{lem:P0d-link} supply the
+handlebody bridge, cancellations, cabling compatibility, and vanishing
+mixed linking.  The staged Kirby pipeline identifies the resulting closed
+picture with $\Sigma_A^0$.
+\end{proof}

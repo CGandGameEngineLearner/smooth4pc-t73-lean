@@ -1,0 +1,24 @@
+\section{与 Lean 字段的对应关系}\label{app:lean-fields}
+
+为检验形式化边界的读者，主要分配如下：
+\begin{center}
+\small
+\begin{tabularx}{\textwidth}{@{}l X@{}}
+\toprule
+Lean 字段 & 数学义务 \\
+\midrule
+\texttt{x0}, \texttt{ell0}, \texttt{ell0\_x0} & P1 比较与所选 genuine MWW 类。 \\
+\texttt{q01}, \texttt{ell1\_comp\_q01} & 完备二柄 beta/psi 商与下降。 \\
+\texttt{q12}, \texttt{ell2\_comp\_q12} & S 的反向 belt 球面、MWW 半球映射与完备 coequalizer。非未用的 E7「$B$ 已固定」断言。 \\
+\texttt{transport}, \texttt{fourIso} & Johnson 替换 $X_J$ 的 E11，非 $\Sigma_A^0$。 \\
+\texttt{s4DegreeZero} & 计算的 \texttt{EmptyKhQ}(494)=0 与来自 \texttt{certify\_t73\_e12\_s4.py} 的 PL $S^4$ Euler 数据。同构 $G(B^4)\simeq G(S^4)$ 与 $\mathcal S^2_0(S^4)\cong\mathbb Z$ 为 MWW 命题~3.4 与推论~3.5，引用而非形式化。仅空 link Lean 实例。 \\
+\texttt{diffeomorphismEquiv} & lasagna 模的分次微分同胚不变性。 \\
+\texttt{matrixConditionsToHomotopySphere} & E13 构造 CS 柄图；Lean \texttt{CSTopologyData} 不可居。 \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+C3 与 P2/E7 为 Unused 而非 Open。Johnson 候选的 Lean \texttt{ExternalGeometry} 不可居。\texttt{T73S4Inhabitant.lean} 中的空 link 控制仅打包 \texttt{EmptyKhQ}。Lean 定理不消费更强陈述，并将外部拓扑记录为结构字段而非内部形式化。
+
+\bibliographystyle{amsplain}
+\bibliography{references}

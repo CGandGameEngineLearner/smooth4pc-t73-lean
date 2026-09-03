@@ -1,0 +1,15 @@
+\section{P0 重构协议}\label{app:p0-reconstruction}
+
+可接受的 P0 证书由以下显式数据组成：三角化三球 $B$ 的有理 PL 数据、44 条高度单调带标号股 $c_i:[0,1]\to B$ 及其法向量、到约化 attaching link 的 passage 绑定、两个保持 framing 的局部消去 movie，以及有序 crossing movie。验证器检验 passage 绑定、不相交性、framing 运输，以及诱导相对 endpoint braid 与公开 $11340$ 字母词的逐字母相等。
+
+\begin{lemma}[P0 证书的正确性]
+设输入通过严格验证器，且其独立嵌入性、不相交性与局部 movie 收据对所声明 PL 复形有效。则 $B$ 是约化 AR handlebody 中嵌入的带框三球，其 $44$ 股构成带框领圈，相对 endpoint 几何 braid 等于公开 $11340$ 字母 pure braid。
+\end{lemma}
+
+\begin{proof}
+PL 球与 passage 绑定映射将每条 $c_i$ 置于实际 AR 边界 chart 中，并在两次消去中保持 ownership 与 endpoint 顺序。高度单调性使 $c_i$ 成为领圈中的 braid；不相交收据使股两两不相交。法向量及其运输收据给出每股的 framing，并表明两次消去 movie 保持它。按高度递增读取认证 crossing 事件，得此嵌入 tangle 的相对 endpoint Artin 词。验证器最终相等将该词与公开词逐字母等同。因带标号 braid 的相对 endpoint 同痕类由其 Artin 词代表，所声称 braid 相等成立。
+\end{proof}
+
+\begin{remark}
+无嵌入几何而导入 crossing 行的符号见证不满足本协议。第~\ref{sec:johnson-presentation} 节所用 Johnson 证书满足它。可机器检验的重放列于附录~\ref{sec:reproducibility-extended}。
+\end{remark}

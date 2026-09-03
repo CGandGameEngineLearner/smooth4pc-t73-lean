@@ -1,0 +1,52 @@
+\section{Introduction}
+
+The smooth four-dimensional Poincare conjecture asks whether every smooth
+closed manifold homotopy equivalent to $S^4$ is diffeomorphic to $S^4$.
+Freedman's work proves the topological counterpart: a homotopy 4-sphere is
+homeomorphic to $S^4$ \cite{Freedman1982}.  The remaining question is
+therefore a smooth classification problem, and any proposed counterexample
+must establish two logically separate conclusions:
+\begin{enumerate}
+\item the candidate is a homotopy 4-sphere;
+\item the candidate is not diffeomorphic to the standard smooth sphere.
+\end{enumerate}
+
+Cappell and Shaneson constructed a distinguished family of potential
+homotopy 4-spheres from torus automorphisms \cite{CappellShaneson1976}.
+Their handle structures were studied by Aitchison and Rubinstein
+\cite{AitchisonRubinstein1984}.  Many subfamilies were subsequently shown to
+be standard, through work including Akbulut \cite{Akbulut2010}, Gompf
+\cite{Gompf2010}, Kim--Yamada \cite{KimYamada2017}, and Iwaki
+\cite{Iwaki2024}.  This history makes geometric identification especially
+important: agreement of a matrix, a relator, or a trace parameter is not a
+substitute for identifying a complete framed handle presentation.
+
+Skein lasagna modules extend Khovanov--Rozansky link homology to smooth
+four-manifolds \cite{MorrisonWalkerWedrich2019}.  Manolescu and Neithalath
+gave a two-handlebody description \cite{ManolescuNeithalath2020}, and
+Manolescu, Walker, and Wedrich gave formulas compatible with general handle
+decompositions \cite{ManolescuWalkerWedrich2023}.  These results provide an
+attractive route to conclusion (ii): a nonzero class in a nonzero bidegree
+cannot be carried by a diffeomorphism to the lasagna module of $S^4$, which
+is concentrated in bidegree zero.
+
+We investigate the standard-form Cappell--Shaneson parameter
+$(41,189,73)$.  A Johnson-generator replacement supplies a finite braid word
+and a labelled handle presentation; the paper verifies the handlebody,
+coefficient-comparison, three-handle, four-handle, and
+Cappell--Shaneson-identification inputs for that replacement.
+
+\subsection*{Contributions}
+
+The main contributions are as follows.
+\begin{enumerate}
+\item We record a splitting-preserving Johnson lift and an exact
+six-sweep 44-channel word equal to the public 11340-letter word.  This is a
+finite P0d fact.  Lemmas P0a--c supply the Johnson replacement presentation,
+and P3/E13 identifies that picture with \(\Sigma_A^0\).
+\item Coefficient comparison and the reversed three-handle picture are
+proved for the Johnson replacement.
+\item A formal Lean core checks the abstract quotient implication; the
+geometric instances are proved in the body of the paper and summarized in
+Appendix~\ref{sec:reproducibility-extended}.
+\end{enumerate}

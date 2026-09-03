@@ -1,0 +1,146 @@
+\section{完整的三次端点向量}\label{app:vector}
+
+在 Section~\ref{sec:exact-algebra} 的约定下，系数向量
+$[\eps^3](\rho_t(B_{88})-I)u=(a_0,\ldots,a_{87})^T$ 为
+\begin{align}
+(a_0,\ldots,a_{87})={}&(
+-7052,-7052,164,164,332,332,324,324,316,316,308,308,\notag\\
+&300,300,292,292,284,284,276,276,268,268,260,260,\notag\\
+&252,252,244,244,236,236,228,228,220,220,212,212,\notag\\
+&204,204,196,196,188,188,180,180,172,172,164,164,\notag\\
+&156,156,148,148,140,140,132,132,124,124,116,116,\notag\\
+&108,108,100,100,92,92,84,84,76,76,68,68,\notag\\
+&60,60,52,52,44,44,36,36,28,28,20,20,\notag\\
+&12,12,-164,-164).
+\end{align}
+检测器余向量是 $\ell=e_{87}^*-e_2^*$，故
+$\ell(a_0,\ldots,a_{87})^T=a_{87}-a_2=-164-164=-328$。
+$88$ 个分量的和为零，这与不变全坐标泛函上
+未约化 Burau 差分的预期一致。
+
+\section{四个分次贡献}\label{app:grading}
+
+\begin{center}
+\begin{tabular}{@{}p{0.17\textwidth}p{0.45\textwidth}p{0.27\textwidth}@{}}
+\toprule
+项 & 来源 & 计算 \\
+\midrule
+$-44$ & 对 $p=44$、$N=2$ 移除 $p(N-1)$ Hom 归一化 & $-44(2-1)=-44$\\
+$+227$ & $227$ 个不同的 Frobenius 标签，每个次数为 $+1$ & $227\cdot1=227$\\
+$+315$ & 来自 $44$ 个 $y$-对与 $271=44+227$ 个 $z$-对的单柄粘合平移 & $44+271=315$\\
+$-4$ & 对 $N=2$、$\alpha=0$、$|r|=2$ 的缆线平移 & $(1-2)(2\cdot2+0)=-4$\\
+\midrule
+合计 & & $-44+227+315-4=494$\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section{约定合法性准则}\label{app:legality}
+
+序列化仅当描述同一带框柄表示、同一定向带基切割扭结、
+同一带标签边界配对、同一法向场与同一插入点时，才为合法。
+其 event 顺序必须是几何偏序的线性扩展。
+相邻 event 仅当支撑不相交且适用严格交换定理时方可交换。
+词替换要求在带基带标签辫或扭结范畴中等式成立；
+闭包、置换、自由群词或同调类等式不足。
+
+坐标变换 $P$ 必须同时作用：
+\begin{equation}\label{eq:simultaneous-coordinate}
+W'=PWP^{-1},\qquad u'=Pu,\qquad
+\ell'=\ell P^{-1},
+\end{equation}
+影子、领圈、基点与插入点在同一自然性方块中传输。
+在 \eqref{eq:simultaneous-coordinate} 下，
+$\ell'(W'-I)u'=\ell(W-I)u$。
+因此，当同时传输存在时即证明坐标不变性；
+并非通过选取偏好的数值答案而强加。
+
+领圈仅当它是固定分量的实际带框管状领圈，
+且相对于边界、基点、标签、旧输入球、法向框与插入点
+与登记领圈同痕时，才为合法。
+这些准则写于详细替代领圈输出被展开之前。
+它们在 Johnson 替换中的使用由 P0 解除。
+
+\section{术语表}\label{app:glossary}
+
+\begin{description}
+\item[Actual map]
+由指定的几何扭结或曲面余核诱导的映射，
+而非仅具有所需源与目标的抽象线性映射。
+\item[Candidate-specific binding]
+不可变有限数据与已发表定理所需实际几何对象之间的识别。
+\item[Complete quotient]
+按适用 MWW 柄公式中全部关系生成元取商，
+而非按采样的有限子集。
+\item[Divided cubic]
+在已知于全定义域上可被 $h^3$ 整除的映射上，
+对 \eqref{eq:D3} 中 $h$ 的约化。
+\item[Endpoint shadow]
+系数迹类在量子竖直-水平迹与固定端点函子下的像。
+\item[Finite certificate]
+不可变有限数据加确定性精确检验器。
+该术语除实际重算的谓词外，不具有几何效力。
+\item[Registered movie order]
+在公开原始输入中固定的定向点推时序。
+\item[Johnson replacement]
+保持分裂的 $\alpha_{ij}$ 提升、93 位侧选择与 CS 柄图景，
+由本文 P0--P3/E13 解除。
+\end{description}
+
+\section{扩展重放命令}\label{sec:reproducibility-extended}
+
+公开仓库为
+\begin{center}
+\url{https://github.com/toffee-desuwa/smooth4pc-t73-lean}.
+\end{center}
+以下命令假定全新克隆且 Python~3.10 或更高版本。
+
+\subsection{重构检测器}
+
+\begin{verbatim}
+python -I -B scripts/recompute_t73_delta3.py --check
+\end{verbatim}
+预期 bearing 行包括
+\texttt{B44\_LENGTH=11340}、
+\texttt{DELTA3\_ETA\_T1=2624}、
+\texttt{DELTA3\_XI=0} 与 \texttt{VERIFY=PASS}。
+
+\subsection{重放 Johnson P0、C、S 与 P3 证书}
+
+\begin{verbatim}
+python3 scripts/certify_t73_p0_johnson.py --check
+python3 scripts/certify_t73_c1_cut_link.py --check
+python3 scripts/certify_t73_c2_comparison.py --check
+python3 scripts/certify_t73_s_relative_moves.py --check
+python3 scripts/certify_t73_p3_four_handle.py --check
+python -B scripts/certify_t73_e12_s4.py --check
+python -B scripts/certify_t73_e13_close.py --check
+python3 scripts/audit_t73_premises.py --check
+python -B scripts/check_t73_claim_boundary.py
+\end{verbatim}
+
+\subsection{编译并检查 Lean 开发}
+
+安装 \texttt{elan} 后，运行
+\begin{verbatim}
+lake update
+lake exe cache get
+python -B tests/test_t73_minimal_formalization.py -v
+lake lean T73Audit.lean
+\end{verbatim}
+Python 测试将审计模块编译到新的临时输出根，
+要求恰好 $38$ 份公理报告，拒绝
+\texttt{propext}、\texttt{Classical.choice} 与 \texttt{Quot.sound}
+之外的任何公理，并拒绝 \texttt{sorryAx}。
+
+\subsection{编译本文}
+
+在 \path{paper/spc4-t73-candidate} 下：
+\begin{verbatim}
+pdflatex -interaction=nonstopmode -halt-on-error main.tex
+bibtex main
+pdflatex -interaction=nonstopmode -halt-on-error main.tex
+pdflatex -interaction=nonstopmode -halt-on-error main.tex
+\end{verbatim}
+审阅用 PDF 复制至
+\path{output/pdf/spc4-t73-candidate.pdf}。

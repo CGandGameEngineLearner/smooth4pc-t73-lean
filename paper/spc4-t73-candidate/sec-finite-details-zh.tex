@@ -1,0 +1,324 @@
+\section{精确有限代数与公开检测器}\label{sec:exact-algebra}
+
+本节使第 4 节的有限层自洽。同一数据与 Johnson 替换领圈的几何绑定是
+假设~\ref{hyp:P1}；整数 $2624$ 本身与该绑定无关。
+
+\subsection{对 9 月 2 日公开草稿的勘误}
+
+9 月 2 日公开草稿报告 $D_3(v_T)=-59072$。该值混用了两种端点坐标系：向量 $u$ 使用
+THXY 端点指标，而余向量 $\ell$ 使用同时标注缆化 Artin 词的领指标。两张表对 $m_2$
+wicket 的排序方向相反。在领坐标表中，同一物理 cup 的端点为 $2$ 与 $87$，故
+\[
+  u=e_2-e_{87},\qquad \ell=e_{87}^*-e_2^*.
+\]
+当两个对象均置于同一张表时，精确计算给出
+$[\varepsilon^3]\ell(\rho(W)-I)u=-328$，从而
+$D_3(v_T)=(-2)^3(-328)=2624$。非零结论不变。
+一致使用 THXY 坐标得到 $-2496$；这是坐标校验，而非第二个几何类。值 $2624$ 属于
+当前冻结的领数据；若 Johnson 领词改变，数值必须重新计算。
+
+\subsection{整逆与长拓扑路线}
+
+除 \eqref{eq:determinants} 外，定义
+\begin{equation}\label{eq:A-minus-I}
+A-I=
+\begin{pmatrix}
+-1&269&1240\\
+0&40&189\\
+1&0&31
+\end{pmatrix}.
+\end{equation}
+按第一行展开得 $\det(A-I)=1$。一个整逆为
+\begin{equation}\label{eq:B-inverse}
+(A-I)^{-1}_{\Z}=
+\begin{pmatrix}
+1240&-8339&1241\\
+189&-1271&189\\
+-40&269&-40
+\end{pmatrix}.
+\end{equation}
+由于 $\det A=1$，直接求逆给出
+\begin{equation}\label{eq:H2-map}
+C=(A^{-1})^T-I=
+\begin{pmatrix}
+1311&189&-41\\
+-8608&-1241&269\\
+1&0&-1
+\end{pmatrix},
+\end{equation}
+其整逆为
+\begin{equation}\label{eq:H2-inverse}
+C^{-1}_{\Z}=
+\begin{pmatrix}
+-1241&-189&40\\
+8339&1270&-269\\
+-1241&-189&39
+\end{pmatrix}.
+\end{equation}
+这些矩阵满足 $\det A=\det(A-I)=1$。\eqref{eq:spherecols} 中的球面坐标矩阵由
+\eqref{eq:H2-map} 的列取负得到，行列式亦为 $1$。
+
+\begin{remark}[长拓扑路线]\label{rem:long-topology-route}
+$A-I$ 的满射性消去了手术后基本群的自然余不变量表示；$A-I$ 与 $(A^{-1})^T-I$ 的双射性
+消去了 Wang 序列与 Mayer--Vietoris 序列中的中间同调。Poincar\'e 对偶则给出 $S^4$
+的同调型。Hurewicz 与 Whitehead 将单连通性连同该同调型提升为与 $S^4$ 的同伦等价。
+本文在已识别的手术流形上使用 Iwaki
+命题~2.1。
+\end{remark}
+
+\begin{corollary}[对已识别图景的同伦球结论]
+\label{cor:homotopy-sphere}
+对由 P3/E13 与 $\Sigma_A^0$ 等同的 Johnson CS 柄图景 $X_J$，$\Sigma_A^0$ 是同伦
+$4$-球。
+\end{corollary}
+
+\begin{proof}
+由 \eqref{eq:determinants}，$A\in\mathrm{SL}(3,\Z)$ 且 $\det(A-I)=1$。
+等同 $X_J\cong\Sigma_A^0$ 即所构造的 CS 柄图景；Iwaki 命题~2.1 \cite{Iwaki2024} 于是适用。
+\end{proof}
+
+\subsection{系数迹与所选 Hattori 类}
+
+\begin{definition}[系数迹]\label{def:coefficient-HH0}
+对小型 $\Q$-线性范畴 $\mathcal C$ 与系数双模 $M$，系数零阶 Hochschild 同调为
+\[
+\HH(\mathcal C;M)=
+\left(\bigoplus_{T}M(T,T)\right)
+\Big/
+\Span_{\Q}\{f\cdot m-m\cdot f\},
+\]
+其中 $f:S\to T$ 与 $m\in M(T,S)$ 取遍每个可循环复合的对。
+\end{definition}
+
+\begin{lemma}[通过系数迹的下降]\label{lem:HH0-descent}
+设 $r_T:M(T,T)\to V$ 对所有可循环复合的 $f$ 与 $m$ 满足 $r_S(f\cdot m)=r_T(m\cdot f)$。
+则存在唯一线性映射 $\bar r:\HH(\mathcal C;M)\to V$，其在 $M(T,T)$ 上的限制为 $r_T$。
+\end{lemma}
+
+\begin{proof}
+各 $r_T$ 之和消去每个关系生成元 $f\cdot m-m\cdot f$，从而唯一地通过该商分解。
+\end{proof}
+
+对 Johnson 替换领圈，引理~\ref{lem:C1} 给出实际的系数等价 \eqref{eq:HattoriActual}。
+第 7 节所选类与除法检测器是以下模式的几何实例。
+
+\subsection{端点模与 Burau 作用}
+
+\begin{definition}[端点模]\label{def:endpoint-module}
+令 $R_\eps=\Z[\eps]/(\eps^7)$，$t=1+\eps$，且
+$E_\eps=R_\eps^{88}=\bigoplus_{i=0}^{87}R_\eps e_i$。可将此自由模与二维基本模的
+$88$ 重张量幂的权 $86$ 子空间等同。
+\end{definition}
+
+\begin{definition}[未约化 Burau 表示]\label{def:burau}
+对 Artin 生成元 $\sigma_i$（$B_{88}$ 中，$1\le i\le87$），定义
+$\rho_t(\sigma_i)$ 在 $e_{i-1},e_i$ 张成子空间之外为恒等，并在该块上为
+\[
+\rho_t(\sigma_i)\big|_{\langle e_{i-1},e_i\rangle}
+=
+\begin{pmatrix}1-t&t\\1&0\end{pmatrix}
+=
+\begin{pmatrix}-\eps&1+\eps\\1&0\end{pmatrix}.
+\]
+其逆在该块上为
+\[
+\rho_t(\sigma_i^{-1})\big|_{\langle e_{i-1},e_i\rangle}
+=
+\begin{pmatrix}0&1\\t^{-1}&1-t^{-1}\end{pmatrix},
+\]
+其中 $t^{-1}=1-\eps+\eps^2-\eps^3+\eps^4-\eps^5+\eps^6$（于 $R_\eps$ 中）。
+对词 $w=\sigma_{i_1}^{s_1}\cdots\sigma_{i_m}^{s_m}$，采用左作用
+$\rho_t(w)v=\rho_t(\sigma_{i_1}^{s_1})\cdots
+\rho_t(\sigma_{i_m}^{s_m})v$。
+\end{definition}
+
+\subsection{从原始交叉到缆化词}
+
+公开输入存储 $252$ 行原始交叉。对 $i<j$ 定义带符号纯行词
+\begin{align}
+L_{ij}^{s}
+ &=\sigma_{j-1}\cdots\sigma_{i+1}
+   \sigma_i^{s}\sigma_i^{s}
+   \sigma_{i+1}^{-1}\cdots\sigma_{j-1}^{-1},
+\label{eq:L-row}\\
+R_{ij}^{s}
+ &=\sigma_i\cdots\sigma_{j-2}
+   \sigma_{j-1}^{s}\sigma_{j-1}^{s}
+   \sigma_{j-2}^{-1}\cdots\sigma_i^{-1}.
+\label{eq:R-row}
+\end{align}
+$44$ 股词 $B_{44}$ 由段 $6$ 上按水平坐标递增的 $R$ 行，再接段 $2$ 上按水平坐标递减的
+$L$ 行得到。缆化同态为
+\begin{equation}\label{eq:cabling}
+c(\sigma_i)=\sigma_{2i}\sigma_{2i+1}\sigma_{2i-1}\sigma_{2i},
+\qquad
+c(\sigma_i^{-1})=c(\sigma_i)^{-1},
+\end{equation}
+$88$ 股词为 $B_{88}=c(B_{44})$。
+
+\begin{proposition}[词恒等式]\label{prop:word-identities}
+精确重构给出 $|B_{44}|=11340$ 与 $|B_{88}|=45360$。Johnson 重构验证器
+逐字母恢复同一 $11340$-字母词。
+\end{proposition}
+
+\subsection{检测器与精确三次项}
+
+令 $R_h=\Q[h]/(h^7)$，并代入 $q=1+h$，$t=q^{-2}$，$\eps=t-1$。
+在公开输入的端点归一化下，复合行是
+\begin{equation}\label{eq:ell}
+\ell=e_{87}^{*}-e_2^{*},
+\end{equation}
+所选 shadow 向量为
+\begin{equation}\label{eq:u}
+u=e_2-e_{87}.
+\end{equation}
+两式均使用公开输入中固定的领坐标端点表。
+
+\begin{definition}[除法三次检测器]\label{def:detector}
+对量子迹类 $x$，定义
+\[
+\mathcal D_h(x)=
+\widehat C(h)\bigl(\rho_h(W)-I\bigr)P_{86}\Sh_h(x),
+\]
+其中 $\Sh_h$ 为量子迹 shadow，$P_{86}$ 投影到 through-$86$ 顶胞，$\widehat C(h)$ 为
+归一化端点 cap 行。当像落在 $h^3R_h$ 中时，除法三次检测器为
+\begin{equation}\label{eq:D3}
+D_3(\bar x)=\left.\frac{\mathcal D_h(x)}{h^3}\right|_{h=0}.
+\end{equation}
+\end{definition}
+
+\begin{proposition}[所选值]\label{prop:D3-vT}
+在 $E_\eps$ 中，$(\rho_t(B_{88})-I)u$ 的首个非零系数出现在次数 $3$。
+与 \eqref{eq:ell} 缩并得
+\begin{equation}\label{eq:ell-eps-series}
+\ell(\rho_t(B_{88})-I)u
+=-328\eps^3+14596\eps^4-410246\eps^5+9595271\eps^6.
+\end{equation}
+故在 $[h]\eps=-2$ 下，
+\begin{equation}\label{eq:D3-vT-value}
+D_3([v_T])=2624\ne0.
+\end{equation}
+完整的次数三向量见附录~\ref{app:vector}。
+\end{proposition}
+
+\begin{proof}
+从右向左遍历 $B_{88}$，模 $\eps^7$ 约化，并与 \eqref{eq:ell} 缩并。所得级数为
+\eqref{eq:ell-eps-series}，故 $D_3([v_T])=(-2)^3(-328)=2624$。
+\end{proof}
+
+\begin{lemma}[参数展开]\label{lem:eps-of-h}
+在 $\Z[h]/(h^7)$ 中，
+$\eps=(1+h)^{-2}-1=-2h+3h^2-4h^3+5h^4-6h^5+7h^6$。
+\end{lemma}
+
+\begin{lemma}[交换子阶]\label{lem:commutator-order}
+若 $P=I+O(h^a)$ 与 $Q=I+O(h^b)$ 为 $h$-进滤环上可逆矩阵，则
+$PQP^{-1}Q^{-1}=I+O(h^{a+b})$。若纯辫子群的每个生成元作用为 $I+O(h)$，则其第
+$r$ 个下中心子群作用为 $I+O(h^r)$。
+\end{lemma}
+
+\begin{remark}[相对类]\label{rem:vT-xi}
+相对类 $\xi=\eta_R[T_0]-s_{\mathrm{inv}}\eta_R[T_1]$ 满足 $D_3(\xi)=0$，因为检测器已含一个因子
+$\rho_h(W)-I$。plain shadow 系数 $[h^3]\ell\Sh_h(\xi)$ 等于 $2624$，但该 plain shadow
+不是 $D_3(\xi)$。
+\end{remark}
+
+\subsection{分次计算}
+
+\begin{proposition}[量子次数]\label{prop:degree-494}
+对 Johnson 替换领圈，所选原始类的量子次数为 $494$。
+\end{proposition}
+
+\begin{proof}
+有四项贡献：
+\begin{align}
+d_1&=-44 &&\text{（去掉 $N=2$ 的 $44$ 个 Hom 归一化）},\\
+d_2&=+227 &&\text{（$227$ 个不同 Frobenius 标签）},\\
+d_3&=+315 &&\text{（$44$ 个 $y$-对及 $271=44+227$ 个 $z$-对）},\\
+d_4&=-4 &&\text{（$N=2$，$\alpha=0$，$|r|=2$ 的缆化移位）}.
+\end{align}
+相加得 $-44+227+315-4=494$。附录~\ref{app:grading} 收集同一表格且无缩写。
+\end{proof}
+
+\subsection{商代数与抽象下降链}
+
+令 $W_0$ 为一柄系数迹，$W_1$ 为其对所有二柄关系的商，$W_2$ 为 $W_1$ 对三柄关系的商。
+记 $W_0$ 中所选类为 $x_0$。
+
+\begin{lemma}[线性检测器在商中存活]\label{lem:quotient-detector}
+设 $V$ 为向量空间，$R\subseteq V$ 为子空间，$\lambda:V\to\Q$ 为线性映射且
+$R\subseteq\ker\lambda$。则存在唯一 $\bar\lambda:V/R\to\Q$ 使
+$\bar\lambda\circ\pi=\lambda$。若 $\lambda(x)\ne0$，则 $\pi(x)\ne0$。
+\end{lemma}
+
+\begin{proposition}[商后抽象非零类]\label{prop:nonzero-W2}
+设假设~\ref{hyp:P1} 与~\ref{hyp:P2} 成立。则存在线性泛函 $\ell_2:W_2\to\Q$ 使
+$\ell_2(q_{12}q_{01}x_0)=2624$。特别地，$q_{12}q_{01}x_0\ne0$。
+\end{proposition}
+
+\begin{proof}
+引理~\ref{lem:HH0-descent} 将量子 shadow 检测器通过系数迹下降。定理~\ref{thm:Cdischarge} 与
+引理~\ref{lem:quotient-detector} 将其通过 $q_{01}$ 下降。定理
+\ref{thm:Sdischarge} 与同一商引理将其通过 $q_{12}$ 下降。
+每一阶段拉回均与前一行一致，故命题~\ref{prop:D3-vT} 给出值 $2624$。
+\end{proof}
+
+\begin{proposition}[闭候选类]\label{prop:closed-class}
+设假设~\ref{hyp:P2} 与~\ref{hyp:P3} 成立，且 Lean \texttt{ExternalGeometry} 的一个实例
+经四柄同构运输该类。则命题~\ref{prop:nonzero-W2} 的类映射到
+$\Stwo(X_J)_{0,494}$ 的非零元。未构造此类实例。
+\end{proposition}
+
+\begin{proof}
+MWW 定理~3.7 与~3.10 识别三柄商，命题~3.4 在引用后识别四柄阶段。
+假设~\ref{hyp:P3} 将计算的空链秩与那些引用分离。定理~\ref{thm:A} 中的 Lean 推论以
+\texttt{ExternalGeometry} 为条件。
+\end{proof}
+
+\begin{remark}[表示与序列化依赖]\label{rem:serialization}
+原始系数 $[h^3]\ell(\rho_h(W)-I)u$ 依赖于带基、带标签、定向的 movie 表示。
+按 emitter 递增坐标序重排同一交叉行会产生不同级数。在修正后的领端点下，其三次系数为
+$0$，首个非零系数为 $663872h^4$。该序反转 $168$ 个非不相交事件，且不是 Johnson 领的
+合法序列化。先前的值 $-58976$ 使用了与被取代公开值相同的混合端点坐标。
+表示无关性须通过对自然性方块每一部分的同步运输来证明；见
+附录~\ref{app:legality}。
+\end{remark}
+
+\section{完全展开的有限维算例}\label{sec:toy-example}
+
+本节在小例上说明代数机制。它不是四维流形计算，也不为任何候选特定假设提供证据。
+
+令 $R_0=\Q[\eps]/(\eps^4)$，$t=1+\eps$，$E_0=R_0^3$，基为 $e_0,e_1,e_2$。两个正 Burau
+生成元为
+\begin{align}
+B_1&=
+\begin{pmatrix}
+-\eps&1+\eps&0\\
+1&0&0\\
+0&0&1
+\end{pmatrix},
+&
+B_2&=
+\begin{pmatrix}
+1&0&0\\
+0&-\eps&1+\eps\\
+0&1&0
+\end{pmatrix}.
+\end{align}
+取纯交换子词
+$w_0=\sigma_1^2\sigma_2^2\sigma_1^{-2}\sigma_2^{-2}$。
+从左到右乘八个矩阵并模 $\eps^4$ 约化得
+\[
+\rho(w_0)=
+\begin{pmatrix}
+1-\eps^3&-\eps^2+\eps^3&\eps^2\\
+\eps^2&1&-\eps^2\\
+-\eps^2+2\eps^3&\eps^2-3\eps^3&1+\eps^3
+\end{pmatrix}.
+\]
+令 $u_0=e_0-e_1$，$\ell_0=e_0^*$。定义
+$d_2(v)=[\eps^2]\,\ell_0(\rho(w_0)-I)v$。
+则 $d_2=\begin{pmatrix}0&-1&1\end{pmatrix}$ 且 $d_2(u_0)=1$。
+用列 $r_0=(1,0,0)^T$ 与 $r_1=(0,1,1)^T$ 模拟两个关系映射。则 $d_2R=0$，故 $d_2$ 下降到
+$E_0/\im R$，所选类在商中非零。此例所缺的正是几何内容：并未声称 toy 关系列来自柄映射，
+也未声称最终商是光滑不变量。

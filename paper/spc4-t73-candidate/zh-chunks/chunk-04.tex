@@ -1,0 +1,64 @@
+\section{The finite computational layer}
+
+The public finite layer has three independent parts: lattice arithmetic, a
+chosen-sphere coordinate determinant, and a truncated Burau calculation.
+
+\subsection{Integral lattice calculations}
+
+Besides \eqref{eq:determinants}, the repository records the proposed sphere
+coordinate columns
+\begin{equation}\label{eq:spherecols}
+C=\begin{pmatrix}
+-1311&-189&41\\
+8608&1241&-269\\
+-1&0&1
+\end{pmatrix},
+\qquad \det C=1.
+\end{equation}
+Thus the three recorded coordinate vectors form a basis of $\Z^3$.  This is
+only the last arithmetic step in a geometric-basis argument.  It does not
+construct embedded spheres, prove disjointness, or identify $\Z^3$ with
+$H_2^{\mathrm{sph}}(\partial W_2)$.
+
+The Lean files also exhibit integral inverses for $A-I$ and for the induced
+map on $H_2(T^3;\Z)$.  These computations eliminate the candidate-specific
+lattice algebra from the homotopy-sphere branch.  Van Kampen,
+Wang--Mayer--Vietoris, Poincare duality, and Hurewicz--Whitehead arguments
+remain supplied through a topology structure rather than formalized as
+four-manifold topology.
+
+\subsection{The public Burau computation}
+
+Let $\varepsilon=t-1$.  From $252$ primitive crossing rows one reconstructs
+an $11{,}340$-letter Artin word on $44$ strands, cables it to $88$ strands,
+and applies the unreduced Burau representation over
+$\Z[\varepsilon]/(\varepsilon^7)$ with $t=q^{-2}$, $q=1+h$, and
+$\varepsilon=(1+h)^{-2}-1$.
+
+Denote the resulting scalar by $\delta_3^{\Bur}$.  The independently
+reproduced public result is
+\begin{equation}\label{eq:burau}
+\delta_3=2624=(-2)^3\cdot(-328).
+\end{equation}
+An earlier draft mixed two endpoint coordinate tables and reported
+$-59072$; with the collar endpoints of Section~\ref{sec:exact-algebra} the
+value is $2624$, which is still nonzero.\footnote{Independent replay:
+\texttt{scripts/recompute\_t73\_delta3.py --check}.}
+
+\begin{proposition}[Exact scope of the computation]\label{prop:scope}
+Equation~\eqref{eq:burau} concerns the truncated Burau model with the collar
+endpoints of \eqref{eq:u} and \eqref{eq:ell}.  Identifying the result with
+the MWW divided cubic is the content of Theorem~\ref{hyp:P1}.
+\end{proposition}
+
+\begin{proof}
+The Burau calculation supplies an integer; Theorem~\ref{hyp:P1} and
+Section~\ref{sec:c-comparison} identify it with the MWW detector on the
+Johnson replacement collar.
+\end{proof}
+
+Thus the finite recomputation and the categorical comparison have distinct
+roles: the former supplies the integer, while the latter makes it a
+four-manifold invariant.
+
+\input{sec-finite-details}

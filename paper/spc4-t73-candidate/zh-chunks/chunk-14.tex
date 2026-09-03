@@ -1,0 +1,38 @@
+\section{P0 reconstruction protocol}\label{app:p0-reconstruction}
+
+An admissible P0 certificate consists of explicit rational PL data for a
+triangulated three-ball $B$, forty-four height-monotone labelled strands
+$c_i:[0,1]\to B$ with normal vectors, passage binding to the reduced
+attaching link, two local cancellation movies preserving framing, and an
+ordered crossing movie.  The verifier checks passage binding, disjointness,
+framing transport, and letter-by-letter equality of the induced
+relative-endpoint braid with the public $11340$-letter word.
+
+\begin{lemma}[Soundness of the P0 certificate]
+Suppose an input passes the strict verifier, and suppose its independent
+embeddedness, disjointness and local-movie receipts are valid for the stated
+PL complex.  Then $B$ is an embedded framed three-ball in the reduced AR
+handlebody, its $44$ strands form a framed collar, and their relative-endpoint
+geometric braid equals the public $11340$-letter pure braid.
+\end{lemma}
+
+\begin{proof}
+The PL ball and the passage-binding map place every $c_i$ in the actual AR
+boundary chart and preserve ownership and endpoint order through the two
+cancellations.  Height monotonicity makes the $c_i$ a braid in the collar;
+the disjointness receipt makes the strands pairwise disjoint.  The normal
+vectors and their transport receipts give the framing on each strand and
+show that the two cancellation movies preserve it.  Reading the certified
+crossing events in increasing height gives the relative-endpoint Artin word
+of this embedded tangle.  The verifier's final equality identifies that word
+letter-for-letter with the public word.  Since relative-endpoint isotopy
+classes of labelled braids are represented by their Artin words, the claimed
+braid equality follows.
+\end{proof}
+
+\begin{remark}
+Symbolic witnesses that import crossing rows without embedded geometry fail
+this contract.  The Johnson certificate used in Section~\ref{sec:johnson-presentation}
+satisfies it.  The machine-checkable replay is listed in
+Appendix~\ref{sec:reproducibility-extended}.
+\end{remark}

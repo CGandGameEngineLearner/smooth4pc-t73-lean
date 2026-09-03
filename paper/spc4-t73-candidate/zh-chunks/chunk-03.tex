@@ -1,0 +1,133 @@
+\section{Precise statements}
+
+We first state the abstract theorem in the form actually proved by the Lean
+development.  This prevents geometric intuition from silently strengthening
+the result.
+
+Fix a collection of manifold labels, a graded family of rational vector
+spaces $G(M,q)$, labels $X$ and $S^4$, and predicates
+\(\operatorname{HS}(M)\) and \(\operatorname{Diff}(M,N)\).
+
+\begin{theorem}[Abstract nonstandardness theorem]\label{thm:A}
+Suppose there are rational vector spaces $W_0,W_1,W_2,W_3$, an element
+$x_0\in W_0$, linear maps
+\[
+W_0\xrightarrow{q_{01}}W_1\xrightarrow{q_{12}}W_2,
+\qquad
+\ell_i:W_i\longrightarrow\Q\quad (i=0,1,2),
+\]
+and linear isomorphisms
+\[
+T:W_2\xrightarrow{\cong}W_3,
+\qquad
+F:W_3\xrightarrow{\cong}G(X,494),
+\]
+such that
+\begin{align}
+\ell_0(x_0)&=2624,\label{eq:value}\\
+\ell_1q_{01}&=\ell_0,\label{eq:q01}\\
+\ell_2q_{12}&=\ell_1.\label{eq:q12}
+\end{align}
+Assume also that every element of $G(S^4,494)$ is zero and that every
+diffeomorphism $X\to S^4$ induces a linear isomorphism
+\(G(X,494)\cong G(S^4,494)\).  Then $X$ is not diffeomorphic to $S^4$.
+\end{theorem}
+
+\begin{proof}
+Set $v=F(T(q_{12}(q_{01}(x_0))))$.  If $v=0$, injectivity of $F$ and $T$
+implies $q_{12}(q_{01}(x_0))=0$.  Applying $\ell_2$ and using
+\eqref{eq:q01}--\eqref{eq:q12} gives $2624=0$, a contradiction.  Thus
+$v\ne0$.  If $X$ were diffeomorphic to $S^4$, the induced isomorphism would
+send $v$ to an element of $G(S^4,494)$, hence to zero, contradicting
+injectivity.
+\end{proof}
+
+The Lean theorem corresponding to Theorem~\ref{thm:A} is a conditional
+implication from input structures \texttt{ExternalGeometry} and
+\texttt{CSExternalGeometry}; no inhabitants are constructed in Lean.
+The candidate-specific inputs are stated below and proved in
+Sections~\ref{sec:johnson-presentation}--\ref{sec:final-identifications}.
+
+\begin{theorem}[Embedded candidate presentation, P0]\label{hyp:P0}
+The explicit Johnson-generator replacement is a labelled and framed handle
+presentation of $\Sigma_A^0$, with the two framed product cancellations, the
+embedded detector ball and the stated cable attachments.
+\end{theorem}
+
+\begin{proof}[Proof of Theorem~\ref{hyp:P0}]
+See Sections~\ref{sec:johnson-presentation} and~\ref{sec:p0-conclusion},
+in particular Theorem~\ref{thm:P0discharge}.
+\end{proof}
+
+\begin{theorem}[Coefficient comparison, C]\label{hyp:P1}
+The completed MWW coefficient quantum trace admits a grading-preserving,
+symmetric-monoidal natural map to the BPW/BHPW weight-one endpoint
+representation, natural also for boundary cobordisms supported away from
+$B$.  Under this map the point-push action is the public Burau
+representation, and the divided cubic row descends through every beta and psi
+relation.  Its value on the selected class is $2624$.
+The class lies in quantum degree $494$ on the Johnson replacement collar.
+\end{theorem}
+
+\begin{proof}[Proof of Theorem~\ref{hyp:P1}]
+See Section~\ref{sec:c-comparison}, in particular Theorem~\ref{thm:Cdischarge}.
+\end{proof}
+
+\begin{theorem}[Relative three-handle closure, S]\label{hyp:P2}
+The three $3$-handles may be
+attached along a complete sphere system disjoint from $B$.  For each sphere
+the detector kills the undotted MWW relation and identifies the once-dotted
+map with the source term.  Hence the divided detector descends through the
+complete three-handle coequalizer.
+\end{theorem}
+
+\begin{proof}[Proof of Theorem~\ref{hyp:P2}]
+See Section~\ref{sec:s-closure}, in particular Theorem~\ref{thm:Sdischarge}.
+\end{proof}
+
+\begin{theorem}[Four-handle closure of the replacement picture, P3]\label{hyp:P3}
+After the reversed $1$-handle $3$-handles of Hypothesis~\ref{hyp:P2}, the
+remaining boundary is $S^3$.  Attaching a $4$-ball along that $S^3$ yields a
+closed $4$-manifold $X_J$.  MWW Proposition~3.4 identifies the empty-link
+lasagna module of this $W_3$ picture with $\mathcal S^2_0(X_J)$.  MWW
+Corollary~3.5 gives $\mathcal S^2_0(S^4)\cong\mathbb Z$ concentrated in
+bidegree $(0,0)$, so the quantum-$494$ summand vanishes.  Diffeomorphisms
+induce grading-preserving equivalences.  $\det A=\det(A-I)=1$ is the
+homotopy-sphere criterion for the standard Cappell--Shaneson construction.
+The identification $X_J\cong\Sigma_A^0$ is the constructed Johnson CS
+handle picture of Hypothesis~\ref{hyp:P0}, not these determinants.
+\end{theorem}
+
+\begin{proof}[Proof of Theorem~\ref{hyp:P3}]
+The reversed $1$-handle picture yields boundary $S^3$ after three
+$1$--$3$ cancellations; attaching a PL $4$-ball gives the closed manifold
+$X_J$.  The empty-link Khovanov ranks in quantum degrees $0$ and $494$, the
+Euler characteristic of the attaching $4$-ball, and the grading sum
+$-44+227+315-4=494$ are computed directly.  The isomorphisms
+$\mathcal S^2_0(B^4)\cong\mathcal S^2_0(S^4)$ and
+$\mathcal S^2_0(S^4)\cong\mathbb Z$ concentrated in bidegree $(0,0)$ are
+\cite[Proposition~3.4 and Corollary~3.5]{ManolescuWalkerWedrich2023}.
+The identification $X_J\cong\Sigma_A^0$ is Theorem~\ref{thm:P0discharge}.
+Independent replay commands are listed in
+Appendix~\ref{sec:reproducibility-extended}.
+\end{proof}
+
+\begin{theorem}[Conditional trace-73 theorem]\label{thm:joined}
+The Johnson CS handle picture $X_J$ is identified with $\Sigma_A^0$.
+Iwaki Proposition~2.1 therefore makes $\Sigma_A^0$ a homotopy sphere.
+If the geometric data of Hypotheses~\ref{hyp:P0}--\ref{hyp:P3} are
+assembled into the Lean interface \texttt{ExternalGeometry}, then
+\[
+\Sigma_A^0\not\cong_{\mathrm{diff}}S^4.
+\]
+That interface is not constructed in Lean, so no counterexample is claimed.
+\end{theorem}
+
+\begin{proof}[Proof of Theorem~\ref{thm:joined}]
+Theorem~\ref{thm:A} gives the smooth obstruction once
+\texttt{ExternalGeometry} is inhabited.  The identification
+$X_J\cong\Sigma_A^0$ and Theorems~\ref{thm:P0discharge},
+\ref{thm:Cdischarge}, and~\ref{thm:Sdischarge} supply the hypotheses.
+\end{proof}
+
+\input{sec-published-results}

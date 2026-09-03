@@ -21,7 +21,7 @@
   linkcolor=blue!55!black,
   citecolor=blue!55!black,
   urlcolor=blue!55!black,
-  pdftitle={A trace-73 Cappell--Shaneson skein-lasagna obstruction},
+  pdftitle={A conditional trace-73 Cappell--Shaneson skein-lasagna obstruction},
   pdfauthor={Anonymous repository audit}
 }
 
@@ -56,8 +56,8 @@
 \newcommand{\Unused}{\textnormal{\textsc{Unused}}}
 \newcommand{\hash}[2]{\shortstack[l]{\texttt{#1}\\\texttt{#2}}}
 
-\title[A trace-73 obstruction]
-{A skein-lasagna obstruction for a trace-73\\
+\title[A conditional trace-73 obstruction]
+{A conditional skein-lasagna obstruction for a trace-73\\
 Cappell--Shaneson sphere}
 
 \author{Anonymous repository audit}
@@ -72,20 +72,19 @@ skein lasagna module, Khovanov homology, formal verification}
 \begin{document}
 
 \begin{abstract}
-We study the trace-73 Cappell--Shaneson manifold associated with
+We study the trace-73 Cappell--Shaneson homotopy $4$-sphere associated with
 \[
 A=\begin{pmatrix}0&269&1240\\0&41&189\\1&0&32\end{pmatrix}.
 \]
-An exact finite calculation gives a nonzero divided cubic
-$D_3=2624$ in quantum degree $494$.
+For an explicit Johnson-generator handle presentation we prove the geometric
+inputs P0, C, S, and P3 needed for a skein-lasagna comparison at quantum
+degree $494$, including the identification $X_J\cong\Sigma_A^0$.
+An exact finite calculation gives a nonzero divided cubic $D_3=2624$.
 An Artin--Magnus certificate and the pure-braid Andreadakis theorem
 establish a third-order property of the public braid word.
-For an explicit Johnson-generator replacement of the handle presentation we
-verify the geometric inputs P0, C, and S, the MWW four-handle layer, and the
-identification $X_J\cong\Sigma_A^0$.
-A Lean development checks the finite and quotient algebra and proves that,
-given explicit interface data assembling the MWW quotients and four-handle
-transport, a nonzero degree-$494$ class obstructs diffeomorphism with $S^4$.
+A Lean development formalizes the abstract quotient argument: given interface
+data assembling the MWW quotients and four-handle transport, a nonzero
+degree-$494$ class would obstruct diffeomorphism with $S^4$.
 Those geometric interfaces are not constructed in Lean, so no counterexample
 to the smooth four-dimensional Poincar\'e conjecture is claimed.
 \end{abstract}
@@ -382,7 +381,7 @@ four-manifold invariant.
 
 \input{sec-finite-details}
 
-\section{Lasagna modules and the intended obstruction}
+\section{Lasagna modules and the comparison framework}
 
 We recall only the features needed for the comparison.  For a smooth
 compact oriented four-manifold $W$ and a framed link $L\subset\partial W$,
@@ -1307,7 +1306,7 @@ Lean field & Mathematical obligation \\
 \midrule
 \texttt{x0}, \texttt{ell0}, \texttt{ell0\_x0} & P1 comparison and the selected genuine MWW class. \\
 \texttt{q01}, \texttt{ell1\_comp\_q01} & Complete two-handle beta/psi quotient and descent. \\
-\texttt{q12}, \texttt{ell2\_comp\_q12} & Reversed belt spheres of S, MWW hemisphere maps, and complete coequalizer.  Not the unused E7 ``$B$ is fixed'' claim. \\
+\texttt{q12}, \texttt{ell2\_comp\_q12} & Reversed belt spheres of S, MWW hemisphere maps, and complete coequalizer.  Not the E7 ``$B$ is fixed'' claim. \\
 \texttt{transport}, \texttt{fourIso} & E11 for the Johnson replacement $X_J$, not $\Sigma_A^0$. \\
 \texttt{s4DegreeZero} & Computed \texttt{EmptyKhQ}(494)=0 and PL $S^4$ Euler data from \texttt{certify\_t73\_e12\_s4.py}.  The isomorphisms $G(B^4)\simeq G(S^4)$ and $\mathcal S^2_0(S^4)\cong\mathbb Z$ are MWW Proposition~3.4 and Corollary~3.5, cited not formalized.  Empty-link Lean inhabitant only. \\
 \texttt{diffeomorphismEquiv} & Graded diffeomorphism invariance of lasagna modules. \\
@@ -1316,11 +1315,13 @@ Lean field & Mathematical obligation \\
 \end{tabularx}
 \end{center}
 
-C3 and P2/E7 are Unused rather than Open.  Lean
-\texttt{ExternalGeometry} is uninhabited for the Johnson candidate.  The empty-link
-control in \texttt{T73S4Inhabitant.lean} packages only \texttt{EmptyKhQ}.  The Lean
-theorem consumes no stronger statement, and it records the
-external topology as structure fields rather than formalizing it internally.
+The geometric inputs discharged in Sections~\ref{sec:johnson-presentation}--\ref{sec:final-identifications}
+remain to be assembled into a single Lean inhabitant of
+\texttt{ExternalGeometry}; that assembly is \Open\ for the Johnson candidate.
+The empty-link control in \texttt{T73S4Inhabitant.lean} packages only
+\texttt{EmptyKhQ}.  The Lean theorem consumes no stronger statement, and it
+records the external topology as structure fields rather than formalizing it
+internally.
 
 \bibliographystyle{amsplain}
 \bibliography{references}

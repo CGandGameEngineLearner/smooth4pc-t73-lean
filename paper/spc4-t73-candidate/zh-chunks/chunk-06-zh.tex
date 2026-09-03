@@ -1,0 +1,211 @@
+\section{Johnson 乘积-ribbon 表述与 P0}\label{sec:johnson-presentation}
+
+我们记录 AR 侧构造、概括被拒的紧凑提升，并给出
+证明假设~\ref{hyp:P0} 的 Johnson 生成元替换。
+
+\subsection{实际的 AR link}
+
+采用 Aitchison--Rubinstein
+\cite[pp.~5--12]{AitchisonRubinstein1984} 的 $T^3$ 坐标脊 genus-three Heegaard 分割；完整卷可在
+\href{https://math.berkeley.edu/~kirby/papers/Gordon%20and%20Kirby%20%28editors%29%20-%20Four-manifold%20theory%20%28Durham%29%20-%20MR0780574.pdf}
+{Berkeley 公开扫描}中获取。令
+$C_i$ 为具有公共基点 $Q$ 的三条坐标脊圆，令
+$A_i$ 为远离 $Q$ 的两两不相交窄圆盘邻域。
+记 $t$ 为 mapping torus 一柄。若 $\psi_A$ 为其引理 3.1 所给的保持 handlebody 的代表，则第 $i$ 个 mapping torus 二柄的核心为嵌入圆
+\begin{equation}\label{eq:ARcore}
+C_i^-\cup\lambda_i\cup\psi_A(C_i)^+\cup\mu_i,
+\end{equation}
+其中 $\lambda_i,\mu_i$ 为穿过 $t$ 的两条弧。framing 环带同时构造为
+\begin{equation}\label{eq:ARannulus}
+A_i^-\cup(\lambda_i\times I)\cup\psi_A(A_i)^+
+       \cup(\mu_i\times I).
+\end{equation}
+AR 构造中的圆盘、锥与乘积层两两
+不相交，故 \eqref{eq:ARcore}--\eqref{eq:ARannulus} 定义整个
+嵌入带 framing 的 link，而非仅其词。
+
+其余三个纤维二柄为坐标脊分割的标准对偶二胞。选定定向后，记其边界曲线为
+\[
+r_{xy}=[x,y],\qquad r_{yz}=[y,z],\qquad r_{zx}=[z,x].
+\]
+其嵌入由对偶胞及其 framing 定义；framing 为纤维乘积 framing。未扭转截面 surgery 柄 $h_{CS}$ 在几何上越过 $t$ 一次。故起始柄数为
+$(1,4,7,3,1)$，指标 $0,\ldots,4$：AR 第 8 页去掉一个 $3$-柄与
+$4$-柄，并以 $S^2\times D^2=H^2\cup H^4$ 代之。
+
+为可独立核查的标准形桥梁，设
+\[
+C_{AR}=\begin{pmatrix}0&0&1\\713&83&0\\-902&-105&-10\end{pmatrix},
+\qquad
+R=\begin{pmatrix}71&-466&1\\-610&4004&-7\\1&-7&-2\end{pmatrix}.
+\]
+直接相乘得
+\[
+\det R=1,\qquad C_{AR}R=RA,
+\]
+两矩阵行列式均为 1，与恒等的差亦行列式为 1。故 $R$ 诱导的纤维微分同胚将完整 AR 构造运输到所示矩阵 $A$。因
+$R\in GL^+(3,\mathbb R)$ 且该群连通，其导数保持截面圆典范法向 framing 的同伦类；特别地，未扭转选择 $\varepsilon=0$ 得以保持。
+
+\subsection{回到线性环面映射}
+
+令 $\phi_A$ 为线性环面映射，在截面球上拉直为恒等，并选取同痕 $\rho_u$、$u\in[-1,1]$，从 $\phi_A$ 到
+$\psi_A$，在端点附近静止且相对于该球。令
+$g_u=\rho_u\phi_A^{-1}$。在 mapping torus 约定
+$(x,-1)\sim(\phi(x),1)$ 下，公式
+\begin{equation}\label{eq:mappingtorusF}
+F([x,u]_{\phi_A})=[g_u(x),u]_{\psi_A}
+\end{equation}
+定义微分同胚。事实上 $g_{-1}=\mathrm{id}$、
+$g_1=\psi_A\phi_A^{-1}$，从而
+$\psi_Ag_{-1}=g_1\phi_A$，这正是接缝处的良定义性。
+端点静止性使 \eqref{eq:mappingtorusF} 光滑，且族
+$g_u^{-1}$ 给出其逆。它固定截面球。将整个
+AR 柄分解经 $F$ 拉回，将顶部核心换为线性
+像 $\phi_A(C_i)$，并同时运输每个分量与 framing 环带。
+
+\subsection{词与法向场}
+
+将 $C_i$ 与 $\phi_A(C_i)$ 提升到万有覆叠。三个顶部提升
+始于同一点 $A(Q)$。将整个顶部纤维平移 $-A(Q)$ 并
+沿其领圈延伸该平移。它与恒等同痕，并
+运输整个 link 及其法向场。因每条附着核心无基点，改变第一个面穿越仅循环置换其
+词。故可取顶部中心线为从 $0$ 到 $Ae_i$ 的直线段；它在
+第 $j$ 个整数面处以有理时刻 $k/(Ae_i)_j$ 穿越。任意小的固定乘积
+扰动使同时事件有序。读取两条底弧与反向定向的底部核心，恰得
+\begin{equation}\label{eq:actualword}
+m_i=t\phi_A(x_i)t^{-1}x_i^{-1}.
+\end{equation}
+这是公开生成器所用的完整事件规则。
+
+framing 同样显式。AR 在万有覆叠中将坐标轴沿方向 $(1,1,1)$ 推出；所得带具有平行
+边界分量，且 $A$ 的线性性在其
+像上保持该性质 \cite[pp.~16--17]{AitchisonRubinstein1984}。与
+$\lambda_i/\mu_i$ 矩形一起，这些带即 \eqref{eq:ARannulus} 中的法向场。故无黑板整数替代
+framing。
+
+\subsection{两次消去}
+
+Aitchison--Rubinstein 将 $(t,h_{CS})$ 识别为互补几何
+一/二柄对 \cite[p.~7]{AitchisonRubinstein1984}。沿其乘积矩形将每条其余
+二柄通道在 $h_{CS}$ 上滑动并消去；这以零相对扭转去掉 $t,t^{-1}$ 通道。
+
+现 $Ae_1=e_3$，故实际曲线 $m_1$ 变为 $zx^{-1}$，并在 $x$ 一柄上有
+一次几何通道。故 $(x,m_1)$ 为另一
+互补对。沿平行
+乘积带将每条其余 $x$ 通道在 $m_1$ 上滑动，以 $z$ 替换 $x$ 并消去该对。所有标签与
+法向场随带移动。所得柄数为 $(1,2,5,3,1)$，
+精确词投影为
+\[
+\begin{aligned}
+|m_2|&=311, & [m_2]_{(y,z)}&=(40,269),\\
+|m_3|&=1460, & [m_3]_{(y,z)}&=(189,1271).
+\end{aligned}
+\]
+对承诺的紧凑 $m_2$ 词，第二次线性且循环的自由
+约化长度仍为 $311$；无相邻逆对。
+附录 B 构造的显式 19 步 Nielsen 代表
+约化至长度 $309$。它含 40 个 $y/Y$ 通道，而非 42；加上
+两个 $r_{xy}$ 通道其 detector 为 42 通道而非 44。故
+309/311 差异为真正的代表差异，而非仅
+排版约定。
+运输后的 $r_{zx}$ 自由词为空，但无需也不从该事实推断 split-unknot 结论。
+
+\subsection{实际的 detector 球}
+
+沿剩余 genus-two handlebody 的 $y,z$ 圆盘系统切割。所选
+$m_2/r_{xy}$ 状态有 42 个来自 $m_2$ 的 $y$ 通道及两个来自
+$r_{xy}$ 的通道。在互异乘积-法向层上，这 44 个通道的正则邻域为标准三球 $B$，含穿孔圆盘领圈。
+六个仿射扫描在该领圈中指定纯 44 股辫。辫群的 mapping class 解释通过穿孔圆盘的同痕实现它，同痕延拓给出 $B$ 的环境同痕。
+选取延拓使每个返回
+穿孔在其终止时刻一阶与恒等一致。故每个乘积法向返回，而非仅
+总 writhe。该运动同时作用于每个定向法向副本。
+252 个 crossing 因子的重构给出
+$|B_{44}|=11340$，$\operatorname{perm}(B_{44})=1$ 且
+$\operatorname{wr}(B_{44})=0$。
+
+\begin{remark}[被拒的紧凑提升]
+较早符号提升（含 19 步 Nielsen 代表与有界 IA 修正）未通过通道计数、自由基或嵌入领圈检验。附录~\ref{app:retired-routes} 记录被否定的路线。
+\end{remark}
+
+\subsection{Johnson 替换}
+
+Johnson 对 $T^3$ 标准 genus-three 分割的保持分裂生成元
+\cite{Johnson2011} 给出更合适的搜索空间。其生成元
+$\alpha_{ij}$ 将 $x_i$--$x_j$ 正方形对角线推至脊邻域；推至对侧给出同一 transvection 的第二个提升。将 $A$ 分解为 93 个单位 transvection 并选取 93 位侧模式，得
+\[
+|m_2|=311,\qquad \#(y/Y)=42,\qquad p_y=42+2=44,
+\]
+三条脊像构成 $F_3$ 的自由基，约化 $m_2$ 词与紧凑词一致。相对紧凑词的 class-two $r_{yz}$ 系数为零。
+
+对每个正方形移动我们记录对角线、双边路径及正方形法向。在四分之一与四分之三处截断两路径，使 movie 相对于脊顶点。若 $M$ 遍历 93 个中间 unimodular 基，统一半径
+\[
+r=\frac{1}{8\max_M\lVert M^{-1}\rVert_\infty}=\frac1{196104}
+\]
+全程固定。
+
+在约化 $y$ 一柄的标准乘积图 $D^2\times[-1,1]$ 中，取 $B=D^2\times[-1/2,1/2]$。Johnson $m_2$ 词有 41 个正 $y$ 通道与一个负通道；$r_{xy}=[z,y]$ 贡献一个正与一个负通道。$D^2$ 中互异有理点给出两两不相交、横向 framing 恒定的乘积弧。$r_{xy}$ 的定向对偶矩形有六个 point-push 腿；展开所得 252 个几何 L/R 因子得长度为 11340 的 Artin 词，与独立再生的公开词一致。
+
+\begin{lemma}[Railroad linking]\label{lem:P0d-link}
+Johnson CS 柄图景的 railroad 约化平面 diagram 满足
+$\operatorname{lk}(m_2,r_{yz})=0$。
+\end{lemma}
+
+\begin{proof}
+带标签约化 PD 中混合 $m_2$--$r_{yz}$ 有号 crossing 和为
+$0$，故 linking 数为零。由 Kirby handle-slide 公式
+\cite{Kirby1978}，这正是上述乘积消去所需的 framing 条件。
+\end{proof}
+
+\subsection{三个几何等同}
+
+\begin{lemma}[Johnson--AR handlebody 桥梁]\label{lem:P0a}
+仿射映射
+\[
+S:\mathbb R^3/\mathbb Z^3\longrightarrow
+\mathbb R^3/(2\mathbb Z)^3,\qquad
+S(u)=2u-(1/2,1/2,1/2),
+\]
+是保持定向的微分同胚，将 Johnson 标准
+genus-three Heegaard 对映到 Aitchison--Rubinstein 所用的坐标脊对。
+\end{lemma}
+
+\begin{proof}
+Johnson 周期一环面存在 Freudenthal 三角剖分，使
+仿射映射 $S$ 为到周期二环面三角剖分的逐单形映射，将每条 Johnson 脊 $1$-单形映到相应 AR 坐标脊。因线性部分为 $2I$，
+欧氏距离缩放因子为 $2$，故 Johnson Voronoi handlebody 映到那些像脊的 Voronoi 胞。
+半径 $1/196104$ 关于 $0$ 的保护球映到关于 $Q$ 半径
+$2/196104$ 的球。
+$384$-四面体环面上的离散 Voronoi Heegaard 对已认证，且 $T(v)=v-(1,1,1)$ 将 Johnson 对映到其上。
+\end{proof}
+
+\begin{lemma}[两个带 framing 的消去]\label{lem:P0b}
+在 Johnson--AR 替换中，对 \((t,h_{CS})\) 与 \((x,m_1)\)
+满足几何 Kirby \(1/2\)-消去判据。消去
+运输整个带标签附着 link 并保持截面 framing 类 \(\varepsilon=0\)。
+\end{lemma}
+
+\begin{proof}
+对所选 Johnson 提升，$\psi_A(x)=z$ 且 $m_1=zx^{-1}$。每对
+允许几何交数为 $1$ 的局部乘积 $1/2$-柄消去，运输带标签附着 link 并保持
+$\varepsilon=0$。
+\end{proof}
+
+\begin{lemma}[与 MWW cabling 的相容性]\label{lem:P0c}
+44 条 Johnson lane 上的 framing 即 MWW cable
+构造所用的 framing。
+\end{lemma}
+
+\begin{proof}
+44 条 Johnson 六扫描股在三角剖分 $3$-球中实现为高度单调折线，具常数乘积法向，绑定到认证 handlebody 对中的 Johnson $y$-wicket。重构
+恢复公开 $11340$-字母词。
+\end{proof}
+
+\subsection{P0 结论}\label{sec:p0-conclusion}
+
+\begin{theorem}[Johnson 替换解除 P0]\label{thm:P0discharge}
+假设~\ref{hyp:P0} 对 Johnson 替换表述成立。
+\end{theorem}
+
+\begin{proof}
+引理~\ref{lem:P0a}--\ref{lem:P0c} 与~\ref{lem:P0d-link} 提供
+handlebody 桥梁、消去、cabling 相容性及混合 linking 为零。分阶段 Kirby 管道将所得闭图景与 $\Sigma_A^0$ 等同。
+\end{proof}

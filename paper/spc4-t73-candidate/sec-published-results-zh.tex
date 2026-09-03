@@ -1,0 +1,154 @@
+\section{所用公开结果及其完整适用范围}\label{sec:published-results}
+
+本节记录从文献引入的数学内容。措辞是对原文的忠实重述而非逐字引用。每一情形下，假设至少与所引来源相同，结论未被加强。候选特定的识别由假设~\ref{hyp:P0}--\ref{hyp:P3}给出，或仍作为无实例的 Lean 字段；它们不被加入外部陈述本身。
+
+\subsection{一柄与二柄公式}
+
+\begin{externalresult}[MWW 定理 4.7]\label{prop:mww-4.7}
+设 $k$ 为域，$W_1=\natural^m(S^1\times B^3)$，且 $L\subset\partial W_1$ 为零调 framed link。设 $L$ 与第 $i$ 个一柄的 belt sphere 横截相交于 $2p_i$ 点。沿这些 belt sphere 切开得到 $S^3$ 中一对球补内的 tangle $R$。则粘合映射诱导从
+\[
+ \KhR_N\!\left(R\cup\bigsqcup_i(T_i\sqcup\overline{T_i});k\right)
+ \left\{\Bigl(\sum_i p_i\Bigr)(N-1)\right\}
+\]
+（对所有具指定边界的 tangle $T_i$ 取直和）模 $3$-球 tangle 范畴的两个粘合作用，到 $\SN(W_1;L;k)$ 的同构。来源说明 display 公式中省略了整体 grading 平移。
+\end{externalresult}
+
+\paragraph{来源与适用范围。}
+这是外部结果 E1，在域、零调、横截性、边界与 grading 平移假设下重述 Manolescu--Walker--Wedrich \cite[Theorem~4.7]{ManolescuWalkerWedrich2023}。其候选特定应用是假设~\ref{hyp:P1} 的 Johnson 替换领。
+
+\begin{externalresult}[MWW 定义 3.1 与定理 3.2]\label{prop:mww-3.2}
+设 $W$ 为光滑定向四维流形，$L\subset\partial W$ 为 framed link，$W'$ 为沿与 $L$ 不相交的 framed link $K\subset\partial W$ 添加二柄得到。对每个相对类 $(\alpha,\eta)\in H_2^L(W';\Z)$，在 $r\in\mathbb N^n$ 上形成缆化直和项
+\[
+ \SN\!\left(W;K(r-\alpha^-,r+\alpha^+)\cup L,\eta^r\right)
+ \{(1-N)(2|r|+|\alpha|)\},
+\]
+再对所有保号着色 braid 关系 $\beta_i(b)v\sim v$ 与所有 stabilization 关系 $\psi_i^{[d]}(v)\sim0$（$d<N-1$）及 $\psi_i^{[N-1]}(v)\sim v$ 作商。沿相应正负平行 core disk 的附着定义从该缆化商到 $\SN(W';L;(\alpha,\eta))$ 的同构。
+\end{externalresult}
+
+\paragraph{来源与适用范围。}
+这正是 MWW 定义 3.1 与定理 3.2 的适用范围 \cite[Definition~3.1 and Theorem~3.2]{ManolescuWalkerWedrich2023}。反平行 braid 关系保留；我们不以对称群替换其 braid 群。
+
+\subsection{三柄与四柄公式}
+
+\begin{externalresult}[MWW 定理 3.7]\label{prop:mww-3.7}
+设 $W$ 为边界 $Y$ 的光滑定向四维流形，$S\subset Y$ 为与 framed link $L\subset Y$ 不相交的嵌入 $2$-球面，$W'$ 为沿 $S$ 添加三柄得到。设 $J$ 为 $S$ 的有向赤道，$\Delta_+$、$\Delta_-$ 为推入 $I\times Y$ 并 adjoin 到 $I\times L$ 的两半球。对固定 outgoing 相对类 $\alpha'$，在所有模 $[S]$ 约化到 $\alpha'$ 的 incoming 相对类上取直和。则到 $\SN(W';L';\alpha')$ 的三柄映射是满射，其核为两半球映射之差的像，目标为它们的 coequalizer。
+\end{externalresult}
+
+\paragraph{来源与适用范围。}
+这是 MWW 定理 3.7 \cite[Theorem~3.7]{ManolescuWalkerWedrich2023}。相对类的直和是定理的一部分。
+
+\begin{externalresult}[MWW 定理 3.10]\label{prop:mww-3.10}
+设 $W_1\subset W_2\subset W_3\subset W_4$ 为固定柄分解，其中 $W_1=\natural^m(S^1\times B^3)$，$W_2$ 沿 $K$ 添加二柄，$W_3$ 沿 $S_1,\ldots,S_p$ 添加三柄，$W_4$ 添加四柄。设 $L\subset\partial W_4$ 为 framed link，用 $\partial W_1$ 中属零亏格曲面（由二柄 core 补全）表示球面，并固定相对类 $\alpha'$。则 $\SN(W_4;L;\alpha')$ 为所有 $\alpha'$ 提升上缆化模的直和之商，对每个三柄球面：无点通过 $(N-2)$-dotted 关系等于零，$(N-1)$-dotted 关系等于恒等。
+\end{externalresult}
+
+\paragraph{来源与适用范围。}
+这是具柄分解、曲面实现、link 与相对类假设的 MWW 定理 3.10 \cite[Theorem~3.10]{ManolescuWalkerWedrich2023}。$N=2$ 时每个球面给出一个无 dotted 关系与一个 once-dotted 减恒等关系。
+
+\begin{externalresult}[MWW 命题 3.4 与推论 3.5]\label{prop:mww-3.4}
+对空边界 link，四维流形 inclusion 到三柄附着结果诱导 $\SN$ 上的满射；inclusion 到四柄附着结果诱导同构。在来源的整系数约定下，$\SN(S^4)\cong\Z$ 且集中在 bidegree $(0,0)$。
+\end{externalresult}
+
+\paragraph{来源与适用范围。}
+这是 MWW 命题 3.4 与推论 3.5 \cite[Proposition~3.4 and Corollary~3.5]{ManolescuWalkerWedrich2023}。来源在柄公式中使用 Manolescu--Neithalath 的二柄体识别 \cite{ManolescuNeithalath2020}。来源推论为整系数。本仓库不证明命题 3.4 或推论 3.5；假设~\ref{hyp:P3} 引用它们，并将计算的空 link 秩与这些引用分开。
+
+\begin{externalresult}[Morrison--Walker--Wedrich 定义 5.4 与例 5.6]\label{prop:mww-B4}
+对光滑定向四维流形 $W$ 与 $\partial W$ 中有向 framed link $L$，群 $\SN(W;L)$ 是由带标号 lasagna filling 生成、模 multilinearity、以同 $\KhR_N$ 值的 filling 替换输入球、以及相对边界的 isotopy 的双分次 Abel 群。若 $W=B^4$ 且 $L\subset S^3=\partial B^4$，filling 的求值诱导同构
+\begin{equation}\label{eq:B4-evaluation}
+\SN(B^4;L)\xrightarrow{\cong}\KhR_N(S^3,L).
+\end{equation}
+\end{externalresult}
+
+\paragraph{来源与适用范围。}
+这是 Morrison--Walker--Wedrich 中的不变量定义与 $4$-球求值 \cite[Definition~5.4 and Example~5.6]{MorrisonWalkerWedrich2019}。来源给出整系数双分次群。Lean \texttt{S4ReductionData} 仅打包 \texttt{EmptyKhQ} 上的空 link 控制；它不为候选 \texttt{ExternalGeometry} 给出实例。
+
+\subsection{三个 attaching sphere 的替换}
+
+\begin{externalresult}[Horvat--Jab\l onowski 定理 5.3]\label{prop:hj-theorem53}
+设 $W$ 为具非空连通边界的光滑紧连通四维流形，配备无四柄的固定柄分解。设分解有 $k$ 个三柄且
+\[
+ \partial W_2\cong M'\#\bigl(\#_k(S^1\times S^2)\bigr),
+\]
+其中 $M'$ 不可约。对 $\partial W_2$ 中两两不相交的光滑嵌入 $2$-球面 $\Sigma_1,\ldots,\Sigma_k$，下列等价：它们可在置换与三--三柄 slide 下 isotopy 到实际 attaching sphere；其 exterior 连通；其同调类构成 $H_2^{\mathrm{sph}}(\partial W_2)$ 的 $\Z$-基。当这些条件成立时，对这些球面同时 surgery 得到与 $M'$ 微分同胚的闭 $3$-流形。
+\end{externalresult}
+
+\paragraph{来源与适用范围。}
+这是 Horvat--Jab\l onowski \cite[Theorem~5.3]{HorvatJablonowski2025} 中定理 5.3 的完整陈述。边界分解、不可约性、球面个数、两两不相交与固定柄分解假设均保留。闭流形定理 5.3 不用于得出检测球 $B$ 已固定。假设~\ref{hyp:P2} 仅与引理~\ref{lem:Ssystem} 一起用于核不变性。该来源中不出现引理 5.5 与 5.7，亦未调用。此用途状态：\Unused。
+
+\subsection{迹、函子性与 Cappell--Shaneson 判据}
+
+\begin{externalresult}[BPW 命题 3.20 与定理 3.21]\label{prop:bpw-trace}
+对具左对偶的局部预分次 endobicategory $(\mathcal C,\Sigma)$，量子 horizontal trace 在 $\Sigma$-扭曲 quantum preshadow 中 universal；若亦有右对偶，则为 quantum shadow。在具对偶与保度结构映射的局部预分次 endobicategory 的 $2$-范畴上，量子 horizontal trace 是 strict $2$-函子。
+\end{externalresult}
+
+\paragraph{来源与适用范围。}
+这合并、且不扩大任一结论，Beliakova--Putyra--Wehrli 命题 3.20 与定理 3.21 \cite[Proposition~3.20 and Theorem~3.21]{BeliakovaPutyraWehrli2019}。
+
+\begin{externalresult}[BHPW 定理 4.6]\label{prop:bhpw}
+对有向 tangle $T$，Blanchet--Khovanov bracket 的同伦型是 $T$ 的不变量，且对普通 tangle cobordism strict 函子。在所述 BHPW 从 foam 范畴到 oriented Bar--Natan 范畴的等价下，其像与普通 Khovanov bracket 同构。
+\end{externalresult}
+
+\paragraph{来源与适用范围。}
+这是 Beliakova--Hogancamp--Putyra--Wehrli 中的 strictification 结果 \cite[Theorem~4.6]{BeliakovaHogancampPutyraWehrli2023}。来源紧接的注记将 knotted web 与四维奇异 foam 的扩展标为 conjectural。这些对象 excluded 于假设~\ref{hyp:P1}。
+
+\begin{externalresult}[Iwaki 命题 2.1]\label{prop:cs-criterion}
+设 $A\in\mathrm{SL}(3,\Z)$，$\Sigma_A^\varepsilon$ 由 $T^3$ 诱导自同构的 mapping torus 沿 canonical section 圆、两种 framing 奇偶之一 surgery 得到。则 $\Sigma_A^\varepsilon$ 为同伦 $4$-球面当且仅当 $\det(A-I)=\pm1$。
+\end{externalresult}
+
+\paragraph{来源与适用范围。}
+这是 Iwaki 命题 2.1，引用原始 Cappell--Shaneson 构造 \cite[Proposition~2.1]{Iwaki2024,CappellShaneson1976}。Johnson 图 $X_J$ 与 $\Sigma_A^0$ 的识别是假设~\ref{hyp:P0} 与 P3/E13，不是 Iwaki 定理的一部分。
+
+\subsection{Lean 中表示的标准拓扑结果}
+
+以下四项在 Iwaki 判据用于已识别的 surgery 流形后并非必需。它们陈述 \path{Smooth4PC/T73CSTopology.lean} 所表示的较长拓扑路线。Lean 将其候选特定应用存为 \texttt{CSTopologyData} 的字段；该结构无实例。
+
+\begin{externalresult}[Seifert--van Kampen 定理]\label{prop:van-kampen}
+设 $X=U\cup V$，$U$、$V$、$U\cap V$ 开且道路连通，并在 $U\cap V$ 中选基点。则 inclusion 诱导的图表
+\[
+\pi_1(U\cap V)\longrightarrow\pi_1(U),
+\qquad
+\pi_1(U\cap V)\longrightarrow\pi_1(V)
+\]
+是群的 pushout：$\pi_1(X)$ 为 $\pi_1(U)$ 与 $\pi_1(V)$ 的自由积模 $\pi_1(U\cap V)$ 每个元素的两像生成的正规闭包。
+\end{externalresult}
+
+\paragraph{来源与适用范围。}
+这是 van Kampen 的标准带基点、道路连通形式 \cite[Section~1.2]{Hatcher2002}。将其用于 Cappell--Shaneson surgery 仍要求 cover 与映射 $A-I$ 的几何识别。
+
+\begin{externalresult}[Wang 与 Mayer--Vietoris 正合列]\label{prop:wang-mv}
+对单值 $f:F\to F$ 的纤维化 $F\to E\to S^1$，有长 Wang 正合列，相关片段为
+\[
+\cdots\to H_k(F)\xrightarrow{\,I-f_*\,}H_k(F)
+\longrightarrow H_k(E)\longrightarrow
+H_{k-1}(F)\xrightarrow{\,I-f_*\,}H_{k-1}(F)\to\cdots.
+\]
+对 excisive 分解 $X=A\cup B$，奇异同调有长 Mayer--Vietoris 正合列
+\[
+\cdots\to H_k(A\cap B)\to H_k(A)\oplus H_k(B)
+\to H_k(X)\to H_{k-1}(A\cap B)\to\cdots,
+\]
+映射为标准的 inclusion 诱导映射与连接同态。
+\end{externalresult}
+
+\paragraph{来源与适用范围。}
+这是通常的奇异同调正合列 \cite[Sections~2.2 and 4.2]{Hatcher2002}。其映射为 \eqref{eq:A-minus-I} 与 \eqref{eq:H2-map} 中矩阵这一候选特定断言不是一般定理的一部分。
+
+\begin{externalresult}[整系数 Poincar\'e 对偶]\label{prop:PD}
+若 $M$ 为闭连通定向拓扑 $n$-流形，$[M]\in H_n(M;\Z)$ 为基本类，则与 $[M]$ 的 cap 积给出对每个 $k$ 的同构
+\[
+H^k(M;\Z)\xrightarrow{\cong}H_{n-k}(M;\Z).
+\]
+\end{externalresult}
+
+\paragraph{来源与适用范围。}
+这是整系数定向 Poincar\'e 对偶 \cite[Section~3.3]{Hatcher2002}。闭性、连通性、定向与整系数均保留。
+
+\begin{externalresult}[Hurewicz 与 Whitehead 提升]\label{prop:hurewicz-whitehead}
+若道路连通空间 $X$ 对 $n\ge2$ 为 $(n-1)$-连通，则 $H_i(X;\Z)=0$（$i<n$）且 Hurewicz 映射 $\pi_n(X)\to H_n(X;\Z)$ 为同构。若单连通 CW 复形之间的映射在所有整同调群上诱导同构，则它为同伦等价。
+\end{externalresult}
+
+\paragraph{来源与适用范围。}
+第一句为 Hurewicz 定理，第二句为单连通 CW 复形的 Whitehead 定理同调形式 \cite[Sections~4.1--4.2]{Hatcher2002}。依次应用可得：具 $S^4$ 整同调的 simply connected CW 复形同伦等价于 $S^4$。候选具该拓扑这一前提是抽象定理之外的。
+
+\begin{remark}[为何采用短路线]\label{rem:topology-tools}
+$\Sigma_A^0$ 的同伦球结论使用 Iwaki 命题 2.1，而非默许从这四项重建 Cappell--Shaneson 计算。较长路线仍作为 \texttt{CSTopologyData} 的 Lean 字段；这些字段无实例。
+\end{remark}

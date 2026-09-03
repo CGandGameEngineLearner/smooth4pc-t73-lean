@@ -1,0 +1,40 @@
+\section{有限计算层}
+
+公开有限层有三个独立部分：格算术、所选球面坐标行列式，以及截断 Burau 计算。
+
+\subsection{整格计算}
+
+除 \eqref{eq:determinants} 外，仓库记录所提议球面坐标列
+\begin{equation}\label{eq:spherecols}
+C=\begin{pmatrix}
+-1311&-189&41\\
+8608&1241&-269\\
+-1&0&1
+\end{pmatrix},
+\qquad \det C=1.
+\end{equation}
+故三条记录坐标向量构成 $\Z^3$ 的基。这只是几何基论证的最后算术步骤。它不构造嵌入球面、证明不相交性，也不将 $\Z^3$ 与 $H_2^{\mathrm{sph}}(\partial W_2)$ 等同。
+
+Lean 文件还给出 $A-I$ 及 $H_2(T^3;\Z)$ 上诱导映射的整逆。这些计算从同伦球面分支消去候选特定格代数。Van Kampen、Wang--Mayer--Vietoris、Poincaré 对偶与 Hurewicz--Whitehead 论证仍通过拓扑结构提供，而非形式化为四维流形拓扑。
+
+\subsection{公开 Burau 计算}
+
+令 $\varepsilon=t-1$。由 $252$ 个原始 crossing 行重构 $44$ 股上 $11{,}340$ 字母 Artin 词，缆化到 $88$ 股，并在 $\Z[\varepsilon]/(\varepsilon^7)$ 上应用非约化 Burau 表示，其中 $t=q^{-2}$、$q=1+h$、$\varepsilon=(1+h)^{-2}-1$。
+
+记所得标量为 $\delta_3^{\Bur}$。独立重现的公开结果为
+\begin{equation}\label{eq:burau}
+\delta_3=2624=(-2)^3\cdot(-328).
+\end{equation}
+较早草稿混用两套 endpoint 坐标表并报告 $-59072$；在 \ref{sec:exact-algebra} 节领圈 endpoint 下值为 $2624$，仍非零。\footnote{独立重放：\texttt{scripts/recompute\_t73\_delta3.py --check}。}
+
+\begin{proposition}[计算的精确适用范围]\label{prop:scope}
+方程~\eqref{eq:burau} 涉及 \eqref{eq:u} 与 \eqref{eq:ell} 的领圈 endpoint 下截断 Burau 模型。将结果与 MWW divided cubic 等同是定理~\ref{hyp:P1} 的内容。
+\end{proposition}
+
+\begin{proof}
+Burau 计算给出整数；定理~\ref{hyp:P1} 与第~\ref{sec:c-comparison} 节将其与 Johnson 替换领圈上的 MWW detector 等同。
+\end{proof}
+
+故有限重算与范畴比较各司其职：前者给出整数，后者使之成为四维流形不变量。
+
+\input{sec-finite-details-zh}

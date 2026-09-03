@@ -1,7 +1,7 @@
 # Trace-73 Cappell--Shaneson paper
 
 This directory contains the **controlling** English `amsart` preprint for a
-skein-lasagna obstruction for a trace-73 Cappell--Shaneson sphere.  Exact
+A conditional skein-lasagna obstruction for a trace-73 Cappell--Shaneson sphere.  Exact
 Artin--Magnus expansion and the pure-braid Andreadakis equality verify a
 cubic-order statement for the public braid.  Geometric lemmas P0a--c and
 C1--C2, S, the MWW four-handle layer and the E13 CS handle picture are
@@ -28,7 +28,7 @@ cp main.pdf ../../output/pdf/spc4-t73-candidate.pdf
 
 The Chinese manuscript mirrors the English `main.tex` section-for-section.
 Translated section files use the `-zh` suffix; body chunks live in
-`zh-chunks/chunk-*-zh.tex`.
+`zh-chunks/chunk-*-zh.tex` (17 chunks, `chunk-00-zh.tex` through `chunk-16-zh.tex`).
 
 From the repository root in WSL (requires `lualatex` and `texlive-lang-chinese`):
 
