@@ -297,14 +297,39 @@ handle picture of Hypothesis~\ref{hyp:P0}, not these determinants.
 \begin{proof}
 This is discharged for the Johnson replacement four-handle picture.
 \texttt{scripts/certify\_t73\_p3\_four\_handle.py} records the three $1$--$3$
-cancellations of the reversed $1$-handles, a PL $4$-ball $I^4$ of Euler
-characteristic $1$ with boundary $S^3$, the finite determinants, and the
-MWW citations.  \texttt{scripts/certify\_t73\_e12\_s4.py} computes the
-empty-link Khovanov complex over $\mathbb Q$ and the standard $S^4$ obtained
-by gluing two copies of that $I^4$ along $S^3$.  The picture is not a
-triangulation of a four-dimensional
-$W_3$.  Identification $X_J\cong\Sigma_A^0$ is
-\texttt{scripts/certify\_t73\_e13\_close.py}, not this four-handle certificate.
+cancellations of the reversed $1$-handles and a PL $4$-ball $I^4$ of Euler
+characteristic $1$ with boundary $S^3$.  The picture is not a
+triangulation of a four-dimensional $W_3$.  Identification
+$X_J\cong\Sigma_A^0$ is \texttt{scripts/certify\_t73\_e13\_close.py}, not
+this four-handle certificate.
+
+The E12 vanishing is the certificate
+\path{audit/t73_e12_s4_reduction.json}, produced by
+\texttt{scripts/certify\_t73\_e12\_s4.py}.  That file has two kinds of
+input, which we keep separate.
+\begin{itemize}
+\item \emph{Computed in this repository.}
+  The empty diagram has one smoothing and zero differential, so empty-link
+  Khovanov homology over $\mathbb Q$ has rational rank $1$ in quantum
+  degree $0$ and rank $0$ in degree $494$; this is Lean's
+  \texttt{EmptyKhQ}.  The same $I^4$ has $16$ vertices and eight boundary
+  $3$-cubes.  Two copies glued along $S^3$ have Euler characteristic
+  $1+1-0=2$, the standard PL $S^4$, not $X_J$.  The quantum degree
+  $-44+227+315-4=494$ is Lean's \texttt{computedDegree}.
+\item \emph{Cited, not proved here.}
+  Manolescu--Walker--Wedrich
+  \cite[Proposition~3.4]{ManolescuWalkerWedrich2023} (arXiv:\texttt{2206.04616}):
+  for the empty boundary link, a $4$-handle attachment induces an
+  isomorphism of skein lasagna modules, so
+  $\mathcal S^2_0(B^4)\cong\mathcal S^2_0(S^4)$.
+  \cite[Corollary~3.5]{ManolescuWalkerWedrich2023}:
+  $\mathcal S^2_0(S^4)\cong\mathbb Z$, concentrated in bidegree $(0,0)$.
+  Over $\mathbb Q$ the degree-$494$ summand is therefore zero.
+\end{itemize}
+The repository does not prove Proposition~3.4 or Corollary~3.5.
+Lean \texttt{T73S4Inhabitant.lean} packages only the empty-link control
+\texttt{S4ReductionData} on \texttt{EmptyKhQ}; it does not inhabit
+candidate \texttt{ExternalGeometry}.
 \end{proof}
 
 \begin{theorem}[Conditional trace-73 theorem]\label{thm:joined}
@@ -1405,13 +1430,26 @@ Hypothesis~\ref{hyp:P0} is discharged for the Johnson replacement, as is
 Hypothesis~\ref{hyp:P1} and Hypothesis~\ref{hyp:P2}.
 Hypothesis~\ref{hyp:P3} is discharged for the Johnson replacement
 four-handle picture $X_J$: three $1$--$3$ cancellations restore $S^3$, a
-PL $4$-ball is attached along that $S^3$, and Corollary~3.5 kills the
-$S^4$ summand in quantum degree $494$.  The certificate is
+PL $4$-ball is attached along that $S^3$, and the E12 vanishing in
+quantum degree $494$ is the conjunction of the repository computations
+with the two MWW citations recorded in the proof of
+Hypothesis~\ref{hyp:P3}.  The four-handle certificate is
 \path{audit/t73_p3_four_handle.json}, with digest
 \[
 \hash{B9ED5F7122D69D623F179089EE76B954}
      {68EA481863F04C270227E251EE07C7B2}.
 \]
+The E12 certificate is \path{audit/t73_e12_s4_reduction.json}, with digest
+\[
+\hash{E7EB5367D63B0D590F850CFAF8878BFB}
+     {E9094AB98669AD2FD5384E6CD4885069}.
+\]
+Its computed pieces are empty-link Khovanov ranks, the $I^4$ Euler
+characteristic, and the degree $494$.  The identifications
+$\mathcal S^2_0(B^4)\cong\mathcal S^2_0(S^4)$ and
+$\mathcal S^2_0(S^4)\cong\mathbb Z$ are
+\cite[Proposition~3.4 and Corollary~3.5]{ManolescuWalkerWedrich2023},
+not theorems of this repository.
 The identification $X_J\cong\Sigma_A^0$ is the constructed Johnson CS handle
 picture \path{audit/t73_e13_close.json}, so the iterated
 quotient is identified with $\mathcal S^2_0(\Sigma_A^0)$ only after the
@@ -1481,7 +1519,7 @@ C3 & \Open & Not used to infer S. \\
 P2/E7 & \Open & Closed HJ Theorem~5.3 is not used as ``$B$ is fixed''. \\
 P2/E10/S & \Discharged & Reversed $1$-handle belt spheres miss the P0 cube and the C1 leftover link; chart returns miss every belt cube; dual loops pair to the identity; $b=0$ foams. \\
 P3/E11 & \Discharged & Three $1$--$3$ cancellations and a PL $4$-ball; MWW Proposition~3.4 on $X_J$, not $\Sigma_A^0$. \\
-P3/E12 & \Discharged & Empty-link Khovanov over $\mathbb Q$, PL $S^4=I^4\cup_{S^3}I^4$ of Euler characteristic $2$, MWW Proposition~3.4; quantum degree $494$ vanishes.  Lean inhabits \texttt{S4ReductionData} on the empty-link control universe; the candidate \texttt{ExternalGeometry} remains uninhabited. \\
+P3/E12 & \Discharged & Computed: empty-link rank over $\mathbb Q$, PL $I^4$ with $\chi=1$, glue $\chi=2$, degree $494$ (\texttt{scripts/certify\_t73\_e12\_s4.py}).  Cited: MWW Proposition~3.4 and Corollary~3.5 \cite{ManolescuWalkerWedrich2023}, arXiv:2206.04616; not proved here.  Not $X_J$.  Candidate \texttt{ExternalGeometry} uninhabited. \\
 P3/E13 & \Discharged & Constructed PL $\psi$, railroad attaching link, reduced PD, and Kirby pipeline; $X_J\cong\Sigma_A^0$. Lean \texttt{CSTopologyData} uninhabited. \\
 \bottomrule
 \end{tabularx}
@@ -1707,7 +1745,7 @@ Lean field & Mathematical obligation \\
 \texttt{q01}, \texttt{ell1\_comp\_q01} & Complete two-handle beta/psi quotient and descent. \\
 \texttt{q12}, \texttt{ell2\_comp\_q12} & Actual E7 spheres, MWW hemisphere maps, and complete coequalizer. \\
 \texttt{transport}, \texttt{fourIso} & E11 for the Johnson replacement $X_J$, not $\Sigma_A^0$. \\
-\texttt{s4DegreeZero} & E12 empty-link control inhabits \texttt{S4ReductionData} on \texttt{EmptyKhQ}; candidate transport remains a parameter. \\
+\texttt{s4DegreeZero} & Computed \texttt{EmptyKhQ}(494)=0 and PL $S^4$ Euler data from \texttt{certify\_t73\_e12\_s4.py}.  The isomorphisms $G(B^4)\simeq G(S^4)$ and $\mathcal S^2_0(S^4)\cong\mathbb Z$ are MWW Proposition~3.4 and Corollary~3.5, cited not formalized.  Empty-link Lean inhabitant only. \\
 \texttt{diffeomorphismEquiv} & Graded diffeomorphism invariance of lasagna modules. \\
 \texttt{matrixConditionsToHomotopySphere} & E13 constructed CS handle picture; Lean \texttt{CSTopologyData} uninhabited. \\
 \bottomrule

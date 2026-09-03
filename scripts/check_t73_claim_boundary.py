@@ -37,6 +37,18 @@ def check() -> None:
     require(paper_text, r"P3/E13 & \Discharged", paper)
     require(paper_text, r"computedCubic_eq_2624", paper)
     require(paper_text, "2624", paper)
+    require(
+        paper_text,
+        r"\cite[Proposition~3.4]{ManolescuWalkerWedrich2023}",
+        paper,
+    )
+    require(
+        paper_text,
+        r"\cite[Corollary~3.5]{ManolescuWalkerWedrich2023}",
+        paper,
+    )
+    require(paper_text, "The repository does not prove Proposition~3.4", paper)
+    require(paper_text, r"scripts/certify\_t73\_e12\_s4.py", paper)
 
     reject(paper_text, r"P2/E10/S & \Open", paper)
     reject(paper_text, r"P3/E11 & \Open", paper)
