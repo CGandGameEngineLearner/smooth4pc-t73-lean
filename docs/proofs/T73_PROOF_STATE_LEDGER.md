@@ -5,7 +5,8 @@
 is discharged for the Johnson replacement.  C is discharged for the
 replacement collar.  S is discharged for the Johnson replacement reversed
 1-handle picture.  The MWW four-handle layer is discharged.  The
-identification `X_J ≅ Sigma_A^0` remains Open.  Entries
+identification `X_J ≅ Sigma_A^0` is discharged as the constructed CS
+handle picture.  Lean ExternalGeometry remains uninhabited.  Entries
 below describing unavailable historical PD/TH objects are recovery history,
 not current premises.  Frozen cubic is `2624`.
 

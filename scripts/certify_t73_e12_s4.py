@@ -14,8 +14,9 @@ reduction from existing objects:
   not X_J.
 
 Degree 494 is replayed from T73Finite.lean.  EmptyKhQ(494)=0, so the S^4
-summand in quantum degree 494 vanishes.  Lean S4ReductionData remains
-uninhabited: this is a computational certificate, not a Universe instance.
+summand in quantum degree 494 vanishes.  T73S4Control.lean still has no
+S4ReductionData instance.  T73S4Inhabitant.lean inhabits the empty-link
+control universe only; that is not a candidate ExternalGeometry.
 The closed manifold X_J is not identified with S^4.
 """
 
@@ -33,6 +34,7 @@ ROOT = Path(__file__).resolve().parents[1]
 P3 = ROOT / "audit" / "t73_p3_four_handle.json"
 LEAN_FINITE = ROOT / "Smooth4PC" / "T73Finite.lean"
 LEAN_S4 = ROOT / "Smooth4PC" / "T73S4Control.lean"
+LEAN_S4_INHABITANT = ROOT / "Smooth4PC" / "T73S4Inhabitant.lean"
 OUTPUT = ROOT / "audit" / "t73_e12_s4_reduction.json"
 DEGREE = -44 + 227 + 315 - 4
 
@@ -149,6 +151,13 @@ def require_lean() -> None:
             raise AssertionError(f"T73S4Control.lean is missing {needle!r}")
     if "instance S4ReductionData" in s4 or "def s4Reduction" in s4:
         raise AssertionError("T73S4Control.lean must not inhabit S4ReductionData")
+    inhabitant = LEAN_S4_INHABITANT.read_text(encoding="utf-8")
+    if "def emptyLinkS4Reduction" not in inhabitant:
+        raise AssertionError("T73S4Inhabitant.lean is missing emptyLinkS4Reduction")
+    if "theorem emptyLink_s4ComputedDegreeZero" not in inhabitant:
+        raise AssertionError("T73S4Inhabitant.lean is missing emptyLink_s4ComputedDegreeZero")
+    if "instance ExternalGeometry" in inhabitant or "def t73ExternalGeometry" in inhabitant:
+        raise AssertionError("empty-link inhabitant must not supply ExternalGeometry")
 
 
 def generate() -> dict[str, Any]:

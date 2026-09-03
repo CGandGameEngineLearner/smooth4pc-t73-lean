@@ -245,6 +245,7 @@ def generate() -> dict[str, Any]:
                 "audit/t73_e12_s4_reduction.json",
                 "scripts/certify_t73_p3_four_handle.py",
                 "Smooth4PC/T73S4Control.lean",
+                "Smooth4PC/T73S4Inhabitant.lean",
                 "MWW Corollary 3.5 unpacked as empty Khovanov and two I^4 glued along S^3",
             ],
             "certificate_sha256": e12_certificate.get("certificate_sha256"),
@@ -260,6 +261,8 @@ def generate() -> dict[str, Any]:
             ),
             "evidence": [
                 "Smooth4PC/T73Finite.lean",
+                "Smooth4PC/T73JohnsonTransvections.lean",
+                "Smooth4PC/T73GeometryPack.lean",
                 "Iwaki Proposition 2.1 for the matrix criterion",
                 "audit/t73_p3_four_handle.json",
                 "scripts/certify_t73_e13_close.py",
@@ -280,8 +283,9 @@ def generate() -> dict[str, Any]:
         "interpretation": (
             "P0, C, S, the MWW four-handle layer and the E13 CS handle picture "
             "are discharged for the explicit Johnson replacement. Lean "
-            "ExternalGeometry remains uninhabited. The counterexample claim is "
-            "not proved."
+            "ExternalGeometry remains uninhabited. The empty-link control "
+            "S4ReductionData is inhabited in T73S4Inhabitant.lean. The "
+            "counterexample claim is not proved."
         ),
     }
 

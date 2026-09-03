@@ -1,6 +1,6 @@
 # Geometric and functorial instantiation audit
 
-**Status:** `OPEN` (P0, C, S, MWW four-handle layer and E13 CS handle picture discharged; Lean ExternalGeometry uninhabited)
+**Status:** `OPEN` (P0, C, S, MWW four-handle layer and E13 CS handle picture discharged; Lean ExternalGeometry uninhabited; empty-link `S4ReductionData` inhabited)
 
 This file is subordinate to
 `docs/proofs/T73_GEOMETRIC_PREMISE_STATUS_20260903.md`.  Historical PD/TH
@@ -15,11 +15,12 @@ artifacts are not premises.  No counterexample is claimed.
 | P2/E7 attaching spheres | **OPEN** | Closed HJ Theorem 5.3 is not used as “B is fixed”; Lemmas 5.5 and 5.7 are not in arXiv:2510.20282 |
 | P2/E10/S three-handle quotient | **DISCHARGED** | Reversed 1-handle belt spheres miss the P0 cube and the C1 leftover link |
 | P3/E11 four-handle | **DISCHARGED** | 1-3 cancellations and a PL 4-ball; MWW 3.4 on `X_J` |
-| P3/E12 standard sphere | **DISCHARGED** | Empty-link Khovanov and PL \(S^4=I^4\cup_{S^3}I^4\); Lean `S4ReductionData` uninhabited |
+| P3/E12 standard sphere | **DISCHARGED** | Empty-link Khovanov and PL \(S^4=I^4\cup_{S^3}I^4\); Lean empty-link `S4ReductionData` inhabited |
 | P3/E13 homotopy sphere | **DISCHARGED** | Constructed PL `psi`, railroad attaching link, reduced PD, Kirby pipeline; Lean `CSTopologyData` uninhabited |
 
-Lean `ExternalGeometry` / `CSExternalGeometry` have no inhabitants.
-`thm:joined` remains Conditional on that inhabitant.
+Lean `ExternalGeometry` / `CSExternalGeometry` have no candidate inhabitants.
+The empty-link control inhabits `S4ReductionData` in `T73S4Inhabitant.lean`.
+`thm:joined` remains Conditional on a candidate `ExternalGeometry`.
 
 ## Retired routes
 

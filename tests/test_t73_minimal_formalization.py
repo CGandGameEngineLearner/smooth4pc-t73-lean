@@ -49,6 +49,10 @@ AXIOM_THEOREMS = (
     "Smooth4PC.T73.conditionalIsHomotopySphere",
     "Smooth4PC.T73.conditionalCounterexample",
     "Smooth4PC.T73.conditionalCounterexample_of_topology",
+    "Smooth4PC.T73.emptyLink_s4ComputedDegreeZero",
+    "Smooth4PC.T73.detectorLine_not_linearEquiv_emptyKhQ",
+    "Smooth4PC.T73.detectorTransport_on_emptyLink_impossible",
+    "Smooth4PC.T73.conditionalCounterexample_of_pack",
 )
 FOUNDATIONAL_AXIOMS = {"propext", "Quot.sound", "Classical.choice"}
 SPHERE_CONSUMER = r"""
@@ -138,6 +142,12 @@ class T73FiniteFormalizationTests(unittest.TestCase):
         cls.cs_algebra = cls.repo / "Smooth4PC" / "T73CSAlgebra.lean"
         cls.cs_topology = cls.repo / "Smooth4PC" / "T73CSTopology.lean"
         cls.s4_control = cls.repo / "Smooth4PC" / "T73S4Control.lean"
+        cls.s4_inhabitant = cls.repo / "Smooth4PC" / "T73S4Inhabitant.lean"
+        cls.certificate_index = cls.repo / "Smooth4PC" / "T73CertificateIndex.lean"
+        cls.johnson_transvections = (
+            cls.repo / "Smooth4PC" / "T73JohnsonTransvections.lean"
+        )
+        cls.geometry_pack = cls.repo / "Smooth4PC" / "T73GeometryPack.lean"
         cls.quotient_equiv = cls.repo / "Smooth4PC" / "QuotientEquiv.lean"
         cls.audit = cls.repo / "T73Audit.lean"
         cls.lake = resolve_lake()
@@ -223,6 +233,10 @@ class T73FiniteFormalizationTests(unittest.TestCase):
             self.cs_algebra,
             self.cs_topology,
             self.s4_control,
+            self.s4_inhabitant,
+            self.certificate_index,
+            self.johnson_transvections,
+            self.geometry_pack,
             self.quotient_equiv,
         ):
             self.assertTrue(path.is_file(), f"missing {path.name}")
@@ -237,6 +251,12 @@ class T73FiniteFormalizationTests(unittest.TestCase):
         cs_algebra_source = self.cs_algebra.read_text(encoding="utf-8")
         cs_topology_source = self.cs_topology.read_text(encoding="utf-8")
         s4_control_source = self.s4_control.read_text(encoding="utf-8")
+        s4_inhabitant_source = self.s4_inhabitant.read_text(encoding="utf-8")
+        certificate_index_source = self.certificate_index.read_text(encoding="utf-8")
+        johnson_transvections_source = self.johnson_transvections.read_text(
+            encoding="utf-8"
+        )
+        geometry_pack_source = self.geometry_pack.read_text(encoding="utf-8")
         quotient_equiv_source = self.quotient_equiv.read_text(encoding="utf-8")
         audit_source = self.audit.read_text(encoding="utf-8")
         for token in (
@@ -260,6 +280,10 @@ class T73FiniteFormalizationTests(unittest.TestCase):
                 + cs_algebra_source
                 + cs_topology_source
                 + s4_control_source
+                + s4_inhabitant_source
+                + certificate_index_source
+                + johnson_transvections_source
+                + geometry_pack_source
                 + quotient_equiv_source
                 + audit_source,
                 rf"\b{re.escape(token)}\b",
@@ -270,6 +294,12 @@ class T73FiniteFormalizationTests(unittest.TestCase):
         self.assertIn("(cs : CSExternalGeometry u)", conditional_source)
         self.assertNotRegex(conditional_source, r"\btheorem\s+notStandard\b")
         self.assertNotRegex(conditional_source, r"\btheorem\s+counterexample\b")
+        self.assertIn("def emptyLinkS4Reduction", s4_inhabitant_source)
+        self.assertIn("def packExternalGeometry", geometry_pack_source)
+        self.assertNotRegex(s4_inhabitant_source, r"\binstance\s+ExternalGeometry\b")
+        self.assertNotRegex(geometry_pack_source, r"\binstance\s+ExternalGeometry\b")
+        self.assertNotRegex(geometry_pack_source, r"\btheorem\s+notStandard\b")
+        self.assertNotRegex(geometry_pack_source, r"\btheorem\s+counterexample\b")
 
         self.assertIn("substitutionLinear ^ 3 * cubicBase", finite_source)
         self.assertIn(
@@ -303,6 +333,14 @@ class T73FiniteFormalizationTests(unittest.TestCase):
             cs_algebra_olean = olean_root / "Smooth4PC" / "T73CSAlgebra.olean"
             cs_topology_olean = olean_root / "Smooth4PC" / "T73CSTopology.olean"
             s4_control_olean = olean_root / "Smooth4PC" / "T73S4Control.olean"
+            s4_inhabitant_olean = olean_root / "Smooth4PC" / "T73S4Inhabitant.olean"
+            certificate_index_olean = (
+                olean_root / "Smooth4PC" / "T73CertificateIndex.olean"
+            )
+            johnson_transvections_olean = (
+                olean_root / "Smooth4PC" / "T73JohnsonTransvections.olean"
+            )
+            geometry_pack_olean = olean_root / "Smooth4PC" / "T73GeometryPack.olean"
             sphere_quotient_olean = (
                 olean_root / "Smooth4PC" / "T73SphereQuotient.olean"
             )
@@ -321,9 +359,13 @@ class T73FiniteFormalizationTests(unittest.TestCase):
                 (self.cs_algebra, cs_algebra_olean),
                 (self.cs_topology, cs_topology_olean),
                 (self.s4_control, s4_control_olean),
+                (self.s4_inhabitant, s4_inhabitant_olean),
+                (self.certificate_index, certificate_index_olean),
+                (self.johnson_transvections, johnson_transvections_olean),
                 (self.split_movie, split_movie_olean),
                 (self.sphere_quotient, sphere_quotient_olean),
                 (self.conditional, conditional_olean),
+                (self.geometry_pack, geometry_pack_olean),
             ):
                 build = self.run_lean(source, olean_root, target)
                 self.assertEqual(build.returncode, 0, build.stdout + build.stderr)

@@ -5,7 +5,8 @@
 Paper Lemmas Ssystem and Sendpoint are discharged for that picture.
 Closed-manifold HJ Theorem 5.3 is used only for kernel invariance, not to
 fix `B`.  The MWW four-handle layer is discharged for `X_J`.  The
-identification `X_J ≅ Sigma_A^0` remains Open, and no counterexample is claimed.
+identification `X_J ≅ Sigma_A^0` is discharged as the constructed CS
+handle picture, and no counterexample is claimed.
 
 ## Statement
 
@@ -68,8 +69,7 @@ ledger or endpoint permutation is used.  The optional owner lifts and
 split-tree Lean algebra are compatible coordinate models but are not
 load-bearing.
 
-P0, C, S and the MWW four-handle layer are supplied by the current paper
-for the Johnson replacement.  The identification `X_J ≅ Sigma_A^0` remains
-Open.  See
+P0, C, S, the MWW four-handle layer and the E13 CS handle picture are
+supplied by the current paper for the Johnson replacement.  See
 `docs/research/T73_S_RELATIVE_STANDARD_SYSTEM_2026-09-02.md` for the
 primary-source audit and detailed boundary conditions.

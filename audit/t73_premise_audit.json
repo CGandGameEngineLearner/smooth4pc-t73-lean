@@ -1,7 +1,7 @@
 {
   "counterexample_claim_falsified": false,
   "counterexample_claim_proved": false,
-  "interpretation": "P0, C, S, the MWW four-handle layer and the E13 CS handle picture are discharged for the explicit Johnson replacement. Lean ExternalGeometry remains uninhabited. The counterexample claim is not proved.",
+  "interpretation": "P0, C, S, the MWW four-handle layer and the E13 CS handle picture are discharged for the explicit Johnson replacement. Lean ExternalGeometry remains uninhabited. The empty-link control S4ReductionData is inhabited in T73S4Inhabitant.lean. The counterexample claim is not proved.",
   "items": {
     "C": {
       "adjudication": "Johnson replacement: C1 product isotopy of P0 reconstruction strands and C2 action cubes plus RepresentableCoefficient.lean.",
@@ -72,6 +72,7 @@
         "audit/t73_e12_s4_reduction.json",
         "scripts/certify_t73_p3_four_handle.py",
         "Smooth4PC/T73S4Control.lean",
+        "Smooth4PC/T73S4Inhabitant.lean",
         "MWW Corollary 3.5 unpacked as empty Khovanov and two I^4 glued along S^3"
       ],
       "falsified": false,
@@ -83,6 +84,8 @@
       "certificate_sha256": "42309427FB78FCFD3208E7F9537C2C7B2B3AFF5484D9E373A69336ABB856B00F",
       "evidence": [
         "Smooth4PC/T73Finite.lean",
+        "Smooth4PC/T73JohnsonTransvections.lean",
+        "Smooth4PC/T73GeometryPack.lean",
         "Iwaki Proposition 2.1 for the matrix criterion",
         "audit/t73_p3_four_handle.json",
         "scripts/certify_t73_e13_close.py",

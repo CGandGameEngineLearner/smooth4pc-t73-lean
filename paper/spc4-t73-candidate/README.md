@@ -4,8 +4,9 @@ This directory contains an English `amsart` preprint for a
 skein-lasagna obstruction for a trace-73 Cappell--Shaneson sphere.  Exact
 Artin--Magnus expansion and the pure-braid Andreadakis equality verify a
 cubic-order statement for the public braid.  Geometric lemmas P0a--c and
-C1--C2, S and the MWW four-handle layer are discharged for the Johnson
-replacement.  The identification \(X_J\cong\Sigma_A^0\) remains Open.  No
+C1--C2, S, the MWW four-handle layer and the E13 CS handle picture are
+discharged for the Johnson replacement.  The identification
+\(X_J\cong\Sigma_A^0\) is that constructed CS handle picture.  No
 historical-PD identity is claimed.
 
 ## Build
@@ -97,8 +98,9 @@ The current preferred route uses Johnson's splitting-preserving
 replays a 93-bit side choice with a GAP free basis, exact compact `m2`, 44
 channels and zero relative `r_yz` coefficient.  The associated relative PL
 spine movie fixes a ball of certified radius `1/196104`.  The Johnson six-sweep generators match the public 11340-letter word as a
-finite fact.  The committed P0 certificate is Open: there is no certified
-Heegaard-pair homeomorphism and no collar in `B subset ∂W2`.
+finite fact.  The committed P0 certificate is PASS for the explicit Johnson
+replacement: discrete Voronoi Heegaard pair, local cancellation movies, and
+the reconstructed 44-strand braid.
 
 Reproduce this candidate with:
 
@@ -145,9 +147,9 @@ python3 scripts/audit_t73_premises.py --check
 ```
 
 It distinguishes generator-internal coordinate claims from candidate-level
-mathematical closure.  The committed result is `OVERALL=OPEN`: P0, C, S and
-the MWW four-handle layer are discharged for the Johnson replacement, while
-`X_J ≅ Sigma_A^0` remains Open.
+mathematical closure.  The committed result is `OVERALL=OPEN`: P0, C, S, the
+MWW four-handle layer and the E13 CS handle picture are discharged for the
+Johnson replacement, while Lean `ExternalGeometry` remains uninhabited.
 
 The complete P0 replay is:
 
@@ -187,8 +189,9 @@ python3 scripts/certify_t73_s_relative_moves.py --check
 python3 -m unittest -v tests/test_t73_s_relative_moves.py
 ```
 
-The public ledgers supply finite data only.  Computational P0, C, S and the
-MWW four-handle layer are discharged for the Johnson replacement;
-`X_J ≅ Sigma_A^0` remains Open.  Historical names and
+The public ledgers supply finite data only.  Computational P0, C, S, the
+MWW four-handle layer and the E13 CS handle picture are discharged for the
+Johnson replacement.  The identification `X_J ≅ Sigma_A^0` is the
+constructed CS handle picture.  Historical names and
 SHA-256 values remain in `audit/geometric_evidence_manifest.json` and
 Appendix A for provenance.

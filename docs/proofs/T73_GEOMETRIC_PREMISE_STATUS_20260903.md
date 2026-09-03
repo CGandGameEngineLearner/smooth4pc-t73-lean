@@ -2,7 +2,8 @@
 
 P0, C, S, the MWW four-handle layer and the E13 CS handle picture are
 discharged for the explicit Johnson replacement. Lean ExternalGeometry
-remains uninhabited. No counterexample is claimed.
+remains uninhabited. The empty-link control `S4ReductionData` is inhabited.
+No counterexample is claimed.
 
 ## Closed (finite or already-proved algebra)
 
@@ -12,7 +13,7 @@ These are not re-litigated.
 - Euler characteristic `1-2+5-3+1=2`
 - degree `-44+227+315-4=494`
 - Theorem A: if the external geometry exists, a nonzero class in quantum degree 494 obstructs a diffeomorphism to `S^4`
-- Lean proves only that implication. `Smooth4PC.T73External.ExternalGeometry` / `CSExternalGeometry` have no inhabitants
+- Lean proves only that implication. `Smooth4PC.T73External.ExternalGeometry` / `CSExternalGeometry` have no candidate inhabitants. `T73S4Inhabitant.lean` inhabits empty-link `S4ReductionData`
 - Frozen public cubic and Lean `computedCubic_eq_2624`: `D_3=2624`. The retired mixed-index value `-59072` is not used
 - Public Burau cubic of the frozen Artin word is nonzero
 - Nielsen 42-channel route is false; inner conjugation `x^{-1}` is whiskers, not an embedded collar
@@ -55,7 +56,7 @@ This is not an identification with historical `∂W_2`, and it is not a triangul
 
 **Object that exists.** `scripts/certify_t73_p3_four_handle.py` takes the three reversed 1-handles of S, records a 1-3 cancellation along each belt sphere (dual-loop intersection 1, chart return missing every belt cube), and restores an S^3 containing the P0 cube. A PL 4-ball `I^4` of Euler characteristic 1 is attached along that S^3. MWW Proposition 3.4 supplies the empty-link isomorphism onto the closed picture `X_J`. MWW Corollary 3.5 kills the standard `S^4` summand in quantum degree 494. The Lean matrix is replayed: `det A = det(A-I) = 1`.
 
-`scripts/certify_t73_e12_s4.py` computes the empty-link Khovanov complex over Q (rank 1 at quantum degree 0, rank 0 at 494) and glues two copies of the P3 `I^4` along `S^3` to a PL `S^4` of Euler characteristic 2. Lean `S4ReductionData` remains uninhabited.
+`scripts/certify_t73_e12_s4.py` computes the empty-link Khovanov complex over Q (rank 1 at quantum degree 0, rank 0 at 494) and glues two copies of the P3 `I^4` along `S^3` to a PL `S^4` of Euler characteristic 2. Lean `T73S4Inhabitant.lean` inhabits `S4ReductionData` on the `EmptyKhQ` control universe, not on the Johnson candidate.
 
 This is not a triangulation of a 4-dimensional `W3`. The P3 certificate itself does not claim `X_J ≅ Σ_A^0`.
 
@@ -70,8 +71,8 @@ This is not a triangulation of a 4-dimensional `W3`. The P3 certificate itself d
 | S geometry | **PASS** | Johnson replacement reversed 1-handle picture |
 | S endpoint | **PASS** | b=0 foams by MWW Example 3.8 |
 | P3/E11--E12 | **PASS** | Four-handle picture `X_J` and MWW 3.5 about `S^4` |
-| P3/E13 identification | **PASS** | Constructed CS handle picture identifies `X_J` with `Σ_A^0`; Lean uninhabited |
-| Counterexample | Open | Lean implication only; no `ExternalGeometry` instance |
+| P3/E13 identification | **PASS** | Constructed CS handle picture identifies `X_J` with `Σ_A^0`; Lean `CSTopologyData` uninhabited |
+| Counterexample | Open | Lean implication only; no candidate `ExternalGeometry` instance |
 
 `audit/t73_premise_audit.json` records `overall=OPEN`, P0, C, S, P3/E11, P3/E12 and P3/E13 `proved: true`. `counterexample_claim_proved` remains false.
 

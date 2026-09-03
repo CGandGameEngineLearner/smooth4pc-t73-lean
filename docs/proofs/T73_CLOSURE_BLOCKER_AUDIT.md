@@ -1,6 +1,6 @@
 # Final closure audit
 
-**Status:** `OPEN` (P0, C, S, MWW four-handle layer and E13 CS handle picture discharged; Lean ExternalGeometry uninhabited)
+**Status:** `OPEN` (P0, C, S, MWW four-handle layer and E13 CS handle picture discharged; Lean ExternalGeometry uninhabited; empty-link `S4ReductionData` inhabited)
 
 See `docs/proofs/T73_GEOMETRIC_PREMISE_STATUS_20260903.md`.
 
@@ -22,8 +22,8 @@ See `docs/proofs/T73_GEOMETRIC_PREMISE_STATUS_20260903.md`.
 - The endpoint cap is not equal to the four W2 core disks.
 - No full-formal-q W2 functional is asserted.  The finite cubic `2624` is
   computed.  The candidate 4-manifold is the constructed CS handle picture.
-- Lean remains a conditional algebraic core; `ExternalGeometry` has no
-  inhabitant.
+- Lean remains a conditional algebraic core; candidate `ExternalGeometry` has no
+  inhabitant. The empty-link control inhabits `S4ReductionData`.
 - Uniqueness of regular neighborhoods is not used.
 
 ## Replays

@@ -39,6 +39,8 @@ S = ROOT / "audit" / "t73_s_relative_moves_certificate.json"
 P3 = ROOT / "audit" / "t73_p3_four_handle.json"
 LEAN_CS = ROOT / "Smooth4PC" / "T73CSTopology.lean"
 LEAN_EXT = ROOT / "Smooth4PC" / "T73External.lean"
+LEAN_PACK = ROOT / "Smooth4PC" / "T73GeometryPack.lean"
+LEAN_S4_INHABITANT = ROOT / "Smooth4PC" / "T73S4Inhabitant.lean"
 OUTPUT = ROOT / "audit" / "t73_e13_close.json"
 PD_OUTPUT = ROOT / "audit" / "t73_reduced_link_pd.json"
 
@@ -391,6 +393,8 @@ def selected_wicket_bijection(m2: list[int], r_xy: list[int]) -> list[dict[str, 
 def lean_uninhabited() -> None:
     cs_text = LEAN_CS.read_text(encoding="utf-8")
     ext_text = LEAN_EXT.read_text(encoding="utf-8")
+    pack_text = LEAN_PACK.read_text(encoding="utf-8")
+    inhab_text = LEAN_S4_INHABITANT.read_text(encoding="utf-8")
     if "structure CSTopologyData" not in cs_text:
         raise AssertionError("CSTopologyData is missing")
     if "structure ExternalGeometry" not in ext_text or "structure CSExternalGeometry" not in ext_text:
@@ -403,8 +407,12 @@ def lean_uninhabited() -> None:
         "instance ExternalGeometry",
         "def t73ExternalGeometry",
     ):
-        if needle in cs_text or needle in ext_text:
+        if needle in cs_text or needle in ext_text or needle in pack_text or needle in inhab_text:
             raise AssertionError(f"Lean must not inhabit CS topology: found {needle}")
+    if "def packExternalGeometry" not in pack_text:
+        raise AssertionError("T73GeometryPack.lean is missing packExternalGeometry")
+    if "def emptyLinkS4Reduction" not in inhab_text:
+        raise AssertionError("T73S4Inhabitant.lean is missing emptyLinkS4Reduction")
 
 
 def generate() -> dict[str, Any]:

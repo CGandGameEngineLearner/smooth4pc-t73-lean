@@ -1,6 +1,8 @@
 import Smooth4PC.T73Conditional
 import Smooth4PC.T73SphereQuotient
 import Smooth4PC.T73S4Control
+import Smooth4PC.T73S4Inhabitant
+import Smooth4PC.T73GeometryPack
 import Smooth4PC.CoefficientTrace
 import Smooth4PC.QuotientEquiv
 
@@ -50,7 +52,11 @@ def finiteAuditDeclarations : List Name := [
   `Smooth4PC.T73.conditionalNotStandard,
   `Smooth4PC.T73.conditionalIsHomotopySphere,
   `Smooth4PC.T73.conditionalCounterexample,
-  `Smooth4PC.T73.conditionalCounterexample_of_topology
+  `Smooth4PC.T73.conditionalCounterexample_of_topology,
+  `Smooth4PC.T73.emptyLink_s4ComputedDegreeZero,
+  `Smooth4PC.T73.detectorLine_not_linearEquiv_emptyKhQ,
+  `Smooth4PC.T73.detectorTransport_on_emptyLink_impossible,
+  `Smooth4PC.T73.conditionalCounterexample_of_pack
 ]
 
 elab "dumpT73Finite" : command => do
@@ -107,5 +113,9 @@ dumpT73Finite
 #print axioms conditionalIsHomotopySphere
 #print axioms conditionalCounterexample
 #print axioms conditionalCounterexample_of_topology
+#print axioms emptyLink_s4ComputedDegreeZero
+#print axioms detectorLine_not_linearEquiv_emptyKhQ
+#print axioms detectorTransport_on_emptyLink_impossible
+#print axioms conditionalCounterexample_of_pack
 
 end Smooth4PC.T73
