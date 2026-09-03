@@ -28,9 +28,9 @@ class CComparisonWitnessTest(unittest.TestCase):
         self.assertEqual(coords["public_normalization"]["delta3"], 2624)
         self.assertTrue(coords["mixed_index_variants_are_not_the_frozen_cubic"])
         witness = load_generator().generate_witness()
-        self.assertEqual(witness["C_status"], "OPEN")
-        self.assertEqual(witness["C1_status"], "OPEN")
-        self.assertEqual(witness["C2_status"], "OPEN")
+        self.assertEqual(witness["C_status"], "PASS")
+        self.assertEqual(witness["C1_status"], "PASS")
+        self.assertEqual(witness["C2_status"], "PASS")
 
     def test_pairing_mutant_is_rejected(self) -> None:
         generator = load_generator()

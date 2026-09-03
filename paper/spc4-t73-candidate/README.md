@@ -3,8 +3,9 @@
 This directory contains an English `amsart` preprint for a
 skein-lasagna obstruction for a trace-73 Cappell--Shaneson sphere.  Exact
 Artin--Magnus expansion and the pure-braid Andreadakis equality verify a
-cubic-order statement for the public braid.  Geometric lemmas P0a--c, C1--C2,
-and S remain Open.  No historical-PD identity is claimed.
+cubic-order statement for the public braid.  Geometric lemmas P0a--c and
+C1--C2 are discharged for the Johnson replacement.  S remains Open.  No
+historical-PD identity is claimed.
 
 ## Build
 
@@ -143,8 +144,8 @@ python3 scripts/audit_t73_premises.py --check
 ```
 
 It distinguishes generator-internal coordinate claims from candidate-level
-mathematical closure.  The committed result is `OVERALL=OPEN`: P0 is
-discharged for the Johnson replacement, while C and S remain Open.
+mathematical closure.  The committed result is `OVERALL=OPEN`: P0 and C are
+discharged for the Johnson replacement, while S remains Open.
 
 The complete P0 replay is:
 
@@ -184,8 +185,7 @@ python3 scripts/certify_t73_s_relative_moves.py --check
 python3 -m unittest -v tests/test_t73_s_relative_moves.py
 ```
 
-The availability script still reports the historical objects as missing.
-The public ledgers supply finite data only.  Computational P0 is discharged
-for the Johnson replacement; C and S remain Open.  Historical names and
+The public ledgers supply finite data only.  Computational P0 and C are
+discharged for the Johnson replacement; S remains Open.  Historical names and
 SHA-256 values remain in `audit/geometric_evidence_manifest.json` and
 Appendix A for provenance.

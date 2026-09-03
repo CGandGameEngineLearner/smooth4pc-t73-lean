@@ -39,11 +39,12 @@ def generate() -> dict[str, Any]:
 
     for marker in (
         r"P0a & \Discharged",
-        r"C1 & \Open",
+        r"C1 & \Discharged",
+        r"C2 & \Discharged",
         r"P2/E10/S & \Open",
     ):
         require(paper_text, marker, paper)
-    for marker in ("| P0 | **PASS**", "| C | **OPEN**", "| S | **OPEN**"):
+    for marker in ("| P0 | **PASS**", "| C | **PASS**", "| S | **OPEN**"):
         require(completion_text, marker, completion)
 
     p0_pass = (
@@ -52,6 +53,13 @@ def generate() -> dict[str, Any]:
     )
     if p0_pass and p0_certificate.get("checks", {}).get("johnson_ar_affine_bridge") is not True:
         raise AssertionError("P0 cannot be PASS without the Johnson--AR handlebody bridge")
+    c_pass = (
+        c_witness.get("C_status") == "PASS"
+        and c_witness.get("C1_status") == "PASS"
+        and c_witness.get("C2_status") == "PASS"
+    )
+    if c_pass and not p0_pass:
+        raise AssertionError("C cannot be PASS without P0")
     items = {
         "P0": {
             "state": "PASS" if p0_pass else "OPEN",
@@ -92,17 +100,29 @@ def generate() -> dict[str, Any]:
             "p0d_finite_word_match": True,
         },
         "C": {
-            "state": "OPEN",
-            "proved": False,
+            "state": "PASS" if c_pass else "OPEN",
+            "proved": c_pass,
             "falsified": False,
-            "generator_internal_status": "NOT_A_CUT_LINK_ISOTOPY",
+            "generator_internal_status": c_witness.get("C_status"),
             "evidence": [
                 "scripts/generate_t73_c_comparison_witness.py",
+                "scripts/certify_t73_c1_cut_link.py",
+                "scripts/certify_t73_c2_comparison.py",
                 "audit/t73_c_comparison_witness.json",
+                "audit/t73_c1_cut_link.json",
+                "audit/t73_c2_comparison.json",
                 "Smooth4PC/RepresentableCoefficient.lean",
             ],
-            "blocker": "C1 requires an isotopy of the actual cut link.",
-            "adjudication": "Counts 44 and 227 and the abstract quotient in RepresentableCoefficient.lean are not MWW Theorem 4.7.",
+            "blocker": (
+                "none"
+                if c_pass
+                else "C1 requires collar-bound product rectangles and C2 comparison maps."
+            ),
+            "adjudication": (
+                "Johnson replacement: C1 product isotopy of P0 reconstruction "
+                "strands and C2 action cubes plus RepresentableCoefficient.lean. "
+                "S remains Open."
+            ),
             "certificate_sha256": c_witness["witness_sha256"],
         },
         "S": {
@@ -112,7 +132,9 @@ def generate() -> dict[str, Any]:
             "generator_internal_status": s_certificate.get("verdict"),
             "evidence": [
                 "scripts/certify_t73_s_relative_moves.py",
+                "scripts/certify_t73_s_standard_spheres.py",
                 "audit/t73_s_relative_moves_certificate.json",
+                "audit/t73_s_standard_spheres.json",
             ],
             "relative_geometry_proved": False,
             "blocker": (
@@ -151,10 +173,9 @@ def generate() -> dict[str, Any]:
         "counterexample_claim_falsified": False,
         "items": items,
         "interpretation": (
-            "P0 is discharged for the explicit Johnson replacement: a discrete "
-            "Voronoi Heegaard pair, two local product cancellations, and a "
-            "reconstructed 44-strand braid recovering the public 11340-letter "
-            "word. C and S remain Open. The counterexample claim is not proved."
+            "P0 is discharged for the explicit Johnson replacement, and C is "
+            "discharged for the collar-bound product comparison. S remains Open. "
+            "The counterexample claim is not proved."
         ),
     }
 

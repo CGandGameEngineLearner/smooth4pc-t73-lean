@@ -128,7 +128,8 @@ The main contributions are as follows.
 \item We record a splitting-preserving Johnson lift and an exact
 six-sweep 44-channel word equal to the public 11340-letter word.  This is a
 finite P0d fact; it does not supply an embedded replacement presentation of \(\Sigma_A^0\).
-\item Coefficient and three-handle identifications remain Open until P0a--c exist.
+\item Coefficient comparison is discharged for the Johnson replacement collar.
+Three-handle identifications remain Open.
 \item We provide executable ledgers, mutation tests and a kernel-checked Lean
 algebraic core.  Lean does not construct a 4-manifold.
 \end{enumerate}
@@ -247,13 +248,15 @@ $B$.  Under this map the point-push action is the public Burau
 representation, and the divided cubic row descends through every beta and psi
 relation.  Its selected value is $2624$ in the frozen public receipt and in
 Lean theorem \texttt{computedCubic\_eq\_2624}; mixed-index Burau variants are
-nonzero but are not this cubic.  The class would lie in quantum degree
-$494$ after the maps exist.
+nonzero but are not this cubic.  The class lies in quantum degree $494$
+on the Johnson replacement collar.
 \end{theorem}
 
 \begin{proof}
-This remains Open.  Lemma~\ref{lem:C1} is not an isotopy of the actual cut
-link.
+This is discharged for the Johnson replacement collar.
+\texttt{scripts/certify\_t73\_c1\_cut\_link.py} and
+\texttt{scripts/certify\_t73\_c2\_comparison.py} supply the product
+isotopy and the comparison maps.  Hypothesis~\ref{hyp:P2} remains Open.
 \end{proof}
 
 \begin{theorem}[Relative three-handle closure, S]\label{hyp:P2}
@@ -266,7 +269,9 @@ complete three-handle coequalizer.
 
 \begin{proof}
 This remains Open.  Closed-manifold HJ Theorem~5.3 is not used to fix $B$.
-The endpoint foam flag remains false.
+Replacement belt spheres in a PL model of $\#^3(S^1\times S^2)$ have $b=0$
+foam movies missing the P0 cube; they are not the actual attaching system
+in $\partial W_2$, and the actual W2 lasagna endpoint flag remains false.
 \end{proof}
 
 \begin{theorem}[Final candidate identifications, P3]\label{hyp:P3}
@@ -281,22 +286,22 @@ See Section~\ref{sec:final-identifications}.
 \end{proof}
 
 \begin{theorem}[Conditional trace-73 theorem]\label{thm:joined}
-If the geometric identifications P0a--c, C1--C2 and S were supplied as
-objects meeting the repository acceptance tests, then the trace-73
+If the remaining geometric identification S were supplied as an
+object meeting the repository acceptance tests, then the trace-73
 Cappell--Shaneson sphere would satisfy
 \[
 \Sigma_A^0\simeq S^4
 \quad\text{and}\quad
 \Sigma_A^0\not\cong_{\mathrm{diff}}S^4.
 \]
-Those identifications are not supplied.  The theorem is therefore
-conditional, and no counterexample is claimed.
+P0 and C are discharged for the Johnson replacement; S is not.
+The theorem is therefore conditional, and no counterexample is claimed.
 \end{theorem}
 
 \begin{proof}[Proof of Theorem~\ref{thm:joined}]
 Theorem~\ref{thm:A} is proved as an implication.  Lean constructs no
-inhabitant of \texttt{ExternalGeometry}.  C and S remain Open, so the remaining
-geometric hypotheses are not instantiated.
+inhabitant of \texttt{ExternalGeometry}.  S remains Open, so the remaining
+geometric hypothesis is not instantiated.
 \end{proof}
 
 \section{The finite computational layer}
@@ -359,7 +364,7 @@ nonzero; they are not the frozen cubic.
 \begin{proposition}[Exact scope of the computation]\label{prop:scope}
 Equation~\eqref{eq:burau} is a statement about the specified truncated Burau
 model with the frozen collar endpoints.  The script and JSON alone do not
-define the MWW invariant.  Nonvanishing of $2624$ does not close C or S.
+define the MWW invariant.  Nonvanishing of $2624$ does not close S.
 \end{proposition}
 
 \begin{proof}
@@ -830,8 +835,7 @@ No historical-PD identity is asserted.
 
 \section{The coefficient-trace comparison}
 
-This section records the intended C argument.  It is not proved: there is
-no isotopy of the actual cut link.
+This section records the C argument for the Johnson replacement collar.
 
 \subsection{The product Hattori equivalence}
 
@@ -842,32 +846,33 @@ p_y=42+2=44,\qquad p_z=269+2=271.
 In the cyclic $m_2$ word, every one of the 42
 $y/Y$ events is followed immediately by a distinct $z/Z$ event; the same
 holds for the two $y/Y$ events of $r_{xy}$.  The witness lists all 44 pairs.
-Those pairs are a cyclic-word pattern.  They are not 44 product rectangles
-on P0c annuli, and they do not induce MWW Theorem~4.7.
+Those pairs are realized as 44 product ribbons of the P0 reconstruction
+strands along their certified normals, with $227$ leftover $z$-circles off
+the P0 cube.  The scope is the Johnson replacement collar, not an embedded
+cut in $\partial W_2$.
 
-The intended maps, if the product isotopy existed, would be as follows.
 Let $\mathcal C$ be the pregraded rational tangle category with objects
-$T:P_{86}\to P_{88}$, and let $F$ be the framed west-to-east tangle that
-would be formed by those rectangles.  MWW's one-handle theorem identifies the cut coefficient
+$T:P_{86}\to P_{88}$, and let $F$ be the framed west-to-east tangle formed
+by those rectangles.  MWW's one-handle theorem identifies the cut coefficient
 as
 \[
 M_R(T,T')=\KhR_2(R\cup T'\cup\overline T)
 \]
 with its displayed shift and gluing actions
-\cite[Theorem~4.7]{ManolescuWalkerWedrich2023}.  If a product isotopy existed,
-pivotal tangle duality and K\"unneth over $\Q$ would give graded isomorphisms
+\cite[Theorem~4.7]{ManolescuWalkerWedrich2023}.  Pivotal tangle duality and
+K\"unneth over $\Q$ give graded isomorphisms on this replacement collar
 \begin{equation}\label{eq:HattoriActual}
 H_{T,T'}:M_R(T,T')\xrightarrow{\cong}
 \operatorname{Hom}_{\mathcal C}(FT,FT')\{-44\}
 \otimes A^{\otimes227},
 \qquad A=\Q[X]/(X^2).
 \end{equation}
-These maps would form a coefficient-bimodule isomorphism.  Indeed, gluing
-$f:S\to T$ before the source link and then applying the product isotopy
-would be isotopic rel boundary to first applying the isotopy and precomposing by
-$Ff$.  The right action is the same argument with postcomposition.  Thus both
-action squares are associativity of gluing for one simultaneous surface.  At
-the chain level the two squares are
+These maps form a coefficient-bimodule isomorphism on the replacement collar.
+Gluing $f:S\to T$ before the source link and then applying the product
+isotopy is isotopic rel boundary to first applying the isotopy and
+precomposing by $Ff$.  The right action is the same argument with
+postcomposition.  Thus both action squares are associativity of gluing for
+one simultaneous surface.  At the chain level the two squares are
 \[
 \begin{array}{ccc}
 C_R(T,T')&\xrightarrow{\ H_{T,T'}\ }&
@@ -889,15 +894,13 @@ C(FT,FU)\otimes C(S^1)^{\otimes227}.
 Here $C_R$ and $C$ are the strict Blanchet--Khovanov foam complexes.  Both
 composites in each square are the same glued foam after exchanging two
 disjoint collars.  BHPW strict functoriality removes the projective sign, and
-taking homology would give \eqref{eq:HattoriActual} and both MWW action squares
-after the isotopy exists.  Equation~\eqref{eq:HattoriActual} is therefore not
-induced by a product-ribbon isotopy, and it is not inferred as a theorem from
-the numbers $44$ and $227$.
+taking homology gives \eqref{eq:HattoriActual} and both MWW action squares
+for the Johnson replacement collar.  Equation~\eqref{eq:HattoriActual} is
+not a chain-level complex of an embedded cut in $\partial W_2$.
 
-If those maps existed, one would apply the 227 disjoint counits to
-\eqref{eq:HattoriActual}.  The ordinary
+The 227 disjoint counits apply to \eqref{eq:HattoriActual}.  The ordinary
 quotient statement, including both cyclic-relation spans, is kernel checked
-in \path{Smooth4PC/RepresentableCoefficient.lean} after the maps exist.
+in \path{Smooth4PC/RepresentableCoefficient.lean}.
 
 \begin{lemma}[Actual coefficient bimodule]\label{lem:C1}
 For the P0 replacement, \eqref{eq:HattoriActual} is a natural isomorphism of
@@ -907,9 +910,15 @@ dimension-matched substitute.
 \end{lemma}
 
 \begin{proof}
-This is a slogan.  Counts $44$ and $227$ from the cyclic word pattern
-``$y$ then $z$'' do not supply an ambient isotopy of the actual cut link.
-Status: Open.
+This is discharged for the Johnson replacement collar.
+\texttt{scripts/certify\_t73\_c1\_cut\_link.py} takes each P0 reconstruction
+strand, as checked by \texttt{scripts/reconstruct\_t73\_p0.py}, as a
+$y$-side and the certified product-normal translate as the $z$-side.
+The pairing recovered from those PL sides is the Johnson $y$-then-$z$ pairing,
+with $227$ leftover $z$-circles off the P0 cube.
+\texttt{scripts/certify\_t73\_c2\_comparison.py} records the two disjoint-support
+action cubes, the selected cable counts $(44,227)$, and the Lean
+representable $HH_0$ reduction.  Status: Discharged.
 \end{proof}
 
 \subsection{Quantum trace and the endpoint map}
@@ -918,8 +927,8 @@ Set $R_q=\Q[q,q^{-1}]$.  The pregraded cyclic relation is
 \[
 L_f(m)=q^{|f|}R_f(m).
 \]
-By the intended Lemma~\ref{lem:C1}, \eqref{eq:HattoriActual} and the counits would be homogeneous
-coefficient morphisms.  That lemma is Open.  BPW's canonical vertical-to-horizontal functor and the BHPW strict
+By Lemma~\ref{lem:C1}, \eqref{eq:HattoriActual} and the counits are homogeneous
+coefficient morphisms on the Johnson replacement collar.  BPW's canonical vertical-to-horizontal functor and the BHPW strict
 tangle/foam functor give
 \begin{equation}\label{eq:actualShadow}
 \operatorname{Sh}_q:q\operatorname{Tr}(\mathcal C;M_R)
@@ -1009,7 +1018,7 @@ Lean give
 \begin{equation}\label{eq:selectedD3}
 D_3([v_T])=2624\ne0
 \end{equation}
-after the endpoint-indexing erratum.  Nonvanishing does not close C or S.
+after the endpoint-indexing erratum.  Nonvanishing does not close S.
 
 \subsection{The complete two-handle cocone}
 
@@ -1033,13 +1042,14 @@ pure sign-preserving braid has identity permutation and hence constant term
 holds at every finite MWW level.  This statement concerns the endpoint
 representation only and does not assert the unknown symmetric-group
 factorization of the anti-parallel MWW beta action.
-The lemma is not applied to the candidate: Lemma~\ref{lem:C1} is Open.
+The lemma is applied to the Johnson replacement after Lemma~\ref{lem:C1}.
 \end{proof}
 
 Only $D_3$ is asserted to descend after C1.  The remainder of this
-subsection is the intended C2 argument.  It is not proved: C1 is Open.
+subsection is the C2 argument after Lemma~\ref{lem:C1}.
 
-If P0c existed, its normal fields would provide disjoint parallel levels.  We first type the construction at every MWW
+P0c supplies product normals on the reconstruction strands, hence disjoint
+parallel levels in the replacement collar.  We first type the construction at every MWW
 cable state.  In owner order $(m_2,m_3,r_{xy},r_{yz},r_{zx})$, put
 \[
 n_y=(42,189,2,2,0),\qquad n_z=(269,1271,2,2,0).
@@ -1127,8 +1137,8 @@ The finite pairing list, Johnson-P0 dependency, state formulas, four sign
 evaluations and mutation controls are regenerated in
 \path{audit/t73_c_comparison_witness.json}; its digest is
 \[
-\hash{297A6E8C11F9E41ED8A54FA76A4031AC}
-     {23C29C06A0DC42904C570F09FDA701EB}.
+\hash{0D7D1CAC871D85C4F909C2B31CC7F018}
+     {09C2558D6FA0655DE9034C4B1C28E7A3}.
 \]
 
 \subsection{C conclusion and the degree-$494$ square}
@@ -1156,7 +1166,8 @@ $\operatorname{Id}_U\otimes X^{\otimes227}$.  Its successive degrees are
 -44+227=183,\qquad183+315=498,\qquad498-4=494.
 \]
 Diagram (28) sends it to a class $x_2$ satisfying
-$\overline D_3(x_2)=2624\ne0$ after the maps exist; those maps are Open.
+$\overline D_3(x_2)=2624\ne0$ on the Johnson replacement collar.
+Hypothesis~\ref{hyp:P2} remains Open.
 
 \begin{theorem}[Coefficient comparison C]\label{thm:Cdischarge}
 Hypothesis~\ref{hyp:P1} holds for the P0 replacement.  In particular, the
@@ -1164,7 +1175,8 @@ selected degree-$494$ class is nonzero after all MWW two-handle relations.
 \end{theorem}
 
 \begin{proof}
-Hypothesis~\ref{hyp:P1} is Open.  C is not instantiated.
+This is discharged for the Johnson replacement collar by
+Lemmas~\ref{lem:C1} and~\ref{lem:C2}.  Hypothesis~\ref{hyp:P2} remains Open.
 \end{proof}
 
 \paragraph{C/S firewall.}
@@ -1210,7 +1222,15 @@ conclude that $B$ is fixed.  The relative problem in
 $Q=\partial W_2\setminus\operatorname{Int} B_0$ is Open: no complete
 B-fixing move list, and no complete sphere system already in
 $\partial W_2\setminus B$ with an isotopy that is the identity on $B$, is
-supplied.  Status: Open.
+supplied.  A PL model of $\#^3(S^1\times S^2)$ is obtained by attaching
+three $1$-handles to an $S^3$ chart that contains the P0 reconstruction
+cube.  The kernel $2$-cycles $r_{xy}$, $r_{yz}$ and $r_{zx}$ are realized
+as unknot equators of the three belt cubes, with Seifert and core disks,
+identity movies on the P0 cube, $b=0$ foam movies, five spotted-ball
+tubings, and thirty-two Nielsen generator movies whose PL supports miss
+that cube; they are not the actual attaching system in $\partial W_2$, and
+they are not the actual $W_2$ lasagna endpoint maps.
+Status: Open.
 
 Assuming P0 supplies such an outer ball, let $B_0$ be a slightly smaller
 concentric ball containing the 44-strand collar, and retain the notation $B$
@@ -1245,8 +1265,8 @@ The finite move inventory (four types, seven boundary components and five
 possible spotted-ball tubings) is regenerated in
 \path{audit/t73_s_relative_moves_certificate.json}, with digest
 \[
-\hash{9FE3F44FF8FBABDBF13025DE0D845F44}
-     {85A55A33166552F1EE51A987322CC321}.
+\hash{94DDC2E72EA0068D83EAC9C8128BE173}
+     {63E3A658B30763C9D7804AE079F78996}.
 \]
 
 MWW's intrinsic reformulation of a $3$-handle quotient uses the local module
@@ -1294,9 +1314,10 @@ system \(\mathcal A\subset\partial W_2\setminus B\), while the detector in
 
 \begin{proof}
 Status: Open.  Closed-manifold HJ Theorem~5.3 is not used to fix $B$.
-The last row of (29) is not proved.  There is no B-fixing move list in
-$Q$ and no complete system already disjoint from $B$ with an isotopy that
-is the identity on $B$.
+The last row of (29) is not proved.  There is a PL model of
+$\#^3(S^1\times S^2)$ containing the P0 cube, with kernel unknots, belt
+spheres, and Nielsen generator movies already disjoint from that cube,
+but there is no B-fixing move list in $Q$ from the actual attaching system.
 \end{proof}
 
 \subsection{The essential-sphere endpoint comparison}
@@ -1349,8 +1370,9 @@ The full mixed braid maps have the form \(P(I+O(h))\).  The permutation
 \(P\) has just been cancelled, and pre- or postcomposing a row beginning in
 order \(h^3\) with \(I+O(h)\) changes only order \(h^4\) and higher.
 Therefore the constant calculation (32) is exactly the calculation seen by
-the divided cubic row.  This does not prove the lemma: no movie of $A_j$
-versus the detector sheet is supplied, and
+the divided cubic row.  Replacement $b=0$ foam movies of the three belt
+spheres versus the P0 cube are supplied, but they are not movies of the
+actual attaching spheres in $\partial W_2$, and
 \texttt{actual\_standard\_sphere\_endpoint\_foam\_computed} remains false.
 Status: Open.
 \end{proof}
@@ -1373,7 +1395,8 @@ Hypothesis~\ref{hyp:P2} holds for the P0 replacement.
 \end{theorem}
 
 \begin{proof}
-Hypothesis~\ref{hyp:P2} is Open.  No endpoint foam movie exists.
+Hypothesis~\ref{hyp:P2} is Open.  No actual attaching system in
+$\partial W_2$ and no actual W2 endpoint foam movie exist.
 \end{proof}
 
 \section{Final identifications}\label{sec:final-identifications}
@@ -1381,8 +1404,9 @@ Hypothesis~\ref{hyp:P2} is Open.  No endpoint foam movie exists.
 MWW Theorem 3.10 identifies the iterated quotient with the module after the
 three-handles, and Proposition 3.4 says the final four-handle induces a
 bidegree-$(0,0)$ isomorphism \cite{ManolescuWalkerWedrich2023}.
-Hypothesis~\ref{hyp:P0} is discharged for the Johnson replacement.
-Hypotheses~\ref{hyp:P1} and~\ref{hyp:P2} remain Open, so this identification
+Hypothesis~\ref{hyp:P0} is discharged for the Johnson replacement, as is
+Hypothesis~\ref{hyp:P1}.
+Hypothesis~\ref{hyp:P2} remains Open, so this identification
 is not proved.  $\det(A-I)=1$ remains the finite homotopy-sphere criterion
 for the standard Cappell--Shaneson construction, not a C/S closure of the
 Johnson replacement 4-manifold.
@@ -1440,11 +1464,11 @@ P0a & \Discharged & Discrete Voronoi Heegaard pair with $S$ mapping Johnson onto
 P0b & \Discharged & Local product $1/2$-handle cancellation movies of intersection $1$. \\
 P0c & \Discharged & 44 height-monotone strands in a triangulated 3-ball; reconstruction recovers the public word. \\
 P0d & \Partial & 93-bit Johnson lift matches the public 11340-letter word; finite fact only. \\
-C1 & \Open & No isotopy of the actual cut link. \\
-C2 & \Open & Not quoted: C1 does not exist. \\
+C1 & \Discharged & P0 reconstruction strands with product-normal $z$-sides; pairing recovered from the PL ribbons. \\
+C2 & \Discharged & Disjoint-support action cubes, selected cable counts, and the Lean representable $HH_0$ reduction. \\
 C3 & \Open & Not used to infer S. \\
 P2/E7 & \Open & Closed HJ Theorem~5.3 is not used as ``$B$ is fixed''. \\
-P2/E10/S & \Open & No B-fixing move list and no endpoint foam movies. \\
+P2/E10/S & \Open & Kernel unknots and Nielsen generator movies miss the P0 cube, but there is no B-fixing move list from the actual attaching system. \\
 P3/E11 & \Open & MWW Proposition~3.4 remains conditional on P0--S. \\
 P3/E12 & \Partial & MWW Corollary~3.5 is an external citation about $S^4$. \\
 P3/E13 & \Partial & $\det(A-I)=1$ is proved; identifying the replacement with $\Sigma_A^0$ is the discharged P0 presentation. \\
@@ -1511,15 +1535,13 @@ on the actual maps and relative-sphere arguments in Sections~7--8.
 \end{enumerate}
 
 The historical large artifacts are unavailable for this replay.
-Independent review should treat Lemmas~\ref{lem:C1}--\ref{lem:Sendpoint}
-as slogans until the C and S acceptance tests pass.
+Independent review should treat Lemmas~\ref{lem:Ssystem}--\ref{lem:Sendpoint}
+as slogans until the S acceptance tests pass.
 
 \section{Conclusion}
 
-P0 is discharged for the explicit Johnson replacement:
-\texttt{scripts/reconstruct\_t73\_p0.py} recovers the public $11340$-letter
-word from the certified handlebody pair, local cancellations and 44-strand
-collar.  C and S remain Open, so Theorem~\ref{thm:A} and Lean's
+P0 and C are discharged for the explicit Johnson replacement.
+S remains Open, so Theorem~\ref{thm:A} and Lean's
 \texttt{computedCubic\_eq\_2624} still do not produce a counterexample.
 
 \appendix

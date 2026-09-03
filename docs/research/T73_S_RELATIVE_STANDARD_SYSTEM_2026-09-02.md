@@ -4,15 +4,17 @@ Date: 2026-09-02
 
 ## Verdict
 
-The independent large-sphere route is unnecessary.  The current paper
-discharges S using total-kernel invariance and an actual endpoint movie
-factorization:
+The independent large-sphere route is unnecessary for the intended argument,
+but that argument is **not** discharged.  The current paper keeps S Open:
+closed-manifold HJ Theorem 5.3 is not used to fix `B`, and there is no
+B-fixing move list from the actual attaching system in
+`Q = partial W2 \\ Int B0`.
 
 ```text
-P0 + monoidal C  =>  S
+P0 + monoidal C  =/=>  S
 ```
 
-is **DISCHARGED**.
+S remains **OPEN**.
 
 ## Sources checked
 
@@ -99,6 +101,6 @@ models, but are not load-bearing for this relative proof.
 
 ## Closure
 
-Paper Lemmas Ssystem and Sendpoint supply the fixed-detector kernel
-replacement and the actual endpoint square.  The Frobenius identities then
-give the six whole-source equations required by MWW Theorem 3.7.
+The intended lemmas would supply a fixed-detector kernel replacement and
+an actual endpoint square.  They are not presently proved: S remains Open.
+Closed-manifold HJ Theorem 5.3 is not used to conclude that `B` is fixed.

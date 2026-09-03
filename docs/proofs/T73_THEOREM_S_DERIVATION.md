@@ -1,9 +1,10 @@
 # Theorem S: relative standard-sphere consequence
 
-**Status:** `DISCHARGED`
+**Status:** `OPEN`
 
-Paper Lemmas Ssystem and Sendpoint instantiate the total-kernel replacement
-and the actual endpoint exchange square.
+Paper Lemmas Ssystem and Sendpoint remain slogans until a B-fixing move
+list from the actual attaching system exists and the actual W2 endpoint
+foam flag is true.  Closed-manifold HJ Theorem 5.3 is not used to fix `B`.
 
 ## Statement
 
@@ -65,6 +66,6 @@ ledger or endpoint permutation is used.  The optional owner lifts and
 split-tree Lean algebra are compatible coordinate models but are not
 load-bearing.
 
-P0, C and S are supplied by the current paper.  See
+P0 and C are supplied by the current paper.  S remains Open.  See
 `docs/research/T73_S_RELATIVE_STANDARD_SYSTEM_2026-09-02.md` for the
 primary-source audit and detailed boundary conditions.

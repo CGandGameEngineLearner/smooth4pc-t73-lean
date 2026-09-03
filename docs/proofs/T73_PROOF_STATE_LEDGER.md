@@ -2,7 +2,8 @@
 
 **Current authority:** the conditional paper together with
 `docs/proofs/T73_GEOMETRIC_PREMISE_STATUS_20260903.md`.  Computational P0
-is discharged for the Johnson replacement.  C and S remain Open.  Entries
+is discharged for the Johnson replacement.  C is discharged for the
+replacement collar.  S remains Open.  Entries
 below describing unavailable historical PD/TH objects are recovery history,
 not current premises.  Frozen cubic is `2624`.
 

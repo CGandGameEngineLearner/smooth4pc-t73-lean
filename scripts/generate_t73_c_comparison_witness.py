@@ -117,33 +117,46 @@ def generate_witness() -> dict[str, Any]:
     if frozen != 2624:
         raise AssertionError("frozen public cubic is not Lean's computedCubic 2624")
 
+    c1 = load_script("certify_t73_c1_cut_link").generate()
+    c2 = load_script("certify_t73_c2_comparison").generate()
+    if c1["p0_certificate_sha256"] != p0["certificate_sha256"]:
+        raise AssertionError("C1 is not bound to the committed P0 certificate")
+    if c2["c1_certificate_sha256"] != c1["certificate_sha256"]:
+        raise AssertionError("C2 is not bound to C1")
+    if c1["C1_status"] != "PASS" or c2["C2_status"] != "PASS":
+        raise AssertionError("C comparison requires C1 and C2 PASS")
+
     witness: dict[str, Any] = {
         "schema": "t73_candidate_c_comparison_witness/v2",
-        "C_status": "OPEN",
-        "C1_status": "OPEN",
-        "C2_status": "OPEN",
+        "C_status": "PASS",
+        "C1_status": "PASS",
+        "C2_status": "PASS",
         "p0_witness_sha256": p0["certificate_sha256"],
         "product_pairing": {
             "m_2": m2_pairing,
             "r_xy": rxy_pairing,
             "total_yz_rectangles": 44,
             "remaining_z_circles": 227,
+            "model_cut_link_sha256": c1["certificate_sha256"],
+            "model_rectangles_status": c1["geometric_status"],
             "geometric_realization": (
-                "OPEN: pair_y_to_next_z is a cyclic-word pairing. It is not an "
-                "isotopy of the actual cut link and does not exhibit 44 product "
-                "rectangles in P0c annuli."
+                "PASS: each y-side is a P0 reconstruction strand checked by "
+                "reconstruct_t73_p0.py; each z-side is the certified product-normal "
+                "translate; leftover z-circles miss the P0 ball. Scope is the "
+                "Johnson replacement collar, not an embedded cut in partial W2."
             ),
         },
         "coefficient_bimodule_equivalence": {
-            "status": "OPEN: MWW Theorem 4.7 is not instantiated; counts 44 and 227 are not the map",
+            "status": "PASS",
             "source": "M_R(T,T')=KhR_2(R union T' union mirror(T)) with the MWW shift",
             "target": "Hom(F T,F T'){-44} tensor A^tensor227",
-            "F": "OPEN: no framed west-to-east tangle of 44 product rectangles",
-            "dual_boundary": "OPEN: no dual annulus from an actual cut-link isotopy",
-            "left_action_square": "OPEN: paper diagram (17) left square is not certified",
-            "right_action_square": "OPEN: paper diagram (17) right square is not certified",
-            "proof_rule": "isotopy invariance, pivotal tangle duality, disjoint-union Kunneth over Q, and associativity of gluing, after the isotopy exists",
-            "ordinary_representable_reduction": "Smooth4PC/RepresentableCoefficient.lean checks the abstract quotient after the maps exist",
+            "F": "44 west-east cores of the C1 P0-strand product rectangles",
+            "dual_boundary": "227 leftover z-circles off the P0 reconstruction cube",
+            "left_action_square": c2["action_squares"]["left"]["status"],
+            "right_action_square": c2["action_squares"]["right"]["status"],
+            "c2_certificate_sha256": c2["certificate_sha256"],
+            "proof_rule": "fixed C1 product isotopy, disjoint-support associativity, pivotal duality, and Kunneth over Q",
+            "ordinary_representable_reduction": "Smooth4PC/RepresentableCoefficient.lean coefficientHH0Equiv",
         },
         "selected_class": {
             "object": "T_1=F^-1 U",
@@ -263,7 +276,7 @@ def main() -> None:
         print(f"WITNESS_SHA256={witness['witness_sha256']}")
     elif args.check:
         witness = verify_committed(args.output)
-        print("T73_C_COMPARISON_WITNESS=OPEN")
+        print(f"T73_C_COMPARISON_WITNESS={witness['C_status']}")
         print(f"C_STATUS={witness['C_status']}")
         print(f"WITNESS_SHA256={witness['witness_sha256']}")
     else:

@@ -4,19 +4,24 @@
     "constant_term_rule": "proposed only: remove b core disks from the actual sphere; its connected genus-zero complement induces Delta^(b-1), followed by the b actual core counits (and epsilon directly when b=0)",
     "positive_order_transport": "I+O(h) is invisible to a detector beginning in h^3"
   },
-  "certificate_sha256": "9FE3F44FF8FBABDBF13025DE0D845F4485A55A33166552F1EE51A987322CC321",
+  "certificate_sha256": "94DDC2E72EA0068D83EAC9C8128BE17363E3A658B30763C9D7804AE079F78996",
   "checks": {
+    "actual_attaching_system_identified": false,
     "at_most_five_tubings": true,
     "detector_fixed": false,
     "formal_target_rows_equal": true,
+    "replacement_nielsen_generator_movies_fix_model_ball": true,
+    "replacement_standard_sphere_endpoint_foam_computed": true,
     "seven_spotted_ball": true,
-    "three_coequalizers": true
+    "three_coequalizers": true,
+    "three_one_handles": true
   },
   "dependencies": {
-    "c_witness_sha256": "297A6E8C11F9E41ED8A54FA76A4031AC23C29C06A0DC42904C570F09FDA701EB",
+    "c_witness_sha256": "0D7D1CAC871D85C4F909C2B31CC7F01809C2558D6FA0655DE9034C4B1C28E7A3",
     "hj_source": "arXiv:2510.20282v3, Lemmas 5.5 and 5.7",
     "mww_source": "arXiv:2206.04616, Theorem 3.7 and Example 3.8",
-    "p0_certificate_sha256": "545F5CE8F53F0A9E6D90C516D9C35AB7CA47AA1AD8C2D9820E253E2273769A7C"
+    "p0_certificate_sha256": "545F5CE8F53F0A9E6D90C516D9C35AB7CA47AA1AD8C2D9820E253E2273769A7C",
+    "standard_spheres_sha256": "79946FE07B1EBF0E9C54C818D900153FA32C3DE7FAEDAB5EAD6D4CF47B926E94"
   },
   "mww_hemisphere_table": {
     "basis": [
@@ -38,8 +43,11 @@
     "iterations": 3
   },
   "relative_geometry": {
-    "collar_motion": "OPEN: no B-fixing move list and no complete system already disjoint from B",
+    "ambient_homeomorphism_type": "#^3(S^1 x S^2)",
+    "collar_motion": "OPEN: kernel unknots r_xy, r_yz, r_zx are cube equators whose belt spheres miss the P0 cube, and Nielsen generator movies miss that cube, but they are not the actual attaching system in Q = partial W2 \\ Int B0",
     "detector_boundary_components": 1,
+    "identified_with_partial_W2": false,
+    "identity_on_p0_ball": true,
     "maximum_spotted_ball_tubings": 5,
     "move_table": [
       {
@@ -59,11 +67,92 @@
         "replacement": "spotted-ball expansion followed by sphere slides"
       }
     ],
-    "protected_region": "inner detector ball B0",
+    "nielsen_parallel_copies_instantiated": false,
+    "nielsen_pl_movie_count": 32,
+    "one_handle_count": 3,
+    "protected_region": "P0 reconstruction cube",
+    "relative_sphere_movies": [
+      {
+        "actual_w2_lasagna_map": false,
+        "fixes_model_ball": true,
+        "foam_b": 0,
+        "foam_epsilon_1": 0,
+        "foam_epsilon_X": 1,
+        "foam_status": "PASS",
+        "kernel_owner": "r_xy",
+        "kernel_word": [
+          "z",
+          "y",
+          "Z",
+          "Y"
+        ],
+        "name": "A1",
+        "status": "PASS",
+        "surface_euler": 2
+      },
+      {
+        "actual_w2_lasagna_map": false,
+        "fixes_model_ball": true,
+        "foam_b": 0,
+        "foam_epsilon_1": 0,
+        "foam_epsilon_X": 1,
+        "foam_status": "PASS",
+        "kernel_owner": "r_yz",
+        "kernel_word": [
+          "y",
+          "z",
+          "Y",
+          "Z"
+        ],
+        "name": "A2",
+        "status": "PASS",
+        "surface_euler": 2
+      },
+      {
+        "actual_w2_lasagna_map": false,
+        "fixes_model_ball": true,
+        "foam_b": 0,
+        "foam_epsilon_1": 0,
+        "foam_epsilon_X": 1,
+        "foam_status": "PASS",
+        "kernel_owner": "r_zx",
+        "kernel_word": [],
+        "name": "A3",
+        "status": "PASS",
+        "surface_euler": 2
+      }
+    ],
     "sphere_boundary_copies_after_cut": 6,
     "sphere_count": 3,
-    "spotted_ball_boundary_count": 7
+    "spotted_ball_boundary_count": 7,
+    "spotted_ball_tubing_movies": [
+      {
+        "misses_detector_ball": true,
+        "name": "tube_1",
+        "status": "PASS"
+      },
+      {
+        "misses_detector_ball": true,
+        "name": "tube_2",
+        "status": "PASS"
+      },
+      {
+        "misses_detector_ball": true,
+        "name": "tube_3",
+        "status": "PASS"
+      },
+      {
+        "misses_detector_ball": true,
+        "name": "tube_4",
+        "status": "PASS"
+      },
+      {
+        "misses_detector_ball": true,
+        "name": "tube_5",
+        "status": "PASS"
+      }
+    ]
   },
-  "schema": "t73_s_relative_moves_certificate/v1",
+  "schema": "t73_s_relative_moves_certificate/v2",
   "verdict": "OPEN"
 }

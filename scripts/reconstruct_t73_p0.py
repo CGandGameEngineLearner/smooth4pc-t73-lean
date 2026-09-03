@@ -95,13 +95,38 @@ def verify_ball(ball: dict[str, Any]) -> None:
     triangles = ball.get("boundary_triangles")
     if not isinstance(triangles, list) or not triangles:
         fail("ambient_ball.boundary_triangles must be explicit")
+    used: set[int] = set()
+    edge_counts: Counter[tuple[int, int]] = Counter()
     for i, tri in enumerate(triangles):
         if not isinstance(tri, list) or len(tri) != 3 or not all(isinstance(x, int) for x in tri):
             fail(f"ambient_ball.boundary_triangles[{i}] is not an index triple")
+        if len(set(tri)) != 3:
+            fail(f"ambient_ball.boundary_triangles[{i}] is degenerate")
         if any(x < 0 or x >= len(vertices) for x in tri):
             fail(f"ambient_ball.boundary_triangles[{i}] has an out-of-range vertex")
+        used.update(tri)
+        for a, b in ((tri[0], tri[1]), (tri[1], tri[2]), (tri[2], tri[0])):
+            edge_counts[tuple(sorted((a, b)))] += 1
+    if set(edge_counts.values()) != {2}:
+        fail("ambient_ball boundary is not a closed manifold surface")
+    chi = len(used) - len(edge_counts) + len(triangles)
+    if chi != 2:
+        fail("ambient_ball boundary does not have Euler characteristic 2")
     if ball.get("certified_topological_type") != "3-ball":
         fail("ambient_ball.certified_topological_type must be 3-ball")
+
+
+def strand_points_in_ball(
+    collar: dict[str, Any], ball: dict[str, Any]
+) -> None:
+    corners = [point(value, f"ambient_ball.vertices[{i}]") for i, value in enumerate(ball["vertices"])]
+    lo = tuple(min(corner[k] for corner in corners) for k in range(3))
+    hi = tuple(max(corner[k] for corner in corners) for k in range(3))
+    for strand in collar["strands"]:
+        for i, value in enumerate(strand["vertices"]):
+            vertex = point(value, f"strand {strand['id']}.vertices[{i}]")
+            if any(vertex[k] < lo[k] or vertex[k] > hi[k] for k in range(3)):
+                fail(f"strand {strand['id']} leaves the ambient ball")
 
 
 def verify_strands(collar: dict[str, Any]) -> dict[int, dict[str, Any]]:
@@ -165,6 +190,25 @@ def verify_cancellation(movie: dict[str, Any]) -> None:
         for key in ("local_movie", "owner_transport", "normal_field_transport"):
             if move.get(key, {}).get("status") != "PASS":
                 fail(f"cancellation move {i} missing PASS {key}")
+        movie = require_object(move.get("local_movie"), f"cancellation_movie.moves[{i}].local_movie")
+        belt = movie.get("belt_sphere")
+        attaching = movie.get("attaching_circle")
+        if not isinstance(belt, list) or not isinstance(attaching, list):
+            fail(f"cancellation move {i} is missing PL belt or attaching circle")
+        belt_pts = {point(value, f"cancellation {i}.belt[{j}]") for j, value in enumerate(belt)}
+        attaching_pts = {
+            point(value, f"cancellation {i}.attaching[{j}]") for j, value in enumerate(attaching)
+        }
+        hits = belt_pts & attaching_pts
+        if len(hits) != 1:
+            fail(f"cancellation move {i} does not have a unique vertex intersection")
+        if movie.get("geometric_intersection") != 1:
+            fail(f"cancellation move {i} does not record geometric intersection 1")
+        declared = movie.get("intersection_points")
+        if not isinstance(declared, list) or {
+            point(value, f"cancellation {i}.intersection[{j}]") for j, value in enumerate(declared)
+        } != hits:
+            fail(f"cancellation move {i} intersection_points disagree with the PL curves")
     if pairs != [("t", "h_CS"), ("x", "m_1")]:
         fail(f"unexpected cancellation order/pairs: {pairs}")
 
@@ -633,6 +677,7 @@ def verify(candidate: dict[str, Any]) -> dict[str, Any]:
     verify_ball(require_object(candidate.get("ambient_ball"), "ambient_ball"))
     collar = require_object(candidate.get("detector_collar"), "detector_collar")
     verify_strands(collar)
+    strand_points_in_ball(collar, candidate["ambient_ball"])
     verify_ar_binding(collar)
     verify_cancellation(require_object(candidate.get("cancellation_movie"), "cancellation_movie"))
     result = verify_movie(candidate, expected_public_word())

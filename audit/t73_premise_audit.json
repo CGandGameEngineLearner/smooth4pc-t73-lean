@@ -1,21 +1,25 @@
 {
   "counterexample_claim_falsified": false,
   "counterexample_claim_proved": false,
-  "interpretation": "P0 is discharged for the explicit Johnson replacement: a discrete Voronoi Heegaard pair, two local product cancellations, and a reconstructed 44-strand braid recovering the public 11340-letter word. C and S remain Open. The counterexample claim is not proved.",
+  "interpretation": "P0 is discharged for the explicit Johnson replacement, and C is discharged for the collar-bound product comparison. S remains Open. The counterexample claim is not proved.",
   "items": {
     "C": {
-      "adjudication": "Counts 44 and 227 and the abstract quotient in RepresentableCoefficient.lean are not MWW Theorem 4.7.",
-      "blocker": "C1 requires an isotopy of the actual cut link.",
-      "certificate_sha256": "297A6E8C11F9E41ED8A54FA76A4031AC23C29C06A0DC42904C570F09FDA701EB",
+      "adjudication": "Johnson replacement: C1 product isotopy of P0 reconstruction strands and C2 action cubes plus RepresentableCoefficient.lean. S remains Open.",
+      "blocker": "none",
+      "certificate_sha256": "0D7D1CAC871D85C4F909C2B31CC7F01809C2558D6FA0655DE9034C4B1C28E7A3",
       "evidence": [
         "scripts/generate_t73_c_comparison_witness.py",
+        "scripts/certify_t73_c1_cut_link.py",
+        "scripts/certify_t73_c2_comparison.py",
         "audit/t73_c_comparison_witness.json",
+        "audit/t73_c1_cut_link.json",
+        "audit/t73_c2_comparison.json",
         "Smooth4PC/RepresentableCoefficient.lean"
       ],
       "falsified": false,
-      "generator_internal_status": "NOT_A_CUT_LINK_ISOTOPY",
-      "proved": false,
-      "state": "OPEN"
+      "generator_internal_status": "PASS",
+      "proved": true,
+      "state": "PASS"
     },
     "P0": {
       "blocker": "none",
@@ -77,10 +81,12 @@
     "S": {
       "adjudication": "Paper Lemmas Ssystem and Sendpoint remain slogans.",
       "blocker": "No B-fixing move list in Q = partial W2 \\ Int B0, and actual_standard_sphere_endpoint_foam_computed is false. Closed-manifold HJ Theorem 5.3 is not used as 'B is fixed'.",
-      "certificate_sha256": "9FE3F44FF8FBABDBF13025DE0D845F4485A55A33166552F1EE51A987322CC321",
+      "certificate_sha256": "94DDC2E72EA0068D83EAC9C8128BE17363E3A658B30763C9D7804AE079F78996",
       "evidence": [
         "scripts/certify_t73_s_relative_moves.py",
-        "audit/t73_s_relative_moves_certificate.json"
+        "scripts/certify_t73_s_standard_spheres.py",
+        "audit/t73_s_relative_moves_certificate.json",
+        "audit/t73_s_standard_spheres.json"
       ],
       "falsified": false,
       "generator_internal_status": "OPEN",

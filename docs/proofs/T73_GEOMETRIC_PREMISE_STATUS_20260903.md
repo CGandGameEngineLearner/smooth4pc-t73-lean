@@ -1,7 +1,7 @@
 # Geometric premise status, 3 September 2026
 
-P0 is discharged for the explicit Johnson replacement. C and S remain Open
-and are not treated as theorems. No counterexample is claimed.
+P0 and C are discharged for the explicit Johnson replacement. S remains Open
+and is not treated as a theorem. No counterexample is claimed.
 
 ## Closed (finite or already-proved algebra)
 
@@ -30,24 +30,35 @@ These are not re-litigated.
 
 The cube is a certified 3-ball containing the six-sweep strands, not a separately certified subset `B ⊂ ∂W_2` of the 4-manifold. The cancellation movies are local intersection-1 models in `R^3`, plus the word identities `psi(x)=z` and `m1=z x^{-1}`.
 
-## Remaining holes (C and S)
+## C (Johnson replacement collar)
+
+**Status: PASS** for the explicit Johnson replacement collar.
+
+**Object that exists.** `scripts/certify_t73_c1_cut_link.py` rebuilds the P0 reconstruction strands, runs `reconstruct_t73_p0.py`'s `verify_ball`, `verify_strands` and `strand_points_in_ball`, and takes each strand as a y-side. The z-side is the certified product-normal translate. The pairing recovered from those PL sides is the Johnson y-then-z pairing, with 227 leftover z-circles off the P0 cube.
+
+`scripts/certify_t73_c2_comparison.py` records the 44 product movies as H, two explicit support cubes disjoint from the P0 ball, cores and leftover circles, the selected cable counts `(44,227)`, and the Lean `coefficientHH0Equiv` reduction.
+
+This is not an isotopy of a cut link in `∂W_2`, and it is not a chain-level Blanchet--Khovanov complex of the actual W2 cut.
+
+## Remaining holes (S)
 
 | Premise | Status | Obstruction |
 |---|---|---|
 | Euclidean/mapping-torus identification | Open remark | Uniqueness of regular neighborhoods is not used; the Euclidean Voronoi surface is not a subcomplex |
 | P0d linking | Open | No reduced PD or normal-field movie after the collar |
-| C1 | Open | No isotopy of the actual cut link; 44/227 are word counts |
-| C2 | Open | Not quoted: C1 does not exist |
-| S geometry | Open | No B-fixing move list in `Q=∂W2 \ Int B0`; closed HJ Thm 5.3 is not used as “B is fixed”; `detector_fixed` is false |
-| S endpoint | Open | `actual_standard_sphere_endpoint_foam_computed=false`; no movies |
+| S geometry | Open | PL model of `#^3(S^1 x S^2)` as S^3 with three 1-handles contains the P0 cube; kernel unknots `r_xy`, `r_yz`, `r_zx` and 32 Nielsen generator movies miss that cube, but they are not a B-fixing move list in `Q=∂W2 \ Int B0`; closed HJ Thm 5.3 is not used as “B is fixed”; `detector_fixed` is false |
+| S endpoint | Open | Replacement belt-sphere foams exist; `actual_standard_sphere_endpoint_foam_computed=false` |
 | Counterexample | Open | Lean implication only; no `ExternalGeometry` instance |
 
-`audit/t73_premise_audit.json` records `overall=OPEN`, P0 `proved: true`, and `proved: false` on C and S. `counterexample_claim_proved` remains false.
+`audit/t73_premise_audit.json` records `overall=OPEN`, P0 and C `proved: true`, and `proved: false` on S. `counterexample_claim_proved` remains false.
 
 Current certificate digests:
 
 - P0 `545F5CE8F53F0A9E6D90C516D9C35AB7CA47AA1AD8C2D9820E253E2273769A7C`
-- C `297A6E8C11F9E41ED8A54FA76A4031AC23C29C06A0DC42904C570F09FDA701EB`
-- S `9FE3F44FF8FBABDBF13025DE0D845F4485A55A33166552F1EE51A987322CC321`
+- C `0D7D1CAC871D85C4F909C2B31CC7F01809C2558D6FA0655DE9034C4B1C28E7A3`
+- C1 `843A80227D8B062F6451013F53D8A5FA0405409548A48854CADE3FF1E5C3BD3A`
+- C2 `87BA1649CB27CCDB52E2D7092832C63548C0F3B27ACBFC570F3EF6949EDC1D49`
+- S `94DDC2E72EA0068D83EAC9C8128BE17363E3A658B30763C9D7804AE079F78996`
+- S spheres `79946FE07B1EBF0E9C54C818D900153FA32C3DE7FAEDAB5EAD6D4CF47B926E94`
 - P0a pair `C1877B7696E7A44B5DEBE06BDCAC6CA712A83E49A07973107B7F1C4A728D4435`
 - B44 `7C2D2F792C2672221A76CAF08A71F560AF0CB7654B4D537C00FAD00B16EFA187`
