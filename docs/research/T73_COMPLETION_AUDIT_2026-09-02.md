@@ -6,16 +6,17 @@ Date: 2026-09-02
 
 The earlier same-day claim that every load-bearing item was discharged is
 retracted.  The Johnson reconstruction, statewise coefficient construction,
-and genus-zero hemisphere calculation now close P0, C and S:
+and genus-zero hemisphere calculation still leave candidate-specific
+identifications to be checked:
 
 | item | verdict | remaining obligation |
 |---|---|---|
-| P0 | **DISCHARGED** | The Johnson alpha-side lift gives a free-basis AR representative, exact compact m2, two framed cancellations, 44 rational lanes and an independently generated/re-extracted 11340-letter braid. |
-| C | **DISCHARGED** | Equations (17) and (24)--(27) construct the product-ribbon coefficient maps and all-state beta/psi cocone; the witness is bound to the Johnson certificate. |
-| S | **DISCHARGED** | The fixed-detector HJ move table supplies the spheres; diagram (30) and the all-$b$ genus-zero core-counit calculation (32) prove the six essential-sphere equations (31). |
+| P0 | **OPEN** | The Johnson certificate gives a replacement mapping-class word and finite braid data, but P0a--c remain unproved. |
+| C | **OPEN** | Equations (17) and (24)--(27) are a conditional construction; actual MWW coefficient identification C1 and all-cable C2 remain unproved. |
+| S | **OPEN** | HJ/MWW give the formal setup, but the fixed-detector realization and actual essential-sphere endpoint square remain unproved. |
 
-P3 follows from the cited MWW four-handle theorem, standard $S^4$ support,
-and Iwaki's Cappell--Shaneson criterion after the now-constructed joins.
+P3 remains conditional on P0--S; E12 and the matrix-only E13 statement are
+independent.
 
 ## Why the compact witnesses do not close the theorem
 
@@ -23,12 +24,11 @@ The older AR JSON witness records parametrizations, framings, words, and
 hashes and remains insufficient.  It is superseded for P0 by
 `audit/t73_p0_johnson_certificate.json`, which uses Johnson splitting
 generators and does not claim historical-PD identity.  The product Hattori
-witness is now bound to that presentation, and the paper defines its maps at
-every cable level.  Horvat--Jablonowski v3 supplies the relative move list;
-the spotted-ball argument removes boundary slides outside the inner detector
-ball.  Removing the actual two-handle core disks from each sphere leaves a
-connected genus-zero cobordism; the Frobenius calculation (32), together with
-cubic-order transport invariance, computes the essential $A_0,A_1$ actions.
+witness is bound to that presentation only at certificate level; the paper
+defines conditional maps at every cable level.  Horvat--Jablonowski v3
+supplies the relative move list but not the candidate fixed-detector
+realization.  Removing core disks and applying Frobenius would compute the
+sphere actions only after the missing actual endpoint exchange square exists.
 
 The committed m2 word has length 311 and remains length 311 after linear and
 cyclic free reduction. A reported length 309 therefore reflects a different

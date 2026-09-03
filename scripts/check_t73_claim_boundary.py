@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Check that the paper's final claim matches the discharged P0/C/S evidence."""
+"""Check that the paper does not outrun the candidate-level evidence."""
 
 from __future__ import annotations
 
@@ -25,25 +25,22 @@ def check() -> None:
 
     require(
         paper_text,
-        r"\begin{theorem}[Trace-73 theorem]\label{thm:joined}",
+        r"\begin{theorem}[Conditional trace-73 theorem]\label{thm:joined}",
         paper,
     )
-    require(paper_text, r"P0 & \Discharged", paper)
-    require(paper_text, r"P1/C & \Discharged", paper)
-    require(paper_text, r"P2/E7 & \Discharged", paper)
-    require(paper_text, r"P2/E10/S & \Discharged", paper)
-    require(paper_text, r"P3/E11 & \Discharged", paper)
+    require(paper_text, r"P0a & \Open", paper)
+    require(paper_text, r"C1 & \Open", paper)
+    require(paper_text, r"P2/E7 & \Open", paper)
+    require(paper_text, r"P2/E10/S & \Open", paper)
+    require(paper_text, r"P3/E11 & \Open", paper)
     require(paper_text, r"P3/E12 & \Discharged", paper)
     require(paper_text, r"P3/E13 & \Discharged", paper)
-    require(paper_text, "gives a counterexample to the smooth", paper)
-    require(paper_text, "genus-zero core-counit calculation (32)", paper)
+    require(paper_text, "a\nconditional theorem", paper)
+    require(paper_text, "P0a--c, C1--C2 and S", paper)
 
-    reject(paper_text, r"\begin{theorem}[Conditional trace-73 theorem]", paper)
-    reject(paper_text, r"P0 & \Open", paper)
-    reject(paper_text, r"P0 & \Partial", paper)
-    reject(paper_text, r"P1/C & \Open", paper)
-    reject(paper_text, r"P2/E10/S & \Open", paper)
-    reject(paper_text, "does not yet give a", paper)
+    reject(paper_text, r"\begin{theorem}[Main theorem]\label{thm:joined}", paper)
+    reject(paper_text, r"P2/E10/S & \Discharged", paper)
+    reject(paper_text, "gives a counterexample to the smooth", paper)
 
 
 def main() -> None:

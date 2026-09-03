@@ -52,21 +52,21 @@ def generate() -> dict[str, Any]:
     )
 
     for marker in (
-        r"P0 & \Discharged",
-        r"P1/C & \Discharged",
-        r"P2/E10/S & \Discharged",
-        r"P3/E11 & \Discharged",
+        r"P0a & \Open",
+        r"C1 & \Open",
+        r"P2/E10/S & \Open",
+        r"P3/E11 & \Open",
         r"P3/E12 & \Discharged",
         r"P3/E13 & \Discharged",
     ):
         require(paper_text, marker, paper)
-    for marker in ("| P0 | **DISCHARGED**", "| C | **DISCHARGED**", "| S | **DISCHARGED**"):
+    for marker in ("| P0 | **OPEN**", "| C | **OPEN**", "| S | **OPEN**"):
         require(completion_text, marker, completion)
 
     items = {
         "P0": {
-            "state": "PROVED",
-            "proved": p0_certificate["verdict"] == "PASS" and all(p0_certificate["checks"].values()),
+            "state": "OPEN",
+            "proved": False,
             "falsified": False,
             "evidence": [
                 "scripts/reconstruct_t73_p0.py",
@@ -86,7 +86,7 @@ def generate() -> dict[str, Any]:
                 "docs/research/T73_P0_PUBLIC_BRAID_AUDIT_2026-09-02.md",
                 "audit/t73_p0_johnson_certificate.json",
             ],
-            "blocker": None,
+            "blocker": "P0a--P0c are not proved by the Johnson certificate.",
             "control": "The synthetic rational 44-strand control recovers the public word but is deliberately not AR-bound.",
             "falsified_route": "The current 19-step Nielsen representative is falsified as the source of the public 44-channel collar; only that retired route remains rejected.",
             "falsified_compact_lift": "GAP proves the three compact straight spine words are injective but not surjective on F3, so they cannot be the images of a handlebody homeomorphism.",
@@ -96,8 +96,8 @@ def generate() -> dict[str, Any]:
             "certificate_sha256": p0_certificate["certificate_sha256"],
         },
         "C": {
-            "state": "PROVED",
-            "proved": True,
+            "state": "OPEN",
+            "proved": False,
             "falsified": False,
             "generator_internal_status": hattori["required_simultaneous_transport"]["status"],
             "evidence": [
@@ -106,13 +106,13 @@ def generate() -> dict[str, Any]:
                 "audit/t73_c_comparison_witness.json",
                 "paper/spc4-t73-candidate/main.tex:The complete two-handle cocone",
             ],
-            "blocker": None,
-            "adjudication": "The actual product-ribbon maps and the all-state beta/psi rows are equations (17) and (24)--(27).",
+            "blocker": "C1/C2 actual MWW coefficient identification and all-cable expansion are not proved.",
+            "adjudication": "Equations (17) and (24)--(27) are a conditional construction, not an instantiated geometric map.",
             "certificate_sha256": c_witness["witness_sha256"],
         },
         "S": {
-            "state": "PROVED",
-            "proved": True,
+            "state": "OPEN",
+            "proved": False,
             "falsified": False,
             "generator_internal_status": spheres["actual_mww_transport_status"],
             "evidence": [
@@ -120,19 +120,19 @@ def generate() -> dict[str, Any]:
                 "scripts/certify_t73_s_relative_moves.py",
                 "audit/t73_s_relative_moves_certificate.json",
                 "docs/research/T73_S_RELATIVE_STANDARD_SYSTEM_2026-09-02.md",
-                "paper/spc4-t73-candidate/main.tex:Remaining S coefficient binding",
+                "paper/spc4-t73-candidate/main.tex:The remaining essential-sphere endpoint comparison",
             ],
             "relative_geometry_proved": True,
-            "blocker": None,
-            "adjudication": "The actual hemisphere maps are diagram (30); the all-b genus-zero core-counit calculation (32) proves the six equations (31) at divided cubic order.",
+            "blocker": "The actual fixed-detector sphere replacement and endpoint equations (31) are not proved.",
+            "adjudication": "HJ/MWW identify the required objects but do not supply the candidate endpoint square.",
             "certificate_sha256": s_certificate["certificate_sha256"],
         },
         "P3_E11": {
-            "state": "PROVED",
-            "proved": True,
+            "state": "PARTIAL",
+            "proved": False,
             "falsified": False,
-            "blocker": None,
-            "evidence": ["MWW Proposition 3.4 applied after the proved C/S quotient maps"],
+            "blocker": "MWW four-handle theorem is general; candidate module identification depends on P0/C/S.",
+            "evidence": ["MWW Proposition 3.4; candidate application is conditional on P0--S"],
         },
         "P3_E12": {
             "state": "PROVED",
@@ -150,8 +150,8 @@ def generate() -> dict[str, Any]:
     }
     return {
         "schema": "t73_premise_audit/v1",
-        "overall": "ALL_LOAD_BEARING_ITEMS_DISCHARGED",
-        "counterexample_claim_proved": True,
+        "overall": "CONDITIONAL_NOT_CLOSED",
+        "counterexample_claim_proved": False,
         "counterexample_claim_falsified": False,
         "items": items,
         "interpretation": "No OPEN item is classified as falsified merely because its witness is absent.",

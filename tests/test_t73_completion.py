@@ -18,10 +18,10 @@ def load_checker():
 
 
 class CompletionGateTest(unittest.TestCase):
-    def test_current_repository_passes_completion_boundary(self) -> None:
+    def test_current_repository_passes_conditional_boundary(self) -> None:
         load_checker().check()
 
-    def test_missing_required_marker_is_rejected(self) -> None:
+    def test_missing_conditional_marker_is_rejected(self) -> None:
         checker = load_checker()
         with self.assertRaises(AssertionError):
             checker.require("main theorem", "conditional theorem", Path("mutant.tex"))

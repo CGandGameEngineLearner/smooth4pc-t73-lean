@@ -4,13 +4,13 @@ Date: 2026-09-02
 
 Current binding note: the regenerated v2 witness is bound to
 `audit/t73_p0_johnson_certificate.json`, not to the retired symbolic AR
-witness.  C is discharged by the actual maps and state family written as
-equations (17) and (24)--(27) in the paper.  S is discharged separately by
-the relative move table and the genus-zero calculation (30)--(32).
+witness.  C is only conditionally constructed by equations (17) and
+(24)--(27); C1/C2 are not instantiated by the certificate.  S remains open.
 
 ## Verdict
 
-C is **DISCHARGED** in the exact strength required by the paper:
+C is **OPEN** at candidate level; the following records the conditional
+algebraic construction:
 
 1. the actual P0 cut coefficient admits a homogeneous quantum-trace map to
    the BPW/BHPW endpoint model;
@@ -322,6 +322,6 @@ the explicit proof above using the cited primary functors.
 
 ## Conclusion
 
-The candidate comparison C is constructed through the two-handle stage.
-Combined with P0, it gives a nonzero rational `N=2` class there in quantum
-degree 494.  Section 8 proves its passage through the three handles.
+Conditional on P0 and C1/C2, the construction gives a nonzero rational
+`N=2` class at the two-handle stage in quantum degree 494.  Passage through
+the three handles remains conditional on S.

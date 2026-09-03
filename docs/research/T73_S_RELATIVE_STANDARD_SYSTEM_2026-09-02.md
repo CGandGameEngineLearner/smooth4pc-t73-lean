@@ -13,10 +13,9 @@ from published general theorems.  The old implication
 P0 + monoidal C  =>  S
 ```
 
-is now **DISCHARGED** after adding the actual genus-zero endpoint
-calculation.  P0 and C supply the detector, the fixed-detector sphere
-replacement is proved, and equation (32) computes the three essential dotted
-and undotted sphere actions.
+is an abstract implication only.  Candidate-level S remains **OPEN**:
+the fixed-detector sphere replacement and actual endpoint maps have not been
+constructed.
 
 ## Sources checked
 
@@ -56,9 +55,9 @@ actual attaching system up to permutation, 3--3 handle slides, and isotopy.
 For the relative statement set `Q=M\Int(B)`.  Their relative uniqueness lemma
 performs ambient isotopies fixed on `partial Q`, sphere slides, and boundary
 slides over `partial B`.  After `B` is capped back in, a boundary slide over
-`partial B` is tubing to an inessential sphere bounding a ball and is removed
-by a local isotopy.  Consequently the replacement can be made without moving
-the detector supported in `B`.
+`partial B` is tubing to an inessential sphere, but the available theorem does
+not prove that it can be removed by a local isotopy while fixing the detector.
+Consequently the fixed-detector replacement remains open.
 
 This proves the geometric E7 replacement from the handle pattern and the
 detector-ball field of P0; no owner-coordinate columns or TH-sized sphere
@@ -91,10 +90,10 @@ lambda(v * A_1) = lambda(v) * ev(undotted sphere) = 0.
 
 These are equations on the whole source, not a selected-vector check.
 The displayed `A_0,A_1` are essential spheres in `S^2 x D^2`, so
-monoidality alone is insufficient.  Equation (32) supplies the missing
-calculation by cutting the actual sphere at its core disks and evaluating the
-resulting connected genus-zero foam.  It gives the two identities above on
-the whole source.
+monoidality alone is insufficient.  The missing calculation would require
+cutting the actual sphere at its core disks and identifying the resulting
+endpoint foam.  The formal Frobenius identities alone do not give the two
+identities above on the whole source.
 
 Because all replacements and sphere neighborhoods are outside `B`, there is
 no old-factor endpoint permutation to calculate.  The earlier 32-step
@@ -111,8 +110,7 @@ This theorem does not solve P0 or C.  To instantiate it one still needs:
 3. proof that this comparison is symmetric monoidal and natural for
    cobordisms disjoint from the detector ball.
 
-Those inputs now exist.  For each sphere, remove its `b` actual two-handle
-core disks.  The complement is connected and genus zero, so its constant
-foam map is the iterated coproduct, and the core disks give
-`epsilon^b`.  The all-`b` identities in equation (32), together with
-cubic-order transport invariance, prove all six maps.
+The proposed calculation is conditional: for each sphere, removing its
+two-handle core disks would give a genus-zero cobordism whose constant foam
+map is the iterated coproduct.  The all-b identities would then imply the
+six maps, but the actual endpoint exchange square is still missing.

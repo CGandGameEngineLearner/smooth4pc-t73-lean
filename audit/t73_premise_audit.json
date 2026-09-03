@@ -1,11 +1,11 @@
 {
   "counterexample_claim_falsified": false,
-  "counterexample_claim_proved": true,
+  "counterexample_claim_proved": false,
   "interpretation": "No OPEN item is classified as falsified merely because its witness is absent.",
   "items": {
     "C": {
-      "adjudication": "The actual product-ribbon maps and the all-state beta/psi rows are equations (17) and (24)--(27).",
-      "blocker": null,
+      "adjudication": "Equations (17) and (24)--(27) are a conditional construction, not an instantiated geometric map.",
+      "blocker": "C1/C2 actual MWW coefficient identification and all-cable expansion are not proved.",
       "certificate_sha256": "6B574D3E062EE5D41D5D0F74C5C85CFC4BBFA773D335F00DF8107232EA1E1573",
       "evidence": [
         "scripts/verify_t73_compact_hattori_binding.py",
@@ -15,11 +15,11 @@
       ],
       "falsified": false,
       "generator_internal_status": "DISCHARGED_BY_PUBLIC_REPLACEMENT_COORDINATES",
-      "proved": true,
-      "state": "PROVED"
+      "proved": false,
+      "state": "OPEN"
     },
     "P0": {
-      "blocker": null,
+      "blocker": "P0a--P0c are not proved by the Johnson certificate.",
       "certificate_sha256": "02CEDCE915EBFC2B3C0A88D10BEEB050F0D7DD828F6F11DC849DA83ED2BC05D2",
       "control": "The synthetic rational 44-strand control recovers the public word but is deliberately not AR-bound.",
       "evidence": [
@@ -44,19 +44,19 @@
       "falsified_compact_lift": "GAP proves the three compact straight spine words are injective but not surjective on F3, so they cannot be the images of a handlebody homeomorphism.",
       "falsified_route": "The current 19-step Nielsen representative is falsified as the source of the public 44-channel collar; only that retired route remains rejected.",
       "johnson_candidate": "The 93-step Johnson alpha-side lift is a GAP free basis, matches compact m2 exactly, has 44 framed lanes, a relative fixed-ball movie and an independently generated/re-extracted public braid.",
-      "proved": true,
+      "proved": false,
       "replacement_adjudication": "The x^-1 correction is simultaneous inner conjugation, hence only a basepoint change in Out(F3); its two extra word passages are not an embedded 44-channel witness.",
       "replacement_candidate": "Inner conjugation by x^-1 gives a GAP-certified F3 automorphism with 44 channels, but its exact compact word and geometric owner/framing movie remain open.",
-      "state": "PROVED"
+      "state": "OPEN"
     },
     "P3_E11": {
-      "blocker": null,
+      "blocker": "MWW four-handle theorem is general; candidate module identification depends on P0/C/S.",
       "evidence": [
-        "MWW Proposition 3.4 applied after the proved C/S quotient maps"
+        "MWW Proposition 3.4; candidate application is conditional on P0--S"
       ],
       "falsified": false,
-      "proved": true,
-      "state": "PROVED"
+      "proved": false,
+      "state": "PARTIAL"
     },
     "P3_E12": {
       "evidence": [
@@ -77,23 +77,23 @@
       "state": "PROVED"
     },
     "S": {
-      "adjudication": "The actual hemisphere maps are diagram (30); the all-b genus-zero core-counit calculation (32) proves the six equations (31) at divided cubic order.",
-      "blocker": null,
-      "certificate_sha256": "A242F07D9F9683F54FD020DB130E90EBC650BF6DFF56AE6751023CF67E190FAA",
+      "adjudication": "HJ/MWW identify the required objects but do not supply the candidate endpoint square.",
+      "blocker": "The actual fixed-detector sphere replacement and endpoint equations (31) are not proved.",
+      "certificate_sha256": "4CAC056A5539C45A321281630229C09DBE12FEC1E3FF02973D2B731DB7AD0BCB",
       "evidence": [
         "scripts/generate_t73_stable_sphere_movies.py",
         "scripts/certify_t73_s_relative_moves.py",
         "audit/t73_s_relative_moves_certificate.json",
         "docs/research/T73_S_RELATIVE_STANDARD_SYSTEM_2026-09-02.md",
-        "paper/spc4-t73-candidate/main.tex:Remaining S coefficient binding"
+        "paper/spc4-t73-candidate/main.tex:The remaining essential-sphere endpoint comparison"
       ],
       "falsified": false,
       "generator_internal_status": "RETIRED_NOT_LOAD_BEARING: this stable label ledger does not determine pivotal adapters, foam signs or actual qHH0 coordinate maps; relative HJ spheres plus MWW local module action replace this explicit-movie route",
-      "proved": true,
+      "proved": false,
       "relative_geometry_proved": true,
-      "state": "PROVED"
+      "state": "OPEN"
     }
   },
-  "overall": "ALL_LOAD_BEARING_ITEMS_DISCHARGED",
+  "overall": "CONDITIONAL_NOT_CLOSED",
   "schema": "t73_premise_audit/v1"
 }

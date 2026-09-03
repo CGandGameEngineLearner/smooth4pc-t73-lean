@@ -1,6 +1,6 @@
 # Standard-sphere MWW binding for the compact presentation
 
-**Status:** `DISCHARGED`
+**Status:** `OPEN -- CONDITIONAL BINDING`
 
 This note records the compact replacement for the unavailable TH1/TH2/THXY
 objects.  P0 is instantiated by the Johnson certificate and C by the
@@ -42,6 +42,7 @@ therefore evaluates a once-dotted sphere by `1` and an undotted sphere by
 
 ## Remaining boundary
 
-The relative sphere system is disjoint from the detector ball, the old
-detector factor is fixed, and the actual sphere maps are computed by the
-genus-zero/core-counit argument.  No historical sphere artifact is required.
+The relative sphere system and the genus-zero/core-counit calculation are
+formal ingredients only.  The actual endpoint exchange square for the
+essential spheres is still required; no historical sphere artifact is assumed
+to supply it.

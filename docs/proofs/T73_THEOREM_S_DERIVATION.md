@@ -1,9 +1,10 @@
 # Theorem S: relative standard-sphere consequence
 
-**Status:** `DISCHARGED`
+**Status:** `OPEN -- CONDITIONAL IMPLICATION ONLY`
 
-P0 and C are discharged.  The fixed-detector move table and the genus-zero
-endpoint calculation (30)--(32) discharge candidate-level S.
+The fixed-detector move table and the genus-zero endpoint calculation describe
+what would be needed, but do not instantiate candidate-level S.  In particular
+the actual endpoint exchange square for the essential spheres is absent.
 
 ## Statement
 
@@ -68,6 +69,6 @@ ledger or endpoint permutation is used.  The optional owner lifts and
 split-tree Lean algebra are compatible coordinate models but are not
 load-bearing.
 
-P0, C and S are now supplied.  See
+P0, C and S are not all supplied.  See
 `docs/research/T73_S_RELATIVE_STANDARD_SYSTEM_2026-09-02.md` for the
 primary-source audit and detailed boundary conditions.

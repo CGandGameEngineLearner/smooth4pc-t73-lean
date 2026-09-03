@@ -73,9 +73,10 @@ def generate() -> dict[str, Any]:
             "three_coequalizers": sphere_count == 3,
         },
         "candidate_binding": {
-            "actual_standard_sphere_endpoint_foam_computed": True,
+            "actual_standard_sphere_endpoint_foam_computed": False,
             "constant_term_rule": (
-                "remove b core disks from the actual sphere; its connected "
+                "proposed only: remove b core disks from the actual sphere; "
+                "its connected "
                 "genus-zero complement induces Delta^(b-1), followed by the "
                 "b actual core counits (and epsilon directly when b=0)"
             ),
@@ -84,7 +85,11 @@ def generate() -> dict[str, Any]:
             ),
         },
     }
-    result["verdict"] = "PASS" if all(result["checks"].values()) else "FAIL"
+    result["verdict"] = (
+        "PARTIAL_GEOMETRY_PASS_ENDPOINT_BINDING_OPEN"
+        if all(result["checks"].values())
+        else "FAIL"
+    )
     result["certificate_sha256"] = canonical_sha(result)
     return result
 

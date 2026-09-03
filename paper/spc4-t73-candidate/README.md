@@ -1,11 +1,11 @@
 # Trace-73 Cappell--Shaneson paper
 
-This directory contains an English `amsart` preprint proving a
-skein-lasagna obstruction for a trace-73 Cappell--Shaneson sphere.  Exact
+This directory contains an English `amsart` preprint stating a conditional
+skein-lasagna obstruction for a trace-73 Cappell--Shaneson candidate.  Exact
 Artin--Magnus expansion and the pure-braid Andreadakis equality verify a
-cubic-order statement for the public braid.  The Johnson replacement
-discharges P0, the statewise coefficient construction discharges C, and the
-relative genus-zero hemisphere calculation discharges S.
+cubic-order statement for the public braid.  The Johnson replacement is a
+candidate P0 construction, while the actual P0/C/S identifications remain
+explicit premises.
 
 ## Build
 
@@ -32,9 +32,10 @@ whether the proposed spine images form a free basis of `F_3`.
 
 The comparison with the MWW skein lasagna evaluation uses the 44 product
 rectangles, BPW/BHPW functoriality, and the statewise divided beta/psi cocone.
-The paper constructs these maps for every cable state and computes the six
-essential-sphere maps by equation (32).  Lean checks finite and quotient
-algebra; the paper supplies the external geometry and functoriality.
+The paper writes the required maps and gives the genus-zero Frobenius
+calculation, but does not identify that calculation with the actual
+essential-sphere endpoint maps.  Lean checks finite and quotient algebra; it
+does not supply the external structures.
 
 The public availability check is:
 
@@ -145,8 +146,8 @@ python3 scripts/audit_t73_premises.py --check
 
 It distinguishes generator-internal coordinate claims from candidate-level
 mathematical closure.  The committed result is
-`OVERALL=ALL_LOAD_BEARING_ITEMS_DISCHARGED`: P0, C, S and the dependent P3
-applications are proved.
+`OVERALL=CONDITIONAL_NOT_CLOSED`: the public finite data pass, but P0a--c,
+C1--C2 and S remain open.
 
 The complete P0 replay is:
 
@@ -187,7 +188,6 @@ python3 -m unittest -v tests/test_t73_s_relative_moves.py
 ```
 
 The availability script still reports the historical objects as missing.
-The public replacement ledgers discharge P0, C, the fixed-detector relative
-move problem, and the essential-sphere endpoint maps.  Names and SHA-256
-values remain in `audit/geometric_evidence_manifest.json` and Appendix A
-for provenance.
+The public replacement ledgers do not discharge P0a--c, C1--C2 or the
+essential-sphere endpoint maps.  Names and SHA-256 values remain in
+`audit/geometric_evidence_manifest.json` and Appendix A for provenance.

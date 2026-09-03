@@ -4,10 +4,10 @@ Date: 2026-09-02
 
 ## Verdict
 
-This note records the earlier abstract stage.  It is superseded by the
-Johnson-bound statewise construction in Section 7 of the paper and
-`T73_C_DISCHARGE_2026-09-02.md`: C is now **DISCHARGED**.  The list below is
-retained to show which objects had to be added.
+This note records the earlier abstract stage.  The Johnson-bound statewise
+construction in Section 7 of the paper is still conditional: C1/C2 (actual
+MWW coefficient identification and all-cable representation) remain open.
+The list below records which objects still have to be added.
 
 ## Primary sources checked
 

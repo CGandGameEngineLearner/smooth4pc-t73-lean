@@ -1,10 +1,10 @@
 {
   "candidate_binding": {
-    "actual_standard_sphere_endpoint_foam_computed": true,
-    "constant_term_rule": "remove b core disks from the actual sphere; its connected genus-zero complement induces Delta^(b-1), followed by the b actual core counits (and epsilon directly when b=0)",
+    "actual_standard_sphere_endpoint_foam_computed": false,
+    "constant_term_rule": "proposed only: remove b core disks from the actual sphere; its connected genus-zero complement induces Delta^(b-1), followed by the b actual core counits (and epsilon directly when b=0)",
     "positive_order_transport": "I+O(h) is invisible to a detector beginning in h^3"
   },
-  "certificate_sha256": "A242F07D9F9683F54FD020DB130E90EBC650BF6DFF56AE6751023CF67E190FAA",
+  "certificate_sha256": "4CAC056A5539C45A321281630229C09DBE12FEC1E3FF02973D2B731DB7AD0BCB",
   "checks": {
     "at_most_five_tubings": true,
     "detector_fixed": true,
@@ -65,5 +65,5 @@
     "spotted_ball_boundary_count": 7
   },
   "schema": "t73_s_relative_moves_certificate/v1",
-  "verdict": "PASS"
+  "verdict": "PARTIAL_GEOMETRY_PASS_ENDPOINT_BINDING_OPEN"
 }

@@ -76,6 +76,8 @@ third-order property of the public braid.  We give an AR-side
  replacement collar and exact six-sweep word, but the paper does not identify
  it with the historical point-push geometry.  The Lean development checks the
  finite and quotient algebra but does not construct the external structures.
+ The result is therefore a conditional candidate proof, not an unconditional
+ counterexample.
 \end{abstract}
 
 \maketitle
@@ -1129,8 +1131,8 @@ The finite move inventory (four types, seven boundary components and five
 possible spotted-ball tubings) is regenerated in
 \path{audit/t73_s_relative_moves_certificate.json}, with digest
 \[
-\hash{A242F07D9F9683F54FD020DB130E90EB}
-     {C650BF6DFF56AE6751023CF67E190FAA}.
+\hash{4CAC056A5539C45A321281630229C09D}
+     {BE12FEC1E3FF02973D2B731DB7AD0BCB}.
 \]
 
 MWW's intrinsic reformulation of a $3$-handle quotient uses the local module
@@ -1206,9 +1208,9 @@ neither supplies this endpoint square.  Consequently S remains
 
 MWW Theorem 3.10 identifies the iterated quotient with the module after the
 three-handles, and Proposition 3.4 says the final four-handle induces a
-bidegree-$(0,0)$ isomorphism \cite{ManolescuWalkerWedrich2023}.  By
-Proposition~\ref{hyp:P0}, this is the handle decomposition of $\Sigma_A^0$.
-By Theorems~\ref{hyp:P1} and \ref{hyp:P2}, the specified selected class
+bidegree-$(0,0)$ isomorphism \cite{ManolescuWalkerWedrich2023}.  Under
+Hypotheses~\ref{hyp:P0}--\ref{hyp:P2}, this is the handle decomposition of
+$\Sigma_A^0$.  Under Hypotheses~\ref{hyp:P1} and \ref{hyp:P2}, the specified selected class
 remains nonzero in
 \[
 \mathcal S^2_{0,(0,494),0}(\Sigma_A^0;\Q).
@@ -1218,9 +1220,9 @@ bidegree $(0,0)$, so the corresponding rational degree-494 summand vanishes.
 The intrinsic definition transports lasagna fillings under diffeomorphisms
 and gives grading-preserving equivalences.  Finally, Iwaki's Proposition 2.1
 and \eqref{eq:determinants} prove that the genuine Cappell--Shaneson manifold
-$\Sigma_A^0$ is a homotopy sphere \cite{Iwaki2024}.  These general results,
-together with Theorems~\ref{thm:Cdischarge} and \ref{thm:Sgeometry}, prove
-Theorem~\ref{hyp:P3}.
+$\Sigma_A^0$ is a homotopy sphere \cite{Iwaki2024}.  These general results
+prove P3 only after the candidate-specific P0--S identifications have been
+supplied.
 
 \section{Formalization boundary}
 
@@ -1250,14 +1252,15 @@ The geometric interfaces contain, among others, the predicates
 \texttt{IsActualMWWCoequalizer}, \quad \texttt{IsActualFourHandle}.
 \end{center}
 These are predicate fields of the ambient universe rather than definitions
-of smooth topology.  Sections 6--8 supply P0, C and S outside Lean.  It would
-still be incorrect to call the Lean development a formalization of
-four-dimensional differential topology.
+of smooth topology.  Sections 6--8 analyze these fields but do not construct
+the missing P0a--c, C1--C2 or S endpoint data.  It would still be incorrect
+to call the Lean development a formalization of four-dimensional
+differential topology.
 
 The audit reports that the printed theorem dependencies use only standard
 logical quotient principles and classical choice, with no \texttt{sorryAx}.
 This is a statement about kernel checking of the algebraic core; the
-geometric instances are proved mathematically rather than defined in Lean.
+remaining geometric instances are not defined in Lean.
 
 \section{Status table and reproducibility ledger}
 
@@ -1313,9 +1316,9 @@ handle calculus for skein lasagna modules
 \cite{ManolescuNeithalath2020,ManolescuWalkerWedrich2023}.  BPW quantum trace
 functoriality and the strict BHPW tangle theory provide general comparison
 tools \cite{BeliakovaPutyraWehrli2019,
-BeliakovaHogancampPutyraWehrli2023}.  Section~7 applies these functors to the
-Johnson product-ribbon coefficient and proves the naturality squares at all
-cable states.
+BeliakovaHogancampPutyraWehrli2023}.  Section~7 records the conditional
+statewise construction; its candidate-level naturality still depends on
+C1--C2.
 
 Ren and Willis use Khovanov-theoretic skein lasagna methods to distinguish
 other exotic four-manifolds \cite{RenWillis2024}.  Their computations are
@@ -1354,20 +1357,20 @@ statewise maps (24)--(27), and the boundary-slide reduction (29).
 
 \section{Conclusion}
 
-The Johnson presentation closes P0, the actual coefficient and all-state
-maps close C, and the relative HJ plus genus-zero foam calculation closes S.
-The resulting nonzero degree-$494$ class survives the final four-handle,
-whereas the standard $S^4$ module has no such degree.  Thus
-Theorem~\ref{thm:joined} gives a counterexample to the smooth
-four-dimensional Poincare conjecture.
+The Johnson construction supplies a candidate P0 replacement, and the finite
+calculation gives the nonzero cubic scalar.  Theorem~\ref{thm:joined} is a
+conditional theorem: its application to the actual Cappell--Shaneson
+handlebody still requires P0a--c, C1--C2 and S.
 
 \appendix
 
 \section{Retired historical objects}\label{app:hashes}
 
 The following table records historical artifacts cited by earlier project
-notes.  They are unavailable, and the replacement proofs discharge their
-former logical roles.  The digests are retained for provenance.
+notes.  They are unavailable and provide no current proof input.  The
+replacement certificate records only a candidate Johnson presentation; the
+P0/C/S premises listed in the main text remain separate.  The digests are
+retained for provenance.
 
 \begin{center}
 \scriptsize
@@ -1394,11 +1397,11 @@ P2 & \texttt{THXY\_FULL\_MACRO\_P3FREE\_HJ\_CERT.json} & \hash{EABF67C0D1AE309F0
 
 The same values and candidate paths are machine-readable in
 \path{audit/geometric_evidence_manifest.json}.  These objects are not
-included.  A proof of P0 must construct or replace the actual embedded
-detector object; a proof of C must construct the actual coefficient/Hattori
-maps and their functorial role.  A proof of S must additionally establish a
-sphere replacement fixed near the detector and identify the resulting
-hemisphere maps with the MWW coequalizer maps.
+included.  They cannot replace P0a--c, C1--C2 or S: a proof of P0 must
+construct the actual embedded detector and framed handle presentation; a
+proof of C must identify the actual coefficient/Hattori maps and their
+functorial role; and a proof of S must identify the actual essential-sphere
+endpoint maps with the MWW coequalizer maps.
 
 \section{Appendix B: strict P0 reconstruction protocol}\label{app:p0-reconstruction}
 

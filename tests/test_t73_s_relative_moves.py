@@ -16,14 +16,16 @@ class SRelativeMovesTest(unittest.TestCase):
         module = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(module)
         generated = module.generate()
-        self.assertEqual(generated["verdict"], "PASS")
+        self.assertEqual(
+            generated["verdict"], "PARTIAL_GEOMETRY_PASS_ENDPOINT_BINDING_OPEN"
+        )
         self.assertEqual(generated["relative_geometry"]["spotted_ball_boundary_count"], 7)
         self.assertEqual(generated["relative_geometry"]["maximum_spotted_ball_tubings"], 5)
         self.assertEqual(
             generated["mww_hemisphere_table"]["coequalizer_difference"],
             {"1": 0, "X": 0},
         )
-        self.assertTrue(
+        self.assertFalse(
             generated["candidate_binding"]["actual_standard_sphere_endpoint_foam_computed"]
         )
 
