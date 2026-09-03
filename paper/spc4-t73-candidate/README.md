@@ -7,9 +7,8 @@ cubic-order statement for the public braid.  Geometric lemmas P0a--c and
 C1--C2, S, the MWW four-handle layer and the E13 CS handle picture are
 discharged for the Johnson replacement.  The identification
 \(X_J\cong\Sigma_A^0\) is that constructed CS handle picture.  No
-historical-PD identity is claimed.  The older manuscript
-`paper/t73_candidate.tex` (Assumptions A1--A5) is retained as a historical
-ledger only; its mathematical content is merged here under Hypotheses P0/C/S/P3
+historical-PD identity is claimed.  The retired September assumptions A1--A5
+from earlier project manuscripts are merged here under Hypotheses P0/C/S/P3
 and Section ``Retired assumption register''.
 
 ## Build

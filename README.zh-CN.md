@@ -22,7 +22,7 @@ Cappell--Shaneson 流形 `X(41,189,73)` 是一个与标准 `S^4` 不微分同胚
 
 ## 公开审阅 PDF
 
-[用于公开审阅的 PDF 文件](paper/T73_SPC4_CANDIDATE_FALSIFICATION_20260902.pdf)
+[用于公开审阅的 PDF 文件](output/pdf/spc4-t73-candidate.pdf)
 
 ## 从哪里开始
 

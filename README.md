@@ -28,7 +28,7 @@ geometric input has been formalized. The exact boundary is visible in
 
 ## PDF for public review
 
-[PDF prepared for public review](paper/T73_SPC4_CANDIDATE_FALSIFICATION_20260902.pdf)
+[PDF prepared for public review](output/pdf/spc4-t73-candidate.pdf)
 
 ## Start here
 

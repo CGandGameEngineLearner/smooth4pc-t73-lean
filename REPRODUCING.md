@@ -112,13 +112,15 @@ record remains at `docs/proofs/PUBLIC_RELEASE_CLEAN_REPLAY_20260901.md`.
 
 ## 8. Build the review paper
 
-With Tectonic 0.17.0 or later on `PATH`, the same command works on Windows,
-Linux, and macOS:
+From `paper/spc4-t73-candidate` in WSL or Linux:
 
 ```text
-cd paper && tectonic t73_candidate.tex --outdir build --keep-logs
+pdflatex -interaction=nonstopmode -halt-on-error main.tex
+bibtex main
+pdflatex -interaction=nonstopmode -halt-on-error main.tex
+pdflatex -interaction=nonstopmode -halt-on-error main.tex
+mkdir -p ../../output/pdf
+cp main.pdf ../../output/pdf/spc4-t73-candidate.pdf
 ```
 
-On Windows, `powershell -ExecutionPolicy Bypass -File paper/build.ps1` uses the
-pinned local Tectonic binary when present, checks the LaTeX log, and copies the
-accepted PDF to `paper/T73_SPC4_CANDIDATE_FALSIFICATION_20260902.pdf`.
+See `paper/spc4-t73-candidate/README.md` for the Chinese edition build.
