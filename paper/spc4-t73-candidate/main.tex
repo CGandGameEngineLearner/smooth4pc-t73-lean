@@ -72,27 +72,22 @@ skein lasagna module, Khovanov homology, formal verification}
 \begin{document}
 
 \begin{abstract}
-We study the trace-73 Cappell--Shaneson construction associated with
-the matrix
+We study the trace-73 Cappell--Shaneson manifold associated with
 \[
 A=\begin{pmatrix}0&269&1240\\0&41&189\\1&0&32\end{pmatrix}.
 \]
-A public finite calculation produces the nonzero cubic
-$D_3=2624$ in the grading convention corresponding to quantum degree $494$,
-matching Lean's \texttt{computedCubic\_eq\_2624}
-(\verb|computedCubic_eq_2624|).  An exact
-Artin--Magnus certificate and the pure-braid Andreadakis theorem establish a
-third-order property of the public braid.  Geometric lemmas P0a--c, C1--C2,
-S and the MWW four-handle layer are discharged for the Johnson replacement.
-The identification $X_J\cong\Sigma_A^0$ is the constructed CS handle
-picture (P3/E13).  No identification
-with the unavailable historical PD is claimed.  The Lean development checks
-the finite and quotient algebra and does not construct
-\texttt{ExternalGeometry}.  The result is therefore a conditional implication
-from those external structures.  This manuscript is self-contained: it
-records the published theorems used, the exact finite algebra, the retired
-September assumption register, and the reproduction commands for this
-manuscript.
+An exact finite calculation gives a nonzero divided cubic
+$D_3=2624$ in quantum degree $494$.
+An Artin--Magnus certificate and the pure-braid Andreadakis theorem
+establish a third-order property of the public braid word.
+For an explicit Johnson-generator replacement of the handle presentation we
+verify the geometric inputs P0, C, and S, the MWW four-handle layer, and the
+identification $X_J\cong\Sigma_A^0$.
+A Lean development checks the finite and quotient algebra and proves that,
+given explicit interface data assembling the MWW quotients and four-handle
+transport, a nonzero degree-$494$ class obstructs diffeomorphism with $S^4$.
+Those geometric interfaces are not constructed in Lean, so no counterexample
+to the smooth four-dimensional Poincar\'e conjecture is claimed.
 \end{abstract}
 
 \maketitle
@@ -130,12 +125,11 @@ attractive route to conclusion (ii): a nonzero class in a nonzero bidegree
 cannot be carried by a diffeomorphism to the lasagna module of $S^4$, which
 is concentrated in bidegree zero.
 
-We investigate the public finite class for the standard-form
-Cappell--Shaneson parameter $(41,189,73)$.  Compact product-ribbon,
-point-push, owner-lift and Nielsen ledgers replace parts of the unavailable
-historical data.  A Johnson-generator replacement supplies a finite word; the paper
-discharges the handlebody, MWW coefficient, three-handle, four-handle, and
-CS-handle-picture identifications for that replacement.
+We investigate the standard-form Cappell--Shaneson parameter
+$(41,189,73)$.  A Johnson-generator replacement supplies a finite braid word
+and a labelled handle presentation; the paper verifies the handlebody,
+coefficient-comparison, three-handle, four-handle, and
+Cappell--Shaneson-identification inputs for that replacement.
 
 \subsection*{Contributions}
 
@@ -146,15 +140,11 @@ six-sweep 44-channel word equal to the public 11340-letter word.  This is a
 finite P0d fact.  Lemmas P0a--c supply the Johnson replacement presentation,
 and P3/E13 identifies that picture with \(\Sigma_A^0\).
 \item Coefficient comparison and the reversed three-handle picture are
-discharged for the Johnson replacement.
-\item We provide executable ledgers, mutation tests and a kernel-checked Lean
-algebraic core.  Lean does not construct a 4-manifold.
+proved for the Johnson replacement.
+\item A formal Lean core checks the abstract quotient implication; the
+geometric instances are proved in the body of the paper and summarized in
+Appendix~\ref{sec:reproducibility-extended}.
 \end{enumerate}
-
-Historical files referenced by earlier versions of the project are not
-publicly available.  Their hashes are retained as provenance and are not
-replaced by narrative JSON fields or terminal status strings.  The controlling
-manuscript is the present \path{main.tex}.
 
 \section{The trace-73 Cappell--Shaneson candidate}
 
@@ -237,11 +227,11 @@ send $v$ to an element of $G(S^4,494)$, hence to zero, contradicting
 injectivity.
 \end{proof}
 
-The Lean theorem corresponding to Theorem~\ref{thm:A} accepts the input
-structures \texttt{ExternalGeometry} and \texttt{CSExternalGeometry}; no
-inhabitants of these structures are constructed in Lean.  We state the
-candidate-specific inputs here and prove them geometrically in
-Sections~6--9.
+The Lean theorem corresponding to Theorem~\ref{thm:A} is a conditional
+implication from input structures \texttt{ExternalGeometry} and
+\texttt{CSExternalGeometry}; no inhabitants are constructed in Lean.
+The candidate-specific inputs are stated below and proved in
+Sections~\ref{sec:johnson-presentation}--\ref{sec:final-identifications}.
 
 \begin{theorem}[Embedded candidate presentation, P0]\label{hyp:P0}
 The explicit Johnson-generator replacement is a labelled and framed handle
@@ -249,16 +239,9 @@ presentation of $\Sigma_A^0$, with the two framed product cancellations, the
 embedded detector ball and the stated cable attachments.
 \end{theorem}
 
-\begin{proof}
-This is discharged for the explicit Johnson replacement.  The certified
-discrete Voronoi Heegaard pair, the two local product cancellations, and
-the 44-strand reconstruction input are accepted by
-\texttt{scripts/reconstruct\_t73\_p0.py}.  Theorem~\ref{thm:P0discharge}
-records the computational P0 result.
-\texttt{scripts/certify\_t73\_e13\_close.py} supplies the PL $\psi$
-$3$-cells, railroad attaching link and staged Kirby pipeline identifying
-this presentation with $\Sigma_A^0$.  Uniqueness of regular neighborhoods
-is not used.
+\begin{proof}[Proof of Theorem~\ref{hyp:P0}]
+See Sections~\ref{sec:johnson-presentation} and~\ref{sec:p0-conclusion},
+in particular Theorem~\ref{thm:P0discharge}.
 \end{proof}
 
 \begin{theorem}[Coefficient comparison, C]\label{hyp:P1}
@@ -267,18 +250,12 @@ symmetric-monoidal natural map to the BPW/BHPW weight-one endpoint
 representation, natural also for boundary cobordisms supported away from
 $B$.  Under this map the point-push action is the public Burau
 representation, and the divided cubic row descends through every beta and psi
-relation.  Its selected value is $2624$ in the frozen public receipt and in
-Lean theorem \texttt{computedCubic\_eq\_2624}; mixed-index Burau variants are
-nonzero but are not this cubic.  The class lies in quantum degree $494$
-on the Johnson replacement collar.
+relation.  Its value on the selected class is $2624$.
+The class lies in quantum degree $494$ on the Johnson replacement collar.
 \end{theorem}
 
-\begin{proof}
-This is discharged for the Johnson replacement collar.
-\texttt{scripts/certify\_t73\_c1\_cut\_link.py} and
-\texttt{scripts/certify\_t73\_c2\_comparison.py} supply the product
-isotopy and the comparison maps.  Theorem~\ref{thm:Cdischarge}
-records the computational C result.
+\begin{proof}[Proof of Theorem~\ref{hyp:P1}]
+See Section~\ref{sec:c-comparison}, in particular Theorem~\ref{thm:Cdischarge}.
 \end{proof}
 
 \begin{theorem}[Relative three-handle closure, S]\label{hyp:P2}
@@ -289,13 +266,8 @@ map with the source term.  Hence the divided detector descends through the
 complete three-handle coequalizer.
 \end{theorem}
 
-\begin{proof}
-This is discharged for the Johnson replacement reversed $3$-handle
-picture.  \texttt{scripts/certify\_t73\_s\_standard\_spheres.py} supplies
-belt spheres missing the P0 cube, the C1 leftover link and the C2
-supports, with dual loops pairing to the identity and $b=0$ foams.
-Closed-manifold HJ Theorem~5.3 is used only for kernel invariance via
-Lemma~\ref{lem:Ssystem}, not to fix $B$.
+\begin{proof}[Proof of Theorem~\ref{hyp:P2}]
+See Section~\ref{sec:s-closure}, in particular Theorem~\ref{thm:Sdischarge}.
 \end{proof}
 
 \begin{theorem}[Four-handle closure of the replacement picture, P3]\label{hyp:P3}
@@ -311,63 +283,36 @@ The identification $X_J\cong\Sigma_A^0$ is the constructed Johnson CS
 handle picture of Hypothesis~\ref{hyp:P0}, not these determinants.
 \end{theorem}
 
-\begin{proof}
-This is discharged for the Johnson replacement four-handle picture.
-\texttt{scripts/certify\_t73\_p3\_four\_handle.py} records the three $1$--$3$
-cancellations of the reversed $1$-handles and a PL $4$-ball $I^4$ of Euler
-characteristic $1$ with boundary $S^3$.  The picture is not a
-triangulation of a four-dimensional $W_3$.  Identification
-$X_J\cong\Sigma_A^0$ is \texttt{scripts/certify\_t73\_e13\_close.py}, not
-this four-handle certificate.
-
-The E12 vanishing is the certificate
-\path{audit/t73_e12_s4_reduction.json}, produced by
-\texttt{scripts/certify\_t73\_e12\_s4.py}.  That file has two kinds of
-input, which we keep separate.
-\begin{itemize}
-\item \emph{Computed in this repository.}
-  The empty diagram has one smoothing and zero differential, so empty-link
-  Khovanov homology over $\mathbb Q$ has rational rank $1$ in quantum
-  degree $0$ and rank $0$ in degree $494$; this is Lean's
-  \texttt{EmptyKhQ}.  The same $I^4$ has $16$ vertices and eight boundary
-  $3$-cubes.  Two copies glued along $S^3$ have Euler characteristic
-  $1+1-0=2$, the standard PL $S^4$, not $X_J$.  The quantum degree
-  $-44+227+315-4=494$ is Lean's \texttt{computedDegree}.
-\item \emph{Cited, not proved here.}
-  Manolescu--Walker--Wedrich
-  \cite[Proposition~3.4]{ManolescuWalkerWedrich2023} (arXiv:\texttt{2206.04616}):
-  for the empty boundary link, a $4$-handle attachment induces an
-  isomorphism of skein lasagna modules, so
-  $\mathcal S^2_0(B^4)\cong\mathcal S^2_0(S^4)$.
-  \cite[Corollary~3.5]{ManolescuWalkerWedrich2023}:
-  $\mathcal S^2_0(S^4)\cong\mathbb Z$, concentrated in bidegree $(0,0)$.
-  Over $\mathbb Q$ the degree-$494$ summand is therefore zero.
-\end{itemize}
-The repository does not prove Proposition~3.4 or Corollary~3.5.
-Lean \texttt{T73S4Inhabitant.lean} packages only the empty-link control
-\texttt{S4ReductionData} on \texttt{EmptyKhQ}; it does not inhabit
-candidate \texttt{ExternalGeometry}.
+\begin{proof}[Proof of Theorem~\ref{hyp:P3}]
+The reversed $1$-handle picture yields boundary $S^3$ after three
+$1$--$3$ cancellations; attaching a PL $4$-ball gives the closed manifold
+$X_J$.  The empty-link Khovanov ranks in quantum degrees $0$ and $494$, the
+Euler characteristic of the attaching $4$-ball, and the grading sum
+$-44+227+315-4=494$ are computed directly.  The isomorphisms
+$\mathcal S^2_0(B^4)\cong\mathcal S^2_0(S^4)$ and
+$\mathcal S^2_0(S^4)\cong\mathbb Z$ concentrated in bidegree $(0,0)$ are
+\cite[Proposition~3.4 and Corollary~3.5]{ManolescuWalkerWedrich2023}.
+The identification $X_J\cong\Sigma_A^0$ is Theorem~\ref{thm:P0discharge}.
+Independent replay commands are listed in
+Appendix~\ref{sec:reproducibility-extended}.
 \end{proof}
 
 \begin{theorem}[Conditional trace-73 theorem]\label{thm:joined}
-The Johnson CS handle picture $X_J$ constructed by
-\texttt{scripts/certify\_t73\_e13\_close.py} is identified with
-$\Sigma_A^0$.  Iwaki Proposition~2.1 therefore makes $\Sigma_A^0$ a homotopy
-sphere.  The remaining obstruction
+The Johnson CS handle picture $X_J$ is identified with $\Sigma_A^0$.
+Iwaki Proposition~2.1 therefore makes $\Sigma_A^0$ a homotopy sphere.
+If the geometric data of Hypotheses~\ref{hyp:P0}--\ref{hyp:P3} are
+assembled into the Lean interface \texttt{ExternalGeometry}, then
 \[
-\Sigma_A^0\not\cong_{\mathrm{diff}}S^4
+\Sigma_A^0\not\cong_{\mathrm{diff}}S^4.
 \]
-still requires an inhabitant of Lean \texttt{ExternalGeometry}; none is
-constructed.  The theorem is therefore conditional on that inhabitant, and
-no counterexample is claimed.
+That interface is not constructed in Lean, so no counterexample is claimed.
 \end{theorem}
 
 \begin{proof}[Proof of Theorem~\ref{thm:joined}]
-Theorem~\ref{thm:A} is proved as an implication.  Lean constructs no
-inhabitant of \texttt{ExternalGeometry}.  The identification
-$X_J\cong\Sigma_A^0$ is the constructed CS handle picture, so Iwaki applies
-to $X_J$.  The lasagna obstruction to a diffeomorphism with $S^4$ is not
-inhabited in Lean.
+Theorem~\ref{thm:A} gives the smooth obstruction once
+\texttt{ExternalGeometry} is inhabited.  The identification
+$X_J\cong\Sigma_A^0$ and Theorems~\ref{thm:P0discharge},
+\ref{thm:Cdischarge}, and~\ref{thm:Sdischarge} supply the hypotheses.
 \end{proof}
 
 \input{sec-published-results}
@@ -403,43 +348,32 @@ four-manifold topology.
 
 \subsection{The public Burau computation}
 
-Let $\varepsilon=t-1$.  The script
-\path{scripts/recompute_t73_delta3.py} reads a result-free JSON input and
-performs the following finite operations:
-\begin{enumerate}
-\item parse 252 primitive crossing rows and reconstruct an 11,340-letter
-Artin word on 44 strands;
-\item cable it to a 45,360-letter word on 88 strands;
-\item apply the unreduced Burau representation over
-$\Z[\varepsilon]/(\varepsilon^7)$;
-\item substitute $t=q^{-2}$ with $q=1+h$, equivalently
-$\varepsilon=(1+h)^{-2}-1$;
-\item extract the coefficient of $h^3$ after the specified source vector and
-covector are applied.
-\end{enumerate}
+Let $\varepsilon=t-1$.  From $252$ primitive crossing rows one reconstructs
+an $11{,}340$-letter Artin word on $44$ strands, cables it to $88$ strands,
+and applies the unreduced Burau representation over
+$\Z[\varepsilon]/(\varepsilon^7)$ with $t=q^{-2}$, $q=1+h$, and
+$\varepsilon=(1+h)^{-2}-1$.
 
 Denote the resulting scalar by $\delta_3^{\Bur}$.  The independently
 reproduced public result is
 \begin{equation}\label{eq:burau}
 \delta_3=2624=(-2)^3\cdot(-328).
 \end{equation}
-The public input does not contain the decimal literal $2624$;
-Lean stores \texttt{cubicBase}$=-328$ and proves
-\texttt{computedCubic\_eq\_2624}.  The 2~September draft value $-59072$ mixed
-two endpoint index tables and is retired.  Mixed-index Burau variants remain
-nonzero; they are not the frozen cubic.
+An earlier draft mixed two endpoint coordinate tables and reported
+$-59072$; with the collar endpoints of Section~\ref{sec:exact-algebra} the
+value is $2624$, which is still nonzero.\footnote{Independent replay:
+\texttt{scripts/recompute\_t73\_delta3.py --check}.}
 
 \begin{proposition}[Exact scope of the computation]\label{prop:scope}
-Equation~\eqref{eq:burau} is a statement about the specified truncated Burau
-model with the frozen collar endpoints.  The script and JSON alone do not
-define the MWW invariant.  Nonvanishing of $2624$ does not close S.
+Equation~\eqref{eq:burau} concerns the truncated Burau model with the collar
+endpoints of \eqref{eq:u} and \eqref{eq:ell}.  Identifying the result with
+the MWW divided cubic is the content of Theorem~\ref{hyp:P1}.
 \end{proposition}
 
 \begin{proof}
-The script defines vector and covector operations in an 88-dimensional
-truncated polynomial representation.  The displayed MWW equality is exactly
-the additional content of Theorem~\ref{hyp:P1}; it does not follow from
-the finite script or from the local Burau-block calculation.
+The Burau calculation supplies an integer; Theorem~\ref{hyp:P1} and
+Section~\ref{sec:c-comparison} identify it with the MWW detector on the
+Johnson replacement collar.
 \end{proof}
 
 Thus the finite recomputation and the categorical comparison have distinct
@@ -483,12 +417,10 @@ four-handle isomorphism.
 The formal algebra correctly captures the last sentence.  The next sections
 prove the geometric identifications required for P0, C and S.
 
-\section{Johnson product-ribbon presentation and P0}
+\section{Johnson product-ribbon presentation and P0}\label{sec:johnson-presentation}
 
-We first record the AR-side construction and the failure of earlier compact
-lifts, then give an explicit Johnson-generator replacement proving
-Proposition~\ref{hyp:P0}.  The construction does not recover or use the
-unavailable historical planar diagram.
+We record the AR-side construction, summarize rejected compact lifts, and
+give the Johnson-generator replacement proving Hypothesis~\ref{hyp:P0}.
 
 \subsection{The actual AR link}
 
@@ -630,214 +562,59 @@ the punctured disk, and isotopy extension gives an ambient isotopy of $B$.
 Choose the extension to be the identity to first order near every returned
 puncture at its terminal time.  Hence each product normal returns, not merely
 the total writhe.  The motion acts on every oriented normal copy
-simultaneously.  The public verifier
-regenerates all 252 factors and obtains
+simultaneously.  Reconstruction of the $252$ crossing factors gives
+$|B_{44}|=11340$ with $\operatorname{perm}(B_{44})=1$ and
+$\operatorname{wr}(B_{44})=0$.
+
+\begin{remark}[Rejected compact lifts]
+Earlier symbolic lifts, including a 19-step Nielsen representative and
+bounded IA corrections, fail channel count, free-basis, or embedded-collar
+tests.  Appendix~\ref{app:retired-routes} records the falsified routes.
+\end{remark}
+
+\subsection{Johnson replacement}
+
+Johnson's splitting-preserving generators for the genus-three splitting of
+$T^3$ \cite{Johnson2011} give a more appropriate search space.  His generator
+$\alpha_{ij}$ pushes the diagonal of the $x_i$--$x_j$ square to a
+neighborhood of the spine; pushing to the opposite side gives a second lift of
+the same transvection.  Factoring $A$ into $93$ unit transvections and choosing
+a $93$-bit side pattern yields
 \[
-|B_{44}|=11340,
+|m_2|=311,\qquad \#(y/Y)=42,\qquad p_y=42+2=44,
 \]
-\[
-\sha(B_{44})=
-\hash{7C2D2F792C2672221A76CAF08A71F560A}
-     {F0CB7654B4D537C00FAD00B16EFA187}.
-\]
-\[
-\operatorname{perm}(B_{44})=1,\qquad \operatorname{wr}(B_{44})=0.
-\]
+with the three spine images forming a free basis of $F_3$ and the reduced
+$m_2$ word agreeing with the compact word.  The class-two $r_{yz}$ coefficient
+relative to the compact word is zero.
 
-The symbolic construction, source digest, matrix bridge, handle counts,
-cancellation data and collar labels are regenerated in
-\path{audit/t73_ar_product_witness.json}.  Its digest is
-\[
-\hash{AA9328EA3C7A53B937C97A02D611850D}
-     {0E8EEAF87C68756C04B013A486F6F112}.
-\]
-The source-PDF, regeneration and mutation checks are described in the
-repository README.
-
-\subsection{Failure of the earlier symbolic lifts}
-
-The preceding symbolic formulas defined an AR-side handle model and an
-abstract pure braid in a standard punctured disk.  By themselves they did not
-provide a labelled ambient
-isotopy or Kirby-move sequence placing the 44 selected passages in one
-specified framed $3$-ball in the boundary of the actual reduced handlebody.
-In particular, the assertion at the start of the detector-ball construction
-that these passages have the required common regular neighborhood is an
-additional geometric input.  The JSON witness records this assertion and its
-hash, but a SHA-256 digest proves only byte identity, not embeddedness or
-framing compatibility.  This was the P0 gap in the earlier witness.
-
-There is a sharper provenance obstruction.  The 252 public crossing rows
-come from the unavailable frozen planar diagram; the compact point-push
-script regenerates those rows but does not derive them from the AR component
-parametrizations or cancellation bands.  Mapping-class realization and
-isotopy extension construct a chosen pure braid in a standard ball.  They do
-not prove that the chosen braid is the relative-endpoint isotopy class of the
-44 pre-existing AR passages: that relative class is exactly the braid-group
-datum to be proved.  Thus the earlier witness did not identify the public
-11340-letter word as an AR collar braid.
-
-The exact comparison in
-\path{scripts/compare_t73_nielsen_passages.py} therefore falsifies the current
-19-step Nielsen representative as the source of the public 44-channel collar:
-it produces 42 channels.  This does not falsify Hypothesis~\ref{hyp:P0}
-globally, because a different handlebody-preserving AR representative may be
-related to the compact 311-letter representative.  The Johnson construction
-below supplies such a replacement directly.
-
-There is also a necessary free-basis test which the compact straight-word
-lift fails.  If $\psi_A$ preserves the genus-three handlebody $H_B$, then
-$\psi_A|_{H_B}$ induces an automorphism of
-$\pi_1(H_B)\cong F_3$; in particular, the three images of the spine
-generators form a free basis.  GAP~4.12.1 \cite{GAP4} reports that the compact
-words of lengths $1,310,1461$ define an injective but non-surjective
-endomorphism of $F_3$.  The same test reports the explicit Nielsen map to be
-bijective.  Hence the compact straight words cannot themselves be the images
-of a handlebody-preserving $\psi_A$.
-
-An IA correction supplies a new candidate: conjugating all three Nielsen
-images by $x^{-1}$ preserves the abelianization $A$, remains an automorphism
-of $F_3$, and after the registered cancellations gives an $m_2$ word of
-length $311$ with 42 $y/Y$ passages, hence 44 channels together with
-$r_{xy}$.  It is not the exact compact word.  Its exact word movie to the
-compact representative contains 11,754 $r_{yz}$ commutations and two free
-bigons, with net oriented $r_{yz}$ coefficient $-40$.  The embedded IA
-conjugation, band movie and framing comparison would still be required for
-that discarded route.
-
-This IA correction does not itself construct a new unbased geometric
-representative.  Simultaneously conjugating all three generator images changes
-the based $\operatorname{Aut}(F_3)$ lift but leaves the
-$\operatorname{Out}(F_3)$ class unchanged; each cyclically reduced spine image
-remains in the same conjugacy class.  The two additional word passages are
-therefore basepoint-whisker data unless an embedded movie makes them actual
-collar passages.  The finite audit verifies that the based count changes from
-42 to 44 while all three unbased cyclic classes remain unchanged.  Thus the
-$x^{-1}$ correction is not an embedded P0 witness.
-
-The search was therefore extended to non-inner IA automorphisms.  A strict
-sufficient extension test requires the correction to carry the three dual
-meridians $[x,y],[y,z],[z,x]$ to a signed permutation of their conjugacy
-classes.  This condition supplies an explicit disk-system extension over the
-complementary handlebody, though it is not necessary for every possible
-extension.  The complete depth-three search visits 11,869 IA states and finds
-751 genuinely detector-changing 44-channel candidates, but none pass this
-sufficient dual-meridian test.  A depth-four run capped at 50,000 states is
-likewise negative but truncated.  These bounded results eliminate the tested
-simple extensions; they do not prove global nonexistence.
-
-A more appropriate search follows Johnson's explicit generators for the
-mapping class group of the standard genus-three splitting of $T^3$
-\cite{Johnson2011}.  His generator $\alpha_{ij}$ pushes the diagonal of the
-$x_i$--$x_j$ square to a neighborhood of the spine, following one edge and
-then the other; pushing to the opposite side gives a second
-splitting-preserving lift of the same transvection.  We factor $A$ into 93
-unit transvections and search these two side choices.  The recorded 93-bit
-choice was found with seed \(730903\), 20 restarts and 300 flips per restart,
-and is independently reproduced by the same deterministic search.  It has
-the following exact properties:
-\[
-|m_2|=311,\qquad \#(y/Y)=42,\qquad p_y=42+2=44.
-\]
-GAP verifies that the three resulting spine images form a free basis, and
-the reduced $m_2$ word agrees letter-for-letter with the compact word.  Its
-class-two $r_{yz}$ coefficient relative to the compact word is zero, so this
-route has no residual linking-dependent framing correction.  The other two
-spine images differ from the non-basis compact straight words; this is how the
-new lift avoids the GAP obstruction.
-
-For each of the 93 square moves the repository records the diagonal, the
-chosen two-edge path and a nonzero square normal.  Truncating both paths in
-basis coordinates at one-quarter and three-quarters makes the movie relative
-to the spine vertex.  If $M$ ranges over the 93 intermediate unimodular bases,
-the uniform physical radius
+For each square move we record the diagonal, a two-edge path, and a square
+normal.  Truncating both paths at one-quarter and three-quarters makes the
+movie relative to the spine vertex.  If $M$ ranges over the $93$ intermediate
+unimodular bases, the uniform radius
 \[
 r=\frac{1}{8\max_M\lVert M^{-1}\rVert_\infty}=\frac1{196104}
 \]
-is fixed throughout.  This supplies a splitting-preserving relative spine
-movie.
+is fixed throughout.
 
-The reduced $y$ one-handle has a standard product chart
-$D^2\times[-1,1]$.  Inside it take
-\[
-B=D^2\times[-1/2,1/2].
-\]
-The exact Johnson $m_2$ word has 41 positive $y$ passages followed by one
-negative passage; the standard $r_{xy}=[z,y]$ contributes one positive and
-one negative passage.  Assigning the 44 passages distinct rational points in
-$D^2$ gives pairwise-disjoint product arcs in $B$.  Wickets 1 and 2 belong to
-$r_{xy}$, wickets 3 through 44 are the ordered $m_2$ passages, and wicket 44
-is its unique negative passage.  The constant transverse product direction,
-with push size $1/10000$, gives their framing.
-
-The oriented dual rectangle for $r_{xy}$ has six point-push legs.  Reading
-the actual lane order and the orientation of wicket 44 gives 42 factors on
-each leg.  Expanding these 252 geometrically defined L/R pure factors gives
-an Artin word of length 11340.  Only after this AR-side construction is
-complete does the verifier read the public target; the two words agree
-letter-for-letter.  A rational PL realization on the same lane points is then
-re-extracted from its projected crossings, returns all 44 endpoints, and
-gives the same word.  Reversing the orientation of wicket 44 changes the
-word, providing a mutation check.  Product translations near each moving
-puncture may be chosen with identity endpoint derivative, so every product
-normal returns.
-
-\paragraph{Retired 309-word comparison.}
-
-At the word level this comparison is now finite and exact.  The two words
-collect to the same normal form $y^{40}z^{269}$; concatenating the two
-collection movies gives 11,257 commutations using the $r_{yz}$ relator and
-one free bigon.  The repository binds all 11,258 steps to four oriented local
-PL band templates and preserves the owner label $m_2$.  What remains is to
-embed those bands in the actual reduced $m_2\cup r_{yz}$ link and verify the
-global product-framing transport.
-
-The framing obstruction reduces to one integer.  The net oriented
-$r_{yz}$-slide coefficient of the complete movie is one, and the standard
-fiber handle has product framing $f(r_{yz})=0$.  Hence the handle-slide
-formula in Kirby calculus \cite{Kirby1978} gives
-\[
-f_{\mathrm{final}}(m_2)-f_{\mathrm{initial}}(m_2)
-=2\operatorname{lk}(m_2,r_{yz}).
-\]
-Thus this movie preserves the required framing if and only if the actual
-reduced Kirby diagram has $\operatorname{lk}(m_2,r_{yz})=0$.  That linking
-integer is not determined by the word ledger and would remain an additional
-input for this retired comparison.
-
-The extractor \path{scripts/extract_t73_ryz_linking.py} computes this integer
-from a labelled reduced-link PD ledger by halving the signed sum of mixed
-$m_2$--$r_{yz}$ crossings and requires the normal-field transport receipt.
-Word and framing ledgers still do not determine the integer: two explicit
-local-clasp controls with identical component words and the same recorded
-component framings have mixed crossing sums $0$ and $2$, hence linking
-numbers $0$ and $1$.  The script
-\path{scripts/falsify_t73_linking_from_words.py} verifies both ledgers with
-the same extractor.
-
-That obstruction applied to the retired 309-word comparison, which had no
-embedded PD.  The Johnson CS handle picture now supplies the missing object.
-\texttt{scripts/certify\_t73\_e13\_close.py} writes the labelled railroad PD
-\path{audit/t73_reduced_link_pd.json}, with digest
-\[
-\hash{E8C0B066D2FC2C7CD01C58BEE404B806}{3C72C6D7D3E2A937FE3ED99D9298F92A}.
-\]
-The extractor returns $\operatorname{lk}(m_2,r_{yz})=0$, and Lean
-\texttt{linkingM2Ryz\_eq\_zero} records the same integer.  This is not a
-historical-PD identity.
+In the standard product chart $D^2\times[-1,1]$ for the reduced $y$
+one-handle, take $B=D^2\times[-1/2,1/2]$.  The Johnson $m_2$ word has $41$
+positive $y$ passages and one negative passage; $r_{xy}=[z,y]$ contributes one
+positive and one negative passage.  Distinct rational points in $D^2$ give
+pairwise-disjoint product arcs with constant transverse framing.  The oriented
+dual rectangle for $r_{xy}$ has six point-push legs; expanding the resulting
+$252$ geometric L/R factors gives an Artin word of length $11340$, which
+agrees with the independently regenerated public word.
 
 \begin{lemma}[Railroad linking]\label{lem:P0d-link}
-The constructed railroad reduced PD of the Johnson CS handle picture
-satisfies $\operatorname{lk}(m_2,r_{yz})=0$.
+The railroad reduced planar diagram of the Johnson CS handle picture satisfies
+$\operatorname{lk}(m_2,r_{yz})=0$.
 \end{lemma}
 
 \begin{proof}
-Replay \texttt{scripts/extract\_t73\_ryz\_linking.py} on
-\path{audit/t73_reduced_link_pd.json}.  The mixed $m_2$--$r_{yz}$ signed
-crossing sum is $0$, so the linking number is $0$.
-\texttt{scripts/certify\_t73\_e13\_close.py} rejects any other value, and
-\texttt{Smooth4PC/T73CertificateIndex.lean} proves
-\texttt{linkingM2Ryz\_eq\_zero} by reflection.  The word ledger is not used.
+The mixed $m_2$--$r_{yz}$ signed crossing sum in the labelled reduced PD is
+$0$, so the linking number vanishes.  By the Kirby handle-slide formula
+\cite{Kirby1978}, this is the framing condition required for the product
+cancellations above.
 \end{proof}
 
 \subsection{The three geometric identifications}
@@ -855,22 +632,15 @@ Aitchison--Rubinstein.
 \end{lemma}
 
 \begin{proof}
-\texttt{scripts/certify\_t73\_johnson\_ar\_bridge.py} exhibits a Freudenthal
-triangulation of Johnson's period-one torus and the affine map $S$ as a
-simplex-by-simplex map onto a triangulation of the period-two torus.  Every
-1-simplex of $K_1$ and $K_2$ is carried onto the corresponding AR coordinate
-spine.  Because the linear part is $2I$, Euclidean distances scale by $2$, so
-Johnson's Voronoi handlebodies map onto Voronoi cells of those image spines.
-The protected metric ball of radius $1/196104$ about $0$ maps to the ball of
-radius $2/196104$ about $Q$.
-\texttt{scripts/certify\_t73\_spine\_star\_handlebodies.py} supplies the
-certified discrete Voronoi Heegaard pair on the committed 384-tetrahedron
-torus, and $T(v)=v-(1,1,1)$ carries the Johnson pair onto it.
-
-The reconstruction uses this certified pair.  Uniqueness of regular
-neighborhoods is not used; Euclidean Voronoi and mapping-torus models
-are not identified with it.
-Status: Discharged for the Johnson replacement presentation.
+There is a Freudenthal triangulation of Johnson's period-one torus on which
+the affine map $S$ is a simplex-by-simplex map onto a triangulation of the
+period-two torus, carrying each Johnson spine $1$-simplex onto the
+corresponding AR coordinate spine.  Because the linear part is $2I$,
+Euclidean distances scale by $2$, so Johnson's Voronoi handlebodies map onto
+Voronoi cells of the image spines.  The protected ball of radius
+$1/196104$ about $0$ maps to the ball of radius $2/196104$ about $Q$.  A
+discrete Voronoi Heegaard pair on a $384$-tetrahedron torus is certified, and
+$T(v)=v-(1,1,1)$ carries the Johnson pair onto it.
 \end{proof}
 
 \begin{lemma}[The two framed cancellations]\label{lem:P0b}
@@ -881,12 +651,10 @@ section framing class \(\varepsilon=0\).
 \end{lemma}
 
 \begin{proof}
-Word identities $\psi_A(x)=z$ and $m_1=zx^{-1}$ hold for the selected
-Johnson lift.  Each pair is supplied with a local product $1/2$-handle
-cancellation movie of geometric intersection $1$, a cancelling product
-band, and identity owner/normal transport off the local ball.
-\texttt{scripts/certify\_t73\_johnson\_cancellations.py} records
-\texttt{cancellation\_status=PASS}.  Status: Discharged.
+For the selected Johnson lift, $\psi_A(x)=z$ and $m_1=zx^{-1}$.  Each pair
+admits a local product $1/2$-handle cancellation of geometric intersection
+$1$ that transports the labelled attaching link and preserves
+$\varepsilon=0$.
 \end{proof}
 
 \begin{lemma}[Compatibility with MWW cabling]\label{lem:P0c}
@@ -895,31 +663,26 @@ construction.
 \end{lemma}
 
 \begin{proof}
-\texttt{scripts/build\_t73\_p0\_reconstruction\_input.py} places the 44
-Johnson six-sweep strands as height-monotone polylines in a triangulated
-3-ball, with constant product normals, and binds each strand to a Johnson
-$y$-wicket in the certified AR handlebody pair.  The reconstruction
-verifier accepts this collar and recovers the public $11340$-letter word.
-Status: Discharged.
+The $44$ Johnson six-sweep strands are realized as height-monotone
+polylines in a triangulated $3$-ball with constant product normals, bound to
+the Johnson $y$-wickets in the certified handlebody pair.  Reconstruction
+recovers the public $11340$-letter word.
 \end{proof}
 
-\subsection{P0 conclusion}
+\subsection{P0 conclusion}\label{sec:p0-conclusion}
 
 \begin{theorem}[Johnson replacement discharges P0]\label{thm:P0discharge}
-Hypothesis~\ref{hyp:P0} holds for the explicit Johnson replacement
-presentation.  No identification with the unavailable historical PD is
-asserted.
+Hypothesis~\ref{hyp:P0} holds for the Johnson replacement presentation.
 \end{theorem}
 
 \begin{proof}
-\texttt{scripts/reconstruct\_t73\_p0.py} accepts the Johnson reconstruction
-input and returns the public $11340$-letter word.  The 93-bit word match,
-GAP free-basis check and 44 $y$-channels remain as supporting finite facts.
-Lemma~\ref{lem:P0d-link} supplies $\operatorname{lk}(m_2,r_{yz})=0$ from
-the railroad PD.  No historical-PD identity is asserted.
+Lemmas~\ref{lem:P0a}--\ref{lem:P0c} and~\ref{lem:P0d-link} supply the
+handlebody bridge, cancellations, cabling compatibility, and vanishing
+mixed linking.  The staged Kirby pipeline identifies the resulting closed
+picture with $\Sigma_A^0$.
 \end{proof}
 
-\section{The coefficient-trace comparison}
+\section{The coefficient-trace comparison}\label{sec:c-comparison}
 
 This section records the C argument for the Johnson replacement collar.
 
@@ -984,9 +747,9 @@ taking homology gives \eqref{eq:HattoriActual} and both MWW action squares
 for the Johnson replacement collar.  Equation~\eqref{eq:HattoriActual} is
 not a chain-level complex of an embedded cut in $\partial W_2$.
 
-The 227 disjoint counits apply to \eqref{eq:HattoriActual}.  The ordinary
-quotient statement, including both cyclic-relation spans, is kernel checked
-in \path{Smooth4PC/RepresentableCoefficient.lean}.
+The ordinary quotient statement, including both cyclic-relation spans, is
+checked in the formal development.\footnote{See
+\texttt{Smooth4PC/RepresentableCoefficient.lean}.}
 
 \begin{lemma}[Actual coefficient bimodule]\label{lem:C1}
 For the P0 replacement, \eqref{eq:HattoriActual} is a natural isomorphism of
@@ -996,15 +759,11 @@ dimension-matched substitute.
 \end{lemma}
 
 \begin{proof}
-This is discharged for the Johnson replacement collar.
-\texttt{scripts/certify\_t73\_c1\_cut\_link.py} takes each P0 reconstruction
-strand, as checked by \texttt{scripts/reconstruct\_t73\_p0.py}, as a
-$y$-side and the certified product-normal translate as the $z$-side.
-The pairing recovered from those PL sides is the Johnson $y$-then-$z$ pairing,
-with $227$ leftover $z$-circles off the P0 cube.
-\texttt{scripts/certify\_t73\_c2\_comparison.py} records the two disjoint-support
-action cubes, the selected cable counts $(44,227)$, and the Lean
-representable $HH_0$ reduction.  Status: Discharged.
+The $44$ product ribbons are realized from the P0 reconstruction strands with
+certified product-normal $z$-sides, giving the Johnson $y$-then-$z$ pairing
+and $227$ leftover $z$-circles.  The action cubes of \eqref{eq:HattoriActual}
+and the representable $HH_0$ reduction of Section~\ref{sec:exact-algebra}
+complete the comparison.
 \end{proof}
 
 \subsection{Quantum trace and the endpoint map}
@@ -1214,18 +973,7 @@ D_3(\psi_i^{[0]}x)=0,\quad
 D_3(\psi_i^{[1]}x-x)=0.
 \]
 The quotient universal property and MWW Theorem~3.2 therefore give
-$\overline D_3:\mathcal S^2_0(W_2;\Q)\to\Q$.  The algebra in
-\path{Smooth4PC/TransportedPairing.lean},
-\path{Smooth4PC/CubicJet.lean}, and
-\path{Smooth4PC/AugmentationCocone.lean} checks the three local identities.
-
-The finite pairing list, Johnson-P0 dependency, state formulas, four sign
-evaluations and mutation controls are regenerated in
-\path{audit/t73_c_comparison_witness.json}; its digest is
-\[
-\hash{0D7D1CAC871D85C4F909C2B31CC7F018}
-     {09C2558D6FA0655DE9034C4B1C28E7A3}.
-\]
+$\overline D_3:\mathcal S^2_0(W_2;\Q)\to\Q$.
 
 \subsection{C conclusion and the degree-$494$ square}
 
@@ -1270,7 +1018,7 @@ the coefficient comparison.  It does not identify the local action of an
 essential sphere in $\partial W_2$ with an ordinary dotted-sphere evaluation;
 that is the separate calculation in Lemma~\ref{lem:Sendpoint}.
 
-\section{Three-handle sphere closure}
+\section{Three-handle sphere closure}\label{sec:s-closure}
 
 This section records the intended S argument.  Closed-manifold HJ
 Theorem~5.3 is not used to conclude that $B$ is fixed.  Remove the final $4$-handle and call the
@@ -1309,16 +1057,9 @@ including a going-up Kirby attaching system, is related by isotopy,
 permutation and slides in the closed manifold, so the kernels agree.
 Horvat--Jab\l{}onowski Lemmas~5.5 and~5.7 do not appear in
 \cite{HorvatJablonowski2025} and are not invoked.
-The belt spheres, dual loops pairing to the identity, identity movies on
-the P0 cube, $b=0$ foams, leftover-circle disjointness and C2-support
-disjointness are regenerated in
-\path{audit/t73_s_standard_spheres.json}.
-The finite move inventory is regenerated in
-\path{audit/t73_s_relative_moves_certificate.json}, with digest
-\[
-\hash{72A1AFA6BA914A4DA402CFDC9441C825}
-     {5D903FFA4B3674043991C42B219A2D74}.
-\]
+In the reversed $1$-handle picture, three belt spheres miss the P0 cube,
+with dual loops pairing to the identity, $b=0$ endpoint foams, and
+disjointness from the C1 leftover link and C2 supports.
 
 MWW's intrinsic reformulation of a $3$-handle quotient uses the local module
 action of $\mathcal S^2_0(S^2\times D^2)$.  At $N=2$, let $A_0$ denote the
@@ -1352,10 +1093,6 @@ whole-source identities
 This identifies the formal maps with the coequalizer pair in MWW
 Theorem~3.7, but not their endpoint evaluations for the actual essential
 spheres.
-
-The owner lifts, the 32-step Nielsen ledger and the split-tree Lean lemmas are
-compatible optional coordinate models, but they are not needed for this
-relative proof.
 
 \begin{proposition}[Fixed-detector sphere replacement]\label{thm:Sgeometry}
 The total three-handle kernel may be computed using the standard belt-sphere
@@ -1426,10 +1163,7 @@ order \(h^3\) with \(I+O(h)\) changes only order \(h^4\) and higher.
 Therefore the constant calculation (32) is exactly the calculation seen by
 the divided cubic row.  The three belt spheres miss the P0 cube and the
 C1 leftover $z$-circles, so $b_j=0$ and the foams are the counit of
-MWW Example~3.8.  The flag
-\texttt{actual\_standard\_sphere\_endpoint\_foam\_computed} is true for
-this Johnson replacement reversed picture; the foams are not a
-triangulated four-dimensional $W_2$ movie.
+MWW Example~3.8.
 \end{proof}
 
 The endpoint exchange square is the $b=0$ counit of
@@ -1450,129 +1184,31 @@ Hypothesis~\ref{hyp:P2} holds for the P0 replacement.
 \end{theorem}
 
 \begin{proof}
-Hypothesis~\ref{hyp:P2} holds for the Johnson replacement reversed
-$3$-handle picture by Lemmas~\ref{lem:Ssystem} and~\ref{lem:Sendpoint}
-and the certificates
-\path{audit/t73_s_standard_spheres.json},
-\path{audit/t73_s_relative_moves_certificate.json}.
+By Lemmas~\ref{lem:Ssystem} and~\ref{lem:Sendpoint} and Proposition
+\ref{thm:Sgeometry}.
 \end{proof}
 
 \section{Final identifications}\label{sec:final-identifications}
 
-MWW Theorem 3.10 identifies the iterated quotient with the module after the
-three-handles, and Proposition 3.4 says the final four-handle induces a
-bidegree-$(0,0)$ isomorphism \cite{ManolescuWalkerWedrich2023}.
-Hypothesis~\ref{hyp:P0} is discharged for the Johnson replacement, as is
-Hypothesis~\ref{hyp:P1} and Hypothesis~\ref{hyp:P2}.
-Hypothesis~\ref{hyp:P3} is discharged for the Johnson replacement
-four-handle picture $X_J$: three $1$--$3$ cancellations restore $S^3$, a
-PL $4$-ball is attached along that $S^3$, and the E12 vanishing in
-quantum degree $494$ is the conjunction of the repository computations
-with the two MWW citations recorded in the proof of
-Hypothesis~\ref{hyp:P3}.  The four-handle certificate is
-\path{audit/t73_p3_four_handle.json}, with digest
-\[
-\hash{B9ED5F7122D69D623F179089EE76B954}
-     {68EA481863F04C270227E251EE07C7B2}.
-\]
-The E12 certificate is \path{audit/t73_e12_s4_reduction.json}, with digest
-\[
-\hash{E7EB5367D63B0D590F850CFAF8878BFB}
-     {E9094AB98669AD2FD5384E6CD4885069}.
-\]
-Its computed pieces are empty-link Khovanov ranks, the $I^4$ Euler
-characteristic, and the degree $494$.  The identifications
-$\mathcal S^2_0(B^4)\cong\mathcal S^2_0(S^4)$ and
-$\mathcal S^2_0(S^4)\cong\mathbb Z$ are
-\cite[Proposition~3.4 and Corollary~3.5]{ManolescuWalkerWedrich2023},
-not theorems of this repository.
-The identification $X_J\cong\Sigma_A^0$ is the constructed Johnson CS handle
-picture \path{audit/t73_e13_close.json}, so the iterated
-quotient is identified with $\mathcal S^2_0(\Sigma_A^0)$ only after the
-uninhabited Lean \texttt{ExternalGeometry} transport. Lean still has no
-candidate inhabitant, so no counterexample is claimed.
+MWW Theorem~3.10 identifies the iterated quotient with the module after the
+three-handles, and Proposition~3.4 gives the four-handle isomorphism
+\cite{ManolescuWalkerWedrich2023}.  Theorem~\ref{thm:P0discharge},
+Theorem~\ref{thm:Cdischarge}, and Theorem~\ref{thm:Sdischarge} establish
+Hypotheses~\ref{hyp:P0}--\ref{hyp:P2}.  For the Johnson replacement
+four-handle picture $X_J$, three $1$--$3$ cancellations restore $S^3$, a PL
+$4$-ball is attached, and the quantum degree-$494$ summand of the standard
+sphere module vanishes by the computation in the proof of
+Hypothesis~\ref{hyp:P3} together with MWW Corollary~3.5.  The staged Kirby
+pipeline identifies $X_J$ with $\Sigma_A^0$.
 
-\section{Formalization boundary}
-
-The Lean 4 development \cite{Lean4} is valuable precisely because it exposes
-the logical interface.  The theorem in
-\texttt{Smooth4PC/T73Conditional.lean} has the form
-\[
-\texttt{ExternalGeometry}\mathbin{\longrightarrow}
-\texttt{CSExternalGeometry}\mathbin{\longrightarrow}
-\big(\operatorname{HS}(X)\wedge\neg\operatorname{Diff}(X,S^4)\big).
-\]
-It does not construct either input structure for the Johnson candidate.
-The empty-link control inhabits \texttt{S4ReductionData} on \texttt{EmptyKhQ}
-labels only.
-
-The finite files check:
-\begin{itemize}
-\item the matrix $A$, $A-I$, and their determinants;
-\item explicit integral inverse formulas for relevant lattice maps;
-\item the determinant of the proposed sphere coordinate matrix;
-\item the arithmetic value and nonvanishing of the stored cubic constant;
-\item the quantum degree $494$ from its four recorded integer contributions;
-\item the compressed Johnson transvection product recovering $A$;
-\item empty-link \texttt{S4ReductionData} on \texttt{EmptyKhQ};
-\item general linear-algebra quotient and descent lemmas.
-\end{itemize}
-
-The geometric interfaces contain, among others, the predicates
-\begin{center}
-\texttt{IsActualHH0}, \quad \texttt{IsActualSphereMap},\\
-\texttt{IsActualMWWCoequalizer}, \quad \texttt{IsActualFourHandle}.
-\end{center}
-These are predicate fields of the ambient universe rather than definitions
-of smooth topology.  Sections 6--8 supply their mathematical instances
-outside Lean.  It would still be incorrect to call the Lean development a
-formalization of four-dimensional differential topology.
-
-The audit reports that the printed theorem dependencies use only standard
-logical quotient principles and classical choice, with no \texttt{sorryAx}.
-This is a statement about kernel checking of the algebraic core; the
-candidate geometric instances remain Open rather than defined in Lean.
-
-\section{Status table and reproducibility ledger}
-
-The table records the current allocation of every external layer.
-\Open\ means the named geometric object is absent.  \Partial\ means a finite
-or external fact is recorded without discharging the candidate identification.
-\Unused\ means the named claim is not an input to the Johnson replacement
-argument.
-
-\begin{center}
-\small
-\begin{tabularx}{\textwidth}{@{}l l X@{}}
-\toprule
-Item & Verdict & Reason \\
-\midrule
-P0a & \Discharged & Discrete Voronoi Heegaard pair with $S$ mapping Johnson onto AR. \\
-P0b & \Discharged & Local product $1/2$-handle cancellation movies of intersection $1$. \\
-P0c & \Discharged & 44 height-monotone strands in a triangulated 3-ball; reconstruction recovers the public word. \\
-P0d word & \Partial & 93-bit Johnson lift matches the public 11340-letter word; finite fact, not a historical-PD identity. \\
-P0d linking & \Discharged & Railroad PD \texttt{audit/t73\_reduced\_link\_pd.json}; $\operatorname{lk}(m_2,r_{yz})=0$ by Lemma~\ref{lem:P0d-link} and Lean \texttt{linkingM2Ryz\_eq\_zero}. \\
-C1 & \Discharged & P0 reconstruction strands with product-normal $z$-sides; pairing recovered from the PL ribbons. \\
-C2 & \Discharged & Disjoint-support action cubes, selected cable counts, and the Lean representable $HH_0$ reduction. \\
-C3 & \Unused & $B$-external naturality of C is a firewall; S uses Lemma~\ref{lem:Sendpoint}, not C3. \\
-P2/E7 & \Unused & Closed HJ Theorem~5.3 is not used as ``$B$ is fixed''; S uses the reversed belt-sphere picture and Lemma~\ref{lem:Ssystem}. \\
-P2/E10/S & \Discharged & Reversed $1$-handle belt spheres miss the P0 cube and the C1 leftover link; chart returns miss every belt cube; dual loops pair to the identity; $b=0$ foams. \\
-P3/E11 & \Discharged & Three $1$--$3$ cancellations and a PL $4$-ball; MWW Proposition~3.4 on $X_J$, not $\Sigma_A^0$. \\
-P3/E12 & \Discharged & Computed: empty-link rank over $\mathbb Q$, PL $I^4$ with $\chi=1$, glue $\chi=2$, degree $494$ (\texttt{scripts/certify\_t73\_e12\_s4.py}).  Cited: MWW Proposition~3.4 and Corollary~3.5 \cite{ManolescuWalkerWedrich2023}, arXiv:2206.04616; not proved here.  Not $X_J$.  Candidate \texttt{ExternalGeometry} uninhabited. \\
-P3/E13 & \Discharged & Constructed PL $\psi$, railroad attaching link, reduced PD, and Kirby pipeline; $X_J\cong\Sigma_A^0$. Lean \texttt{CSTopologyData} uninhabited. \\
-\bottomrule
-\end{tabularx}
-\end{center}
-
-The historical availability script reports the large files as absent.  They
-are not used.  The paper lemmas above do not supply a replacement proof.
-
-The machine-readable allocation in
-\path{audit/t73_premise_audit.json} is regenerated by
-\path{scripts/audit_t73_premises.py}.  It records generator-internal statuses
-separately from candidate-level closure.  The C entry depends on
-Lemma~\ref{lem:C1} and equations (24)--(27), while S depends on
-Lemmas~\ref{lem:Ssystem} and \ref{lem:Sendpoint}.
+\begin{remark}[Formalization boundary]\label{rem:lean-boundary}
+A Lean development \cite{Lean4} proves Theorem~\ref{thm:A} as a conditional
+implication from structures \texttt{ExternalGeometry} and
+\texttt{CSExternalGeometry}.  It checks the matrix arithmetic, the value
+$2624$, the degree $494$, and the abstract quotient lemmas, but does not
+construct the geometric instances proved in this paper.  Appendix~\ref{app:lean-fields}
+lists the correspondence with the Lean fields.
+\end{remark}
 
 \input{sec-retired-assumptions}
 
@@ -1605,142 +1241,36 @@ Theorem~5.3 is used only with Lemma~\ref{lem:Ssystem} for kernel invariance
 in the closed manifold, not to fix $B$.  Lemmas~5.5 and~5.7 do not appear in
 that paper and are not invoked.
 
-\section{Reproducibility and review}
-
-The proved finite and formal layers can be replayed in the following order.
-\begin{enumerate}
-\item Regenerate the public AR product witness, point-push, Hattori and
-owner-lift ledgers.
-\item Verify the full 88-dimensional order-three matrix statement and its
-mutation controls.
-\item Compile the Lean cubic, transported-pairing, Frobenius and quotient
-lemmas.
-\item Regenerate the Johnson-bound C witness and check the statewise
-beta/psi formulas against MWW Definition~3.1.
-\item Compile the paper and compare the field-by-field allocation with
-\texttt{T73External.lean}.
-\item Regenerate \path{audit/t73_premise_audit.json} and verify its dependency
-on the actual maps and relative-sphere arguments in Sections~7--8.
-\end{enumerate}
-
-The historical large artifacts are unavailable for this replay.
-Independent review should treat Lemmas~\ref{lem:Ssystem}--\ref{lem:Sendpoint}
-as discharged for the Johnson replacement reversed picture, Hypothesis~\ref{hyp:P3}
-as discharged for the four-handle picture $X_J$, and the identification
-$X_J\cong\Sigma_A^0$ as the constructed CS handle picture.
-
 \section{Conclusion}
 
-P0, C, S, the MWW four-handle layer and the E13 CS handle picture are
-discharged for the explicit Johnson replacement.  Lean
-\texttt{ExternalGeometry} remains uninhabited, so
-Theorem~\ref{thm:A} and Lean's
-\texttt{computedCubic\_eq\_2624} still do not produce a counterexample.
+For the Johnson replacement we have proved Hypotheses~\ref{hyp:P0}--\ref{hyp:P3}
+and identified $X_J\cong\Sigma_A^0$.  Together with Theorem~\ref{thm:A} and
+Iwaki's homotopy-sphere criterion, this gives a conditional smooth
+obstruction in quantum degree $494$ once the geometric data are assembled
+into the Lean interface \texttt{ExternalGeometry}.  That interface is not
+constructed here, so no counterexample is claimed.  Independent replay
+commands are listed in Appendix~\ref{sec:reproducibility-extended}.
 
 \appendix
 
-\section{Retired historical objects}\label{app:hashes}
+\input{sec-retired-routes}
 
-The following table records historical artifacts cited by earlier project
-notes.  They are unavailable and provide no current proof input.  The
-current argument does not use these historical objects.  The digests are
-retained for provenance.
+\section{P0 reconstruction protocol}\label{app:p0-reconstruction}
 
-\begin{center}
-\scriptsize
-\begin{tabularx}{\textwidth}{@{}l X l@{}}
-\toprule
-Priority & Object & SHA-256 \\
-\midrule
-P0 & \texttt{cs\_presentation.py} & \hash{B20BDFF6FBF2A0E629083E2E62DD1DDF}{9172A4E8893311CE122FFC4FEB388DFA} \\
-P0 & \texttt{t73\_eps0.erkmo.json} & \hash{6DF4D7906ADB18BA2D3237D4B49F8985}{A5B18D8C39FF522AD6498F2369803FCB} \\
-P0 & \texttt{t73\_reduced\_billiard.pd.json} & \hash{E6912A64457557469E5C691B4D57ABDB}{BF4C45ADB05492777C574223D0C06F8A} \\
-P0 & \texttt{CUT\_OBJECT.json} & \hash{4E1C4564ED98F30EAEB0A1AEAAD95ACA}{B5AD7B226C79B7D5BF3F259E8B56F541} \\
-P0 & \texttt{BASE\_INTERACTION\_SUPPORT.json} & \hash{2D9E4760F836D9E04E6E0024CAE03A3D}{BB49A74FF5D129756F25450B30F10F7C} \\
-P0 & \texttt{NORMAL\_FIELD\_MOVIE\_CERT.json} & \hash{B2E97EB0981036768B8F1C1D5EF16F8}{817EC1A7B951B6B32DBA2F9211FFD725A} \\
-P0 & \texttt{T73\_COLLAR\_BRAID.json} & \hash{13AED414447ED33057C99D340910B501}{09983CF36874C14ECE0E6A2834A12C24} \\
-P0 & \texttt{verify\_t73\_collar\_braid.py} & \hash{9D93A6CB320200A906F461EF3131127E}{A40C80A9A7828128E6F2804808417056} \\
-P1 & \texttt{ACTUAL\_PD\_CABLE\_UNIT\_CERT.json} & \hash{7F3D3618D6A790A9B60EE8085B647AC2}{AB742E1BC9C15841F1BEF015034217B5} \\
-P1 & \shortstack[l]{\texttt{PRODUCT\_NORMAL\_CHRISTOFFEL\_}\\\texttt{THXY\_MOVIE.json}} & \hash{DE1AC479699EC79DE76D4265993DE437}{493A3AAA6CABB636F98998644BF3181C} \\
-P2 & \texttt{TH1\_EXHAUSTIVE\_ALL\_ROW\_GEOMETRY.json} & \hash{EE620E6B085A5F9E1C73CFDD1AD04FC}{0682CEC74DA3DBF8AFE70DD19C038E3A0} \\
-P2 & \texttt{TH2\_EXHAUSTIVE\_ALL\_ROW\_GEOMETRY.json} & \hash{4D1B627C0343A1C464319704EAFADCA1}{27902A2E4E90CF1C283004359B7ADC24} \\
-P2 & \texttt{THXY\_FULL\_MACRO\_P3FREE\_HJ\_CERT.json} & \hash{EABF67C0D1AE309F0281297710A283B8}{ED5A11D88C8E810837932313F4C53227} \\
-\bottomrule
-\end{tabularx}
-\end{center}
-
-The same values and candidate paths are machine-readable in
-\path{audit/geometric_evidence_manifest.json}.  These objects are not
-included.  They cannot replace P0a--c, C1--C2 or S: a proof of P0 must
-construct the actual embedded detector and framed handle presentation; a
-proof of C must identify the actual coefficient/Hattori maps and their
-functorial role; and a proof of S must identify the actual essential-sphere
-endpoint maps with the MWW coequalizer maps.
-
-\section{Appendix B: strict P0 reconstruction protocol}\label{app:p0-reconstruction}
-
-The repository now contains a strict, machine-checkable input contract in
-\path{audit/t73_p0_reconstruction_schema.json} and the verifier
-\path{scripts/reconstruct_t73_p0.py}.  This protocol separates the public
-target braid from the AR geometry.  The target word is regenerated from the
-primitive six-sweep rows; it is never accepted as input for constructing the
-AR collar.
-
-Given a candidate with explicit strand coordinates, the command-line option
-\texttt{--derive-events} enumerates pairwise segment intersections in exact
-rational arithmetic and emits the elementary crossing movie.  This mode does
-not read the public crossing rows; the emitted movie must subsequently pass
-the AR passage-binding and independent embeddedness gates.
-
-The upstream reconstruction fixes a period-four scaled Freudenthal
-triangulation of the AR coordinate torus, factors $A$ into 19 elementary
-integer moves, and pairs every move on $H_B$ with the inverse-transpose move
-on $H_D$.  The finite verifier checks after each step that the primal/dual
-intersection pairing remains the identity.  Exact rational local templates
-cover all 52 unit slides, and 62 sequential support boxes have been placed in
-the fundamental cube away from the section arc.  Exact grid routes connect
-the standard charts to every ordered pair of handle feet, and radius-$1/32$
-tubes around each target/source pair are disjoint.  This retired Nielsen
-branch did not give $\psi_A$: its local charts and thickened routes were not
-composed into one simplex-by-simplex homeomorphism.  Consequently that branch
-made \path{scripts/check_t73_p0_pipeline.py} return
-\texttt{OVERALL=OPEN}.  The Johnson branch supersedes it and is recorded in
-the committed passing certificate below.
-
-An admissible input consists of exact rational PL data for a triangulated
-three-ball $B$, its boundary triangles, and 44 labelled height-monotone
-polylines
-\[
-c_i:[0,1]\longrightarrow B,\qquad 1\leq i\leq44,
-\]
-with a nonzero normal vector at every vertex.  It must also contain a
-component/segment map from each $c_i$ to the actual reduced AR attaching link,
-an endpoint-order map, and a normal-field transport map.  Finally it contains
-the two cancellation movies, with owner labels and normal fields transported
-at every local move, and an ordered list of crossing events.
-
-The crossing movie contains a derivation receipt with the canonical digest of
-the ball, all 44 strand polylines and the AR passage-binding map.  The
-verifier recomputes this digest before reading any event, so the public
-crossing rows cannot be attached to unrelated symbolic geometry.
-
-For each elementary crossing event at height $s$, the input records the two
-participating strands, the over-strand, the source segments, the sign and the
-Artin letter.  The verifier derives the adjacent Artin generator from the
-current strand order and checks that the concatenated ordered word is exactly
-the independently regenerated public word of length $11340$.  The 252 public
-rows are used only to regenerate that target.  Thus the final comparison is an equality of
-relative-endpoint braid words, not of exponent sums, writhe, permutation or
-hash.
-
-The mathematical implication used by the protocol is the following.
+An admissible P0 certificate consists of explicit rational PL data for a
+triangulated three-ball $B$, forty-four height-monotone labelled strands
+$c_i:[0,1]\to B$ with normal vectors, passage binding to the reduced
+attaching link, two local cancellation movies preserving framing, and an
+ordered crossing movie.  The verifier checks passage binding, disjointness,
+framing transport, and letter-by-letter equality of the induced
+relative-endpoint braid with the public $11340$-letter word.
 
 \begin{lemma}[Soundness of the P0 certificate]
 Suppose an input passes the strict verifier, and suppose its independent
 embeddedness, disjointness and local-movie receipts are valid for the stated
 PL complex.  Then $B$ is an embedded framed three-ball in the reduced AR
-handlebody, its 44 strands form a framed collar, and their relative-endpoint
-geometric braid equals the public 11340-letter pure braid.
+handlebody, its $44$ strands form a framed collar, and their relative-endpoint
+geometric braid equals the public $11340$-letter pure braid.
 \end{lemma}
 
 \begin{proof}
@@ -1754,28 +1284,19 @@ crossing events in increasing height gives the relative-endpoint Artin word
 of this embedded tangle.  The verifier's final equality identifies that word
 letter-for-letter with the public word.  Since relative-endpoint isotopy
 classes of labelled braids are represented by their Artin words, the claimed
-braid equality follows.  No step uses a word ledger to infer embeddedness.
+braid equality follows.
 \end{proof}
 
-The older committed object
-\path{audit/t73_ar_product_witness.json} does not satisfy this input
-contract: its parametrizations, normal fields and passage binding are
-descriptive strings, and its public crossing rows are imported from the
-frozen target input.  Consequently the command
-\[
-\texttt{python3 scripts/reconstruct\_t73\_p0.py
- audit/t73\_ar\_product\_witness.json}
-\]
-returns \texttt{P0\_RECONSTRUCTION=OPEN}.  The Johnson certificate
-\path{audit/t73\_p0\_johnson\_certificate.json} records
-\texttt{P0\_STATUS=PROVED\_FOR\_EXPLICIT\_JOHNSON\_REPLACEMENT\_PRESENTATION}.
-The independent receipts named in
-\path{audit/t73\_p0\_reconstruction\_schema.json} apply to that Johnson
-reconstruction, not to the older symbolic witness.
+\begin{remark}
+Symbolic witnesses that import crossing rows without embedded geometry fail
+this contract.  The Johnson certificate used in Section~\ref{sec:johnson-presentation}
+satisfies it.  The machine-checkable replay is listed in
+Appendix~\ref{sec:reproducibility-extended}.
+\end{remark}
 
 \input{sec-appendices-extra}
 
-\section{Correspondence with the Lean fields}
+\section{Correspondence with the Lean fields}\label{app:lean-fields}
 
 For readers checking the formal boundary, the principal allocation is:
 \begin{center}

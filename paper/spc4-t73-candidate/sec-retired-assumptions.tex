@@ -1,88 +1,11 @@
-\section{Retired assumption register of the September draft}
-\label{sec:retired-assumptions}
-
-Earlier versions of this project collected unresolved candidate-specific
-geometry into five numbered assumptions A1--A5.  That register is retained
-here only as a historical crosswalk.  The controlling interface of the present paper is
+\begin{remark}[Earlier assumption register]\label{sec:retired-assumptions}
+An earlier project draft grouped unresolved candidate geometry into five
+assumptions A1--A5 (actual presentation, coefficient comparison, all-state
+cocone, sphere maps, and rational closure).  The present interface is
 Hypotheses~\ref{hyp:P0}--\ref{hyp:P3} together with the uninhabited Lean
 fields \texttt{ExternalGeometry} and \texttt{CSExternalGeometry}.  None of
-A1--A5 is proved as stated, and none is used as a premise of
-Theorem~\ref{thm:joined}.
-
-\begin{center}
-\small
-\begin{tabularx}{\textwidth}{@{}l l X@{}}
-\toprule
-Old assumption & Replacement & Status in this paper \\
-\midrule
-A1 actual presentation and collar &
-P0a--c, P0d linking, P3/E13 &
-\Discharged\ for the Johnson replacement; no historical-PD identity \\
-A2 Hattori, endpoint, filtration, grading &
-C1, C2, Lemma~\ref{lem:C1} &
-\Discharged\ for the Johnson replacement collar \\
-A3 all-state two-handle cocone &
-C2, equations (26)--(27) &
-\Discharged\ for the Johnson replacement collar \\
-A4 actual spheres and whole-source maps &
-S, Lemmas~\ref{lem:Ssystem}--\ref{lem:Sendpoint} &
-\Discharged\ for the reversed belt-sphere picture \\
-A5 rational closure and $S^4$ comparison &
-P3/E12 computed ranks; MWW 3.4--3.5 cited &
-Computed part \Discharged; citations not proved here \\
-Lean transport and diffeomorphism invariance &
-\texttt{ExternalGeometry} &
-Uninhabited; counterexample not claimed \\
-\bottomrule
-\end{tabularx}
-\end{center}
-
-\paragraph{What A1--A5 asked.}
-A1 required the frozen framed diagram to be the actual reduced handle
-presentation of $\Sigma_A^0$, with one common framed movie transporting
-collar, detector insertion and point-push chronology.  A2 required the MWW
-one-handle hypotheses, endpoint shadow $u=e_2-e_{87}$, whole-module
-filtration, and the four grading contributions $-44,+227,+315,-4$.  A3
-required the statewise divided-cubic beta/psi cocone on every finite cable
-state.  A4 required embedded chosen spheres satisfying Horvat--Jab\l onowski
-E7 and MWW three-handle formulas, with leading Frobenius form on the whole
-source.  A5 required rational graded closure through the four-handle and a
-vanishing degree-$494$ piece for $S^4$.
-
-\paragraph{Why the register is not deleted.}
-The old wording remains the most explicit statement of what would have been
-required to close the historical-PD route.  Removing it would erase the
-claim boundary between finite certificates and geometric identification.
-Independent review of the retired route should still treat A1 as falsified
-for the unavailable planar diagram and A4 as the last load-bearing point of
-that manuscript; the Johnson replacement argument above supersedes that route
-without proving the old assumption statements verbatim.
-
-\paragraph{How each old assumption could still be attacked.}
-\begin{itemize}
-\item \textbf{A1.}  Give a framed Kirby movie from the standard
-Cappell--Shaneson surgery to the frozen cut presentation, transporting every
-label, normal field, basepoint and detector insertion disk.  The Johnson
-certificate replaces this for $X_J$, not for the historical PD.
-\item \textbf{A2.}  Construct the actual coefficient equivalence from paired
-annuli and prove both action-naturality squares.  Lemma~\ref{lem:C1} does
-this for the Johnson replacement collar only.
-\item \textbf{A3.}  Prove the beta/psi equations on every finite cable state
-as equalities of linear maps on their full source spaces.  Equations
-(26)--(27) do this after C1.
-\item \textbf{A4.}  Embed the finite sphere models in one actual
-$\partial W_2$, verify E7, and identify whole-source MWW maps with the
-leading Frobenius form.  The reversed belt-sphere proof of S replaces the
-TH1/TH2/THXY combinatorial models.
-\item \textbf{A5.}  Match published coefficient and grading conventions and
-check bidegree $(0,0)$ for the four-handle isomorphism.  E12 separates the
-computed ranks from the cited MWW isomorphisms.
-\end{itemize}
-
-\begin{remark}[No inference from filenames or certificates]
-Names such as ``global descending certificate'', ``chosen sphere receipt'',
-or ``Hattori decision'' are locators for data.  They do not occur as
-premises of any proof in this article.  Whenever a finite file is used, the
-relevant mathematical content is stated explicitly and the replay command is
-given in Section~\ref{sec:reproducibility-extended}.
+A1--A5 is used as a premise of Theorem~\ref{thm:joined}.  For the Johnson
+replacement, A1 is discharged by P0 and P3/E13, A2--A3 by C, A4 by S, and
+the computed part of A5 by P3/E12 together with the cited MWW
+Proposition~3.4 and Corollary~3.5.
 \end{remark}

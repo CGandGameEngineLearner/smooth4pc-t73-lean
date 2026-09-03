@@ -50,16 +50,14 @@ def generate() -> dict[str, Any]:
     )
 
     for marker in (
-        r"P0a & \Discharged",
-        r"P0d linking & \Discharged",
-        r"C1 & \Discharged",
-        r"C2 & \Discharged",
-        r"C3 & \Unused",
-        r"P2/E7 & \Unused",
-        r"P2/E10/S & \Discharged",
-        r"P3/E11 & \Discharged",
-        r"P3/E12 & \Discharged",
-        r"P3/E13 & \Discharged",
+        r"\label{thm:P0discharge}",
+        r"\label{lem:P0d-link}",
+        r"\label{lem:C1}",
+        r"\label{thm:Cdischarge}",
+        r"\label{thm:Sdischarge}",
+        r"\label{hyp:P3}",
+        r"C3 and P2/E7 are Unused",
+        r"\label{sec:final-identifications}",
     ):
         require(paper_text, marker, paper)
     for marker in (

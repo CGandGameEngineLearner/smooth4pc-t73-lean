@@ -20,11 +20,9 @@ With both objects in that one table, the exact calculation gives
 $[\varepsilon^3]\ell(\rho(W)-I)u=-328$ and hence
 $D_3(v_T)=(-2)^3(-328)=2624$.  The nonvanishing conclusion is unchanged.
 Using the THXY coordinates consistently gives $-2496$; this is a coordinate
-check, not a second geometric class.  The Lean literals, public receipt,
-Appendix~\ref{app:vector}, and Remark~\ref{rem:serialization} have been
-updated together.  The value $2624$ belongs to the currently frozen data.
-If the Johnson collar word changes, the numerical value must be recomputed.
-The superseded public PDF had SHA-256 prefix \texttt{8E621FD9}.
+check, not a second geometric class.  The value $2624$ belongs to the
+currently frozen collar data; if the Johnson collar word changes, the
+numerical value must be recomputed.
 
 \subsection{Integral inverses and the long topology route}
 
@@ -64,9 +62,9 @@ C^{-1}_{\Z}=
 -1241&-189&39
 \end{pmatrix}.
 \end{equation}
-These are checked in \path{Smooth4PC/T73CSAlgebra.lean} by ring normalization.
-The columns in \eqref{eq:spherecols} are the negated class columns of $C$;
-$\det C=1$ is \path{T73.sphereDet_eq_one}.
+These matrices satisfy $\det A=\det(A-I)=1$.  The sphere coordinate matrix in
+\eqref{eq:spherecols} is obtained by negating the columns of
+\eqref{eq:H2-map} and also has determinant $1$.
 
 \begin{remark}[Long topology route]\label{rem:long-topology-route}
 Surjectivity of $A-I$ kills the natural coinvariant presentation of the
@@ -74,9 +72,7 @@ fundamental group after surgery; bijectivity of $A-I$ and $(A^{-1})^T-I$
 kills the intermediate homology in the Wang and Mayer--Vietoris sequences.
 Poincar\'e duality then gives the homology profile of $S^4$.  Hurewicz and
 Whitehead promote simple connectivity plus that homology profile to a
-homotopy equivalence with $S^4$.  Those implications are represented by
-separate fields in \path{Smooth4PC/T73CSTopology.lean}; see
-Section~\ref{sec:published-results}.  This paper uses Iwaki
+homotopy equivalence with $S^4$.  This paper uses Iwaki
 Proposition~2.1 on the identified surgery manifold instead.
 \end{remark}
 
@@ -104,8 +100,7 @@ the coefficient zeroth Hochschild homology is
 \Span_{\Q}\{f\cdot m-m\cdot f\},
 \]
 where $f:S\to T$ and $m\in M(T,S)$ range over every cyclically composable
-pair.  This is the quotient implemented in
-\path{Smooth4PC/CoefficientTrace.lean}.
+pair.
 \end{definition}
 
 \begin{lemma}[Descent through the coefficient trace]\label{lem:HH0-descent}
@@ -184,19 +179,8 @@ and the $88$-strand word is $B_{88}=c(B_{44})$.
 
 \begin{proposition}[Word identities]\label{prop:word-identities}
 The exact reconstruction gives
-$|B_{44}|=11340$ and $|B_{88}|=45360$.  The canonical JSON SHA-256 values
-are
-\[
-\hash{7C2D2F792C2672221A76CAF08A71F560A}
-     {F0CB7654B4D537C00FAD00B16EFA187}
-\]
-and
-\[
-\hash{C13D0A3BA9B05F41A6D2C5B4AB12DDEC}
-     {DABEFC1883835891AD3BD2B8955B5FFB}.
-\]
-The Johnson reconstruction verifier recovers the same $11340$-letter word
-letter-for-letter.
+$|B_{44}|=11340$ and $|B_{88}|=45360$.  The Johnson reconstruction verifier
+recovers the same $11340$-letter word letter-for-letter.
 \end{proposition}
 
 \subsection{The detector and the exact cubic}
@@ -210,12 +194,8 @@ and the selected shadow vector is
 \begin{equation}\label{eq:u}
 u=e_2-e_{87}.
 \end{equation}
-Both formulas use the collar-coordinate table
-\path{data/B88_POSITION_TO_PASSAGE_TABLE.json}; its SHA-256 is
-\[
-\hash{119C7E9E74AE6C820DA72A84CDFD5D44}
-     {5D81E6C3AACCC209C25D37C323961508}.
-\]
+Both formulas use the collar-coordinate endpoint table fixed in the public
+input.
 
 \begin{definition}[The divided cubic detector]\label{def:detector}
 For a quantum trace class $x$, define
@@ -246,15 +226,9 @@ The complete degree-three vector is printed in Appendix~\ref{app:vector}.
 \end{proposition}
 
 \begin{proof}
-The deterministic algorithm in \texttt{scripts/recompute\_t73\_delta3.py}
-traverses $B_{88}$ from right to left, reduces modulo $\eps^7$, and
-contracts with \eqref{eq:ell}.  The input SHA-256 is
-\[
-\hash{0F0F4A568D966367313C29C25CEDDE4}
-     {FD9ABAD32B9375519E9CDF9168AE0A764}.
-\]
-Lean stores \texttt{cubicBase}$=-328$ and proves
-\texttt{computedCubic\_eq\_2624}.
+Traverse $B_{88}$ from right to left, reduce modulo $\eps^7$, and contract
+with \eqref{eq:ell}.  The resulting series is
+\eqref{eq:ell-eps-series}, so $D_3([v_T])=(-2)^3(-328)=2624$.
 \end{proof}
 
 \begin{lemma}[Parameter expansion]\label{lem:eps-of-h}
@@ -291,8 +265,8 @@ d_2&=+227 &&\text{($227$ distinct Frobenius labels)},\\
 d_3&=+315 &&\text{($44$ $y$-pairs and $271=44+227$ $z$-pairs)},\\
 d_4&=-4 &&\text{(cabled shift for $N=2$, $\alpha=0$, $|r|=2$)}.
 \end{align}
-Adding gives $-44+227+315-4=494$.  Lean proves \texttt{computedDegree}.
-Appendix~\ref{app:grading} collects the same table without abbreviation.
+Adding gives $-44+227+315-4=494$.  Appendix~\ref{app:grading} collects the
+same table without abbreviation.
 \end{proof}
 
 \subsection{Quotient algebra and the abstract descent chain}
