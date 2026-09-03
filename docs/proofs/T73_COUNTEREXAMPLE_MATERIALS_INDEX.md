@@ -1,6 +1,11 @@
 # T73 counterexample candidate materials index
 
-**Status:** CANDIDATE_PROOF_PENDING_INDEPENDENT_REVIEW
+**Status:** `ALL LOAD-BEARING P0/C/S/P3 ITEMS DISCHARGED`
+
+> The compact artifacts retain valid finite results but do not replace every
+> geometric and functorial role of the unavailable large inputs.  The
+> controlling correction is
+> `docs/research/T73_CORRECTION_AND_CLOSURE_NOTE_2026-09-02.md`.
 
 This file is the entry point. The mathematical derivations and the formerly
 machine-local load-bearing certificates are now colocated in the repository.
@@ -16,6 +21,35 @@ Their byte identities are pinned below and in
    Laudenbach--Poenaru and DIAGRAM bridge.
 3. [T73_PROOF_STATE_LEDGER.md](T73_PROOF_STATE_LEDGER.md)
    Recovery ledger, supersession chronology and forbidden stale routes.
+4. [T73_COMPACT_POINT_PUSH_BRIDGE.md](T73_COMPACT_POINT_PUSH_BRIDGE.md)
+   Public six-sweep regeneration of all 252 local point-push factors and the
+   resulting 44-strand braid; this discharges the local collar input only.
+5. [T73_COMPACT_AR_PRESENTATION.md](T73_COMPACT_AR_PRESENTATION.md)
+   Public AR product-annulus witness, matrix bridge, two geometric
+   cancellations and embedded detector ball for the replacement presentation.
+6. [T73_CUBIC_NATURALITY_PROGRAM.md](T73_CUBIC_NATURALITY_PROGRAM.md)
+   Kernel-checked cubic transport algebra and a 32-step public sphere-slide
+   construction; retained as an optional coordinate model.
+7. [T73_COMPACT_MWW_COMPARISON.md](T73_COMPACT_MWW_COMPARISON.md)
+   Compact balanced-cable count, Hattori coefficient normal form and
+   kernel-checked local R-matrix/Burau comparison.
+8. [T73_STANDARD_SPHERE_MWW_BINDING.md](T73_STANDARD_SPHERE_MWW_BINDING.md)
+   Relative standard-sphere replacement and the `b=1` MWW/Frobenius movie
+   calculation away from the detector collar.
+9. [T73_CLOSURE_BLOCKER_AUDIT.md](T73_CLOSURE_BLOCKER_AUDIT.md)
+   Final allocation and negative-boundary audit.
+10. [T73_THEOREM_C_DERIVATION.md](T73_THEOREM_C_DERIVATION.md)
+    Typed construction of the MWW-to-quantum-horizontal-trace endpoint
+    comparison and its exact remaining statewise cable-coherence square.
+11. [T73_THEOREM_S_DERIVATION.md](T73_THEOREM_S_DERIVATION.md)
+    Relative standard-sphere and intrinsic module-action proof deriving S
+    from P0 and the symmetric-monoidal form of C.
+12. [T73_EXTERNAL_GEOMETRY_DISCHARGE.md](T73_EXTERNAL_GEOMETRY_DISCHARGE.md)
+    Field-by-field assignment of the compact comparison and published
+    topology results to `ExternalGeometry` and `CSExternalGeometry`.
+13. [T73_GAMMA3_CABLING_CERTIFICATE.md](T73_GAMMA3_CABLING_CERTIFICATE.md)
+    Exact Artin--Magnus and Andreadakis proof of cubic order for every
+    physical cabling of the point-push.
 
 ## Colocated supporting derivations
 

@@ -1,5 +1,9 @@
 # T73 proof state ledger
 
+**Current authority:** the conditional paper together with the current P0, C,
+and relative-S research notes.  Entries below describing unavailable
+historical PD/TH objects are recovery history, not current premises.
+
 **Updated:** 2026-09-01 (Asia/Tokyo)
 **Purpose:** recovery source of truth for the mathematical chain. Read this
 before rerunning any long sphere computation.
@@ -20,7 +24,7 @@ would introduce a second factor and starts in order six. The mixed-Z branch
 has an actual raw lift but is contained in the full action-closed two-cup
 `psi0` ideal and is retired as the carrying class.
 
-## Closed layers
+## Layer audit
 
 | layer | current status | current evidence |
 |---|---|---|
@@ -36,19 +40,16 @@ functional, beta's `O(h)` defect against `W-I=O(h^3)`, and split-injectivity of
 the dotted direct system after quotienting the undotted image. It does not use
 the retired owner-only mixed-Z model.
 
-The first G1 PASS was premature: it treated `Ae_i` as the complete attaching
-circle and was correctly overturned. The final proof uses the full
-`m_i=t phi_A(x_i) t^-1 x_i^-1` object. Aitchison--Rubinstein pages 5--7
-construct its bottom/top/base-handle product ribbon, and page 17 constructs
-the actual linear-`A` strips and their product framings. The suspension
-diffeomorphism transports the whole labeled framed presentation. It may carry
-a nontrivial pure braid; this is not declared zero. Its boundary map extends
-over the four-dimensional one-handlebody by Laudenbach--Poenaru, so the actual
-presentation is diffeomorphic to the transported product representative.
-Only then do the two product cancellations give `t->empty` and `x->z`;
-nested product bigons give the actual zero-framed `r_zx` disk. The
-transported product tangle and the exhaustive global-descending DIAGRAM
-tangle are isotopic to the same marked boundary-parallel reference tangle.
+The first G1 PASS was premature because it treated `Ae_i` as a complete
+attaching circle.  The replacement proof instead uses the full
+`m_i=t phi_A(x_i) t^-1 x_i^-1` object.  Aitchison--Rubinstein pp. 5--7
+construct its bottom/top/base-handle product ribbon, and pp. 16--17 construct
+the product normal.  The mapping-torus diffeomorphism transports the whole
+labelled framed presentation.  The two product cancellations give
+`t->empty` and `x->z`, after which the detector collar is defined in a
+standard regular-neighborhood ball.  The empty free word of `r_zx` is not
+used to infer a split disk.  No comparison with the historical DIAGRAM is
+claimed.
 Framing is transported from the actual AR annuli, not inferred from the
 emitter's discarded blackboard winding.
 

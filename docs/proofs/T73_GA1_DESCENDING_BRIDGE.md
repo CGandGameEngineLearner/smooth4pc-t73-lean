@@ -1,6 +1,11 @@
 # T73 actual-Gompf to DIAGRAM bridge
 
-**Status:** PROVED BY THE AR ACTUAL PRODUCT-RIBBON CONSTRUCTION
+**Status:** `HISTORICAL PD ROUTE SUPERSEDED BY T73_COMPACT_AR_PRESENTATION.md`
+
+The argument below has not been independently instantiated from the public
+repository. Its load-bearing PD diagram, builder, cut/framing records and
+move data are referenced only by historical local paths and hashes. See
+[`../GEOMETRIC_INSTANTIATION_AUDIT.md`](../GEOMETRIC_INSTANTIATION_AUDIT.md).
 
 This note proves that the curves used by the TH1, TH2 and THXY calculations
 are a framed Kirby presentation of the actual reduced

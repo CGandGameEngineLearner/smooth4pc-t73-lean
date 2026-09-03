@@ -6,12 +6,14 @@ This repository contains a **candidate proof pending independent external
 review** for the Cappell--Shaneson manifold denoted (X(41,189,73)).  It is
 not a peer-accepted counterexample to the smooth four-dimensional Poincare
 conjecture.  The strongest checked Lean result is conditional: finite algebra
-and quotient arguments are kernel-checked, while the geometric identifications
-and several published topology inputs remain explicit hypotheses.  The exact
+and quotient arguments are kernel-checked.  The current paper supplies
+paper-level proofs of P0a--c, C1--C2 and the essential-sphere endpoint
+comparison; these geometric lemmas remain outside Lean and require
+independent mathematical review.  The exact
 conditional endpoint is in
 [`Smooth4PC/T73Conditional.lean`](../Smooth4PC/T73Conditional.lean), and the
-full mathematical allocation of proved, computed, cited and open inputs is in
-[`docs/proofs/T73_SPC4_COUNTEREXAMPLE_CANDIDATE_PROOF.md`](proofs/T73_SPC4_COUNTEREXAMPLE_CANDIDATE_PROOF.md).
+current mathematical allocation is in the LaTeX paper and the research notes
+under [`docs/research/`](research/).
 
 ## The three-step argument
 

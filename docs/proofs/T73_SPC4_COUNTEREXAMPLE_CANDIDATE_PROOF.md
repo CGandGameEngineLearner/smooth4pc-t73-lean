@@ -1,6 +1,13 @@
-# T73 SPC4 counterexample candidate proof
+# T73 historical candidate proof
 
-**Status:** `CANDIDATE_PROOF_PENDING_INDEPENDENT_REVIEW`
+**Status:** `HISTORICAL; CURRENT PAPER DISCHARGES P0/C/S/P3`
+
+> The current proof allocation is the LaTeX paper and the research notes for
+> the public AR P0 witness, the coefficient comparison C, and relative S.
+> Historical G1/TH artifacts and the old status table below are not
+> load-bearing.
+
+OPEN entries below document the retired large-certificate route.
 
 Entry point for all colocated derivations and pinned large inputs:
 `T73_COUNTEREXAMPLE_MATERIALS_INDEX.md`.
@@ -927,14 +934,14 @@ checked in `AuditArithmetic.lean`.
 | F2 cubic | **[F]** | Section 6 | exact value 2624 |
 | E5 one-cup cell firewall | **[P]** | Section 7 | mixed-Z route retired |
 | E6 beta/psi cocone | **[P]** | Section 8 | divided \(h^3\) only |
-| G1 actual-Gompf/DIAGRAM framed lift | **[P]** | Section 9 and T73_GA1_DESCENDING_BRIDGE.md | AR actual product ribbons; no numeric blackboard framing consumed |
-| E7 chosen HJ replacement | **[E]** | Section 9; external HJ theorem with hypotheses verified there | historical spheres not needed |
-| E8 six sphere rows | **[P]** | Section 10 | divided \(h^3\) only |
+| G1 actual-Gompf/DIAGRAM framed lift | **[O]** | Section 9 and T73_GA1_DESCENDING_BRIDGE.md | candidate argument; builder, full PD and framing/move witnesses are not public |
+| E7 chosen HJ replacement | **OPEN** | HJ Theorem 5.3 is available, but its boundary, handle-count, irreducibility and spherical-basis hypotheses are not publicly instantiated | TH1/TH2/THXY objects are not published |
+| E8 six sphere rows | **[O]** | Section 10 | divided \(h^3\) claim; candidate-specific sphere witnesses are not public |
 | E9 edge naturality | **not independently required** | Section 11 | no full-\(q\) claim |
-| E10 complete MWW quotient | **[E]** | MWW universal presentation | completeness external |
-| E11 graded four-handle | **[E]** | MWW four-handle theorem | external |
-| E12 rational \(S^4\) control | **[E]** | MWW grading/control | direct rational form |
-| E13 CS bridge | **[E]** | KPR and finite determinants | external topology bridge |
+| E10 complete MWW quotient | **OPEN** | MWW Theorems 3.2 and 3.10 give the general presentation | `q01` and `q12` are not identified with the candidate-specific MWW maps |
+| E11 graded four-handle | **PARTIAL** | MWW Proposition 3.4 gives the general four-handle isomorphism | the repository does not identify `G`, its rational \(N=2\) grading, and `fourIso` with that theorem in degree 494 |
+| E12 rational \(S^4\) control | **PARTIAL** | MWW Corollary 3.5 gives \(\mathcal S^N_0(S^4)\cong\mathbb Z\), concentrated in bidegree zero | the abstract `G` is not identified with the rational \(N=2\) lasagna module |
+| E13 CS bridge | **PARTIAL** | Iwaki Proposition 2.1 and the finite determinant checks apply to \(\Sigma_A^\varepsilon\) | identification of the frozen detector presentation with that \(\Sigma_A^\varepsilon\) depends on G1/P0 |
 
 All thirteen manifest consumer anchors remain present. The manifest role labels
 are a frozen allocation; this text records the newer discharge status without
@@ -942,14 +949,17 @@ editing that separate contract.
 
 ## 16. Honest closing status
 
-This document now internally proves the one-cup firewall, the all-level
-two-handle divided cocone, the actual-Gompf/DIAGRAM framed bridge, the hardened
-chosen HJ basis, and all six chosen sphere equations at order \(h^3\).
+This document records candidate arguments for the one-cup firewall, the
+two-handle divided cocone, the actual-Gompf/DIAGRAM framed bridge, the chosen
+HJ basis, and the six sphere equations at order \(h^3\).  The public tree does
+not contain the geometric inputs needed to independently instantiate those
+arguments, and it does not contain a comparison theorem identifying the
+truncated Burau cubic with an MWW skein-lasagna evaluation.
 Mixed \(Z\), relative \(\xi\), raw \(\nu\), vertex-potential and
 unrestricted E9 routes are retired.
 
-The remaining undischarged external premises are E7 and E10--E13; E4 is a
-cited theorem whose ordinary-surface scope was discharged in Section 5.
+The remaining open premises include G1, the Burau--MWW comparison, E7--E10,
+and the candidate-specific identifications required by E11--E13.
 Therefore the status remains
 
 CANDIDATE_PROOF_PENDING_INDEPENDENT_REVIEW

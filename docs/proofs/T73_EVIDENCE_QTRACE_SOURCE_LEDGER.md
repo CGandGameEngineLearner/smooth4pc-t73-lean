@@ -1,9 +1,17 @@
 # MR Rees / coefficient quantum trace source ledger
 
+**Status:** `DISCHARGED BY THE PUBLIC C COMPARISON WITNESS`
+
+> The rows below are type and dependency targets.  Entries L2 and L6 are now
+> instantiated by `audit/t73_c_comparison_witness.json` and Section 7 of the
+> paper.  The ordinary representable-coefficient step is proved separately in
+> `Smooth4PC/RepresentableCoefficient.lean`.
+
 ## Scope and verdict
 
 This ledger audits the construction in `MR_REES_QUANTUM_TRACE_RESULT.md`.
-The conclusion survives, with one clarification: the Burau operator is not an
+Conditionally on the missing coefficient-bimodule equivalence, the algebraic
+construction has the following clarification: the Burau operator is not an
 internal endomorphism of the raw coefficient bimodule.  It acts after the
 universal quantum vertical-to-horizontal shadow.  The resulting composite is
 nevertheless a genuine map from the coefficient quantum trace, and its
@@ -11,10 +19,10 @@ divided cubic specializes to an ordinary MWW `HH_0` functional.
 
 ```text
 q-coefficient trace:                    CONSTRUCTED
-respect for qTr relations:              PROVED BELOW
-specialization to ordinary MWW HH0:     PROVED BELOW
+respect for qTr relations:              PROVED
+specialization to ordinary MWW HH0:     PROVED
 uniform h^3 divisibility:               PROVED ON FULL ENDPOINT TARGET
-divided ordinary functional:            PROVED BELOW
+divided ordinary functional:            PROVED
 selected cyclic submodule flat:         CONSEQUENCE, NOT PREMISE
 internal W action on raw M_R:            NOT CLAIMED
 ```

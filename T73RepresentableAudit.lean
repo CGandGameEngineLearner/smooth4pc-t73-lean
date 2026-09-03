@@ -1,0 +1,7 @@
+import Smooth4PC.RepresentableCoefficient
+
+#print axioms Smooth4PC.LinearHomAutofunctor.symm_comp_map_left
+#print axioms Smooth4PC.LinearHomAutofunctor.symm_comp_map_right
+#print axioms Smooth4PC.LinearHomAutofunctor.rawMap_to_from
+#print axioms Smooth4PC.LinearHomAutofunctor.rawMap_from_to
+#print axioms Smooth4PC.LinearHomAutofunctor.coefficientHH0Equiv_apply_mk
