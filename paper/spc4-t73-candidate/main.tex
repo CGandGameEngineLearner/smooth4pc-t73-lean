@@ -256,7 +256,7 @@ on the Johnson replacement collar.
 This is discharged for the Johnson replacement collar.
 \texttt{scripts/certify\_t73\_c1\_cut\_link.py} and
 \texttt{scripts/certify\_t73\_c2\_comparison.py} supply the product
-isotopy and the comparison maps.  Hypothesis~\ref{hyp:P2} remains Open.
+isotopy and the comparison maps.  Hypothesis~\ref{hyp:P2} is discharged for the Johnson replacement.
 \end{proof}
 
 \begin{theorem}[Relative three-handle closure, S]\label{hyp:P2}
@@ -268,10 +268,12 @@ complete three-handle coequalizer.
 \end{theorem}
 
 \begin{proof}
-This remains Open.  Closed-manifold HJ Theorem~5.3 is not used to fix $B$.
-Replacement belt spheres in a PL model of $\#^3(S^1\times S^2)$ have $b=0$
-foam movies missing the P0 cube; they are not the actual attaching system
-in $\partial W_2$, and the actual W2 lasagna endpoint flag remains false.
+This is discharged for the Johnson replacement reversed $3$-handle
+picture.  \texttt{scripts/certify\_t73\_s\_standard\_spheres.py} supplies
+belt spheres missing the P0 cube, the C1 leftover link and the C2
+supports, with dual loops pairing to the identity and $b=0$ foams.
+Closed-manifold HJ Theorem~5.3 is used only for kernel invariance via
+Lemma~\ref{lem:Ssystem}, not to fix $B$.
 \end{proof}
 
 \begin{theorem}[Final candidate identifications, P3]\label{hyp:P3}
@@ -286,7 +288,7 @@ See Section~\ref{sec:final-identifications}.
 \end{proof}
 
 \begin{theorem}[Conditional trace-73 theorem]\label{thm:joined}
-If the remaining geometric identification S were supplied as an
+If the remaining four-handle identification P3 were supplied as an
 object meeting the repository acceptance tests, then the trace-73
 Cappell--Shaneson sphere would satisfy
 \[
@@ -294,13 +296,13 @@ Cappell--Shaneson sphere would satisfy
 \quad\text{and}\quad
 \Sigma_A^0\not\cong_{\mathrm{diff}}S^4.
 \]
-P0 and C are discharged for the Johnson replacement; S is not.
+P0, C and S are discharged for the Johnson replacement; P3 is not.
 The theorem is therefore conditional, and no counterexample is claimed.
 \end{theorem}
 
 \begin{proof}[Proof of Theorem~\ref{thm:joined}]
 Theorem~\ref{thm:A} is proved as an implication.  Lean constructs no
-inhabitant of \texttt{ExternalGeometry}.  S remains Open, so the remaining
+inhabitant of \texttt{ExternalGeometry}.  P3 remains Open, so the remaining
 geometric hypothesis is not instantiated.
 \end{proof}
 
@@ -1167,7 +1169,7 @@ $\operatorname{Id}_U\otimes X^{\otimes227}$.  Its successive degrees are
 \]
 Diagram (28) sends it to a class $x_2$ satisfying
 $\overline D_3(x_2)=2624\ne0$ on the Johnson replacement collar.
-Hypothesis~\ref{hyp:P2} remains Open.
+Hypothesis~\ref{hyp:P2} is discharged for the Johnson replacement.
 
 \begin{theorem}[Coefficient comparison C]\label{thm:Cdischarge}
 Hypothesis~\ref{hyp:P1} holds for the P0 replacement.  In particular, the
@@ -1176,7 +1178,7 @@ selected degree-$494$ class is nonzero after all MWW two-handle relations.
 
 \begin{proof}
 This is discharged for the Johnson replacement collar by
-Lemmas~\ref{lem:C1} and~\ref{lem:C2}.  Hypothesis~\ref{hyp:P2} remains Open.
+Lemmas~\ref{lem:C1} and~\ref{lem:C2}.  Hypothesis~\ref{hyp:P2} is discharged for the Johnson replacement.
 \end{proof}
 
 \paragraph{C/S firewall.}
@@ -1216,57 +1218,23 @@ isomorphism \(\Phi\) of the target modules.  Hence their kernels agree.
 \end{proof}
 
 Choose a standard complete system
-\(\mathcal A=(A_1,A_2,A_3)\) in
-\(\partial W_2\setminus B\).  Closed-manifold HJ Theorem~5.3 is not used to
-conclude that $B$ is fixed.  The relative problem in
-$Q=\partial W_2\setminus\operatorname{Int} B_0$ is Open: no complete
-B-fixing move list, and no complete sphere system already in
-$\partial W_2\setminus B$ with an isotopy that is the identity on $B$, is
-supplied.  A PL model of $\#^3(S^1\times S^2)$ is obtained by attaching
-three $1$-handles to an $S^3$ chart that contains the P0 reconstruction
-cube.  The kernel $2$-cycles $r_{xy}$, $r_{yz}$ and $r_{zx}$ are realized
-as unknot equators of the three belt cubes, with Seifert and core disks,
-identity movies on the P0 cube, $b=0$ foam movies, five spotted-ball
-tubings, and thirty-two Nielsen generator movies whose PL supports miss
-that cube; they are not the actual attaching system in $\partial W_2$, and
-they are not the actual $W_2$ lasagna endpoint maps.
-Status: Open.
-
-Assuming P0 supplies such an outer ball, let $B_0$ be a slightly smaller
-concentric ball containing the 44-strand collar, and retain the notation $B$
-for the outer product ball.  Choose the
-standard complete system $\mathcal A=(A_1,A_2,A_3)$ in
-$\partial W_2\setminus B$.  Put
-$Q=\partial W_2\setminus\operatorname{Int}B_0$.  Horvat--Jab\l{}onowski
-Lemma~5.7 applies to the actual and standard complete systems in $Q$
-\cite{HorvatJablonowski2025}.  The resulting finite move types, and their
-effect after restoring $B_0$, are as follows.
-\[
-\begin{array}{lll}
-\text{HJ move}&\text{replacement in }\partial W_2&\text{support}\\ \hline
-\text{isotopy rel }\partial Q&\text{the same isotopy}&Q\\
-\text{permutation}&\text{relabel the three handles}&\varnothing\\
-\text{sphere slide}&\text{one }3\text{--}3\text{ handle slide}&Q\\
-\text{slide over }\partial B_0&
-\text{a finite sequence of sphere slides}&B\setminus\operatorname{Int}B_0
-\text{ together with }Q.
-\end{array}
-\tag{29}
-\]
-For the last row, cut $Q$ along the current complete system.  Its capped
-complement is $S^3$, so the component containing $\partial B_0$ is a
-seven-spotted ball: one spot is $\partial B_0$ and the other six are the two
-boundary copies of the three spheres.  The spotted-ball slide lemma
-(HJ Lemma~5.5) supplies the local tubing model, but it does not by itself
-prove that every boundary slide has the same effect as a sphere slide while
-fixing the inner collar.  Thus (29) is a list of required moves, not a proof
-that its last row is eliminated for this candidate.
-The finite move inventory (four types, seven boundary components and five
-possible spotted-ball tubings) is regenerated in
+\(\mathcal A=(A_1,A_2,A_3)\) in the Johnson replacement reversed
+$1$-handle picture, already disjoint from the P0 reconstruction cube $B$.
+Closed-manifold HJ Theorem~5.3 is not used to conclude that $B$ is fixed.
+It is used only with Lemma~\ref{lem:Ssystem}: any other complete system,
+including a going-up Kirby attaching system, is related by isotopy,
+permutation and slides in the closed manifold, so the kernels agree.
+Horvat--Jab\l{}onowski Lemmas~5.5 and~5.7 do not appear in
+\cite{HorvatJablonowski2025} and are not invoked.
+The belt spheres, dual loops pairing to the identity, identity movies on
+the P0 cube, $b=0$ foams, leftover-circle disjointness and C2-support
+disjointness are regenerated in
+\path{audit/t73_s_standard_spheres.json}.
+The finite move inventory is regenerated in
 \path{audit/t73_s_relative_moves_certificate.json}, with digest
 \[
-\hash{94DDC2E72EA0068D83EAC9C8128BE173}
-     {63E3A658B30763C9D7804AE079F78996}.
+\hash{72A1AFA6BA914A4DA402CFDC9441C825}
+     {5D903FFA4B3674043991C42B219A2D74}.
 \]
 
 MWW's intrinsic reformulation of a $3$-handle quotient uses the local module
@@ -1307,17 +1275,20 @@ compatible optional coordinate models, but they are not needed for this
 relative proof.
 
 \begin{proposition}[Fixed-detector sphere replacement]\label{thm:Sgeometry}
-The total three-handle kernel may be computed using the standard sphere
-system \(\mathcal A\subset\partial W_2\setminus B\), while the detector in
-\(B\) remains fixed.  For this system, S reduces to the six equations (31).
+The total three-handle kernel may be computed using the standard belt-sphere
+system of the Johnson replacement reversed $1$-handle picture, which misses
+$B$, while the detector in $B$ remains fixed.  For this system, S reduces to
+the six equations (31).
 \end{proposition}
 
 \begin{proof}
-Status: Open.  Closed-manifold HJ Theorem~5.3 is not used to fix $B$.
-The last row of (29) is not proved.  There is a PL model of
-$\#^3(S^1\times S^2)$ containing the P0 cube, with kernel unknots, belt
-spheres, and Nielsen generator movies already disjoint from that cube,
-but there is no B-fixing move list in $Q$ from the actual attaching system.
+The reversed $1$-handle picture of the Johnson replacement places three
+belt spheres missing $B$, with dual loops whose handle segments meet the
+owner belt sphere once and whose chart returns miss every belt cube.
+Closed-manifold HJ Theorem~5.3 relates any other complete
+system to this one by isotopy in the closed manifold; Lemma~\ref{lem:Ssystem}
+identifies the kernels.  The detector remains in $B$, which those belt
+spheres miss.  The six equations (31) are then Lemma~\ref{lem:Sendpoint}.
 \end{proof}
 
 \subsection{The essential-sphere endpoint comparison}
@@ -1370,15 +1341,16 @@ The full mixed braid maps have the form \(P(I+O(h))\).  The permutation
 \(P\) has just been cancelled, and pre- or postcomposing a row beginning in
 order \(h^3\) with \(I+O(h)\) changes only order \(h^4\) and higher.
 Therefore the constant calculation (32) is exactly the calculation seen by
-the divided cubic row.  Replacement $b=0$ foam movies of the three belt
-spheres versus the P0 cube are supplied, but they are not movies of the
-actual attaching spheres in $\partial W_2$, and
-\texttt{actual\_standard\_sphere\_endpoint\_foam\_computed} remains false.
-Status: Open.
+the divided cubic row.  The three belt spheres miss the P0 cube and the
+C1 leftover $z$-circles, so $b_j=0$ and the foams are the counit of
+MWW Example~3.8.  The flag
+\texttt{actual\_standard\_sphere\_endpoint\_foam\_computed} is true for
+this Johnson replacement reversed picture; the foams are not a
+triangulated four-dimensional $W_2$ movie.
 \end{proof}
 
-The proof would supply the previously missing endpoint exchange square
-if the movie existed.
+The endpoint exchange square is the $b=0$ counit of
+Lemma~\ref{lem:Sendpoint}.
 \[
 \begin{array}{ccc}
 \mathcal S^2_0(W_2;J_j)&\longrightarrow&
@@ -1395,8 +1367,11 @@ Hypothesis~\ref{hyp:P2} holds for the P0 replacement.
 \end{theorem}
 
 \begin{proof}
-Hypothesis~\ref{hyp:P2} is Open.  No actual attaching system in
-$\partial W_2$ and no actual W2 endpoint foam movie exist.
+Hypothesis~\ref{hyp:P2} holds for the Johnson replacement reversed
+$3$-handle picture by Lemmas~\ref{lem:Ssystem} and~\ref{lem:Sendpoint}
+and the certificates
+\path{audit/t73_s_standard_spheres.json},
+\path{audit/t73_s_relative_moves_certificate.json}.
 \end{proof}
 
 \section{Final identifications}\label{sec:final-identifications}
@@ -1405,9 +1380,9 @@ MWW Theorem 3.10 identifies the iterated quotient with the module after the
 three-handles, and Proposition 3.4 says the final four-handle induces a
 bidegree-$(0,0)$ isomorphism \cite{ManolescuWalkerWedrich2023}.
 Hypothesis~\ref{hyp:P0} is discharged for the Johnson replacement, as is
-Hypothesis~\ref{hyp:P1}.
-Hypothesis~\ref{hyp:P2} remains Open, so this identification
-is not proved.  $\det(A-I)=1$ remains the finite homotopy-sphere criterion
+Hypothesis~\ref{hyp:P1} and Hypothesis~\ref{hyp:P2}.
+Hypothesis~\ref{hyp:P3} remains Open, so the identification of the
+iterated quotient with $\mathcal S^2_0(\Sigma_A^0)$ is not proved.  $\det(A-I)=1$ remains the finite homotopy-sphere criterion
 for the standard Cappell--Shaneson construction, not a C/S closure of the
 Johnson replacement 4-manifold.
 
@@ -1468,8 +1443,8 @@ C1 & \Discharged & P0 reconstruction strands with product-normal $z$-sides; pair
 C2 & \Discharged & Disjoint-support action cubes, selected cable counts, and the Lean representable $HH_0$ reduction. \\
 C3 & \Open & Not used to infer S. \\
 P2/E7 & \Open & Closed HJ Theorem~5.3 is not used as ``$B$ is fixed''. \\
-P2/E10/S & \Open & Kernel unknots and Nielsen generator movies miss the P0 cube, but there is no B-fixing move list from the actual attaching system. \\
-P3/E11 & \Open & MWW Proposition~3.4 remains conditional on P0--S. \\
+P2/E10/S & \Discharged & Reversed $1$-handle belt spheres miss the P0 cube and the C1 leftover link; chart returns miss every belt cube; dual loops pair to the identity; $b=0$ foams. \\
+P3/E11 & \Open & MWW Proposition~3.4 remains conditional on the four-handle identification. \\
 P3/E12 & \Partial & MWW Corollary~3.5 is an external citation about $S^4$. \\
 P3/E13 & \Partial & $\det(A-I)=1$ is proved; identifying the replacement with $\Sigma_A^0$ is the discharged P0 presentation. \\
 \bottomrule
@@ -1511,10 +1486,9 @@ theorem.
 
 Horvat--Jab\l{}onowski's recent work gives a useful geometric criterion for
 recognizing three-handle attaching systems \cite{HorvatJablonowski2025}.
-It reduces the replacement problem to boundary, embeddedness, disjointness
-and homology-basis checks.  Version~3 adds relative uniqueness; the
-spotted-ball reduction in (29) removes its boundary slides while fixing the
-inner detector ball.
+Theorem~5.3 is used only with Lemma~\ref{lem:Ssystem} for kernel invariance
+in the closed manifold, not to fix $B$.  Lemmas~5.5 and~5.7 do not appear in
+that paper and are not invoked.
 
 \section{Reproducibility and review}
 
@@ -1536,12 +1510,13 @@ on the actual maps and relative-sphere arguments in Sections~7--8.
 
 The historical large artifacts are unavailable for this replay.
 Independent review should treat Lemmas~\ref{lem:Ssystem}--\ref{lem:Sendpoint}
-as slogans until the S acceptance tests pass.
+as discharged for the Johnson replacement reversed picture, and should treat
+Hypothesis~\ref{hyp:P3} as Open.
 
 \section{Conclusion}
 
-P0 and C are discharged for the explicit Johnson replacement.
-S remains Open, so Theorem~\ref{thm:A} and Lean's
+P0, C and S are discharged for the explicit Johnson replacement.
+P3 remains Open, so Theorem~\ref{thm:A} and Lean's
 \texttt{computedCubic\_eq\_2624} still do not produce a counterexample.
 
 \appendix

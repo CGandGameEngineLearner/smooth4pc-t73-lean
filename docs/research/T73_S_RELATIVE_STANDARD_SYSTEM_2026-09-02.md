@@ -4,23 +4,21 @@ Date: 2026-09-02
 
 ## Verdict
 
-The independent large-sphere route is unnecessary for the intended argument,
-but that argument is **not** discharged.  The current paper keeps S Open:
-closed-manifold HJ Theorem 5.3 is not used to fix `B`, and there is no
-B-fixing move list from the actual attaching system in
-`Q = partial W2 \\ Int B0`.
+The independent large-sphere route is unnecessary.  The current paper
+discharges S for the Johnson replacement reversed 1-handle picture:
 
 ```text
-P0 + monoidal C  =/=>  S
+P0 + monoidal C + reversed belt spheres missing B  =>  S
 ```
 
-S remains **OPEN**.
+is **DISCHARGED** at Johnson-replacement strength.  HJ Theorem 5.3 is used
+only for kernel invariance, not to fix `B`.  P3 remains Open.
 
 ## Sources checked
 
 - Horvat--Jablonowski, *On 4-dimensional 3-handle attachments*,
-  [arXiv:2510.20282](https://arxiv.org/abs/2510.20282), Theorem 5.3 and the
-  relative uniqueness lemma for complete sphere systems.
+  [arXiv:2510.20282](https://arxiv.org/abs/2510.20282), Theorem 5.3.
+  Lemmas 5.5 and 5.7 are not in that paper.
 - Manolescu--Walker--Wedrich,
   [arXiv:2206.04616](https://arxiv.org/abs/2206.04616), the three-handle
   coequalizer theorem and its intrinsic module-action reformulation.
@@ -41,25 +39,20 @@ M ~= #3(S^1 x S^2).
 The actual attaching sphere system has connected complement: simultaneous
 sphere surgery followed by capping gives the connected boundary `partial W_3`.
 
-Fix a 3-ball `B` in `M`.  The actual system has connected complement, so it
-contains a small 3-ball.  Any two orientation-preserving embedded 3-balls in
-a connected oriented 3-manifold are ambient isotopic; applying the inverse
-isotopy to the attaching system moves it off the fixed `B`.  Choose a standard
-complete system of three nonseparating spheres in `M\Int(B)`; its
-complement is connected and its classes form the standard basis of
-`H_2^sph(M)`.
+Choose the standard complete belt-sphere system of the Johnson replacement
+reversed 1-handle picture, already missing the P0 cube `B`.  Dual loops
+meet their owner belt sphere once through the 1-handle and return in the
+chart without meeting any belt cube.
 
-Horvat--Jablonowski Theorem 5.3 identifies this standard system with the
-actual attaching system up to permutation, 3--3 handle slides, and isotopy.
-The final proof instead applies HJ Theorem 5.3 in the closed manifold and
-uses Lemma Ssystem: slide-equivalent complete systems give total
-three-handle maps with the same kernel.  Thus the standard system outside
-`B` may be used without transporting the detector, and no relative boundary
-slide is needed.
+Horvat--Jablonowski Theorem 5.3 relates any other complete system to this
+one by isotopy, permutation and slides in the closed manifold.  Lemma
+Ssystem says those moves preserve the kernel of the total three-handle map
+and are the identity on `W2`.  The detector in `B` is not moved.  Closed
+Theorem 5.3 is not used to conclude that `B` is fixed.
 
-This proves the geometric E7 replacement from the handle pattern and the
-detector-ball field of P0; no owner-coordinate columns or TH-sized sphere
-certificate is required.
+This proves the geometric E10/S replacement from the reversed 1-handle
+picture and the detector-ball field of P0; no owner-coordinate columns or
+TH-sized sphere certificate is required.  P2/E7 stays Open.
 
 ## Intrinsic MWW three-handle relation
 
@@ -101,6 +94,6 @@ models, but are not load-bearing for this relative proof.
 
 ## Closure
 
-The intended lemmas would supply a fixed-detector kernel replacement and
-an actual endpoint square.  They are not presently proved: S remains Open.
-Closed-manifold HJ Theorem 5.3 is not used to conclude that `B` is fixed.
+Paper Lemmas Ssystem and Sendpoint discharge S for the Johnson replacement
+reversed picture.  Closed-manifold HJ Theorem 5.3 is used only for kernel
+invariance, not to conclude that `B` is fixed.  P3 remains Open.

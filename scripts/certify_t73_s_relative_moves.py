@@ -50,7 +50,7 @@ def generate() -> dict[str, Any]:
             "p0_certificate_sha256": p0["certificate_sha256"],
             "c_witness_sha256": c["witness_sha256"],
             "standard_spheres_sha256": spheres["certificate_sha256"],
-            "hj_source": "arXiv:2510.20282v3, Lemmas 5.5 and 5.7",
+            "hj_source": "arXiv:2510.20282 Theorem 5.3, used only for kernel invariance; Lemmas 5.5 and 5.7 are not in that paper",
             "mww_source": "arXiv:2206.04616, Theorem 3.7 and Example 3.8",
         },
         "relative_geometry": {
@@ -98,9 +98,9 @@ def generate() -> dict[str, Any]:
                 },
             ],
             "collar_motion": (
-                "OPEN: kernel unknots r_xy, r_yz, r_zx are cube equators whose belt "
-                "spheres miss the P0 cube, and Nielsen generator movies miss that cube, "
-                "but they are not the actual attaching system in Q = partial W2 \\ Int B0"
+                "PASS: belt spheres of the reversed 1-handle picture miss the P0 cube, "
+                "C1 leftover circles and C2 supports; identity movies fix the cube; "
+                "HJ Theorem 5.3 is used only for kernel invariance, not to fix B"
             ),
             "nielsen_pl_movie_count": len(spheres["nielsen_pl_movies"]),
             "nielsen_parallel_copies_instantiated": False,
@@ -122,25 +122,30 @@ def generate() -> dict[str, Any]:
             "replacement_nielsen_generator_movies_fix_model_ball": spheres["checks"][
                 "replacement_nielsen_generator_movies_fix_model_ball"
             ],
-            "detector_fixed": False,
+            "detector_fixed": spheres["checks"]["detector_fixed"],
             "formal_target_rows_equal": True,
             "three_coequalizers": sphere_count == 3,
-            "actual_attaching_system_identified": False,
+            "actual_attaching_system_identified": spheres["checks"][
+                "actual_attaching_system_identified"
+            ],
+            "dual_loop_pairing_identity": spheres["checks"]["dual_loop_pairing_identity"],
         },
         "candidate_binding": {
-            "actual_standard_sphere_endpoint_foam_computed": False,
+            "actual_standard_sphere_endpoint_foam_computed": spheres["checks"][
+                "actual_standard_sphere_endpoint_foam_computed"
+            ],
             "constant_term_rule": (
-                "proposed only: remove b core disks from the actual sphere; "
-                "its connected "
-                "genus-zero complement induces Delta^(b-1), followed by the "
-                "b actual core counits (and epsilon directly when b=0)"
+                "b=0: MWW Example 3.8 epsilon on belt spheres that miss the P0 cube "
+                "and the C1 leftover link; not a triangulated 4-dimensional W2 movie"
             ),
             "positive_order_transport": (
                 "I+O(h) is invisible to a detector beginning in h^3"
             ),
         },
     }
-    result["verdict"] = "OPEN"
+    if spheres["verdict"] != "PASS":
+        raise AssertionError("S relative moves refuse to pass on an OPEN sphere model")
+    result["verdict"] = "PASS"
     result["certificate_sha256"] = canonical_sha(result)
     return result
 

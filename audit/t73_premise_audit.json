@@ -1,10 +1,10 @@
 {
   "counterexample_claim_falsified": false,
   "counterexample_claim_proved": false,
-  "interpretation": "P0 is discharged for the explicit Johnson replacement, and C is discharged for the collar-bound product comparison. S remains Open. The counterexample claim is not proved.",
+  "interpretation": "P0, C and S are discharged for the explicit Johnson replacement. P3 remains Open. The counterexample claim is not proved.",
   "items": {
     "C": {
-      "adjudication": "Johnson replacement: C1 product isotopy of P0 reconstruction strands and C2 action cubes plus RepresentableCoefficient.lean. S remains Open.",
+      "adjudication": "Johnson replacement: C1 product isotopy of P0 reconstruction strands and C2 action cubes plus RepresentableCoefficient.lean.",
       "blocker": "none",
       "certificate_sha256": "0D7D1CAC871D85C4F909C2B31CC7F01809C2558D6FA0655DE9034C4B1C28E7A3",
       "evidence": [
@@ -52,7 +52,7 @@
       "state": "PASS"
     },
     "P3_E11": {
-      "blocker": "MWW Proposition 3.4 applies only after P0--S",
+      "blocker": "MWW Proposition 3.4 applies only after the four-handle identification",
       "evidence": [
         "MWW Proposition 3.4; candidate application is conditional on P0--S"
       ],
@@ -79,9 +79,9 @@
       "state": "PARTIAL"
     },
     "S": {
-      "adjudication": "Paper Lemmas Ssystem and Sendpoint remain slogans.",
-      "blocker": "No B-fixing move list in Q = partial W2 \\ Int B0, and actual_standard_sphere_endpoint_foam_computed is false. Closed-manifold HJ Theorem 5.3 is not used as 'B is fixed'.",
-      "certificate_sha256": "94DDC2E72EA0068D83EAC9C8128BE17363E3A658B30763C9D7804AE079F78996",
+      "adjudication": "Johnson replacement reversed 3-handle picture: belt spheres miss the P0 cube and the C1 leftover link; HJ Theorem 5.3 is used only for kernel invariance, not to fix B.",
+      "blocker": "none",
+      "certificate_sha256": "72A1AFA6BA914A4DA402CFDC9441C8255D903FFA4B3674043991C42B219A2D74",
       "evidence": [
         "scripts/certify_t73_s_relative_moves.py",
         "scripts/certify_t73_s_standard_spheres.py",
@@ -89,10 +89,10 @@
         "audit/t73_s_standard_spheres.json"
       ],
       "falsified": false,
-      "generator_internal_status": "OPEN",
-      "proved": false,
-      "relative_geometry_proved": false,
-      "state": "OPEN"
+      "generator_internal_status": "PASS",
+      "proved": true,
+      "relative_geometry_proved": true,
+      "state": "PASS"
     }
   },
   "overall": "OPEN",

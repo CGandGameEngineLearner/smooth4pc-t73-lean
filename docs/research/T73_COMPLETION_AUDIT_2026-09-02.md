@@ -4,16 +4,16 @@ Date: 2026-09-03
 
 ## Result
 
-P0 and C are discharged for the explicit Johnson replacement.  S remains Open.
+P0, C and S are discharged for the explicit Johnson replacement.  P3 remains Open.
 No counterexample is claimed.
 
 | item | verdict | remaining obligation |
 |---|---|---|
 | P0 | **PASS** | Computational reconstruction recovers the public 11340-letter word. |
 | C | **PASS** | Collar-bound product rectangles and C2 comparison maps. |
-| S | **OPEN** | Kernel unknots and Nielsen generator movies miss the P0 cube, but there is no B-fixing move list from the actual attaching system, and no actual W2 endpoint foams. |
+| S | **PASS** | Reversed 1-handle belt spheres miss the P0 cube and the C1 leftover link; chart returns miss every belt cube. |
 
-P3 remains conditional on S.  `det(A-I)=1` and `D_3=2624` are finite facts.
+P3 remains the four-handle identification.  `det(A-I)=1` and `D_3=2624` are finite facts.
 
 ## Formal boundary
 

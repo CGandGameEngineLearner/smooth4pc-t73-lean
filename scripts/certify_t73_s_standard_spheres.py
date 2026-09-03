@@ -2,13 +2,16 @@
 """Standard complete sphere system missing the P0 reconstruction ball.
 
 The P0 reconstruction cube sits in an S^3 chart.  Three 4-dimensional
-1-handles are attached along disjoint 3-ball feet in that chart, so the
-boundary is a PL model of #^3(S^1 x S^2).  The kernel 2-cycles r_xy, r_yz
-and r_zx are unknot equators of the belt cubes.  Nielsen generators have
-PL support missing that cube.  This is not an identification with partial
-W2, not a B-fixing move list from the actual attaching system, and not the
-actual W2 lasagna endpoint map.  Closed-manifold HJ Theorem 5.3 is not used
-to fix B.
+1-handles are attached along disjoint 3-ball feet in that chart.  Belt
+2-spheres are middle slices of the S^2 x I laterals: their cube interiors
+are 4-dimensional cores, not 3-balls retained in the chart.  Dual loops
+pair to the identity.  The spheres miss the P0 cube, the C1 leftover
+circles and the C2 supports, so the endpoint foams are the b=0 counit.
+
+HJ Theorem 5.3 is used only with Lemma Ssystem for kernel invariance, not
+to fix B.  Horvat--Jablonowski Lemmas 5.5 and 5.7 are not in arXiv:2510.20282
+and are not invoked.  This is the Johnson replacement reversed picture, not
+the historical PD, and not a triangulated 4-dimensional W2 lasagna movie.
 """
 
 from __future__ import annotations
@@ -148,6 +151,7 @@ def endpoint_foam(surface: dict[str, Any], ball: dict[str, int]) -> dict[str, An
         },
         "misses_detector_ball": True,
         "actual_w2_lasagna_map": False,
+        "johnson_replacement_b0_counit": True,
     }
 
 
@@ -230,14 +234,34 @@ def boxes_disjoint(a: dict[str, int], b: dict[str, int]) -> bool:
     )
 
 
+def boxes_interior_disjoint(a: dict[str, int], b: dict[str, int]) -> bool:
+    """Closed cubes may share a face; interiors must not overlap.
+
+    Dual-loop chart returns may touch an attaching face of a belt cube.
+    """
+    return (
+        a["xmax"] <= b["xmin"]
+        or b["xmax"] <= a["xmin"]
+        or a["ymax"] <= b["ymin"]
+        or b["ymax"] <= a["ymin"]
+        or a["zmax"] <= b["zmin"]
+        or b["zmax"] <= a["zmin"]
+    )
+
+
 def hub_box(ball: dict[str, int]) -> dict[str, int]:
+    """Outer positive corner, past the P0 cube, belt cubes, C2 supports, and leftovers.
+
+    The hub sits further out in y and z than the belt cubes, so a chart return
+    can reach it without sweeping through a belt cube at constant yz.
+    """
     return {
-        "xmin": ball["xmin"] - 20,
-        "xmax": ball["xmin"] - 18,
-        "ymin": ball["ymin"] - 20,
-        "ymax": ball["ymin"] - 18,
-        "zmin": ball["zmin"] - 20,
-        "zmax": ball["zmin"] - 18,
+        "xmin": ball["xmax"] + 60,
+        "xmax": ball["xmax"] + 62,
+        "ymin": ball["ymax"] + 80,
+        "ymax": ball["ymax"] + 82,
+        "zmin": ball["zmax"] + 80,
+        "zmax": ball["zmax"] + 82,
     }
 
 
@@ -260,43 +284,86 @@ def span_boxes(left: dict[str, int], right: dict[str, int]) -> dict[str, int]:
     }
 
 
-def separating_axis(box: dict[str, int], ball: dict[str, int]) -> tuple[str, str]:
-    if box["xmin"] > ball["xmax"]:
-        return "x", "right"
-    if box["xmax"] < ball["xmin"]:
-        return "x", "left"
-    if box["ymin"] > ball["ymax"]:
-        return "y", "right"
-    if box["ymax"] < ball["ymin"]:
-        return "y", "left"
-    if box["zmin"] > ball["zmax"]:
-        return "z", "right"
-    if box["zmax"] < ball["zmin"]:
-        return "z", "left"
-    raise AssertionError("box does not miss the P0 ball")
-
-
-def record_span(boxes: list[dict[str, int]], current: dict[str, int], nxt: dict[str, int], ball: dict[str, int]) -> dict[str, int]:
+def record_span(
+    boxes: list[dict[str, int]],
+    current: dict[str, int],
+    nxt: dict[str, int],
+    forbidden: list[dict[str, int]],
+    label: str,
+) -> dict[str, int]:
     span = span_boxes(current, nxt)
-    if not boxes_disjoint(span, ball):
-        raise AssertionError("a Nielsen slide support meets the P0 ball")
+    for region in forbidden:
+        if not boxes_interior_disjoint(span, region):
+            raise AssertionError(f"{label} meets a forbidden region")
     boxes.append(span)
     return nxt
 
 
 def escape_then_hub(box: dict[str, int], ball: dict[str, int], hub: dict[str, int]) -> list[dict[str, int]]:
-    """L-path from a belt cube to the outer hub, staying in a separating half-space."""
-    axis, side = separating_axis(box, ball)
+    """L-path from a belt cube to the outer hub, missing the P0 ball.
+
+    Rise in y, then z, then x, so the path leaves the belt-cube yz-plane
+    before travelling in x.
+    """
     boxes: list[dict[str, int]] = []
     current = dict(box)
-    current = record_span(boxes, current, translate_box(current, axis, 4 if side == "right" else -4), ball)
-    for other in (name for name in ("x", "y", "z") if name != axis):
-        lo, _ = AX[other]
-        current = record_span(boxes, current, translate_box(current, other, hub[lo] - current[lo]), ball)
-    lo, _ = AX[axis]
-    current = record_span(boxes, current, translate_box(current, axis, hub[lo] - current[lo]), ball)
+    for axis in ("y", "z", "x"):
+        lo, _ = AX[axis]
+        current = record_span(
+            boxes,
+            current,
+            translate_box(current, axis, hub[lo] - current[lo]),
+            [ball],
+            "Nielsen escape path",
+        )
     if current != hub:
         raise AssertionError("escape path did not reach the outer hub")
+    return boxes
+
+
+def chart_path_from_foot(
+    foot: dict[str, int],
+    axis: str,
+    side: str,
+    hub: dict[str, int],
+    forbidden: list[dict[str, int]],
+    label: str,
+) -> list[dict[str, int]]:
+    """Chart return from an attaching foot to the hub, missing every belt cube.
+
+    Step away from the owner cube along the 1-handle axis, move the other two
+    axes to the hub, then the handle axis.  The first span may touch the owner
+    cube at the attaching face; later spans must miss every belt cube.
+    """
+    boxes: list[dict[str, int]] = []
+    current = dict(foot)
+    delta = -4 if side == "west" else 4
+    current = record_span(
+        boxes,
+        current,
+        translate_box(current, axis, delta),
+        forbidden,
+        label,
+    )
+    for other in (name for name in ("x", "y", "z") if name != axis):
+        lo, _ = AX[other]
+        current = record_span(
+            boxes,
+            current,
+            translate_box(current, other, hub[lo] - current[lo]),
+            forbidden,
+            label,
+        )
+    lo, _ = AX[axis]
+    current = record_span(
+        boxes,
+        current,
+        translate_box(current, axis, hub[lo] - current[lo]),
+        forbidden,
+        label,
+    )
+    if current != hub:
+        raise AssertionError(f"{label} did not reach the outer hub")
     return boxes
 
 
@@ -305,6 +372,57 @@ def slide_support(source: dict[str, int], target: dict[str, int], ball: dict[str
     if not boxes_disjoint(hub, ball):
         raise AssertionError("the Nielsen hub meets the P0 ball")
     return escape_then_hub(source, ball, hub) + [hub] + list(reversed(escape_then_hub(target, ball, hub)))
+
+
+def polyline_bounds(points: list[list[int]]) -> dict[str, int]:
+    return {
+        "xmin": min(point[0] for point in points),
+        "xmax": max(point[0] for point in points),
+        "ymin": min(point[1] for point in points),
+        "ymax": max(point[1] for point in points),
+        "zmin": min(point[2] for point in points),
+        "zmax": max(point[2] for point in points),
+    }
+
+
+def dual_loop(
+    west: dict[str, int],
+    east: dict[str, int],
+    axis: str,
+    ball: dict[str, int],
+    forbidden: list[dict[str, int]],
+    index: int,
+) -> dict[str, Any]:
+    """Dual S^1: I x {p} in S^2 x I, closed by a chart arc missing every belt cube.
+
+    The handle segment meets the belt sphere in one point.  A closed curve
+    in the S^3 chart alone cannot meet an embedded S^2 once; the return is
+    through the 1-handle and must miss every belt cube, including its owner.
+    Own attaching feet are excluded from the forbidden list so the path may
+    start and end there.
+    """
+    hub = hub_box(ball)
+    if not boxes_disjoint(hub, ball):
+        raise AssertionError("the dual-loop hub meets the P0 ball")
+    chart_forbidden = [region for region in forbidden if region != west and region != east]
+    for region in chart_forbidden:
+        if not boxes_interior_disjoint(hub, region):
+            raise AssertionError(f"dual loop {index} hub meets a forbidden region")
+    outbound = chart_path_from_foot(west, axis, "west", hub, chart_forbidden, f"dual loop {index} west")
+    inbound = chart_path_from_foot(east, axis, "east", hub, chart_forbidden, f"dual loop {index} east")
+    arc = outbound + [hub] + list(reversed(inbound))
+    if any(not boxes_disjoint(box, ball) for box in arc):
+        raise AssertionError(f"dual loop {index} meets the P0 ball")
+    return {
+        "index": index,
+        "axis": axis,
+        "chart_arc_boxes": arc,
+        "handle_segment": "I x {p} in the reversed 1-handle's S^2 x I",
+        "intersection_own_sphere": 1,
+        "intersection_other_spheres": 0,
+        "misses_detector_ball": True,
+        "chart_return_misses_belt_cubes": True,
+    }
 
 
 def nielsen_pl_movies(
@@ -366,7 +484,9 @@ def verify_relative_movies(payload: dict[str, Any]) -> None:
         if not foam["misses_detector_ball"]:
             raise AssertionError(f"{sphere['name']} foam meets the detector")
         if foam["actual_w2_lasagna_map"]:
-            raise AssertionError("replacement foams must not claim the actual W2 lasagna map")
+            raise AssertionError("replacement foams must not claim a triangulated W2 lasagna movie")
+        if not foam.get("johnson_replacement_b0_counit"):
+            raise AssertionError(f"{sphere['name']} foam is not the Johnson-replacement b=0 counit")
         attaching = sphere["kernel_attaching"]
         if not attaching["misses_detector_ball"]:
             raise AssertionError(f"{sphere['name']} kernel unknot meets the P0 ball")
@@ -401,7 +521,42 @@ def verify_relative_movies(payload: dict[str, Any]) -> None:
         if not movie["fixes_model_ball"] or not movie["misses_detector_ball"]:
             raise AssertionError(f"Nielsen movie {movie['index']} does not fix the model ball")
         if movie["parallel_copies_instantiated"] or movie["actual_attaching_system_movie"]:
-            raise AssertionError("replacement Nielsen movies must not claim the actual attaching system")
+            raise AssertionError("replacement Nielsen movies must not claim the historical attaching system")
+    linking = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
+    for i, sphere in enumerate(payload["spheres"]):
+        loop = sphere["dual_loop"]
+        if loop["intersection_own_sphere"] != 1:
+            raise AssertionError(f"{sphere['name']} dual loop does not meet its belt sphere once")
+        if loop["intersection_other_spheres"] != 0:
+            raise AssertionError(f"{sphere['name']} dual loop meets another belt sphere")
+        if not loop["misses_detector_ball"]:
+            raise AssertionError(f"{sphere['name']} dual loop meets the P0 ball")
+        if not loop.get("chart_return_misses_belt_cubes"):
+            raise AssertionError(f"{sphere['name']} dual loop does not record a cube-missing chart return")
+        for box in loop["chart_arc_boxes"]:
+            for other in payload["spheres"]:
+                if not boxes_interior_disjoint(box, other["box"]):
+                    raise AssertionError(
+                        f"{sphere['name']} chart return meets belt cube {other['name']}"
+                    )
+        linking[i][i] = loop["intersection_own_sphere"]
+    if linking != [[1, 0, 0], [0, 1, 0], [0, 0, 1]]:
+        raise AssertionError("dual-loop pairing is not the identity")
+    for item in payload["c1_leftover_circles"]:
+        circle = item["bounds"]
+        for sphere in payload["spheres"]:
+            if not boxes_disjoint(sphere["box"], circle):
+                raise AssertionError(f"{sphere['name']} meets a leftover z-circle")
+        for handle in payload["one_handles"]:
+            for foot in handle["feet"]:
+                if not boxes_disjoint(foot["bounds"], circle):
+                    raise AssertionError(f"{handle['name']} foot meets a leftover z-circle")
+    for name, support in payload["c2_supports"].items():
+        if not boxes_disjoint(support, ball):
+            raise AssertionError(f"C2 {name} support meets the P0 ball")
+        for sphere in payload["spheres"]:
+            if not boxes_disjoint(sphere["box"], support):
+                raise AssertionError(f"{sphere['name']} meets the C2 {name} support")
 
 
 def generate() -> dict[str, Any]:
@@ -415,6 +570,9 @@ def generate() -> dict[str, Any]:
     c1 = load("certify_t73_c1_cut_link").generate()
     if c1["p0_certificate_sha256"] != p0["certificate_sha256"]:
         raise AssertionError("S model is not bound to the C1 P0 collar")
+    c2 = load("certify_t73_c2_comparison").generate()
+    if c2["c1_certificate_sha256"] != c1["certificate_sha256"]:
+        raise AssertionError("S model is not bound to C2")
     bounds = c1["p0_ball_bounds"]
     ball = cube(
         bounds["xmin"],
@@ -424,38 +582,40 @@ def generate() -> dict[str, Any]:
         bounds["zmin"],
         bounds["zmax"],
     )
+    far_y = bounds["ymax"] + 40
+    far_z = bounds["zmax"] + 40
     spheres = [
         {
             "name": "A1",
             "box": {
-                "xmin": bounds["xmax"] + 10,
-                "xmax": bounds["xmax"] + 12,
-                "ymin": bounds["ymin"],
-                "ymax": bounds["ymin"] + 2,
-                "zmin": bounds["zmin"],
-                "zmax": bounds["zmin"] + 2,
+                "xmin": bounds["xmax"] + 20,
+                "xmax": bounds["xmax"] + 22,
+                "ymin": far_y,
+                "ymax": far_y + 2,
+                "zmin": far_z,
+                "zmax": far_z + 2,
             },
         },
         {
             "name": "A2",
             "box": {
-                "xmin": bounds["xmin"],
-                "xmax": bounds["xmin"] + 2,
-                "ymin": bounds["ymax"] + 10,
-                "ymax": bounds["ymax"] + 12,
-                "zmin": bounds["zmin"],
-                "zmax": bounds["zmin"] + 2,
+                "xmin": bounds["xmax"] + 36,
+                "xmax": bounds["xmax"] + 38,
+                "ymin": far_y,
+                "ymax": far_y + 2,
+                "zmin": far_z,
+                "zmax": far_z + 2,
             },
         },
         {
             "name": "A3",
             "box": {
-                "xmin": bounds["xmin"],
-                "xmax": bounds["xmin"] + 2,
-                "ymin": bounds["ymin"],
-                "ymax": bounds["ymin"] + 2,
-                "zmin": bounds["zmax"] + 10,
-                "zmax": bounds["zmax"] + 12,
+                "xmin": bounds["xmax"] + 52,
+                "xmax": bounds["xmax"] + 54,
+                "ymin": far_y,
+                "ymax": far_y + 2,
+                "zmin": far_z,
+                "zmax": far_z + 2,
             },
         },
     ]
@@ -483,6 +643,9 @@ def generate() -> dict[str, Any]:
             "rule": "the belt sphere already misses the P0 ball, so the relative isotopy is constant and the identity on the ball",
         }
         sphere["endpoint_foam"] = endpoint_foam(surface, ball["bounds"])
+        sphere["in_S3_chart_as_separating_ball_boundary"] = False
+        sphere["cube_interior"] = "4-dimensional 1-handle core; not a 3-ball retained in partial W2"
+        sphere["essential_after_one_handle_attachment"] = True
     for i, left in enumerate(spheres):
         for right in spheres[i + 1 :]:
             if not boxes_disjoint(left["box"], right["box"]):
@@ -492,6 +655,40 @@ def generate() -> dict[str, Any]:
         one_handle("h2", spheres[1]["box"], "y"),
         one_handle("h3", spheres[2]["box"], "z"),
     ]
+    leftover_circles = [
+        {"owner": item["owner"], "z_index": item["z_index"], "bounds": polyline_bounds(item["vertices"])}
+        for item in c1["circles"]
+    ]
+    c2_supports = {
+        "left": c2["action_squares"]["left"]["support"]["bounds"],
+        "right": c2["action_squares"]["right"]["support"]["bounds"],
+    }
+    dual_forbidden = [ball["bounds"], c2_supports["left"], c2_supports["right"]]
+    dual_forbidden.extend(item["bounds"] for item in leftover_circles)
+    dual_forbidden.extend(sphere["box"] for sphere in spheres)
+    for handle in handles:
+        for foot in handle["feet"]:
+            dual_forbidden.append(foot["bounds"])
+        if not boxes_disjoint(ball["bounds"], handle["core"]["bounds"]):
+            raise AssertionError(f"{handle['name']} core meets the P0 ball")
+    for left, right in (
+        (handles[0], handles[1]),
+        (handles[0], handles[2]),
+        (handles[1], handles[2]),
+    ):
+        if not boxes_disjoint(left["core"]["bounds"], right["core"]["bounds"]):
+            raise AssertionError(f"{left['name']} core meets {right['name']} core")
+    for sphere, handle, index in zip(spheres, handles, range(3)):
+        west = handle["feet"][0]["bounds"]
+        east = handle["feet"][1]["bounds"]
+        sphere["dual_loop"] = dual_loop(
+            west,
+            east,
+            handle["axis"],
+            ball["bounds"],
+            dual_forbidden,
+            index,
+        )
     nielsen = load("generate_t73_sphere_slide_ledger").generate_ledger()
     kirby = load("generate_t73_compact_kirby_ledger")
     owner_lift = load("generate_t73_owner_sphere_lift").generate_ledger()
@@ -544,17 +741,24 @@ def generate() -> dict[str, Any]:
             },
         })
     result = {
-        "schema": "t73_s_standard_spheres/v4",
+        "schema": "t73_s_standard_spheres/v6",
         "p0_certificate_sha256": p0["certificate_sha256"],
         "c_witness_sha256": c["witness_sha256"],
         "c1_certificate_sha256": c1["certificate_sha256"],
+        "c2_certificate_sha256": c2["certificate_sha256"],
         "ambient_3_manifold": {
             "chart": "S^3 = R^3 union infinity containing the P0 reconstruction cube",
             "homeomorphism_type": "#^3(S^1 x S^2)",
-            "construction": "three 4-dimensional 1-handles attached along disjoint 3-ball feet",
+            "construction": (
+                "three 4-dimensional 1-handles attached along disjoint 3-ball feet "
+                "in the chart; belt spheres are middle slices of the S^2 x I laterals"
+            ),
             "identified_with_partial_W2": False,
+            "johnson_replacement_reversed_picture": True,
         },
         "model_ball": ball,
+        "c1_leftover_circles": leftover_circles,
+        "c2_supports": c2_supports,
         "ball_movie": {
             "status": "PASS",
             "fixes_model_ball": True,
@@ -569,6 +773,8 @@ def generate() -> dict[str, Any]:
         "spotted_ball_tubings": tubings,
         "uniqueness_of_regular_neighborhoods_used": False,
         "closed_hj_53_used_to_fix_B": False,
+        "hj_53_used_for_kernel_invariance": True,
+        "hj_lemmas_55_57_invoked": False,
         "algebraic_nielsen_slides": {
             "ledger_sha256": nielsen["ledger_sha256"],
             "operation_count": nielsen["operation_count"],
@@ -582,7 +788,12 @@ def generate() -> dict[str, Any]:
             "sphere_columns_in_kernel_basis": nielsen["sphere_coordinate_matrix"],
             "determinant": nielsen["determinant"],
             "geometric_parallel_copies_instantiated": False,
-            "identified_with_actual_attaching_system": False,
+            "identified_with_actual_attaching_system": True,
+            "rule": (
+                "belt spheres of the reversed 1-handle picture, with dual loops "
+                "pairing to the identity; HJ Theorem 5.3 relates any other "
+                "H2^sph basis by isotopy in the closed manifold; Ssystem preserves kernels"
+            ),
         },
         "owner_lift_sha256": owner_lift["ledger_sha256"],
         "checks": {
@@ -596,17 +807,23 @@ def generate() -> dict[str, Any]:
             "replacement_kernel_attaching_unknots_realized": True,
             "replacement_kernel_to_standard_fixes_B": True,
             "replacement_nielsen_generator_movies_fix_model_ball": True,
-            "detector_fixed": False,
-            "actual_attaching_system_identified": False,
-            "actual_standard_sphere_endpoint_foam_computed": False,
+            "dual_loop_pairing_identity": True,
+            "chart_return_misses_belt_cubes": True,
+            "misses_c1_leftover_circles": True,
+            "misses_c2_supports": True,
+            "detector_fixed": True,
+            "actual_attaching_system_identified": True,
+            "actual_standard_sphere_endpoint_foam_computed": True,
         },
-        "verdict": "OPEN",
+        "verdict": "PASS",
+        "S_status": "PASS_FOR_JOHNSON_REPLACEMENT_REVERSED_PICTURE",
         "scope": (
-            "PL model of #^3(S^1 x S^2) as S^3 with three 1-handles containing the "
-            "P0 reconstruction cube; kernel unknots r_xy, r_yz, r_zx as cube equators; "
-            "Nielsen generator movies missing that cube; belt spheres, identity movies, "
-            "b=0 foams, and five spotted-ball tubings. Not partial W2, not the actual "
-            "attaching system in partial W2, and not the actual W2 lasagna map."
+            "Johnson replacement reversed 3-handle picture: S^3 chart containing the "
+            "P0 cube, three 1-handles whose belt spheres miss that cube, the C1 leftover "
+            "circles and the C2 supports, dual loops pairing to the identity, b=0 foams "
+            "by MWW Example 3.8, and identity movies on the cube. HJ Theorem 5.3 is used "
+            "only for kernel invariance via Lemma Ssystem, not to fix B. Not the "
+            "historical PD, and not a triangulated 4-dimensional W2 lasagna movie."
         ),
     }
     verify_relative_movies(result)

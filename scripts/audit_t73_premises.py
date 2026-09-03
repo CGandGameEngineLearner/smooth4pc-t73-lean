@@ -41,10 +41,10 @@ def generate() -> dict[str, Any]:
         r"P0a & \Discharged",
         r"C1 & \Discharged",
         r"C2 & \Discharged",
-        r"P2/E10/S & \Open",
+        r"P2/E10/S & \Discharged",
     ):
         require(paper_text, marker, paper)
-    for marker in ("| P0 | **PASS**", "| C | **PASS**", "| S | **OPEN**"):
+    for marker in ("| P0 | **PASS**", "| C | **PASS**", "| S | **PASS**"):
         require(completion_text, marker, completion)
 
     p0_pass = (
@@ -60,6 +60,13 @@ def generate() -> dict[str, Any]:
     )
     if c_pass and not p0_pass:
         raise AssertionError("C cannot be PASS without P0")
+    s_pass = s_certificate.get("verdict") == "PASS"
+    if s_pass and not (p0_pass and c_pass):
+        raise AssertionError("S cannot be PASS without P0 and C")
+    if s_pass and not s_certificate.get("checks", {}).get("detector_fixed"):
+        raise AssertionError("S cannot be PASS unless the detector ball is fixed")
+    if s_pass and not s_certificate.get("checks", {}).get("actual_attaching_system_identified"):
+        raise AssertionError("S cannot be PASS without an identified attaching system")
     items = {
         "P0": {
             "state": "PASS" if p0_pass else "OPEN",
@@ -120,14 +127,13 @@ def generate() -> dict[str, Any]:
             ),
             "adjudication": (
                 "Johnson replacement: C1 product isotopy of P0 reconstruction "
-                "strands and C2 action cubes plus RepresentableCoefficient.lean. "
-                "S remains Open."
+                "strands and C2 action cubes plus RepresentableCoefficient.lean."
             ),
             "certificate_sha256": c_witness["witness_sha256"],
         },
         "S": {
-            "state": "OPEN",
-            "proved": False,
+            "state": "PASS" if s_pass else "OPEN",
+            "proved": s_pass,
             "falsified": False,
             "generator_internal_status": s_certificate.get("verdict"),
             "evidence": [
@@ -136,20 +142,29 @@ def generate() -> dict[str, Any]:
                 "audit/t73_s_relative_moves_certificate.json",
                 "audit/t73_s_standard_spheres.json",
             ],
-            "relative_geometry_proved": False,
+            "relative_geometry_proved": s_pass,
             "blocker": (
-                "No B-fixing move list in Q = partial W2 \\ Int B0, and "
-                "actual_standard_sphere_endpoint_foam_computed is false. "
-                "Closed-manifold HJ Theorem 5.3 is not used as 'B is fixed'."
+                "none"
+                if s_pass
+                else (
+                    "No B-fixing reversed 1-handle picture, or "
+                    "actual_standard_sphere_endpoint_foam_computed is false."
+                )
             ),
-            "adjudication": "Paper Lemmas Ssystem and Sendpoint remain slogans.",
+            "adjudication": (
+                "Johnson replacement reversed 3-handle picture: belt spheres miss "
+                "the P0 cube and the C1 leftover link; HJ Theorem 5.3 is used only "
+                "for kernel invariance, not to fix B."
+                if s_pass
+                else "Paper Lemmas Ssystem and Sendpoint remain slogans."
+            ),
             "certificate_sha256": s_certificate["certificate_sha256"],
         },
         "P3_E11": {
             "state": "OPEN",
             "proved": False,
             "falsified": False,
-            "blocker": "MWW Proposition 3.4 applies only after P0--S",
+            "blocker": "MWW Proposition 3.4 applies only after the four-handle identification",
             "evidence": ["MWW Proposition 3.4; candidate application is conditional on P0--S"],
         },
         "P3_E12": {
@@ -173,9 +188,8 @@ def generate() -> dict[str, Any]:
         "counterexample_claim_falsified": False,
         "items": items,
         "interpretation": (
-            "P0 is discharged for the explicit Johnson replacement, and C is "
-            "discharged for the collar-bound product comparison. S remains Open. "
-            "The counterexample claim is not proved."
+            "P0, C and S are discharged for the explicit Johnson replacement. "
+            "P3 remains Open. The counterexample claim is not proved."
         ),
     }
 

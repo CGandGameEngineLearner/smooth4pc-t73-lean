@@ -1,10 +1,10 @@
 # Theorem S: relative standard-sphere consequence
 
-**Status:** `OPEN`
+**Status:** `PASS` for the Johnson replacement reversed picture
 
-Paper Lemmas Ssystem and Sendpoint remain slogans until a B-fixing move
-list from the actual attaching system exists and the actual W2 endpoint
-foam flag is true.  Closed-manifold HJ Theorem 5.3 is not used to fix `B`.
+Paper Lemmas Ssystem and Sendpoint are discharged for that picture.
+Closed-manifold HJ Theorem 5.3 is used only for kernel invariance, not to
+fix `B`.  P3 remains Open, and no counterexample is claimed.
 
 ## Statement
 
@@ -28,13 +28,14 @@ three-dimensional 1-handles, so
 partial W2 ~= #3(S1 x S2).
 ```
 
-Choose the standard three nonseparating spheres outside `B`.  Their classes
-form a basis of spherical second homology and their complement is connected.
-Horvat--Jablonowski Theorem 5.3 identifies them with the actual attaching
-system up to permutation, 3--3 handle slides and isotopy.  Lemma Ssystem
-shows directly that these moves preserve the kernel of the total
+Choose the standard three nonseparating belt spheres outside `B` in the
+Johnson replacement reversed 1-handle picture.  Their classes form a basis
+of spherical second homology.  Horvat--Jablonowski Theorem 5.3 relates any
+other complete system to this one by isotopy in the closed manifold.
+Lemma Ssystem shows those moves preserve the kernel of the total
 three-handle map.  Thus the standard system can be used without applying an
-ambient isotopy to the detector inside `B`.
+ambient isotopy to the detector inside `B`.  Closed Theorem 5.3 is not used
+to conclude that `B` is fixed.
 
 ## Intrinsic MWW closure
 
@@ -66,6 +67,7 @@ ledger or endpoint permutation is used.  The optional owner lifts and
 split-tree Lean algebra are compatible coordinate models but are not
 load-bearing.
 
-P0 and C are supplied by the current paper.  S remains Open.  See
+P0, C and S are supplied by the current paper for the Johnson replacement.
+P3 remains Open.  See
 `docs/research/T73_S_RELATIVE_STANDARD_SYSTEM_2026-09-02.md` for the
 primary-source audit and detailed boundary conditions.

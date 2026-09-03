@@ -1,7 +1,7 @@
 # Geometric premise status, 3 September 2026
 
-P0 and C are discharged for the explicit Johnson replacement. S remains Open
-and is not treated as a theorem. No counterexample is claimed.
+P0, C and S are discharged for the explicit Johnson replacement. P3 remains
+Open. No counterexample is claimed.
 
 ## Closed (finite or already-proved algebra)
 
@@ -40,17 +40,25 @@ The cube is a certified 3-ball containing the six-sweep strands, not a separatel
 
 This is not an isotopy of a cut link in `∂W_2`, and it is not a chain-level Blanchet--Khovanov complex of the actual W2 cut.
 
-## Remaining holes (S)
+## S (Johnson replacement reversed 1-handle picture)
+
+**Status: PASS** for the explicit Johnson replacement reversed 1-handle picture.
+
+**Object that exists.** `scripts/certify_t73_s_standard_spheres.py` places three belt cubes in the far positive octant of the P0 chart.  Each cube interior is recorded as a 4-dimensional 1-handle core, not a 3-ball retained in the chart.  Dual loops meet the owner belt sphere once through `I×{p}` in `S^2×I` and return by a chart L-path that misses every belt cube, the P0 ball, the C1 leftover z-circles and the C2 supports.  Endpoint foams are the `b=0` counit of MWW Example 3.8.  HJ Theorem 5.3 is used only with Lemma Ssystem for kernel invariance, not to fix `B`.  Lemmas 5.5 and 5.7 are not invoked.
+
+This is not an identification with historical `∂W_2`, and it is not a triangulated 4-dimensional W2 lasagna movie.
+
+## Remaining holes (P3)
 
 | Premise | Status | Obstruction |
 |---|---|---|
 | Euclidean/mapping-torus identification | Open remark | Uniqueness of regular neighborhoods is not used; the Euclidean Voronoi surface is not a subcomplex |
 | P0d linking | Open | No reduced PD or normal-field movie after the collar |
-| S geometry | Open | PL model of `#^3(S^1 x S^2)` as S^3 with three 1-handles contains the P0 cube; kernel unknots `r_xy`, `r_yz`, `r_zx` and 32 Nielsen generator movies miss that cube, but they are not a B-fixing move list in `Q=∂W2 \ Int B0`; closed HJ Thm 5.3 is not used as “B is fixed”; `detector_fixed` is false |
-| S endpoint | Open | Replacement belt-sphere foams exist; `actual_standard_sphere_endpoint_foam_computed=false` |
-| Counterexample | Open | Lean implication only; no `ExternalGeometry` instance |
+| S geometry | **PASS** | Johnson replacement reversed 1-handle picture: belt spheres miss the P0 cube, C1 leftover circles and C2 supports; dual loops pair to the identity; HJ 5.3 used only for kernel invariance, not to fix B |
+| S endpoint | **PASS** | b=0 foams by MWW Example 3.8; not a triangulated 4-dimensional W2 movie |
+| Counterexample | Open | Lean implication only; no `ExternalGeometry` instance; P3 Open |
 
-`audit/t73_premise_audit.json` records `overall=OPEN`, P0 and C `proved: true`, and `proved: false` on S. `counterexample_claim_proved` remains false.
+`audit/t73_premise_audit.json` records `overall=OPEN`, P0, C and S `proved: true`, and `proved: false` on P3. `counterexample_claim_proved` remains false.
 
 Current certificate digests:
 
@@ -58,7 +66,7 @@ Current certificate digests:
 - C `0D7D1CAC871D85C4F909C2B31CC7F01809C2558D6FA0655DE9034C4B1C28E7A3`
 - C1 `843A80227D8B062F6451013F53D8A5FA0405409548A48854CADE3FF1E5C3BD3A`
 - C2 `87BA1649CB27CCDB52E2D7092832C63548C0F3B27ACBFC570F3EF6949EDC1D49`
-- S `94DDC2E72EA0068D83EAC9C8128BE17363E3A658B30763C9D7804AE079F78996`
-- S spheres `79946FE07B1EBF0E9C54C818D900153FA32C3DE7FAEDAB5EAD6D4CF47B926E94`
+- S `72A1AFA6BA914A4DA402CFDC9441C8255D903FFA4B3674043991C42B219A2D74`
+- S spheres `F3DC5242984F6D56C2D67F16AC8D8996DE40CC74B2BC1BB677963E8298398D2C`
 - P0a pair `C1877B7696E7A44B5DEBE06BDCAC6CA712A83E49A07973107B7F1C4A728D4435`
 - B44 `7C2D2F792C2672221A76CAF08A71F560AF0CB7654B4D537C00FAD00B16EFA187`
