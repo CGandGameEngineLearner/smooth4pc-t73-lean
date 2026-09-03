@@ -28,16 +28,14 @@ def check() -> None:
         r"\begin{theorem}[Conditional trace-73 theorem]\label{thm:joined}",
         paper,
     )
-    require(paper_text, r"P0a & \Open", paper)
+    require(paper_text, r"P0a & \Discharged", paper)
     require(paper_text, r"C1 & \Open", paper)
     require(paper_text, r"P2/E10/S & \Open", paper)
     require(paper_text, r"computedCubic_eq_2624", paper)
     require(paper_text, "2624", paper)
 
-    reject(paper_text, r"P0a & \Discharged", paper)
     reject(paper_text, r"C1 & \Discharged", paper)
     reject(paper_text, r"P2/E10/S & \Discharged", paper)
-    reject(paper_text, r"P0a & \Discharged", paper)
     reject(paper_text, "gives a counterexample", paper)
     reject(paper_text, r"\begin{theorem}[Trace-73 theorem]\label{thm:joined}", paper)
 

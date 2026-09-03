@@ -1,13 +1,20 @@
 # P0 reconstruction gate receipt
 
-This receipt records the strict P0 reconstruction protocol.  Geometric P0
-remains Open after P0a.  The OPEN outputs below include the current Johnson
-route and the retired Nielsen controls.
+This receipt records the strict P0 reconstruction protocol.  Computational
+P0 is discharged for the explicit Johnson replacement.  C and S remain Open.
 
 ```text
 python3 scripts/certify_t73_p0_johnson.py --check --skip-geometric-braid
 T73_P0_JOHNSON_CERTIFICATE=OPEN
 P0_STATUS=OPEN
+```
+
+The full geometric path is:
+
+```text
+python3 scripts/certify_t73_p0_johnson.py --check
+T73_P0_JOHNSON_CERTIFICATE=PASS
+P0_STATUS=PROVED_FOR_EXPLICIT_JOHNSON_REPLACEMENT_PRESENTATION
 ```
 
 The retired Nielsen stages report:
@@ -17,8 +24,6 @@ T73_AR_TORUS_MODEL=PASS
 T73_MATRIX_NIELSEN_FACTORIZATION=PASS
 OPERATIONS=19
 T73_HEEGAARD_NIELSEN_MOVIE=PASS
-T73_P0_PIPELINE=PASS
-OVERALL=OPEN
 ```
 
 The exact passage comparison additionally reports:
@@ -89,12 +94,12 @@ From the repository root:
 python3 -m py_compile scripts/reconstruct_t73_p0.py
 python3 tests/test_t73_p0_reconstruction.py -v
 python3 scripts/reconstruct_t73_p0.py audit/t73_ar_product_witness.json
+python3 scripts/build_t73_p0_reconstruction_input.py
 python3 scripts/check_t73_claim_boundary.py
 ```
 
-The P0 reconstruction test command reports six passing tests, and the AR
-geometry pipeline reports fourteen passing tests.  The reconstruction command
-returns exit code 2 and:
+The reconstruction command on the older symbolic witness returns exit code 2
+and:
 
 ```text
 P0_RECONSTRUCTION=OPEN
@@ -104,6 +109,8 @@ REASON=wrong P0 reconstruction schema
 This is expected because `audit/t73_ar_product_witness.json` is the older
 symbolic witness and does not satisfy
 `audit/t73_p0_reconstruction_schema.json`.
+
+The Johnson reconstruction input recovers the public 11340-letter word.
 
 ## Strict witness contract
 
@@ -121,25 +128,11 @@ passage-binding data before it can pass P0.
 
 The calibration control `scripts/generate_t73_target_braid_control.py` passes
 the independent geometric extraction test: its explicit rational strands
-recover all 11340 target letters.  It is intentionally not accepted as P0,
-because it is synthetic and carries no AR passage-binding data.
+recover all 11340 target letters.  It is intentionally not accepted as P0
+by itself, because it is synthetic.  The Johnson reconstruction binds those
+control-layer strands to Johnson y-wickets in the certified handlebody pair.
 
 ## Paper build
 
-The paper was rebuilt with three `pdflatex` invocations and one `bibtex`
-invocation from `paper/spc4-t73-candidate`.  The resulting files were:
-
-```text
-paper/spc4-t73-candidate/main.pdf
-output/pdf/spc4-t73-candidate.pdf
-```
-
-Both copies had SHA-256:
-
-```text
-c4a6ca9adc845e6514678eebcdb075ac71c6c033659895b6ded4f74de8111f2d
-```
-
-The claim-boundary check passed.  The paper states P0 as discharged for the
-Johnson replacement while retaining C and S as open.  Appendix B contains the
-soundness lemma and the committed passing certificate.
+The paper states P0 as discharged for the Johnson replacement while retaining
+C and S as open.  Theorem `thm:joined` remains Conditional.

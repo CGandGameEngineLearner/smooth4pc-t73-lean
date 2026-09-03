@@ -23,10 +23,17 @@ class JohnsonARBridgeTest(unittest.TestCase):
         self.assertEqual(result["ambient_simplicial_map"], "PASS")
         self.assertEqual(result["johnson_tetrahedron_count"], 48)
         self.assertEqual(len(result["johnson_spine_edges_scaled"]), 12)
-        self.assertEqual(result["ar_handlebody_as_certified_complex"], "OPEN")
+        self.assertEqual(result["ar_handlebody_as_certified_complex"], "PASS")
+        self.assertEqual(result["spine_star_complex_status"], "PASS")
+        self.assertEqual(result["spine_star_L_B_tetrahedra"], 156)
+        self.assertEqual(result["handlebody_L_B_tetrahedra"], 192)
+        self.assertTrue(result["spine_stars_fill_torus"])
+        self.assertEqual(result["equatorial_tets_unsplit"], 0)
+        self.assertEqual(result["s_maps_johnson_pair_onto_ar_pair"], "PASS")
+        self.assertEqual(result["heegaard_handlebody_complex"], "PASS")
         self.assertFalse(result["uniqueness_of_regular_neighborhoods_used"])
-        self.assertEqual(result["p0a_status"], "OPEN")
-        self.assertEqual(result["bridge_status"], "OPEN")
+        self.assertEqual(result["p0a_status"], "PASS")
+        self.assertEqual(result["bridge_status"], "PASS")
 
 
 if __name__ == "__main__":

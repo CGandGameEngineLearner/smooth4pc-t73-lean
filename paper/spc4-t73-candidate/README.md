@@ -143,7 +143,8 @@ python3 scripts/audit_t73_premises.py --check
 ```
 
 It distinguishes generator-internal coordinate claims from candidate-level
-mathematical closure.  The committed result is `OVERALL=OPEN`: P0a remains Open, so C and S are not instantiated.
+mathematical closure.  The committed result is `OVERALL=OPEN`: P0 is
+discharged for the Johnson replacement, while C and S remain Open.
 
 The complete P0 replay is:
 
@@ -184,6 +185,7 @@ python3 -m unittest -v tests/test_t73_s_relative_moves.py
 ```
 
 The availability script still reports the historical objects as missing.
-The public ledgers supply finite data only; the geometric identifications
-remain Open.  Historical names and SHA-256 values remain in
-`audit/geometric_evidence_manifest.json` and Appendix A for provenance.
+The public ledgers supply finite data only.  Computational P0 is discharged
+for the Johnson replacement; C and S remain Open.  Historical names and
+SHA-256 values remain in `audit/geometric_evidence_manifest.json` and
+Appendix A for provenance.

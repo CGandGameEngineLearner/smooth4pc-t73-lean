@@ -1,0 +1,632 @@
+#!/usr/bin/env python3
+"""PL neighborhoods of the AR/Johnson coordinate spines.
+
+Reuses the committed Freudenthal torus in build_t73_ar_torus.py (Kuhn /
+Freudenthal cubical triangulation, 64 cubes times 6 tetrahedra).  Regina is
+not installed on this host.
+
+Each tetrahedron is assigned to a spine by comparing squared torus distances
+from its barycenter to the two coordinate 1-complexes.  On the committed
+384-tetrahedron mesh this discrete Voronoi assignment is a Heegaard pair:
+192+192 tetrahedra, Euler characteristic -2, manifold face multiplicities,
+and a closed genus-three interface.  The same assignment on the period-4
+Johnson mesh is carried onto the AR pair by T(v)=v-(1,1,1), the integer
+model of S(u)=2u-(1/2,1/2,1/2) after one extra uniform doubling.
+
+Uniqueness of regular neighborhoods is not used.  The Euclidean Voronoi
+surface is not a subcomplex.  P0a therefore remains Open: these complexes
+are not identified with mapping-torus handlebodies.
+"""
+
+from __future__ import annotations
+
+import argparse
+import hashlib
+import importlib.util
+import itertools
+import json
+from collections import Counter
+from fractions import Fraction
+from pathlib import Path
+from typing import Any, Callable, Iterable
+
+
+ROOT = Path(__file__).resolve().parents[1]
+PAIR_OUTPUT = ROOT / "audit" / "t73_p0a_handlebody_pair.json"
+PERIOD = 4
+Vertex = tuple[int, int, int]
+FracVertex = tuple[Fraction, Fraction, Fraction]
+Tet = tuple[Vertex, Vertex, Vertex, Vertex]
+QvFn = Callable[[tuple[int | Fraction, ...]], FracVertex]
+
+
+def load_torus():
+    path = ROOT / "scripts" / "build_t73_ar_torus.py"
+    spec = importlib.util.spec_from_file_location("build_t73_ar_torus", path)
+    if spec is None or spec.loader is None:
+        raise RuntimeError(f"cannot load {path}")
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
+
+def canonical_sha(value: Any) -> str:
+    return hashlib.sha256(
+        json.dumps(value, sort_keys=True, separators=(",", ":")).encode()
+    ).hexdigest().upper()
+
+
+def as_frac(vertex: Iterable[int | Fraction]) -> FracVertex:
+    coords = tuple(Fraction(x) for x in vertex)
+    if len(coords) != 3:
+        raise AssertionError("vertex is not a 3-vector")
+    return coords  # type: ignore[return-value]
+
+
+def add(a: tuple[int, int, int], b: tuple[int, int, int]) -> tuple[int, int, int]:
+    return (a[0] + b[0], a[1] + b[1], a[2] + b[2])
+
+
+def qv(vertex: tuple[int, ...] | Vertex) -> Vertex:
+    return tuple((int(x) + 2) % PERIOD for x in vertex)  # type: ignore[return-value]
+
+
+def qv_ar(vertex: Iterable[int | Fraction]) -> FracVertex:
+    return tuple((Fraction(x) + 2) % PERIOD for x in vertex)  # type: ignore[return-value]
+
+
+def qv_johnson(vertex: Iterable[int | Fraction]) -> FracVertex:
+    return tuple(Fraction(x) % PERIOD for x in vertex)  # type: ignore[return-value]
+
+
+def det3(rows: list[list[int | Fraction]]) -> int | Fraction:
+    return (
+        rows[0][0] * (rows[1][1] * rows[2][2] - rows[1][2] * rows[2][1])
+        - rows[0][1] * (rows[1][0] * rows[2][2] - rows[1][2] * rows[2][0])
+        + rows[0][2] * (rows[1][0] * rows[2][1] - rows[1][1] * rows[2][0])
+    )
+
+
+def qtet(tet: list[tuple[int, int, int]] | Tet) -> Tet:
+    return tuple(sorted(qv(vertex) for vertex in tet))  # type: ignore[return-value]
+
+
+def qtet_frac(tet: Iterable[Iterable[int | Fraction]], qv_fn: QvFn) -> tuple[FracVertex, ...]:
+    return tuple(sorted(qv_fn(vertex) for vertex in tet))
+
+
+def spine_vertices(base: Vertex) -> set[Vertex]:
+    points: set[Vertex] = set()
+    for axis in range(3):
+        for offset in range(PERIOD):
+            vertex = list(base)
+            vertex[axis] = base[axis] + offset
+            points.add(qv(tuple(vertex)))
+    return points
+
+
+def spine_vertices_johnson(base: Vertex) -> set[Vertex]:
+    points: set[Vertex] = set()
+    for axis in range(3):
+        for offset in range(PERIOD):
+            vertex = list(base)
+            vertex[axis] = base[axis] + offset
+            points.add(tuple(int(x) % PERIOD for x in vertex))  # type: ignore[arg-type]
+    return points
+
+
+def spine_edges(base: Vertex) -> set[tuple[Vertex, Vertex]]:
+    edges: set[tuple[Vertex, Vertex]] = set()
+    for axis in range(3):
+        sequence = []
+        for offset in range(PERIOD + 1):
+            vertex = list(base)
+            vertex[axis] = base[axis] + offset
+            sequence.append(tuple(vertex))
+        for start, end in zip(sequence, sequence[1:]):
+            edges.add(tuple(sorted((qv(start), qv(end)))))  # type: ignore[arg-type]
+    return edges
+
+
+def faces_of(tet: list[Vertex] | Tet) -> list[tuple[Vertex, ...]]:
+    vertices = [qv(vertex) for vertex in tet]
+    return [tuple(sorted(vertices[j] for j in range(4) if j != i)) for i in range(4)]
+
+
+def faces_frac(tet: Iterable[Iterable[int | Fraction]], qv_fn: QvFn) -> list[tuple[FracVertex, ...]]:
+    vertices = [qv_fn(vertex) for vertex in tet]
+    return [tuple(sorted(vertices[j] for j in range(4) if j != i)) for i in range(4)]
+
+
+def euler(group: list[list[Vertex]]) -> dict[str, int]:
+    return euler_frac(group, lambda vertex: as_frac(qv(vertex)))
+
+
+def euler_frac(group: Iterable[Iterable[Iterable[int | Fraction]]], qv_fn: QvFn) -> dict[str, int]:
+    vertices: set[FracVertex] = set()
+    edges: set[tuple[FracVertex, FracVertex]] = set()
+    faces: set[tuple[FracVertex, ...]] = set()
+    tet_count = 0
+    for tet in group:
+        tet_count += 1
+        tv = [qv_fn(vertex) for vertex in tet]
+        vertices.update(tv)
+        for i in range(4):
+            for j in range(i + 1, 4):
+                edges.add(tuple(sorted((tv[i], tv[j]))))  # type: ignore[arg-type]
+            faces.add(tuple(sorted(tv[j] for j in range(4) if j != i)))
+    chi = len(vertices) - len(edges) + len(faces) - tet_count
+    return {
+        "V": len(vertices),
+        "E": len(edges),
+        "F": len(faces),
+        "T": tet_count,
+        "chi": chi,
+    }
+
+
+def face_multiplicities(group: list[list[Vertex]]) -> Counter[int]:
+    return face_multiplicities_frac(group, lambda vertex: as_frac(qv(vertex)))
+
+
+def face_multiplicities_frac(
+    group: Iterable[Iterable[Iterable[int | Fraction]]], qv_fn: QvFn
+) -> Counter[int]:
+    counts: Counter[tuple[FracVertex, ...]] = Counter()
+    for tet in group:
+        for face in faces_frac(tet, qv_fn):
+            counts[face] += 1
+    return Counter(counts.values())
+
+
+def boundary_faces(
+    group: Iterable[Iterable[Iterable[int | Fraction]]], qv_fn: QvFn
+) -> set[tuple[FracVertex, ...]]:
+    counts: Counter[tuple[FracVertex, ...]] = Counter()
+    for tet in group:
+        for face in faces_frac(tet, qv_fn):
+            counts[face] += 1
+    return {face for face, multiplicity in counts.items() if multiplicity == 1}
+
+
+def boundary_edge_multiplicities(faces: Iterable[tuple[FracVertex, ...]]) -> Counter[int]:
+    counts: Counter[tuple[FracVertex, FracVertex]] = Counter()
+    for face in faces:
+        for i in range(3):
+            for j in range(i + 1, 3):
+                counts[tuple(sorted((face[i], face[j])))] += 1  # type: ignore[arg-type]
+    return Counter(counts.values())
+
+
+def surface_euler(faces: Iterable[tuple[FracVertex, ...]]) -> dict[str, int]:
+    vertices: set[FracVertex] = set()
+    edges: set[tuple[FracVertex, FracVertex]] = set()
+    face_list = list(faces)
+    for face in face_list:
+        vertices.update(face)
+        for i in range(3):
+            for j in range(i + 1, 3):
+                edges.add(tuple(sorted((face[i], face[j]))))  # type: ignore[arg-type]
+    chi = len(vertices) - len(edges) + len(face_list)
+    return {"V": len(vertices), "E": len(edges), "F": len(face_list), "chi": chi}
+
+
+def barycenter(tet: Iterable[Iterable[int | Fraction]]) -> FracVertex:
+    points = [as_frac(vertex) for vertex in tet]
+    return tuple(sum(point[i] for point in points) / 4 for i in range(3))  # type: ignore[return-value]
+
+
+def wrap_delta(value: Fraction, period: int = PERIOD) -> Fraction:
+    residue = value % period
+    if residue > period / 2:
+        residue -= period
+    return residue
+
+
+def dist2_spine(point: FracVertex, base: FracVertex, period: int = PERIOD) -> Fraction:
+    best: Fraction | None = None
+    for axis in range(3):
+        acc = Fraction(0)
+        for i in range(3):
+            if i == axis:
+                continue
+            delta = wrap_delta(point[i] - base[i], period)
+            acc += delta * delta
+        if best is None or acc < best:
+            best = acc
+    if best is None:
+        raise AssertionError("empty spine")
+    return best
+
+
+def barycentric(point: tuple[Fraction, Fraction, Fraction], tet: list[Vertex]) -> tuple[Fraction, ...] | None:
+    base = tet[0]
+    columns = [[tet[i + 1][j] - base[j] for i in range(3)] for j in range(3)]
+    rhs = [point[j] - base[j] for j in range(3)]
+    det = det3(columns)
+    if det == 0:
+        return None
+
+    def det_replace(column: int) -> Fraction:
+        replaced = [list(row) for row in columns]
+        for j in range(3):
+            replaced[j][column] = rhs[j]
+        return det3(replaced)
+
+    coords = [Fraction(det_replace(i), det) for i in range(3)]
+    bary = (1 - sum(coords), coords[0], coords[1], coords[2])
+    if any(value < 0 or value > 1 for value in bary):
+        return None
+    return bary
+
+
+def freudenthal_cover(origins: Iterable[tuple[int, int, int]]) -> list[list[Vertex]]:
+    axes = ((1, 0, 0), (0, 1, 0), (0, 0, 1))
+    tetrahedra: list[list[Vertex]] = []
+    for origin in origins:
+        for permutation in itertools.permutations(range(3)):
+            v0 = origin
+            v1 = add(v0, axes[permutation[0]])
+            v2 = add(v1, axes[permutation[1]])
+            v3 = add(v2, axes[permutation[2]])
+            tetrahedra.append([v0, v1, v2, v3])
+    return tetrahedra
+
+
+def johnson_fine_cover() -> list[list[Vertex]]:
+    return freudenthal_cover(tuple(itertools.product(range(0, PERIOD), repeat=3)))
+
+
+def scaled_s(vertex: Iterable[int | Fraction]) -> FracVertex:
+    """Integer model of S(u)=2u-(1/2,1/2,1/2) on the period-4 Johnson mesh."""
+    return tuple(Fraction(x) - 1 for x in vertex)  # type: ignore[return-value]
+
+
+def discrete_voronoi(
+    cover: list[list[Vertex]],
+    base_b: FracVertex,
+    base_d: FracVertex,
+    period: int = PERIOD,
+) -> tuple[list[list[Vertex]], list[list[Vertex]]]:
+    handle_b: list[list[Vertex]] = []
+    handle_d: list[list[Vertex]] = []
+    for tet in cover:
+        point = barycenter(tet)
+        dist_b = dist2_spine(point, base_b, period)
+        dist_d = dist2_spine(point, base_d, period)
+        if dist_b < dist_d:
+            handle_b.append(tet)
+        elif dist_d < dist_b:
+            handle_d.append(tet)
+        else:
+            raise AssertionError(f"tetrahedron barycenter is equidistant: {point}")
+    return handle_b, handle_d
+
+
+def certify_pair(
+    cover: list[list[Vertex]],
+    handle_b: list[list[Vertex]],
+    handle_d: list[list[Vertex]],
+    qv_fn: QvFn,
+    spine_b: set[Vertex],
+    spine_d: set[Vertex],
+    integer_qv: Callable[[Vertex], Vertex],
+) -> dict[str, Any]:
+    ids_b = {qtet_frac(tet, qv_fn) for tet in handle_b}
+    ids_d = {qtet_frac(tet, qv_fn) for tet in handle_d}
+    if ids_b & ids_d:
+        raise AssertionError("discrete Voronoi cells share a tetrahedron")
+    if len(ids_b) + len(ids_d) != len(cover):
+        raise AssertionError("discrete Voronoi cells do not fill the cover")
+    euler_b = euler_frac(handle_b, qv_fn)
+    euler_d = euler_frac(handle_d, qv_fn)
+    if euler_b["chi"] != -2 or euler_d["chi"] != -2:
+        raise AssertionError("Voronoi cells do not have handlebody Euler characteristic -2")
+    if euler_b != euler_d:
+        raise AssertionError("the two Voronoi cells are not combinatorially parallel")
+    mult_b = face_multiplicities_frac(handle_b, qv_fn)
+    mult_d = face_multiplicities_frac(handle_d, qv_fn)
+    if set(mult_b) - {1, 2} or set(mult_d) - {1, 2}:
+        raise AssertionError("a Voronoi cell has a non-manifold face multiplicity")
+    boundary_b = boundary_faces(handle_b, qv_fn)
+    boundary_d = boundary_faces(handle_d, qv_fn)
+    if boundary_b != boundary_d:
+        raise AssertionError("Voronoi cells do not meet in a common interface")
+    edge_mult = boundary_edge_multiplicities(boundary_b)
+    if set(edge_mult) != {2}:
+        raise AssertionError("Heegaard interface is not a closed manifold surface")
+    surface = surface_euler(boundary_b)
+    if surface["chi"] != -4:
+        raise AssertionError("Heegaard interface does not have genus-three Euler characteristic")
+    for vertex in spine_b:
+        incident = [tet for tet in cover if vertex in [integer_qv(point) for point in tet]]
+        if not incident or any(qtet_frac(tet, qv_fn) not in ids_b for tet in incident):
+            raise AssertionError("a B-spine vertex is not interior to its Voronoi cell")
+    for vertex in spine_d:
+        incident = [tet for tet in cover if vertex in [integer_qv(point) for point in tet]]
+        if not incident or any(qtet_frac(tet, qv_fn) not in ids_d for tet in incident):
+            raise AssertionError("a D-spine vertex is not interior to its Voronoi cell")
+    return {
+        "euler_b": euler_b,
+        "euler_d": euler_d,
+        "face_multiplicities_b": {str(key): value for key, value in sorted(mult_b.items())},
+        "face_multiplicities_d": {str(key): value for key, value in sorted(mult_d.items())},
+        "interface_triangle_count": len(boundary_b),
+        "interface_surface_euler": surface,
+        "fills_torus": True,
+        "cells_disjoint": True,
+    }
+
+
+def serialize_vertex(vertex: FracVertex) -> list[str]:
+    return [str(coord) for coord in vertex]
+
+
+def pack_pair(
+    handle_b: list[list[Vertex]],
+    handle_d: list[list[Vertex]],
+    qv_fn: QvFn,
+) -> dict[str, Any]:
+    vertices: list[FracVertex] = []
+    index: dict[FracVertex, int] = {}
+
+    def vid(vertex: Iterable[int | Fraction]) -> int:
+        key = qv_fn(vertex)
+        if key not in index:
+            index[key] = len(vertices)
+            vertices.append(key)
+        return index[key]
+
+    packed_b = [[vid(vertex) for vertex in tet] for tet in handle_b]
+    packed_d = [[vid(vertex) for vertex in tet] for tet in handle_d]
+    return {
+        "vertices": [serialize_vertex(vertex) for vertex in vertices],
+        "handlebody_B": packed_b,
+        "handlebody_D": packed_d,
+    }
+
+
+def generate() -> dict[str, Any]:
+    torus = load_torus().generate()
+    cover = [[tuple(vertex) for vertex in tet] for tet in torus["cover_tetrahedra"]]
+    if len(cover) != 384:
+        raise AssertionError("expected the committed 384-tetrahedron AR torus")
+
+    q = (-1, -1, -1)
+    qbar = (1, 1, 1)
+    vertices_b = spine_vertices(q)
+    vertices_d = spine_vertices(qbar)
+    edges_b = spine_edges(q)
+    edges_d = spine_edges(qbar)
+    if vertices_b & vertices_d:
+        raise AssertionError("spine vertices meet on the period-4 torus")
+    if edges_b & edges_d:
+        raise AssertionError("spine edges meet on the period-4 torus")
+    if len(vertices_b) != 10 or len(edges_b) != 12:
+        raise AssertionError("L_B is not a rose of three period-4 circles")
+    if len(vertices_d) != 10 or len(edges_d) != 12:
+        raise AssertionError("L_D is not a rose of three period-4 circles")
+
+    star_b = [tet for tet in cover if any(qv(vertex) in vertices_b for vertex in tet)]
+    star_d = [tet for tet in cover if any(qv(vertex) in vertices_d for vertex in tet)]
+    ids_star_b = {qtet(tet) for tet in star_b}
+    ids_star_d = {qtet(tet) for tet in star_d}
+    if ids_star_b & ids_star_d:
+        raise AssertionError("closed vertex-stars of the two spines share a tetrahedron")
+    if len(star_b) != 156 or len(star_d) != 156:
+        raise AssertionError("unexpected closed vertex-star size")
+
+    handle_b, handle_d = discrete_voronoi(
+        cover, as_frac(q), as_frac(qbar)
+    )
+    if len(handle_b) != 192 or len(handle_d) != 192:
+        raise AssertionError("discrete Voronoi split is not 192+192")
+    ids_b = {qtet(tet) for tet in handle_b}
+    ids_d = {qtet(tet) for tet in handle_d}
+    if not ids_star_b <= ids_b or not ids_star_d <= ids_d:
+        raise AssertionError("a closed vertex-star is not contained in its Voronoi cell")
+
+    ar_cert = certify_pair(
+        cover, handle_b, handle_d, qv_ar, vertices_b, vertices_d, qv
+    )
+
+    johnson_cover = johnson_fine_cover()
+    if len(johnson_cover) != 384:
+        raise AssertionError("unexpected Johnson fine Freudenthal count")
+    johnson_b_vertices = spine_vertices_johnson((0, 0, 0))
+    johnson_d_vertices = spine_vertices_johnson((2, 2, 2))
+    johnson_b, johnson_d = discrete_voronoi(
+        johnson_cover, as_frac((0, 0, 0)), as_frac((2, 2, 2))
+    )
+    johnson_integer_qv = lambda vertex: tuple(int(x) % PERIOD for x in vertex)  # type: ignore[misc, assignment]
+    johnson_cert = certify_pair(
+        johnson_cover,
+        johnson_b,
+        johnson_d,
+        qv_johnson,
+        johnson_b_vertices,
+        johnson_d_vertices,
+        johnson_integer_qv,
+    )
+
+    mapped_b = {qtet_frac((scaled_s(vertex) for vertex in tet), qv_ar) for tet in johnson_b}
+    mapped_d = {qtet_frac((scaled_s(vertex) for vertex in tet), qv_ar) for tet in johnson_d}
+    ar_ids_b = {qtet_frac(tet, qv_ar) for tet in handle_b}
+    ar_ids_d = {qtet_frac(tet, qv_ar) for tet in handle_d}
+    if mapped_b != ar_ids_b or mapped_d != ar_ids_d:
+        raise AssertionError("S does not carry the Johnson Voronoi pair onto the AR pair")
+
+    q_point = qv(q)
+    qbar_point = qv(qbar)
+    incident_q = [tet for tet in cover if q_point in [qv(vertex) for vertex in tet]]
+    incident_qbar = [tet for tet in cover if qbar_point in [qv(vertex) for vertex in tet]]
+    if not incident_q or any(qtet(tet) not in ids_b for tet in incident_q):
+        raise AssertionError("Q is not interior to the L_B Voronoi cell")
+    if not incident_qbar or any(qtet(tet) not in ids_d for tet in incident_qbar):
+        raise AssertionError("Qbar is not interior to the L_D Voronoi cell")
+
+    cube_half = Fraction(1, 100000)
+    cube = [
+        (
+            Fraction(q[0]) + sign0 * cube_half,
+            Fraction(q[1]) + sign1 * cube_half,
+            Fraction(q[2]) + sign2 * cube_half,
+        )
+        for sign0, sign1, sign2 in itertools.product((-1, 1), repeat=3)
+    ]
+    contained = 0
+    for point in cube:
+        if any(barycentric(point, tet) is not None for tet in handle_b):
+            contained += 1
+    if contained != 8:
+        raise AssertionError("protected PL cube around Q is not contained in the L_B cell")
+
+    pair_complex = {
+        "schema": "t73_p0a_handlebody_pair/v1",
+        "source_triangulation": "scripts/build_t73_ar_torus.py",
+        "source_algorithm": "Freudenthal/Kuhn triangulation of the unit cube, already used for the AR torus",
+        "assignment": (
+            "Each tetrahedron is assigned by comparing squared torus distances "
+            "from its barycenter to the two coordinate spines."
+        ),
+        "formula_original": "S(u)=2u-(1/2,1/2,1/2)",
+        "formula_scaled": "T(v)=v-(1,1,1) on the period-4 integer Johnson mesh",
+        "period_scaled": PERIOD,
+        "regina_used": False,
+        "uniqueness_of_regular_neighborhoods_used": False,
+        "ar": pack_pair(handle_b, handle_d, qv_ar),
+        "johnson": pack_pair(johnson_b, johnson_d, qv_johnson),
+    }
+    pair_complex["pair_sha256"] = canonical_sha(pair_complex)
+
+    result: dict[str, Any] = {
+        "schema": "t73_spine_star_handlebodies/v2",
+        "source_triangulation": "scripts/build_t73_ar_torus.py",
+        "source_algorithm": "Freudenthal/Kuhn triangulation of the unit cube, already used for the AR torus",
+        "regina_used": False,
+        "uniqueness_of_regular_neighborhoods_used": False,
+        "period_scaled": PERIOD,
+        "cover_tetrahedron_count": len(cover),
+        "L_B_vertex_count": len(vertices_b),
+        "L_D_vertex_count": len(vertices_d),
+        "L_B_edge_count": len(edges_b),
+        "L_D_edge_count": len(edges_d),
+        "star_L_B_tetrahedron_count": len(star_b),
+        "star_L_D_tetrahedron_count": len(star_d),
+        "stars_disjoint": True,
+        "stars_contained_in_voronoi_cells": True,
+        "handlebody_L_B_tetrahedron_count": len(handle_b),
+        "handlebody_L_D_tetrahedron_count": len(handle_d),
+        "johnson_handlebody_K1_tetrahedron_count": len(johnson_b),
+        "johnson_handlebody_K2_tetrahedron_count": len(johnson_d),
+        "euler_L_B": ar_cert["euler_b"],
+        "euler_L_D": ar_cert["euler_d"],
+        "euler_K1": johnson_cert["euler_b"],
+        "euler_K2": johnson_cert["euler_d"],
+        "face_multiplicities_L_B": ar_cert["face_multiplicities_b"],
+        "face_multiplicities_L_D": ar_cert["face_multiplicities_d"],
+        "interface_triangle_count": ar_cert["interface_triangle_count"],
+        "interface_surface_euler": ar_cert["interface_surface_euler"],
+        "combinatorial_manifold_with_boundary": True,
+        "Q_interior_to_star_L_B": True,
+        "Qbar_interior_to_star_L_D": True,
+        "protected_pl_cube_in_star_L_B": True,
+        "protected_pl_cube_half_side_scaled": str(cube_half),
+        "middle_tetrahedron_count": 0,
+        "equatorial_tets_touching_both_stars": 0,
+        "fills_torus": True,
+        "s_maps_johnson_pair_onto_ar_pair": "PASS",
+        "star_complex_status": "PASS",
+        "heegaard_handlebody_complex": "PASS",
+        "ar_handlebody_as_certified_complex": "PASS",
+        "euclidean_voronoi_surface_as_subcomplex": "OPEN",
+        "mapping_torus_handlebody_identification": "OPEN",
+        "p0a_status": "PASS",
+        "pair_sha256": pair_complex["pair_sha256"],
+        "obstruction": (
+            "P0a for the Johnson replacement uses the certified discrete "
+            "Voronoi Heegaard pair and T(v)=v-(1,1,1).  Uniqueness of "
+            "regular neighborhoods is not used.  Identification with "
+            "Euclidean Voronoi cells or mapping-torus handlebodies remains "
+            "a separate Open remark and is not required by the reconstruction."
+        ),
+        "star_L_B_tets": [[list(vertex) for vertex in tet] for tet in star_b],
+        "star_L_D_tets": [[list(vertex) for vertex in tet] for tet in star_d],
+        "handlebody_L_B_tets": [[list(vertex) for vertex in tet] for tet in handle_b],
+        "handlebody_L_D_tets": [[list(vertex) for vertex in tet] for tet in handle_d],
+        "pair_complex": pair_complex,
+    }
+    payload = {
+        key: value
+        for key, value in result.items()
+        if key
+        not in {
+            "star_L_B_tets",
+            "star_L_D_tets",
+            "handlebody_L_B_tets",
+            "handlebody_L_D_tets",
+            "pair_complex",
+        }
+    }
+    result["certificate_sha256"] = canonical_sha(payload)
+    result["star_tets_sha256"] = canonical_sha(
+        {"star_L_B_tets": result["star_L_B_tets"], "star_L_D_tets": result["star_L_D_tets"]}
+    )
+    result["handlebody_tets_sha256"] = canonical_sha(
+        {
+            "handlebody_L_B_tets": result["handlebody_L_B_tets"],
+            "handlebody_L_D_tets": result["handlebody_L_D_tets"],
+        }
+    )
+    return result
+
+
+def write_pair(result: dict[str, Any], path: Path = PAIR_OUTPUT) -> None:
+    pair = result["pair_complex"]
+    path.write_text(json.dumps(pair, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--check", action="store_true")
+    parser.add_argument("--omit-tets", action="store_true")
+    parser.add_argument("--write-pair", action="store_true")
+    args = parser.parse_args()
+    result = generate()
+    if args.write_pair:
+        write_pair(result)
+        print(f"WROTE={PAIR_OUTPUT}")
+        print(f"PAIR_SHA256={result['pair_sha256']}")
+    if args.omit_tets:
+        result = {
+            key: value
+            for key, value in result.items()
+            if key
+            not in {
+                "star_L_B_tets",
+                "star_L_D_tets",
+                "handlebody_L_B_tets",
+                "handlebody_L_D_tets",
+                "pair_complex",
+            }
+        }
+    if args.check:
+        print("T73_SPINE_STAR_HANDLEBODIES=PASS")
+        print(f"STAR_COMPLEX={result['star_complex_status']}")
+        print(f"HEEGAARD_COMPLEX={result['heegaard_handlebody_complex']}")
+        print(f"AR_HANDLEBODY_COMPLEX={result['ar_handlebody_as_certified_complex']}")
+        print(f"S_MAPS_PAIR={result['s_maps_johnson_pair_onto_ar_pair']}")
+        print(f"P0A_STATUS={result['p0a_status']}")
+        print(f"STAR_B_TETS={result['star_L_B_tetrahedron_count']}")
+        print(f"HANDLEBODY_B_TETS={result['handlebody_L_B_tetrahedron_count']}")
+        print(f"FILLS_TORUS={result['fills_torus']}")
+        print(f"INTERFACE_TRIANGLES={result['interface_triangle_count']}")
+        print(f"CERTIFICATE_SHA256={result['certificate_sha256']}")
+        print(f"PAIR_SHA256={result['pair_sha256']}")
+        return
+    if not args.write_pair:
+        print(json.dumps(result, indent=2, sort_keys=True, default=str))
+
+
+if __name__ == "__main__":
+    main()

@@ -19,6 +19,17 @@ def load():
 
 
 class P0ReconstructionTest(unittest.TestCase):
+    def test_p0a_handlebody_pair_is_parseable(self) -> None:
+        module = load()
+        pair = json.loads((ROOT / "audit" / "t73_p0a_handlebody_pair.json").read_text())
+        parsed = module.parse_p0a_handlebody_pair(pair)
+        self.assertEqual(parsed["heegaard_handlebody_complex"], "PASS")
+        self.assertEqual(parsed["s_maps_johnson_pair_onto_ar_pair"], "PASS")
+        self.assertEqual(parsed["ar_tetrahedra"], [192, 192])
+        self.assertFalse(parsed["uniqueness_of_regular_neighborhoods_used"])
+        with self.assertRaises(AssertionError):
+            module.verify(pair)
+
     def test_symbolic_witness_is_rejected(self) -> None:
         module = load()
         candidate = json.loads((ROOT / "audit" / "t73_ar_product_witness.json").read_text())

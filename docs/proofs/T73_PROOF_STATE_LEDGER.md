@@ -1,9 +1,10 @@
 # T73 proof state ledger
 
 **Current authority:** the conditional paper together with
-`docs/proofs/T73_GEOMETRIC_PREMISE_STATUS_20260903.md`.  Geometric P0, C, and
-S remain Open.  Entries below describing unavailable historical PD/TH objects
-are recovery history, not current premises.  Frozen cubic is `2624`.
+`docs/proofs/T73_GEOMETRIC_PREMISE_STATUS_20260903.md`.  Computational P0
+is discharged for the Johnson replacement.  C and S remain Open.  Entries
+below describing unavailable historical PD/TH objects are recovery history,
+not current premises.  Frozen cubic is `2624`.
 
 **Updated:** 2026-09-03
 **Purpose:** recovery source of truth for the mathematical chain. Read this
@@ -33,7 +34,7 @@ has an actual raw lift but is contained in the full action-closed two-cup
 | E2 selected diagonal class | PROVED | main proof Sections 2--3 |
 | E3 coefficient q-trace and raw-state binding | PROVED | `MR_REES_QUANTUM_TRACE_SOURCE_LEDGER.md`, SHA `99913F0AF70CF5FF650492C2740F98B7053FEBBB58212DA32B506D863836EA84`; `RAW_STATE_BINDING_RESULT.md`, SHA `BCBFBC9F8A5350D323EC2876352EC25C6690E5BB6AD4F2C264441BA4D73CDEF6` |
 | E5/E6 one-/two-handle beta/psi quotient | PROVED at divided cubic | `T73_EVIDENCE_ONE_CUP_E5_E6.md`, source SHA `6A63978D734EFF30B8F6C2E6F9800F9338B3499BA1CA4D6AF4880716468FE865` |
-| G1 actual-Gompf/DIAGRAM framed lift | OPEN | P0a failed: AR handlebodies are not a certified PL complex; uniqueness of regular neighborhoods is not used |
+| G1 actual-Gompf/DIAGRAM framed lift | OPEN | historical DIAGRAM lift unavailable; Johnson P0 is the replacement presentation |
 | E8 three chosen sphere rows | PROVED at divided cubic | `T73_EVIDENCE_E8_CHOSEN_SPHERES.md`, source SHA `C33AF1FCAE8F0056A75D1841E1151786C2EBB756AD8A768C4E3E6704274E2B43` |
 
 The E5/E6 proof uses the one-cup through-86 cell, the ordinary divided
@@ -44,8 +45,9 @@ the retired owner-only mixed-Z model.
 The first G1 PASS was premature because it treated `Ae_i` as a complete
 attaching circle.  The later slogan used uniqueness of regular neighborhoods
 to place a detector ball after the word identities `t empty` and `x to z`.
-That identification is Open: there is no certified PL Heegaard-pair
-homeomorphism and no Kirby cancellation movie.
+That uniqueness argument is not used.  The Johnson replacement now has a
+certified discrete Voronoi Heegaard pair, two local product cancellation
+movies, and a reconstructed 44-strand braid recovering the public word.
 
 ## Sphere evidence chronology
 

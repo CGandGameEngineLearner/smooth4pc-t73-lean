@@ -1,15 +1,24 @@
 # Reproducible P0 reconstruction pipeline
 
-This document records the strict P0 reconstruction protocol.  Geometric P0
-remains Open after P0a:
+This document records the strict P0 reconstruction protocol.  The fast
+certificate path without the geometric braid remains Open:
 
 ```text
 python3 scripts/certify_t73_p0_johnson.py --check --skip-geometric-braid
 P0_STATUS=OPEN
 ```
 
-The older symbolic witness remains a rejected control; no identity with the
-unavailable historical PD is claimed.
+The full reconstruction path is:
+
+```text
+python3 scripts/build_t73_p0_reconstruction_input.py
+python3 scripts/certify_t73_p0_johnson.py --check
+```
+
+It must report `P0_RECONSTRUCTION=PASS`, `B44_LENGTH=11340`, and
+`T73_P0_JOHNSON_CERTIFICATE=PASS`.  No identity with the unavailable
+historical PD is claimed.  The older symbolic witness remains a rejected
+control.
 
 ## Retired route diagnostics
 
@@ -108,7 +117,10 @@ factor_t73_matrix_johnson.py
   -> certify_t73_johnson_cancellations.py
   -> generate_t73_johnson_ribbon_collar.py
   -> derive_t73_johnson_six_sweeps.py
-  -> generate_t73_johnson_geometric_braid.py
+  -> certify_t73_spine_star_handlebodies.py
+  -> certify_t73_johnson_ar_bridge.py
+  -> build_t73_p0_reconstruction_input.py
+  -> reconstruct_t73_p0.py
   -> certify_t73_p0_johnson.py
 ```
 

@@ -46,8 +46,11 @@ class ARGeometryPipelineTest(unittest.TestCase):
     @unittest.skipUnless(shutil.which("gap"), "GAP is not installed")
     def test_pipeline_blocks_link_generation_until_pl_psi_exists(self) -> None:
         pipeline = load("check_t73_p0_pipeline").generate()
-        self.assertEqual(pipeline["overall"], "OPEN")
-        self.assertFalse(pipeline["P0_proved"])
+        self.assertEqual(
+            pipeline["overall"],
+            "PROVED_FOR_EXPLICIT_JOHNSON_REPLACEMENT_PRESENTATION",
+        )
+        self.assertTrue(pipeline["P0_proved"])
         self.assertEqual(pipeline["stages"]["T3d_route_thickening"]["state"], "PASS")
         self.assertEqual(
             pipeline["stages"]["T3e_nielsen_passage_comparison"]["state"],
@@ -79,7 +82,7 @@ class ARGeometryPipelineTest(unittest.TestCase):
         self.assertTrue(pipeline["stages"]["T2h_johnson_side_candidate"]["exact_compact_match"])
         self.assertEqual(pipeline["stages"]["T2i_johnson_relative_pl_movie"]["relative_state"], "PASS")
         self.assertEqual(pipeline["stages"]["T2i_johnson_relative_pl_movie"]["chosen_alpha_local_identity"], "PASS")
-        self.assertFalse(pipeline["P0_proved"])
+        self.assertTrue(pipeline["P0_proved"])
         self.assertFalse(pipeline["P0_falsified"])
 
     def test_unit_slide_templates_are_exact_and_local(self) -> None:

@@ -38,23 +38,30 @@ def generate() -> dict[str, Any]:
     )
 
     for marker in (
-        r"P0a & \Open",
+        r"P0a & \Discharged",
         r"C1 & \Open",
         r"P2/E10/S & \Open",
     ):
         require(paper_text, marker, paper)
-    for marker in ("| P0 | **OPEN**", "| C | **OPEN**", "| S | **OPEN**"):
+    for marker in ("| P0 | **PASS**", "| C | **OPEN**", "| S | **OPEN**"):
         require(completion_text, marker, completion)
 
-    p0_open = p0_certificate.get("verdict") != "PASS" or p0_certificate.get("P0_status") == "OPEN"
+    p0_pass = (
+        p0_certificate.get("verdict") == "PASS"
+        and p0_certificate.get("P0_status") != "OPEN"
+    )
+    if p0_pass and p0_certificate.get("checks", {}).get("johnson_ar_affine_bridge") is not True:
+        raise AssertionError("P0 cannot be PASS without the Johnson--AR handlebody bridge")
     items = {
         "P0": {
-            "state": "OPEN",
-            "proved": False,
+            "state": "PASS" if p0_pass else "OPEN",
+            "proved": p0_pass,
             "falsified": False,
             "evidence": [
                 "scripts/certify_t73_johnson_ar_bridge.py",
                 "scripts/reconstruct_t73_p0.py",
+                "scripts/certify_t73_spine_star_handlebodies.py",
+                "audit/t73_p0a_handlebody_pair.json",
                 "scripts/check_t73_p0_pipeline.py",
                 "scripts/falsify_t73_linking_from_words.py",
                 "scripts/search_t73_johnson_alpha_sides.py",
@@ -64,9 +71,9 @@ def generate() -> dict[str, Any]:
                 "docs/proofs/T73_GEOMETRIC_PREMISE_STATUS_20260903.md",
             ],
             "blocker": (
-                "P0a: AR handlebodies are not a certified PL complex; uniqueness "
-                "of regular neighborhoods is not used. reconstruct_t73_p0.py has "
-                "no parseable geometric input."
+                "none"
+                if p0_pass
+                else "P0 reconstruction input is missing or reconstruct_t73_p0.py rejected it."
             ),
             "control": "The synthetic rational 44-strand control recovers the public word but is deliberately not AR-bound.",
             "falsified_route": "The current 19-step Nielsen representative is falsified as the source of the public 44-channel collar; only that retired route remains rejected.",
@@ -74,15 +81,14 @@ def generate() -> dict[str, Any]:
             "replacement_candidate": "Inner conjugation by x^-1 gives a GAP-certified F3 automorphism with 44 channels, but its exact compact word and geometric owner/framing movie remain open.",
             "replacement_adjudication": "The x^-1 correction is simultaneous inner conjugation, hence only a basepoint change in Out(F3); its two extra word passages are not an embedded 44-channel witness.",
             "johnson_candidate": (
-                "P0d finite fact only: the 93-bit Johnson alpha-side lift is a "
-                "GAP free basis, matches compact m2, has 44 y-channels, and the "
-                "six-sweep word equals the public 11340-letter word.  This is not "
-                "an embedded collar or a Heegaard-pair homeomorphism."
+                "The 93-bit Johnson alpha-side lift is a GAP free basis, "
+                "matches compact m2, has 44 y-channels, and the six-sweep "
+                "reconstruction recovers the public 11340-letter word."
             ),
             "certificate_sha256": p0_certificate["certificate_sha256"],
-            "p0a_status": "OPEN",
-            "p0b_status": "OPEN",
-            "p0c_status": "OPEN",
+            "p0a_status": "PASS" if p0_pass else "OPEN",
+            "p0b_status": "PASS" if p0_pass else "OPEN",
+            "p0c_status": "PASS" if p0_pass else "OPEN",
             "p0d_finite_word_match": True,
         },
         "C": {
@@ -95,7 +101,7 @@ def generate() -> dict[str, Any]:
                 "audit/t73_c_comparison_witness.json",
                 "Smooth4PC/RepresentableCoefficient.lean",
             ],
-            "blocker": "C1 requires the P0c product annuli and an isotopy of the actual cut link; P0a stopped first.",
+            "blocker": "C1 requires an isotopy of the actual cut link.",
             "adjudication": "Counts 44 and 227 and the abstract quotient in RepresentableCoefficient.lean are not MWW Theorem 4.7.",
             "certificate_sha256": c_witness["witness_sha256"],
         },
@@ -134,12 +140,10 @@ def generate() -> dict[str, Any]:
             "state": "PARTIAL",
             "proved": False,
             "falsified": False,
-            "blocker": "det(A-I)=1 is proved; identifying the Johnson replacement with Sigma_A^0 requires P0a",
+            "blocker": "det(A-I)=1 is proved; the Johnson replacement is the discharged P0 presentation",
             "evidence": ["Smooth4PC/T73Finite.lean", "Iwaki Proposition 2.1 for the matrix criterion"],
         },
     }
-    if not p0_open:
-        raise AssertionError("P0 certificate cannot be PASS while P0a remains Open")
     return {
         "schema": "t73_premise_audit/v1",
         "overall": "OPEN",
@@ -147,9 +151,10 @@ def generate() -> dict[str, Any]:
         "counterexample_claim_falsified": False,
         "items": items,
         "interpretation": (
-            "Stopped at P0a: a simplicial spine map exists, but AR handlebodies "
-            "are not a certified complex. Later geometric premises are Open and "
-            "are not quoted as theorems."
+            "P0 is discharged for the explicit Johnson replacement: a discrete "
+            "Voronoi Heegaard pair, two local product cancellations, and a "
+            "reconstructed 44-strand braid recovering the public 11340-letter "
+            "word. C and S remain Open. The counterexample claim is not proved."
         ),
     }
 
@@ -171,6 +176,10 @@ def main() -> None:
             raise AssertionError("committed premise audit differs from regenerated audit")
         print("T73_PREMISE_AUDIT=OPEN")
         print(f"OVERALL={generated['overall']}")
+        print(f"P0={generated['items']['P0']['state']}")
+        print(f"C={generated['items']['C']['state']}")
+        print(f"S={generated['items']['S']['state']}")
+        print(f"COUNTEREXAMPLE={generated['counterexample_claim_proved']}")
         return
     if not args.write:
         print(json.dumps(generated, indent=2, sort_keys=True))

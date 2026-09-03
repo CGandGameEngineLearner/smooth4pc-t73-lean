@@ -20,6 +20,7 @@ import argparse
 import bisect
 import hashlib
 import json
+from collections import Counter
 from fractions import Fraction
 from pathlib import Path
 from typing import Any
@@ -419,7 +420,7 @@ def verify_movie(candidate: dict[str, Any], expected: list[int]) -> dict[str, An
     if not isinstance(events, list):
         fail("crossing_movie.events must be an explicit ordered list")
     letters: list[int] = []
-    previous_height: Fraction | None = None
+    previous_height = Fraction(0)
     order = list(range(1, 45))
     for i, raw in enumerate(events):
         event = require_object(raw, f"crossing_movie.events[{i}]")
@@ -443,18 +444,20 @@ def verify_movie(candidate: dict[str, Any], expected: list[int]) -> dict[str, An
             if key not in event:
                 fail(f"crossing event {i} missing {key}")
         height = rational(event["z_time"], f"crossing event {i}.z_time")
-        if previous_height is not None and height <= previous_height:
+        if height <= previous_height:
             fail("crossing event heights must be strictly increasing")
-        previous_height = height
+        order_sample = (previous_height + height) / 2
         if event["over_strand"] not in (moving, other):
             fail(f"crossing event {i}.over_strand is not a participating strand")
         verify_event_geometry(event, i, parsed, heights)
-        positions = []
-        order_sample = (Fraction(0) if previous_height is None else previous_height + height) / 2
+        sample_pairs = []
         for strand_id, raw_points in parsed.items():
-            _, at_height = segment_at_height(raw_points, order_sample, f"strand {strand_id}", heights[strand_id])
-            positions.append((at_height[0], strand_id))
-        positions.sort()
+            _, at_height = segment_at_height(
+                raw_points, order_sample, f"strand {strand_id}", heights[strand_id]
+            )
+            sample_pairs.append((at_height[0], strand_id))
+        sample_pairs.sort()
+        positions = [strand_id for _, strand_id in sample_pairs]
         left_position, right_position = positions.index(moving), positions.index(other)
         if right_position != left_position + 1:
             fail(f"crossing event {i} is not in the declared left/right order")
@@ -468,6 +471,7 @@ def verify_movie(candidate: dict[str, Any], expected: list[int]) -> dict[str, An
             fail(f"crossing event {i} has an inconsistent derived Artin letter")
         letters.append(letter)
         order[left_position], order[right_position] = order[right_position], order[left_position]
+        previous_height = height
     if letters != expected:
         fail("AR-derived elementary crossing movie does not equal the public 11340-letter word")
     return {
@@ -475,6 +479,150 @@ def verify_movie(candidate: dict[str, Any], expected: list[int]) -> dict[str, An
         "length": len(letters),
         "sha256": canonical_sha(letters),
         "letters": letters,
+    }
+
+
+def _p0a_point(value: Any, where: str) -> tuple[Fraction, Fraction, Fraction]:
+    if not isinstance(value, list) or len(value) != 3:
+        fail(f"{where} must be a 3-vector")
+    return tuple(rational(x, f"{where}[{i}]") for i, x in enumerate(value))  # type: ignore[return-value]
+
+
+def _p0a_qv_ar(vertex: tuple[Fraction, Fraction, Fraction]) -> tuple[Fraction, Fraction, Fraction]:
+    return tuple((coord + 2) % 4 for coord in vertex)  # type: ignore[return-value]
+
+
+def _p0a_scaled_s(vertex: tuple[Fraction, Fraction, Fraction]) -> tuple[Fraction, Fraction, Fraction]:
+    return tuple(coord - 1 for coord in vertex)  # type: ignore[return-value]
+
+
+def _p0a_unpack_handlebody(block: dict[str, Any], where: str) -> tuple[
+    list[tuple[Fraction, Fraction, Fraction]],
+    list[list[int]],
+    list[list[int]],
+]:
+    vertices_raw = block.get("vertices")
+    if not isinstance(vertices_raw, list) or not vertices_raw:
+        fail(f"{where}.vertices must contain explicit PL vertices")
+    vertices = [_p0a_point(value, f"{where}.vertices[{i}]") for i, value in enumerate(vertices_raw)]
+    packed = []
+    for name in ("handlebody_B", "handlebody_D"):
+        tets = block.get(name)
+        if not isinstance(tets, list) or not tets:
+            fail(f"{where}.{name} must contain explicit tetrahedra")
+        packed_tets: list[list[int]] = []
+        for i, tet in enumerate(tets):
+            if not isinstance(tet, list) or len(tet) != 4 or not all(isinstance(x, int) for x in tet):
+                fail(f"{where}.{name}[{i}] is not an index quadruple")
+            if len(set(tet)) != 4:
+                fail(f"{where}.{name}[{i}] is degenerate")
+            if any(index < 0 or index >= len(vertices) for index in tet):
+                fail(f"{where}.{name}[{i}] has an out-of-range vertex")
+            packed_tets.append(list(tet))
+        packed.append(packed_tets)
+    return vertices, packed[0], packed[1]
+
+
+def _p0a_euler(
+    vertices: list[tuple[Fraction, Fraction, Fraction]],
+    tets: list[list[int]],
+) -> dict[str, int]:
+    vertex_set = {vertices[index] for tet in tets for index in tet}
+    edges: set[tuple[tuple[Fraction, Fraction, Fraction], ...]] = set()
+    faces: set[tuple[tuple[Fraction, Fraction, Fraction], ...]] = set()
+    for tet in tets:
+        points = [vertices[index] for index in tet]
+        for i in range(4):
+            for j in range(i + 1, 4):
+                edges.add(tuple(sorted((points[i], points[j]))))
+            faces.add(tuple(sorted(points[j] for j in range(4) if j != i)))
+    chi = len(vertex_set) - len(edges) + len(faces) - len(tets)
+    return {"V": len(vertex_set), "E": len(edges), "F": len(faces), "T": len(tets), "chi": chi}
+
+
+def _p0a_boundary(
+    vertices: list[tuple[Fraction, Fraction, Fraction]],
+    tets: list[list[int]],
+) -> tuple[set[tuple[tuple[Fraction, Fraction, Fraction], ...]], Counter]:
+    counts: Counter[tuple[tuple[Fraction, Fraction, Fraction], ...]] = Counter()
+    for tet in tets:
+        points = [vertices[index] for index in tet]
+        for i in range(4):
+            counts[tuple(sorted(points[j] for j in range(4) if j != i))] += 1
+    if set(counts.values()) - {1, 2}:
+        fail("handlebody has a non-manifold face multiplicity")
+    boundary = {face for face, multiplicity in counts.items() if multiplicity == 1}
+    edge_counts: Counter[tuple[tuple[Fraction, Fraction, Fraction], ...]] = Counter()
+    for face in boundary:
+        for i in range(3):
+            for j in range(i + 1, 3):
+                edge_counts[tuple(sorted((face[i], face[j])))] += 1
+    if set(edge_counts.values()) != {2}:
+        fail("handlebody interface is not a closed manifold surface")
+    return boundary, counts
+
+
+def parse_p0a_handlebody_pair(candidate: dict[str, Any]) -> dict[str, Any]:
+    """Parse the P0a PL handlebody pair. This is not a P0 collar reconstruction."""
+    if candidate.get("schema") != "t73_p0a_handlebody_pair/v1":
+        fail("wrong P0a handlebody-pair schema")
+    if candidate.get("uniqueness_of_regular_neighborhoods_used") is not False:
+        fail("uniqueness of regular neighborhoods must not be used")
+    ar_vertices, ar_b, ar_d = _p0a_unpack_handlebody(
+        require_object(candidate.get("ar"), "ar"), "ar"
+    )
+    johnson_vertices, johnson_b, johnson_d = _p0a_unpack_handlebody(
+        require_object(candidate.get("johnson"), "johnson"), "johnson"
+    )
+    if len(ar_b) != 192 or len(ar_d) != 192 or len(johnson_b) != 192 or len(johnson_d) != 192:
+        fail("handlebody pair is not the certified 192+192 discrete Voronoi split")
+    euler_b = _p0a_euler(ar_vertices, ar_b)
+    euler_d = _p0a_euler(ar_vertices, ar_d)
+    if euler_b["chi"] != -2 or euler_d["chi"] != -2:
+        fail("AR handlebodies do not have Euler characteristic -2")
+    if _p0a_euler(johnson_vertices, johnson_b)["chi"] != -2:
+        fail("Johnson K1 handlebody does not have Euler characteristic -2")
+    if _p0a_euler(johnson_vertices, johnson_d)["chi"] != -2:
+        fail("Johnson K2 handlebody does not have Euler characteristic -2")
+    ar_ids_b = {tuple(sorted(tet)) for tet in ar_b}
+    ar_ids_d = {tuple(sorted(tet)) for tet in ar_d}
+    if ar_ids_b & ar_ids_d:
+        fail("AR handlebodies share a tetrahedron")
+    boundary_b, _ = _p0a_boundary(ar_vertices, ar_b)
+    boundary_d, _ = _p0a_boundary(ar_vertices, ar_d)
+    if boundary_b != boundary_d:
+        fail("AR handlebodies do not meet in a common interface")
+
+    def tet_points(vertices: list[tuple[Fraction, Fraction, Fraction]], tet: list[int]):
+        return frozenset(vertices[index] for index in tet)
+
+    ar_b_points = {tet_points(ar_vertices, tet) for tet in ar_b}
+    ar_d_points = {tet_points(ar_vertices, tet) for tet in ar_d}
+    mapped_b = {
+        frozenset(_p0a_qv_ar(_p0a_scaled_s(johnson_vertices[index])) for index in tet)
+        for tet in johnson_b
+    }
+    mapped_d = {
+        frozenset(_p0a_qv_ar(_p0a_scaled_s(johnson_vertices[index])) for index in tet)
+        for tet in johnson_d
+    }
+    if mapped_b != ar_b_points or mapped_d != ar_d_points:
+        fail("S does not carry the Johnson handlebody pair onto the AR pair")
+
+    payload = {key: value for key, value in candidate.items() if key != "pair_sha256"}
+    expected = canonical_sha(payload)
+    if candidate.get("pair_sha256") != expected:
+        fail("handlebody-pair SHA-256 does not match the supplied complex")
+    return {
+        "schema": "t73_p0a_handlebody_pair_parse/v1",
+        "heegaard_handlebody_complex": "PASS",
+        "s_maps_johnson_pair_onto_ar_pair": "PASS",
+        "uniqueness_of_regular_neighborhoods_used": False,
+        "ar_tetrahedra": [len(ar_b), len(ar_d)],
+        "johnson_tetrahedra": [len(johnson_b), len(johnson_d)],
+        "euler_L_B": euler_b,
+        "interface_triangles": len(boundary_b),
+        "pair_sha256": expected,
     }
 
 
@@ -511,6 +659,15 @@ def main() -> None:
     args = parser.parse_args()
     try:
         candidate = json.loads(args.candidate.read_text(encoding="utf-8"))
+        if candidate.get("schema") == "t73_p0a_handlebody_pair/v1":
+            parsed = parse_p0a_handlebody_pair(candidate)
+            print("P0A_HANDLEBODY_PAIR=PARSED")
+            print(f"HEEGAARD_COMPLEX={parsed['heegaard_handlebody_complex']}")
+            print(f"S_MAPS_PAIR={parsed['s_maps_johnson_pair_onto_ar_pair']}")
+            print(f"PAIR_SHA256={parsed['pair_sha256']}")
+            print("P0_RECONSTRUCTION=OPEN")
+            print("REASON=P0a handlebody pair is present; detector collar is not supplied")
+            raise SystemExit(2)
         if args.derive_events:
             collar = require_object(candidate.get("detector_collar"), "detector_collar")
             print(json.dumps(derive_elementary_events(collar), indent=2))

@@ -25,7 +25,12 @@ class PremiseAuditTest(unittest.TestCase):
 
     def test_load_bearing_geometry_is_open(self) -> None:
         audit = load().generate()
-        for key in ("P0", "C", "S"):
+        self.assertEqual(audit["items"]["P0"]["state"], "PASS")
+        self.assertTrue(audit["items"]["P0"]["proved"])
+        self.assertEqual(audit["items"]["P0"]["p0a_status"], "PASS")
+        self.assertEqual(audit["items"]["P0"]["p0b_status"], "PASS")
+        self.assertEqual(audit["items"]["P0"]["p0c_status"], "PASS")
+        for key in ("C", "S"):
             self.assertEqual(audit["items"][key]["state"], "OPEN")
             self.assertFalse(audit["items"][key]["proved"])
             self.assertFalse(audit["items"][key]["falsified"])

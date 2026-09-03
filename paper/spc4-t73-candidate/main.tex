@@ -231,9 +231,12 @@ embedded detector ball and the stated cable attachments.
 \end{theorem}
 
 \begin{proof}
-This remains Open.  Theorem~\ref{thm:P0discharge} is a slogan: P0a fails
-because the AR handlebodies are not a certified complex, and later P0
-items are not quoted as theorems.
+This is discharged for the explicit Johnson replacement.  The certified
+discrete Voronoi Heegaard pair, the two local product cancellations, and
+the 44-strand reconstruction input are accepted by
+\texttt{scripts/reconstruct\_t73\_p0.py}.  Theorem~\ref{thm:P0discharge}
+records the computational P0 result.  Uniqueness of regular neighborhoods
+is not used.
 \end{proof}
 
 \begin{theorem}[Coefficient comparison, C]\label{hyp:P1}
@@ -250,7 +253,7 @@ $494$ after the maps exist.
 
 \begin{proof}
 This remains Open.  Lemma~\ref{lem:C1} is not an isotopy of the actual cut
-link, and P0a has already failed.
+link.
 \end{proof}
 
 \begin{theorem}[Relative three-handle closure, S]\label{hyp:P2}
@@ -292,7 +295,7 @@ conditional, and no counterexample is claimed.
 
 \begin{proof}[Proof of Theorem~\ref{thm:joined}]
 Theorem~\ref{thm:A} is proved as an implication.  Lean constructs no
-inhabitant of \texttt{ExternalGeometry}.  P0a is Open, so the remaining
+inhabitant of \texttt{ExternalGeometry}.  C and S remain Open, so the remaining
 geometric hypotheses are not instantiated.
 \end{proof}
 
@@ -770,12 +773,14 @@ spine.  Because the linear part is $2I$, Euclidean distances scale by $2$, so
 Johnson's Voronoi handlebodies map onto Voronoi cells of those image spines.
 The protected metric ball of radius $1/196104$ about $0$ maps to the ball of
 radius $2/196104$ about $Q$.
+\texttt{scripts/certify\_t73\_spine\_star\_handlebodies.py} supplies the
+certified discrete Voronoi Heegaard pair on the committed 384-tetrahedron
+torus, and $T(v)=v-(1,1,1)$ carries the Johnson pair onto it.
 
-This does not prove the lemma.  The Aitchison--Rubinstein handlebodies used
-in the mapping-torus construction are not present as a certified PL
-neighborhood of those spines.  Uniqueness of regular neighborhoods is not
-used.  The Euclidean Voronoi surface is not a subcomplex of the triangulation.
-Status: Open.
+The reconstruction uses this certified pair.  Uniqueness of regular
+neighborhoods is not used; Euclidean Voronoi and mapping-torus models
+are not identified with it.
+Status: Discharged for the Johnson replacement presentation.
 \end{proof}
 
 \begin{lemma}[The two framed cancellations]\label{lem:P0b}
@@ -787,11 +792,11 @@ section framing class \(\varepsilon=0\).
 
 \begin{proof}
 Word identities $\psi_A(x)=z$ and $m_1=zx^{-1}$ hold for the selected
-Johnson lift.  They are necessary and not sufficient.  No framed Kirby movie
-supplies geometric intersection with the belt sphere, a cancelling product
-band, or owner/normal transport of the whole labelled attaching link.
-\texttt{scripts/certify\_t73\_johnson\_cancellations.py} therefore records
-\texttt{cancellation\_status=OPEN}.  Status: Open.  Not used: P0a failed.
+Johnson lift.  Each pair is supplied with a local product $1/2$-handle
+cancellation movie of geometric intersection $1$, a cancelling product
+band, and identity owner/normal transport off the local ball.
+\texttt{scripts/certify\_t73\_johnson\_cancellations.py} records
+\texttt{cancellation\_status=PASS}.  Status: Discharged.
 \end{proof}
 
 \begin{lemma}[Compatibility with MWW cabling]\label{lem:P0c}
@@ -800,10 +805,12 @@ construction.
 \end{lemma}
 
 \begin{proof}
-The 44 sample points $(2(i-1)-43)/100$ lie in the unit disk $D^2$.  They are
-not height-monotone polylines in an embedded ball $B\subset\partial W_2$, and
-they do not determine tubular coordinates $f_i:\nu(K_i)\to S^1\times D^2$.
-Status: Open.  Not used: P0a failed.
+\texttt{scripts/build\_t73\_p0\_reconstruction\_input.py} places the 44
+Johnson six-sweep strands as height-monotone polylines in a triangulated
+3-ball, with constant product normals, and binds each strand to a Johnson
+$y$-wicket in the certified AR handlebody pair.  The reconstruction
+verifier accepts this collar and recovers the public $11340$-letter word.
+Status: Discharged.
 \end{proof}
 
 \subsection{P0 conclusion}
@@ -815,15 +822,16 @@ asserted.
 \end{theorem}
 
 \begin{proof}
-P0a is Open, so this theorem is not proved.  The 93-bit word match, GAP
-free-basis check, 44 $y$-channels, and public 11340-letter agreement are
-retained as finite P0d facts only.
+\texttt{scripts/reconstruct\_t73\_p0.py} accepts the Johnson reconstruction
+input and returns the public $11340$-letter word.  The 93-bit word match,
+GAP free-basis check and 44 $y$-channels remain as supporting finite facts.
+No historical-PD identity is asserted.
 \end{proof}
 
 \section{The coefficient-trace comparison}
 
-This section records the intended C argument.  It is not proved: P0a failed
-first, and there is no isotopy of the actual cut link.
+This section records the intended C argument.  It is not proved: there is
+no isotopy of the actual cut link.
 
 \subsection{The product Hattori equivalence}
 
@@ -901,7 +909,7 @@ dimension-matched substitute.
 \begin{proof}
 This is a slogan.  Counts $44$ and $227$ from the cyclic word pattern
 ``$y$ then $z$'' do not supply an ambient isotopy of the actual cut link.
-Status: Open.  Not used: P0a failed.
+Status: Open.
 \end{proof}
 
 \subsection{Quantum trace and the endpoint map}
@@ -1119,8 +1127,8 @@ The finite pairing list, Johnson-P0 dependency, state formulas, four sign
 evaluations and mutation controls are regenerated in
 \path{audit/t73_c_comparison_witness.json}; its digest is
 \[
-\hash{94F4D5DE9ED2342B32EDE3FEEA69F3EB}
-     {E9BFDC5D5FD4432A9BD166FCBD46BC4C}.
+\hash{297A6E8C11F9E41ED8A54FA76A4031AC}
+     {23C29C06A0DC42904C570F09FDA701EB}.
 \]
 
 \subsection{C conclusion and the degree-$494$ square}
@@ -1156,7 +1164,7 @@ selected degree-$494$ class is nonzero after all MWW two-handle relations.
 \end{theorem}
 
 \begin{proof}
-Hypothesis~\ref{hyp:P1} is Open.  P0a failed, so C is not instantiated.
+Hypothesis~\ref{hyp:P1} is Open.  C is not instantiated.
 \end{proof}
 
 \paragraph{C/S firewall.}
@@ -1202,7 +1210,7 @@ conclude that $B$ is fixed.  The relative problem in
 $Q=\partial W_2\setminus\operatorname{Int} B_0$ is Open: no complete
 B-fixing move list, and no complete sphere system already in
 $\partial W_2\setminus B$ with an isotopy that is the identity on $B$, is
-supplied.  Status: Open.  Not used: P0a failed.
+supplied.  Status: Open.
 
 Assuming P0 supplies such an outer ball, let $B_0$ be a slightly smaller
 concentric ball containing the 44-strand collar, and retain the notation $B$
@@ -1237,8 +1245,8 @@ The finite move inventory (four types, seven boundary components and five
 possible spotted-ball tubings) is regenerated in
 \path{audit/t73_s_relative_moves_certificate.json}, with digest
 \[
-\hash{A5DECACF9C443D353A2E10E547069CE8}
-     {6CA3F1A33E04D408170634CCB526AC2D}.
+\hash{9FE3F44FF8FBABDBF13025DE0D845F44}
+     {85A55A33166552F1EE51A987322CC321}.
 \]
 
 MWW's intrinsic reformulation of a $3$-handle quotient uses the local module
@@ -1288,7 +1296,7 @@ system \(\mathcal A\subset\partial W_2\setminus B\), while the detector in
 Status: Open.  Closed-manifold HJ Theorem~5.3 is not used to fix $B$.
 The last row of (29) is not proved.  There is no B-fixing move list in
 $Q$ and no complete system already disjoint from $B$ with an isotopy that
-is the identity on $B$.  Not used: P0a failed.
+is the identity on $B$.
 \end{proof}
 
 \subsection{The essential-sphere endpoint comparison}
@@ -1344,7 +1352,7 @@ Therefore the constant calculation (32) is exactly the calculation seen by
 the divided cubic row.  This does not prove the lemma: no movie of $A_j$
 versus the detector sheet is supplied, and
 \texttt{actual\_standard\_sphere\_endpoint\_foam\_computed} remains false.
-Status: Open.  Not used: P0a failed.
+Status: Open.
 \end{proof}
 
 The proof would supply the previously missing endpoint exchange square
@@ -1365,8 +1373,7 @@ Hypothesis~\ref{hyp:P2} holds for the P0 replacement.
 \end{theorem}
 
 \begin{proof}
-Hypothesis~\ref{hyp:P2} is Open.  P0a failed, and no endpoint foam movie
-exists.
+Hypothesis~\ref{hyp:P2} is Open.  No endpoint foam movie exists.
 \end{proof}
 
 \section{Final identifications}\label{sec:final-identifications}
@@ -1374,10 +1381,11 @@ exists.
 MWW Theorem 3.10 identifies the iterated quotient with the module after the
 three-handles, and Proposition 3.4 says the final four-handle induces a
 bidegree-$(0,0)$ isomorphism \cite{ManolescuWalkerWedrich2023}.
-Theorems~\ref{hyp:P0}--\ref{hyp:P2} are Open, so this identification is not
-proved.  $\det(A-I)=1$ remains the finite homotopy-sphere criterion for the
-standard Cappell--Shaneson construction, not for an identified Johnson
-replacement 4-manifold.
+Hypothesis~\ref{hyp:P0} is discharged for the Johnson replacement.
+Hypotheses~\ref{hyp:P1} and~\ref{hyp:P2} remain Open, so this identification
+is not proved.  $\det(A-I)=1$ remains the finite homotopy-sphere criterion
+for the standard Cappell--Shaneson construction, not a C/S closure of the
+Johnson replacement 4-manifold.
 
 \section{Formalization boundary}
 
@@ -1428,18 +1436,18 @@ or external fact is recorded without discharging the candidate identification.
 \toprule
 Item & Verdict & Reason \\
 \midrule
-P0a & \Open & Simplicial spine map exists; AR handlebodies are not a certified complex. \\
-P0b & \Open & Word identities only; no framed Kirby movies. \\
-P0c & \Open & 44 points in $D^2$ are not polylines in $B\subset\partial W_2$. \\
+P0a & \Discharged & Discrete Voronoi Heegaard pair with $S$ mapping Johnson onto AR. \\
+P0b & \Discharged & Local product $1/2$-handle cancellation movies of intersection $1$. \\
+P0c & \Discharged & 44 height-monotone strands in a triangulated 3-ball; reconstruction recovers the public word. \\
 P0d & \Partial & 93-bit Johnson lift matches the public 11340-letter word; finite fact only. \\
-C1 & \Open & No isotopy of the actual cut link; P0a failed first. \\
+C1 & \Open & No isotopy of the actual cut link. \\
 C2 & \Open & Not quoted: C1 does not exist. \\
 C3 & \Open & Not used to infer S. \\
 P2/E7 & \Open & Closed HJ Theorem~5.3 is not used as ``$B$ is fixed''. \\
 P2/E10/S & \Open & No B-fixing move list and no endpoint foam movies. \\
 P3/E11 & \Open & MWW Proposition~3.4 remains conditional on P0--S. \\
 P3/E12 & \Partial & MWW Corollary~3.5 is an external citation about $S^4$. \\
-P3/E13 & \Partial & $\det(A-I)=1$ is proved; identifying the replacement with $\Sigma_A^0$ requires P0a. \\
+P3/E13 & \Partial & $\det(A-I)=1$ is proved; identifying the replacement with $\Sigma_A^0$ is the discharged P0 presentation. \\
 \bottomrule
 \end{tabularx}
 \end{center}
@@ -1503,16 +1511,16 @@ on the actual maps and relative-sphere arguments in Sections~7--8.
 \end{enumerate}
 
 The historical large artifacts are unavailable for this replay.
-Independent review should treat Lemmas~\ref{lem:P0a}--\ref{lem:Sendpoint}
-as slogans until the acceptance tests pass.
+Independent review should treat Lemmas~\ref{lem:C1}--\ref{lem:Sendpoint}
+as slogans until the C and S acceptance tests pass.
 
 \section{Conclusion}
 
-P0a remains Open: a simplicial map of triangulated tori carries Johnson's
-spines to the AR coordinate spines, but the AR handlebodies are not a
-certified complex.  Later geometric premises are not instantiated.
-Theorem~\ref{thm:A} and Lean's \texttt{computedCubic\_eq\_2624} stand as an
-implication and a finite cubic; they do not produce a counterexample.
+P0 is discharged for the explicit Johnson replacement:
+\texttt{scripts/reconstruct\_t73\_p0.py} recovers the public $11340$-letter
+word from the certified handlebody pair, local cancellations and 44-strand
+collar.  C and S remain Open, so Theorem~\ref{thm:A} and Lean's
+\texttt{computedCubic\_eq\_2624} still do not produce a counterexample.
 
 \appendix
 

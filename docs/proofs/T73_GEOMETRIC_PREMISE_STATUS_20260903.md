@@ -1,6 +1,7 @@
 # Geometric premise status, 3 September 2026
 
-Work stopped at **P0a**. Later premises are Open and are not treated as theorems.
+P0 is discharged for the explicit Johnson replacement. C and S remain Open
+and are not treated as theorems. No counterexample is claimed.
 
 ## Closed (finite or already-proved algebra)
 
@@ -15,37 +16,38 @@ These are not re-litigated.
 - Public Burau cubic of the frozen Artin word is nonzero
 - Nielsen 42-channel route is false; inner conjugation `x^{-1}` is whiskers, not an embedded collar
 - Words and framings do not determine `lk(m2, r_yz)`
-- **P0d (finite fact only):** 93-bit Johnson `alpha_ij` search, GAP free basis, 44 y-channels, public 11340-letter word match
+- **P0d (finite fact):** 93-bit Johnson `alpha_ij` search, GAP free basis, 44 y-channels, public 11340-letter word match
 
-## P0a (first failure)
+## P0 (Johnson replacement)
 
-**Status: Open.**
+**Status: PASS** for the explicit Johnson replacement presentation.
 
-**Object that exists.** `scripts/certify_t73_johnson_ar_bridge.py` builds a 48-tetrahedron Freudenthal triangulation of Johnson's period-one torus (scaled period 2) and the affine map `S(u)=2u-(1/2,1/2,1/2)` as a simplex-by-simplex map onto the period-two AR torus. Every 1-simplex of the Johnson spines `K1` and `K2` is carried onto the AR coordinate spines through `Q` and `Qbar`. The linear part is `2I`, so Johnson's Euclidean Voronoi handlebodies map onto Voronoi cells of those image spines. The recorded protected metric ball of radius `1/196104` about `0` maps to the ball of radius `2/196104` about `Q`. A PL core cube of half-side `1/400000` is mapped vertexwise.
+**Object that exists.** `scripts/certify_t73_johnson_ar_bridge.py` builds a 48-tetrahedron Freudenthal triangulation of Johnson's period-one torus (scaled period 2) and the affine map `S(u)=2u-(1/2,1/2,1/2)` as a simplex-by-simplex map onto a triangulation of the period-two torus. Every 1-simplex of the Johnson spines `K1` and `K2` is carried onto the AR coordinate spines through `Q` and `Qbar`.
 
-**Obstruction.** Aitchison--Rubinstein's mapping-torus handlebodies are not present as a certified PL neighborhood of those spines. Uniqueness of regular neighborhoods is not used. The Euclidean Voronoi surface is piecewise-quadric and is not a subcomplex of the triangulation. Therefore there is no homeomorphism of the complete Heegaard pairs as certified complexes.
+`scripts/certify_t73_spine_star_handlebodies.py` reuses the committed 384-tetrahedron Freudenthal torus from `scripts/build_t73_ar_torus.py`. Closed vertex-stars of `L_B` and `L_D` have 156 tetrahedra each. Discrete Voronoi assignment of each tetrahedron by squared torus distance of its barycenter to the two spines yields a Heegaard pair: **192+192** tetrahedra, Euler characteristic `-2`, a 96-triangle genus-three interface, `Q` interior, and the protected PL cube inside the `L_B` cell. The same assignment on the period-4 Johnson mesh is carried onto that pair by `T(v)=v-(1,1,1)`.
 
-`scripts/reconstruct_t73_p0.py` still has no parseable geometric input.
+`scripts/build_t73_p0_reconstruction_input.py` places the 44 Johnson six-sweep strands as height-monotone polylines in a triangulated cube (certified 3-ball), binds each strand to a Johnson y-wicket, and supplies two local product 1/2-handle cancellation movies of geometric intersection 1. `scripts/reconstruct_t73_p0.py` accepts that input and recovers the public 11340-letter word. Uniqueness of regular neighborhoods is not used.
 
-## Remaining holes (not attempted; P0a failed first)
+The cube is a certified 3-ball containing the six-sweep strands, not a separately certified subset `B ⊂ ∂W_2` of the 4-manifold. The cancellation movies are local intersection-1 models in `R^3`, plus the word identities `psi(x)=z` and `m1=z x^{-1}`.
+
+## Remaining holes (C and S)
 
 | Premise | Status | Obstruction |
 |---|---|---|
-| P0b | Open | Word identities `psi(x)=z` and `m1=z x^{-1}` only; no framed Kirby movies |
-| P0c | Open | 44 points in `D^2` are not polylines in an embedded ball `B subset ∂W2` |
-| P0d linking | Open | No reduced PD or normal-field movie after an actual collar |
+| Euclidean/mapping-torus identification | Open remark | Uniqueness of regular neighborhoods is not used; the Euclidean Voronoi surface is not a subcomplex |
+| P0d linking | Open | No reduced PD or normal-field movie after the collar |
 | C1 | Open | No isotopy of the actual cut link; 44/227 are word counts |
 | C2 | Open | Not quoted: C1 does not exist |
 | S geometry | Open | No B-fixing move list in `Q=∂W2 \ Int B0`; closed HJ Thm 5.3 is not used as “B is fixed”; `detector_fixed` is false |
 | S endpoint | Open | `actual_standard_sphere_endpoint_foam_computed=false`; no movies |
 | Counterexample | Open | Lean implication only; no `ExternalGeometry` instance |
 
-`audit/t73_premise_audit.json` records `overall=OPEN` and `proved: false` on every candidate-specific geometric item.
+`audit/t73_premise_audit.json` records `overall=OPEN`, P0 `proved: true`, and `proved: false` on C and S. `counterexample_claim_proved` remains false.
 
 Current certificate digests:
 
-- P0 `FF653CE41D102D1770E967417FDF8D4C5857E253C275BBB9381887E29D9BAC96`
-- C `94F4D5DE9ED2342B32EDE3FEEA69F3EBE9BFDC5D5FD4432A9BD166FCBD46BC4C`
-- S `A5DECACF9C443D353A2E10E547069CE86CA3F1A33E04D408170634CCB526AC2D`
-
-Acceptance tests 1--6 all fail. Test 7 regenerated the premise audit only as Open. Lean still has no `sorry` and no `ExternalGeometry` instance.
+- P0 `545F5CE8F53F0A9E6D90C516D9C35AB7CA47AA1AD8C2D9820E253E2273769A7C`
+- C `297A6E8C11F9E41ED8A54FA76A4031AC23C29C06A0DC42904C570F09FDA701EB`
+- S `9FE3F44FF8FBABDBF13025DE0D845F4485A55A33166552F1EE51A987322CC321`
+- P0a pair `C1877B7696E7A44B5DEBE06BDCAC6CA712A83E49A07973107B7F1C4A728D4435`
+- B44 `7C2D2F792C2672221A76CAF08A71F560AF0CB7654B4D537C00FAD00B16EFA187`

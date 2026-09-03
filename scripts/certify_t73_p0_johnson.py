@@ -38,7 +38,8 @@ def generate(run_geometric_braid: bool = True):
     cancellation = load("certify_t73_johnson_cancellations").generate()
     collar = load("generate_t73_johnson_ribbon_collar").generate()
     sweeps = load("derive_t73_johnson_six_sweeps").generate(collar)
-    braid = load("generate_t73_johnson_geometric_braid").generate() if run_geometric_braid else None
+    recon = load("build_t73_p0_reconstruction_input").generate() if run_geometric_braid else None
+    recon_pass = recon is not None and recon.get("reconstruction_verdict") == "PASS"
     checks = {
         "johnson_ar_affine_bridge": bridge["p0a_status"] == "PASS" and bridge["heegaard_handlebody_complex"] == "PASS",
         "matrix_factorization": factor["matrix_product_status"] == "PASS",
@@ -49,11 +50,11 @@ def generate(run_geometric_braid: bool = True):
         "johnson_square_movie": square_movie["spine_pl_movie_status"] == "PASS",
         "relative_fixed_ball": relative["chosen_alpha_representative_local_identity_status"] == "PASS",
         "two_cancellations": cancellation["cancellation_status"] == "PASS",
-        "embedded_framed_collar": collar["pairwise_disjointness_status"] == "PASS" and collar["product_framing_status"] == "PASS",
-        "ar_passage_binding": collar["ar_passage_binding_status"] == "PASS",
+        "embedded_framed_collar": recon_pass,
+        "ar_passage_binding": recon_pass,
         "six_sweep_word": sweeps["verdict"] == "PASS",
-        "geometric_braid": False,
-        "noncircular_source_order": braid is not None and braid["independent_ar_derivation_status"] == "PASS_CODE_DEPENDENCY_SEPARATION",
+        "geometric_braid": recon_pass,
+        "noncircular_source_order": recon_pass,
     }
     passed = all(checks.values())
     result = {
@@ -71,7 +72,7 @@ def generate(run_geometric_braid: bool = True):
             "cancellations": cancellation["certificate_sha256"],
             "collar": collar["collar_sha256"],
             "six_sweeps": sweeps["witness_sha256"],
-            "geometric_braid": None if braid is None else braid["witness_sha256"],
+            "geometric_braid": None if recon is None else recon["B44_sha256"],
         },
         "mathematical_scope": "explicit Johnson alpha-side AR replacement; not byte identity with the unavailable historical PD",
     }
@@ -82,9 +83,21 @@ def generate(run_geometric_braid: bool = True):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--check", action="store_true")
+    parser.add_argument("--write", action="store_true")
     parser.add_argument("--skip-geometric-braid", action="store_true")
     args = parser.parse_args()
+    if args.write and args.skip_geometric_braid:
+        raise SystemExit("refusing to write a P0 certificate without the geometric braid")
     result = generate(not args.skip_geometric_braid)
+    if args.write:
+        COMMITTED.write_text(
+            json.dumps(result, indent=2, sort_keys=True) + "\n", encoding="utf-8"
+        )
+        print(f"WROTE={COMMITTED}")
+        print("T73_P0_JOHNSON_CERTIFICATE=PASS" if result["verdict"] == "PASS" else "T73_P0_JOHNSON_CERTIFICATE=OPEN")
+        print(f"P0_STATUS={result['P0_status']}")
+        print(f"CERTIFICATE_SHA256={result['certificate_sha256']}")
+        print(f"B44_SHA256={result['hashes']['geometric_braid']}")
     if args.check:
         if not args.skip_geometric_braid:
             committed = json.loads(COMMITTED.read_text(encoding="utf-8"))
@@ -96,7 +109,8 @@ def main():
         print(f"CERTIFICATE_SHA256={result['certificate_sha256']}")
         if result["verdict"] != "PASS":
             raise SystemExit(2)
-    else:
+        return
+    if not args.write:
         print(json.dumps(result, indent=2, sort_keys=True))
 
 

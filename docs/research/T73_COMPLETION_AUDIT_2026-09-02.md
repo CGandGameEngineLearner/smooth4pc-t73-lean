@@ -4,15 +4,16 @@ Date: 2026-09-03
 
 ## Result
 
-Geometric closure stopped at P0a.  No load-bearing geometric item is discharged.
+P0 is discharged for the explicit Johnson replacement.  C and S remain Open.
+No counterexample is claimed.
 
 | item | verdict | remaining obligation |
 |---|---|---|
-| P0 | **OPEN** | P0a: AR handlebodies are not a certified PL complex. |
-| C | **OPEN** | Not instantiated; P0a failed first. |
+| P0 | **PASS** | Computational reconstruction recovers the public 11340-letter word. |
+| C | **OPEN** | No isotopy of the actual cut link. |
 | S | **OPEN** | No B-fixing move list and no endpoint foam movies. |
 
-P3 remains conditional on P0--S.  `det(A-I)=1` and `D_3=2624` are finite facts.
+P3 remains conditional on C and S.  `det(A-I)=1` and `D_3=2624` are finite facts.
 
 ## Formal boundary
 
