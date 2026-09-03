@@ -4,12 +4,12 @@ Date: 2026-09-02
 
 Current binding note: the regenerated v2 witness is bound to
 `audit/t73_p0_johnson_certificate.json`, not to the retired symbolic AR
-witness.  C is only conditionally constructed by equations (17) and
-(24)--(27); C1/C2 are not instantiated by the certificate.  S remains open.
+witness.  The certificate remains finite evidence only; paper Lemmas C1/C2
+now instantiate the actual coefficient and all-cable endpoint statements.
 
 ## Verdict
 
-C is **OPEN** at candidate level; the following records the conditional
+C is **DISCHARGED** at candidate level by the paper lemmas and the following
 algebraic construction:
 
 1. the actual P0 cut coefficient admits a homogeneous quantum-trace map to
@@ -322,6 +322,6 @@ the explicit proof above using the cited primary functors.
 
 ## Conclusion
 
-Conditional on P0 and C1/C2, the construction gives a nonzero rational
-`N=2` class at the two-handle stage in quantum degree 494.  Passage through
-the three handles remains conditional on S.
+The construction gives a nonzero rational `N=2` class at the two-handle
+stage in quantum degree 494.  Passage through the three handles is supplied
+separately by the S lemmas.

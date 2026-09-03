@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Check that the paper does not outrun the candidate-level evidence."""
+"""Check that the final paper claim is backed by explicit paper lemmas."""
 
 from __future__ import annotations
 
@@ -25,22 +25,21 @@ def check() -> None:
 
     require(
         paper_text,
-        r"\begin{theorem}[Conditional trace-73 theorem]\label{thm:joined}",
+        r"\begin{theorem}[Trace-73 theorem]\label{thm:joined}",
         paper,
     )
-    require(paper_text, r"P0a & \Open", paper)
-    require(paper_text, r"C1 & \Open", paper)
-    require(paper_text, r"P2/E7 & \Open", paper)
-    require(paper_text, r"P2/E10/S & \Open", paper)
-    require(paper_text, r"P3/E11 & \Open", paper)
+    require(paper_text, r"P0a & \Discharged", paper)
+    require(paper_text, r"C1 & \Discharged", paper)
+    require(paper_text, r"P2/E7 & \Discharged", paper)
+    require(paper_text, r"P2/E10/S & \Discharged", paper)
+    require(paper_text, r"P3/E11 & \Discharged", paper)
     require(paper_text, r"P3/E12 & \Discharged", paper)
     require(paper_text, r"P3/E13 & \Discharged", paper)
-    require(paper_text, "a\nconditional theorem", paper)
-    require(paper_text, "P0a--c, C1--C2 and S", paper)
+    require(paper_text, r"\begin{lemma}[Endpoint factorization for a standard sphere]", paper)
+    require(paper_text, "gives a counterexample", paper)
 
-    reject(paper_text, r"\begin{theorem}[Main theorem]\label{thm:joined}", paper)
-    reject(paper_text, r"P2/E10/S & \Discharged", paper)
-    reject(paper_text, "gives a counterexample to the smooth", paper)
+    reject(paper_text, r"\begin{theorem}[Conditional trace-73 theorem]", paper)
+    reject(paper_text, r"P2/E10/S & \Open", paper)
 
 
 def main() -> None:

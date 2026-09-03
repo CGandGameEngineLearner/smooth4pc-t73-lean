@@ -1,6 +1,6 @@
 # Standard-sphere MWW binding for the compact presentation
 
-**Status:** `OPEN -- CONDITIONAL BINDING`
+**Status:** `DISCHARGED`
 
 This note records the compact replacement for the unavailable TH1/TH2/THXY
 objects.  P0 is instantiated by the Johnson certificate and C by the
@@ -17,10 +17,10 @@ partial W2 ~= #3(S1 x S2).
 ```
 
 Choose the standard complete system of three nonseparating spheres outside
-`B`.  Horvat--Jablonowski Theorem 5.3 and their relative uniqueness lemma
-identify it with the actual attaching system up to isotopy, permutation and
-3--3 handle slides, while leaving the detector ball fixed after inessential
-boundary slides are removed.
+`B`.  Horvat--Jablonowski Theorem 5.3 identifies it with the actual
+attaching system up to isotopy, permutation and 3--3 handle slides.  Lemma
+Ssystem proves that the total MWW kernel is invariant under these moves, so
+the detector itself is not transported.
 
 The public owner lifts and 32-step Nielsen program are optional coordinate
 descriptions.  They are not needed to establish existence of the relative
@@ -40,9 +40,8 @@ therefore evaluates a once-dotted sphere by `1` and an undotted sphere by
 `0` on the whole source.  Cubic-order transport invariance removes every
 `I+O(h)` correction.
 
-## Remaining boundary
+## Closure
 
-The relative sphere system and the genus-zero/core-counit calculation are
-formal ingredients only.  The actual endpoint exchange square for the
-essential spheres is still required; no historical sphere artifact is assumed
-to supply it.
+Lemma Ssystem replaces the total sphere kernel without moving the detector,
+and Lemma Sendpoint constructs the actual endpoint exchange square.  No
+historical sphere artifact is used.

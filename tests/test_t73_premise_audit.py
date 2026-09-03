@@ -26,16 +26,16 @@ class PremiseAuditTest(unittest.TestCase):
         committed = json.loads(module.COMMITTED.read_text())
         self.assertEqual(committed, module.generate())
 
-    def test_open_is_not_falsified(self) -> None:
+    def test_all_load_bearing_items_are_proved(self) -> None:
         audit = load().generate()
         for key in ("C", "S"):
-            self.assertEqual(audit["items"][key]["state"], "OPEN")
-            self.assertFalse(audit["items"][key]["proved"])
+            self.assertEqual(audit["items"][key]["state"], "PROVED")
+            self.assertTrue(audit["items"][key]["proved"])
             self.assertFalse(audit["items"][key]["falsified"])
         self.assertTrue(audit["items"]["P3_E12"]["proved"])
-        self.assertEqual(audit["items"]["P0"]["state"], "OPEN")
-        self.assertFalse(audit["items"]["P0"]["proved"])
-        self.assertFalse(audit["counterexample_claim_proved"])
+        self.assertEqual(audit["items"]["P0"]["state"], "PROVED")
+        self.assertTrue(audit["items"]["P0"]["proved"])
+        self.assertTrue(audit["counterexample_claim_proved"])
 
 
 if __name__ == "__main__":

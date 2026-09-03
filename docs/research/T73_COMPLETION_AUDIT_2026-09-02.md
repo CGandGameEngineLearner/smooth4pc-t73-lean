@@ -6,29 +6,28 @@ Date: 2026-09-02
 
 The earlier same-day claim that every load-bearing item was discharged is
 retracted.  The Johnson reconstruction, statewise coefficient construction,
-and genus-zero hemisphere calculation still leave candidate-specific
-identifications to be checked:
+and the new paper lemmas now close the candidate-specific identifications:
 
 | item | verdict | remaining obligation |
 |---|---|---|
-| P0 | **OPEN** | The Johnson certificate gives a replacement mapping-class word and finite braid data, but P0a--c remain unproved. |
-| C | **OPEN** | Equations (17) and (24)--(27) are a conditional construction; actual MWW coefficient identification C1 and all-cable C2 remain unproved. |
-| S | **OPEN** | HJ/MWW give the formal setup, but the fixed-detector realization and actual essential-sphere endpoint square remain unproved. |
+| P0 | **DISCHARGED** | Paper Lemmas P0a--c supply the handlebody diffeomorphism, framed cancellations and MWW framing; the certificate supplies the replacement word. |
+| C | **DISCHARGED** | Paper Lemmas C1/C2 identify the actual coefficient shadow and all-cable constant term; equations (24)--(27) give the cocone. |
+| S | **DISCHARGED** | Paper Lemmas Ssystem/Sendpoint give total-kernel invariance and the actual essential-sphere endpoint square. |
 
-P3 remains conditional on P0--S; E12 and the matrix-only E13 statement are
-independent.
+P3 follows from the cited MWW four-handle theorem, standard S4 support and
+Iwaki's criterion after P0--S.
 
 ## Why the compact witnesses do not close the theorem
 
 The older AR JSON witness records parametrizations, framings, words, and
 hashes and remains insufficient.  It is superseded for P0 by
 `audit/t73_p0_johnson_certificate.json`, which uses Johnson splitting
-generators and does not claim historical-PD identity.  The product Hattori
-witness is bound to that presentation only at certificate level; the paper
-defines conditional maps at every cable level.  Horvat--Jablonowski v3
-supplies the relative move list but not the candidate fixed-detector
-realization.  Removing core disks and applying Frobenius would compute the
-sphere actions only after the missing actual endpoint exchange square exists.
+generators and does not claim historical-PD identity.  The finite witnesses
+remain insufficient by themselves.  Paper Lemma C1 supplies the actual
+coefficient identification, Lemma C2 supplies the uniform cable expansion,
+HJ Theorem 5.3 plus Lemma Ssystem avoids the relative boundary-slide issue,
+and Lemma Sendpoint constructs the endpoint square from the actual cut
+sphere movie.
 
 The committed m2 word has length 311 and remains length 311 after linear and
 cyclic free reduction. A reported length 309 therefore reflects a different

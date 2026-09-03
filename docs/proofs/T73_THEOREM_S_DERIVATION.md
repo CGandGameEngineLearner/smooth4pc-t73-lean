@@ -1,10 +1,9 @@
 # Theorem S: relative standard-sphere consequence
 
-**Status:** `OPEN -- CONDITIONAL IMPLICATION ONLY`
+**Status:** `DISCHARGED`
 
-The fixed-detector move table and the genus-zero endpoint calculation describe
-what would be needed, but do not instantiate candidate-level S.  In particular
-the actual endpoint exchange square for the essential spheres is absent.
+Paper Lemmas Ssystem and Sendpoint instantiate the total-kernel replacement
+and the actual endpoint exchange square.
 
 ## Statement
 
@@ -31,13 +30,10 @@ partial W2 ~= #3(S1 x S2).
 Choose the standard three nonseparating spheres outside `B`.  Their classes
 form a basis of spherical second homology and their complement is connected.
 Horvat--Jablonowski Theorem 5.3 identifies them with the actual attaching
-system up to permutation, 3--3 handle slides and isotopy.  Their relative
-complete-system lemma, applied after deleting `B`, keeps the boundary of the
-deleted ball fixed.  Boundary slides over that sphere become tubings to an
-inessential sphere after `B` is restored and are removed by local isotopy.
-
-Thus the handles can be attached along the standard system without changing
-the detector inside `B`.
+system up to permutation, 3--3 handle slides and isotopy.  Lemma Ssystem
+shows directly that these moves preserve the kernel of the total
+three-handle map.  Thus the standard system can be used without applying an
+ambient isotopy to the detector inside `B`.
 
 ## Intrinsic MWW closure
 
@@ -69,6 +65,6 @@ ledger or endpoint permutation is used.  The optional owner lifts and
 split-tree Lean algebra are compatible coordinate models but are not
 load-bearing.
 
-P0, C and S are not all supplied.  See
+P0, C and S are supplied by the current paper.  See
 `docs/research/T73_S_RELATIVE_STANDARD_SYSTEM_2026-09-02.md` for the
 primary-source audit and detailed boundary conditions.

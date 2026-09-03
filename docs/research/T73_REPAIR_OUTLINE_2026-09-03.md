@@ -48,3 +48,26 @@
 - C1：实际 MWW \(\KhR_2\) 系数双模与 endpoint quantum trace 的自然同构；
 - C2：实际所有 cable level 的 pure-braid \(I+O(h)\) 展开；
 - C3：C 的 \(B\) 外自然性不得被用于推出 S 的本质球作用。
+
+## 2026-09-03 resolution
+
+The current paper adds seven paper-level lemmas:
+
+- P0a: the affine map is a degree-one diffeomorphism between different
+  lattice quotients and carries the complete Heegaard pair;
+- P0b: both attaching circles satisfy the geometric Kirby cancellation
+  criterion and use transported product annuli;
+- P0c: the MWW tubular coordinates are chosen from those framing annuli;
+- C1: the actual cut-link isotopy, the \(N=2\) BHPW equivalence and
+  Künneth identify the MWW coefficient with both actions;
+- C2: after endpoint specialization at \(q=1\), every pure cable braid has
+  constant term \(I\), uniformly in cable level;
+- Ssystem: slide-equivalent complete sphere systems have the same total MWW
+  three-handle kernel, avoiding relative boundary slides;
+- Sendpoint: a generic cut movie has no mixed Morse critical points, so its
+  constant endpoint map factors as the old detector factor tensor the actual
+  genus-zero/core-counit map.
+
+The last lemma supplies the endpoint exchange square that was missing in the
+outline above; only after this square is established is the Frobenius
+calculation (32) used to prove (31).

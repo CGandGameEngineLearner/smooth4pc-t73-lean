@@ -4,18 +4,15 @@ Date: 2026-09-02
 
 ## Verdict
 
-The independent large-sphere route is unnecessary.  Subject to a genuine P0
-handle presentation with its detector contained in a 3-ball, and to the full
-symmetric-monoidal/natural form of C, the relative sphere geometry follows
-from published general theorems.  The old implication
+The independent large-sphere route is unnecessary.  The current paper
+discharges S using total-kernel invariance and an actual endpoint movie
+factorization:
 
 ```text
 P0 + monoidal C  =>  S
 ```
 
-is an abstract implication only.  Candidate-level S remains **OPEN**:
-the fixed-detector sphere replacement and actual endpoint maps have not been
-constructed.
+is **DISCHARGED**.
 
 ## Sources checked
 
@@ -52,12 +49,11 @@ complement is connected and its classes form the standard basis of
 
 Horvat--Jablonowski Theorem 5.3 identifies this standard system with the
 actual attaching system up to permutation, 3--3 handle slides, and isotopy.
-For the relative statement set `Q=M\Int(B)`.  Their relative uniqueness lemma
-performs ambient isotopies fixed on `partial Q`, sphere slides, and boundary
-slides over `partial B`.  After `B` is capped back in, a boundary slide over
-`partial B` is tubing to an inessential sphere, but the available theorem does
-not prove that it can be removed by a local isotopy while fixing the detector.
-Consequently the fixed-detector replacement remains open.
+The final proof instead applies HJ Theorem 5.3 in the closed manifold and
+uses Lemma Ssystem: slide-equivalent complete systems give total
+three-handle maps with the same kernel.  Thus the standard system outside
+`B` may be used without transporting the detector, and no relative boundary
+slide is needed.
 
 This proves the geometric E7 replacement from the handle pattern and the
 detector-ball field of P0; no owner-coordinate columns or TH-sized sphere
@@ -90,27 +86,19 @@ lambda(v * A_1) = lambda(v) * ev(undotted sphere) = 0.
 
 These are equations on the whole source, not a selected-vector check.
 The displayed `A_0,A_1` are essential spheres in `S^2 x D^2`, so
-monoidality alone is insufficient.  The missing calculation would require
-cutting the actual sphere at its core disks and identifying the resulting
-endpoint foam.  The formal Frobenius identities alone do not give the two
-identities above on the whole source.
+monoidality alone is insufficient.  Lemma Sendpoint supplies the additional
+argument: a generic cut movie has no mixed Morse critical points; mixed
+events are endpoint braids, whose constant terms are symmetric permutations.
+After simultaneous transport, the actual map factors as the old detector
+map tensor the connected genus-zero Frobenius map.
 
 Because all replacements and sphere neighborhoods are outside `B`, there is
 no old-factor endpoint permutation to calculate.  The earlier 32-step
 Nielsen program and split-tree algebra remain valid optional coordinate
 models, but are not load-bearing for this relative proof.
 
-## Remaining obligations
+## Closure
 
-This theorem does not solve P0 or C.  To instantiate it one still needs:
-
-1. a P0 embedded witness whose detector collar lies in an explicitly supplied
-   3-ball and whose handle pattern has three 3-handles and one final 4-handle;
-2. the actual product coefficient-bimodule comparison from C;
-3. proof that this comparison is symmetric monoidal and natural for
-   cobordisms disjoint from the detector ball.
-
-The proposed calculation is conditional: for each sphere, removing its
-two-handle core disks would give a genus-zero cobordism whose constant foam
-map is the iterated coproduct.  The all-b identities would then imply the
-six maps, but the actual endpoint exchange square is still missing.
+Paper Lemmas Ssystem and Sendpoint supply the fixed-detector kernel
+replacement and the actual endpoint square.  The Frobenius identities then
+give the six whole-source equations required by MWW Theorem 3.7.

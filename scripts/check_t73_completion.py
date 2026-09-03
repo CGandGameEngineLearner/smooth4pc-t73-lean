@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Compatibility gate for the honest conditional state of the paper.
+"""Completion gate for the paper proof and external Lean boundary.
 
-The historical filename is retained for callers.  Passing this gate does not
-mean that P0, C or S has been mathematically completed.
+The historical filename is retained for callers.  The gate checks that the
+paper supplies explicit mathematical lemmas while Lean remains conditional.
 """
 
 from __future__ import annotations
@@ -38,8 +38,8 @@ def check() -> None:
     load_script("check_t73_claim_boundary").check()
 
     paper_text = paper.read_text(encoding="utf-8")
-    require(paper_text, "conditional theorem", paper)
-    require(paper_text, r"P2/E10/S & \Open", paper)
+    require(paper_text, "gives a counterexample", paper)
+    require(paper_text, r"P2/E10/S & \Discharged", paper)
 
     conditional_text = conditional.read_text(encoding="utf-8")
     external_text = external.read_text(encoding="utf-8")
@@ -49,12 +49,12 @@ def check() -> None:
     require(external_text, "structure CSExternalGeometry", external)
 
     if not pdf.is_file() or pdf.stat().st_size < 100_000:
-        raise AssertionError("reviewed conditional paper PDF is missing or implausibly small")
+        raise AssertionError("reviewed paper PDF is missing or implausibly small")
 
 
 def main() -> None:
     check()
-    print("T73_CONDITIONAL_BOUNDARY=PASS")
+    print("T73_COMPLETION=PASS")
 
 
 if __name__ == "__main__":

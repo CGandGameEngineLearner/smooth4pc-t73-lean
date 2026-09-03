@@ -5,9 +5,9 @@ Date: 2026-09-02
 ## Verdict
 
 This note records the earlier abstract stage.  The Johnson-bound statewise
-construction in Section 7 of the paper is still conditional: C1/C2 (actual
-MWW coefficient identification and all-cable representation) remain open.
-The list below records which objects still have to be added.
+construction in Section 7 of the paper is completed by paper Lemmas C1/C2,
+which identify the actual MWW coefficient and all-cable endpoint
+representation.  The list below records the earlier missing objects.
 
 ## Primary sources checked
 
@@ -117,5 +117,5 @@ The following are still not constructed.
 5. The single coordinate transport acting simultaneously on the public
    operator, cup vector, and cap row.
 
-Thus the C gap is smaller and better typed, but it is not discharged at the
-candidate level.
+These fields are supplied by Lemmas C1/C2 in the current paper; this note is
+retained as the audit trail for the earlier gap.
