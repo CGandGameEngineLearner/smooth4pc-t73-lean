@@ -1096,8 +1096,9 @@ $3$-handles attaches three three-dimensional $1$-handles to $S^3$, and hence
 The actual attaching sphere system has connected complement, since sphere
 surgery on it gives the connected boundary of $W_3$.
 
-Let $B_0$ be a slightly smaller concentric ball containing the 44-strand
-collar, and retain the notation $B$ for the outer product ball.  Choose the
+Assuming P0 supplies such an outer ball, let $B_0$ be a slightly smaller
+concentric ball containing the 44-strand collar, and retain the notation $B$
+for the outer product ball.  Choose the
 standard complete system $\mathcal A=(A_1,A_2,A_3)$ in
 $\partial W_2\setminus B$.  Put
 $Q=\partial W_2\setminus\operatorname{Int}B_0$.  Horvat--Jab\l{}onowski
@@ -1124,12 +1125,8 @@ boundary copies of the three spheres.  The spotted-ball slide lemma
 prove that every boundary slide has the same effect as a sphere slide while
 fixing the inner collar.  Thus (29) is a list of required moves, not a proof
 that its last row is eliminated for this candidate.
-All arcs are chosen in the punctured shell and the cut complement.  Hence the
-isotopy is the identity on $B_0$, so the collar and its product framing never
-move.  The table is only a finite list of required move types; the actual
-relative replacement remains a P0/S premise.
-The four move types, seven boundary components and five spotted-ball tubings
-are regenerated in
+The finite move inventory (four types, seven boundary components and five
+possible spotted-ball tubings) is regenerated in
 \path{audit/t73_s_relative_moves_certificate.json}, with digest
 \[
 \hash{A242F07D9F9683F54FD020DB130E90EB}
@@ -1179,10 +1176,10 @@ For that system, S reduces exactly to the six equations in (31).
 \end{proposition}
 
 \begin{proof}
-The relative replacement is the finite move table (29).  Sphere slides are
-exactly $3$--$3$ handle slides, so they do not change the resulting
-three-handle cobordism.  Diagram (30) is MWW Theorem~3.7 and Example~3.8
-applied in the tubular neighborhood of each standard sphere.
+Under the fixed-detector realization required by S, the relative moves in
+(29) are supported outside $B_0$, and sphere slides are exactly $3$--$3$
+handle slides.  Diagram (30) is MWW Theorem~3.7 applied to the resulting
+standard system.
 \end{proof}
 
 \subsection{The remaining essential-sphere endpoint comparison}
@@ -1274,20 +1271,25 @@ independently checkable argument are both supplied.
 \toprule
 Item & Verdict & Reason \\
 \midrule
-P0 & \Discharged & The Johnson-generator lift, relative PL movie, two cancellations, 44 rational framed lanes and independently generated/re-extracted 11340-letter braid prove the replacement presentation; no historical-PD identity is claimed. \\
-P1/C & \Discharged & The product-ribbon isotopy gives the actual two-sided coefficient maps; the statewise Reynolds--counit construction proves every beta/psi square. \\
-P2/E7 & \Discharged & HJ Lemmas 5.5 and 5.7 give the finite relative move table, with boundary slides replaced outside the inner detector ball. \\
-P2/E10/S & \Discharged & Diagram (30) identifies the actual hemisphere pair, and the genus-zero core-counit calculation (32) proves all six equations (31). \\
-P3/E11 & \Discharged & MWW Proposition 3.4 applies to the identified handle decomposition and preserves the degree-$494$ class. \\
+P0a & \Open & The Johnson lift is a valid mapping-class representative, but the paper has not constructed the relative AR-handlebody diffeomorphism. \\
+P0b & \Open & The two word cancellations are recorded, but a complete ambient framed Kirby $1/2$ cancellation with $\varepsilon=0$ is not supplied. \\
+P0c & \Open & The rational product normal is recorded, but its equality with the AR/MWW lasagna framing is not proved. \\
+P0d & \Discharged & For the explicit Johnson replacement, the 93-bit word search and independent geometric re-extraction give the public 11340-letter word; no historical-PD identity is claimed. \\
+C1 & \Open & The actual MWW $\KhR_2$ coefficient bimodule and its map to the endpoint quantum trace are not identified by the certificate. \\
+C2 & \Open & The all-cable pure-braid $I+O(h)$ statement is required but not proved for the actual MWW cable representations. \\
+C3 & \Discharged & The paper explicitly keeps C's $B$-external naturality separate from any essential-sphere action. \\
+P2/E7 & \Open & HJ supplies allowed relative moves, but the fixed-detector realization for this candidate is not constructed. \\
+P2/E10/S & \Open & The formal MWW hemisphere pair is identified, but the six actual endpoint evaluations are not computed. \\
+P3/E11 & \Open & MWW Proposition 3.4 is general; its application to this candidate still depends on P0, C and S. \\
 P3/E12 & \Discharged & MWW Corollary 3.5 gives the standard $S^4$ module concentrated in bidegree zero. \\
-P3/E13 & \Discharged & The Johnson--AR bridge identifies the candidate with $\Sigma_A^0$, so Iwaki's determinant criterion applies to the verified matrix. \\
+P3/E13 & \Discharged & Iwaki's determinant criterion applies to the matrix, independently of the unproved handlebody identification. \\
 \bottomrule
 \end{tabularx}
 \end{center}
 
 The historical availability script reports the large files as absent.  The
-Johnson, statewise coefficient and genus-zero sphere constructions make them
-unnecessary.
+Johnson word certificate does not replace the missing P0a--c geometry, and
+the statewise coefficient and sphere ledgers do not replace C1/C2 or S.
 
 The machine-readable allocation in
 \path{audit/t73_premise_audit.json} is regenerated by
