@@ -103,6 +103,7 @@ python -B scripts/certify_t73_e13_identification.py --check
 
 # 前提汇总（须保持 OVERALL=OPEN / 非反例）
 python -B scripts/audit_t73_premises.py --check
+python -B scripts/check_t73_claim_boundary.py
 ```
 
 | 脚本 | 作用 | 预期 |
@@ -117,6 +118,7 @@ python -B scripts/audit_t73_premises.py --check
 | `certify_t73_e12_s4.py` | 标准 \(S^4\) 上空链次数 \(494\) | `S4_DEGREE_494_ZERO=True` |
 | `certify_t73_e13_*.py` | \(X_J\cong\Sigma_A^0\) 管道 | `IDENTIFIED_WITH_SIGMA=True` |
 | `audit_t73_premises.py` | 汇总状态 | `P0/C/S/P3=PASS`，`COUNTEREXAMPLE=False` |
+| `check_t73_claim_boundary.py` | 论文保持条件性主张 | `T73_CLAIM_BOUNDARY=OPEN_GEOMETRY` |
 
 **说明。**
 

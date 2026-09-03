@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
-"""Check that the paper does not claim a discharged counterexample."""
+"""Check that the controlling paper keeps a conditional claim boundary.
+
+The English manuscript discharges Johnson P0/C/S/P3 in the body, but must not
+claim an unconditional smooth counterexample: Lean ExternalGeometry remains
+uninhabited, and MWW 3.4/3.5 are cited rather than proved here.
+"""
 
 from __future__ import annotations
 
@@ -7,6 +12,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
+PAPER = ROOT / "paper" / "spc4-t73-candidate" / "main.tex"
 
 
 def require(text: str, needle: str, source: Path) -> None:
@@ -20,54 +26,67 @@ def reject(text: str, needle: str, source: Path) -> None:
 
 
 def check() -> None:
-    paper = ROOT / "paper" / "spc4-t73-candidate" / "main.tex"
-    paper_text = paper.read_text(encoding="utf-8")
+    paper_text = PAPER.read_text(encoding="utf-8")
 
+    # Conditional top-level theorem (not an unconditional Trace-73 theorem).
     require(
         paper_text,
         r"\begin{theorem}[Conditional trace-73 theorem]\label{thm:joined}",
-        paper,
-    )
-    require(paper_text, r"P0a & \Discharged", paper)
-    require(paper_text, r"P0d linking & \Discharged", paper)
-    require(paper_text, r"C1 & \Discharged", paper)
-    require(paper_text, r"C2 & \Discharged", paper)
-    require(paper_text, r"C3 & \Unused", paper)
-    require(paper_text, r"P2/E7 & \Unused", paper)
-    require(paper_text, r"P2/E10/S & \Discharged", paper)
-    require(paper_text, r"P3/E11 & \Discharged", paper)
-    require(paper_text, r"P3/E12 & \Discharged", paper)
-    require(paper_text, r"P3/E13 & \Discharged", paper)
-    require(paper_text, r"lem:P0d-link", paper)
-    require(paper_text, r"linkingM2Ryz\_eq\_zero", paper)
-    require(paper_text, r"computedCubic_eq_2624", paper)
-    require(paper_text, "2624", paper)
-    require(
-        paper_text,
-        r"\cite[Proposition~3.4]{ManolescuWalkerWedrich2023}",
-        paper,
+        PAPER,
     )
     require(
         paper_text,
-        r"\cite[Corollary~3.5]{ManolescuWalkerWedrich2023}",
-        paper,
+        "That interface is not constructed in Lean, so no counterexample is claimed.",
+        PAPER,
     )
-    require(paper_text, "The repository does not prove Proposition~3.4", paper)
-    require(paper_text, r"scripts/certify\_t73\_e12\_s4.py", paper)
+    require(
+        paper_text,
+        r"that assembly is \Open\ for the Johnson candidate",
+        PAPER,
+    )
 
-    reject(paper_text, r"P2/E10/S & \Open", paper)
-    reject(paper_text, r"P3/E11 & \Open", paper)
-    reject(paper_text, r"C3 & \Open", paper)
-    reject(paper_text, r"P2/E7 & \Open", paper)
-    reject(paper_text, "The actual reduced PD ledger is absent", paper)
-    reject(paper_text, "that object is absent", paper)
-    reject(paper_text, "gives a counterexample", paper)
-    reject(paper_text, r"\begin{theorem}[Trace-73 theorem]\label{thm:joined}", paper)
+    # Discharged geometric theorems / lemmas used by the claim map.
+    for marker in (
+        r"\label{thm:P0discharge}",
+        r"\label{lem:P0d-link}",
+        r"\label{lem:C1}",
+        r"\label{thm:Cdischarge}",
+        r"\label{thm:Sdischarge}",
+        r"\label{hyp:P3}",
+        r"\label{sec:final-identifications}",
+        r"Not the E7",
+    ):
+        require(paper_text, marker, PAPER)
+
+    # Finite / cited layers that must remain visible in the manuscript.
+    require(paper_text, "2624", PAPER)
+    require(paper_text, "494", PAPER)
+    require(
+        paper_text,
+        r"\cite[Proposition~3.4 and Corollary~3.5]{ManolescuWalkerWedrich2023}",
+        PAPER,
+    )
+    require(paper_text, "cited not formalized", PAPER)
+    require(paper_text, r"scripts/recompute\_t73\_delta3.py --check", PAPER)
+    require(paper_text, r"certify\_t73\_e12\_s4.py", PAPER)
+
+    # Forbidden: restored status-table OPEN rows, absent-ledger slogans,
+    # or an unconditional joined theorem / counterexample claim.
+    reject(paper_text, r"\begin{theorem}[Trace-73 theorem]\label{thm:joined}", PAPER)
+    reject(paper_text, "gives a counterexample", PAPER)
+    reject(paper_text, "The actual reduced PD ledger is absent", PAPER)
+    reject(paper_text, "that object is absent", PAPER)
+    reject(paper_text, r"P0a & \Open", PAPER)
+    reject(paper_text, r"P3/E11 & \Open", PAPER)
+    reject(paper_text, r"P2/E10/S & \Open", PAPER)
+    reject(paper_text, r"C3 & \Open", PAPER)
+    reject(paper_text, r"P2/E7 & \Open", PAPER)
 
 
 def main() -> None:
     check()
     print("T73_CLAIM_BOUNDARY=OPEN_GEOMETRY")
+    print(f"PAPER={PAPER}")
 
 
 if __name__ == "__main__":

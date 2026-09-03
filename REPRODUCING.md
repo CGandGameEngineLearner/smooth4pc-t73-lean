@@ -100,6 +100,7 @@ python -B scripts/certify_t73_e13_close.py --check
 python -B scripts/certify_t73_e13_identification.py --check
 
 python -B scripts/audit_t73_premises.py --check
+python -B scripts/check_t73_claim_boundary.py
 ```
 
 Expected highlights:
@@ -114,6 +115,7 @@ Expected highlights:
 - E12: `S4_DEGREE_494_ZERO=True`, `ABOUT_STANDARD_S4=True`
 - E13: `IDENTIFIED_WITH_SIGMA=True`
 - audit: `P0/C/S/P3=PASS`, `OVERALL=OPEN`, `COUNTEREXAMPLE=False`
+- claim boundary: `T73_CLAIM_BOUNDARY=OPEN_GEOMETRY`
 
 A short copy of this checklist also appears in the root `README.md` /
 `README.zh-CN.md`.

@@ -112,6 +112,7 @@ python -B scripts/certify_t73_e13_identification.py --check
 
 # Premise summary (must remain OVERALL=OPEN / no counterexample)
 python -B scripts/audit_t73_premises.py --check
+python -B scripts/check_t73_claim_boundary.py
 ```
 
 | Script | Role | Expect |
@@ -126,6 +127,7 @@ python -B scripts/audit_t73_premises.py --check
 | `certify_t73_e12_s4.py` | Empty-link degree \(494\) on standard \(S^4\) | `S4_DEGREE_494_ZERO=True` |
 | `certify_t73_e13_*.py` | \(X_J\cong\Sigma_A^0\) pipeline | `IDENTIFIED_WITH_SIGMA=True` |
 | `audit_t73_premises.py` | Aggregate status | `P0/C/S/P3=PASS`, `COUNTEREXAMPLE=False` |
+| `check_t73_claim_boundary.py` | Paper keeps conditional claim | `T73_CLAIM_BOUNDARY=OPEN_GEOMETRY` |
 
 **Notes.**
 
