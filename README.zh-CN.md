@@ -59,8 +59,71 @@ python3 scripts/audit_t73_premises.py --check
    [`paper/spc4-t73-candidate/main.tex`](paper/spc4-t73-candidate/main.tex)
    或上方英文/中文 PDF。
 2. 按 [`REPRODUCING.md`](REPRODUCING.md) 从全新 clone 编译、检查公理报告并重算检测量。
-3. 复核边界图见
+3. 按下方命令重放有限检测量与 Johnson P0/C/S/P3 证书（完整清单见 `REPRODUCING.md`）。
+4. 复核边界图见
    [`docs/INDEPENDENT_REVIEW.md`](docs/INDEPENDENT_REVIEW.md)。
+
+## 重算 / 重放计算脚本
+
+在仓库根目录使用 **Python 3.10+**。Windows 上可用 `python` 代替 `python3`。
+每个 `--check` 会在内存中再生证书，并与 `audit/` 下已提交的 JSON 比对。
+
+### 有限检测量（\(D_3=2624\)）
+
+```text
+python -I -B scripts/recompute_t73_delta3.py --check
+```
+
+预期：`DELTA3_ETA_T1=2624`、`DELTA3_XI=0`、`VERIFY=PASS`。
+
+### Johnson P0 → C → S → P3（推荐顺序）
+
+```text
+# P0（约 1–2 分钟）：AR 桥、消去、几何辫
+python -B scripts/certify_t73_p0_johnson.py --check
+
+# 可选：写出并核验严格 P0 重构输入（默认未提交该 JSON）
+python -B scripts/build_t73_p0_reconstruction_input.py --write
+python -B scripts/reconstruct_t73_p0.py audit/t73_p0_reconstruction_input.json
+
+# C：product 矩形、比较支撑、汇总 witness
+python -B scripts/certify_t73_c1_cut_link.py --check
+python -B scripts/certify_t73_c2_comparison.py --check
+python -B scripts/generate_t73_c_comparison_witness.py --check
+
+# S：反向 belt 球面与相对移动账本
+python -B scripts/certify_t73_s_standard_spheres.py --check
+python -B scripts/certify_t73_s_relative_moves.py --check
+
+# P3：四柄图景、标准 S^4 次数 494、CS 识别
+python -B scripts/certify_t73_p3_four_handle.py --check
+python -B scripts/certify_t73_e12_s4.py --check
+python -B scripts/certify_t73_e13_close.py --check
+python -B scripts/certify_t73_e13_identification.py --check
+
+# 前提汇总（须保持 OVERALL=OPEN / 非反例）
+python -B scripts/audit_t73_premises.py --check
+```
+
+| 脚本 | 作用 | 预期 |
+| --- | --- | --- |
+| `certify_t73_p0_johnson.py` | P0 Johnson 替换 | `T73_P0_JOHNSON_CERTIFICATE=PASS` |
+| `reconstruct_t73_p0.py` | 严格 PL collar 对公开词 | `P0_RECONSTRUCTION=PASS`，`B44_LENGTH=11340` |
+| `certify_t73_c1_cut_link.py` | 44 条带 + 227 剩余 \(z\) | `RECTANGLES=44`，`LEFTOVER_Z_CIRCLES=227` |
+| `certify_t73_c2_comparison.py` | C2 支撑不相交 / \(H\) movies | `T73_C2_COMPARISON=PASS` |
+| `generate_t73_c_comparison_witness.py` | C 账本绑定 P0/C1/C2 | `C_STATUS=PASS` |
+| `certify_t73_s_*.py` | S 球面系与移动 | `PASS` |
+| `certify_t73_p3_four_handle.py` | \(X_J\) 四柄层 | `E11`/`E12` PASS；`E13=PARTIAL` 属设计 |
+| `certify_t73_e12_s4.py` | 标准 \(S^4\) 上空链次数 \(494\) | `S4_DEGREE_494_ZERO=True` |
+| `certify_t73_e13_*.py` | \(X_J\cong\Sigma_A^0\) 管道 | `IDENTIFIED_WITH_SIGMA=True` |
+| `audit_t73_premises.py` | 汇总状态 | `P0/C/S/P3=PASS`，`COUNTEREXAMPLE=False` |
+
+**说明。**
+
+- 证书经 SHA 链式绑定：C 绑定 P0，S 绑定 P0+C，P3 绑定 P0+C+S。改上游而不再生下游会导致 `--check` 失败。
+- `certify_t73_p3_four_handle.py` 报 `E13=PARTIAL` 是预期行为；完整 \(\Sigma_A^0\) 识别在 `e13_*` 脚本中。
+- C1/C2 核验的是正文所用的**组合 / PL 模型**义务，本身并不重证 MWW/BPW 范畴比较。
+- Lean 编译（`tests/test_t73_minimal_formalization.py`）另计，较慢（约 5–10 分钟）；见 [`REPRODUCING.md`](REPRODUCING.md)。
 
 ## 复现约定
 

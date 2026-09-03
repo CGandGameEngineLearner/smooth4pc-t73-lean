@@ -66,8 +66,73 @@ Paper sources and build notes:
    or the English PDF above.
 2. Follow [`REPRODUCING.md`](REPRODUCING.md) to build from a fresh clone, audit
    reported axioms, and recompute the detector.
-3. For the independent-review boundary map, see
+3. Replay the finite detector and Johnson P0/C/S/P3 certificates below
+   (or the fuller checklist in `REPRODUCING.md`).
+4. For the independent-review boundary map, see
    [`docs/INDEPENDENT_REVIEW.md`](docs/INDEPENDENT_REVIEW.md).
+
+## Replay calculation scripts
+
+Requires **Python 3.10+** from the repository root. On Windows, `python` is
+fine wherever `python3` appears. Each `--check` regenerates the certificate
+in memory and compares it to the committed JSON under `audit/`.
+
+### Finite detector (\(D_3=2624\))
+
+```text
+python -I -B scripts/recompute_t73_delta3.py --check
+```
+
+Expect `DELTA3_ETA_T1=2624`, `DELTA3_XI=0`, and `VERIFY=PASS`.
+
+### Johnson P0 → C → S → P3 (recommended order)
+
+```text
+# P0 (~1–2 min): AR bridge, cancellations, geometric braid
+python -B scripts/certify_t73_p0_johnson.py --check
+
+# Optional explicit P0 reconstruction input (not committed by default)
+python -B scripts/build_t73_p0_reconstruction_input.py --write
+python -B scripts/reconstruct_t73_p0.py audit/t73_p0_reconstruction_input.json
+
+# C: product rectangles, comparison supports, assembled witness
+python -B scripts/certify_t73_c1_cut_link.py --check
+python -B scripts/certify_t73_c2_comparison.py --check
+python -B scripts/generate_t73_c_comparison_witness.py --check
+
+# S: reversed belt spheres and relative-move ledger
+python -B scripts/certify_t73_s_standard_spheres.py --check
+python -B scripts/certify_t73_s_relative_moves.py --check
+
+# P3: four-handle picture, standard-S^4 degree 494, CS identification
+python -B scripts/certify_t73_p3_four_handle.py --check
+python -B scripts/certify_t73_e12_s4.py --check
+python -B scripts/certify_t73_e13_close.py --check
+python -B scripts/certify_t73_e13_identification.py --check
+
+# Premise summary (must remain OVERALL=OPEN / no counterexample)
+python -B scripts/audit_t73_premises.py --check
+```
+
+| Script | Role | Expect |
+| --- | --- | --- |
+| `certify_t73_p0_johnson.py` | P0 Johnson replacement | `T73_P0_JOHNSON_CERTIFICATE=PASS` |
+| `reconstruct_t73_p0.py` | Strict PL collar vs public word | `P0_RECONSTRUCTION=PASS`, `B44_LENGTH=11340` |
+| `certify_t73_c1_cut_link.py` | 44 ribbons + 227 leftover \(z\) | `RECTANGLES=44`, `LEFTOVER_Z_CIRCLES=227` |
+| `certify_t73_c2_comparison.py` | Disjoint C2 supports / \(H\) movies | `T73_C2_COMPARISON=PASS` |
+| `generate_t73_c_comparison_witness.py` | C ledger bound to P0/C1/C2 | `C_STATUS=PASS` |
+| `certify_t73_s_*.py` | S sphere system + moves | `PASS` |
+| `certify_t73_p3_four_handle.py` | \(X_J\) four-handle layer | `E11`/`E12` PASS; `E13=PARTIAL` by design |
+| `certify_t73_e12_s4.py` | Empty-link degree \(494\) on standard \(S^4\) | `S4_DEGREE_494_ZERO=True` |
+| `certify_t73_e13_*.py` | \(X_J\cong\Sigma_A^0\) pipeline | `IDENTIFIED_WITH_SIGMA=True` |
+| `audit_t73_premises.py` | Aggregate status | `P0/C/S/P3=PASS`, `COUNTEREXAMPLE=False` |
+
+**Notes.**
+
+- Certificates are SHA-chained: C binds to P0, S to P0+C, P3 to P0+C+S. Changing an upstream certificate without regenerating dependents will fail `--check`.
+- `certify_t73_p3_four_handle.py` reporting `E13=PARTIAL` is expected; full \(\Sigma_A^0\) identification is in the `e13_*` scripts.
+- C1/C2 check **combinatorial / PL model** obligations used by the paper; they do not re-prove MWW/BPW categorical comparison by themselves.
+- Lean compile (`tests/test_t73_minimal_formalization.py`) is separate and slower (~5–10 min); see [`REPRODUCING.md`](REPRODUCING.md).
 
 ## Reproducibility contract
 

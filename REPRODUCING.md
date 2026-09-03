@@ -73,7 +73,52 @@ DELTA3_XI=0
 VERIFY=PASS
 ```
 
-## 5. Verify the public geometry evidence
+## 5. Replay Johnson P0 / C / S / P3 certificates
+
+Run from the repository root with Python 3.10+. On Windows, `python` may be
+used in place of `python3`. Each `--check` regenerates the certificate and
+compares it to the committed file under `audit/`. Prefer this order (SHA
+chain: P0 → C → S → P3):
+
+```text
+python -B scripts/certify_t73_p0_johnson.py --check
+
+# Optional: materialize and verify the strict P0 reconstruction input
+python -B scripts/build_t73_p0_reconstruction_input.py --write
+python -B scripts/reconstruct_t73_p0.py audit/t73_p0_reconstruction_input.json
+
+python -B scripts/certify_t73_c1_cut_link.py --check
+python -B scripts/certify_t73_c2_comparison.py --check
+python -B scripts/generate_t73_c_comparison_witness.py --check
+
+python -B scripts/certify_t73_s_standard_spheres.py --check
+python -B scripts/certify_t73_s_relative_moves.py --check
+
+python -B scripts/certify_t73_p3_four_handle.py --check
+python -B scripts/certify_t73_e12_s4.py --check
+python -B scripts/certify_t73_e13_close.py --check
+python -B scripts/certify_t73_e13_identification.py --check
+
+python -B scripts/audit_t73_premises.py --check
+```
+
+Expected highlights:
+
+- P0: `T73_P0_JOHNSON_CERTIFICATE=PASS` (full geometric braid; ~1–2 minutes)
+- optional reconstruct: `P0_RECONSTRUCTION=PASS`, `B44_LENGTH=11340`
+- C1: `RECTANGLES=44`, `LEFTOVER_Z_CIRCLES=227`
+- C2 / C witness: `PASS`
+- S: `PASS` on spheres and relative moves
+- P3 four-handle: `E11`/`E12` PASS and `E13=PARTIAL` **by design**
+  (identification is completed by the `e13_*` scripts)
+- E12: `S4_DEGREE_494_ZERO=True`, `ABOUT_STANDARD_S4=True`
+- E13: `IDENTIFIED_WITH_SIGMA=True`
+- audit: `P0/C/S/P3=PASS`, `OVERALL=OPEN`, `COUNTEREXAMPLE=False`
+
+A short copy of this checklist also appears in the root `README.md` /
+`README.zh-CN.md`.
+
+## 6. Verify the public geometry evidence
 
 Before that, verify the public geometry evidence and recompute the
 2,126,291-crossing global-descending certificate:
@@ -84,7 +129,7 @@ python -I -B scripts/verify_public_geometry_evidence.py
 
 The command must end with `GLOBAL_DESCENDING=PASS` and `VERIFY=PASS`.
 
-## 6. Check the convention freeze
+## 7. Check the convention freeze
 
 The legality criteria were committed before the detailed convention search:
 
@@ -97,7 +142,7 @@ The command must exit `0`. The two records are:
 - `docs/proofs/QSTAR_R7_LEGALITY_CRITERIA_PRESEARCH_20260901.md`
 - `docs/proofs/QSTAR_R7_LEGALITY_ADJUDICATION_20260901.md`
 
-## 7. Interpret the result correctly
+## 8. Interpret the result correctly
 
 Compilation verifies the finite algebra and the implication from the
 `ExternalGeometry` and Cappell--Shaneson interfaces to the final conclusion.
@@ -110,7 +155,7 @@ For the erratum compilation and complete axiom output, see
 `docs/proofs/QSTAR_R8_T73AUDIT_RAW_20260903.txt`.  The earlier fresh-clone
 record remains at `docs/proofs/PUBLIC_RELEASE_CLEAN_REPLAY_20260901.md`.
 
-## 8. Build the review paper
+## 9. Build the review paper
 
 From `paper/spc4-t73-candidate` in WSL or Linux:
 
