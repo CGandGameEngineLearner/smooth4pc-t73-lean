@@ -1,47 +1,73 @@
-# Smooth4PC T73 counterexample / falsification package
+# Smooth4PC T73 — conditional skein-lasagna obstruction
 
 [中文说明](README.zh-CN.md)
 
-This repository presents a **candidate disproof of the smooth four-dimensional
-Poincare conjecture, pending independent external review**.  The proposed
-counterexample is the Cappell--Shaneson manifold `X(41,189,73)`, claimed to be
-a homotopy four-sphere not diffeomorphic to the standard `S^4`.
+This repository supports a **conditional** skein-lasagna obstruction for the
+trace-73 Cappell--Shaneson homotopy 4-sphere associated with
+\[
+A=\begin{pmatrix}0&269&1240\\0&41&189\\1&0&32\end{pmatrix}
+\]
+(Iwaki standard form \(X_{41,189,73}\)).
 
-The proposed distinguishing class has quantum degree `494`. Its divided cubic
-detector evaluates to `2624`, whereas the corresponding degree of the
-standard four-sphere module is zero. The finite calculation and the abstract
-quotient implication are checked in Lean; the candidate-specific geometric
-identifications and the cited topology theorems remain explicit inputs rather
-than hidden axioms.
+**No counterexample to the smooth four-dimensional Poincaré conjecture is
+claimed.** The controlling manuscript is
+[`paper/spc4-t73-candidate/main.tex`](paper/spc4-t73-candidate/main.tex)
+(*A conditional skein-lasagna obstruction for a trace-73 Cappell--Shaneson
+sphere*).
 
-**Erratum (2 September 2026).** The former value `-59072` was wrong because
-the endpoint vector and covector were read from two different index tables.
-After both are expressed in the collar table used by the braid word, the exact
-value is `+2624`, which is still nonzero. Both the numerical detector and the
-proposed disproof remain conditional on the uncertified assumptions stated in
-the paper; I am continuing to work on those premises.
+## What is proved, and what is open
 
-That distinction matters: a successful Lean build verifies the implication
-encoded by the repository. It does not, by itself, certify that every
-geometric input has been formalized. The exact boundary is visible in
-[`Smooth4PC/T73External.lean`](Smooth4PC/T73External.lean).
+For an explicit **Johnson-generator** handle presentation the paper proves the
+geometric inputs **P0, C, S, and P3** needed for a skein-lasagna comparison at
+quantum degree \(494\), including the identification \(X_J\cong\Sigma_A^0\).
 
-## PDF for public review
+An exact finite calculation gives a nonzero divided cubic \(D_3=2624\). An
+Artin--Magnus certificate and the pure-braid Andreadakis theorem establish a
+third-order property of the public braid word.
 
-[PDF prepared for public review](output/pdf/spc4-t73-candidate.pdf)
+A Lean development formalizes the **abstract quotient argument**: given
+interface data assembling the MWW quotients and four-handle transport
+(`ExternalGeometry`), a nonzero degree-\(494\) class would obstruct
+diffeomorphism with \(S^4\). Those geometric interfaces are **not** constructed
+in Lean.
+
+| Layer | Status |
+| --- | --- |
+| Finite algebra (\(2624\), degree \(494\), \(\det A=\det(A-I)=1\)) | Checked in Lean |
+| Abstract conditional implication | Checked in Lean |
+| Johnson P0 / C / S / P3 (paper geometry + certificates) | Discharged in the paper |
+| Lean inhabitant of `ExternalGeometry` | **Open** |
+
+The exact Lean boundary is
+[`Smooth4PC/T73External.lean`](Smooth4PC/T73External.lean). Premises audit:
+
+```text
+python3 scripts/audit_t73_premises.py --check
+```
+
+Expected summary: `P0/C/S/P3=PASS`, `OVERALL=OPEN`, `COUNTEREXAMPLE=False`.
+
+**Erratum (2 September 2026).** An earlier draft mixed two endpoint index
+tables and reported \(-59072\). With both objects in the collar table used by
+the braid word, the exact value is \(+2624\) (still nonzero).
+
+## PDFs for review
+
+- English: [`output/pdf/spc4-t73-candidate.pdf`](output/pdf/spc4-t73-candidate.pdf)
+- Chinese: [`output/pdf/spc4-t73-candidate-zh.pdf`](output/pdf/spc4-t73-candidate-zh.pdf)
+
+Paper sources and build notes:
+[`paper/spc4-t73-candidate/README.md`](paper/spc4-t73-candidate/README.md).
 
 ## Start here
 
-1. Read [`docs/INDEPENDENT_REVIEW.md`](docs/INDEPENDENT_REVIEW.md) for the
-   three-step proof chain, the published-source map and the review boundary.
+1. Read the paper abstract and §3 (precise statements) in
+   [`paper/spc4-t73-candidate/main.tex`](paper/spc4-t73-candidate/main.tex)
+   or the English PDF above.
 2. Follow [`REPRODUCING.md`](REPRODUCING.md) to build from a fresh clone, audit
-   all reported axioms and independently recompute the detector.
-3. Use
-   [`docs/proofs/T73_COUNTEREXAMPLE_MATERIALS_INDEX.md`](docs/proofs/T73_COUNTEREXAMPLE_MATERIALS_INDEX.md)
-   to enter the full proof and evidence tree.
-
-The proof manuscript itself is
-[`docs/proofs/T73_SPC4_COUNTEREXAMPLE_CANDIDATE_PROOF.md`](docs/proofs/T73_SPC4_COUNTEREXAMPLE_CANDIDATE_PROOF.md).
+   reported axioms, and recompute the detector.
+3. For the independent-review boundary map, see
+   [`docs/INDEPENDENT_REVIEW.md`](docs/INDEPENDENT_REVIEW.md).
 
 ## Reproducibility contract
 
@@ -53,26 +79,24 @@ The proof manuscript itself is
 - `sorryAx`: absent
 - expected detector value: `2624`
 
-The committed `lake-manifest.json` pins all Lean dependencies. Build products,
-local dependency copies and old probe files are not part of the source tree.
+The committed `lake-manifest.json` pins Lean dependencies. Build products and
+local dependency copies are not part of the source contract.
 
 ## Scope
 
-This is a public verification package, not a claim of peer acceptance. The
-most useful adverse review is one that attacks the candidate-specific
-geometric bindings in the independent-review note, not one that merely reruns
-the already checked integer arithmetic.
+This is a public verification package for a **conditional** obstruction, not a
+claim of peer acceptance and not a claimed counterexample. The most useful
+adverse review attacks the Johnson geometric bindings and the remaining Lean
+`ExternalGeometry` assembly, not the already checked integer arithmetic.
 
 ## Why this is being released on GitHub first
 
-GitHub is being used as the first public release channel for reasons of access,
-speed and reproducibility—not as a substitute for scholarly review. My
-existing arXiv submission history is in computer science, and I may not
-currently have the endorsement required for the relevant mathematics category.
-This repository therefore makes the full argument, Lean sources, exact inputs
-and replay instructions publicly inspectable now. If the work receives
-substantive mathematical scrutiny and assistance, I intend to prepare a
-conventional preprint and submit it through the appropriate scholarly channel.
+GitHub is the first public release channel for access, speed and
+reproducibility—not a substitute for scholarly review. Existing arXiv history
+is in computer science; mathematics-category endorsement may be unavailable.
+The full argument, Lean sources, certificates and replay instructions are
+inspectable here. After substantive scrutiny, a conventional preprint
+submission is intended.
 
 ## License
 

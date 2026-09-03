@@ -1,15 +1,18 @@
 # Trace-73 Cappell--Shaneson paper
 
-This directory contains the **controlling** English `amsart` preprint for a
-A conditional skein-lasagna obstruction for a trace-73 Cappell--Shaneson sphere.  Exact
-Artin--Magnus expansion and the pure-braid Andreadakis equality verify a
-cubic-order statement for the public braid.  Geometric lemmas P0a--c and
-C1--C2, S, the MWW four-handle layer and the E13 CS handle picture are
-discharged for the Johnson replacement.  The identification
-\(X_J\cong\Sigma_A^0\) is that constructed CS handle picture.  No
-historical-PD identity is claimed.  The retired September assumptions A1--A5
-from earlier project manuscripts are merged here under Hypotheses P0/C/S/P3
-and Section ``Retired assumption register''.
+This directory contains the **controlling** English `amsart` preprint
+
+*A conditional skein-lasagna obstruction for a trace-73 Cappell--Shaneson
+sphere*
+
+(`main.tex`; Chinese edition `main-zh.tex`).  For an explicit Johnson-generator
+handle presentation the paper proves geometric inputs P0, C, S, and P3 at
+quantum degree \(494\), including \(X_J\cong\Sigma_A^0\).  An exact finite
+calculation gives \(D_3=2624\).  Lean formalizes the abstract quotient
+implication from `ExternalGeometry`; that interface is not inhabited, so **no
+counterexample to the smooth four-dimensional Poincaré conjecture is claimed**.
+No historical-PD identity is claimed.  Retired September assumptions A1--A5
+are recorded under Hypotheses P0/C/S/P3 and the retired-assumption remark.
 
 ## Build
 

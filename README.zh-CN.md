@@ -1,70 +1,91 @@
-# Smooth4PC T73 反例与证伪材料包
+# Smooth4PC T73 — 条件 skein-lasagna 阻碍
 
 [English](README.md)
 
-本仓库提出一份**等待独立外部复核的光滑四维庞加莱猜想证伪**：候选反例
-Cappell--Shaneson 流形 `X(41,189,73)` 是一个与标准 `S^4` 不微分同胚的
-同伦四维球。
+本仓库支持对 trace-73 Cappell--Shaneson **同伦** \(4\)-球面
+\[
+A=\begin{pmatrix}0&269&1240\\0&41&189\\1&0&32\end{pmatrix}
+\]
+（Iwaki 标准形 \(X_{41,189,73}\)）的一份**条件性** skein-lasagna 阻碍论证。
 
-候选证明构造了一个量子次数为 `494` 的类。它的三次除法检测量为
-`2624`，而标准四维球模在该次数上为零。有限计算与抽象商空间推理已经
-由 Lean 检查；候选对象与真实几何之间的识别，以及引用的拓扑定理，仍被
-明确列作外部输入，没有藏进形式化代码。
+**不断言光滑四维 Poincaré 猜想的反例。** 控制性文稿为
+[`paper/spc4-t73-candidate/main.tex`](paper/spc4-t73-candidate/main.tex)
+（中文对照：`main-zh.tex`；标题：《trace-73 Cappell--Shaneson 球面的条件
+skein-lasagna 阻碍》）。
 
-**勘误（2026 年 9 月 2 日）。**旧值 `-59072` 是错误的：端点向量与余向量
-误用了两张不同的索引表。统一到辫词所采用的 collar 索引表后，精确值为
-`+2624`，仍然非零。无论这个数值还是所提议的证伪结论，都仍以论文中明确
-列出的未认证前提为条件；我目前仍在继续处理这些前提。
+## 已证与开放
 
-因此，Lean 编译成功所验证的是仓库中编码的蕴涵链，并不自动等于所有几何
-输入都已经形式化。精确边界见
-[`Smooth4PC/T73External.lean`](Smooth4PC/T73External.lean)。
+对显式 **Johnson 生成元** 柄表示，正文证明 skein-lasagna 在 quantum degree
+\(494\) 处比较所需的几何输入 **P0、C、S、P3**，包括识别
+\(X_J\cong\Sigma_A^0\)。
 
-## 公开审阅 PDF
+精确有限计算给出非零 divided cubic \(D_3=2624\)。Artin--Magnus 证书与
+pure-braid Andreadakis 定理确立公开 braid 词的三阶性质。
 
-[用于公开审阅的 PDF 文件](output/pdf/spc4-t73-candidate.pdf)
+Lean 开发将**抽象商论证**形式化：若给定将 MWW 商与四柄运输组装起来的接口数据
+（`ExternalGeometry`），则非零次数-\(494\) 类**将**阻碍与 \(S^4\) 的微分同胚。
+这些几何接口**未**在 Lean 中构造。
+
+| 层次 | 状态 |
+| --- | --- |
+| 有限代数（\(2624\)、次数 \(494\)、\(\det A=\det(A-I)=1\)） | Lean 已检 |
+| 抽象条件蕴含 | Lean 已检 |
+| Johnson P0 / C / S / P3（正文几何 + 证书） | 正文已证 |
+| Lean 中 `ExternalGeometry` 实例 | **开放** |
+
+Lean 边界见
+[`Smooth4PC/T73External.lean`](Smooth4PC/T73External.lean)。前提审计：
+
+```text
+python3 scripts/audit_t73_premises.py --check
+```
+
+预期摘要：`P0/C/S/P3=PASS`，`OVERALL=OPEN`，`COUNTEREXAMPLE=False`。
+
+**勘误（2026 年 9 月 2 日）。** 较早草稿混用两套 endpoint 索引表，报告了
+\(-59072\)。统一到 braid 词所用 collar 表后，精确值为 \(+2624\)（仍非零）。
+
+## 审阅 PDF
+
+- 英文：[`output/pdf/spc4-t73-candidate.pdf`](output/pdf/spc4-t73-candidate.pdf)
+- 中文：[`output/pdf/spc4-t73-candidate-zh.pdf`](output/pdf/spc4-t73-candidate-zh.pdf)
+
+文稿与编译说明：
+[`paper/spc4-t73-candidate/README.md`](paper/spc4-t73-candidate/README.md)。
 
 ## 从哪里开始
 
-1. 阅读 [`docs/INDEPENDENT_REVIEW.md`](docs/INDEPENDENT_REVIEW.md)：三步证明链、
-   公开文献依赖与复核边界。
-2. 按 [`REPRODUCING.md`](REPRODUCING.md) 从全新 clone 编译、检查全部公理报告，
-   并独立重算检测量。
-3. 从
-   [`docs/proofs/T73_COUNTEREXAMPLE_MATERIALS_INDEX.md`](docs/proofs/T73_COUNTEREXAMPLE_MATERIALS_INDEX.md)
-   进入完整证明与证据树。
-
-证明正文为
-[`docs/proofs/T73_SPC4_COUNTEREXAMPLE_CANDIDATE_PROOF.md`](docs/proofs/T73_SPC4_COUNTEREXAMPLE_CANDIDATE_PROOF.md)。
+1. 阅读论文摘要与第 3 节（精确陈述）：
+   [`paper/spc4-t73-candidate/main.tex`](paper/spc4-t73-candidate/main.tex)
+   或上方英文/中文 PDF。
+2. 按 [`REPRODUCING.md`](REPRODUCING.md) 从全新 clone 编译、检查公理报告并重算检测量。
+3. 复核边界图见
+   [`docs/INDEPENDENT_REVIEW.md`](docs/INDEPENDENT_REVIEW.md)。
 
 ## 复现约定
 
 - Lean 工具链：`leanprover/lean4:v4.32.1`
-- mathlib 版本：`520045ab14e26149ee970e2e617ca04b09bde5d6`
+- mathlib 修订：`520045ab14e26149ee970e2e617ca04b09bde5d6`
 - Python：3.10 或更高
-- 预期 `#print axioms` 报告：`38` 条
-- 报告中允许出现的公理：`propext`、`Classical.choice`、`Quot.sound`
-- `sorryAx`：不得出现
-- 检测量预期值：`2624`
+- 预期公理报告数：`38`
+- 允许公理：`propext`、`Classical.choice`、`Quot.sound`
+- `sorryAx`：无
+- 预期检测量：`2624`
 
-提交的 `lake-manifest.json` 锁定全部 Lean 依赖。编译产物、本机依赖副本与
-历史临时探针不属于发布源码。
+已提交的 `lake-manifest.json` 锁定 Lean 依赖。构建产物与本地依赖副本不在源码约定内。
 
-## 范围声明
+## 范围
 
-这是公开复核材料，不是声称该结果已经得到同行认可。最有价值的对抗复核，
-是直接攻击独立复核文档所列的候选几何绑定，而不只是再次运行已经核过的
-整数算术。
+这是面向**条件性**阻碍的公开核验包，不是同行接受声明，也不是已证反例。
+最有用的否定性审阅应针对 Johnson 几何绑定与尚未组装的 Lean
+`ExternalGeometry`，而非已检整算术。
 
-## 为什么先在 GitHub 发布
+## 为何先在 GitHub 公开
 
-先选择 GitHub，是为了让材料尽快公开、便于访问，并让任何人都能直接复现
-Lean 与精确计算；这并不是用代码仓库代替学术审查。我的 arXiv 投稿记录目前
-在计算机科学领域，我未必已经具备向相应数学分类投稿所需的 endorsement。
-因此，我先把完整论证、Lean 源码、精确输入和从零复现步骤公开出来。如果这项
-工作得到实质性的数学复核与帮助，我会整理正式预印本，并通过合适的学术渠道
-投稿。
+GitHub 作为首个公开渠道，便于获取、速度与复现，不能替代学术审阅。既有
+arXiv 投稿史在计算机科学方向；数学类目背书可能暂不具备。完整论证、Lean
+源码、证书与重放说明均可在此检查。经实质审阅后，计划提交常规预印本。
 
 ## 许可证
 
-本仓库采用 [MIT License](LICENSE) 发布。
+本仓库以 [MIT License](LICENSE) 发布。
