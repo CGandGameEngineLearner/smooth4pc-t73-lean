@@ -34,7 +34,7 @@ def check() -> None:
     require(paper_text, r"P2/E10/S & \Discharged", paper)
     require(paper_text, r"P3/E11 & \Discharged", paper)
     require(paper_text, r"P3/E12 & \Discharged", paper)
-    require(paper_text, r"P3/E13 & \Partial", paper)
+    require(paper_text, r"P3/E13 & \Discharged", paper)
     require(paper_text, r"computedCubic_eq_2624", paper)
     require(paper_text, "2624", paper)
 

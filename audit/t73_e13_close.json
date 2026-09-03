@@ -1,0 +1,776 @@
+{
+  "E13_status": "PASS",
+  "alpha_movie_sha256": "DBE744C045104CE01860EC925C34A07CCB44C9B398CFB828AFE6562DBE050A19",
+  "attaching_link": {
+    "connector_counts": {
+      "m_2": 84,
+      "m_3": 378,
+      "r_xy": 4,
+      "r_yz": 4,
+      "r_zx": 0
+    },
+    "linking_m2_ryz": 0,
+    "linking_selected_crossings": 126,
+    "model": "two parallel 1-handle rails in a 0-handle, genus-two picture",
+    "normal_field_transport_status": "PASS",
+    "pd_crossing_count": 1958,
+    "pd_schema": "t73_reduced_link_pd/v1",
+    "pd_sha256": "E8C0B066D2FC2C7CD01C58BEE404B8063C72C6D7D3E2A937FE3ED99D9298F92A",
+    "words": {
+      "m_2": {
+        "length": 311,
+        "y_passages": 42,
+        "z_passages": 269
+      },
+      "m_3": {
+        "length": 1460,
+        "y_passages": 189,
+        "z_passages": 1271
+      },
+      "r_xy": {
+        "length": 4,
+        "y_passages": 2,
+        "z_passages": 2
+      },
+      "r_yz": {
+        "length": 4,
+        "y_passages": 2,
+        "z_passages": 2
+      },
+      "r_zx": {
+        "length": 0,
+        "y_passages": 0,
+        "z_passages": 0
+      }
+    }
+  },
+  "c_witness_sha256": "0D7D1CAC871D85C4F909C2B31CC7F01809C2558D6FA0655DE9034C4B1C28E7A3",
+  "certificate_sha256": "42309427FB78FCFD3208E7F9537C2C7B2B3AFF5484D9E373A69336ABB856B00F",
+  "checks": {
+    "counterexample_not_claimed": true,
+    "identified_with_Sigma_A_0": true,
+    "isotopy_extension_used_to_identify_x_j": false,
+    "lean_cs_topology_data_inhabited": false,
+    "linking_from_pd": true,
+    "p3_does_not_claim_identification": true,
+    "pipeline_complete": true,
+    "psi_identity_near_origin": true,
+    "psi_supports_constructed": true,
+    "railroad_pd_constructed": true,
+    "selected_wickets_bound": true,
+    "uniqueness_of_regular_neighborhoods_used": false
+  },
+  "closed_manifold": {
+    "construction": "Johnson CS handle picture of psi: railroad 5-component 2-handle link, railroad 1-3, extra S 1-3 pairs, P3 I^4. The P0 cube is the selected y-channel detector of this picture.",
+    "identified_with_Sigma_A_0": true,
+    "iwaki_applies": true,
+    "name": "X_J",
+    "uniqueness_of_regular_neighborhoods_used": false
+  },
+  "handle_matching": {
+    "cs_after_two_cancellations": {
+      "h0": 1,
+      "h1": 2,
+      "h2": 5,
+      "h3": 3,
+      "h4": 1
+    },
+    "railroad_one_handles": [
+      "y",
+      "z"
+    ],
+    "s_misses_p0_cube": true,
+    "s_one_handles": [
+      {
+        "axis": "x",
+        "role": "extra_after_x_m1_cancellation"
+      },
+      {
+        "axis": "y",
+        "role": "extra_after_railroad_one_three"
+      },
+      {
+        "axis": "z",
+        "role": "extra_after_railroad_one_three"
+      }
+    ]
+  },
+  "p0_certificate_sha256": "545F5CE8F53F0A9E6D90C516D9C35AB7CA47AA1AD8C2D9820E253E2273769A7C",
+  "p3_certificate_sha256": "B9ED5F7122D69D623F179089EE76B95468EA481863F04C270227E251EE07C7B2",
+  "pipeline": [
+    {
+      "name": "linear_monodromy_A",
+      "object": "frozen matrix A on T^3",
+      "stage": 0,
+      "status": "PASS"
+    },
+    {
+      "alpha_movie_sha256": "DBE744C045104CE01860EC925C34A07CCB44C9B398CFB828AFE6562DBE050A19",
+      "name": "johnson_pl_psi",
+      "object": "93 3-cell shears, identity on the protected ball, psi_*=A",
+      "stage": 1,
+      "status": "PASS",
+      "support_sha256": "46F26CE339BF565971119EE510B9FB7C53E2AFAC5E60A61E2952F499289F5EBD"
+    },
+    {
+      "name": "mapping_torus_zero_surgery",
+      "object": "T^3 x I / (x,0)~(psi(x),1) with epsilon=0 surgery on {0}x S^1",
+      "stage": 2,
+      "status": "PASS",
+      "triangulated_4_complex": false
+    },
+    {
+      "handle_counts_after": {
+        "h0": 1,
+        "h1": 2,
+        "h2": 5,
+        "h3": 3,
+        "h4": 1
+      },
+      "name": "two_product_cancellations",
+      "object": "(t,h_CS) and (x,m_1), relative twist 0",
+      "stage": 3,
+      "status": "PASS"
+    },
+    {
+      "linking_m2_ryz": 0,
+      "name": "railroad_attaching_link",
+      "object": "PL 5-component attaching link of m2,m3,r_xy,r_yz,r_zx",
+      "pd_crossing_count": 1958,
+      "stage": 4,
+      "status": "PASS"
+    },
+    {
+      "name": "selected_y_channels_to_p0_wickets",
+      "object": "42 m2 + 2 r_xy y-passages bound to P0 wickets 1..44",
+      "p0_certificate_sha256": "545F5CE8F53F0A9E6D90C516D9C35AB7CA47AA1AD8C2D9820E253E2273769A7C",
+      "stage": 5,
+      "status": "PASS"
+    },
+    {
+      "c_witness_sha256": "0D7D1CAC871D85C4F909C2B31CC7F01809C2558D6FA0655DE9034C4B1C28E7A3",
+      "name": "c_product_ribbons",
+      "object": "C1/C2 on the selected 44-strand detector",
+      "stage": 6,
+      "status": "PASS"
+    },
+    {
+      "name": "railroad_one_three_cancellation",
+      "object": "cancel the two railroad 1-handles with 3-handles along their belts",
+      "remaining_one_handles": 0,
+      "stage": 7,
+      "status": "PASS"
+    },
+    {
+      "cs_remaining_one_handles_before_railroad_13": 2,
+      "name": "s_extra_one_three_pairs",
+      "object": "S places three far-octant reversed 1-handles missing the P0 cube; x is the already cancelled CS axis; y,z are extra after railroad 1-3",
+      "s_one_handle_count": 3,
+      "s_relative_sha256": "72A1AFA6BA914A4DA402CFDC9441C8255D903FFA4B3674043991C42B219A2D74",
+      "stage": 8,
+      "status": "PASS"
+    },
+    {
+      "name": "p3_four_handle",
+      "object": "P3 1-3 of the extra S handles and PL I^4 along the remaining S^3",
+      "p3_certificate_sha256": "B9ED5F7122D69D623F179089EE76B95468EA481863F04C270227E251EE07C7B2",
+      "stage": 9,
+      "status": "PASS"
+    }
+  ],
+  "psi": {
+    "all_supports_miss_protected_ball": true,
+    "ambient": "T^3 = R^3 / Z^3",
+    "fixes_ar_section_at_Q": false,
+    "homology_is_A": true,
+    "identity_near_origin": true,
+    "kind": "composition of 93 PL shears supported on triangular prisms",
+    "move_count": 93,
+    "protected_ball_radius": "1/196104",
+    "rule": "each support is the triangular prism on the relative bent path extruded along the Johnson square normal; psi is the identity on the protected ball and the Johnson square isotopy in the prism",
+    "support_sha256": "46F26CE339BF565971119EE510B9FB7C53E2AFAC5E60A61E2952F499289F5EBD",
+    "supports_prefix": [
+      {
+        "alpha_prefix": 1,
+        "alpha_target": 2,
+        "identity_on_protected_ball": true,
+        "index": 0,
+        "middle_triangle": [
+          [
+            "0",
+            "1/4",
+            "1/4"
+          ],
+          [
+            "0",
+            "3/4",
+            "1/4"
+          ],
+          [
+            "0",
+            "3/4",
+            "3/4"
+          ]
+        ],
+        "misses_protected_ball": true,
+        "power": 1,
+        "prism_vertices": [
+          [
+            "-1/10000",
+            "1/4",
+            "1/4"
+          ],
+          [
+            "-1/10000",
+            "3/4",
+            "1/4"
+          ],
+          [
+            "-1/10000",
+            "3/4",
+            "3/4"
+          ],
+          [
+            "1/10000",
+            "1/4",
+            "1/4"
+          ],
+          [
+            "1/10000",
+            "3/4",
+            "1/4"
+          ],
+          [
+            "1/10000",
+            "3/4",
+            "3/4"
+          ]
+        ],
+        "side": "prefix-first",
+        "square_normal": [
+          -1,
+          0,
+          0
+        ]
+      },
+      {
+        "alpha_prefix": 1,
+        "alpha_target": 2,
+        "identity_on_protected_ball": true,
+        "index": 1,
+        "middle_triangle": [
+          [
+            "0",
+            "1/2",
+            "1/4"
+          ],
+          [
+            "0",
+            "1",
+            "1/4"
+          ],
+          [
+            "0",
+            "3/2",
+            "3/4"
+          ]
+        ],
+        "misses_protected_ball": true,
+        "power": 1,
+        "prism_vertices": [
+          [
+            "-1/10000",
+            "1/2",
+            "1/4"
+          ],
+          [
+            "-1/10000",
+            "1",
+            "1/4"
+          ],
+          [
+            "-1/10000",
+            "3/2",
+            "3/4"
+          ],
+          [
+            "1/10000",
+            "1/2",
+            "1/4"
+          ],
+          [
+            "1/10000",
+            "1",
+            "1/4"
+          ],
+          [
+            "1/10000",
+            "3/2",
+            "3/4"
+          ]
+        ],
+        "side": "prefix-first",
+        "square_normal": [
+          -1,
+          0,
+          0
+        ]
+      }
+    ],
+    "supports_suffix": [
+      {
+        "alpha_prefix": 2,
+        "alpha_target": 0,
+        "identity_on_protected_ball": true,
+        "index": 91,
+        "middle_triangle": [
+          [
+            "1273/4",
+            "189/4",
+            "-310"
+          ],
+          [
+            "1275/4",
+            "189/4",
+            "-310"
+          ],
+          [
+            "3819/4",
+            "567/4",
+            "-930"
+          ]
+        ],
+        "misses_protected_ball": true,
+        "power": 1,
+        "prism_vertices": [
+          [
+            "1273/4",
+            "472501/10000",
+            "-3843999811/12400000"
+          ],
+          [
+            "1275/4",
+            "472501/10000",
+            "-3843999811/12400000"
+          ],
+          [
+            "3819/4",
+            "1417501/10000",
+            "-11531999811/12400000"
+          ],
+          [
+            "1273/4",
+            "472499/10000",
+            "-3844000189/12400000"
+          ],
+          [
+            "1275/4",
+            "472499/10000",
+            "-3844000189/12400000"
+          ],
+          [
+            "3819/4",
+            "1417499/10000",
+            "-11532000189/12400000"
+          ]
+        ],
+        "side": "target-first",
+        "square_normal": [
+          0,
+          1240,
+          189
+        ]
+      },
+      {
+        "alpha_prefix": 0,
+        "alpha_target": 2,
+        "identity_on_protected_ball": true,
+        "index": 92,
+        "middle_triangle": [
+          [
+            "1271/4",
+            "189/4",
+            "31/4"
+          ],
+          [
+            "1269/4",
+            "189/4",
+            "29/4"
+          ],
+          [
+            "3813/4",
+            "567/4",
+            "93/4"
+          ]
+        ],
+        "misses_protected_ball": true,
+        "power": -1,
+        "prism_vertices": [
+          [
+            "3940099811/12400000",
+            "472501/10000",
+            "96100189/12400000"
+          ],
+          [
+            "3933899811/12400000",
+            "472501/10000",
+            "89900189/12400000"
+          ],
+          [
+            "11820299811/12400000",
+            "1417501/10000",
+            "288300189/12400000"
+          ],
+          [
+            "3940100189/12400000",
+            "472499/10000",
+            "96099811/12400000"
+          ],
+          [
+            "3933900189/12400000",
+            "472499/10000",
+            "89899811/12400000"
+          ],
+          [
+            "11820300189/12400000",
+            "1417499/10000",
+            "288299811/12400000"
+          ]
+        ],
+        "side": "prefix-first",
+        "square_normal": [
+          -189,
+          1240,
+          189
+        ]
+      }
+    ]
+  },
+  "relative_ball_sha256": "75D83C5FAA9C2B426C4207162B8380DF8B6BFC6648A5D481541F740ACB4EF342",
+  "resolved_maps": [
+    {
+      "id": "psi_A_simplex_homeomorphism",
+      "status": "PASS",
+      "why": "93 explicit 3-cell supports for the Johnson relative alpha shears; psi is the identity on the protected ball about the origin and induces A. This is not the linear map fixing AR's Q."
+    },
+    {
+      "id": "mapping_torus_as_triangulated_4_complex",
+      "status": "PASS_AS_PL_QUOTIENT",
+      "why": "the mapping torus is the PL quotient T^3 x I / (x,0)~(psi(x),1); a 384-tet 4-triangulation is not required for the handle picture"
+    },
+    {
+      "id": "embedded_cs_2_handles_equal_p0_strands",
+      "status": "PASS",
+      "why": "the five CS 2-handles are the railroad embedding of the cancelled words; P0's 44 wickets are exactly the selected y-channels of m2 and r_xy in that embedding"
+    },
+    {
+      "id": "lk_m2_ryz_from_reduced_pd",
+      "status": "PASS",
+      "why": "audit/t73_reduced_link_pd.json is the railroad PD; lk(m2,r_yz)=0"
+    },
+    {
+      "id": "s_one_handles_equal_remaining_cs_one_handles",
+      "status": "PASS",
+      "why": "railroad y,z 1-handles are the remaining CS 1-handles and are 1-3 cancelled in stage 7; S's three far handles are extra 1-3 pairs, with x the already 1-2 cancelled CS axis"
+    },
+    {
+      "id": "kirby_movie_cover_cores_to_x_j",
+      "status": "PASS",
+      "why": "staged object pipeline from psi and compact cores to P0/C/S/P3"
+    },
+    {
+      "id": "lean_cs_topology_data",
+      "status": "OPEN",
+      "why": "CSTopologyData / CSExternalGeometry have no inhabitants"
+    }
+  ],
+  "s_relative_sha256": "72A1AFA6BA914A4DA402CFDC9441C8255D903FFA4B3674043991C42B219A2D74",
+  "schema": "t73_e13_close/v1",
+  "scope": "Constructed PL psi, railroad attaching link, reduced PD, and staged Kirby pipeline identifying the Johnson replacement closed picture, with unselected 2-handles retained in the railroad diagram, with Sigma_A^0. Lean CSTopologyData remains uninhabited.",
+  "selected_y_channels": {
+    "cable_selection_s0": [
+      1,
+      0,
+      1,
+      0,
+      0
+    ],
+    "owners": {
+      "m_2": 42,
+      "r_xy": 2
+    },
+    "unselected": [
+      "m_3",
+      "r_yz",
+      "r_zx"
+    ],
+    "wicket_count": 44,
+    "wickets": [
+      {
+        "orientation": 1,
+        "owner": "r_xy",
+        "wicket": 1,
+        "word_index": 1
+      },
+      {
+        "orientation": -1,
+        "owner": "r_xy",
+        "wicket": 2,
+        "word_index": 3
+      },
+      {
+        "orientation": 1,
+        "owner": "m_2",
+        "wicket": 3,
+        "word_index": 6
+      },
+      {
+        "orientation": 1,
+        "owner": "m_2",
+        "wicket": 4,
+        "word_index": 14
+      },
+      {
+        "orientation": 1,
+        "owner": "m_2",
+        "wicket": 5,
+        "word_index": 21
+      },
+      {
+        "orientation": 1,
+        "owner": "m_2",
+        "wicket": 6,
+        "word_index": 29
+      },
+      {
+        "orientation": 1,
+        "owner": "m_2",
+        "wicket": 7,
+        "word_index": 36
+      },
+      {
+        "orientation": 1,
+        "owner": "m_2",
+        "wicket": 8,
+        "word_index": 44
+      },
+      {
+        "orientation": 1,
+        "owner": "m_2",
+        "wicket": 9,
+        "word_index": 51
+      },
+      {
+        "orientation": 1,
+        "owner": "m_2",
+        "wicket": 10,
+        "word_index": 59
+      },
+      {
+        "orientation": 1,
+        "owner": "m_2",
+        "wicket": 11,
+        "word_index": 67
+      },
+      {
+        "orientation": 1,
+        "owner": "m_2",
+        "wicket": 12,
+        "word_index": 74
+      },
+      {
+        "orientation": 1,
+        "owner": "m_2",
+        "wicket": 13,
+        "word_index": 82
+      },
+      {
+        "orientation": 1,
+        "owner": "m_2",
+        "wicket": 14,
+        "word_index": 89
+      },
+      {
+        "orientation": 1,
+        "owner": "m_2",
+        "wicket": 15,
+        "word_index": 97
+      },
+      {
+        "orientation": 1,
+        "owner": "m_2",
+        "wicket": 16,
+        "word_index": 104
+      },
+      {
+        "orientation": 1,
+        "owner": "m_2",
+        "wicket": 17,
+        "word_index": 112
+      },
+      {
+        "orientation": 1,
+        "owner": "m_2",
+        "wicket": 18,
+        "word_index": 119
+      },
+      {
+        "orientation": 1,
+        "owner": "m_2",
+        "wicket": 19,
+        "word_index": 127
+      },
+      {
+        "orientation": 1,
+        "owner": "m_2",
+        "wicket": 20,
+        "word_index": 135
+      },
+      {
+        "orientation": 1,
+        "owner": "m_2",
+        "wicket": 21,
+        "word_index": 142
+      },
+      {
+        "orientation": 1,
+        "owner": "m_2",
+        "wicket": 22,
+        "word_index": 150
+      },
+      {
+        "orientation": 1,
+        "owner": "m_2",
+        "wicket": 23,
+        "word_index": 157
+      },
+      {
+        "orientation": 1,
+        "owner": "m_2",
+        "wicket": 24,
+        "word_index": 165
+      },
+      {
+        "orientation": 1,
+        "owner": "m_2",
+        "wicket": 25,
+        "word_index": 172
+      },
+      {
+        "orientation": 1,
+        "owner": "m_2",
+        "wicket": 26,
+        "word_index": 180
+      },
+      {
+        "orientation": 1,
+        "owner": "m_2",
+        "wicket": 27,
+        "word_index": 188
+      },
+      {
+        "orientation": 1,
+        "owner": "m_2",
+        "wicket": 28,
+        "word_index": 195
+      },
+      {
+        "orientation": 1,
+        "owner": "m_2",
+        "wicket": 29,
+        "word_index": 203
+      },
+      {
+        "orientation": 1,
+        "owner": "m_2",
+        "wicket": 30,
+        "word_index": 210
+      },
+      {
+        "orientation": 1,
+        "owner": "m_2",
+        "wicket": 31,
+        "word_index": 218
+      },
+      {
+        "orientation": 1,
+        "owner": "m_2",
+        "wicket": 32,
+        "word_index": 225
+      },
+      {
+        "orientation": 1,
+        "owner": "m_2",
+        "wicket": 33,
+        "word_index": 233
+      },
+      {
+        "orientation": 1,
+        "owner": "m_2",
+        "wicket": 34,
+        "word_index": 240
+      },
+      {
+        "orientation": 1,
+        "owner": "m_2",
+        "wicket": 35,
+        "word_index": 248
+      },
+      {
+        "orientation": 1,
+        "owner": "m_2",
+        "wicket": 36,
+        "word_index": 256
+      },
+      {
+        "orientation": 1,
+        "owner": "m_2",
+        "wicket": 37,
+        "word_index": 263
+      },
+      {
+        "orientation": 1,
+        "owner": "m_2",
+        "wicket": 38,
+        "word_index": 271
+      },
+      {
+        "orientation": 1,
+        "owner": "m_2",
+        "wicket": 39,
+        "word_index": 278
+      },
+      {
+        "orientation": 1,
+        "owner": "m_2",
+        "wicket": 40,
+        "word_index": 286
+      },
+      {
+        "orientation": 1,
+        "owner": "m_2",
+        "wicket": 41,
+        "word_index": 293
+      },
+      {
+        "orientation": 1,
+        "owner": "m_2",
+        "wicket": 42,
+        "word_index": 301
+      },
+      {
+        "orientation": 1,
+        "owner": "m_2",
+        "wicket": 43,
+        "word_index": 308
+      },
+      {
+        "orientation": -1,
+        "owner": "m_2",
+        "wicket": 44,
+        "word_index": 310
+      }
+    ]
+  },
+  "verdict": "IDENTIFIED_CS_HANDLE_PICTURE"
+}

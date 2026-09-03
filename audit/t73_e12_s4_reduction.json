@@ -1,0 +1,107 @@
+{
+  "E12_status": "PASS",
+  "about_standard_S4_not_candidate": true,
+  "certificate_sha256": "E7EB5367D63B0D590F850CFAF8878BFBE9094AB98669AD2FD5384E6CD4885069",
+  "checks": {
+    "about_standard_S4_not_candidate": true,
+    "boundary_euler_0": true,
+    "counterexample_not_claimed": true,
+    "degree_494": true,
+    "empty_khovanov_rank_0_at_494": true,
+    "empty_khovanov_rank_1_at_q0": true,
+    "four_ball_euler_1": true,
+    "identified_with_X_J": false,
+    "lean_s4_reduction_data_inhabited": false,
+    "p3_four_ball_bound": true,
+    "s4_degree_494_zero": true,
+    "standard_s4_euler_2": true
+  },
+  "identified_with_X_J": false,
+  "lean_s4_reduction_data_inhabited": false,
+  "mww_corollary_3_5": {
+    "source": "arXiv:2206.04616 Corollary 3.5",
+    "statement": "S^N_0(S^4) isomorphic to Z, concentrated in bidegree (0,0)",
+    "unpacked_as": "S4ReductionData.evalB4 and attach4 on the computed I^4 and empty Khovanov"
+  },
+  "p3_certificate_sha256": "B9ED5F7122D69D623F179089EE76B95468EA481863F04C270227E251EE07C7B2",
+  "s4_reduction": {
+    "B4": {
+      "boundary": "S^3",
+      "boundary_3_faces": 8,
+      "boundary_euler_characteristic": 0,
+      "empty_link": true,
+      "euler_characteristic": 1,
+      "model": "I^4",
+      "vertices": 16
+    },
+    "attach4": {
+      "bidegree": [
+        0,
+        0
+      ],
+      "empty_link": true,
+      "geometric_model": {
+        "B4": {
+          "boundary": "S^3",
+          "boundary_3_faces": 8,
+          "boundary_euler_characteristic": 0,
+          "empty_link": true,
+          "euler_characteristic": 1,
+          "model": "I^4",
+          "vertices": 16
+        },
+        "about_standard_S4_not_candidate": true,
+        "euler_characteristic": 2,
+        "glue": "identify the eight boundary 3-cubes of two I^4 copies",
+        "identified_with_X_J": false,
+        "model": "B4 union_{S^3} B4",
+        "name": "S^4"
+      },
+      "source": "arXiv:2206.04616 Proposition 3.4, empty-link 4-handle isomorphism",
+      "statement": "G(B^4, q) \u2243 G(S^4, q)"
+    },
+    "conclusion": {
+      "lean_packaging": "Smooth4PC.T73.s4ComputedDegreeZero_of_reduction",
+      "quantum_degree": 494,
+      "rule": "EmptyKhQ(494)=0, evalB4 identifies G(B^4,494) with that zero module, attach4 identifies G(S^4,494) with G(B^4,494)",
+      "statement": "G(S^4, 494) = 0",
+      "summand_zero": true
+    },
+    "evalB4": {
+      "computed": true,
+      "empty_khovanov": {
+        "diagram": "empty link: 0 crossings, 0 components",
+        "differential": [
+          [
+            0
+          ]
+        ],
+        "generators": [
+          {
+            "homological": 0,
+            "name": "empty_smoothing",
+            "quantum": 0
+          }
+        ],
+        "homology_rank_total": 1,
+        "image_rank": 0,
+        "kernel_rank": 1,
+        "lean_def": "Smooth4PC.T73.EmptyKhQ",
+        "matches_lean_EmptyKhQ": true,
+        "rational_dimension_by_quantum_degree": {
+          "-1": 0,
+          "0": 1,
+          "1": 0,
+          "494": 0
+        },
+        "resolution_cube_vertices": 1,
+        "theory": "Blanchet-Khovanov / KhR_2 over Q"
+      },
+      "source": "empty-link evaluation of skein lasagna of a 4-ball",
+      "statement": "G(B^4, q) \u2243 EmptyKhQ(q)"
+    }
+  },
+  "schema": "t73_e12_s4_reduction/v1",
+  "scope": "Computational S^4 reduction: empty-link Khovanov over Q, PL I^4, standard S^4 of Euler characteristic 2, MWW Proposition 3.4 and Corollary 3.5, degree 494 vanishes.  Not X_J, and Lean S4ReductionData remains uninhabited.",
+  "verdict": "PASS"
+}

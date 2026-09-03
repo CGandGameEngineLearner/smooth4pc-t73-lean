@@ -39,6 +39,15 @@ def generate() -> dict[str, Any]:
     p3_certificate = json.loads(
         (ROOT / "audit" / "t73_p3_four_handle.json").read_text(encoding="utf-8")
     )
+    e12_certificate = json.loads(
+        (ROOT / "audit" / "t73_e12_s4_reduction.json").read_text(encoding="utf-8")
+    )
+    e13_close = json.loads(
+        (ROOT / "audit" / "t73_e13_close.json").read_text(encoding="utf-8")
+    )
+    e13_identification = json.loads(
+        (ROOT / "audit" / "t73_e13_identification.json").read_text(encoding="utf-8")
+    )
 
     for marker in (
         r"P0a & \Discharged",
@@ -47,7 +56,7 @@ def generate() -> dict[str, Any]:
         r"P2/E10/S & \Discharged",
         r"P3/E11 & \Discharged",
         r"P3/E12 & \Discharged",
-        r"P3/E13 & \Partial",
+        r"P3/E13 & \Discharged",
     ):
         require(paper_text, marker, paper)
     for marker in (
@@ -56,7 +65,7 @@ def generate() -> dict[str, Any]:
         "| S | **PASS**",
         "| P3/E11 | **PASS**",
         "| P3/E12 | **PASS**",
-        "| P3/E13 | **PARTIAL**",
+        "| P3/E13 | **PASS**",
     ):
         require(completion_text, marker, completion)
 
@@ -88,13 +97,27 @@ def generate() -> dict[str, Any]:
     )
     if p3_e11_pass and not s_pass:
         raise AssertionError("P3/E11 cannot be PASS without S")
-    p3_e12_pass = p3_certificate.get("E12_status") == "PASS" and p3_certificate.get(
-        "e12_s4", {}
-    ).get("about_standard_S4_not_candidate")
-    p3_e13_partial = (
-        p3_certificate.get("E13_status") == "PARTIAL"
-        and p3_certificate.get("e13_determinants", {}).get("det_A") == 1
-        and p3_certificate.get("e13_determinants", {}).get("det_A_minus_I") == 1
+    p3_e12_pass = (
+        p3_certificate.get("E12_status") == "PASS"
+        and p3_certificate.get("e12_s4", {}).get("about_standard_S4_not_candidate")
+        and e12_certificate.get("verdict") == "PASS"
+        and e12_certificate.get("checks", {}).get("s4_degree_494_zero") is True
+        and e12_certificate.get("about_standard_S4_not_candidate") is True
+        and e12_certificate.get("lean_s4_reduction_data_inhabited") is False
+        and e12_certificate.get("identified_with_X_J") is False
+        and e12_certificate.get("p3_certificate_sha256") == p3_certificate.get("certificate_sha256")
+    )
+    p3_e13_pass = (
+        e13_close.get("verdict") == "IDENTIFIED_CS_HANDLE_PICTURE"
+        and e13_close.get("E13_status") == "PASS"
+        and e13_close.get("checks", {}).get("identified_with_Sigma_A_0") is True
+        and e13_close.get("checks", {}).get("lean_cs_topology_data_inhabited") is False
+        and e13_close.get("checks", {}).get("uniqueness_of_regular_neighborhoods_used") is False
+        and e13_close.get("p3_certificate_sha256") == p3_certificate.get("certificate_sha256")
+        and e13_identification.get("verdict") == "IDENTIFIED_CS_HANDLE_PICTURE"
+        and e13_identification.get("checks", {}).get("identified_with_Sigma_A_0") is True
+        and e13_identification.get("e13_close_sha256") == e13_close.get("certificate_sha256")
+        and p3_certificate.get("closed_manifold", {}).get("identified_with_Sigma_A_0") is False
         and p3_certificate.get("e13_determinants", {}).get("identifies_X_J_with_Sigma_A_0")
         is False
     )
@@ -216,23 +239,36 @@ def generate() -> dict[str, Any]:
             "state": "PASS" if p3_e12_pass else "CITED_EXTERNAL",
             "proved": p3_e12_pass,
             "falsified": False,
-            "blocker": "none" if p3_e12_pass else "MWW Corollary 3.5 not recorded as a statement about S^4",
+            "blocker": "none" if p3_e12_pass else "S^4 reduction certificate missing or not about standard S^4",
             "evidence": [
+                "scripts/certify_t73_e12_s4.py",
+                "audit/t73_e12_s4_reduction.json",
                 "scripts/certify_t73_p3_four_handle.py",
                 "Smooth4PC/T73S4Control.lean",
-                "MWW Corollary 3.5 as a statement about S^4, not a candidate identification",
+                "MWW Corollary 3.5 unpacked as empty Khovanov and two I^4 glued along S^3",
             ],
+            "certificate_sha256": e12_certificate.get("certificate_sha256"),
         },
         "P3_E13": {
-            "state": "PARTIAL" if p3_e13_partial else "OPEN",
-            "proved": False,
+            "state": "PASS" if p3_e13_pass else "OPEN",
+            "proved": p3_e13_pass,
             "falsified": False,
-            "blocker": "det(A-I)=1 is proved; X_J is not identified with Sigma_A^0",
+            "blocker": (
+                "none"
+                if p3_e13_pass
+                else "E13 close certificate missing or does not identify X_J with Sigma_A^0"
+            ),
             "evidence": [
                 "Smooth4PC/T73Finite.lean",
                 "Iwaki Proposition 2.1 for the matrix criterion",
                 "audit/t73_p3_four_handle.json",
+                "scripts/certify_t73_e13_close.py",
+                "audit/t73_e13_close.json",
+                "audit/t73_reduced_link_pd.json",
+                "scripts/certify_t73_e13_identification.py",
+                "audit/t73_e13_identification.json",
             ],
+            "certificate_sha256": e13_close.get("certificate_sha256"),
         },
     }
     return {
@@ -242,9 +278,10 @@ def generate() -> dict[str, Any]:
         "counterexample_claim_falsified": False,
         "items": items,
         "interpretation": (
-            "P0, C, S and the MWW four-handle layer are discharged for the "
-            "explicit Johnson replacement. X_J is not identified with Sigma_A^0. "
-            "The counterexample claim is not proved."
+            "P0, C, S, the MWW four-handle layer and the E13 CS handle picture "
+            "are discharged for the explicit Johnson replacement. Lean "
+            "ExternalGeometry remains uninhabited. The counterexample claim is "
+            "not proved."
         ),
     }
 

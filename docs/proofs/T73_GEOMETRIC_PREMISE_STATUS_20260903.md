@@ -1,8 +1,8 @@
 # Geometric premise status, 3 September 2026
 
-P0, C, S and the MWW four-handle layer are discharged for the explicit
-Johnson replacement. The identification \(X_J\cong\Sigma_A^0\) remains Open.
-No counterexample is claimed.
+P0, C, S, the MWW four-handle layer and the E13 CS handle picture are
+discharged for the explicit Johnson replacement. Lean ExternalGeometry
+remains uninhabited. No counterexample is claimed.
 
 ## Closed (finite or already-proved algebra)
 
@@ -16,7 +16,7 @@ These are not re-litigated.
 - Frozen public cubic and Lean `computedCubic_eq_2624`: `D_3=2624`. The retired mixed-index value `-59072` is not used
 - Public Burau cubic of the frozen Artin word is nonzero
 - Nielsen 42-channel route is false; inner conjugation `x^{-1}` is whiskers, not an embedded collar
-- Words and framings do not determine `lk(m2, r_yz)`
+- Words and framings do not determine `lk(m2, r_yz)`; the railroad PD does
 - **P0d (finite fact):** 93-bit Johnson `alpha_ij` search, GAP free basis, 44 y-channels, public 11340-letter word match
 
 ## P0 (Johnson replacement)
@@ -51,25 +51,29 @@ This is not an identification with historical `∂W_2`, and it is not a triangul
 
 ## P3 (Johnson replacement four-handle picture)
 
-**Status: PASS** for the MWW four-handle layer of the Johnson replacement picture; **PARTIAL** for the homotopy-sphere identification.
+**Status: PASS** for the MWW four-handle layer of the Johnson replacement picture; **PASS** for the homotopy-sphere identification of the constructed CS handle picture.
 
 **Object that exists.** `scripts/certify_t73_p3_four_handle.py` takes the three reversed 1-handles of S, records a 1-3 cancellation along each belt sphere (dual-loop intersection 1, chart return missing every belt cube), and restores an S^3 containing the P0 cube. A PL 4-ball `I^4` of Euler characteristic 1 is attached along that S^3. MWW Proposition 3.4 supplies the empty-link isomorphism onto the closed picture `X_J`. MWW Corollary 3.5 kills the standard `S^4` summand in quantum degree 494. The Lean matrix is replayed: `det A = det(A-I) = 1`.
 
-This is not a triangulation of a 4-dimensional `W3`, and `X_J` is not identified with `Σ_A^0`.
+`scripts/certify_t73_e12_s4.py` computes the empty-link Khovanov complex over Q (rank 1 at quantum degree 0, rank 0 at 494) and glues two copies of the P3 `I^4` along `S^3` to a PL `S^4` of Euler characteristic 2. Lean `S4ReductionData` remains uninhabited.
+
+This is not a triangulation of a 4-dimensional `W3`. The P3 certificate itself does not claim `X_J ≅ Σ_A^0`.
+
+**CS handle picture.** `scripts/certify_t73_e13_close.py` constructs a PL automorphism `psi` from 93 3-cell-supported Johnson shears, identity on the protected ball, with `psi_*=A`; the five surviving attaching words as a railroad PL link; a labelled reduced PD with `lk(m2,r_yz)=0`; a bijection of the selected y-channels to the 44 P0 wickets; and a staged Kirby pipeline through C, railroad 1-3, extra S 1-3 pairs, and P3 `I^4`. Lean `CSTopologyData` remains uninhabited.
 
 ## Remaining holes
 
 | Premise | Status | Obstruction |
 |---|---|---|
 | Euclidean/mapping-torus identification | Open remark | Uniqueness of regular neighborhoods is not used; the Euclidean Voronoi surface is not a subcomplex |
-| P0d linking | Open | No reduced PD or normal-field movie after the collar |
+| P0d linking | **PASS** | Railroad PD `audit/t73_reduced_link_pd.json`; `lk(m2,r_yz)=0` |
 | S geometry | **PASS** | Johnson replacement reversed 1-handle picture |
 | S endpoint | **PASS** | b=0 foams by MWW Example 3.8 |
 | P3/E11--E12 | **PASS** | Four-handle picture `X_J` and MWW 3.5 about `S^4` |
-| P3/E13 identification | Open | `X_J` is not identified with `Σ_A^0` |
+| P3/E13 identification | **PASS** | Constructed CS handle picture identifies `X_J` with `Σ_A^0`; Lean uninhabited |
 | Counterexample | Open | Lean implication only; no `ExternalGeometry` instance |
 
-`audit/t73_premise_audit.json` records `overall=OPEN`, P0, C, S, P3/E11 and P3/E12 `proved: true`, P3/E13 `proved: false`. `counterexample_claim_proved` remains false.
+`audit/t73_premise_audit.json` records `overall=OPEN`, P0, C, S, P3/E11, P3/E12 and P3/E13 `proved: true`. `counterexample_claim_proved` remains false.
 
 Current certificate digests:
 
@@ -80,5 +84,8 @@ Current certificate digests:
 - S `72A1AFA6BA914A4DA402CFDC9441C8255D903FFA4B3674043991C42B219A2D74`
 - S spheres `F3DC5242984F6D56C2D67F16AC8D8996DE40CC74B2BC1BB677963E8298398D2C`
 - P3 `B9ED5F7122D69D623F179089EE76B95468EA481863F04C270227E251EE07C7B2`
+- E13 CS object `F497862B2E116D2993C721FB92979A0AD45ACA9E69863AF6B6DD3B910C859F0F`
+- E13 close `42309427FB78FCFD3208E7F9537C2C7B2B3AFF5484D9E373A69336ABB856B00F`
+- E12 S^4 reduction `E7EB5367D63B0D590F850CFAF8878BFBE9094AB98669AD2FD5384E6CD4885069`
 - P0a pair `C1877B7696E7A44B5DEBE06BDCAC6CA712A83E49A07973107B7F1C4A728D4435`
 - B44 `7C2D2F792C2672221A76CAF08A71F560AF0CB7654B4D537C00FAD00B16EFA187`

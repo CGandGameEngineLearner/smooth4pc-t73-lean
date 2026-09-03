@@ -1,7 +1,7 @@
 {
   "counterexample_claim_falsified": false,
   "counterexample_claim_proved": false,
-  "interpretation": "P0, C, S and the MWW four-handle layer are discharged for the explicit Johnson replacement. X_J is not identified with Sigma_A^0. The counterexample claim is not proved.",
+  "interpretation": "P0, C, S, the MWW four-handle layer and the E13 CS handle picture are discharged for the explicit Johnson replacement. Lean ExternalGeometry remains uninhabited. The counterexample claim is not proved.",
   "items": {
     "C": {
       "adjudication": "Johnson replacement: C1 product isotopy of P0 reconstruction strands and C2 action cubes plus RepresentableCoefficient.lean.",
@@ -66,25 +66,34 @@
     },
     "P3_E12": {
       "blocker": "none",
+      "certificate_sha256": "E7EB5367D63B0D590F850CFAF8878BFBE9094AB98669AD2FD5384E6CD4885069",
       "evidence": [
+        "scripts/certify_t73_e12_s4.py",
+        "audit/t73_e12_s4_reduction.json",
         "scripts/certify_t73_p3_four_handle.py",
         "Smooth4PC/T73S4Control.lean",
-        "MWW Corollary 3.5 as a statement about S^4, not a candidate identification"
+        "MWW Corollary 3.5 unpacked as empty Khovanov and two I^4 glued along S^3"
       ],
       "falsified": false,
       "proved": true,
       "state": "PASS"
     },
     "P3_E13": {
-      "blocker": "det(A-I)=1 is proved; X_J is not identified with Sigma_A^0",
+      "blocker": "none",
+      "certificate_sha256": "42309427FB78FCFD3208E7F9537C2C7B2B3AFF5484D9E373A69336ABB856B00F",
       "evidence": [
         "Smooth4PC/T73Finite.lean",
         "Iwaki Proposition 2.1 for the matrix criterion",
-        "audit/t73_p3_four_handle.json"
+        "audit/t73_p3_four_handle.json",
+        "scripts/certify_t73_e13_close.py",
+        "audit/t73_e13_close.json",
+        "audit/t73_reduced_link_pd.json",
+        "scripts/certify_t73_e13_identification.py",
+        "audit/t73_e13_identification.json"
       ],
       "falsified": false,
-      "proved": false,
-      "state": "PARTIAL"
+      "proved": true,
+      "state": "PASS"
     },
     "S": {
       "adjudication": "Johnson replacement reversed 3-handle picture: belt spheres miss the P0 cube and the C1 leftover link; HJ Theorem 5.3 is used only for kernel invariance, not to fix B.",

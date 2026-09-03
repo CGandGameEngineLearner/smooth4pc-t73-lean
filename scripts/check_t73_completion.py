@@ -39,7 +39,7 @@ def check() -> None:
 
     paper_text = paper.read_text(encoding="utf-8")
     require(paper_text, r"P2/E10/S & \Discharged", paper)
-    require(paper_text, r"P3/E13 & \Partial", paper)
+    require(paper_text, r"P3/E13 & \Discharged", paper)
     require(paper_text, r"\begin{theorem}[Conditional trace-73 theorem]\label{thm:joined}", paper)
 
     conditional_text = conditional.read_text(encoding="utf-8")
