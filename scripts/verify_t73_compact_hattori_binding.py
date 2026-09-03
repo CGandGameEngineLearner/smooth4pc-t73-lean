@@ -15,7 +15,7 @@ from typing import Any
 
 REPOSITORY = Path(__file__).resolve().parents[1]
 DEFAULT_INPUT = REPOSITORY / "data" / "T73_DELTA3_PUBLIC_INPUT.json"
-P0_WITNESS = REPOSITORY / "audit" / "t73_ar_product_witness.json"
+P0_WITNESS = REPOSITORY / "audit" / "t73_p0_johnson_certificate.json"
 C_WITNESS = REPOSITORY / "audit" / "t73_c_comparison_witness.json"
 
 
@@ -128,7 +128,7 @@ def verify(
     if replacement_binding:
         p0 = json.loads(P0_WITNESS.read_text(encoding="utf-8"))
         comparison = json.loads(C_WITNESS.read_text(encoding="utf-8"))
-        if comparison["p0_witness_sha256"] != p0["witness_sha256"]:
+        if comparison["p0_witness_sha256"] != p0["certificate_sha256"]:
             raise AssertionError("C witness is not bound to the committed P0 witness")
         pairing = comparison["product_pairing"]
         if pairing["total_yz_rectangles"] != py or pairing["remaining_z_circles"] != pz - py:
@@ -151,7 +151,7 @@ def verify(
             "status": "DISCHARGED_BY_PUBLIC_REPLACEMENT_COORDINATES",
         }
         ledger["replacement_dependencies"] = {
-            "p0_witness_sha256": p0["witness_sha256"],
+            "p0_witness_sha256": p0["certificate_sha256"],
             "c_witness_sha256": comparison["witness_sha256"],
         }
     else:

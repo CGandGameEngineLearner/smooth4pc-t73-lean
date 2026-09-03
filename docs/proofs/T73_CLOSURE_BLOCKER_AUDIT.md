@@ -6,9 +6,9 @@
 
 | item | verdict | evidence |
 |---|---|---|
-| P0 | **DISCHARGED** | public AR source, parameterized product witness, matrix bridge, two cancellations, detector ball |
+| P0 | **DISCHARGED** | Johnson splitting lift, relative product movie, two cancellations, detector ball and re-extracted public braid |
 | C | **DISCHARGED** | 44-rectangle Hattori equivalence, BPW/BHPW completed shadow, divided beta/psi cocone, nonzero sign-robust cubic |
-| S | **DISCHARGED** | relative complete sphere system plus intrinsic MWW local module action |
+| S | **DISCHARGED** | relative HJ move table plus the actual all-`b` genus-zero/core-counit calculation |
 | P3/E11 | **DISCHARGED** | MWW four-handle isomorphism on the P0 decomposition |
 | P3/E12 | **DISCHARGED** | MWW standard-S4 module concentrated in bidegree zero |
 | P3/E13 | **DISCHARGED** | P0 manifold identification plus Iwaki's determinant criterion |

@@ -2,6 +2,12 @@
 
 Date: 2026-09-02
 
+Current binding note: the regenerated v2 witness is bound to
+`audit/t73_p0_johnson_certificate.json`, not to the retired symbolic AR
+witness.  C is discharged by the actual maps and state family written as
+equations (17) and (24)--(27) in the paper.  S is discharged separately by
+the relative move table and the genus-zero calculation (30)--(32).
+
 ## Verdict
 
 C is **DISCHARGED** in the exact strength required by the paper:
@@ -289,10 +295,10 @@ functional on the actual W2 lasagna module whose selected value is nonzero.
 
 The detector point-push and cap are supported in the P0 ball.  A cobordism
 disjoint from that ball is carried by the symmetric-monoidal endpoint functor
-to a tensor factor independent of `rho(W)-I`.  Therefore the divided W2 row
-is symmetric monoidal for the standard attaching spheres used in relative S.
-The dotted and undotted sphere factors evaluate to one and zero,
-respectively, exactly as required there.
+to a tensor factor independent of `rho(W)-I`.  This is the naturality input
+used in relative S.  It does not by itself evaluate an essential
+`S^2 x {0}` sphere: those six dotted/undotted endpoint values are the
+remaining equations (31).
 
 ## 8. Independent replay
 
@@ -306,7 +312,7 @@ python -I -B tests/test_t73_c_comparison_witness.py -v
 The current witness SHA-256 is
 
 ```text
-410B1C411F321DD83F8ACD76CF5C259DF2EE341629B13669C2FE458005E5D922.
+6B574D3E062EE5D41D5D0F74C5C85CFC4BBFA773D335F00DF8107232EA1E1573.
 ```
 
 The replay checks every y-to-z product pairing, the 227 residual circles, the
@@ -316,7 +322,6 @@ the explicit proof above using the cited primary functors.
 
 ## Conclusion
 
-The candidate comparison C is constructed in the strength used by the final
-obstruction.  Combined with the already discharged P0, relative S and P3,
-the trace-73 candidate has a nonzero rational `N=2` lasagna class in quantum
-degree 494, whereas the corresponding degree of `S^4` vanishes.
+The candidate comparison C is constructed through the two-handle stage.
+Combined with P0, it gives a nonzero rational `N=2` class there in quantum
+degree 494.  Section 8 proves its passage through the three handles.

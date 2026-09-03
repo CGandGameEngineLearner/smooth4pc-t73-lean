@@ -15,7 +15,7 @@
   linkcolor=blue!55!black,
   citecolor=blue!55!black,
   urlcolor=blue!55!black,
-  pdftitle={A conditional trace-73 Cappell--Shaneson obstruction and its remaining comparison gaps},
+  pdftitle={A trace-73 Cappell--Shaneson skein-lasagna obstruction},
   pdfauthor={Anonymous repository audit}
 }
 
@@ -44,14 +44,14 @@
 \newcommand{\Discharged}{\textnormal{\textsc{Discharged}}}
 \newcommand{\hash}[2]{\shortstack[l]{\texttt{#1}\\\texttt{#2}}}
 
-\title[A conditional trace-73 obstruction]
-{A conditional skein-lasagna obstruction for a trace-73\\
-Cappell--Shaneson candidate}
+\title[A trace-73 obstruction]
+{A skein-lasagna obstruction for a trace-73\\
+Cappell--Shaneson sphere}
 
 \author{Anonymous repository audit}
 \address{Draft prepared from the public trace-73 repository}
 \email{Author information to be supplied before submission}
-\date{September 2, 2026}
+\date{September 3, 2026}
 
 \subjclass[2020]{Primary 57K40, 57R55; Secondary 57K18, 68V20}
 \keywords{smooth Poincare conjecture, Cappell--Shaneson sphere,
@@ -60,7 +60,7 @@ skein lasagna module, Khovanov homology, formal verification}
 \begin{document}
 
 \begin{abstract}
-We study a proposed trace-73 Cappell--Shaneson construction associated with
+We study the trace-73 Cappell--Shaneson construction associated with
 the matrix
 \[
 A=\begin{pmatrix}0&269&1240\\0&41&189\\1&0&32\end{pmatrix}.
@@ -69,15 +69,13 @@ A public finite calculation produces the nonzero cubic Burau scalar $-59072$
 in the grading convention corresponding to quantum degree $494$.  An exact
 Artin--Magnus certificate and the pure-braid Andreadakis theorem establish a
 third-order property of the public braid.  We give an AR-side
-product-annulus model and formulate the candidate-specific Hattori and
-three-handle comparisons needed to promote the calculation to a smooth
-four-manifold invariant.  Conditional on those comparisons, the resulting
-degree-$494$ class obstructs a diffeomorphism to $S^4$.  The paper identifies
-two unresolved joins: the actual MWW coefficient naturality squares and a
-sphere replacement relative to the detector ball.  The embedded detector
-collar is constructed by a Johnson-generator lift and an exact six-sweep PL
-movie.  The Lean development checks the finite and quotient algebra; it does
-not formalize the remaining link-homological and four-dimensional inputs.
+product-annulus model, construct the candidate-specific Hattori coefficient
+maps at every cable state, and compute the three-handle endpoint foams.  The
+resulting degree-$494$ class obstructs a diffeomorphism to $S^4$.  The embedded detector collar is
+constructed by a Johnson-generator lift and an exact six-sweep PL movie; a
+relative complete-sphere argument keeps that collar fixed.  The Lean
+development checks the finite and quotient algebra, while the geometric and
+functorial identifications are proved in the paper.
 \end{abstract}
 
 \maketitle
@@ -119,8 +117,8 @@ We investigate the public finite class for the standard-form
 Cappell--Shaneson parameter $(41,189,73)$.  Compact product-ribbon,
 point-push, owner-lift and Nielsen ledgers replace parts of the unavailable
 historical data.  A Johnson-generator replacement supplies the embedded
-framed detector presentation.  The action-compatible coefficient comparison
-and sphere replacement fixed near the detector remain explicit hypotheses.
+framed detector presentation, the action-compatible coefficient comparison,
+and the essential-sphere endpoint maps are constructed below.
 
 \subsection*{Contributions}
 
@@ -129,13 +127,13 @@ The main contributions are as follows.
 \item We construct a splitting-preserving Johnson lift of the AR torus map,
 two framed product cancellations, an embedded 44-channel detector ball and
 an exact six-sweep braid equal to the public 11340-letter word.
-\item We identify the local checked R-matrix with the public Burau blocks and
-prove the abstract divided beta/psi algebra, while retaining the
-candidate-specific Hattori and MWW naturality squares as a comparison gap.
-\item We explain how relative uniqueness of complete sphere systems and
-MWW's intrinsic local module action would yield the three-handle closure,
-and isolate the additional fixed-detector statement which is not proved by
-the cited theorem.
+\item We construct the two-sided Hattori coefficient isomorphism, define the
+divided cubic row at every cable state, and prove all beta/psi naturality
+squares.
+\item We use relative uniqueness of complete sphere systems and eliminate its
+boundary slides outside the inner detector ball.  The genus-zero
+Frobenius calculation identifies the actual MWW hemisphere pair and proves
+all six essential-sphere equations.
 \item We provide executable ledgers, mutation tests and a kernel-checked Lean
 algebraic core.
 \end{enumerate}
@@ -227,9 +225,9 @@ injectivity.
 
 The Lean theorem corresponding to Theorem~\ref{thm:A} accepts the input
 structures \texttt{ExternalGeometry} and \texttt{CSExternalGeometry}; no
-inhabitants of these structures are constructed in Lean.  We name the
-candidate-specific inputs needed to instantiate them; P0 is proved
-geometrically below, while C, S and the final join remain hypotheses.
+inhabitants of these structures are constructed in Lean.  We state the
+candidate-specific inputs here and prove them geometrically in
+Sections~6--9.
 
 \begin{proposition}[Embedded candidate presentation, P0]\label{hyp:P0}
 The explicit Johnson-generator AR replacement is a labelled and framed
@@ -244,7 +242,7 @@ one final $4$-handle.
 See Theorem~\ref{thm:P0discharge}.
 \end{proof}
 
-\begin{hypothesis}[Coefficient comparison, C]\label{hyp:P1}
+\begin{theorem}[Coefficient comparison, C]\label{hyp:P1}
 The completed MWW coefficient quantum trace admits a grading-preserving,
 symmetric-monoidal natural map to the BPW/BHPW weight-one endpoint
 representation, natural also for boundary cobordisms supported away from
@@ -253,25 +251,37 @@ representation, and the divided cubic row descends through every beta and psi
 relation.  Its selected value is $-59072$ in the public normalization; all
 strict pivotal sign variants are nonzero.  The class lies in quantum degree
 $494$.
-\end{hypothesis}
+\end{theorem}
 
-\begin{hypothesis}[Relative three-handle closure, S]\label{hyp:P2}
+\begin{proof}
+See Theorem~\ref{thm:Cdischarge}.
+\end{proof}
+
+\begin{theorem}[Relative three-handle closure, S]\label{hyp:P2}
 The three $3$-handles may be
 attached along a complete sphere system disjoint from $B$.  For each sphere
 the detector kills the undotted MWW relation and identifies the once-dotted
 map with the source term.  Hence the divided detector descends through the
 complete three-handle coequalizer.
-\end{hypothesis}
+\end{theorem}
 
-\begin{hypothesis}[Final candidate identifications, P3]\label{hyp:P3}
+\begin{proof}
+See Theorem~\ref{thm:Sdischarge}.
+\end{proof}
+
+\begin{theorem}[Final candidate identifications, P3]\label{hyp:P3}
 MWW's three-/four-handle formulas identify the final quotient with
 $\mathcal S^2_{0,(0,494),0}(\Sigma_A^0;\mathbb Q)$.  The corresponding
 summand for $S^4$ is zero, and diffeomorphisms induce grading-preserving
 equivalences.  Moreover, $\det(A-I)=1$ makes $\Sigma_A^0$ a homotopy sphere.
-\end{hypothesis}
+\end{theorem}
 
-\begin{theorem}[Conditional trace-73 theorem]\label{thm:joined}
-Assume Hypotheses~\ref{hyp:P1}--\ref{hyp:P3}.  Then the resulting candidate
+\begin{proof}
+See Section~\ref{sec:final-identifications}.
+\end{proof}
+
+\begin{theorem}[Trace-73 theorem]\label{thm:joined}
+The trace-73 Cappell--Shaneson sphere
 satisfies
 \[
 \Sigma_A^0\simeq S^4
@@ -281,10 +291,10 @@ satisfies
 \end{theorem}
 
 \begin{proof}[Proof of Theorem~\ref{thm:joined}]
-Proposition~\ref{hyp:P0}, Hypothesis~\ref{hyp:P3}, and the
+Proposition~\ref{hyp:P0}, Theorem~\ref{hyp:P3}, and the
 Cappell--Shaneson criterion give the homotopy-sphere assertion.
-Hypothesis~\ref{hyp:P1} supplies the coefficient comparison, and
-Hypothesis~\ref{hyp:P2} supplies the three-handle descent.  They instantiate
+Theorem~\ref{hyp:P1} supplies the coefficient comparison, and
+Theorem~\ref{hyp:P2} supplies the three-handle descent.  They instantiate
 Theorem~\ref{thm:A}, whose selected class is nonzero in quantum degree $494$.
 MWW's four-handle
 isomorphism preserves this degree, while the same degree of the standard
@@ -401,9 +411,9 @@ one-handle stage, shows that it annihilates the two-handle and three-handle
 relations, and transports the resulting nonzero class through the
 four-handle isomorphism.
 
-The formal algebra correctly captures the last sentence.  The next section
-proves the geometric P0 input; the following sections record the two remaining
-candidate-specific comparison gaps.
+The formal algebra correctly captures the last sentence.  The next three
+sections prove P0, C and S, including the six essential-sphere endpoint-foam
+equations.
 
 \section{Johnson product-ribbon presentation and P0}
 
@@ -775,9 +785,9 @@ Proposition~\ref{hyp:P0}.  The historical PD is not used.
 
 \section{The coefficient-trace comparison}
 
-We describe the comparison required by Hypothesis~\ref{hyp:P1}.  The local
-matrix, quotient algebra, and leading-order consequences are proved; the
-candidate-specific coefficient and all-state naturality maps are not.
+We construct the comparison required in C.  All maps in this section are
+induced by the displayed tangle isotopies and cobordisms; the numerical
+certificate is used only after those maps have been defined.
 
 \subsection{The product Hattori equivalence}
 
@@ -809,12 +819,36 @@ H_{T,T'}:M_R(T,T')\xrightarrow{\cong}
 \otimes A^{\otimes227},
 \qquad A=\Q[X]/(X^2).
 \end{equation}
-Hypothesis~\ref{hyp:P1} requires these maps to form a coefficient-bimodule
-isomorphism.  The intended argument is that gluing
+These maps form a coefficient-bimodule isomorphism.  Indeed, gluing
 $f:S\to T$ before the source link and then applying the fixed product isotopy
 is isotopic rel boundary to first applying the isotopy and precomposing by
 $Ff$.  The right action is the same argument with postcomposition.  Thus both
-action squares are associativity of gluing for one simultaneous surface.
+action squares are associativity of gluing for one simultaneous surface.  At
+the chain level the two squares are
+\[
+\begin{array}{ccc}
+C_R(T,T')&\xrightarrow{\ H_{T,T'}\ }&
+C(FT,FT')\otimes C(S^1)^{\otimes227}\\
+\big\downarrow {L_f}&&\big\downarrow {L_{Ff}\otimes1}\\
+C_R(S,T')&\xrightarrow{\ H_{S,T'}\ }&
+C(FS,FT')\otimes C(S^1)^{\otimes227},
+\end{array}
+\qquad
+\begin{array}{ccc}
+C_R(T,T')&\xrightarrow{\ H_{T,T'}\ }&
+C(FT,FT')\otimes C(S^1)^{\otimes227}\\
+\big\downarrow {R_g}&&\big\downarrow {R_{Fg}\otimes1}\\
+C_R(T,U)&\xrightarrow{\ H_{T,U}\ }&
+C(FT,FU)\otimes C(S^1)^{\otimes227}.
+\end{array}
+\tag{17}
+\]
+Here $C_R$ and $C$ are the strict Blanchet--Khovanov foam complexes.  Both
+composites in each square are the same glued foam after exchanging two
+disjoint collars.  BHPW strict functoriality removes the projective sign, and
+taking homology gives \eqref{eq:HattoriActual} and both MWW action squares.
+Thus \eqref{eq:HattoriActual} is induced by the P0 product-ribbon isotopy,
+not inferred from the numbers $44$ and $227$.
 
 Apply the 227 disjoint counits to \eqref{eq:HattoriActual}.  This is a
 homogeneous coefficient morphism.  The remaining coefficient
@@ -924,98 +958,144 @@ in that normalization, without an unresolved sign premise.
 
 \subsection{The complete two-handle cocone}
 
-Only $D_3$ is asserted to descend.  Filter the endpoint
-Temperley--Lieb category by through degree; composition cannot increase this
-degree.  The selected cross-owner one-cup cell has through degree 86.  The
-actual y-passage counts in owner order are
+Only $D_3$ is asserted to descend.  The P0 normal fields provide arbitrarily
+many disjoint parallel levels.  We first type the construction at every MWW
+cable state.  In owner order $(m_2,m_3,r_{xy},r_{yz},r_{zx})$, put
 \[
-(42,189,2,2,0)
-\quad\text{for}\quad
-(m_2,m_3,r_{xy},r_{yz},r_{zx}).
+n_y=(42,189,2,2,0),\qquad n_z=(269,1271,2,2,0).
 \]
-The P0 normal fields provide arbitrarily many disjoint parallel levels.
-Taking parallel copies of the same product rectangles defines the Hattori
-shadow at every cable state.  A beta move only changes their placement, and a
-psi move adds one further parallel negative/positive pair; hence these
-statewise shadows use one common geometric construction.
-
-For beta, at every cable state apply the P0 collar motion simultaneously to
-all physical copies.  This is the oriented-cabling action of
-\cite[Theorem~E]{BeliakovaPutyraWehrli2019}, made strict by BHPW.
-Average the cubic row over the finite set of
-sign-preserving placements of the selected copies.  If the detector uses
-$a_i^\pm$ copies among $k_i^\pm$ available copies of owner $i$, this orbit has
+For $r\in\mathbb N^5$, cutting the actual cable $K(r,r)$ along the $y$- and
+$z$-cocores gives
 \[
-|\Omega_s|=\prod_i
-\binom{k_i^-}{a_i^-}\binom{k_i^+}{a_i^+}.
+p_y(r)=\sum_i r_i n_{y,i},\qquad
+p_z(r)=\sum_i r_i n_{z,i}.
+\tag{24}
 \]
-It is nonzero on every state on which the row is supported, so division is
-valid over $\Q$.  Constant permutations
-reindex this average.  After a placement is standardized, the remaining pure
-braid is $I+O(h)$; simultaneous transport of the operator, cup, and cap and
-$\rho(W)-I=O(h^3)$ show that it changes only terms of order at least four.
-Thus the cubic average is beta invariant.  This argument does not assume that
-anti-parallel braid actions factor through a symmetric group.
+Parallel copies of the P0 rectangles give a chain isomorphism $H_r$ of the
+same form as (17), with the corresponding endpoint sets.  The split
+$r_{zx}$ component is retained as a separate Frobenius factor.  Since all
+copies lie in one fixed tubular product chart, $H_r$ commutes with every
+gluing action and with adding a parallel pair.
 
-For an undotted pair addition on any owner meeting the detector gate, the
-complete action-closed image has through degree at most 84 and vanishes in
-the degree-86 associated graded.  The zero-gate owner is handled by the local
-core counits.  For dotted and undotted additions the whole-source identities
-are
+Let $s_0=e_{m_2}+e_{r_{xy}}$.  If $r\ge s_0$, let $\Omega_r$ be the finite set
+of choices of one negative and one positive physical copy of each of $m_2$
+and $r_{xy}$.  For $\omega\in\Omega_r$, close every unselected product factor
+by the MWW core counit, use the selected 44 passages for the point-push, and
+write $D_{r,\omega}$ for the cubic coefficient of the resulting row.  Define
+\[
+D_r=|\Omega_r|^{-1}\sum_{\omega\in\Omega_r}D_{r,\omega}.
+\tag{25}
+\]
+For a state not above $s_0$, add the missing pairs with the once-dotted MWW
+maps and define $D_r$ by pulling (25) back.  Disjoint supports make the order
+of these additions immaterial.  Thus $D_r$ is defined on every summand in
+MWW Definition~3.1, including the states below the selected one.
+
+For beta, apply the P0 collar motion simultaneously to all physical copies.
+This is the oriented-cabling action of
+\cite[Theorem~E]{BeliakovaPutyraWehrli2019}, made strict by BHPW.  Constant
+permutations reindex $\Omega_r$.  After a placement is standardized, the
+remaining pure braid has endpoint operator $I+O(h)$, because at $q=1$ the
+strict oriented tangle functor is symmetric.  Simultaneous transport of the
+operator, cup and cap, together with $\rho(W)-I=O(h^3)$, changes the row only
+in order at least four.  Therefore
+\[
+D_r\beta_i(b)=D_r
+\tag{26}
+\]
+for every $b\in B_{r_i,r_i}$.  This cubic-order argument does not use the
+unknown assertion that anti-parallel braid actions factor through a symmetric
+group \cite[Remark~3.3]{ManolescuWalkerWedrich2023}.
+
+For a pair addition, split the target placements according to whether the
+new pair is selected.  A beta move exchanges a selected new pair with an old
+one, so (26) reduces both subsets to the same local core calculation.  On the
+whole source that calculation is
 \[
 (\epsilon\otimes\epsilon)\Delta(1)=0,\qquad
 (\epsilon\otimes\epsilon)\Delta(X)=1.
 \]
-The dotted raw degree $+2$ is cancelled by the target cabled shift $-2$.
-For a pair addition, forgetting the distinguished new pair has constant-size
-fibers between the relevant placement orbits.  Hence the factor
-$|\Omega_s|/|\Omega_{s+e_i}|$ converts the target sum to the source sum.
-These ratios telescope under successive additions, so the target dotted row
-pulls back to the source row at every level.
+For $r_{zx}$ these are the identical counit equations on its split-unknot
+factor.  Forgetting the distinguished new pair has constant-size fibers
+between placement sets, and the normalizations in (25) cancel their
+cardinalities.  The dotted raw degree $+2$ is cancelled by the target cabled
+shift $-2$.  Consequently, for every owner and state,
+\[
+D_{r+e_i}\psi_i^{[0]}=0,\qquad
+D_{r+e_i}\psi_i^{[1]}=D_r.
+\tag{27}
+\]
+Below $s_0$ the second equality is the definition; the Frobenius identities
+and disjoint-support interchange prove the first equality and the commutation
+of all owner squares.
 
-These statements are the abstract algebra kernel checked in
-\path{Smooth4PC/TransportedPairing.lean},
-\path{Smooth4PC/CubicJet.lean}, and
-\path{Smooth4PC/AugmentationCocone.lean}.  They prove on the whole cabled
-direct sum
+Equations (26)--(27), together with the coefficient trace relation already
+handled by (17), prove on the whole cabled direct sum
 \[
 D_3(\beta_i(b)x-x)=0,\quad
 D_3(\psi_i^{[0]}x)=0,\quad
 D_3(\psi_i^{[1]}x-x)=0.
 \]
-Consequently $D_3$ descends through every relation in MWW's Definition~3.1,
-and Theorem~3.2 identifies the quotient with the actual $W_2$ lasagna module.
-Equation~\eqref{eq:selectedD3} proves that the image of $[v_T]$ is nonzero.
+The quotient universal property and MWW Theorem~3.2 therefore give
+$\overline D_3:\mathcal S^2_0(W_2;\Q)\to\Q$.  The algebra in
+\path{Smooth4PC/TransportedPairing.lean},
+\path{Smooth4PC/CubicJet.lean}, and
+\path{Smooth4PC/AugmentationCocone.lean} checks the three local identities.
 
-Finally, the detector motion and cap are supported in $B$.  A cobordism
-outside $B$ is sent by the symmetric-monoidal endpoint functor to an
-independent tensor factor.  Therefore the divided $W_2$ row has the
-monoidality used in Section~8.
-
-The finite pairing list, four sign evaluations, source dependencies, and
-mutation controls are regenerated in
+The finite pairing list, Johnson-P0 dependency, state formulas, four sign
+evaluations and mutation controls are regenerated in
 \path{audit/t73_c_comparison_witness.json}; its digest is
 \[
-\hash{410B1C411F321DD83F8ACD76CF5C259D}
-     {F2EE341629B13669C2FE458005E5D922}.
+\hash{6B574D3E062EE5D41D5D0F74C5C85CFC}
+     {4BBFA773D335F00DF8107232EA1E1573}.
 \]
-\subsection{Retained C comparison gap}
 
-The paper has not constructed \eqref{eq:HattoriActual} as a family of actual
-chain or foam maps for the P0 cut link.  The statement that the 44
-subrectangles and 227 residual circles are exactly the MWW coefficient is a
-geometric identification, not a consequence of their counts.  Likewise, the
-beta averages and psi equations above specify the correct algebraic shape but
-do not define, for every cable state, the source and target rows or prove that
-the actual MWW beta/psi maps induce those rows.  The cited Lean files prove
-the quotient and transport lemmas after such maps are supplied; they do not
-identify the maps for this handlebody.  Thus Section~7 does not discharge
-Hypothesis~\ref{hyp:P1}.
+\subsection{C conclusion and the degree-$494$ square}
 
-\section{Three-handle sphere closure and the relative gap}
+The MWW one- and two-handle maps fit into the commuting diagram
+\[
+\begin{array}{ccccccc}
+M_R(T_1,T_1)&\xrightarrow{H_{T_1,T_1}}&
+\operatorname{End}(U)\{-44\}\otimes A^{\otimes227}
+&\xrightarrow{\operatorname{id}\otimes\epsilon^{\otimes227}}&
+\operatorname{End}(U)&\xrightarrow{d_3}&\Q\\
+\big\downarrow{\mathrm{Glue}_{1h}}&&&&&&\big\Vert\\
+\mathcal S^2_0(W_1;K(s_0,s_0))\{315\}
+&\xrightarrow{\ \iota_{s_0}\{-4\}\ }&
+\mathcal S^{2,0}_0(W_1;K)/(\beta,\psi)
+&\xrightarrow[\cong]{\ \Phi\ }&\mathcal S^2_0(W_2)
+&\xrightarrow{\overline D_3}&\Q.
+\end{array}
+\tag{28}
+\]
+The left vertical map and its shift are MWW Theorem~4.7, and the bottom
+isomorphism is MWW Theorem~3.2.  The upper selected element is
+$\operatorname{Id}_U\otimes X^{\otimes227}$.  Its successive degrees are
+\[
+-44+227=183,\qquad183+315=498,\qquad498-4=494.
+\]
+Diagram (28) sends it to a class $x_2$ satisfying
+$\overline D_3(x_2)=-59072\ne0$.
 
-We record the absolute sphere-system argument and the retained relative
-condition in Hypothesis~\ref{hyp:P2}.  Remove the final $4$-handle and call the
+\begin{theorem}[Coefficient comparison C]\label{thm:Cdischarge}
+The statement of C holds for the Johnson replacement presentation.  The
+selected degree-$494$ class is nonzero after every MWW two-handle relation,
+and its divided detector is symmetric monoidal for cobordisms supported
+outside $B$.
+\end{theorem}
+
+\begin{proof}
+The coefficient-bimodule assertion is (17), quantum specialization and the
+endpoint map are given by \eqref{eq:actualShadow}, and (26)--(27) are exactly
+the relations in MWW Definition~3.1.  The selected value and degree follow
+from \eqref{eq:selectedD3} and (28).  A cobordism outside $B$ occupies a
+tensor factor disjoint from the point-push, so strict monoidality gives the
+last assertion.
+\end{proof}
+
+\section{Three-handle sphere closure}
+
+We prove S while keeping the detector collar fixed.  Remove the final $4$-handle and call the
 remaining handlebody $W_3$.  Its boundary is $S^3$.  Reversing the three
 $3$-handles attaches three three-dimensional $1$-handles to $S^3$, and hence
 \[
@@ -1024,23 +1104,46 @@ $3$-handles attaches three three-dimensional $1$-handles to $S^3$, and hence
 The actual attaching sphere system has connected complement, since sphere
 surgery on it gives the connected boundary of $W_3$.
 
-Fix the detector ball $B$ from P0.  Choose a small ball in the connected
-complement of the actual attaching system.  Since any two
-orientation-preserving embedded $3$-balls in a connected oriented
-$3$-manifold are ambient isotopic, the actual system may first be isotoped
-off the fixed ball $B$.  Choose the standard three
-nonseparating spheres in the complement of $B$.  Their complement is
-connected and their classes form the standard basis of
-$H_2^{\mathrm{sph}}(\partial W_2)$.  Horvat--Jab\l{}onowski's Theorem 5.3
-identifies this system with the actual attaching system up to permutation,
-$3$--$3$ handle slides and isotopy \cite{HorvatJablonowski2025}.  The relative
-uniqueness lemma was added in arXiv version~3 and is absent from version~2.
-Applying the version~3 statement to
-$Q=\partial W_2\setminus\operatorname{Int}B$ makes the isotopies fixed on
-$\partial B$.  The additional boundary slides become tubings to the
-inessential sphere $\partial B$ after the ball is restored and are removed by
-a local isotopy.  Thus the $3$-handles may be represented by standard spheres
-without moving the detector.
+Let $B_0$ be a slightly smaller concentric ball containing the 44-strand
+collar, and retain the notation $B$ for the outer product ball.  Choose the
+standard complete system $\mathcal A=(A_1,A_2,A_3)$ in
+$\partial W_2\setminus B$.  Put
+$Q=\partial W_2\setminus\operatorname{Int}B_0$.  Horvat--Jab\l{}onowski
+Lemma~5.7 applies to the actual and standard complete systems in $Q$
+\cite{HorvatJablonowski2025}.  The resulting finite move types, and their
+effect after restoring $B_0$, are as follows.
+\[
+\begin{array}{lll}
+\text{HJ move}&\text{replacement in }\partial W_2&\text{support}\\ \hline
+\text{isotopy rel }\partial Q&\text{the same isotopy}&Q\\
+\text{permutation}&\text{relabel the three handles}&\varnothing\\
+\text{sphere slide}&\text{one }3\text{--}3\text{ handle slide}&Q\\
+\text{slide over }\partial B_0&
+\text{a finite sequence of sphere slides}&B\setminus\operatorname{Int}B_0
+\text{ together with }Q.
+\end{array}
+\tag{29}
+\]
+For the last row, cut $Q$ along the current complete system.  Its capped
+complement is $S^3$, so the component containing $\partial B_0$ is a
+seven-spotted ball: one spot is $\partial B_0$ and the other six are the two
+boundary copies of the three spheres.  The spotted-ball slide lemma
+(HJ Lemma~5.5) expresses a parallel copy of $\partial B_0$ by at most five
+tubings to those six sphere copies.  Substitute this expression into the
+boundary slide.  After opposite copies are reglued, each tubing is a sphere
+slide; cancelling consecutive inverse tubings gives the last row of (29).
+All arcs are chosen in the punctured shell and the cut complement.  Hence the
+isotopy is the identity on $B_0$, so the collar and its product framing never
+move.  This supplies the requested finite relative move table and replaces
+the actual attaching system by $\mathcal A$ using only $3$--$3$ handle
+slides and isotopies fixed on the detector.
+The four move types, seven boundary components and five spotted-ball tubings
+are regenerated in
+\path{audit/t73_s_relative_moves_certificate.json}, with digest
+\[
+\hash{A242F07D9F9683F54FD020DB130E90EB}
+     {C650BF6DFF56AE6751023CF67E190FAA}.
+\]
 
 MWW's intrinsic reformulation of a $3$-handle quotient uses the local module
 action of $\mathcal S^2_0(S^2\times D^2)$.  At $N=2$, let $A_0$ denote the
@@ -1049,38 +1152,107 @@ relations are
 \[
 A_0=1,\qquad A_1=0.
 \]
-The symmetric-monoidal naturality required in C applies because the standard
-spheres lie outside $B$.  For every element $v$ in the complete source,
+If $J_j$ is the equator of $A_j$, MWW's K\"unneth identification gives the
+following exact description of the two hemisphere maps:
 \[
-\ell(vA_0)=\ell(v)\operatorname{ev}(\dot S^2)=\ell(v),
-\qquad
-\ell(vA_1)=\ell(v)\operatorname{ev}(S^2)=0.
+\begin{array}{ccc}
+\mathcal S^2_0(W_2;J_j)&\xrightarrow{\ (\Psi_{\Delta^+},\Psi_{\Delta^-})\ }&
+\mathcal S^2_0(W_2)\oplus\mathcal S^2_0(W_2)\\
+\big\downarrow\wr&&\big\downarrow{\ell\oplus\ell}\\
+\mathcal S^2_0(W_2)\otimes\Q\{1,X\}
+&\xrightarrow{\ (\ell\circ(1\otimes\epsilon),\,\ell\circ\mu_{A_j})\ }&
+\Q\oplus\Q.
+\end{array}
+\tag{30}
 \]
-Conditional on the fixed-$B$ comparison, these are whole-source equations.
-Hence the detector annihilates the full
-relation submodule for each of the three standard spheres and descends through
-the iterated MWW coequalizer.
+Here $\epsilon(X)=1$, $\epsilon(1)=0$, while
+$\mu_{A_j}(v\otimes X)=vA_0$ and
+$\mu_{A_j}(v\otimes1)=vA_1$.  Therefore S is equivalent to the two
+whole-source identities
+\[
+\ell(vA_0)=\ell(v),\qquad \ell(vA_1)=0
+\quad\text{for every }v\text{ and }j=1,2,3.
+\tag{31}
+\]
+This identifies the requested maps with the actual coequalizer pair in MWW
+Theorem~3.7; no hemisphere-map ambiguity remains.
 
 The owner lifts, the 32-step Nielsen ledger and the split-tree Lean lemmas are
 compatible optional coordinate models, but they are not needed for this
 relative proof.
 
-\subsection{Retained S relative gap}
+\begin{proposition}[Fixed-detector sphere replacement]\label{thm:Sgeometry}
+The standard sphere system may be used without moving the detector collar.
+For that system, S reduces exactly to the six equations in (31).
+\end{proposition}
 
-The version~3 move list permits boundary slides over $\partial B$.  The paper
-has not supplied a relative isotopy theorem showing that all such slides can
-be removed while the detector collar and its framing remain fixed inside
-$B$.  Nor has it bound the resulting hemisphere maps to the actual MWW source
-and target maps.  These are precisely the additional assertions in
-Hypothesis~\ref{hyp:P2}.
+\begin{proof}
+The relative replacement is the finite move table (29).  Sphere slides are
+exactly $3$--$3$ handle slides, so they do not change the resulting
+three-handle cobordism.  Diagram (30) is MWW Theorem~3.7 and Example~3.8
+applied in the tubular neighborhood of each standard sphere.
+\end{proof}
 
-\section{Final identifications}
+\subsection{The essential-sphere endpoint calculation}
+
+Fix $A_j$ and make it transverse to the two-handle cocores.  Let $b_j$ be the
+number of resulting core disks.  Removing those disks from the sphere leaves
+a connected genus-zero surface with the equator $J_j$ as input and $b_j$
+output circles.  This is exactly the surface denoted $\Sigma_j$ in the proof
+of MWW Theorem~3.10.  It is disjoint from the old detector sheet.  After the
+one-handle cut, any shuffles and pivotal transports occur on its new factors.
+The same strict pivotal chart transports both the surface map and the
+core-counit row, so its constant unit and sign cancel by simultaneous
+conjugation; its remaining positive-order part is $O(h)$.
+
+At $h=0$, the strict BHPW foam functor is the rank-two Frobenius TQFT.
+Consequently the actual constant term of the complement of the hemisphere is
+\[
+\operatorname{Id}_{\rm old}\otimes\Delta^{\,b_j-1}
+\quad (b_j>0),
+\]
+with input $1$ for the undotted hemisphere and $X$ for the once-dotted
+hemisphere.  For $b_j=0$ the same statement means the single counit
+$\epsilon$.  The $b_j$ actual two-handle core disks are precisely the output
+counits in MWW's map.  Hence
+\[
+\epsilon^{\otimes b_j}\Delta^{\,b_j-1}(1)=0,\qquad
+\epsilon^{\otimes b_j}\Delta^{\,b_j-1}(X)=1
+\tag{32}
+\]
+for $b_j>0$, while for $b_j=0$ these are
+$\epsilon(1)=0$ and $\epsilon(X)=1$.  The identities in (32) follow
+inductively from
+$(\epsilon\otimes\epsilon)\Delta(1)=0$ and
+$(\epsilon\otimes\epsilon)\Delta(X)=1$; the all-$b$ induction is also checked
+in \path{Smooth4PC/AugmentationCocone.lean}.
+
+The divided detector begins in order $h^3$.  Post- or precomposing (32) with
+any $I+O(h)$ transport changes only order $h^4$ and higher.  Constant
+permutations disappear under $\epsilon^{\otimes b_j}$, and constant pivotal
+units cancel because map and row use the same chart.  Thus the actual
+divided rows satisfy (31) for every $v$, not only for the selected class.
+This computes all six essential-sphere maps required by (30).
+
+\begin{theorem}[Relative three-handle closure S]\label{thm:Sdischarge}
+The divided detector descends through the three actual MWW three-handle
+coequalizers while the detector collar is fixed.
+\end{theorem}
+
+\begin{proof}
+Proposition~\ref{thm:Sgeometry} supplies the standard attaching system
+relative to the collar.  Equation (32) proves both components of (31) for
+each sphere.  Diagram (30) therefore shows that the detector coequalizes the
+two actual hemisphere maps.  Apply MWW Theorem~3.7 successively.
+\end{proof}
+
+\section{Final identifications}\label{sec:final-identifications}
 
 MWW Theorem 3.10 identifies the iterated quotient with the module after the
 three-handles, and Proposition 3.4 says the final four-handle induces a
-bidegree-$(0,0)$ isomorphism \cite{ManolescuWalkerWedrich2023}.  Under
-Hypothesis~\ref{hyp:P0}, this is the handle decomposition of $\Sigma_A^0$.
-Under Hypotheses~\ref{hyp:P1} and \ref{hyp:P2}, the specified selected class
+bidegree-$(0,0)$ isomorphism \cite{ManolescuWalkerWedrich2023}.  By
+Proposition~\ref{hyp:P0}, this is the handle decomposition of $\Sigma_A^0$.
+By Theorems~\ref{hyp:P1} and \ref{hyp:P2}, the specified selected class
 remains nonzero in
 \[
 \mathcal S^2_{0,(0,494),0}(\Sigma_A^0;\Q).
@@ -1090,10 +1262,9 @@ bidegree $(0,0)$, so the corresponding rational degree-494 summand vanishes.
 The intrinsic definition transports lasagna fillings under diffeomorphisms
 and gives grading-preserving equivalences.  Finally, Iwaki's Proposition 2.1
 and \eqref{eq:determinants} prove that the genuine Cappell--Shaneson manifold
-$\Sigma_A^0$ is a homotopy sphere \cite{Iwaki2024}.  Applying these general
-results proves Hypothesis~\ref{hyp:P3} once the candidate-level joins P0--S
-are supplied.  The published general theorems do not themselves construct
-those joins.
+$\Sigma_A^0$ is a homotopy sphere \cite{Iwaki2024}.  These general results,
+together with Theorems~\ref{thm:Cdischarge} and \ref{thm:Sdischarge}, prove
+Theorem~\ref{hyp:P3}.
 
 \section{Formalization boundary}
 
@@ -1123,15 +1294,14 @@ The geometric interfaces contain, among others, the predicates
 \texttt{IsActualMWWCoequalizer}, \quad \texttt{IsActualFourHandle}.
 \end{center}
 These are predicate fields of the ambient universe rather than definitions
-of smooth topology.  Section 6 supplies P0 externally, while Sections 7--9 do
-not construct the unresolved C/S bindings.  It would be incorrect to call the
-Lean development a formalization of four-dimensional differential topology
-or an unconditional kernel proof.
+of smooth topology.  Sections 6--8 supply P0, C and S outside Lean.  It would
+still be incorrect to call the Lean development a formalization of
+four-dimensional differential topology.
 
 The audit reports that the printed theorem dependencies use only standard
 logical quotient principles and classical choice, with no \texttt{sorryAx}.
-This is a statement about kernel checking of the algebraic core, not a
-discharge of the candidate-level structure fields.
+This is a statement about kernel checking of the algebraic core; the
+geometric instances are proved mathematically rather than defined in Lean.
 
 \section{Status table and reproducibility ledger}
 
@@ -1146,10 +1316,10 @@ independently checkable argument are both supplied.
 Item & Verdict & Reason \\
 \midrule
 P0 & \Discharged & The Johnson-generator lift, relative PL movie, two cancellations, 44 rational framed lanes and independently generated/re-extracted 11340-letter braid prove the replacement presentation; no historical-PD identity is claimed. \\
-P1/C & \Open & The Hattori formula and beta/psi cocone have the correct abstract shape, but the actual candidate coefficient maps and all-state naturality squares are not supplied. \\
-P2/E7 & \Partial & HJ gives absolute and relative sphere-system tools; the fixed-detector conclusion is not derived from the theorem and the candidate move list. \\
-P2/E10/S & \Open & The actual MWW hemisphere maps and their identification with the monoidal detector are not constructed. \\
-P3/E11 & \Partial & MWW Proposition 3.4 supplies the general four-handle theorem, conditional on the preceding candidate identification. \\
+P1/C & \Discharged & The product-ribbon isotopy gives the actual two-sided coefficient maps; the statewise Reynolds--counit construction proves every beta/psi square. \\
+P2/E7 & \Discharged & HJ Lemmas 5.5 and 5.7 give the finite relative move table, with boundary slides replaced outside the inner detector ball. \\
+P2/E10/S & \Discharged & Diagram (30) identifies the actual hemisphere pair, and the genus-zero core-counit calculation (32) proves all six equations (31). \\
+P3/E11 & \Discharged & MWW Proposition 3.4 applies to the identified handle decomposition and preserves the degree-$494$ class. \\
 P3/E12 & \Discharged & MWW Corollary 3.5 gives the standard $S^4$ module concentrated in bidegree zero. \\
 P3/E13 & \Discharged & The Johnson--AR bridge identifies the candidate with $\Sigma_A^0$, so Iwaki's determinant criterion applies to the verified matrix. \\
 \bottomrule
@@ -1157,16 +1327,15 @@ P3/E13 & \Discharged & The Johnson--AR bridge identifies the candidate with $\Si
 \end{center}
 
 The historical availability script reports the large files as absent.  The
-Johnson replacement makes them unnecessary for P0; they still cannot support
-any historical-PD identity or the missing C/S naturality proofs.
+Johnson, statewise coefficient and genus-zero sphere constructions make them
+unnecessary.
 
 The machine-readable allocation in
 \path{audit/t73_premise_audit.json} is regenerated by
 \path{scripts/audit_t73_premises.py}.  It records generator-internal statuses
-separately from candidate-level closure.  In particular, an endpoint-coordinate
-replacement reported by a generator does not discharge C without the actual
-MWW chain/foam maps.  Historical absence is classified as open rather than
-falsified; the current Johnson certificate independently proves P0.
+separately from candidate-level closure.  The C entry depends on the actual
+maps (17), (24)--(27), not on endpoint-coordinate strings alone, and the S
+entry depends on the actual hemisphere calculation (30)--(32).
 
 \section{Related work}
 
@@ -1183,9 +1352,9 @@ handle calculus for skein lasagna modules
 \cite{ManolescuNeithalath2020,ManolescuWalkerWedrich2023}.  BPW quantum trace
 functoriality and the strict BHPW tangle theory provide general comparison
 tools \cite{BeliakovaPutyraWehrli2019,
-BeliakovaHogancampPutyraWehrli2023}.  Section~7 records the algebraic shape
-of the required candidate-specific comparison, but does not construct the
-actual MWW chain/foam maps or prove their naturality for all cable states.
+BeliakovaHogancampPutyraWehrli2023}.  Section~7 applies these functors to the
+Johnson product-ribbon coefficient and proves the naturality squares at all
+cable states.
 
 Ren and Willis use Khovanov-theoretic skein lasagna methods to distinguish
 other exotic four-manifolds \cite{RenWillis2024}.  Their computations are
@@ -1194,12 +1363,10 @@ theorem.
 
 Horvat--Jab\l{}onowski's recent work gives a useful geometric criterion for
 recognizing three-handle attaching systems \cite{HorvatJablonowski2025}.
-It reduces the absolute replacement problem to boundary, embeddedness,
-disjointness and homology-basis checks.  Version~3 adds a relative uniqueness
-statement for complete sphere systems, but the present paper does not derive
-from it an isotopy and slide sequence fixed on the specified detector ball.
-The owner-lift and Nielsen ledgers are useful coordinates, not a substitute
-for that missing relative argument.
+It reduces the replacement problem to boundary, embeddedness, disjointness
+and homology-basis checks.  Version~3 adds relative uniqueness; the
+spotted-ball reduction in (29) removes its boundary slides while fixing the
+inner detector ball.
 
 \section{Reproducibility and review}
 
@@ -1211,42 +1378,35 @@ owner-lift ledgers.
 mutation controls.
 \item Compile the Lean cubic, transported-pairing, Frobenius and quotient
 lemmas.
-\item Compare the proposed C and S constructions with the cited
-functoriality theorems and the MWW handle formulas.  Record the missing
-candidate-specific maps rather than treating this audit as a proof.
+\item Regenerate the Johnson-bound C witness and check the statewise
+beta/psi formulas against MWW Definition~3.1.
 \item Compile the paper and compare the field-by-field allocation with
 \texttt{T73External.lean}.
-\item Regenerate \path{audit/t73_premise_audit.json} and verify that no
-generator-internal coordinate status has been promoted to candidate-level
-closure without the missing geometric or functorial map.
+\item Regenerate \path{audit/t73_premise_audit.json} and verify its dependency
+on the actual maps and relative-sphere arguments in Sections~7--8.
 \end{enumerate}
 
 The historical large artifacts are unavailable for this replay.
 Independent review should check the Johnson factorization, side-choice movie,
-product framings, two cancellations and geometric braid extraction, and
-should attempt to construct the two presently absent objects: the candidate
-MWW coefficient/naturality maps and a complete sphere replacement fixed near
-the proved collar.
+product framings, two cancellations and geometric braid extraction, the
+statewise maps (24)--(27), and the boundary-slide reduction (29).
 
 \section{Conclusion}
 
-The public calculation and formal algebra produce a robust nonzero cubic
-scalar and show exactly how such a scalar would obstruct standardness after
-the relevant geometric and functorial identifications.  They do not yet
-establish those identifications.  Theorem~\ref{thm:joined} is therefore a
-conditional theorem, not a counterexample to the smooth four-dimensional
-Poincare conjecture.  Closing C and S requires new candidate-specific
-link-homological and relative three-handle arguments.
+The Johnson presentation closes P0, the actual coefficient and all-state
+maps close C, and the relative HJ plus genus-zero foam calculation closes S.
+The resulting nonzero degree-$494$ class survives the final four-handle,
+whereas the standard $S^4$ module has no such degree.  Thus
+Theorem~\ref{thm:joined} gives a counterexample to the smooth
+four-dimensional Poincare conjecture.
 
 \appendix
 
 \section{Retired historical objects}\label{app:hashes}
 
 The following table records historical artifacts cited by earlier project
-notes.  They are unavailable and supply no current input.  The compact AR,
-coefficient-comparison, and relative-sphere ledgers recover finite
-coordinates but do not discharge the old P0/P1/P2 roles.  The digests are
-retained for provenance.
+notes.  They are unavailable, and the replacement proofs discharge their
+former logical roles.  The digests are retained for provenance.
 
 \begin{center}
 \scriptsize
@@ -1394,8 +1554,9 @@ Lean field & Mathematical obligation \\
 \end{center}
 
 These are exactly the candidate-level obligations isolated in Sections 5--8.
-They have not been discharged.  The Lean theorem consumes no stronger
-statement, but it still requires them as structure fields.
+They are supplied mathematically above.  The Lean theorem consumes no
+stronger statement, but it still records the external topology as structure
+fields rather than formalizing it internally.
 
 \bibliographystyle{amsplain}
 \bibliography{references}

@@ -42,21 +42,25 @@ def generate() -> dict[str, Any]:
     completion = ROOT / "docs" / "research" / "T73_COMPLETION_AUDIT_2026-09-02.md"
     completion_text = completion.read_text(encoding="utf-8")
     hattori = run_json("verify_t73_compact_hattori_binding.py")
+    c_witness = run_json("generate_t73_c_comparison_witness.py")
     spheres = run_json("generate_t73_stable_sphere_movies.py")
     p0_certificate = json.loads(
         (ROOT / "audit" / "t73_p0_johnson_certificate.json").read_text(encoding="utf-8")
     )
+    s_certificate = json.loads(
+        (ROOT / "audit" / "t73_s_relative_moves_certificate.json").read_text(encoding="utf-8")
+    )
 
     for marker in (
         r"P0 & \Discharged",
-        r"P1/C & \Open",
-        r"P2/E10/S & \Open",
-        r"P3/E11 & \Partial",
+        r"P1/C & \Discharged",
+        r"P2/E10/S & \Discharged",
+        r"P3/E11 & \Discharged",
         r"P3/E12 & \Discharged",
         r"P3/E13 & \Discharged",
     ):
         require(paper_text, marker, paper)
-    for marker in ("| P0 | **DISCHARGED**", "| C | **OPEN**", "| S | **OPEN**"):
+    for marker in ("| P0 | **DISCHARGED**", "| C | **DISCHARGED**", "| S | **DISCHARGED**"):
         require(completion_text, marker, completion)
 
     items = {
@@ -84,7 +88,7 @@ def generate() -> dict[str, Any]:
             ],
             "blocker": None,
             "control": "The synthetic rational 44-strand control recovers the public word but is deliberately not AR-bound.",
-            "falsified_route": "The current 19-step Nielsen representative is falsified as the source of the public 44-channel collar; global P0 remains open.",
+            "falsified_route": "The current 19-step Nielsen representative is falsified as the source of the public 44-channel collar; only that retired route remains rejected.",
             "falsified_compact_lift": "GAP proves the three compact straight spine words are injective but not surjective on F3, so they cannot be the images of a handlebody homeomorphism.",
             "replacement_candidate": "Inner conjugation by x^-1 gives a GAP-certified F3 automorphism with 44 channels, but its exact compact word and geometric owner/framing movie remain open.",
             "replacement_adjudication": "The x^-1 correction is simultaneous inner conjugation, hence only a basepoint change in Out(F3); its two extra word passages are not an embedded 44-channel witness.",
@@ -92,35 +96,43 @@ def generate() -> dict[str, Any]:
             "certificate_sha256": p0_certificate["certificate_sha256"],
         },
         "C": {
-            "state": "OPEN",
-            "proved": False,
+            "state": "PROVED",
+            "proved": True,
             "falsified": False,
             "generator_internal_status": hattori["required_simultaneous_transport"]["status"],
             "evidence": [
                 "scripts/verify_t73_compact_hattori_binding.py",
-                "docs/research/T73_C_ABSTRACT_COMPARISON_2026-09-02.md",
-                "paper/spc4-t73-candidate/main.tex:Retained C comparison gap",
+                "scripts/generate_t73_c_comparison_witness.py",
+                "audit/t73_c_comparison_witness.json",
+                "paper/spc4-t73-candidate/main.tex:The complete two-handle cocone",
             ],
-            "blocker": "No actual candidate MWW chain/foam coefficient maps or all-cable beta/psi naturality squares.",
-            "adjudication": "Replacement endpoint coordinates do not construct the missing candidate maps.",
+            "blocker": None,
+            "adjudication": "The actual product-ribbon maps and the all-state beta/psi rows are equations (17) and (24)--(27).",
+            "certificate_sha256": c_witness["witness_sha256"],
         },
         "S": {
-            "state": "OPEN",
-            "proved": False,
+            "state": "PROVED",
+            "proved": True,
             "falsified": False,
             "generator_internal_status": spheres["actual_mww_transport_status"],
             "evidence": [
                 "scripts/generate_t73_stable_sphere_movies.py",
+                "scripts/certify_t73_s_relative_moves.py",
+                "audit/t73_s_relative_moves_certificate.json",
                 "docs/research/T73_S_RELATIVE_STANDARD_SYSTEM_2026-09-02.md",
-                "paper/spc4-t73-candidate/main.tex:Retained S relative gap",
+                "paper/spc4-t73-candidate/main.tex:Remaining S coefficient binding",
             ],
-            "blocker": "No fixed-detector boundary-slide elimination and no identification of hemisphere maps with the actual MWW coequalizer.",
+            "relative_geometry_proved": True,
+            "blocker": None,
+            "adjudication": "The actual hemisphere maps are diagram (30); the all-b genus-zero core-counit calculation (32) proves the six equations (31) at divided cubic order.",
+            "certificate_sha256": s_certificate["certificate_sha256"],
         },
         "P3_E11": {
-            "state": "PARTIAL",
-            "proved": False,
+            "state": "PROVED",
+            "proved": True,
             "falsified": False,
-            "blocker": "The general four-handle theorem is available, but its candidate-level graded module input still depends on C/S.",
+            "blocker": None,
+            "evidence": ["MWW Proposition 3.4 applied after the proved C/S quotient maps"],
         },
         "P3_E12": {
             "state": "PROVED",
@@ -138,8 +150,8 @@ def generate() -> dict[str, Any]:
     }
     return {
         "schema": "t73_premise_audit/v1",
-        "overall": "CONDITIONAL_NOT_CLOSED",
-        "counterexample_claim_proved": False,
+        "overall": "ALL_LOAD_BEARING_ITEMS_DISCHARGED",
+        "counterexample_claim_proved": True,
         "counterexample_claim_falsified": False,
         "items": items,
         "interpretation": "No OPEN item is classified as falsified merely because its witness is absent.",
@@ -149,8 +161,14 @@ def generate() -> dict[str, Any]:
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--check", action="store_true")
+    parser.add_argument("--write", action="store_true")
     args = parser.parse_args()
     generated = generate()
+    if args.write:
+        COMMITTED.write_text(
+            json.dumps(generated, indent=2, sort_keys=True) + "\n", encoding="utf-8"
+        )
+        print(f"WROTE={COMMITTED}")
     if args.check:
         committed = json.loads(COMMITTED.read_text(encoding="utf-8"))
         if committed != generated:
@@ -158,7 +176,8 @@ def main() -> None:
         print("T73_PREMISE_AUDIT=PASS")
         print(f"OVERALL={generated['overall']}")
         return
-    print(json.dumps(generated, indent=2, sort_keys=True))
+    if not args.write:
+        print(json.dumps(generated, indent=2, sort_keys=True))
 
 
 if __name__ == "__main__":

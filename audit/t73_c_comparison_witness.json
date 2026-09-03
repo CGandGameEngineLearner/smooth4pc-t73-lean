@@ -35,7 +35,7 @@
       "cup5_-1_cap2_-1": -59072
     }
   },
-  "p0_witness_sha256": "AA9328EA3C7A53B937C97A02D611850D0E8EEAF87C68756C04B013A486F6F112",
+  "p0_witness_sha256": "02CEDCE915EBFC2B3C0A88D10BEEB050F0D7DD828F6F11DC849DA83ED2BC05D2",
   "product_pairing": {
     "geometric_realization": "take the displayed one-edge subrectangles in the negative/positive parallel-copy product annuli from the P0 normal field",
     "m_2": {
@@ -651,7 +651,7 @@
     "specialization": "q=1 gives ordinary coefficient HH0",
     "vertical_horizontal_map": "BPW canonical qvTr-to-qhTr functor"
   },
-  "schema": "t73_candidate_c_comparison_witness/v1",
+  "schema": "t73_candidate_c_comparison_witness/v2",
   "selected_class": {
     "absolute_degree": 494,
     "circle_evaluation": "epsilon(X)^227=1",
@@ -661,6 +661,12 @@
   },
   "two_handle_naturality": {
     "beta_movie": "transport a physical-copy braid through the statewise point-push; the conjugate braid cancels against the identically braided core-disk closure",
+    "local_psi_frobenius_checks": {
+      "epsilon_tensor_epsilon_delta_1": 0,
+      "epsilon_tensor_epsilon_delta_X": 1,
+      "r_zx_split_circle_epsilon_1": 0,
+      "r_zx_split_circle_epsilon_X": 1
+    },
     "orbit_normalization": "divide by the nonzero rational orbit size; beta reindexes the sum and successive psi extension ratios telescope",
     "owner_y_passage_counts": {
       "m_2": 42,
@@ -669,13 +675,21 @@
       "r_yz": 2,
       "r_zx": 0
     },
+    "owner_z_passage_counts": {
+      "m_2": 269,
+      "m_3": 1271,
+      "r_xy": 2,
+      "r_yz": 2,
+      "r_zx": 0
+    },
     "placement_orbit_size": "product over active owners of binomial(k_i^-,a_i^-) times binomial(k_i^+,a_i^+)",
     "psi_dotted": "the once-dotted added pair closes with epsilon(X)=1 and reproduces the source row",
     "psi_undotted": "the added opposite pair closes with the core counit and epsilon(1)=0",
+    "state_formula": "for r=(r_i), p_y(r)=sum_i r_i n_y(i) and p_z(r)=sum_i r_i n_z(i); choose injections of the base m_2 and r_xy copy-pairs and average over their finite orbit",
     "statewise_W": "apply the same P0 collar isotopy simultaneously to every physical cable copy",
     "strict_sign_control": "BHPW strict functoriality",
     "through_degree_firewall": "a balanced pair on every positive-gate owner adds at least four y endpoints/two cups, so the action-closed undotted image has through degree <=84; r_zx is the unique zero-gate owner",
     "whole_source": true
   },
-  "witness_sha256": "410B1C411F321DD83F8ACD76CF5C259DF2EE341629B13669C2FE458005E5D922"
+  "witness_sha256": "6B574D3E062EE5D41D5D0F74C5C85CFC4BBFA773D335F00DF8107232EA1E1573"
 }

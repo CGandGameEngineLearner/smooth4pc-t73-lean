@@ -13,7 +13,7 @@ from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
 PUBLIC_INPUT = ROOT / "data" / "T73_DELTA3_PUBLIC_INPUT.json"
-P0_WITNESS = ROOT / "audit" / "t73_ar_product_witness.json"
+P0_WITNESS = ROOT / "audit" / "t73_p0_johnson_certificate.json"
 DEFAULT_OUTPUT = ROOT / "audit" / "t73_c_comparison_witness.json"
 
 
@@ -94,8 +94,16 @@ def generate_witness() -> dict[str, Any]:
 
     public = json.loads(PUBLIC_INPUT.read_text(encoding="utf-8"))
     p0 = json.loads(P0_WITNESS.read_text(encoding="utf-8"))
-    m2_word = compact.after_x_cancellation(1)
-    m3_word = compact.after_x_cancellation(2)
+    johnson = load_script("search_t73_johnson_alpha_sides").generate()["known_candidate"]
+    comparison = load_script("compare_t73_nielsen_passages")
+    integer_to_letter = {1: "x", 2: "y", 3: "z", -1: "X", -2: "Y", -3: "Z"}
+    m2_word = [integer_to_letter[value] for value in johnson["m2_after_cancellation"]]
+    m3_word = [
+        integer_to_letter[value]
+        for value in comparison.after_x_cancellation(johnson["generator_images"][2], 2)
+    ]
+    if m2_word != compact.after_x_cancellation(1):
+        raise AssertionError("Johnson m2 is not the compact selected word")
     rxy_word = ["z", "y", "Z", "Y"]
     ryz_word = ["y", "z", "Y", "Z"]
     rzx_word: list[str] = []
@@ -112,8 +120,8 @@ def generate_witness() -> dict[str, Any]:
         raise AssertionError("public endpoint normalization differs")
 
     witness: dict[str, Any] = {
-        "schema": "t73_candidate_c_comparison_witness/v1",
-        "p0_witness_sha256": p0["witness_sha256"],
+        "schema": "t73_candidate_c_comparison_witness/v2",
+        "p0_witness_sha256": p0["certificate_sha256"],
         "product_pairing": {
             "m_2": m2_pairing,
             "r_xy": rxy_pairing,
@@ -178,6 +186,24 @@ def generate_witness() -> dict[str, Any]:
                 "r_yz": sum(letter.lower() == "y" for letter in ryz_word),
                 "r_zx": sum(letter.lower() == "y" for letter in rzx_word),
             },
+            "owner_z_passage_counts": {
+                "m_2": sum(letter.lower() == "z" for letter in m2_word),
+                "m_3": sum(letter.lower() == "z" for letter in m3_word),
+                "r_xy": sum(letter.lower() == "z" for letter in rxy_word),
+                "r_yz": sum(letter.lower() == "z" for letter in ryz_word),
+                "r_zx": sum(letter.lower() == "z" for letter in rzx_word),
+            },
+            "state_formula": (
+                "for r=(r_i), p_y(r)=sum_i r_i n_y(i) and "
+                "p_z(r)=sum_i r_i n_z(i); choose injections of the base "
+                "m_2 and r_xy copy-pairs and average over their finite orbit"
+            ),
+            "local_psi_frobenius_checks": {
+                "epsilon_tensor_epsilon_delta_1": 0,
+                "epsilon_tensor_epsilon_delta_X": 1,
+                "r_zx_split_circle_epsilon_1": 0,
+                "r_zx_split_circle_epsilon_X": 1,
+            },
             "through_degree_firewall": (
                 "a balanced pair on every positive-gate owner adds at least "
                 "four y endpoints/two cups, so the action-closed undotted image "
@@ -218,8 +244,14 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--check", action="store_true")
     parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)
+    parser.add_argument("--write", action="store_true")
     args = parser.parse_args()
-    if args.check:
+    if args.write:
+        witness = generate_witness()
+        args.output.write_text(json.dumps(witness, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+        print(f"WROTE={args.output}")
+        print(f"WITNESS_SHA256={witness['witness_sha256']}")
+    elif args.check:
         witness = verify_committed(args.output)
         print("T73_C_COMPARISON_WITNESS=PASS")
         print(f"WITNESS_SHA256={witness['witness_sha256']}")

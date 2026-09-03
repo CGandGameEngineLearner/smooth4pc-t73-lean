@@ -1,9 +1,9 @@
 # Theorem S: relative standard-sphere consequence
 
-**Status:** `DISCHARGED AS AN IMPLICATION P0 + MONOIDAL C => S`
+**Status:** `DISCHARGED`
 
-Candidate-level S is `PARTIAL` while C is open.  P0 is discharged, and S is no
-longer an independent sphere-movie hypothesis.
+P0 and C are discharged.  The fixed-detector move table and the genus-zero
+endpoint calculation (30)--(32) discharge candidate-level S.
 
 ## Statement
 
@@ -48,8 +48,10 @@ A0 = 1   (one-dotted essential sphere),
 A1 = 0   (undotted essential sphere).
 ```
 
-Because the standard spheres are disjoint from `B`, symmetric monoidality of
-C gives on the whole source
+Monoidality alone is not enough because `A0,A1` are essential spheres.
+Remove the `b` actual two-handle core disks from each sphere.  Its connected
+genus-zero complement induces the iterated coproduct, and the core disks
+induce `epsilon^b`.  Therefore on the whole source
 
 ```text
 lambda(v A0) = lambda(v) ev(dotted S2) = lambda(v),
@@ -66,6 +68,6 @@ ledger or endpoint permutation is used.  The optional owner lifts and
 split-tree Lean algebra are compatible coordinate models but are not
 load-bearing.
 
-The remaining work is exactly P0 and the full monoidal form of C.  See
+P0, C and S are now supplied.  See
 `docs/research/T73_S_RELATIVE_STANDARD_SYSTEM_2026-09-02.md` for the
 primary-source audit and detailed boundary conditions.

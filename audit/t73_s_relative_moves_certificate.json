@@ -1,0 +1,69 @@
+{
+  "candidate_binding": {
+    "actual_standard_sphere_endpoint_foam_computed": true,
+    "constant_term_rule": "remove b core disks from the actual sphere; its connected genus-zero complement induces Delta^(b-1), followed by the b actual core counits (and epsilon directly when b=0)",
+    "positive_order_transport": "I+O(h) is invisible to a detector beginning in h^3"
+  },
+  "certificate_sha256": "A242F07D9F9683F54FD020DB130E90EBC650BF6DFF56AE6751023CF67E190FAA",
+  "checks": {
+    "at_most_five_tubings": true,
+    "detector_fixed": true,
+    "formal_target_rows_equal": true,
+    "seven_spotted_ball": true,
+    "three_coequalizers": true
+  },
+  "dependencies": {
+    "c_witness_sha256": "6B574D3E062EE5D41D5D0F74C5C85CFC4BBFA773D335F00DF8107232EA1E1573",
+    "hj_source": "arXiv:2510.20282v3, Lemmas 5.5 and 5.7",
+    "mww_source": "arXiv:2206.04616, Theorem 3.7 and Example 3.8",
+    "p0_certificate_sha256": "02CEDCE915EBFC2B3C0A88D10BEEB050F0D7DD828F6F11DC849DA83ED2BC05D2"
+  },
+  "mww_hemisphere_table": {
+    "basis": [
+      "1",
+      "X"
+    ],
+    "coequalizer_difference": {
+      "1": 0,
+      "X": 0
+    },
+    "delta_minus_after_detector": {
+      "1": 0,
+      "X": 1
+    },
+    "delta_plus": {
+      "1": 0,
+      "X": 1
+    },
+    "iterations": 3
+  },
+  "relative_geometry": {
+    "collar_motion": "IDENTITY_ON_B0",
+    "detector_boundary_components": 1,
+    "maximum_spotted_ball_tubings": 5,
+    "move_table": [
+      {
+        "hj_move": "ambient isotopy rel boundary",
+        "replacement": "same isotopy in Q"
+      },
+      {
+        "hj_move": "permutation",
+        "replacement": "relabel three 3-handles"
+      },
+      {
+        "hj_move": "sphere slide",
+        "replacement": "one 3-3 handle slide"
+      },
+      {
+        "hj_move": "boundary slide over dB0",
+        "replacement": "spotted-ball expansion followed by sphere slides"
+      }
+    ],
+    "protected_region": "inner detector ball B0",
+    "sphere_boundary_copies_after_cut": 6,
+    "sphere_count": 3,
+    "spotted_ball_boundary_count": 7
+  },
+  "schema": "t73_s_relative_moves_certificate/v1",
+  "verdict": "PASS"
+}

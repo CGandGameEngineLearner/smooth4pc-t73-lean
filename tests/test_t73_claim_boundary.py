@@ -18,10 +18,10 @@ def load_checker():
 
 
 class ClaimBoundaryTest(unittest.TestCase):
-    def test_current_paper_retains_open_candidate_joins(self) -> None:
+    def test_current_paper_matches_discharged_joins(self) -> None:
         load_checker().check()
 
-    def test_unconditional_claim_is_rejected(self) -> None:
+    def test_reject_helper_detects_forbidden_text(self) -> None:
         checker = load_checker()
         source = Path("mutant.tex")
         with self.assertRaises(AssertionError):

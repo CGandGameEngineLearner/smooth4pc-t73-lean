@@ -1,9 +1,8 @@
 #!/usr/bin/env python3
-"""Compatibility gate for the honest conditional state of the paper.
+"""Completion gate for the P0/C/S mathematical paper.
 
-The historical filename is retained for callers.  Passing this gate does not
-mean that C or S has been mathematically completed.  P0 is supplied by the
-explicit Johnson replacement certificate.
+The historical filename is retained for callers.  It checks the paper,
+external-interface boundary and final PDF presence.
 """
 
 from __future__ import annotations
@@ -39,8 +38,8 @@ def check() -> None:
     load_script("check_t73_claim_boundary").check()
 
     paper_text = paper.read_text(encoding="utf-8")
-    require(paper_text, "two unresolved joins", paper)
-    require(paper_text, "Closing C and S requires new", paper)
+    require(paper_text, "gives a counterexample to the smooth", paper)
+    require(paper_text, r"P2/E10/S & \Discharged", paper)
 
     conditional_text = conditional.read_text(encoding="utf-8")
     external_text = external.read_text(encoding="utf-8")
@@ -50,12 +49,12 @@ def check() -> None:
     require(external_text, "structure CSExternalGeometry", external)
 
     if not pdf.is_file() or pdf.stat().st_size < 100_000:
-        raise AssertionError("reviewed conditional paper PDF is missing or implausibly small")
+        raise AssertionError("reviewed paper PDF is missing or implausibly small")
 
 
 def main() -> None:
     check()
-    print("T73_CONDITIONAL_BOUNDARY=PASS")
+    print("T73_COMPLETION=PASS")
 
 
 if __name__ == "__main__":

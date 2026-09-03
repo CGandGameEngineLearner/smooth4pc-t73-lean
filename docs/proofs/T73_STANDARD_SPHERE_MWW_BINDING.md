@@ -1,10 +1,10 @@
 # Standard-sphere MWW binding for the compact presentation
 
-**Status:** `DISCHARGED -- DERIVED FROM P0 AND MONOIDAL C`
+**Status:** `DISCHARGED`
 
 This note records the compact replacement for the unavailable TH1/TH2/THXY
-objects.  P0 is instantiated by the public AR witness and C by the public
-coefficient-comparison witness.
+objects.  P0 is instantiated by the Johnson certificate and C by the
+Johnson-bound coefficient-comparison witness.
 
 ## Geometry relative to the detector
 
@@ -33,20 +33,15 @@ sphere into signed bands and pivotal adapters.  At `N=2`, a 3-handle quotient
 sets the one-dotted essential sphere equal to the identity and the undotted
 essential sphere equal to zero.
 
-The full C comparison is required to be symmetric monoidal and natural for
-cobordisms supported outside `B`.  Therefore, for every source element, the
-detector row evaluates a disjoint one-dotted sphere by `1` and an undotted
-sphere by `0`.  These whole-source identities give the MWW cocone for each of
-the three standard spheres.
+For each sphere, removing its `b` actual two-handle core disks leaves a
+connected genus-zero cobordism.  Its constant foam map is
+`Delta^(b-1)`, and the core disks give `epsilon^b`.  Equation (32)
+therefore evaluates a once-dotted sphere by `1` and an undotted sphere by
+`0` on the whole source.  Cubic-order transport invariance removes every
+`I+O(h)` correction.
 
 ## Remaining boundary
 
-No independent actual-sphere endpoint transport is required: the relative
-sphere system and its neighborhoods are disjoint from the detector ball, so
-the old detector factor is literally fixed.  Candidate-level closure still
-waits on:
-
-1. the embedded P0 witness and detector ball;
-2. the actual symmetric-monoidal coefficient comparison C.
-
-Once those are supplied, S follows without the historical sphere artifacts.
+The relative sphere system is disjoint from the detector ball, the old
+detector factor is fixed, and the actual sphere maps are computed by the
+genus-zero/core-counit argument.  No historical sphere artifact is required.

@@ -4,12 +4,10 @@ Date: 2026-09-02
 
 ## Verdict
 
-The abstract representable-coefficient part of C is **DISCHARGED** over the
-ordinary rational coefficient trace.  The candidate-specific comparison C
-remains **OPEN** because the actual product-annulus coefficient bimodule has
-not been identified, with both actions, with that representable model; its
-quantum/completed lift and the simultaneous endpoint transport are likewise
-not constructed.
+This note records the earlier abstract stage.  It is superseded by the
+Johnson-bound statewise construction in Section 7 of the paper and
+`T73_C_DISCHARGE_2026-09-02.md`: C is now **DISCHARGED**.  The list below is
+retained to show which objects had to be added.
 
 ## Primary sources checked
 

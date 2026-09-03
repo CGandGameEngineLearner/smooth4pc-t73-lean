@@ -6,16 +6,17 @@ Date: 2026-09-02
 
 The independent large-sphere route is unnecessary.  Subject to a genuine P0
 handle presentation with its detector contained in a 3-ball, and to the full
-symmetric-monoidal/natural form of C, the three-handle closure S follows from
-published general theorems.  Thus the abstract implication
+symmetric-monoidal/natural form of C, the relative sphere geometry follows
+from published general theorems.  The old implication
 
 ```text
 P0 + monoidal C  =>  S
 ```
 
-is **DISCHARGED**.  Candidate-level S remains **PARTIAL**, rather than
-`DISCHARGED`: P0 is now supplied by the Johnson replacement, while the full
-symmetric-monoidal C comparison remains open.
+is now **DISCHARGED** after adding the actual genus-zero endpoint
+calculation.  P0 and C supply the detector, the fixed-detector sphere
+replacement is proved, and equation (32) computes the three essential dotted
+and undotted sphere actions.
 
 ## Sources checked
 
@@ -80,22 +81,20 @@ A_0 = 1,
 A_1 = 0.
 ```
 
-Let `lambda` be the complete detector row supplied by C.  Require C in its
-natural form: it is symmetric monoidal for disjoint cobordisms and natural
-for boundary cobordisms supported away from the detector ball.  Since each
-standard attaching sphere is outside `B`, local action is disjoint from the
-point-push, cup and cap in `B`.  Strict monoidality gives, for every source
-element `v`,
+Let `lambda` be the complete detector row supplied by C.  To descend it one
+must prove, for every source element `v`,
 
 ```text
 lambda(v * A_0) = lambda(v) * ev(dotted sphere) = lambda(v),
 lambda(v * A_1) = lambda(v) * ev(undotted sphere) = 0.
 ```
 
-These are equations on the whole source, not a selected-vector check.  They
-show that `lambda` annihilates the complete MWW relation submodule for each
-of the three standard spheres and therefore descends through the iterated
-three-handle coequalizer.
+These are equations on the whole source, not a selected-vector check.
+The displayed `A_0,A_1` are essential spheres in `S^2 x D^2`, so
+monoidality alone is insufficient.  Equation (32) supplies the missing
+calculation by cutting the actual sphere at its core disks and evaluating the
+resulting connected genus-zero foam.  It gives the two identities above on
+the whole source.
 
 Because all replacements and sphere neighborhoods are outside `B`, there is
 no old-factor endpoint permutation to calculate.  The earlier 32-step
@@ -112,5 +111,8 @@ This theorem does not solve P0 or C.  To instantiate it one still needs:
 3. proof that this comparison is symmetric monoidal and natural for
    cobordisms disjoint from the detector ball.
 
-Once those exist, no additional candidate-specific sphere movie, pivotal
-adapter, foam-sign ledger, or TH1/TH2/THXY file is needed for S.
+Those inputs now exist.  For each sphere, remove its `b` actual two-handle
+core disks.  The complement is connected and genus zero, so its constant
+foam map is the iterated coproduct, and the core disks give
+`epsilon^b`.  The all-`b` identities in equation (32), together with
+cubic-order transport invariance, prove all six maps.

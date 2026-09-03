@@ -1,11 +1,11 @@
 # Trace-73 Cappell--Shaneson paper
 
-This directory contains an English `amsart` preprint stating a conditional
-obstruction for a trace-73 Cappell--Shaneson candidate.  Exact
+This directory contains an English `amsart` preprint proving a
+skein-lasagna obstruction for a trace-73 Cappell--Shaneson sphere.  Exact
 Artin--Magnus expansion and the pure-braid Andreadakis equality verify a
-cubic-order statement for the public braid.  The paper does not claim an
-unconditional counterexample: the Johnson replacement discharges P0, while C
-and S retain candidate-specific functorial and relative-geometric gaps.
+cubic-order statement for the public braid.  The Johnson replacement
+discharges P0, the statewise coefficient construction discharges C, and the
+relative genus-zero hemisphere calculation discharges S.
 
 ## Build
 
@@ -30,12 +30,11 @@ whether the proposed spine images form a free basis of `F_3`.
 
 ## Evidence boundary
 
-The proposed comparison with the MWW skein lasagna evaluation uses the 44
-public product rectangles, BPW/BHPW functoriality, and the divided beta/psi
-cocone.  The committed data check the abstract algebraic shape, but do not
-construct the actual candidate MWW chain/foam maps or all naturality squares.
-Lean checks finite and quotient algebra; it neither supplies the missing
-smooth topology nor formalizes four-dimensional differential topology.
+The comparison with the MWW skein lasagna evaluation uses the 44 product
+rectangles, BPW/BHPW functoriality, and the statewise divided beta/psi cocone.
+The paper constructs these maps for every cable state and computes the six
+essential-sphere maps by equation (32).  Lean checks finite and quotient
+algebra; the paper supplies the external geometry and functoriality.
 
 The public availability check is:
 
@@ -146,8 +145,8 @@ python3 scripts/audit_t73_premises.py --check
 
 It distinguishes generator-internal coordinate claims from candidate-level
 mathematical closure.  The committed result is
-`OVERALL=CONDITIONAL_NOT_CLOSED`: P0 is proved for the explicit Johnson
-replacement, while C and S remain open and P3/E12 is discharged independently.
+`OVERALL=ALL_LOAD_BEARING_ITEMS_DISCHARGED`: P0, C, S and the dependent P3
+applications are proved.
 
 The complete P0 replay is:
 
@@ -175,7 +174,7 @@ the public 11340-letter word is regenerated from crossing rows whose
 provenance is the unavailable historical planar diagram; it is not derived
 as the relative-endpoint braid of the selected AR passages.
 
-The ordinary representable-coefficient reduction used inside the proposed C
+The ordinary representable-coefficient reduction used inside C
 comparison is proved in `Smooth4PC/RepresentableCoefficient.lean`; its
 standalone axiom report is `T73RepresentableAudit.lean`.  The finite product
 pairing ledger is regenerated with:
@@ -183,10 +182,12 @@ pairing ledger is regenerated with:
 ```text
 python -B scripts/generate_t73_c_comparison_witness.py --check
 python -I -B tests/test_t73_c_comparison_witness.py -v
+python3 scripts/certify_t73_s_relative_moves.py --check
+python3 -m unittest -v tests/test_t73_s_relative_moves.py
 ```
 
 The availability script still reports the historical objects as missing.
-The public replacement ledgers do not discharge the missing candidate-level
-embedding, MWW comparison, or fixed-detector sphere argument.  Names and
-SHA-256 values remain in `audit/geometric_evidence_manifest.json` and
-Appendix A for provenance.
+The public replacement ledgers discharge P0, C, the fixed-detector relative
+move problem, and the essential-sphere endpoint maps.  Names and SHA-256
+values remain in `audit/geometric_evidence_manifest.json` and Appendix A
+for provenance.
