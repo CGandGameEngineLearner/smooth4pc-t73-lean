@@ -26,6 +26,14 @@
   "normal_surgery_trace": {
     "required": ["format", "source_sha256", "sphere_sha256s", "steps", "result_sha256"],
     "format": "explicit_simplicial_cut_cap/v1",
+    "required_per_step": [
+      "sphere_name",
+      "parallel_vertex_map",
+      "product_tetrahedra",
+      "cap_vertices",
+      "result"
+    ],
+    "semantics": "parallel_vertex_map identifies a disjoint parallel copy of every sphere vertex. product_tetrahedra must equal the verifier-derived staircase triangulation of S2 x I. The verifier removes precisely these tetrahedra, appends the two cap vertices, cones both boundary sphere copies, and requires exact equality with result.",
     "meaning": "A replayable cut-open-and-cap trace deriving surgery_result from w2_boundary and the three sphere subcomplexes. No PASS receipt is accepted."
   },
   "surgery_result": {

@@ -4,9 +4,10 @@
 The current repository has no admissible witness.  This verifier checks all
 finite simplicial predicates for which data are present, and refuses to
 promote a status string, a hash binding, or a homeomorphism-type label into a
-normal-surgery proof.  The explicit cut-and-cap replay engine is intentionally
-not faked: until such a trace is supplied and replay support is implemented,
-the verdict is OPEN.
+normal-surgery proof.  A cut-and-cap step is defined by an explicitly embedded
+canonical prism neighbourhood S^2 x I.  The verifier reconstructs and removes
+that neighbourhood, cones off its two boundary copies, and compares the exact
+resulting triangulation.
 """
 
 from __future__ import annotations
@@ -105,6 +106,31 @@ def validate_closed_3_complex(value: dict[str, Any], where: str) -> dict[str, An
         fail(f"{where} is not a closed face-paired 3-dimensional pseudomanifold")
     if not connected_simplices(tetrahedra):
         fail(f"{where} has disconnected tetrahedron adjacency")
+    used_vertices = {vertex for tet in tetrahedra for vertex in tet}
+    if used_vertices != set(range(len(vertices))):
+        fail(f"{where} has unused vertices")
+    for vertex in range(len(vertices)):
+        link_triangles = [
+            tuple(sorted(item for item in tet if item != vertex))
+            for tet in tetrahedra
+            if vertex in tet
+        ]
+        if len(set(link_triangles)) != len(link_triangles):
+            fail(f"{where} vertex {vertex} has duplicate triangles in its link")
+        link_edges = Counter(
+            edge for triangle in link_triangles for edge in faces(triangle)
+        )
+        link_vertices = {
+            item for triangle in link_triangles for item in triangle
+        }
+        link_chi = len(link_vertices) - len(link_edges) + len(link_triangles)
+        if (
+            not link_edges
+            or set(link_edges.values()) != {2}
+            or link_chi != 2
+            or not connected_simplices(link_triangles)
+        ):
+            fail(f"{where} vertex {vertex} does not have a triangulated S2 link")
     return {
         "vertices": vertices,
         "tetrahedra": tetrahedra,
@@ -143,6 +169,192 @@ def validate_sphere(
         "vertices": used_vertices,
         "sha256": canonical_sha({"name": value["name"], "triangles": value["triangles"]}),
     }
+
+
+def canonical_prism_tetrahedra(
+    sphere: dict[str, Any], parallel: dict[int, int]
+) -> list[tuple[int, ...]]:
+    """Staircase triangulation of the product of a triangulated S2 with I."""
+    product: list[tuple[int, ...]] = []
+    for triangle in sphere["triangles"]:
+        a, b, c = sorted(triangle)
+        ua, ub, uc = parallel[a], parallel[b], parallel[c]
+        product.extend(
+            [
+                tuple(sorted((a, b, c, uc))),
+                tuple(sorted((a, b, ub, uc))),
+                tuple(sorted((a, ua, ub, uc))),
+            ]
+        )
+    if len(set(product)) != len(product):
+        fail(f"normal neighbourhood of {sphere['name']} has duplicate tetrahedra")
+    return product
+
+
+def replay_cut_cap_step(
+    current_raw: dict[str, Any],
+    sphere: dict[str, Any],
+    step: dict[str, Any],
+    where: str,
+    forbidden_vertices: set[int] | None = None,
+) -> dict[str, Any]:
+    """Replay surgery on a two-sided S2 with a certified product neighbourhood."""
+    require_fields(
+        step,
+        [
+            "sphere_name",
+            "parallel_vertex_map",
+            "product_tetrahedra",
+            "cap_vertices",
+            "result",
+        ],
+        where,
+    )
+    if step["sphere_name"] != sphere["name"]:
+        fail(f"{where}.sphere_name does not match the trace order")
+    current = validate_closed_3_complex(current_raw, f"{where}.source")
+    pairs = step["parallel_vertex_map"]
+    if not isinstance(pairs, list):
+        fail(f"{where}.parallel_vertex_map must be a list")
+    lower_vertices = sphere["vertices"]
+    parallel: dict[int, int] = {}
+    for index, raw in enumerate(pairs):
+        if (
+            not isinstance(raw, list)
+            or len(raw) != 2
+            or not all(isinstance(vertex, int) for vertex in raw)
+        ):
+            fail(f"{where}.parallel_vertex_map[{index}] is not [lower, upper]")
+        lower, upper = raw
+        if (
+            lower not in lower_vertices
+            or lower in parallel
+            or upper < 0
+            or upper >= len(current["vertices"])
+            or upper in lower_vertices
+        ):
+            fail(f"{where}.parallel_vertex_map is not a disjoint map on sphere vertices")
+        parallel[lower] = upper
+    if set(parallel) != lower_vertices or len(set(parallel.values())) != len(parallel):
+        fail(f"{where}.parallel_vertex_map is not a bijection to a disjoint copy")
+
+    expected_product = canonical_prism_tetrahedra(sphere, parallel)
+    if forbidden_vertices is not None:
+        neighbourhood_vertices = {
+            vertex for tet in expected_product for vertex in tet
+        }
+        if neighbourhood_vertices & forbidden_vertices:
+            fail(f"{where}.product neighbourhood meets protected data")
+    supplied = step["product_tetrahedra"]
+    if not isinstance(supplied, list):
+        fail(f"{where}.product_tetrahedra must be a list")
+    supplied_product = [
+        tuple(sorted(simplex(raw, 4, len(current["vertices"]), f"{where}.product_tetrahedra[{index}]")))
+        for index, raw in enumerate(supplied)
+    ]
+    if supplied_product != expected_product:
+        fail(f"{where}.product_tetrahedra is not the canonical S2 x I triangulation")
+    current_tets = [tuple(sorted(tet)) for tet in current["tetrahedra"]]
+    current_set = set(current_tets)
+    if not set(expected_product) <= current_set:
+        fail(f"{where}.product neighbourhood is not a tetrahedron subcomplex")
+
+    # The boundary of the proposed neighbourhood must be exactly the lower
+    # sphere and its parallel upper copy.  This detects missing/extra prism
+    # tetrahedra and makes the local replacement a genuine S2 x I cut.
+    product_face_counts = Counter(
+        face for tet in expected_product for face in faces(tet)
+    )
+    product_boundary = {
+        face for face, count in product_face_counts.items() if count == 1
+    }
+    if set(product_face_counts.values()) - {1, 2}:
+        fail(f"{where}.product neighbourhood has nonmanifold face incidence")
+    lower_boundary = {tuple(sorted(triangle)) for triangle in sphere["triangles"]}
+    upper_boundary = {
+        tuple(sorted(parallel[vertex] for vertex in triangle))
+        for triangle in sphere["triangles"]
+    }
+    if product_boundary != lower_boundary | upper_boundary:
+        fail(f"{where}.product neighbourhood boundary is not two copies of the sphere")
+
+    cap_vertices = step["cap_vertices"]
+    if not isinstance(cap_vertices, list) or len(cap_vertices) != 2:
+        fail(f"{where}.cap_vertices must contain two new vertex records")
+    encoded_existing = {
+        json.dumps(vertex, sort_keys=True, separators=(",", ":"))
+        for vertex in current["vertices"]
+    }
+    encoded_caps = [
+        json.dumps(vertex, sort_keys=True, separators=(",", ":"))
+        for vertex in cap_vertices
+    ]
+    if len(set(encoded_caps)) != 2 or any(item in encoded_existing for item in encoded_caps):
+        fail(f"{where}.cap_vertices are not two distinct new vertices")
+    lower_cap = len(current["vertices"])
+    upper_cap = lower_cap + 1
+    retained = [
+        list(tet)
+        for tet in current_tets
+        if tet not in set(expected_product)
+    ]
+    lower_cones = [
+        sorted((*triangle, lower_cap)) for triangle in sphere["triangles"]
+    ]
+    upper_cones = [
+        sorted((*tuple(parallel[vertex] for vertex in triangle), upper_cap))
+        for triangle in sphere["triangles"]
+    ]
+    generated_raw = {
+        "vertices": list(current["vertices"]) + cap_vertices,
+        "tetrahedra": retained + lower_cones + upper_cones,
+    }
+    generated = validate_closed_3_complex(generated_raw, f"{where}.generated_result")
+    result_raw = require_object(step["result"], f"{where}.result")
+    result = validate_closed_3_complex(result_raw, f"{where}.result")
+    if generated_raw != {
+        "vertices": result_raw["vertices"],
+        "tetrahedra": result_raw["tetrahedra"],
+    }:
+        fail(f"{where}.result does not equal the replayed cut-and-cap complex")
+    if generated["sha256"] != result["sha256"]:
+        fail(f"{where}.result digest mismatch after replay")
+    return generated_raw
+
+
+def replay_normal_surgery_trace(
+    ambient_raw: dict[str, Any],
+    ambient: dict[str, Any],
+    spheres: list[dict[str, Any]],
+    trace: dict[str, Any],
+    detector_vertices: set[int],
+) -> dict[str, Any]:
+    if len(trace["steps"]) != len(spheres):
+        fail("normal_surgery_trace must contain one step per attaching sphere")
+    current_raw = {
+        "vertices": ambient_raw["vertices"],
+        "tetrahedra": ambient_raw["tetrahedra"],
+    }
+    for index, (sphere, raw_step) in enumerate(zip(spheres, trace["steps"])):
+        step = require_object(raw_step, f"normal_surgery_trace.steps[{index}]")
+        other_sphere_vertices = set().union(
+            *[
+                other["vertices"]
+                for other_index, other in enumerate(spheres)
+                if other_index != index
+            ]
+        )
+        current_raw = replay_cut_cap_step(
+            current_raw,
+            sphere,
+            step,
+            f"normal_surgery_trace.steps[{index}]",
+            detector_vertices | other_sphere_vertices,
+        )
+    result = validate_closed_3_complex(current_raw, "normal_surgery_trace.final")
+    if result["sha256"] != trace["result_sha256"]:
+        fail("normal_surgery_trace.result_sha256 disagrees with replay")
+    return current_raw
 
 
 def validate_detector(
@@ -266,7 +478,7 @@ def verify_payload(payload: dict[str, Any]) -> dict[str, Any]:
         if all_sphere_vertices & sphere["vertices"]:
             fail("attaching_spheres are not pairwise vertex-disjoint")
         all_sphere_vertices |= sphere["vertices"]
-    validate_detector(
+    detector = validate_detector(
         require_object(payload["detector_ball"], "detector_ball"),
         ambient,
         all_sphere_vertices,
@@ -298,14 +510,14 @@ def verify_payload(payload: dict[str, Any]) -> dict[str, Any]:
         require_object(payload["attaching_isomorphism"], "attaching_isomorphism"),
     )
 
-    # No sound replay implementation exists in the repository yet.  Reject
-    # even a structurally complete trace instead of trusting its result hash.
-    fail(
-        "explicit_simplicial_cut_cap/v1 replay is not implemented; "
-        "G-S1 remains OPEN rather than trusting a surgery receipt"
+    replayed_raw = replay_normal_surgery_trace(
+        payload["w2_boundary"], ambient, spheres, trace, detector["vertices"]
     )
-
-    # Unreachable until the cut-and-cap primitive is implemented.
+    if replayed_raw != {
+        "vertices": surgery_raw["vertices"],
+        "tetrahedra": surgery_raw["tetrahedra"],
+    }:
+        fail("surgery_result does not equal the final replayed surgery complex")
     return {"verdict": "PASS", "G_S1": "PROVED", "G_P3": "PROVED"}
 
 

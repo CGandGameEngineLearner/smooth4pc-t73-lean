@@ -22,7 +22,13 @@
           "physical_endpoint_id",
           "tensor_position",
           "orientation",
+          "boundary_face",
+          "oriented_tangent_vector_at_boundary",
+          "boundary_face_coorientation",
+          "bpw_boundary_word_symbol",
           "variance",
+          "variance_derivation",
+          "nesting_parent_locator",
           "nesting_depth",
           "defect_basis_state",
           "duality_atoms"
@@ -31,7 +37,23 @@
           "physical_endpoint_id": {"type": "string"},
           "tensor_position": {"type": "integer", "minimum": 0, "maximum": 87},
           "orientation": {"enum": [-1, 1]},
+          "boundary_face": {"enum": ["source", "target"]},
+          "oriented_tangent_vector_at_boundary": {
+            "type": "array",
+            "minItems": 3,
+            "maxItems": 3,
+            "items": {"type": ["integer", "number", "string"]}
+          },
+          "boundary_face_coorientation": {
+            "type": "array",
+            "minItems": 3,
+            "maxItems": 3,
+            "items": {"type": ["integer", "number", "string"]}
+          },
+          "bpw_boundary_word_symbol": {"enum": ["up", "down"]},
           "variance": {"enum": ["V", "V_dual"]},
+          "variance_derivation": {"type": "string", "minLength": 1},
+          "nesting_parent_locator": {"type": "string", "minLength": 1},
           "nesting_depth": {"type": "integer", "minimum": 0},
           "defect_basis_state": {"enum": ["highest", "defect"]},
           "duality_atoms": {

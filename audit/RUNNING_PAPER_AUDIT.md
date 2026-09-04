@@ -1299,6 +1299,18 @@ Topology-source checks completed 2026-09-04:
   supply the missing categorical identification.
 - Enforcement: the new checker exits nonzero and refuses pivotal or degree
   certification until all primitive fields are supplied.
+- Endpoint-level diagnostic (2026-09-05): the report now contains 88 entries
+  keyed by the physical endpoint ID.  For each it records the available base
+  passage orientation, cable-copy multiplier, their derived product and the
+  exact absent boundary face/tangent/coorientation, BPW boundary-word symbol,
+  nesting parent/depth, A.4 atom path, and Blanchet normal/movie.  The two
+  selected cup feet additionally name the absent ordered A.6 cup and cap
+  terms.  Thus the failure is localized, not a generic missing-field verdict.
+- Legacy regression: all 88 serialized legacy coefficients are `+q^0`, with
+  zero primitive derivations.  Moreover, the old builder ignores the base
+  passage orientation; its orientation disagrees with the derivable
+  passage-times-copy sign at four named endpoints.  The checker therefore
+  rejects the legacy table even though it is complete as a list of literals.
 
 ### F-505 — The intrinsic four-term degree ledger is plausible, but the comparison grading remains uncertified
 
@@ -1475,11 +1487,36 @@ Topology-source checks completed 2026-09-04:
   returns `verdict=OPEN`, `G_S1=OPEN`, and `G_P3=OPEN` because the current W2
   JSON is metadata rather than a witness. Three unit tests pass and confirm
   that the current artifact and boolean-only substitutes are rejected.
-- Deliberate remaining implementation gap: v1 does not yet replay the
-  `explicit_simplicial_cut_cap/v1` primitive. It rejects even a structurally
-  complete receipt at that point instead of trusting source/result hashes.
-  A normal-surface cut-and-cap engine or replayable Regina certificate is
-  required before this gate can return PASS.
+- The initially missing `explicit_simplicial_cut_cap/v1` primitive is now
+  implemented as recorded in F-607. Current T73 data still fail before that
+  stage because they contain no ambient boundary triangulation.
+
+### F-607 — Explicit simplicial normal-sphere surgery now has replayed finite semantics
+
+- Severity: **Major (positive infrastructure result)**
+- Status: **CONFIRMED**
+- Locations: `scripts/verify_t73_gs1_gp3.py`, functions
+  `canonical_prism_tetrahedra`, `replay_cut_cap_step`, and
+  `replay_normal_surgery_trace`; schema
+  `audit/t73_gs1_gp3_schema.json`; tests
+  `tests/test_t73_gs1_gp3_gate.py`.
+- Semantics: for each attaching sphere, the witness gives a disjoint parallel
+  vertex copy. The verifier independently derives the staircase
+  triangulation of \(S^2\times I\), requires exactly that tetrahedron
+  subcomplex, verifies that its boundary is precisely the two sphere copies,
+  removes it, appends two new cap vertices, cones both copies, and requires
+  exact equality with the next closed combinatorial 3-manifold. Vertex links
+  are checked to be triangulated 2-spheres. Product neighborhoods must miss
+  the detector and the other attaching spheres. The final complex is bound
+  to the trace and then to the explicit \(S^3\) recognition and 4-ball
+  attaching isomorphism.
+- Synthetic validation: a 36-tetrahedron cyclic three-slab triangulation of
+  \(S^2\times S^1\) contains a canonical 12-tetrahedron
+  \(S^2\times I\) neighborhood. Removing it and coning its two boundary
+  spheres replays to a closed 32-tetrahedron surgery result. Mutations deleting
+  a prism tetrahedron or altering the claimed result are rejected.
+- Test result: six focused unit tests pass. The current T73 W2 metadata still
+  returns `G_S1=OPEN`, `G_P3=OPEN`; no candidate topology is inferred.
 
 ## Proof dependency ledger
 
@@ -1551,7 +1588,7 @@ explicit checked contracts.
   no forbidden proof escape declaration; the focused finite tests above did
   pass.
 
-### F-500 — The C verifier contains no chain-level coefficient map
+### F-520 — The C verifier contains no chain-level coefficient map
 
 - Severity: **Critical**
 - Status: **CONFIRMED**
@@ -1566,7 +1603,7 @@ explicit checked contracts.
   `docs/proofs/T73_C_CHAINMAP_PAPER_PROOF.md` is absent, so 2624 is not yet an
   MWW quotient functional.
 
-### F-501 — Selected-state rectangles do not establish the claimed all-cable comparison
+### F-521 — Selected-state rectangles do not establish the claimed all-cable comparison
 
 - Severity: **Critical**
 - Status: **CONFIRMED**
@@ -1579,7 +1616,7 @@ explicit checked contracts.
 - Impact: whole-source beta/psi equations cannot be inferred from the selected
   state certificate.  The missing datum is C-H2 in the proof note.
 
-### F-502 — Endpoint pivotal data remain assumed
+### F-522 — Endpoint pivotal data remain assumed
 
 - Severity: **Critical**
 - Status: **CONFIRMED**
@@ -1591,7 +1628,7 @@ explicit checked contracts.
   unproved convention choice.  C-H3 requires a derivation in the actual
   BPW/BHPW pivotal category.
 
-### F-503 — The BPW/BHPW theorems give only a conditional route after the missing `H` is supplied
+### F-523 — The BPW/BHPW theorems give only a conditional route after the missing `H` is supplied
 
 - Severity: **Major**
 - Status: **CONFIRMED**
@@ -1602,7 +1639,7 @@ explicit checked contracts.
 - Impact: citing strict functoriality cannot replace a definition of the
   actual chain map or its two action squares.
 
-### F-504 — Constructive C attempt stops at four explicit missing inputs
+### F-524 — Constructive C attempt stops at four explicit missing inputs
 
 - Severity: **Critical**
 - Status: **BLOCKED ON NEW MATHEMATICAL DATA, NOT ON LEAN**
@@ -1790,3 +1827,30 @@ post-F-017 working tree, including the later Johnson restore hierarchy.
   paired-saddle ambient cells, while the old restore assembler replaced that
   state by PASS. A flattening generator must supply an admissible witness
   before P0 can use the composition-of-homeomorphisms paper argument.
+- Constructive follow-up (2026-09-05): tracing the paired-support, cap and
+  outer-collar builders locates the first absent coordinate object more
+  sharply. No simplicial self-map of the complete paired-support boundary
+  sphere is supplied which carries source_patch to target_patch and agrees
+  on the cap curves with the recorded cap-product transport. Thus
+  boundary_halfturn_cells, ambient_pl_cells,
+  paired_saddle_ambient_cells, and final_restore_assembly correctly remain
+  OPEN upstream. The strict verifier now reports this exact datum. The gate
+  tests include one expected-failure invariant demonstrating that the legacy
+  assembler improperly promotes those upstream OPEN values to PASS.
+
+### F-409 — The paired-saddle ambient map exists by a checked PL 3-ball argument
+
+- Severity: **Remediation**
+- Status: **RESOLVED FOR LOCAL EXISTENCE ONLY**
+- Evidence: `scripts/verify_t73_paired_saddle_topology.py` and
+  `tests/test_t73_paired_saddle_topology.py` check all vertex links, sphere
+  boundaries, collapse certificates, proper source/target disks, and every
+  simple boundary-curve triangle move for all four canonical supports.
+- Result: PL Schoenflies, uniqueness of proper disks in a 3-ball, and isotopy
+  extension across a thin external collar give a local ambient PL
+  homeomorphism fixed on the enlarged outer boundary. The four support sizes
+  are 85, 83, 122 and 122 tetrahedra; boundary isotopies use 5, 5, 40 and 40
+  triangle moves.
+- Limit: this is an existence theorem, not the missing canonical coordinate
+  evaluator. It is not bound to the later stored spine and detector
+  transports, so F-401 and global P0/E13 remain open.

@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import importlib.util
+import copy
 import json
 from pathlib import Path
 import unittest
@@ -16,6 +17,64 @@ def load():
     module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)
     return module
+
+
+def synthetic_s2_times_s1_surgery(module):
+    """Three cyclic S2 product slabs; remove one and cap to obtain S3."""
+    sphere_triangles = [
+        [1, 2, 3],
+        [0, 2, 3],
+        [0, 1, 3],
+        [0, 1, 2],
+    ]
+
+    def prism(lower, upper):
+        tetrahedra = []
+        for triangle in sphere_triangles:
+            a, b, c = sorted(triangle)
+            la, lb, lc = lower[a], lower[b], lower[c]
+            ua, ub, uc = upper[a], upper[b], upper[c]
+            tetrahedra.extend(
+                [
+                    sorted((la, lb, lc, uc)),
+                    sorted((la, lb, ub, uc)),
+                    sorted((la, ua, ub, uc)),
+                ]
+            )
+        return tetrahedra
+
+    lower = {vertex: vertex for vertex in range(4)}
+    upper = {vertex: vertex + 4 for vertex in range(4)}
+    middle = {vertex: vertex + 8 for vertex in range(4)}
+    product = prism(lower, upper)
+    complement = prism(upper, middle) + prism(middle, lower)
+    source = {
+        "vertices": [[vertex] for vertex in range(12)],
+        "tetrahedra": product + complement,
+    }
+    sphere_raw = {"name": "A", "triangles": sphere_triangles}
+    ambient = module.validate_closed_3_complex(source, "synthetic_source")
+    sphere = module.validate_sphere(sphere_raw, ambient, "synthetic_sphere")
+    cap_vertices = [["lower_cap"], ["upper_cap"]]
+    result = {
+        "vertices": source["vertices"] + cap_vertices,
+        "tetrahedra": (
+            complement
+            + [sorted((*triangle, 12)) for triangle in sphere_triangles]
+            + [
+                sorted((*tuple(vertex + 4 for vertex in triangle), 13))
+                for triangle in sphere_triangles
+            ]
+        ),
+    }
+    step = {
+        "sphere_name": "A",
+        "parallel_vertex_map": [[vertex, vertex + 4] for vertex in range(4)],
+        "product_tetrahedra": product,
+        "cap_vertices": cap_vertices,
+        "result": result,
+    }
+    return source, sphere, step, result
 
 
 class GS1GP3GateTest(unittest.TestCase):
@@ -94,6 +153,34 @@ class GS1GP3GateTest(unittest.TestCase):
         }
         with self.assertRaisesRegex(module.WitnessError, "closed triangulated surface"):
             module.verify_payload(fake)
+
+    def test_valid_explicit_s2_cut_and_cap_replays(self) -> None:
+        module = load()
+        source, sphere, step, expected = synthetic_s2_times_s1_surgery(module)
+        replayed = module.replay_cut_cap_step(source, sphere, step, "synthetic")
+        self.assertEqual(replayed, expected)
+        checked = module.validate_closed_3_complex(replayed, "synthetic_result")
+        self.assertEqual(len(checked["vertices"]), 14)
+        self.assertEqual(len(checked["tetrahedra"]), 32)
+
+    def test_cut_and_cap_rejects_missing_prism_tetrahedron(self) -> None:
+        module = load()
+        source, sphere, step, _ = synthetic_s2_times_s1_surgery(module)
+        mutant = copy.deepcopy(step)
+        mutant["product_tetrahedra"].pop()
+        with self.assertRaisesRegex(module.WitnessError, "canonical S2 x I"):
+            module.replay_cut_cap_step(source, sphere, mutant, "mutant")
+
+    def test_cut_and_cap_rejects_wrong_result(self) -> None:
+        module = load()
+        source, sphere, step, _ = synthetic_s2_times_s1_surgery(module)
+        mutant = copy.deepcopy(step)
+        mutant["result"]["tetrahedra"].pop()
+        with self.assertRaisesRegex(
+            module.WitnessError,
+            "closed face-paired|does not equal the replayed",
+        ):
+            module.replay_cut_cap_step(source, sphere, mutant, "mutant")
 
 
 if __name__ == "__main__":

@@ -1,6 +1,7 @@
 {
   "actual_endpoint_count": 88,
   "actual_endpoint_orientations_present": true,
+  "actual_passage_orientations_present": true,
   "degree_494_certified": false,
   "derived": {
     "X_labels": 227,
@@ -10,7 +11,3372 @@
     "one_handle_gluing_shift": 315
   },
   "detector_braid_writhe": 0,
+  "endpoint_diagnostics": [
+    {
+      "actual_endpoint_locator": "geometry/t73_actual_cut_tangle.json#/framed_endpoints/0",
+      "exact_absent_primitives": [
+        "boundary_face_source_or_target",
+        "oriented_tangent_vector_at_boundary",
+        "boundary_face_coorientation",
+        "bpw_boundary_word_symbol_derived_from_those_vectors",
+        "cup_web_or_platform_nesting_parent",
+        "cup_web_or_platform_nesting_depth",
+        "ordered_BPW_A4_duality_atom_path",
+        "blanchet_binding_or_detachment_local_normal",
+        "strict_foam_movie_locator_for_the_chart"
+      ],
+      "legacy_assignment": {
+        "accepted_as_primitive_derivation": false,
+        "orientation": -1,
+        "orientation_ignores_base_passage": false,
+        "pivotal_coefficient": {
+          "display": "+q^0",
+          "q_power": 0,
+          "sign": 1
+        }
+      },
+      "owner": "r_xy",
+      "physical_endpoint_id": "actual:r_xy:w1:neg:r_xy:vertex:3",
+      "pivotal_sign": "UNDETERMINED",
+      "present_primitives": {
+        "base_passage_orientation": 1,
+        "copy_orientation_multiplier": -1,
+        "copy_sign": "neg",
+        "oriented_copy_passage_sign": -1,
+        "transported_normal_coefficient": -1
+      },
+      "q_power": "UNDETERMINED",
+      "tensor_position_from_boundary_order": 0,
+      "variance": "UNDETERMINED",
+      "wicket": 1
+    },
+    {
+      "actual_endpoint_locator": "geometry/t73_actual_cut_tangle.json#/framed_endpoints/1",
+      "exact_absent_primitives": [
+        "boundary_face_source_or_target",
+        "oriented_tangent_vector_at_boundary",
+        "boundary_face_coorientation",
+        "bpw_boundary_word_symbol_derived_from_those_vectors",
+        "cup_web_or_platform_nesting_parent",
+        "cup_web_or_platform_nesting_depth",
+        "ordered_BPW_A4_duality_atom_path",
+        "blanchet_binding_or_detachment_local_normal",
+        "strict_foam_movie_locator_for_the_chart"
+      ],
+      "legacy_assignment": {
+        "accepted_as_primitive_derivation": false,
+        "orientation": 1,
+        "orientation_ignores_base_passage": false,
+        "pivotal_coefficient": {
+          "display": "+q^0",
+          "q_power": 0,
+          "sign": 1
+        }
+      },
+      "owner": "r_xy",
+      "physical_endpoint_id": "actual:r_xy:w1:pos:r_xy:vertex:5",
+      "pivotal_sign": "UNDETERMINED",
+      "present_primitives": {
+        "base_passage_orientation": 1,
+        "copy_orientation_multiplier": 1,
+        "copy_sign": "pos",
+        "oriented_copy_passage_sign": 1,
+        "transported_normal_coefficient": 1
+      },
+      "q_power": "UNDETERMINED",
+      "tensor_position_from_boundary_order": 1,
+      "variance": "UNDETERMINED",
+      "wicket": 1
+    },
+    {
+      "actual_endpoint_locator": "geometry/t73_actual_cut_tangle.json#/framed_endpoints/2",
+      "exact_absent_primitives": [
+        "boundary_face_source_or_target",
+        "oriented_tangent_vector_at_boundary",
+        "boundary_face_coorientation",
+        "bpw_boundary_word_symbol_derived_from_those_vectors",
+        "cup_web_or_platform_nesting_parent",
+        "cup_web_or_platform_nesting_depth",
+        "ordered_BPW_A4_duality_atom_path",
+        "blanchet_binding_or_detachment_local_normal",
+        "strict_foam_movie_locator_for_the_chart",
+        "selected_cup_ordered_BPW_A6_term",
+        "selected_cap_ordered_BPW_A6_term",
+        "selected_cup_and_cap_strict_movie_locators"
+      ],
+      "legacy_assignment": {
+        "accepted_as_primitive_derivation": false,
+        "orientation": -1,
+        "orientation_ignores_base_passage": true,
+        "pivotal_coefficient": {
+          "display": "+q^0",
+          "q_power": 0,
+          "sign": 1
+        }
+      },
+      "owner": "r_xy",
+      "physical_endpoint_id": "actual:r_xy:w2:neg:r_xy:vertex:7",
+      "pivotal_sign": "UNDETERMINED",
+      "present_primitives": {
+        "base_passage_orientation": -1,
+        "copy_orientation_multiplier": -1,
+        "copy_sign": "neg",
+        "oriented_copy_passage_sign": 1,
+        "transported_normal_coefficient": -1
+      },
+      "q_power": "UNDETERMINED",
+      "tensor_position_from_boundary_order": 2,
+      "variance": "UNDETERMINED",
+      "wicket": 2
+    },
+    {
+      "actual_endpoint_locator": "geometry/t73_actual_cut_tangle.json#/framed_endpoints/3",
+      "exact_absent_primitives": [
+        "boundary_face_source_or_target",
+        "oriented_tangent_vector_at_boundary",
+        "boundary_face_coorientation",
+        "bpw_boundary_word_symbol_derived_from_those_vectors",
+        "cup_web_or_platform_nesting_parent",
+        "cup_web_or_platform_nesting_depth",
+        "ordered_BPW_A4_duality_atom_path",
+        "blanchet_binding_or_detachment_local_normal",
+        "strict_foam_movie_locator_for_the_chart"
+      ],
+      "legacy_assignment": {
+        "accepted_as_primitive_derivation": false,
+        "orientation": 1,
+        "orientation_ignores_base_passage": true,
+        "pivotal_coefficient": {
+          "display": "+q^0",
+          "q_power": 0,
+          "sign": 1
+        }
+      },
+      "owner": "r_xy",
+      "physical_endpoint_id": "actual:r_xy:w2:pos:r_xy:vertex:1",
+      "pivotal_sign": "UNDETERMINED",
+      "present_primitives": {
+        "base_passage_orientation": -1,
+        "copy_orientation_multiplier": 1,
+        "copy_sign": "pos",
+        "oriented_copy_passage_sign": -1,
+        "transported_normal_coefficient": 1
+      },
+      "q_power": "UNDETERMINED",
+      "tensor_position_from_boundary_order": 3,
+      "variance": "UNDETERMINED",
+      "wicket": 2
+    },
+    {
+      "actual_endpoint_locator": "geometry/t73_actual_cut_tangle.json#/framed_endpoints/4",
+      "exact_absent_primitives": [
+        "boundary_face_source_or_target",
+        "oriented_tangent_vector_at_boundary",
+        "boundary_face_coorientation",
+        "bpw_boundary_word_symbol_derived_from_those_vectors",
+        "cup_web_or_platform_nesting_parent",
+        "cup_web_or_platform_nesting_depth",
+        "ordered_BPW_A4_duality_atom_path",
+        "blanchet_binding_or_detachment_local_normal",
+        "strict_foam_movie_locator_for_the_chart"
+      ],
+      "legacy_assignment": {
+        "accepted_as_primitive_derivation": false,
+        "orientation": -1,
+        "orientation_ignores_base_passage": true,
+        "pivotal_coefficient": {
+          "display": "+q^0",
+          "q_power": 0,
+          "sign": 1
+        }
+      },
+      "owner": "m_2",
+      "physical_endpoint_id": "actual:m_2:w44:neg:c1:letter:0",
+      "pivotal_sign": "UNDETERMINED",
+      "present_primitives": {
+        "base_passage_orientation": -1,
+        "copy_orientation_multiplier": -1,
+        "copy_sign": "neg",
+        "oriented_copy_passage_sign": 1,
+        "transported_normal_coefficient": -1
+      },
+      "q_power": "UNDETERMINED",
+      "tensor_position_from_boundary_order": 4,
+      "variance": "UNDETERMINED",
+      "wicket": 44
+    },
+    {
+      "actual_endpoint_locator": "geometry/t73_actual_cut_tangle.json#/framed_endpoints/5",
+      "exact_absent_primitives": [
+        "boundary_face_source_or_target",
+        "oriented_tangent_vector_at_boundary",
+        "boundary_face_coorientation",
+        "bpw_boundary_word_symbol_derived_from_those_vectors",
+        "cup_web_or_platform_nesting_parent",
+        "cup_web_or_platform_nesting_depth",
+        "ordered_BPW_A4_duality_atom_path",
+        "blanchet_binding_or_detachment_local_normal",
+        "strict_foam_movie_locator_for_the_chart",
+        "selected_cup_ordered_BPW_A6_term",
+        "selected_cap_ordered_BPW_A6_term",
+        "selected_cup_and_cap_strict_movie_locators"
+      ],
+      "legacy_assignment": {
+        "accepted_as_primitive_derivation": false,
+        "orientation": 1,
+        "orientation_ignores_base_passage": true,
+        "pivotal_coefficient": {
+          "display": "+q^0",
+          "q_power": 0,
+          "sign": 1
+        }
+      },
+      "owner": "m_2",
+      "physical_endpoint_id": "actual:m_2:w44:pos:m_2:C_i",
+      "pivotal_sign": "UNDETERMINED",
+      "present_primitives": {
+        "base_passage_orientation": -1,
+        "copy_orientation_multiplier": 1,
+        "copy_sign": "pos",
+        "oriented_copy_passage_sign": -1,
+        "transported_normal_coefficient": 1
+      },
+      "q_power": "UNDETERMINED",
+      "tensor_position_from_boundary_order": 5,
+      "variance": "UNDETERMINED",
+      "wicket": 44
+    },
+    {
+      "actual_endpoint_locator": "geometry/t73_actual_cut_tangle.json#/framed_endpoints/6",
+      "exact_absent_primitives": [
+        "boundary_face_source_or_target",
+        "oriented_tangent_vector_at_boundary",
+        "boundary_face_coorientation",
+        "bpw_boundary_word_symbol_derived_from_those_vectors",
+        "cup_web_or_platform_nesting_parent",
+        "cup_web_or_platform_nesting_depth",
+        "ordered_BPW_A4_duality_atom_path",
+        "blanchet_binding_or_detachment_local_normal",
+        "strict_foam_movie_locator_for_the_chart"
+      ],
+      "legacy_assignment": {
+        "accepted_as_primitive_derivation": false,
+        "orientation": -1,
+        "orientation_ignores_base_passage": false,
+        "pivotal_coefficient": {
+          "display": "+q^0",
+          "q_power": 0,
+          "sign": 1
+        }
+      },
+      "owner": "m_2",
+      "physical_endpoint_id": "actual:m_2:w43:neg:c1:letter:309",
+      "pivotal_sign": "UNDETERMINED",
+      "present_primitives": {
+        "base_passage_orientation": 1,
+        "copy_orientation_multiplier": -1,
+        "copy_sign": "neg",
+        "oriented_copy_passage_sign": -1,
+        "transported_normal_coefficient": -1
+      },
+      "q_power": "UNDETERMINED",
+      "tensor_position_from_boundary_order": 6,
+      "variance": "UNDETERMINED",
+      "wicket": 43
+    },
+    {
+      "actual_endpoint_locator": "geometry/t73_actual_cut_tangle.json#/framed_endpoints/7",
+      "exact_absent_primitives": [
+        "boundary_face_source_or_target",
+        "oriented_tangent_vector_at_boundary",
+        "boundary_face_coorientation",
+        "bpw_boundary_word_symbol_derived_from_those_vectors",
+        "cup_web_or_platform_nesting_parent",
+        "cup_web_or_platform_nesting_depth",
+        "ordered_BPW_A4_duality_atom_path",
+        "blanchet_binding_or_detachment_local_normal",
+        "strict_foam_movie_locator_for_the_chart"
+      ],
+      "legacy_assignment": {
+        "accepted_as_primitive_derivation": false,
+        "orientation": 1,
+        "orientation_ignores_base_passage": false,
+        "pivotal_coefficient": {
+          "display": "+q^0",
+          "q_power": 0,
+          "sign": 1
+        }
+      },
+      "owner": "m_2",
+      "physical_endpoint_id": "actual:m_2:w43:pos:c1:letter:308",
+      "pivotal_sign": "UNDETERMINED",
+      "present_primitives": {
+        "base_passage_orientation": 1,
+        "copy_orientation_multiplier": 1,
+        "copy_sign": "pos",
+        "oriented_copy_passage_sign": 1,
+        "transported_normal_coefficient": 1
+      },
+      "q_power": "UNDETERMINED",
+      "tensor_position_from_boundary_order": 7,
+      "variance": "UNDETERMINED",
+      "wicket": 43
+    },
+    {
+      "actual_endpoint_locator": "geometry/t73_actual_cut_tangle.json#/framed_endpoints/8",
+      "exact_absent_primitives": [
+        "boundary_face_source_or_target",
+        "oriented_tangent_vector_at_boundary",
+        "boundary_face_coorientation",
+        "bpw_boundary_word_symbol_derived_from_those_vectors",
+        "cup_web_or_platform_nesting_parent",
+        "cup_web_or_platform_nesting_depth",
+        "ordered_BPW_A4_duality_atom_path",
+        "blanchet_binding_or_detachment_local_normal",
+        "strict_foam_movie_locator_for_the_chart"
+      ],
+      "legacy_assignment": {
+        "accepted_as_primitive_derivation": false,
+        "orientation": -1,
+        "orientation_ignores_base_passage": false,
+        "pivotal_coefficient": {
+          "display": "+q^0",
+          "q_power": 0,
+          "sign": 1
+        }
+      },
+      "owner": "m_2",
+      "physical_endpoint_id": "actual:m_2:w42:neg:c1:letter:302",
+      "pivotal_sign": "UNDETERMINED",
+      "present_primitives": {
+        "base_passage_orientation": 1,
+        "copy_orientation_multiplier": -1,
+        "copy_sign": "neg",
+        "oriented_copy_passage_sign": -1,
+        "transported_normal_coefficient": -1
+      },
+      "q_power": "UNDETERMINED",
+      "tensor_position_from_boundary_order": 8,
+      "variance": "UNDETERMINED",
+      "wicket": 42
+    },
+    {
+      "actual_endpoint_locator": "geometry/t73_actual_cut_tangle.json#/framed_endpoints/9",
+      "exact_absent_primitives": [
+        "boundary_face_source_or_target",
+        "oriented_tangent_vector_at_boundary",
+        "boundary_face_coorientation",
+        "bpw_boundary_word_symbol_derived_from_those_vectors",
+        "cup_web_or_platform_nesting_parent",
+        "cup_web_or_platform_nesting_depth",
+        "ordered_BPW_A4_duality_atom_path",
+        "blanchet_binding_or_detachment_local_normal",
+        "strict_foam_movie_locator_for_the_chart"
+      ],
+      "legacy_assignment": {
+        "accepted_as_primitive_derivation": false,
+        "orientation": 1,
+        "orientation_ignores_base_passage": false,
+        "pivotal_coefficient": {
+          "display": "+q^0",
+          "q_power": 0,
+          "sign": 1
+        }
+      },
+      "owner": "m_2",
+      "physical_endpoint_id": "actual:m_2:w42:pos:c1:letter:301",
+      "pivotal_sign": "UNDETERMINED",
+      "present_primitives": {
+        "base_passage_orientation": 1,
+        "copy_orientation_multiplier": 1,
+        "copy_sign": "pos",
+        "oriented_copy_passage_sign": 1,
+        "transported_normal_coefficient": 1
+      },
+      "q_power": "UNDETERMINED",
+      "tensor_position_from_boundary_order": 9,
+      "variance": "UNDETERMINED",
+      "wicket": 42
+    },
+    {
+      "actual_endpoint_locator": "geometry/t73_actual_cut_tangle.json#/framed_endpoints/10",
+      "exact_absent_primitives": [
+        "boundary_face_source_or_target",
+        "oriented_tangent_vector_at_boundary",
+        "boundary_face_coorientation",
+        "bpw_boundary_word_symbol_derived_from_those_vectors",
+        "cup_web_or_platform_nesting_parent",
+        "cup_web_or_platform_nesting_depth",
+        "ordered_BPW_A4_duality_atom_path",
+        "blanchet_binding_or_detachment_local_normal",
+        "strict_foam_movie_locator_for_the_chart"
+      ],
+      "legacy_assignment": {
+        "accepted_as_primitive_derivation": false,
+        "orientation": -1,
+        "orientation_ignores_base_passage": false,
+        "pivotal_coefficient": {
+          "display": "+q^0",
+          "q_power": 0,
+          "sign": 1
+        }
+      },
+      "owner": "m_2",
+      "physical_endpoint_id": "actual:m_2:w41:neg:c1:letter:294",
+      "pivotal_sign": "UNDETERMINED",
+      "present_primitives": {
+        "base_passage_orientation": 1,
+        "copy_orientation_multiplier": -1,
+        "copy_sign": "neg",
+        "oriented_copy_passage_sign": -1,
+        "transported_normal_coefficient": -1
+      },
+      "q_power": "UNDETERMINED",
+      "tensor_position_from_boundary_order": 10,
+      "variance": "UNDETERMINED",
+      "wicket": 41
+    },
+    {
+      "actual_endpoint_locator": "geometry/t73_actual_cut_tangle.json#/framed_endpoints/11",
+      "exact_absent_primitives": [
+        "boundary_face_source_or_target",
+        "oriented_tangent_vector_at_boundary",
+        "boundary_face_coorientation",
+        "bpw_boundary_word_symbol_derived_from_those_vectors",
+        "cup_web_or_platform_nesting_parent",
+        "cup_web_or_platform_nesting_depth",
+        "ordered_BPW_A4_duality_atom_path",
+        "blanchet_binding_or_detachment_local_normal",
+        "strict_foam_movie_locator_for_the_chart"
+      ],
+      "legacy_assignment": {
+        "accepted_as_primitive_derivation": false,
+        "orientation": 1,
+        "orientation_ignores_base_passage": false,
+        "pivotal_coefficient": {
+          "display": "+q^0",
+          "q_power": 0,
+          "sign": 1
+        }
+      },
+      "owner": "m_2",
+      "physical_endpoint_id": "actual:m_2:w41:pos:c1:letter:293",
+      "pivotal_sign": "UNDETERMINED",
+      "present_primitives": {
+        "base_passage_orientation": 1,
+        "copy_orientation_multiplier": 1,
+        "copy_sign": "pos",
+        "oriented_copy_passage_sign": 1,
+        "transported_normal_coefficient": 1
+      },
+      "q_power": "UNDETERMINED",
+      "tensor_position_from_boundary_order": 11,
+      "variance": "UNDETERMINED",
+      "wicket": 41
+    },
+    {
+      "actual_endpoint_locator": "geometry/t73_actual_cut_tangle.json#/framed_endpoints/12",
+      "exact_absent_primitives": [
+        "boundary_face_source_or_target",
+        "oriented_tangent_vector_at_boundary",
+        "boundary_face_coorientation",
+        "bpw_boundary_word_symbol_derived_from_those_vectors",
+        "cup_web_or_platform_nesting_parent",
+        "cup_web_or_platform_nesting_depth",
+        "ordered_BPW_A4_duality_atom_path",
+        "blanchet_binding_or_detachment_local_normal",
+        "strict_foam_movie_locator_for_the_chart"
+      ],
+      "legacy_assignment": {
+        "accepted_as_primitive_derivation": false,
+        "orientation": -1,
+        "orientation_ignores_base_passage": false,
+        "pivotal_coefficient": {
+          "display": "+q^0",
+          "q_power": 0,
+          "sign": 1
+        }
+      },
+      "owner": "m_2",
+      "physical_endpoint_id": "actual:m_2:w40:neg:c1:letter:287",
+      "pivotal_sign": "UNDETERMINED",
+      "present_primitives": {
+        "base_passage_orientation": 1,
+        "copy_orientation_multiplier": -1,
+        "copy_sign": "neg",
+        "oriented_copy_passage_sign": -1,
+        "transported_normal_coefficient": -1
+      },
+      "q_power": "UNDETERMINED",
+      "tensor_position_from_boundary_order": 12,
+      "variance": "UNDETERMINED",
+      "wicket": 40
+    },
+    {
+      "actual_endpoint_locator": "geometry/t73_actual_cut_tangle.json#/framed_endpoints/13",
+      "exact_absent_primitives": [
+        "boundary_face_source_or_target",
+        "oriented_tangent_vector_at_boundary",
+        "boundary_face_coorientation",
+        "bpw_boundary_word_symbol_derived_from_those_vectors",
+        "cup_web_or_platform_nesting_parent",
+        "cup_web_or_platform_nesting_depth",
+        "ordered_BPW_A4_duality_atom_path",
+        "blanchet_binding_or_detachment_local_normal",
+        "strict_foam_movie_locator_for_the_chart"
+      ],
+      "legacy_assignment": {
+        "accepted_as_primitive_derivation": false,
+        "orientation": 1,
+        "orientation_ignores_base_passage": false,
+        "pivotal_coefficient": {
+          "display": "+q^0",
+          "q_power": 0,
+          "sign": 1
+        }
+      },
+      "owner": "m_2",
+      "physical_endpoint_id": "actual:m_2:w40:pos:c1:letter:286",
+      "pivotal_sign": "UNDETERMINED",
+      "present_primitives": {
+        "base_passage_orientation": 1,
+        "copy_orientation_multiplier": 1,
+        "copy_sign": "pos",
+        "oriented_copy_passage_sign": 1,
+        "transported_normal_coefficient": 1
+      },
+      "q_power": "UNDETERMINED",
+      "tensor_position_from_boundary_order": 13,
+      "variance": "UNDETERMINED",
+      "wicket": 40
+    },
+    {
+      "actual_endpoint_locator": "geometry/t73_actual_cut_tangle.json#/framed_endpoints/14",
+      "exact_absent_primitives": [
+        "boundary_face_source_or_target",
+        "oriented_tangent_vector_at_boundary",
+        "boundary_face_coorientation",
+        "bpw_boundary_word_symbol_derived_from_those_vectors",
+        "cup_web_or_platform_nesting_parent",
+        "cup_web_or_platform_nesting_depth",
+        "ordered_BPW_A4_duality_atom_path",
+        "blanchet_binding_or_detachment_local_normal",
+        "strict_foam_movie_locator_for_the_chart"
+      ],
+      "legacy_assignment": {
+        "accepted_as_primitive_derivation": false,
+        "orientation": -1,
+        "orientation_ignores_base_passage": false,
+        "pivotal_coefficient": {
+          "display": "+q^0",
+          "q_power": 0,
+          "sign": 1
+        }
+      },
+      "owner": "m_2",
+      "physical_endpoint_id": "actual:m_2:w39:neg:c1:letter:279",
+      "pivotal_sign": "UNDETERMINED",
+      "present_primitives": {
+        "base_passage_orientation": 1,
+        "copy_orientation_multiplier": -1,
+        "copy_sign": "neg",
+        "oriented_copy_passage_sign": -1,
+        "transported_normal_coefficient": -1
+      },
+      "q_power": "UNDETERMINED",
+      "tensor_position_from_boundary_order": 14,
+      "variance": "UNDETERMINED",
+      "wicket": 39
+    },
+    {
+      "actual_endpoint_locator": "geometry/t73_actual_cut_tangle.json#/framed_endpoints/15",
+      "exact_absent_primitives": [
+        "boundary_face_source_or_target",
+        "oriented_tangent_vector_at_boundary",
+        "boundary_face_coorientation",
+        "bpw_boundary_word_symbol_derived_from_those_vectors",
+        "cup_web_or_platform_nesting_parent",
+        "cup_web_or_platform_nesting_depth",
+        "ordered_BPW_A4_duality_atom_path",
+        "blanchet_binding_or_detachment_local_normal",
+        "strict_foam_movie_locator_for_the_chart"
+      ],
+      "legacy_assignment": {
+        "accepted_as_primitive_derivation": false,
+        "orientation": 1,
+        "orientation_ignores_base_passage": false,
+        "pivotal_coefficient": {
+          "display": "+q^0",
+          "q_power": 0,
+          "sign": 1
+        }
+      },
+      "owner": "m_2",
+      "physical_endpoint_id": "actual:m_2:w39:pos:c1:letter:278",
+      "pivotal_sign": "UNDETERMINED",
+      "present_primitives": {
+        "base_passage_orientation": 1,
+        "copy_orientation_multiplier": 1,
+        "copy_sign": "pos",
+        "oriented_copy_passage_sign": 1,
+        "transported_normal_coefficient": 1
+      },
+      "q_power": "UNDETERMINED",
+      "tensor_position_from_boundary_order": 15,
+      "variance": "UNDETERMINED",
+      "wicket": 39
+    },
+    {
+      "actual_endpoint_locator": "geometry/t73_actual_cut_tangle.json#/framed_endpoints/16",
+      "exact_absent_primitives": [
+        "boundary_face_source_or_target",
+        "oriented_tangent_vector_at_boundary",
+        "boundary_face_coorientation",
+        "bpw_boundary_word_symbol_derived_from_those_vectors",
+        "cup_web_or_platform_nesting_parent",
+        "cup_web_or_platform_nesting_depth",
+        "ordered_BPW_A4_duality_atom_path",
+        "blanchet_binding_or_detachment_local_normal",
+        "strict_foam_movie_locator_for_the_chart"
+      ],
+      "legacy_assignment": {
+        "accepted_as_primitive_derivation": false,
+        "orientation": -1,
+        "orientation_ignores_base_passage": false,
+        "pivotal_coefficient": {
+          "display": "+q^0",
+          "q_power": 0,
+          "sign": 1
+        }
+      },
+      "owner": "m_2",
+      "physical_endpoint_id": "actual:m_2:w38:neg:c1:letter:272",
+      "pivotal_sign": "UNDETERMINED",
+      "present_primitives": {
+        "base_passage_orientation": 1,
+        "copy_orientation_multiplier": -1,
+        "copy_sign": "neg",
+        "oriented_copy_passage_sign": -1,
+        "transported_normal_coefficient": -1
+      },
+      "q_power": "UNDETERMINED",
+      "tensor_position_from_boundary_order": 16,
+      "variance": "UNDETERMINED",
+      "wicket": 38
+    },
+    {
+      "actual_endpoint_locator": "geometry/t73_actual_cut_tangle.json#/framed_endpoints/17",
+      "exact_absent_primitives": [
+        "boundary_face_source_or_target",
+        "oriented_tangent_vector_at_boundary",
+        "boundary_face_coorientation",
+        "bpw_boundary_word_symbol_derived_from_those_vectors",
+        "cup_web_or_platform_nesting_parent",
+        "cup_web_or_platform_nesting_depth",
+        "ordered_BPW_A4_duality_atom_path",
+        "blanchet_binding_or_detachment_local_normal",
+        "strict_foam_movie_locator_for_the_chart"
+      ],
+      "legacy_assignment": {
+        "accepted_as_primitive_derivation": false,
+        "orientation": 1,
+        "orientation_ignores_base_passage": false,
+        "pivotal_coefficient": {
+          "display": "+q^0",
+          "q_power": 0,
+          "sign": 1
+        }
+      },
+      "owner": "m_2",
+      "physical_endpoint_id": "actual:m_2:w38:pos:c1:letter:271",
+      "pivotal_sign": "UNDETERMINED",
+      "present_primitives": {
+        "base_passage_orientation": 1,
+        "copy_orientation_multiplier": 1,
+        "copy_sign": "pos",
+        "oriented_copy_passage_sign": 1,
+        "transported_normal_coefficient": 1
+      },
+      "q_power": "UNDETERMINED",
+      "tensor_position_from_boundary_order": 17,
+      "variance": "UNDETERMINED",
+      "wicket": 38
+    },
+    {
+      "actual_endpoint_locator": "geometry/t73_actual_cut_tangle.json#/framed_endpoints/18",
+      "exact_absent_primitives": [
+        "boundary_face_source_or_target",
+        "oriented_tangent_vector_at_boundary",
+        "boundary_face_coorientation",
+        "bpw_boundary_word_symbol_derived_from_those_vectors",
+        "cup_web_or_platform_nesting_parent",
+        "cup_web_or_platform_nesting_depth",
+        "ordered_BPW_A4_duality_atom_path",
+        "blanchet_binding_or_detachment_local_normal",
+        "strict_foam_movie_locator_for_the_chart"
+      ],
+      "legacy_assignment": {
+        "accepted_as_primitive_derivation": false,
+        "orientation": -1,
+        "orientation_ignores_base_passage": false,
+        "pivotal_coefficient": {
+          "display": "+q^0",
+          "q_power": 0,
+          "sign": 1
+        }
+      },
+      "owner": "m_2",
+      "physical_endpoint_id": "actual:m_2:w37:neg:c1:letter:264",
+      "pivotal_sign": "UNDETERMINED",
+      "present_primitives": {
+        "base_passage_orientation": 1,
+        "copy_orientation_multiplier": -1,
+        "copy_sign": "neg",
+        "oriented_copy_passage_sign": -1,
+        "transported_normal_coefficient": -1
+      },
+      "q_power": "UNDETERMINED",
+      "tensor_position_from_boundary_order": 18,
+      "variance": "UNDETERMINED",
+      "wicket": 37
+    },
+    {
+      "actual_endpoint_locator": "geometry/t73_actual_cut_tangle.json#/framed_endpoints/19",
+      "exact_absent_primitives": [
+        "boundary_face_source_or_target",
+        "oriented_tangent_vector_at_boundary",
+        "boundary_face_coorientation",
+        "bpw_boundary_word_symbol_derived_from_those_vectors",
+        "cup_web_or_platform_nesting_parent",
+        "cup_web_or_platform_nesting_depth",
+        "ordered_BPW_A4_duality_atom_path",
+        "blanchet_binding_or_detachment_local_normal",
+        "strict_foam_movie_locator_for_the_chart"
+      ],
+      "legacy_assignment": {
+        "accepted_as_primitive_derivation": false,
+        "orientation": 1,
+        "orientation_ignores_base_passage": false,
+        "pivotal_coefficient": {
+          "display": "+q^0",
+          "q_power": 0,
+          "sign": 1
+        }
+      },
+      "owner": "m_2",
+      "physical_endpoint_id": "actual:m_2:w37:pos:c1:letter:263",
+      "pivotal_sign": "UNDETERMINED",
+      "present_primitives": {
+        "base_passage_orientation": 1,
+        "copy_orientation_multiplier": 1,
+        "copy_sign": "pos",
+        "oriented_copy_passage_sign": 1,
+        "transported_normal_coefficient": 1
+      },
+      "q_power": "UNDETERMINED",
+      "tensor_position_from_boundary_order": 19,
+      "variance": "UNDETERMINED",
+      "wicket": 37
+    },
+    {
+      "actual_endpoint_locator": "geometry/t73_actual_cut_tangle.json#/framed_endpoints/20",
+      "exact_absent_primitives": [
+        "boundary_face_source_or_target",
+        "oriented_tangent_vector_at_boundary",
+        "boundary_face_coorientation",
+        "bpw_boundary_word_symbol_derived_from_those_vectors",
+        "cup_web_or_platform_nesting_parent",
+        "cup_web_or_platform_nesting_depth",
+        "ordered_BPW_A4_duality_atom_path",
+        "blanchet_binding_or_detachment_local_normal",
+        "strict_foam_movie_locator_for_the_chart"
+      ],
+      "legacy_assignment": {
+        "accepted_as_primitive_derivation": false,
+        "orientation": -1,
+        "orientation_ignores_base_passage": false,
+        "pivotal_coefficient": {
+          "display": "+q^0",
+          "q_power": 0,
+          "sign": 1
+        }
+      },
+      "owner": "m_2",
+      "physical_endpoint_id": "actual:m_2:w36:neg:c1:letter:257",
+      "pivotal_sign": "UNDETERMINED",
+      "present_primitives": {
+        "base_passage_orientation": 1,
+        "copy_orientation_multiplier": -1,
+        "copy_sign": "neg",
+        "oriented_copy_passage_sign": -1,
+        "transported_normal_coefficient": -1
+      },
+      "q_power": "UNDETERMINED",
+      "tensor_position_from_boundary_order": 20,
+      "variance": "UNDETERMINED",
+      "wicket": 36
+    },
+    {
+      "actual_endpoint_locator": "geometry/t73_actual_cut_tangle.json#/framed_endpoints/21",
+      "exact_absent_primitives": [
+        "boundary_face_source_or_target",
+        "oriented_tangent_vector_at_boundary",
+        "boundary_face_coorientation",
+        "bpw_boundary_word_symbol_derived_from_those_vectors",
+        "cup_web_or_platform_nesting_parent",
+        "cup_web_or_platform_nesting_depth",
+        "ordered_BPW_A4_duality_atom_path",
+        "blanchet_binding_or_detachment_local_normal",
+        "strict_foam_movie_locator_for_the_chart"
+      ],
+      "legacy_assignment": {
+        "accepted_as_primitive_derivation": false,
+        "orientation": 1,
+        "orientation_ignores_base_passage": false,
+        "pivotal_coefficient": {
+          "display": "+q^0",
+          "q_power": 0,
+          "sign": 1
+        }
+      },
+      "owner": "m_2",
+      "physical_endpoint_id": "actual:m_2:w36:pos:c1:letter:256",
+      "pivotal_sign": "UNDETERMINED",
+      "present_primitives": {
+        "base_passage_orientation": 1,
+        "copy_orientation_multiplier": 1,
+        "copy_sign": "pos",
+        "oriented_copy_passage_sign": 1,
+        "transported_normal_coefficient": 1
+      },
+      "q_power": "UNDETERMINED",
+      "tensor_position_from_boundary_order": 21,
+      "variance": "UNDETERMINED",
+      "wicket": 36
+    },
+    {
+      "actual_endpoint_locator": "geometry/t73_actual_cut_tangle.json#/framed_endpoints/22",
+      "exact_absent_primitives": [
+        "boundary_face_source_or_target",
+        "oriented_tangent_vector_at_boundary",
+        "boundary_face_coorientation",
+        "bpw_boundary_word_symbol_derived_from_those_vectors",
+        "cup_web_or_platform_nesting_parent",
+        "cup_web_or_platform_nesting_depth",
+        "ordered_BPW_A4_duality_atom_path",
+        "blanchet_binding_or_detachment_local_normal",
+        "strict_foam_movie_locator_for_the_chart"
+      ],
+      "legacy_assignment": {
+        "accepted_as_primitive_derivation": false,
+        "orientation": -1,
+        "orientation_ignores_base_passage": false,
+        "pivotal_coefficient": {
+          "display": "+q^0",
+          "q_power": 0,
+          "sign": 1
+        }
+      },
+      "owner": "m_2",
+      "physical_endpoint_id": "actual:m_2:w35:neg:c1:letter:249",
+      "pivotal_sign": "UNDETERMINED",
+      "present_primitives": {
+        "base_passage_orientation": 1,
+        "copy_orientation_multiplier": -1,
+        "copy_sign": "neg",
+        "oriented_copy_passage_sign": -1,
+        "transported_normal_coefficient": -1
+      },
+      "q_power": "UNDETERMINED",
+      "tensor_position_from_boundary_order": 22,
+      "variance": "UNDETERMINED",
+      "wicket": 35
+    },
+    {
+      "actual_endpoint_locator": "geometry/t73_actual_cut_tangle.json#/framed_endpoints/23",
+      "exact_absent_primitives": [
+        "boundary_face_source_or_target",
+        "oriented_tangent_vector_at_boundary",
+        "boundary_face_coorientation",
+        "bpw_boundary_word_symbol_derived_from_those_vectors",
+        "cup_web_or_platform_nesting_parent",
+        "cup_web_or_platform_nesting_depth",
+        "ordered_BPW_A4_duality_atom_path",
+        "blanchet_binding_or_detachment_local_normal",
+        "strict_foam_movie_locator_for_the_chart"
+      ],
+      "legacy_assignment": {
+        "accepted_as_primitive_derivation": false,
+        "orientation": 1,
+        "orientation_ignores_base_passage": false,
+        "pivotal_coefficient": {
+          "display": "+q^0",
+          "q_power": 0,
+          "sign": 1
+        }
+      },
+      "owner": "m_2",
+      "physical_endpoint_id": "actual:m_2:w35:pos:c1:letter:248",
+      "pivotal_sign": "UNDETERMINED",
+      "present_primitives": {
+        "base_passage_orientation": 1,
+        "copy_orientation_multiplier": 1,
+        "copy_sign": "pos",
+        "oriented_copy_passage_sign": 1,
+        "transported_normal_coefficient": 1
+      },
+      "q_power": "UNDETERMINED",
+      "tensor_position_from_boundary_order": 23,
+      "variance": "UNDETERMINED",
+      "wicket": 35
+    },
+    {
+      "actual_endpoint_locator": "geometry/t73_actual_cut_tangle.json#/framed_endpoints/24",
+      "exact_absent_primitives": [
+        "boundary_face_source_or_target",
+        "oriented_tangent_vector_at_boundary",
+        "boundary_face_coorientation",
+        "bpw_boundary_word_symbol_derived_from_those_vectors",
+        "cup_web_or_platform_nesting_parent",
+        "cup_web_or_platform_nesting_depth",
+        "ordered_BPW_A4_duality_atom_path",
+        "blanchet_binding_or_detachment_local_normal",
+        "strict_foam_movie_locator_for_the_chart"
+      ],
+      "legacy_assignment": {
+        "accepted_as_primitive_derivation": false,
+        "orientation": -1,
+        "orientation_ignores_base_passage": false,
+        "pivotal_coefficient": {
+          "display": "+q^0",
+          "q_power": 0,
+          "sign": 1
+        }
+      },
+      "owner": "m_2",
+      "physical_endpoint_id": "actual:m_2:w34:neg:c1:letter:241",
+      "pivotal_sign": "UNDETERMINED",
+      "present_primitives": {
+        "base_passage_orientation": 1,
+        "copy_orientation_multiplier": -1,
+        "copy_sign": "neg",
+        "oriented_copy_passage_sign": -1,
+        "transported_normal_coefficient": -1
+      },
+      "q_power": "UNDETERMINED",
+      "tensor_position_from_boundary_order": 24,
+      "variance": "UNDETERMINED",
+      "wicket": 34
+    },
+    {
+      "actual_endpoint_locator": "geometry/t73_actual_cut_tangle.json#/framed_endpoints/25",
+      "exact_absent_primitives": [
+        "boundary_face_source_or_target",
+        "oriented_tangent_vector_at_boundary",
+        "boundary_face_coorientation",
+        "bpw_boundary_word_symbol_derived_from_those_vectors",
+        "cup_web_or_platform_nesting_parent",
+        "cup_web_or_platform_nesting_depth",
+        "ordered_BPW_A4_duality_atom_path",
+        "blanchet_binding_or_detachment_local_normal",
+        "strict_foam_movie_locator_for_the_chart"
+      ],
+      "legacy_assignment": {
+        "accepted_as_primitive_derivation": false,
+        "orientation": 1,
+        "orientation_ignores_base_passage": false,
+        "pivotal_coefficient": {
+          "display": "+q^0",
+          "q_power": 0,
+          "sign": 1
+        }
+      },
+      "owner": "m_2",
+      "physical_endpoint_id": "actual:m_2:w34:pos:c1:letter:240",
+      "pivotal_sign": "UNDETERMINED",
+      "present_primitives": {
+        "base_passage_orientation": 1,
+        "copy_orientation_multiplier": 1,
+        "copy_sign": "pos",
+        "oriented_copy_passage_sign": 1,
+        "transported_normal_coefficient": 1
+      },
+      "q_power": "UNDETERMINED",
+      "tensor_position_from_boundary_order": 25,
+      "variance": "UNDETERMINED",
+      "wicket": 34
+    },
+    {
+      "actual_endpoint_locator": "geometry/t73_actual_cut_tangle.json#/framed_endpoints/26",
+      "exact_absent_primitives": [
+        "boundary_face_source_or_target",
+        "oriented_tangent_vector_at_boundary",
+        "boundary_face_coorientation",
+        "bpw_boundary_word_symbol_derived_from_those_vectors",
+        "cup_web_or_platform_nesting_parent",
+        "cup_web_or_platform_nesting_depth",
+        "ordered_BPW_A4_duality_atom_path",
+        "blanchet_binding_or_detachment_local_normal",
+        "strict_foam_movie_locator_for_the_chart"
+      ],
+      "legacy_assignment": {
+        "accepted_as_primitive_derivation": false,
+        "orientation": -1,
+        "orientation_ignores_base_passage": false,
+        "pivotal_coefficient": {
+          "display": "+q^0",
+          "q_power": 0,
+          "sign": 1
+        }
+      },
+      "owner": "m_2",
+      "physical_endpoint_id": "actual:m_2:w33:neg:c1:letter:234",
+      "pivotal_sign": "UNDETERMINED",
+      "present_primitives": {
+        "base_passage_orientation": 1,
+        "copy_orientation_multiplier": -1,
+        "copy_sign": "neg",
+        "oriented_copy_passage_sign": -1,
+        "transported_normal_coefficient": -1
+      },
+      "q_power": "UNDETERMINED",
+      "tensor_position_from_boundary_order": 26,
+      "variance": "UNDETERMINED",
+      "wicket": 33
+    },
+    {
+      "actual_endpoint_locator": "geometry/t73_actual_cut_tangle.json#/framed_endpoints/27",
+      "exact_absent_primitives": [
+        "boundary_face_source_or_target",
+        "oriented_tangent_vector_at_boundary",
+        "boundary_face_coorientation",
+        "bpw_boundary_word_symbol_derived_from_those_vectors",
+        "cup_web_or_platform_nesting_parent",
+        "cup_web_or_platform_nesting_depth",
+        "ordered_BPW_A4_duality_atom_path",
+        "blanchet_binding_or_detachment_local_normal",
+        "strict_foam_movie_locator_for_the_chart"
+      ],
+      "legacy_assignment": {
+        "accepted_as_primitive_derivation": false,
+        "orientation": 1,
+        "orientation_ignores_base_passage": false,
+        "pivotal_coefficient": {
+          "display": "+q^0",
+          "q_power": 0,
+          "sign": 1
+        }
+      },
+      "owner": "m_2",
+      "physical_endpoint_id": "actual:m_2:w33:pos:c1:letter:233",
+      "pivotal_sign": "UNDETERMINED",
+      "present_primitives": {
+        "base_passage_orientation": 1,
+        "copy_orientation_multiplier": 1,
+        "copy_sign": "pos",
+        "oriented_copy_passage_sign": 1,
+        "transported_normal_coefficient": 1
+      },
+      "q_power": "UNDETERMINED",
+      "tensor_position_from_boundary_order": 27,
+      "variance": "UNDETERMINED",
+      "wicket": 33
+    },
+    {
+      "actual_endpoint_locator": "geometry/t73_actual_cut_tangle.json#/framed_endpoints/28",
+      "exact_absent_primitives": [
+        "boundary_face_source_or_target",
+        "oriented_tangent_vector_at_boundary",
+        "boundary_face_coorientation",
+        "bpw_boundary_word_symbol_derived_from_those_vectors",
+        "cup_web_or_platform_nesting_parent",
+        "cup_web_or_platform_nesting_depth",
+        "ordered_BPW_A4_duality_atom_path",
+        "blanchet_binding_or_detachment_local_normal",
+        "strict_foam_movie_locator_for_the_chart"
+      ],
+      "legacy_assignment": {
+        "accepted_as_primitive_derivation": false,
+        "orientation": -1,
+        "orientation_ignores_base_passage": false,
+        "pivotal_coefficient": {
+          "display": "+q^0",
+          "q_power": 0,
+          "sign": 1
+        }
+      },
+      "owner": "m_2",
+      "physical_endpoint_id": "actual:m_2:w32:neg:c1:letter:226",
+      "pivotal_sign": "UNDETERMINED",
+      "present_primitives": {
+        "base_passage_orientation": 1,
+        "copy_orientation_multiplier": -1,
+        "copy_sign": "neg",
+        "oriented_copy_passage_sign": -1,
+        "transported_normal_coefficient": -1
+      },
+      "q_power": "UNDETERMINED",
+      "tensor_position_from_boundary_order": 28,
+      "variance": "UNDETERMINED",
+      "wicket": 32
+    },
+    {
+      "actual_endpoint_locator": "geometry/t73_actual_cut_tangle.json#/framed_endpoints/29",
+      "exact_absent_primitives": [
+        "boundary_face_source_or_target",
+        "oriented_tangent_vector_at_boundary",
+        "boundary_face_coorientation",
+        "bpw_boundary_word_symbol_derived_from_those_vectors",
+        "cup_web_or_platform_nesting_parent",
+        "cup_web_or_platform_nesting_depth",
+        "ordered_BPW_A4_duality_atom_path",
+        "blanchet_binding_or_detachment_local_normal",
+        "strict_foam_movie_locator_for_the_chart"
+      ],
+      "legacy_assignment": {
+        "accepted_as_primitive_derivation": false,
+        "orientation": 1,
+        "orientation_ignores_base_passage": false,
+        "pivotal_coefficient": {
+          "display": "+q^0",
+          "q_power": 0,
+          "sign": 1
+        }
+      },
+      "owner": "m_2",
+      "physical_endpoint_id": "actual:m_2:w32:pos:c1:letter:225",
+      "pivotal_sign": "UNDETERMINED",
+      "present_primitives": {
+        "base_passage_orientation": 1,
+        "copy_orientation_multiplier": 1,
+        "copy_sign": "pos",
+        "oriented_copy_passage_sign": 1,
+        "transported_normal_coefficient": 1
+      },
+      "q_power": "UNDETERMINED",
+      "tensor_position_from_boundary_order": 29,
+      "variance": "UNDETERMINED",
+      "wicket": 32
+    },
+    {
+      "actual_endpoint_locator": "geometry/t73_actual_cut_tangle.json#/framed_endpoints/30",
+      "exact_absent_primitives": [
+        "boundary_face_source_or_target",
+        "oriented_tangent_vector_at_boundary",
+        "boundary_face_coorientation",
+        "bpw_boundary_word_symbol_derived_from_those_vectors",
+        "cup_web_or_platform_nesting_parent",
+        "cup_web_or_platform_nesting_depth",
+        "ordered_BPW_A4_duality_atom_path",
+        "blanchet_binding_or_detachment_local_normal",
+        "strict_foam_movie_locator_for_the_chart"
+      ],
+      "legacy_assignment": {
+        "accepted_as_primitive_derivation": false,
+        "orientation": -1,
+        "orientation_ignores_base_passage": false,
+        "pivotal_coefficient": {
+          "display": "+q^0",
+          "q_power": 0,
+          "sign": 1
+        }
+      },
+      "owner": "m_2",
+      "physical_endpoint_id": "actual:m_2:w31:neg:c1:letter:219",
+      "pivotal_sign": "UNDETERMINED",
+      "present_primitives": {
+        "base_passage_orientation": 1,
+        "copy_orientation_multiplier": -1,
+        "copy_sign": "neg",
+        "oriented_copy_passage_sign": -1,
+        "transported_normal_coefficient": -1
+      },
+      "q_power": "UNDETERMINED",
+      "tensor_position_from_boundary_order": 30,
+      "variance": "UNDETERMINED",
+      "wicket": 31
+    },
+    {
+      "actual_endpoint_locator": "geometry/t73_actual_cut_tangle.json#/framed_endpoints/31",
+      "exact_absent_primitives": [
+        "boundary_face_source_or_target",
+        "oriented_tangent_vector_at_boundary",
+        "boundary_face_coorientation",
+        "bpw_boundary_word_symbol_derived_from_those_vectors",
+        "cup_web_or_platform_nesting_parent",
+        "cup_web_or_platform_nesting_depth",
+        "ordered_BPW_A4_duality_atom_path",
+        "blanchet_binding_or_detachment_local_normal",
+        "strict_foam_movie_locator_for_the_chart"
+      ],
+      "legacy_assignment": {
+        "accepted_as_primitive_derivation": false,
+        "orientation": 1,
+        "orientation_ignores_base_passage": false,
+        "pivotal_coefficient": {
+          "display": "+q^0",
+          "q_power": 0,
+          "sign": 1
+        }
+      },
+      "owner": "m_2",
+      "physical_endpoint_id": "actual:m_2:w31:pos:c1:letter:218",
+      "pivotal_sign": "UNDETERMINED",
+      "present_primitives": {
+        "base_passage_orientation": 1,
+        "copy_orientation_multiplier": 1,
+        "copy_sign": "pos",
+        "oriented_copy_passage_sign": 1,
+        "transported_normal_coefficient": 1
+      },
+      "q_power": "UNDETERMINED",
+      "tensor_position_from_boundary_order": 31,
+      "variance": "UNDETERMINED",
+      "wicket": 31
+    },
+    {
+      "actual_endpoint_locator": "geometry/t73_actual_cut_tangle.json#/framed_endpoints/32",
+      "exact_absent_primitives": [
+        "boundary_face_source_or_target",
+        "oriented_tangent_vector_at_boundary",
+        "boundary_face_coorientation",
+        "bpw_boundary_word_symbol_derived_from_those_vectors",
+        "cup_web_or_platform_nesting_parent",
+        "cup_web_or_platform_nesting_depth",
+        "ordered_BPW_A4_duality_atom_path",
+        "blanchet_binding_or_detachment_local_normal",
+        "strict_foam_movie_locator_for_the_chart"
+      ],
+      "legacy_assignment": {
+        "accepted_as_primitive_derivation": false,
+        "orientation": -1,
+        "orientation_ignores_base_passage": false,
+        "pivotal_coefficient": {
+          "display": "+q^0",
+          "q_power": 0,
+          "sign": 1
+        }
+      },
+      "owner": "m_2",
+      "physical_endpoint_id": "actual:m_2:w30:neg:c1:letter:211",
+      "pivotal_sign": "UNDETERMINED",
+      "present_primitives": {
+        "base_passage_orientation": 1,
+        "copy_orientation_multiplier": -1,
+        "copy_sign": "neg",
+        "oriented_copy_passage_sign": -1,
+        "transported_normal_coefficient": -1
+      },
+      "q_power": "UNDETERMINED",
+      "tensor_position_from_boundary_order": 32,
+      "variance": "UNDETERMINED",
+      "wicket": 30
+    },
+    {
+      "actual_endpoint_locator": "geometry/t73_actual_cut_tangle.json#/framed_endpoints/33",
+      "exact_absent_primitives": [
+        "boundary_face_source_or_target",
+        "oriented_tangent_vector_at_boundary",
+        "boundary_face_coorientation",
+        "bpw_boundary_word_symbol_derived_from_those_vectors",
+        "cup_web_or_platform_nesting_parent",
+        "cup_web_or_platform_nesting_depth",
+        "ordered_BPW_A4_duality_atom_path",
+        "blanchet_binding_or_detachment_local_normal",
+        "strict_foam_movie_locator_for_the_chart"
+      ],
+      "legacy_assignment": {
+        "accepted_as_primitive_derivation": false,
+        "orientation": 1,
+        "orientation_ignores_base_passage": false,
+        "pivotal_coefficient": {
+          "display": "+q^0",
+          "q_power": 0,
+          "sign": 1
+        }
+      },
+      "owner": "m_2",
+      "physical_endpoint_id": "actual:m_2:w30:pos:c1:letter:210",
+      "pivotal_sign": "UNDETERMINED",
+      "present_primitives": {
+        "base_passage_orientation": 1,
+        "copy_orientation_multiplier": 1,
+        "copy_sign": "pos",
+        "oriented_copy_passage_sign": 1,
+        "transported_normal_coefficient": 1
+      },
+      "q_power": "UNDETERMINED",
+      "tensor_position_from_boundary_order": 33,
+      "variance": "UNDETERMINED",
+      "wicket": 30
+    },
+    {
+      "actual_endpoint_locator": "geometry/t73_actual_cut_tangle.json#/framed_endpoints/34",
+      "exact_absent_primitives": [
+        "boundary_face_source_or_target",
+        "oriented_tangent_vector_at_boundary",
+        "boundary_face_coorientation",
+        "bpw_boundary_word_symbol_derived_from_those_vectors",
+        "cup_web_or_platform_nesting_parent",
+        "cup_web_or_platform_nesting_depth",
+        "ordered_BPW_A4_duality_atom_path",
+        "blanchet_binding_or_detachment_local_normal",
+        "strict_foam_movie_locator_for_the_chart"
+      ],
+      "legacy_assignment": {
+        "accepted_as_primitive_derivation": false,
+        "orientation": -1,
+        "orientation_ignores_base_passage": false,
+        "pivotal_coefficient": {
+          "display": "+q^0",
+          "q_power": 0,
+          "sign": 1
+        }
+      },
+      "owner": "m_2",
+      "physical_endpoint_id": "actual:m_2:w29:neg:c1:letter:204",
+      "pivotal_sign": "UNDETERMINED",
+      "present_primitives": {
+        "base_passage_orientation": 1,
+        "copy_orientation_multiplier": -1,
+        "copy_sign": "neg",
+        "oriented_copy_passage_sign": -1,
+        "transported_normal_coefficient": -1
+      },
+      "q_power": "UNDETERMINED",
+      "tensor_position_from_boundary_order": 34,
+      "variance": "UNDETERMINED",
+      "wicket": 29
+    },
+    {
+      "actual_endpoint_locator": "geometry/t73_actual_cut_tangle.json#/framed_endpoints/35",
+      "exact_absent_primitives": [
+        "boundary_face_source_or_target",
+        "oriented_tangent_vector_at_boundary",
+        "boundary_face_coorientation",
+        "bpw_boundary_word_symbol_derived_from_those_vectors",
+        "cup_web_or_platform_nesting_parent",
+        "cup_web_or_platform_nesting_depth",
+        "ordered_BPW_A4_duality_atom_path",
+        "blanchet_binding_or_detachment_local_normal",
+        "strict_foam_movie_locator_for_the_chart"
+      ],
+      "legacy_assignment": {
+        "accepted_as_primitive_derivation": false,
+        "orientation": 1,
+        "orientation_ignores_base_passage": false,
+        "pivotal_coefficient": {
+          "display": "+q^0",
+          "q_power": 0,
+          "sign": 1
+        }
+      },
+      "owner": "m_2",
+      "physical_endpoint_id": "actual:m_2:w29:pos:c1:letter:203",
+      "pivotal_sign": "UNDETERMINED",
+      "present_primitives": {
+        "base_passage_orientation": 1,
+        "copy_orientation_multiplier": 1,
+        "copy_sign": "pos",
+        "oriented_copy_passage_sign": 1,
+        "transported_normal_coefficient": 1
+      },
+      "q_power": "UNDETERMINED",
+      "tensor_position_from_boundary_order": 35,
+      "variance": "UNDETERMINED",
+      "wicket": 29
+    },
+    {
+      "actual_endpoint_locator": "geometry/t73_actual_cut_tangle.json#/framed_endpoints/36",
+      "exact_absent_primitives": [
+        "boundary_face_source_or_target",
+        "oriented_tangent_vector_at_boundary",
+        "boundary_face_coorientation",
+        "bpw_boundary_word_symbol_derived_from_those_vectors",
+        "cup_web_or_platform_nesting_parent",
+        "cup_web_or_platform_nesting_depth",
+        "ordered_BPW_A4_duality_atom_path",
+        "blanchet_binding_or_detachment_local_normal",
+        "strict_foam_movie_locator_for_the_chart"
+      ],
+      "legacy_assignment": {
+        "accepted_as_primitive_derivation": false,
+        "orientation": -1,
+        "orientation_ignores_base_passage": false,
+        "pivotal_coefficient": {
+          "display": "+q^0",
+          "q_power": 0,
+          "sign": 1
+        }
+      },
+      "owner": "m_2",
+      "physical_endpoint_id": "actual:m_2:w28:neg:c1:letter:196",
+      "pivotal_sign": "UNDETERMINED",
+      "present_primitives": {
+        "base_passage_orientation": 1,
+        "copy_orientation_multiplier": -1,
+        "copy_sign": "neg",
+        "oriented_copy_passage_sign": -1,
+        "transported_normal_coefficient": -1
+      },
+      "q_power": "UNDETERMINED",
+      "tensor_position_from_boundary_order": 36,
+      "variance": "UNDETERMINED",
+      "wicket": 28
+    },
+    {
+      "actual_endpoint_locator": "geometry/t73_actual_cut_tangle.json#/framed_endpoints/37",
+      "exact_absent_primitives": [
+        "boundary_face_source_or_target",
+        "oriented_tangent_vector_at_boundary",
+        "boundary_face_coorientation",
+        "bpw_boundary_word_symbol_derived_from_those_vectors",
+        "cup_web_or_platform_nesting_parent",
+        "cup_web_or_platform_nesting_depth",
+        "ordered_BPW_A4_duality_atom_path",
+        "blanchet_binding_or_detachment_local_normal",
+        "strict_foam_movie_locator_for_the_chart"
+      ],
+      "legacy_assignment": {
+        "accepted_as_primitive_derivation": false,
+        "orientation": 1,
+        "orientation_ignores_base_passage": false,
+        "pivotal_coefficient": {
+          "display": "+q^0",
+          "q_power": 0,
+          "sign": 1
+        }
+      },
+      "owner": "m_2",
+      "physical_endpoint_id": "actual:m_2:w28:pos:c1:letter:195",
+      "pivotal_sign": "UNDETERMINED",
+      "present_primitives": {
+        "base_passage_orientation": 1,
+        "copy_orientation_multiplier": 1,
+        "copy_sign": "pos",
+        "oriented_copy_passage_sign": 1,
+        "transported_normal_coefficient": 1
+      },
+      "q_power": "UNDETERMINED",
+      "tensor_position_from_boundary_order": 37,
+      "variance": "UNDETERMINED",
+      "wicket": 28
+    },
+    {
+      "actual_endpoint_locator": "geometry/t73_actual_cut_tangle.json#/framed_endpoints/38",
+      "exact_absent_primitives": [
+        "boundary_face_source_or_target",
+        "oriented_tangent_vector_at_boundary",
+        "boundary_face_coorientation",
+        "bpw_boundary_word_symbol_derived_from_those_vectors",
+        "cup_web_or_platform_nesting_parent",
+        "cup_web_or_platform_nesting_depth",
+        "ordered_BPW_A4_duality_atom_path",
+        "blanchet_binding_or_detachment_local_normal",
+        "strict_foam_movie_locator_for_the_chart"
+      ],
+      "legacy_assignment": {
+        "accepted_as_primitive_derivation": false,
+        "orientation": -1,
+        "orientation_ignores_base_passage": false,
+        "pivotal_coefficient": {
+          "display": "+q^0",
+          "q_power": 0,
+          "sign": 1
+        }
+      },
+      "owner": "m_2",
+      "physical_endpoint_id": "actual:m_2:w27:neg:c1:letter:189",
+      "pivotal_sign": "UNDETERMINED",
+      "present_primitives": {
+        "base_passage_orientation": 1,
+        "copy_orientation_multiplier": -1,
+        "copy_sign": "neg",
+        "oriented_copy_passage_sign": -1,
+        "transported_normal_coefficient": -1
+      },
+      "q_power": "UNDETERMINED",
+      "tensor_position_from_boundary_order": 38,
+      "variance": "UNDETERMINED",
+      "wicket": 27
+    },
+    {
+      "actual_endpoint_locator": "geometry/t73_actual_cut_tangle.json#/framed_endpoints/39",
+      "exact_absent_primitives": [
+        "boundary_face_source_or_target",
+        "oriented_tangent_vector_at_boundary",
+        "boundary_face_coorientation",
+        "bpw_boundary_word_symbol_derived_from_those_vectors",
+        "cup_web_or_platform_nesting_parent",
+        "cup_web_or_platform_nesting_depth",
+        "ordered_BPW_A4_duality_atom_path",
+        "blanchet_binding_or_detachment_local_normal",
+        "strict_foam_movie_locator_for_the_chart"
+      ],
+      "legacy_assignment": {
+        "accepted_as_primitive_derivation": false,
+        "orientation": 1,
+        "orientation_ignores_base_passage": false,
+        "pivotal_coefficient": {
+          "display": "+q^0",
+          "q_power": 0,
+          "sign": 1
+        }
+      },
+      "owner": "m_2",
+      "physical_endpoint_id": "actual:m_2:w27:pos:c1:letter:188",
+      "pivotal_sign": "UNDETERMINED",
+      "present_primitives": {
+        "base_passage_orientation": 1,
+        "copy_orientation_multiplier": 1,
+        "copy_sign": "pos",
+        "oriented_copy_passage_sign": 1,
+        "transported_normal_coefficient": 1
+      },
+      "q_power": "UNDETERMINED",
+      "tensor_position_from_boundary_order": 39,
+      "variance": "UNDETERMINED",
+      "wicket": 27
+    },
+    {
+      "actual_endpoint_locator": "geometry/t73_actual_cut_tangle.json#/framed_endpoints/40",
+      "exact_absent_primitives": [
+        "boundary_face_source_or_target",
+        "oriented_tangent_vector_at_boundary",
+        "boundary_face_coorientation",
+        "bpw_boundary_word_symbol_derived_from_those_vectors",
+        "cup_web_or_platform_nesting_parent",
+        "cup_web_or_platform_nesting_depth",
+        "ordered_BPW_A4_duality_atom_path",
+        "blanchet_binding_or_detachment_local_normal",
+        "strict_foam_movie_locator_for_the_chart"
+      ],
+      "legacy_assignment": {
+        "accepted_as_primitive_derivation": false,
+        "orientation": -1,
+        "orientation_ignores_base_passage": false,
+        "pivotal_coefficient": {
+          "display": "+q^0",
+          "q_power": 0,
+          "sign": 1
+        }
+      },
+      "owner": "m_2",
+      "physical_endpoint_id": "actual:m_2:w26:neg:c1:letter:181",
+      "pivotal_sign": "UNDETERMINED",
+      "present_primitives": {
+        "base_passage_orientation": 1,
+        "copy_orientation_multiplier": -1,
+        "copy_sign": "neg",
+        "oriented_copy_passage_sign": -1,
+        "transported_normal_coefficient": -1
+      },
+      "q_power": "UNDETERMINED",
+      "tensor_position_from_boundary_order": 40,
+      "variance": "UNDETERMINED",
+      "wicket": 26
+    },
+    {
+      "actual_endpoint_locator": "geometry/t73_actual_cut_tangle.json#/framed_endpoints/41",
+      "exact_absent_primitives": [
+        "boundary_face_source_or_target",
+        "oriented_tangent_vector_at_boundary",
+        "boundary_face_coorientation",
+        "bpw_boundary_word_symbol_derived_from_those_vectors",
+        "cup_web_or_platform_nesting_parent",
+        "cup_web_or_platform_nesting_depth",
+        "ordered_BPW_A4_duality_atom_path",
+        "blanchet_binding_or_detachment_local_normal",
+        "strict_foam_movie_locator_for_the_chart"
+      ],
+      "legacy_assignment": {
+        "accepted_as_primitive_derivation": false,
+        "orientation": 1,
+        "orientation_ignores_base_passage": false,
+        "pivotal_coefficient": {
+          "display": "+q^0",
+          "q_power": 0,
+          "sign": 1
+        }
+      },
+      "owner": "m_2",
+      "physical_endpoint_id": "actual:m_2:w26:pos:c1:letter:180",
+      "pivotal_sign": "UNDETERMINED",
+      "present_primitives": {
+        "base_passage_orientation": 1,
+        "copy_orientation_multiplier": 1,
+        "copy_sign": "pos",
+        "oriented_copy_passage_sign": 1,
+        "transported_normal_coefficient": 1
+      },
+      "q_power": "UNDETERMINED",
+      "tensor_position_from_boundary_order": 41,
+      "variance": "UNDETERMINED",
+      "wicket": 26
+    },
+    {
+      "actual_endpoint_locator": "geometry/t73_actual_cut_tangle.json#/framed_endpoints/42",
+      "exact_absent_primitives": [
+        "boundary_face_source_or_target",
+        "oriented_tangent_vector_at_boundary",
+        "boundary_face_coorientation",
+        "bpw_boundary_word_symbol_derived_from_those_vectors",
+        "cup_web_or_platform_nesting_parent",
+        "cup_web_or_platform_nesting_depth",
+        "ordered_BPW_A4_duality_atom_path",
+        "blanchet_binding_or_detachment_local_normal",
+        "strict_foam_movie_locator_for_the_chart"
+      ],
+      "legacy_assignment": {
+        "accepted_as_primitive_derivation": false,
+        "orientation": -1,
+        "orientation_ignores_base_passage": false,
+        "pivotal_coefficient": {
+          "display": "+q^0",
+          "q_power": 0,
+          "sign": 1
+        }
+      },
+      "owner": "m_2",
+      "physical_endpoint_id": "actual:m_2:w25:neg:c1:letter:173",
+      "pivotal_sign": "UNDETERMINED",
+      "present_primitives": {
+        "base_passage_orientation": 1,
+        "copy_orientation_multiplier": -1,
+        "copy_sign": "neg",
+        "oriented_copy_passage_sign": -1,
+        "transported_normal_coefficient": -1
+      },
+      "q_power": "UNDETERMINED",
+      "tensor_position_from_boundary_order": 42,
+      "variance": "UNDETERMINED",
+      "wicket": 25
+    },
+    {
+      "actual_endpoint_locator": "geometry/t73_actual_cut_tangle.json#/framed_endpoints/43",
+      "exact_absent_primitives": [
+        "boundary_face_source_or_target",
+        "oriented_tangent_vector_at_boundary",
+        "boundary_face_coorientation",
+        "bpw_boundary_word_symbol_derived_from_those_vectors",
+        "cup_web_or_platform_nesting_parent",
+        "cup_web_or_platform_nesting_depth",
+        "ordered_BPW_A4_duality_atom_path",
+        "blanchet_binding_or_detachment_local_normal",
+        "strict_foam_movie_locator_for_the_chart"
+      ],
+      "legacy_assignment": {
+        "accepted_as_primitive_derivation": false,
+        "orientation": 1,
+        "orientation_ignores_base_passage": false,
+        "pivotal_coefficient": {
+          "display": "+q^0",
+          "q_power": 0,
+          "sign": 1
+        }
+      },
+      "owner": "m_2",
+      "physical_endpoint_id": "actual:m_2:w25:pos:c1:letter:172",
+      "pivotal_sign": "UNDETERMINED",
+      "present_primitives": {
+        "base_passage_orientation": 1,
+        "copy_orientation_multiplier": 1,
+        "copy_sign": "pos",
+        "oriented_copy_passage_sign": 1,
+        "transported_normal_coefficient": 1
+      },
+      "q_power": "UNDETERMINED",
+      "tensor_position_from_boundary_order": 43,
+      "variance": "UNDETERMINED",
+      "wicket": 25
+    },
+    {
+      "actual_endpoint_locator": "geometry/t73_actual_cut_tangle.json#/framed_endpoints/44",
+      "exact_absent_primitives": [
+        "boundary_face_source_or_target",
+        "oriented_tangent_vector_at_boundary",
+        "boundary_face_coorientation",
+        "bpw_boundary_word_symbol_derived_from_those_vectors",
+        "cup_web_or_platform_nesting_parent",
+        "cup_web_or_platform_nesting_depth",
+        "ordered_BPW_A4_duality_atom_path",
+        "blanchet_binding_or_detachment_local_normal",
+        "strict_foam_movie_locator_for_the_chart"
+      ],
+      "legacy_assignment": {
+        "accepted_as_primitive_derivation": false,
+        "orientation": -1,
+        "orientation_ignores_base_passage": false,
+        "pivotal_coefficient": {
+          "display": "+q^0",
+          "q_power": 0,
+          "sign": 1
+        }
+      },
+      "owner": "m_2",
+      "physical_endpoint_id": "actual:m_2:w24:neg:c1:letter:166",
+      "pivotal_sign": "UNDETERMINED",
+      "present_primitives": {
+        "base_passage_orientation": 1,
+        "copy_orientation_multiplier": -1,
+        "copy_sign": "neg",
+        "oriented_copy_passage_sign": -1,
+        "transported_normal_coefficient": -1
+      },
+      "q_power": "UNDETERMINED",
+      "tensor_position_from_boundary_order": 44,
+      "variance": "UNDETERMINED",
+      "wicket": 24
+    },
+    {
+      "actual_endpoint_locator": "geometry/t73_actual_cut_tangle.json#/framed_endpoints/45",
+      "exact_absent_primitives": [
+        "boundary_face_source_or_target",
+        "oriented_tangent_vector_at_boundary",
+        "boundary_face_coorientation",
+        "bpw_boundary_word_symbol_derived_from_those_vectors",
+        "cup_web_or_platform_nesting_parent",
+        "cup_web_or_platform_nesting_depth",
+        "ordered_BPW_A4_duality_atom_path",
+        "blanchet_binding_or_detachment_local_normal",
+        "strict_foam_movie_locator_for_the_chart"
+      ],
+      "legacy_assignment": {
+        "accepted_as_primitive_derivation": false,
+        "orientation": 1,
+        "orientation_ignores_base_passage": false,
+        "pivotal_coefficient": {
+          "display": "+q^0",
+          "q_power": 0,
+          "sign": 1
+        }
+      },
+      "owner": "m_2",
+      "physical_endpoint_id": "actual:m_2:w24:pos:c1:letter:165",
+      "pivotal_sign": "UNDETERMINED",
+      "present_primitives": {
+        "base_passage_orientation": 1,
+        "copy_orientation_multiplier": 1,
+        "copy_sign": "pos",
+        "oriented_copy_passage_sign": 1,
+        "transported_normal_coefficient": 1
+      },
+      "q_power": "UNDETERMINED",
+      "tensor_position_from_boundary_order": 45,
+      "variance": "UNDETERMINED",
+      "wicket": 24
+    },
+    {
+      "actual_endpoint_locator": "geometry/t73_actual_cut_tangle.json#/framed_endpoints/46",
+      "exact_absent_primitives": [
+        "boundary_face_source_or_target",
+        "oriented_tangent_vector_at_boundary",
+        "boundary_face_coorientation",
+        "bpw_boundary_word_symbol_derived_from_those_vectors",
+        "cup_web_or_platform_nesting_parent",
+        "cup_web_or_platform_nesting_depth",
+        "ordered_BPW_A4_duality_atom_path",
+        "blanchet_binding_or_detachment_local_normal",
+        "strict_foam_movie_locator_for_the_chart"
+      ],
+      "legacy_assignment": {
+        "accepted_as_primitive_derivation": false,
+        "orientation": -1,
+        "orientation_ignores_base_passage": false,
+        "pivotal_coefficient": {
+          "display": "+q^0",
+          "q_power": 0,
+          "sign": 1
+        }
+      },
+      "owner": "m_2",
+      "physical_endpoint_id": "actual:m_2:w23:neg:c1:letter:158",
+      "pivotal_sign": "UNDETERMINED",
+      "present_primitives": {
+        "base_passage_orientation": 1,
+        "copy_orientation_multiplier": -1,
+        "copy_sign": "neg",
+        "oriented_copy_passage_sign": -1,
+        "transported_normal_coefficient": -1
+      },
+      "q_power": "UNDETERMINED",
+      "tensor_position_from_boundary_order": 46,
+      "variance": "UNDETERMINED",
+      "wicket": 23
+    },
+    {
+      "actual_endpoint_locator": "geometry/t73_actual_cut_tangle.json#/framed_endpoints/47",
+      "exact_absent_primitives": [
+        "boundary_face_source_or_target",
+        "oriented_tangent_vector_at_boundary",
+        "boundary_face_coorientation",
+        "bpw_boundary_word_symbol_derived_from_those_vectors",
+        "cup_web_or_platform_nesting_parent",
+        "cup_web_or_platform_nesting_depth",
+        "ordered_BPW_A4_duality_atom_path",
+        "blanchet_binding_or_detachment_local_normal",
+        "strict_foam_movie_locator_for_the_chart"
+      ],
+      "legacy_assignment": {
+        "accepted_as_primitive_derivation": false,
+        "orientation": 1,
+        "orientation_ignores_base_passage": false,
+        "pivotal_coefficient": {
+          "display": "+q^0",
+          "q_power": 0,
+          "sign": 1
+        }
+      },
+      "owner": "m_2",
+      "physical_endpoint_id": "actual:m_2:w23:pos:c1:letter:157",
+      "pivotal_sign": "UNDETERMINED",
+      "present_primitives": {
+        "base_passage_orientation": 1,
+        "copy_orientation_multiplier": 1,
+        "copy_sign": "pos",
+        "oriented_copy_passage_sign": 1,
+        "transported_normal_coefficient": 1
+      },
+      "q_power": "UNDETERMINED",
+      "tensor_position_from_boundary_order": 47,
+      "variance": "UNDETERMINED",
+      "wicket": 23
+    },
+    {
+      "actual_endpoint_locator": "geometry/t73_actual_cut_tangle.json#/framed_endpoints/48",
+      "exact_absent_primitives": [
+        "boundary_face_source_or_target",
+        "oriented_tangent_vector_at_boundary",
+        "boundary_face_coorientation",
+        "bpw_boundary_word_symbol_derived_from_those_vectors",
+        "cup_web_or_platform_nesting_parent",
+        "cup_web_or_platform_nesting_depth",
+        "ordered_BPW_A4_duality_atom_path",
+        "blanchet_binding_or_detachment_local_normal",
+        "strict_foam_movie_locator_for_the_chart"
+      ],
+      "legacy_assignment": {
+        "accepted_as_primitive_derivation": false,
+        "orientation": -1,
+        "orientation_ignores_base_passage": false,
+        "pivotal_coefficient": {
+          "display": "+q^0",
+          "q_power": 0,
+          "sign": 1
+        }
+      },
+      "owner": "m_2",
+      "physical_endpoint_id": "actual:m_2:w22:neg:c1:letter:151",
+      "pivotal_sign": "UNDETERMINED",
+      "present_primitives": {
+        "base_passage_orientation": 1,
+        "copy_orientation_multiplier": -1,
+        "copy_sign": "neg",
+        "oriented_copy_passage_sign": -1,
+        "transported_normal_coefficient": -1
+      },
+      "q_power": "UNDETERMINED",
+      "tensor_position_from_boundary_order": 48,
+      "variance": "UNDETERMINED",
+      "wicket": 22
+    },
+    {
+      "actual_endpoint_locator": "geometry/t73_actual_cut_tangle.json#/framed_endpoints/49",
+      "exact_absent_primitives": [
+        "boundary_face_source_or_target",
+        "oriented_tangent_vector_at_boundary",
+        "boundary_face_coorientation",
+        "bpw_boundary_word_symbol_derived_from_those_vectors",
+        "cup_web_or_platform_nesting_parent",
+        "cup_web_or_platform_nesting_depth",
+        "ordered_BPW_A4_duality_atom_path",
+        "blanchet_binding_or_detachment_local_normal",
+        "strict_foam_movie_locator_for_the_chart"
+      ],
+      "legacy_assignment": {
+        "accepted_as_primitive_derivation": false,
+        "orientation": 1,
+        "orientation_ignores_base_passage": false,
+        "pivotal_coefficient": {
+          "display": "+q^0",
+          "q_power": 0,
+          "sign": 1
+        }
+      },
+      "owner": "m_2",
+      "physical_endpoint_id": "actual:m_2:w22:pos:c1:letter:150",
+      "pivotal_sign": "UNDETERMINED",
+      "present_primitives": {
+        "base_passage_orientation": 1,
+        "copy_orientation_multiplier": 1,
+        "copy_sign": "pos",
+        "oriented_copy_passage_sign": 1,
+        "transported_normal_coefficient": 1
+      },
+      "q_power": "UNDETERMINED",
+      "tensor_position_from_boundary_order": 49,
+      "variance": "UNDETERMINED",
+      "wicket": 22
+    },
+    {
+      "actual_endpoint_locator": "geometry/t73_actual_cut_tangle.json#/framed_endpoints/50",
+      "exact_absent_primitives": [
+        "boundary_face_source_or_target",
+        "oriented_tangent_vector_at_boundary",
+        "boundary_face_coorientation",
+        "bpw_boundary_word_symbol_derived_from_those_vectors",
+        "cup_web_or_platform_nesting_parent",
+        "cup_web_or_platform_nesting_depth",
+        "ordered_BPW_A4_duality_atom_path",
+        "blanchet_binding_or_detachment_local_normal",
+        "strict_foam_movie_locator_for_the_chart"
+      ],
+      "legacy_assignment": {
+        "accepted_as_primitive_derivation": false,
+        "orientation": -1,
+        "orientation_ignores_base_passage": false,
+        "pivotal_coefficient": {
+          "display": "+q^0",
+          "q_power": 0,
+          "sign": 1
+        }
+      },
+      "owner": "m_2",
+      "physical_endpoint_id": "actual:m_2:w21:neg:c1:letter:143",
+      "pivotal_sign": "UNDETERMINED",
+      "present_primitives": {
+        "base_passage_orientation": 1,
+        "copy_orientation_multiplier": -1,
+        "copy_sign": "neg",
+        "oriented_copy_passage_sign": -1,
+        "transported_normal_coefficient": -1
+      },
+      "q_power": "UNDETERMINED",
+      "tensor_position_from_boundary_order": 50,
+      "variance": "UNDETERMINED",
+      "wicket": 21
+    },
+    {
+      "actual_endpoint_locator": "geometry/t73_actual_cut_tangle.json#/framed_endpoints/51",
+      "exact_absent_primitives": [
+        "boundary_face_source_or_target",
+        "oriented_tangent_vector_at_boundary",
+        "boundary_face_coorientation",
+        "bpw_boundary_word_symbol_derived_from_those_vectors",
+        "cup_web_or_platform_nesting_parent",
+        "cup_web_or_platform_nesting_depth",
+        "ordered_BPW_A4_duality_atom_path",
+        "blanchet_binding_or_detachment_local_normal",
+        "strict_foam_movie_locator_for_the_chart"
+      ],
+      "legacy_assignment": {
+        "accepted_as_primitive_derivation": false,
+        "orientation": 1,
+        "orientation_ignores_base_passage": false,
+        "pivotal_coefficient": {
+          "display": "+q^0",
+          "q_power": 0,
+          "sign": 1
+        }
+      },
+      "owner": "m_2",
+      "physical_endpoint_id": "actual:m_2:w21:pos:c1:letter:142",
+      "pivotal_sign": "UNDETERMINED",
+      "present_primitives": {
+        "base_passage_orientation": 1,
+        "copy_orientation_multiplier": 1,
+        "copy_sign": "pos",
+        "oriented_copy_passage_sign": 1,
+        "transported_normal_coefficient": 1
+      },
+      "q_power": "UNDETERMINED",
+      "tensor_position_from_boundary_order": 51,
+      "variance": "UNDETERMINED",
+      "wicket": 21
+    },
+    {
+      "actual_endpoint_locator": "geometry/t73_actual_cut_tangle.json#/framed_endpoints/52",
+      "exact_absent_primitives": [
+        "boundary_face_source_or_target",
+        "oriented_tangent_vector_at_boundary",
+        "boundary_face_coorientation",
+        "bpw_boundary_word_symbol_derived_from_those_vectors",
+        "cup_web_or_platform_nesting_parent",
+        "cup_web_or_platform_nesting_depth",
+        "ordered_BPW_A4_duality_atom_path",
+        "blanchet_binding_or_detachment_local_normal",
+        "strict_foam_movie_locator_for_the_chart"
+      ],
+      "legacy_assignment": {
+        "accepted_as_primitive_derivation": false,
+        "orientation": -1,
+        "orientation_ignores_base_passage": false,
+        "pivotal_coefficient": {
+          "display": "+q^0",
+          "q_power": 0,
+          "sign": 1
+        }
+      },
+      "owner": "m_2",
+      "physical_endpoint_id": "actual:m_2:w20:neg:c1:letter:136",
+      "pivotal_sign": "UNDETERMINED",
+      "present_primitives": {
+        "base_passage_orientation": 1,
+        "copy_orientation_multiplier": -1,
+        "copy_sign": "neg",
+        "oriented_copy_passage_sign": -1,
+        "transported_normal_coefficient": -1
+      },
+      "q_power": "UNDETERMINED",
+      "tensor_position_from_boundary_order": 52,
+      "variance": "UNDETERMINED",
+      "wicket": 20
+    },
+    {
+      "actual_endpoint_locator": "geometry/t73_actual_cut_tangle.json#/framed_endpoints/53",
+      "exact_absent_primitives": [
+        "boundary_face_source_or_target",
+        "oriented_tangent_vector_at_boundary",
+        "boundary_face_coorientation",
+        "bpw_boundary_word_symbol_derived_from_those_vectors",
+        "cup_web_or_platform_nesting_parent",
+        "cup_web_or_platform_nesting_depth",
+        "ordered_BPW_A4_duality_atom_path",
+        "blanchet_binding_or_detachment_local_normal",
+        "strict_foam_movie_locator_for_the_chart"
+      ],
+      "legacy_assignment": {
+        "accepted_as_primitive_derivation": false,
+        "orientation": 1,
+        "orientation_ignores_base_passage": false,
+        "pivotal_coefficient": {
+          "display": "+q^0",
+          "q_power": 0,
+          "sign": 1
+        }
+      },
+      "owner": "m_2",
+      "physical_endpoint_id": "actual:m_2:w20:pos:c1:letter:135",
+      "pivotal_sign": "UNDETERMINED",
+      "present_primitives": {
+        "base_passage_orientation": 1,
+        "copy_orientation_multiplier": 1,
+        "copy_sign": "pos",
+        "oriented_copy_passage_sign": 1,
+        "transported_normal_coefficient": 1
+      },
+      "q_power": "UNDETERMINED",
+      "tensor_position_from_boundary_order": 53,
+      "variance": "UNDETERMINED",
+      "wicket": 20
+    },
+    {
+      "actual_endpoint_locator": "geometry/t73_actual_cut_tangle.json#/framed_endpoints/54",
+      "exact_absent_primitives": [
+        "boundary_face_source_or_target",
+        "oriented_tangent_vector_at_boundary",
+        "boundary_face_coorientation",
+        "bpw_boundary_word_symbol_derived_from_those_vectors",
+        "cup_web_or_platform_nesting_parent",
+        "cup_web_or_platform_nesting_depth",
+        "ordered_BPW_A4_duality_atom_path",
+        "blanchet_binding_or_detachment_local_normal",
+        "strict_foam_movie_locator_for_the_chart"
+      ],
+      "legacy_assignment": {
+        "accepted_as_primitive_derivation": false,
+        "orientation": -1,
+        "orientation_ignores_base_passage": false,
+        "pivotal_coefficient": {
+          "display": "+q^0",
+          "q_power": 0,
+          "sign": 1
+        }
+      },
+      "owner": "m_2",
+      "physical_endpoint_id": "actual:m_2:w19:neg:c1:letter:128",
+      "pivotal_sign": "UNDETERMINED",
+      "present_primitives": {
+        "base_passage_orientation": 1,
+        "copy_orientation_multiplier": -1,
+        "copy_sign": "neg",
+        "oriented_copy_passage_sign": -1,
+        "transported_normal_coefficient": -1
+      },
+      "q_power": "UNDETERMINED",
+      "tensor_position_from_boundary_order": 54,
+      "variance": "UNDETERMINED",
+      "wicket": 19
+    },
+    {
+      "actual_endpoint_locator": "geometry/t73_actual_cut_tangle.json#/framed_endpoints/55",
+      "exact_absent_primitives": [
+        "boundary_face_source_or_target",
+        "oriented_tangent_vector_at_boundary",
+        "boundary_face_coorientation",
+        "bpw_boundary_word_symbol_derived_from_those_vectors",
+        "cup_web_or_platform_nesting_parent",
+        "cup_web_or_platform_nesting_depth",
+        "ordered_BPW_A4_duality_atom_path",
+        "blanchet_binding_or_detachment_local_normal",
+        "strict_foam_movie_locator_for_the_chart"
+      ],
+      "legacy_assignment": {
+        "accepted_as_primitive_derivation": false,
+        "orientation": 1,
+        "orientation_ignores_base_passage": false,
+        "pivotal_coefficient": {
+          "display": "+q^0",
+          "q_power": 0,
+          "sign": 1
+        }
+      },
+      "owner": "m_2",
+      "physical_endpoint_id": "actual:m_2:w19:pos:c1:letter:127",
+      "pivotal_sign": "UNDETERMINED",
+      "present_primitives": {
+        "base_passage_orientation": 1,
+        "copy_orientation_multiplier": 1,
+        "copy_sign": "pos",
+        "oriented_copy_passage_sign": 1,
+        "transported_normal_coefficient": 1
+      },
+      "q_power": "UNDETERMINED",
+      "tensor_position_from_boundary_order": 55,
+      "variance": "UNDETERMINED",
+      "wicket": 19
+    },
+    {
+      "actual_endpoint_locator": "geometry/t73_actual_cut_tangle.json#/framed_endpoints/56",
+      "exact_absent_primitives": [
+        "boundary_face_source_or_target",
+        "oriented_tangent_vector_at_boundary",
+        "boundary_face_coorientation",
+        "bpw_boundary_word_symbol_derived_from_those_vectors",
+        "cup_web_or_platform_nesting_parent",
+        "cup_web_or_platform_nesting_depth",
+        "ordered_BPW_A4_duality_atom_path",
+        "blanchet_binding_or_detachment_local_normal",
+        "strict_foam_movie_locator_for_the_chart"
+      ],
+      "legacy_assignment": {
+        "accepted_as_primitive_derivation": false,
+        "orientation": -1,
+        "orientation_ignores_base_passage": false,
+        "pivotal_coefficient": {
+          "display": "+q^0",
+          "q_power": 0,
+          "sign": 1
+        }
+      },
+      "owner": "m_2",
+      "physical_endpoint_id": "actual:m_2:w18:neg:c1:letter:120",
+      "pivotal_sign": "UNDETERMINED",
+      "present_primitives": {
+        "base_passage_orientation": 1,
+        "copy_orientation_multiplier": -1,
+        "copy_sign": "neg",
+        "oriented_copy_passage_sign": -1,
+        "transported_normal_coefficient": -1
+      },
+      "q_power": "UNDETERMINED",
+      "tensor_position_from_boundary_order": 56,
+      "variance": "UNDETERMINED",
+      "wicket": 18
+    },
+    {
+      "actual_endpoint_locator": "geometry/t73_actual_cut_tangle.json#/framed_endpoints/57",
+      "exact_absent_primitives": [
+        "boundary_face_source_or_target",
+        "oriented_tangent_vector_at_boundary",
+        "boundary_face_coorientation",
+        "bpw_boundary_word_symbol_derived_from_those_vectors",
+        "cup_web_or_platform_nesting_parent",
+        "cup_web_or_platform_nesting_depth",
+        "ordered_BPW_A4_duality_atom_path",
+        "blanchet_binding_or_detachment_local_normal",
+        "strict_foam_movie_locator_for_the_chart"
+      ],
+      "legacy_assignment": {
+        "accepted_as_primitive_derivation": false,
+        "orientation": 1,
+        "orientation_ignores_base_passage": false,
+        "pivotal_coefficient": {
+          "display": "+q^0",
+          "q_power": 0,
+          "sign": 1
+        }
+      },
+      "owner": "m_2",
+      "physical_endpoint_id": "actual:m_2:w18:pos:c1:letter:119",
+      "pivotal_sign": "UNDETERMINED",
+      "present_primitives": {
+        "base_passage_orientation": 1,
+        "copy_orientation_multiplier": 1,
+        "copy_sign": "pos",
+        "oriented_copy_passage_sign": 1,
+        "transported_normal_coefficient": 1
+      },
+      "q_power": "UNDETERMINED",
+      "tensor_position_from_boundary_order": 57,
+      "variance": "UNDETERMINED",
+      "wicket": 18
+    },
+    {
+      "actual_endpoint_locator": "geometry/t73_actual_cut_tangle.json#/framed_endpoints/58",
+      "exact_absent_primitives": [
+        "boundary_face_source_or_target",
+        "oriented_tangent_vector_at_boundary",
+        "boundary_face_coorientation",
+        "bpw_boundary_word_symbol_derived_from_those_vectors",
+        "cup_web_or_platform_nesting_parent",
+        "cup_web_or_platform_nesting_depth",
+        "ordered_BPW_A4_duality_atom_path",
+        "blanchet_binding_or_detachment_local_normal",
+        "strict_foam_movie_locator_for_the_chart"
+      ],
+      "legacy_assignment": {
+        "accepted_as_primitive_derivation": false,
+        "orientation": -1,
+        "orientation_ignores_base_passage": false,
+        "pivotal_coefficient": {
+          "display": "+q^0",
+          "q_power": 0,
+          "sign": 1
+        }
+      },
+      "owner": "m_2",
+      "physical_endpoint_id": "actual:m_2:w17:neg:c1:letter:113",
+      "pivotal_sign": "UNDETERMINED",
+      "present_primitives": {
+        "base_passage_orientation": 1,
+        "copy_orientation_multiplier": -1,
+        "copy_sign": "neg",
+        "oriented_copy_passage_sign": -1,
+        "transported_normal_coefficient": -1
+      },
+      "q_power": "UNDETERMINED",
+      "tensor_position_from_boundary_order": 58,
+      "variance": "UNDETERMINED",
+      "wicket": 17
+    },
+    {
+      "actual_endpoint_locator": "geometry/t73_actual_cut_tangle.json#/framed_endpoints/59",
+      "exact_absent_primitives": [
+        "boundary_face_source_or_target",
+        "oriented_tangent_vector_at_boundary",
+        "boundary_face_coorientation",
+        "bpw_boundary_word_symbol_derived_from_those_vectors",
+        "cup_web_or_platform_nesting_parent",
+        "cup_web_or_platform_nesting_depth",
+        "ordered_BPW_A4_duality_atom_path",
+        "blanchet_binding_or_detachment_local_normal",
+        "strict_foam_movie_locator_for_the_chart"
+      ],
+      "legacy_assignment": {
+        "accepted_as_primitive_derivation": false,
+        "orientation": 1,
+        "orientation_ignores_base_passage": false,
+        "pivotal_coefficient": {
+          "display": "+q^0",
+          "q_power": 0,
+          "sign": 1
+        }
+      },
+      "owner": "m_2",
+      "physical_endpoint_id": "actual:m_2:w17:pos:c1:letter:112",
+      "pivotal_sign": "UNDETERMINED",
+      "present_primitives": {
+        "base_passage_orientation": 1,
+        "copy_orientation_multiplier": 1,
+        "copy_sign": "pos",
+        "oriented_copy_passage_sign": 1,
+        "transported_normal_coefficient": 1
+      },
+      "q_power": "UNDETERMINED",
+      "tensor_position_from_boundary_order": 59,
+      "variance": "UNDETERMINED",
+      "wicket": 17
+    },
+    {
+      "actual_endpoint_locator": "geometry/t73_actual_cut_tangle.json#/framed_endpoints/60",
+      "exact_absent_primitives": [
+        "boundary_face_source_or_target",
+        "oriented_tangent_vector_at_boundary",
+        "boundary_face_coorientation",
+        "bpw_boundary_word_symbol_derived_from_those_vectors",
+        "cup_web_or_platform_nesting_parent",
+        "cup_web_or_platform_nesting_depth",
+        "ordered_BPW_A4_duality_atom_path",
+        "blanchet_binding_or_detachment_local_normal",
+        "strict_foam_movie_locator_for_the_chart"
+      ],
+      "legacy_assignment": {
+        "accepted_as_primitive_derivation": false,
+        "orientation": -1,
+        "orientation_ignores_base_passage": false,
+        "pivotal_coefficient": {
+          "display": "+q^0",
+          "q_power": 0,
+          "sign": 1
+        }
+      },
+      "owner": "m_2",
+      "physical_endpoint_id": "actual:m_2:w16:neg:c1:letter:105",
+      "pivotal_sign": "UNDETERMINED",
+      "present_primitives": {
+        "base_passage_orientation": 1,
+        "copy_orientation_multiplier": -1,
+        "copy_sign": "neg",
+        "oriented_copy_passage_sign": -1,
+        "transported_normal_coefficient": -1
+      },
+      "q_power": "UNDETERMINED",
+      "tensor_position_from_boundary_order": 60,
+      "variance": "UNDETERMINED",
+      "wicket": 16
+    },
+    {
+      "actual_endpoint_locator": "geometry/t73_actual_cut_tangle.json#/framed_endpoints/61",
+      "exact_absent_primitives": [
+        "boundary_face_source_or_target",
+        "oriented_tangent_vector_at_boundary",
+        "boundary_face_coorientation",
+        "bpw_boundary_word_symbol_derived_from_those_vectors",
+        "cup_web_or_platform_nesting_parent",
+        "cup_web_or_platform_nesting_depth",
+        "ordered_BPW_A4_duality_atom_path",
+        "blanchet_binding_or_detachment_local_normal",
+        "strict_foam_movie_locator_for_the_chart"
+      ],
+      "legacy_assignment": {
+        "accepted_as_primitive_derivation": false,
+        "orientation": 1,
+        "orientation_ignores_base_passage": false,
+        "pivotal_coefficient": {
+          "display": "+q^0",
+          "q_power": 0,
+          "sign": 1
+        }
+      },
+      "owner": "m_2",
+      "physical_endpoint_id": "actual:m_2:w16:pos:c1:letter:104",
+      "pivotal_sign": "UNDETERMINED",
+      "present_primitives": {
+        "base_passage_orientation": 1,
+        "copy_orientation_multiplier": 1,
+        "copy_sign": "pos",
+        "oriented_copy_passage_sign": 1,
+        "transported_normal_coefficient": 1
+      },
+      "q_power": "UNDETERMINED",
+      "tensor_position_from_boundary_order": 61,
+      "variance": "UNDETERMINED",
+      "wicket": 16
+    },
+    {
+      "actual_endpoint_locator": "geometry/t73_actual_cut_tangle.json#/framed_endpoints/62",
+      "exact_absent_primitives": [
+        "boundary_face_source_or_target",
+        "oriented_tangent_vector_at_boundary",
+        "boundary_face_coorientation",
+        "bpw_boundary_word_symbol_derived_from_those_vectors",
+        "cup_web_or_platform_nesting_parent",
+        "cup_web_or_platform_nesting_depth",
+        "ordered_BPW_A4_duality_atom_path",
+        "blanchet_binding_or_detachment_local_normal",
+        "strict_foam_movie_locator_for_the_chart"
+      ],
+      "legacy_assignment": {
+        "accepted_as_primitive_derivation": false,
+        "orientation": -1,
+        "orientation_ignores_base_passage": false,
+        "pivotal_coefficient": {
+          "display": "+q^0",
+          "q_power": 0,
+          "sign": 1
+        }
+      },
+      "owner": "m_2",
+      "physical_endpoint_id": "actual:m_2:w15:neg:c1:letter:98",
+      "pivotal_sign": "UNDETERMINED",
+      "present_primitives": {
+        "base_passage_orientation": 1,
+        "copy_orientation_multiplier": -1,
+        "copy_sign": "neg",
+        "oriented_copy_passage_sign": -1,
+        "transported_normal_coefficient": -1
+      },
+      "q_power": "UNDETERMINED",
+      "tensor_position_from_boundary_order": 62,
+      "variance": "UNDETERMINED",
+      "wicket": 15
+    },
+    {
+      "actual_endpoint_locator": "geometry/t73_actual_cut_tangle.json#/framed_endpoints/63",
+      "exact_absent_primitives": [
+        "boundary_face_source_or_target",
+        "oriented_tangent_vector_at_boundary",
+        "boundary_face_coorientation",
+        "bpw_boundary_word_symbol_derived_from_those_vectors",
+        "cup_web_or_platform_nesting_parent",
+        "cup_web_or_platform_nesting_depth",
+        "ordered_BPW_A4_duality_atom_path",
+        "blanchet_binding_or_detachment_local_normal",
+        "strict_foam_movie_locator_for_the_chart"
+      ],
+      "legacy_assignment": {
+        "accepted_as_primitive_derivation": false,
+        "orientation": 1,
+        "orientation_ignores_base_passage": false,
+        "pivotal_coefficient": {
+          "display": "+q^0",
+          "q_power": 0,
+          "sign": 1
+        }
+      },
+      "owner": "m_2",
+      "physical_endpoint_id": "actual:m_2:w15:pos:c1:letter:97",
+      "pivotal_sign": "UNDETERMINED",
+      "present_primitives": {
+        "base_passage_orientation": 1,
+        "copy_orientation_multiplier": 1,
+        "copy_sign": "pos",
+        "oriented_copy_passage_sign": 1,
+        "transported_normal_coefficient": 1
+      },
+      "q_power": "UNDETERMINED",
+      "tensor_position_from_boundary_order": 63,
+      "variance": "UNDETERMINED",
+      "wicket": 15
+    },
+    {
+      "actual_endpoint_locator": "geometry/t73_actual_cut_tangle.json#/framed_endpoints/64",
+      "exact_absent_primitives": [
+        "boundary_face_source_or_target",
+        "oriented_tangent_vector_at_boundary",
+        "boundary_face_coorientation",
+        "bpw_boundary_word_symbol_derived_from_those_vectors",
+        "cup_web_or_platform_nesting_parent",
+        "cup_web_or_platform_nesting_depth",
+        "ordered_BPW_A4_duality_atom_path",
+        "blanchet_binding_or_detachment_local_normal",
+        "strict_foam_movie_locator_for_the_chart"
+      ],
+      "legacy_assignment": {
+        "accepted_as_primitive_derivation": false,
+        "orientation": -1,
+        "orientation_ignores_base_passage": false,
+        "pivotal_coefficient": {
+          "display": "+q^0",
+          "q_power": 0,
+          "sign": 1
+        }
+      },
+      "owner": "m_2",
+      "physical_endpoint_id": "actual:m_2:w14:neg:c1:letter:90",
+      "pivotal_sign": "UNDETERMINED",
+      "present_primitives": {
+        "base_passage_orientation": 1,
+        "copy_orientation_multiplier": -1,
+        "copy_sign": "neg",
+        "oriented_copy_passage_sign": -1,
+        "transported_normal_coefficient": -1
+      },
+      "q_power": "UNDETERMINED",
+      "tensor_position_from_boundary_order": 64,
+      "variance": "UNDETERMINED",
+      "wicket": 14
+    },
+    {
+      "actual_endpoint_locator": "geometry/t73_actual_cut_tangle.json#/framed_endpoints/65",
+      "exact_absent_primitives": [
+        "boundary_face_source_or_target",
+        "oriented_tangent_vector_at_boundary",
+        "boundary_face_coorientation",
+        "bpw_boundary_word_symbol_derived_from_those_vectors",
+        "cup_web_or_platform_nesting_parent",
+        "cup_web_or_platform_nesting_depth",
+        "ordered_BPW_A4_duality_atom_path",
+        "blanchet_binding_or_detachment_local_normal",
+        "strict_foam_movie_locator_for_the_chart"
+      ],
+      "legacy_assignment": {
+        "accepted_as_primitive_derivation": false,
+        "orientation": 1,
+        "orientation_ignores_base_passage": false,
+        "pivotal_coefficient": {
+          "display": "+q^0",
+          "q_power": 0,
+          "sign": 1
+        }
+      },
+      "owner": "m_2",
+      "physical_endpoint_id": "actual:m_2:w14:pos:c1:letter:89",
+      "pivotal_sign": "UNDETERMINED",
+      "present_primitives": {
+        "base_passage_orientation": 1,
+        "copy_orientation_multiplier": 1,
+        "copy_sign": "pos",
+        "oriented_copy_passage_sign": 1,
+        "transported_normal_coefficient": 1
+      },
+      "q_power": "UNDETERMINED",
+      "tensor_position_from_boundary_order": 65,
+      "variance": "UNDETERMINED",
+      "wicket": 14
+    },
+    {
+      "actual_endpoint_locator": "geometry/t73_actual_cut_tangle.json#/framed_endpoints/66",
+      "exact_absent_primitives": [
+        "boundary_face_source_or_target",
+        "oriented_tangent_vector_at_boundary",
+        "boundary_face_coorientation",
+        "bpw_boundary_word_symbol_derived_from_those_vectors",
+        "cup_web_or_platform_nesting_parent",
+        "cup_web_or_platform_nesting_depth",
+        "ordered_BPW_A4_duality_atom_path",
+        "blanchet_binding_or_detachment_local_normal",
+        "strict_foam_movie_locator_for_the_chart"
+      ],
+      "legacy_assignment": {
+        "accepted_as_primitive_derivation": false,
+        "orientation": -1,
+        "orientation_ignores_base_passage": false,
+        "pivotal_coefficient": {
+          "display": "+q^0",
+          "q_power": 0,
+          "sign": 1
+        }
+      },
+      "owner": "m_2",
+      "physical_endpoint_id": "actual:m_2:w13:neg:c1:letter:83",
+      "pivotal_sign": "UNDETERMINED",
+      "present_primitives": {
+        "base_passage_orientation": 1,
+        "copy_orientation_multiplier": -1,
+        "copy_sign": "neg",
+        "oriented_copy_passage_sign": -1,
+        "transported_normal_coefficient": -1
+      },
+      "q_power": "UNDETERMINED",
+      "tensor_position_from_boundary_order": 66,
+      "variance": "UNDETERMINED",
+      "wicket": 13
+    },
+    {
+      "actual_endpoint_locator": "geometry/t73_actual_cut_tangle.json#/framed_endpoints/67",
+      "exact_absent_primitives": [
+        "boundary_face_source_or_target",
+        "oriented_tangent_vector_at_boundary",
+        "boundary_face_coorientation",
+        "bpw_boundary_word_symbol_derived_from_those_vectors",
+        "cup_web_or_platform_nesting_parent",
+        "cup_web_or_platform_nesting_depth",
+        "ordered_BPW_A4_duality_atom_path",
+        "blanchet_binding_or_detachment_local_normal",
+        "strict_foam_movie_locator_for_the_chart"
+      ],
+      "legacy_assignment": {
+        "accepted_as_primitive_derivation": false,
+        "orientation": 1,
+        "orientation_ignores_base_passage": false,
+        "pivotal_coefficient": {
+          "display": "+q^0",
+          "q_power": 0,
+          "sign": 1
+        }
+      },
+      "owner": "m_2",
+      "physical_endpoint_id": "actual:m_2:w13:pos:c1:letter:82",
+      "pivotal_sign": "UNDETERMINED",
+      "present_primitives": {
+        "base_passage_orientation": 1,
+        "copy_orientation_multiplier": 1,
+        "copy_sign": "pos",
+        "oriented_copy_passage_sign": 1,
+        "transported_normal_coefficient": 1
+      },
+      "q_power": "UNDETERMINED",
+      "tensor_position_from_boundary_order": 67,
+      "variance": "UNDETERMINED",
+      "wicket": 13
+    },
+    {
+      "actual_endpoint_locator": "geometry/t73_actual_cut_tangle.json#/framed_endpoints/68",
+      "exact_absent_primitives": [
+        "boundary_face_source_or_target",
+        "oriented_tangent_vector_at_boundary",
+        "boundary_face_coorientation",
+        "bpw_boundary_word_symbol_derived_from_those_vectors",
+        "cup_web_or_platform_nesting_parent",
+        "cup_web_or_platform_nesting_depth",
+        "ordered_BPW_A4_duality_atom_path",
+        "blanchet_binding_or_detachment_local_normal",
+        "strict_foam_movie_locator_for_the_chart"
+      ],
+      "legacy_assignment": {
+        "accepted_as_primitive_derivation": false,
+        "orientation": -1,
+        "orientation_ignores_base_passage": false,
+        "pivotal_coefficient": {
+          "display": "+q^0",
+          "q_power": 0,
+          "sign": 1
+        }
+      },
+      "owner": "m_2",
+      "physical_endpoint_id": "actual:m_2:w12:neg:c1:letter:75",
+      "pivotal_sign": "UNDETERMINED",
+      "present_primitives": {
+        "base_passage_orientation": 1,
+        "copy_orientation_multiplier": -1,
+        "copy_sign": "neg",
+        "oriented_copy_passage_sign": -1,
+        "transported_normal_coefficient": -1
+      },
+      "q_power": "UNDETERMINED",
+      "tensor_position_from_boundary_order": 68,
+      "variance": "UNDETERMINED",
+      "wicket": 12
+    },
+    {
+      "actual_endpoint_locator": "geometry/t73_actual_cut_tangle.json#/framed_endpoints/69",
+      "exact_absent_primitives": [
+        "boundary_face_source_or_target",
+        "oriented_tangent_vector_at_boundary",
+        "boundary_face_coorientation",
+        "bpw_boundary_word_symbol_derived_from_those_vectors",
+        "cup_web_or_platform_nesting_parent",
+        "cup_web_or_platform_nesting_depth",
+        "ordered_BPW_A4_duality_atom_path",
+        "blanchet_binding_or_detachment_local_normal",
+        "strict_foam_movie_locator_for_the_chart"
+      ],
+      "legacy_assignment": {
+        "accepted_as_primitive_derivation": false,
+        "orientation": 1,
+        "orientation_ignores_base_passage": false,
+        "pivotal_coefficient": {
+          "display": "+q^0",
+          "q_power": 0,
+          "sign": 1
+        }
+      },
+      "owner": "m_2",
+      "physical_endpoint_id": "actual:m_2:w12:pos:c1:letter:74",
+      "pivotal_sign": "UNDETERMINED",
+      "present_primitives": {
+        "base_passage_orientation": 1,
+        "copy_orientation_multiplier": 1,
+        "copy_sign": "pos",
+        "oriented_copy_passage_sign": 1,
+        "transported_normal_coefficient": 1
+      },
+      "q_power": "UNDETERMINED",
+      "tensor_position_from_boundary_order": 69,
+      "variance": "UNDETERMINED",
+      "wicket": 12
+    },
+    {
+      "actual_endpoint_locator": "geometry/t73_actual_cut_tangle.json#/framed_endpoints/70",
+      "exact_absent_primitives": [
+        "boundary_face_source_or_target",
+        "oriented_tangent_vector_at_boundary",
+        "boundary_face_coorientation",
+        "bpw_boundary_word_symbol_derived_from_those_vectors",
+        "cup_web_or_platform_nesting_parent",
+        "cup_web_or_platform_nesting_depth",
+        "ordered_BPW_A4_duality_atom_path",
+        "blanchet_binding_or_detachment_local_normal",
+        "strict_foam_movie_locator_for_the_chart"
+      ],
+      "legacy_assignment": {
+        "accepted_as_primitive_derivation": false,
+        "orientation": -1,
+        "orientation_ignores_base_passage": false,
+        "pivotal_coefficient": {
+          "display": "+q^0",
+          "q_power": 0,
+          "sign": 1
+        }
+      },
+      "owner": "m_2",
+      "physical_endpoint_id": "actual:m_2:w11:neg:c1:letter:68",
+      "pivotal_sign": "UNDETERMINED",
+      "present_primitives": {
+        "base_passage_orientation": 1,
+        "copy_orientation_multiplier": -1,
+        "copy_sign": "neg",
+        "oriented_copy_passage_sign": -1,
+        "transported_normal_coefficient": -1
+      },
+      "q_power": "UNDETERMINED",
+      "tensor_position_from_boundary_order": 70,
+      "variance": "UNDETERMINED",
+      "wicket": 11
+    },
+    {
+      "actual_endpoint_locator": "geometry/t73_actual_cut_tangle.json#/framed_endpoints/71",
+      "exact_absent_primitives": [
+        "boundary_face_source_or_target",
+        "oriented_tangent_vector_at_boundary",
+        "boundary_face_coorientation",
+        "bpw_boundary_word_symbol_derived_from_those_vectors",
+        "cup_web_or_platform_nesting_parent",
+        "cup_web_or_platform_nesting_depth",
+        "ordered_BPW_A4_duality_atom_path",
+        "blanchet_binding_or_detachment_local_normal",
+        "strict_foam_movie_locator_for_the_chart"
+      ],
+      "legacy_assignment": {
+        "accepted_as_primitive_derivation": false,
+        "orientation": 1,
+        "orientation_ignores_base_passage": false,
+        "pivotal_coefficient": {
+          "display": "+q^0",
+          "q_power": 0,
+          "sign": 1
+        }
+      },
+      "owner": "m_2",
+      "physical_endpoint_id": "actual:m_2:w11:pos:c1:letter:67",
+      "pivotal_sign": "UNDETERMINED",
+      "present_primitives": {
+        "base_passage_orientation": 1,
+        "copy_orientation_multiplier": 1,
+        "copy_sign": "pos",
+        "oriented_copy_passage_sign": 1,
+        "transported_normal_coefficient": 1
+      },
+      "q_power": "UNDETERMINED",
+      "tensor_position_from_boundary_order": 71,
+      "variance": "UNDETERMINED",
+      "wicket": 11
+    },
+    {
+      "actual_endpoint_locator": "geometry/t73_actual_cut_tangle.json#/framed_endpoints/72",
+      "exact_absent_primitives": [
+        "boundary_face_source_or_target",
+        "oriented_tangent_vector_at_boundary",
+        "boundary_face_coorientation",
+        "bpw_boundary_word_symbol_derived_from_those_vectors",
+        "cup_web_or_platform_nesting_parent",
+        "cup_web_or_platform_nesting_depth",
+        "ordered_BPW_A4_duality_atom_path",
+        "blanchet_binding_or_detachment_local_normal",
+        "strict_foam_movie_locator_for_the_chart"
+      ],
+      "legacy_assignment": {
+        "accepted_as_primitive_derivation": false,
+        "orientation": -1,
+        "orientation_ignores_base_passage": false,
+        "pivotal_coefficient": {
+          "display": "+q^0",
+          "q_power": 0,
+          "sign": 1
+        }
+      },
+      "owner": "m_2",
+      "physical_endpoint_id": "actual:m_2:w10:neg:c1:letter:60",
+      "pivotal_sign": "UNDETERMINED",
+      "present_primitives": {
+        "base_passage_orientation": 1,
+        "copy_orientation_multiplier": -1,
+        "copy_sign": "neg",
+        "oriented_copy_passage_sign": -1,
+        "transported_normal_coefficient": -1
+      },
+      "q_power": "UNDETERMINED",
+      "tensor_position_from_boundary_order": 72,
+      "variance": "UNDETERMINED",
+      "wicket": 10
+    },
+    {
+      "actual_endpoint_locator": "geometry/t73_actual_cut_tangle.json#/framed_endpoints/73",
+      "exact_absent_primitives": [
+        "boundary_face_source_or_target",
+        "oriented_tangent_vector_at_boundary",
+        "boundary_face_coorientation",
+        "bpw_boundary_word_symbol_derived_from_those_vectors",
+        "cup_web_or_platform_nesting_parent",
+        "cup_web_or_platform_nesting_depth",
+        "ordered_BPW_A4_duality_atom_path",
+        "blanchet_binding_or_detachment_local_normal",
+        "strict_foam_movie_locator_for_the_chart"
+      ],
+      "legacy_assignment": {
+        "accepted_as_primitive_derivation": false,
+        "orientation": 1,
+        "orientation_ignores_base_passage": false,
+        "pivotal_coefficient": {
+          "display": "+q^0",
+          "q_power": 0,
+          "sign": 1
+        }
+      },
+      "owner": "m_2",
+      "physical_endpoint_id": "actual:m_2:w10:pos:c1:letter:59",
+      "pivotal_sign": "UNDETERMINED",
+      "present_primitives": {
+        "base_passage_orientation": 1,
+        "copy_orientation_multiplier": 1,
+        "copy_sign": "pos",
+        "oriented_copy_passage_sign": 1,
+        "transported_normal_coefficient": 1
+      },
+      "q_power": "UNDETERMINED",
+      "tensor_position_from_boundary_order": 73,
+      "variance": "UNDETERMINED",
+      "wicket": 10
+    },
+    {
+      "actual_endpoint_locator": "geometry/t73_actual_cut_tangle.json#/framed_endpoints/74",
+      "exact_absent_primitives": [
+        "boundary_face_source_or_target",
+        "oriented_tangent_vector_at_boundary",
+        "boundary_face_coorientation",
+        "bpw_boundary_word_symbol_derived_from_those_vectors",
+        "cup_web_or_platform_nesting_parent",
+        "cup_web_or_platform_nesting_depth",
+        "ordered_BPW_A4_duality_atom_path",
+        "blanchet_binding_or_detachment_local_normal",
+        "strict_foam_movie_locator_for_the_chart"
+      ],
+      "legacy_assignment": {
+        "accepted_as_primitive_derivation": false,
+        "orientation": -1,
+        "orientation_ignores_base_passage": false,
+        "pivotal_coefficient": {
+          "display": "+q^0",
+          "q_power": 0,
+          "sign": 1
+        }
+      },
+      "owner": "m_2",
+      "physical_endpoint_id": "actual:m_2:w9:neg:c1:letter:52",
+      "pivotal_sign": "UNDETERMINED",
+      "present_primitives": {
+        "base_passage_orientation": 1,
+        "copy_orientation_multiplier": -1,
+        "copy_sign": "neg",
+        "oriented_copy_passage_sign": -1,
+        "transported_normal_coefficient": -1
+      },
+      "q_power": "UNDETERMINED",
+      "tensor_position_from_boundary_order": 74,
+      "variance": "UNDETERMINED",
+      "wicket": 9
+    },
+    {
+      "actual_endpoint_locator": "geometry/t73_actual_cut_tangle.json#/framed_endpoints/75",
+      "exact_absent_primitives": [
+        "boundary_face_source_or_target",
+        "oriented_tangent_vector_at_boundary",
+        "boundary_face_coorientation",
+        "bpw_boundary_word_symbol_derived_from_those_vectors",
+        "cup_web_or_platform_nesting_parent",
+        "cup_web_or_platform_nesting_depth",
+        "ordered_BPW_A4_duality_atom_path",
+        "blanchet_binding_or_detachment_local_normal",
+        "strict_foam_movie_locator_for_the_chart"
+      ],
+      "legacy_assignment": {
+        "accepted_as_primitive_derivation": false,
+        "orientation": 1,
+        "orientation_ignores_base_passage": false,
+        "pivotal_coefficient": {
+          "display": "+q^0",
+          "q_power": 0,
+          "sign": 1
+        }
+      },
+      "owner": "m_2",
+      "physical_endpoint_id": "actual:m_2:w9:pos:c1:letter:51",
+      "pivotal_sign": "UNDETERMINED",
+      "present_primitives": {
+        "base_passage_orientation": 1,
+        "copy_orientation_multiplier": 1,
+        "copy_sign": "pos",
+        "oriented_copy_passage_sign": 1,
+        "transported_normal_coefficient": 1
+      },
+      "q_power": "UNDETERMINED",
+      "tensor_position_from_boundary_order": 75,
+      "variance": "UNDETERMINED",
+      "wicket": 9
+    },
+    {
+      "actual_endpoint_locator": "geometry/t73_actual_cut_tangle.json#/framed_endpoints/76",
+      "exact_absent_primitives": [
+        "boundary_face_source_or_target",
+        "oriented_tangent_vector_at_boundary",
+        "boundary_face_coorientation",
+        "bpw_boundary_word_symbol_derived_from_those_vectors",
+        "cup_web_or_platform_nesting_parent",
+        "cup_web_or_platform_nesting_depth",
+        "ordered_BPW_A4_duality_atom_path",
+        "blanchet_binding_or_detachment_local_normal",
+        "strict_foam_movie_locator_for_the_chart"
+      ],
+      "legacy_assignment": {
+        "accepted_as_primitive_derivation": false,
+        "orientation": -1,
+        "orientation_ignores_base_passage": false,
+        "pivotal_coefficient": {
+          "display": "+q^0",
+          "q_power": 0,
+          "sign": 1
+        }
+      },
+      "owner": "m_2",
+      "physical_endpoint_id": "actual:m_2:w8:neg:c1:letter:45",
+      "pivotal_sign": "UNDETERMINED",
+      "present_primitives": {
+        "base_passage_orientation": 1,
+        "copy_orientation_multiplier": -1,
+        "copy_sign": "neg",
+        "oriented_copy_passage_sign": -1,
+        "transported_normal_coefficient": -1
+      },
+      "q_power": "UNDETERMINED",
+      "tensor_position_from_boundary_order": 76,
+      "variance": "UNDETERMINED",
+      "wicket": 8
+    },
+    {
+      "actual_endpoint_locator": "geometry/t73_actual_cut_tangle.json#/framed_endpoints/77",
+      "exact_absent_primitives": [
+        "boundary_face_source_or_target",
+        "oriented_tangent_vector_at_boundary",
+        "boundary_face_coorientation",
+        "bpw_boundary_word_symbol_derived_from_those_vectors",
+        "cup_web_or_platform_nesting_parent",
+        "cup_web_or_platform_nesting_depth",
+        "ordered_BPW_A4_duality_atom_path",
+        "blanchet_binding_or_detachment_local_normal",
+        "strict_foam_movie_locator_for_the_chart"
+      ],
+      "legacy_assignment": {
+        "accepted_as_primitive_derivation": false,
+        "orientation": 1,
+        "orientation_ignores_base_passage": false,
+        "pivotal_coefficient": {
+          "display": "+q^0",
+          "q_power": 0,
+          "sign": 1
+        }
+      },
+      "owner": "m_2",
+      "physical_endpoint_id": "actual:m_2:w8:pos:c1:letter:44",
+      "pivotal_sign": "UNDETERMINED",
+      "present_primitives": {
+        "base_passage_orientation": 1,
+        "copy_orientation_multiplier": 1,
+        "copy_sign": "pos",
+        "oriented_copy_passage_sign": 1,
+        "transported_normal_coefficient": 1
+      },
+      "q_power": "UNDETERMINED",
+      "tensor_position_from_boundary_order": 77,
+      "variance": "UNDETERMINED",
+      "wicket": 8
+    },
+    {
+      "actual_endpoint_locator": "geometry/t73_actual_cut_tangle.json#/framed_endpoints/78",
+      "exact_absent_primitives": [
+        "boundary_face_source_or_target",
+        "oriented_tangent_vector_at_boundary",
+        "boundary_face_coorientation",
+        "bpw_boundary_word_symbol_derived_from_those_vectors",
+        "cup_web_or_platform_nesting_parent",
+        "cup_web_or_platform_nesting_depth",
+        "ordered_BPW_A4_duality_atom_path",
+        "blanchet_binding_or_detachment_local_normal",
+        "strict_foam_movie_locator_for_the_chart"
+      ],
+      "legacy_assignment": {
+        "accepted_as_primitive_derivation": false,
+        "orientation": -1,
+        "orientation_ignores_base_passage": false,
+        "pivotal_coefficient": {
+          "display": "+q^0",
+          "q_power": 0,
+          "sign": 1
+        }
+      },
+      "owner": "m_2",
+      "physical_endpoint_id": "actual:m_2:w7:neg:c1:letter:37",
+      "pivotal_sign": "UNDETERMINED",
+      "present_primitives": {
+        "base_passage_orientation": 1,
+        "copy_orientation_multiplier": -1,
+        "copy_sign": "neg",
+        "oriented_copy_passage_sign": -1,
+        "transported_normal_coefficient": -1
+      },
+      "q_power": "UNDETERMINED",
+      "tensor_position_from_boundary_order": 78,
+      "variance": "UNDETERMINED",
+      "wicket": 7
+    },
+    {
+      "actual_endpoint_locator": "geometry/t73_actual_cut_tangle.json#/framed_endpoints/79",
+      "exact_absent_primitives": [
+        "boundary_face_source_or_target",
+        "oriented_tangent_vector_at_boundary",
+        "boundary_face_coorientation",
+        "bpw_boundary_word_symbol_derived_from_those_vectors",
+        "cup_web_or_platform_nesting_parent",
+        "cup_web_or_platform_nesting_depth",
+        "ordered_BPW_A4_duality_atom_path",
+        "blanchet_binding_or_detachment_local_normal",
+        "strict_foam_movie_locator_for_the_chart"
+      ],
+      "legacy_assignment": {
+        "accepted_as_primitive_derivation": false,
+        "orientation": 1,
+        "orientation_ignores_base_passage": false,
+        "pivotal_coefficient": {
+          "display": "+q^0",
+          "q_power": 0,
+          "sign": 1
+        }
+      },
+      "owner": "m_2",
+      "physical_endpoint_id": "actual:m_2:w7:pos:c1:letter:36",
+      "pivotal_sign": "UNDETERMINED",
+      "present_primitives": {
+        "base_passage_orientation": 1,
+        "copy_orientation_multiplier": 1,
+        "copy_sign": "pos",
+        "oriented_copy_passage_sign": 1,
+        "transported_normal_coefficient": 1
+      },
+      "q_power": "UNDETERMINED",
+      "tensor_position_from_boundary_order": 79,
+      "variance": "UNDETERMINED",
+      "wicket": 7
+    },
+    {
+      "actual_endpoint_locator": "geometry/t73_actual_cut_tangle.json#/framed_endpoints/80",
+      "exact_absent_primitives": [
+        "boundary_face_source_or_target",
+        "oriented_tangent_vector_at_boundary",
+        "boundary_face_coorientation",
+        "bpw_boundary_word_symbol_derived_from_those_vectors",
+        "cup_web_or_platform_nesting_parent",
+        "cup_web_or_platform_nesting_depth",
+        "ordered_BPW_A4_duality_atom_path",
+        "blanchet_binding_or_detachment_local_normal",
+        "strict_foam_movie_locator_for_the_chart"
+      ],
+      "legacy_assignment": {
+        "accepted_as_primitive_derivation": false,
+        "orientation": -1,
+        "orientation_ignores_base_passage": false,
+        "pivotal_coefficient": {
+          "display": "+q^0",
+          "q_power": 0,
+          "sign": 1
+        }
+      },
+      "owner": "m_2",
+      "physical_endpoint_id": "actual:m_2:w6:neg:c1:letter:30",
+      "pivotal_sign": "UNDETERMINED",
+      "present_primitives": {
+        "base_passage_orientation": 1,
+        "copy_orientation_multiplier": -1,
+        "copy_sign": "neg",
+        "oriented_copy_passage_sign": -1,
+        "transported_normal_coefficient": -1
+      },
+      "q_power": "UNDETERMINED",
+      "tensor_position_from_boundary_order": 80,
+      "variance": "UNDETERMINED",
+      "wicket": 6
+    },
+    {
+      "actual_endpoint_locator": "geometry/t73_actual_cut_tangle.json#/framed_endpoints/81",
+      "exact_absent_primitives": [
+        "boundary_face_source_or_target",
+        "oriented_tangent_vector_at_boundary",
+        "boundary_face_coorientation",
+        "bpw_boundary_word_symbol_derived_from_those_vectors",
+        "cup_web_or_platform_nesting_parent",
+        "cup_web_or_platform_nesting_depth",
+        "ordered_BPW_A4_duality_atom_path",
+        "blanchet_binding_or_detachment_local_normal",
+        "strict_foam_movie_locator_for_the_chart"
+      ],
+      "legacy_assignment": {
+        "accepted_as_primitive_derivation": false,
+        "orientation": 1,
+        "orientation_ignores_base_passage": false,
+        "pivotal_coefficient": {
+          "display": "+q^0",
+          "q_power": 0,
+          "sign": 1
+        }
+      },
+      "owner": "m_2",
+      "physical_endpoint_id": "actual:m_2:w6:pos:c1:letter:29",
+      "pivotal_sign": "UNDETERMINED",
+      "present_primitives": {
+        "base_passage_orientation": 1,
+        "copy_orientation_multiplier": 1,
+        "copy_sign": "pos",
+        "oriented_copy_passage_sign": 1,
+        "transported_normal_coefficient": 1
+      },
+      "q_power": "UNDETERMINED",
+      "tensor_position_from_boundary_order": 81,
+      "variance": "UNDETERMINED",
+      "wicket": 6
+    },
+    {
+      "actual_endpoint_locator": "geometry/t73_actual_cut_tangle.json#/framed_endpoints/82",
+      "exact_absent_primitives": [
+        "boundary_face_source_or_target",
+        "oriented_tangent_vector_at_boundary",
+        "boundary_face_coorientation",
+        "bpw_boundary_word_symbol_derived_from_those_vectors",
+        "cup_web_or_platform_nesting_parent",
+        "cup_web_or_platform_nesting_depth",
+        "ordered_BPW_A4_duality_atom_path",
+        "blanchet_binding_or_detachment_local_normal",
+        "strict_foam_movie_locator_for_the_chart"
+      ],
+      "legacy_assignment": {
+        "accepted_as_primitive_derivation": false,
+        "orientation": -1,
+        "orientation_ignores_base_passage": false,
+        "pivotal_coefficient": {
+          "display": "+q^0",
+          "q_power": 0,
+          "sign": 1
+        }
+      },
+      "owner": "m_2",
+      "physical_endpoint_id": "actual:m_2:w5:neg:c1:letter:22",
+      "pivotal_sign": "UNDETERMINED",
+      "present_primitives": {
+        "base_passage_orientation": 1,
+        "copy_orientation_multiplier": -1,
+        "copy_sign": "neg",
+        "oriented_copy_passage_sign": -1,
+        "transported_normal_coefficient": -1
+      },
+      "q_power": "UNDETERMINED",
+      "tensor_position_from_boundary_order": 82,
+      "variance": "UNDETERMINED",
+      "wicket": 5
+    },
+    {
+      "actual_endpoint_locator": "geometry/t73_actual_cut_tangle.json#/framed_endpoints/83",
+      "exact_absent_primitives": [
+        "boundary_face_source_or_target",
+        "oriented_tangent_vector_at_boundary",
+        "boundary_face_coorientation",
+        "bpw_boundary_word_symbol_derived_from_those_vectors",
+        "cup_web_or_platform_nesting_parent",
+        "cup_web_or_platform_nesting_depth",
+        "ordered_BPW_A4_duality_atom_path",
+        "blanchet_binding_or_detachment_local_normal",
+        "strict_foam_movie_locator_for_the_chart"
+      ],
+      "legacy_assignment": {
+        "accepted_as_primitive_derivation": false,
+        "orientation": 1,
+        "orientation_ignores_base_passage": false,
+        "pivotal_coefficient": {
+          "display": "+q^0",
+          "q_power": 0,
+          "sign": 1
+        }
+      },
+      "owner": "m_2",
+      "physical_endpoint_id": "actual:m_2:w5:pos:c1:letter:21",
+      "pivotal_sign": "UNDETERMINED",
+      "present_primitives": {
+        "base_passage_orientation": 1,
+        "copy_orientation_multiplier": 1,
+        "copy_sign": "pos",
+        "oriented_copy_passage_sign": 1,
+        "transported_normal_coefficient": 1
+      },
+      "q_power": "UNDETERMINED",
+      "tensor_position_from_boundary_order": 83,
+      "variance": "UNDETERMINED",
+      "wicket": 5
+    },
+    {
+      "actual_endpoint_locator": "geometry/t73_actual_cut_tangle.json#/framed_endpoints/84",
+      "exact_absent_primitives": [
+        "boundary_face_source_or_target",
+        "oriented_tangent_vector_at_boundary",
+        "boundary_face_coorientation",
+        "bpw_boundary_word_symbol_derived_from_those_vectors",
+        "cup_web_or_platform_nesting_parent",
+        "cup_web_or_platform_nesting_depth",
+        "ordered_BPW_A4_duality_atom_path",
+        "blanchet_binding_or_detachment_local_normal",
+        "strict_foam_movie_locator_for_the_chart"
+      ],
+      "legacy_assignment": {
+        "accepted_as_primitive_derivation": false,
+        "orientation": -1,
+        "orientation_ignores_base_passage": false,
+        "pivotal_coefficient": {
+          "display": "+q^0",
+          "q_power": 0,
+          "sign": 1
+        }
+      },
+      "owner": "m_2",
+      "physical_endpoint_id": "actual:m_2:w4:neg:c1:letter:15",
+      "pivotal_sign": "UNDETERMINED",
+      "present_primitives": {
+        "base_passage_orientation": 1,
+        "copy_orientation_multiplier": -1,
+        "copy_sign": "neg",
+        "oriented_copy_passage_sign": -1,
+        "transported_normal_coefficient": -1
+      },
+      "q_power": "UNDETERMINED",
+      "tensor_position_from_boundary_order": 84,
+      "variance": "UNDETERMINED",
+      "wicket": 4
+    },
+    {
+      "actual_endpoint_locator": "geometry/t73_actual_cut_tangle.json#/framed_endpoints/85",
+      "exact_absent_primitives": [
+        "boundary_face_source_or_target",
+        "oriented_tangent_vector_at_boundary",
+        "boundary_face_coorientation",
+        "bpw_boundary_word_symbol_derived_from_those_vectors",
+        "cup_web_or_platform_nesting_parent",
+        "cup_web_or_platform_nesting_depth",
+        "ordered_BPW_A4_duality_atom_path",
+        "blanchet_binding_or_detachment_local_normal",
+        "strict_foam_movie_locator_for_the_chart"
+      ],
+      "legacy_assignment": {
+        "accepted_as_primitive_derivation": false,
+        "orientation": 1,
+        "orientation_ignores_base_passage": false,
+        "pivotal_coefficient": {
+          "display": "+q^0",
+          "q_power": 0,
+          "sign": 1
+        }
+      },
+      "owner": "m_2",
+      "physical_endpoint_id": "actual:m_2:w4:pos:c1:letter:14",
+      "pivotal_sign": "UNDETERMINED",
+      "present_primitives": {
+        "base_passage_orientation": 1,
+        "copy_orientation_multiplier": 1,
+        "copy_sign": "pos",
+        "oriented_copy_passage_sign": 1,
+        "transported_normal_coefficient": 1
+      },
+      "q_power": "UNDETERMINED",
+      "tensor_position_from_boundary_order": 85,
+      "variance": "UNDETERMINED",
+      "wicket": 4
+    },
+    {
+      "actual_endpoint_locator": "geometry/t73_actual_cut_tangle.json#/framed_endpoints/86",
+      "exact_absent_primitives": [
+        "boundary_face_source_or_target",
+        "oriented_tangent_vector_at_boundary",
+        "boundary_face_coorientation",
+        "bpw_boundary_word_symbol_derived_from_those_vectors",
+        "cup_web_or_platform_nesting_parent",
+        "cup_web_or_platform_nesting_depth",
+        "ordered_BPW_A4_duality_atom_path",
+        "blanchet_binding_or_detachment_local_normal",
+        "strict_foam_movie_locator_for_the_chart"
+      ],
+      "legacy_assignment": {
+        "accepted_as_primitive_derivation": false,
+        "orientation": -1,
+        "orientation_ignores_base_passage": false,
+        "pivotal_coefficient": {
+          "display": "+q^0",
+          "q_power": 0,
+          "sign": 1
+        }
+      },
+      "owner": "m_2",
+      "physical_endpoint_id": "actual:m_2:w3:neg:c1:letter:7",
+      "pivotal_sign": "UNDETERMINED",
+      "present_primitives": {
+        "base_passage_orientation": 1,
+        "copy_orientation_multiplier": -1,
+        "copy_sign": "neg",
+        "oriented_copy_passage_sign": -1,
+        "transported_normal_coefficient": -1
+      },
+      "q_power": "UNDETERMINED",
+      "tensor_position_from_boundary_order": 86,
+      "variance": "UNDETERMINED",
+      "wicket": 3
+    },
+    {
+      "actual_endpoint_locator": "geometry/t73_actual_cut_tangle.json#/framed_endpoints/87",
+      "exact_absent_primitives": [
+        "boundary_face_source_or_target",
+        "oriented_tangent_vector_at_boundary",
+        "boundary_face_coorientation",
+        "bpw_boundary_word_symbol_derived_from_those_vectors",
+        "cup_web_or_platform_nesting_parent",
+        "cup_web_or_platform_nesting_depth",
+        "ordered_BPW_A4_duality_atom_path",
+        "blanchet_binding_or_detachment_local_normal",
+        "strict_foam_movie_locator_for_the_chart"
+      ],
+      "legacy_assignment": {
+        "accepted_as_primitive_derivation": false,
+        "orientation": 1,
+        "orientation_ignores_base_passage": false,
+        "pivotal_coefficient": {
+          "display": "+q^0",
+          "q_power": 0,
+          "sign": 1
+        }
+      },
+      "owner": "m_2",
+      "physical_endpoint_id": "actual:m_2:w3:pos:c1:letter:6",
+      "pivotal_sign": "UNDETERMINED",
+      "present_primitives": {
+        "base_passage_orientation": 1,
+        "copy_orientation_multiplier": 1,
+        "copy_sign": "pos",
+        "oriented_copy_passage_sign": 1,
+        "transported_normal_coefficient": 1
+      },
+      "q_power": "UNDETERMINED",
+      "tensor_position_from_boundary_order": 87,
+      "variance": "UNDETERMINED",
+      "wicket": 3
+    }
+  ],
   "hard_coded_builder_assignments_present": true,
+  "legacy_endpoint_coefficients": {
+    "accepted_for_pivotal_certification": false,
+    "all_coefficients_plus_q0": true,
+    "endpoint_count": 88,
+    "orientation_disagreement_endpoint_ids": [
+      "actual:r_xy:w2:neg:r_xy:vertex:7",
+      "actual:r_xy:w2:pos:r_xy:vertex:1",
+      "actual:m_2:w44:neg:c1:letter:0",
+      "actual:m_2:w44:pos:m_2:C_i"
+    ],
+    "primitive_derivation_count": 0,
+    "reason": "The legacy table serializes derived sign/q-power literals but contains no boundary-face, BPW A.4/A.6, nesting, or Blanchet-normal proof."
+  },
   "missing": [
     "data/T73_C_PIVOTAL_GRADING_INPUT.json",
     "88 ordered V/V_dual endpoint charts with BPW (A.4) atoms",

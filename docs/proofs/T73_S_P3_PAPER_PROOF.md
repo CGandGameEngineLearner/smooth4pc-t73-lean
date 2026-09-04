@@ -288,10 +288,15 @@ mechanically: attaching words and railroad curves omit a triangulated
 3-dimensional attaching-region complement and face gluings after each
 2-handle. A new handle-triangulation construction would be required.
 
-The v1 verifier intentionally leaves the explicit normal-sphere cut-and-cap
-replay primitive unimplemented and therefore refuses even a structurally
-complete receipt. This is fail-closed: source/result hashes bind data but do
-not prove that the latter is surgery on the former. Implementing that
-primitive (or replacing it with a replayable Regina normal-surface
-cut/simplification certificate) is the next concrete engineering step before
-the gate can return `PASS`.
+The explicit normal-sphere cut-and-cap replay primitive is now implemented.
+For each sphere it derives a canonical staircase triangulation of a supplied
+product neighborhood \(S^2\times I\), checks that this is an actual
+tetrahedron subcomplex whose boundary is exactly two sphere copies, removes
+it, cones the two copies with distinct new vertices, and compares the exact
+closed result. It also checks that these product neighborhoods miss the
+detector and the other spheres. A synthetic \(S^2\times S^1\) example and
+two mutations exercise this primitive.
+
+This removes one verifier implementation gap but supplies no candidate data.
+The current T73 artifact still has no ambient tetrahedra, embedded product
+neighborhoods, or step results, so it continues to return `OPEN`.

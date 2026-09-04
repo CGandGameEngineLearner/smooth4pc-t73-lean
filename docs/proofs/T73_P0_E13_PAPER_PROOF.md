@@ -446,3 +446,42 @@ accepted: it contains no common source/target vertex arrays or tetrahedral
 map. The default gate returns `OPEN`. This defines a concrete target for a
 future flattening generator, but does not fill item 1 of the minimal completion
 package.
+
+## 11. Paper-level rescue of the local paired saddle
+
+The missing flattened affine cells are not necessary for the *existence* of
+the local paired-saddle homeomorphism. The new verifier
+`scripts/verify_t73_paired_saddle_topology.py` reconstructs each of the four
+supports in the ambient period-four triangulation and checks every vertex
+link. The respective supports have 85, 83, 122 and 122 tetrahedra; all
+boundary-vertex links are disks, all interior-vertex links are spheres, and
+each boundary is a connected triangulated sphere. The recorded elementary
+collapse to a point is replayed. The source and target patches are connected
+properly embedded triangulated disks: their boundary edges lie on the support
+sphere, their remaining vertices and triangles lie in the interior. Finally,
+the 5, 5, 40 and 40 recorded boundary triangle moves are replayed; every
+intermediate curve is simple and the last curve is exactly the target-disk
+boundary.
+
+It follows by standard three-dimensional PL topology that each support is a
+PL 3-ball. One proof doubles the contractible PL 3-manifold along its sphere
+boundary, applies the three-dimensional Poincare theorem and PL Schoenflies,
+and takes either complementary component. The boundary curve isotopy extends
+over a collar. Its terminal extension carries the source disk to a proper
+disk with the target boundary. Any two proper PL disks in a 3-ball with the
+same boundary are ambient isotopic relative to that boundary: cap either disk
+with the same boundary disk and use PL Schoenflies. Composing these maps sends
+the source patch to the target patch. Taper the boundary isotopy to the
+identity across a sufficiently thin *external* collar of the support sphere;
+the resulting homeomorphism is fixed on the outer boundary of the enlarged
+ball. Positive recorded clearance lets this collar be chosen disjoint from
+the protected section ball.
+
+Thus the disk-uniqueness/Alexander-trick route closes the existence of a local
+paired-saddle ambient PL homeomorphism, and it proves that this local map can
+be chosen isotopic to the identity and to carry the two owner sides in the
+prescribed order. It does not construct a canonical coordinate evaluator and
+does not identify the arbitrary homeomorphism supplied by the theorem with
+the later stored spine-transport or detector polylines. Consequently this
+repairs one local ArmRestore existence step but does not close the global P0
+or E13 chain.

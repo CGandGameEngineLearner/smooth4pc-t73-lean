@@ -33,6 +33,12 @@ ENDPOINTS = ROOT / "geometry" / "t73_actual_cut_tangle.json"
 PUBLIC = ROOT / "data" / "T73_DELTA3_PUBLIC_INPUT.json"
 REPORT = ROOT / "audit" / "t73_c_pivotal_grading_report.json"
 ENDPOINT_BUILDER = ROOT / "scripts" / "build_t73_endpoint_transport.py"
+LEGACY_CONVENTION = ROOT / "data" / "T73_ENDPOINT_CONVENTION.json"
+
+SELECTED_CUP_IDS = {
+    "actual:r_xy:w2:neg:r_xy:vertex:7",
+    "actual:m_2:w44:pos:m_2:C_i",
+}
 
 REQUIRED_DIAGRAMS = {
     "mww_selected_coefficient_closure",
@@ -49,7 +55,13 @@ REQUIRED_ENDPOINT_FIELDS = {
     "physical_endpoint_id",
     "tensor_position",
     "orientation",
+    "boundary_face",
+    "oriented_tangent_vector_at_boundary",
+    "boundary_face_coorientation",
+    "bpw_boundary_word_symbol",
     "variance",
+    "variance_derivation",
+    "nesting_parent_locator",
     "nesting_depth",
     "defect_basis_state",
     "duality_atoms",
@@ -84,10 +96,132 @@ def detector_writhe() -> int:
     return 8 * sum(int(row[sign_index]) for row in data["point_push"]["crossing_rows"])
 
 
+def _copy_orientation_multiplier(copy_sign: str) -> int:
+    if copy_sign == "pos":
+        return 1
+    if copy_sign == "neg":
+        return -1
+    raise ValueError(f"unknown cable-copy sign {copy_sign!r}")
+
+
+def endpoint_diagnostics(actual_endpoints: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """Explain, endpoint by endpoint, why orientation does not fix a pivot.
+
+    The product of the stored passage orientation and the cable-copy sign is
+    derivable.  It is recorded as a necessary oriented-intersection datum, but
+    it is not promoted to a BPW ``V``/``V_dual`` variance: that also requires
+    the missing source/target boundary face and its coorientation.
+    """
+
+    legacy_by_id: dict[str, dict[str, Any]] = {}
+    if LEGACY_CONVENTION.is_file():
+        legacy = json.loads(LEGACY_CONVENTION.read_text(encoding="utf-8"))
+        legacy_by_id = {
+            item["physical_endpoint_id"]: item for item in legacy.get("endpoints", [])
+        }
+
+    diagnostics: list[dict[str, Any]] = []
+    for endpoint in sorted(actual_endpoints, key=lambda item: int(item["geometric_order"])):
+        endpoint_id = endpoint["physical_endpoint_id"]
+        passage_orientation = int(endpoint["orientation"])
+        copy_multiplier = _copy_orientation_multiplier(endpoint["sign"])
+        oriented_copy_passage_sign = passage_orientation * copy_multiplier
+        legacy = legacy_by_id.get(endpoint_id)
+        legacy_orientation = legacy.get("orientation") if legacy else None
+        legacy_pivotal = legacy.get("pivotal_coefficient") if legacy else None
+        absent = [
+            # Needed to turn the oriented intersection sign into an arrow in
+            # the BPW boundary word, hence into V or V^*.
+            "boundary_face_source_or_target",
+            "oriented_tangent_vector_at_boundary",
+            "boundary_face_coorientation",
+            "bpw_boundary_word_symbol_derived_from_those_vectors",
+            # Needed for the position-dependent V^* -> V chart in BPW (A.4).
+            "cup_web_or_platform_nesting_parent",
+            "cup_web_or_platform_nesting_depth",
+            "ordered_BPW_A4_duality_atom_path",
+            # Needed to determine any signs in the strict Blanchet lift.
+            "blanchet_binding_or_detachment_local_normal",
+            "strict_foam_movie_locator_for_the_chart",
+        ]
+        if endpoint_id in SELECTED_CUP_IDS:
+            absent.extend(
+                [
+                    "selected_cup_ordered_BPW_A6_term",
+                    "selected_cap_ordered_BPW_A6_term",
+                    "selected_cup_and_cap_strict_movie_locators",
+                ]
+            )
+        diagnostics.append(
+            {
+                "physical_endpoint_id": endpoint_id,
+                "owner": endpoint["owner"],
+                "wicket": int(endpoint["wicket"]),
+                "tensor_position_from_boundary_order": int(endpoint["geometric_order"]),
+                "actual_endpoint_locator": (
+                    "geometry/t73_actual_cut_tangle.json#/framed_endpoints/"
+                    f"{int(endpoint['geometric_order'])}"
+                ),
+                "present_primitives": {
+                    "copy_sign": endpoint["sign"],
+                    "copy_orientation_multiplier": copy_multiplier,
+                    "base_passage_orientation": passage_orientation,
+                    "oriented_copy_passage_sign": oriented_copy_passage_sign,
+                    "transported_normal_coefficient": endpoint[
+                        "transported_normal_coefficient"
+                    ],
+                },
+                "legacy_assignment": {
+                    "orientation": legacy_orientation,
+                    "pivotal_coefficient": legacy_pivotal,
+                    "orientation_ignores_base_passage": (
+                        legacy_orientation is not None
+                        and int(legacy_orientation) != oriented_copy_passage_sign
+                    ),
+                    "accepted_as_primitive_derivation": False,
+                },
+                "exact_absent_primitives": absent,
+                "variance": "UNDETERMINED",
+                "pivotal_sign": "UNDETERMINED",
+                "q_power": "UNDETERMINED",
+            }
+        )
+    return diagnostics
+
+
+def legacy_assessment(diagnostics: list[dict[str, Any]]) -> dict[str, Any]:
+    assigned = [
+        item["legacy_assignment"]["pivotal_coefficient"]
+        for item in diagnostics
+        if item["legacy_assignment"]["pivotal_coefficient"] is not None
+    ]
+    return {
+        "endpoint_count": len(assigned),
+        "all_coefficients_plus_q0": bool(assigned)
+        and all(
+            int(coefficient.get("sign", 0)) == 1
+            and int(coefficient.get("q_power", 1)) == 0
+            for coefficient in assigned
+        ),
+        "orientation_disagreement_endpoint_ids": [
+            item["physical_endpoint_id"]
+            for item in diagnostics
+            if item["legacy_assignment"]["orientation_ignores_base_passage"]
+        ],
+        "primitive_derivation_count": 0,
+        "accepted_for_pivotal_certification": False,
+        "reason": (
+            "The legacy table serializes derived sign/q-power literals but "
+            "contains no boundary-face, BPW A.4/A.6, nesting, or Blanchet-normal proof."
+        ),
+    }
+
+
 def base_report() -> dict[str, Any]:
     actual = json.loads(ENDPOINTS.read_text(encoding="utf-8"))
     endpoints = actual.get("framed_endpoints", [])
     builder_source = ENDPOINT_BUILDER.read_text(encoding="utf-8")
+    diagnostics = endpoint_diagnostics(endpoints)
     return {
         "schema": "t73_c_pivotal_grading_report/v1",
         "status": "OPEN",
@@ -95,10 +229,15 @@ def base_report() -> dict[str, Any]:
         "actual_endpoint_orientations_present": all(
             endpoint.get("sign") in {"neg", "pos"} for endpoint in endpoints
         ),
+        "actual_passage_orientations_present": all(
+            endpoint.get("orientation") in {-1, 1} for endpoint in endpoints
+        ),
         "detector_braid_writhe": detector_writhe(),
         "hard_coded_builder_assignments_present": (
             "pivotal_sign = 1" in builder_source and "q_power = 0" in builder_source
         ),
+        "endpoint_diagnostics": diagnostics,
+        "legacy_endpoint_coefficients": legacy_assessment(diagnostics),
         "missing": [],
         "derived": {
             "hom_normalization": -44,
@@ -142,8 +281,33 @@ def validate_input(payload: dict[str, Any], report: dict[str, Any]) -> None:
             seen_positions.add(position)
         if chart.get("orientation") not in {-1, 1}:
             report["missing"].append(f"endpoint_duality_charts[{index}].orientation=+-1")
+        if chart.get("boundary_face") not in {"source", "target"}:
+            report["missing"].append(
+                f"endpoint_duality_charts[{index}].boundary_face=source|target"
+            )
+        for vector_field in (
+            "oriented_tangent_vector_at_boundary",
+            "boundary_face_coorientation",
+        ):
+            vector = chart.get(vector_field)
+            if not isinstance(vector, list) or len(vector) != 3:
+                report["missing"].append(
+                    f"endpoint_duality_charts[{index}].{vector_field}=3-vector"
+                )
+        if chart.get("bpw_boundary_word_symbol") not in {"up", "down"}:
+            report["missing"].append(
+                f"endpoint_duality_charts[{index}].bpw_boundary_word_symbol=up|down"
+            )
         if chart.get("variance") not in ALLOWED_VARIANCE:
             report["missing"].append(f"endpoint_duality_charts[{index}].variance=V|V_dual")
+        if not chart.get("variance_derivation"):
+            report["missing"].append(
+                f"endpoint_duality_charts[{index}].variance_derivation"
+            )
+        if not chart.get("nesting_parent_locator"):
+            report["missing"].append(
+                f"endpoint_duality_charts[{index}].nesting_parent_locator"
+            )
         if chart.get("defect_basis_state") not in ALLOWED_DEFECT_STATE:
             report["missing"].append(
                 f"endpoint_duality_charts[{index}].defect_basis_state=highest|defect"

@@ -899,9 +899,9 @@ positive-Jacobian derived-star ambient cells is the remaining chart step.
 There are only three local derived-star types.  In the twice barycentrically
 subdivided standard tetrahedron, the before/after stars for collapse dimensions
 $1,2,3$ contain respectively
-[
-(96,36),qquad(216,156),qquad(576,396)
-]
+\[
+(96,36),\qquad(216,156),\qquad(576,396)
+\]
 tetrahedra, with differences $60,60,180$.  Every before and after star has a
 manifold sphere boundary and collapses to a point.  Removing their common
 boundary leaves a disk on either side; the common boundary polygons have
@@ -985,10 +985,44 @@ dimension-two map gives $90$ actual collar moves and $362880$ positive cells.
 All carrier charts and inverses are explicit, and the expanded carrier boxes
 miss the protected ball.  Hence the outer boundary extension passes.
 
+\begin{lemma}[Existence of the local paired-saddle restore]
+\label{lem:paired-saddle-existence}
+For each of the four signed Johnson-side templates, there is an
+orientation-preserving PL homeomorphism of a slightly enlarged paired-saddle
+support, fixed on its outer boundary, which carries the source owner disk to
+the target owner disk, preserves the two owner sides, and misses the protected
+section ball.
+\end{lemma}
+
+\begin{proof}
+The exact finite replay in
+\texttt{verify\_t73\_paired\_saddle\_topology.py} checks the four supports
+with respectively $85,83,122,122$ tetrahedra.  Every vertex link is a disk at
+the boundary and a sphere in the interior, every boundary is a connected
+triangulated $2$-sphere, and the recorded collapse to a point replays.
+Consequently each support is a contractible PL $3$-manifold with sphere
+boundary and hence a PL $3$-ball: double it along the boundary, use van Kampen
+and Mayer--Vietoris to obtain a homotopy $3$-sphere, and apply the
+$3$-dimensional Poincar\'e theorem and PL Schoenflies.
+
+The source and target patches are proper PL disks.  Their boundary curves are
+joined by the replayed sequence of $5,5,40,40$ elementary triangle moves,
+each intermediate curve being simple.  Extend this boundary isotopy over a
+collar.  After the boundaries agree, the PL disk theorem makes the two proper
+disks ambiently isotopic relative to their common boundary.  Isotopy extension
+and the Alexander trick give a PL homeomorphism of the ball.  Taper the
+boundary motion to the identity in an external collar.  The recorded positive
+clearance permits that collar to be chosen disjoint from the protected ball,
+and orientation selects the prescribed owner side.  These standard PL
+extension results are reviewed in \cite{RourkeSanderson1972}.
+\end{proof}
+
 Combining the single disk moves, source side charts, negative normalization,
 cap-$1$ to cap-$0$ transport, inverse target side charts, outer curve collar,
 and section cutoff gives four canonical unit restores with $346313864$
-expanded cells.  Axis-permutation conjugation places them at all $93$ Johnson
+expanded cells at the level of the stored hierarchy; the existence of its
+paired-saddle layer follows from Lemma~\ref{lem:paired-saddle-existence}.
+Axis-permutation conjugation places them at all $93$ Johnson
 factors; the resulting hierarchy represents $8113517822$ cells, fixes the
 protected ball, maps both owners setwise, has explicit reverse-order inverse,
 and its transvection product is $A$.  Changing the first side bit is detected.

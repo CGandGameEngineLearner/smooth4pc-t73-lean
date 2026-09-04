@@ -21,6 +21,9 @@ from typing import Any
 ROOT = Path(__file__).resolve().parents[1]
 SCHEMA = ROOT / "audit" / "t73_canonical_arm_restore_schema.json"
 DEFAULT_INPUT = ROOT / "geometry" / "t73_johnson_restore_assembly.json"
+PAIRED_SUPPORT = ROOT / "geometry" / "t73_johnson_paired_saddle_support.json"
+CAP_ASSEMBLY = ROOT / "geometry" / "t73_johnson_cap_collapse_assembly.json"
+OUTER_COLLAR = ROOT / "geometry" / "t73_johnson_outer_curve_collar.json"
 
 
 class WitnessError(ValueError):
@@ -250,6 +253,27 @@ def verify_payload(payload: dict[str, Any]) -> dict[str, Any]:
     if not SCHEMA.is_file():
         fail("canonical ArmRestore schema is missing")
     if payload.get("schema") != "t73_canonical_arm_restore_map/v1":
+        if payload.get("schema") == "t73_johnson_restore_assembly/v1":
+            support = json.loads(PAIRED_SUPPORT.read_text(encoding="utf-8"))
+            cap = json.loads(CAP_ASSEMBLY.read_text(encoding="utf-8"))
+            outer = json.loads(OUTER_COLLAR.read_text(encoding="utf-8"))
+            promoted = (
+                support.get("paired_saddle_ambient_cells") == "OPEN"
+                and cap.get("paired_saddle_ambient_cells") == "OPEN"
+                and cap.get("johnson_restore_ambient_cells") == "OPEN"
+                and outer.get("final_restore_assembly") == "OPEN"
+                and payload.get("paired_saddle_ambient_cells") == "PASS"
+                and payload.get("johnson_arm_restore") == "PASS"
+            )
+            if promoted:
+                fail(
+                    "legacy assembler promotes upstream OPEN to PASS; first absent "
+                    "coordinate datum is a simplicial self-map of the complete "
+                    "paired-support boundary sphere carrying source_patch to "
+                    "target_patch and agreeing on the cap curves with the recorded "
+                    "cap-product transport; without that boundary map there is no "
+                    "fixed-boundary ambient extension or evaluable ArmRestore"
+                )
         fail("input is not a canonical ArmRestore map witness")
     required = {"canonical_key", "period", "initial_state_sha256", "final_state_sha256", "layers"}
     if set(payload) < required | {"schema"}:
