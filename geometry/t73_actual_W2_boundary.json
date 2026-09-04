@@ -1,0 +1,7 @@
+{
+  "identified_with_partial_W2": false,
+  "reason": "no 4-dimensional W2 triangulation has been built from the AR link",
+  "schema": "t73_actual_W2_boundary/v1",
+  "sha256": "52D077EEF4CB317B967EE537AC302BC96F8C462F6EC55EEFC5F4EE5117D65E09",
+  "source": "dual-block Heegaard surface of the period-4 cubulation"
+}

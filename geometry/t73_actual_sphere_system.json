@@ -1,0 +1,336 @@
+{
+  "actual_w2_lasagna_map": false,
+  "complement_connected": null,
+  "hj_53_kernel_invariance_only": true,
+  "hj_lemmas_55_57_invoked": false,
+  "pairwise": [
+    {
+      "disjoint": true,
+      "interior_shared": [],
+      "left": "A1",
+      "right": "A2",
+      "shared_vertex_count": 0
+    },
+    {
+      "disjoint": true,
+      "interior_shared": [],
+      "left": "A1",
+      "right": "A3",
+      "shared_vertex_count": 0
+    },
+    {
+      "disjoint": true,
+      "interior_shared": [],
+      "left": "A2",
+      "right": "A3",
+      "shared_vertex_count": 0
+    }
+  ],
+  "pairwise_disjoint": true,
+  "reason": "dual meridians exist, but they are not yet disjoint embedded spheres on actual \u2202W2",
+  "schema": "t73_actual_sphere_system/v1",
+  "sha256": "7415715547EDE28E8502C129863DAD4FCAD5B393A075AA641695DF809FE4969F",
+  "simultaneous_surgery_is_S3": null,
+  "spheres": [
+    {
+      "axis": 0,
+      "disjoint_from_detector": true,
+      "embedded_s2_candidate": true,
+      "euler_characteristic": 2,
+      "h0_meridian": {
+        "boundary_edge_count": 16,
+        "closed": true,
+        "owner": 0,
+        "plane_axis": 0,
+        "plane_value": 2,
+        "polyline": [
+          [
+            "2",
+            "0",
+            "0"
+          ],
+          [
+            "2",
+            "0",
+            "1"
+          ],
+          [
+            "2",
+            "1",
+            "1"
+          ],
+          [
+            "2",
+            "1",
+            "0"
+          ],
+          [
+            "2",
+            "0",
+            "0"
+          ]
+        ],
+        "square_count": 4,
+        "vertex_count": 4
+      },
+      "h1_meridian": {
+        "boundary_edge_count": 8,
+        "closed": true,
+        "owner": 1,
+        "plane_axis": 0,
+        "plane_value": 0,
+        "polyline": [
+          [
+            "0",
+            "1",
+            "1"
+          ],
+          [
+            "0",
+            "1",
+            "2"
+          ],
+          [
+            "0",
+            "1",
+            "3"
+          ],
+          [
+            "0",
+            "2",
+            "3"
+          ],
+          [
+            "0",
+            "3",
+            "3"
+          ],
+          [
+            "0",
+            "3",
+            "2"
+          ],
+          [
+            "0",
+            "3",
+            "1"
+          ],
+          [
+            "0",
+            "2",
+            "1"
+          ],
+          [
+            "0",
+            "1",
+            "1"
+          ]
+        ],
+        "square_count": 4,
+        "vertex_count": 8
+      },
+      "name": "A1"
+    },
+    {
+      "axis": 1,
+      "disjoint_from_detector": true,
+      "embedded_s2_candidate": true,
+      "euler_characteristic": 2,
+      "h0_meridian": {
+        "boundary_edge_count": 16,
+        "closed": true,
+        "owner": 0,
+        "plane_axis": 1,
+        "plane_value": 2,
+        "polyline": [
+          [
+            "0",
+            "2",
+            "0"
+          ],
+          [
+            "0",
+            "2",
+            "1"
+          ],
+          [
+            "1",
+            "2",
+            "1"
+          ],
+          [
+            "1",
+            "2",
+            "0"
+          ],
+          [
+            "0",
+            "2",
+            "0"
+          ]
+        ],
+        "square_count": 4,
+        "vertex_count": 4
+      },
+      "h1_meridian": {
+        "boundary_edge_count": 8,
+        "closed": true,
+        "owner": 1,
+        "plane_axis": 1,
+        "plane_value": 0,
+        "polyline": [
+          [
+            "1",
+            "0",
+            "1"
+          ],
+          [
+            "1",
+            "0",
+            "2"
+          ],
+          [
+            "1",
+            "0",
+            "3"
+          ],
+          [
+            "2",
+            "0",
+            "3"
+          ],
+          [
+            "3",
+            "0",
+            "3"
+          ],
+          [
+            "3",
+            "0",
+            "2"
+          ],
+          [
+            "3",
+            "0",
+            "1"
+          ],
+          [
+            "2",
+            "0",
+            "1"
+          ],
+          [
+            "1",
+            "0",
+            "1"
+          ]
+        ],
+        "square_count": 4,
+        "vertex_count": 8
+      },
+      "name": "A2"
+    },
+    {
+      "axis": 2,
+      "disjoint_from_detector": true,
+      "embedded_s2_candidate": true,
+      "euler_characteristic": 2,
+      "h0_meridian": {
+        "boundary_edge_count": 16,
+        "closed": true,
+        "owner": 0,
+        "plane_axis": 2,
+        "plane_value": 2,
+        "polyline": [
+          [
+            "0",
+            "0",
+            "2"
+          ],
+          [
+            "0",
+            "1",
+            "2"
+          ],
+          [
+            "1",
+            "1",
+            "2"
+          ],
+          [
+            "1",
+            "0",
+            "2"
+          ],
+          [
+            "0",
+            "0",
+            "2"
+          ]
+        ],
+        "square_count": 4,
+        "vertex_count": 4
+      },
+      "h1_meridian": {
+        "boundary_edge_count": 8,
+        "closed": true,
+        "owner": 1,
+        "plane_axis": 2,
+        "plane_value": 0,
+        "polyline": [
+          [
+            "1",
+            "1",
+            "0"
+          ],
+          [
+            "1",
+            "2",
+            "0"
+          ],
+          [
+            "1",
+            "3",
+            "0"
+          ],
+          [
+            "2",
+            "3",
+            "0"
+          ],
+          [
+            "3",
+            "3",
+            "0"
+          ],
+          [
+            "3",
+            "2",
+            "0"
+          ],
+          [
+            "3",
+            "1",
+            "0"
+          ],
+          [
+            "2",
+            "1",
+            "0"
+          ],
+          [
+            "1",
+            "1",
+            "0"
+          ]
+        ],
+        "square_count": 4,
+        "vertex_count": 8
+      },
+      "name": "A3"
+    }
+  ],
+  "spherical_homology_basis": null,
+  "status": "OPEN",
+  "w2_boundary_sha256": "52D077EEF4CB317B967EE537AC302BC96F8C462F6EC55EEFC5F4EE5117D65E09"
+}

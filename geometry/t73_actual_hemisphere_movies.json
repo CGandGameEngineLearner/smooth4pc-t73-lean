@@ -1,0 +1,33 @@
+{
+  "actual_w2_lasagna_map": false,
+  "detector_identities": {
+    "D(v A0) = D(v)": "OPEN",
+    "D(v A1) = 0": "OPEN"
+  },
+  "movies": [
+    {
+      "A0_identity_on_detector": null,
+      "A1_kills_detector": null,
+      "reason": "no actual \u2202W2 hemisphere movie has been triangulated",
+      "sphere": "A1",
+      "status": "OPEN"
+    },
+    {
+      "A0_identity_on_detector": null,
+      "A1_kills_detector": null,
+      "reason": "no actual \u2202W2 hemisphere movie has been triangulated",
+      "sphere": "A2",
+      "status": "OPEN"
+    },
+    {
+      "A0_identity_on_detector": null,
+      "A1_kills_detector": null,
+      "reason": "no actual \u2202W2 hemisphere movie has been triangulated",
+      "sphere": "A3",
+      "status": "OPEN"
+    }
+  ],
+  "schema": "t73_actual_hemisphere_movies/v1",
+  "sphere_system_sha256": "7415715547EDE28E8502C129863DAD4FCAD5B393A075AA641695DF809FE4969F",
+  "status": "OPEN"
+}
