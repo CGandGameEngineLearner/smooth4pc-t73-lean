@@ -679,6 +679,20 @@ tetrahedron and reproduces the target handlebody simplex by simplex, with
 boundary Euler characteristic $-4$.  Turning each recorded disk move and the
 paired saddle into explicit ambient PL cells with positive Jacobian remains
 \Open.
+The local ambient cell problem for every disk move has a uniform solution.
+After adding the midpoint of the exchanged edge, the refined tetrahedron
+boundary is an octahedron; both the $1\leftrightarrow3$ move and the
+$2\leftrightarrow2$ move are conjugate to its half-turn.  Use four rational
+angular sectors and octahedral radii $1,1001/1000,501/500$.  The two Johnson
+sides use sector shifts $(2,1,0)$ and $(2,3,0)$, respectively.  A compatible
+staircase triangulation gives $8+24+24=56$ affine tetrahedra per side, all
+with Jacobian exactly $1$, a fixed outer boundary, and explicit cellwise
+inverse.  Instantiating the template at all $2194$ recorded disk moves gives
+$122864$ affine cells with Jacobians in $[1/3,3]$.  Every instantiated source
+and image is face-to-face, its eight outer triangles agree pointwise, and the
+minimum periodic bounding-box clearance from the protected ball is
+$7989/8000$.  Thus all single-move ambient collars are complete; constructing
+the paired-saddle collar remains \Open.
 
 In the standard product chart $D^2\times[-1,1]$ for the reduced $y$
 one-handle, take $B=D^2\times[-1/2,1/2]$.  The Johnson $m_2$ word has $41$
