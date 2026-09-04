@@ -26,7 +26,7 @@ evidence.
 | Lasagna / citations | MWW/BPW/BHPW comparison and primary sources | TWO PASSES COMPLETE |
 | Computation / Lean | finite value, scripts, certificates, formal boundary | FIRST PASS COMPLETE |
 
-## Current verdict (2026-09-04)
+## Current verdict (updated 2026-09-05)
 
 **The unconditional Trace-73 counterexample theorem is not proved.**  The
 abstract linear-algebra implication is valid; the determinant calculation,
@@ -34,15 +34,18 @@ public-word Burau value `2624`, and Artin--Magnus/Andreadakis finite checks
 replay.  The relevant published MWW handle theorems and classical topology
 results appear sound within their stated hypotheses.
 
-The proof fails at multiple independent candidate-specific bridges:
+The construction work after the first audit has repaired the topological
+typing of P0/E13: the Johnson mapping classes give an actual unlabelled AR
+presentation, standard collar topology supplies the 44 marked vertical arcs,
+the auxiliary braid is moved out of the attaching link and into C, and
+transporting the complete AR upper handles gives E13/P3. The proof still fails
+at independent categorical bridges:
 
-1. no verified ambient identification of the Johnson model with the actual
-   Cappell--Shaneson handle presentation (`D-02`);
-2. no constructed BPW/BHPW/MWW coefficient-shadow map turning the Burau cubic
+1. no constructed BPW/BHPW/MWW coefficient-shadow map turning the Burau cubic
    into a functional on the genuine two-handle quotient (`D-03`--`D-05`);
-3. no proof of the actual three-handle endpoint factorization or complete
-   `W2`/`W3` geometry (`D-06`--`D-07`);
-4. pivotal coefficients are hard-coded, and a 2026 grading erratum has not
+2. no proof of the actual three-handle endpoint factorization on the whole
+   MWW source (`D-06`);
+3. pivotal coefficients are hard-coded, and a 2026 grading erratum has not
    been reconciled with the claimed absolute degree `494`.
 
 The repository's own source and git history confirm these are proof gaps, not
@@ -1391,6 +1394,55 @@ Topology-source checks completed 2026-09-04:
   prove that every allowed presentation change acts only by simultaneous
   conjugation.
 
+### F-509 — A fixed noncanonical point-push is sufficient in principle, but its MWW cocone is missing
+
+- Severity: **Major clarification; Critical remaining interface**
+- Status: **CONDITIONAL THEOREM PROVED; APPLICATION OPEN**
+- Location: the fixed-\(W\) theorem in
+  docs/proofs/T73_C_CHAINMAP_PAPER_PROOF.md.
+- Positive result: a detector used only to prove nonvanishing need not be
+  canonical under changes of its definition. For specified \(W\), the BPW
+  horizontal-trace action and strict BHPW foam/qHH functor assign an endpoint
+  operator \(A_W\). Given a genuine coefficient shadow,
+  \(C_h(A_W-I)\operatorname{Sh}_h\) is well typed on coefficient qTrace.
+  Thus F-508 does not force the scalar to vanish.
+- Conditional descent: statewise shadows satisfying simultaneous beta
+  conjugation and old-factor/local-Frobenius factorization for psi give,
+  after placement averaging, beta invariance and undotted-zero/
+  dotted-identity. The proof uses \(A_W-I=O(h^3)\) and
+  \((\epsilon\otimes\epsilon)\Delta(1)=0\),
+  \((\epsilon\otimes\epsilon)\Delta(X)=1\).
+- Remaining obstruction: no statewise actual-MWW chain maps, actual-beta
+  comparison diagrams, or whole-source actual-psi factorizations are
+  supplied. BPW/BHPW evaluate supplied movies but do not construct these
+  candidate-specific squares.
+- Required wording: \(W\) may be an auxiliary chosen detector, but must not
+  then be used to discharge P0/C-H1; beta/psi descent stays hypothetical.
+
+### F-510 — A standard 88-endpoint pivotal convention is now derived and reproduces 2624
+
+- Severity: **Remediation / partial closure**
+- Status: **PIVOTAL CERTIFIED; ABSOLUTE DEGREE OPEN**
+- Locations: `geometry/t73_p0_marked_vertical_collar.json`,
+  `scripts/build_t73_c_pivotal_grading_input.py`,
+  `data/T73_C_PIVOTAL_GRADING_INPUT.json`,
+  `scripts/check_t73_c_pivotal_grading_inputs.py`, and the updated endpoint
+  discussion in `main.tex`.
+- Construction: the freely chosen standard collar fixes source/target faces,
+  tangents, coorientations, tensor order, 44 `V` and 44 `V*` factors, BPW
+  (A.4) duality atoms, BPW (A.6) cup/cap terms, and product-foam normals. The
+  input is hash-bound to the static P0 marked collar, not copied from the old
+  asserted pivotal coefficients.
+- Result: the derived endpoint monomials have positive signs and q-powers 0
+  or 1; the cup has powers -1 and +1. Since `rho(W)-I=O(h^3)`, those
+  positive-order factors do not alter the cubic, which replays as 2624. Four
+  updated tests pass, while the legacy all-`+q^0` table remains rejected as a
+  derivation.
+- Remaining gap: four global diagrams--the actual MWW coefficient closure,
+  Hattori target closure, selected cabled state, and MWW-to-BHPW comparison--
+  lack a common framing/writhe conversion ledger. Therefore the intrinsic sum
+  494 is not yet certified as the absolute MWW grading.
+
 ### F-600 — The “actual” sphere-system builder assigns, rather than constructs, the embedding in \(\partial W_2\)
 
 - Severity: **Critical**
@@ -1636,6 +1688,103 @@ Topology-source checks completed 2026-09-04:
   independently modelled standard-sphere/P3 artifacts, asserting that it is
   the transported decomposition simply renames the missing equivalence.
 
+### F-610 — Making B44 auxiliary permits boundary disjointness but does not yield the MWW tensor factorization
+
+- Severity: **Critical**
+- Status: **CONFIRMED PARTIAL LEMMA / REMAINING OBSTRUCTION**
+- Locations: analysis in
+  `docs/proofs/T73_S_P3_PAPER_PROOF.md`, Section 10; S argument at
+  `main.tex:1455--1509`.
+- Positive result: after the actual upper spheres are fixed, an independently
+  chosen small detector ball can be placed in their boundary complement. If
+  the coefficient object, detector, and both hemisphere maps admit a literal
+  tensor separation and the MWW-to-endpoint comparison is symmetric-monoidal
+  natural for those maps, strict monoidality proves
+  \(\operatorname{Id}\otimes\epsilon^{\otimes b}\Delta^{b-1}\) on the whole
+  source. This is the exact separated-support lemma.
+- Failure of its hypotheses here: the 44 detector lanes are selected passages
+  of the same 2-handle components on which the transported spheres have
+  \(12578,1824,409\) core-boundary copies. Their cable endpoints are
+  interleaved, so boundary disjointness of a small ball does not provide a
+  tensor decomposition of the MWW source. Pulling both constructions into
+  the 4-dimensional handle formula produces pairs of 2-surfaces; relative
+  transversality gives isolated intersections because \(2+2=4\), not
+  disjointness. No intersection-removal/Whitney data are supplied.
+- Mixed maps: strict functoriality controls composition and signs but does not
+  remove braid/pivotal maps between interleaved endpoints. Showing that they
+  are \(P(I+O(h))\) with simultaneous detector conjugation is exactly the
+  missing C-S1 naturality theorem.
+- Circularity: if B44 is replaced by a genuinely local tensor-separated
+  class, S follows formally, but the candidate-specific beta/psi descent and
+  the scalar 2624 must be established anew. Assigning the old computation to
+  that new class merely renames the missing geometric comparison.
+
+### F-611 — MWW reduces S to an actual surface map, but the statewise shadow on that map is missing
+
+- Severity: **Critical**
+- Status: **CONDITIONAL THEOREM PROVED; CANDIDATE HYPOTHESES OPEN**
+- Locations: MWW Theorem 3.10 proof, equations (12)--(15); detailed theorem
+  in `docs/proofs/T73_S_P3_PAPER_PROOF.md`, Section 11; manuscript
+  Lemma `lem:Sendpoint`, `main.tex:1455--1509`.
+- Source clarification: after deleting a small hemisphere disk and all
+  2-handle cores, MWW obtains
+  \(\Sigma_-\subset I\times\partial W_1\). Their commuting diagram proves
+  that the nontrivial hemisphere map under the 2-handle isomorphism is the
+  cabled skein-lasagna map induced by \(\Sigma_-\). Thus MWW itself supplies
+  beta/psi compatibility of that surface map; it does not supply compatibility
+  with the proposed detector.
+- Conditional result: if a completed statewise shadow is defined and natural
+  on every elementary event in a typed movie for \(\Sigma_-\), is symmetric
+  monoidal modulo \(h\), all mixed events are
+  \(P(I+O(h))\), and the detector rows use the same equivariant permutation
+  convention and start in order \(h^3\), then the divided cubic sees exactly
+  \(\operatorname{Id}\otimes
+  \epsilon^{\otimes b}\Delta^{b-1}\). Interleaving is harmless under these
+  hypotheses: constant permutations move through the commutative,
+  cocommutative Frobenius operations and cancel at the endpoints, while every
+  \(O(h)\) correction changes only order \(h^4\).
+- Exact missing data: the all-owner artifact has no typed chronology of all
+  mixed Reidemeister/braid/pivotal events; the shadow is not constructed on
+  the actual births/deaths/saddles; its naturality squares with every beta/psi
+  generator are absent; and constant mixed maps are not proved to match the
+  detector's pivotal/permutation convention. JSON assigns the desired
+  `PASS_ACTUAL_C_COCONE` conclusion instead.
+- Dependency impact: this is a precise sufficient theorem for completing S,
+  and shows interleaving is not inherently fatal. It also identifies the
+  irreducible missing interface: a statewise monoidal-natural shadow on the
+  actual typed \(\Sigma_-\) movie.
+
+### F-612 — The finite typed \(\Sigma_-\) movie prefix is closed; shadow naturality remains open
+
+- Severity: **Major positive result / Critical remaining interface**
+- Status: **PARTIAL**
+- Locations: `scripts/build_t73_sigma_minus_typed.py`;
+  `tests/test_t73_sigma_minus_typed.py`;
+  `docs/proofs/T73_S_P3_PAPER_PROOF.md`, Section 12.
+- Derived data: for all three owner boundary words, the builder recomputes
+  signed owner positions and profiles, the cable-state shifts, explicit
+  stable endpoint permutations and inverses, old/new tensor-factor types, and
+  parameterized event blocks. The movies have zero births,
+  \(b-1\) coproduct saddles and \(b\) restored-core caps for
+  \(b=12578,1824,409\).
+- Formal MWW consequences: beta preserves multiplicity types; psi pair
+  addition commutes componentwise with every surface translation. Thus both
+  paths of every beta/psi type square agree. MWW equations (12)--(15) supply
+  the induced \(\Sigma_-\) map on the cabled quotient. The local Frobenius
+  evaluation is verified as zero on \(1\) and one on \(X\); direct expansions
+  through \(b=6\) test the general formula.
+- Mutation coverage: changing a sign in an actual owner word breaks the
+  recomputed profile; an invalid owner label is rejected; endpoint
+  permutations are checked bijective with explicit inverses.
+- Remaining map, intentionally OPEN:
+  `StatewiseShadowNaturality_Aj` for each sphere. It must define shadow
+  maps for the typed critical and mixed events, prove
+  \(P(I+O(h))\), detector permutation equivariance, and actual beta/psi
+  naturality equalities. Type compatibility does not prove these maps commute.
+- Test result: four focused tests pass; generated digest
+  `6B680BF1EE75336DD357DCD7B44546D360D1C303460069401DCCFE8EF88D7E23`.
+  The generated status remains `S_status=OPEN`.
+
 ## Proof dependency ledger
 
 The main theorem will be expanded into atomic premises.  For each premise this
@@ -1645,18 +1794,19 @@ and unresolved semantic gaps.
 | ID | Atomic obligation | Current evidence/status | Main-theorem impact |
 |---|---|---|---|
 | D-01 | `det A=1`, `det(A-I)=1` and CS homotopy-sphere criterion | finite arithmetic plus Iwaki Proposition 2.1; **CONFIRMED for the standard surgery object** (F-100) | establishes homotopy-sphere status of `Sigma_A^0`, not the `X_J` identification |
-| D-02 | Johnson framed handle picture is the actual `Sigma_A^0` picture | internally called both discharged and OPEN; E13 assigns the desired boolean without constructing/verifying an ambient equivalence; **UNPROVED** (F-101--F-107) | load-bearing identification |
-| D-03 | selected raw class is a genuine, correctly graded MWW one-handle class | pivotal coefficients are hard-coded and the Hattori/endpoint bridge is absent; **OPEN** (F-201--F-202, F-209--F-210, F-300) | required to interpret detector geometrically |
+| D-02 | Johnson framed handle picture is the actual `Sigma_A^0` picture | **RESOLVED AT PAPER LEVEL AFTER RETYPING**: Johnson mapping classes and local straightening give the unlabelled AR presentation; standard cancellation/collar lemmas give P0; the auxiliary `B44` is C data, not attaching-link geometry (F-409, F-411--F-413) | supplies the actual manifold/collar without relying on the old E13 booleans |
+| D-03 | selected raw class is a genuine, correctly graded MWW one-handle class | the standard pivotal convention is now derived and reproduces 2624, but the Hattori/statewise coefficient shadow is absent and absolute grading remains open; **PARTIAL** (F-201--F-202, F-209--F-210, F-510) | required to interpret detector categorically |
 | D-04 | Burau divided cubic equals an MWW/BPW/BHPW natural functional on the entire typed source | no cited theorem supplies the claimed shadow map; paper itself says comparison remains OPEN; **UNPROVED** (F-007, F-201) | required before quotient descent |
 | D-05 | functional kills every two-handle beta/psi relation | abstract/finite cocone exists, but identification of every actual MWW beta/psi map is missing; **OPEN** (F-203) | required for nonzero `W2` class |
 | D-06 | actual complete 3-handle sphere system and endpoint maps give undotted-zero/dotted-identity on whole source | MWW local formulas are sound, but global detector factorization and actual `W2` geometry are unproved; **OPEN** (F-012, F-204--F-205) | required for surviving `W3` class |
-| D-07 | four-handle attachment transports class by grading-preserving isomorphism | MWW theorem scope is correct for an actual empty-link 4-handle, but the purported `S^3` boundary and attaching map are not established; **OPEN** (F-104--F-105, F-200) | required for closed `X_J` class |
+| D-07 | four-handle attachment transports class by grading-preserving isomorphism | **TOPOLOGICAL PART RESOLVED** by transporting the complete original AR upper-handle maps (F-609); MWW Proposition 3.4 has the correct empty-link scope | transports a class only after D-06 establishes that one survives the actual three-handle maps |
 | D-08 | standard `S^4` module vanishes in quantum degree 494 | MWW Corollary 3.5 and proof chain **CONFIRMED**, with `Q`/`Z` wording qualification (F-200, F-206, F-208) | target obstruction is available if an actual degree-494 class exists |
 | D-09 | diffeomorphisms induce absolute-grading-preserving isomorphisms in exactly the theory/coefficient convention used | general invariant framework appears sound, but a 2026 grading erratum is not reconciled with this paper's absolute shifts; **RECHECK REQUIRED** (F-209) | converts class mismatch to nondiffeomorphism only after convention audit |
 
-At present D-02 through at least D-04 are independently fatal: the abstract
-linear-algebra theorem is valid, but its intended geometric instantiation has
-not been established by the manuscript's own status statements.
+At present D-03 through D-06 remain fatal. The abstract linear-algebra theorem
+and the P0/E13 topological realization are available, but the Burau detector
+has not been identified with a homogeneous functional on the genuine MWW
+two-/three-handle quotients.
 
 ## Reproduction log
 
@@ -2031,3 +2181,78 @@ post-F-017 working tree, including the later Johnson restore hierarchy.
 - Consequence: arbitrary local braid insertion does not justify 2624. A
   direct fixed-marking derivation of the actual tangle and all endpoint data
   is still required.
+- Revision: F-413 separates an auxiliary detector morphism from an insertion
+  into the attaching link. Under that corrected typing, F-412 remains valid
+  as a warning about presentation isotopies but is not an obstruction to
+  choosing W independently inside C.
+
+### F-413 — Moving B44 from P0 to the auxiliary C detector removes the braid-insertion obstruction
+
+- Severity: **Dependency correction / remediation**
+- Status: **RESOLVED AT THE TYPE-DECOMPOSITION LEVEL; C/S STILL OPEN**
+- Location: Section 7 of
+  docs/proofs/T73_P0_E13_CONCEPTUAL_CLOSURE.md.
+- Correction to F-412: its relative-boundary obstruction applies only if B44
+  is inserted into, or claimed as an uncompensated coordinate change of, the
+  AR attaching link. P0 may instead stop at a standard product collar with
+  42 m2 and two r_xy vertical passages, their framings and fixed endpoint
+  marking.
+- Type check: the six-sweep W can be chosen independently as auxiliary C
+  data. After doubling, rho_h(W) postcomposes the E88 output of
+  Sh_h : qTr(C;M_R) -> Hom(E86,E88), so
+  ell_h (rho_h(W)-I) Sh_h is a well-typed linear detector. W is neither a
+  handle attachment nor part of the selected source class.
+- Consequence: W need not be canonical; a nonzero-class detector may depend
+  on choices. The fact that W inverse gives another scalar is not by itself a
+  defect. What remains load-bearing is construction of the actual shadow and
+  proof that this chosen detector annihilates all beta/psi relations and
+  descends through the actual three-handle maps.
+- Revised scope: the conceptual Johnson--AR route can close P0/E13 up to a
+  marked vertical product collar. The 2624 and six-sweep claims belong wholly
+  to C/S.
+
+### F-414 — The retyped static P0 marked collar is now explicit and independently verified
+
+- Severity: **Remediation**
+- Status: **RESOLVED FOR THE STANDARD STATIC COLLAR**
+- Evidence: geometry/t73_p0_marked_vertical_collar.json,
+  scripts/build_t73_p0_marked_vertical_collar.py,
+  scripts/verify_t73_p0_marked_vertical_collar.py, and
+  tests/test_t73_p0_marked_vertical_collar.py.
+- Construction: 44 source-bound wickets use an 11-by-4 rational grid inside
+  D2, vertical arcs across D2 times [-1,1], constant normal
+  (0,1/1000,0), explicit two-triangle framing rectangles, and 88 ordered
+  negative/positive normal translates. Owners are exactly 42 m_2 and two
+  r_xy; the artifact contains no braid word.
+- Verification: exact arithmetic proves distinct centre arcs and push-offs,
+  boundary levels, disk containment, framing rectangles, source IDs,
+  orientations, owners, and endpoint order. Six mutations are rejected.
+- Paper bridge: any genuine product y-handle collar with the same labelled
+  transverse passages is carried to this model by a boundary-fixed disk
+  isotopy and product extension; the product framing fields are straightened
+  in disjoint tubular neighborhoods. B44 remains auxiliary C data.
+
+### F-415 — Hostile re-review validates retyped P0 after repairing two hidden implications
+
+- Severity: **Remediation with corrected proof**
+- Status: **RESOLVED FOR P0 AS RETYPED; C/S EXCLUDED**
+- Location: docs/proofs/T73_P0_HOSTILE_REVIEW.md and the revised proofs of
+  prop:unlabelled-P0 and lem:marked-detector-collar in main.tex.
+- Repair 1: equality of ambient mapping classes did not automatically give an
+  isotopy relative to the section ball. The proof now fixes the section point
+  along the whole isotopy, chooses the endpoint local-straightening class that
+  kills the pi1(SO(3)) derivative loop, and applies parametric straightening.
+  The mapping-torus map is then identity on Bq times S1, proving epsilon zero
+  without changing psi or the Johnson side word.
+- Repair 2: a reduced word or abelianization alone does not imply 42 geometric
+  passages. The proof now uses Johnson's actual embedded square-slide
+  representatives inductively, with repeated edge occurrences placed in
+  disjoint parallel lanes. This realizes the verified 42 y letters of m2 as
+  geometric passages; the standard r_xy dual cell supplies the other two.
+- Validation: actual Johnson representatives compose to the 93-factor
+  monodromy A; AR then applies, the two standard one/two cancellations and
+  transported upper handles preserve Sigma_A^0, and the verified static collar
+  supplies the marked P0 endpoint data without B44.
+- Boundary: product rectangle pairing, 227 simultaneous leftovers, the
+  coefficient shadow, beta/psi descent and hemisphere maps remain C/S. They
+  are not consequences of P0.

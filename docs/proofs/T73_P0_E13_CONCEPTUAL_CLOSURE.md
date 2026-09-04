@@ -146,3 +146,103 @@ insertion would force B44 to be braid-trivial; non-boundary-fixed point-push
 transports the endpoint data and conjugates the categorical action.
 Therefore this route closes only unlabelled P0/E13 existence, not the labelled
 P0 required for C, S, or the value 2624.
+
+## 7. Revision: the braid may be auxiliary detector data rather than attaching-link data
+
+The preceding obstruction applies if B44 is asserted to be inserted into, or
+read as an uncompensated coordinate change of, the AR attaching link. It does
+not prevent a different and correctly typed construction: leave the attaching
+link unchanged and choose B44 as an auxiliary tangle operator used to define a
+linear detector in C.
+
+This distinction is decisive. A functional used to prove that a quotient
+class is nonzero need not be canonical and need not be preserved by every
+diffeomorphism. It only has to be a well-defined linear functional on the
+actual quotient under consideration. Replacing W by its inverse and obtaining
+a different scalar therefore shows that W is a detector choice, not that the
+choice is illegal.
+
+### Revised P0 obligation
+
+P0 needs only the following marked local data in addition to the unlabelled
+Johnson--AR presentation:
+
+1. a product collar B = D2 times I for the selected y one-handle after the
+   genuine cancellations;
+2. the 42 passages of m2 and two passages of r_xy through this collar, made
+   into 44 disjoint vertical product arcs by the collar coordinates;
+3. their orientations, product framings, owner labels, and a fixed ordering
+   of the 88 cabled endpoints.
+
+No nontrivial braid is part of P0. Any finite family of transverse passages
+through a one-handle has such a product chart after shrinking the belt-sphere
+collar and choosing distinct points in D2. The Johnson edge-path word supplies
+the signed passage count. This is compatible with the unlabelled construction
+above and does not change Sigma_A^0 or its upper handles.
+
+### Revised C obligation
+
+Fix the standard 44-punctured disk identified by P0 and choose the six-sweep
+pure braid W = B44 as an auxiliary morphism of that marked tangle category.
+After oriented doubling it gives an endomorphism rho_h(W) of E88. If the
+coefficient shadow has type
+
+    Sh_h : qTr(C; M_R) -> Hom(E86,E88),
+
+then
+
+    D_h = ell_h composed with (rho_h(W)-I) composed with Sh_h
+
+is type-correct: rho_h(W) acts by postcomposition on the E88 output. The
+selected class v_T is defined independently from the product rectangles and
+227 circle factors. W is a parameter of the covector D_h, not a component of
+v_T, the attaching link, or the four-manifold.
+
+The burden moved to C is substantial. One must prove:
+
+1. Sh_h is the actual MWW coefficient-shadow map in the fixed P0 endpoint
+   marking;
+2. W has the stated oriented 88-strand action in exactly that marking;
+3. D_h is divisible by h cubed and its reduction D3 is independent of lift;
+4. D3 annihilates every beta and psi relation at every cable level;
+5. the same detector descends through the actual three-handle maps.
+
+These are categorical and quotient-descent obligations. They are not P0 or
+E13 obligations. The present C audit shows that they remain open.
+
+### No conflict with the relative-boundary obstruction
+
+The auxiliary braid is not claimed to arise from a boundary-fixed ambient
+isotopy of the vertical attaching strands. It is simply a chosen tangle
+morphism in the standard marked ball, or equivalently the trace surface of a
+chosen point-push in B times I. Therefore its nontrivial braid class is
+allowed. Nor is it an ambient coordinate change, so there is no requirement
+to conjugate it away together with the outside attaching link.
+
+The two r_xy passages cause no type mismatch in this formulation. P0 supplies
+all 44 marked punctures regardless of owner, and the auxiliary point-push acts
+on the punctured disk containing all of them. Postcomposing monodromy is no
+longer being used to create their motion.
+
+## 8. Revised theorem
+
+### Theorem
+
+Assume the Johnson mapping-class construction, even relative straightening,
+AR handle construction, standard one/two cancellations and transported upper
+handles described above. Then P0/E13 establish Sigma_A^0 together with a
+standard marked detector collar containing 42 m2 and two r_xy vertical
+passages. They need not establish the six-sweep braid.
+
+Let W be the separately chosen six-sweep pure braid in that marked collar.
+Then W is legitimate auxiliary C data, and the formula
+
+    D_h = ell_h (rho_h(W)-I) Sh_h
+
+is well typed whenever Sh_h has the displayed coefficient-shadow type.
+Consequently the value 2624 may be used to prove nonvanishing if, and only if,
+the whole-source beta/psi and three-handle descent statements are proved.
+
+Thus moving W out of P0 removes the point-push obstruction to P0/E13. It does
+not close the paper: it isolates the remaining failure in C/S rather than in
+the ambient identification of the four-manifold.

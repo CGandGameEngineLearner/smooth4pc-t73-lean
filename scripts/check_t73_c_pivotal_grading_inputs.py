@@ -21,6 +21,7 @@ failure mode remains closed.
 from __future__ import annotations
 
 import argparse
+import importlib.util
 import json
 from pathlib import Path
 from typing import Any
@@ -30,6 +31,7 @@ ROOT = Path(__file__).resolve().parents[1]
 INPUT = ROOT / "data" / "T73_C_PIVOTAL_GRADING_INPUT.json"
 SCHEMA = ROOT / "data" / "T73_C_PIVOTAL_GRADING_INPUT.schema.json"
 ENDPOINTS = ROOT / "geometry" / "t73_actual_cut_tangle.json"
+MARKED_COLLAR = ROOT / "geometry" / "t73_p0_marked_vertical_collar.json"
 PUBLIC = ROOT / "data" / "T73_DELTA3_PUBLIC_INPUT.json"
 REPORT = ROOT / "audit" / "t73_c_pivotal_grading_report.json"
 ENDPOINT_BUILDER = ROOT / "scripts" / "build_t73_endpoint_transport.py"
@@ -65,6 +67,7 @@ REQUIRED_ENDPOINT_FIELDS = {
     "nesting_depth",
     "defect_basis_state",
     "duality_atoms",
+    "highest_duality_atoms",
 }
 
 ALLOWED_VARIANCE = {"V", "V_dual"}
@@ -84,7 +87,30 @@ ALLOWED_ATOMS = {
     # and a source locator before one of these is accepted.
     "blanchet_detachment_positive",
     "blanchet_detachment_negative",
+    "blanchet_blue_product_no_binding",
 }
+
+ATOM_COEFFICIENTS = {
+    "V_v1_to_v_plus": (1, 0),
+    "V_vminus1_to_v_minus": (1, 0),
+    "Vdual_v1dual_to_v_minus": (1, 0),
+    "Vdual_vminus1dual_to_qminus1_v_plus": (1, -1),
+    "coev_vplus_vminus_coeff_1": (1, 0),
+    "coev_vminus_vplus_coeff_qminus1": (1, -1),
+    "ev_vplus_vminus_coeff_q": (1, 1),
+    "ev_vminus_vplus_coeff_1": (1, 0),
+    "blanchet_blue_product_no_binding": (1, 0),
+}
+
+
+def load_script(name: str):
+    path = ROOT / "scripts" / f"{name}.py"
+    spec = importlib.util.spec_from_file_location(name, path)
+    if spec is None or spec.loader is None:
+        raise RuntimeError(f"cannot load {path}")
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
 
 
 def detector_writhe() -> int:
@@ -217,6 +243,121 @@ def legacy_assessment(diagnostics: list[dict[str, Any]]) -> dict[str, Any]:
     }
 
 
+def _atom_coefficient(atoms: list[dict[str, Any]]) -> tuple[int, int]:
+    sign = 1
+    power = 0
+    for atom in atoms:
+        kind = atom["kind"]
+        if kind not in ATOM_COEFFICIENTS:
+            raise ValueError(f"no derivation rule for atom {kind}")
+        atom_sign, atom_power = ATOM_COEFFICIENTS[kind]
+        sign *= atom_sign
+        power += atom_power
+    return sign, power
+
+
+def derive_standard_coefficients(payload: dict[str, Any], report: dict[str, Any]) -> None:
+    """Derive endpoint monomials and the selected A.6 cup/cap.
+
+    The normalization sends the mixed highest tensor to the all-V highest
+    tensor with coefficient one.  Hence it contributes +1 in q-degree for
+    each V-dual factor, cancelling the q^-1 in every highest V-dual A.4 atom.
+    """
+
+    charts = payload["endpoint_duality_charts"]
+    dual_count = sum(chart["variance"] == "V_dual" for chart in charts)
+    high = {chart["physical_endpoint_id"]: _atom_coefficient(chart["highest_duality_atoms"]) for chart in charts}
+    defect = {chart["physical_endpoint_id"]: _atom_coefficient(chart["duality_atoms"]) for chart in charts}
+    high_total_sign = 1
+    high_total_power = 0
+    for coefficient in high.values():
+        high_total_sign *= coefficient[0]
+        high_total_power += coefficient[1]
+    if high_total_sign != 1 or high_total_power != -dual_count:
+        raise ValueError("highest mixed tensor does not have the BPW A.4 coefficient q^-#dual")
+
+    actual = json.loads(ENDPOINTS.read_text(encoding="utf-8"))
+    actual_by_id = {item["physical_endpoint_id"]: item for item in actual["framed_endpoints"]}
+    positions = json.loads(
+        (ROOT / "data" / "B88_POSITION_TO_PASSAGE_TABLE.json").read_text(encoding="utf-8")
+    )["positions"]
+    public_by_key = {
+        (item["owner"], int(item["wicket"]), item["sign"]): int(item["index"])
+        for item in positions
+    }
+    coefficients = []
+    by_id: dict[str, dict[str, int]] = {}
+    for chart in charts:
+        endpoint_id = chart["physical_endpoint_id"]
+        actual_endpoint = actual_by_id[endpoint_id]
+        high_sign, high_power = high[endpoint_id]
+        defect_sign, defect_power = defect[endpoint_id]
+        sign = high_total_sign * high_sign * defect_sign
+        power = dual_count + high_total_power - high_power + defect_power
+        public_position = public_by_key[
+            (
+                actual_endpoint["owner"],
+                int(actual_endpoint["wicket"]),
+                actual_endpoint["sign"],
+            )
+        ]
+        row = {
+            "physical_endpoint_id": endpoint_id,
+            "tensor_position": int(chart["tensor_position"]),
+            "public_position": public_position,
+            "sign": sign,
+            "q_power": power,
+        }
+        coefficients.append(row)
+        by_id[endpoint_id] = row
+
+    def derive_morphism(name: str, inverse_chart: bool) -> list[dict[str, int]]:
+        item = payload["selected_cup_cap"][name]
+        result = []
+        for term in item["terms"]:
+            endpoint_id = term["defect_endpoint_id"]
+            chart = by_id[endpoint_id]
+            atom_sign, atom_power = ATOM_COEFFICIENTS[term["atom"]]
+            result.append(
+                {
+                    "public_position": chart["public_position"],
+                    "sign": chart["sign"] * atom_sign,
+                    "q_power": atom_power + (-chart["q_power"] if inverse_chart else chart["q_power"]),
+                }
+            )
+        result.sort(key=lambda row: row["public_position"])
+        return result
+
+    cup = derive_morphism("cup", inverse_chart=False)
+    cap = derive_morphism("cap", inverse_chart=True)
+
+    recompute = load_script("recompute_t73_delta3")
+    public = json.loads(PUBLIC.read_text(encoding="utf-8"))
+    b44, _ = recompute.build_oriented_b44(public)
+    b88 = recompute.cable_word(b44)
+    # W-I starts in order three on the whole endpoint module, so positive
+    # q-powers in cup/cap cannot alter h^3.  Only their constant signs enter.
+    u_terms = [[row["public_position"], row["sign"]] for row in cup]
+    ell_terms = [[row["public_position"], row["sign"]] for row in cap]
+    vector = recompute.sparse_vector(88, 6, u_terms)
+    delta = recompute.delta_apply(b88, vector)
+    epsilon_scalar = recompute.apply_covector(delta, ell_terms)
+    h_scalar = recompute.substitute_epsilon_with_h(epsilon_scalar, 6)
+
+    report["standard_convention"] = {
+        "dual_factor_count": dual_count,
+        "highest_tensor_raw_q_power": high_total_power,
+        "highest_tensor_normalization_q_power": dual_count,
+        "endpoint_coefficients": sorted(coefficients, key=lambda row: row["tensor_position"]),
+        "derived_public_cup": cup,
+        "derived_public_cap": cap,
+        "h3_depends_only_on_constant_terms": True,
+        "epsilon_degrees_0_to_6": epsilon_scalar,
+        "h_degrees_0_to_6": h_scalar,
+        "derived_h3": h_scalar[3],
+    }
+
+
 def base_report() -> dict[str, Any]:
     actual = json.loads(ENDPOINTS.read_text(encoding="utf-8"))
     endpoints = actual.get("framed_endpoints", [])
@@ -254,6 +395,13 @@ def base_report() -> dict[str, Any]:
 def validate_input(payload: dict[str, Any], report: dict[str, Any]) -> None:
     if payload.get("schema") != "t73_c_pivotal_grading_input/v1":
         report["missing"].append("root.schema=t73_c_pivotal_grading_input/v1")
+
+    collar = json.loads(MARKED_COLLAR.read_text(encoding="utf-8"))
+    standard_collar = payload.get("standard_collar")
+    if not isinstance(standard_collar, dict) or standard_collar.get(
+        "p0_marked_vertical_collar_sha256"
+    ) != collar.get("sha256"):
+        report["missing"].append("standard_collar.p0_marked_vertical_collar_sha256")
 
     charts = payload.get("endpoint_duality_charts")
     if not isinstance(charts, list) or len(charts) != 88:
@@ -312,27 +460,34 @@ def validate_input(payload: dict[str, Any], report: dict[str, Any]) -> None:
             report["missing"].append(
                 f"endpoint_duality_charts[{index}].defect_basis_state=highest|defect"
             )
-        atoms = chart.get("duality_atoms")
-        if not isinstance(atoms, list) or not atoms:
-            report["missing"].append(f"endpoint_duality_charts[{index}].duality_atoms")
-        else:
+        for atom_field in ("duality_atoms", "highest_duality_atoms"):
+            atoms = chart.get(atom_field)
+            if not isinstance(atoms, list) or not atoms:
+                report["missing"].append(f"endpoint_duality_charts[{index}].{atom_field}")
+                continue
             for atom_index, atom in enumerate(atoms):
                 if not isinstance(atom, dict) or atom.get("kind") not in ALLOWED_ATOMS:
                     report["missing"].append(
-                        f"endpoint_duality_charts[{index}].duality_atoms[{atom_index}].kind"
+                        f"endpoint_duality_charts[{index}].{atom_field}[{atom_index}].kind"
                     )
                     continue
                 if not atom.get("source_locator"):
                     report["missing"].append(
-                        f"endpoint_duality_charts[{index}].duality_atoms[{atom_index}].source_locator"
+                        f"endpoint_duality_charts[{index}].{atom_field}[{atom_index}].source_locator"
                     )
                 if atom["kind"].startswith("blanchet_") and not atom.get("local_normal"):
                     report["missing"].append(
-                        f"endpoint_duality_charts[{index}].duality_atoms[{atom_index}].local_normal"
+                        f"endpoint_duality_charts[{index}].{atom_field}[{atom_index}].local_normal"
                     )
 
     if charts and seen_positions != set(range(88)):
         report["missing"].append("tensor_position permutation 0..87")
+    expected_collar_ids = {
+        f"actual:{item['owner']}:w{item['wicket']}:{item['side']}:{item['source_id']}"
+        for item in collar["doubled_endpoint_order"]
+    }
+    if charts and seen_ids != expected_collar_ids:
+        report["missing"].append("endpoint ids do not equal the P0 marked collar")
 
     cup_cap = payload.get("selected_cup_cap")
     if not isinstance(cup_cap, dict):
@@ -346,6 +501,19 @@ def validate_input(payload: dict[str, Any], report: dict[str, Any]) -> None:
             for field in ("ordered_feet", "bpw_A6_term", "movie_or_web_locator"):
                 if not item.get(field):
                     report["missing"].append(f"selected_cup_cap.{name}.{field}")
+            terms = item.get("terms")
+            if not isinstance(terms, list) or len(terms) != 2:
+                report["missing"].append(f"selected_cup_cap.{name}.terms[2]")
+            else:
+                for term_index, term in enumerate(terms):
+                    if term.get("atom") not in ATOM_COEFFICIENTS:
+                        report["missing"].append(
+                            f"selected_cup_cap.{name}.terms[{term_index}].atom"
+                        )
+                    if not term.get("defect_endpoint_id"):
+                        report["missing"].append(
+                            f"selected_cup_cap.{name}.terms[{term_index}].defect_endpoint_id"
+                        )
 
     diagrams = payload.get("grading_diagrams")
     if not isinstance(diagrams, list):
@@ -380,6 +548,8 @@ def validate_input(payload: dict[str, Any], report: dict[str, Any]) -> None:
         item.startswith("endpoint_duality_charts")
         or item.startswith("selected_cup_cap")
         or item.startswith("tensor_position")
+        or item.startswith("standard_collar")
+        or item.startswith("endpoint ids")
         for item in report["missing"]
     )
     report["degree_494_certified"] = (
@@ -389,8 +559,16 @@ def validate_input(payload: dict[str, Any], report: dict[str, Any]) -> None:
     )
     report["status"] = (
         "CERTIFIED" if report["pivotal_coefficients_certified"] and report["degree_494_certified"]
+        else "PIVOTAL_CERTIFIED_DEGREE_OPEN" if report["pivotal_coefficients_certified"]
         else "OPEN"
     )
+    if report["pivotal_coefficients_certified"]:
+        derive_standard_coefficients(payload, report)
+        if report["standard_convention"]["derived_h3"] != 2624:
+            report["pivotal_coefficients_certified"] = False
+            report["degree_494_certified"] = False
+            report["status"] = "OPEN"
+            report["missing"].append("standard convention does not reproduce h3=2624")
 
 
 def generate() -> dict[str, Any]:

@@ -245,9 +245,10 @@ embedded detector ball and the stated cable attachments.
 \begin{remark}[Computational support for P0]
 Sections~\ref{sec:johnson-presentation} and~\ref{sec:p0-conclusion} construct
 the Heegaard-preserving $\psi_A$, actual framed AR link, both Kirby
-cancellations, 44-channel detector and geometry-derived braid.
-Proposition~\ref{thm:P0discharge} records the precise finite certificate;
-the ambient interpretation is the P0 hypothesis.
+cancellations, and the static marked 44-channel product collar.
+Proposition~\ref{prop:P0finite} records the finite certificate, and
+Theorem~\ref{thm:P0discharge} supplies its paper-level ambient interpretation.
+The separately chosen six-sweep braid is auxiliary C data.
 \end{remark}
 
 \begin{hypothesis}[Coefficient comparison, C]\label{hyp:P1}
@@ -305,9 +306,9 @@ $-44+227+315-4=494$ are computed directly.  The isomorphisms
 $\mathcal S^2_0(B^4)\cong\mathcal S^2_0(S^4)$ and
 $\mathcal S^2_0(S^4)\cong\mathbb Z$ concentrated in bidegree $(0,0)$ are
 \cite[Proposition~3.4 and Corollary~3.5]{ManolescuWalkerWedrich2023}.
-The identification $X_J\cong\Sigma_A^0$ is part of
-Hypothesis~\ref{hyp:P0}; Proposition~\ref{thm:P0discharge} records only its
-finite supporting certificate.
+The identification $X_J\cong\Sigma_A^0$ is supplied by
+Theorem~\ref{thm:P0discharge}; Proposition~\ref{prop:P0finite} records its
+finite supporting data.
 Independent replay commands are listed in
 Appendix~\ref{sec:reproducibility-extended}.
 \end{remark}
@@ -433,11 +434,14 @@ pure, have returned endpoints and product normals, and have writhe zero.  The
 script \texttt{audit\_t73\_point\_push\_gauge.py} replays both calculations.
 \end{proof}
 
-Consequently the six-sweep loop must be part of a geometrically anchored
-relative cobordism datum.  To use it in C one must prove that every allowed
-change of the actual handle presentation transports the operator, source and
-detector row simultaneously as a conjugation.  Static endpoint and framing
-data alone do not select the loop.
+Consequently the six-sweep loop is fixed as an auxiliary oriented tangle
+morphism in C; it is not claimed to be selected canonically by the static P0
+geometry.  For a nonvanishing argument the detector functional itself need
+not be invariant under replacing $W$ by a different loop.  What must be proved
+is instead that, for this fixed $W$, the actual statewise MWW comparison maps
+intertwine every beta move by simultaneous conjugation and every psi move by
+the required local Frobenius factorization.  Static endpoint and framing data
+alone do not prove those identities.
 
 Thus the finite recomputation and the categorical comparison have distinct
 roles: the former supplies the integer, while the latter makes it a
@@ -1205,13 +1209,28 @@ attaching maps, gives a complete handle decomposition of $\Sigma_A^0$.
 \begin{proof}
 Each Johnson generator has an orientation-preserving representative preserving
 the genus-three splitting \cite{Johnson2011}; their product induces the
-verified product of elementary transvections, namely $A$.  Choose the common
-spine vertex inside one handlebody.  An isotopy supported in a small ball in
-that handlebody first fixes the vertex and then, by local straightening and
-the Alexander trick, makes $\psi$ the identity on a smaller ball without
-changing its mapping class or the splitting.  The two homotopy classes of
-oriented normal-frame paths differ by the generator of $\pi_1(SO(3))$; choose
-the even class, so section surgery uses $\varepsilon=0$.
+verified product of elementary transvections, namely $A$.  Here the selected
+side at each factor is one of Johnson's two actual square-slide
+representatives of that transvection, not merely an automorphism of a free
+group.  Both representatives preserve the splitting and fix the common spine
+vertex $q$.
+
+Choose an ambient isotopy from the product representative to the linear map
+$f_A$.  If the track of $q$ under a preliminary isotopy is $\gamma_s$, compose
+at time $s$ with translation by $q-\gamma_s$; the resulting isotopy fixes
+$q$ and has the same endpoints.  Its normal derivative is a path in
+$GL^+(3,\mathbb R)$.  Local straightening at the two endpoints has two possible
+relative homotopy classes, differing by the generator of $\pi_1(SO(3))$.
+Choose the endpoint straightening for which the resulting derivative loop is
+null-homotopic.  Parametric local straightening and isotopy extension then
+modify the entire point-fixed isotopy, relative its endpoints, to be
+pointwise constant on a smaller ball $B_q$ at every time.  Thus the final
+$\psi$ is identity on $B_q$ and is isotopic to the standard straightened
+$f_A$ \emph{relative to $B_q$}.  The induced mapping-torus diffeomorphism is
+the identity on $B_q\times S^1$ and therefore carries the product normal
+framing exactly to the product normal framing.  This, rather than the matrix
+or an untracked choice of local coordinates, is the assertion
+$\varepsilon=0$.
 
 Aitchison--Rubinstein then supplies the complete embedded framed handle
 decomposition for this representative.  Lemma~\ref{lem:P0b} performs genuine
@@ -1221,21 +1240,66 @@ isotopic to $f_A$ relative to the section neighborhood, that manifold is
 $\Sigma_A^0$.
 \end{proof}
 
-Proposition~\ref{prop:unlabelled-P0} does not yet prove the marked part of P0.
-A nontrivial pure braid cannot be inserted into the vertical detector tangle
-by an ambient isotopy fixed on the entire detector-cylinder boundary.  If the
-point-push instead changes the top marking, the outside closure, source vector,
-detector row and endpoint actions must all be transported.  Their simultaneous
-transport is a coordinate conjugation, so the old fixed row and vector cannot
-be retained with only the new $B_{44}$ operator.  The two selected $r_{xy}$
-passages also do not arise merely by postcomposing the monodromy.  Thus the
-unlabelled realization and the independently computed marked detector require
-an additional relative-cobordism identification, which remains the marked P0
-hypothesis.
+\begin{lemma}[Standard marked detector collar]
+\label{lem:marked-detector-collar}
+After the two cancellations, the selected $y$-handle contains an embedded
+product ball $B=D^2\times I$ meeting $m_2\cup r_{xy}$ in $42+2$ disjoint
+vertical product arcs.  Their owner labels, orientations, product framings and
+the induced ordering of the $88$ doubled endpoints may be fixed independently
+of any point-push braid.
+\end{lemma}
+
+\begin{proof}
+In the one-handle chart, every transverse passage has a product neighborhood
+$D^2_\alpha\times I$ and the finitely many passage points in the belt disk are
+distinct.  The number $42+2$ is not inferred from abelianization.  At every
+factor use Johnson's embedded square-slide representative and carry the
+coordinate spine by isotopy extension.  Tracking the oriented edge paths
+through these $93$ graph slides gives the committed reduced $m_2$ path with
+exactly $42$ occurrences of the $y$-edge; placing repeated occurrences in
+disjoint parallel lanes gives an embedded representative with exactly those
+geometric belt passages.  The standard dual-cell boundary
+$r_{xy}=[z,y]$ has its two oppositely oriented $y$-passages.  Thus the
+source-bound word replay is used only after the geometric square-slide model
+has supplied the lanes; equality of a free-group word alone would not suffice.
+
+Shrink the passage neighborhoods and choose one disk containing exactly these
+42 labelled $m_2$ points and two labelled $r_{xy}$ points.  Isotopy in the
+handle chart straightens the corresponding arcs simultaneously to
+$\{p_1,\ldots,p_{44}\}\times I$.  The AR framing annuli and the product
+cancellation bands restrict to nonzero normal vector fields on these arcs;
+contractibility of each arc makes them homotopic to the constant product
+normal, with the recorded orientations retained.  Ordering the distinct
+points and then the negative/positive cable copy fixes the 88 endpoint marking.
+The source-bound event replay verifies the passage counts and owner IDs.  A
+fully explicit standardization is recorded independently of the braid: for
+$w=1,\ldots,44$, put
+\[
+c_w=(w-1)\bmod 11,\qquad r_w=\lfloor(w-1)/11\rfloor,\qquad
+p_w=\left(\frac{c_w-5}{12},\frac{2r_w-3}{16}\right).
+\]
+These $11\times4$ rational grid points and their two translates
+$p_w^\pm=p_w\pm(0,1/1000)$ lie strictly inside $D^2$ and are pairwise
+distinct.  The centre arcs are $p_w\times[-1,1]$, the constant product normal
+is $(0,1/1000,0)$, and two triangles span the framing rectangle to the
+positive push-off.  The verifier
+\texttt{verify\_t73\_p0\_marked\_vertical\_collar.py} reconstructs the
+$42+2$ source binding and the 88-point order and rejects owner, orientation,
+normal, collision, endpoint-order, and braid-in-P0 mutations.
+\end{proof}
+
+The public braid $B_{44}$ is not part of the attaching link or of P0.  It is a
+separately chosen endomorphism in the marked tangle category used to define the
+C detector.  This typing avoids the invalid operation of inserting a
+nontrivial braid by a boundary-fixed ambient isotopy.  Noncanonicity is allowed:
+a linear functional used to witness a nonzero quotient class need only be
+well-defined for its fixed choice, not independent of every other possible
+functional.  All naturality and quotient-descent obligations for that choice
+belong to C and S.
 
 \subsection{P0 conclusion}\label{sec:p0-conclusion}
 
-\begin{proposition}[Finite P0 certificate for the Johnson replacement]\label{thm:P0discharge}
+\begin{proposition}[Finite P0 certificate for the Johnson replacement]\label{prop:P0finite}
 The committed verifier reconstructs the $93$-factor matrix product, the
 labelled finite PL hierarchy, the six and $1513$ recorded band moves, the
 $44$-channel cut, and the $11340$-letter terminal braid comparison.
@@ -1247,6 +1311,23 @@ committed hash and incidence data by
 \texttt{certify\_t73\_p0\_johnson.py}.  The geometric meaning of this list is
 exactly the additional ambient assertion in Hypothesis~\ref{hyp:P0}; the
 proposition does not infer that assertion from the status strings.
+\end{proof}
+
+\begin{theorem}[P0 for the Johnson--AR presentation]\label{thm:P0discharge}
+Hypothesis~\ref{hyp:P0} holds for the handle presentation of
+Proposition~\ref{prop:unlabelled-P0}, with the detector collar of
+Lemma~\ref{lem:marked-detector-collar}.  The auxiliary braid $B_{44}$ is C
+data and is not asserted to be an ambient-isotopy modification of the
+attaching link.
+\end{theorem}
+
+\begin{proof}
+Proposition~\ref{prop:unlabelled-P0} gives the complete labelled and framed AR
+presentation of $\Sigma_A^0$, Lemma~\ref{lem:P0b} gives the two genuine
+product cancellations, and Lemma~\ref{lem:marked-detector-collar} supplies the
+embedded ball, owner binding, endpoint marking and product cable framings.
+These are precisely the geometric assertions of Hypothesis~\ref{hyp:P0} after
+the point-push operator is correctly assigned to C.
 \end{proof}
 
 \section{The coefficient-trace comparison}\label{sec:c-comparison}
@@ -1371,19 +1452,29 @@ v_T=H_{T_1,T_1}^{-1}
   (\operatorname{Id}_U\otimes X^{\otimes227}).
 \]
 The circle counits give
-$\operatorname{Sh}_h([v_T])=u_h$.  Its absolute degree is
+$\operatorname{Sh}_h([v_T])=u_h$.  The intrinsic framed-$\KhR_2$ ledger is
 \[
 -44+227+315-4=494.
 \]
 
-Before any public index is assigned, the 44 actual product rectangles give
+Before any public index is assigned, the 44 product rectangles give
 88 physical endpoints: the positive side records the actual $y$ source and
 the negative side its paired $z$ source.  Boundary orientation orders the two
 $r_{xy}$ wickets forward and the 42 $m_2$ wickets in reverse, with negative
 then positive side in each rectangle.  Only then does the public position
-table attach Burau indices.  The resulting monomial map $P(q)$ and its inverse
-are recomputed from these physical identifiers; all pivotal coefficients are
-$+q^0$, and sign, order, and pivotal mutations fail.
+table attaches Burau indices.  We use the freely chosen standard collar
+convention of Lemma~\ref{lem:marked-detector-collar}: move the two selected
+cup feet to adjacent tensor positions, orient every doubled endpoint by the
+product of its base-passage orientation and cable-copy sign, and assign $V$
+to an upward point and $V^*$ to a downward point.  This gives $44$ factors of
+each variance.  BPW (A.4) then derives, rather than assumes, the pivotal
+monomials: in the normalized one-defect basis their signs are positive and
+their powers are $0$ or $1$.  BPW (A.6) gives the selected cup powers
+$(-1,+1)$ and constant positive cap terms.  The builder
+\texttt{build\_t73\_c\_pivotal\_grading\_input.py} records the ordered
+duality atoms, tangents, coorientations and product-foam normals for all 88
+endpoints; the fail-closed checker verifies them and rejects the legacy table
+of 88 asserted $+q^0$ coefficients.
 
 The normalized checked R-matrix on adjacent one-defect basis vectors is
 \[
@@ -1393,18 +1484,25 @@ After the position basis change and $t=q^{-2}$, it is the public positive
 Burau block; the negative block is its inverse.  The physical cable has mixed
 orientations.  BPW's oriented-cabling formula identifies it with the
 all-positive model up to a writhe-dependent grading shift and pivotal basis
-maps.  The complete public word has writhe zero, so the global shift
-vanishes.  Any degree-zero permutation or pivotal chart $P$ transports the
+maps.  The complete public word has writhe zero, so its own conversion shift
+vanishes.  Any simultaneous permutation or pivotal chart $P$ transports the
 operator, cup and cap simultaneously:
 \[
 W\mapsto PWP^{-1},\qquad u\mapsto Pu,\qquad
 \ell\mapsto\ell P^{-1}.
 \]
 The matrix coefficient is unchanged; we choose the public endpoint labels
-after this common transport.  Unresolved $\pm$ formulae for the constant
-terms are not used.  In the transported collar coordinates of
-Section~\ref{sec:exact-algebra} the constant pairing is the definite
-identity recorded there, not a sign ansatz.
+after this common transport.  Since $\rho_h(W)-I=O(h^3)$, positive powers in
+the pivotal cup, cap and basis maps affect only order at least four.  Direct
+replay with the derived constant terms still gives
+$[\varepsilon^3]=-328$ and $[h^3]=2624$.
+
+This certifies the standard pivotal convention, not yet the word ``absolute''
+in the degree statement above.  The coefficient closure, Hattori target,
+selected cabled state and MWW--BHPW comparison diagrams still need one common
+writhe/framing ledger using the Manolescu--Neithalath erratum.  Until that
+ledger is supplied, $494$ is the intrinsic formal sum and its absolute
+comparison remains part of Hypothesis~\ref{hyp:P1}.
 
 Over $\Q[[h]]$ define
 \[
@@ -1743,6 +1841,39 @@ Johnson factors gives $\wedge^2A=A^{-T}$, factor by factor, and the
 mapping-torus boundary is $I-A^{-T}$.  The separate surface-transport
 verifier replays the two Kirby collars and rejects a missing band.
 
+\begin{proposition}[Typed $\Sigma_-$ movie prefix]
+\label{prop:sigma-minus-typed}
+For the three transported sphere words, the finite source/target types of the
+MWW punctured-sphere maps have core counts $12578,1824,409$.  On a cable
+state, their owner shifts, endpoint permutations, and local Frobenius event
+blocks consist of no births, $b_j-1$ coproduct saddles, and $b_j$ restored-core
+caps.  Pair addition commutes with the induced cable-state translation, and
+the local composite is
+\[
+\epsilon^{\otimes b_j}\Delta^{b_j-1}(1)=0,\qquad
+\epsilon^{\otimes b_j}\Delta^{b_j-1}(X)=1.
+\]
+\end{proposition}
+
+\begin{proof}
+The parameterized builder \texttt{build\_t73\_sigma\_minus\_typed.py}
+recomputes every signed owner position from the three boundary words, stably
+sorts them into owner/sign blocks, and records the permutation and inverse.
+It adds the resulting negative and positive owner counts to symbolic cable
+states and checks directly that this translation commutes with each beta type
+and with addition of every psi pair.  The event counts follow from a connected
+genus-zero surface with $b_j$ restored core boundaries.  Finally
+$\Delta^{b-1}(X)=X^{\otimes b}$, whereas every summand of
+$\Delta^{b-1}(1)$ contains a factor $1$; applying
+$\epsilon(1)=0$, $\epsilon(X)=1$ gives the displayed identities.  Owner-word
+and invalid-owner mutations are rejected.
+\end{proof}
+
+Proposition~\ref{prop:sigma-minus-typed} constructs the complete finite type
+and local-TQFT prefix.  It deliberately does not identify the actual shadow of
+each mixed braid, pivotal, saddle and cap event; that naturality is the
+remaining hypothesis in Lemma~\ref{lem:Sendpoint} below.
+
 MWW's intrinsic reformulation of a $3$-handle quotient uses the local module
 action of $\mathcal S^2_0(S^2\times D^2)$.  At $N=2$, let $A_0$ denote the
 essential sphere with one dot and $A_1$ the undotted sphere.  The quotient
@@ -1795,8 +1926,13 @@ spheres miss.  The six equations (31) are then Lemma~\ref{lem:Sendpoint}.
 
 \subsection{The essential-sphere endpoint comparison}
 
-\begin{lemma}[Endpoint factorization for a standard sphere]\label{lem:Sendpoint}
-For every \(j\), every cable state and every source element \(v\), the
+\begin{lemma}[Endpoint factorization from a statewise shadow]\label{lem:Sendpoint}
+Assume that the coefficient shadow of Hypothesis~\ref{hyp:P1} is defined on
+every elementary event of the typed $\Sigma_-$ movies of
+Proposition~\ref{prop:sigma-minus-typed}, is symmetric-monoidal modulo $h$,
+and is natural for every beta and psi generator.  Assume further that each
+mixed endpoint map is $P(I+O(h))$ and that the detector row uses the same
+permutation and pivotal convention.  Then, for every \(j\), every cable state and every source element \(v\), the
 constant term of the actual endpoint image of
 \(\mu_{A_j}(v\otimes a)\) is the old detector image of \(v\) tensored with
 the rank-two TQFT map of the punctured standard sphere.  Consequently the
@@ -1811,11 +1947,11 @@ Make \(A_j\) transverse to the two-handle cocores, and let \(b_j\) be the
 number of core disks.  MWW's proof of Theorem~3.10 represents the
 \(\Delta^-\) hemisphere, before the core disks are restored, by the connected
 genus-zero surface obtained from \(A_j\) after deleting those disks and the
-\(\Delta^+\) disk.  Choose a generic movie after cutting the one-handles.
-Because \(A_j\) and the detector sheet are disjoint, every critical point of
-the movie belongs entirely to one of the two surfaces.  Mixed events are
-therefore only invertible Reidemeister/pivotal moves, represented at the
-endpoint by cable braids; there are no mixed births, saddles or deaths.
+\(\Delta^+\) disk.  Choose the typed generic movie of
+Proposition~\ref{prop:sigma-minus-typed} after cutting the one-handles.  Its
+intrinsic sphere events are the recorded coproduct saddles and restored-core
+caps; interleaving with the old endpoint factor contributes the mixed braid
+and pivotal maps covered by the hypotheses.
 
 At \(q=1\), Lemma~\ref{lem:C2} identifies every mixed braid with the
 symmetry of the tensor category.  Naturality of births, saddles and deaths
@@ -1846,9 +1982,9 @@ Therefore the constant calculation (32) is the candidate calculation seen by
 the divided cubic row.  For the three nonzero values
 $b_j=12578,1824,409$, the finite Frobenius movies have respectively
 $b_j-1$ coproduct saddles and $b_j$ counits and reproduce (32).  Thus the
-geometric $\partial W_2$ binding is present; the theorem below remains at the
-stated claim boundary until the complete MWW map is packaged in the global
-interface.
+finite type and Frobenius calculation are present.  The statewise shadow
+naturality assumed in the statement is the remaining candidate-specific map;
+it is not inferred from the JSON movie labels.
 \end{proof}
 
 The endpoint exchange square is the above iterated coproduct--counit model of
@@ -1914,11 +2050,12 @@ cable summand.
 
 MWW Theorem~3.10 identifies the iterated quotient with the module after the
 three-handles, and Proposition~3.4 gives the four-handle isomorphism
-\cite{ManolescuWalkerWedrich2023}.  Propositions~\ref{thm:P0discharge},
-\ref{thm:Cdischarge}, and~\ref{thm:Sdischarge} establish the finite
-certificate statements supporting Hypotheses~\ref{hyp:P0}--\ref{hyp:P2};
-they do not by themselves prove the ambient and chain-level identifications
-listed in Section~\ref{sec:certificate-scope}.  Assuming those identifications,
+\cite{ManolescuWalkerWedrich2023}.  Theorem~\ref{thm:P0discharge} proves P0,
+while Propositions~\ref{thm:Cdischarge} and~\ref{thm:Sdischarge} establish the
+finite certificate statements supporting C and S; they do not by themselves
+prove the chain-level identifications listed in
+Section~\ref{sec:certificate-scope}.  Assuming C, S and the remaining grading
+identifications,
 for the Johnson
 replacement four-handle picture $X_J$, three-handle attachment along each
 belt sphere restores the boundary $S^3$, a PL $4$-ball is attached, and the
@@ -1969,12 +2106,13 @@ dated 24 August 2026, contains Lemma~5.5 and Lemma~5.7; neither is invoked.
 
 \section{Conclusion}
 
-For the Johnson replacement, the mathematical certificates establish the
-finite statements listed in Section~\ref{sec:certificate-scope}.  Promoting
-those statements to Hypotheses~\ref{hyp:P0}--\ref{hyp:P3}, and in particular
-identifying the finite Burau row with the actual MWW map and
-$X_J\cong\Sigma_A^0$, requires the additional paper-level arguments recorded
-in the third column of that table.
+For the Johnson replacement, Theorem~\ref{thm:P0discharge} and
+Lemma~\ref{lem:upper-handle-transport} establish the ambient P0 and E13/P3
+identifications after correctly moving the auxiliary braid into C.  The
+remaining certificates establish the finite statements listed in
+Section~\ref{sec:certificate-scope}.  Promoting the Burau row and local
+Frobenius tables to the actual MWW maps still requires C and S, together with
+the grading identifications recorded in the third column of that table.
 The Lean development still proves only the conditional implication because
 the analytic MWW objects and maps have not been constructed as an inhabitant
 of \texttt{ExternalGeometry}.  The present unconditional conclusions are the

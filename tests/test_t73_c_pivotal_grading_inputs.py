@@ -18,18 +18,18 @@ def load_checker():
 
 
 class CPivotalGradingFailClosedTest(unittest.TestCase):
-    def test_current_repository_remains_open(self):
+    def test_standard_pivotal_is_certified_but_absolute_degree_remains_open(self):
         checker = load_checker()
         report = checker.generate()
-        self.assertEqual(report["status"], "OPEN")
-        self.assertFalse(report["pivotal_coefficients_certified"])
+        self.assertEqual(report["status"], "PIVOTAL_CERTIFIED_DEGREE_OPEN")
+        self.assertTrue(report["pivotal_coefficients_certified"])
         self.assertFalse(report["degree_494_certified"])
         self.assertEqual(report["detector_braid_writhe"], 0)
         self.assertEqual(report["derived"]["formal_sum"], 494)
         missing = "\n".join(report["missing"])
-        self.assertIn("T73_C_PIVOTAL_GRADING_INPUT.json", missing)
-        self.assertIn("V/V_dual", missing)
-        self.assertIn("writhe ledger", missing)
+        self.assertIn("mww_selected_coefficient_closure", missing)
+        self.assertIn("hattori_target_closure", missing)
+        self.assertIn("mww_to_bhpw_selected_comparison", missing)
 
     def test_every_endpoint_names_the_missing_primitive(self):
         checker = load_checker()
@@ -61,9 +61,10 @@ class CPivotalGradingFailClosedTest(unittest.TestCase):
         # Two reversed passages contribute two cable copies each.  The old
         # builder used only copy sign and therefore disagrees on four entries.
         self.assertEqual(len(legacy["orientation_disagreement_endpoint_ids"]), 4)
-        self.assertFalse(report["pivotal_coefficients_certified"])
+        self.assertTrue(report["pivotal_coefficients_certified"])
+        self.assertEqual(report["standard_convention"]["derived_h3"], 2624)
 
-    def test_command_exits_nonzero_without_primitive_input(self):
+    def test_command_exits_nonzero_until_absolute_grading_is_complete(self):
         result = subprocess.run(
             [sys.executable, str(SCRIPT)],
             cwd=ROOT,
@@ -73,7 +74,7 @@ class CPivotalGradingFailClosedTest(unittest.TestCase):
             check=False,
         )
         self.assertEqual(result.returncode, 2)
-        self.assertIn('"status": "OPEN"', result.stdout)
+        self.assertIn('"status": "PIVOTAL_CERTIFIED_DEGREE_OPEN"', result.stdout)
 
 
 if __name__ == "__main__":

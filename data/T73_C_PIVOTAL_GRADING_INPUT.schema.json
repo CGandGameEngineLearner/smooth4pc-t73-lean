@@ -31,7 +31,8 @@
           "nesting_parent_locator",
           "nesting_depth",
           "defect_basis_state",
-          "duality_atoms"
+          "duality_atoms",
+          "highest_duality_atoms"
         ],
         "properties": {
           "physical_endpoint_id": {"type": "string"},
@@ -65,7 +66,28 @@
               "properties": {
                 "kind": {"type": "string"},
                 "source_locator": {"type": "string"},
-                "local_normal": {"type": "string"}
+                "local_normal": {
+                  "type": "array",
+                  "minItems": 3,
+                  "maxItems": 3
+                }
+              }
+            }
+          },
+          "highest_duality_atoms": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "required": ["kind", "source_locator"],
+              "properties": {
+                "kind": {"type": "string"},
+                "source_locator": {"type": "string"},
+                "local_normal": {
+                  "type": "array",
+                  "minItems": 3,
+                  "maxItems": 3
+                }
               }
             }
           }
@@ -88,11 +110,24 @@
   "$defs": {
     "orderedMorphism": {
       "type": "object",
-      "required": ["ordered_feet", "bpw_A6_term", "movie_or_web_locator"],
+      "required": ["ordered_feet", "bpw_A6_term", "movie_or_web_locator", "terms"],
       "properties": {
         "ordered_feet": {"type": "array", "minItems": 2, "maxItems": 2},
         "bpw_A6_term": {"type": "string"},
-        "movie_or_web_locator": {"type": "string"}
+        "movie_or_web_locator": {"type": "string"},
+        "terms": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "type": "object",
+            "required": ["defect_endpoint_id", "atom"],
+            "properties": {
+              "defect_endpoint_id": {"type": "string"},
+              "atom": {"type": "string"}
+            }
+          }
+        }
       }
     },
     "gradingDiagram": {

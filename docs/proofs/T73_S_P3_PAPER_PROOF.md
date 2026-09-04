@@ -373,3 +373,241 @@ argument. If the manuscript keeps the independently specified
 standard-sphere/P3 object as its definition of \(X_J\), then asserting it is
 the transported object without constructing the relative upper-handle
 equivalence merely renames the missing identification.
+
+## 10. Retyping the detector as auxiliary data
+
+One can weaken P0 by treating the 44-strand ball and chosen cobordism/class as
+auxiliary data rather than as part of the handle presentation. This removes
+the need for the unlabelled AR diffeomorphism to preserve a previously fixed
+detector ball. It does not, by itself, prove S.
+
+### A valid separated-support lemma
+
+Let \(\mathcal C\) be a strict symmetric-monoidal category of the relevant
+tangles and cobordisms, and let \(Z:\mathcal C\to\mathrm{grVect}\) be a
+strict symmetric-monoidal functor. Suppose:
+
+1. a source object has a literal ordered tensor decomposition
+   \(T=T_B\otimes T_U\);
+2. the detector is \(d=d_B\otimes d_U\);
+3. the two hemisphere cobordisms have the literal separated form
+   \(\operatorname{id}_{T_B}\otimes H^\pm:T_B\otimes T_U\to
+   T_B\otimes T'_U\);
+4. the comparison from the MWW coefficient object to \(Z(T)\) is monoidal
+   and natural for these two cobordisms.
+
+Then
+\[
+d\,Z(\operatorname{id}_{T_B}\otimes H^\pm)
+=d_B\otimes\bigl(d_U Z(H^\pm)\bigr).
+\]
+Consequently, when \(H^\pm\) is the punctured standard-sphere movie followed
+by its \(b\) core caps, its local factor is
+\(\epsilon^{\otimes b}\Delta^{b-1}\), giving zero on \(1\) and one on \(X\).
+This proves the desired dotted/undotted identities on the whole source.
+
+The proof is exactly strict monoidality and naturality. No transversality
+theorem alone gives conclusion (4).
+
+### What can be separated geometrically
+
+Given a finite embedded sphere system in a 3-manifold boundary, a sufficiently
+small 3-ball may be chosen in its complement. Thus, if the detector tangle is
+freely chosen local data, its abstract 44-strand braid can be placed in such a
+ball. Collar uniqueness then places the sphere-attachment movies and the ball
+in disjoint boundary collars. This elementary observation does not require a
+relative sphere-system uniqueness theorem.
+
+However, the public detector is not merely an abstract local braid. Its 44
+lanes are selected passages of the same 2-handle attaching components whose
+cocores puncture the transported attaching spheres. After using the MWW
+handle formula, the punctured-sphere source has
+\(b_j=12578,1824,409\) boundary copies on those components. These endpoints
+and the detector endpoints occupy the same cable objects. They need not admit
+a literal tensor decomposition \(T_B\otimes T_U\), even if their geometric
+arcs lie at different normal levels.
+
+### Exact transversality limitation
+
+Ordinary relative transversality makes two surfaces in a 4-manifold
+transverse; because \(2+2=4\), their intersection is generically a finite set
+of points, not empty. Removing those points would require additional
+intersection-number, fundamental-group, Whitney-disk, and framing data. No
+such theorem or data appear here. Likewise, disjoint supports in the
+3-dimensional boundary do not imply that the pulled-back core-restoration
+surfaces are disjoint in the 4-dimensional 2-handlebody.
+
+At the movie level, interleaved cable endpoints produce mixed braid and
+pivotal maps. Strict functoriality controls signs and composition; it does not
+turn a linked or braided cobordism into a disjoint tensor product. If an
+independent comparison proves that every mixed map is
+\(P(I+O(h))\), with the same permutation \(P\) conjugating the detector, then
+the \(h^3\) leading coefficient is unchanged. But that is precisely the
+unproved naturality/comparison statement C-S1, not a consequence of moving an
+auxiliary ball.
+
+### Conclusion
+
+Retyping the ball is useful only at the boundary-geometric level:
+
+- it permits choosing a local braid ball disjoint from the actual upper
+  sphere system;
+- it does not show that the braid represents the candidate-specific
+  two-handle class used by the computation;
+- it does not split the shared cable endpoints or core-restoration surfaces;
+- it does not supply the monoidal natural comparison needed by the
+  separated-support lemma.
+
+If one instead chooses a completely local class whose entire MWW source and
+all sphere actions satisfy the four hypotheses above, S follows formally, but
+the Burau value 2624 and its descent through the candidate's beta/psi
+relations must then be recomputed for that new class. Reusing the old value
+would be circular.
+
+## 11. Statewise shadow theorem for the actual MWW surface map
+
+MWW's proof of Theorem 3.10 makes the relevant map more precise than the
+informal hemisphere language. For an attaching sphere \(S\), remove a small
+disk \(\Delta_+\) and the 2-handle core disks. The remainder is a surface
+\(\Sigma_-\subset I\times\partial W_1\) with boundary \(J\) and signed
+parallel copies of the attaching circles \(K_i\). MWW's diagram (their
+equation (12)) proves that, under the two-handle isomorphism \(\Phi\), the
+nontrivial hemisphere map is exactly the map induced on the cabled skein
+lasagna module by \(\Sigma_-\). Their equations (14)--(15) say that the
+three-handle relations are
+\[
+\overline\Psi_{\Sigma(n\bullet)}(v)=0\quad(0\leq n\leq N-2),
+\qquad
+\overline\Psi_{\Sigma((N-1)\bullet)}(v)=v.
+\]
+Thus MWW already proves compatibility of the actual surface maps with the
+beta/psi quotient. What MWW does not prove is compatibility with this
+paper's detector.
+
+### Conditional leading-coefficient theorem
+
+Fix a cable state. Suppose the following data exist.
+
+1. A completed statewise shadow functor \(\operatorname{Sh}_h\) is defined on
+   every object and every elementary cobordism in a movie for \(\Sigma_-\),
+   including births, deaths, saddles, Reidemeister maps, pivotal maps, and
+   endpoint braids.
+2. \(\operatorname{Sh}_h\) is symmetric-monoidal after reduction modulo \(h\),
+   and is natural for all movie moves and for every MWW beta/psi map.
+3. The all-owner product-neighborhood data lift to a typed movie in which the
+   only interactions between the old detector factor and the punctured-sphere
+   factor are invertible braid/pivotal maps
+   \[
+   P_\nu(I+hK_\nu).
+   \]
+   There are no mixed births, deaths, or saddles.
+4. The family of detector rows is equivariant for the constant permutations
+   \(P_\nu\), with the same pivotal convention on source and target.
+5. The detector has expansion
+   \(D_h=h^3D_3+O(h^4)\).
+
+Then, on the coefficient of \(h^3\),
+\[
+D_3\,\operatorname{Sh}_h(\Sigma_-)
+=D_3\otimes\epsilon^{\otimes b}\Delta^{b-1}.
+\]
+In particular, at \(N=2\), the once-dotted surface acts as the identity under
+\(D_3\), and the undotted surface acts as zero.
+
+### Proof
+
+Choose the supplied typed movie. Strict interchange moves each invertible
+mixed event past a local Frobenius critical point. Modulo \(h\), its map is
+the symmetry \(P_\nu\); commutativity and cocommutativity of the rank-two
+Frobenius algebra allow these symmetries to be moved to the movie's ends.
+Hypothesis 4 cancels the resulting endpoint permutations against the
+detector rows. Every remaining mixed factor is \(I+hK_\nu\). Since
+\[
+(h^3D_3+O(h^4))(I+hK_\nu)=h^3D_3+O(h^4),
+\]
+all such factors are invisible to the divided cubic. The connected
+genus-zero punctured-sphere part has one iterated coproduct and \(b\) restored
+core counits, hence gives
+\(\epsilon^{\otimes b}\Delta^{b-1}\). The local calculation in Section 3
+finishes the proof.
+
+Naturality in hypothesis 2 also proves beta/psi compatibility. If
+\(\beta,\psi\) is any generating two-handle relation, its square with
+\(\operatorname{Sh}_h(\Sigma_-)\) commutes statewise. Applying the already
+compatible detector family makes the two sides equal, so the surface identity
+descends to the MWW coequalizer rather than merely holding on chosen raw
+representatives.
+
+### Exact unresolved obstruction
+
+Interleaving is therefore not an intrinsic mathematical obstruction if the
+five hypotheses are available. The repository does not provide them.
+Specifically:
+
+- the claimed all-owner decomposition records copy counts, owner words, and
+  normal levels, but no typed chronological list of every mixed
+  Reidemeister/pivotal/braid event in \(\Sigma_-\);
+- the proposed shadow is not constructed as a functor on births, deaths, and
+  saddles for the actual MWW coefficient objects;
+- no naturality squares with the beta and psi generators are given;
+- no proof identifies every constant mixed map with the same permutation
+  convention used by the detector row.
+
+The script instead writes the conclusion
+`PASS_ACTUAL_C_COCONE` and the identity/zero actions into JSON. Hence
+the conditional theorem gives a precise route to S, but the present
+all-owner artifact does not satisfy its hypotheses. The first genuinely new
+data are the typed \(\Sigma_-\) movie and a statewise monoidal-natural shadow
+on all its elementary cobordisms.
+
+## 12. Parameterized typed \(\Sigma_-\) certificate
+
+The finite portion of the typed movie is now implemented in
+`scripts/build_t73_sigma_minus_typed.py`.
+
+For each transported surface, the builder reads the complete signed
+owner-boundary word and independently reconstructs:
+
+- every negative and positive boundary-copy position for
+  \(r_{xy},r_{yz},r_{zx}\);
+- the cable-state translations
+  \((r^-,r^+)\mapsto(r^-+s^-,r^++s^+)\);
+- the stable permutation from chronological endpoint order to
+  owner/sign-block order, with its explicit inverse;
+- a parameterized event list consisting of zero births, \(b-1\)
+  coproduct saddles, one endpoint-permutation block, and \(b\) restored-core
+  caps;
+- the old tensor factor, the new \(J\)-Frobenius factor, and their target
+  cable types.
+
+The counts are \(b=12578,1824,409\). The verifier checks the signed profiles
+against the stored all-owner profiles rather than trusting them.
+
+At the type level, a beta generator preserves the cable multiplicities before
+and after the surface translation. A psi generator adds one oppositely
+oriented pair on a selected component; componentwise addition proves that
+psi followed by the surface shift and the surface shift followed by psi have
+identical source and target cable vectors. This closes the beta/psi *typing*
+part of MWW equations (12)--(15). MWW's construction supplies the induced
+surface map on their quotient.
+
+The certificate also proves the local algebra
+\[
+\epsilon^{\otimes b}\Delta^{b-1}(1)=0,\qquad
+\epsilon^{\otimes b}\Delta^{b-1}(X)=1.
+\]
+A test expands the Frobenius maps directly for \(1\leq b\leq6\), while the
+general calculation follows from
+\(\Delta^{b-1}(X)=X^{\otimes b}\) and the fact that every summand of
+\(\Delta^{b-1}(1)\) contains a \(1\)-factor.
+
+The certificate deliberately retains one open field for each sphere:
+`StatewiseShadowNaturality_Aj`. It must supply the shadow maps for the
+typed births, saddles, caps, braids, and pivotal events; prove every mixed map
+is \(P(I+O(h))\); match the detector's permutation convention; and prove the
+actual beta/psi naturality squares. These are maps and equalities, not type
+checks, and cannot be generated from the owner word.
+
+Therefore all consequences that follow formally from MWW and the owner
+profiles are now closed, while S itself correctly remains open at the
+statewise-shadow naturality interface.

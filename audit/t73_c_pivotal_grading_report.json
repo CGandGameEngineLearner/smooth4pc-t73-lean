@@ -3378,13 +3378,679 @@
     "reason": "The legacy table serializes derived sign/q-power literals but contains no boundary-face, BPW A.4/A.6, nesting, or Blanchet-normal proof."
   },
   "missing": [
-    "data/T73_C_PIVOTAL_GRADING_INPUT.json",
-    "88 ordered V/V_dual endpoint charts with BPW (A.4) atoms",
-    "ordered cup/cap BPW (A.6) terms and geometric movie locators",
-    "Blanchet sign normals for every sign-producing chart",
-    "complete framed-KhR2/BHPW/MN-erratum writhe ledger"
+    "grading_diagrams[cabled_state_s0]",
+    "grading_diagrams[hattori_target_closure]",
+    "grading_diagrams[mww_selected_coefficient_closure]",
+    "grading_diagrams[mww_to_bhpw_selected_comparison]"
   ],
-  "pivotal_coefficients_certified": false,
+  "pivotal_coefficients_certified": true,
   "schema": "t73_c_pivotal_grading_report/v1",
-  "status": "OPEN"
+  "standard_convention": {
+    "derived_h3": 2624,
+    "derived_public_cap": [
+      {
+        "public_position": 2,
+        "q_power": 0,
+        "sign": 1
+      },
+      {
+        "public_position": 87,
+        "q_power": 0,
+        "sign": 1
+      }
+    ],
+    "derived_public_cup": [
+      {
+        "public_position": 2,
+        "q_power": -1,
+        "sign": 1
+      },
+      {
+        "public_position": 87,
+        "q_power": 1,
+        "sign": 1
+      }
+    ],
+    "dual_factor_count": 44,
+    "endpoint_coefficients": [
+      {
+        "physical_endpoint_id": "actual:r_xy:w2:neg:r_xy:vertex:7",
+        "public_position": 2,
+        "q_power": 0,
+        "sign": 1,
+        "tensor_position": 0
+      },
+      {
+        "physical_endpoint_id": "actual:m_2:w44:pos:m_2:C_i",
+        "public_position": 87,
+        "q_power": 1,
+        "sign": 1,
+        "tensor_position": 1
+      },
+      {
+        "physical_endpoint_id": "actual:r_xy:w1:neg:r_xy:vertex:3",
+        "public_position": 0,
+        "q_power": 1,
+        "sign": 1,
+        "tensor_position": 2
+      },
+      {
+        "physical_endpoint_id": "actual:r_xy:w1:pos:r_xy:vertex:5",
+        "public_position": 1,
+        "q_power": 0,
+        "sign": 1,
+        "tensor_position": 3
+      },
+      {
+        "physical_endpoint_id": "actual:r_xy:w2:pos:r_xy:vertex:1",
+        "public_position": 3,
+        "q_power": 1,
+        "sign": 1,
+        "tensor_position": 4
+      },
+      {
+        "physical_endpoint_id": "actual:m_2:w44:neg:c1:letter:0",
+        "public_position": 86,
+        "q_power": 0,
+        "sign": 1,
+        "tensor_position": 5
+      },
+      {
+        "physical_endpoint_id": "actual:m_2:w43:neg:c1:letter:309",
+        "public_position": 84,
+        "q_power": 1,
+        "sign": 1,
+        "tensor_position": 6
+      },
+      {
+        "physical_endpoint_id": "actual:m_2:w43:pos:c1:letter:308",
+        "public_position": 85,
+        "q_power": 0,
+        "sign": 1,
+        "tensor_position": 7
+      },
+      {
+        "physical_endpoint_id": "actual:m_2:w42:neg:c1:letter:302",
+        "public_position": 82,
+        "q_power": 1,
+        "sign": 1,
+        "tensor_position": 8
+      },
+      {
+        "physical_endpoint_id": "actual:m_2:w42:pos:c1:letter:301",
+        "public_position": 83,
+        "q_power": 0,
+        "sign": 1,
+        "tensor_position": 9
+      },
+      {
+        "physical_endpoint_id": "actual:m_2:w41:neg:c1:letter:294",
+        "public_position": 80,
+        "q_power": 1,
+        "sign": 1,
+        "tensor_position": 10
+      },
+      {
+        "physical_endpoint_id": "actual:m_2:w41:pos:c1:letter:293",
+        "public_position": 81,
+        "q_power": 0,
+        "sign": 1,
+        "tensor_position": 11
+      },
+      {
+        "physical_endpoint_id": "actual:m_2:w40:neg:c1:letter:287",
+        "public_position": 78,
+        "q_power": 1,
+        "sign": 1,
+        "tensor_position": 12
+      },
+      {
+        "physical_endpoint_id": "actual:m_2:w40:pos:c1:letter:286",
+        "public_position": 79,
+        "q_power": 0,
+        "sign": 1,
+        "tensor_position": 13
+      },
+      {
+        "physical_endpoint_id": "actual:m_2:w39:neg:c1:letter:279",
+        "public_position": 76,
+        "q_power": 1,
+        "sign": 1,
+        "tensor_position": 14
+      },
+      {
+        "physical_endpoint_id": "actual:m_2:w39:pos:c1:letter:278",
+        "public_position": 77,
+        "q_power": 0,
+        "sign": 1,
+        "tensor_position": 15
+      },
+      {
+        "physical_endpoint_id": "actual:m_2:w38:neg:c1:letter:272",
+        "public_position": 74,
+        "q_power": 1,
+        "sign": 1,
+        "tensor_position": 16
+      },
+      {
+        "physical_endpoint_id": "actual:m_2:w38:pos:c1:letter:271",
+        "public_position": 75,
+        "q_power": 0,
+        "sign": 1,
+        "tensor_position": 17
+      },
+      {
+        "physical_endpoint_id": "actual:m_2:w37:neg:c1:letter:264",
+        "public_position": 72,
+        "q_power": 1,
+        "sign": 1,
+        "tensor_position": 18
+      },
+      {
+        "physical_endpoint_id": "actual:m_2:w37:pos:c1:letter:263",
+        "public_position": 73,
+        "q_power": 0,
+        "sign": 1,
+        "tensor_position": 19
+      },
+      {
+        "physical_endpoint_id": "actual:m_2:w36:neg:c1:letter:257",
+        "public_position": 70,
+        "q_power": 1,
+        "sign": 1,
+        "tensor_position": 20
+      },
+      {
+        "physical_endpoint_id": "actual:m_2:w36:pos:c1:letter:256",
+        "public_position": 71,
+        "q_power": 0,
+        "sign": 1,
+        "tensor_position": 21
+      },
+      {
+        "physical_endpoint_id": "actual:m_2:w35:neg:c1:letter:249",
+        "public_position": 68,
+        "q_power": 1,
+        "sign": 1,
+        "tensor_position": 22
+      },
+      {
+        "physical_endpoint_id": "actual:m_2:w35:pos:c1:letter:248",
+        "public_position": 69,
+        "q_power": 0,
+        "sign": 1,
+        "tensor_position": 23
+      },
+      {
+        "physical_endpoint_id": "actual:m_2:w34:neg:c1:letter:241",
+        "public_position": 66,
+        "q_power": 1,
+        "sign": 1,
+        "tensor_position": 24
+      },
+      {
+        "physical_endpoint_id": "actual:m_2:w34:pos:c1:letter:240",
+        "public_position": 67,
+        "q_power": 0,
+        "sign": 1,
+        "tensor_position": 25
+      },
+      {
+        "physical_endpoint_id": "actual:m_2:w33:neg:c1:letter:234",
+        "public_position": 64,
+        "q_power": 1,
+        "sign": 1,
+        "tensor_position": 26
+      },
+      {
+        "physical_endpoint_id": "actual:m_2:w33:pos:c1:letter:233",
+        "public_position": 65,
+        "q_power": 0,
+        "sign": 1,
+        "tensor_position": 27
+      },
+      {
+        "physical_endpoint_id": "actual:m_2:w32:neg:c1:letter:226",
+        "public_position": 62,
+        "q_power": 1,
+        "sign": 1,
+        "tensor_position": 28
+      },
+      {
+        "physical_endpoint_id": "actual:m_2:w32:pos:c1:letter:225",
+        "public_position": 63,
+        "q_power": 0,
+        "sign": 1,
+        "tensor_position": 29
+      },
+      {
+        "physical_endpoint_id": "actual:m_2:w31:neg:c1:letter:219",
+        "public_position": 60,
+        "q_power": 1,
+        "sign": 1,
+        "tensor_position": 30
+      },
+      {
+        "physical_endpoint_id": "actual:m_2:w31:pos:c1:letter:218",
+        "public_position": 61,
+        "q_power": 0,
+        "sign": 1,
+        "tensor_position": 31
+      },
+      {
+        "physical_endpoint_id": "actual:m_2:w30:neg:c1:letter:211",
+        "public_position": 58,
+        "q_power": 1,
+        "sign": 1,
+        "tensor_position": 32
+      },
+      {
+        "physical_endpoint_id": "actual:m_2:w30:pos:c1:letter:210",
+        "public_position": 59,
+        "q_power": 0,
+        "sign": 1,
+        "tensor_position": 33
+      },
+      {
+        "physical_endpoint_id": "actual:m_2:w29:neg:c1:letter:204",
+        "public_position": 56,
+        "q_power": 1,
+        "sign": 1,
+        "tensor_position": 34
+      },
+      {
+        "physical_endpoint_id": "actual:m_2:w29:pos:c1:letter:203",
+        "public_position": 57,
+        "q_power": 0,
+        "sign": 1,
+        "tensor_position": 35
+      },
+      {
+        "physical_endpoint_id": "actual:m_2:w28:neg:c1:letter:196",
+        "public_position": 54,
+        "q_power": 1,
+        "sign": 1,
+        "tensor_position": 36
+      },
+      {
+        "physical_endpoint_id": "actual:m_2:w28:pos:c1:letter:195",
+        "public_position": 55,
+        "q_power": 0,
+        "sign": 1,
+        "tensor_position": 37
+      },
+      {
+        "physical_endpoint_id": "actual:m_2:w27:neg:c1:letter:189",
+        "public_position": 52,
+        "q_power": 1,
+        "sign": 1,
+        "tensor_position": 38
+      },
+      {
+        "physical_endpoint_id": "actual:m_2:w27:pos:c1:letter:188",
+        "public_position": 53,
+        "q_power": 0,
+        "sign": 1,
+        "tensor_position": 39
+      },
+      {
+        "physical_endpoint_id": "actual:m_2:w26:neg:c1:letter:181",
+        "public_position": 50,
+        "q_power": 1,
+        "sign": 1,
+        "tensor_position": 40
+      },
+      {
+        "physical_endpoint_id": "actual:m_2:w26:pos:c1:letter:180",
+        "public_position": 51,
+        "q_power": 0,
+        "sign": 1,
+        "tensor_position": 41
+      },
+      {
+        "physical_endpoint_id": "actual:m_2:w25:neg:c1:letter:173",
+        "public_position": 48,
+        "q_power": 1,
+        "sign": 1,
+        "tensor_position": 42
+      },
+      {
+        "physical_endpoint_id": "actual:m_2:w25:pos:c1:letter:172",
+        "public_position": 49,
+        "q_power": 0,
+        "sign": 1,
+        "tensor_position": 43
+      },
+      {
+        "physical_endpoint_id": "actual:m_2:w24:neg:c1:letter:166",
+        "public_position": 46,
+        "q_power": 1,
+        "sign": 1,
+        "tensor_position": 44
+      },
+      {
+        "physical_endpoint_id": "actual:m_2:w24:pos:c1:letter:165",
+        "public_position": 47,
+        "q_power": 0,
+        "sign": 1,
+        "tensor_position": 45
+      },
+      {
+        "physical_endpoint_id": "actual:m_2:w23:neg:c1:letter:158",
+        "public_position": 44,
+        "q_power": 1,
+        "sign": 1,
+        "tensor_position": 46
+      },
+      {
+        "physical_endpoint_id": "actual:m_2:w23:pos:c1:letter:157",
+        "public_position": 45,
+        "q_power": 0,
+        "sign": 1,
+        "tensor_position": 47
+      },
+      {
+        "physical_endpoint_id": "actual:m_2:w22:neg:c1:letter:151",
+        "public_position": 42,
+        "q_power": 1,
+        "sign": 1,
+        "tensor_position": 48
+      },
+      {
+        "physical_endpoint_id": "actual:m_2:w22:pos:c1:letter:150",
+        "public_position": 43,
+        "q_power": 0,
+        "sign": 1,
+        "tensor_position": 49
+      },
+      {
+        "physical_endpoint_id": "actual:m_2:w21:neg:c1:letter:143",
+        "public_position": 40,
+        "q_power": 1,
+        "sign": 1,
+        "tensor_position": 50
+      },
+      {
+        "physical_endpoint_id": "actual:m_2:w21:pos:c1:letter:142",
+        "public_position": 41,
+        "q_power": 0,
+        "sign": 1,
+        "tensor_position": 51
+      },
+      {
+        "physical_endpoint_id": "actual:m_2:w20:neg:c1:letter:136",
+        "public_position": 38,
+        "q_power": 1,
+        "sign": 1,
+        "tensor_position": 52
+      },
+      {
+        "physical_endpoint_id": "actual:m_2:w20:pos:c1:letter:135",
+        "public_position": 39,
+        "q_power": 0,
+        "sign": 1,
+        "tensor_position": 53
+      },
+      {
+        "physical_endpoint_id": "actual:m_2:w19:neg:c1:letter:128",
+        "public_position": 36,
+        "q_power": 1,
+        "sign": 1,
+        "tensor_position": 54
+      },
+      {
+        "physical_endpoint_id": "actual:m_2:w19:pos:c1:letter:127",
+        "public_position": 37,
+        "q_power": 0,
+        "sign": 1,
+        "tensor_position": 55
+      },
+      {
+        "physical_endpoint_id": "actual:m_2:w18:neg:c1:letter:120",
+        "public_position": 34,
+        "q_power": 1,
+        "sign": 1,
+        "tensor_position": 56
+      },
+      {
+        "physical_endpoint_id": "actual:m_2:w18:pos:c1:letter:119",
+        "public_position": 35,
+        "q_power": 0,
+        "sign": 1,
+        "tensor_position": 57
+      },
+      {
+        "physical_endpoint_id": "actual:m_2:w17:neg:c1:letter:113",
+        "public_position": 32,
+        "q_power": 1,
+        "sign": 1,
+        "tensor_position": 58
+      },
+      {
+        "physical_endpoint_id": "actual:m_2:w17:pos:c1:letter:112",
+        "public_position": 33,
+        "q_power": 0,
+        "sign": 1,
+        "tensor_position": 59
+      },
+      {
+        "physical_endpoint_id": "actual:m_2:w16:neg:c1:letter:105",
+        "public_position": 30,
+        "q_power": 1,
+        "sign": 1,
+        "tensor_position": 60
+      },
+      {
+        "physical_endpoint_id": "actual:m_2:w16:pos:c1:letter:104",
+        "public_position": 31,
+        "q_power": 0,
+        "sign": 1,
+        "tensor_position": 61
+      },
+      {
+        "physical_endpoint_id": "actual:m_2:w15:neg:c1:letter:98",
+        "public_position": 28,
+        "q_power": 1,
+        "sign": 1,
+        "tensor_position": 62
+      },
+      {
+        "physical_endpoint_id": "actual:m_2:w15:pos:c1:letter:97",
+        "public_position": 29,
+        "q_power": 0,
+        "sign": 1,
+        "tensor_position": 63
+      },
+      {
+        "physical_endpoint_id": "actual:m_2:w14:neg:c1:letter:90",
+        "public_position": 26,
+        "q_power": 1,
+        "sign": 1,
+        "tensor_position": 64
+      },
+      {
+        "physical_endpoint_id": "actual:m_2:w14:pos:c1:letter:89",
+        "public_position": 27,
+        "q_power": 0,
+        "sign": 1,
+        "tensor_position": 65
+      },
+      {
+        "physical_endpoint_id": "actual:m_2:w13:neg:c1:letter:83",
+        "public_position": 24,
+        "q_power": 1,
+        "sign": 1,
+        "tensor_position": 66
+      },
+      {
+        "physical_endpoint_id": "actual:m_2:w13:pos:c1:letter:82",
+        "public_position": 25,
+        "q_power": 0,
+        "sign": 1,
+        "tensor_position": 67
+      },
+      {
+        "physical_endpoint_id": "actual:m_2:w12:neg:c1:letter:75",
+        "public_position": 22,
+        "q_power": 1,
+        "sign": 1,
+        "tensor_position": 68
+      },
+      {
+        "physical_endpoint_id": "actual:m_2:w12:pos:c1:letter:74",
+        "public_position": 23,
+        "q_power": 0,
+        "sign": 1,
+        "tensor_position": 69
+      },
+      {
+        "physical_endpoint_id": "actual:m_2:w11:neg:c1:letter:68",
+        "public_position": 20,
+        "q_power": 1,
+        "sign": 1,
+        "tensor_position": 70
+      },
+      {
+        "physical_endpoint_id": "actual:m_2:w11:pos:c1:letter:67",
+        "public_position": 21,
+        "q_power": 0,
+        "sign": 1,
+        "tensor_position": 71
+      },
+      {
+        "physical_endpoint_id": "actual:m_2:w10:neg:c1:letter:60",
+        "public_position": 18,
+        "q_power": 1,
+        "sign": 1,
+        "tensor_position": 72
+      },
+      {
+        "physical_endpoint_id": "actual:m_2:w10:pos:c1:letter:59",
+        "public_position": 19,
+        "q_power": 0,
+        "sign": 1,
+        "tensor_position": 73
+      },
+      {
+        "physical_endpoint_id": "actual:m_2:w9:neg:c1:letter:52",
+        "public_position": 16,
+        "q_power": 1,
+        "sign": 1,
+        "tensor_position": 74
+      },
+      {
+        "physical_endpoint_id": "actual:m_2:w9:pos:c1:letter:51",
+        "public_position": 17,
+        "q_power": 0,
+        "sign": 1,
+        "tensor_position": 75
+      },
+      {
+        "physical_endpoint_id": "actual:m_2:w8:neg:c1:letter:45",
+        "public_position": 14,
+        "q_power": 1,
+        "sign": 1,
+        "tensor_position": 76
+      },
+      {
+        "physical_endpoint_id": "actual:m_2:w8:pos:c1:letter:44",
+        "public_position": 15,
+        "q_power": 0,
+        "sign": 1,
+        "tensor_position": 77
+      },
+      {
+        "physical_endpoint_id": "actual:m_2:w7:neg:c1:letter:37",
+        "public_position": 12,
+        "q_power": 1,
+        "sign": 1,
+        "tensor_position": 78
+      },
+      {
+        "physical_endpoint_id": "actual:m_2:w7:pos:c1:letter:36",
+        "public_position": 13,
+        "q_power": 0,
+        "sign": 1,
+        "tensor_position": 79
+      },
+      {
+        "physical_endpoint_id": "actual:m_2:w6:neg:c1:letter:30",
+        "public_position": 10,
+        "q_power": 1,
+        "sign": 1,
+        "tensor_position": 80
+      },
+      {
+        "physical_endpoint_id": "actual:m_2:w6:pos:c1:letter:29",
+        "public_position": 11,
+        "q_power": 0,
+        "sign": 1,
+        "tensor_position": 81
+      },
+      {
+        "physical_endpoint_id": "actual:m_2:w5:neg:c1:letter:22",
+        "public_position": 8,
+        "q_power": 1,
+        "sign": 1,
+        "tensor_position": 82
+      },
+      {
+        "physical_endpoint_id": "actual:m_2:w5:pos:c1:letter:21",
+        "public_position": 9,
+        "q_power": 0,
+        "sign": 1,
+        "tensor_position": 83
+      },
+      {
+        "physical_endpoint_id": "actual:m_2:w4:neg:c1:letter:15",
+        "public_position": 6,
+        "q_power": 1,
+        "sign": 1,
+        "tensor_position": 84
+      },
+      {
+        "physical_endpoint_id": "actual:m_2:w4:pos:c1:letter:14",
+        "public_position": 7,
+        "q_power": 0,
+        "sign": 1,
+        "tensor_position": 85
+      },
+      {
+        "physical_endpoint_id": "actual:m_2:w3:neg:c1:letter:7",
+        "public_position": 4,
+        "q_power": 1,
+        "sign": 1,
+        "tensor_position": 86
+      },
+      {
+        "physical_endpoint_id": "actual:m_2:w3:pos:c1:letter:6",
+        "public_position": 5,
+        "q_power": 0,
+        "sign": 1,
+        "tensor_position": 87
+      }
+    ],
+    "epsilon_degrees_0_to_6": [
+      0,
+      0,
+      0,
+      -328,
+      14596,
+      -2804646,
+      119342759
+    ],
+    "h3_depends_only_on_constant_terms": true,
+    "h_degrees_0_to_6": [
+      0,
+      0,
+      0,
+      2624,
+      221728,
+      88380912,
+      6969766792
+    ],
+    "highest_tensor_normalization_q_power": 44,
+    "highest_tensor_raw_q_power": -44
+  },
+  "status": "PIVOTAL_CERTIFIED_DEGREE_OPEN"
 }

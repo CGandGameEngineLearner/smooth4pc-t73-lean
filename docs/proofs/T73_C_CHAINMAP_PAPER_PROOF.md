@@ -88,6 +88,92 @@ This is the maximal rigorous paper proof currently available: it proves the
 comparison from the explicitly stated dg-bimodule input, not from the existing
 `PASS` fields.
 
+## C-H1: exact source boundary and failed currying attempt
+
+The source results make every step after representability formal, but they do
+not supply representability itself.
+
+For cable state \(r\), MWW Definition 4.5 gives one 3-ball category
+\(\mathcal C_{p_i(r)}\) for each one-handle, and Theorem 4.7 uses
+\[
+\mathcal A_r=\prod_i\mathcal C_{p_i(r)}
+\]
+with a coefficient profunctor \(M_{R_r}\).  Its objects are tuples of
+inserted tangles.  The theorem identifies the skein-lasagna module with the
+coinvariant/coend quotient for the two actions on this profunctor.  It does
+not make \(R_r\) an endo-1-morphism of a single category.
+
+BPW Proposition 3.12 identifies a trace of one morphism category with the
+corresponding vertical trace.  BPW Propositions 3.20--3.21 then give the
+universal quantum preshadow and functoriality for a locally pregraded
+endobicategory with duals.  They apply after a coefficient class has been
+typed as a 2-morphism \(a:F_rT\Rightarrow F_rT\) in one morphism category.
+They do not turn an arbitrary multi-variable MWW profunctor into such an
+endofunctor.
+
+BHPW Theorem 4.6 makes an already specified tangle/foam construction
+strictly functorial.  Its Corollaries E--F apply the qHH shadow and identify
+the self-coefficient endpoint groups.  There is no K0-only obstruction:
+qHH acts before the Chern/K0 identification, which is used only to name the
+endpoint modules.  Strictness nevertheless cannot create a missing planar
+gluing functor.
+
+The required candidate-specific datum is a canopolis operation
+\[
+\iota_r:\mathcal A_r\longrightarrow
+\mathcal T_2(P_{a_r},P_{b_r})
+\tag{C.H1a}
+\]
+and natural homogeneous isomorphisms
+\[
+\chi^r_{\mathbf T,\mathbf T'}:
+M_{R_r}(\mathbf T,\mathbf T')
+\xrightarrow{\cong}
+\operatorname{Hom}\!\left(F_r\iota_r\mathbf T,
+F_r\iota_r\mathbf T'\right)\otimes A^{\otimes\ell_r}.
+\tag{C.H1b}
+\]
+The all-owner product rectangles suggest a planar matching on the fixed
+attaching arcs, but do not specify how arbitrary inserted tangles in all
+input balls are glued, which boundary points remain external, or the output
+split \(P_{a_r},P_{b_r}\).  Thus they do not define (C.H1a).
+
+There is also an explicit normalization conflict in the present formula.
+Under MWW Definition 4.5, a tangle
+\(T:P_{86}\to P_{88}\) has \(86+88=174=2p\) boundary points, so its morphism
+category has \(p=87\) and the \(N=2\) Hom normalization is \(+87\).
+The manuscript instead attaches the shift \(-44\) to
+\(\operatorname{Hom}(FT,FT')\) and describes it as removal of the Hom
+normalization.  The value \(44\) belongs to the selected y-handle
+configuration \(p_y=44\), not to the asserted
+\(P_{86}\to P_{88}\) morphism category.  No planar operation or object shift
+is given that reconciles these two numbers.  A constant change of all Hom
+gradings would also destroy degree-zero composition.
+
+A possible repair would first construct the exact planar currying at its
+naturally resulting endpoint count, and only afterwards postcompose its
+endpoint shadow with the auxiliary cup \(U:P_{86}\to P_{88}\).  The cup
+cannot be inserted into (C.H1b) merely to change the endpoint count: it is
+not an invertible tangle, so doing so does not produce a coefficient-bimodule
+isomorphism.
+
+If (C.H1a)--(C.H1b) were supplied by one framed product-ribbon isotopy, no
+matrix enumeration would be necessary.  Extending the same isotopy by the
+identity on all insertion boxes would give
+\[
+\chi^r_{\mathbf S,\mathbf T'}(f\cdot m)
+=(F_r\iota_r f)^*\chi^r_{\mathbf T,\mathbf T'}(m),\qquad
+\chi^r_{\mathbf T,\mathbf U}(m\cdot g)
+=(F_r\iota_r g)_*\chi^r_{\mathbf T,\mathbf T'}(m).
+\tag{C.H1c}
+\]
+These are the same glued surface, so BHPW strictness fixes their sign.
+Homogeneous circle counits would then carry every coefficient quantum-cyclic
+relation to the regular vertical-trace relation; BPW 3.12 and 3.20--3.21
+would give the statewise \(\Theta_r\).  Hence naturality and qTrace descent
+are formal after (C.H1a)--(C.H1b), but the current paper does not define
+those maps and its displayed endpoint/shift type is inconsistent.
+
 ## Why the current artifacts do not supply (C.1)--(C.2)
 
 `scripts/certify_t73_c1_cut_link.py` reconstructs 44 endpoint paths and 227
@@ -244,8 +330,8 @@ does not construct the dg foam maps in (C.1)--(C.2).
 
 ## Point-push gauge and naturality
 
-Let (A=ho_h(W)).  A genuine change of endpoint coordinates by an
-invertible (P) transports operator, cup, and cap simultaneously:
+Let \(A=\rho_h(W)\).  A genuine change of endpoint coordinates by an
+invertible \(P\) transports operator, cup, and cap simultaneously:
 
 \[
 A\mapsto PAP^{-1},\qquad u\mapsto Pu,\qquad
@@ -263,8 +349,8 @@ Thus naturality does not force the cubic to vanish; it makes it invariant
 under simultaneous conjugation.
 
 Changing the chosen point-push *loop* is different.  Precomposing it by a
-returned pure loop (P), with the fixed cup and cap unchanged, replaces (A)
-by (ho_h(P)A).  If (P,W\in\Gamma_3), then
+returned pure loop \(P\), with the fixed cup and cap unchanged, replaces \(A\)
+by \(\rho_h(P)A\).  If \(P,W\in\Gamma_3\), then
 
 \[
 \rho_h(P)=I+h^3K_P+O(h^4),\quad
@@ -279,8 +365,8 @@ D_3(PW)-D_3(W)=\ell K_Pu.
 \tag{C.4}
 \]
 
-Taking the equally supported inverse loop (P=W^{-1}) gives a concrete
-counterexample: (W^{-1}W=1), its endpoints and first-order normals return
+Taking the equally supported inverse loop \(P=W^{-1}\) gives a concrete
+counterexample: \(W^{-1}W=1\), its endpoints and first-order normals return
 and its writhe is still zero, but the cubic changes from 2624 to zero.  This
 is replayed by `scripts/audit_t73_point_push_gauge.py` and recorded in
 `audit/t73_point_push_gauge.json`.
@@ -291,10 +377,80 @@ nonzero if its quotient descent is independently established.  It does show
 that the current P0 recipe---normalize the points, choose the six-sweep loop
 by isotopy extension, and return them---does not make 2624 a
 presentation-independent consequence of the static AR collar.  A repair must
-either declare (W) to be an auxiliary chosen endpoint self-cobordism, which
+either declare \(W\) to be an auxiliary chosen endpoint self-cobordism, which
 cannot discharge P0 or (C.1), or construct a relative cobordism class selected
 by the embedded AR geometry and prove that every permitted presentation
 change is only the conjugation (C.3), never the multiplication (C.4).
+
+## Fixed noncanonical \(W\): sufficient in principle
+
+Canonicity is not required to prove that a class is nonzero.  Fix the
+oriented point-push tangle \(W:P_{88}\to P_{88}\), cup
+\(U:P_{86}\to P_{88}\), and cap \(C:P_{88}\to P_{86}\).  The BPW
+horizontal-trace action and strict BHPW foam/qHH functor assign a specified
+\(W\) an endpoint operator
+\[
+A_W:E_{88,h}\longrightarrow E_{88,h}.
+\]
+Under the Chern/K0 identification this is the corresponding
+\(U_q(\mathfrak{sl}_2)\) intertwiner.  Equality with the numerical Burau
+matrix still requires the unresolved variance and pivotal chart.
+
+Assuming the coefficient shadow of (C.1)--(C.2),
+\[
+D_h^W(x)=C_h(A_W-I)\operatorname{Sh}_h(x)
+\tag{C.5}
+\]
+is well defined on the fixed coefficient qTrace: after the shadow kills the
+cyclic relations, the remaining factors are fixed linear maps.  If
+\(A_W-I=O(h^3)\), division by \(h^3\) and reduction modulo \(h\) gives an
+ordinary functional.  No invariance under replacing \(W\) is needed.
+
+The exact sufficient descent statement is:
+
+**Fixed-\(W\) cubic cocone theorem.** For every cable state \(r\), assume a
+strict statewise shadow
+\(\Theta_r:C_r\widehat\otimes R_h\to E_r\).  For each placement
+\(\omega\in\Omega_r\), assume typed maps placing the same fixed \(W\) on 88
+old endpoints, uniformly with \(A_{W,\omega}-I=O(h^3)\).  Suppose every MWW
+beta is sent to a physical-copy braid \(B\) satisfying
+\[
+A_{W,b\omega}=BA_{W,\omega}B^{-1},\qquad
+u_{b\omega}=Bu_\omega,\qquad c_{b\omega}=c_\omega B^{-1},
+\tag{C.6}
+\]
+and every MWW psi is sent to an old factor tensor its local Frobenius map,
+with \(W\) on the old factor and \(\epsilon\otimes\epsilon\) on the new pair.
+Then
+\[
+\lambda_{r,\omega}(x)=
+[h^3]\,c_{r,\omega}(A_{W,\omega}-I)\Theta_r(x),\qquad
+\lambda_r=|\Omega_r|^{-1}\sum_{\omega\in\Omega_r}\lambda_{r,\omega}
+\tag{C.7}
+\]
+satisfies
+\[
+\lambda_r\beta_i(b)=\lambda_r,\qquad
+\lambda_{r+e_i}\psi_i^{[0]}=0,\qquad
+\lambda_{r+e_i}\psi_i^{[1]}=\lambda_r.
+\tag{C.8}
+\]
+
+For beta, (C.6) gives equality after reindexing the average; a
+positive-\(h\)-order standardization error multiplies \(A_W-I=O(h^3)\) and
+does not affect the cubic.  For psi, \(W\) stays on the old factor and
+\[
+(\epsilon\otimes\epsilon)\Delta(1)=0,\qquad
+(\epsilon\otimes\epsilon)\Delta(X)=1.
+\]
+The placement-orbit cardinalities cancel between adjacent averages.
+
+Thus a fixed noncanonical \(W\) is sufficient in principle.  The application
+remains open: there are no statewise chain maps \(\Theta_r\), actual-beta
+comparison diagrams, or whole-source actual-psi factorizations.  The
+all-owner artifact supplies their geometric incidence prefix only.
+BPW/BHPW evaluate supplied movies; they do not construct these
+candidate-specific squares.
 
 ## Minimum data required to close C
 
@@ -315,3 +471,31 @@ Until these data are supplied, the correct statement is conditional: the
 finite Burau computation produces 2624 in the chosen endpoint model, while C
 does not yet turn that number into a functional on the genuine two-handle
 skein-lasagna quotient.
+
+## Standard pivotal convention after P0 retyping
+
+The static P0 collar now fixes 44 vertical framed arcs but deliberately
+contains no braid.  This permits a fresh standard endpoint convention rather
+than trying to justify the legacy all-`+q^0` table.  Move the two selected cup
+feet to tensor positions 0 and 1; keep the remaining marked endpoints in their
+geometric order.  The oriented sign of a doubled point is its base-passage
+orientation times its cable-copy sign.  Upward points are assigned `V` and
+downward points `V*`, giving 44 of each.
+
+`scripts/build_t73_c_pivotal_grading_input.py` writes the source/target faces,
+tangents, coorientations, BPW boundary symbols, A.4 duality atoms, A.6 cup/cap
+terms and standard no-binding product-foam normals.  The input is hash-bound
+to `geometry/t73_p0_marked_vertical_collar.json`.  The fail-closed checker
+derives positive pivotal signs with q-powers 0 or 1 and selected cup powers
+-1 and +1.  It does not copy the legacy coefficients.
+
+Because the braid operator minus the identity starts in order `h^3`, all
+positive-order corrections in these pivotal maps affect only order at least
+four.  Recomputing with the derived constant terms again gives epsilon cubic
+-328 and h cubic 2624.  Thus C-H3 is resolved for this chosen convention.
+
+Absolute degree remains open.  The actual MWW coefficient closure, Hattori
+target closure, selected cabled state and MWW-to-BHPW comparison are exactly
+the four missing grading diagrams.  Until C-H1 supplies them with one common
+framing/writhe convention, the sum 494 is intrinsic framed-KhR2 arithmetic,
+not a certified absolute comparison degree.
