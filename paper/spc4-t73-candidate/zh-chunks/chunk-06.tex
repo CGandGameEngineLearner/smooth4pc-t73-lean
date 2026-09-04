@@ -213,15 +213,16 @@ Aitchison--Rubinstein.
 \end{lemma}
 
 \begin{proof}
-There is a Freudenthal triangulation of Johnson's period-one torus on which
-the affine map $S$ is a simplex-by-simplex map onto a triangulation of the
-period-two torus, carrying each Johnson spine $1$-simplex onto the
-corresponding AR coordinate spine.  Because the linear part is $2I$,
-Euclidean distances scale by $2$, so Johnson's Voronoi handlebodies map onto
-Voronoi cells of the image spines.  The protected ball of radius
-$1/196104$ about $0$ maps to the ball of radius $2/196104$ about $Q$.  A
-discrete Voronoi Heegaard pair on a $384$-tetrahedron torus is certified, and
-$T(v)=v-(1,1,1)$ carries the Johnson pair onto it.
+The period-four cubulation of $T^3$ has a $2\times 2\times 2$ coarse
+cellulation.  The barycentric dual $3$-blocks of the four vertices of each
+coordinate spine are genus-three handlebodies: each collapses onto its spine
+by an explicit free-face elementary-collapse sequence, the two blocks meet
+in a closed genus-three surface and fill $T^3$, and Regina's
+\texttt{recogniseHandlebody} returns genus $3$.  Tetrahedra are assigned as
+whole dual $3$-blocks of cubical vertices, not by comparing tetrahedron
+barycentres to the spines.  In the integer model $T(v)=v-(1,1,1)$ of $S$,
+this Johnson dual-block pair is carried simplex-by-simplex onto the AR
+dual-block pair.
 \end{proof}
 
 \begin{lemma}[The two framed cancellations]\label{lem:P0b}

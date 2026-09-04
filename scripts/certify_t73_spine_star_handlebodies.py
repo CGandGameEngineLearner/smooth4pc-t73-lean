@@ -14,8 +14,10 @@ Johnson mesh is carried onto the AR pair by T(v)=v-(1,1,1), the integer
 model of S(u)=2u-(1/2,1/2,1/2) after one extra uniform doubling.
 
 Uniqueness of regular neighborhoods is not used.  The Euclidean Voronoi
-surface is not a subcomplex.  P0a therefore remains Open: these complexes
-are not identified with mapping-torus handlebodies.
+surface is not a subcomplex.  This Voronoi assignment is not the P0a proof.
+P0a is the cubical dual-block neighbourhoods, elementary collapses, and
+Regina recogniseHandlebody recorded by
+scripts/build_t73_common_heegaard_complex.py.
 """
 
 from __future__ import annotations
@@ -544,11 +546,10 @@ def generate() -> dict[str, Any]:
         "p0a_status": "PASS",
         "pair_sha256": pair_complex["pair_sha256"],
         "obstruction": (
-            "P0a for the Johnson replacement uses the certified discrete "
-            "Voronoi Heegaard pair and T(v)=v-(1,1,1).  Uniqueness of "
-            "regular neighborhoods is not used.  Identification with "
-            "Euclidean Voronoi cells or mapping-torus handlebodies remains "
-            "a separate Open remark and is not required by the reconstruction."
+            "This Voronoi certificate is not the P0a proof.  P0a is the "
+            "dual-block regular neighbourhood collapse in "
+            "scripts/build_t73_common_heegaard_complex.py, independently "
+            "recognised by Regina recogniseHandlebody."
         ),
         "star_L_B_tets": [[list(vertex) for vertex in tet] for tet in star_b],
         "star_L_D_tets": [[list(vertex) for vertex in tet] for tet in star_d],

@@ -1,0 +1,35 @@
+{
+  "MUTATION_GLUING": "FAIL",
+  "P0A_BY_REGINA": "PROVED",
+  "REGINA_HANDLEBODY": "PASS",
+  "engine": [
+    "wsl",
+    "-e",
+    "bash",
+    "-lc",
+    "$HOME/.venvs/regina/bin/python"
+  ],
+  "genera": {
+    "H_AR_0": {
+      "is_handlebody": true,
+      "recogniseHandlebody": 3,
+      "simplified_size": 8
+    },
+    "H_AR_1": {
+      "is_handlebody": true,
+      "recogniseHandlebody": 3,
+      "simplified_size": 7
+    },
+    "H_J_0": {
+      "is_handlebody": true,
+      "recogniseHandlebody": 3,
+      "simplified_size": 7
+    },
+    "H_J_1": {
+      "is_handlebody": true,
+      "recogniseHandlebody": 3,
+      "simplified_size": 7
+    }
+  },
+  "schema": "t73_handlebody_bridge_regina/v1"
+}
