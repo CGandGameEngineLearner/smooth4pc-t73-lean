@@ -540,6 +540,29 @@ adding the missing constructions (F-015).
   marked with revision notes, while substantive findings are evaluated
   against the current working copy.
 
+### F-017 — Paper now distinguishes executable certificates from their mathematical interpretation
+
+- Severity: **Remediation**
+- Status: **RESOLVED at the exposition/claim-boundary level; mathematical bridges remain OPEN**
+- Location: new `main.tex` Section `sec:certificate-scope`, revised abstract,
+  `thm:joined`, P0/C/S/P3 statements, certificate propositions, final
+  identifications, and conclusion.
+- Change: the paper now lists, for P0, C, S, P3 and E13, the exact verifier
+  entry points, the finite predicates they reconstruct, and the additional
+  ambient/categorical theorem required to interpret each certificate.  The
+  top-level obstruction is stated conditionally rather than treating status
+  strings as proofs.  The Lean wording now says it verifies the imported
+  arithmetic `(-2)^3(-328)=2624`, not the long braid calculation.
+- Fresh replay: P0 and C1/C2 passed; relative S passed; standard-sphere S
+  failed `--check` solely because its committed upstream C/C1/C2 digests are
+  stale; P3 reported E11/E12 PASS and E13 PARTIAL; E13 wrappers printed
+  `IDENTIFIED_WITH_SIGMA=True` while the final wrapper also reported
+  `MISSING_MAPS=1`.  The paper records these outputs without promoting them
+  beyond their implemented contracts.
+- Remaining impact: F-102--F-107 and F-201--F-204 are not mathematically
+  resolved.  A future unconditional theorem still requires the actual global
+  PL/Kirby and MWW comparison arguments.
+
 ### F-108 — The manuscript cites the wrong Cappell--Shaneson paper as the original source of Iwaki Proposition 2.1
 
 - Severity: **Minor for truth; Major for the requested proof provenance**
