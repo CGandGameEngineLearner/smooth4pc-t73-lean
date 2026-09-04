@@ -499,3 +499,223 @@ target closure, selected cabled state and MWW-to-BHPW comparison are exactly
 the four missing grading diagrams.  Until C-H1 supplies them with one common
 framing/writhe convention, the sum 494 is intrinsic framed-KhR2 arithmetic,
 not a certified absolute comparison degree.
+
+## Corrected C-H1 typing: reduce \(C_{271}\), then double \(C_{44}\)
+
+The normalization conflict above identifies the correct order of operations.
+At the selected state let
+\[
+\mathcal A_{s_0}=\mathcal C_{44}\boxtimes\mathcal C_{271},
+\]
+where \(\mathcal C_p=\mathcal S^2_0(B^3;P_p;\mathbb Q)\) is MWW's
+bigraded 3-ball category.  Keep the coefficient \(M_R\) unshifted; MWW's
+one-handle gluing contributes the global shift
+\(\{44+271\}=\{315\}\).
+
+First take the coefficient coend in the z variable:
+\[
+M_R^{z}(T,T')=
+\int^{Z\in\mathcal C_{271}}
+M_R\bigl((T,Z),(T',Z)\bigr).
+\tag{C.H1d}
+\]
+This is a \(\mathcal C_{44}\)-bimodule.  Directly reordering the generators
+and relations in the two coends gives the Fubini isomorphism
+\[
+HH_0(\mathcal C_{44}\boxtimes\mathcal C_{271};M_R)
+\cong HH_0(\mathcal C_{44};M_R^z).
+\tag{C.H1e}
+\]
+No finite-dimensionality or matrix calculation is used here.
+
+The 44 product rectangles suggest a 44-strand tangle \(B\), while the
+remaining z channels suggest 227 separate unknot factors.  The required
+geometric statement is the natural reduced-coefficient isomorphism
+\[
+H^z_{T,T'}:
+M_R^z(T,T')
+\xrightarrow{\cong}
+\operatorname{Hom}_{\mathcal C_{44}}(BT,BT')\{-44\}
+\otimes A^{\otimes227}.
+\tag{C.H1f}
+\]
+Now \(-44\) has the correct source: objects of \(\mathcal C_{44}\) have
+88 boundary points, so MWW Definition 4.5 puts the shift \(+44\) in their
+Hom spaces; the product-ribbon isotopy is an isomorphism of raw link
+homologies, hence contributes the compensating \(-44\).  Labelling the 227
+circles by \(X\) contributes \(+227\), and the later MWW shifts give
+\[
+-44+227+315-4=494.
+\]
+This arithmetic is homogeneous provided (C.H1f) is proved in one framed
+convention.
+
+Apply the 227 counits and remove the simultaneous \(B\)-transport.  BPW's
+vertical-to-horizontal trace applied to \(\mathcal C_{44}\), followed by
+oriented doubling, then has target
+\[
+\operatorname{Sh}^{44}_h:
+q\operatorname{Tr}(\mathcal C_{44};M_R^z)
+\longrightarrow \operatorname{End}(E_{88,h}),
+\tag{C.H1g}
+\]
+where the 88-dimensional one-defect space appears only after doubling the
+44 oriented wickets.  The selected cup is external:
+\[
+u_h:E_{86,h}\longrightarrow E_{88,h},\qquad
+\ell_h:E_{88,h}\longrightarrow E_{86,h}.
+\]
+Thus the correctly typed detector is
+\[
+D_h(x)=
+\ell_h\bigl(\rho_h(W)-I\bigr)
+\operatorname{Sh}^{44}_h(x)\,u_h.
+\tag{C.H1h}
+\]
+For the diagonal whose reduced regular trace is the identity,
+\(\operatorname{Sh}^{44}_h(x)=\operatorname{Id}_{E_{88,h}}\), and (C.H1h)
+specializes to the computed cubic.  The noninvertible cup is no longer
+incorrectly placed inside a coefficient-bimodule equivalence.
+
+Equations (C.H1d)--(C.H1h) are suitable replacements for the manuscript's
+\(P_{86}\to P_{88}\) coefficient category and equation (17).  They are not
+yet an unconditional proof.  To prove (C.H1f), the product tangle must give
+a two-sided representable profunctor in the z variable so that the
+\(\mathcal C_{271}\)-coend is evaluated by co-Yoneda.  Concretely, one needs:
+
+1. a boundary-parametrized planar/canopolis operation
+   \(J:\mathcal C_{44}\to\mathcal C_{271}\) adding the 227 standard z arcs;
+2. an isotopy, relative to all insertion boxes, identifying the full
+   off-diagonal coefficient link for arbitrary \(T,T',Z,Z'\) with the two
+   representable z-Hom factors determined by \(J\) and \(B\);
+3. the resulting composition/co-Yoneda square, including MWW's Hom shifts,
+   both \(\mathcal C_{44}\) actions, and both
+   \(\mathcal C_{271}\) actions.
+
+BHPW canopolis composition and strict functoriality prove naturality once
+this planar input is supplied.  The current all-owner artifact records
+attaching-arc pairings and residual meridians, but not parametrizations of
+the two z insertion spheres, the planar operation \(J\), or the relative
+isotopy for arbitrary inserted tangles.  Therefore (C.H1f), and hence
+\(\operatorname{Sh}^{44}_h\), remains the first open C-H1 map.  The corrected
+typing shows how it could be closed without foam matrices; it is not implied
+by the existing counts alone.
+
+## Stress test: the 227 factors are not invariant before the z coend
+
+There is no platform, idempotent, coloring, or owner label in MWW's
+\(\mathcal C_{271}\) that distinguishes the 44 selected z channels from the
+227 added channels.  Definition 4.5 allows every framed oriented tangle with
+the prescribed boundary and all KhR morphisms between such objects.  In
+particular, a same-orientation braid may exchange a selected strand with an
+added strand.  BHPW's platforms and weight block record admissibility and
+total weight; they do not supply a central idempotent marking the provenance
+of individual strands.
+
+The failure of a fixed-factor counit is already visible in the rank-two
+Frobenius model.  Let
+\(A=\mathbb Q[X]/(X^2)\), with
+\(\epsilon(1)=0\), \(\epsilon(X)=1\), and let
+\(\tau:A\otimes A\to A\otimes A\) exchange an active circle and an added
+circle.  This is the constant term of an allowed same-orientation braid.
+Then
+\[
+(\operatorname{id}\otimes\epsilon)(1\otimes X)=1,\qquad
+(\operatorname{id}\otimes\epsilon)\tau(1\otimes X)
+=(\operatorname{id}\otimes\epsilon)(X\otimes1)=0.
+\tag{C.mix1}
+\]
+Thus capping the factor declared to be extra is not invariant under the full
+\(\mathcal C_{271}\) action.
+
+There is also an explicit allowed merge--split foam.  Its Frobenius map is
+\[
+S=\Delta\circ m:A\otimes A\longrightarrow A\otimes A.
+\]
+Since
+\[
+S(1\otimes1)=1\otimes X+X\otimes1,
+\]
+we have
+\[
+(\operatorname{id}\otimes\epsilon)S(1\otimes1)=1
+\quad\text{but}\quad
+(\operatorname{id}\otimes\epsilon)(1\otimes1)=0.
+\tag{C.mix2}
+\]
+No map on the active factor can make the fixed-extra counit intertwine this
+foam, because a linear map must send zero to zero.  Equations (C.mix1)--(C.mix2)
+disprove any claim that
+\(\operatorname{Hom}(JT,JT')\cong
+\operatorname{Hom}(T,T')\otimes A^{\otimes227}\) is natural for the entire
+\(\mathcal C_{271}\) action with the second tensor factor fixed.
+
+This does not disprove the full co-Yoneda route in (C.H1d)--(C.H1f).
+If the original coefficient profunctor first factors as two genuine
+representables over the *full* category \(\mathcal C_{271}\), then the
+coend composes all mixing morphisms and yields
+\(\operatorname{Hom}_{\mathcal C_{271}}(JT,JT')\).  Only after this coend
+may the split-link Kunneth isomorphism and the 227 counits be applied.  At
+that stage only the remaining \(\mathcal C_{44}\) actions require naturality,
+and \(J(f)=f\sqcup\operatorname{id}^{\sqcup227}\) preserves the split
+circles.
+
+Therefore the order is load-bearing:
+\[
+\text{full z-representability}
+\ \Longrightarrow\
+\text{co-Yoneda over all z morphisms}
+\ \Longrightarrow\
+\text{split-link Kunneth and counits}.
+\tag{C.mix3}
+\]
+The manuscript currently uses Kunneth/counits before proving the first two
+arrows and says the circle factors are disjoint from both actions.  That
+statement is false for the full z action by (C.mix1)--(C.mix2).  C can still
+close only if the missing relative planar diagram proves the two-sided
+representable factorization needed for the first arrow of (C.mix3).  The
+all-owner primitive incidence data do not prove it.
+
+## Literal off-diagonal splitting is not yet established
+
+Define \(J(T)=T\sqcup I^{\sqcup227}\), placing the 227 boundary-parallel z
+arcs in a separated sub-ball of a newly standardized z insertion ball.  This
+is a valid canopolis operation.  Co-Yoneda would close C-H1 if the full
+off-diagonal coefficient admitted the relative factorization
+\[
+M_R((T,Z),(T',Z'))\cong
+\operatorname{Hom}_{z}(JBT,Z')\otimes
+\operatorname{Hom}_{z}(Z,JBT')
+\tag{C.split}
+\]
+for arbitrary insertion tangles.
+
+The existing rectangles do not prove (C.split).  The tensor product requires
+the two Hom closures to be a literal split union relative to all four
+insertion boxes, or a separately proved monoidal foam equivalence.  No
+separating sphere or two disjoint containing 3-balls are supplied.
+
+The first concrete unseparated connector is visible in the selected state.
+Of the 42 \(m_2\) y--z connectors, 41 are Johnson central connectors.  The
+last is the cyclic
+\[
+m_2:C_i\longrightarrow c1:\mathrm{letter}:0
+\]
+connector through the bottom coordinate arc and both
+\(\lambda_i/\mu_i\) bands of the \((t,h_{CS})\) cancellation.  Its record
+contains the band hashes and an endpoint rule, but no common-complement PL
+surface, no assignment of its two sides to the two proposed Hom closures,
+and no separating sphere relative to the y and z insertion boxes.
+
+Moreover, each of the 227 residual z tracks is explicitly marked as a
+conditional transport in a normalized complement chart.  Separate target
+meridians and private levels do not provide one simultaneous ambient isotopy
+relative to both z insertion boxes and the cyclic connector.
+
+This is not a proof that (C.split) is topologically impossible.  It is the
+exact reason it does not follow from the current data.  A sufficient new
+artifact would give an embedded separating 2-sphere in the complement of
+the four parametrized insertion boxes and all coefficient strands, together
+with a simultaneous ambient movie carrying the cyclic connector and all 227
+residual tracks to opposite split sides.  Until then the two-representable
+route remains possible but unproved.

@@ -1443,6 +1443,126 @@ Topology-source checks completed 2026-09-04:
   lack a common framing/writhe conversion ledger. Therefore the intrinsic sum
   494 is not yet certified as the absolute MWW grading.
 
+### F-511 — C-H1 first fails at currying the MWW product coefficient into one morphism category
+
+- Severity: **Critical**
+- Status: **CONFIRMED TYPE/GRADING GAP**
+- Location: equation (17) and Lemma C1 in main.tex; source-exact analysis in
+  docs/proofs/T73_C_CHAINMAP_PAPER_PROOF.md.
+- MWW source type: Theorem 4.7 gives a coefficient profunctor on the product
+  of the 3-ball categories \(\prod_i\mathcal C_{p_i(r)}\). It does not state
+  that the cut tangle represents an endofunctor of a single category.
+- BPW/BHPW limit: BPW 3.12 and 3.20--3.21 give vertical/horizontal quantum
+  trace only after such a morphism-category/endofunctor type is supplied.
+  BHPW 4.6 makes specified planar tangle/foam operations strict; it does not
+  construct the missing currying operation. There is no K0-only problem,
+  since qHH is applied before the endpoint Chern identification.
+- Missing datum: a planar/canopolis functor
+  \(\iota_r:\prod_i\mathcal C_{p_i(r)}
+  \to\mathcal T_2(P_{a_r},P_{b_r})\), together with a natural homogeneous
+  coefficient isomorphism for arbitrary tuples of inserted tangles. The
+  all-owner rectangles bind fixed attaching arcs but do not specify this
+  operation on arbitrary objects or morphisms.
+- Concrete grading contradiction: a tangle \(P_{86}\to P_{88}\) has
+  \(174=2\cdot87\) boundary points, so MWW Definition 4.5 gives Hom
+  normalization \(+87\) for \(N=2\). The manuscript instead uses \(-44\) as
+  removal of that normalization. The number 44 belongs to the y-handle
+  configuration, and no planar functor or object shift reconciles it with
+  the asserted morphism category.
+- Consequence: no matrix enumeration is needed once the missing natural
+  representability map exists, but C-H1 is not presently constructed and the
+  absolute degree ledger cannot use its \(-44\) term as written.
+
+### F-512 — Corrected C-H1 must coend out \(C_{271}\) before oriented doubling
+
+- Severity: **Critical repair specification**
+- Status: **CORRECTED TYPE DERIVED; REPRESENTABILITY OPEN**
+- Location: corrected equations (C.H1d)--(C.H1h) in
+  docs/proofs/T73_C_CHAINMAP_PAPER_PROOF.md.
+- Correct source: at the selected state MWW Theorem 4.7 uses
+  \(\mathcal C_{44}\boxtimes\mathcal C_{271}\) and global shift \(+315\).
+  First taking the coefficient coend in the z variable gives a
+  \(\mathcal C_{44}\)-bimodule \(M_R^z\); Fubini for coend quotients then
+  reduces the product trace to \(HH_0(\mathcal C_{44};M_R^z)\).
+- Correct target: if the product rectangles give
+  \(M_R^z(T,T')\cong
+  \operatorname{Hom}_{\mathcal C_{44}}(BT,BT')\{-44\}
+  \otimes A^{\otimes227}\), then \(-44\) is exactly the MWW Hom
+  normalization for 88 boundary points. Oriented doubling is applied only
+  afterwards and gives a shadow into \(\operatorname{End}(E_{88})\).
+  The cup \(E_{86}\to E_{88}\) remains external, so the detector is
+  \(\ell(\rho(W)-I)\operatorname{Sh}^{44}(x)u\).
+- Remaining first map: the existing geometry does not define the planar
+  functor \(J:\mathcal C_{44}\to\mathcal C_{271}\) adding 227 z arcs, nor a
+  relative-to-insertion-boxes isotopy identifying the full off-diagonal MWW
+  coefficient with two z-representable Hom factors for arbitrary inserted
+  tangles. Without that factorization, co-Yoneda cannot establish the
+  reduced coefficient isomorphism.
+- Source boundary: BHPW canopolis composition and strict functoriality would
+  prove all-variable naturality once this planar operation exists. The
+  published results do not infer it from endpoint counts or fixed attaching
+  arcs.
+- Grading: the corrected route makes the formal ledger
+  \(-44+227+315-4=494\) type-consistent, but absolute grading stays open
+  until the representability isotopy and its writhe/convention table are
+  supplied.
+
+### F-513 — Full \(C_{271}\) morphisms mix the 227 added factors with the active factors
+
+- Severity: **Critical for the naive Kunneth/counit argument**
+- Status: **REFUTED BEFORE CO-YONEDA; FULL REPRESENTABLE ROUTE OPEN**
+- Locations: Lemma C1 and the claim that circle counits are disjoint from
+  both actions in main.tex; stress test in
+  docs/proofs/T73_C_CHAINMAP_PAPER_PROOF.md.
+- Category check: MWW Definition 4.5 has all oriented tangles with boundary
+  \(P_{271}\) and their full KhR morphism spaces. There is no owner label or
+  central idempotent distinguishing 44 active strands from 227 added ones.
+  BHPW platforms/weight blocks do not add such provenance.
+- Braid counterexample: on \(A\otimes A\), an allowed same-orientation
+  exchange \(\tau\) gives
+  \((1\otimes\epsilon)(1\otimes X)=1\) but
+  \((1\otimes\epsilon)\tau(1\otimes X)=0\).
+- Foam counterexample: the allowed merge--split map
+  \(S=\Delta m\) sends \(1\otimes1\) to
+  \(1\otimes X+X\otimes1\). Hence
+  \((1\otimes\epsilon)S(1\otimes1)=1\), whereas the fixed-extra counit of
+  \(1\otimes1\) is zero. No active-factor map can make this natural.
+- Consequence: the proposed \(A^{\otimes227}\) splitting and counits are not
+  natural for the full z action if applied before taking the z coend.
+- Surviving possible route: first prove that the complete MWW coefficient is
+  a pair of representable profunctors over the full \(\mathcal C_{271}\);
+  then co-Yoneda absorbs every mixing morphism; only afterwards apply the
+  split-link Kunneth isomorphism and counits. No invariant platform is needed
+  in this order, but the required two-sided representable planar
+  factorization is still absent.
+
+### F-514 — The current product data do not prove the off-diagonal coefficient is literally split
+
+- Severity: **Critical remaining geometric interface**
+- Status: **OPEN; FIRST UNSEPARATED CONNECTOR IDENTIFIED**
+- Location: the literal-splitting test in
+  docs/proofs/T73_C_CHAINMAP_PAPER_PROOF.md and
+  geometry/t73_all_owner_product_primitives.json.
+- Proposed operation: \(J(T)=T\sqcup I^{\sqcup227}\) is valid, but co-Yoneda
+  additionally requires the full coefficient to factor naturally as
+  \(\operatorname{Hom}_z(JBT,Z')\otimes
+  \operatorname{Hom}_z(Z,JBT')\) relative to all four insertion boxes.
+- Missing split: no relative separating sphere or two disjoint 3-balls
+  containing the proposed Hom closures are supplied.
+- Exact first connector: 41 selected \(m_2\) pairings use Johnson central
+  connectors. The last is the cyclic
+  \(m_2:C_i\to c1:\mathrm{letter}:0\) connector through the bottom coordinate
+  arc and both \(\lambda_i/\mu_i\) bands of the
+  \((t,h_{CS})\) cancellation. It has hashes and an endpoint rule, but no
+  common-complement surface or split-side assignment.
+- Residual issue: all 227 z-circle tracks are explicitly conditional ambient
+  transports. Their individual meridians do not form a simultaneous isotopy
+  relative to both z insertion boxes and the cyclic connector.
+- Assessment: this does not prove that the two-representable factorization is
+  impossible. It proves that it is not supplied by the existing rectangles.
+  C-H1 requires the relative separating sphere and simultaneous ambient movie
+  before (C.split) and co-Yoneda can be used.
+
 ### F-600 — The “actual” sphere-system builder assigns, rather than constructs, the embedding in \(\partial W_2\)
 
 - Severity: **Critical**
