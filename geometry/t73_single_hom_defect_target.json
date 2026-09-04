@@ -1,0 +1,4184 @@
+{
+  "bottom_endpoint_count": 86,
+  "bottom_endpoints": [
+    {
+      "bottom_index": 0,
+      "orientation": -1,
+      "physical_endpoint_id": "actual:r_xy:w1:neg:r_xy:vertex:3",
+      "point": [
+        "-83/89",
+        "0",
+        "0"
+      ],
+      "top_index": 2,
+      "variance": "V_dual"
+    },
+    {
+      "bottom_index": 1,
+      "orientation": 1,
+      "physical_endpoint_id": "actual:r_xy:w1:pos:r_xy:vertex:5",
+      "point": [
+        "-81/89",
+        "0",
+        "0"
+      ],
+      "top_index": 3,
+      "variance": "V"
+    },
+    {
+      "bottom_index": 2,
+      "orientation": -1,
+      "physical_endpoint_id": "actual:r_xy:w2:pos:r_xy:vertex:1",
+      "point": [
+        "-79/89",
+        "0",
+        "0"
+      ],
+      "top_index": 4,
+      "variance": "V_dual"
+    },
+    {
+      "bottom_index": 3,
+      "orientation": 1,
+      "physical_endpoint_id": "actual:m_2:w44:neg:c1:letter:0",
+      "point": [
+        "-77/89",
+        "0",
+        "0"
+      ],
+      "top_index": 5,
+      "variance": "V"
+    },
+    {
+      "bottom_index": 4,
+      "orientation": -1,
+      "physical_endpoint_id": "actual:m_2:w43:neg:c1:letter:309",
+      "point": [
+        "-75/89",
+        "0",
+        "0"
+      ],
+      "top_index": 6,
+      "variance": "V_dual"
+    },
+    {
+      "bottom_index": 5,
+      "orientation": 1,
+      "physical_endpoint_id": "actual:m_2:w43:pos:c1:letter:308",
+      "point": [
+        "-73/89",
+        "0",
+        "0"
+      ],
+      "top_index": 7,
+      "variance": "V"
+    },
+    {
+      "bottom_index": 6,
+      "orientation": -1,
+      "physical_endpoint_id": "actual:m_2:w42:neg:c1:letter:302",
+      "point": [
+        "-71/89",
+        "0",
+        "0"
+      ],
+      "top_index": 8,
+      "variance": "V_dual"
+    },
+    {
+      "bottom_index": 7,
+      "orientation": 1,
+      "physical_endpoint_id": "actual:m_2:w42:pos:c1:letter:301",
+      "point": [
+        "-69/89",
+        "0",
+        "0"
+      ],
+      "top_index": 9,
+      "variance": "V"
+    },
+    {
+      "bottom_index": 8,
+      "orientation": -1,
+      "physical_endpoint_id": "actual:m_2:w41:neg:c1:letter:294",
+      "point": [
+        "-67/89",
+        "0",
+        "0"
+      ],
+      "top_index": 10,
+      "variance": "V_dual"
+    },
+    {
+      "bottom_index": 9,
+      "orientation": 1,
+      "physical_endpoint_id": "actual:m_2:w41:pos:c1:letter:293",
+      "point": [
+        "-65/89",
+        "0",
+        "0"
+      ],
+      "top_index": 11,
+      "variance": "V"
+    },
+    {
+      "bottom_index": 10,
+      "orientation": -1,
+      "physical_endpoint_id": "actual:m_2:w40:neg:c1:letter:287",
+      "point": [
+        "-63/89",
+        "0",
+        "0"
+      ],
+      "top_index": 12,
+      "variance": "V_dual"
+    },
+    {
+      "bottom_index": 11,
+      "orientation": 1,
+      "physical_endpoint_id": "actual:m_2:w40:pos:c1:letter:286",
+      "point": [
+        "-61/89",
+        "0",
+        "0"
+      ],
+      "top_index": 13,
+      "variance": "V"
+    },
+    {
+      "bottom_index": 12,
+      "orientation": -1,
+      "physical_endpoint_id": "actual:m_2:w39:neg:c1:letter:279",
+      "point": [
+        "-59/89",
+        "0",
+        "0"
+      ],
+      "top_index": 14,
+      "variance": "V_dual"
+    },
+    {
+      "bottom_index": 13,
+      "orientation": 1,
+      "physical_endpoint_id": "actual:m_2:w39:pos:c1:letter:278",
+      "point": [
+        "-57/89",
+        "0",
+        "0"
+      ],
+      "top_index": 15,
+      "variance": "V"
+    },
+    {
+      "bottom_index": 14,
+      "orientation": -1,
+      "physical_endpoint_id": "actual:m_2:w38:neg:c1:letter:272",
+      "point": [
+        "-55/89",
+        "0",
+        "0"
+      ],
+      "top_index": 16,
+      "variance": "V_dual"
+    },
+    {
+      "bottom_index": 15,
+      "orientation": 1,
+      "physical_endpoint_id": "actual:m_2:w38:pos:c1:letter:271",
+      "point": [
+        "-53/89",
+        "0",
+        "0"
+      ],
+      "top_index": 17,
+      "variance": "V"
+    },
+    {
+      "bottom_index": 16,
+      "orientation": -1,
+      "physical_endpoint_id": "actual:m_2:w37:neg:c1:letter:264",
+      "point": [
+        "-51/89",
+        "0",
+        "0"
+      ],
+      "top_index": 18,
+      "variance": "V_dual"
+    },
+    {
+      "bottom_index": 17,
+      "orientation": 1,
+      "physical_endpoint_id": "actual:m_2:w37:pos:c1:letter:263",
+      "point": [
+        "-49/89",
+        "0",
+        "0"
+      ],
+      "top_index": 19,
+      "variance": "V"
+    },
+    {
+      "bottom_index": 18,
+      "orientation": -1,
+      "physical_endpoint_id": "actual:m_2:w36:neg:c1:letter:257",
+      "point": [
+        "-47/89",
+        "0",
+        "0"
+      ],
+      "top_index": 20,
+      "variance": "V_dual"
+    },
+    {
+      "bottom_index": 19,
+      "orientation": 1,
+      "physical_endpoint_id": "actual:m_2:w36:pos:c1:letter:256",
+      "point": [
+        "-45/89",
+        "0",
+        "0"
+      ],
+      "top_index": 21,
+      "variance": "V"
+    },
+    {
+      "bottom_index": 20,
+      "orientation": -1,
+      "physical_endpoint_id": "actual:m_2:w35:neg:c1:letter:249",
+      "point": [
+        "-43/89",
+        "0",
+        "0"
+      ],
+      "top_index": 22,
+      "variance": "V_dual"
+    },
+    {
+      "bottom_index": 21,
+      "orientation": 1,
+      "physical_endpoint_id": "actual:m_2:w35:pos:c1:letter:248",
+      "point": [
+        "-41/89",
+        "0",
+        "0"
+      ],
+      "top_index": 23,
+      "variance": "V"
+    },
+    {
+      "bottom_index": 22,
+      "orientation": -1,
+      "physical_endpoint_id": "actual:m_2:w34:neg:c1:letter:241",
+      "point": [
+        "-39/89",
+        "0",
+        "0"
+      ],
+      "top_index": 24,
+      "variance": "V_dual"
+    },
+    {
+      "bottom_index": 23,
+      "orientation": 1,
+      "physical_endpoint_id": "actual:m_2:w34:pos:c1:letter:240",
+      "point": [
+        "-37/89",
+        "0",
+        "0"
+      ],
+      "top_index": 25,
+      "variance": "V"
+    },
+    {
+      "bottom_index": 24,
+      "orientation": -1,
+      "physical_endpoint_id": "actual:m_2:w33:neg:c1:letter:234",
+      "point": [
+        "-35/89",
+        "0",
+        "0"
+      ],
+      "top_index": 26,
+      "variance": "V_dual"
+    },
+    {
+      "bottom_index": 25,
+      "orientation": 1,
+      "physical_endpoint_id": "actual:m_2:w33:pos:c1:letter:233",
+      "point": [
+        "-33/89",
+        "0",
+        "0"
+      ],
+      "top_index": 27,
+      "variance": "V"
+    },
+    {
+      "bottom_index": 26,
+      "orientation": -1,
+      "physical_endpoint_id": "actual:m_2:w32:neg:c1:letter:226",
+      "point": [
+        "-31/89",
+        "0",
+        "0"
+      ],
+      "top_index": 28,
+      "variance": "V_dual"
+    },
+    {
+      "bottom_index": 27,
+      "orientation": 1,
+      "physical_endpoint_id": "actual:m_2:w32:pos:c1:letter:225",
+      "point": [
+        "-29/89",
+        "0",
+        "0"
+      ],
+      "top_index": 29,
+      "variance": "V"
+    },
+    {
+      "bottom_index": 28,
+      "orientation": -1,
+      "physical_endpoint_id": "actual:m_2:w31:neg:c1:letter:219",
+      "point": [
+        "-27/89",
+        "0",
+        "0"
+      ],
+      "top_index": 30,
+      "variance": "V_dual"
+    },
+    {
+      "bottom_index": 29,
+      "orientation": 1,
+      "physical_endpoint_id": "actual:m_2:w31:pos:c1:letter:218",
+      "point": [
+        "-25/89",
+        "0",
+        "0"
+      ],
+      "top_index": 31,
+      "variance": "V"
+    },
+    {
+      "bottom_index": 30,
+      "orientation": -1,
+      "physical_endpoint_id": "actual:m_2:w30:neg:c1:letter:211",
+      "point": [
+        "-23/89",
+        "0",
+        "0"
+      ],
+      "top_index": 32,
+      "variance": "V_dual"
+    },
+    {
+      "bottom_index": 31,
+      "orientation": 1,
+      "physical_endpoint_id": "actual:m_2:w30:pos:c1:letter:210",
+      "point": [
+        "-21/89",
+        "0",
+        "0"
+      ],
+      "top_index": 33,
+      "variance": "V"
+    },
+    {
+      "bottom_index": 32,
+      "orientation": -1,
+      "physical_endpoint_id": "actual:m_2:w29:neg:c1:letter:204",
+      "point": [
+        "-19/89",
+        "0",
+        "0"
+      ],
+      "top_index": 34,
+      "variance": "V_dual"
+    },
+    {
+      "bottom_index": 33,
+      "orientation": 1,
+      "physical_endpoint_id": "actual:m_2:w29:pos:c1:letter:203",
+      "point": [
+        "-17/89",
+        "0",
+        "0"
+      ],
+      "top_index": 35,
+      "variance": "V"
+    },
+    {
+      "bottom_index": 34,
+      "orientation": -1,
+      "physical_endpoint_id": "actual:m_2:w28:neg:c1:letter:196",
+      "point": [
+        "-15/89",
+        "0",
+        "0"
+      ],
+      "top_index": 36,
+      "variance": "V_dual"
+    },
+    {
+      "bottom_index": 35,
+      "orientation": 1,
+      "physical_endpoint_id": "actual:m_2:w28:pos:c1:letter:195",
+      "point": [
+        "-13/89",
+        "0",
+        "0"
+      ],
+      "top_index": 37,
+      "variance": "V"
+    },
+    {
+      "bottom_index": 36,
+      "orientation": -1,
+      "physical_endpoint_id": "actual:m_2:w27:neg:c1:letter:189",
+      "point": [
+        "-11/89",
+        "0",
+        "0"
+      ],
+      "top_index": 38,
+      "variance": "V_dual"
+    },
+    {
+      "bottom_index": 37,
+      "orientation": 1,
+      "physical_endpoint_id": "actual:m_2:w27:pos:c1:letter:188",
+      "point": [
+        "-9/89",
+        "0",
+        "0"
+      ],
+      "top_index": 39,
+      "variance": "V"
+    },
+    {
+      "bottom_index": 38,
+      "orientation": -1,
+      "physical_endpoint_id": "actual:m_2:w26:neg:c1:letter:181",
+      "point": [
+        "-7/89",
+        "0",
+        "0"
+      ],
+      "top_index": 40,
+      "variance": "V_dual"
+    },
+    {
+      "bottom_index": 39,
+      "orientation": 1,
+      "physical_endpoint_id": "actual:m_2:w26:pos:c1:letter:180",
+      "point": [
+        "-5/89",
+        "0",
+        "0"
+      ],
+      "top_index": 41,
+      "variance": "V"
+    },
+    {
+      "bottom_index": 40,
+      "orientation": -1,
+      "physical_endpoint_id": "actual:m_2:w25:neg:c1:letter:173",
+      "point": [
+        "-3/89",
+        "0",
+        "0"
+      ],
+      "top_index": 42,
+      "variance": "V_dual"
+    },
+    {
+      "bottom_index": 41,
+      "orientation": 1,
+      "physical_endpoint_id": "actual:m_2:w25:pos:c1:letter:172",
+      "point": [
+        "-1/89",
+        "0",
+        "0"
+      ],
+      "top_index": 43,
+      "variance": "V"
+    },
+    {
+      "bottom_index": 42,
+      "orientation": -1,
+      "physical_endpoint_id": "actual:m_2:w24:neg:c1:letter:166",
+      "point": [
+        "1/89",
+        "0",
+        "0"
+      ],
+      "top_index": 44,
+      "variance": "V_dual"
+    },
+    {
+      "bottom_index": 43,
+      "orientation": 1,
+      "physical_endpoint_id": "actual:m_2:w24:pos:c1:letter:165",
+      "point": [
+        "3/89",
+        "0",
+        "0"
+      ],
+      "top_index": 45,
+      "variance": "V"
+    },
+    {
+      "bottom_index": 44,
+      "orientation": -1,
+      "physical_endpoint_id": "actual:m_2:w23:neg:c1:letter:158",
+      "point": [
+        "5/89",
+        "0",
+        "0"
+      ],
+      "top_index": 46,
+      "variance": "V_dual"
+    },
+    {
+      "bottom_index": 45,
+      "orientation": 1,
+      "physical_endpoint_id": "actual:m_2:w23:pos:c1:letter:157",
+      "point": [
+        "7/89",
+        "0",
+        "0"
+      ],
+      "top_index": 47,
+      "variance": "V"
+    },
+    {
+      "bottom_index": 46,
+      "orientation": -1,
+      "physical_endpoint_id": "actual:m_2:w22:neg:c1:letter:151",
+      "point": [
+        "9/89",
+        "0",
+        "0"
+      ],
+      "top_index": 48,
+      "variance": "V_dual"
+    },
+    {
+      "bottom_index": 47,
+      "orientation": 1,
+      "physical_endpoint_id": "actual:m_2:w22:pos:c1:letter:150",
+      "point": [
+        "11/89",
+        "0",
+        "0"
+      ],
+      "top_index": 49,
+      "variance": "V"
+    },
+    {
+      "bottom_index": 48,
+      "orientation": -1,
+      "physical_endpoint_id": "actual:m_2:w21:neg:c1:letter:143",
+      "point": [
+        "13/89",
+        "0",
+        "0"
+      ],
+      "top_index": 50,
+      "variance": "V_dual"
+    },
+    {
+      "bottom_index": 49,
+      "orientation": 1,
+      "physical_endpoint_id": "actual:m_2:w21:pos:c1:letter:142",
+      "point": [
+        "15/89",
+        "0",
+        "0"
+      ],
+      "top_index": 51,
+      "variance": "V"
+    },
+    {
+      "bottom_index": 50,
+      "orientation": -1,
+      "physical_endpoint_id": "actual:m_2:w20:neg:c1:letter:136",
+      "point": [
+        "17/89",
+        "0",
+        "0"
+      ],
+      "top_index": 52,
+      "variance": "V_dual"
+    },
+    {
+      "bottom_index": 51,
+      "orientation": 1,
+      "physical_endpoint_id": "actual:m_2:w20:pos:c1:letter:135",
+      "point": [
+        "19/89",
+        "0",
+        "0"
+      ],
+      "top_index": 53,
+      "variance": "V"
+    },
+    {
+      "bottom_index": 52,
+      "orientation": -1,
+      "physical_endpoint_id": "actual:m_2:w19:neg:c1:letter:128",
+      "point": [
+        "21/89",
+        "0",
+        "0"
+      ],
+      "top_index": 54,
+      "variance": "V_dual"
+    },
+    {
+      "bottom_index": 53,
+      "orientation": 1,
+      "physical_endpoint_id": "actual:m_2:w19:pos:c1:letter:127",
+      "point": [
+        "23/89",
+        "0",
+        "0"
+      ],
+      "top_index": 55,
+      "variance": "V"
+    },
+    {
+      "bottom_index": 54,
+      "orientation": -1,
+      "physical_endpoint_id": "actual:m_2:w18:neg:c1:letter:120",
+      "point": [
+        "25/89",
+        "0",
+        "0"
+      ],
+      "top_index": 56,
+      "variance": "V_dual"
+    },
+    {
+      "bottom_index": 55,
+      "orientation": 1,
+      "physical_endpoint_id": "actual:m_2:w18:pos:c1:letter:119",
+      "point": [
+        "27/89",
+        "0",
+        "0"
+      ],
+      "top_index": 57,
+      "variance": "V"
+    },
+    {
+      "bottom_index": 56,
+      "orientation": -1,
+      "physical_endpoint_id": "actual:m_2:w17:neg:c1:letter:113",
+      "point": [
+        "29/89",
+        "0",
+        "0"
+      ],
+      "top_index": 58,
+      "variance": "V_dual"
+    },
+    {
+      "bottom_index": 57,
+      "orientation": 1,
+      "physical_endpoint_id": "actual:m_2:w17:pos:c1:letter:112",
+      "point": [
+        "31/89",
+        "0",
+        "0"
+      ],
+      "top_index": 59,
+      "variance": "V"
+    },
+    {
+      "bottom_index": 58,
+      "orientation": -1,
+      "physical_endpoint_id": "actual:m_2:w16:neg:c1:letter:105",
+      "point": [
+        "33/89",
+        "0",
+        "0"
+      ],
+      "top_index": 60,
+      "variance": "V_dual"
+    },
+    {
+      "bottom_index": 59,
+      "orientation": 1,
+      "physical_endpoint_id": "actual:m_2:w16:pos:c1:letter:104",
+      "point": [
+        "35/89",
+        "0",
+        "0"
+      ],
+      "top_index": 61,
+      "variance": "V"
+    },
+    {
+      "bottom_index": 60,
+      "orientation": -1,
+      "physical_endpoint_id": "actual:m_2:w15:neg:c1:letter:98",
+      "point": [
+        "37/89",
+        "0",
+        "0"
+      ],
+      "top_index": 62,
+      "variance": "V_dual"
+    },
+    {
+      "bottom_index": 61,
+      "orientation": 1,
+      "physical_endpoint_id": "actual:m_2:w15:pos:c1:letter:97",
+      "point": [
+        "39/89",
+        "0",
+        "0"
+      ],
+      "top_index": 63,
+      "variance": "V"
+    },
+    {
+      "bottom_index": 62,
+      "orientation": -1,
+      "physical_endpoint_id": "actual:m_2:w14:neg:c1:letter:90",
+      "point": [
+        "41/89",
+        "0",
+        "0"
+      ],
+      "top_index": 64,
+      "variance": "V_dual"
+    },
+    {
+      "bottom_index": 63,
+      "orientation": 1,
+      "physical_endpoint_id": "actual:m_2:w14:pos:c1:letter:89",
+      "point": [
+        "43/89",
+        "0",
+        "0"
+      ],
+      "top_index": 65,
+      "variance": "V"
+    },
+    {
+      "bottom_index": 64,
+      "orientation": -1,
+      "physical_endpoint_id": "actual:m_2:w13:neg:c1:letter:83",
+      "point": [
+        "45/89",
+        "0",
+        "0"
+      ],
+      "top_index": 66,
+      "variance": "V_dual"
+    },
+    {
+      "bottom_index": 65,
+      "orientation": 1,
+      "physical_endpoint_id": "actual:m_2:w13:pos:c1:letter:82",
+      "point": [
+        "47/89",
+        "0",
+        "0"
+      ],
+      "top_index": 67,
+      "variance": "V"
+    },
+    {
+      "bottom_index": 66,
+      "orientation": -1,
+      "physical_endpoint_id": "actual:m_2:w12:neg:c1:letter:75",
+      "point": [
+        "49/89",
+        "0",
+        "0"
+      ],
+      "top_index": 68,
+      "variance": "V_dual"
+    },
+    {
+      "bottom_index": 67,
+      "orientation": 1,
+      "physical_endpoint_id": "actual:m_2:w12:pos:c1:letter:74",
+      "point": [
+        "51/89",
+        "0",
+        "0"
+      ],
+      "top_index": 69,
+      "variance": "V"
+    },
+    {
+      "bottom_index": 68,
+      "orientation": -1,
+      "physical_endpoint_id": "actual:m_2:w11:neg:c1:letter:68",
+      "point": [
+        "53/89",
+        "0",
+        "0"
+      ],
+      "top_index": 70,
+      "variance": "V_dual"
+    },
+    {
+      "bottom_index": 69,
+      "orientation": 1,
+      "physical_endpoint_id": "actual:m_2:w11:pos:c1:letter:67",
+      "point": [
+        "55/89",
+        "0",
+        "0"
+      ],
+      "top_index": 71,
+      "variance": "V"
+    },
+    {
+      "bottom_index": 70,
+      "orientation": -1,
+      "physical_endpoint_id": "actual:m_2:w10:neg:c1:letter:60",
+      "point": [
+        "57/89",
+        "0",
+        "0"
+      ],
+      "top_index": 72,
+      "variance": "V_dual"
+    },
+    {
+      "bottom_index": 71,
+      "orientation": 1,
+      "physical_endpoint_id": "actual:m_2:w10:pos:c1:letter:59",
+      "point": [
+        "59/89",
+        "0",
+        "0"
+      ],
+      "top_index": 73,
+      "variance": "V"
+    },
+    {
+      "bottom_index": 72,
+      "orientation": -1,
+      "physical_endpoint_id": "actual:m_2:w9:neg:c1:letter:52",
+      "point": [
+        "61/89",
+        "0",
+        "0"
+      ],
+      "top_index": 74,
+      "variance": "V_dual"
+    },
+    {
+      "bottom_index": 73,
+      "orientation": 1,
+      "physical_endpoint_id": "actual:m_2:w9:pos:c1:letter:51",
+      "point": [
+        "63/89",
+        "0",
+        "0"
+      ],
+      "top_index": 75,
+      "variance": "V"
+    },
+    {
+      "bottom_index": 74,
+      "orientation": -1,
+      "physical_endpoint_id": "actual:m_2:w8:neg:c1:letter:45",
+      "point": [
+        "65/89",
+        "0",
+        "0"
+      ],
+      "top_index": 76,
+      "variance": "V_dual"
+    },
+    {
+      "bottom_index": 75,
+      "orientation": 1,
+      "physical_endpoint_id": "actual:m_2:w8:pos:c1:letter:44",
+      "point": [
+        "67/89",
+        "0",
+        "0"
+      ],
+      "top_index": 77,
+      "variance": "V"
+    },
+    {
+      "bottom_index": 76,
+      "orientation": -1,
+      "physical_endpoint_id": "actual:m_2:w7:neg:c1:letter:37",
+      "point": [
+        "69/89",
+        "0",
+        "0"
+      ],
+      "top_index": 78,
+      "variance": "V_dual"
+    },
+    {
+      "bottom_index": 77,
+      "orientation": 1,
+      "physical_endpoint_id": "actual:m_2:w7:pos:c1:letter:36",
+      "point": [
+        "71/89",
+        "0",
+        "0"
+      ],
+      "top_index": 79,
+      "variance": "V"
+    },
+    {
+      "bottom_index": 78,
+      "orientation": -1,
+      "physical_endpoint_id": "actual:m_2:w6:neg:c1:letter:30",
+      "point": [
+        "73/89",
+        "0",
+        "0"
+      ],
+      "top_index": 80,
+      "variance": "V_dual"
+    },
+    {
+      "bottom_index": 79,
+      "orientation": 1,
+      "physical_endpoint_id": "actual:m_2:w6:pos:c1:letter:29",
+      "point": [
+        "75/89",
+        "0",
+        "0"
+      ],
+      "top_index": 81,
+      "variance": "V"
+    },
+    {
+      "bottom_index": 80,
+      "orientation": -1,
+      "physical_endpoint_id": "actual:m_2:w5:neg:c1:letter:22",
+      "point": [
+        "77/89",
+        "0",
+        "0"
+      ],
+      "top_index": 82,
+      "variance": "V_dual"
+    },
+    {
+      "bottom_index": 81,
+      "orientation": 1,
+      "physical_endpoint_id": "actual:m_2:w5:pos:c1:letter:21",
+      "point": [
+        "79/89",
+        "0",
+        "0"
+      ],
+      "top_index": 83,
+      "variance": "V"
+    },
+    {
+      "bottom_index": 82,
+      "orientation": -1,
+      "physical_endpoint_id": "actual:m_2:w4:neg:c1:letter:15",
+      "point": [
+        "81/89",
+        "0",
+        "0"
+      ],
+      "top_index": 84,
+      "variance": "V_dual"
+    },
+    {
+      "bottom_index": 83,
+      "orientation": 1,
+      "physical_endpoint_id": "actual:m_2:w4:pos:c1:letter:14",
+      "point": [
+        "83/89",
+        "0",
+        "0"
+      ],
+      "top_index": 85,
+      "variance": "V"
+    },
+    {
+      "bottom_index": 84,
+      "orientation": -1,
+      "physical_endpoint_id": "actual:m_2:w3:neg:c1:letter:7",
+      "point": [
+        "85/89",
+        "0",
+        "0"
+      ],
+      "top_index": 86,
+      "variance": "V_dual"
+    },
+    {
+      "bottom_index": 85,
+      "orientation": 1,
+      "physical_endpoint_id": "actual:m_2:w3:pos:c1:letter:6",
+      "point": [
+        "87/89",
+        "0",
+        "0"
+      ],
+      "top_index": 87,
+      "variance": "V"
+    }
+  ],
+  "cells": [
+    {
+      "bottom_index": 0,
+      "cell_id": "through:0",
+      "kind": "through_strand",
+      "physical_endpoint_id": "actual:r_xy:w1:neg:r_xy:vertex:3",
+      "product_normal": [
+        "0",
+        "1",
+        "0"
+      ],
+      "top_index": 2,
+      "vertices": [
+        [
+          "-83/89",
+          "0",
+          "0"
+        ],
+        [
+          "-83/89",
+          "0",
+          "1"
+        ]
+      ]
+    },
+    {
+      "bottom_index": 1,
+      "cell_id": "through:1",
+      "kind": "through_strand",
+      "physical_endpoint_id": "actual:r_xy:w1:pos:r_xy:vertex:5",
+      "product_normal": [
+        "0",
+        "1",
+        "0"
+      ],
+      "top_index": 3,
+      "vertices": [
+        [
+          "-81/89",
+          "0",
+          "0"
+        ],
+        [
+          "-81/89",
+          "0",
+          "1"
+        ]
+      ]
+    },
+    {
+      "bottom_index": 2,
+      "cell_id": "through:2",
+      "kind": "through_strand",
+      "physical_endpoint_id": "actual:r_xy:w2:pos:r_xy:vertex:1",
+      "product_normal": [
+        "0",
+        "1",
+        "0"
+      ],
+      "top_index": 4,
+      "vertices": [
+        [
+          "-79/89",
+          "0",
+          "0"
+        ],
+        [
+          "-79/89",
+          "0",
+          "1"
+        ]
+      ]
+    },
+    {
+      "bottom_index": 3,
+      "cell_id": "through:3",
+      "kind": "through_strand",
+      "physical_endpoint_id": "actual:m_2:w44:neg:c1:letter:0",
+      "product_normal": [
+        "0",
+        "1",
+        "0"
+      ],
+      "top_index": 5,
+      "vertices": [
+        [
+          "-77/89",
+          "0",
+          "0"
+        ],
+        [
+          "-77/89",
+          "0",
+          "1"
+        ]
+      ]
+    },
+    {
+      "bottom_index": 4,
+      "cell_id": "through:4",
+      "kind": "through_strand",
+      "physical_endpoint_id": "actual:m_2:w43:neg:c1:letter:309",
+      "product_normal": [
+        "0",
+        "1",
+        "0"
+      ],
+      "top_index": 6,
+      "vertices": [
+        [
+          "-75/89",
+          "0",
+          "0"
+        ],
+        [
+          "-75/89",
+          "0",
+          "1"
+        ]
+      ]
+    },
+    {
+      "bottom_index": 5,
+      "cell_id": "through:5",
+      "kind": "through_strand",
+      "physical_endpoint_id": "actual:m_2:w43:pos:c1:letter:308",
+      "product_normal": [
+        "0",
+        "1",
+        "0"
+      ],
+      "top_index": 7,
+      "vertices": [
+        [
+          "-73/89",
+          "0",
+          "0"
+        ],
+        [
+          "-73/89",
+          "0",
+          "1"
+        ]
+      ]
+    },
+    {
+      "bottom_index": 6,
+      "cell_id": "through:6",
+      "kind": "through_strand",
+      "physical_endpoint_id": "actual:m_2:w42:neg:c1:letter:302",
+      "product_normal": [
+        "0",
+        "1",
+        "0"
+      ],
+      "top_index": 8,
+      "vertices": [
+        [
+          "-71/89",
+          "0",
+          "0"
+        ],
+        [
+          "-71/89",
+          "0",
+          "1"
+        ]
+      ]
+    },
+    {
+      "bottom_index": 7,
+      "cell_id": "through:7",
+      "kind": "through_strand",
+      "physical_endpoint_id": "actual:m_2:w42:pos:c1:letter:301",
+      "product_normal": [
+        "0",
+        "1",
+        "0"
+      ],
+      "top_index": 9,
+      "vertices": [
+        [
+          "-69/89",
+          "0",
+          "0"
+        ],
+        [
+          "-69/89",
+          "0",
+          "1"
+        ]
+      ]
+    },
+    {
+      "bottom_index": 8,
+      "cell_id": "through:8",
+      "kind": "through_strand",
+      "physical_endpoint_id": "actual:m_2:w41:neg:c1:letter:294",
+      "product_normal": [
+        "0",
+        "1",
+        "0"
+      ],
+      "top_index": 10,
+      "vertices": [
+        [
+          "-67/89",
+          "0",
+          "0"
+        ],
+        [
+          "-67/89",
+          "0",
+          "1"
+        ]
+      ]
+    },
+    {
+      "bottom_index": 9,
+      "cell_id": "through:9",
+      "kind": "through_strand",
+      "physical_endpoint_id": "actual:m_2:w41:pos:c1:letter:293",
+      "product_normal": [
+        "0",
+        "1",
+        "0"
+      ],
+      "top_index": 11,
+      "vertices": [
+        [
+          "-65/89",
+          "0",
+          "0"
+        ],
+        [
+          "-65/89",
+          "0",
+          "1"
+        ]
+      ]
+    },
+    {
+      "bottom_index": 10,
+      "cell_id": "through:10",
+      "kind": "through_strand",
+      "physical_endpoint_id": "actual:m_2:w40:neg:c1:letter:287",
+      "product_normal": [
+        "0",
+        "1",
+        "0"
+      ],
+      "top_index": 12,
+      "vertices": [
+        [
+          "-63/89",
+          "0",
+          "0"
+        ],
+        [
+          "-63/89",
+          "0",
+          "1"
+        ]
+      ]
+    },
+    {
+      "bottom_index": 11,
+      "cell_id": "through:11",
+      "kind": "through_strand",
+      "physical_endpoint_id": "actual:m_2:w40:pos:c1:letter:286",
+      "product_normal": [
+        "0",
+        "1",
+        "0"
+      ],
+      "top_index": 13,
+      "vertices": [
+        [
+          "-61/89",
+          "0",
+          "0"
+        ],
+        [
+          "-61/89",
+          "0",
+          "1"
+        ]
+      ]
+    },
+    {
+      "bottom_index": 12,
+      "cell_id": "through:12",
+      "kind": "through_strand",
+      "physical_endpoint_id": "actual:m_2:w39:neg:c1:letter:279",
+      "product_normal": [
+        "0",
+        "1",
+        "0"
+      ],
+      "top_index": 14,
+      "vertices": [
+        [
+          "-59/89",
+          "0",
+          "0"
+        ],
+        [
+          "-59/89",
+          "0",
+          "1"
+        ]
+      ]
+    },
+    {
+      "bottom_index": 13,
+      "cell_id": "through:13",
+      "kind": "through_strand",
+      "physical_endpoint_id": "actual:m_2:w39:pos:c1:letter:278",
+      "product_normal": [
+        "0",
+        "1",
+        "0"
+      ],
+      "top_index": 15,
+      "vertices": [
+        [
+          "-57/89",
+          "0",
+          "0"
+        ],
+        [
+          "-57/89",
+          "0",
+          "1"
+        ]
+      ]
+    },
+    {
+      "bottom_index": 14,
+      "cell_id": "through:14",
+      "kind": "through_strand",
+      "physical_endpoint_id": "actual:m_2:w38:neg:c1:letter:272",
+      "product_normal": [
+        "0",
+        "1",
+        "0"
+      ],
+      "top_index": 16,
+      "vertices": [
+        [
+          "-55/89",
+          "0",
+          "0"
+        ],
+        [
+          "-55/89",
+          "0",
+          "1"
+        ]
+      ]
+    },
+    {
+      "bottom_index": 15,
+      "cell_id": "through:15",
+      "kind": "through_strand",
+      "physical_endpoint_id": "actual:m_2:w38:pos:c1:letter:271",
+      "product_normal": [
+        "0",
+        "1",
+        "0"
+      ],
+      "top_index": 17,
+      "vertices": [
+        [
+          "-53/89",
+          "0",
+          "0"
+        ],
+        [
+          "-53/89",
+          "0",
+          "1"
+        ]
+      ]
+    },
+    {
+      "bottom_index": 16,
+      "cell_id": "through:16",
+      "kind": "through_strand",
+      "physical_endpoint_id": "actual:m_2:w37:neg:c1:letter:264",
+      "product_normal": [
+        "0",
+        "1",
+        "0"
+      ],
+      "top_index": 18,
+      "vertices": [
+        [
+          "-51/89",
+          "0",
+          "0"
+        ],
+        [
+          "-51/89",
+          "0",
+          "1"
+        ]
+      ]
+    },
+    {
+      "bottom_index": 17,
+      "cell_id": "through:17",
+      "kind": "through_strand",
+      "physical_endpoint_id": "actual:m_2:w37:pos:c1:letter:263",
+      "product_normal": [
+        "0",
+        "1",
+        "0"
+      ],
+      "top_index": 19,
+      "vertices": [
+        [
+          "-49/89",
+          "0",
+          "0"
+        ],
+        [
+          "-49/89",
+          "0",
+          "1"
+        ]
+      ]
+    },
+    {
+      "bottom_index": 18,
+      "cell_id": "through:18",
+      "kind": "through_strand",
+      "physical_endpoint_id": "actual:m_2:w36:neg:c1:letter:257",
+      "product_normal": [
+        "0",
+        "1",
+        "0"
+      ],
+      "top_index": 20,
+      "vertices": [
+        [
+          "-47/89",
+          "0",
+          "0"
+        ],
+        [
+          "-47/89",
+          "0",
+          "1"
+        ]
+      ]
+    },
+    {
+      "bottom_index": 19,
+      "cell_id": "through:19",
+      "kind": "through_strand",
+      "physical_endpoint_id": "actual:m_2:w36:pos:c1:letter:256",
+      "product_normal": [
+        "0",
+        "1",
+        "0"
+      ],
+      "top_index": 21,
+      "vertices": [
+        [
+          "-45/89",
+          "0",
+          "0"
+        ],
+        [
+          "-45/89",
+          "0",
+          "1"
+        ]
+      ]
+    },
+    {
+      "bottom_index": 20,
+      "cell_id": "through:20",
+      "kind": "through_strand",
+      "physical_endpoint_id": "actual:m_2:w35:neg:c1:letter:249",
+      "product_normal": [
+        "0",
+        "1",
+        "0"
+      ],
+      "top_index": 22,
+      "vertices": [
+        [
+          "-43/89",
+          "0",
+          "0"
+        ],
+        [
+          "-43/89",
+          "0",
+          "1"
+        ]
+      ]
+    },
+    {
+      "bottom_index": 21,
+      "cell_id": "through:21",
+      "kind": "through_strand",
+      "physical_endpoint_id": "actual:m_2:w35:pos:c1:letter:248",
+      "product_normal": [
+        "0",
+        "1",
+        "0"
+      ],
+      "top_index": 23,
+      "vertices": [
+        [
+          "-41/89",
+          "0",
+          "0"
+        ],
+        [
+          "-41/89",
+          "0",
+          "1"
+        ]
+      ]
+    },
+    {
+      "bottom_index": 22,
+      "cell_id": "through:22",
+      "kind": "through_strand",
+      "physical_endpoint_id": "actual:m_2:w34:neg:c1:letter:241",
+      "product_normal": [
+        "0",
+        "1",
+        "0"
+      ],
+      "top_index": 24,
+      "vertices": [
+        [
+          "-39/89",
+          "0",
+          "0"
+        ],
+        [
+          "-39/89",
+          "0",
+          "1"
+        ]
+      ]
+    },
+    {
+      "bottom_index": 23,
+      "cell_id": "through:23",
+      "kind": "through_strand",
+      "physical_endpoint_id": "actual:m_2:w34:pos:c1:letter:240",
+      "product_normal": [
+        "0",
+        "1",
+        "0"
+      ],
+      "top_index": 25,
+      "vertices": [
+        [
+          "-37/89",
+          "0",
+          "0"
+        ],
+        [
+          "-37/89",
+          "0",
+          "1"
+        ]
+      ]
+    },
+    {
+      "bottom_index": 24,
+      "cell_id": "through:24",
+      "kind": "through_strand",
+      "physical_endpoint_id": "actual:m_2:w33:neg:c1:letter:234",
+      "product_normal": [
+        "0",
+        "1",
+        "0"
+      ],
+      "top_index": 26,
+      "vertices": [
+        [
+          "-35/89",
+          "0",
+          "0"
+        ],
+        [
+          "-35/89",
+          "0",
+          "1"
+        ]
+      ]
+    },
+    {
+      "bottom_index": 25,
+      "cell_id": "through:25",
+      "kind": "through_strand",
+      "physical_endpoint_id": "actual:m_2:w33:pos:c1:letter:233",
+      "product_normal": [
+        "0",
+        "1",
+        "0"
+      ],
+      "top_index": 27,
+      "vertices": [
+        [
+          "-33/89",
+          "0",
+          "0"
+        ],
+        [
+          "-33/89",
+          "0",
+          "1"
+        ]
+      ]
+    },
+    {
+      "bottom_index": 26,
+      "cell_id": "through:26",
+      "kind": "through_strand",
+      "physical_endpoint_id": "actual:m_2:w32:neg:c1:letter:226",
+      "product_normal": [
+        "0",
+        "1",
+        "0"
+      ],
+      "top_index": 28,
+      "vertices": [
+        [
+          "-31/89",
+          "0",
+          "0"
+        ],
+        [
+          "-31/89",
+          "0",
+          "1"
+        ]
+      ]
+    },
+    {
+      "bottom_index": 27,
+      "cell_id": "through:27",
+      "kind": "through_strand",
+      "physical_endpoint_id": "actual:m_2:w32:pos:c1:letter:225",
+      "product_normal": [
+        "0",
+        "1",
+        "0"
+      ],
+      "top_index": 29,
+      "vertices": [
+        [
+          "-29/89",
+          "0",
+          "0"
+        ],
+        [
+          "-29/89",
+          "0",
+          "1"
+        ]
+      ]
+    },
+    {
+      "bottom_index": 28,
+      "cell_id": "through:28",
+      "kind": "through_strand",
+      "physical_endpoint_id": "actual:m_2:w31:neg:c1:letter:219",
+      "product_normal": [
+        "0",
+        "1",
+        "0"
+      ],
+      "top_index": 30,
+      "vertices": [
+        [
+          "-27/89",
+          "0",
+          "0"
+        ],
+        [
+          "-27/89",
+          "0",
+          "1"
+        ]
+      ]
+    },
+    {
+      "bottom_index": 29,
+      "cell_id": "through:29",
+      "kind": "through_strand",
+      "physical_endpoint_id": "actual:m_2:w31:pos:c1:letter:218",
+      "product_normal": [
+        "0",
+        "1",
+        "0"
+      ],
+      "top_index": 31,
+      "vertices": [
+        [
+          "-25/89",
+          "0",
+          "0"
+        ],
+        [
+          "-25/89",
+          "0",
+          "1"
+        ]
+      ]
+    },
+    {
+      "bottom_index": 30,
+      "cell_id": "through:30",
+      "kind": "through_strand",
+      "physical_endpoint_id": "actual:m_2:w30:neg:c1:letter:211",
+      "product_normal": [
+        "0",
+        "1",
+        "0"
+      ],
+      "top_index": 32,
+      "vertices": [
+        [
+          "-23/89",
+          "0",
+          "0"
+        ],
+        [
+          "-23/89",
+          "0",
+          "1"
+        ]
+      ]
+    },
+    {
+      "bottom_index": 31,
+      "cell_id": "through:31",
+      "kind": "through_strand",
+      "physical_endpoint_id": "actual:m_2:w30:pos:c1:letter:210",
+      "product_normal": [
+        "0",
+        "1",
+        "0"
+      ],
+      "top_index": 33,
+      "vertices": [
+        [
+          "-21/89",
+          "0",
+          "0"
+        ],
+        [
+          "-21/89",
+          "0",
+          "1"
+        ]
+      ]
+    },
+    {
+      "bottom_index": 32,
+      "cell_id": "through:32",
+      "kind": "through_strand",
+      "physical_endpoint_id": "actual:m_2:w29:neg:c1:letter:204",
+      "product_normal": [
+        "0",
+        "1",
+        "0"
+      ],
+      "top_index": 34,
+      "vertices": [
+        [
+          "-19/89",
+          "0",
+          "0"
+        ],
+        [
+          "-19/89",
+          "0",
+          "1"
+        ]
+      ]
+    },
+    {
+      "bottom_index": 33,
+      "cell_id": "through:33",
+      "kind": "through_strand",
+      "physical_endpoint_id": "actual:m_2:w29:pos:c1:letter:203",
+      "product_normal": [
+        "0",
+        "1",
+        "0"
+      ],
+      "top_index": 35,
+      "vertices": [
+        [
+          "-17/89",
+          "0",
+          "0"
+        ],
+        [
+          "-17/89",
+          "0",
+          "1"
+        ]
+      ]
+    },
+    {
+      "bottom_index": 34,
+      "cell_id": "through:34",
+      "kind": "through_strand",
+      "physical_endpoint_id": "actual:m_2:w28:neg:c1:letter:196",
+      "product_normal": [
+        "0",
+        "1",
+        "0"
+      ],
+      "top_index": 36,
+      "vertices": [
+        [
+          "-15/89",
+          "0",
+          "0"
+        ],
+        [
+          "-15/89",
+          "0",
+          "1"
+        ]
+      ]
+    },
+    {
+      "bottom_index": 35,
+      "cell_id": "through:35",
+      "kind": "through_strand",
+      "physical_endpoint_id": "actual:m_2:w28:pos:c1:letter:195",
+      "product_normal": [
+        "0",
+        "1",
+        "0"
+      ],
+      "top_index": 37,
+      "vertices": [
+        [
+          "-13/89",
+          "0",
+          "0"
+        ],
+        [
+          "-13/89",
+          "0",
+          "1"
+        ]
+      ]
+    },
+    {
+      "bottom_index": 36,
+      "cell_id": "through:36",
+      "kind": "through_strand",
+      "physical_endpoint_id": "actual:m_2:w27:neg:c1:letter:189",
+      "product_normal": [
+        "0",
+        "1",
+        "0"
+      ],
+      "top_index": 38,
+      "vertices": [
+        [
+          "-11/89",
+          "0",
+          "0"
+        ],
+        [
+          "-11/89",
+          "0",
+          "1"
+        ]
+      ]
+    },
+    {
+      "bottom_index": 37,
+      "cell_id": "through:37",
+      "kind": "through_strand",
+      "physical_endpoint_id": "actual:m_2:w27:pos:c1:letter:188",
+      "product_normal": [
+        "0",
+        "1",
+        "0"
+      ],
+      "top_index": 39,
+      "vertices": [
+        [
+          "-9/89",
+          "0",
+          "0"
+        ],
+        [
+          "-9/89",
+          "0",
+          "1"
+        ]
+      ]
+    },
+    {
+      "bottom_index": 38,
+      "cell_id": "through:38",
+      "kind": "through_strand",
+      "physical_endpoint_id": "actual:m_2:w26:neg:c1:letter:181",
+      "product_normal": [
+        "0",
+        "1",
+        "0"
+      ],
+      "top_index": 40,
+      "vertices": [
+        [
+          "-7/89",
+          "0",
+          "0"
+        ],
+        [
+          "-7/89",
+          "0",
+          "1"
+        ]
+      ]
+    },
+    {
+      "bottom_index": 39,
+      "cell_id": "through:39",
+      "kind": "through_strand",
+      "physical_endpoint_id": "actual:m_2:w26:pos:c1:letter:180",
+      "product_normal": [
+        "0",
+        "1",
+        "0"
+      ],
+      "top_index": 41,
+      "vertices": [
+        [
+          "-5/89",
+          "0",
+          "0"
+        ],
+        [
+          "-5/89",
+          "0",
+          "1"
+        ]
+      ]
+    },
+    {
+      "bottom_index": 40,
+      "cell_id": "through:40",
+      "kind": "through_strand",
+      "physical_endpoint_id": "actual:m_2:w25:neg:c1:letter:173",
+      "product_normal": [
+        "0",
+        "1",
+        "0"
+      ],
+      "top_index": 42,
+      "vertices": [
+        [
+          "-3/89",
+          "0",
+          "0"
+        ],
+        [
+          "-3/89",
+          "0",
+          "1"
+        ]
+      ]
+    },
+    {
+      "bottom_index": 41,
+      "cell_id": "through:41",
+      "kind": "through_strand",
+      "physical_endpoint_id": "actual:m_2:w25:pos:c1:letter:172",
+      "product_normal": [
+        "0",
+        "1",
+        "0"
+      ],
+      "top_index": 43,
+      "vertices": [
+        [
+          "-1/89",
+          "0",
+          "0"
+        ],
+        [
+          "-1/89",
+          "0",
+          "1"
+        ]
+      ]
+    },
+    {
+      "bottom_index": 42,
+      "cell_id": "through:42",
+      "kind": "through_strand",
+      "physical_endpoint_id": "actual:m_2:w24:neg:c1:letter:166",
+      "product_normal": [
+        "0",
+        "1",
+        "0"
+      ],
+      "top_index": 44,
+      "vertices": [
+        [
+          "1/89",
+          "0",
+          "0"
+        ],
+        [
+          "1/89",
+          "0",
+          "1"
+        ]
+      ]
+    },
+    {
+      "bottom_index": 43,
+      "cell_id": "through:43",
+      "kind": "through_strand",
+      "physical_endpoint_id": "actual:m_2:w24:pos:c1:letter:165",
+      "product_normal": [
+        "0",
+        "1",
+        "0"
+      ],
+      "top_index": 45,
+      "vertices": [
+        [
+          "3/89",
+          "0",
+          "0"
+        ],
+        [
+          "3/89",
+          "0",
+          "1"
+        ]
+      ]
+    },
+    {
+      "bottom_index": 44,
+      "cell_id": "through:44",
+      "kind": "through_strand",
+      "physical_endpoint_id": "actual:m_2:w23:neg:c1:letter:158",
+      "product_normal": [
+        "0",
+        "1",
+        "0"
+      ],
+      "top_index": 46,
+      "vertices": [
+        [
+          "5/89",
+          "0",
+          "0"
+        ],
+        [
+          "5/89",
+          "0",
+          "1"
+        ]
+      ]
+    },
+    {
+      "bottom_index": 45,
+      "cell_id": "through:45",
+      "kind": "through_strand",
+      "physical_endpoint_id": "actual:m_2:w23:pos:c1:letter:157",
+      "product_normal": [
+        "0",
+        "1",
+        "0"
+      ],
+      "top_index": 47,
+      "vertices": [
+        [
+          "7/89",
+          "0",
+          "0"
+        ],
+        [
+          "7/89",
+          "0",
+          "1"
+        ]
+      ]
+    },
+    {
+      "bottom_index": 46,
+      "cell_id": "through:46",
+      "kind": "through_strand",
+      "physical_endpoint_id": "actual:m_2:w22:neg:c1:letter:151",
+      "product_normal": [
+        "0",
+        "1",
+        "0"
+      ],
+      "top_index": 48,
+      "vertices": [
+        [
+          "9/89",
+          "0",
+          "0"
+        ],
+        [
+          "9/89",
+          "0",
+          "1"
+        ]
+      ]
+    },
+    {
+      "bottom_index": 47,
+      "cell_id": "through:47",
+      "kind": "through_strand",
+      "physical_endpoint_id": "actual:m_2:w22:pos:c1:letter:150",
+      "product_normal": [
+        "0",
+        "1",
+        "0"
+      ],
+      "top_index": 49,
+      "vertices": [
+        [
+          "11/89",
+          "0",
+          "0"
+        ],
+        [
+          "11/89",
+          "0",
+          "1"
+        ]
+      ]
+    },
+    {
+      "bottom_index": 48,
+      "cell_id": "through:48",
+      "kind": "through_strand",
+      "physical_endpoint_id": "actual:m_2:w21:neg:c1:letter:143",
+      "product_normal": [
+        "0",
+        "1",
+        "0"
+      ],
+      "top_index": 50,
+      "vertices": [
+        [
+          "13/89",
+          "0",
+          "0"
+        ],
+        [
+          "13/89",
+          "0",
+          "1"
+        ]
+      ]
+    },
+    {
+      "bottom_index": 49,
+      "cell_id": "through:49",
+      "kind": "through_strand",
+      "physical_endpoint_id": "actual:m_2:w21:pos:c1:letter:142",
+      "product_normal": [
+        "0",
+        "1",
+        "0"
+      ],
+      "top_index": 51,
+      "vertices": [
+        [
+          "15/89",
+          "0",
+          "0"
+        ],
+        [
+          "15/89",
+          "0",
+          "1"
+        ]
+      ]
+    },
+    {
+      "bottom_index": 50,
+      "cell_id": "through:50",
+      "kind": "through_strand",
+      "physical_endpoint_id": "actual:m_2:w20:neg:c1:letter:136",
+      "product_normal": [
+        "0",
+        "1",
+        "0"
+      ],
+      "top_index": 52,
+      "vertices": [
+        [
+          "17/89",
+          "0",
+          "0"
+        ],
+        [
+          "17/89",
+          "0",
+          "1"
+        ]
+      ]
+    },
+    {
+      "bottom_index": 51,
+      "cell_id": "through:51",
+      "kind": "through_strand",
+      "physical_endpoint_id": "actual:m_2:w20:pos:c1:letter:135",
+      "product_normal": [
+        "0",
+        "1",
+        "0"
+      ],
+      "top_index": 53,
+      "vertices": [
+        [
+          "19/89",
+          "0",
+          "0"
+        ],
+        [
+          "19/89",
+          "0",
+          "1"
+        ]
+      ]
+    },
+    {
+      "bottom_index": 52,
+      "cell_id": "through:52",
+      "kind": "through_strand",
+      "physical_endpoint_id": "actual:m_2:w19:neg:c1:letter:128",
+      "product_normal": [
+        "0",
+        "1",
+        "0"
+      ],
+      "top_index": 54,
+      "vertices": [
+        [
+          "21/89",
+          "0",
+          "0"
+        ],
+        [
+          "21/89",
+          "0",
+          "1"
+        ]
+      ]
+    },
+    {
+      "bottom_index": 53,
+      "cell_id": "through:53",
+      "kind": "through_strand",
+      "physical_endpoint_id": "actual:m_2:w19:pos:c1:letter:127",
+      "product_normal": [
+        "0",
+        "1",
+        "0"
+      ],
+      "top_index": 55,
+      "vertices": [
+        [
+          "23/89",
+          "0",
+          "0"
+        ],
+        [
+          "23/89",
+          "0",
+          "1"
+        ]
+      ]
+    },
+    {
+      "bottom_index": 54,
+      "cell_id": "through:54",
+      "kind": "through_strand",
+      "physical_endpoint_id": "actual:m_2:w18:neg:c1:letter:120",
+      "product_normal": [
+        "0",
+        "1",
+        "0"
+      ],
+      "top_index": 56,
+      "vertices": [
+        [
+          "25/89",
+          "0",
+          "0"
+        ],
+        [
+          "25/89",
+          "0",
+          "1"
+        ]
+      ]
+    },
+    {
+      "bottom_index": 55,
+      "cell_id": "through:55",
+      "kind": "through_strand",
+      "physical_endpoint_id": "actual:m_2:w18:pos:c1:letter:119",
+      "product_normal": [
+        "0",
+        "1",
+        "0"
+      ],
+      "top_index": 57,
+      "vertices": [
+        [
+          "27/89",
+          "0",
+          "0"
+        ],
+        [
+          "27/89",
+          "0",
+          "1"
+        ]
+      ]
+    },
+    {
+      "bottom_index": 56,
+      "cell_id": "through:56",
+      "kind": "through_strand",
+      "physical_endpoint_id": "actual:m_2:w17:neg:c1:letter:113",
+      "product_normal": [
+        "0",
+        "1",
+        "0"
+      ],
+      "top_index": 58,
+      "vertices": [
+        [
+          "29/89",
+          "0",
+          "0"
+        ],
+        [
+          "29/89",
+          "0",
+          "1"
+        ]
+      ]
+    },
+    {
+      "bottom_index": 57,
+      "cell_id": "through:57",
+      "kind": "through_strand",
+      "physical_endpoint_id": "actual:m_2:w17:pos:c1:letter:112",
+      "product_normal": [
+        "0",
+        "1",
+        "0"
+      ],
+      "top_index": 59,
+      "vertices": [
+        [
+          "31/89",
+          "0",
+          "0"
+        ],
+        [
+          "31/89",
+          "0",
+          "1"
+        ]
+      ]
+    },
+    {
+      "bottom_index": 58,
+      "cell_id": "through:58",
+      "kind": "through_strand",
+      "physical_endpoint_id": "actual:m_2:w16:neg:c1:letter:105",
+      "product_normal": [
+        "0",
+        "1",
+        "0"
+      ],
+      "top_index": 60,
+      "vertices": [
+        [
+          "33/89",
+          "0",
+          "0"
+        ],
+        [
+          "33/89",
+          "0",
+          "1"
+        ]
+      ]
+    },
+    {
+      "bottom_index": 59,
+      "cell_id": "through:59",
+      "kind": "through_strand",
+      "physical_endpoint_id": "actual:m_2:w16:pos:c1:letter:104",
+      "product_normal": [
+        "0",
+        "1",
+        "0"
+      ],
+      "top_index": 61,
+      "vertices": [
+        [
+          "35/89",
+          "0",
+          "0"
+        ],
+        [
+          "35/89",
+          "0",
+          "1"
+        ]
+      ]
+    },
+    {
+      "bottom_index": 60,
+      "cell_id": "through:60",
+      "kind": "through_strand",
+      "physical_endpoint_id": "actual:m_2:w15:neg:c1:letter:98",
+      "product_normal": [
+        "0",
+        "1",
+        "0"
+      ],
+      "top_index": 62,
+      "vertices": [
+        [
+          "37/89",
+          "0",
+          "0"
+        ],
+        [
+          "37/89",
+          "0",
+          "1"
+        ]
+      ]
+    },
+    {
+      "bottom_index": 61,
+      "cell_id": "through:61",
+      "kind": "through_strand",
+      "physical_endpoint_id": "actual:m_2:w15:pos:c1:letter:97",
+      "product_normal": [
+        "0",
+        "1",
+        "0"
+      ],
+      "top_index": 63,
+      "vertices": [
+        [
+          "39/89",
+          "0",
+          "0"
+        ],
+        [
+          "39/89",
+          "0",
+          "1"
+        ]
+      ]
+    },
+    {
+      "bottom_index": 62,
+      "cell_id": "through:62",
+      "kind": "through_strand",
+      "physical_endpoint_id": "actual:m_2:w14:neg:c1:letter:90",
+      "product_normal": [
+        "0",
+        "1",
+        "0"
+      ],
+      "top_index": 64,
+      "vertices": [
+        [
+          "41/89",
+          "0",
+          "0"
+        ],
+        [
+          "41/89",
+          "0",
+          "1"
+        ]
+      ]
+    },
+    {
+      "bottom_index": 63,
+      "cell_id": "through:63",
+      "kind": "through_strand",
+      "physical_endpoint_id": "actual:m_2:w14:pos:c1:letter:89",
+      "product_normal": [
+        "0",
+        "1",
+        "0"
+      ],
+      "top_index": 65,
+      "vertices": [
+        [
+          "43/89",
+          "0",
+          "0"
+        ],
+        [
+          "43/89",
+          "0",
+          "1"
+        ]
+      ]
+    },
+    {
+      "bottom_index": 64,
+      "cell_id": "through:64",
+      "kind": "through_strand",
+      "physical_endpoint_id": "actual:m_2:w13:neg:c1:letter:83",
+      "product_normal": [
+        "0",
+        "1",
+        "0"
+      ],
+      "top_index": 66,
+      "vertices": [
+        [
+          "45/89",
+          "0",
+          "0"
+        ],
+        [
+          "45/89",
+          "0",
+          "1"
+        ]
+      ]
+    },
+    {
+      "bottom_index": 65,
+      "cell_id": "through:65",
+      "kind": "through_strand",
+      "physical_endpoint_id": "actual:m_2:w13:pos:c1:letter:82",
+      "product_normal": [
+        "0",
+        "1",
+        "0"
+      ],
+      "top_index": 67,
+      "vertices": [
+        [
+          "47/89",
+          "0",
+          "0"
+        ],
+        [
+          "47/89",
+          "0",
+          "1"
+        ]
+      ]
+    },
+    {
+      "bottom_index": 66,
+      "cell_id": "through:66",
+      "kind": "through_strand",
+      "physical_endpoint_id": "actual:m_2:w12:neg:c1:letter:75",
+      "product_normal": [
+        "0",
+        "1",
+        "0"
+      ],
+      "top_index": 68,
+      "vertices": [
+        [
+          "49/89",
+          "0",
+          "0"
+        ],
+        [
+          "49/89",
+          "0",
+          "1"
+        ]
+      ]
+    },
+    {
+      "bottom_index": 67,
+      "cell_id": "through:67",
+      "kind": "through_strand",
+      "physical_endpoint_id": "actual:m_2:w12:pos:c1:letter:74",
+      "product_normal": [
+        "0",
+        "1",
+        "0"
+      ],
+      "top_index": 69,
+      "vertices": [
+        [
+          "51/89",
+          "0",
+          "0"
+        ],
+        [
+          "51/89",
+          "0",
+          "1"
+        ]
+      ]
+    },
+    {
+      "bottom_index": 68,
+      "cell_id": "through:68",
+      "kind": "through_strand",
+      "physical_endpoint_id": "actual:m_2:w11:neg:c1:letter:68",
+      "product_normal": [
+        "0",
+        "1",
+        "0"
+      ],
+      "top_index": 70,
+      "vertices": [
+        [
+          "53/89",
+          "0",
+          "0"
+        ],
+        [
+          "53/89",
+          "0",
+          "1"
+        ]
+      ]
+    },
+    {
+      "bottom_index": 69,
+      "cell_id": "through:69",
+      "kind": "through_strand",
+      "physical_endpoint_id": "actual:m_2:w11:pos:c1:letter:67",
+      "product_normal": [
+        "0",
+        "1",
+        "0"
+      ],
+      "top_index": 71,
+      "vertices": [
+        [
+          "55/89",
+          "0",
+          "0"
+        ],
+        [
+          "55/89",
+          "0",
+          "1"
+        ]
+      ]
+    },
+    {
+      "bottom_index": 70,
+      "cell_id": "through:70",
+      "kind": "through_strand",
+      "physical_endpoint_id": "actual:m_2:w10:neg:c1:letter:60",
+      "product_normal": [
+        "0",
+        "1",
+        "0"
+      ],
+      "top_index": 72,
+      "vertices": [
+        [
+          "57/89",
+          "0",
+          "0"
+        ],
+        [
+          "57/89",
+          "0",
+          "1"
+        ]
+      ]
+    },
+    {
+      "bottom_index": 71,
+      "cell_id": "through:71",
+      "kind": "through_strand",
+      "physical_endpoint_id": "actual:m_2:w10:pos:c1:letter:59",
+      "product_normal": [
+        "0",
+        "1",
+        "0"
+      ],
+      "top_index": 73,
+      "vertices": [
+        [
+          "59/89",
+          "0",
+          "0"
+        ],
+        [
+          "59/89",
+          "0",
+          "1"
+        ]
+      ]
+    },
+    {
+      "bottom_index": 72,
+      "cell_id": "through:72",
+      "kind": "through_strand",
+      "physical_endpoint_id": "actual:m_2:w9:neg:c1:letter:52",
+      "product_normal": [
+        "0",
+        "1",
+        "0"
+      ],
+      "top_index": 74,
+      "vertices": [
+        [
+          "61/89",
+          "0",
+          "0"
+        ],
+        [
+          "61/89",
+          "0",
+          "1"
+        ]
+      ]
+    },
+    {
+      "bottom_index": 73,
+      "cell_id": "through:73",
+      "kind": "through_strand",
+      "physical_endpoint_id": "actual:m_2:w9:pos:c1:letter:51",
+      "product_normal": [
+        "0",
+        "1",
+        "0"
+      ],
+      "top_index": 75,
+      "vertices": [
+        [
+          "63/89",
+          "0",
+          "0"
+        ],
+        [
+          "63/89",
+          "0",
+          "1"
+        ]
+      ]
+    },
+    {
+      "bottom_index": 74,
+      "cell_id": "through:74",
+      "kind": "through_strand",
+      "physical_endpoint_id": "actual:m_2:w8:neg:c1:letter:45",
+      "product_normal": [
+        "0",
+        "1",
+        "0"
+      ],
+      "top_index": 76,
+      "vertices": [
+        [
+          "65/89",
+          "0",
+          "0"
+        ],
+        [
+          "65/89",
+          "0",
+          "1"
+        ]
+      ]
+    },
+    {
+      "bottom_index": 75,
+      "cell_id": "through:75",
+      "kind": "through_strand",
+      "physical_endpoint_id": "actual:m_2:w8:pos:c1:letter:44",
+      "product_normal": [
+        "0",
+        "1",
+        "0"
+      ],
+      "top_index": 77,
+      "vertices": [
+        [
+          "67/89",
+          "0",
+          "0"
+        ],
+        [
+          "67/89",
+          "0",
+          "1"
+        ]
+      ]
+    },
+    {
+      "bottom_index": 76,
+      "cell_id": "through:76",
+      "kind": "through_strand",
+      "physical_endpoint_id": "actual:m_2:w7:neg:c1:letter:37",
+      "product_normal": [
+        "0",
+        "1",
+        "0"
+      ],
+      "top_index": 78,
+      "vertices": [
+        [
+          "69/89",
+          "0",
+          "0"
+        ],
+        [
+          "69/89",
+          "0",
+          "1"
+        ]
+      ]
+    },
+    {
+      "bottom_index": 77,
+      "cell_id": "through:77",
+      "kind": "through_strand",
+      "physical_endpoint_id": "actual:m_2:w7:pos:c1:letter:36",
+      "product_normal": [
+        "0",
+        "1",
+        "0"
+      ],
+      "top_index": 79,
+      "vertices": [
+        [
+          "71/89",
+          "0",
+          "0"
+        ],
+        [
+          "71/89",
+          "0",
+          "1"
+        ]
+      ]
+    },
+    {
+      "bottom_index": 78,
+      "cell_id": "through:78",
+      "kind": "through_strand",
+      "physical_endpoint_id": "actual:m_2:w6:neg:c1:letter:30",
+      "product_normal": [
+        "0",
+        "1",
+        "0"
+      ],
+      "top_index": 80,
+      "vertices": [
+        [
+          "73/89",
+          "0",
+          "0"
+        ],
+        [
+          "73/89",
+          "0",
+          "1"
+        ]
+      ]
+    },
+    {
+      "bottom_index": 79,
+      "cell_id": "through:79",
+      "kind": "through_strand",
+      "physical_endpoint_id": "actual:m_2:w6:pos:c1:letter:29",
+      "product_normal": [
+        "0",
+        "1",
+        "0"
+      ],
+      "top_index": 81,
+      "vertices": [
+        [
+          "75/89",
+          "0",
+          "0"
+        ],
+        [
+          "75/89",
+          "0",
+          "1"
+        ]
+      ]
+    },
+    {
+      "bottom_index": 80,
+      "cell_id": "through:80",
+      "kind": "through_strand",
+      "physical_endpoint_id": "actual:m_2:w5:neg:c1:letter:22",
+      "product_normal": [
+        "0",
+        "1",
+        "0"
+      ],
+      "top_index": 82,
+      "vertices": [
+        [
+          "77/89",
+          "0",
+          "0"
+        ],
+        [
+          "77/89",
+          "0",
+          "1"
+        ]
+      ]
+    },
+    {
+      "bottom_index": 81,
+      "cell_id": "through:81",
+      "kind": "through_strand",
+      "physical_endpoint_id": "actual:m_2:w5:pos:c1:letter:21",
+      "product_normal": [
+        "0",
+        "1",
+        "0"
+      ],
+      "top_index": 83,
+      "vertices": [
+        [
+          "79/89",
+          "0",
+          "0"
+        ],
+        [
+          "79/89",
+          "0",
+          "1"
+        ]
+      ]
+    },
+    {
+      "bottom_index": 82,
+      "cell_id": "through:82",
+      "kind": "through_strand",
+      "physical_endpoint_id": "actual:m_2:w4:neg:c1:letter:15",
+      "product_normal": [
+        "0",
+        "1",
+        "0"
+      ],
+      "top_index": 84,
+      "vertices": [
+        [
+          "81/89",
+          "0",
+          "0"
+        ],
+        [
+          "81/89",
+          "0",
+          "1"
+        ]
+      ]
+    },
+    {
+      "bottom_index": 83,
+      "cell_id": "through:83",
+      "kind": "through_strand",
+      "physical_endpoint_id": "actual:m_2:w4:pos:c1:letter:14",
+      "product_normal": [
+        "0",
+        "1",
+        "0"
+      ],
+      "top_index": 85,
+      "vertices": [
+        [
+          "83/89",
+          "0",
+          "0"
+        ],
+        [
+          "83/89",
+          "0",
+          "1"
+        ]
+      ]
+    },
+    {
+      "bottom_index": 84,
+      "cell_id": "through:84",
+      "kind": "through_strand",
+      "physical_endpoint_id": "actual:m_2:w3:neg:c1:letter:7",
+      "product_normal": [
+        "0",
+        "1",
+        "0"
+      ],
+      "top_index": 86,
+      "vertices": [
+        [
+          "85/89",
+          "0",
+          "0"
+        ],
+        [
+          "85/89",
+          "0",
+          "1"
+        ]
+      ]
+    },
+    {
+      "bottom_index": 85,
+      "cell_id": "through:85",
+      "kind": "through_strand",
+      "physical_endpoint_id": "actual:m_2:w3:pos:c1:letter:6",
+      "product_normal": [
+        "0",
+        "1",
+        "0"
+      ],
+      "top_index": 87,
+      "vertices": [
+        [
+          "87/89",
+          "0",
+          "0"
+        ],
+        [
+          "87/89",
+          "0",
+          "1"
+        ]
+      ]
+    },
+    {
+      "bpw_A6_terms": [
+        {
+          "atom": "coev_vplus_vminus_coeff_1",
+          "defect_endpoint_id": "actual:m_2:w44:pos:m_2:C_i"
+        },
+        {
+          "atom": "coev_vminus_vplus_coeff_qminus1",
+          "defect_endpoint_id": "actual:r_xy:w2:neg:r_xy:vertex:7"
+        }
+      ],
+      "cell_id": "cup:0",
+      "kind": "one_cup",
+      "ordered_physical_endpoint_ids": [
+        "actual:r_xy:w2:neg:r_xy:vertex:7",
+        "actual:m_2:w44:pos:m_2:C_i"
+      ],
+      "product_normal": [
+        "0",
+        "1",
+        "0"
+      ],
+      "top_indices": [
+        0,
+        1
+      ],
+      "vertices": [
+        [
+          "-87/89",
+          "0",
+          "1"
+        ],
+        [
+          "-86/89",
+          "0",
+          "3/4"
+        ],
+        [
+          "-85/89",
+          "0",
+          "1"
+        ]
+      ]
+    }
+  ],
+  "cup_count": 1,
+  "first_missing_map": "glue the 1084 Z-sphere endpoints through arbitrary C_271 insertions and map all 630 source intervals to the 86 through strands, one cup, and internal closed factors",
+  "grading": {
+    "additional_quantum_shift": "UNDETERMINED",
+    "gluing_cobordism_euler": "UNDETERMINED",
+    "target_cup_terms_recorded": true
+  },
+  "morphism_type": {
+    "source": "P86",
+    "target": "P88"
+  },
+  "pivotal_currying_cells": [
+    {
+      "bpw_A6_terms": [
+        {
+          "atom": "coev_vplus_vminus_coeff_1",
+          "defect_endpoint_id": "actual:m_2:w44:pos:m_2:C_i"
+        },
+        {
+          "atom": "coev_vminus_vplus_coeff_qminus1",
+          "defect_endpoint_id": "actual:r_xy:w2:neg:r_xy:vertex:7"
+        }
+      ],
+      "cell_id": "cup:0",
+      "kind": "one_cup",
+      "ordered_physical_endpoint_ids": [
+        "actual:r_xy:w2:neg:r_xy:vertex:7",
+        "actual:m_2:w44:pos:m_2:C_i"
+      ],
+      "product_normal": [
+        "0",
+        "1",
+        "0"
+      ],
+      "top_indices": [
+        0,
+        1
+      ],
+      "vertices": [
+        [
+          "-87/89",
+          "0",
+          "1"
+        ],
+        [
+          "-86/89",
+          "0",
+          "3/4"
+        ],
+        [
+          "-85/89",
+          "0",
+          "1"
+        ]
+      ]
+    }
+  ],
+  "pivotal_input_sha256": "CD03E02C0B083E117D3F5359FFEC9E0812E47A3A9380DDC28D6870A338A10217",
+  "schema": "t73_single_hom_defect_target/v1",
+  "sha256": "CD6B05CD33DD4DF6D22B1A64E327F2994FD5F8BEF7F494FA908A34EE5CDC1EAD",
+  "source_exterior_interval_count": 630,
+  "source_exterior_sha256": "81E35ACE16DDC6C7226D6251EE57ADD6B4C253976452EEFFB48BBC49E5857E6C",
+  "source_to_target_interval_map": [],
+  "source_to_target_status": "OPEN",
+  "through_strand_count": 86,
+  "top_endpoint_count": 88,
+  "top_endpoints": [
+    {
+      "orientation": 1,
+      "physical_endpoint_id": "actual:r_xy:w2:neg:r_xy:vertex:7",
+      "point": [
+        "-87/89",
+        "0",
+        "1"
+      ],
+      "top_index": 0,
+      "variance": "V"
+    },
+    {
+      "orientation": -1,
+      "physical_endpoint_id": "actual:m_2:w44:pos:m_2:C_i",
+      "point": [
+        "-85/89",
+        "0",
+        "1"
+      ],
+      "top_index": 1,
+      "variance": "V_dual"
+    },
+    {
+      "orientation": -1,
+      "physical_endpoint_id": "actual:r_xy:w1:neg:r_xy:vertex:3",
+      "point": [
+        "-83/89",
+        "0",
+        "1"
+      ],
+      "top_index": 2,
+      "variance": "V_dual"
+    },
+    {
+      "orientation": 1,
+      "physical_endpoint_id": "actual:r_xy:w1:pos:r_xy:vertex:5",
+      "point": [
+        "-81/89",
+        "0",
+        "1"
+      ],
+      "top_index": 3,
+      "variance": "V"
+    },
+    {
+      "orientation": -1,
+      "physical_endpoint_id": "actual:r_xy:w2:pos:r_xy:vertex:1",
+      "point": [
+        "-79/89",
+        "0",
+        "1"
+      ],
+      "top_index": 4,
+      "variance": "V_dual"
+    },
+    {
+      "orientation": 1,
+      "physical_endpoint_id": "actual:m_2:w44:neg:c1:letter:0",
+      "point": [
+        "-77/89",
+        "0",
+        "1"
+      ],
+      "top_index": 5,
+      "variance": "V"
+    },
+    {
+      "orientation": -1,
+      "physical_endpoint_id": "actual:m_2:w43:neg:c1:letter:309",
+      "point": [
+        "-75/89",
+        "0",
+        "1"
+      ],
+      "top_index": 6,
+      "variance": "V_dual"
+    },
+    {
+      "orientation": 1,
+      "physical_endpoint_id": "actual:m_2:w43:pos:c1:letter:308",
+      "point": [
+        "-73/89",
+        "0",
+        "1"
+      ],
+      "top_index": 7,
+      "variance": "V"
+    },
+    {
+      "orientation": -1,
+      "physical_endpoint_id": "actual:m_2:w42:neg:c1:letter:302",
+      "point": [
+        "-71/89",
+        "0",
+        "1"
+      ],
+      "top_index": 8,
+      "variance": "V_dual"
+    },
+    {
+      "orientation": 1,
+      "physical_endpoint_id": "actual:m_2:w42:pos:c1:letter:301",
+      "point": [
+        "-69/89",
+        "0",
+        "1"
+      ],
+      "top_index": 9,
+      "variance": "V"
+    },
+    {
+      "orientation": -1,
+      "physical_endpoint_id": "actual:m_2:w41:neg:c1:letter:294",
+      "point": [
+        "-67/89",
+        "0",
+        "1"
+      ],
+      "top_index": 10,
+      "variance": "V_dual"
+    },
+    {
+      "orientation": 1,
+      "physical_endpoint_id": "actual:m_2:w41:pos:c1:letter:293",
+      "point": [
+        "-65/89",
+        "0",
+        "1"
+      ],
+      "top_index": 11,
+      "variance": "V"
+    },
+    {
+      "orientation": -1,
+      "physical_endpoint_id": "actual:m_2:w40:neg:c1:letter:287",
+      "point": [
+        "-63/89",
+        "0",
+        "1"
+      ],
+      "top_index": 12,
+      "variance": "V_dual"
+    },
+    {
+      "orientation": 1,
+      "physical_endpoint_id": "actual:m_2:w40:pos:c1:letter:286",
+      "point": [
+        "-61/89",
+        "0",
+        "1"
+      ],
+      "top_index": 13,
+      "variance": "V"
+    },
+    {
+      "orientation": -1,
+      "physical_endpoint_id": "actual:m_2:w39:neg:c1:letter:279",
+      "point": [
+        "-59/89",
+        "0",
+        "1"
+      ],
+      "top_index": 14,
+      "variance": "V_dual"
+    },
+    {
+      "orientation": 1,
+      "physical_endpoint_id": "actual:m_2:w39:pos:c1:letter:278",
+      "point": [
+        "-57/89",
+        "0",
+        "1"
+      ],
+      "top_index": 15,
+      "variance": "V"
+    },
+    {
+      "orientation": -1,
+      "physical_endpoint_id": "actual:m_2:w38:neg:c1:letter:272",
+      "point": [
+        "-55/89",
+        "0",
+        "1"
+      ],
+      "top_index": 16,
+      "variance": "V_dual"
+    },
+    {
+      "orientation": 1,
+      "physical_endpoint_id": "actual:m_2:w38:pos:c1:letter:271",
+      "point": [
+        "-53/89",
+        "0",
+        "1"
+      ],
+      "top_index": 17,
+      "variance": "V"
+    },
+    {
+      "orientation": -1,
+      "physical_endpoint_id": "actual:m_2:w37:neg:c1:letter:264",
+      "point": [
+        "-51/89",
+        "0",
+        "1"
+      ],
+      "top_index": 18,
+      "variance": "V_dual"
+    },
+    {
+      "orientation": 1,
+      "physical_endpoint_id": "actual:m_2:w37:pos:c1:letter:263",
+      "point": [
+        "-49/89",
+        "0",
+        "1"
+      ],
+      "top_index": 19,
+      "variance": "V"
+    },
+    {
+      "orientation": -1,
+      "physical_endpoint_id": "actual:m_2:w36:neg:c1:letter:257",
+      "point": [
+        "-47/89",
+        "0",
+        "1"
+      ],
+      "top_index": 20,
+      "variance": "V_dual"
+    },
+    {
+      "orientation": 1,
+      "physical_endpoint_id": "actual:m_2:w36:pos:c1:letter:256",
+      "point": [
+        "-45/89",
+        "0",
+        "1"
+      ],
+      "top_index": 21,
+      "variance": "V"
+    },
+    {
+      "orientation": -1,
+      "physical_endpoint_id": "actual:m_2:w35:neg:c1:letter:249",
+      "point": [
+        "-43/89",
+        "0",
+        "1"
+      ],
+      "top_index": 22,
+      "variance": "V_dual"
+    },
+    {
+      "orientation": 1,
+      "physical_endpoint_id": "actual:m_2:w35:pos:c1:letter:248",
+      "point": [
+        "-41/89",
+        "0",
+        "1"
+      ],
+      "top_index": 23,
+      "variance": "V"
+    },
+    {
+      "orientation": -1,
+      "physical_endpoint_id": "actual:m_2:w34:neg:c1:letter:241",
+      "point": [
+        "-39/89",
+        "0",
+        "1"
+      ],
+      "top_index": 24,
+      "variance": "V_dual"
+    },
+    {
+      "orientation": 1,
+      "physical_endpoint_id": "actual:m_2:w34:pos:c1:letter:240",
+      "point": [
+        "-37/89",
+        "0",
+        "1"
+      ],
+      "top_index": 25,
+      "variance": "V"
+    },
+    {
+      "orientation": -1,
+      "physical_endpoint_id": "actual:m_2:w33:neg:c1:letter:234",
+      "point": [
+        "-35/89",
+        "0",
+        "1"
+      ],
+      "top_index": 26,
+      "variance": "V_dual"
+    },
+    {
+      "orientation": 1,
+      "physical_endpoint_id": "actual:m_2:w33:pos:c1:letter:233",
+      "point": [
+        "-33/89",
+        "0",
+        "1"
+      ],
+      "top_index": 27,
+      "variance": "V"
+    },
+    {
+      "orientation": -1,
+      "physical_endpoint_id": "actual:m_2:w32:neg:c1:letter:226",
+      "point": [
+        "-31/89",
+        "0",
+        "1"
+      ],
+      "top_index": 28,
+      "variance": "V_dual"
+    },
+    {
+      "orientation": 1,
+      "physical_endpoint_id": "actual:m_2:w32:pos:c1:letter:225",
+      "point": [
+        "-29/89",
+        "0",
+        "1"
+      ],
+      "top_index": 29,
+      "variance": "V"
+    },
+    {
+      "orientation": -1,
+      "physical_endpoint_id": "actual:m_2:w31:neg:c1:letter:219",
+      "point": [
+        "-27/89",
+        "0",
+        "1"
+      ],
+      "top_index": 30,
+      "variance": "V_dual"
+    },
+    {
+      "orientation": 1,
+      "physical_endpoint_id": "actual:m_2:w31:pos:c1:letter:218",
+      "point": [
+        "-25/89",
+        "0",
+        "1"
+      ],
+      "top_index": 31,
+      "variance": "V"
+    },
+    {
+      "orientation": -1,
+      "physical_endpoint_id": "actual:m_2:w30:neg:c1:letter:211",
+      "point": [
+        "-23/89",
+        "0",
+        "1"
+      ],
+      "top_index": 32,
+      "variance": "V_dual"
+    },
+    {
+      "orientation": 1,
+      "physical_endpoint_id": "actual:m_2:w30:pos:c1:letter:210",
+      "point": [
+        "-21/89",
+        "0",
+        "1"
+      ],
+      "top_index": 33,
+      "variance": "V"
+    },
+    {
+      "orientation": -1,
+      "physical_endpoint_id": "actual:m_2:w29:neg:c1:letter:204",
+      "point": [
+        "-19/89",
+        "0",
+        "1"
+      ],
+      "top_index": 34,
+      "variance": "V_dual"
+    },
+    {
+      "orientation": 1,
+      "physical_endpoint_id": "actual:m_2:w29:pos:c1:letter:203",
+      "point": [
+        "-17/89",
+        "0",
+        "1"
+      ],
+      "top_index": 35,
+      "variance": "V"
+    },
+    {
+      "orientation": -1,
+      "physical_endpoint_id": "actual:m_2:w28:neg:c1:letter:196",
+      "point": [
+        "-15/89",
+        "0",
+        "1"
+      ],
+      "top_index": 36,
+      "variance": "V_dual"
+    },
+    {
+      "orientation": 1,
+      "physical_endpoint_id": "actual:m_2:w28:pos:c1:letter:195",
+      "point": [
+        "-13/89",
+        "0",
+        "1"
+      ],
+      "top_index": 37,
+      "variance": "V"
+    },
+    {
+      "orientation": -1,
+      "physical_endpoint_id": "actual:m_2:w27:neg:c1:letter:189",
+      "point": [
+        "-11/89",
+        "0",
+        "1"
+      ],
+      "top_index": 38,
+      "variance": "V_dual"
+    },
+    {
+      "orientation": 1,
+      "physical_endpoint_id": "actual:m_2:w27:pos:c1:letter:188",
+      "point": [
+        "-9/89",
+        "0",
+        "1"
+      ],
+      "top_index": 39,
+      "variance": "V"
+    },
+    {
+      "orientation": -1,
+      "physical_endpoint_id": "actual:m_2:w26:neg:c1:letter:181",
+      "point": [
+        "-7/89",
+        "0",
+        "1"
+      ],
+      "top_index": 40,
+      "variance": "V_dual"
+    },
+    {
+      "orientation": 1,
+      "physical_endpoint_id": "actual:m_2:w26:pos:c1:letter:180",
+      "point": [
+        "-5/89",
+        "0",
+        "1"
+      ],
+      "top_index": 41,
+      "variance": "V"
+    },
+    {
+      "orientation": -1,
+      "physical_endpoint_id": "actual:m_2:w25:neg:c1:letter:173",
+      "point": [
+        "-3/89",
+        "0",
+        "1"
+      ],
+      "top_index": 42,
+      "variance": "V_dual"
+    },
+    {
+      "orientation": 1,
+      "physical_endpoint_id": "actual:m_2:w25:pos:c1:letter:172",
+      "point": [
+        "-1/89",
+        "0",
+        "1"
+      ],
+      "top_index": 43,
+      "variance": "V"
+    },
+    {
+      "orientation": -1,
+      "physical_endpoint_id": "actual:m_2:w24:neg:c1:letter:166",
+      "point": [
+        "1/89",
+        "0",
+        "1"
+      ],
+      "top_index": 44,
+      "variance": "V_dual"
+    },
+    {
+      "orientation": 1,
+      "physical_endpoint_id": "actual:m_2:w24:pos:c1:letter:165",
+      "point": [
+        "3/89",
+        "0",
+        "1"
+      ],
+      "top_index": 45,
+      "variance": "V"
+    },
+    {
+      "orientation": -1,
+      "physical_endpoint_id": "actual:m_2:w23:neg:c1:letter:158",
+      "point": [
+        "5/89",
+        "0",
+        "1"
+      ],
+      "top_index": 46,
+      "variance": "V_dual"
+    },
+    {
+      "orientation": 1,
+      "physical_endpoint_id": "actual:m_2:w23:pos:c1:letter:157",
+      "point": [
+        "7/89",
+        "0",
+        "1"
+      ],
+      "top_index": 47,
+      "variance": "V"
+    },
+    {
+      "orientation": -1,
+      "physical_endpoint_id": "actual:m_2:w22:neg:c1:letter:151",
+      "point": [
+        "9/89",
+        "0",
+        "1"
+      ],
+      "top_index": 48,
+      "variance": "V_dual"
+    },
+    {
+      "orientation": 1,
+      "physical_endpoint_id": "actual:m_2:w22:pos:c1:letter:150",
+      "point": [
+        "11/89",
+        "0",
+        "1"
+      ],
+      "top_index": 49,
+      "variance": "V"
+    },
+    {
+      "orientation": -1,
+      "physical_endpoint_id": "actual:m_2:w21:neg:c1:letter:143",
+      "point": [
+        "13/89",
+        "0",
+        "1"
+      ],
+      "top_index": 50,
+      "variance": "V_dual"
+    },
+    {
+      "orientation": 1,
+      "physical_endpoint_id": "actual:m_2:w21:pos:c1:letter:142",
+      "point": [
+        "15/89",
+        "0",
+        "1"
+      ],
+      "top_index": 51,
+      "variance": "V"
+    },
+    {
+      "orientation": -1,
+      "physical_endpoint_id": "actual:m_2:w20:neg:c1:letter:136",
+      "point": [
+        "17/89",
+        "0",
+        "1"
+      ],
+      "top_index": 52,
+      "variance": "V_dual"
+    },
+    {
+      "orientation": 1,
+      "physical_endpoint_id": "actual:m_2:w20:pos:c1:letter:135",
+      "point": [
+        "19/89",
+        "0",
+        "1"
+      ],
+      "top_index": 53,
+      "variance": "V"
+    },
+    {
+      "orientation": -1,
+      "physical_endpoint_id": "actual:m_2:w19:neg:c1:letter:128",
+      "point": [
+        "21/89",
+        "0",
+        "1"
+      ],
+      "top_index": 54,
+      "variance": "V_dual"
+    },
+    {
+      "orientation": 1,
+      "physical_endpoint_id": "actual:m_2:w19:pos:c1:letter:127",
+      "point": [
+        "23/89",
+        "0",
+        "1"
+      ],
+      "top_index": 55,
+      "variance": "V"
+    },
+    {
+      "orientation": -1,
+      "physical_endpoint_id": "actual:m_2:w18:neg:c1:letter:120",
+      "point": [
+        "25/89",
+        "0",
+        "1"
+      ],
+      "top_index": 56,
+      "variance": "V_dual"
+    },
+    {
+      "orientation": 1,
+      "physical_endpoint_id": "actual:m_2:w18:pos:c1:letter:119",
+      "point": [
+        "27/89",
+        "0",
+        "1"
+      ],
+      "top_index": 57,
+      "variance": "V"
+    },
+    {
+      "orientation": -1,
+      "physical_endpoint_id": "actual:m_2:w17:neg:c1:letter:113",
+      "point": [
+        "29/89",
+        "0",
+        "1"
+      ],
+      "top_index": 58,
+      "variance": "V_dual"
+    },
+    {
+      "orientation": 1,
+      "physical_endpoint_id": "actual:m_2:w17:pos:c1:letter:112",
+      "point": [
+        "31/89",
+        "0",
+        "1"
+      ],
+      "top_index": 59,
+      "variance": "V"
+    },
+    {
+      "orientation": -1,
+      "physical_endpoint_id": "actual:m_2:w16:neg:c1:letter:105",
+      "point": [
+        "33/89",
+        "0",
+        "1"
+      ],
+      "top_index": 60,
+      "variance": "V_dual"
+    },
+    {
+      "orientation": 1,
+      "physical_endpoint_id": "actual:m_2:w16:pos:c1:letter:104",
+      "point": [
+        "35/89",
+        "0",
+        "1"
+      ],
+      "top_index": 61,
+      "variance": "V"
+    },
+    {
+      "orientation": -1,
+      "physical_endpoint_id": "actual:m_2:w15:neg:c1:letter:98",
+      "point": [
+        "37/89",
+        "0",
+        "1"
+      ],
+      "top_index": 62,
+      "variance": "V_dual"
+    },
+    {
+      "orientation": 1,
+      "physical_endpoint_id": "actual:m_2:w15:pos:c1:letter:97",
+      "point": [
+        "39/89",
+        "0",
+        "1"
+      ],
+      "top_index": 63,
+      "variance": "V"
+    },
+    {
+      "orientation": -1,
+      "physical_endpoint_id": "actual:m_2:w14:neg:c1:letter:90",
+      "point": [
+        "41/89",
+        "0",
+        "1"
+      ],
+      "top_index": 64,
+      "variance": "V_dual"
+    },
+    {
+      "orientation": 1,
+      "physical_endpoint_id": "actual:m_2:w14:pos:c1:letter:89",
+      "point": [
+        "43/89",
+        "0",
+        "1"
+      ],
+      "top_index": 65,
+      "variance": "V"
+    },
+    {
+      "orientation": -1,
+      "physical_endpoint_id": "actual:m_2:w13:neg:c1:letter:83",
+      "point": [
+        "45/89",
+        "0",
+        "1"
+      ],
+      "top_index": 66,
+      "variance": "V_dual"
+    },
+    {
+      "orientation": 1,
+      "physical_endpoint_id": "actual:m_2:w13:pos:c1:letter:82",
+      "point": [
+        "47/89",
+        "0",
+        "1"
+      ],
+      "top_index": 67,
+      "variance": "V"
+    },
+    {
+      "orientation": -1,
+      "physical_endpoint_id": "actual:m_2:w12:neg:c1:letter:75",
+      "point": [
+        "49/89",
+        "0",
+        "1"
+      ],
+      "top_index": 68,
+      "variance": "V_dual"
+    },
+    {
+      "orientation": 1,
+      "physical_endpoint_id": "actual:m_2:w12:pos:c1:letter:74",
+      "point": [
+        "51/89",
+        "0",
+        "1"
+      ],
+      "top_index": 69,
+      "variance": "V"
+    },
+    {
+      "orientation": -1,
+      "physical_endpoint_id": "actual:m_2:w11:neg:c1:letter:68",
+      "point": [
+        "53/89",
+        "0",
+        "1"
+      ],
+      "top_index": 70,
+      "variance": "V_dual"
+    },
+    {
+      "orientation": 1,
+      "physical_endpoint_id": "actual:m_2:w11:pos:c1:letter:67",
+      "point": [
+        "55/89",
+        "0",
+        "1"
+      ],
+      "top_index": 71,
+      "variance": "V"
+    },
+    {
+      "orientation": -1,
+      "physical_endpoint_id": "actual:m_2:w10:neg:c1:letter:60",
+      "point": [
+        "57/89",
+        "0",
+        "1"
+      ],
+      "top_index": 72,
+      "variance": "V_dual"
+    },
+    {
+      "orientation": 1,
+      "physical_endpoint_id": "actual:m_2:w10:pos:c1:letter:59",
+      "point": [
+        "59/89",
+        "0",
+        "1"
+      ],
+      "top_index": 73,
+      "variance": "V"
+    },
+    {
+      "orientation": -1,
+      "physical_endpoint_id": "actual:m_2:w9:neg:c1:letter:52",
+      "point": [
+        "61/89",
+        "0",
+        "1"
+      ],
+      "top_index": 74,
+      "variance": "V_dual"
+    },
+    {
+      "orientation": 1,
+      "physical_endpoint_id": "actual:m_2:w9:pos:c1:letter:51",
+      "point": [
+        "63/89",
+        "0",
+        "1"
+      ],
+      "top_index": 75,
+      "variance": "V"
+    },
+    {
+      "orientation": -1,
+      "physical_endpoint_id": "actual:m_2:w8:neg:c1:letter:45",
+      "point": [
+        "65/89",
+        "0",
+        "1"
+      ],
+      "top_index": 76,
+      "variance": "V_dual"
+    },
+    {
+      "orientation": 1,
+      "physical_endpoint_id": "actual:m_2:w8:pos:c1:letter:44",
+      "point": [
+        "67/89",
+        "0",
+        "1"
+      ],
+      "top_index": 77,
+      "variance": "V"
+    },
+    {
+      "orientation": -1,
+      "physical_endpoint_id": "actual:m_2:w7:neg:c1:letter:37",
+      "point": [
+        "69/89",
+        "0",
+        "1"
+      ],
+      "top_index": 78,
+      "variance": "V_dual"
+    },
+    {
+      "orientation": 1,
+      "physical_endpoint_id": "actual:m_2:w7:pos:c1:letter:36",
+      "point": [
+        "71/89",
+        "0",
+        "1"
+      ],
+      "top_index": 79,
+      "variance": "V"
+    },
+    {
+      "orientation": -1,
+      "physical_endpoint_id": "actual:m_2:w6:neg:c1:letter:30",
+      "point": [
+        "73/89",
+        "0",
+        "1"
+      ],
+      "top_index": 80,
+      "variance": "V_dual"
+    },
+    {
+      "orientation": 1,
+      "physical_endpoint_id": "actual:m_2:w6:pos:c1:letter:29",
+      "point": [
+        "75/89",
+        "0",
+        "1"
+      ],
+      "top_index": 81,
+      "variance": "V"
+    },
+    {
+      "orientation": -1,
+      "physical_endpoint_id": "actual:m_2:w5:neg:c1:letter:22",
+      "point": [
+        "77/89",
+        "0",
+        "1"
+      ],
+      "top_index": 82,
+      "variance": "V_dual"
+    },
+    {
+      "orientation": 1,
+      "physical_endpoint_id": "actual:m_2:w5:pos:c1:letter:21",
+      "point": [
+        "79/89",
+        "0",
+        "1"
+      ],
+      "top_index": 83,
+      "variance": "V"
+    },
+    {
+      "orientation": -1,
+      "physical_endpoint_id": "actual:m_2:w4:neg:c1:letter:15",
+      "point": [
+        "81/89",
+        "0",
+        "1"
+      ],
+      "top_index": 84,
+      "variance": "V_dual"
+    },
+    {
+      "orientation": 1,
+      "physical_endpoint_id": "actual:m_2:w4:pos:c1:letter:14",
+      "point": [
+        "83/89",
+        "0",
+        "1"
+      ],
+      "top_index": 85,
+      "variance": "V"
+    },
+    {
+      "orientation": -1,
+      "physical_endpoint_id": "actual:m_2:w3:neg:c1:letter:7",
+      "point": [
+        "85/89",
+        "0",
+        "1"
+      ],
+      "top_index": 86,
+      "variance": "V_dual"
+    },
+    {
+      "orientation": 1,
+      "physical_endpoint_id": "actual:m_2:w3:pos:c1:letter:6",
+      "point": [
+        "87/89",
+        "0",
+        "1"
+      ],
+      "top_index": 87,
+      "variance": "V"
+    }
+  ],
+  "z_coend_gluing_cells": []
+}

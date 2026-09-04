@@ -10,12 +10,12 @@ export FORCE_SOURCE_DATE=1
 export TZ=UTC
 
 cd "$PAPER"
-# Do not use -halt-on-error: luatexja+Fandol emits recoverable \textfont7
-# math-font noise that still yields a usable PDF under nonstopmode.
-lualatex -interaction=nonstopmode main-zh.tex
+# unicode-math initializes the LuaTeX math families used by the ctex/Fandol
+# document, so the Chinese build can and should fail on its first real error.
+lualatex -interaction=nonstopmode -halt-on-error main-zh.tex
 bibtex main-zh
-lualatex -interaction=nonstopmode main-zh.tex
-lualatex -interaction=nonstopmode main-zh.tex
+lualatex -interaction=nonstopmode -halt-on-error main-zh.tex
+lualatex -interaction=nonstopmode -halt-on-error main-zh.tex
 
 mkdir -p "$OUT"
 cp main-zh.pdf "$OUT/.spc4-t73-candidate-zh.new.pdf"

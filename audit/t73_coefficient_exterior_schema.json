@@ -1,0 +1,42 @@
+{
+  "schema": "t73_coefficient_exterior_isotopy/v1",
+  "required": [
+    "schema",
+    "dependencies",
+    "initial",
+    "moves",
+    "final",
+    "initial_source_binding",
+    "final_target_binding"
+  ],
+  "dependencies": [
+    "source_exterior_sha256",
+    "selected_canopolis_target_sha256"
+  ],
+  "bindings": {
+    "initial_source_binding_count": 630,
+    "final_target_binding_count": 630,
+    "meaning": "Exact bijections from every saved source interval to an initial ambient arc and from every final ambient arc to every saved target strand, including ordered endpoint IDs and endpoint vertices."
+  },
+  "frame_required": ["complex", "boundary_components", "arcs", "ribbons"],
+  "boundary_components": {
+    "count": 5,
+    "names": ["outer", "y_left", "y_right", "z_left", "z_right"],
+    "meaning": "Exact connected components of the boundary triangle subcomplex; every component is checked as S2."
+  },
+  "arcs": {
+    "count": 630,
+    "required_per_arc": ["name", "edge_path", "start_boundary", "end_boundary", "owner", "closure_side", "endpoint_index", "source_id"],
+    "meaning": "Pairwise interior-disjoint embedded edge paths. No imported source IDs or route hashes count as paths."
+  },
+  "ribbons": {
+    "count": 630,
+    "required_per_ribbon": ["name", "core_arc", "push_off_path", "triangles"],
+    "meaning": "Embedded triangulated disks whose boundary is exactly the core path, push-off path, and two endpoint edges."
+  },
+  "move_kinds": [
+    "interior_bistellar_replacement (2-3 or 3-2)",
+    "ambient_simplicial_isomorphism"
+  ],
+  "fixed_data": "Every move fixes the four insertion-boundary components pointwise. Bistellar support must miss every arc/ribbon vertex; ambient isomorphisms must map all typed subcomplexes exactly."
+}

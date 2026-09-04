@@ -676,7 +676,7 @@ close only if the missing relative planar diagram proves the two-sided
 representable factorization needed for the first arrow of (C.mix3).  The
 all-owner primitive incidence data do not prove it.
 
-## Literal off-diagonal splitting is not yet established
+## Literal off-diagonal splitting is refuted for the saved source
 
 Define \(J(T)=T\sqcup I^{\sqcup227}\), placing the 227 boundary-parallel z
 arcs in a separated sub-ball of a newly standardized z insertion ball.  This
@@ -691,35 +691,31 @@ off-diagonal normalized coefficient
 \]
 for arbitrary insertion tangles.
 
-The existing rectangles do not prove (C.split).  The tensor product requires
-the two Hom closures to be a literal split union relative to all four
-insertion boxes, or a separately proved monoidal foam equivalence.  No
-separating sphere or two disjoint containing 3-balls are supplied.
-
-The first concrete unseparated connector is visible in the selected state.
-Of the 42 \(m_2\) y--z connectors, 41 are Johnson central connectors.  The
-last is the cyclic
+The complete source constructor now decides this question.  It saves all
+1260 oriented boundary endpoints and 630 exterior intervals.  The 176
+Y-incident intervals have transition counts
 \[
-m_2:C_i\longrightarrow c1:\mathrm{letter}:0
+84(Y_-,Z_+)+84(Y_+,Z_-)+4(Y_-,Z_-)+4(Y_+,Z_+).
 \]
-connector through the bottom coordinate arc and both
-\(\lambda_i/\mu_i\) bands of the \((t,h_{CS})\) cancellation.  Its record
-contains the band hashes and an endpoint rule, but no common-complement PL
-surface, no assignment of its two sides to the two proposed Hom closures,
-and no separating sphere relative to the y and z insertion boxes.
+The final eight same-side intervals are attached to the two negatively
+oriented base Y passages \(m_2:C_i\) and \(r_{xy}:\mathrm{vertex}:1\), on
+both cable copies and both incident sides.
 
-Moreover, each of the 227 residual z tracks is explicitly marked as a
-conditional transport in a normalized complement chart.  Separate target
-meridians and private levels do not provide one simultaneous ambient isotopy
-relative to both z insertion boxes and the cyclic connector.
+The v2 target has the correct endpoint cardinalities: each closure contains
+88 Y--Z arcs and 227 Z--Z arcs, hence its four insertion balls carry
+\(88,542,542,88\) endpoints.  Nevertheless a relative ambient isotopy fixes
+the endpoint matching, not just those counts.  The eight same-side source
+intervals cannot lie in two disjoint closure balls pairing
+\((Y_-,Z_+)\) and \((Y_+,Z_-)\).  Thus (C.split) is false for the saved
+source matching.
 
-This is not a proof that (C.split) is topologically impossible.  It is the
-exact reason it does not follow from the current data.  A sufficient new
-artifact would give an embedded separating 2-sphere in the complement of
-the four parametrized insertion boxes and all coefficient strands, together
-with a simultaneous ambient movie carrying the cyclic connector and all 227
-residual tracks to opposite split sides.  Until then the two-representable
-route remains possible but unproved.
+Four crosswise reconnections would change the matching, but they are saddle
+or merge--split cobordisms rather than a pivotal retyping or ambient isotopy.
+Their Blanchet signs, Euler characteristics and quantum degrees have not been
+constructed.  The conditional theorem below remains a correct statement
+about a different coefficient exterior satisfying its premise; it is
+counterfactual for the saved source and cannot establish the actual C map or
+degree.
 
 ## Conditional two-representable theorem, with all shifts
 

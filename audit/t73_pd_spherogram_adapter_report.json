@@ -1,0 +1,125 @@
+{
+  "component_incidence": {
+    "m_2": 814,
+    "m_3": 1696,
+    "r_xy": 702,
+    "r_yz": 704,
+    "r_zx": 0
+  },
+  "input_crossings": 1958,
+  "present": {
+    "component_halfedge_cycles": false,
+    "dotted_one_handle_components": false,
+    "integer_surgery_framings": false,
+    "r_zx_embedding": false,
+    "self_crossings": false,
+    "standard_pd_code": false
+  },
+  "reasons": [
+    "missing standard_pd_code: one four-half-edge incidence row per crossing, with every arc label appearing exactly twice",
+    "missing component_halfedge_cycles: cyclic successor order through every over/under half-edge, including order among crossings on the same railroad segment",
+    "missing self_crossings: all self-crossings, not only mixed-owner crossings",
+    "missing r_zx_embedding: an explicit zero-crossing component rather than an empty word",
+    "missing dotted_one_handle_components: the two dotted y/z components or an equivalent explicit genus-two handlebody triangulation",
+    "missing integer_surgery_framings: integer diagram framings for m_2 and m_3 after comparison of product and blackboard framings",
+    "390 railroad segments contain multiple crossings with no along-segment order",
+    "r_zx has no crossing incidence and no embedded component record"
+  ],
+  "regina_triangulation": "OPEN",
+  "repeated_segment_count": 390,
+  "repeated_segment_examples": {
+    "m_2:0": [
+      10,
+      74,
+      702,
+      766,
+      1396
+    ],
+    "m_2:1": [
+      11,
+      75,
+      703,
+      767,
+      1397,
+      1398,
+      1399
+    ],
+    "m_2:10": [
+      20,
+      84,
+      712,
+      776,
+      1416
+    ],
+    "m_2:11": [
+      21,
+      85,
+      713,
+      777,
+      1417,
+      1418,
+      1419
+    ],
+    "m_2:12": [
+      22,
+      86,
+      714,
+      778,
+      1420,
+      1421,
+      1422
+    ],
+    "m_2:13": [
+      23,
+      87,
+      715,
+      779,
+      1423,
+      1424
+    ],
+    "m_2:14": [
+      24,
+      88,
+      716,
+      780,
+      1425
+    ],
+    "m_2:15": [
+      25,
+      89,
+      717,
+      781,
+      1426,
+      1427,
+      1428
+    ],
+    "m_2:16": [
+      26,
+      90,
+      718,
+      782,
+      1429,
+      1430,
+      1431
+    ],
+    "m_2:17": [
+      27,
+      91,
+      719,
+      783,
+      1432
+    ]
+  },
+  "required_fields": {
+    "component_halfedge_cycles": "cyclic successor order through every over/under half-edge, including order among crossings on the same railroad segment",
+    "dotted_one_handle_components": "the two dotted y/z components or an equivalent explicit genus-two handlebody triangulation",
+    "integer_surgery_framings": "integer diagram framings for m_2 and m_3 after comparison of product and blackboard framings",
+    "r_zx_embedding": "an explicit zero-crossing component rather than an empty word",
+    "self_crossings": "all self-crossings, not only mixed-owner crossings",
+    "standard_pd_code": "one four-half-edge incidence row per crossing, with every arc label appearing exactly twice"
+  },
+  "schema": "t73_pd_spherogram_adapter_audit/v1",
+  "snappy_complement": "OPEN",
+  "spherogram_link": "OPEN",
+  "verdict": "OPEN"
+}

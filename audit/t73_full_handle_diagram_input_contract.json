@@ -1,0 +1,34 @@
+{
+  "schema": "t73_full_handle_diagram_input/v1",
+  "purpose": "Minimal new geometric input from which a standard PD code, Spherogram link exterior, Regina triangulation, and integer surgery coefficients can be derived without guesses.",
+  "ambient": {
+    "required": ["projection_direction", "height_direction", "genericity_certificate"],
+    "meaning": "One common rational S3 chart or an explicit triangulated genus-two handlebody boundary."
+  },
+  "components": {
+    "required_names": ["m_2", "m_3", "r_xy", "r_yz", "r_zx", "dotted_y", "dotted_z"],
+    "required_per_component": [
+      "closed_core_polyline",
+      "cyclic_segment_successor",
+      "component_kind"
+    ],
+    "two_handle_component_extra_field": "closed_push_off_polyline",
+    "meaning": "All seven cores are closed rational polylines in the same ambient chart. Each of the five 2-handle components also has a disjoint framing push-off. Zero-crossing and dotted components must still have cores."
+  },
+  "derivable_outputs": [
+    "all mixed and self crossings with projection parameters",
+    "cyclic crossing order along each component",
+    "four-half-edge standard PD rows",
+    "blackboard writhe and linking matrix",
+    "integer framing as linking(core,push_off)",
+    "seven-component Kirby diagram"
+  ],
+  "forbidden_substitutes": [
+    "free words",
+    "crossing signs without half-edge successors",
+    "segment IDs without along-segment parameters",
+    "empty word for an embedded component",
+    "same-product-framing string",
+    "PASS or hash receipts"
+  ]
+}

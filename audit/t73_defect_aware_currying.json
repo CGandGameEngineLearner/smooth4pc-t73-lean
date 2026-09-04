@@ -1,0 +1,199 @@
+{
+  "P86_to_P88_boundary_endpoints": 174,
+  "active_boundary_endpoints_after_pivotal_mates": 176,
+  "active_boundary_endpoints_before_mates": 176,
+  "active_interval_count": 176,
+  "all_owner_primitives_sha256": "14838013B844500A6EBFC17C3121DD2FD8A0BBF40648689A58EC41C14F6296B7",
+  "correct_side_count": 168,
+  "minimum_independent_reconnections": 4,
+  "negative_base_y_sources": [
+    "m_2:C_i",
+    "r_xy:vertex:1"
+  ],
+  "one_defect_derived_from_eight_wrong_intervals": false,
+  "one_defect_origin": "external chosen cup E86 -> E88 / weight-86 endpoint sector",
+  "pivotal_input_scope": "freely chosen standard auxiliary detector convention; not a recovery of legacy endpoint coefficients",
+  "pivotal_mates_preserve_total_endpoint_count": true,
+  "proposed_endpoint_reconnections": [
+    {
+      "Blanchet_sign": "UNDETERMINED",
+      "Euler_quantum_degree": "UNDETERMINED",
+      "index": 0,
+      "left_or_right_mate": "UNDETERMINED",
+      "new_cross_pairs": [
+        [
+          "m_2:negative:event:0:entry",
+          "m_2:negative:event:1:entry"
+        ],
+        [
+          "m_2:negative:event:0:exit",
+          "m_2:negative:event:310:exit"
+        ]
+      ],
+      "old_Yminus_Zminus_interval": "m_2:negative:interval:310",
+      "old_Yplus_Zplus_interval": "m_2:negative:interval:0",
+      "required_operation": "pivotal mate/reconnection, not ambient isotopy relative endpoints"
+    },
+    {
+      "Blanchet_sign": "UNDETERMINED",
+      "Euler_quantum_degree": "UNDETERMINED",
+      "index": 1,
+      "left_or_right_mate": "UNDETERMINED",
+      "new_cross_pairs": [
+        [
+          "m_2:positive:event:310:exit",
+          "m_2:positive:event:309:exit"
+        ],
+        [
+          "m_2:positive:event:310:entry",
+          "m_2:positive:event:0:entry"
+        ]
+      ],
+      "old_Yminus_Zminus_interval": "m_2:positive:interval:310",
+      "old_Yplus_Zplus_interval": "m_2:positive:interval:309",
+      "required_operation": "pivotal mate/reconnection, not ambient isotopy relative endpoints"
+    },
+    {
+      "Blanchet_sign": "UNDETERMINED",
+      "Euler_quantum_degree": "UNDETERMINED",
+      "index": 2,
+      "left_or_right_mate": "UNDETERMINED",
+      "new_cross_pairs": [
+        [
+          "r_xy:negative:event:0:entry",
+          "r_xy:negative:event:1:exit"
+        ],
+        [
+          "r_xy:negative:event:2:entry",
+          "r_xy:negative:event:3:exit"
+        ]
+      ],
+      "old_Yminus_Zminus_interval": "r_xy:negative:interval:3",
+      "old_Yplus_Zplus_interval": "r_xy:negative:interval:1",
+      "required_operation": "pivotal mate/reconnection, not ambient isotopy relative endpoints"
+    },
+    {
+      "Blanchet_sign": "UNDETERMINED",
+      "Euler_quantum_degree": "UNDETERMINED",
+      "index": 3,
+      "left_or_right_mate": "UNDETERMINED",
+      "new_cross_pairs": [
+        [
+          "r_xy:positive:event:3:exit",
+          "r_xy:positive:event:2:entry"
+        ],
+        [
+          "r_xy:positive:event:1:exit",
+          "r_xy:positive:event:0:entry"
+        ]
+      ],
+      "old_Yminus_Zminus_interval": "r_xy:positive:interval:3",
+      "old_Yplus_Zplus_interval": "r_xy:positive:interval:1",
+      "required_operation": "pivotal mate/reconnection, not ambient isotopy relative endpoints"
+    }
+  ],
+  "schema": "t73_defect_aware_currying_audit/v1",
+  "selected_pivotal_feet": [
+    "actual:m_2:w44:pos:m_2:C_i",
+    "actual:r_xy:w2:neg:r_xy:vertex:7"
+  ],
+  "source_exterior_sha256": "81E35ACE16DDC6C7226D6251EE57ADD6B4C253976452EEFFB48BBC49E5857E6C",
+  "transition_counts": {
+    "Y_minus--Z_minus": 4,
+    "Y_minus--Z_plus": 84,
+    "Y_plus--Z_minus": 84,
+    "Y_plus--Z_plus": 4
+  },
+  "verdict": "NO_SINGLE_DEFECT_CURRYING_FROM_CURRENT_INCIDENCE",
+  "wrong_side_count": 8,
+  "wrong_side_intervals": [
+    {
+      "copy_sign": "negative",
+      "from_endpoint_id": "m_2:negative:event:0:exit",
+      "from_source_id": "m_2:C_i",
+      "from_sphere": "Y_plus",
+      "interval_id": "m_2:negative:interval:0",
+      "owner": "m_2",
+      "to_endpoint_id": "m_2:negative:event:1:entry",
+      "to_source_id": "c1:letter:309",
+      "to_sphere": "Z_plus"
+    },
+    {
+      "copy_sign": "negative",
+      "from_endpoint_id": "m_2:negative:event:310:exit",
+      "from_source_id": "c1:letter:0",
+      "from_sphere": "Z_minus",
+      "interval_id": "m_2:negative:interval:310",
+      "owner": "m_2",
+      "to_endpoint_id": "m_2:negative:event:0:entry",
+      "to_source_id": "m_2:C_i",
+      "to_sphere": "Y_minus"
+    },
+    {
+      "copy_sign": "positive",
+      "from_endpoint_id": "m_2:positive:event:309:exit",
+      "from_source_id": "c1:letter:309",
+      "from_sphere": "Z_plus",
+      "interval_id": "m_2:positive:interval:309",
+      "owner": "m_2",
+      "to_endpoint_id": "m_2:positive:event:310:entry",
+      "to_source_id": "m_2:C_i",
+      "to_sphere": "Y_plus"
+    },
+    {
+      "copy_sign": "positive",
+      "from_endpoint_id": "m_2:positive:event:310:exit",
+      "from_source_id": "m_2:C_i",
+      "from_sphere": "Y_minus",
+      "interval_id": "m_2:positive:interval:310",
+      "owner": "m_2",
+      "to_endpoint_id": "m_2:positive:event:0:entry",
+      "to_source_id": "c1:letter:0",
+      "to_sphere": "Z_minus"
+    },
+    {
+      "copy_sign": "negative",
+      "from_endpoint_id": "r_xy:negative:event:1:exit",
+      "from_source_id": "r_xy:vertex:3",
+      "from_sphere": "Z_plus",
+      "interval_id": "r_xy:negative:interval:1",
+      "owner": "r_xy",
+      "to_endpoint_id": "r_xy:negative:event:2:entry",
+      "to_source_id": "r_xy:vertex:5",
+      "to_sphere": "Y_plus"
+    },
+    {
+      "copy_sign": "negative",
+      "from_endpoint_id": "r_xy:negative:event:3:exit",
+      "from_source_id": "r_xy:vertex:7",
+      "from_sphere": "Z_minus",
+      "interval_id": "r_xy:negative:interval:3",
+      "owner": "r_xy",
+      "to_endpoint_id": "r_xy:negative:event:0:entry",
+      "to_source_id": "r_xy:vertex:1",
+      "to_sphere": "Y_minus"
+    },
+    {
+      "copy_sign": "positive",
+      "from_endpoint_id": "r_xy:positive:event:1:exit",
+      "from_source_id": "r_xy:vertex:5",
+      "from_sphere": "Y_plus",
+      "interval_id": "r_xy:positive:interval:1",
+      "owner": "r_xy",
+      "to_endpoint_id": "r_xy:positive:event:2:entry",
+      "to_source_id": "r_xy:vertex:3",
+      "to_sphere": "Z_plus"
+    },
+    {
+      "copy_sign": "positive",
+      "from_endpoint_id": "r_xy:positive:event:3:exit",
+      "from_source_id": "r_xy:vertex:1",
+      "from_sphere": "Y_minus",
+      "interval_id": "r_xy:positive:interval:3",
+      "owner": "r_xy",
+      "to_endpoint_id": "r_xy:positive:event:0:entry",
+      "to_source_id": "r_xy:vertex:7",
+      "to_sphere": "Z_minus"
+    }
+  ]
+}

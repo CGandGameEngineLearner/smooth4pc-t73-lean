@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "T73 C-H1 relative four-box rational PL ambient isotopy",
+  "type": "object",
+  "required": [
+    "schema",
+    "dependencies",
+    "ambient_exterior",
+    "source_strands",
+    "source_framings",
+    "endpoint_matching",
+    "vertex_moves",
+    "target_binding",
+    "euler_degree"
+  ],
+  "properties": {
+    "schema": {"const": "t73_c_h1_relative_isotopy/v1"},
+    "dependencies": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_exterior_sha256",
+        "selected_canopolis_target_sha256",
+        "all_owner_primitives_sha256"
+      ]
+    },
+    "ambient_exterior": {
+      "type": "object",
+      "required": ["vertices", "tetrahedra", "outer_boundary_vertices", "insertion_balls"],
+      "properties": {
+        "vertices": {"type": "array", "minItems": 5},
+        "tetrahedra": {"type": "array", "minItems": 1},
+        "outer_boundary_vertices": {"type": "array"},
+        "insertion_balls": {"type": "array", "minItems": 4, "maxItems": 4}
+      }
+    },
+    "source_strands": {
+      "type": "array",
+      "minItems": 630,
+      "maxItems": 630,
+      "items": {
+        "type": "object",
+        "required": ["id", "vertices", "endpoint_ids", "orientation"]
+      }
+    },
+    "source_framings": {
+      "type": "array",
+      "minItems": 630,
+      "maxItems": 630,
+      "items": {
+        "type": "object",
+        "required": ["strand_id", "push_off_vertices", "relative_twist"]
+      }
+    },
+    "endpoint_matching": {
+      "type": "array",
+      "minItems": 1260,
+      "maxItems": 1260,
+      "items": {
+        "type": "object",
+        "required": ["ball", "endpoint_id", "ambient_vertex", "orientation"]
+      }
+    },
+    "vertex_moves": {"type": "array", "minItems": 1},
+    "target_binding": {
+      "type": "array",
+      "minItems": 630,
+      "maxItems": 630,
+      "items": {
+        "type": "object",
+        "required": [
+          "source_strand_id",
+          "target_side",
+          "target_index",
+          "target_endpoint_ids",
+          "final_polyline"
+        ]
+      }
+    },
+    "euler_degree": {
+      "type": "object",
+      "required": ["births", "saddles", "deaths", "closed_trace_euler_characteristic", "quantum_shift"]
+    }
+  }
+}

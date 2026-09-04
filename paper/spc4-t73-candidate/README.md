@@ -7,10 +7,11 @@ sphere*
 
 (`main.tex`; Chinese edition `main-zh.tex`).  For an explicit Johnson-generator
 handle presentation the paper proves P0 and transports the complete AR upper
-handles to obtain E13/P3, including \(X_J\cong\Sigma_A^0\).  The corrected
-literal-split route would lie in quantum degree \(223\), but its relative
-coefficient split and the C/S statewise shadow remain open.  An exact finite
-calculation gives \(D_3=2624\).  Lean formalizes the abstract quotient
+handles to obtain E13/P3, including \(X_J\cong\Sigma_A^0\).  Complete source
+and target endpoint constructors refute the literal split by exhibiting eight
+wrong-side connectors.  Its target-only degree ledger is \(223\), but the
+actual C/S comparison and its degree remain open.  An exact finite endpoint
+calculation gives the scalar \(2624\).  Lean formalizes the abstract quotient
 implication from `ExternalGeometry`; that interface is not inhabited.  The
 paper therefore states a conditional obstruction rather than an unconditional
 counterexample theorem.
@@ -31,7 +32,9 @@ Windows checkout to
 
 ### Chinese edition (`main-zh.tex`)
 
-The Chinese manuscript mirrors the English `main.tex` section-for-section.
+The Chinese manuscript still contains historical C/S body text and begins
+with an explicit audit warning; it must not be treated as authoritative until
+it is fully resynchronized with `main.tex`.
 Translated section files use the `-zh` suffix; body chunks live in
 `zh-chunks/chunk-*-zh.tex` (17 chunks, `chunk-00-zh.tex` through `chunk-16-zh.tex`).
 
@@ -62,11 +65,12 @@ whether the proposed spine images form a free basis of `F_3`.
 
 ## Evidence boundary
 
-The comparison with the MWW skein lasagna evaluation uses the 44 product
-rectangles, BPW/BHPW functoriality, and the statewise divided beta/psi cocone.
-The paper constructs the actual endpoint factorization before applying the
-genus-zero Frobenius calculation.  Lean checks finite and quotient algebra;
-the external geometry remains a paper proof rather than a Lean definition.
+The proposed comparison with the MWW skein lasagna evaluation uses the 44
+product rectangles, BPW/BHPW functoriality, and a statewise divided beta/psi
+cocone.  The saved source endpoint matching refutes the formerly proposed
+literal factorization.  An actual coend/currying transformation and its
+grading are now an explicit hypothesis.  Lean checks finite and quotient
+algebra; it does not construct this external comparison.
 
 The public availability check is:
 

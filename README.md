@@ -21,9 +21,11 @@ sphere*).
 For an explicit **Johnson-generator** handle presentation the paper now gives
 a paper-level construction of **P0** and transports the complete AR upper
 handles to obtain **E13/P3**, including \(X_J\cong\Sigma_A^0\).  The
-two-representable coefficient route has corrected candidate degree \(223\),
-but its relative four-box split and the resulting **C/S** statewise shadow are
-not yet constructed.
+complete source and target constructors now save \(1260\) endpoints and
+\(630\) framed arcs each.  Their matchings differ in eight wrong-side
+connectors, so the proposed literal two-representable split is refuted.  Its
+degree \(223\) is target-only; the actual **C/S** map and its nonzero degree
+remain open.
 
 An exact finite calculation gives a nonzero divided cubic \(D_3=2624\). An
 Artin--Magnus certificate and the pure-braid Andreadakis theorem establish a
@@ -37,10 +39,10 @@ in Lean.
 
 | Layer | Status |
 | --- | --- |
-| Finite algebra (\(2624\), legacy degree \(494\), \(\det A=\det(A-I)=1\)) | Checked in Lean; Lean degree not migrated to corrected \(223\) route |
+| Finite algebra (endpoint scalar \(2624\), historical degree \(494\), \(\det A=\det(A-I)=1\)) | Checked in Lean; no actual MWW class degree is currently constructed |
 | Abstract conditional implication | Checked in Lean |
 | Johnson P0 / E13 / topological P3 | Proved at paper level after detector retyping |
-| C / S coefficient and hemisphere comparison | **Open** at the relative split/statewise shadow |
+| C / S coefficient and hemisphere comparison | **Open** at the actual coend/currying and statewise shadow |
 | Lean inhabitant of `ExternalGeometry` | **Open** |
 
 The exact Lean boundary is
@@ -53,6 +55,16 @@ python3 scripts/audit_t73_premises.py --check
 The legacy script still prints historical PASS labels and is not an
 authoritative completion test; use `audit/RUNNING_PAPER_AUDIT.md` and the new
 fail-closed gates instead.
+
+The complete selected-C geometry bundle is rebuilt and checked with:
+
+```text
+python3 scripts/build_t73_complete_geometry_bundle.py --write
+python3 scripts/build_t73_complete_geometry_bundle.py --check
+```
+
+This saves all currently reconstructible endpoint/arc geometry.  Its manifest
+deliberately remains `OPEN` at the actual coend/currying map.
 
 **Erratum (2 September 2026).** An earlier draft mixed two endpoint index
 tables and reported \(-59072\). With both objects in the collar table used by
@@ -180,7 +192,7 @@ python -B scripts/check_t73_claim_boundary.py
 | `verify_t73_actual_sphere_system.py` | Actual partial-W2 sphere system | `ACTUAL_SPHERE_SYSTEM=PASS` |
 | `verify_t73_hemisphere_movies.py` | Actual MWW three-handle maps | `ACTUAL_W2_LASAGNA_MAP=True` |
 | `certify_t73_p3_four_handle.py` | \(X_J\) four-handle layer | `E11`/`E12` PASS; `E13=PARTIAL` by design |
-| `certify_t73_e12_s4.py` | Legacy empty-link degree \(494\) check; MWW vanishing holds at corrected \(223\) as well | `S4_DEGREE_494_ZERO=True` |
+| `certify_t73_e12_s4.py` | Historical empty-link degree \(494\) check; MWW vanishing holds in every nonzero degree, but the actual candidate degree is open | `S4_DEGREE_494_ZERO=True` |
 | `certify_t73_e13_*.py` | \(X_J\cong\Sigma_A^0\) pipeline | `IDENTIFIED_WITH_SIGMA=True` |
 | `audit_t73_premises.py` | Aggregate status | `PASS_MATHEMATICAL_LEAN_PARTIAL`, `COUNTEREXAMPLE=True` |
 | `check_t73_claim_boundary.py` | Paper/Lean claim boundary | `T73_CLAIM_BOUNDARY=UNCONDITIONAL_PAPER_LEAN_PARTIAL` |

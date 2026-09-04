@@ -8,7 +8,8 @@ divided cubic.
 
 \subsection{Erratum to the 2 September public draft}
 
-The 2 September public draft reported $D_3(v_T)=-59072$.  That value mixed
+The 2 September public draft reported the endpoint-model scalar as $-59072$.
+That value mixed
 two endpoint coordinate systems: the vector $u$ used the THXY endpoint
 indices, whereas the covector $\ell$ used the collar indices that also label
 the cabled Artin word.  The two tables order the $m_2$ wickets in opposite
@@ -19,7 +20,8 @@ and $87$, so
 \]
 With both objects in that one table, the exact calculation gives
 $[\varepsilon^3]\ell(\rho(W)-I)u=-328$ and hence
-$D_3(v_T)=(-2)^3(-328)=2624$.  The nonvanishing conclusion is unchanged.
+$[h^3]\ell(\rho_h(W)-I)u=(-2)^3(-328)=2624$.  The endpoint-model
+nonvanishing conclusion is unchanged.
 Using the THXY coordinates consistently gives $-2496$; this is a coordinate
 check, not a second geometric class.  The value $2624$ belongs to the
 currently frozen collar data; if the Johnson collar word changes, the
@@ -115,10 +117,11 @@ The sum of the $r_T$ kills every relation generator $f\cdot m-m\cdot f$ and
 therefore factors uniquely through the quotient.
 \end{proof}
 
-For the Johnson replacement collar, Lemma~\ref{lem:C1} supplies the actual
-coefficient equivalence \eqref{eq:HattoriActual}.  The selected class and
-divided detector of Section~7 are the geometric instances of the following
-pattern.
+For the counterfactual split target, Lemma~\ref{lem:C1} supplies the formal
+coefficient equivalence \eqref{eq:HattoriSplit}.  The saved source fails that
+lemma's premise.  Hypothesis~\ref{hyp:P1} therefore postulates an actual
+replacement comparison and class; the following endpoint module is the
+finite target pattern, not that missing construction.
 
 \subsection{The endpoint module and the Burau action}
 
@@ -212,16 +215,16 @@ D_3(\bar x)=\left.\frac{\mathcal D_h(x)}{h^3}\right|_{h=0}.
 \end{equation}
 \end{definition}
 
-\begin{proposition}[Selected value]\label{prop:D3-vT}
+\begin{proposition}[Selected endpoint value]\label{prop:D3-vT}
 In $E_\eps$, the first nonzero coefficient of $(\rho_t(B_{88})-I)u$ occurs in
 degree $3$.  Contracting with \eqref{eq:ell} gives
 \begin{equation}\label{eq:ell-eps-series}
 \ell(\rho_t(B_{88})-I)u
 =-328\eps^3+14596\eps^4-410246\eps^5+9595271\eps^6.
 \end{equation}
-Hence, with $[h]\eps=-2$,
+Hence, with $[h]\eps=-2$, the endpoint-model scalar is
 \begin{equation}\label{eq:D3-vT-value}
-D_3([v_T])=2624\ne0.
+[h^3],\ell(\rho_h(W)-I)u=2624\ne0.
 \end{equation}
 The complete degree-three vector is printed in Appendix~\ref{app:vector}.
 \end{proposition}
@@ -229,7 +232,8 @@ The complete degree-three vector is printed in Appendix~\ref{app:vector}.
 \begin{proof}
 Traverse $B_{88}$ from right to left, reduce modulo $\eps^7$, and contract
 with \eqref{eq:ell}.  The resulting series is
-\eqref{eq:ell-eps-series}, so $D_3([v_T])=(-2)^3(-328)=2624$.
+\eqref{eq:ell-eps-series}, so the displayed coefficient is
+$(-2)^3(-328)=2624$.
 \end{proof}
 
 \begin{lemma}[Parameter expansion]\label{lem:eps-of-h}
@@ -253,8 +257,9 @@ $2624$, but that plain shadow is not $D_3(\xi)$.
 
 \subsection{The grading calculation}
 
-\begin{proposition}[Corrected split-route quantum degree]\label{prop:degree-223}
-Assuming the relative two-representable split of Hypothesis~\ref{hyp:P1}, the
+\begin{proposition}[Counterfactual literal-split grading ledger]\label{prop:degree-223}
+For a coefficient exterior satisfying the relative two-representable split
+premise of Lemma~\ref{lem:C1}, the
 selected normalized one-handle class has quantum degree $227$, and its image
 in the two-handle quotient has degree $223$.
 \end{proposition}
@@ -269,6 +274,8 @@ $+227$.  These shifts cancel.  The identity has degree zero and the 227
 separate $X$ labels contribute $+227$.  Finally MWW's selected cable shift is
 $(1-2)(2\cdot2+0)=-4$.  Hence the degree is $227-4=223$.
 Appendix~\ref{app:grading} records the complete normalization ledger.
+The saved source incidence does not satisfy the split premise, so this
+proposition does not determine $q_C$.
 \end{proof}
 
 \subsection{Quotient algebra and the abstract descent chain}
@@ -302,14 +309,14 @@ Proposition~\ref{prop:D3-vT} gives the value $2624$.
 \begin{proposition}[Closed candidate class]\label{prop:closed-class}
 Suppose Hypotheses~\ref{hyp:P1}--\ref{hyp:P3} hold.  Then the class of
 Proposition~\ref{prop:nonzero-W2} maps to a nonzero element of
-$\Stwo(X_J)_{0,223}$.
+$\Stwo(X_J)_{0,q_C}$.
 \end{proposition}
 
 \begin{proof}
 MWW Theorems~3.7 and~3.10 identify the three-handle quotient, and
 Proposition~3.4 identifies the four-handle stage once cited.
 Hypothesis~\ref{hyp:P3} separates the computed empty-link ranks from those
-citations and transports the degree-$223$ class through the four-handle
+citations and transports the degree-$q_C$ class through the four-handle
 isomorphism.  Injectivity preserves nonvanishing.
 \end{proof}
 

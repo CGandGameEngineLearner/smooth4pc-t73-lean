@@ -1,0 +1,166 @@
+{
+  "artifacts": [
+    {
+      "completion_status": "OPEN",
+      "content_bytes": 1836089,
+      "content_sha256": "071DA9CE27BB96AD27EBAFA4C2C448D88AFCD6CDEBDD008888CFDC33C69B5D67",
+      "embedded_payload_sha256": "81E35ACE16DDC6C7226D6251EE57ADD6B4C253976452EEFFB48BBC49E5857E6C",
+      "generator": "scripts/build_t73_selected_source_exterior.py",
+      "geometry_counts": {
+        "cable_component_cycles": 4,
+        "cyclic_seams": 4,
+        "endpoints_per_insertion_sphere": {
+          "Y_minus": 88,
+          "Y_plus": 88,
+          "Z_minus": 542,
+          "Z_plus": 542
+        },
+        "exterior_intervals": 630,
+        "total_boundary_endpoints": 1260
+      },
+      "id": "selected_source_exterior",
+      "open_obligations": [
+        "actual AR coefficient exterior to the saved canonical representative: relative ambient isotopy",
+        "full framed-link/handlebody input suitable for an independent complement computation"
+      ],
+      "path": "geometry/t73_selected_source_exterior.json",
+      "reconstruction_status": "VERIFIED",
+      "schema": "t73_selected_source_exterior/v1",
+      "status": "OPEN",
+      "verification_diagnostic": "exact semantic verifier accepted the reconstructed artifact",
+      "verifier": "scripts/verify_t73_selected_source_exterior.py"
+    },
+    {
+      "completion_status": "OPEN",
+      "content_bytes": 1526081,
+      "content_sha256": "7B9B7749CF905EA8015AB3B0685E54F4804B73E66EAA2F08C0F36D5FEA160531",
+      "embedded_payload_sha256": "A27BF976168397172E0342AB7F8EDC734FADA28DBF8CA569B1508C328BDA9244",
+      "generator": "scripts/build_t73_selected_canopolis_normal_form.py",
+      "geometry_counts": {
+        "active_yz_arcs_per_closure": 88,
+        "closure_balls": 2,
+        "endpoints_per_insertion_ball": {
+          "Y_source": 88,
+          "Y_target": 88,
+          "Z_source": 542,
+          "Z_target": 542
+        },
+        "residual_zz_arcs_per_closure": 227,
+        "target_arcs": 630,
+        "target_primitives": 315,
+        "total_boundary_endpoints": 1260
+      },
+      "id": "selected_canopolis_target_v2",
+      "open_obligations": [
+        "relative source isotopy is explicitly not claimed",
+        "eight wrong-side source connectors obstruct the literal split-target interpretation"
+      ],
+      "path": "geometry/t73_selected_canopolis_normal_form.json",
+      "reconstruction_status": "VERIFIED",
+      "schema": "t73_selected_canopolis_normal_form/v2",
+      "status": "OPEN",
+      "verification_diagnostic": "exact semantic verifier accepted the reconstructed artifact",
+      "verifier": "scripts/verify_t73_selected_canopolis_normal_form.py"
+    },
+    {
+      "completion_status": "OPEN",
+      "content_bytes": 79984,
+      "content_sha256": "C1B926B5698E654CDDA71148F423F800712B0259EFD0977A31C5D24A9A592BDB",
+      "embedded_payload_sha256": "CD6B05CD33DD4DF6D22B1A64E327F2994FD5F8BEF7F494FA908A34EE5CDC1EAD",
+      "generator": "scripts/build_t73_single_hom_defect_target.py",
+      "geometry_counts": {
+        "bottom_endpoints": 86,
+        "cups": 1,
+        "source_exterior_intervals": 630,
+        "source_to_target_interval_map_entries": 0,
+        "target_cells": 87,
+        "through_strands": 86,
+        "top_endpoints": 88,
+        "z_coend_gluing_cells": 0
+      },
+      "id": "single_hom_defect_target",
+      "open_obligations": [
+        "glue the 1084 Z-sphere endpoints through arbitrary C_271 insertions and map all 630 source intervals to the 86 through strands, one cup, and internal closed factors",
+        "Euler characteristic and quantum shift of the missing gluing cobordism"
+      ],
+      "path": "geometry/t73_single_hom_defect_target.json",
+      "reconstruction_status": "VERIFIED",
+      "schema": "t73_single_hom_defect_target/v1",
+      "status": "OPEN",
+      "verification_diagnostic": "exact semantic verifier accepted the reconstructed artifact",
+      "verifier": "scripts/verify_t73_single_hom_defect_target.py"
+    },
+    {
+      "completion_status": "OPEN",
+      "content_bytes": 6687,
+      "content_sha256": "DEC886BC22C32AAF71B39FFD6452D3C433F8DC9F41B5A492F494C7201426714F",
+      "embedded_payload_sha256": null,
+      "generator": "scripts/audit_t73_defect_aware_currying.py",
+      "geometry_counts": {
+        "active_intervals": 176,
+        "correct_side_intervals": 168,
+        "minimum_independent_reconnections": 4,
+        "p86_to_p88_boundary_endpoints": 174,
+        "wrong_side_intervals": 8
+      },
+      "id": "defect_aware_currying_audit",
+      "open_obligations": [
+        "choose and verify all pivotal mates, Blanchet signs, and Euler degrees",
+        "derive the P86-to-P88 single defect from the saved 630-interval source incidence"
+      ],
+      "path": "audit/t73_defect_aware_currying.json",
+      "reconstruction_status": "VERIFIED",
+      "schema": "t73_defect_aware_currying_audit/v1",
+      "status": "OPEN",
+      "verification_diagnostic": "exact semantic verifier accepted the reconstructed artifact",
+      "verifier": "scripts/audit_t73_defect_aware_currying.py --check"
+    }
+  ],
+  "bundle_status": "OPEN",
+  "bundle_version": 1,
+  "closed_facts": {
+    "saved_boundary_endpoint_count": 1260,
+    "saved_source_exterior_interval_count": 630,
+    "target_template_arc_count": 630,
+    "wrong_side_active_interval_count": 8
+  },
+  "dependency_edges": [
+    {
+      "from": "selected_source_exterior",
+      "kind": "embedded source payload SHA256",
+      "status": "VERIFIED",
+      "to": "single_hom_defect_target"
+    },
+    {
+      "from": "selected_source_exterior",
+      "kind": "embedded source payload SHA256",
+      "status": "VERIFIED",
+      "to": "defect_aware_currying_audit"
+    },
+    {
+      "from": "selected_source_exterior",
+      "kind": "relative ambient isotopy / defect-aware replacement",
+      "status": "OPEN",
+      "to": "selected_canopolis_target_v2"
+    },
+    {
+      "from": "selected_source_exterior",
+      "kind": "coend gluing and pivotal currying",
+      "status": "OPEN",
+      "to": "single_hom_defect_target"
+    }
+  ],
+  "first_open_gate": "construct and verify a relative source-to-target cobordism/currying map from all 630 saved source intervals, including the eight wrong-side intervals",
+  "manifest_payload_sha256": "9C25C25A99AAF5CF0EC2F058218938FDB6E52C0FC506A4688DC214280AA9DEE0",
+  "policy": {
+    "allowed_status_values": [
+      "VERIFIED",
+      "OPEN"
+    ],
+    "fail_closed": true,
+    "open_cannot_be_promoted_without_new_checked_certificate_fields": true,
+    "reconstruction_is_not_proof_completion": true
+  },
+  "schema": "t73_complete_geometry_bundle_manifest/v1",
+  "schema_file": "data/T73_COMPLETE_GEOMETRY_BUNDLE_MANIFEST.schema.json"
+}

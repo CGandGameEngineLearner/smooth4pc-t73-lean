@@ -1,0 +1,139 @@
+{
+  "boundary_endpoint_mismatch": null,
+  "legacy_product_isotopy": {
+    "accepted_as_coordinate_movie": false,
+    "exhibited_product_isotopy_field": true,
+    "rectangle_frames_are_hashes_only": true,
+    "status_field": "PASS"
+  },
+  "missing": [
+    "source exterior common tetrahedral mesh with arcs/ribbons as subcomplexes",
+    "geometry/t73_c_h1_relative_isotopy.json: rational tetrahedra, every vertex move/time slab, framings, and final target binding"
+  ],
+  "schema": "t73_c_h1_relative_isotopy_report/v1",
+  "selected_target": {
+    "endpoint_counts_per_insertion_ball": {
+      "Y_source": 88,
+      "Y_target": 88,
+      "Z_source": 542,
+      "Z_target": 542
+    },
+    "schema": "t73_selected_canopolis_normal_form/v2",
+    "scope": "complete candidate target template only; the eight wrong-side source connectors forbid interpreting it as a literal relative ambient-isotopy target",
+    "strand_count": 630,
+    "total_boundary_endpoint_count": 1260
+  },
+  "source_exterior": {
+    "actual_ar_relative_isotopy_proved": false,
+    "canonical_representative_only": true,
+    "endpoint_counts_per_sphere": {
+      "Y_minus": 88,
+      "Y_plus": 88,
+      "Z_minus": 542,
+      "Z_plus": 542
+    },
+    "exterior_interval_count": 630,
+    "has_common_tetrahedral_exterior": false,
+    "schema": "t73_selected_source_exterior/v1",
+    "total_boundary_endpoint_count": 1260
+  },
+  "split_matching_obstruction": {
+    "active_y_incident_interval_count": 176,
+    "expected_two_representable_pairs": [
+      [
+        "Y_minus",
+        "Z_plus"
+      ],
+      [
+        "Y_plus",
+        "Z_minus"
+      ]
+    ],
+    "literal_two_disjoint_closures_relative_four_balls_possible": false,
+    "reason": "wrong-side connectors force both proposed closure factors to use endpoint subsets on the same Z insertion spheres; arbitrary C_271 tangles do not preserve those subsets",
+    "transition_counts": {
+      "Y_minus--Z_minus": 4,
+      "Y_minus--Z_plus": 84,
+      "Y_plus--Z_minus": 84,
+      "Y_plus--Z_plus": 4
+    },
+    "wrong_side_connector_count": 8,
+    "wrong_side_connectors": [
+      {
+        "copy_sign": "negative",
+        "from_source_id": "m_2:C_i",
+        "from_sphere": "Y_plus",
+        "interval_id": "m_2:negative:interval:0",
+        "owner": "m_2",
+        "to_source_id": "c1:letter:309",
+        "to_sphere": "Z_plus"
+      },
+      {
+        "copy_sign": "negative",
+        "from_source_id": "c1:letter:0",
+        "from_sphere": "Z_minus",
+        "interval_id": "m_2:negative:interval:310",
+        "owner": "m_2",
+        "to_source_id": "m_2:C_i",
+        "to_sphere": "Y_minus"
+      },
+      {
+        "copy_sign": "positive",
+        "from_source_id": "c1:letter:309",
+        "from_sphere": "Z_plus",
+        "interval_id": "m_2:positive:interval:309",
+        "owner": "m_2",
+        "to_source_id": "m_2:C_i",
+        "to_sphere": "Y_plus"
+      },
+      {
+        "copy_sign": "positive",
+        "from_source_id": "m_2:C_i",
+        "from_sphere": "Y_minus",
+        "interval_id": "m_2:positive:interval:310",
+        "owner": "m_2",
+        "to_source_id": "c1:letter:0",
+        "to_sphere": "Z_minus"
+      },
+      {
+        "copy_sign": "negative",
+        "from_source_id": "r_xy:vertex:3",
+        "from_sphere": "Z_plus",
+        "interval_id": "r_xy:negative:interval:1",
+        "owner": "r_xy",
+        "to_source_id": "r_xy:vertex:5",
+        "to_sphere": "Y_plus"
+      },
+      {
+        "copy_sign": "negative",
+        "from_source_id": "r_xy:vertex:7",
+        "from_sphere": "Z_minus",
+        "interval_id": "r_xy:negative:interval:3",
+        "owner": "r_xy",
+        "to_source_id": "r_xy:vertex:1",
+        "to_sphere": "Y_minus"
+      },
+      {
+        "copy_sign": "positive",
+        "from_source_id": "r_xy:vertex:5",
+        "from_sphere": "Y_plus",
+        "interval_id": "r_xy:positive:interval:1",
+        "owner": "r_xy",
+        "to_source_id": "r_xy:vertex:3",
+        "to_sphere": "Z_plus"
+      },
+      {
+        "copy_sign": "positive",
+        "from_source_id": "r_xy:vertex:1",
+        "from_sphere": "Y_minus",
+        "interval_id": "r_xy:positive:interval:3",
+        "owner": "r_xy",
+        "to_source_id": "r_xy:vertex:7",
+        "to_sphere": "Z_minus"
+      }
+    ]
+  },
+  "status": "IMPOSSIBLE_LITERAL_SPLIT_BOUNDARY_MATCHING",
+  "target_normal_form_present": true,
+  "target_only_is_not_source_isotopy": true
+}

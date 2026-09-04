@@ -21,14 +21,19 @@ def load_script():
 class SelectedCanopolisNormalFormTest(unittest.TestCase):
     def test_four_box_split_normal_form(self) -> None:
         result = load_script().verify()
-        self.assertEqual(result["T73_SELECTED_CANOPOLIS_NORMAL_FORM"], "PASS_TARGET_ONLY")
-        self.assertEqual(result["TARGET_ACTIVE_CORRIDORS"], 44)
-        self.assertEqual(result["TARGET_ADDED_Z_ARCS"], 227)
-        self.assertEqual(result["TARGET_CYCLIC_CONNECTOR"], "PASS")
+        self.assertEqual(
+            result["T73_SELECTED_CANOPOLIS_NORMAL_FORM"],
+            "PASS_COMPLETE_TARGET_TEMPLATE",
+        )
+        self.assertEqual(result["ACTIVE_YZ_PER_CLOSURE"], 88)
+        self.assertEqual(result["RESIDUAL_ZZ_PER_CLOSURE"], 227)
+        self.assertEqual(result["CYCLIC_CONNECTOR"], "PASS")
         self.assertEqual(result["TARGET_SEPARATING_SPHERE"], "PASS")
-        self.assertEqual(result["TARGET_BRAID_DATA"], "ABSENT")
-        self.assertEqual(result["SOURCE_RELATIVE_ISOTOPY"], "OPEN")
-        self.assertEqual(result["BOUNDARY_ENDPOINT_INCIDENCE"], "OPEN")
+        self.assertEqual(result["BRAID_DATA"], "ABSENT")
+        self.assertEqual(result["TOTAL_ENDPOINTS"], 1260)
+        self.assertEqual(result["TARGET_ARCS"], 630)
+        self.assertEqual(result["SOURCE_RELATIVE_ISOTOPY"], "REFUTED_LITERAL_SPLIT")
+        self.assertEqual(result["DEFECT_AWARE_CURRYING"], "OPEN")
         self.assertEqual(set(result["MUTATIONS"].values()), {"FAIL"})
 
 

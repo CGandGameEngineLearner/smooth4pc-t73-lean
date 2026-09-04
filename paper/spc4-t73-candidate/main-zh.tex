@@ -3,6 +3,7 @@
 \usepackage[UTF8,scheme=plain,fontset=fandol]{ctex}
 \usepackage{microtype}
 \usepackage{amsmath,amssymb,mathtools}
+\usepackage{unicode-math}
 \usepackage{booktabs}
 \usepackage{tabularx}
 \usepackage{longtable}
@@ -75,16 +76,28 @@ skein lasagna 模, Khovanov 同调, 形式化验证}
 A=\begin{pmatrix}0&269&1240\\0&41&189\\1&0&32\end{pmatrix}
 \]
 所对应的 trace-73 Cappell--Shaneson 同伦 $4$-球面。
-skein-lasagna 在 quantum degree $494$ 处比较所需的几何输入 P0、C、S 已对显式 Johnson 表示完成，包括识别 $X_J\cong\Sigma_A^0$。
-整数 $2624$ 从实际 detector braid 重算，并与显式 Johnson 表示的 MWW divided cubic 行识别。
+有限证书重构 Johnson 表示数据、公开 detector braid、端点模型中的整数
+$2624$，以及所选系数外部的完整源端与目标端端点表。后两张表暴露八条
+wrong-side connector，从而否定先前提出的相对四球 literal
+two-representable split。相应的 $223$ 仅是该反事实目标的分次账本；历史值
+$494$ 与 $223$ 目前都没有被证明是实际 MWW 类的次数。
 Artin--Magnus 证书与 pure-braid Andreadakis 定理确立公开 braid 词的三阶性质。
-因此 $\Sigma_A^0$ 是不微分同胚于 $S^4$ 的光滑同伦 $4$-球面，给出光滑四维 Poincaré 猜想的数学反例。
-Lean 开发将抽象商论证形式化：若给定将 MWW 商与四柄运输组装起来的接口数据，则非零次数-$494$ 类将阻碍与 $S^4$ 的微分同胚。
-这些几何接口尚未构造成 Lean 居民，故形式定理仍为条件式，且不断言 Lean 已验证的反例。
+若另行给出某个非零次数中的实际齐次 MWW 比较、全部 beta/psi 与三柄自然性
+以及四柄绑定，则抽象论证会阻碍 $\Sigma_A^0$ 与 $S^4$ 微分同胚。
+这些接口尚未构成 Lean 居民，故形式定理仍为条件式；本文不宣称得到光滑
+四维 Poincaré 猜想的反例。
 \end{abstract}
 
 \maketitle
 \tableofcontents
+
+\begin{quote}\small
+\textbf{版本说明（2026-09-05）。}
+本中文稿的若干后续 C/S 推导尚未逐段同步英文主稿
+\texttt{main.tex} 的最新审计更正；凡与“八条 wrong-side connector、实际
+coend/currying map 与次数均为 OPEN”冲突的无条件叙述，均为历史文字而非当前
+结论。当前可发布的逻辑状态以英文主稿及运行审计为准。
+\end{quote}
 \section{引言}
 
 光滑四维 Poincaré 猜想问：每个与 $S^4$ 同伦等价的光滑闭流形是否微分同胚于 $S^4$。
@@ -132,7 +145,7 @@ Iwaki 对许多无限族证明标准性。$(41,189,73)$ 出现在代表表中并
 
 我们首先以 Lean 开发实际证明的形式陈述抽象定理。这防止几何直觉在不知不觉中加强结论。
 
-固定流形标签集合、有理向量空间分次族 $G(M,q)$、标签 $X$ 与 $S^4$，以及谓词
+固定流形标签集合、有理向量空间分次族 $G(M,q)$、非零整数 $q_*$、标签 $X$ 与 $S^4$，以及谓词
 \(\operatorname{HS}(M)\) 与 \(\operatorname{Diff}(M,N)\)。
 
 \begin{theorem}[抽象非标准性定理]\label{thm:A}
@@ -146,7 +159,7 @@ W_0\xrightarrow{q_{01}}W_1\xrightarrow{q_{12}}W_2,
 \[
 T:W_2\xrightarrow{\cong}W_3,
 \qquad
-F:W_3\xrightarrow{\cong}G(X,494),
+F:W_3\xrightarrow{\cong}G(X,q_*),
 \]
 使得
 \begin{align}
@@ -154,17 +167,18 @@ F:W_3\xrightarrow{\cong}G(X,494),
 \ell_1q_{01}&=\ell_0,\label{eq:q01}\\
 \ell_2q_{12}&=\ell_1.\label{eq:q12}
 \end{align}
-再假设 $G(S^4,494)$ 的每个元素为零，且每个微分同胚 $X\to S^4$ 诱导线性同构
-\(G(X,494)\cong G(S^4,494)\)。则 $X$ 不与 $S^4$ 微分同胚。
+再假设 $G(S^4,q_*)$ 的每个元素为零，且每个微分同胚 $X\to S^4$ 诱导线性同构
+\(G(X,q_*)\cong G(S^4,q_*)\)。则 $X$ 不与 $S^4$ 微分同胚。
 \end{theorem}
 
 \begin{proof}
-令 $v=F(T(q_{12}(q_{01}(x_0))))$。若 $v=0$，$F$ 与 $T$ 的单射性蕴含 $q_{12}(q_{01}(x_0))=0$。应用 $\ell_2$ 并用 \eqref{eq:q01}--\eqref{eq:q12} 得 $2624=0$，矛盾。故 $v\ne0$。若 $X$ 与 $S^4$ 微分同胚，诱导同构将 $v$ 映到 $G(S^4,494)$ 的元素，故为零，与单射性矛盾。
+令 $v=F(T(q_{12}(q_{01}(x_0))))$。若 $v=0$，$F$ 与 $T$ 的单射性蕴含 $q_{12}(q_{01}(x_0))=0$。应用 $\ell_2$ 并用 \eqref{eq:q01}--\eqref{eq:q12} 得 $2624=0$，矛盾。故 $v\ne0$。若 $X$ 与 $S^4$ 微分同胚，诱导同构将 $v$ 映到 $G(S^4,q_*)$ 的元素，故为零，与单射性矛盾。
 \end{proof}
 
 与定理~\ref{thm:A} 对应的 Lean 定理是从输入结构 \texttt{ExternalGeometry} 与
 \texttt{CSExternalGeometry} 出发的条件蕴含；Lean 中不构造其实例。
-候选特定输入见下文并已解除。将它们包装为 Lean 接口居民不属于形式化开发。
+候选特定输入见下文；其中 C 与 S 仍是假设。令
+$q_C\in\mathbb Z\setminus\{0\}$ 表示尚未由当前构造器确定的实际量子次数。
 
 \begin{theorem}[嵌入候选表示，P0]\label{hyp:P0}
 显式 Johnson 生成元替换是 $\Sigma_A^0$ 的带标号带框柄表示，含两个带框乘积消去、嵌入 detector 球及所述缆附着。
@@ -176,45 +190,45 @@ Heegaard 的 $\psi_A$、实际带 framing AR link、两次 Kirby 消去、44 通
 detector 及几何导出 braid；定理~\ref{thm:P0discharge} 装配这些数据。
 \end{proof}
 
-\begin{theorem}[系数比较，C]\label{hyp:P1}
-完备 MWW 系数量子 trace 允许到 BPW/BHPW 权重一 endpoint 表示的分次保持、对称幺半自然映射，对远离 $B$ 支持的边界 cobordism 亦自然。在该映射下 point-push 作用为公开 Burau 表示，divided cubic 行通过每个 beta 与 psi 关系下降。其在所选类上的值为 $2624$。
-该类位于 Johnson 替换领圈的 quantum degree $494$。
-\end{theorem}
+\begin{hypothesis}[实际系数比较，C]\label{hyp:P1}
+实际完备 MWW 系数迹中存在量子次数为 $q_C$ 的齐次类 $x_C$，并且在每个缆态
+都有到 BPW/BHPW 端点模型的链层面比较族。该比较对两个系数作用、每个 beta/psi
+映射以及远离 $B$ 的边界 cobordism 自然。在另行复合外置 cup
+$E_{86}\to E_{88}$ 与端点 cap 后，divided cubic 通过所有关系下降，并在 $x_C$
+上取值 $2624$。本假设包括尚缺的 $z$-coend gluing/currying map、任何重连胞腔
+及其完整 Euler、framing 与分次账本。
+\end{hypothesis}
 
-\begin{proof}[定理~\ref{hyp:P1} 的证明]
-第~\ref{sec:c-comparison} 节构造 44 条实际乘积矩形、227 个 source-bound
-剩余圆、端点运输及完整 beta/psi cocone；定理~\ref{thm:Cdischarge} 将所得行
-与 MWW divided cubic 识别。
-\end{proof}
+完整端点构造器无条件给出的是 $1260$ 个端点、$630$ 条弧以及八条
+wrong-side connector；它没有构造本假设中的比较，也没有确定 $q_C$。
 
-\begin{theorem}[相对三柄闭包，S]\label{hyp:P2}
+\begin{hypothesis}[相对三柄闭包，S]\label{hyp:P2}
 三个 $3$-柄可沿与 $B$ 不相交的完备球面系统附着。对每个球面，detector 消去无点 MWW 关系并将一次带点映射与源项等同。故 divided detector 通过完备三柄 coequalizer 下降。
-\end{theorem}
+\end{hypothesis}
 
-\begin{proof}[定理~\ref{hyp:P2} 的证明]
-第~\ref{sec:s-closure} 节把三张 H1 压缩盘运输过全部 93 个 Johnson 因子及
-1519 条 Kirby band，构造实际穿孔 hemisphere movie 并验证完整 MWW
-coequalizer；定理~\ref{thm:Sdischarge} 记录该结论。
-\end{proof}
+\begin{hypothesis}[替换图景的四柄闭包，P3]\label{hyp:P3}
+在假设~\ref{hyp:P2} 的反向 $1$-柄 $3$-柄之后，剩余边界为 $S^3$。沿该
+$S^3$ 附着 $4$-ball 得闭 $4$-流形 $X_J$。MWW 命题~3.4 给出四柄同构，
+推论~3.5 给出 $\mathcal S^2_0(S^4)\cong\mathbb Z$ 集中在 bidegree
+$(0,0)$，故 quantum-$q_C$ 分项消失。微分同胚诱导分次保持等价。
+$\det A=\det(A-I)=1$ 只给出标准 Cappell--Shaneson 构造的同伦球面判据；
+识别 $X_J\cong\Sigma_A^0$ 来自 P0 构造。
+\end{hypothesis}
 
-\begin{theorem}[替换图景的四柄闭包，P3]\label{hyp:P3}
-在假设~\ref{hyp:P2} 的反向 $1$-柄 $3$-柄之后，剩余边界为 $S^3$。沿该 $S^3$ 附着 $4$-ball 得闭 $4$-流形 $X_J$。MWW 命题~3.4 将该 $W_3$ 图景的空 link lasagna 模与 $\mathcal S^2_0(X_J)$ 等同。MWW 推论~3.5 给出 $\mathcal S^2_0(S^4)\cong\mathbb Z$ 集中在 bidegree $(0,0)$，故 quantum-$494$ 分项消失。微分同胚诱导分次保持等价。$\det A=\det(A-I)=1$ 是标准 Cappell--Shaneson 构造的同伦球面判据。识别 $X_J\cong\Sigma_A^0$ 是假设~\ref{hyp:P0} 的构造 Johnson CS 柄图，而非这些行列式。
-\end{theorem}
-
-\begin{proof}[定理~\ref{hyp:P3} 的证明]
-沿每个 belt 球面附着三柄恢复边界 $S^3$；附着 PL $4$-ball 得闭流形 $X_J$。空 link Khovanov 在 quantum degrees $0$ 与 $494$ 的秩、附着 $4$-ball 的 Euler 特征，以及分次和 $-44+227+315-4=494$ 均直接计算。同构 $\mathcal S^2_0(B^4)\cong\mathcal S^2_0(S^4)$ 与 $\mathcal S^2_0(S^4)\cong\mathbb Z$ 集中在 bidegree $(0,0)$ 见 \cite[Proposition~3.4 and Corollary~3.5]{ManolescuWalkerWedrich2023}。识别 $X_J\cong\Sigma_A^0$ 是定理~\ref{thm:P0discharge}。独立重放命令列于附录~\ref{sec:reproducibility-extended}。
-\end{proof}
-
-\begin{theorem}[Trace-73 定理]\label{thm:joined}
+\begin{theorem}[条件式 trace-73 阻碍]\label{thm:joined}
+假设 P0、C、S 与 P3 的全部数学输入成立，包括实际 MWW 比较及
+$X_J\cong\Sigma_A^0$ 的识别。则
 Cappell--Shaneson 流形 $\Sigma_A^0$ 是光滑同伦 $4$-球面，且
 \[
 \Sigma_A^0\not\cong_{\mathrm{diff}}S^4.
 \]
-因此它是光滑四维 Poincaré 猜想的反例。
+因此这些假设若成立，将给出光滑四维 Poincaré 猜想的反例。
 \end{theorem}
 
 \begin{proof}[定理~\ref{thm:joined} 的证明]
-定理~\ref{thm:P0discharge}、\ref{thm:Cdischarge} 与~\ref{thm:Sdischarge}，连同假设~\ref{hyp:P3} 与 E13 识别，提供定理~\ref{thm:A} 的数学数据。故非零次数-$494$ 类阻碍与 $S^4$ 的微分同胚。Iwaki 命题~2.1 与 $\det(A-I)=1$ 独立表明 $\Sigma_A^0$ 是同伦球面。Lean 开发形式化有限代数与抽象蕴含，但不形式化此分析实例化；该形式化边界不使数学陈述成为条件式。
+所假设的数据提供定理~\ref{thm:A} 的数学输入。故非零次数-$q_C$ 类阻碍与
+$S^4$ 的微分同胚。Iwaki 命题~2.1 与 $\det(A-I)=1$ 独立表明
+$\Sigma_A^0$ 是同伦球面。Lean 开发只形式化有限代数与抽象条件蕴含。
 \end{proof}
 
 \input{sec-published-results-zh}
@@ -245,14 +259,14 @@ Lean 文件还给出 $A-I$ 及 $H_2(T^3;\Z)$ 上诱导映射的整逆。这些�
 \begin{equation}\label{eq:burau}
 \delta_3=2624=(-2)^3\cdot(-328).
 \end{equation}
-较早草稿混用两套 endpoint 坐标表并报告 $-59072$；在第~\ref{sec:exact-algebra} 节实际 endpoint 运输下，截断 Burau 值为 $2624$。第~\ref{sec:c-comparison} 节将该几何绑定值与 MWW divided cubic 行识别。\footnote{独立重放：\texttt{scripts/recompute\_t73\_delta3.py --check}。}
+较早草稿混用两套 endpoint 坐标表并报告 $-59072$；在第~\ref{sec:exact-algebra} 节实际 endpoint 运输下，截断 Burau 值为 $2624$。把该值与实际 MWW divided cubic 行识别正是假设~\ref{hyp:P1} 的内容。\footnote{独立重放：\texttt{scripts/recompute\_t73\_delta3.py --check}。}
 
 \begin{proposition}[计算的精确适用范围]\label{prop:scope}
-方程~\eqref{eq:burau} 涉及 \eqref{eq:u} 与 \eqref{eq:ell} 的领圈 endpoint 下截断 Burau 模型。该整数为几何绑定；第~\ref{sec:c-comparison} 节将其 divided cubic 与显式 Johnson 表示的 MWW 行识别。
+方程~\eqref{eq:burau} 涉及 \eqref{eq:u} 与 \eqref{eq:ell} 的领圈 endpoint 下截断 Burau 模型。该整数为端点模型值；将其与显式 Johnson 表示的实际 MWW 行识别仍是假设~\ref{hyp:P1}。
 \end{proposition}
 
 \begin{proof}
-Burau 计算给出整数；定理~\ref{hyp:P1} 与第~\ref{sec:c-comparison} 节将其与 Johnson 替换领圈上的 MWW detector 等同。
+Burau 计算给出整数；假设~\ref{hyp:P1} 才将其与 Johnson 替换领圈上的 MWW detector 等同。
 \end{proof}
 
 故有限重算与范畴比较各司其职：前者给出整数，后者使之成为四维流形不变量。
@@ -555,6 +569,18 @@ E13 链将所得闭图景与 $\Sigma_A^0$ 识别。
 \section{系数迹比较}\label{sec:c-comparison}
 
 本节记录 Johnson 替换领圈的 C 论证。
+
+\begin{quote}\small
+\textbf{审计更正。}
+当前完整构造器在源端与目标端都保存了 $1260$ 个端点和 $630$ 条带框弧；
+每侧为 $88$ 条 $Y$--$Z$ 弧与 $227$ 条 $Z$--$Z$ 弧。但是源端匹配中有
+$4$ 条 $Y_-$--$Z_-$ 与 $4$ 条 $Y_+$--$Z_+$ 弧，故不存在逐点固定四个
+插入球的 literal two-representable split 同痕。下述 Hattori 等价及
+$494$ 分次推导是已被该端点表否定的历史路线，不是实际系数比较的证明。
+真正需要的 $z$-coend/currying 映射、可能的重连胞腔、Blanchet 符号、Euler
+次数与绝对量子次数仍为 OPEN；外置的 $P_{86}\to P_{88}$ cup 也不能补出这些
+数据。
+\end{quote}
 
 \subsection{乘积 Hattori 等价}
 
@@ -978,7 +1004,10 @@ Ren 与 Willis 用 Khovanov 理论的 skein lasagna 方法区分其他异质四�
 Horvat--Jab\l{}onowski 近期工作给出识别三柄附着系统的有用几何判据 \cite{HorvatJablonowski2025}。定理~5.3 仅与引理~\ref{lem:Ssystem} 用于闭流形中的核不变性，不用于固定 $B$。该预印本当前版本日期为 2026 年 8 月 24 日，含引理~5.5 与引理~5.7；二者均未调用。
 \section{结论}
 
-对 Johnson 替换，数学证书解除假设~\ref{hyp:P0}--\ref{hyp:P3} 并识别 $X_J\cong\Sigma_A^0$。Lean 开发仍只证明条件蕴含，因为分析性的 MWW 对象与映射尚未构造成 \texttt{ExternalGeometry} 的居民。故反例定理是有待专家审阅的纸面数学主张，尚非完全由 Lean 验证的定理。独立重放命令列于附录~\ref{sec:reproducibility-extended}。
+对 Johnson 替换，正文给出 P0/E13 的纸面构造与上柄运输；端点构造器同时
+否定了旧的 literal split。实际 C 比较、其次数 $q_C$ 与 S 的全态自然性仍为
+假设，且未构造成 \texttt{ExternalGeometry} 的居民。因此当前只有条件式阻碍，
+没有已完成的反例定理。独立重放命令列于附录~\ref{sec:reproducibility-extended}。
 \appendix
 
 \input{sec-retired-routes-zh}
@@ -1018,7 +1047,8 @@ Lean 字段 & 数学义务 \\
 \end{tabularx}
 \end{center}
 
-第~\ref{sec:johnson-presentation}--\ref{sec:final-identifications} 节的几何输入已在论文中完成。它们尚未组装成 Lean 中 \texttt{ExternalGeometry} 的单一居民；这是形式化间隔，而非数学定理的假设。
+P0/E13 的拓扑输入在正文中给出；C 与 S 的实际比较仍是数学假设，而不只是
+Lean 包装尚缺。它们也尚未组装成 Lean 中 \texttt{ExternalGeometry} 的居民。
 \texttt{T73S4Inhabitant.lean} 中的空 link 控制仅打包 \texttt{EmptyKhQ}。Lean 定理不消费更强陈述，并将外部拓扑记录为结构字段而非内部形式化。
 
 \bibliographystyle{amsplain}

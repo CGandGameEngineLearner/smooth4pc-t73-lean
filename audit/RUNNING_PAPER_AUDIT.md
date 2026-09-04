@@ -1650,6 +1650,190 @@ Topology-source checks completed 2026-09-04:
 - Firewall: none of those files should be rewritten to 223 while the
   relative split hypothesis and subsequent C/S maps remain unproved.
 
+### F-518 — C-H1 now has a coordinate-only output contract and fail-closed co-Yoneda consumer
+
+- Severity: **Remediation / explicit remaining blocker**
+- Status: **CONTRACT AND POLYGONAL SOURCE IMPLEMENTED; SIMPLICIAL MOVIE OPEN**
+- Locations: data/T73_C_H1_RELATIVE_ISOTOPY.schema.json,
+  scripts/verify_t73_c_h1_relative_isotopy.py,
+  scripts/build_t73_c_h1_coend_certificate.py,
+  tests/test_t73_c_h1_relative_isotopy_gate.py, and
+  docs/proofs/T73_C_H1_GEOMETRIC_OUTPUT_CONTRACT.md.
+- Contract: a candidate must give a common rational tetrahedral exterior,
+  four parametrized insertion-ball boundary subcomplexes, 630 framed strand
+  paths, 1260 oriented endpoints, complete matching, and a sequence of exact
+  one-vertex PL moves. Every move fixes all required boundary vertices, has a
+  spherical star link, and preserves every incident determinant sign for the
+  whole time interval.
+- Target/euler checks: final paths must equal the two coordinate canopolis
+  closure systems; orientations and product push-offs must agree; no
+  births/saddles/deaths are allowed; closed trace Euler characteristic and
+  quantum shift must be zero.
+- Current result: geometry/t73_selected_source_exterior.json supplies
+  combinatorial incidence and rational polygonal routes, but no common
+  tetrahedral exterior; geometry/t73_c_h1_relative_isotopy.json is absent.
+  The target normal form remains target-only.
+- Legacy rejection: geometry/t73_product_ribbon_isotopy.json stores PASS and
+  exhibited_product_isotopy=true, but each frame is only a time/hash pair.
+  The new verifier refuses it as a coordinate movie.
+- Co-Yoneda firewall: the certificate builder raises unless the geometric
+  verifier returns PASS_COORDINATE_MOVIE; no certificate is currently
+  written. Five regression tests pass, including rejection of status literals
+  without coordinates.
+- Next required constructor: incorporate the polygonal source exterior,
+  insertion-box incidence and framing tracks into one common embedded
+  rational tetrahedral mesh. Local torus, cancellation-belt and
+  detector-chart hashes cannot be treated as that mesh.
+
+### F-519 — The v1 target endpoint-count defect has been corrected in v2
+
+- Severity: **Corrected constructor defect; matching obstruction remains**
+- Status: **SUPERSEDED BY V2 AND F-525**
+- Evidence: geometry/t73_selected_source_exterior.json,
+  geometry/t73_selected_canopolis_normal_form.json, and the updated
+  C-H1 relative-isotopy verifier.
+- Source type: the four source insertion spheres have endpoint counts
+  \((88,88,542,542)\), with 630 exterior intervals and 1260 total endpoints.
+- Old target type: assigning one endpoint to each end of all 315 arcs on every
+  ball produced the false multiset \(\{315,315,315,315\}\).
+- Repair: schema v2 distinguishes 88 Y--Z arcs from 227 Z--Z arcs on each
+  side. Its endpoint multiset is \(\{88,88,542,542\}\), matching the source,
+  and its 630 centre arcs and 630 push-offs pass exact pairwise tests.
+- Remaining obstruction: equality of counts is not equality of matching.
+  F-525 exhibits eight wrong-side connectors and therefore still refutes the
+  literal relative split.
+- Enforcement: the geometric verifier returns
+  IMPOSSIBLE_LITERAL_SPLIT_BOUNDARY_MATCHING, and the co-Yoneda certificate
+  builder refuses to write an artifact.
+
+### F-525 — Eight mixed-orientation intervals obstruct a literal two-closure target
+
+- Severity: **Critical topological/type obstruction**
+- Status: **REFUTED LITERAL SPLIT MATCHING**
+- Evidence: scripts/verify_t73_c_h1_relative_isotopy.py and
+  audit/t73_c_h1_relative_isotopy_report.json.
+- Exact incidence: the 176 y-incident source intervals split as 84
+  \(Y_--Z_+\), 84 \(Y_+-Z_-\), four \(Y_--Z_-\), and four
+  \(Y_+-Z_+\).
+- Provenance: the eight exceptions are precisely the positive/negative
+  cable-copy intervals on both sides of the two negatively oriented base y
+  passages \(m_2:C_i\) and \(r_{xy}:\mathrm{vertex}:1\).
+- Consequence: a target with 88 active plus 227 z arcs per closure can match
+  total arc counts, but two closures using disjoint pairs of insertion balls
+  cannot match these eight endpoints. Allowing each closure to use subsets of
+  both z balls destroys a relative separating sphere and exposes the subsets
+  to arbitrary \(\mathcal C_{271}\) mixing.
+- Enforcement: the verifier returns
+  IMPOSSIBLE_LITERAL_SPLIT_BOUNDARY_MATCHING and the co-Yoneda builder
+  refuses certification.
+
+### F-526 — The eight wrong-side intervals do not derive the single weight defect
+
+- Severity: **Major route refutation**
+- Status: **CONFIRMED**
+- Evidence: scripts/audit_t73_defect_aware_currying.py,
+  audit/t73_defect_aware_currying.json, and
+  tests/test_t73_defect_aware_currying.py.
+- Count: two negative base y passages times two cable copies times two
+  incident sides produce eight exceptions. Correcting the cross matching
+  requires four independent endpoint reconnections, whose mate choice,
+  Blanchet sign and Euler degree are not supplied.
+- Endpoint invariant: pivotal currying changes source/target variance but
+  preserves the total 176 active boundary endpoints. A
+  \(P_{86}\to P_{88}\) object has 174. Thus the currying cannot itself
+  produce the claimed one-cup defect.
+- Correct origin: the weight-86 one-defect sector is selected by the external
+  cup \(E_{86}\to E_{88}\); it is not a consequence of the eight source
+  intervals.
+- Result: the single-Hom target may be defined as auxiliary target data, but
+  the source-to-target map and its grading remain open.
+
+### F-527 — No cup/cap movie can be assigned to the four endpoint re-pairings from current data
+
+- Severity: **Critical remaining C-H1 cell data**
+- Status: **FAIL-CLOSED**
+- Location: docs/proofs/T73_DEFECT_AWARE_CURRYING_AUDIT.md and
+  audit/t73_defect_aware_currying.json.
+- Pairing table: four rows pair the two wrong \(m_2\) intervals for each
+  cable sign and the two wrong \(r_{xy}\) intervals for each cable sign. The
+  artifact records old intervals and exact proposed cross endpoint pairs.
+- Obstruction: a pivotal mate changes Hom presentation but not pointwise
+  relative endpoint matching. The proposed pairs change matching, so they
+  require saddle/reconnection cells rather than a bare evaluation or
+  coevaluation chart.
+- Missing fields: left/right mate, ordered BPW A.6 atom, Blanchet sign,
+  number of saddles, Euler characteristic and quantum degree. Each is stored
+  as UNDETERMINED.
+- Count obstruction: pivotal mates preserve 176 active boundary endpoints;
+  \(P_{86}\to P_{88}\) has 174. The one defect comes from the external cup,
+  not these four re-pairings.
+- Verification: three focused tests pass and prevent promotion to a
+  single-defect currying map.
+
+### F-528 — A top-level constructor now saves and inventories every reconstructible selected-C geometry object
+
+- Severity: **Remediation / reproducibility**
+- Status: **RECONSTRUCTION VERIFIED; PROOF COMPLETION OPEN**
+- Evidence: `scripts/build_t73_complete_geometry_bundle.py`,
+  `geometry/t73_complete_geometry_bundle_manifest.v1.json`,
+  `data/T73_COMPLETE_GEOMETRY_BUNDLE_MANIFEST.schema.json`,
+  `tests/test_t73_complete_geometry_bundle.py`, and
+  `docs/proofs/T73_COMPLETE_GEOMETRY_CONSTRUCTOR.md`.
+- Saved objects: the four-cycle source exterior with 1260 endpoints and 630
+  framed intervals; the v2 target template with the same endpoint and arc
+  totals; the auxiliary P86-to-P88 target; and the four-reconnection defect
+  audit. Full `--write`, reconstruction `--check`, fast `--check-files`, JSON
+  Schema validation, and OPEN-to-VERIFIED mutation tests pass.
+- Status firewall: every artifact has
+  `reconstruction_status=VERIFIED`, but every `completion_status` and effective
+  `status` is frozen to `OPEN`. The first open edge is the actual 630-interval
+  source-to-target coend/currying transformation, including the eight
+  wrong-side intervals.
+
+### F-529 — The manuscript no longer applies the refuted split ledger to the actual C class
+
+- Severity: **Critical logical correction**
+- Status: **RESOLVED AS AN EXPLICIT CONDITIONAL STATEMENT**
+- Evidence: `paper/spc4-t73-candidate/main.tex`,
+  `sec-finite-details.tex`, and `sec-appendices-extra.tex`.
+- Correction: the formerly named `HattoriActual` formula is now the
+  counterfactual `HattoriSplit` formula. Lemma C1 assumes the literal target
+  matching and is explicitly inapplicable to the saved source. The value 223
+  is only that target's formal ledger, and degree-zero pivotal mates do not
+  restore the historical 494 ledger.
+- Actual conditional theorem: Hypothesis C now postulates an actual class
+  (x_C) in an unspecified degree (q_C\ne0), a statewise coend/currying
+  comparison natural for both actions and all beta/psi maps, its complete
+  grading ledger, and evaluation 2624. The abstract obstruction uses only
+  (q_C\ne0). The finite endpoint calculation is stated separately as the
+  scalar 2624 and no longer as an unconditional MWW value.
+- Translation firewall: the Chinese manuscript and auxiliary Chinese TeX
+  files contain an explicit version warning that their remaining historical
+  C/S text is not authoritative until fully synchronized.
+
+### F-530 — The simplicial coefficient gates reject identity and unbound-movie false positives
+
+- Severity: **Critical verifier repair**
+- Status: **RESOLVED FOR THE CURRENT FAIL-CLOSED CONTRACT**
+- Evidence: `scripts/verify_t73_coefficient_exterior.py`,
+  `scripts/verify_t73_c_h1_relative_isotopy.py`, their two schemas, and their
+  focused tests.
+- Former false positives: the coefficient-exterior gate accepted an arbitrary
+  valid frame with `initial=final` and no moves, without binding either end to
+  the saved source/target. The C-H1 validator did not require strand paths to
+  be ambient edges, did not bind the 1260 endpoint rows exactly, and did not
+  require a bijection onto all 630 target arcs. A supplied movie could also
+  overwrite the already proved split obstruction with PASS.
+- Repair: movies are nonempty and nonidentity, end at time one, and are SHA
+  bound to the current source and target. Initial and final arcs and push-offs
+  are bijectively bound to the complete saved rational polylines (collinear
+  subdivisions allowed), endpoint IDs and named boundary components are
+  checked in order, and ambient moves cannot change typed geometry. The C-H1
+  validator rejects the eight wrong-side connectors before considering any
+  movie, and report generation cannot overwrite that result.
+- Scope: no current simplicial witness exists. These checks specify what a
+  future common tetrahedral exterior must contain; they do not construct it.
+
 ### F-600 — The “actual” sphere-system builder assigns, rather than constructs, the embedding in \(\partial W_2\)
 
 - Severity: **Critical**
@@ -2051,6 +2235,111 @@ Topology-source checks completed 2026-09-04:
   nonzero \((0,223)\) class would still obstruct \(S^4\). C and S remain open.
   Adopting this route requires replacing or parameterizing every hard-coded
   494 in the paper and Lean interfaces.
+
+### F-615 — Complete coefficient-exterior geometry now has a fail-closed simplicial contract
+
+- Severity: **Major positive infrastructure / Critical missing witness**
+- Status: **PARTIAL**
+- Locations: `audit/t73_coefficient_exterior_schema.json`;
+  `scripts/verify_t73_coefficient_exterior.py`;
+  `tests/test_t73_coefficient_exterior.py`.
+- Contract: an admissible frame is a triangulated 3-manifold whose boundary
+  has exactly five explicitly enumerated 2-sphere components (outer plus four
+  insertion boundaries), 630 owner/side/index-typed embedded edge paths, and
+  630 vertex-disjoint framed ribbon disks whose boundaries are exactly their
+  core paths, push-offs, and endpoint edges. Face incidence, vertex
+  sphere/disk links, boundary components, path incidence, and ribbon topology
+  are derived rather than asserted.
+- Relative moves: v1 replays vertex-preserving 2-3 and 3-2 bistellar
+  replacements with equal local boundary and support disjoint from the typed
+  geometry. It also accepts explicit simplicial ambient isomorphisms that fix
+  every insertion-boundary vertex and carry every arc and ribbon exactly.
+- Adversarial result: the new normal-form JSON fails immediately because it
+  contains cuboid/routing metadata rather than a tetrahedral holed
+  3-manifold. Six tests validate a synthetic ball/ribbon and reject boundary
+  map, ribbon, and boolean/hash mutations.
+- Dependency impact: this gate can later bind the typed S movies through
+  owner/source/endpoint indices, but no present constructor produces its
+  geometric witness.
+- Corrected endpoint contract: the four insertion spheres have respectively
+  88, 88, 542, and 542 incident endpoints, totaling 1260 endpoints and hence
+  630 exterior intervals. Each oriented closure side contains 315 intervals.
+  The earlier 542-arc count confused z endpoints with complete exterior
+  intervals and is superseded.
+
+### F-616 — The reduced “PD” cannot be converted to Spherogram/SnapPy/Regina
+
+- Severity: **Critical data gap**
+- Status: **CONFIRMED**
+- Locations: `audit/t73_reduced_link_pd.json`;
+  `audit/t73_pd_spherogram_adapter_report.json`;
+  `scripts/audit_t73_pd_spherogram_adapter.py`;
+  `tests/test_t73_pd_spherogram_adapter.py`.
+- Environment: Regina 7.4.1, SnapPy 3.3.2, and Spherogram 2.4.1 were loaded
+  from `/tmp/t73-topology-tools`.
+- Exact failure: the file is a signed *mixed-owner crossing ledger*, not a
+  standard PD code. It lacks four-half-edge incidence rows, cyclic successor
+  order along components, all self-crossings, an embedded zero-crossing
+  \(r_{zx}\), the two dotted 1-handle components (or a handlebody
+  triangulation), and integer diagram framings for \(m_2,m_3\).
+  There are 390 railroad segments containing multiple crossings but no
+  along-segment order; \(r_{zx}\) has zero incidence.
+- Consequence: neither a Spherogram Link nor a link-complement triangulation
+  is determined. Crossing signs and segment numbers suffice for selected
+  linking sums, but not for planar link reconstruction. The adapter validates
+  standard PD label incidence if future data supply it, and otherwise returns
+  OPEN without invoking topology recognition.
+
+### F-617 — Exhaustive workspace search cannot recover a unique full Kirby PD diagram
+
+- Severity: **Critical data gap**
+- Status: **CONFIRMED**
+- Locations: `docs/proofs/T73_FULL_PD_RECOVERY_AUDIT.md`;
+  `audit/t73_full_handle_diagram_input_contract.json`;
+  `scripts/audit_t73_pd_spherogram_adapter.py`.
+- Recoverable distinction: the new selected-source exterior supplies four
+  cabled coefficient cycles, all 1260 endpoint successors and 630 rational
+  routes. It is not the closed five-component reduced attaching link and has
+  arbitrary insertion tangles at its four boundary spheres.
+- Nonuniqueness witnesses: (i) segment `m_2:0` has records
+  10,74,702,766,1396 with no stored along-segment order, and swapping two
+  changes PD successors without changing the ledger; (ii) tying a local knot
+  into a component changes self-crossings while preserving every mixed
+  record; (iii) an unknot and local trefoil both realize the empty
+  \(r_{zx}\) handle word with zero mixed incidence; (iv) blackboard curls
+  change integer diagram framing while preserving the string
+  `same-product-framing`.
+- Other missing geometry: the dotted y/z components or an explicit genus-two
+  handlebody triangulation are absent. Therefore the link-in-\(S^3\) input
+  required by Spherogram is not determined.
+- Minimal new contract: seven closed core polylines, five disjoint framing
+  push-offs for the 2-handle components, and one common generic rational projection. These suffice to
+  derive all mixed/self crossings, crossing parameters and successor cycles,
+  standard PD rows, linking matrix, and integer framings. A bare PD code would
+  still not prove AR provenance.
+
+### F-618 — The eight \(r_{xy}\) connectors are a pivotal variance issue, not a source of degree 494
+
+- Severity: **Major**
+- Status: **CONFIRMED**
+- Locations: `scripts/audit_t73_rxy_pivotal_currying.py`;
+  `tests/test_t73_rxy_pivotal_currying.py`;
+  `docs/proofs/T73_FULL_PD_RECOVERY_AUDIT.md`.
+- Classification: the two oriented \(r_{xy}\) cycles contain eight Y/Z
+  exterior intervals: four join the same variance side and four opposite
+  variance sides. Standard rigid pivotal duality can bend endpoints to type
+  these consistently in a curried morphism.
+- Topological qualification: pivotal currying changes the boundary
+  presentation/canopolis variance; it is not an ambient isotopy pointwise
+  relative to four fixed insertion spheres. The z coend and the selected
+  noninvertible cup \(P_{86}\to P_{88}\) remain separate operations.
+- Grading: normalized pivotal identifications are degree-zero equivalences.
+  They repair typing but cannot contribute the missing \(+271\). Hence they
+  do not change the independently audited two-representable degree 223 into
+  494. Any nonzero Euler degree would signal use of an actual cup/cap
+  cobordism rather than a pivotal equivalence and must be counted explicitly.
+- Mutation test: deleting one \(r_{xy}\) interval is rejected; two focused
+  tests pass.
 
 ## Proof dependency ledger
 
@@ -2524,30 +2813,77 @@ post-F-017 working tree, including the later Johnson restore hierarchy.
   coefficient shadow, beta/psi descent and hemisphere maps remain C/S. They
   are not consequences of P0.
 
-### F-416 — The four-box artifact proves only the split target, not a relative split of the source coefficient link
+### F-416 — The four-box artifact is a complete target template, not a relative split of the source coefficient link
 
 - Severity: **Critical for C-H1 / grading**
-- Status: **OPEN; NO TOPOLOGICAL OBSTRUCTION PROVED**
+- Status: **TARGET COMPLETED; LITERAL SOURCE SPLIT REFUTED BY F-525**
 - Evidence: geometry/t73_selected_canopolis_normal_form.json,
   scripts/build_t73_selected_canopolis_normal_form.py,
   scripts/verify_t73_selected_canopolis_normal_form.py,
   tests/test_t73_selected_canopolis_normal_form.py, and
   docs/proofs/T73_SELECTED_CANOPOLIS_NORMAL_FORM.md.
-- Positive result: the target has four rational insertion boxes, two disjoint
-  closure balls, 44 active corridors, 227 added z arcs, product framings and
-  cyclic private lane 43. Six target mutations fail.
-- First missing datum: the actual coefficient exterior has no complete
-  oriented endpoint incidence/matching table on the four parametrized
-  insertion spheres. Primitive source IDs and private target levels do not
-  determine the relative tangle type. No simultaneous framed ambient isotopy
-  moves the cyclic connector and all 227 residual tracks while fixing all
-  four spheres.
+- Positive result: schema v2 has four rational insertion boxes, two disjoint
+  closure balls, 1260 explicit endpoints and 630 explicit framed arcs. Each
+  closure has 88 Y--Z arcs and 227 Z--Z U-arcs; endpoint counts are
+  \(88,542,542,88\). Nine target mutations fail, including an orientation
+  mutation.
+- Source comparison: F-417 supplies the complete source endpoint matching.
+  F-525 finds eight wrong-side connectors, so no simultaneous ambient isotopy
+  pointwise fixed on the four spheres can give the literal two-closure target.
 - Grading consequence: if the missing map is an ambient isotopy, its trace has
   Euler characteristic zero and ordinary Kunneth introduces no extra shift.
   If endpoint pairings require saddle reconnection, the cobordism has a new
   Euler/framing degree not contained in the minus-44 Hom normalization. Thus
   the p_y/p_z count alone does not certify degree 494.
-- Remediation: the verifier now reports PASS_TARGET_ONLY together with
-  SOURCE_RELATIVE_ISOTOPY=OPEN, BOUNDARY_ENDPOINT_INCIDENCE=OPEN, and an
-  undetermined grading correction. Lemma C1 in main.tex remains conditional
-  on the missing relative four-box isotopy.
+- Remediation: the verifier reports PASS_COMPLETE_TARGET_TEMPLATE together
+  with SOURCE_RELATIVE_ISOTOPY=REFUTED_LITERAL_SPLIT and
+  DEFECT_AWARE_CURRYING=OPEN. Lemma C1 in main.tex is explicitly
+  counterfactual and its actual replacement remains in Hypothesis C.
+
+### F-417 — Complete selected source endpoint incidence and rational exterior routes are now saved
+
+- Severity: **Remediation / source reconstruction**
+- Status: **RESOLVED FOR A CANONICAL SOURCE REPRESENTATIVE; AR RELATIVE ISOTOPY OPEN**
+- Evidence: geometry/t73_selected_source_exterior.json,
+  scripts/build_t73_selected_source_exterior.py,
+  scripts/verify_t73_selected_source_exterior.py,
+  tests/test_t73_selected_source_exterior.py, and
+  docs/proofs/T73_SELECTED_SOURCE_EXTERIOR.md.
+- Data: four oriented cable cycles give 88 endpoints on each Y insertion
+  sphere and 542 on each Z insertion sphere, 1260 boundary points total, 630
+  exterior intervals, and four cyclic seams. Each cable-sign closure has 88
+  cross-handle intervals and 227 z--z residual intervals.
+- Geometry: all endpoints and two-segment routes have rational coordinates.
+  Exact checks prove complete matching, pairwise route disjointness,
+  insertion-ball avoidance, endpoint product normals and disjoint rational
+  push-offs. The positive and negative m2 cyclic seams are explicitly bound.
+  Seven mutations fail.
+- Scope: this is reconstructed from full reduced event records, not hashes,
+  but is still a chosen canonical representative. It does not prove a relative
+  isotopy from the actual AR exterior.
+- Single-Hom boundary: four insertion spheres with 1260 points cannot be
+  changed by ambient isotopy into a P86-to-P88 boundary with 174 points.
+  The 1084 z endpoints require canopolis gluing/coend evaluation, and the
+  remaining y defect requires the selected cup and pivotal turns. Those
+  gluing/cobordism cells and their Euler grading are the next missing datum.
+
+### F-418 — A single-Hom P86-to-P88 defect target exists, but the source currying map does not
+
+- Severity: **Remediation / exact type boundary**
+- Status: **TARGET RESOLVED; SOURCE MAP OPEN**
+- Evidence: geometry/t73_single_hom_defect_target.json,
+  scripts/build_t73_single_hom_defect_target.py,
+  scripts/verify_t73_single_hom_defect_target.py, and
+  tests/test_t73_single_hom_defect_target.py.
+- Target: 86 explicit vertical through cells and one explicit cup with the two
+  selected physical feet give a P86-to-P88 tangle. The BPW A.6 cup terms and
+  product normals are attached to the correct positions.
+- Missing map: no fixed ambient isotopy can preserve the four source insertion
+  spheres and simultaneously change 1260 boundary points into 174. The 1084
+  Z endpoints must be glued through arbitrary C_271 insertions/coend data,
+  after which pivotal currying organizes the Y defect. The artifact therefore
+  keeps z_coend_gluing_cells and source_to_target_interval_map empty and
+  reports both OPEN.
+- Grading: without those gluing/currying cells their Euler characteristic and
+  additional quantum shift remain undetermined. The target cup alone does not
+  certify the full comparison degree.

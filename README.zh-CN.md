@@ -8,30 +8,35 @@ A=\begin{pmatrix}0&269&1240\\0&41&189\\1&0&32\end{pmatrix}
 \]
 （Iwaki 标准形 \(X_{41,189,73}\)）的一份论文层面 skein-lasagna 阻碍论证。
 
-**论文主张一个光滑四维 Poincaré 猜想的数学反例；该结论尚未完全 Lean
-形式化，也不代表已经同行接受。** 控制性文稿为
+**当前论文只给出条件式阻碍，不宣称得到光滑四维 Poincaré 猜想的反例。**
+控制性文稿为
 [`paper/spc4-t73-candidate/main.tex`](paper/spc4-t73-candidate/main.tex)
 （中文对照：`main-zh.tex`；标题：《trace-73 Cappell--Shaneson 球面的
 skein-lasagna 阻碍》）。
 
 ## 已证与开放
 
-对显式 **Johnson 生成元** 柄表示，正文证明 skein-lasagna 在 quantum degree
-\(494\) 处比较所需的几何输入 **P0、C、S、P3**，包括识别
-\(X_J\cong\Sigma_A^0\)。
+对显式 **Johnson 生成元** 柄表示，正文在纸面层面给出 **P0/E13** 与上柄
+运输。新的完整系数构造器在源端与目标端各保存 \(1260\) 个端点和 \(630\)
+条带框弧，但两张匹配表相差八条 wrong-side connector，因此先前的 literal
+two-representable split 已被否定。其 \(223\) 只是反事实目标的分次账本；历史
+值 \(494\) 与 \(223\) 都不是当前已构造的实际 MWW 类次数。**C 与 S 仍开放。**
 
-精确有限计算给出非零 divided cubic \(D_3=2624\)。Artin--Magnus 证书与
+精确有限计算给出非零端点模型标量 \(2624\)。把它识别为实际 MWW divided
+cubic 仍属于 C 假设。Artin--Magnus 证书与
 pure-braid Andreadakis 定理确立公开 braid 词的三阶性质。
 
 Lean 开发将**抽象商论证**形式化：若给定将 MWW 商与四柄运输组装起来的接口数据
-（`ExternalGeometry`），则非零次数-\(494\) 类**将**阻碍与 \(S^4\) 的微分同胚。
+（`ExternalGeometry`），则任意非零量子次数中的非零类**将**阻碍与 \(S^4\)
+的微分同胚。
 这些几何接口**未**在 Lean 中构造。
 
 | 层次 | 状态 |
 | --- | --- |
-| 有限代数（\(2624\)、次数 \(494\)、\(\det A=\det(A-I)=1\)） | Lean 已检 |
+| 有限代数（端点标量 \(2624\)、历史次数 \(494\)、\(\det A=\det(A-I)=1\)） | Lean 已检；实际 MWW 次数未构造 |
 | 抽象条件蕴含 | Lean 已检 |
-| Johnson P0 / C / S / P3（正文几何 + 证书） | 正文已证 |
+| Johnson P0 / E13 / 拓扑 P3 | 纸面层面已给出 |
+| C / S 系数与三柄比较 | **开放** |
 | Lean 中 `ExternalGeometry` 实例 | **开放** |
 
 Lean 边界见
@@ -41,8 +46,19 @@ Lean 边界见
 python3 scripts/audit_t73_premises.py --check
 ```
 
-预期摘要：`P0/C/S/P3=PASS`、`OVERALL=PASS_MATHEMATICAL_LEAN_PARTIAL`、
-`COUNTEREXAMPLE=True`。
+旧聚合脚本仍会打印历史 `PASS` 与 `COUNTEREXAMPLE=True`，这些状态不是当前
+完成判据。应以 `audit/RUNNING_PAPER_AUDIT.md`、完整几何 bundle 及新的
+fail-closed gates 为准。
+
+完整 selected-C 几何 bundle 的重建命令为：
+
+```text
+python3 scripts/build_t73_complete_geometry_bundle.py --write
+python3 scripts/build_t73_complete_geometry_bundle.py --check
+```
+
+它保存当前可重构的全部端点与弧几何；实际 coend/currying map 未构造，所以
+顶层 manifest 按设计保持 `OPEN`。
 
 **勘误（2026 年 9 月 2 日）。** 较早草稿混用两套 endpoint 索引表，报告了
 \(-59072\)。统一到 braid 词所用 collar 表后，精确值为 \(+2624\)（仍非零）。
