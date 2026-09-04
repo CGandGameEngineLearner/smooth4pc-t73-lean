@@ -125,6 +125,15 @@ $\operatorname{Sh}_h([v_T])=u_h$.  Its absolute degree is
 -44+227+315-4=494.
 \]
 
+Before any public index is assigned, the 44 actual product rectangles give
+88 physical endpoints: the positive side records the actual $y$ source and
+the negative side its paired $z$ source.  Boundary orientation orders the two
+$r_{xy}$ wickets forward and the 42 $m_2$ wickets in reverse, with negative
+then positive side in each rectangle.  Only then does the public position
+table attach Burau indices.  The resulting monomial map $P(q)$ and its inverse
+are recomputed from these physical identifiers; all pivotal coefficients are
+$+q^0$, and sign, order, and pivotal mutations fail.
+
 The normalized checked R-matrix on adjacent one-defect basis vectors is
 \[
 \begin{pmatrix}1-q^{-2}&q^{-1}\\q^{-1}&0\end{pmatrix}.
@@ -142,7 +151,7 @@ W\mapsto PWP^{-1},\qquad u\mapsto Pu,\qquad
 \]
 The matrix coefficient is unchanged; we choose the public endpoint labels
 after this common transport.  Unresolved $\pm$ formulae for the constant
-terms are not used.  In the frozen collar coordinates of
+terms are not used.  In the transported collar coordinates of
 Section~\ref{sec:exact-algebra} the constant pairing is the definite
 identity recorded there, not a sign ansatz.
 
@@ -173,12 +182,13 @@ The four mixed-index Burau sign variants
 \[
 -53824,\quad -53760,\quad -59008,\quad -59072
 \]
-are nonzero, but they are not the frozen cubic.  The frozen public receipt and
-Lean give
+are nonzero, but they are not the selected cubic.  The geometry-bound public receipt and
+Lean record the truncated Burau scalar
 \begin{equation}\label{eq:selectedD3}
-D_3([v_T])=2624\ne0
+D_3([v_T])=2624
 \end{equation}
-after the endpoint-indexing erratum.  Nonvanishing does not close S.
+after the endpoint-indexing erratum.  This integer is presently only that
+geometry-bound Burau value.  It does not close C or S.
 
 \subsection{The complete two-handle cocone}
 
@@ -319,13 +329,14 @@ Diagram (28) sends it to a class $x_2$ satisfying
 $\overline D_3(x_2)=2624\ne0$ on the Johnson replacement collar.
 
 \begin{theorem}[Coefficient comparison C]\label{thm:Cdischarge}
-Hypothesis~\ref{hyp:P1} holds for the P0 replacement.  In particular, the
-selected degree-$494$ class is nonzero after all MWW two-handle relations.
+Hypothesis~\ref{hyp:P1} holds for the explicit Johnson presentation.
 \end{theorem}
 
 \begin{proof}
-This is discharged for the Johnson replacement collar by
-Lemmas~\ref{lem:C1} and~\ref{lem:C2}.
+The 44 actual y/z rectangles and 227 actual leftover-circle transports give
+the coefficient-bimodule identification in Lemma~\ref{lem:C1};
+Lemma~\ref{lem:C2} and the Reynolds cocone verify both actions and every
+finite cable state.
 \end{proof}
 
 \paragraph{C/S firewall.}

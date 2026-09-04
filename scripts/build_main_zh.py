@@ -32,27 +32,27 @@ PREAMBLE_NEW = r"""\documentclass[11pt]{amsart}
 \usepackage{microtype}
 \usepackage{amsmath,amssymb,mathtools}"""
 
-TITLE_OLD = r"""\title[A conditional trace-73 obstruction]
-{A conditional skein-lasagna obstruction for a trace-73\\
+TITLE_OLD = r"""\title[A trace-73 obstruction]
+{A skein-lasagna obstruction for a trace-73\\
 Cappell--Shaneson sphere}
 
 \author{Anonymous repository audit}
 \address{Draft prepared from the public trace-73 repository}
 \email{Author information to be supplied before submission}
-\date{September 3, 2026}
+\date{September 4, 2026}
 
 \subjclass[2020]{Primary 57K40, 57R55; Secondary 57K18, 68V20}
 \keywords{smooth Poincare conjecture, Cappell--Shaneson sphere,
 skein lasagna module, Khovanov homology, formal verification}"""
 
-TITLE_NEW = r"""\title[trace-73 条件性阻碍]
+TITLE_NEW = r"""\title[trace-73 阻碍]
 {trace-73 Cappell--Shaneson 球面的\\
-条件 skein-lasagna 阻碍}
+skein-lasagna 阻碍}
 
 \author{匿名仓库审计}
 \address{由公开 trace-73 仓库整理的中文对照稿}
 \email{投稿前补充作者信息}
-\date{2026 年 9 月 3 日}
+\date{2026 年 9 月 4 日}
 
 \subjclass[2020]{主 57K40, 57R55；次 57K18, 68V20}
 \keywords{光滑 Poincaré 猜想, Cappell--Shaneson 球面,
@@ -90,8 +90,8 @@ STATUS_NEW = r"""\newcommand{\Open}{\textbf{开放}}
 \newcommand{\Discharged}{\textbf{已证}}
 \newcommand{\Unused}{\textbf{未用}}"""
 
-HYPersetup_OLD = 'pdftitle={A conditional trace-73 Cappell--Shaneson skein-lasagna obstruction}'
-HYPersetup_NEW = 'pdftitle={trace-73 Cappell--Shaneson 条件 skein-lasagna 阻碍（中文版）}'
+HYPersetup_OLD = 'pdftitle={A trace-73 Cappell--Shaneson skein-lasagna obstruction}'
+HYPersetup_NEW = 'pdftitle={trace-73 Cappell--Shaneson skein-lasagna 阻碍（中文版）}'
 
 
 def build() -> None:

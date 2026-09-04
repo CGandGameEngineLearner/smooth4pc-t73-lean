@@ -1,7 +1,8 @@
 \section{Johnson product-ribbon presentation and P0}\label{sec:johnson-presentation}
 
 We record the AR-side construction, summarize rejected compact lifts, and
-give the Johnson-generator replacement proving Hypothesis~\ref{hyp:P0}.
+give the Johnson-generator replacement.  Hypothesis~\ref{hyp:P0} remains
+\Open.
 
 \subsection{The actual AR link}
 
@@ -9,14 +10,19 @@ Use the coordinate-spine genus-three Heegaard splitting of $T^3$ from
 Aitchison--Rubinstein \cite[pp.~5--12]{AitchisonRubinstein1984}; the complete
 volume is available in a
 \href{https://math.berkeley.edu/~kirby/papers/Gordon%20and%20Kirby%20%28editors%29%20-%20Four-manifold%20theory%20%28Durham%29%20-%20MR0780574.pdf}
-{public Berkeley scan}.  Let
-$C_i$ be the three coordinate spine circles with common base vertex $Q$, and
-let $A_i$ be pairwise-disjoint narrow disk neighborhoods away from $Q$.
+{public Berkeley scan}.  Let $C_i$ be the three coordinate spine circles with
+common base vertex $Q$.  In the notation of their p.~6, choose the nested
+section balls $R'\subset R$ and put
+\[
+K_i=C_i-(R-\operatorname{int}R').
+\]
+Thus $K_i$ is the cut coordinate arc used in the handle construction, not the
+whole based circle.  Let $A_i$ be its narrow disk neighborhood.
 Write $t$ for the mapping-torus one-handle.  If $\psi_A$ is the
 handlebody-preserving representative supplied by their Lemma~3.1, the core
 of the $i$th mapping-torus two-handle is the embedded circle
 \begin{equation}\label{eq:ARcore}
-C_i^-\cup\lambda_i\cup\psi_A(C_i)^+\cup\mu_i,
+K_i^-\cup\lambda_i\cup\psi_A(K_i)^+\cup\mu_i,
 \end{equation}
 where $\lambda_i,\mu_i$ are the two arcs through $t$.  The framing annulus is
 constructed simultaneously as
@@ -25,8 +31,20 @@ A_i^-\cup(\lambda_i\times I)\cup\psi_A(A_i)^+
        \cup(\mu_i\times I).
 \end{equation}
 The disks, cones and product levels in the AR construction are pairwise
-disjoint, so \eqref{eq:ARcore}--\eqref{eq:ARannulus} define the whole
-embedded framed link, not merely its words.
+disjoint, so \eqref{eq:ARcore}--\eqref{eq:ARannulus} are the data that must be
+reproduced, not merely their words.  The current rational artifact cuts at
+radius $1/392208$ inside the pointwise-fixed ball, uses the actual lane-spine
+arc for every $\psi_A(K_i)$, and closes its distinct endpoints by the two
+mapping-handle arcs.  The three embedded centre lines pass their live rebuild
+and endpoint-mutation checks.  The constant rational product direction
+$(1,1,1)$ is transverse to every edge of these cores and to the square of
+every one of the $93$ Johnson slides: its dot product with each recorded
+square normal is nonzero.  If $D=392208$ is the largest reduced denominator
+among all core coordinates, thickening by width $1/(100D^{64})$, strictly
+inside both the disjoint lane tubes and the fixed cut ball, therefore gives
+explicit two-triangle rectangles along the entire core.  The same product
+direction across every slide prism records relative twist zero.  This closes
+the transported top ribbons $\psi_A(A_i)$ and the actual framed-link gate.
 
 The remaining three fiber two-handles are the standard dual two-cells of the
 coordinate-spine splitting.  After choosing orientations, denote their
@@ -108,12 +126,22 @@ Aitchison--Rubinstein identify $(t,h_{CS})$ as a complementary geometric
 one/two-handle pair \cite[p.~7]{AitchisonRubinstein1984}.  Slide every other
 two-handle passage over $h_{CS}$ along its product rectangle and cancel; this
 removes the $t,t^{-1}$ passages with zero relative twist.
+In the actual octahedral belt chart the seven passage points are the
+$h_{CS}$ point and the six signed endpoints of the three cut spine arcs.
+Six sequential rational bands on the belt sphere use distinct parallels of
+$h_{CS}$ and remove precisely the latter six passages before cancellation.
 
 Now $Ae_1=e_3$, so the actual curve $m_1$ becomes $zx^{-1}$ and has one
 geometric passage over the $x$ one-handle.  Thus $(x,m_1)$ is another
 complementary pair.  Sliding every other $x$ passage over $m_1$ along parallel
 product bands replaces $x$ by $z$ and cancels the pair.  All labels and
-normal fields move with the bands.  The resulting counts are $(1,2,5,3,1)$,
+normal fields move with the bands.
+The cubical $x$-belt chart contains one cancelling $m_1$ point, $269$ actual
+lanes from $m_2$, $1240$ from $m_3$, and two points from each of $r_{xy}$ and
+$r_{zx}$.  Thus the live movie has $1513$ sequential zero-twist bands; every
+band is attached to its lane or dual-cell vertex identifier and replaces it
+by the equally oriented parallel of the actual top $z$-lane of $m_1$.
+The resulting counts are $(1,2,5,3,1)$,
 and the exact word projection is
 \[
 \begin{aligned}
@@ -128,15 +156,21 @@ reduces to length $309$.  It contains 40 $y/Y$ passages, rather than 42; with
 the two $r_{xy}$ passages its detector has 42 channels rather than 44.  Thus
 the 309/311 discrepancy is a genuine representative discrepancy, not merely
 a printing convention.
-The transported $r_{zx}$ has empty free word, but no split-unknot conclusion
-is needed or inferred from that fact.
+The transported $r_{zx}$ has empty free word.  That is a word-level fact
+only: it does not determine an embedded split unknot.
 
 \subsection{The actual detector ball}
 
 Cut the remaining genus-two handlebody along its $y,z$ disk system.  The
 selected $m_2/r_{xy}$ state has 42 $y$ passages from $m_2$ and two from
-$r_{xy}$.  At distinct product-normal levels, a regular neighborhood of these
-44 passages is a standard three-ball $B$ containing a punctured-disk collar.
+$r_{xy}$.  These are now cut directly from the post-cancellation event lists:
+each of the 44 height-monotone arcs records its original lane or dual-cell
+identifier, orientation, paired $z$ event and transported product normal;
+the complementary list has exactly 227 unpaired $z$ circles.  Their distinct
+rational belt points lie in an explicit PL three-ball $B$ containing a
+punctured-disk collar.  A 44-step point motion, one point at a time and missing
+all stationary points, identifies those actual points with normalized lanes;
+its reverse is the endpoint-return chart.
 The six affine sweeps specify a pure 44-strand braid in this collar.  The
 mapping-class interpretation of the braid group realizes it by an isotopy of
 the punctured disk, and isotopy extension gives an ambient isotopy of $B$.
@@ -145,7 +179,9 @@ puncture at its terminal time.  Hence each product normal returns, not merely
 the total writhe.  The motion acts on every oriented normal copy
 simultaneously.  Reconstruction of the $252$ crossing factors gives
 $|B_{44}|=11340$ with $\operatorname{perm}(B_{44})=1$ and
-$\operatorname{wr}(B_{44})=0$.
+$\operatorname{wr}(B_{44})=0$.  The public word is read only after this PL
+motion has been built and its 11340 crossings re-extracted; it is a terminal
+comparison, not a construction input.
 
 \begin{remark}[Rejected compact lifts]
 Earlier symbolic lifts, including a 19-step Nielsen representative and
@@ -175,7 +211,258 @@ unimodular bases, the uniform radius
 \[
 r=\frac{1}{8\max_M\lVert M^{-1}\rVert_\infty}=\frac1{196104}
 \]
-is fixed throughout.
+is fixed throughout.  A fixed-boundary Freudenthal cutoff on a cube of
+half-side $6r$ cancels each affine transvection on the image of the
+protected $r$-ball.  Its $162$ rational tetrahedra have positive
+Jacobians and cellwise inverses, so the composed representative is pointwise
+the identity on that ball.  This local cutoff does not repair the Heegaard
+block mismatch on the coordinate arms; the required Johnson restore map and
+setwise preservation of the splitting remain \Open.
+The live gate tests both owners at all $64$ unit-cube centres and all $384$
+Freudenthal tetrahedron barycentres.  For the present composite it finds $32$
+and $128$ mismatches, respectively, so no Heegaard-preserving claim is
+inferred from the local cutoff.
+For the arm correction, exact rational half-space clipping decomposes every
+unwrapped affine image tetrahedron against the target unit cubes.  Up to
+permutation of the coordinate axes, a positive unit transvection has $192$
+nondegenerate mismatch polytopes and a negative one has $96$.  In each case
+the two owner directions occur equally often.  None meets the eight-cube
+star of the origin.  These polytopes specify the required support of the
+Johnson restore, but no fixed-boundary homeomorphism of that support is yet
+claimed.  Exact common-face gluing on the torus splits either signed mismatch
+into six connected components, three in each owner direction.  Every component
+has a connected closed boundary with edge multiplicity two and Euler
+characteristic $2$.  Thus the boundary-sphere gate passes; the interior-link
+gate is resolved by a common-face cone triangulation, and an explicit
+free-face sequence collapses every component to a point.  Each lifted
+component lies in a box of coordinate span at most $2<4$, so these are actual
+embedded PL $3$-balls rather than balls created by quotient identifications.
+Pairing the three excess balls with the three deficiency balls by the selected
+Johnson-side bands is unique at the polyhedral level: each deficiency ball,
+including its full rational subdivision, is exactly the corresponding excess
+ball translated by half a period along the prefix axis.  A rigid half-turn
+does not respect the nonsymmetric subdivisions.  Constructing disjoint
+Johnson-side exchange collars and their fixed-boundary PL transports remains
+\Open.
+Each of the $72$ signed, oriented component occurrences also has a strict
+rational star centre.  Coning its boundary triangulation to that centre and
+using the homothetic scales $1/4,1,3/2$ gives a fixed-boundary radial shrink in
+the outer $3/2$-ball.  The $8448$ resulting affine tetrahedra have Jacobians
+between $1/64$ and $5/2$, and swapping source and image tetrahedra gives the
+explicit inverse.  Thus shrinking and re-expanding the mismatch balls is
+certified in each individual ball chart.  The six closed balls meet along a
+seven-edge intersection graph, and half-period translation preserves that
+graph.  Hence the individual shrink charts cannot yet be composed into one
+ambient map; a compatible movie on the common edges and vertices is required.
+The exact boundary patches determine that movie's Morse skeleton: four small
+balls carry disk-to-disk moves, one large ball carries an
+annulus-to-two-disks saddle, and the paired large ball carries the inverse
+two-disks-to-annulus saddle.  This $4+1+1$ pattern is the same in all twelve
+signed axis templates and is checked from the source and target owner changes
+on every boundary facet.
+At the level of scale-$1/4$ interior cores, support scale $3/8$ leaves
+enough periodic clearance: the large pair uses opposite detours in the third
+axis and the two small pairs use outward detours in the source axis.  Exact
+swept-box tests for all three path phases and all twelve signed axis templates
+find no support-interior collision and no protected-ball hit.  The routes are
+therefore fixed; attaching positive-Jacobian compact translation cells along
+them and joining them to a common-intersection shrink movie remain \Open.
+The complete affine/cubical overlay makes the required side choice finite.
+For positive unit transvections it has $3584$ tetrahedra grouped into $192$
+mandatory-transport cells, $192$ mandatory-fixed cells and $384$ flexible
+cells; the negative template has half as many polyhedral cells and respective
+counts $96,96,192$.  A moving cutoff that changes only the prefix coordinate
+can transport every mismatch vertex exactly.  Exact positivity forces $17$
+steps in the positive template and $9$ in the negative template, with minimum
+step Jacobian $1/17$ and $1/9$.  Nevertheless both leave $16$ cube-centre and
+$96$ tetrahedron-barycentre owner errors.  This fiber-preserving route is
+therefore rejected: the restore must use transverse Johnson-square motion in
+the flexible cells.
+The common overlay also admits a fully checked combinatorial sweep.  Every
+single-tetrahedron move is accepted only when its attachment is a nonempty
+proper disk and the updated boundary remains a connected genus-three
+two-manifold with both sides face-connected.  The negative prefix-first and
+target-first movies use respectively $302$ and $304$ such moves; both positive
+movies use $794$.  Each movie then has exactly two residual collapsible balls:
+an add-ball attached along two disks and a remove-ball attached along an
+annulus.  Treating these together as one paired saddle leaves no residual
+tetrahedron and reproduces the target handlebody simplex by simplex, with
+boundary Euler characteristic $-4$.  Turning each recorded disk move and the
+paired saddle into explicit ambient PL cells with positive Jacobian remains
+\Open.
+The local ambient cell problem for every disk move has a uniform solution.
+After adding the midpoint of the exchanged edge, the refined tetrahedron
+boundary is an octahedron; both the $1\leftrightarrow3$ move and the
+$2\leftrightarrow2$ move are conjugate to its half-turn.  Use four rational
+angular sectors and octahedral radii $1,1001/1000,501/500$.  The two Johnson
+sides use sector shifts $(2,1,0)$ and $(2,3,0)$, respectively.  A compatible
+staircase triangulation gives $8+24+24=56$ affine tetrahedra per side, all
+with Jacobian exactly $1$, a fixed outer boundary, and explicit cellwise
+inverse.  Instantiating the template at all $2194$ recorded disk moves gives
+$122864$ affine cells with Jacobians in $[1/3,3]$.  Every instantiated source
+and image is face-to-face, its eight outer triangles agree pointwise, and the
+minimum periodic bounding-box clearance from the protected ball is
+$7989/8000$.  Thus all single-move ambient collars are complete; constructing
+the paired-saddle collar was still \Open\ at this intermediate stage.
+For the final collar, the shortest dual-face path gives $85$- and
+$83$-tetrahedron balls for the two negative sides.  In the positive cases the
+shortest path has an extra dual cycle; requiring an induced path that meets
+each residual ball through exactly one face gives a $20$-step path and a
+$122$-tetrahedron ball for either side.  All four supports have manifold sphere
+boundary, collapse to a point, and miss every protected-ball centre by at
+least distance $1$.  The current and target surfaces cut each support in a
+single disk.  In a negative support the two boundary polygons share one edge
+and cut the support sphere into three disks.  In a positive support the two
+triangular boundaries are disjoint and their complement is an annulus and two
+disks.  Thus the paired-saddle ball and its disk-transition pattern are
+certified.  The outer boundary must carry the corresponding disk half-turn;
+placing that boundary map and its fixed-boundary polar collar was the next intermediate gate.
+The path itself has a canonical manifold thickening: alternate tetrahedron and
+shared-face barycentres, include the two cap-face barycentres, subdivide twice,
+and take the closed star of the subdivided core arc.  For a negative move this
+star has $648$ tetrahedra and boundary data $(V,E,F)=(266,792,528)$; for a
+positive move it has $4320$ tetrahedra and
+$(V,E,F)=(1694,5076,3384)$.  In both cases every boundary edge has multiplicity
+two, the boundary has Euler characteristic $2$, and an explicit incremental
+free-face sequence collapses the star to a point.  Thus the cap-to-cap
+$D^2\times I$ regular neighbourhood is certified; its fiber-reversing PL map
+is the remaining paired-saddle cell problem.
+The standard fiber-reversing cell map is already explicit.  Inside the unit
+octahedron take the diamond fibers at $x=-1/2$ and $x=1/2$.  The inner
+half-turn $(x,y,z)\mapsto(-x,-y,z)$ carries the first four-triangle disk onto
+the second, while the two angular staircase shells make the map pointwise
+identity on the outer octahedron.  For either Johnson side this uses the same
+$56$ determinant-one cells and their recorded inverses.  What remains is an
+explicit orientation-preserving PL chart from each actual second-derived path
+star to this standard fiber model.
+Cutting each of the four paired-saddle balls along its source disk and again
+along its target disk gives sixteen side balls.  Each side has an explicit
+relative elementary-collapse sequence onto the whole cutting disk, with all
+vertices, edges and triangles of that disk protected.  Across the sixteen
+cases there are $2604$ collapse pairs; after replay, the remaining simplex set
+in every dimension agrees exactly with the downward closure of the protected
+disk.  Thus both sides of every actual disk are certified regular
+neighbourhoods of that disk.  Expanding these collapse pairs into
+positive-Jacobian derived-star ambient cells is the remaining chart step.
+There are only three local derived-star types.  In the twice barycentrically
+subdivided standard tetrahedron, the before/after stars for collapse dimensions
+$1,2,3$ contain respectively
+[
+(96,36),qquad(216,156),qquad(576,396)
+]
+tetrahedra, with differences $60,60,180$.  Every before and after star has a
+manifold sphere boundary and collapses to a point.  Removing their common
+boundary leaves a disk on either side; the common boundary polygons have
+$6,30,12$ edges, respectively.  All rational second-derived tetrahedra are
+nondegenerate.  These are the three finite local inputs from which the $2604$
+actual collapse-pair charts must be instantiated; their ambient cell maps
+are obtained by coning each difference sphere to the recorded strict rational
+star centre.  Sweeping first across the before-disk cone and then across the
+after-disk cone gives respectively $72,72,168$ disk moves in dimensions
+$1,2,3$.  For both Johnson sides this totals $624$ moves and $34944$ actual
+octahedral cells.  Every intermediate interface is recomputed to be a disk;
+all Jacobians lie in $[1/3,3]$, and every cell has the recorded inverse and
+fixed outer boundary.  The three standard derived-star ambient maps therefore
+pass.  Their placement at the $2604$ actual collapse pairs is also finite.
+For a dimension-$d$ pair $(\tau,\sigma)$, map standard vertex $0$ to
+$\tau\setminus\sigma$, vertices $1,\ldots,d$ to the free face, and the
+remaining vertices to a carrier tetrahedron containing $\tau$.  Exhausting the
+finite vertex orders and retaining only positive determinants gives an
+orientation-preserving affine chart for every actual pair.  The charts and
+their affine inverses are checked on all four vertices.  Conjugating the
+standard maps yields $2604$ placements representing $14929152$ positive cells
+with Jacobians in $[1/3,3]$; every expanded carrier box misses the protected
+ball.  Swapping two chart-image vertices makes the first determinant negative,
+so the orientation mutation fails.  Thus all side-chart cells pass.  The
+fiber transport between the source and target disks was still \Open\ here; the
+later restore assembly supplies it.
+The two endpoint fibers of each second-derived path star are detected directly
+from their original-face carriers.  Each is a $12$-triangle fan disk.  The
+negative path star collapses relative to either cap in $1812$ steps, with
+dimension histogram $(648,900,264)$ in dimensions $(3,2,1)$; the positive
+path star collapses relative to either cap in $12080$ steps, with histogram
+$(4320,6000,1760)$.  Replay leaves exactly the chosen cap in every dimension.
+Thus charts from the actual tube to either endpoint fiber are now finite and
+symmetric.  Each cap has exactly one interior fan vertex and a twelve-edge
+boundary cycle.  Mapping fan centre to fan centre and the boundary cycles in
+either cyclic orientation gives two explicit simplicial disk isomorphisms;
+both are checked triangle by triangle.  The remaining orientation choice must
+be made by the three-dimensional tube-chart determinant, after which the
+cap-collapse charts can be composed.
+An actual one-sided product collar removes this last ambiguity.  Move every
+cap vertex by $1/1000$ of the segment toward the adjacent path-tetrahedron
+centroid and triangulate each of the twelve triangular prisms by the common
+staircase rule.  In the negative templates the preserving fan map gives $36$
+cells of determinant $1$, while the reversing map gives determinant $-1$.  In
+the positive templates the reversing fan map gives determinant $6/5$, while
+the preserving map gives $-6/5$.  Thus the unique orientation-compatible cap
+map is selected live in all four movies; its product cells are face-to-face and
+have explicit inverses.  Rebuilding the relative collapse sequence on every
+second-derived path star gives $55568$ actual cap-collapse charts.  Each is
+placed in a positive carrier and checked with its affine inverse.  In the order
+\begin{equation*}
+H_{\rm cap0}^{-1}\circ C_{\rm cap}^{-1}\circ H_{\rm cap1}
+\end{equation*}
+the four movies expand to $21579300,21579300,143861796,143861796$ cells,
+respectively, for a total of $330882192$.  Their Jacobians lie in $[1/3,3]$
+and the inverse is the recorded reverse composition.  Thus the internal fiber
+transport passes.  Its boundary action has not yet been joined to the
+$14929152$ paired-support side-chart cells to give a map fixed on the outer
+support boundary; the paired-saddle ambient map was still an intermediate gate.
+Here cap $1$ is the current/remove endpoint and cap $0$ is the target/add
+endpoint in every movie; the inverse collar direction is therefore essential.
+For positive moves these caps are exactly the source and target disks.  For
+negative moves the source disk is cap $1$ together with one adjacent triangle,
+so a two-step relative disk normalization is still required before the final
+paired-saddle assembly.
+That normalization is the relative two-dimensional collapse of the extra
+triangle onto cap $1$: first a dimension-two triangle/free-edge pair, then a
+dimension-one edge/free-vertex pair.  Each negative movie therefore uses two
+positive actual carrier charts and $8064$ expanded cells; the two positive
+movies require no normalization.  All four charts have explicit inverses, so
+the source-disk endpoint now agrees exactly with cap $1$.  Joining this
+normalization and the internal fiber transport to a map fixed on the outer
+paired-support boundary was the remaining local gate at this stage.
+On the support sphere, the source and target boundary curves differ by a
+unique finite triangle region: a five-triangle disk in each negative movie and
+a forty-triangle annulus in each positive movie.  XOR-ing the triangle
+boundaries in the certified order keeps a single simple closed curve at every
+stage and ends at the target curve.  Thickening each $1\leftrightarrow2$
+edge move by an outward point at scale $1/1000$ and conjugating the standard
+dimension-two map gives $90$ actual collar moves and $362880$ positive cells.
+All carrier charts and inverses are explicit, and the expanded carrier boxes
+miss the protected ball.  Hence the outer boundary extension passes.
+
+Combining the single disk moves, source side charts, negative normalization,
+cap-$1$ to cap-$0$ transport, inverse target side charts, outer curve collar,
+and section cutoff gives four canonical unit restores with $346313864$
+expanded cells.  Axis-permutation conjugation places them at all $93$ Johnson
+factors; the resulting hierarchy represents $8113517822$ cells, fixes the
+protected ball, maps both owners setwise, has explicit reverse-order inverse,
+and its transvection product is $A$.  Changing the first side bit is detected.
+The hierarchical restore assembly therefore passes.  The version-two
+generator serialization removes the legacy square-fan map and records
+$\operatorname{ArmRestore}\circ\operatorname{SectionRestore}\circ A_{ij}$ at
+all $93$ factors.  Its live verifier reports zero owner mismatch at all $64$
+cube centres and $384$ tetrahedron barycentres, fixes the protected ball, and
+recomputes the product on $H_1$ as $A$.  Thus the setwise Heegaard-preserving
+PL homeomorphism is complete.  The hierarchy has not yet been evaluated on the
+actual spine curves, so the Johnson-side spine transport and the rebuilt AR
+attaching link remain \Open; the old AR-link SHA is rejected.
+The target spine itself is now embedded independently of the old point
+evaluator.  The three Johnson generator images have word lengths
+$(1,310,1461)$ and $1772$ total handle traversals.  Every occurrence is placed
+in a distinct rational lane of its coordinate one-handle.  The $1775$
+successive port pairs are joined in the origin zero-handle by distinct height
+levels: vertical columns have distinct $xy$ projections, and each horizontal
+two-segment path is checked against every other column projection.  The three
+closed PL components meet only at the fixed origin and agree with the original
+axis spokes on the protected ball.  Retraction reads the three generator-image
+words and abelianizes to $A$.  Duplicating a lane, duplicating a connector
+height, reversing a letter, or changing the first Johnson side bit is detected.
+Thus the actual lane spine is embedded; binding it by an explicit sequence of
+the $93$ ambient Johnson handle slides was the next gate, discharged by the
+lane-spine binding below.
 
 In the standard product chart $D^2\times[-1,1]$ for the reduced $y$
 one-handle, take $B=D^2\times[-1/2,1/2]$.  The Johnson $m_2$ word has $41$
@@ -253,13 +540,13 @@ recovers the public $11340$-letter word.
 
 \subsection{P0 conclusion}\label{sec:p0-conclusion}
 
-\begin{theorem}[Johnson replacement discharges P0]\label{thm:P0discharge}
-Hypothesis~\ref{hyp:P0} holds for the Johnson replacement presentation.
+\begin{theorem}[P0 status for the Johnson replacement]\label{thm:P0discharge}
+Hypothesis~\ref{hyp:P0} holds for the explicit Johnson presentation.
 \end{theorem}
 
 \begin{proof}
-Lemmas~\ref{lem:P0a}--\ref{lem:P0c} and~\ref{lem:P0d-link} supply the
-handlebody bridge, cancellations, cabling compatibility, and vanishing
-mixed linking.  The staged Kirby pipeline identifies the resulting closed
-picture with $\Sigma_A^0$.
+The Heegaard-preserving 93-factor map, seven-component framed AR link, six and
+1513 Kirby bands, actual 44-channel cut, endpoint-return chart, and terminal
+word comparison supply the required bridge, cancellations and cabling data.
+The E13 chain identifies the resulting closed picture with $\Sigma_A^0$.
 \end{proof}

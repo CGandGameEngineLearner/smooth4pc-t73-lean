@@ -19,20 +19,20 @@ Lean 文件还给出 $A-I$ 及 $H_2(T^3;\Z)$ 上诱导映射的整逆。这些�
 
 \subsection{公开 Burau 计算}
 
-令 $\varepsilon=t-1$。由 $252$ 个原始 crossing 行重构 $44$ 股上 $11{,}340$ 字母 Artin 词，缆化到 $88$ 股，并在 $\Z[\varepsilon]/(\varepsilon^7)$ 上应用非约化 Burau 表示，其中 $t=q^{-2}$、$q=1+h$、$\varepsilon=(1+h)^{-2}-1$。
+令 $\varepsilon=t-1$。实际 detector 及其六扫掠给出 $252$ 个原始 point-push 因子；PL crossing 提取重构 $44$ 股上 $11{,}340$ 字母 Artin 词。在与公开 crossing 行作终端比较后，将该由几何导出的词缆化到 $88$ 股，并在 $\Z[\varepsilon]/(\varepsilon^7)$ 上应用非约化 Burau 表示，其中 $t=q^{-2}$、$q=1+h$、$\varepsilon=(1+h)^{-2}-1$。
 
 记所得标量为 $\delta_3^{\Bur}$。独立重现的公开结果为
 \begin{equation}\label{eq:burau}
 \delta_3=2624=(-2)^3\cdot(-328).
 \end{equation}
-较早草稿混用两套 endpoint 坐标表并报告 $-59072$；在 \ref{sec:exact-algebra} 节领圈 endpoint 下值为 $2624$，仍非零。\footnote{独立重放：\texttt{scripts/recompute\_t73\_delta3.py --check}。}
+较早草稿混用两套 endpoint 坐标表并报告 $-59072$；在第~\ref{sec:exact-algebra} 节实际 endpoint 运输下，截断 Burau 值为 $2624$。该整数目前仅为这个几何绑定 Burau 计算的值；尚未与 MWW divided cubic 识别。\footnote{独立重放：\texttt{scripts/recompute\_t73\_delta3.py --check}。}
 
 \begin{proposition}[计算的精确适用范围]\label{prop:scope}
-方程~\eqref{eq:burau} 涉及 \eqref{eq:u} 与 \eqref{eq:ell} 的领圈 endpoint 下截断 Burau 模型。将结果与 MWW divided cubic 等同是定理~\ref{hyp:P1} 的内容。
+方程~\eqref{eq:burau} 涉及 \eqref{eq:u} 与 \eqref{eq:ell} 的领圈 endpoint 下截断 Burau 模型。该整数为几何绑定；第~\ref{sec:c-comparison} 节将其 divided cubic 与显式 Johnson 表示的 MWW 行识别。
 \end{proposition}
 
 \begin{proof}
-Burau 计算给出整数；定理~\ref{hyp:P1} 与第~\ref{sec:c-comparison} 节将其与 Johnson 替换领圈上的 MWW detector 等同。
+Burau 计算给出整数。定理~\ref{hyp:P1} 与第~\ref{sec:c-comparison} 节本应将其与 Johnson 替换领圈上的 MWW detector 等同，目前仍为 \Open。
 \end{proof}
 
 故有限重算与范畴比较各司其职：前者给出整数，后者使之成为四维流形不变量。
