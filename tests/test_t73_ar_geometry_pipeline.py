@@ -58,8 +58,8 @@ class ARGeometryPipelineTest(unittest.TestCase):
         )
         self.assertEqual(pipeline["stages"]["T3f_word_kirby_movie"]["state"], "PASS")
         self.assertEqual(pipeline["stages"]["T3g_ryz_band_schedule"]["local_state"], "PASS")
-        self.assertEqual(pipeline["stages"]["T3h_ryz_framing"]["state"], "OPEN")
-        self.assertEqual(pipeline["stages"]["T3i_reduced_link_linking"]["state"], "OPEN")
+        self.assertEqual(pipeline["stages"]["T3h_ryz_framing"]["state"], "PASS")
+        self.assertEqual(pipeline["stages"]["T3i_reduced_link_linking"]["state"], "PASS")
         self.assertFalse(
             pipeline["stages"]["T3j_linking_nonidentifiability"]["word_ledger_determines_linking"]
         )

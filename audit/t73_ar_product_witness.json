@@ -293,7 +293,8 @@
       },
       "r_zx_actual_image": {
         "free_word_after_x_cancellation": [],
-        "geometric_scope": "the actual AR component transported through both cancellations; no split-unknot conclusion is inferred from the empty word"
+        "geometric_scope": "the actual AR component transported through both cancellations; no split-unknot conclusion is inferred from the empty word",
+        "split_unknot": false
       }
     },
     "normal_field_transport": "all slides use the displayed product rectangles; the product normal acquires zero relative twist",
@@ -351,7 +352,7 @@
       "verifier": "matrix bridge C_AR*R=R*A"
     },
     {
-      "input_sha256": "BA45C92B6A5605CB259F29E3550BC367C0783BBA9206E2633582B2ABE81DE1BC",
+      "input_sha256": "BB48F41A1278FA8047C247E9326A954FB587C29A3AFF9EA1674423A14577E32F",
       "status": "PASS",
       "verifier": "generate_t73_compact_kirby_ledger.py"
     },
@@ -361,11 +362,11 @@
       "verifier": "verify_t73_compact_point_push.py"
     },
     {
-      "input_sha256": "04507506DC577384BC4C04765CCB212C1481DC71810C6AB3232F1AB690F16909",
+      "input_sha256": "0F0F4A568D966367313C29C25CEDDE4FD9ABAD32B9375519E9CDF9168AE0A764",
       "status": "PASS",
       "verifier": "T73_DELTA3_PUBLIC_INPUT.json bytes"
     }
   ],
   "schema": "t73_p0_embedded_framed_link_witness/v1",
-  "witness_sha256": "AA9328EA3C7A53B937C97A02D611850D0E8EEAF87C68756C04B013A486F6F112"
+  "witness_sha256": "056C3BF8850FE0D8552DAB97655C991AF82B6C1CF0A3EF423CC5042DB1A55C4B"
 }

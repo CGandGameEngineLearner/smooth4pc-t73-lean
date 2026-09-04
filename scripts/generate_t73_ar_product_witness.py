@@ -266,14 +266,19 @@ def verify_committed(candidate_path: Path, source_pdf: Path | None = None) -> di
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--check", action="store_true")
+    parser.add_argument("--write", action="store_true")
     parser.add_argument("--source-pdf", type=Path)
     parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)
     args = parser.parse_args()
+    if args.write:
+        witness = generate_witness()
+        args.output.write_text(json.dumps(witness, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+        print(f"WROTE={args.output}")
     if args.check:
         witness = verify_committed(args.output, args.source_pdf)
         print("T73_AR_PRODUCT_WITNESS=PASS")
         print(f"WITNESS_SHA256={witness['witness_sha256']}")
-    else:
+    elif not args.write:
         print(json.dumps(generate_witness(), indent=2, sort_keys=True))
 
 
