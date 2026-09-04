@@ -2,14 +2,20 @@ from __future__ import annotations
 
 import os
 import re
+import shutil
 import subprocess
 import tempfile
 import unittest
 from pathlib import Path
 
 
-PINNED_LAKE = Path(
+_WINDOWS_PINNED_LAKE = Path(
     r"C:\Users\LENOVO\.elan\toolchains\leanprover--lean4---v4.32.1\bin\lake.exe"
+)
+PINNED_LAKE = (
+    _WINDOWS_PINNED_LAKE
+    if _WINDOWS_PINNED_LAKE.is_file()
+    else Path(shutil.which("lake") or _WINDOWS_PINNED_LAKE)
 )
 
 CONSUMER = r"""
