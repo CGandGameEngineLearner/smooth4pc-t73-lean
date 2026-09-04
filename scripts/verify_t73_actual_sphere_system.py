@@ -13,6 +13,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 SPHERES = ROOT / "geometry" / "t73_actual_sphere_system.json"
 W2 = ROOT / "geometry" / "t73_actual_W2_boundary.json"
+DUAL_DISKS = ROOT / "geometry" / "t73_johnson_dual_disk_movie.json"
 
 
 def load(name):
@@ -51,10 +52,13 @@ def verify():
     builder = load("build_t73_actual_sphere_system")
     stored = json.loads(SPHERES.read_text(encoding="utf-8"))
     w2 = json.loads(W2.read_text(encoding="utf-8"))
+    dual_disks = json.loads(DUAL_DISKS.read_text(encoding="utf-8"))
     rebuilt = builder.build(write=False)
     if stored != rebuilt:
         raise AssertionError("stored actual sphere system does not match a live rebuild")
     validate(stored, w2)
+    if stored["johnson_dual_disk_movie_sha256"] != dual_disks["sha256"]:
+        raise AssertionError("sphere profile is not bound to the actual H1 disk movie")
     mutant = copy.deepcopy(stored)
     mutant["spheres"][0]["core_disk_boundary_profile"][0]["copy_count"] += 1
     failed = False

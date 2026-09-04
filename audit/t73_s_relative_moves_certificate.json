@@ -6,7 +6,7 @@
     "constant_term_rule": "MODEL ONLY: for b=(9920,1430,311), the two explicitly triangulated hemisphere movies apply epsilon^tensor(b) Delta^(b-1); this sends 1 to 0 and X to 1 after factorization through the actual C cocone",
     "positive_order_transport": "I+O(h) is invisible to a detector beginning in h^3"
   },
-  "certificate_sha256": "689310EE82CB790BDC41BF5F4EE6F5A6E44591C13C2B77D08125DB16E85C0D11",
+  "certificate_sha256": "90B651C452A17A0E7D3E9E92F7D2AC5BC6AC12CBDE3865C4DB7E9F4D3898D578",
   "checks": {
     "D_vA0_equals_D_v": false,
     "D_vA1_equals_zero": false,
@@ -25,8 +25,8 @@
   },
   "dependencies": {
     "actual_W2_boundary_sha256": "E0E99C9E99FD100F8FECD3C9898102DD5E04395C08CC39E0ECEAC1835F344896",
-    "actual_hemisphere_movies_sha256": "20CDB6F442E8A967A359FEE3600DED64918A703661B95DE685D8D1B7050B856E",
-    "actual_sphere_system_sha256": "5916E912798FBAC11A9DCEEE85A760FEA1DBDA93172FAD71E0A1437FC1B0284C",
+    "actual_hemisphere_movies_sha256": "E7A7F7D329AB778133845EFA74579B6592885F30A79512E0AF77E1CE44C5570A",
+    "actual_sphere_system_sha256": "7C374BC787825617D0ACDCAE536C62CDCF5208B1DEA74D09FDA3237D987A8C62",
     "c_witness_sha256": "2A5F7AC5038987B2520BA25D64C4EE4E79A2EBBAB977D1E89541E869A80C9886",
     "hj_source": "arXiv:2510.20282 Theorem 5.3, used only for kernel invariance; Lemmas 5.5 and 5.7 appear in the 24 August 2026 version and are not invoked",
     "mww_source": "arXiv:2206.04616, Theorem 3.7 and Example 3.8",

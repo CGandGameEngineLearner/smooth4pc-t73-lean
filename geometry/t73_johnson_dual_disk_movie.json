@@ -1,0 +1,7573 @@
+{
+  "actual_H1_disk_transport": "PASS",
+  "actual_mapping_torus_3_handle_movie": "PASS_BEFORE_KIRBY_CANCELLATION_TRANSPORT",
+  "factor_count": 93,
+  "factors": [
+    {
+      "after_H2_matrix_sha256": "6AE9778F3BE9CCB1CEC2E1E42AE44852B930F43BB739CA7E649139517CFF813A",
+      "ambient_restore_factor_sha256": "FB7DB9890A5D1CB36B50F3C0B712CDFDCE155D7807AEA3492AC40E9E6022D574",
+      "before_H2_matrix_sha256": "109BBB0D098BDAFC39CF6A1BD168F764524693E0397D50D120C246AC1EA69B38",
+      "dual_disk_slide_multiple": -1,
+      "index": 0,
+      "johnson_boundary_path": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1
+        ]
+      ],
+      "johnson_square_vertices": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1
+        ]
+      ],
+      "local_H2_matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          -1,
+          1
+        ]
+      ],
+      "maps_H1_setwise": true,
+      "power": 1,
+      "prefix_axis": 1,
+      "relative_protected_ball": true,
+      "side": "prefix-first",
+      "source_axis": 2,
+      "square_normal": [
+        -1,
+        0,
+        0
+      ]
+    },
+    {
+      "after_H2_matrix_sha256": "83ED87E62596825D91B6830EC8A8042CFD579BCFED4EAF438E5BBC27CC24892A",
+      "ambient_restore_factor_sha256": "AA1F2165A0453A20DA75F5FDDADBA109B724B012A78F1237AAEFEA3333963E65",
+      "before_H2_matrix_sha256": "6AE9778F3BE9CCB1CEC2E1E42AE44852B930F43BB739CA7E649139517CFF813A",
+      "dual_disk_slide_multiple": -1,
+      "index": 1,
+      "johnson_boundary_path": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          2,
+          1
+        ]
+      ],
+      "johnson_square_vertices": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          1
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          2,
+          1
+        ]
+      ],
+      "local_H2_matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          -1,
+          1
+        ]
+      ],
+      "maps_H1_setwise": true,
+      "power": 1,
+      "prefix_axis": 1,
+      "relative_protected_ball": true,
+      "side": "prefix-first",
+      "source_axis": 2,
+      "square_normal": [
+        -1,
+        0,
+        0
+      ]
+    },
+    {
+      "after_H2_matrix_sha256": "B165CB6502D38590CA3DBAC29D2DE7AA3D125A4D522AC2E277984781ED0C4831",
+      "ambient_restore_factor_sha256": "384740677167A202F912EA0CD35378AFE64EB473E863F287CC0E9AB35A022261",
+      "before_H2_matrix_sha256": "83ED87E62596825D91B6830EC8A8042CFD579BCFED4EAF438E5BBC27CC24892A",
+      "dual_disk_slide_multiple": -1,
+      "index": 2,
+      "johnson_boundary_path": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          1
+        ],
+        [
+          0,
+          3,
+          1
+        ]
+      ],
+      "johnson_square_vertices": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          1
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          3,
+          1
+        ]
+      ],
+      "local_H2_matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          -1,
+          1
+        ]
+      ],
+      "maps_H1_setwise": true,
+      "power": 1,
+      "prefix_axis": 1,
+      "relative_protected_ball": true,
+      "side": "target-first",
+      "source_axis": 2,
+      "square_normal": [
+        -1,
+        0,
+        0
+      ]
+    },
+    {
+      "after_H2_matrix_sha256": "29FC541F35502BBD1A350E611CCE29D4C4C9AE5E4E5DA9AE06C98F175C38C48A",
+      "ambient_restore_factor_sha256": "32DFBB833F7D14E586AACBAA941674D0334B91725214F3242800676B2F5395E6",
+      "before_H2_matrix_sha256": "B165CB6502D38590CA3DBAC29D2DE7AA3D125A4D522AC2E277984781ED0C4831",
+      "dual_disk_slide_multiple": -1,
+      "index": 3,
+      "johnson_boundary_path": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          4,
+          1
+        ]
+      ],
+      "johnson_square_vertices": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          3,
+          1
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          4,
+          1
+        ]
+      ],
+      "local_H2_matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          -1,
+          1
+        ]
+      ],
+      "maps_H1_setwise": true,
+      "power": 1,
+      "prefix_axis": 1,
+      "relative_protected_ball": true,
+      "side": "prefix-first",
+      "source_axis": 2,
+      "square_normal": [
+        -1,
+        0,
+        0
+      ]
+    },
+    {
+      "after_H2_matrix_sha256": "28582131D0EC9F49BC61B2B724A0250698696E87DF32C147C314758D50C468DA",
+      "ambient_restore_factor_sha256": "7E90103A72180DDCDFD7F1A3FB9DA5740F6C588924DA955757050E7B0FD1BC0A",
+      "before_H2_matrix_sha256": "29FC541F35502BBD1A350E611CCE29D4C4C9AE5E4E5DA9AE06C98F175C38C48A",
+      "dual_disk_slide_multiple": -1,
+      "index": 4,
+      "johnson_boundary_path": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          4,
+          1
+        ]
+      ],
+      "johnson_square_vertices": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          4,
+          1
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          4,
+          1
+        ]
+      ],
+      "local_H2_matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          -1,
+          0,
+          1
+        ]
+      ],
+      "maps_H1_setwise": true,
+      "power": 1,
+      "prefix_axis": 0,
+      "relative_protected_ball": true,
+      "side": "prefix-first",
+      "source_axis": 2,
+      "square_normal": [
+        0,
+        1,
+        -4
+      ]
+    },
+    {
+      "after_H2_matrix_sha256": "55B078855FDD2D1A5160B245FF73AD68C5FBADBA178DB3A1F3A56495594CB42D",
+      "ambient_restore_factor_sha256": "C928C0AC4E86DED60B06D7D39B06DCE27AA001117BFB253E0214375C23B6138C",
+      "before_H2_matrix_sha256": "28582131D0EC9F49BC61B2B724A0250698696E87DF32C147C314758D50C468DA",
+      "dual_disk_slide_multiple": -1,
+      "index": 5,
+      "johnson_boundary_path": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          4,
+          1
+        ],
+        [
+          2,
+          4,
+          1
+        ]
+      ],
+      "johnson_square_vertices": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          4,
+          1
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          2,
+          4,
+          1
+        ]
+      ],
+      "local_H2_matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          -1,
+          0,
+          1
+        ]
+      ],
+      "maps_H1_setwise": true,
+      "power": 1,
+      "prefix_axis": 0,
+      "relative_protected_ball": true,
+      "side": "target-first",
+      "source_axis": 2,
+      "square_normal": [
+        0,
+        1,
+        -4
+      ]
+    },
+    {
+      "after_H2_matrix_sha256": "41D01181AD6F2208534D623A385C5BFCAB630C83B02CF3C9203219328BCAAC0A",
+      "ambient_restore_factor_sha256": "0C7B80555D942425C4777BDCA5DDBF2E872D5D02245CCA020A2FF01226F68DAC",
+      "before_H2_matrix_sha256": "55B078855FDD2D1A5160B245FF73AD68C5FBADBA178DB3A1F3A56495594CB42D",
+      "dual_disk_slide_multiple": -1,
+      "index": 6,
+      "johnson_boundary_path": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          4,
+          1
+        ],
+        [
+          3,
+          4,
+          1
+        ]
+      ],
+      "johnson_square_vertices": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          4,
+          1
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          3,
+          4,
+          1
+        ]
+      ],
+      "local_H2_matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          -1,
+          0,
+          1
+        ]
+      ],
+      "maps_H1_setwise": true,
+      "power": 1,
+      "prefix_axis": 0,
+      "relative_protected_ball": true,
+      "side": "target-first",
+      "source_axis": 2,
+      "square_normal": [
+        0,
+        1,
+        -4
+      ]
+    },
+    {
+      "after_H2_matrix_sha256": "D4897C2DDE74713046FDE10207BF4487296FF7B63E655E58EED7C461D96E4FA0",
+      "ambient_restore_factor_sha256": "C15895292CCF86770432912393475284E8099D1CB960272B596B37AD503B9F2E",
+      "before_H2_matrix_sha256": "41D01181AD6F2208534D623A385C5BFCAB630C83B02CF3C9203219328BCAAC0A",
+      "dual_disk_slide_multiple": -1,
+      "index": 7,
+      "johnson_boundary_path": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          4,
+          4,
+          1
+        ]
+      ],
+      "johnson_square_vertices": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          3,
+          4,
+          1
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          4,
+          4,
+          1
+        ]
+      ],
+      "local_H2_matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          -1,
+          0,
+          1
+        ]
+      ],
+      "maps_H1_setwise": true,
+      "power": 1,
+      "prefix_axis": 0,
+      "relative_protected_ball": true,
+      "side": "prefix-first",
+      "source_axis": 2,
+      "square_normal": [
+        0,
+        1,
+        -4
+      ]
+    },
+    {
+      "after_H2_matrix_sha256": "A1283E87A1B5C18CC92C21EC3E17FF1DAB1D4B6A11804F682294FF29FAC21277",
+      "ambient_restore_factor_sha256": "7FA803123BC5C3CF3A7E9C736E28DEE06F67D025EE76E365C6827A11A768BCA2",
+      "before_H2_matrix_sha256": "D4897C2DDE74713046FDE10207BF4487296FF7B63E655E58EED7C461D96E4FA0",
+      "dual_disk_slide_multiple": -1,
+      "index": 8,
+      "johnson_boundary_path": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          4,
+          4,
+          1
+        ],
+        [
+          5,
+          4,
+          1
+        ]
+      ],
+      "johnson_square_vertices": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          4,
+          4,
+          1
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          5,
+          4,
+          1
+        ]
+      ],
+      "local_H2_matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          -1,
+          0,
+          1
+        ]
+      ],
+      "maps_H1_setwise": true,
+      "power": 1,
+      "prefix_axis": 0,
+      "relative_protected_ball": true,
+      "side": "target-first",
+      "source_axis": 2,
+      "square_normal": [
+        0,
+        1,
+        -4
+      ]
+    },
+    {
+      "after_H2_matrix_sha256": "EAE33C8D784263E5D9042E73B2ED09A8512C7D65A027DFA80E4DF44CECB3C090",
+      "ambient_restore_factor_sha256": "66C74C797727998E4FBCB109D6CD55B49B0CB980FDEBB21BB4C580F729BD24AC",
+      "before_H2_matrix_sha256": "A1283E87A1B5C18CC92C21EC3E17FF1DAB1D4B6A11804F682294FF29FAC21277",
+      "dual_disk_slide_multiple": -1,
+      "index": 9,
+      "johnson_boundary_path": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          6,
+          4,
+          1
+        ]
+      ],
+      "johnson_square_vertices": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          5,
+          4,
+          1
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          6,
+          4,
+          1
+        ]
+      ],
+      "local_H2_matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          -1,
+          0,
+          1
+        ]
+      ],
+      "maps_H1_setwise": true,
+      "power": 1,
+      "prefix_axis": 0,
+      "relative_protected_ball": true,
+      "side": "prefix-first",
+      "source_axis": 2,
+      "square_normal": [
+        0,
+        1,
+        -4
+      ]
+    },
+    {
+      "after_H2_matrix_sha256": "185A93D0798BEF276BCE4744208226AAA81AE70D40BFB075E1F56E066F4BC4A6",
+      "ambient_restore_factor_sha256": "A6AFDDD82DD889957355730D02959117FB2CC786948A6D47B96FD1A27F351E28",
+      "before_H2_matrix_sha256": "EAE33C8D784263E5D9042E73B2ED09A8512C7D65A027DFA80E4DF44CECB3C090",
+      "dual_disk_slide_multiple": -1,
+      "index": 10,
+      "johnson_boundary_path": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          6,
+          4,
+          1
+        ],
+        [
+          7,
+          4,
+          1
+        ]
+      ],
+      "johnson_square_vertices": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          6,
+          4,
+          1
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          7,
+          4,
+          1
+        ]
+      ],
+      "local_H2_matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          -1,
+          0,
+          1
+        ]
+      ],
+      "maps_H1_setwise": true,
+      "power": 1,
+      "prefix_axis": 0,
+      "relative_protected_ball": true,
+      "side": "target-first",
+      "source_axis": 2,
+      "square_normal": [
+        0,
+        1,
+        -4
+      ]
+    },
+    {
+      "after_H2_matrix_sha256": "26F7310F920EF836B2E9368FB6B295898CAD252EA11931194D3599EA4459DBC4",
+      "ambient_restore_factor_sha256": "A47D0D6AC09AB3C3D925F9A1AA50228D7BF9EAFB8A2FC045EB3DFA8792CB4E33",
+      "before_H2_matrix_sha256": "185A93D0798BEF276BCE4744208226AAA81AE70D40BFB075E1F56E066F4BC4A6",
+      "dual_disk_slide_multiple": -1,
+      "index": 11,
+      "johnson_boundary_path": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          8,
+          4,
+          1
+        ]
+      ],
+      "johnson_square_vertices": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          7,
+          4,
+          1
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          8,
+          4,
+          1
+        ]
+      ],
+      "local_H2_matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          -1,
+          0,
+          1
+        ]
+      ],
+      "maps_H1_setwise": true,
+      "power": 1,
+      "prefix_axis": 0,
+      "relative_protected_ball": true,
+      "side": "prefix-first",
+      "source_axis": 2,
+      "square_normal": [
+        0,
+        1,
+        -4
+      ]
+    },
+    {
+      "after_H2_matrix_sha256": "9B3169FAD6C8548F1397DAF8B64B53EC43133B137AB60CAD72CCC4068475CD90",
+      "ambient_restore_factor_sha256": "23CFECB22797C277BC21DE45803ECA9CE409923622AA005F4DD8414705FCF19A",
+      "before_H2_matrix_sha256": "26F7310F920EF836B2E9368FB6B295898CAD252EA11931194D3599EA4459DBC4",
+      "dual_disk_slide_multiple": -1,
+      "index": 12,
+      "johnson_boundary_path": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          8,
+          4,
+          1
+        ],
+        [
+          9,
+          4,
+          1
+        ]
+      ],
+      "johnson_square_vertices": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          8,
+          4,
+          1
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          9,
+          4,
+          1
+        ]
+      ],
+      "local_H2_matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          -1,
+          0,
+          1
+        ]
+      ],
+      "maps_H1_setwise": true,
+      "power": 1,
+      "prefix_axis": 0,
+      "relative_protected_ball": true,
+      "side": "target-first",
+      "source_axis": 2,
+      "square_normal": [
+        0,
+        1,
+        -4
+      ]
+    },
+    {
+      "after_H2_matrix_sha256": "7E5B83C276255BD57909B13CFCD24922412373F83CE1CC645A117313DEBEC142",
+      "ambient_restore_factor_sha256": "71FC8763B89B6C4899F1626C782783046B6180940C1C70319DF3B089DD565832",
+      "before_H2_matrix_sha256": "9B3169FAD6C8548F1397DAF8B64B53EC43133B137AB60CAD72CCC4068475CD90",
+      "dual_disk_slide_multiple": -1,
+      "index": 13,
+      "johnson_boundary_path": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          9,
+          4,
+          1
+        ],
+        [
+          10,
+          4,
+          1
+        ]
+      ],
+      "johnson_square_vertices": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          9,
+          4,
+          1
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          10,
+          4,
+          1
+        ]
+      ],
+      "local_H2_matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          -1,
+          0,
+          1
+        ]
+      ],
+      "maps_H1_setwise": true,
+      "power": 1,
+      "prefix_axis": 0,
+      "relative_protected_ball": true,
+      "side": "target-first",
+      "source_axis": 2,
+      "square_normal": [
+        0,
+        1,
+        -4
+      ]
+    },
+    {
+      "after_H2_matrix_sha256": "1B76651681A520F31AC40D301D8CC99D2896CED1421A68D59848D7DA4A2871E6",
+      "ambient_restore_factor_sha256": "0DEC25105E5602DCF03E0C5D1DA37F9E0DAF8C518553413BC163F9052D3595D8",
+      "before_H2_matrix_sha256": "7E5B83C276255BD57909B13CFCD24922412373F83CE1CC645A117313DEBEC142",
+      "dual_disk_slide_multiple": -1,
+      "index": 14,
+      "johnson_boundary_path": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          10,
+          4,
+          1
+        ],
+        [
+          11,
+          4,
+          1
+        ]
+      ],
+      "johnson_square_vertices": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          10,
+          4,
+          1
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          11,
+          4,
+          1
+        ]
+      ],
+      "local_H2_matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          -1,
+          0,
+          1
+        ]
+      ],
+      "maps_H1_setwise": true,
+      "power": 1,
+      "prefix_axis": 0,
+      "relative_protected_ball": true,
+      "side": "target-first",
+      "source_axis": 2,
+      "square_normal": [
+        0,
+        1,
+        -4
+      ]
+    },
+    {
+      "after_H2_matrix_sha256": "717949D90F3AF7952279AE784594338095DA15D0C2D4C723C81E3F06CEE31235",
+      "ambient_restore_factor_sha256": "FB91E127330043C0A0D7DBE622D5CF72E283DC9B421138DF313441FB6944AD3D",
+      "before_H2_matrix_sha256": "1B76651681A520F31AC40D301D8CC99D2896CED1421A68D59848D7DA4A2871E6",
+      "dual_disk_slide_multiple": -1,
+      "index": 15,
+      "johnson_boundary_path": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          12,
+          4,
+          1
+        ]
+      ],
+      "johnson_square_vertices": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          11,
+          4,
+          1
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          12,
+          4,
+          1
+        ]
+      ],
+      "local_H2_matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          -1,
+          0,
+          1
+        ]
+      ],
+      "maps_H1_setwise": true,
+      "power": 1,
+      "prefix_axis": 0,
+      "relative_protected_ball": true,
+      "side": "prefix-first",
+      "source_axis": 2,
+      "square_normal": [
+        0,
+        1,
+        -4
+      ]
+    },
+    {
+      "after_H2_matrix_sha256": "DDC4663C62521C4BCF212BBB159D9B40A606F045CC76C434BFE6E8A16D5500DE",
+      "ambient_restore_factor_sha256": "ABF9E666ECFAA5174803AE5296C681CEF4C18A6954B0B12ABEFEFB95826451F9",
+      "before_H2_matrix_sha256": "717949D90F3AF7952279AE784594338095DA15D0C2D4C723C81E3F06CEE31235",
+      "dual_disk_slide_multiple": -1,
+      "index": 16,
+      "johnson_boundary_path": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          12,
+          4,
+          1
+        ],
+        [
+          13,
+          4,
+          1
+        ]
+      ],
+      "johnson_square_vertices": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          12,
+          4,
+          1
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          13,
+          4,
+          1
+        ]
+      ],
+      "local_H2_matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          -1,
+          0,
+          1
+        ]
+      ],
+      "maps_H1_setwise": true,
+      "power": 1,
+      "prefix_axis": 0,
+      "relative_protected_ball": true,
+      "side": "target-first",
+      "source_axis": 2,
+      "square_normal": [
+        0,
+        1,
+        -4
+      ]
+    },
+    {
+      "after_H2_matrix_sha256": "61267C707F60CE7D0A44C03752735BD3DA60ACA02969D3B6B76613FD404C44E6",
+      "ambient_restore_factor_sha256": "12275FBA8F98ABB3BEBD0F670D398D0E86AC36F0BA7333843806A2BFD26A0CDE",
+      "before_H2_matrix_sha256": "DDC4663C62521C4BCF212BBB159D9B40A606F045CC76C434BFE6E8A16D5500DE",
+      "dual_disk_slide_multiple": -1,
+      "index": 17,
+      "johnson_boundary_path": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          13,
+          4,
+          1
+        ],
+        [
+          14,
+          4,
+          1
+        ]
+      ],
+      "johnson_square_vertices": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          13,
+          4,
+          1
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          14,
+          4,
+          1
+        ]
+      ],
+      "local_H2_matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          -1,
+          0,
+          1
+        ]
+      ],
+      "maps_H1_setwise": true,
+      "power": 1,
+      "prefix_axis": 0,
+      "relative_protected_ball": true,
+      "side": "target-first",
+      "source_axis": 2,
+      "square_normal": [
+        0,
+        1,
+        -4
+      ]
+    },
+    {
+      "after_H2_matrix_sha256": "4CB72A5AA978A61FF655B2032D2D4C88871ACFFF16D8F0A97D250164455086CE",
+      "ambient_restore_factor_sha256": "71D9F8DA1D6E6D755778B66FB93740DA8007C2EDC7416A243110D041623A7E39",
+      "before_H2_matrix_sha256": "61267C707F60CE7D0A44C03752735BD3DA60ACA02969D3B6B76613FD404C44E6",
+      "dual_disk_slide_multiple": -1,
+      "index": 18,
+      "johnson_boundary_path": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          14,
+          4,
+          1
+        ],
+        [
+          15,
+          4,
+          1
+        ]
+      ],
+      "johnson_square_vertices": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          14,
+          4,
+          1
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          15,
+          4,
+          1
+        ]
+      ],
+      "local_H2_matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          -1,
+          0,
+          1
+        ]
+      ],
+      "maps_H1_setwise": true,
+      "power": 1,
+      "prefix_axis": 0,
+      "relative_protected_ball": true,
+      "side": "target-first",
+      "source_axis": 2,
+      "square_normal": [
+        0,
+        1,
+        -4
+      ]
+    },
+    {
+      "after_H2_matrix_sha256": "1C1FCD063D59F9DE56B25894C8AFF1E2614ACA5500FA402562336431246725E6",
+      "ambient_restore_factor_sha256": "4FEB7B6F90F87C4F3E6A7EF32C36EA38ADAB56CF12989DF3A11B08D36A134567",
+      "before_H2_matrix_sha256": "4CB72A5AA978A61FF655B2032D2D4C88871ACFFF16D8F0A97D250164455086CE",
+      "dual_disk_slide_multiple": -1,
+      "index": 19,
+      "johnson_boundary_path": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          15,
+          4,
+          1
+        ],
+        [
+          16,
+          4,
+          1
+        ]
+      ],
+      "johnson_square_vertices": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          15,
+          4,
+          1
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          16,
+          4,
+          1
+        ]
+      ],
+      "local_H2_matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          -1,
+          0,
+          1
+        ]
+      ],
+      "maps_H1_setwise": true,
+      "power": 1,
+      "prefix_axis": 0,
+      "relative_protected_ball": true,
+      "side": "target-first",
+      "source_axis": 2,
+      "square_normal": [
+        0,
+        1,
+        -4
+      ]
+    },
+    {
+      "after_H2_matrix_sha256": "95A10E98E6626F7A783461557A1B4741D1865C4806B4BAFEE8263C1125A766CF",
+      "ambient_restore_factor_sha256": "40248C4A715D47E5AE68630875C09E48F3251871F46E457EF557AF7A27FFC8BE",
+      "before_H2_matrix_sha256": "1C1FCD063D59F9DE56B25894C8AFF1E2614ACA5500FA402562336431246725E6",
+      "dual_disk_slide_multiple": -1,
+      "index": 20,
+      "johnson_boundary_path": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          17,
+          4,
+          1
+        ]
+      ],
+      "johnson_square_vertices": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          16,
+          4,
+          1
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          17,
+          4,
+          1
+        ]
+      ],
+      "local_H2_matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          -1,
+          0,
+          1
+        ]
+      ],
+      "maps_H1_setwise": true,
+      "power": 1,
+      "prefix_axis": 0,
+      "relative_protected_ball": true,
+      "side": "prefix-first",
+      "source_axis": 2,
+      "square_normal": [
+        0,
+        1,
+        -4
+      ]
+    },
+    {
+      "after_H2_matrix_sha256": "9D31D91AEB0A6E4096A977435E65BB8B466C0B412F1A5206C915DFD5A855DF11",
+      "ambient_restore_factor_sha256": "90AABA2C4C2C6D46112F2FE6722813A58A41A8FC6AFF280609C3B3A93F972DA7",
+      "before_H2_matrix_sha256": "95A10E98E6626F7A783461557A1B4741D1865C4806B4BAFEE8263C1125A766CF",
+      "dual_disk_slide_multiple": -1,
+      "index": 21,
+      "johnson_boundary_path": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          18,
+          4,
+          1
+        ]
+      ],
+      "johnson_square_vertices": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          17,
+          4,
+          1
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          18,
+          4,
+          1
+        ]
+      ],
+      "local_H2_matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          -1,
+          0,
+          1
+        ]
+      ],
+      "maps_H1_setwise": true,
+      "power": 1,
+      "prefix_axis": 0,
+      "relative_protected_ball": true,
+      "side": "prefix-first",
+      "source_axis": 2,
+      "square_normal": [
+        0,
+        1,
+        -4
+      ]
+    },
+    {
+      "after_H2_matrix_sha256": "450BA0901AD8A37A82A3FA8D9DAAD1E0507C13C8A69F8310B00A822229FFCADE",
+      "ambient_restore_factor_sha256": "92FDF5A7195B6D79F6C86E2F51CB678810361469BC09AAD747E203521704BE98",
+      "before_H2_matrix_sha256": "9D31D91AEB0A6E4096A977435E65BB8B466C0B412F1A5206C915DFD5A855DF11",
+      "dual_disk_slide_multiple": -1,
+      "index": 22,
+      "johnson_boundary_path": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          19,
+          4,
+          1
+        ]
+      ],
+      "johnson_square_vertices": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          18,
+          4,
+          1
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          19,
+          4,
+          1
+        ]
+      ],
+      "local_H2_matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          -1,
+          0,
+          1
+        ]
+      ],
+      "maps_H1_setwise": true,
+      "power": 1,
+      "prefix_axis": 0,
+      "relative_protected_ball": true,
+      "side": "prefix-first",
+      "source_axis": 2,
+      "square_normal": [
+        0,
+        1,
+        -4
+      ]
+    },
+    {
+      "after_H2_matrix_sha256": "2259C83F05AFCD1010F05CC9ED51A0B285D4E587E576D52F95D8FE0583C9E6C6",
+      "ambient_restore_factor_sha256": "A08C04BF1DA1BDF7127289F632583E315BC32D2E827A5E12E1A5108FC165E50A",
+      "before_H2_matrix_sha256": "450BA0901AD8A37A82A3FA8D9DAAD1E0507C13C8A69F8310B00A822229FFCADE",
+      "dual_disk_slide_multiple": -1,
+      "index": 23,
+      "johnson_boundary_path": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          20,
+          4,
+          1
+        ]
+      ],
+      "johnson_square_vertices": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          19,
+          4,
+          1
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          20,
+          4,
+          1
+        ]
+      ],
+      "local_H2_matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          -1,
+          0,
+          1
+        ]
+      ],
+      "maps_H1_setwise": true,
+      "power": 1,
+      "prefix_axis": 0,
+      "relative_protected_ball": true,
+      "side": "prefix-first",
+      "source_axis": 2,
+      "square_normal": [
+        0,
+        1,
+        -4
+      ]
+    },
+    {
+      "after_H2_matrix_sha256": "B27C535C6246B2DE2046F817BED8A4F325425CDD2FC70E92D0EF836C36BB4EAB",
+      "ambient_restore_factor_sha256": "B6496EF0FA8B53A90E5CD66843065254240C86C519C06BCA123E124E73A88E8B",
+      "before_H2_matrix_sha256": "2259C83F05AFCD1010F05CC9ED51A0B285D4E587E576D52F95D8FE0583C9E6C6",
+      "dual_disk_slide_multiple": -1,
+      "index": 24,
+      "johnson_boundary_path": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          21,
+          4,
+          1
+        ]
+      ],
+      "johnson_square_vertices": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          20,
+          4,
+          1
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          21,
+          4,
+          1
+        ]
+      ],
+      "local_H2_matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          -1,
+          0,
+          1
+        ]
+      ],
+      "maps_H1_setwise": true,
+      "power": 1,
+      "prefix_axis": 0,
+      "relative_protected_ball": true,
+      "side": "prefix-first",
+      "source_axis": 2,
+      "square_normal": [
+        0,
+        1,
+        -4
+      ]
+    },
+    {
+      "after_H2_matrix_sha256": "76B449D9C51F26D99E33D0BEDA2C395BB0365958D509063D8A6723C6278C73F6",
+      "ambient_restore_factor_sha256": "E689CDC00C54E0BDB3B4C731CAADCCCA7126F9B846809BB61096A4D3DC656D7D",
+      "before_H2_matrix_sha256": "B27C535C6246B2DE2046F817BED8A4F325425CDD2FC70E92D0EF836C36BB4EAB",
+      "dual_disk_slide_multiple": -1,
+      "index": 25,
+      "johnson_boundary_path": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          21,
+          4,
+          1
+        ],
+        [
+          22,
+          4,
+          1
+        ]
+      ],
+      "johnson_square_vertices": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          21,
+          4,
+          1
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          22,
+          4,
+          1
+        ]
+      ],
+      "local_H2_matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          -1,
+          0,
+          1
+        ]
+      ],
+      "maps_H1_setwise": true,
+      "power": 1,
+      "prefix_axis": 0,
+      "relative_protected_ball": true,
+      "side": "target-first",
+      "source_axis": 2,
+      "square_normal": [
+        0,
+        1,
+        -4
+      ]
+    },
+    {
+      "after_H2_matrix_sha256": "471A417C3E3C0C3C312DA11C13A2CEC11A4CF61E62AAC243F53350BC162C01C8",
+      "ambient_restore_factor_sha256": "EB73049122BADDB974B2400546C89FB748CD7000943E5D3CAFB9E44FE517E536",
+      "before_H2_matrix_sha256": "76B449D9C51F26D99E33D0BEDA2C395BB0365958D509063D8A6723C6278C73F6",
+      "dual_disk_slide_multiple": -1,
+      "index": 26,
+      "johnson_boundary_path": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          22,
+          4,
+          1
+        ],
+        [
+          23,
+          4,
+          1
+        ]
+      ],
+      "johnson_square_vertices": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          22,
+          4,
+          1
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          23,
+          4,
+          1
+        ]
+      ],
+      "local_H2_matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          -1,
+          0,
+          1
+        ]
+      ],
+      "maps_H1_setwise": true,
+      "power": 1,
+      "prefix_axis": 0,
+      "relative_protected_ball": true,
+      "side": "target-first",
+      "source_axis": 2,
+      "square_normal": [
+        0,
+        1,
+        -4
+      ]
+    },
+    {
+      "after_H2_matrix_sha256": "66A521751387EB8CC47DC7A077CE6F46A1FE8C4F6B53626B157ACF2D8FEC7F5C",
+      "ambient_restore_factor_sha256": "529DA0BCA9763638DB4082A0C1EDBE3F23D4E1E2F9CF564FC0256452D1819E6A",
+      "before_H2_matrix_sha256": "471A417C3E3C0C3C312DA11C13A2CEC11A4CF61E62AAC243F53350BC162C01C8",
+      "dual_disk_slide_multiple": -1,
+      "index": 27,
+      "johnson_boundary_path": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          24,
+          4,
+          1
+        ]
+      ],
+      "johnson_square_vertices": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          23,
+          4,
+          1
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          24,
+          4,
+          1
+        ]
+      ],
+      "local_H2_matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          -1,
+          0,
+          1
+        ]
+      ],
+      "maps_H1_setwise": true,
+      "power": 1,
+      "prefix_axis": 0,
+      "relative_protected_ball": true,
+      "side": "prefix-first",
+      "source_axis": 2,
+      "square_normal": [
+        0,
+        1,
+        -4
+      ]
+    },
+    {
+      "after_H2_matrix_sha256": "5712B1F9BAB19F5780ACB599E7AAE2EC7027D53E2350015A29B4DA71D049C810",
+      "ambient_restore_factor_sha256": "2447F0302F91B252619DF6ED866B50BE9F23A3E71AFA3B87DD130A8114D19820",
+      "before_H2_matrix_sha256": "66A521751387EB8CC47DC7A077CE6F46A1FE8C4F6B53626B157ACF2D8FEC7F5C",
+      "dual_disk_slide_multiple": -1,
+      "index": 28,
+      "johnson_boundary_path": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          24,
+          4,
+          1
+        ],
+        [
+          25,
+          4,
+          1
+        ]
+      ],
+      "johnson_square_vertices": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          24,
+          4,
+          1
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          25,
+          4,
+          1
+        ]
+      ],
+      "local_H2_matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          -1,
+          0,
+          1
+        ]
+      ],
+      "maps_H1_setwise": true,
+      "power": 1,
+      "prefix_axis": 0,
+      "relative_protected_ball": true,
+      "side": "target-first",
+      "source_axis": 2,
+      "square_normal": [
+        0,
+        1,
+        -4
+      ]
+    },
+    {
+      "after_H2_matrix_sha256": "1CB22C71573B3F8C953C15AD5BABE473EEFC3EC292DDEB66AB1E0BA15BD0967C",
+      "ambient_restore_factor_sha256": "74D00D206D1EDDFC6D1A69ECB7DEBE1597B0E50FDC9378B9005F56CE4F16BBFF",
+      "before_H2_matrix_sha256": "5712B1F9BAB19F5780ACB599E7AAE2EC7027D53E2350015A29B4DA71D049C810",
+      "dual_disk_slide_multiple": -1,
+      "index": 29,
+      "johnson_boundary_path": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          25,
+          4,
+          1
+        ],
+        [
+          26,
+          4,
+          1
+        ]
+      ],
+      "johnson_square_vertices": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          25,
+          4,
+          1
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          26,
+          4,
+          1
+        ]
+      ],
+      "local_H2_matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          -1,
+          0,
+          1
+        ]
+      ],
+      "maps_H1_setwise": true,
+      "power": 1,
+      "prefix_axis": 0,
+      "relative_protected_ball": true,
+      "side": "target-first",
+      "source_axis": 2,
+      "square_normal": [
+        0,
+        1,
+        -4
+      ]
+    },
+    {
+      "after_H2_matrix_sha256": "B13DFC47275E2E49ED28CD3E84DB552A398A684AEFB6647B8BF1DCA9A6EC6FA3",
+      "ambient_restore_factor_sha256": "6759FCC38C111254355EE9699183FD24F78D9EDBE95A90419C13137D6FF74DC1",
+      "before_H2_matrix_sha256": "1CB22C71573B3F8C953C15AD5BABE473EEFC3EC292DDEB66AB1E0BA15BD0967C",
+      "dual_disk_slide_multiple": -1,
+      "index": 30,
+      "johnson_boundary_path": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          27,
+          4,
+          1
+        ]
+      ],
+      "johnson_square_vertices": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          26,
+          4,
+          1
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          27,
+          4,
+          1
+        ]
+      ],
+      "local_H2_matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          -1,
+          0,
+          1
+        ]
+      ],
+      "maps_H1_setwise": true,
+      "power": 1,
+      "prefix_axis": 0,
+      "relative_protected_ball": true,
+      "side": "prefix-first",
+      "source_axis": 2,
+      "square_normal": [
+        0,
+        1,
+        -4
+      ]
+    },
+    {
+      "after_H2_matrix_sha256": "BB027341F2B64FC3C4AA0E3EE5F3B5F44169D2F8E0C4F7B605BCFB03CE18C983",
+      "ambient_restore_factor_sha256": "59F0E036136B8EB2446D8695079088A8C2A2A10E3CA33C64F8BBF3E85389A9FA",
+      "before_H2_matrix_sha256": "B13DFC47275E2E49ED28CD3E84DB552A398A684AEFB6647B8BF1DCA9A6EC6FA3",
+      "dual_disk_slide_multiple": -1,
+      "index": 31,
+      "johnson_boundary_path": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          28,
+          4,
+          1
+        ]
+      ],
+      "johnson_square_vertices": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          27,
+          4,
+          1
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          28,
+          4,
+          1
+        ]
+      ],
+      "local_H2_matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          -1,
+          0,
+          1
+        ]
+      ],
+      "maps_H1_setwise": true,
+      "power": 1,
+      "prefix_axis": 0,
+      "relative_protected_ball": true,
+      "side": "prefix-first",
+      "source_axis": 2,
+      "square_normal": [
+        0,
+        1,
+        -4
+      ]
+    },
+    {
+      "after_H2_matrix_sha256": "B4CCEDF196124DBCD566B043A1EC8462B93F42C8181D56E83932DBFF66AF849A",
+      "ambient_restore_factor_sha256": "52091DA7832D72CACCDAE474EA0D3CE6CB14F2B865DE608E8C9B0D2ED8D6F576",
+      "before_H2_matrix_sha256": "BB027341F2B64FC3C4AA0E3EE5F3B5F44169D2F8E0C4F7B605BCFB03CE18C983",
+      "dual_disk_slide_multiple": -1,
+      "index": 32,
+      "johnson_boundary_path": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          29,
+          4,
+          1
+        ]
+      ],
+      "johnson_square_vertices": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          28,
+          4,
+          1
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          29,
+          4,
+          1
+        ]
+      ],
+      "local_H2_matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          -1,
+          0,
+          1
+        ]
+      ],
+      "maps_H1_setwise": true,
+      "power": 1,
+      "prefix_axis": 0,
+      "relative_protected_ball": true,
+      "side": "prefix-first",
+      "source_axis": 2,
+      "square_normal": [
+        0,
+        1,
+        -4
+      ]
+    },
+    {
+      "after_H2_matrix_sha256": "B4B32E3ACF4F9F9915D894FAB2DCEC3D467AD4E0BACCAE425293CB225668291A",
+      "ambient_restore_factor_sha256": "8257E52087EF600D9265CDE973755047075DA3810AC52CDA23EAEC891BA1DF8D",
+      "before_H2_matrix_sha256": "B4CCEDF196124DBCD566B043A1EC8462B93F42C8181D56E83932DBFF66AF849A",
+      "dual_disk_slide_multiple": -1,
+      "index": 33,
+      "johnson_boundary_path": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          30,
+          4,
+          1
+        ]
+      ],
+      "johnson_square_vertices": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          29,
+          4,
+          1
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          30,
+          4,
+          1
+        ]
+      ],
+      "local_H2_matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          -1,
+          0,
+          1
+        ]
+      ],
+      "maps_H1_setwise": true,
+      "power": 1,
+      "prefix_axis": 0,
+      "relative_protected_ball": true,
+      "side": "prefix-first",
+      "source_axis": 2,
+      "square_normal": [
+        0,
+        1,
+        -4
+      ]
+    },
+    {
+      "after_H2_matrix_sha256": "ED6299FA52B6947E63C992215E2AFA11B3B4EBD4BF62C2F939AC50A033D0012D",
+      "ambient_restore_factor_sha256": "7E21EA8D19CF52CE7C8FA937D09BEAF07448141FC706B9158BE65E4CF8AE46DA",
+      "before_H2_matrix_sha256": "B4B32E3ACF4F9F9915D894FAB2DCEC3D467AD4E0BACCAE425293CB225668291A",
+      "dual_disk_slide_multiple": -1,
+      "index": 34,
+      "johnson_boundary_path": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          31,
+          4,
+          1
+        ]
+      ],
+      "johnson_square_vertices": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          30,
+          4,
+          1
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          31,
+          4,
+          1
+        ]
+      ],
+      "local_H2_matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          -1,
+          0,
+          1
+        ]
+      ],
+      "maps_H1_setwise": true,
+      "power": 1,
+      "prefix_axis": 0,
+      "relative_protected_ball": true,
+      "side": "prefix-first",
+      "source_axis": 2,
+      "square_normal": [
+        0,
+        1,
+        -4
+      ]
+    },
+    {
+      "after_H2_matrix_sha256": "D4CD5309C15C302A8E081951FAF5F6B51A2AE0708CFF74F2B77F145A7ABBCCC1",
+      "ambient_restore_factor_sha256": "9E19E8F7DF9BE53859CA6CA1D32E38F6E5C0621550EF5F44A5C28498F16CD684",
+      "before_H2_matrix_sha256": "ED6299FA52B6947E63C992215E2AFA11B3B4EBD4BF62C2F939AC50A033D0012D",
+      "dual_disk_slide_multiple": -1,
+      "index": 35,
+      "johnson_boundary_path": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          31,
+          4,
+          1
+        ],
+        [
+          32,
+          4,
+          1
+        ]
+      ],
+      "johnson_square_vertices": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          31,
+          4,
+          1
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          32,
+          4,
+          1
+        ]
+      ],
+      "local_H2_matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          -1,
+          0,
+          1
+        ]
+      ],
+      "maps_H1_setwise": true,
+      "power": 1,
+      "prefix_axis": 0,
+      "relative_protected_ball": true,
+      "side": "target-first",
+      "source_axis": 2,
+      "square_normal": [
+        0,
+        1,
+        -4
+      ]
+    },
+    {
+      "after_H2_matrix_sha256": "0E4D88E6B1AEA3758A6638FCC0E4697816238405FB5F58CC326417967A334A47",
+      "ambient_restore_factor_sha256": "55C2B239E03B10AB2AAA84B2605A6F8BC3C019F7B68924EB9C6DDA01ECF31816",
+      "before_H2_matrix_sha256": "D4CD5309C15C302A8E081951FAF5F6B51A2AE0708CFF74F2B77F145A7ABBCCC1",
+      "dual_disk_slide_multiple": 1,
+      "index": 36,
+      "johnson_boundary_path": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          32,
+          4,
+          1
+        ],
+        [
+          32,
+          3,
+          1
+        ]
+      ],
+      "johnson_square_vertices": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          32,
+          4,
+          1
+        ],
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          32,
+          3,
+          1
+        ]
+      ],
+      "local_H2_matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1
+        ]
+      ],
+      "maps_H1_setwise": true,
+      "power": -1,
+      "prefix_axis": 1,
+      "relative_protected_ball": true,
+      "side": "target-first",
+      "source_axis": 2,
+      "square_normal": [
+        1,
+        0,
+        -32
+      ]
+    },
+    {
+      "after_H2_matrix_sha256": "0503654CCA1A8CEA20083420595E94EAE50BC7B57FD5757A2FC5989EBA03AD9D",
+      "ambient_restore_factor_sha256": "D47E38EDB56EB9F694EA77D7A99171A07BFB64A189E18D7D7715CE9138BCEC48",
+      "before_H2_matrix_sha256": "0E4D88E6B1AEA3758A6638FCC0E4697816238405FB5F58CC326417967A334A47",
+      "dual_disk_slide_multiple": -1,
+      "index": 37,
+      "johnson_boundary_path": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          32,
+          4,
+          1
+        ]
+      ],
+      "johnson_square_vertices": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          32,
+          3,
+          1
+        ],
+        [
+          32,
+          4,
+          1
+        ]
+      ],
+      "local_H2_matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          -1
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "maps_H1_setwise": true,
+      "power": 1,
+      "prefix_axis": 2,
+      "relative_protected_ball": true,
+      "side": "target-first",
+      "source_axis": 1,
+      "square_normal": [
+        1,
+        0,
+        -32
+      ]
+    },
+    {
+      "after_H2_matrix_sha256": "B9A4A473AF9145DEDE1CDB70E5A92022D143B73EE39E83E7178A918FA3CECAE7",
+      "ambient_restore_factor_sha256": "E4FD8513709D1B3768F8F16D901B3A2B7E9BF9F666B0982AFB8AA93F33733807",
+      "before_H2_matrix_sha256": "0503654CCA1A8CEA20083420595E94EAE50BC7B57FD5757A2FC5989EBA03AD9D",
+      "dual_disk_slide_multiple": 1,
+      "index": 38,
+      "johnson_boundary_path": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          -1,
+          -1
+        ],
+        [
+          32,
+          2,
+          3
+        ]
+      ],
+      "johnson_square_vertices": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          32,
+          3,
+          4
+        ],
+        [
+          0,
+          -1,
+          -1
+        ],
+        [
+          32,
+          2,
+          3
+        ]
+      ],
+      "local_H2_matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1
+        ]
+      ],
+      "maps_H1_setwise": true,
+      "power": -1,
+      "prefix_axis": 1,
+      "relative_protected_ball": true,
+      "side": "prefix-first",
+      "source_axis": 2,
+      "square_normal": [
+        1,
+        32,
+        -32
+      ]
+    },
+    {
+      "after_H2_matrix_sha256": "FB5D93587C56D73D37E149DA5DA6B57A6F4C2027A52372FBEEE3256A5A7445A6",
+      "ambient_restore_factor_sha256": "9A73BBAA7D88E638A26A3E0AE1A5253573A926B68DCDEBE73FEC1BF65EBAAE92",
+      "before_H2_matrix_sha256": "B9A4A473AF9145DEDE1CDB70E5A92022D143B73EE39E83E7178A918FA3CECAE7",
+      "dual_disk_slide_multiple": 1,
+      "index": 39,
+      "johnson_boundary_path": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          32,
+          -1,
+          4
+        ],
+        [
+          32,
+          -1,
+          3
+        ]
+      ],
+      "johnson_square_vertices": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          32,
+          -1,
+          4
+        ],
+        [
+          0,
+          0,
+          -1
+        ],
+        [
+          32,
+          -1,
+          3
+        ]
+      ],
+      "local_H2_matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1
+        ]
+      ],
+      "maps_H1_setwise": true,
+      "power": -1,
+      "prefix_axis": 1,
+      "relative_protected_ball": true,
+      "side": "target-first",
+      "source_axis": 2,
+      "square_normal": [
+        1,
+        32,
+        0
+      ]
+    },
+    {
+      "after_H2_matrix_sha256": "968C34C9B1B6BC60C0C8371DB6568AA4C9EB8FBBC5E648EC2F94339235BCDB08",
+      "ambient_restore_factor_sha256": "50FB23AB471D31B6BA8C16D04218498A1AB0A362811EF52C63F825F1FF5D86FA",
+      "before_H2_matrix_sha256": "FB5D93587C56D73D37E149DA5DA6B57A6F4C2027A52372FBEEE3256A5A7445A6",
+      "dual_disk_slide_multiple": 1,
+      "index": 40,
+      "johnson_boundary_path": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          32,
+          -5,
+          4
+        ],
+        [
+          32,
+          -4,
+          3
+        ]
+      ],
+      "johnson_square_vertices": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          32,
+          -5,
+          4
+        ],
+        [
+          0,
+          1,
+          -1
+        ],
+        [
+          32,
+          -4,
+          3
+        ]
+      ],
+      "local_H2_matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1
+        ]
+      ],
+      "maps_H1_setwise": true,
+      "power": -1,
+      "prefix_axis": 1,
+      "relative_protected_ball": true,
+      "side": "target-first",
+      "source_axis": 2,
+      "square_normal": [
+        1,
+        32,
+        32
+      ]
+    },
+    {
+      "after_H2_matrix_sha256": "FDAA73E2CCD80DAEB198B73FAEE083C0681011E30E9D6A73A4509783365813D9",
+      "ambient_restore_factor_sha256": "2DE40AECB22562B83B255D1E94D4A770088A1D23F0B47E239E8F040F5342D244",
+      "before_H2_matrix_sha256": "968C34C9B1B6BC60C0C8371DB6568AA4C9EB8FBBC5E648EC2F94339235BCDB08",
+      "dual_disk_slide_multiple": 1,
+      "index": 41,
+      "johnson_boundary_path": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          -1
+        ],
+        [
+          32,
+          -7,
+          3
+        ]
+      ],
+      "johnson_square_vertices": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          32,
+          -9,
+          4
+        ],
+        [
+          0,
+          2,
+          -1
+        ],
+        [
+          32,
+          -7,
+          3
+        ]
+      ],
+      "local_H2_matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1
+        ]
+      ],
+      "maps_H1_setwise": true,
+      "power": -1,
+      "prefix_axis": 1,
+      "relative_protected_ball": true,
+      "side": "prefix-first",
+      "source_axis": 2,
+      "square_normal": [
+        1,
+        32,
+        64
+      ]
+    },
+    {
+      "after_H2_matrix_sha256": "3F9D84DE9B22EF26837DD552E06CB7C5A53CBF9103A6803DE2D2EADAD61E3149",
+      "ambient_restore_factor_sha256": "12CA6527623BBCD3333C5375EAE1FAD60518AA5C0C9CD31A8D4CAAE3C3692025",
+      "before_H2_matrix_sha256": "FDAA73E2CCD80DAEB198B73FAEE083C0681011E30E9D6A73A4509783365813D9",
+      "dual_disk_slide_multiple": -1,
+      "index": 42,
+      "johnson_boundary_path": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          -3,
+          1
+        ],
+        [
+          32,
+          -16,
+          5
+        ]
+      ],
+      "johnson_square_vertices": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          -3,
+          1
+        ],
+        [
+          32,
+          -13,
+          4
+        ],
+        [
+          32,
+          -16,
+          5
+        ]
+      ],
+      "local_H2_matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          -1
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "maps_H1_setwise": true,
+      "power": 1,
+      "prefix_axis": 2,
+      "relative_protected_ball": true,
+      "side": "target-first",
+      "source_axis": 1,
+      "square_normal": [
+        1,
+        32,
+        96
+      ]
+    },
+    {
+      "after_H2_matrix_sha256": "1A60D3F6AA5647CB208E778630FD91833E56E243152C1F54321DB7EC56C018D1",
+      "ambient_restore_factor_sha256": "C8FF9F0F90018A890C0E4CE9E68C8C35DF3C74D7FD9448299C5A32A3BA38DA60",
+      "before_H2_matrix_sha256": "3F9D84DE9B22EF26837DD552E06CB7C5A53CBF9103A6803DE2D2EADAD61E3149",
+      "dual_disk_slide_multiple": 1,
+      "index": 43,
+      "johnson_boundary_path": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          3,
+          2
+        ],
+        [
+          32,
+          -10,
+          -7
+        ]
+      ],
+      "johnson_square_vertices": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          32,
+          -13,
+          -9
+        ],
+        [
+          0,
+          3,
+          2
+        ],
+        [
+          32,
+          -10,
+          -7
+        ]
+      ],
+      "local_H2_matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1
+        ]
+      ],
+      "maps_H1_setwise": true,
+      "power": -1,
+      "prefix_axis": 1,
+      "relative_protected_ball": true,
+      "side": "prefix-first",
+      "source_axis": 2,
+      "square_normal": [
+        1,
+        -64,
+        96
+      ]
+    },
+    {
+      "after_H2_matrix_sha256": "2B5189565EE9CC22849215094E751F9D370944F3F97FBF40BFA63992A63A237C",
+      "ambient_restore_factor_sha256": "E1ECFC5EABE6BD3C153B5A7F3A0FD408FC09DB6987AB974AC4CE412D95B12D0D",
+      "before_H2_matrix_sha256": "1A60D3F6AA5647CB208E778630FD91833E56E243152C1F54321DB7EC56C018D1",
+      "dual_disk_slide_multiple": 1,
+      "index": 44,
+      "johnson_boundary_path": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          32,
+          -3,
+          -7
+        ]
+      ],
+      "johnson_square_vertices": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          32,
+          -4,
+          -9
+        ],
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          32,
+          -3,
+          -7
+        ]
+      ],
+      "local_H2_matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1
+        ]
+      ],
+      "maps_H1_setwise": true,
+      "power": -1,
+      "prefix_axis": 1,
+      "relative_protected_ball": true,
+      "side": "prefix-first",
+      "source_axis": 2,
+      "square_normal": [
+        1,
+        -64,
+        32
+      ]
+    },
+    {
+      "after_H2_matrix_sha256": "565391281215C3C5855A568855B1C596BFBF2C9D6919AB689B3C94C88969595C",
+      "ambient_restore_factor_sha256": "34CEDF83E1C5A511FF1EC00B23BDCDE5D1BB671F45AB87F547B07BC87C739483",
+      "before_H2_matrix_sha256": "2B5189565EE9CC22849215094E751F9D370944F3F97FBF40BFA63992A63A237C",
+      "dual_disk_slide_multiple": 1,
+      "index": 45,
+      "johnson_boundary_path": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          32,
+          5,
+          -9
+        ],
+        [
+          32,
+          4,
+          -7
+        ]
+      ],
+      "johnson_square_vertices": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          32,
+          5,
+          -9
+        ],
+        [
+          0,
+          -1,
+          2
+        ],
+        [
+          32,
+          4,
+          -7
+        ]
+      ],
+      "local_H2_matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1
+        ]
+      ],
+      "maps_H1_setwise": true,
+      "power": -1,
+      "prefix_axis": 1,
+      "relative_protected_ball": true,
+      "side": "target-first",
+      "source_axis": 2,
+      "square_normal": [
+        1,
+        -64,
+        -32
+      ]
+    },
+    {
+      "after_H2_matrix_sha256": "A29694F21379402F5753D9F51931EDEB43C2EBCD0AC3EB9D8BD28C25DB56E9DE",
+      "ambient_restore_factor_sha256": "C61A5B1C77F2800150CE72135FD5D1944E7FE9EAF4D3475412FE97AB468AF73F",
+      "before_H2_matrix_sha256": "565391281215C3C5855A568855B1C596BFBF2C9D6919AB689B3C94C88969595C",
+      "dual_disk_slide_multiple": 1,
+      "index": 46,
+      "johnson_boundary_path": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          -3,
+          2
+        ],
+        [
+          32,
+          11,
+          -7
+        ]
+      ],
+      "johnson_square_vertices": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          32,
+          14,
+          -9
+        ],
+        [
+          0,
+          -3,
+          2
+        ],
+        [
+          32,
+          11,
+          -7
+        ]
+      ],
+      "local_H2_matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1
+        ]
+      ],
+      "maps_H1_setwise": true,
+      "power": -1,
+      "prefix_axis": 1,
+      "relative_protected_ball": true,
+      "side": "prefix-first",
+      "source_axis": 2,
+      "square_normal": [
+        1,
+        -64,
+        -96
+      ]
+    },
+    {
+      "after_H2_matrix_sha256": "9BE19D713BCC889AB4E6997B202850B2824788B722049001F7295E260A46A25C",
+      "ambient_restore_factor_sha256": "E04B73F15713B0B8C3B2480096ABD90244715086B93E66CD5D4C3225461A0250",
+      "before_H2_matrix_sha256": "A29694F21379402F5753D9F51931EDEB43C2EBCD0AC3EB9D8BD28C25DB56E9DE",
+      "dual_disk_slide_multiple": 1,
+      "index": 47,
+      "johnson_boundary_path": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          32,
+          23,
+          -9
+        ],
+        [
+          32,
+          18,
+          -7
+        ]
+      ],
+      "johnson_square_vertices": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          32,
+          23,
+          -9
+        ],
+        [
+          0,
+          -5,
+          2
+        ],
+        [
+          32,
+          18,
+          -7
+        ]
+      ],
+      "local_H2_matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1
+        ]
+      ],
+      "maps_H1_setwise": true,
+      "power": -1,
+      "prefix_axis": 1,
+      "relative_protected_ball": true,
+      "side": "target-first",
+      "source_axis": 2,
+      "square_normal": [
+        1,
+        -64,
+        -160
+      ]
+    },
+    {
+      "after_H2_matrix_sha256": "23A54B2C4914CEF40C8CBD85B4A5F2F770044CF90C8A2BCD4E2B8A82D2F9B18A",
+      "ambient_restore_factor_sha256": "9186D8FF00E8F7E1328659F288587FF7F8275957F095BB28365736A672FD60CD",
+      "before_H2_matrix_sha256": "9BE19D713BCC889AB4E6997B202850B2824788B722049001F7295E260A46A25C",
+      "dual_disk_slide_multiple": -1,
+      "index": 48,
+      "johnson_boundary_path": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          7,
+          -2
+        ],
+        [
+          32,
+          39,
+          -11
+        ]
+      ],
+      "johnson_square_vertices": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          7,
+          -2
+        ],
+        [
+          32,
+          32,
+          -9
+        ],
+        [
+          32,
+          39,
+          -11
+        ]
+      ],
+      "local_H2_matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          -1
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "maps_H1_setwise": true,
+      "power": 1,
+      "prefix_axis": 2,
+      "relative_protected_ball": true,
+      "side": "target-first",
+      "source_axis": 1,
+      "square_normal": [
+        1,
+        -64,
+        -224
+      ]
+    },
+    {
+      "after_H2_matrix_sha256": "61AB7B664AA445E9931EB1F46B77A41EF0107B8BE8D1CAF802EF85487BC49719",
+      "ambient_restore_factor_sha256": "E6854D6CFE734D5C226A5335AE8DA3C3B829EDE7B5F3AB85AA14354BAAC3108E",
+      "before_H2_matrix_sha256": "23A54B2C4914CEF40C8CBD85B4A5F2F770044CF90C8A2BCD4E2B8A82D2F9B18A",
+      "dual_disk_slide_multiple": 1,
+      "index": 49,
+      "johnson_boundary_path": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          32,
+          32,
+          23
+        ],
+        [
+          32,
+          25,
+          18
+        ]
+      ],
+      "johnson_square_vertices": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          32,
+          32,
+          23
+        ],
+        [
+          0,
+          -7,
+          -5
+        ],
+        [
+          32,
+          25,
+          18
+        ]
+      ],
+      "local_H2_matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1
+        ]
+      ],
+      "maps_H1_setwise": true,
+      "power": -1,
+      "prefix_axis": 1,
+      "relative_protected_ball": true,
+      "side": "target-first",
+      "source_axis": 2,
+      "square_normal": [
+        1,
+        160,
+        -224
+      ]
+    },
+    {
+      "after_H2_matrix_sha256": "90E4E305554F60046C81A768F4819028859CD21A2C1BDEBB44F452CFC84774D8",
+      "ambient_restore_factor_sha256": "36F3CFCAF885692549336D371606BA968FB28AA45FD12B4333356EA9BF79110F",
+      "before_H2_matrix_sha256": "61AB7B664AA445E9931EB1F46B77A41EF0107B8BE8D1CAF802EF85487BC49719",
+      "dual_disk_slide_multiple": 1,
+      "index": 50,
+      "johnson_boundary_path": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          32,
+          9,
+          23
+        ],
+        [
+          32,
+          7,
+          18
+        ]
+      ],
+      "johnson_square_vertices": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          32,
+          9,
+          23
+        ],
+        [
+          0,
+          -2,
+          -5
+        ],
+        [
+          32,
+          7,
+          18
+        ]
+      ],
+      "local_H2_matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1
+        ]
+      ],
+      "maps_H1_setwise": true,
+      "power": -1,
+      "prefix_axis": 1,
+      "relative_protected_ball": true,
+      "side": "target-first",
+      "source_axis": 2,
+      "square_normal": [
+        1,
+        160,
+        -64
+      ]
+    },
+    {
+      "after_H2_matrix_sha256": "D3B1EE9A7DA4CB6C4FBDE635820884151178BBB9E2CD76A37A7A6DA3E1999F17",
+      "ambient_restore_factor_sha256": "59A0D159EF748800E39B55E7BB4B497C3921037C128530C36ED436114D871178",
+      "before_H2_matrix_sha256": "90E4E305554F60046C81A768F4819028859CD21A2C1BDEBB44F452CFC84774D8",
+      "dual_disk_slide_multiple": 1,
+      "index": 51,
+      "johnson_boundary_path": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          32,
+          -14,
+          23
+        ],
+        [
+          32,
+          -11,
+          18
+        ]
+      ],
+      "johnson_square_vertices": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          32,
+          -14,
+          23
+        ],
+        [
+          0,
+          3,
+          -5
+        ],
+        [
+          32,
+          -11,
+          18
+        ]
+      ],
+      "local_H2_matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1
+        ]
+      ],
+      "maps_H1_setwise": true,
+      "power": -1,
+      "prefix_axis": 1,
+      "relative_protected_ball": true,
+      "side": "target-first",
+      "source_axis": 2,
+      "square_normal": [
+        1,
+        160,
+        96
+      ]
+    },
+    {
+      "after_H2_matrix_sha256": "C77E95AA6C16481F7F845A203DD67CE13DDBA63E99F42E2115A3AEE48A336925",
+      "ambient_restore_factor_sha256": "4E489BA57E0302543ACB570887CB7A8A4FFEA8A1EEDE01B2EE4AF59635423495",
+      "before_H2_matrix_sha256": "D3B1EE9A7DA4CB6C4FBDE635820884151178BBB9E2CD76A37A7A6DA3E1999F17",
+      "dual_disk_slide_multiple": 1,
+      "index": 52,
+      "johnson_boundary_path": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          8,
+          -5
+        ],
+        [
+          32,
+          -29,
+          18
+        ]
+      ],
+      "johnson_square_vertices": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          32,
+          -37,
+          23
+        ],
+        [
+          0,
+          8,
+          -5
+        ],
+        [
+          32,
+          -29,
+          18
+        ]
+      ],
+      "local_H2_matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1
+        ]
+      ],
+      "maps_H1_setwise": true,
+      "power": -1,
+      "prefix_axis": 1,
+      "relative_protected_ball": true,
+      "side": "prefix-first",
+      "source_axis": 2,
+      "square_normal": [
+        1,
+        160,
+        256
+      ]
+    },
+    {
+      "after_H2_matrix_sha256": "DF1EBE6ACA98573300F1887DDEF9AA1E41D717B71C9965CC754708F622E56CC8",
+      "ambient_restore_factor_sha256": "61E215CB1979C70E5797CCF433DE1102B55C33C53548056CBDD1EF355A160E26",
+      "before_H2_matrix_sha256": "C77E95AA6C16481F7F845A203DD67CE13DDBA63E99F42E2115A3AEE48A336925",
+      "dual_disk_slide_multiple": 1,
+      "index": 53,
+      "johnson_boundary_path": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          32,
+          -60,
+          23
+        ],
+        [
+          32,
+          -47,
+          18
+        ]
+      ],
+      "johnson_square_vertices": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          32,
+          -60,
+          23
+        ],
+        [
+          0,
+          13,
+          -5
+        ],
+        [
+          32,
+          -47,
+          18
+        ]
+      ],
+      "local_H2_matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1
+        ]
+      ],
+      "maps_H1_setwise": true,
+      "power": -1,
+      "prefix_axis": 1,
+      "relative_protected_ball": true,
+      "side": "target-first",
+      "source_axis": 2,
+      "square_normal": [
+        1,
+        160,
+        416
+      ]
+    },
+    {
+      "after_H2_matrix_sha256": "19A342D9C725B39E8D23BF632E67BE65D04E2CD158A4B948076B6AAE02664B1C",
+      "ambient_restore_factor_sha256": "1A76F847808B115E0CC4576361425B3FC383FCD6A13F74198B3589E5E9B8786F",
+      "before_H2_matrix_sha256": "DF1EBE6ACA98573300F1887DDEF9AA1E41D717B71C9965CC754708F622E56CC8",
+      "dual_disk_slide_multiple": 1,
+      "index": 54,
+      "johnson_boundary_path": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          32,
+          -83,
+          23
+        ],
+        [
+          32,
+          -65,
+          18
+        ]
+      ],
+      "johnson_square_vertices": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          32,
+          -83,
+          23
+        ],
+        [
+          0,
+          18,
+          -5
+        ],
+        [
+          32,
+          -65,
+          18
+        ]
+      ],
+      "local_H2_matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1
+        ]
+      ],
+      "maps_H1_setwise": true,
+      "power": -1,
+      "prefix_axis": 1,
+      "relative_protected_ball": true,
+      "side": "target-first",
+      "source_axis": 2,
+      "square_normal": [
+        1,
+        160,
+        576
+      ]
+    },
+    {
+      "after_H2_matrix_sha256": "7F155E786DBD9EAD484041A0BA0CC8EB2C3784D76EB8A6D655F5E20BA556FEE7",
+      "ambient_restore_factor_sha256": "C62A42F4868F6F26CB10869D275D894426AB4020379EB54E87EEB11E27A9721C",
+      "before_H2_matrix_sha256": "19A342D9C725B39E8D23BF632E67BE65D04E2CD158A4B948076B6AAE02664B1C",
+      "dual_disk_slide_multiple": 1,
+      "index": 55,
+      "johnson_boundary_path": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          32,
+          -106,
+          23
+        ],
+        [
+          32,
+          -83,
+          18
+        ]
+      ],
+      "johnson_square_vertices": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          32,
+          -106,
+          23
+        ],
+        [
+          0,
+          23,
+          -5
+        ],
+        [
+          32,
+          -83,
+          18
+        ]
+      ],
+      "local_H2_matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1
+        ]
+      ],
+      "maps_H1_setwise": true,
+      "power": -1,
+      "prefix_axis": 1,
+      "relative_protected_ball": true,
+      "side": "target-first",
+      "source_axis": 2,
+      "square_normal": [
+        1,
+        160,
+        736
+      ]
+    },
+    {
+      "after_H2_matrix_sha256": "288355D5BE5E2E0E11DDB12CC76E1D0DD57DBF6827EE9CB216CDDF9FD61584A6",
+      "ambient_restore_factor_sha256": "CA6B52C3FB35476A73B0290B3F2032D292B8D03163645F1ADF86064B22AA9B4D",
+      "before_H2_matrix_sha256": "7F155E786DBD9EAD484041A0BA0CC8EB2C3784D76EB8A6D655F5E20BA556FEE7",
+      "dual_disk_slide_multiple": -1,
+      "index": 56,
+      "johnson_boundary_path": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          -28,
+          5
+        ],
+        [
+          32,
+          -157,
+          28
+        ]
+      ],
+      "johnson_square_vertices": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          -28,
+          5
+        ],
+        [
+          32,
+          -129,
+          23
+        ],
+        [
+          32,
+          -157,
+          28
+        ]
+      ],
+      "local_H2_matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          -1
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "maps_H1_setwise": true,
+      "power": 1,
+      "prefix_axis": 2,
+      "relative_protected_ball": true,
+      "side": "target-first",
+      "source_axis": 1,
+      "square_normal": [
+        1,
+        160,
+        896
+      ]
+    },
+    {
+      "after_H2_matrix_sha256": "00040199AD988460F8B14C3ED18AF5234FD656C269895FA107A47F066C5F3D04",
+      "ambient_restore_factor_sha256": "D2A28D57E7E0274A5BE5B97586B24AC385010FDECCD66F6FA675BB677631C07F",
+      "before_H2_matrix_sha256": "288355D5BE5E2E0E11DDB12CC76E1D0DD57DBF6827EE9CB216CDDF9FD61584A6",
+      "dual_disk_slide_multiple": 1,
+      "index": 57,
+      "johnson_boundary_path": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          32,
+          -129,
+          -106
+        ],
+        [
+          32,
+          -101,
+          -83
+        ]
+      ],
+      "johnson_square_vertices": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          32,
+          -129,
+          -106
+        ],
+        [
+          0,
+          28,
+          23
+        ],
+        [
+          32,
+          -101,
+          -83
+        ]
+      ],
+      "local_H2_matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1
+        ]
+      ],
+      "maps_H1_setwise": true,
+      "power": -1,
+      "prefix_axis": 1,
+      "relative_protected_ball": true,
+      "side": "target-first",
+      "source_axis": 2,
+      "square_normal": [
+        1,
+        -736,
+        896
+      ]
+    },
+    {
+      "after_H2_matrix_sha256": "F542AAD1B6AC18140B73AA5836D2825027F623C5EC9531353671F47EE7B54626",
+      "ambient_restore_factor_sha256": "063E2AC60C3906E68F2EA1BD50853176979A6991221F9319D4A8B4947857DB4A",
+      "before_H2_matrix_sha256": "00040199AD988460F8B14C3ED18AF5234FD656C269895FA107A47F066C5F3D04",
+      "dual_disk_slide_multiple": 1,
+      "index": 58,
+      "johnson_boundary_path": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          5,
+          23
+        ],
+        [
+          32,
+          -18,
+          -83
+        ]
+      ],
+      "johnson_square_vertices": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          32,
+          -23,
+          -106
+        ],
+        [
+          0,
+          5,
+          23
+        ],
+        [
+          32,
+          -18,
+          -83
+        ]
+      ],
+      "local_H2_matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1
+        ]
+      ],
+      "maps_H1_setwise": true,
+      "power": -1,
+      "prefix_axis": 1,
+      "relative_protected_ball": true,
+      "side": "prefix-first",
+      "source_axis": 2,
+      "square_normal": [
+        1,
+        -736,
+        160
+      ]
+    },
+    {
+      "after_H2_matrix_sha256": "82A2C46B624EB8A7FC66669613591FDF073379BC9EFF495D17D8E78778BCD395",
+      "ambient_restore_factor_sha256": "0235117DFC76A5F91FDE8407E63EF41DFF37DEB67648C0FB72F51A17F4C133A8",
+      "before_H2_matrix_sha256": "F542AAD1B6AC18140B73AA5836D2825027F623C5EC9531353671F47EE7B54626",
+      "dual_disk_slide_multiple": 1,
+      "index": 59,
+      "johnson_boundary_path": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          32,
+          83,
+          -106
+        ],
+        [
+          32,
+          65,
+          -83
+        ]
+      ],
+      "johnson_square_vertices": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          32,
+          83,
+          -106
+        ],
+        [
+          0,
+          -18,
+          23
+        ],
+        [
+          32,
+          65,
+          -83
+        ]
+      ],
+      "local_H2_matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1
+        ]
+      ],
+      "maps_H1_setwise": true,
+      "power": -1,
+      "prefix_axis": 1,
+      "relative_protected_ball": true,
+      "side": "target-first",
+      "source_axis": 2,
+      "square_normal": [
+        1,
+        -736,
+        -576
+      ]
+    },
+    {
+      "after_H2_matrix_sha256": "81E376379881B72E245CCA5D7C6784675BF39CCBB54D7008B27FBDB0B3F3E120",
+      "ambient_restore_factor_sha256": "6DAC1175741F434178EBBE25A976F16FC831D68B8A451F435D6BF63AAE6A91EB",
+      "before_H2_matrix_sha256": "82A2C46B624EB8A7FC66669613591FDF073379BC9EFF495D17D8E78778BCD395",
+      "dual_disk_slide_multiple": 1,
+      "index": 60,
+      "johnson_boundary_path": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          32,
+          189,
+          -106
+        ],
+        [
+          32,
+          148,
+          -83
+        ]
+      ],
+      "johnson_square_vertices": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          32,
+          189,
+          -106
+        ],
+        [
+          0,
+          -41,
+          23
+        ],
+        [
+          32,
+          148,
+          -83
+        ]
+      ],
+      "local_H2_matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1
+        ]
+      ],
+      "maps_H1_setwise": true,
+      "power": -1,
+      "prefix_axis": 1,
+      "relative_protected_ball": true,
+      "side": "target-first",
+      "source_axis": 2,
+      "square_normal": [
+        1,
+        -736,
+        -1312
+      ]
+    },
+    {
+      "after_H2_matrix_sha256": "9E3198E9A28399463AD673D15E8A2EFA2D2CFE85075AF8A8A5D0B6D02790DF86",
+      "ambient_restore_factor_sha256": "D4FBB4555BEDB814B9408CEE21CFEC26620359A98683588E7FD64C7FAB50146F",
+      "before_H2_matrix_sha256": "81E376379881B72E245CCA5D7C6784675BF39CCBB54D7008B27FBDB0B3F3E120",
+      "dual_disk_slide_multiple": 1,
+      "index": 61,
+      "johnson_boundary_path": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          -64,
+          23
+        ],
+        [
+          32,
+          231,
+          -83
+        ]
+      ],
+      "johnson_square_vertices": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          32,
+          295,
+          -106
+        ],
+        [
+          0,
+          -64,
+          23
+        ],
+        [
+          32,
+          231,
+          -83
+        ]
+      ],
+      "local_H2_matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1
+        ]
+      ],
+      "maps_H1_setwise": true,
+      "power": -1,
+      "prefix_axis": 1,
+      "relative_protected_ball": true,
+      "side": "prefix-first",
+      "source_axis": 2,
+      "square_normal": [
+        1,
+        -736,
+        -2048
+      ]
+    },
+    {
+      "after_H2_matrix_sha256": "69628480D0FD6ED302B09B1F246AF2627FBCCBA04799C03CC06FC0C447CA9BED",
+      "ambient_restore_factor_sha256": "B2CDA75B978C5EDFEF9DFE100E5619179F8A3187809ACCA990829D4FA8894A54",
+      "before_H2_matrix_sha256": "9E3198E9A28399463AD673D15E8A2EFA2D2CFE85075AF8A8A5D0B6D02790DF86",
+      "dual_disk_slide_multiple": -1,
+      "index": 62,
+      "johnson_boundary_path": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          32,
+          401,
+          -106
+        ],
+        [
+          32,
+          488,
+          -129
+        ]
+      ],
+      "johnson_square_vertices": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          87,
+          -23
+        ],
+        [
+          32,
+          401,
+          -106
+        ],
+        [
+          32,
+          488,
+          -129
+        ]
+      ],
+      "local_H2_matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          -1
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "maps_H1_setwise": true,
+      "power": 1,
+      "prefix_axis": 2,
+      "relative_protected_ball": true,
+      "side": "prefix-first",
+      "source_axis": 1,
+      "square_normal": [
+        1,
+        -736,
+        -2784
+      ]
+    },
+    {
+      "after_H2_matrix_sha256": "BB7DB04AB8A4BD42AA426C89251A525F74ABCE078E51A6F7A3F942E0C945B4D8",
+      "ambient_restore_factor_sha256": "84C7D68B341D230246DDFE160A6871E79CAEBC3B0813B5FE1B02CDE474318F4C",
+      "before_H2_matrix_sha256": "69628480D0FD6ED302B09B1F246AF2627FBCCBA04799C03CC06FC0C447CA9BED",
+      "dual_disk_slide_multiple": 1,
+      "index": 63,
+      "johnson_boundary_path": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          -87,
+          -64
+        ],
+        [
+          32,
+          314,
+          231
+        ]
+      ],
+      "johnson_square_vertices": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          32,
+          401,
+          295
+        ],
+        [
+          0,
+          -87,
+          -64
+        ],
+        [
+          32,
+          314,
+          231
+        ]
+      ],
+      "local_H2_matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1
+        ]
+      ],
+      "maps_H1_setwise": true,
+      "power": -1,
+      "prefix_axis": 1,
+      "relative_protected_ball": true,
+      "side": "prefix-first",
+      "source_axis": 2,
+      "square_normal": [
+        1,
+        2048,
+        -2784
+      ]
+    },
+    {
+      "after_H2_matrix_sha256": "4961FE71D840DAD24963D33238994BC43316B4A00A623A55216958F888FFDD72",
+      "ambient_restore_factor_sha256": "16920D03FDA13992215ACABA59421A98A6E4386CD369F2D86593F0055E651E39",
+      "before_H2_matrix_sha256": "BB7DB04AB8A4BD42AA426C89251A525F74ABCE078E51A6F7A3F942E0C945B4D8",
+      "dual_disk_slide_multiple": 1,
+      "index": 64,
+      "johnson_boundary_path": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          -23,
+          -64
+        ],
+        [
+          32,
+          83,
+          231
+        ]
+      ],
+      "johnson_square_vertices": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          32,
+          106,
+          295
+        ],
+        [
+          0,
+          -23,
+          -64
+        ],
+        [
+          32,
+          83,
+          231
+        ]
+      ],
+      "local_H2_matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1
+        ]
+      ],
+      "maps_H1_setwise": true,
+      "power": -1,
+      "prefix_axis": 1,
+      "relative_protected_ball": true,
+      "side": "prefix-first",
+      "source_axis": 2,
+      "square_normal": [
+        1,
+        2048,
+        -736
+      ]
+    },
+    {
+      "after_H2_matrix_sha256": "F82257D45BF99C90B52D033FF548BD428B435E42AFCDC85FB3716EC4B33E6FA6",
+      "ambient_restore_factor_sha256": "E3CED159CE5B7629E83CFBC2D0DB61E934D178ACDC81A8F239983E9C0171013B",
+      "before_H2_matrix_sha256": "4961FE71D840DAD24963D33238994BC43316B4A00A623A55216958F888FFDD72",
+      "dual_disk_slide_multiple": 1,
+      "index": 65,
+      "johnson_boundary_path": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          32,
+          -189,
+          295
+        ],
+        [
+          32,
+          -148,
+          231
+        ]
+      ],
+      "johnson_square_vertices": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          32,
+          -189,
+          295
+        ],
+        [
+          0,
+          41,
+          -64
+        ],
+        [
+          32,
+          -148,
+          231
+        ]
+      ],
+      "local_H2_matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1
+        ]
+      ],
+      "maps_H1_setwise": true,
+      "power": -1,
+      "prefix_axis": 1,
+      "relative_protected_ball": true,
+      "side": "target-first",
+      "source_axis": 2,
+      "square_normal": [
+        1,
+        2048,
+        1312
+      ]
+    },
+    {
+      "after_H2_matrix_sha256": "AFE060074001EDAA67AF8A8F5B3C56414E490C560C18AA1EAD0F8ADF54E7DFDC",
+      "ambient_restore_factor_sha256": "FE7B0D86EA8271FB2938BC672B469D6D2F5727A342C2089C22E5D6CB8E2EEDD1",
+      "before_H2_matrix_sha256": "F82257D45BF99C90B52D033FF548BD428B435E42AFCDC85FB3716EC4B33E6FA6",
+      "dual_disk_slide_multiple": 1,
+      "index": 66,
+      "johnson_boundary_path": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          32,
+          -484,
+          295
+        ],
+        [
+          32,
+          -379,
+          231
+        ]
+      ],
+      "johnson_square_vertices": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          32,
+          -484,
+          295
+        ],
+        [
+          0,
+          105,
+          -64
+        ],
+        [
+          32,
+          -379,
+          231
+        ]
+      ],
+      "local_H2_matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1
+        ]
+      ],
+      "maps_H1_setwise": true,
+      "power": -1,
+      "prefix_axis": 1,
+      "relative_protected_ball": true,
+      "side": "target-first",
+      "source_axis": 2,
+      "square_normal": [
+        1,
+        2048,
+        3360
+      ]
+    },
+    {
+      "after_H2_matrix_sha256": "6DE8AD2E1CB41890623240A67ED862E6050BA2EC204F95AC8ECF16676B1538FB",
+      "ambient_restore_factor_sha256": "7E85F0FA904F38B9054D9BF757FED8066608703B3A2F7451AA8E241966EB73EF",
+      "before_H2_matrix_sha256": "AFE060074001EDAA67AF8A8F5B3C56414E490C560C18AA1EAD0F8ADF54E7DFDC",
+      "dual_disk_slide_multiple": -1,
+      "index": 67,
+      "johnson_boundary_path": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          32,
+          -779,
+          295
+        ],
+        [
+          32,
+          -948,
+          359
+        ]
+      ],
+      "johnson_square_vertices": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          -169,
+          64
+        ],
+        [
+          32,
+          -779,
+          295
+        ],
+        [
+          32,
+          -948,
+          359
+        ]
+      ],
+      "local_H2_matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          -1
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "maps_H1_setwise": true,
+      "power": 1,
+      "prefix_axis": 2,
+      "relative_protected_ball": true,
+      "side": "prefix-first",
+      "source_axis": 1,
+      "square_normal": [
+        1,
+        2048,
+        5408
+      ]
+    },
+    {
+      "after_H2_matrix_sha256": "28E018AFC929C3E7BAB792C32446165288629849D5C6009A138E679775FF56F5",
+      "ambient_restore_factor_sha256": "98EF627E19E5EAD1B87083E5FC50258BD67D8EB53DF0D6EB5CF98E2F82BFBD58",
+      "before_H2_matrix_sha256": "6DE8AD2E1CB41890623240A67ED862E6050BA2EC204F95AC8ECF16676B1538FB",
+      "dual_disk_slide_multiple": 1,
+      "index": 68,
+      "johnson_boundary_path": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          169,
+          105
+        ],
+        [
+          32,
+          -610,
+          -379
+        ]
+      ],
+      "johnson_square_vertices": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          32,
+          -779,
+          -484
+        ],
+        [
+          0,
+          169,
+          105
+        ],
+        [
+          32,
+          -610,
+          -379
+        ]
+      ],
+      "local_H2_matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1
+        ]
+      ],
+      "maps_H1_setwise": true,
+      "power": -1,
+      "prefix_axis": 1,
+      "relative_protected_ball": true,
+      "side": "prefix-first",
+      "source_axis": 2,
+      "square_normal": [
+        1,
+        -3360,
+        5408
+      ]
+    },
+    {
+      "after_H2_matrix_sha256": "294390F760E0A537069D4558E0B2DDD432635D45AFC325B44C6F3FF1BAD27BD6",
+      "ambient_restore_factor_sha256": "C3ABB6CE2D5E6C093924FC4B0661FFE04AE0BF86BDDF8852EABE30536006189E",
+      "before_H2_matrix_sha256": "28E018AFC929C3E7BAB792C32446165288629849D5C6009A138E679775FF56F5",
+      "dual_disk_slide_multiple": 1,
+      "index": 69,
+      "johnson_boundary_path": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          32,
+          -295,
+          -484
+        ],
+        [
+          32,
+          -231,
+          -379
+        ]
+      ],
+      "johnson_square_vertices": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          32,
+          -295,
+          -484
+        ],
+        [
+          0,
+          64,
+          105
+        ],
+        [
+          32,
+          -231,
+          -379
+        ]
+      ],
+      "local_H2_matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1
+        ]
+      ],
+      "maps_H1_setwise": true,
+      "power": -1,
+      "prefix_axis": 1,
+      "relative_protected_ball": true,
+      "side": "target-first",
+      "source_axis": 2,
+      "square_normal": [
+        1,
+        -3360,
+        2048
+      ]
+    },
+    {
+      "after_H2_matrix_sha256": "CA88A799BAD20D932CD08A6AAEB0D335BE0E9A42213F93C7861FD1E7A9564387",
+      "ambient_restore_factor_sha256": "F2D747477CBDC18766968117862ED472020D49869909B4B61412A61F28AE898C",
+      "before_H2_matrix_sha256": "294390F760E0A537069D4558E0B2DDD432635D45AFC325B44C6F3FF1BAD27BD6",
+      "dual_disk_slide_multiple": 1,
+      "index": 70,
+      "johnson_boundary_path": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          -41,
+          105
+        ],
+        [
+          32,
+          148,
+          -379
+        ]
+      ],
+      "johnson_square_vertices": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          32,
+          189,
+          -484
+        ],
+        [
+          0,
+          -41,
+          105
+        ],
+        [
+          32,
+          148,
+          -379
+        ]
+      ],
+      "local_H2_matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1
+        ]
+      ],
+      "maps_H1_setwise": true,
+      "power": -1,
+      "prefix_axis": 1,
+      "relative_protected_ball": true,
+      "side": "prefix-first",
+      "source_axis": 2,
+      "square_normal": [
+        1,
+        -3360,
+        -1312
+      ]
+    },
+    {
+      "after_H2_matrix_sha256": "5A154DE0318E2124E7F1871970E8E97EB27880AC742269CDDB756F3E35EE6FBB",
+      "ambient_restore_factor_sha256": "D349F35D06CDBF930B29C6459C30825B40AAADA4F7AA272E50E3FFD251DD555B",
+      "before_H2_matrix_sha256": "CA88A799BAD20D932CD08A6AAEB0D335BE0E9A42213F93C7861FD1E7A9564387",
+      "dual_disk_slide_multiple": 1,
+      "index": 71,
+      "johnson_boundary_path": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          32,
+          673,
+          -484
+        ],
+        [
+          32,
+          527,
+          -379
+        ]
+      ],
+      "johnson_square_vertices": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          32,
+          673,
+          -484
+        ],
+        [
+          0,
+          -146,
+          105
+        ],
+        [
+          32,
+          527,
+          -379
+        ]
+      ],
+      "local_H2_matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1
+        ]
+      ],
+      "maps_H1_setwise": true,
+      "power": -1,
+      "prefix_axis": 1,
+      "relative_protected_ball": true,
+      "side": "target-first",
+      "source_axis": 2,
+      "square_normal": [
+        1,
+        -3360,
+        -4672
+      ]
+    },
+    {
+      "after_H2_matrix_sha256": "D481B61F43C2E1FADB065763CA3B60DC32DAD096716CE97D69705B74E34D3907",
+      "ambient_restore_factor_sha256": "64B06E2A284EF63F2FEC91B56C00F2EDF3B59AEEB2C3DC2B5C9C5DB9EB6A2084",
+      "before_H2_matrix_sha256": "5A154DE0318E2124E7F1871970E8E97EB27880AC742269CDDB756F3E35EE6FBB",
+      "dual_disk_slide_multiple": -1,
+      "index": 72,
+      "johnson_boundary_path": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          32,
+          1157,
+          -484
+        ],
+        [
+          32,
+          1408,
+          -589
+        ]
+      ],
+      "johnson_square_vertices": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          251,
+          -105
+        ],
+        [
+          32,
+          1157,
+          -484
+        ],
+        [
+          32,
+          1408,
+          -589
+        ]
+      ],
+      "local_H2_matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          -1
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "maps_H1_setwise": true,
+      "power": 1,
+      "prefix_axis": 2,
+      "relative_protected_ball": true,
+      "side": "prefix-first",
+      "source_axis": 1,
+      "square_normal": [
+        1,
+        -3360,
+        -8032
+      ]
+    },
+    {
+      "after_H2_matrix_sha256": "2E6CD4A84E1BA86DA6EE4424172482BB323A22DE91D508491002D6B8BF974E58",
+      "ambient_restore_factor_sha256": "3E8C98AD696A780103B616663BD70E7BB5A250F9D3A07F9BDED4A27EC8FBA694",
+      "before_H2_matrix_sha256": "D481B61F43C2E1FADB065763CA3B60DC32DAD096716CE97D69705B74E34D3907",
+      "dual_disk_slide_multiple": 1,
+      "index": 73,
+      "johnson_boundary_path": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          -251,
+          -146
+        ],
+        [
+          32,
+          906,
+          527
+        ]
+      ],
+      "johnson_square_vertices": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          32,
+          1157,
+          673
+        ],
+        [
+          0,
+          -251,
+          -146
+        ],
+        [
+          32,
+          906,
+          527
+        ]
+      ],
+      "local_H2_matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1
+        ]
+      ],
+      "maps_H1_setwise": true,
+      "power": -1,
+      "prefix_axis": 1,
+      "relative_protected_ball": true,
+      "side": "prefix-first",
+      "source_axis": 2,
+      "square_normal": [
+        1,
+        4672,
+        -8032
+      ]
+    },
+    {
+      "after_H2_matrix_sha256": "A7937A9511A845089805C7941CD1BB811A259A073C3FFEF2C4268612C9F55FFE",
+      "ambient_restore_factor_sha256": "8093531744B87DCDE5BD2BA42AD5230B9EA77D2B240C68F1725F8DCAB9BAC1DA",
+      "before_H2_matrix_sha256": "2E6CD4A84E1BA86DA6EE4424172482BB323A22DE91D508491002D6B8BF974E58",
+      "dual_disk_slide_multiple": 1,
+      "index": 74,
+      "johnson_boundary_path": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          -105,
+          -146
+        ],
+        [
+          32,
+          379,
+          527
+        ]
+      ],
+      "johnson_square_vertices": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          32,
+          484,
+          673
+        ],
+        [
+          0,
+          -105,
+          -146
+        ],
+        [
+          32,
+          379,
+          527
+        ]
+      ],
+      "local_H2_matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1
+        ]
+      ],
+      "maps_H1_setwise": true,
+      "power": -1,
+      "prefix_axis": 1,
+      "relative_protected_ball": true,
+      "side": "prefix-first",
+      "source_axis": 2,
+      "square_normal": [
+        1,
+        4672,
+        -3360
+      ]
+    },
+    {
+      "after_H2_matrix_sha256": "349BC1CD20FF2CD89C3E0271902E17CE1DF1BF8004A5D1357871504B9838FE27",
+      "ambient_restore_factor_sha256": "3E1D07D7435A254D2B06F8EA2EF3D06A49465B3F8813A1C1E1E836AB29D306EA",
+      "before_H2_matrix_sha256": "A7937A9511A845089805C7941CD1BB811A259A073C3FFEF2C4268612C9F55FFE",
+      "dual_disk_slide_multiple": 1,
+      "index": 75,
+      "johnson_boundary_path": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          32,
+          -189,
+          673
+        ],
+        [
+          32,
+          -148,
+          527
+        ]
+      ],
+      "johnson_square_vertices": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          32,
+          -189,
+          673
+        ],
+        [
+          0,
+          41,
+          -146
+        ],
+        [
+          32,
+          -148,
+          527
+        ]
+      ],
+      "local_H2_matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1
+        ]
+      ],
+      "maps_H1_setwise": true,
+      "power": -1,
+      "prefix_axis": 1,
+      "relative_protected_ball": true,
+      "side": "target-first",
+      "source_axis": 2,
+      "square_normal": [
+        1,
+        4672,
+        1312
+      ]
+    },
+    {
+      "after_H2_matrix_sha256": "38D035086CBA301AC7AF8A5E858D4FFEF1EF0AD1C247A8A4B65EB7C72690D38D",
+      "ambient_restore_factor_sha256": "657A5F22C54F96D11F14B2AEED6A837D30915CD0C702518FFB11DD7C682EF755",
+      "before_H2_matrix_sha256": "349BC1CD20FF2CD89C3E0271902E17CE1DF1BF8004A5D1357871504B9838FE27",
+      "dual_disk_slide_multiple": 1,
+      "index": 76,
+      "johnson_boundary_path": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          32,
+          -862,
+          673
+        ],
+        [
+          32,
+          -675,
+          527
+        ]
+      ],
+      "johnson_square_vertices": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          32,
+          -862,
+          673
+        ],
+        [
+          0,
+          187,
+          -146
+        ],
+        [
+          32,
+          -675,
+          527
+        ]
+      ],
+      "local_H2_matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1
+        ]
+      ],
+      "maps_H1_setwise": true,
+      "power": -1,
+      "prefix_axis": 1,
+      "relative_protected_ball": true,
+      "side": "target-first",
+      "source_axis": 2,
+      "square_normal": [
+        1,
+        4672,
+        5984
+      ]
+    },
+    {
+      "after_H2_matrix_sha256": "0A6951B2BE350CE582A9DADC88F5FC6BE4802D81A48DEB5F94446EEC1F4B675D",
+      "ambient_restore_factor_sha256": "B91C1A745E508297FDDF5999CAF816976B7FF665F46242EEABF424C4709690D4",
+      "before_H2_matrix_sha256": "38D035086CBA301AC7AF8A5E858D4FFEF1EF0AD1C247A8A4B65EB7C72690D38D",
+      "dual_disk_slide_multiple": -1,
+      "index": 77,
+      "johnson_boundary_path": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          32,
+          -1535,
+          673
+        ],
+        [
+          32,
+          -1868,
+          819
+        ]
+      ],
+      "johnson_square_vertices": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          -333,
+          146
+        ],
+        [
+          32,
+          -1535,
+          673
+        ],
+        [
+          32,
+          -1868,
+          819
+        ]
+      ],
+      "local_H2_matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          -1
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "maps_H1_setwise": true,
+      "power": 1,
+      "prefix_axis": 2,
+      "relative_protected_ball": true,
+      "side": "prefix-first",
+      "source_axis": 1,
+      "square_normal": [
+        1,
+        4672,
+        10656
+      ]
+    },
+    {
+      "after_H2_matrix_sha256": "E05751CF169D34551EDFF3840FA22BC2B2029D46E4615364C906E5637AA6CD3D",
+      "ambient_restore_factor_sha256": "D34FCA8D53C489F3FB31BC8C4DF111D8D74E08DD37D87F0D9EE3D34743C2DA2A",
+      "before_H2_matrix_sha256": "0A6951B2BE350CE582A9DADC88F5FC6BE4802D81A48DEB5F94446EEC1F4B675D",
+      "dual_disk_slide_multiple": 1,
+      "index": 78,
+      "johnson_boundary_path": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          32,
+          -1535,
+          -862
+        ],
+        [
+          32,
+          -1202,
+          -675
+        ]
+      ],
+      "johnson_square_vertices": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          32,
+          -1535,
+          -862
+        ],
+        [
+          0,
+          333,
+          187
+        ],
+        [
+          32,
+          -1202,
+          -675
+        ]
+      ],
+      "local_H2_matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1
+        ]
+      ],
+      "maps_H1_setwise": true,
+      "power": -1,
+      "prefix_axis": 1,
+      "relative_protected_ball": true,
+      "side": "target-first",
+      "source_axis": 2,
+      "square_normal": [
+        1,
+        -5984,
+        10656
+      ]
+    },
+    {
+      "after_H2_matrix_sha256": "E6534A17E998C2C26BC4893EE5444A51B000D22929C3DC19159009CD206C0A1B",
+      "ambient_restore_factor_sha256": "D9524813D7FE4F58B2F67CCF9C193180FDCC5938659651028AC9F92F92F2DEB0",
+      "before_H2_matrix_sha256": "E05751CF169D34551EDFF3840FA22BC2B2029D46E4615364C906E5637AA6CD3D",
+      "dual_disk_slide_multiple": 1,
+      "index": 79,
+      "johnson_boundary_path": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          32,
+          -673,
+          -862
+        ],
+        [
+          32,
+          -527,
+          -675
+        ]
+      ],
+      "johnson_square_vertices": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          32,
+          -673,
+          -862
+        ],
+        [
+          0,
+          146,
+          187
+        ],
+        [
+          32,
+          -527,
+          -675
+        ]
+      ],
+      "local_H2_matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1
+        ]
+      ],
+      "maps_H1_setwise": true,
+      "power": -1,
+      "prefix_axis": 1,
+      "relative_protected_ball": true,
+      "side": "target-first",
+      "source_axis": 2,
+      "square_normal": [
+        1,
+        -5984,
+        4672
+      ]
+    },
+    {
+      "after_H2_matrix_sha256": "31AFD168F6833FFC7AB4B0D32700FF77800C2C447A2D53BAAC4D06BACA209026",
+      "ambient_restore_factor_sha256": "FBD33856917987330F74974F3AA734ED1331042C7BBDB84A150A66D5E47F03BD",
+      "before_H2_matrix_sha256": "E6534A17E998C2C26BC4893EE5444A51B000D22929C3DC19159009CD206C0A1B",
+      "dual_disk_slide_multiple": 1,
+      "index": 80,
+      "johnson_boundary_path": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          -41,
+          187
+        ],
+        [
+          32,
+          148,
+          -675
+        ]
+      ],
+      "johnson_square_vertices": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          32,
+          189,
+          -862
+        ],
+        [
+          0,
+          -41,
+          187
+        ],
+        [
+          32,
+          148,
+          -675
+        ]
+      ],
+      "local_H2_matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1
+        ]
+      ],
+      "maps_H1_setwise": true,
+      "power": -1,
+      "prefix_axis": 1,
+      "relative_protected_ball": true,
+      "side": "prefix-first",
+      "source_axis": 2,
+      "square_normal": [
+        1,
+        -5984,
+        -1312
+      ]
+    },
+    {
+      "after_H2_matrix_sha256": "6ADA8C9BD2BD173C005963D3D47B87CC6581912A5F9380B41ED37C4D40C0C28E",
+      "ambient_restore_factor_sha256": "21661E51F0DDD677E2C3E67CCD5BCCC75E0B7EAB5CE7D43872585E9944CD1842",
+      "before_H2_matrix_sha256": "31AFD168F6833FFC7AB4B0D32700FF77800C2C447A2D53BAAC4D06BACA209026",
+      "dual_disk_slide_multiple": 1,
+      "index": 81,
+      "johnson_boundary_path": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          32,
+          1051,
+          -862
+        ],
+        [
+          32,
+          823,
+          -675
+        ]
+      ],
+      "johnson_square_vertices": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          32,
+          1051,
+          -862
+        ],
+        [
+          0,
+          -228,
+          187
+        ],
+        [
+          32,
+          823,
+          -675
+        ]
+      ],
+      "local_H2_matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1
+        ]
+      ],
+      "maps_H1_setwise": true,
+      "power": -1,
+      "prefix_axis": 1,
+      "relative_protected_ball": true,
+      "side": "target-first",
+      "source_axis": 2,
+      "square_normal": [
+        1,
+        -5984,
+        -7296
+      ]
+    },
+    {
+      "after_H2_matrix_sha256": "A4A319D10422DBDF3FB47707721843D3A9F3A820C9976E4B71EFC65C73AD0DCD",
+      "ambient_restore_factor_sha256": "62094AA623CB34DF6F3E47D04FB69EEF410381B14CCCB9AA82247EE3D7DDA1B5",
+      "before_H2_matrix_sha256": "6ADA8C9BD2BD173C005963D3D47B87CC6581912A5F9380B41ED37C4D40C0C28E",
+      "dual_disk_slide_multiple": -1,
+      "index": 82,
+      "johnson_boundary_path": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          415,
+          -187
+        ],
+        [
+          32,
+          2328,
+          -1049
+        ]
+      ],
+      "johnson_square_vertices": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          415,
+          -187
+        ],
+        [
+          32,
+          1913,
+          -862
+        ],
+        [
+          32,
+          2328,
+          -1049
+        ]
+      ],
+      "local_H2_matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          -1
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "maps_H1_setwise": true,
+      "power": 1,
+      "prefix_axis": 2,
+      "relative_protected_ball": true,
+      "side": "target-first",
+      "source_axis": 1,
+      "square_normal": [
+        1,
+        -5984,
+        -13280
+      ]
+    },
+    {
+      "after_H2_matrix_sha256": "88B415B5370BD14FD2D8E4EF0F3D366A87C33093702724F9DB68C0A497847E28",
+      "ambient_restore_factor_sha256": "4F002802DC001F3CE1D49AE103E64DECE934B64E8B38EC2EF9000E69D7DF87E8",
+      "before_H2_matrix_sha256": "A4A319D10422DBDF3FB47707721843D3A9F3A820C9976E4B71EFC65C73AD0DCD",
+      "dual_disk_slide_multiple": 1,
+      "index": 83,
+      "johnson_boundary_path": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          -415,
+          -228
+        ],
+        [
+          32,
+          1498,
+          823
+        ]
+      ],
+      "johnson_square_vertices": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          32,
+          1913,
+          1051
+        ],
+        [
+          0,
+          -415,
+          -228
+        ],
+        [
+          32,
+          1498,
+          823
+        ]
+      ],
+      "local_H2_matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1
+        ]
+      ],
+      "maps_H1_setwise": true,
+      "power": -1,
+      "prefix_axis": 1,
+      "relative_protected_ball": true,
+      "side": "prefix-first",
+      "source_axis": 2,
+      "square_normal": [
+        1,
+        7296,
+        -13280
+      ]
+    },
+    {
+      "after_H2_matrix_sha256": "EA5B204FDF62487FF6EE92812335EC85998E49E13AEB73A21C833BDFA3966DE7",
+      "ambient_restore_factor_sha256": "7F8B60B71C214A242AEB1DEC463876AC2D6D5C5173120B8B6FFC44B5B22D7A40",
+      "before_H2_matrix_sha256": "88B415B5370BD14FD2D8E4EF0F3D366A87C33093702724F9DB68C0A497847E28",
+      "dual_disk_slide_multiple": 1,
+      "index": 84,
+      "johnson_boundary_path": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          32,
+          862,
+          1051
+        ],
+        [
+          32,
+          675,
+          823
+        ]
+      ],
+      "johnson_square_vertices": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          32,
+          862,
+          1051
+        ],
+        [
+          0,
+          -187,
+          -228
+        ],
+        [
+          32,
+          675,
+          823
+        ]
+      ],
+      "local_H2_matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1
+        ]
+      ],
+      "maps_H1_setwise": true,
+      "power": -1,
+      "prefix_axis": 1,
+      "relative_protected_ball": true,
+      "side": "target-first",
+      "source_axis": 2,
+      "square_normal": [
+        1,
+        7296,
+        -5984
+      ]
+    },
+    {
+      "after_H2_matrix_sha256": "1C0A8BACC3EA6CC48B4001FD5C7077A166A827A25423B32CC45DE0AAFAFBEAB3",
+      "ambient_restore_factor_sha256": "BD60CAF3D13E1938687D7A6B1A4569D1CF578F1E0A02D00F9DDECFD9A9817947",
+      "before_H2_matrix_sha256": "EA5B204FDF62487FF6EE92812335EC85998E49E13AEB73A21C833BDFA3966DE7",
+      "dual_disk_slide_multiple": 1,
+      "index": 85,
+      "johnson_boundary_path": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          32,
+          -189,
+          1051
+        ],
+        [
+          32,
+          -148,
+          823
+        ]
+      ],
+      "johnson_square_vertices": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          32,
+          -189,
+          1051
+        ],
+        [
+          0,
+          41,
+          -228
+        ],
+        [
+          32,
+          -148,
+          823
+        ]
+      ],
+      "local_H2_matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1
+        ]
+      ],
+      "maps_H1_setwise": true,
+      "power": -1,
+      "prefix_axis": 1,
+      "relative_protected_ball": true,
+      "side": "target-first",
+      "source_axis": 2,
+      "square_normal": [
+        1,
+        7296,
+        1312
+      ]
+    },
+    {
+      "after_H2_matrix_sha256": "A29CEEDDC7F4710497EEB007D86C866100AFA1E94CE54C90EA45A9616F72A860",
+      "ambient_restore_factor_sha256": "F54A6F0B000CA630E4FADF03643E5F1DAB1B87F1813B59ED881C24C395D3B201",
+      "before_H2_matrix_sha256": "1C0A8BACC3EA6CC48B4001FD5C7077A166A827A25423B32CC45DE0AAFAFBEAB3",
+      "dual_disk_slide_multiple": 1,
+      "index": 86,
+      "johnson_boundary_path": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          269,
+          -228
+        ],
+        [
+          32,
+          -971,
+          823
+        ]
+      ],
+      "johnson_square_vertices": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          32,
+          -1240,
+          1051
+        ],
+        [
+          0,
+          269,
+          -228
+        ],
+        [
+          32,
+          -971,
+          823
+        ]
+      ],
+      "local_H2_matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1
+        ]
+      ],
+      "maps_H1_setwise": true,
+      "power": -1,
+      "prefix_axis": 1,
+      "relative_protected_ball": true,
+      "side": "prefix-first",
+      "source_axis": 2,
+      "square_normal": [
+        1,
+        7296,
+        8608
+      ]
+    },
+    {
+      "after_H2_matrix_sha256": "F306CD5FD211250D4F7BF4DF01D70109608ADCC9CC91F97585AFFA154926F242",
+      "ambient_restore_factor_sha256": "53E277D06D9A3727702FFE3BB4743816E2FD4C91AFF81676E50A86835CD66F82",
+      "before_H2_matrix_sha256": "A29CEEDDC7F4710497EEB007D86C866100AFA1E94CE54C90EA45A9616F72A860",
+      "dual_disk_slide_multiple": -1,
+      "index": 87,
+      "johnson_boundary_path": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          -497,
+          228
+        ],
+        [
+          32,
+          -2788,
+          1279
+        ]
+      ],
+      "johnson_square_vertices": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          -497,
+          228
+        ],
+        [
+          32,
+          -2291,
+          1051
+        ],
+        [
+          32,
+          -2788,
+          1279
+        ]
+      ],
+      "local_H2_matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          -1
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "maps_H1_setwise": true,
+      "power": 1,
+      "prefix_axis": 2,
+      "relative_protected_ball": true,
+      "side": "target-first",
+      "source_axis": 1,
+      "square_normal": [
+        1,
+        7296,
+        15904
+      ]
+    },
+    {
+      "after_H2_matrix_sha256": "0A06612CAC2E31208270FB135F1C238ED6830249670521AF3943669A9EBA245D",
+      "ambient_restore_factor_sha256": "4851929D5998D7A14929E5E2F346978F3AB9F99F18A703A1FA7C299041516984",
+      "before_H2_matrix_sha256": "F306CD5FD211250D4F7BF4DF01D70109608ADCC9CC91F97585AFFA154926F242",
+      "dual_disk_slide_multiple": 1,
+      "index": 88,
+      "johnson_boundary_path": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          497,
+          269
+        ],
+        [
+          32,
+          -1794,
+          -971
+        ]
+      ],
+      "johnson_square_vertices": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          32,
+          -2291,
+          -1240
+        ],
+        [
+          0,
+          497,
+          269
+        ],
+        [
+          32,
+          -1794,
+          -971
+        ]
+      ],
+      "local_H2_matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1
+        ]
+      ],
+      "maps_H1_setwise": true,
+      "power": -1,
+      "prefix_axis": 1,
+      "relative_protected_ball": true,
+      "side": "prefix-first",
+      "source_axis": 2,
+      "square_normal": [
+        1,
+        -8608,
+        15904
+      ]
+    },
+    {
+      "after_H2_matrix_sha256": "3648BEA7782E60D400A9F1B8EC7E4061FA75F920E00B4B1EEFA811C9DE0FD286",
+      "ambient_restore_factor_sha256": "466BF310B165FCDB01678FB43E6816A6684AC5318DBCD6E4B7DA6FB146119EDF",
+      "before_H2_matrix_sha256": "0A06612CAC2E31208270FB135F1C238ED6830249670521AF3943669A9EBA245D",
+      "dual_disk_slide_multiple": 1,
+      "index": 89,
+      "johnson_boundary_path": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          228,
+          269
+        ],
+        [
+          32,
+          -823,
+          -971
+        ]
+      ],
+      "johnson_square_vertices": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          32,
+          -1051,
+          -1240
+        ],
+        [
+          0,
+          228,
+          269
+        ],
+        [
+          32,
+          -823,
+          -971
+        ]
+      ],
+      "local_H2_matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1
+        ]
+      ],
+      "maps_H1_setwise": true,
+      "power": -1,
+      "prefix_axis": 1,
+      "relative_protected_ball": true,
+      "side": "prefix-first",
+      "source_axis": 2,
+      "square_normal": [
+        1,
+        -8608,
+        7296
+      ]
+    },
+    {
+      "after_H2_matrix_sha256": "9E959ED821C1994F86756877AB943928F00DCD84FEFEBE7D5B1ED7056FFAA776",
+      "ambient_restore_factor_sha256": "EA6F8E6734D1A0BFAC3DF7CA4F461FC714C52380839CE5B943EE51145378B610",
+      "before_H2_matrix_sha256": "3648BEA7782E60D400A9F1B8EC7E4061FA75F920E00B4B1EEFA811C9DE0FD286",
+      "dual_disk_slide_multiple": 1,
+      "index": 90,
+      "johnson_boundary_path": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          32,
+          189,
+          -1240
+        ],
+        [
+          31,
+          189,
+          -1240
+        ]
+      ],
+      "johnson_square_vertices": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          32,
+          189,
+          -1240
+        ],
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          31,
+          189,
+          -1240
+        ]
+      ],
+      "local_H2_matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          1
+        ]
+      ],
+      "maps_H1_setwise": true,
+      "power": -1,
+      "prefix_axis": 0,
+      "relative_protected_ball": true,
+      "side": "target-first",
+      "source_axis": 2,
+      "square_normal": [
+        0,
+        1240,
+        189
+      ]
+    },
+    {
+      "after_H2_matrix_sha256": "251137BA54BF80AF5766C03A54A355C6D0CE43E83302B008D4DF1A6974C0BD4A",
+      "ambient_restore_factor_sha256": "2560CF11D7B2F00C861288123D2039497B5C396A8A3A46C8A84936C947141B27",
+      "before_H2_matrix_sha256": "9E959ED821C1994F86756877AB943928F00DCD84FEFEBE7D5B1ED7056FFAA776",
+      "dual_disk_slide_multiple": -1,
+      "index": 91,
+      "johnson_boundary_path": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          1273,
+          189,
+          -1240
+        ]
+      ],
+      "johnson_square_vertices": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          1272,
+          189,
+          -1240
+        ],
+        [
+          1273,
+          189,
+          -1240
+        ]
+      ],
+      "local_H2_matrix": [
+        [
+          1,
+          0,
+          -1
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "maps_H1_setwise": true,
+      "power": 1,
+      "prefix_axis": 2,
+      "relative_protected_ball": true,
+      "side": "target-first",
+      "source_axis": 0,
+      "square_normal": [
+        0,
+        1240,
+        189
+      ]
+    },
+    {
+      "after_H2_matrix_sha256": "4F1AE1FE5D3B32642CF56B74546944025B5760EF8AAAEA3CF8D5B94B33A426F3",
+      "ambient_restore_factor_sha256": "36E44498CE76F9F0C567A0AA9BEE73217258DFE0C99D18136D1E86C12389071C",
+      "before_H2_matrix_sha256": "251137BA54BF80AF5766C03A54A355C6D0CE43E83302B008D4DF1A6974C0BD4A",
+      "dual_disk_slide_multiple": 1,
+      "index": 92,
+      "johnson_boundary_path": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          -1,
+          0,
+          -1
+        ],
+        [
+          1271,
+          189,
+          31
+        ]
+      ],
+      "johnson_square_vertices": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          1272,
+          189,
+          32
+        ],
+        [
+          -1,
+          0,
+          -1
+        ],
+        [
+          1271,
+          189,
+          31
+        ]
+      ],
+      "local_H2_matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          1
+        ]
+      ],
+      "maps_H1_setwise": true,
+      "power": -1,
+      "prefix_axis": 0,
+      "relative_protected_ball": true,
+      "side": "prefix-first",
+      "source_axis": 2,
+      "square_normal": [
+        -189,
+        1240,
+        189
+      ]
+    }
+  ],
+  "final_H2_matrix": [
+    [
+      1312,
+      189,
+      -41
+    ],
+    [
+      -8608,
+      -1240,
+      269
+    ],
+    [
+      1,
+      0,
+      0
+    ]
+  ],
+  "initial_H1_compression_disks": [
+    {
+      "axis": 0,
+      "boundary": {
+        "boundary_edge_count": 16,
+        "closed": true,
+        "owner": 0,
+        "plane_axis": 0,
+        "plane_value": 2,
+        "polyline": [
+          [
+            "2",
+            "0",
+            "0"
+          ],
+          [
+            "2",
+            "0",
+            "1"
+          ],
+          [
+            "2",
+            "1",
+            "1"
+          ],
+          [
+            "2",
+            "1",
+            "0"
+          ],
+          [
+            "2",
+            "0",
+            "0"
+          ]
+        ],
+        "square_count": 4,
+        "vertex_count": 4
+      },
+      "disk": "D1_1",
+      "squares": [
+        {
+          "cube_origin": [
+            1,
+            0,
+            0
+          ],
+          "triangles": [
+            [
+              0,
+              1,
+              2
+            ],
+            [
+              0,
+              2,
+              3
+            ]
+          ],
+          "vertices": [
+            [
+              "2",
+              "0",
+              "0"
+            ],
+            [
+              "2",
+              "1",
+              "0"
+            ],
+            [
+              "2",
+              "1",
+              "1"
+            ],
+            [
+              "2",
+              "0",
+              "1"
+            ]
+          ]
+        },
+        {
+          "cube_origin": [
+            1,
+            0,
+            3
+          ],
+          "triangles": [
+            [
+              0,
+              1,
+              2
+            ],
+            [
+              0,
+              2,
+              3
+            ]
+          ],
+          "vertices": [
+            [
+              "2",
+              "0",
+              "3"
+            ],
+            [
+              "2",
+              "1",
+              "3"
+            ],
+            [
+              "2",
+              "1",
+              "4"
+            ],
+            [
+              "2",
+              "0",
+              "4"
+            ]
+          ]
+        },
+        {
+          "cube_origin": [
+            1,
+            3,
+            0
+          ],
+          "triangles": [
+            [
+              0,
+              1,
+              2
+            ],
+            [
+              0,
+              2,
+              3
+            ]
+          ],
+          "vertices": [
+            [
+              "2",
+              "3",
+              "0"
+            ],
+            [
+              "2",
+              "4",
+              "0"
+            ],
+            [
+              "2",
+              "4",
+              "1"
+            ],
+            [
+              "2",
+              "3",
+              "1"
+            ]
+          ]
+        },
+        {
+          "cube_origin": [
+            1,
+            3,
+            3
+          ],
+          "triangles": [
+            [
+              0,
+              1,
+              2
+            ],
+            [
+              0,
+              2,
+              3
+            ]
+          ],
+          "vertices": [
+            [
+              "2",
+              "3",
+              "3"
+            ],
+            [
+              "2",
+              "4",
+              "3"
+            ],
+            [
+              "2",
+              "4",
+              "4"
+            ],
+            [
+              "2",
+              "3",
+              "4"
+            ]
+          ]
+        }
+      ],
+      "topological_disk": true,
+      "triangle_count": 8
+    },
+    {
+      "axis": 1,
+      "boundary": {
+        "boundary_edge_count": 16,
+        "closed": true,
+        "owner": 0,
+        "plane_axis": 1,
+        "plane_value": 2,
+        "polyline": [
+          [
+            "0",
+            "2",
+            "0"
+          ],
+          [
+            "0",
+            "2",
+            "1"
+          ],
+          [
+            "1",
+            "2",
+            "1"
+          ],
+          [
+            "1",
+            "2",
+            "0"
+          ],
+          [
+            "0",
+            "2",
+            "0"
+          ]
+        ],
+        "square_count": 4,
+        "vertex_count": 4
+      },
+      "disk": "D1_2",
+      "squares": [
+        {
+          "cube_origin": [
+            0,
+            1,
+            0
+          ],
+          "triangles": [
+            [
+              0,
+              1,
+              2
+            ],
+            [
+              0,
+              2,
+              3
+            ]
+          ],
+          "vertices": [
+            [
+              "0",
+              "2",
+              "0"
+            ],
+            [
+              "1",
+              "2",
+              "0"
+            ],
+            [
+              "1",
+              "2",
+              "1"
+            ],
+            [
+              "0",
+              "2",
+              "1"
+            ]
+          ]
+        },
+        {
+          "cube_origin": [
+            0,
+            1,
+            3
+          ],
+          "triangles": [
+            [
+              0,
+              1,
+              2
+            ],
+            [
+              0,
+              2,
+              3
+            ]
+          ],
+          "vertices": [
+            [
+              "0",
+              "2",
+              "3"
+            ],
+            [
+              "1",
+              "2",
+              "3"
+            ],
+            [
+              "1",
+              "2",
+              "4"
+            ],
+            [
+              "0",
+              "2",
+              "4"
+            ]
+          ]
+        },
+        {
+          "cube_origin": [
+            3,
+            1,
+            0
+          ],
+          "triangles": [
+            [
+              0,
+              1,
+              2
+            ],
+            [
+              0,
+              2,
+              3
+            ]
+          ],
+          "vertices": [
+            [
+              "3",
+              "2",
+              "0"
+            ],
+            [
+              "4",
+              "2",
+              "0"
+            ],
+            [
+              "4",
+              "2",
+              "1"
+            ],
+            [
+              "3",
+              "2",
+              "1"
+            ]
+          ]
+        },
+        {
+          "cube_origin": [
+            3,
+            1,
+            3
+          ],
+          "triangles": [
+            [
+              0,
+              1,
+              2
+            ],
+            [
+              0,
+              2,
+              3
+            ]
+          ],
+          "vertices": [
+            [
+              "3",
+              "2",
+              "3"
+            ],
+            [
+              "4",
+              "2",
+              "3"
+            ],
+            [
+              "4",
+              "2",
+              "4"
+            ],
+            [
+              "3",
+              "2",
+              "4"
+            ]
+          ]
+        }
+      ],
+      "topological_disk": true,
+      "triangle_count": 8
+    },
+    {
+      "axis": 2,
+      "boundary": {
+        "boundary_edge_count": 16,
+        "closed": true,
+        "owner": 0,
+        "plane_axis": 2,
+        "plane_value": 2,
+        "polyline": [
+          [
+            "0",
+            "0",
+            "2"
+          ],
+          [
+            "0",
+            "1",
+            "2"
+          ],
+          [
+            "1",
+            "1",
+            "2"
+          ],
+          [
+            "1",
+            "0",
+            "2"
+          ],
+          [
+            "0",
+            "0",
+            "2"
+          ]
+        ],
+        "square_count": 4,
+        "vertex_count": 4
+      },
+      "disk": "D1_3",
+      "squares": [
+        {
+          "cube_origin": [
+            0,
+            0,
+            1
+          ],
+          "triangles": [
+            [
+              0,
+              1,
+              2
+            ],
+            [
+              0,
+              2,
+              3
+            ]
+          ],
+          "vertices": [
+            [
+              "0",
+              "0",
+              "2"
+            ],
+            [
+              "1",
+              "0",
+              "2"
+            ],
+            [
+              "1",
+              "1",
+              "2"
+            ],
+            [
+              "0",
+              "1",
+              "2"
+            ]
+          ]
+        },
+        {
+          "cube_origin": [
+            0,
+            3,
+            1
+          ],
+          "triangles": [
+            [
+              0,
+              1,
+              2
+            ],
+            [
+              0,
+              2,
+              3
+            ]
+          ],
+          "vertices": [
+            [
+              "0",
+              "3",
+              "2"
+            ],
+            [
+              "1",
+              "3",
+              "2"
+            ],
+            [
+              "1",
+              "4",
+              "2"
+            ],
+            [
+              "0",
+              "4",
+              "2"
+            ]
+          ]
+        },
+        {
+          "cube_origin": [
+            3,
+            0,
+            1
+          ],
+          "triangles": [
+            [
+              0,
+              1,
+              2
+            ],
+            [
+              0,
+              2,
+              3
+            ]
+          ],
+          "vertices": [
+            [
+              "3",
+              "0",
+              "2"
+            ],
+            [
+              "4",
+              "0",
+              "2"
+            ],
+            [
+              "4",
+              "1",
+              "2"
+            ],
+            [
+              "3",
+              "1",
+              "2"
+            ]
+          ]
+        },
+        {
+          "cube_origin": [
+            3,
+            3,
+            1
+          ],
+          "triangles": [
+            [
+              0,
+              1,
+              2
+            ],
+            [
+              0,
+              2,
+              3
+            ]
+          ],
+          "vertices": [
+            [
+              "3",
+              "3",
+              "2"
+            ],
+            [
+              "4",
+              "3",
+              "2"
+            ],
+            [
+              "4",
+              "4",
+              "2"
+            ],
+            [
+              "3",
+              "4",
+              "2"
+            ]
+          ]
+        }
+      ],
+      "topological_disk": true,
+      "triangle_count": 8
+    }
+  ],
+  "mapping_torus_sphere_boundary_rule": "I-wedge^2(A)",
+  "mapping_torus_sphere_columns": [
+    [
+      -1311,
+      -189,
+      41
+    ],
+    [
+      8608,
+      1241,
+      -269
+    ],
+    [
+      -1,
+      0,
+      1
+    ]
+  ],
+  "post_cancellation_relative_surface_map": "OPEN",
+  "psi_A_sha256": "D39346634778A7DAFDB39E0F8644932D2AE925B14FED691F25623399CD6424E1",
+  "restore_assembly_sha256": "899ABA9A7B67AD9B263A4E53FC99E1B47703B673C653A577DAEF9772641F3561",
+  "schema": "t73_johnson_dual_disk_movie/v1",
+  "sha256": "CDEFDF634CD78C9F11F0AC380B617AD85E689B2788A669E65CEFB5A59E6273BA",
+  "spine_binding_sha256": "0E217A8634B0DAC40CE055DAA360C6AC55B9F2EC8778256DB4C5BECCF3E6C883",
+  "wedge2_A_equals_A_inverse_transpose": [
+    [
+      1312,
+      189,
+      -41
+    ],
+    [
+      -8608,
+      -1240,
+      269
+    ],
+    [
+      1,
+      0,
+      0
+    ]
+  ]
+}

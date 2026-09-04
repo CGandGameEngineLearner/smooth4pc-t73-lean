@@ -4,6 +4,7 @@
   "complement_connected": true,
   "hj_53_kernel_invariance_only": true,
   "hj_lemmas_55_57_invoked": false,
+  "johnson_dual_disk_movie_sha256": "CDEFDF634CD78C9F11F0AC380B617AD85E689B2788A669E65CEFB5A59E6273BA",
   "pairwise": [
     {
       "disjoint": true,
@@ -24,7 +25,7 @@
   "pairwise_disjoint": true,
   "reason": "the reversed sphere model and b=(1541,10118,2) profiles are explicit, but the surfaces have not been transported through an actual relative W2 boundary map",
   "schema": "t73_actual_sphere_system/v2",
-  "sha256": "5916E912798FBAC11A9DCEEE85A760FEA1DBDA93172FAD71E0A1437FC1B0284C",
+  "sha256": "7C374BC787825617D0ACDCAE536C62CDCF5208B1DEA74D09FDA3237D987A8C62",
   "simultaneous_surgery_in_reversed_model_is_S3": true,
   "simultaneous_surgery_is_S3": false,
   "simultaneous_surgery_reason": "the abstract reversed model compresses to S3; transfer to the actual W2 boundary awaits the missing relative boundary map",

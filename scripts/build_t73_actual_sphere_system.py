@@ -29,6 +29,7 @@ CANCEL_X = ROOT / "geometry" / "t73_cancel_x_m1.json"
 C1 = ROOT / "audit" / "t73_c1_cut_link.json"
 C2 = ROOT / "audit" / "t73_c2_comparison.json"
 C_WITNESS = ROOT / "audit" / "t73_c_comparison_witness.json"
+DUAL_DISK_MOVIE = ROOT / "geometry" / "t73_johnson_dual_disk_movie.json"
 
 
 def load(name: str):
@@ -57,6 +58,7 @@ def build(write: bool = False) -> dict[str, Any]:
     c1 = json.loads(C1.read_text(encoding="utf-8"))
     c2 = json.loads(C2.read_text(encoding="utf-8"))
     c_witness = json.loads(C_WITNESS.read_text(encoding="utf-8"))
+    dual_disk_movie = json.loads(DUAL_DISK_MOVIE.read_text(encoding="utf-8"))
     standard = load("certify_t73_s_standard_spheres").generate()
     if link["status"]["actual_framed_ar_link"] != "PASS":
         raise AssertionError("actual W2 requires the framed AR link")
@@ -66,6 +68,10 @@ def build(write: bool = False) -> dict[str, Any]:
         raise AssertionError("actual W2 detector/cocone data are not closed")
     if standard["verdict"] != "PASS" or not all(standard["checks"].values()):
         raise AssertionError("reversed three-handle sphere model is not verified")
+    if dual_disk_movie["psi_A_sha256"] != link["psi_A_sha256"] or dual_disk_movie["actual_H1_disk_transport"] != "PASS":
+        raise AssertionError("actual H1 compression-disk movie is not bound to the AR link")
+    if dual_disk_movie["mapping_torus_sphere_columns"] != standard["attaching_homology"]["sphere_columns_in_kernel_basis"]:
+        raise AssertionError("dual-disk movie and reversed sphere columns disagree")
     spheres = []
     kernel_owners = ["r_xy", "r_yz", "r_zx"]
     sphere_matrix = standard["attaching_homology"]["sphere_columns_in_kernel_basis"]
@@ -148,6 +154,7 @@ def build(write: bool = False) -> dict[str, Any]:
         "status": "OPEN",
         "reason": "the reversed sphere model and b=(1541,10118,2) profiles are explicit, but the surfaces have not been transported through an actual relative W2 boundary map",
         "standard_sphere_certificate_sha256": standard["certificate_sha256"],
+        "johnson_dual_disk_movie_sha256": dual_disk_movie["sha256"],
         "c_witness_sha256": c_witness["witness_sha256"],
     }
     result["sha256"] = canonical_sha({key: value for key, value in result.items() if key != "sha256"})
