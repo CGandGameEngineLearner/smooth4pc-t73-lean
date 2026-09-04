@@ -1,0 +1,119 @@
+{
+  "axis_sample_images": [
+    {
+      "axis": 0,
+      "image": [
+        "0",
+        "0",
+        "1/8"
+      ],
+      "linear_A_image": [
+        "0",
+        "0",
+        "1/8"
+      ],
+      "source": [
+        "1/8",
+        "0",
+        "0"
+      ]
+    },
+    {
+      "axis": 1,
+      "image": [
+        "269/8",
+        "41/8",
+        "0"
+      ],
+      "linear_A_image": [
+        "269/8",
+        "41/8",
+        "0"
+      ],
+      "source": [
+        "0",
+        "1/8",
+        "0"
+      ]
+    },
+    {
+      "axis": 2,
+      "image": [
+        "155",
+        "189/8",
+        "4"
+      ],
+      "linear_A_image": [
+        "155",
+        "189/8",
+        "4"
+      ],
+      "source": [
+        "0",
+        "0",
+        "1/8"
+      ]
+    }
+  ],
+  "construction": "psi_A is the composition of the 93 explicit Phi o A_ij cells; each factor is a PL homeomorphism with explicit inverse, so the composition is a PL homeomorphism. Homology is A because each Phi is isotopic to the identity. Setwise Heegaard preservation and section-ball identity are live checks, not assumptions.",
+  "fixes_origin": true,
+  "generator_count": 93,
+  "generator_manifest_sha256": "816E5A2ECBA934543A79E50AD4D590E5D173A1A3DE1FD5FB8B423AE1D50CADA2",
+  "h0_centers_left": 16,
+  "heegaard_pair_preserved": false,
+  "homology_is_A": true,
+  "matrix_A": [
+    [
+      0,
+      269,
+      1240
+    ],
+    [
+      0,
+      41,
+      189
+    ],
+    [
+      1,
+      0,
+      32
+    ]
+  ],
+  "origin_image": [
+    "0",
+    "0",
+    "0"
+  ],
+  "pl_homeomorphism": true,
+  "psi_A_star": [
+    [
+      0,
+      269,
+      1240
+    ],
+    [
+      0,
+      41,
+      189
+    ],
+    [
+      1,
+      0,
+      32
+    ]
+  ],
+  "schema": "t73_psi_A/v1",
+  "section_ball_axis_fixed": [
+    false,
+    false,
+    false
+  ],
+  "section_ball_identity": false,
+  "sha256": "E120409A99ACB8FB6770917E85867665FE73CB2334AD0B6983A75A5E94043693",
+  "status": {
+    "fixes_section_neighborhood": "OPEN",
+    "pl_homeomorphism": "PASS",
+    "preserves_heegaard_pair": "OPEN",
+    "psi_star_equals_A": "PASS"
+  }
+}
