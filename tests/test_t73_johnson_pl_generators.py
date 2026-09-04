@@ -33,6 +33,7 @@ class JohnsonPLGeneratorTest(unittest.TestCase):
         data = json.loads(path.read_text(encoding="utf-8"))
         self.assertIn("cell_decomposition", data)
         self.assertIn("straightening", data)
+        self.assertIn("section_restore", data)
         self.assertIn("explicit_inverse", data)
         self.assertTrue(data["jacobian_positive"])
         self.assertIn("protected_ball_disjointness", data)
@@ -42,6 +43,7 @@ class JohnsonPLGeneratorTest(unittest.TestCase):
             data["heegaard_pair_preserved"], data["heegaard_pair"]["preserved"]
         )
         self.assertGreater(len(data["straightening"]["cells"]), 0)
+        self.assertEqual(data["section_restore"]["cell_count"], 162)
         self.assertGreater(
             float(data["protected_ball_disjointness"]["clearance"].split("/")[0]), 0
         )
@@ -64,6 +66,8 @@ class JohnsonPLGeneratorTest(unittest.TestCase):
         self.assertEqual(result["H1_TRANVECTION_PRODUCT"], "PASS")
         self.assertEqual(result["MUTATION_JACOBIAN"], "FAIL")
         self.assertEqual(result["MUTATION_SIDE_BIT"], "FAIL")
+        self.assertEqual(result["SECTION_RESTORE_CELLS"], "PASS")
+        self.assertEqual(result["SECTION_BALL"], "PASS")
         self.assertEqual(result["COUNT"], 93)
 
 

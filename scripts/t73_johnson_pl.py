@@ -13,11 +13,14 @@ from __future__ import annotations
 import itertools
 from collections import Counter, defaultdict
 from fractions import Fraction
+from functools import lru_cache
 from typing import Any, Iterable
 
 PERIOD = 4
 AXES = ((1, 0, 0), (0, 1, 0), (0, 0, 1))
 PROTECTED_RADIUS = Fraction(1, 196104)
+SECTION_RESTORE_INNER = 2 * PROTECTED_RADIUS
+SECTION_RESTORE_OUTER = 6 * PROTECTED_RADIUS
 INNER = Fraction(1, 4)
 OUTER = Fraction(3, 4)
 INSET = Fraction(1, 16)
@@ -341,10 +344,177 @@ def apply_cells(cells: list[dict[str, Any]], point: Iterable[Fraction]) -> list[
     return pt
 
 
+@lru_cache(maxsize=None)
+def section_restore_cells(
+    source: int, prefix: int, power: int
+) -> tuple[dict[str, Any], ...]:
+    """Cells for a compactly supported copy of ``A_ij^{-1}`` near 0.
+
+    The vertex function is ``v_prefix -= power * chi(v) * v_source`` on
+    the four-level cubical grid.  Here chi is one on the inner cube and zero
+    on the outer boundary.  The outer/inner ratio is three; direct exact
+    determinants on all 162 Freudenthal tetrahedra lie in [1/2, 3/2].
+    Consequently the fixed-boundary degree-one PL map of the outer cube is a
+    homeomorphism.  Swapping source and image tetrahedra gives its explicit
+    inverse.  Periodic copies of the cube are disjoint.
+    """
+
+    inner = SECTION_RESTORE_INNER
+    outer = SECTION_RESTORE_OUTER
+    levels = (-outer, -inner, inner, outer)
+    axes = ((1, 0, 0), (0, 1, 0), (0, 0, 1))
+
+    def vertex_image(vertex: tuple[Fraction, Fraction, Fraction]) -> list[Fraction]:
+        norm = inf_norm(vertex)
+        if norm <= inner:
+            weight = Fraction(1)
+        elif norm >= outer:
+            weight = Fraction(0)
+        else:
+            weight = (outer - norm) / (outer - inner)
+        image = list(vertex)
+        image[prefix] -= power * weight * vertex[source]
+        return image
+
+    result: list[dict[str, Any]] = []
+    for ix, iy, iz in itertools.product(range(3), repeat=3):
+        indices = (ix, iy, iz)
+        origin = tuple(levels[indices[axis]] for axis in range(3))
+        widths = tuple(
+            levels[indices[axis] + 1] - levels[indices[axis]] for axis in range(3)
+        )
+        for permutation in itertools.permutations(range(3)):
+            vertices = [origin]
+            current = origin
+            for axis in permutation:
+                step = [Fraction(0), Fraction(0), Fraction(0)]
+                step[axis] = widths[axis]
+                current = tuple(current[i] + step[i] for i in range(3))
+                vertices.append(current)
+            image = [vertex_image(vertex) for vertex in vertices]
+            source_tet = [list(vertex) for vertex in vertices]
+            linear, translation, jacobian = affine_from_tets(source_tet, image)
+            if jacobian <= 0:
+                raise AssertionError(f"section restore cell has Jacobian {jacobian}")
+            inv_linear, inv_translation, inv_jacobian = affine_from_tets(image, source_tet)
+            if inv_jacobian <= 0:
+                raise AssertionError(
+                    f"inverse section restore cell has Jacobian {inv_jacobian}"
+                )
+            result.append(
+                {
+                    "source": [encode(vertex) for vertex in source_tet],
+                    "image": [encode(vertex) for vertex in image],
+                    "linear": [[str(entry) for entry in row] for row in linear],
+                    "translation": encode(translation),
+                    "jacobian_det": str(jacobian),
+                    "inverse_linear": [
+                        [str(entry) for entry in row] for row in inv_linear
+                    ],
+                    "inverse_translation": encode(inv_translation),
+                    "inverse_jacobian_det": str(inv_jacobian),
+                }
+            )
+    return tuple(result)
+
+
+def section_restore_certificate(source: int, prefix: int, power: int) -> dict[str, Any]:
+    cells = section_restore_cells(source, prefix, power)
+    determinants = [Fraction(cell["jacobian_det"]) for cell in cells]
+    inverse_determinants = [
+        Fraction(cell["inverse_jacobian_det"]) for cell in cells
+    ]
+    return {
+        "kind": "periodic_fixed-boundary_freudenthal_cutoff",
+        "source_axis": source,
+        "prefix_axis": prefix,
+        "power": power,
+        "inner_half_side": str(SECTION_RESTORE_INNER),
+        "outer_half_side": str(SECTION_RESTORE_OUTER),
+        "grid_levels": [
+            str(-SECTION_RESTORE_OUTER),
+            str(-SECTION_RESTORE_INNER),
+            str(SECTION_RESTORE_INNER),
+            str(SECTION_RESTORE_OUTER),
+        ],
+        "vertex_rule": "v_prefix -= power * chi(v) * v_source",
+        "cell_rule": "Freudenthal on each of the 27 grid boxes",
+        "cell_count": len(cells),
+        "jacobian_det_min": str(min(determinants)),
+        "jacobian_det_max": str(max(determinants)),
+        "inverse_jacobian_det_min": str(min(inverse_determinants)),
+        "boundary_identity": True,
+        "inner_map": "inverse transvection",
+        "explicit_inverse": "swap source and image on every reconstructed cell",
+    }
+
+
+def _periodic_delta(point: Iterable[Fraction]) -> tuple[list[Fraction], list[Fraction]]:
+    """Return a nearest period-four lift and its lattice translation."""
+
+    delta = []
+    lattice = []
+    for value in point:
+        value = Fraction(value)
+        quotient = (value + PERIOD // 2) // PERIOD
+        base = Fraction(quotient * PERIOD)
+        delta.append(value - base)
+        lattice.append(base)
+    return delta, lattice
+
+
+def apply_section_restore(
+    source: int, prefix: int, power: int, point: Iterable[Fraction]
+) -> list[Fraction]:
+    delta, lattice = _periodic_delta(point)
+    if inf_norm(delta) >= SECTION_RESTORE_OUTER:
+        return [Fraction(value) for value in point]
+    image = apply_cells(list(section_restore_cells(source, prefix, power)), delta)
+    return add(image, lattice)
+
+
+def apply_section_restore_inverse(
+    source: int, prefix: int, power: int, point: Iterable[Fraction]
+) -> list[Fraction]:
+    delta, lattice = _periodic_delta(point)
+    if inf_norm(delta) >= SECTION_RESTORE_OUTER:
+        return [Fraction(value) for value in point]
+    inverse_cells = []
+    for cell in section_restore_cells(source, prefix, power):
+        inverse_cells.append(
+            {
+                "source": cell["image"],
+                "linear": cell["inverse_linear"],
+                "translation": cell["inverse_translation"],
+            }
+        )
+    image = apply_cells(inverse_cells, delta)
+    return add(image, lattice)
+
+
 def apply_alpha(generator: dict[str, Any], point: Iterable[Fraction]) -> list[Fraction]:
     linear = generator["transvection"]["linear"]
     after_a = matvec(linear, point)
-    return apply_cells(generator["straightening"]["cells"], after_a)
+    after_square = apply_cells(generator["straightening"]["cells"], after_a)
+    return apply_section_restore(
+        int(generator["alpha_target"]),
+        int(generator["alpha_prefix"]),
+        int(generator["power"]),
+        after_square,
+    )
+
+
+def apply_alpha_inverse(generator: dict[str, Any], point: Iterable[Fraction]) -> list[Fraction]:
+    before_restore = apply_section_restore_inverse(
+        int(generator["alpha_target"]),
+        int(generator["alpha_prefix"]),
+        int(generator["power"]),
+        point,
+    )
+    before_square = apply_cells(
+        generator["straightening"]["inverse_cells"], before_restore
+    )
+    return matvec(generator["transvection"]["inverse_linear"], before_square)
 
 
 def coarse_spine_vertices(base: Vertex) -> tuple[Vertex, ...]:

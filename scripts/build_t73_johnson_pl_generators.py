@@ -7,6 +7,7 @@ import argparse
 import hashlib
 import importlib.util
 import json
+import time
 from pathlib import Path
 from typing import Any
 
@@ -29,6 +30,20 @@ def canonical_sha(value: Any) -> str:
     return hashlib.sha256(raw).hexdigest().upper()
 
 
+def write_json(path: Path, value: Any) -> None:
+    """Write generated JSON, tolerating short-lived Windows mount locks."""
+
+    payload = json.dumps(value, indent=2, sort_keys=True) + "\n"
+    for attempt in range(8):
+        try:
+            path.write_text(payload, encoding="utf-8")
+            return
+        except OSError:
+            if attempt == 7:
+                raise
+            time.sleep(0.05 * (attempt + 1))
+
+
 def known_bits() -> list[int]:
     bits = "001001101010111011110000011011000001110110100101111101111101100001100101000110110110110100110"
     return [int(bit) for bit in bits]
@@ -47,6 +62,7 @@ def build_generator(index: int, movie_move: dict[str, Any], pl) -> dict[str, Any
     target_vector = square[1]
     prefix_vector = square[2]
     straightening = pl.square_fan_cells(target_vector, prefix_vector, side)
+    section_restore = pl.section_restore_certificate(source, prefix, power)
     generator = {
         "schema": "t73_johnson_pl_generator/v1",
         "index": index,
@@ -66,6 +82,7 @@ def build_generator(index: int, movie_move: dict[str, Any], pl) -> dict[str, Any
                 },
             },
             "prism_cell_count": straightening["cell_count"],
+            "section_restore_cell_count": section_restore["cell_count"],
         },
         "transvection": {
             "linear": linear,
@@ -73,15 +90,22 @@ def build_generator(index: int, movie_move: dict[str, Any], pl) -> dict[str, Any
             "jacobian_det": 1,
         },
         "straightening": straightening,
+        "section_restore": section_restore,
         "explicit_inverse": {
+            "application_order": [
+                "section_restore_inverse",
+                "straightening_inverse",
+                "transvection_inverse",
+            ],
             "transvection": inverse_linear,
             "straightening_cells": straightening["inverse_cells"],
+            "section_restore": section_restore["explicit_inverse"],
         },
         "jacobian_det_min": straightening["jacobian_det_min"],
         "jacobian_positive": True,
         "support": (
-            "global affine transvection composed with a relative square-fan "
-            "prism that misses the protected ball"
+            "global affine transvection, relative square-fan prism, and a "
+            "fixed-boundary section cutoff; the arm restore remains open"
         ),
         "protected_ball_disjointness": {
             "prism_misses_protected_ball": True,
@@ -139,6 +163,7 @@ def build_all(write: bool = False) -> dict[str, Any]:
                 "power": generator["power"],
                 "side_bit": bit,
                 "prism_cell_count": generator["straightening"]["cell_count"],
+                "section_restore_cell_count": generator["section_restore"]["cell_count"],
                 "jacobian_det_min": generator["jacobian_det_min"],
                 "heegaard_pair_preserved": generator["heegaard_pair_preserved"],
                 "fixes_section_ball": generator["fixes_section_ball"],
@@ -146,9 +171,7 @@ def build_all(write: bool = False) -> dict[str, Any]:
             }
         )
         if write:
-            (ROOT / path).write_text(
-                json.dumps(generator, indent=2, sort_keys=True) + "\n", encoding="utf-8"
-            )
+            write_json(ROOT / path, generator)
     if product != factor["matrix_A"]:
         raise AssertionError("unit transvections no longer multiply to A")
     manifest = {
@@ -158,24 +181,25 @@ def build_all(write: bool = False) -> dict[str, Any]:
         "generators": records,
         "product_on_H1": product,
         "prism_cells_per_generator": records[0]["prism_cell_count"] if records else 0,
+        "section_restore_cells_per_generator": (
+            records[0]["section_restore_cell_count"] if records else 0
+        ),
         "heegaard_preserved_count": heegaard_count,
         "section_ball_identity_count": ball_count,
         "heegaard_preserving_representative": "PASS" if heegaard_count == 93 else "OPEN",
         "section_ball_identity": "PASS" if ball_count == 93 else "OPEN",
         "construction": (
-            "each generator is Phi o A_ij with Phi a relative square-fan prism "
-            "isotopic to the identity; (Phi o A_ij)_* = A_ij is proved by the "
-            "Jacobian-1 affine transvection. Setwise dual-block preservation "
-            "and pointwise identity on the section ball are live checks."
+            "each generator currently has a global A_ij, the legacy relative "
+            "square-fan prism, and an exact fixed-boundary PL cutoff that cancels "
+            "A_ij on the protected ball. The missing arm-supported Johnson "
+            "Restore is still required for setwise dual-block preservation."
         ),
     }
     manifest["sha256"] = canonical_sha(
         {key: value for key, value in manifest.items() if key != "sha256"}
     )
     if write:
-        (OUT_DIR / "manifest.json").write_text(
-            json.dumps(manifest, indent=2, sort_keys=True) + "\n", encoding="utf-8"
-        )
+        write_json(OUT_DIR / "manifest.json", manifest)
     return manifest
 
 
@@ -190,6 +214,7 @@ def main() -> None:
         print(f"COUNT={manifest['count']}")
         print(f"PRODUCT_ON_H1={manifest['product_on_H1']}")
         print(f"PRISM_CELLS={manifest['prism_cells_per_generator']}")
+        print(f"SECTION_RESTORE_CELLS={manifest['section_restore_cells_per_generator']}")
         print(f"HEEGAARD_PRESERVING={manifest['heegaard_preserving_representative']}")
         print(f"HEEGAARD_PRESERVED_COUNT={manifest['heegaard_preserved_count']}")
         print(f"SECTION_BALL_IDENTITY={manifest['section_ball_identity']}")

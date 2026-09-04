@@ -64,9 +64,16 @@
       },
       "region": "T^3 minus the straightening prism"
     },
-    "prism_cell_count": 12
+    "prism_cell_count": 12,
+    "section_restore_cell_count": 162
   },
   "explicit_inverse": {
+    "application_order": [
+      "section_restore_inverse",
+      "straightening_inverse",
+      "transvection_inverse"
+    ],
+    "section_restore": "swap source and image on every reconstructed cell",
     "straightening_cells": [
       {
         "image": [
@@ -915,7 +922,7 @@
       ]
     ]
   },
-  "fixes_section_ball": false,
+  "fixes_section_ball": true,
   "heegaard_pair": {
     "h0_cube_centers": 32,
     "left_h0": 8,
@@ -951,65 +958,35 @@
   },
   "schema": "t73_johnson_pl_generator/v1",
   "section_ball": {
-    "failure_count": 32,
-    "failures": [
-      {
-        "delta": "1/3137664",
-        "image": [
-          "1/3137664",
-          "0",
-          "1/3137664"
-        ],
-        "point": [
-          "0",
-          "0",
-          "1/3137664"
-        ]
-      },
-      {
-        "delta": "1/1568832",
-        "image": [
-          "1/1568832",
-          "0",
-          "1/1568832"
-        ],
-        "point": [
-          "0",
-          "0",
-          "1/1568832"
-        ]
-      },
-      {
-        "delta": "1/1045888",
-        "image": [
-          "1/1045888",
-          "0",
-          "1/1045888"
-        ],
-        "point": [
-          "0",
-          "0",
-          "1/1045888"
-        ]
-      },
-      {
-        "delta": "1/784416",
-        "image": [
-          "1/784416",
-          "0",
-          "1/784416"
-        ],
-        "point": [
-          "0",
-          "0",
-          "1/784416"
-        ]
-      }
-    ],
-    "identity": false,
+    "failure_count": 0,
+    "failures": [],
+    "identity": true,
     "samples": 64
   },
-  "sha256": "5FF2978F78F892EEA3F88FC3BF5B1E72893B0D3BF066AEACB45ADCA8F51A2A02",
+  "section_restore": {
+    "boundary_identity": true,
+    "cell_count": 162,
+    "cell_rule": "Freudenthal on each of the 27 grid boxes",
+    "explicit_inverse": "swap source and image on every reconstructed cell",
+    "grid_levels": [
+      "-1/32684",
+      "-1/98052",
+      "1/98052",
+      "1/32684"
+    ],
+    "inner_half_side": "1/98052",
+    "inner_map": "inverse transvection",
+    "inverse_jacobian_det_min": "2/3",
+    "jacobian_det_max": "3/2",
+    "jacobian_det_min": "1/2",
+    "kind": "periodic_fixed-boundary_freudenthal_cutoff",
+    "outer_half_side": "1/32684",
+    "power": 1,
+    "prefix_axis": 0,
+    "source_axis": 2,
+    "vertex_rule": "v_prefix -= power * chi(v) * v_source"
+  },
+  "sha256": "39BCA5E46F7990A9807CED5C7972FEB5EFF4A25F94FBA45AC0B507E3BDC50346",
   "side": "prefix-first",
   "side_bit": 0,
   "square_normal": [
@@ -3006,7 +2983,7 @@
     ],
     "protected_clearance": "7/2"
   },
-  "support": "global affine transvection composed with a relative square-fan prism that misses the protected ball",
+  "support": "global affine transvection, relative square-fan prism, and a fixed-boundary section cutoff; the arm restore remains open",
   "transvection": {
     "inverse_linear": [
       [

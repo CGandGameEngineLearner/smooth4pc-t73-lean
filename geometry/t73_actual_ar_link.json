@@ -2751,15 +2751,15 @@
     "rule": "normal circle in a coordinate plane orthogonal to C_i, transported by psi_A on the top slice; lambda/mu are I-arcs",
     "source": "Aitchison-Rubinstein mapping-torus 1-handles, not a (1,1,1) translate"
   },
-  "generator_manifest_sha256": "816E5A2ECBA934543A79E50AD4D590E5D173A1A3DE1FD5FB8B423AE1D50CADA2",
-  "psi_A_sha256": "E120409A99ACB8FB6770917E85867665FE73CB2334AD0B6983A75A5E94043693",
+  "generator_manifest_sha256": "C416F58C96269BD87E8A734226EA9FD02A57E8684EA05E6BF3699C6CED4544DE",
+  "psi_A_sha256": "CC85E11F08D95179B1526DC2AAEABC6FBBDB254789C291E480525800BE331691",
   "schema": "t73_actual_ar_link/v1",
-  "sha256": "2794D4F4B482BC37433CEADD1466C0F55CF58DFA5DE3DC793CD06B06CCF1AEBC",
+  "sha256": "AFCC1D5E642B8C64FAF14CC0B539E734E1F5E78D0ED7E5FA02E1986718CC9EC5",
   "status": {
     "actual_psi_images": "PASS",
     "dual_2_cells_from_cubulation": "PASS",
     "free_words_are_not_embeddings": "PASS",
     "heegaard_preserving_psi_A": "OPEN",
-    "section_ball_identity": "OPEN"
+    "section_ball_identity": "PASS"
   }
 }

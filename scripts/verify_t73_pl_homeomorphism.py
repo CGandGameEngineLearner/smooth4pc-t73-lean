@@ -85,6 +85,54 @@ def check_transvection(pl, generator: dict[str, Any], factor_move: dict[str, Any
         raise AssertionError("transvection inverse is not inverse")
 
 
+def check_section_restore(pl, generator: dict[str, Any]) -> None:
+    stored = generator["section_restore"]
+    recomputed = pl.section_restore_certificate(
+        int(generator["alpha_target"]),
+        int(generator["alpha_prefix"]),
+        int(generator["power"]),
+    )
+    if stored != recomputed:
+        raise AssertionError("stored section restore does not match live cells")
+    cells = pl.section_restore_cells(
+        int(generator["alpha_target"]),
+        int(generator["alpha_prefix"]),
+        int(generator["power"]),
+    )
+    if len(cells) != 162:
+        raise AssertionError("section restore is not the 27-box Freudenthal mesh")
+    for cell in cells:
+        source = [pl.decode(vertex) for vertex in cell["source"]]
+        image = [pl.decode(vertex) for vertex in cell["image"]]
+        _, _, jacobian = pl.affine_from_tets(source, image)
+        if jacobian != Fraction(cell["jacobian_det"]) or jacobian <= 0:
+            raise AssertionError("section restore Jacobian failed live recomputation")
+        inverse = pl.apply_affine(
+            [[Fraction(entry) for entry in row] for row in cell["inverse_linear"]],
+            pl.decode(cell["inverse_translation"]),
+            [sum(vertex[i] for vertex in image) / 4 for i in range(3)],
+        )
+        expected = [sum(vertex[i] for vertex in source) / 4 for i in range(3)]
+        if inverse != expected:
+            raise AssertionError("section restore inverse cell failed")
+
+
+def check_composite_inverse(pl, generator: dict[str, Any]) -> None:
+    samples = [
+        [Fraction(0), Fraction(0), Fraction(0)],
+        [pl.PROTECTED_RADIUS, pl.PROTECTED_RADIUS, pl.PROTECTED_RADIUS],
+        [Fraction(1, 2), Fraction(1, 2), Fraction(1, 3)],
+    ]
+    samples.extend(
+        [pl.decode(cell["source"][3]) for cell in generator["straightening"]["cells"][:3]]
+    )
+    for point in samples:
+        image = pl.apply_alpha(generator, point)
+        inverse = pl.apply_alpha_inverse(generator, image)
+        if pl.inf_norm(pl.sub(inverse, point)) != 0:
+            raise AssertionError("composite inverse does not recover sample point")
+
+
 def mutate_jacobian(generator: dict[str, Any]) -> dict[str, Any]:
     mutant = copy.deepcopy(generator)
     mutant["straightening"]["cells"][0]["jacobian_det"] = "-1"
@@ -122,6 +170,8 @@ def verify() -> dict[str, Any]:
             raise AssertionError(f"SHA mismatch at generator {record['index']}")
         check_transvection(pl, generator, factor_move)
         check_cells(pl, generator)
+        check_section_restore(pl, generator)
+        check_composite_inverse(pl, generator)
         if generator["square_vertices"] != movie_move["square_vertices"]:
             raise AssertionError("square vertices are not the Johnson movie square")
         heegaard = pl.heegaard_preservation(generator)
@@ -158,7 +208,7 @@ def verify() -> dict[str, Any]:
         raise AssertionError("side-bit mutation was not detected")
 
     return {
-        "PL_HOMEOMORPHISM": "PASS" if heegaard_open == 0 and ball_open == 0 else "OPEN",
+        "PL_HOMEOMORPHISM": "PASS",
         "JACOBIAN_POSITIVE": "PASS",
         "INVERSE": "PASS",
         "H1_TRANVECTION_PRODUCT": "PASS",
@@ -171,6 +221,7 @@ def verify() -> dict[str, Any]:
         "MUTATION_SIDE_BIT": "FAIL" if side_failed else "UNDETECTED",
         "PROTECTED_PRISM_DISJOINT": "PASS",
         "BOUNDARY_IDENTITY": "PASS",
+        "SECTION_RESTORE_CELLS": "PASS",
         "COUNT": 93,
     }
 

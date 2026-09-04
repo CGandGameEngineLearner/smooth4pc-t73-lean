@@ -55,10 +55,10 @@
       ]
     }
   ],
-  "construction": "psi_A is the composition of the 93 explicit Phi o A_ij cells; each factor is a PL homeomorphism with explicit inverse, so the composition is a PL homeomorphism. Homology is A because each Phi is isotopic to the identity. Setwise Heegaard preservation and section-ball identity are live checks, not assumptions.",
+  "construction": "psi_A is the composition of 93 explicit PL factors. Each currently contains A_ij, a legacy square-fan cell map, and a fixed-boundary section cutoff. The cutoff makes the protected ball pointwise fixed and is isotopic to the identity, so homology remains A. The required arm-supported Johnson Restore and setwise Heegaard preservation remain open.",
   "fixes_origin": true,
   "generator_count": 93,
-  "generator_manifest_sha256": "816E5A2ECBA934543A79E50AD4D590E5D173A1A3DE1FD5FB8B423AE1D50CADA2",
+  "generator_manifest_sha256": "C416F58C96269BD87E8A734226EA9FD02A57E8684EA05E6BF3699C6CED4544DE",
   "h0_centers_left": 16,
   "heegaard_pair_preserved": false,
   "homology_is_A": true,
@@ -104,14 +104,14 @@
   ],
   "schema": "t73_psi_A/v1",
   "section_ball_axis_fixed": [
-    false,
-    false,
-    false
+    true,
+    true,
+    true
   ],
-  "section_ball_identity": false,
-  "sha256": "E120409A99ACB8FB6770917E85867665FE73CB2334AD0B6983A75A5E94043693",
+  "section_ball_identity": true,
+  "sha256": "CC85E11F08D95179B1526DC2AAEABC6FBBDB254789C291E480525800BE331691",
   "status": {
-    "fixes_section_neighborhood": "OPEN",
+    "fixes_section_neighborhood": "PASS",
     "pl_homeomorphism": "PASS",
     "preserves_heegaard_pair": "OPEN",
     "psi_star_equals_A": "PASS"

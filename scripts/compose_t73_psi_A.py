@@ -104,11 +104,12 @@ def compose(write: bool = False) -> dict[str, Any]:
         "h0_centers_left": h0_left,
         "axis_sample_images": axis_images,
         "construction": (
-            "psi_A is the composition of the 93 explicit Phi o A_ij cells; "
-            "each factor is a PL homeomorphism with explicit inverse, so the "
-            "composition is a PL homeomorphism. Homology is A because each Phi "
-            "is isotopic to the identity. Setwise Heegaard preservation and "
-            "section-ball identity are live checks, not assumptions."
+            "psi_A is the composition of 93 explicit PL factors. Each currently "
+            "contains A_ij, a legacy square-fan cell map, and a fixed-boundary "
+            "section cutoff. The cutoff makes the protected ball pointwise fixed "
+            "and is isotopic to the identity, so homology remains A. The required "
+            "arm-supported Johnson Restore and setwise Heegaard preservation "
+            "remain open."
         ),
         "status": {
             "pl_homeomorphism": "PASS",
