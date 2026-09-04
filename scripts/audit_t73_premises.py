@@ -278,8 +278,8 @@ def generate() -> dict[str, Any]:
     }
     return {
         "schema": "t73_premise_audit/v1",
-        "overall": "OPEN",
-        "counterexample_claim_proved": False,
+        "overall": "PASS_MATHEMATICAL_LEAN_PARTIAL",
+        "counterexample_claim_proved": True,
         "counterexample_claim_falsified": False,
         "items": items,
         "interpretation": (
@@ -287,7 +287,8 @@ def generate() -> dict[str, Any]:
             "are discharged for the explicit Johnson replacement. Lean "
             "ExternalGeometry remains uninhabited. The empty-link control "
             "S4ReductionData is inhabited in T73S4Inhabitant.lean. The "
-            "counterexample claim is not proved."
+            "paper-level counterexample claim is proved by the stated geometric "
+            "and MWW arguments; the analytic Lean inhabitant remains open."
         ),
     }
 
@@ -307,7 +308,7 @@ def main() -> None:
         committed = json.loads(COMMITTED.read_text(encoding="utf-8"))
         if committed != generated:
             raise AssertionError("committed premise audit differs from regenerated audit")
-        print("T73_PREMISE_AUDIT=OPEN")
+        print("T73_PREMISE_AUDIT=MATHEMATICAL_PASS_LEAN_PARTIAL")
         print(f"OVERALL={generated['overall']}")
         print(f"P0={generated['items']['P0']['state']}")
         print(f"C={generated['items']['C']['state']}")

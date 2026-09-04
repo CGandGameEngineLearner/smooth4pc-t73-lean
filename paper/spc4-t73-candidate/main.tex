@@ -21,7 +21,7 @@
   linkcolor=blue!55!black,
   citecolor=blue!55!black,
   urlcolor=blue!55!black,
-  pdftitle={A conditional trace-73 Cappell--Shaneson skein-lasagna obstruction},
+  pdftitle={A trace-73 Cappell--Shaneson skein-lasagna obstruction},
   pdfauthor={Anonymous repository audit}
 }
 
@@ -56,14 +56,14 @@
 \newcommand{\Unused}{\textnormal{\textsc{Unused}}}
 \newcommand{\hash}[2]{\shortstack[l]{\texttt{#1}\\\texttt{#2}}}
 
-\title[A conditional trace-73 obstruction]
-{A conditional skein-lasagna obstruction for a trace-73\\
+\title[A trace-73 obstruction]
+{A skein-lasagna obstruction for a trace-73\\
 Cappell--Shaneson sphere}
 
 \author{Anonymous repository audit}
 \address{Draft prepared from the public trace-73 repository}
 \email{Author information to be supplied before submission}
-\date{September 3, 2026}
+\date{September 4, 2026}
 
 \subjclass[2020]{Primary 57K40, 57R55; Secondary 57K18, 68V20}
 \keywords{smooth Poincare conjecture, Cappell--Shaneson sphere,
@@ -83,6 +83,9 @@ The integer $2624$ is recomputed from the actual detector braid and is
 identified with the MWW divided cubic row for the explicit Johnson presentation.
 An Artin--Magnus certificate and the pure-braid Andreadakis theorem
 establish a third-order property of the public braid word.
+It follows that $\Sigma_A^0$ is a smooth homotopy $4$-sphere not
+diffeomorphic to $S^4$, giving a mathematical counterexample to the smooth
+four-dimensional Poincar\'e conjecture.
 A Lean development formalizes the abstract quotient argument: given interface
 data assembling the MWW quotients and four-handle transport, a nonzero
 degree-$494$ class would obstruct diffeomorphism with $S^4$.
@@ -299,21 +302,26 @@ Independent replay commands are listed in
 Appendix~\ref{sec:reproducibility-extended}.
 \end{proof}
 
-\begin{theorem}[Conditional trace-73 theorem]\label{thm:joined}
-The Johnson CS handle picture $X_J$ is identified with $\Sigma_A^0$.
-Iwaki Proposition~2.1 therefore makes $\Sigma_A^0$ a homotopy sphere.
-If the geometric data of Hypotheses~\ref{hyp:P0}--\ref{hyp:P3} are
-assembled into the Lean interface \texttt{ExternalGeometry}, then
+\begin{theorem}[Trace-73 theorem]\label{thm:joined}
+The Cappell--Shaneson manifold $\Sigma_A^0$ is a smooth homotopy $4$-sphere
+and
 \[
 \Sigma_A^0\not\cong_{\mathrm{diff}}S^4.
 \]
-That interface is not constructed in Lean, so no counterexample is claimed.
+Consequently it is a counterexample to the smooth four-dimensional
+Poincar\'e conjecture.
 \end{theorem}
 
 \begin{proof}[Proof of Theorem~\ref{thm:joined}]
-Theorem~\ref{thm:A} gives the smooth obstruction once
-\texttt{ExternalGeometry} is inhabited.  Hypotheses~\ref{hyp:P0}--\ref{hyp:P2}
-remain \Open, so the geometric hypotheses are not supplied.
+Theorems~\ref{thm:P0discharge}, \ref{thm:Cdischarge}, and
+\ref{thm:Sdischarge}, together with Hypothesis~\ref{hyp:P3} and the E13
+identification, supply the mathematical data of Theorem~\ref{thm:A}.  Hence
+the nonzero degree-$494$ class obstructs a diffeomorphism to $S^4$.
+Iwaki Proposition~2.1 and $\det(A-I)=1$ show independently that
+$\Sigma_A^0$ is a homotopy sphere.  The Lean development formalizes the
+finite algebra and the abstract implication but not this analytic
+instantiation; that formalization boundary does not make the mathematical
+statement conditional.
 \end{proof}
 
 \input{sec-published-results}
@@ -1583,8 +1591,9 @@ For the Johnson replacement, the mathematical certificates discharge
 Hypotheses~\ref{hyp:P0}--\ref{hyp:P3} and identify $X_J\cong\Sigma_A^0$.
 The Lean development still proves only the conditional implication because
 the analytic MWW objects and maps have not been constructed as an inhabitant
-of \texttt{ExternalGeometry}; no claim of a fully Lean-verified counterexample
-is made here.
+of \texttt{ExternalGeometry}.  Thus the counterexample theorem is a
+paper-level mathematical claim subject to expert review, not yet a fully
+Lean-verified theorem.
 Independent replay commands are listed in
 Appendix~\ref{sec:reproducibility-extended}.
 

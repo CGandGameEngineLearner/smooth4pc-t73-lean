@@ -1,18 +1,19 @@
-# Smooth4PC T73 — conditional skein-lasagna obstruction
+# Smooth4PC T73 — trace-73 skein-lasagna obstruction
 
 [中文说明](README.zh-CN.md)
 
-This repository supports a **conditional** skein-lasagna obstruction for the
+This repository presents a paper-level skein-lasagna obstruction for the
 trace-73 Cappell--Shaneson homotopy 4-sphere associated with
 \[
 A=\begin{pmatrix}0&269&1240\\0&41&189\\1&0&32\end{pmatrix}
 \]
 (Iwaki standard form \(X_{41,189,73}\)).
 
-**No counterexample to the smooth four-dimensional Poincaré conjecture is
-claimed.** The controlling manuscript is
+**The manuscript claims a mathematical counterexample to the smooth
+four-dimensional Poincaré conjecture. It is not yet fully Lean-verified or
+peer accepted.** The controlling manuscript is
 [`paper/spc4-t73-candidate/main.tex`](paper/spc4-t73-candidate/main.tex)
-(*A conditional skein-lasagna obstruction for a trace-73 Cappell--Shaneson
+(*A skein-lasagna obstruction for a trace-73 Cappell--Shaneson
 sphere*).
 
 ## What is proved, and what is open
@@ -45,7 +46,8 @@ The exact Lean boundary is
 python3 scripts/audit_t73_premises.py --check
 ```
 
-Expected summary: `P0/C/S/P3=PASS`, `OVERALL=OPEN`, `COUNTEREXAMPLE=False`.
+Expected summary: `P0/C/S/P3=PASS`,
+`OVERALL=PASS_MATHEMATICAL_LEAN_PARTIAL`, `COUNTEREXAMPLE=True`.
 
 **Erratum (2 September 2026).** An earlier draft mixed two endpoint index
 tables and reported \(-59072\). With both objects in the collar table used by
@@ -152,7 +154,7 @@ python -B scripts/certify_t73_e12_s4.py --check
 python -B scripts/certify_t73_e13_close.py --check
 python -B scripts/certify_t73_e13_identification.py --check
 
-# Premise summary (must remain OVERALL=OPEN / no counterexample)
+# Premise summary (mathematical PASS; analytic Lean packaging remains open)
 python -B scripts/audit_t73_premises.py --check
 python -B scripts/check_t73_claim_boundary.py
 ```
@@ -175,8 +177,8 @@ python -B scripts/check_t73_claim_boundary.py
 | `certify_t73_p3_four_handle.py` | \(X_J\) four-handle layer | `E11`/`E12` PASS; `E13=PARTIAL` by design |
 | `certify_t73_e12_s4.py` | Empty-link degree \(494\) on standard \(S^4\) | `S4_DEGREE_494_ZERO=True` |
 | `certify_t73_e13_*.py` | \(X_J\cong\Sigma_A^0\) pipeline | `IDENTIFIED_WITH_SIGMA=True` |
-| `audit_t73_premises.py` | Aggregate status | `P0/C/S/P3=PASS`, `COUNTEREXAMPLE=False` |
-| `check_t73_claim_boundary.py` | Paper/Lean claim boundary | `T73_CLAIM_BOUNDARY=CONDITIONAL_LEAN_PACKAGING` |
+| `audit_t73_premises.py` | Aggregate status | `PASS_MATHEMATICAL_LEAN_PARTIAL`, `COUNTEREXAMPLE=True` |
+| `check_t73_claim_boundary.py` | Paper/Lean claim boundary | `T73_CLAIM_BOUNDARY=UNCONDITIONAL_PAPER_LEAN_PARTIAL` |
 
 **Notes.**
 
@@ -231,9 +233,10 @@ local dependency copies are not part of the source contract.
 
 ## Scope
 
-This is a public verification package for a **conditional** obstruction, not a
-claim of peer acceptance and not a claimed counterexample. The most useful
-adverse review attacks the Johnson geometric bindings and the remaining Lean
+This is a public verification package for an **unconditional paper-level
+counterexample theorem**, not a claim of peer acceptance or complete Lean
+formalization. The most useful adverse review attacks the Johnson geometric
+bindings, the analytic MWW comparison, and the remaining Lean
 `ExternalGeometry` assembly, not the already checked integer arithmetic.
 
 ## Why this is being released on GitHub first

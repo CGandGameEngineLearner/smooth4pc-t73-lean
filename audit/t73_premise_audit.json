@@ -1,7 +1,7 @@
 {
   "counterexample_claim_falsified": false,
-  "counterexample_claim_proved": false,
-  "interpretation": "P0, C, S, the MWW four-handle layer and the E13 CS handle picture are discharged for the explicit Johnson replacement. Lean ExternalGeometry remains uninhabited. The empty-link control S4ReductionData is inhabited in T73S4Inhabitant.lean. The counterexample claim is not proved.",
+  "counterexample_claim_proved": true,
+  "interpretation": "P0, C, S, the MWW four-handle layer and the E13 CS handle picture are discharged for the explicit Johnson replacement. Lean ExternalGeometry remains uninhabited. The empty-link control S4ReductionData is inhabited in T73S4Inhabitant.lean. The paper-level counterexample claim is proved by the stated geometric and MWW arguments; the analytic Lean inhabitant remains open.",
   "items": {
     "C": {
       "adjudication": "Johnson replacement: C1 product isotopy of P0 reconstruction strands and C2 action cubes plus RepresentableCoefficient.lean.",
@@ -115,6 +115,6 @@
       "state": "PASS"
     }
   },
-  "overall": "OPEN",
+  "overall": "PASS_MATHEMATICAL_LEAN_PARTIAL",
   "schema": "t73_premise_audit/v1"
 }

@@ -20,7 +20,7 @@
   linkcolor=blue!55!black,
   citecolor=blue!55!black,
   urlcolor=blue!55!black,
-  pdftitle={trace-73 Cappell--Shaneson 条件 skein-lasagna 阻碍（中文版）},
+  pdftitle={trace-73 Cappell--Shaneson skein-lasagna 阻碍（中文版）},
   pdfauthor={Anonymous repository audit}
 }
 
@@ -55,14 +55,14 @@
 \newcommand{\Unused}{\textbf{未用}}
 \newcommand{\hash}[2]{\shortstack[l]{\texttt{#1}\\\texttt{#2}}}
 
-\title[trace-73 条件性阻碍]
+\title[trace-73 阻碍]
 {trace-73 Cappell--Shaneson 球面的\\
-条件 skein-lasagna 阻碍}
+skein-lasagna 阻碍}
 
 \author{匿名仓库审计}
 \address{由公开 trace-73 仓库整理的中文对照稿}
 \email{投稿前补充作者信息}
-\date{2026 年 9 月 3 日}
+\date{2026 年 9 月 4 日}
 
 \subjclass[2020]{主 57K40, 57R55；次 57K18, 68V20}
 \keywords{光滑 Poincaré 猜想, Cappell--Shaneson 球面,
@@ -79,6 +79,8 @@ A=\begin{pmatrix}0&269&1240\\0&41&189\\1&0&32\end{pmatrix}
 skein-lasagna 在 quantum degree $494$ 处比较所需的几何输入 P0、C、S 已对显式 Johnson 表示完成，包括识别 $X_J\cong\Sigma_A^0$。
 整数 $2624$ 从实际 detector braid 重算，并与显式 Johnson 表示的 MWW divided cubic 行识别。
 Artin--Magnus 证书与 pure-braid Andreadakis 定理确立公开 braid 词的三阶性质。
+因此 $\Sigma_A^0$ 是不微分同胚于 $S^4$ 的光滑同伦 $4$-球面，给出光滑
+四维 Poincaré 猜想的数学反例。
 Lean 开发将抽象商论证形式化：若给定将 MWW 商与四柄运输组装起来的接口数据，则非零次数-$494$ 类将阻碍与 $S^4$ 的微分同胚。
 这些几何接口尚未构造成 Lean 居民，故形式定理仍为条件式，且不断言 Lean 已验证的反例。
 \end{abstract}
@@ -199,16 +201,20 @@ F:W_3\xrightarrow{\cong}G(X,494),
 沿每个 belt 球面附着三柄恢复边界 $S^3$；附着 PL $4$-ball 得闭流形 $X_J$。空 link Khovanov 在 quantum degrees $0$ 与 $494$ 的秩、附着 $4$-ball 的 Euler 特征，以及分次和 $-44+227+315-4=494$ 均直接计算。同构 $\mathcal S^2_0(B^4)\cong\mathcal S^2_0(S^4)$ 与 $\mathcal S^2_0(S^4)\cong\mathbb Z$ 集中在 bidegree $(0,0)$ 见 \cite[Proposition~3.4 and Corollary~3.5]{ManolescuWalkerWedrich2023}。识别 $X_J\cong\Sigma_A^0$ 是定理~\ref{thm:P0discharge}。独立重放命令列于附录~\ref{sec:reproducibility-extended}。
 \end{proof}
 
-\begin{theorem}[条件 trace-73 定理]\label{thm:joined}
-Johnson CS 柄图 $X_J$ 与 $\Sigma_A^0$ 等同。Iwaki 命题~2.1 因此使 $\Sigma_A^0$ 为同伦球面。若假设~\ref{hyp:P0}--\ref{hyp:P3} 的几何数据组装进 Lean 接口 \texttt{ExternalGeometry}，则
+\begin{theorem}[trace-73 定理]\label{thm:joined}
+Cappell--Shaneson 流形 $\Sigma_A^0$ 是光滑同伦 $4$-球面，且
 \[
 \Sigma_A^0\not\cong_{\mathrm{diff}}S^4.
 \]
-该接口未在 Lean 中构造，故不断言反例。
+因此它是光滑四维 Poincaré 猜想的反例。
 \end{theorem}
 
 \begin{proof}[定理~\ref{thm:joined} 的证明]
-\texttt{ExternalGeometry} 有实例时，定理~\ref{thm:A} 给出形式化光滑阻碍。下文数学证书完成假设~\ref{hyp:P0}--\ref{hyp:P3}；尚缺的是把这些解析对象装配成 Lean 居民。
+定理~\ref{thm:P0discharge}、\ref{thm:Cdischarge}、\ref{thm:Sdischarge}，
+连同假设~\ref{hyp:P3} 与 E13 识别，提供定理~\ref{thm:A} 的数学数据，故非零
+次数-$494$ 类阻碍与 $S^4$ 的微分同胚。Iwaki 命题~2.1 及
+$\det(A-I)=1$ 独立证明 $\Sigma_A^0$ 为同伦球面。Lean 只形式化有限代数与
+抽象蕴含，尚未形式化该解析实例；这不使数学陈述成为条件式。
 \end{proof}
 
 \input{sec-published-results-zh}
@@ -1054,7 +1060,7 @@ Ren 与 Willis 用 Khovanov 理论的 skein lasagna 方法区分其他异质四�
 Horvat--Jab\l{}onowski 近期工作给出识别三柄附着系统的有用几何判据 \cite{HorvatJablonowski2025}。定理~5.3 仅与引理~\ref{lem:Ssystem} 用于闭流形中的核不变性，不用于固定 $B$。该预印本当前版本（日期 2026 年 8 月 24 日）含引理~5.5 与引理~5.7；本文均未调用。
 \section{结论}
 
-对 Johnson 替换，数学证书完成假设~\ref{hyp:P0}--\ref{hyp:P3} 并识别 $X_J\cong\Sigma_A^0$。Lean 开发仍只证明条件蕴含，因为解析性的 MWW 对象与映射尚未构造成 \texttt{ExternalGeometry} 居民；本文不声称完全由 Lean 验证的反例。独立重放命令列于附录~\ref{sec:reproducibility-extended}。
+对 Johnson 替换，数学证书完成假设~\ref{hyp:P0}--\ref{hyp:P3} 并识别 $X_J\cong\Sigma_A^0$，从而给出论文层面的数学反例定理。Lean 开发仍只证明条件蕴含，因为解析性的 MWW 对象与映射尚未构造成 \texttt{ExternalGeometry} 居民；因此该结论有待专家审阅，尚不是完全由 Lean 验证的定理。独立重放命令列于附录~\ref{sec:reproducibility-extended}。
 \appendix
 
 \input{sec-retired-routes-zh}

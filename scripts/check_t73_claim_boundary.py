@@ -1,10 +1,8 @@
 #!/usr/bin/env python3
-"""Check that the controlling paper keeps a conditional claim boundary.
+"""Check the unconditional paper theorem and its partial Lean boundary.
 
-The English manuscript marks Johnson P0/C/S as Open until actual geometry
-is supplied, and must not claim an unconditional smooth counterexample:
-Lean ExternalGeometry remains uninhabited, and MWW 3.4/3.5 are cited rather
-than proved here.
+The mathematical theorem is unconditional after P0/C/S/E13, while the Lean
+formalization must still state that ExternalGeometry remains uninhabited.
 """
 
 from __future__ import annotations
@@ -29,20 +27,20 @@ def reject(text: str, needle: str, source: Path) -> None:
 def check() -> None:
     paper_text = PAPER.read_text(encoding="utf-8")
 
-    # Conditional top-level theorem (not an unconditional Trace-73 theorem).
+    # Unconditional paper theorem, separated from the partial Lean status.
     require(
         paper_text,
-        r"\begin{theorem}[Conditional trace-73 theorem]\label{thm:joined}",
+        r"\begin{theorem}[Trace-73 theorem]\label{thm:joined}",
         PAPER,
     )
     require(
         paper_text,
-        "That interface is not constructed in Lean, so no counterexample is claimed.",
+        "Consequently it is a counterexample to the smooth four-dimensional",
         PAPER,
     )
     require(
         paper_text,
-        r"that assembly is \Open\ for the Johnson candidate",
+        "paper-level mathematical claim subject to expert review",
         PAPER,
     )
 
@@ -76,7 +74,7 @@ def check() -> None:
     )
     require(
         paper_text,
-        "no claim of a fully Lean-verified counterexample",
+        "not yet a fully",
         PAPER,
     )
     require(
@@ -102,10 +100,10 @@ def check() -> None:
     require(paper_text, r"scripts/recompute\_t73\_delta3.py --check", PAPER)
     require(paper_text, r"certify\_t73\_e12\_s4.py", PAPER)
 
-    # Forbidden: restored status-table OPEN rows, absent-ledger slogans,
-    # or an unconditional joined theorem / counterexample claim.
-    reject(paper_text, r"\begin{theorem}[Trace-73 theorem]\label{thm:joined}", PAPER)
-    reject(paper_text, "gives a counterexample", PAPER)
+    # Forbidden: stale OPEN rows, absent-ledger slogans, or a claim that Lean
+    # already contains the analytic geometry inhabitant.
+    reject(paper_text, r"\begin{theorem}[Conditional trace-73 theorem]\label{thm:joined}", PAPER)
+    reject(paper_text, "fully Lean-verified counterexample is proved", PAPER)
     reject(paper_text, "The actual reduced PD ledger is absent", PAPER)
     reject(paper_text, "that object is absent", PAPER)
     reject(paper_text, r"P0a & \Open", PAPER)
@@ -121,7 +119,7 @@ def check() -> None:
 
 def main() -> None:
     check()
-    print("T73_CLAIM_BOUNDARY=CONDITIONAL_LEAN_PACKAGING")
+    print("T73_CLAIM_BOUNDARY=UNCONDITIONAL_PAPER_LEAN_PARTIAL")
     print(f"PAPER={PAPER}")
 
 

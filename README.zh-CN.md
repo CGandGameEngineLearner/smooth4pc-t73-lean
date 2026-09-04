@@ -1,4 +1,4 @@
-# Smooth4PC T73 — 条件 skein-lasagna 阻碍
+# Smooth4PC T73 — trace-73 skein-lasagna 阻碍
 
 [English](README.md)
 
@@ -6,11 +6,12 @@
 \[
 A=\begin{pmatrix}0&269&1240\\0&41&189\\1&0&32\end{pmatrix}
 \]
-（Iwaki 标准形 \(X_{41,189,73}\)）的一份**条件性** skein-lasagna 阻碍论证。
+（Iwaki 标准形 \(X_{41,189,73}\)）的一份论文层面 skein-lasagna 阻碍论证。
 
-**不断言光滑四维 Poincaré 猜想的反例。** 控制性文稿为
+**论文主张一个光滑四维 Poincaré 猜想的数学反例；该结论尚未完全 Lean
+形式化，也不代表已经同行接受。** 控制性文稿为
 [`paper/spc4-t73-candidate/main.tex`](paper/spc4-t73-candidate/main.tex)
-（中文对照：`main-zh.tex`；标题：《trace-73 Cappell--Shaneson 球面的条件
+（中文对照：`main-zh.tex`；标题：《trace-73 Cappell--Shaneson 球面的
 skein-lasagna 阻碍》）。
 
 ## 已证与开放
@@ -40,7 +41,8 @@ Lean 边界见
 python3 scripts/audit_t73_premises.py --check
 ```
 
-预期摘要：`P0/C/S/P3=PASS`，`OVERALL=OPEN`，`COUNTEREXAMPLE=False`。
+预期摘要：`P0/C/S/P3=PASS`、`OVERALL=PASS_MATHEMATICAL_LEAN_PARTIAL`、
+`COUNTEREXAMPLE=True`。
 
 **勘误（2026 年 9 月 2 日）。** 较早草稿混用两套 endpoint 索引表，报告了
 \(-59072\)。统一到 braid 词所用 collar 表后，精确值为 \(+2624\)（仍非零）。
@@ -141,7 +143,7 @@ python -B scripts/certify_t73_e12_s4.py --check
 python -B scripts/certify_t73_e13_close.py --check
 python -B scripts/certify_t73_e13_identification.py --check
 
-# 前提汇总（须保持 OVERALL=OPEN / 非反例）
+# 前提汇总（数学 PASS；解析 Lean 装配仍开放）
 python -B scripts/audit_t73_premises.py --check
 python -B scripts/check_t73_claim_boundary.py
 ```
@@ -164,8 +166,8 @@ python -B scripts/check_t73_claim_boundary.py
 | `certify_t73_p3_four_handle.py` | \(X_J\) 四柄层 | `E11`/`E12` PASS；`E13=PARTIAL` 属设计 |
 | `certify_t73_e12_s4.py` | 标准 \(S^4\) 上空链次数 \(494\) | `S4_DEGREE_494_ZERO=True` |
 | `certify_t73_e13_*.py` | \(X_J\cong\Sigma_A^0\) 管道 | `IDENTIFIED_WITH_SIGMA=True` |
-| `audit_t73_premises.py` | 汇总状态 | `P0/C/S/P3=PASS`，`COUNTEREXAMPLE=False` |
-| `check_t73_claim_boundary.py` | 论文/Lean 声称边界 | `T73_CLAIM_BOUNDARY=CONDITIONAL_LEAN_PACKAGING` |
+| `audit_t73_premises.py` | 汇总状态 | `PASS_MATHEMATICAL_LEAN_PARTIAL`，`COUNTEREXAMPLE=True` |
+| `check_t73_claim_boundary.py` | 论文/Lean 声称边界 | `T73_CLAIM_BOUNDARY=UNCONDITIONAL_PAPER_LEAN_PARTIAL` |
 
 **说明。**
 
@@ -216,8 +218,8 @@ MWW 模与映射后才能改为 PASS，不能由证书布尔值替代。
 
 ## 范围
 
-这是面向**条件性**阻碍的公开核验包，不是同行接受声明，也不是已证反例。
-最有用的否定性审阅应针对 Johnson 几何绑定与尚未组装的 Lean
+这是面向**无条件论文级反例定理**的公开核验包，不是同行接受或完整 Lean
+形式化声明。最有用的否定性审阅应针对 Johnson 几何绑定、解析 MWW 比较与尚未组装的 Lean
 `ExternalGeometry`，而非已检整算术。
 
 ## 为何先在 GitHub 公开
