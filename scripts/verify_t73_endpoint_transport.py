@@ -13,6 +13,8 @@ from typing import Any
 ROOT = Path(__file__).resolve().parents[1]
 CONVENTION = ROOT / "data" / "T73_ENDPOINT_CONVENTION.json"
 AUDIT = ROOT / "audit" / "t73_endpoint_transport.json"
+ACTUAL_CUT = ROOT / "geometry" / "t73_actual_cut_tangle.json"
+ACTUAL_BRAID = ROOT / "geometry" / "t73_actual_geometric_braid.json"
 
 
 def load_builder():
@@ -47,6 +49,14 @@ def verify(*, write: bool = False) -> dict[str, Any]:
     }
     convention = payloads["convention"]
     transport = payloads["transport"]
+    cut = json.loads(ACTUAL_CUT.read_text(encoding="utf-8"))
+    braid = json.loads(ACTUAL_BRAID.read_text(encoding="utf-8"))
+    if convention["actual_cut_tangle_sha256"] != cut["sha256"]:
+        raise AssertionError("endpoint convention is not bound to the actual detector")
+    if convention["actual_geometric_braid_sha256"] != braid["witness_sha256"]:
+        raise AssertionError("endpoint convention is not bound to the actual braid")
+    if not convention["physical_endpoints_precede_public_table_lookup"]:
+        raise AssertionError("public endpoint coordinates were treated as physical input")
     if convention["dimension"] != 88 or len(convention["endpoints"]) != 88:
         raise AssertionError("convention does not record all 88 endpoints")
     required = {
@@ -57,6 +67,9 @@ def verify(*, write: bool = False) -> dict[str, Any]:
         "public_order",
         "pivotal_coefficient",
         "weight_defect_basis_vector",
+        "actual_side_source_id",
+        "coordinate_in_detector_chart",
+        "public_endpoint_id",
     }
     geometric = [None] * 88
     public = [None] * 88
@@ -66,6 +79,8 @@ def verify(*, write: bool = False) -> dict[str, Any]:
             raise AssertionError(f"endpoint missing {sorted(missing)}")
         if endpoint["pivotal_coefficient"]["sign"] not in (-1, 1):
             raise AssertionError("unresolved pivotal sign")
+        if not endpoint["physical_endpoint_id"].startswith("actual:"):
+            raise AssertionError("physical endpoint identity came from the public table")
         geo = endpoint["geometric_order"]
         pub = endpoint["public_order"]
         if geometric[geo] is not None or public[pub] is not None:
@@ -103,6 +118,9 @@ def verify(*, write: bool = False) -> dict[str, Any]:
     result = {
         "ENDPOINT_TRANSPORT": "PASS",
         "NO_UNRESOLVED_SIGNS": "PASS",
+        "ACTUAL_ENDPOINT_BINDING": "PASS",
+        "ACTUAL_CUT_SHA256": cut["sha256"],
+        "ACTUAL_BRAID_SHA256": braid["witness_sha256"],
         "derived_u_terms": derived_u,
         "derived_ell_terms": derived_ell,
         "failing_mutation_tests": mutations,

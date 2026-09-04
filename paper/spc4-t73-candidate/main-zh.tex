@@ -77,7 +77,7 @@ A=\begin{pmatrix}0&269&1240\\0&41&189\\1&0&32\end{pmatrix}
 \]
 所对应的 trace-73 Cappell--Shaneson 同伦 $4$-球面。
 skein-lasagna 在 quantum degree $494$ 处比较所需的几何输入 P0、C、S 仍为 \Open，不视为已证；识别 $X_J\cong\Sigma_A^0$ 同样为 \Open。
-整数 $2624$ 是当前冻结截断 Burau 计算在公开领圈词上的值，不是已识别的 MWW divided cubic。
+整数 $2624$ 是几何绑定的截断 Burau 计算在实际 detector braid 上的值，不是已识别的 MWW divided cubic。
 Artin--Magnus 证书与 pure-braid Andreadakis 定理确立公开 braid 词的三阶性质。
 Lean 开发将抽象商论证形式化：若给定将 MWW 商与四柄运输组装起来的接口数据，则非零次数-$494$ 类将阻碍与 $S^4$ 的微分同胚。
 这些几何接口未在 Lean 中构造，故不断言光滑四维 Poincaré 猜想的反例。
@@ -233,16 +233,16 @@ Lean 文件还给出 $A-I$ 及 $H_2(T^3;\Z)$ 上诱导映射的整逆。这些�
 
 \subsection{公开 Burau 计算}
 
-令 $\varepsilon=t-1$。由 $252$ 个原始 crossing 行重构 $44$ 股上 $11{,}340$ 字母 Artin 词，缆化到 $88$ 股，并在 $\Z[\varepsilon]/(\varepsilon^7)$ 上应用非约化 Burau 表示，其中 $t=q^{-2}$、$q=1+h$、$\varepsilon=(1+h)^{-2}-1$。
+令 $\varepsilon=t-1$。实际 detector 及其六次 sweep 给出 $252$ 个原始 point-push 因子；PL crossing 提取重构 $44$ 股上 $11{,}340$ 字母 Artin 词。仅在与公开 crossing 行作末端比较后，才把此几何导出词缆化到 $88$ 股，并在 $\Z[\varepsilon]/(\varepsilon^7)$ 上应用非约化 Burau 表示，其中 $t=q^{-2}$、$q=1+h$、$\varepsilon=(1+h)^{-2}-1$。
 
 记所得标量为 $\delta_3^{\Bur}$。独立重现的公开结果为
 \begin{equation}\label{eq:burau}
 \delta_3=2624=(-2)^3\cdot(-328).
 \end{equation}
-较早草稿混用两套 endpoint 坐标表并报告 $-59072$；在 \ref{sec:exact-algebra} 节领圈 endpoint 下冻结截断 Burau 值为 $2624$。该整数目前仅是冻结 Burau 计算的值，尚未与 MWW divided cubic 识别。\footnote{独立重放：\texttt{scripts/recompute\_t73\_delta3.py --check}。}
+较早草稿混用两套 endpoint 坐标表并报告 $-59072$；在 \ref{sec:exact-algebra} 节的实际 endpoint 运输下，截断 Burau 值为 $2624$。该整数目前仅是几何绑定 Burau 计算的值，尚未与 MWW divided cubic 识别。\footnote{独立重放：\texttt{scripts/recompute\_t73\_delta3.py --check}。}
 
 \begin{proposition}[计算的精确适用范围]\label{prop:scope}
-方程~\eqref{eq:burau} 涉及 \eqref{eq:u} 与 \eqref{eq:ell} 的领圈 endpoint 下截断 Burau 模型。该整数是冻结 Burau 标量。将其与 MWW divided cubic 等同是定理~\ref{hyp:P1} 的内容，该定理仍为 \Open。
+方程~\eqref{eq:burau} 涉及 \eqref{eq:u} 与 \eqref{eq:ell} 的领圈 endpoint 下截断 Burau 模型。该整数是几何绑定 Burau 标量。将其与 MWW divided cubic 等同是定理~\ref{hyp:P1} 的内容，该定理仍为 \Open。
 \end{proposition}
 
 \begin{proof}
@@ -777,6 +777,12 @@ $\operatorname{Sh}_h([v_T])=u_h$。其绝对次数为
 \[
 -44+227+315-4=494.
 \]
+
+在赋予任何公开指标之前，44 条实际乘积矩形先给出 88 个物理端点：正侧记录
+实际 y 源，负侧记录其配对 z 源。边界定向将两个 $r_{xy}$ wicket 正向排序，
+将 42 个 $m_2$ wicket 反向排序，并在每个矩形内先负后正。此后公开位置表
+才附加 Burau 指标。单项式映射 $P(q)$ 及其逆由这些物理标识重算；全部枢轴
+系数为 $+q^0$，且符号、次序与枢轴变异均失败。
 
 相邻单缺陷基向量上归一化检查的 R-矩阵为
 \[

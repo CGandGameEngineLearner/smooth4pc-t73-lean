@@ -539,7 +539,7 @@
     "pairing_invariant": true,
     "u_public_equals_P_u_geometric": true
   },
-  "convention_sha256": "99C0E0ABD2A3D94C2D1C866AB05917C57BB42637A6718D94BC7810D95A6B87B4",
+  "convention_sha256": "19A9F1DA4992E354AC096E36318ADD602F6DD39952DC844C30978043CF1F1DA1",
   "derived_public_pairing": {
     "ell_terms": [
       [
@@ -567,10 +567,10 @@
   "schema": "t73_endpoint_transport/v1",
   "selected_cup": {
     "minus_geometric_order": 5,
-    "minus_physical_endpoint_id": "ep:c_m_2_pos:0310",
+    "minus_physical_endpoint_id": "actual:m_2:w44:pos:m_2:C_i",
     "minus_public_order": 87,
     "plus_geometric_order": 2,
-    "plus_physical_endpoint_id": "ep:c_r_xy_neg:0000",
+    "plus_physical_endpoint_id": "actual:r_xy:w2:neg:r_xy:vertex:7",
     "plus_public_order": 2
   }
 }

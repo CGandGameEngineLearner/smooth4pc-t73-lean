@@ -21,6 +21,18 @@ from typing import Any
 HERE = Path(__file__).resolve().parent
 DEFAULT_INPUT = HERE.parent / "data" / "T73_DELTA3_PUBLIC_INPUT.json"
 DEFAULT_RECEIPT = HERE.parent / "data" / "T73_DELTA3_PUBLIC_RECEIPT.json"
+ACTUAL_CUT = HERE.parent / "geometry" / "t73_actual_cut_tangle.json"
+ACTUAL_BRAID = HERE.parent / "geometry" / "t73_actual_geometric_braid.json"
+
+
+def load_script(name: str):
+    path = HERE / f"{name}.py"
+    spec = importlib.util.spec_from_file_location(name, path)
+    if spec is None or spec.loader is None:
+        raise ValueError(f"cannot load {path}")
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
 
 
 def sha256_bytes(data: bytes) -> str:
@@ -320,6 +332,14 @@ def build_receipt(input_path: Path) -> dict[str, Any]:
     pairing = builder.public_pairing_terms(convention)
     u_terms = pairing["u_terms"]
     ell_terms = pairing["ell_terms"]
+    actual_cut = json.loads(ACTUAL_CUT.read_text(encoding="utf-8"))
+    actual_braid = json.loads(ACTUAL_BRAID.read_text(encoding="utf-8"))
+    if actual_braid["actual_cut_tangle_sha256"] != actual_cut["sha256"]:
+        raise ValueError("actual braid is stale relative to the detector")
+    collar = load_script("generate_t73_johnson_ribbon_collar").generate()
+    geometry_b44 = load_script("derive_t73_johnson_six_sweeps").source_word(collar)
+    if canonical_sha(geometry_b44) != actual_braid["recovered_word_sha256"]:
+        raise ValueError("actual braid artifact does not match the live geometry-derived word")
 
     degree = data["endpoint_model"]["truncation_degree"]
     dimension = data["endpoint_model"]["dimension"]
@@ -336,7 +356,10 @@ def build_receipt(input_path: Path) -> dict[str, Any]:
     if position_table_sha != data["endpoint_model"]["position_table_sha256"]:
         raise ValueError("B88 position-to-passage table SHA mismatch")
 
-    b44, _ = build_oriented_b44(data)
+    frozen_b44, _ = build_oriented_b44(data)
+    if frozen_b44 != geometry_b44:
+        raise ValueError("terminal public crossing-row comparison differs from the actual braid")
+    b44 = geometry_b44
     b88 = cable_word(b44)
     integrity = data["point_push"]["derived_integrity"]
     if len(b88) != integrity["B88_length"]:
@@ -356,6 +379,12 @@ def build_receipt(input_path: Path) -> dict[str, Any]:
     return {
         "schema": "t73_delta3_public_receipt/v1",
         "input_sha256": sha256_bytes(input_bytes),
+        "actual_geometry": {
+            "cut_tangle_sha256": actual_cut["sha256"],
+            "geometric_braid_sha256": actual_braid["witness_sha256"],
+            "word_source": "actual detector chart and six-sweep PL crossing extraction",
+            "public_crossing_rows_used_only_as_terminal_comparison": True,
+        },
         "endpoint_model": {
             "u_terms": u_terms,
             "ell_terms": ell_terms,
@@ -381,7 +410,7 @@ def build_receipt(input_path: Path) -> dict[str, Any]:
             "delta3_eta_R_T1": delta3,
             "delta3_xi": xi_h[3],
             "plain_shadow_cubic_of_xi": delta3,
-            "cubic_exoticness_claim": "STOP" if delta3 == 0 else "FROZEN_BURAU_ONLY",
+            "cubic_exoticness_claim": "STOP" if delta3 == 0 else "GEOMETRY_BOUND_BURAU_ONLY",
         },
     }
 

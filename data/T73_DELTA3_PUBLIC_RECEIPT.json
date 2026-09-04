@@ -1,4 +1,10 @@
 {
+  "actual_geometry": {
+    "cut_tangle_sha256": "F14DAA3B3C0E1B57EB51F00CF86D0199E3D28B0F71E67AE7FF1B1FE6977137CE",
+    "geometric_braid_sha256": "30BA2F845F0667F1AFDD118325417DEE9A04D306EC8D397D47F45C90525403E4",
+    "public_crossing_rows_used_only_as_terminal_comparison": true,
+    "word_source": "actual detector chart and six-sweep PL crossing extraction"
+  },
   "derived_words": {
     "B44_length": 11340,
     "B44_sha256": "7C2D2F792C2672221A76CAF08A71F560AF0CB7654B4D537C00FAD00B16EFA187",
@@ -80,7 +86,7 @@
   },
   "input_sha256": "0F0F4A568D966367313C29C25CEDDE4FD9ABAD32B9375519E9CDF9168AE0A764",
   "results": {
-    "cubic_exoticness_claim": "FROZEN_BURAU_ONLY",
+    "cubic_exoticness_claim": "GEOMETRY_BOUND_BURAU_ONLY",
     "delta3_eta_R_T1": 2624,
     "delta3_xi": 0,
     "plain_shadow_cubic_of_xi": 2624

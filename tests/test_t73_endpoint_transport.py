@@ -55,11 +55,26 @@ class EndpointTransportTest(unittest.TestCase):
         self.assertNotIn('data["endpoint_model"]["ell_terms"]', source)
         self.assertIn("public_pairing_terms", source)
 
+    def test_delta3_receipt_is_bound_to_actual_geometry(self) -> None:
+        recompute = load("recompute_t73_delta3")
+        receipt = recompute.build_receipt(ROOT / "data" / "T73_DELTA3_PUBLIC_INPUT.json")
+        self.assertTrue(
+            receipt["actual_geometry"][
+                "public_crossing_rows_used_only_as_terminal_comparison"
+            ]
+        )
+        self.assertEqual(receipt["results"]["delta3_eta_R_T1"], 2624)
+        self.assertEqual(
+            receipt["results"]["cubic_exoticness_claim"],
+            "GEOMETRY_BOUND_BURAU_ONLY",
+        )
+
     def test_mutations_fail(self) -> None:
         verifier = load("verify_t73_endpoint_transport")
         result = verifier.verify(write=False)
         self.assertEqual(result["ENDPOINT_TRANSPORT"], "PASS")
         self.assertEqual(result["NO_UNRESOLVED_SIGNS"], "PASS")
+        self.assertEqual(result["ACTUAL_ENDPOINT_BINDING"], "PASS")
         for name, status in result["failing_mutation_tests"].items():
             self.assertTrue(status.startswith("FAIL"), msg=f"{name}: {status}")
 

@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""Build the unique T73 endpoint authority and the monomial transport P(q).
+"""Build endpoint transport from actual detector endpoints to public order.
 
-Physical endpoints come from the B88 position-to-passage table.  Geometric
-order reverses the m_2 wickets relative to the public collar table (the
-documented THXY/collar opposition).  Public order is the collar index.
+Physical endpoints and geometric order come from the actual post-cancellation
+detector.  Only after those 88 endpoints exist is the B88 table used to attach
+the public Burau index.
 Pivotal coefficients are recorded per endpoint; the frozen Burau model uses
 +q^0.  The selected cup is identified by physical owner/letter/sign, not by
 handwritten public indices.
@@ -21,6 +21,8 @@ from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
 POSITION_TABLE = ROOT / "data" / "B88_POSITION_TO_PASSAGE_TABLE.json"
+ACTUAL_CUT = ROOT / "geometry" / "t73_actual_cut_tangle.json"
+ACTUAL_BRAID = ROOT / "geometry" / "t73_actual_geometric_braid.json"
 CONVENTION_OUT = ROOT / "data" / "T73_ENDPOINT_CONVENTION.json"
 AUDIT_OUT = ROOT / "audit" / "t73_endpoint_transport.json"
 DIMENSION = 88
@@ -207,32 +209,51 @@ def vecmat(vector: list[int], matrix: list[list[int]]) -> list[int]:
 
 
 def build_convention(positions: list[dict[str, Any]] | None = None) -> dict[str, Any]:
+    cut = json.loads(ACTUAL_CUT.read_text(encoding="utf-8"))
+    braid = json.loads(ACTUAL_BRAID.read_text(encoding="utf-8"))
+    if cut["status"] != "PASS" or len(cut["framed_endpoints"]) != DIMENSION:
+        raise ValueError("actual detector does not supply 88 framed endpoints")
+    if braid["actual_cut_tangle_sha256"] != cut["sha256"]:
+        raise ValueError("actual geometric braid is stale relative to the detector")
+    if braid["endpoint_return_status"] != "PASS":
+        raise ValueError("actual geometric braid does not return its endpoints")
     if positions is None:
         positions = load_positions()
-    ranked = sorted(enumerate(positions), key=lambda item: geometric_rank(item[1]))
-    geometric_of_public = [None] * DIMENSION
-    for geometric_index, (public_index, _row) in enumerate(ranked):
-        geometric_of_public[public_index] = geometric_index
-
+    public_by_physical_key = {
+        (row["owner"], int(row["wicket"]), row["sign"]): row
+        for row in positions
+    }
+    if len(public_by_physical_key) != DIMENSION:
+        raise ValueError("public endpoint table does not have unique owner/wicket/sign keys")
     endpoints = []
-    for public_index, row in enumerate(positions):
-        geometric_index = geometric_of_public[public_index]
-        if geometric_index is None:
-            raise ValueError("geometric order missed a public endpoint")
-        orientation = 1 if row["sign"] == "pos" else -1
+    for actual in cut["framed_endpoints"]:
+        key = (actual["owner"], int(actual["wicket"]), actual["sign"])
+        row = public_by_physical_key.get(key)
+        if row is None:
+            raise ValueError(f"actual endpoint has no public coordinate: {key}")
+        if int(row["word_letter"]) != int(actual["word_event_index"]):
+            raise ValueError("public word-event label disagrees with the actual detector endpoint")
+        geometric_index = int(actual["geometric_order"])
+        public_index = int(row["index"])
+        orientation = 1 if actual["sign"] == "pos" else -1
         pivotal_sign = 1
         q_power = 0
         basis = [0] * DIMENSION
         basis[geometric_index] = 1
         endpoints.append(
             {
-                "physical_endpoint_id": row["endpoint_id"],
-                "passage_id": row["passage_id"],
-                "owner": row["owner"],
+                "physical_endpoint_id": actual["physical_endpoint_id"],
+                "actual_side_source_id": actual["actual_side_source_id"],
+                "coordinate_in_detector_chart": actual["coordinate_in_detector_chart"],
+                "passage_id": actual["actual_side_source_id"],
+                "public_endpoint_id": row["endpoint_id"],
+                "public_passage_id": row["passage_id"],
+                "owner": actual["owner"],
                 "orientation": orientation,
-                "sign": row["sign"],
-                "wicket": int(row["wicket"]),
-                "word_letter": int(row["word_letter"]),
+                "passage_orientation": actual["orientation"],
+                "sign": actual["sign"],
+                "wicket": int(actual["wicket"]),
+                "word_letter": int(actual["word_event_index"]),
                 "geometric_order": geometric_index,
                 "public_order": public_index,
                 "pivotal_coefficient": {
@@ -251,13 +272,14 @@ def build_convention(positions: list[dict[str, Any]] | None = None) -> dict[str,
         or ep["orientation"] not in (-1, 1)
     ]
     return {
-        "schema": "t73_endpoint_convention/v1",
+        "schema": "t73_endpoint_convention/v2",
         "dimension": DIMENSION,
         "geometric_order_rule": (
-            "r_xy wickets keep public collar order; m_2 wickets are reversed "
-            "relative to the public collar table"
+            cut["endpoint_boundary_order_rule"]
         ),
         "public_order_rule": "B88_POSITION_TO_PASSAGE_TABLE.json index",
+        "actual_cut_tangle_sha256": cut["sha256"],
+        "actual_geometric_braid_sha256": braid["witness_sha256"],
         "selected_cup_physical": [
             {
                 "owner": spec["owner"],
@@ -268,6 +290,7 @@ def build_convention(positions: list[dict[str, Any]] | None = None) -> dict[str,
             for spec in SELECTED_CUP
         ],
         "position_table_sha256": sha256_bytes(POSITION_TABLE.read_bytes()),
+        "physical_endpoints_precede_public_table_lookup": True,
         "no_unresolved_signs": not unresolved,
         "unresolved_endpoint_ids": unresolved,
         "endpoints": endpoints,

@@ -79,8 +79,8 @@ A=\begin{pmatrix}0&269&1240\\0&41&189\\1&0&32\end{pmatrix}.
 The geometric inputs P0, C, and S needed for a skein-lasagna comparison at
 quantum degree $494$ remain \Open; they are not treated as proved, and the
 identification $X_J\cong\Sigma_A^0$ is likewise \Open.
-The integer $2624$ is the value of the currently frozen truncated Burau
-computation on the public collar word, not an identified MWW divided cubic.
+The integer $2624$ is the value of the geometry-bound truncated Burau
+computation on the actual detector braid, not an identified MWW divided cubic.
 An Artin--Magnus certificate and the pure-braid Andreadakis theorem
 establish a third-order property of the public braid word.
 A Lean development formalizes the abstract quotient argument: given interface
@@ -349,8 +349,10 @@ four-manifold topology.
 
 \subsection{The public Burau computation}
 
-Let $\varepsilon=t-1$.  From $252$ primitive crossing rows one reconstructs
-an $11{,}340$-letter Artin word on $44$ strands, cables it to $88$ strands,
+Let $\varepsilon=t-1$.  The actual detector and its six sweeps give $252$
+primitive point-push factors; PL crossing extraction reconstructs an
+$11{,}340$-letter Artin word on $44$ strands.  After a terminal comparison
+with the public crossing rows, one cables this geometry-derived word to $88$ strands,
 and applies the unreduced Burau representation over
 $\Z[\varepsilon]/(\varepsilon^7)$ with $t=q^{-2}$, $q=1+h$, and
 $\varepsilon=(1+h)^{-2}-1$.
@@ -361,15 +363,15 @@ reproduced public result is
 \delta_3=2624=(-2)^3\cdot(-328).
 \end{equation}
 An earlier draft mixed two endpoint coordinate tables and reported
-$-59072$; with the collar endpoints of Section~\ref{sec:exact-algebra} the
-frozen truncated Burau value is $2624$.  That integer is presently only the
-value of this frozen Burau computation; it is not identified with an MWW
+$-59072$; with the actual endpoint transport of Section~\ref{sec:exact-algebra}
+the truncated Burau value is $2624$.  That integer is presently only the
+value of this geometry-bound Burau computation; it is not identified with an MWW
 divided cubic.\footnote{Independent replay:
 \texttt{scripts/recompute\_t73\_delta3.py --check}.}
 
 \begin{proposition}[Exact scope of the computation]\label{prop:scope}
 Equation~\eqref{eq:burau} concerns the truncated Burau model with the collar
-endpoints of \eqref{eq:u} and \eqref{eq:ell}.  The integer is a frozen Burau
+endpoints of \eqref{eq:u} and \eqref{eq:ell}.  The integer is a geometry-bound Burau
 scalar.  Identifying it with the MWW divided cubic is the content of
 Theorem~\ref{hyp:P1}, which remains \Open.
 \end{proposition}
@@ -1101,6 +1103,15 @@ $\operatorname{Sh}_h([v_T])=u_h$.  Its absolute degree is
 -44+227+315-4=494.
 \]
 
+Before any public index is assigned, the 44 actual product rectangles give
+88 physical endpoints: the positive side records the actual $y$ source and
+the negative side its paired $z$ source.  Boundary orientation orders the two
+$r_{xy}$ wickets forward and the 42 $m_2$ wickets in reverse, with negative
+then positive side in each rectangle.  Only then does the public position
+table attach Burau indices.  The resulting monomial map $P(q)$ and its inverse
+are recomputed from these physical identifiers; all pivotal coefficients are
+$+q^0$, and sign, order, and pivotal mutations fail.
+
 The normalized checked R-matrix on adjacent one-defect basis vectors is
 \[
 \begin{pmatrix}1-q^{-2}&q^{-1}\\q^{-1}&0\end{pmatrix}.
@@ -1118,7 +1129,7 @@ W\mapsto PWP^{-1},\qquad u\mapsto Pu,\qquad
 \]
 The matrix coefficient is unchanged; we choose the public endpoint labels
 after this common transport.  Unresolved $\pm$ formulae for the constant
-terms are not used.  In the frozen collar coordinates of
+terms are not used.  In the transported collar coordinates of
 Section~\ref{sec:exact-algebra} the constant pairing is the definite
 identity recorded there, not a sign ansatz.
 
@@ -1149,13 +1160,13 @@ The four mixed-index Burau sign variants
 \[
 -53824,\quad -53760,\quad -59008,\quad -59072
 \]
-are nonzero, but they are not the frozen cubic.  The frozen public receipt and
+are nonzero, but they are not the selected cubic.  The geometry-bound public receipt and
 Lean record the truncated Burau scalar
 \begin{equation}\label{eq:selectedD3}
 D_3([v_T])=2624
 \end{equation}
 after the endpoint-indexing erratum.  This integer is presently only that
-frozen Burau value.  It does not close C or S.
+geometry-bound Burau value.  It does not close C or S.
 
 \subsection{The complete two-handle cocone}
 

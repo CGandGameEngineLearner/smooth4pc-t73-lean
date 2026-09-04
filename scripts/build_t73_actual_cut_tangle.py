@@ -194,6 +194,34 @@ def build(write: bool = False) -> dict[str, Any]:
         )
     if len(passages) != 44 or len({tuple(item["belt_face_point"]) for item in passages}) != 44:
         raise AssertionError("actual y cut does not give 44 distinct passages")
+    passage_by_wicket = {item["wicket"]: item for item in passages}
+    boundary_wicket_order = [1, 2] + list(reversed(range(3, 45)))
+    framed_endpoints = []
+    for wicket in boundary_wicket_order:
+        passage = passage_by_wicket[wicket]
+        x, z = (Fraction(value) for value in passage["belt_face_point"][:2])
+        normal = Fraction(width)
+        for sign, coefficient, source_key in (
+            ("neg", -1, "paired_z_source_id"),
+            ("pos", 1, "source_id"),
+        ):
+            point = [x + coefficient * normal, z + coefficient * normal, Fraction(0)]
+            framed_endpoints.append(
+                {
+                    "physical_endpoint_id": f"actual:{passage['owner']}:w{wicket}:{sign}:{passage[source_key]}",
+                    "owner": passage["owner"],
+                    "wicket": wicket,
+                    "sign": sign,
+                    "orientation": passage["orientation"],
+                    "word_event_index": passage["word_event_index"],
+                    "actual_side_source_id": passage[source_key],
+                    "coordinate_in_detector_chart": [str(value) for value in point],
+                    "geometric_order": len(framed_endpoints),
+                    "transported_normal_coefficient": coefficient,
+                }
+            )
+    if len(framed_endpoints) != 88:
+        raise AssertionError("actual product rectangles do not have 88 framed endpoints")
     result = {
         "schema": "t73_actual_cut_tangle/v2",
         "ar_link_sha256": link["sha256"],
@@ -207,6 +235,8 @@ def build(write: bool = False) -> dict[str, Any]:
         "post_x_event_lists": {"m_2": m2_events, "r_xy": rxy_events},
         "product_rectangle_pairings": pairs,
         "passages": passages,
+        "framed_endpoints": framed_endpoints,
+        "endpoint_boundary_order_rule": "r_xy wickets 1,2 forward; m_2 wickets 44,...,3 reverse; within each rectangle neg then pos",
         "passage_count": len(passages),
         "leftover_z_circles": leftovers,
         "leftover_circle_count": len(leftovers),
