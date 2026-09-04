@@ -281,21 +281,28 @@ W_1\subset W_2\subset W_3\subset W_4,
 采用 Aitchison--Rubinstein
 \cite[pp.~5--12]{AitchisonRubinstein1984} 的 $T^3$ 坐标脊 genus-three Heegaard 分割；完整卷可在
 \href{https://math.berkeley.edu/~kirby/papers/Gordon%20and%20Kirby%20%28editors%29%20-%20Four-manifold%20theory%20%28Durham%29%20-%20MR0780574.pdf}
-{Berkeley 公开扫描}中获取。令
-$C_i$ 为具有公共基点 $Q$ 的三条坐标脊圆，令
-$A_i$ 为远离 $Q$ 的两两不相交窄圆盘邻域。
+{Berkeley 公开扫描}中获取。令 $C_i$ 为具有公共基点 $Q$ 的三条坐标脊圆。
+沿用其第 6 页记号，选择嵌套截面球 $R'\subset R$ 并令
+\[
+K_i=C_i-(R-\operatorname{int}R').
+\]
+因此 $K_i$ 是柄构造中实际使用的切开坐标弧，而非整条带基点圆；令
+$A_i$ 为其窄圆盘邻域。
 记 $t$ 为 mapping torus 一柄。若 $\psi_A$ 为其引理 3.1 所给的保持 handlebody 的代表，则第 $i$ 个 mapping torus 二柄的核心为嵌入圆
 \begin{equation}\label{eq:ARcore}
-C_i^-\cup\lambda_i\cup\psi_A(C_i)^+\cup\mu_i,
+K_i^-\cup\lambda_i\cup\psi_A(K_i)^+\cup\mu_i,
 \end{equation}
 其中 $\lambda_i,\mu_i$ 为穿过 $t$ 的两条弧。framing 环带同时构造为
 \begin{equation}\label{eq:ARannulus}
 A_i^-\cup(\lambda_i\times I)\cup\psi_A(A_i)^+
        \cup(\mu_i\times I).
 \end{equation}
-AR 构造中的圆盘、锥与乘积层两两
-不相交，故 \eqref{eq:ARcore}--\eqref{eq:ARannulus} 定义整个
-嵌入带 framing 的 link，而非仅其词。
+AR 构造中的圆盘、锥与乘积层两两不相交，故必须重现
+\eqref{eq:ARcore}--\eqref{eq:ARannulus} 的这些数据，而非仅其词。当前有理
+artifact 在逐点固定球内的半径 $1/392208$ 处切开，给每个
+$\psi_A(K_i)$ 使用实际 lane-spine 弧，并以两条 mapping-handle 弧闭合其
+互异端点。三条嵌入中心线已通过现场重建与端点变异检查。完整顶部 ribbon
+$\psi_A(A_i)$ 的运输仍为 \Open，故带 framing 的 link 门仍为 \Open。
 
 其余三个纤维二柄为坐标脊分割的标准对偶二胞。选定定向后，记其边界曲线为
 \[

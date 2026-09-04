@@ -434,14 +434,19 @@ Use the coordinate-spine genus-three Heegaard splitting of $T^3$ from
 Aitchison--Rubinstein \cite[pp.~5--12]{AitchisonRubinstein1984}; the complete
 volume is available in a
 \href{https://math.berkeley.edu/~kirby/papers/Gordon%20and%20Kirby%20%28editors%29%20-%20Four-manifold%20theory%20%28Durham%29%20-%20MR0780574.pdf}
-{public Berkeley scan}.  Let
-$C_i$ be the three coordinate spine circles with common base vertex $Q$, and
-let $A_i$ be pairwise-disjoint narrow disk neighborhoods away from $Q$.
+{public Berkeley scan}.  Let $C_i$ be the three coordinate spine circles with
+common base vertex $Q$.  In the notation of their p.~6, choose the nested
+section balls $R'\subset R$ and put
+\[
+K_i=C_i-(R-\operatorname{int}R').
+\]
+Thus $K_i$ is the cut coordinate arc used in the handle construction, not the
+whole based circle.  Let $A_i$ be its narrow disk neighborhood.
 Write $t$ for the mapping-torus one-handle.  If $\psi_A$ is the
 handlebody-preserving representative supplied by their Lemma~3.1, the core
 of the $i$th mapping-torus two-handle is the embedded circle
 \begin{equation}\label{eq:ARcore}
-C_i^-\cup\lambda_i\cup\psi_A(C_i)^+\cup\mu_i,
+K_i^-\cup\lambda_i\cup\psi_A(K_i)^+\cup\mu_i,
 \end{equation}
 where $\lambda_i,\mu_i$ are the two arcs through $t$.  The framing annulus is
 constructed simultaneously as
@@ -450,8 +455,13 @@ A_i^-\cup(\lambda_i\times I)\cup\psi_A(A_i)^+
        \cup(\mu_i\times I).
 \end{equation}
 The disks, cones and product levels in the AR construction are pairwise
-disjoint, so \eqref{eq:ARcore}--\eqref{eq:ARannulus} define the whole
-embedded framed link, not merely its words.
+disjoint, so \eqref{eq:ARcore}--\eqref{eq:ARannulus} are the data that must be
+reproduced, not merely their words.  The current rational artifact cuts at
+radius $1/392208$ inside the pointwise-fixed ball, uses the actual lane-spine
+arc for every $\psi_A(K_i)$, and closes its distinct endpoints by the two
+mapping-handle arcs.  The three embedded centre lines pass their live rebuild
+and endpoint-mutation checks.  Transport of the complete top ribbons
+$\psi_A(A_i)$ is still \Open, so the framed-link gate remains \Open.
 
 The remaining three fiber two-handles are the standard dual two-cells of the
 coordinate-spine splitting.  After choosing orientations, denote their

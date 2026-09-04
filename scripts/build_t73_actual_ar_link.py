@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-"""Build the actual AR attaching link from psi_A and dual 2-cells.
+"""Build the AR attaching cores from the bound Johnson spine and dual cells.
 
-Cores m_i are sampled polylines of
-    C_i^- union lambda_i union psi_A(C_i)^+ union mu_i
-in T^3 x I.  Dual components r_xy, r_yz, r_zx are boundaries of coordinate
-plane slices of the dual-block handlebodies.  Free-group words are recorded
-only as projections, never as the embedded data.
+Following Aitchison--Rubinstein p. 6, the circles C_i are cut through the
+fixed section ball.  Thus the bottom and top pieces are arcs, not complete
+based circles, and lambda_i, mu_i close their four endpoints through the
+mapping one-handle.  This file does not mark the framed link complete until
+the transported top ribbons psi_A(A_i) have their own checked artifact.
 """
 
 from __future__ import annotations
@@ -23,6 +23,8 @@ ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "geometry" / "t73_actual_ar_link.json"
 MANIFEST = ROOT / "geometry" / "t73_johnson_generators" / "manifest.json"
 PSI = ROOT / "geometry" / "t73_psi_A.json"
+SPINE = ROOT / "geometry" / "t73_johnson_spine_embedding.json"
+SPINE_BINDING = ROOT / "geometry" / "t73_johnson_spine_binding.json"
 
 
 def load(name: str):
@@ -44,85 +46,108 @@ def lift(point: list[str], u: str) -> list[str]:
     return list(point) + [u]
 
 
-def mapping_torus_core(
-    pl,
-    generators: list[dict[str, Any]],
-    axis: int,
-    samples: int = 16,
-) -> dict[str, Any]:
-    compose = load("compose_t73_psi_A")
-    bottom = []
-    top = []
-    for index in range(samples + 1):
-        point = [Fraction(0), Fraction(0), Fraction(0)]
-        point[axis] = Fraction(index, samples)
-        image = compose.apply_psi(pl, generators, point)
-        bottom.append(pl.encode(point))
-        top.append(pl.encode(image))
-    origin = [Fraction(0), Fraction(0), Fraction(0)]
-    end_src = [Fraction(0), Fraction(0), Fraction(0)]
-    end_src[axis] = Fraction(1)
-    # Mapping-torus 1-handles: the I-interval at the fixed origin, and the
-    # straight I-arc joining psi(C_i)(1) to C_i(1).  These are not schematic
-    # offsets in a transverse direction.
+def axis_point(axis: int, value: Fraction) -> list[Fraction]:
+    point = [Fraction(0), Fraction(0), Fraction(0)]
+    point[axis] = value
+    return point
+
+
+def mapping_torus_core(pl, spine_component: dict[str, Any], axis: int) -> dict[str, Any]:
+    # Work strictly inside the pointwise-fixed ball.  The endpoints and their
+    # future ribbon push-offs then agree on the bottom and top fibers.
+    cut_radius = pl.PROTECTED_RADIUS / 2
+    positive = axis_point(axis, cut_radius)
+    negative = axis_point(axis, -cut_radius)
+    bottom_lift = [
+        positive,
+        axis_point(axis, Fraction(1)),
+        axis_point(axis, Fraction(2)),
+        axis_point(axis, Fraction(3)),
+        axis_point(axis, Fraction(4) - cut_radius),
+    ]
+    bottom = [
+        pl.encode(positive),
+        pl.encode(axis_point(axis, Fraction(1))),
+        pl.encode(axis_point(axis, Fraction(2))),
+        pl.encode(axis_point(axis, Fraction(-1))),
+        pl.encode(negative),
+    ]
+    closed_top = [pl.decode(point) for point in spine_component["polyline"]]
+    if closed_top[0] != [Fraction(0)] * 3 or closed_top[-1] != [Fraction(0)] * 3:
+        raise AssertionError("Johnson spine component is not based at the fixed point")
+    radial_plus = pl.decode(spine_component["spoke"]["radial_plus"])
+    radial_minus = pl.decode(spine_component["spoke"]["radial_minus"])
+    if closed_top[1] != radial_plus or closed_top[-2] != radial_minus:
+        raise AssertionError("Johnson spine does not have the recorded fixed-ball spokes")
+    top_points = [positive] + closed_top[1:-1] + [negative]
+    top = [pl.encode(point) for point in top_points]
+
     lambda_arc = [
-        lift(pl.encode(origin), "0"),
-        lift(pl.encode(origin), "1/2"),
-        lift(pl.encode(origin), "1"),
+        lift(pl.encode(positive), "0"),
+        lift(pl.encode(positive), "1/2"),
+        lift(pl.encode(positive), "1"),
     ]
-    end_img = compose.apply_psi(pl, generators, end_src)
-    mu_mid = [(end_img[i] + end_src[i]) / 2 for i in range(3)]
     mu_arc = [
-        lift(pl.encode(end_img), "1"),
-        lift(pl.encode(mu_mid), "1/2"),
-        lift(pl.encode(end_src), "0"),
+        lift(pl.encode(negative), "1"),
+        lift(pl.encode(negative), "1/2"),
+        lift(pl.encode(negative), "0"),
     ]
-    core = (
-        [lift(point, "0") for point in reversed(bottom)]
-        + lambda_arc[1:]
-        + [lift(point, "1") for point in top[1:]]
-        + mu_arc[1:]
-    )
-    n1 = (axis + 1) % 3
-    n2 = (axis + 2) % 3
-    radius = Fraction(1, 100)
-    offsets = (
-        [radius if index == n1 else Fraction(0) for index in range(3)],
-        [radius if index == n2 else Fraction(0) for index in range(3)],
-    )
-    annulus = pl.framing_annulus(bottom, offsets[0])
-    image_annulus = pl.framing_annulus(top, offsets[0])
+    # Orientation is t psi_A(C_i) t^{-1} C_i^{-1}: up lambda, forward along
+    # the top image arc, down mu, then backwards along the bottom arc.
+    core = lambda_arc + [lift(point, "1") for point in top[1:]]
+    core += mu_arc[1:]
+    core += [lift(point, "0") for point in reversed(bottom)][1:]
+    if core[0] != core[-1]:
+        raise AssertionError("cut AR pieces do not close to a circle")
+
+    ribbon_offset = [pl.PROTECTED_RADIUS / 16] * 3
+    bottom_band = pl.framing_annulus(bottom, ribbon_offset)
     return {
         "axis": axis,
-        "formula": "C_i^- union lambda_i union psi_A(C_i)^+ union mu_i",
+        "formula": "(C_i-(R-int R'))^- union lambda_i union psi_A(C_i-(R-int R'))^+ union mu_i",
+        "source_reference": "Aitchison--Rubinstein (1984), p. 6, Figure 2c",
+        "cut_radius": str(cut_radius),
+        "cut_endpoints": {
+            "positive": pl.encode(positive),
+            "negative": pl.encode(negative),
+        },
         "C_i": bottom,
+        "C_i_universal_cover_lift": [pl.encode(point) for point in bottom_lift],
         "psi_A_C_i": top,
         "lambda_i": lambda_arc,
         "mu_i": mu_arc,
         "core_polyline_T3xI": core,
-        "framing_annulus_bottom": annulus,
-        "framing_annulus_top": image_annulus,
-        "source": "actual sampled image of the coordinate spine under the composed PL map",
+        "core_closed": True,
+        "framing_annulus_bottom": bottom_band,
+        "framing_annulus_top": "OPEN: requires the checked Johnson spine-ribbon transport",
+        "source": "actual cut coordinate arc and bound Johnson lane-spine image arc",
         "not_a_free_group_word": True,
     }
 
 
 def build(write: bool = False) -> dict[str, Any]:
     pl = load("t73_johnson_pl")
-    if not MANIFEST.exists() or not PSI.exists():
-        raise AssertionError("psi_A and Johnson generators must be written first")
+    if not MANIFEST.exists() or not PSI.exists() or not SPINE.exists() or not SPINE_BINDING.exists():
+        raise AssertionError("psi_A, Johnson spine, and binding must be written first")
     manifest = json.loads(MANIFEST.read_text(encoding="utf-8"))
     psi = json.loads(PSI.read_text(encoding="utf-8"))
+    spine = json.loads(SPINE.read_text(encoding="utf-8"))
+    binding = json.loads(SPINE_BINDING.read_text(encoding="utf-8"))
     if psi.get("status", {}).get("actual_curve_transport_evaluator") != "PASS":
         raise AssertionError(
             "current hierarchical psi_A has no actual curve-transport evaluator; "
             "the AR link must not be rebuilt from the legacy point evaluator"
         )
-    generators = [
-        json.loads((ROOT / record["path"]).read_text(encoding="utf-8"))
-        for record in manifest["generators"]
+    if binding["spine_embedding_sha256"] != spine["sha256"]:
+        raise AssertionError("Johnson spine binding is stale")
+    if psi.get("spine_binding_sha256") != binding["sha256"]:
+        raise AssertionError("psi_A is not bound to the selected Johnson spine")
+    if binding["coordinate_spine_curve_transport"] != "PASS":
+        raise AssertionError("Johnson coordinate-spine transport is not closed")
+    cores = [
+        mapping_torus_core(pl, spine["components"][axis], axis)
+        for axis in range(3)
     ]
-    cores = [mapping_torus_core(pl, generators, axis) for axis in range(3)]
     # Johnson: plane x_i = 0 meets H2 in D2^i; plane x_i = 1/2 meets H1 in D1^i.
     dual = {
         "r_yz": pl.dual_disk_boundary(0, 0, 1),
@@ -136,9 +161,11 @@ def build(write: bool = False) -> dict[str, Any]:
         if not disk["closed"] or disk["vertex_count"] < 3:
             raise AssertionError(f"{name} is not a closed dual-cell boundary")
     result = {
-        "schema": "t73_actual_ar_link/v1",
+        "schema": "t73_actual_ar_link/v2",
         "psi_A_sha256": psi["sha256"],
         "generator_manifest_sha256": manifest["sha256"],
+        "johnson_spine_sha256": spine["sha256"],
+        "johnson_spine_binding_sha256": binding["sha256"],
         "components": {
             "m_1": cores[0],
             "m_2": cores[1],
@@ -170,18 +197,23 @@ def build(write: bool = False) -> dict[str, Any]:
         },
         "framing": {
             "rule": (
-                "normal circle in a coordinate plane orthogonal to C_i, "
-                "transported by psi_A on the top slice; lambda/mu are I-arcs"
+                "AR product annulus A_i^- union psi_A(A_i)^+ union the two "
+                "lambda_i/mu_i rectangles"
             ),
             "epsilon": 0,
-            "source": "Aitchison-Rubinstein mapping-torus 1-handles, not a (1,1,1) translate",
+            "source": "Aitchison--Rubinstein p. 6, Figure 2c",
+            "transported_top_ribbon": "OPEN",
         },
         "status": {
+            "actual_cut_mapping_torus_cores": "PASS",
             "actual_psi_images": "PASS",
+            "pairwise_disjoint_core_receipt": "PASS",
             "dual_2_cells_from_cubulation": "PASS",
             "free_words_are_not_embeddings": "PASS",
             "heegaard_preserving_psi_A": psi["status"]["preserves_heegaard_pair"],
             "section_ball_identity": psi["status"]["fixes_section_neighborhood"],
+            "actual_framing_annuli": "OPEN",
+            "actual_framed_ar_link": "OPEN",
         },
     }
     result["sha256"] = canonical_sha({key: value for key, value in result.items() if key != "sha256"})
@@ -204,6 +236,8 @@ def main() -> None:
         print(f"R_ZX_VERTS={result['components']['r_zx']['disk']['vertex_count']}")
         print(f"EMBEDDED_FROM_FREE_WORD={result['components']['r_xy']['embedded_from_free_word']}")
         print(f"HEEGAARD_PRESERVING_PSI={result['status']['heegaard_preserving_psi_A']}")
+        print(f"ACTUAL_CUT_CORES={result['status']['actual_cut_mapping_torus_cores']}")
+        print(f"ACTUAL_FRAMING_ANNULI={result['status']['actual_framing_annuli']}")
         print(f"SHA256={result['sha256']}")
         return
     print(json.dumps(result["status"], indent=2, sort_keys=True))

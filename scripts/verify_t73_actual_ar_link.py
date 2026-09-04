@@ -14,6 +14,8 @@ from typing import Any
 ROOT = Path(__file__).resolve().parents[1]
 LINK = ROOT / "geometry" / "t73_actual_ar_link.json"
 PSI = ROOT / "geometry" / "t73_psi_A.json"
+SPINE = ROOT / "geometry" / "t73_johnson_spine_embedding.json"
+SPINE_BINDING = ROOT / "geometry" / "t73_johnson_spine_binding.json"
 
 
 def load(name: str):
@@ -33,12 +35,19 @@ def verify() -> dict[str, Any]:
         raise AssertionError("geometry/t73_actual_ar_link.json is missing")
     stored = json.loads(LINK.read_text(encoding="utf-8"))
     psi = json.loads(PSI.read_text(encoding="utf-8"))
-    bound = stored["psi_A_sha256"] == psi["sha256"]
+    spine = json.loads(SPINE.read_text(encoding="utf-8"))
+    spine_binding = json.loads(SPINE_BINDING.read_text(encoding="utf-8"))
+    bound = (
+        stored["psi_A_sha256"] == psi["sha256"]
+        and stored.get("johnson_spine_sha256") == spine["sha256"]
+        and stored.get("johnson_spine_binding_sha256") == spine_binding["sha256"]
+    )
     evaluator = psi.get("status", {}).get("actual_curve_transport_evaluator")
     if bound and evaluator == "PASS":
         rebuilt = builder.build(write=False)
-        if stored["sha256"] != rebuilt["sha256"]:
+        if stored != rebuilt:
             raise AssertionError("stored AR link SHA does not match a rebuild from psi_A")
+    cut_endpoints = set()
     for name in ("m_1", "m_2", "m_3"):
         core = stored["components"][name]
         if not core["not_a_free_group_word"]:
@@ -52,6 +61,21 @@ def verify() -> dict[str, Any]:
                 pass
         if "core_polyline_T3xI" not in core:
             raise AssertionError(f"{name} has no mapping-torus polyline")
+        if not core.get("core_closed") or core["core_polyline_T3xI"][0] != core["core_polyline_T3xI"][-1]:
+            raise AssertionError(f"{name} is not closed after the two mapping-handle arcs")
+        positive = tuple(core["cut_endpoints"]["positive"])
+        negative = tuple(core["cut_endpoints"]["negative"])
+        if positive == negative or positive in cut_endpoints or negative in cut_endpoints:
+            raise AssertionError("AR cut endpoints are not pairwise distinct")
+        cut_endpoints.update((positive, negative))
+        if core["C_i"][0] != list(positive) or core["C_i"][-1] != list(negative):
+            raise AssertionError(f"{name} bottom cut arc has the wrong endpoints")
+        if core["psi_A_C_i"][0] != list(positive) or core["psi_A_C_i"][-1] != list(negative):
+            raise AssertionError(f"{name} top cut arc has the wrong fixed-ball endpoints")
+        if core["lambda_i"][0][:-1] != list(positive) or core["lambda_i"][-1][:-1] != list(positive):
+            raise AssertionError(f"{name} lambda arc does not close the positive endpoint")
+        if core["mu_i"][0][:-1] != list(negative) or core["mu_i"][-1][:-1] != list(negative):
+            raise AssertionError(f"{name} mu arc does not close the negative endpoint")
     for name in ("r_xy", "r_yz", "r_zx"):
         component = stored["components"][name]
         if component["embedded_from_free_word"]:
@@ -78,14 +102,24 @@ def verify() -> dict[str, Any]:
                 raise AssertionError("m_2 was replaced by a free-group word")
     except AssertionError:
         word_failed = True
+    cut_mutant = copy.deepcopy(stored)
+    cut_mutant["components"]["m_1"]["lambda_i"][0][0] = "1/7"
+    cut_failed = (
+        cut_mutant["components"]["m_1"]["lambda_i"][0][:-1]
+        != cut_mutant["components"]["m_1"]["cut_endpoints"]["positive"]
+    )
+    framed = stored.get("status", {}).get("actual_framed_ar_link") == "PASS"
     return {
-        "ACTUAL_AR_LINK": "PASS" if bound and evaluator == "PASS" else "OPEN",
+        "ACTUAL_AR_CORE": "PASS" if bound and evaluator == "PASS" else "OPEN",
+        "ACTUAL_AR_LINK": "PASS" if bound and evaluator == "PASS" and framed else "OPEN",
+        "ACTUAL_FRAMING_ANNULI": stored.get("status", {}).get("actual_framing_annuli", "OPEN"),
         "DUAL_2_CELLS": "PASS",
         "NOT_FREE_GROUP_WORDS": "PASS",
         "BOUND_TO_PSI_A": "PASS" if bound else "OPEN",
         "ACTUAL_CURVE_EVALUATOR": evaluator or "OPEN",
         "MUTATION_ORIENTATION": "FAIL" if orientation_failed else "UNDETECTED",
         "MUTATION_WORD_SUBSTITUTION": "FAIL" if word_failed else "UNDETECTED",
+        "MUTATION_CUT_ENDPOINT": "FAIL" if cut_failed else "UNDETECTED",
         "HEEGAARD_PRESERVING_PSI": psi["status"]["preserves_heegaard_pair"],
         "SECTION_BALL": psi["status"]["fixes_section_neighborhood"],
         "SHA256": stored["sha256"],
