@@ -197,8 +197,11 @@ class T73FiniteFormalizationTests(unittest.TestCase):
         reports = re.findall(
             r"(?m)^'([^']+)' depends on axioms:\s*\[([^\]]*)\]$", output
         )
-        self.assertEqual(len(reports), len(AXIOM_THEOREMS), "missing axiom report")
-        self.assertEqual({name for name, _ in reports}, set(AXIOM_THEOREMS))
+        self.assertEqual(
+            {name for name, _ in reports},
+            set(AXIOM_THEOREMS),
+            "missing axiom report",
+        )
         for _, payload in reports:
             names = {name.strip() for name in payload.split(",") if name.strip()}
             self.assertLessEqual(

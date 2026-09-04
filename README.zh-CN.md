@@ -165,6 +165,31 @@ python -B scripts/check_t73_claim_boundary.py
 - 旧的 word-only `band_slides` / `derived_crossings` 路线已删除；当前检查从实际带 framing AR link 与 source-bound 弧开始。
 - Lean 编译（`tests/test_t73_minimal_formalization.py`）另计，较慢（约 5–10 分钟）；见 [`REPRODUCING.md`](REPRODUCING.md)。
 
+### Focused 测试与 Lean 编译
+
+```text
+python3 -m unittest \
+  tests.test_t73_actual_cut_tangle \
+  tests.test_t73_actual_product_rectangles \
+  tests.test_t73_actual_leftover_z_circles \
+  tests.test_t73_actual_geometric_braid \
+  tests.test_t73_endpoint_transport \
+  tests.test_t73_johnson_dual_disk_movie \
+  tests.test_t73_three_handle_surface_transport \
+  tests.test_t73_actual_three_handle \
+  tests.test_t73_e13_close tests.test_t73_e13_identification
+
+python3 scripts/generate_t73_lean_geometry.py --check
+lake env lean Smooth4PC/T73CertificateIndex.lean
+lake env lean Smooth4PC/T73JohnsonTransvections.lean
+lake env lean Smooth4PC/T73GeometryPack.lean
+lake env lean Smooth4PC/T73Conditional.lean
+```
+
+本仓库的 `lake build` 没有默认 target，请使用上述显式模块命令。生成的 Lean
+索引记录 actual artifact SHA 以及精确计数 `44`、`227`、`93`、
+`[12578,1824,409]`、`6`、`1513`。
+
 ## 复现约定
 
 - Lean 工具链：`leanprover/lean4:v4.32.1`

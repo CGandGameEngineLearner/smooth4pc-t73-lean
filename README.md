@@ -176,6 +176,31 @@ python -B scripts/check_t73_claim_boundary.py
   current checks start from the actual framed AR link and source-bound arcs.
 - Lean compile (`tests/test_t73_minimal_formalization.py`) is separate and slower (~5–10 min); see [`REPRODUCING.md`](REPRODUCING.md).
 
+### Focused tests and Lean compilation
+
+```text
+python3 -m unittest \
+  tests.test_t73_actual_cut_tangle \
+  tests.test_t73_actual_product_rectangles \
+  tests.test_t73_actual_leftover_z_circles \
+  tests.test_t73_actual_geometric_braid \
+  tests.test_t73_endpoint_transport \
+  tests.test_t73_johnson_dual_disk_movie \
+  tests.test_t73_three_handle_surface_transport \
+  tests.test_t73_actual_three_handle \
+  tests.test_t73_e13_close tests.test_t73_e13_identification
+
+python3 scripts/generate_t73_lean_geometry.py --check
+lake env lean Smooth4PC/T73CertificateIndex.lean
+lake env lean Smooth4PC/T73JohnsonTransvections.lean
+lake env lean Smooth4PC/T73GeometryPack.lean
+lake env lean Smooth4PC/T73Conditional.lean
+```
+
+`lake build` has no default target in this repository; use the explicit module
+commands above. The generated Lean index records the actual artifact hashes and
+the exact counts `44`, `227`, `93`, `[12578,1824,409]`, `6`, and `1513`.
+
 ## Reproducibility contract
 
 - Lean toolchain: `leanprover/lean4:v4.32.1`

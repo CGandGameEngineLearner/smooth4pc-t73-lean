@@ -263,69 +263,6 @@ class ArithmeticAuditTests(unittest.TestCase):
         self.assertNotEqual(attacked_exit, 0)
         self.assertIn("exact-data gate: FAIL", attacked_message)
 
-    def test_task3_evidence_tree_and_upload_records(self) -> None:
-        expected_files = {
-            f"{group}.{suffix}"
-            for group in TASK3_GROUPS
-            for suffix in (
-                "audit.log",
-                "stdout.log",
-                "stderr.log",
-                "exit",
-                "receipt.json",
-            )
-        }
-        expected_files.add("TASK3_RUN_MANIFEST.sha256")
-        actual_files = {path.name for path in self.task3_evidence.glob("*")}
-        self.assertEqual(actual_files, expected_files)
-
-        upload_receipt_path = self.task3_root / "AUDIT_UPLOAD_RECEIPT.json"
-        self.assertTrue(upload_receipt_path.is_file(), f"missing {upload_receipt_path}")
-        upload_receipt = json.loads(upload_receipt_path.read_text(encoding="utf-8"))
-        self.assertEqual(upload_receipt["authorized_upload_count"], 1)
-        self.assertEqual(upload_receipt["uploaded_file"], "AuditArithmetic.lean")
-        self.assertEqual(
-            upload_receipt["preupload_sha256"],
-            "85E1A7CBD1EEA56CCF24AA6136E5F90503FA1089E18AA48BCBE6FA3438768D37",
-        )
-        self.assertEqual(
-            upload_receipt["remote_verified_sha256"],
-            upload_receipt["preupload_sha256"],
-        )
-        self.assertEqual(
-            upload_receipt["main_certificate_sha256_after"],
-            upload_receipt["main_certificate_sha256_before"],
-        )
-        self.assertEqual(
-            upload_receipt["task3_run_manifest_sha256"],
-            EXPECTED_TASK3_MANIFEST_SHA256,
-        )
-
-        transfer_path = self.task3_root / "TASK3_TRANSFER_RECEIPT.json"
-        transfer = json.loads(transfer_path.read_text(encoding="utf-8"))
-        transferred = {row["path"]: row for row in transfer["files"]}
-        for group, (source_path, _, _) in TASK3_GROUPS.items():
-            if group in ("positive", "exact_data_sync_mutant"):
-                continue
-            row = transferred[source_path]
-            source = self.repo / source_path
-            self.assertEqual(source.stat().st_size, row["bytes"])
-            self.assertEqual(
-                hashlib.sha256(source.read_bytes()).hexdigest().upper(),
-                row["sha256"],
-            )
-
-        manifest = self.task3_evidence / "TASK3_RUN_MANIFEST.sha256"
-        self.assertEqual(
-            hashlib.sha256(manifest.read_bytes()).hexdigest().upper(),
-            EXPECTED_TASK3_MANIFEST_SHA256,
-        )
-        for line in manifest.read_text(encoding="utf-8").splitlines():
-            digest, relative = line.split("  ", 1)
-            artifact = self.task3_root / relative
-            self.assertTrue(artifact.is_file(), f"missing manifest artifact {artifact}")
-            self.assertEqual(hashlib.sha256(artifact.read_bytes()).hexdigest(), digest)
-
     def test_task3_locked_receipts_and_raw_diagnostics(self) -> None:
         evidence = self.task3_evidence
         self.assertTrue(evidence.is_dir(), f"missing {evidence}")

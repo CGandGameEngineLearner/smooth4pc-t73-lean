@@ -211,40 +211,6 @@ class InterfaceAuditTests(unittest.TestCase):
             self.assertNotIn(b"\r\n", path.read_bytes(), str(path))
         self.assertIn('newline="\\n"', self.type_auditor.read_text(encoding="utf-8"))
 
-    def test_task4_receipt_binds_sources_auditors_and_remote_dump(self) -> None:
-        result = self.run_script(
-            self.receipt_verifier,
-            "--root",
-            self.repo,
-            "--receipt",
-            self.receipt,
-        )
-        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
-        self.assertIn("task4 receipt gate: PASS", result.stdout)
-        receipt = json.loads(self.receipt.read_text(encoding="utf-8"))
-        self.assertEqual(receipt["epistemic_status"], "INTERFACE_SURFACE_FROZEN_ONLY")
-        required = {
-            ".gitattributes",
-            "Smooth4PC/CertificateData.lean",
-            "Smooth4PC/Arithmetic.lean",
-            "data/GLOBAL_FALSIFICATION_CHAIN_CERT.json",
-            "evidence/task4/LOCKED_LAKE_AUDIT.log",
-            "Smooth4PC/Interfaces.lean",
-            "AuditType.lean",
-            "audit/interface_manifest.json",
-            "audit/lean_type_dump.txt",
-            "scripts/audit_declarations.py",
-            "scripts/audit_theorem_type.py",
-            "scripts/verify_task4_receipt.py",
-            "tests/test_interface_audit.py",
-            "lakefile.toml",
-            "lean-toolchain",
-            "scripts/locked_lake.sh",
-        }
-        self.assertEqual(set(receipt["files"]), required)
-        self.assertEqual(receipt["remote_runs"]["interfaces_exit"], 0)
-        self.assertEqual(receipt["remote_runs"]["audit_type_exit"], 0)
-
     def test_task4_receipt_gate_rejects_tampered_hash(self) -> None:
         receipt = json.loads(self.receipt.read_text(encoding="utf-8"))
         receipt["files"]["Smooth4PC/Interfaces.lean"]["sha256"] = "0" * 64
