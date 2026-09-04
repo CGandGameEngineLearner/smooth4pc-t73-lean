@@ -480,6 +480,21 @@ reported \texttt{MISSING\_MAPS=1}.  These outputs are recorded here literally:
 their status words summarize the programs' finite contracts and are not used
 as substitutes for the mathematical implications in the third column.
 
+Three stricter, fail-closed gates encode the missing primitive data rather
+than accepting those status words.  The canonical ArmRestore gate
+\texttt{verify\_t73\_canonical\_arm\_restore.py} requires a common
+source/target tetrahedral map and returns \texttt{OPEN} on the current restore
+assembly.  The C gate
+\texttt{check\_t73\_c\_pivotal\_grading\_inputs.py} requires all 88 ordered
+duality charts, cup/cap atoms and the erratum-corrected writhe ledger; these
+inputs are not present.  The S/P3 gate
+\texttt{verify\_t73\_gs1\_gp3.py} requires an actual triangulated
+$\partial W_2$, embedded sphere and detector subcomplexes, a replayable
+normal-surgery trace, $S^3$ recognition and the four-ball attaching
+isomorphism; the current boundary metadata does not satisfy that contract.
+Thus all three gates currently return \texttt{OPEN}, as they must until the
+objects in the third column are constructed.
+
 The numerical part is independently reproducible: the public Artin word has
 length $11340$, its $88$-strand cable has length $45360$, the truncated Burau
 row has cubic coefficient $-328$, and the substitution

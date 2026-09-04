@@ -1,0 +1,166 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "t73_canonical_arm_restore_map/v1",
+  "title": "Exact hierarchical witness for one canonical Johnson ArmRestore",
+  "description": "A witness is a sequence of local PL homeomorphisms. Each layer uses one abstract tetrahedral support with exact source and target coordinates. Pair-separation certificates prove that the two coordinate realizations are embedded; equality on every boundary vertex makes extension by the identity well defined. The verifier, not this schema, checks determinants, face incidences, separators, inverse affine maps, state chaining, protected-cube avoidance, and owner transport.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "canonical_key",
+    "period",
+    "initial_state_sha256",
+    "final_state_sha256",
+    "layers"
+  ],
+  "properties": {
+    "schema": {
+      "const": "t73_canonical_arm_restore_map/v1"
+    },
+    "canonical_key": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["power", "side"],
+      "properties": {
+        "power": {"enum": [-1, 1]},
+        "side": {"enum": ["prefix-first", "target-first"]}
+      }
+    },
+    "period": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "initial_state_sha256": {
+      "$ref": "#/$defs/sha256"
+    },
+    "final_state_sha256": {
+      "$ref": "#/$defs/sha256"
+    },
+    "layers": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/layer"}
+    }
+  },
+  "$defs": {
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9A-F]{64}$"
+    },
+    "rational": {
+      "oneOf": [
+        {"type": "integer"},
+        {"type": "string", "pattern": "^-?[0-9]+(?:/[1-9][0-9]*)?$"}
+      ]
+    },
+    "point": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {"$ref": "#/$defs/rational"}
+    },
+    "tetrahedron": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "uniqueItems": true,
+      "items": {"type": "integer", "minimum": 0}
+    },
+    "separator": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["normal", "offset", "margin"],
+      "properties": {
+        "normal": {"$ref": "#/$defs/point"},
+        "offset": {"$ref": "#/$defs/rational"},
+        "margin": {"$ref": "#/$defs/rational"}
+      }
+    },
+    "pair_separator": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["left", "right", "source", "target"],
+      "properties": {
+        "left": {"type": "integer", "minimum": 0},
+        "right": {"type": "integer", "minimum": 0},
+        "source": {"$ref": "#/$defs/separator"},
+        "target": {"$ref": "#/$defs/separator"}
+      }
+    },
+    "protected_cube": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["center", "half_width"],
+      "properties": {
+        "center": {"$ref": "#/$defs/point"},
+        "half_width": {"$ref": "#/$defs/rational"}
+      }
+    },
+    "chart": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["lower", "upper"],
+      "properties": {
+        "lower": {"$ref": "#/$defs/point"},
+        "upper": {"$ref": "#/$defs/point"}
+      }
+    },
+    "layer": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "input_state_sha256",
+        "output_state_sha256",
+        "chart",
+        "source_vertices",
+        "target_vertices",
+        "tetrahedra",
+        "pair_separators",
+        "fixed_boundary_vertices",
+        "source_owner_by_tetrahedron",
+        "target_owner_by_tetrahedron",
+        "protected_cube"
+      ],
+      "properties": {
+        "id": {"type": "string", "minLength": 1},
+        "input_state_sha256": {"$ref": "#/$defs/sha256"},
+        "output_state_sha256": {"$ref": "#/$defs/sha256"},
+        "chart": {"$ref": "#/$defs/chart"},
+        "source_vertices": {
+          "type": "array",
+          "minItems": 4,
+          "items": {"$ref": "#/$defs/point"}
+        },
+        "target_vertices": {
+          "type": "array",
+          "minItems": 4,
+          "items": {"$ref": "#/$defs/point"}
+        },
+        "tetrahedra": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/tetrahedron"}
+        },
+        "pair_separators": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/pair_separator"}
+        },
+        "fixed_boundary_vertices": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {"type": "integer", "minimum": 0}
+        },
+        "source_owner_by_tetrahedron": {
+          "type": "array",
+          "items": {"enum": [0, 1]}
+        },
+        "target_owner_by_tetrahedron": {
+          "type": "array",
+          "items": {"enum": [0, 1]}
+        },
+        "protected_cube": {"$ref": "#/$defs/protected_cube"}
+      }
+    }
+  }
+}

@@ -263,3 +263,35 @@ The earliest unavailable input is G-S1.  Even granting it, C-S1 is an
 independent categorical obstruction.  Therefore no honest modification of
 `main.tex` can currently change S or P3 from hypotheses to discharged
 theorems.
+
+## 8. Fail-closed G-S1/G-P3 gate
+
+The follow-up audit added the schema
+`audit/t73_gs1_gp3_schema.json`, verifier
+`scripts/verify_t73_gs1_gp3.py`, and tests
+`tests/test_t73_gs1_gp3_gate.py`.
+
+The gate requires an explicit closed tetrahedral complex for
+\(\partial W_2\); three triangular sphere subcomplexes; a detector-ball
+tetrahedron subcomplex with a checked one-face shelling; an explicit
+cut-and-cap surgery trace; the resulting closed triangulation with a
+simplicial recognition as the boundary of a 4-simplex; a one-pentachoron
+4-ball; and a vertex bijection identifying its derived boundary with the
+surgery result. It derives manifold incidence, sphere Euler characteristic
+and connectedness, pairwise disjointness, detector disjointness, the
+four-ball boundary, and both simplicial isomorphisms from the lists.
+
+The current `geometry/t73_actual_W2_boundary.json` fails at the first gate:
+it is metadata, not a `t73_gs1_gp3_witness/v1`, and has no vertices or
+tetrahedra. Existing lower-handle data do not determine such a triangulation
+mechanically: attaching words and railroad curves omit a triangulated
+3-dimensional attaching-region complement and face gluings after each
+2-handle. A new handle-triangulation construction would be required.
+
+The v1 verifier intentionally leaves the explicit normal-sphere cut-and-cap
+replay primitive unimplemented and therefore refuses even a structurally
+complete receipt. This is fail-closed: source/result hashes bind data but do
+not prove that the latter is surgery on the former. Implementing that
+primitive (or replacing it with a replayable Regina normal-surface
+cut/simplification certificate) is the next concrete engineering step before
+the gate can return `PASS`.

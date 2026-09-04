@@ -1,0 +1,24 @@
+{
+  "actual_endpoint_count": 88,
+  "actual_endpoint_orientations_present": true,
+  "degree_494_certified": false,
+  "derived": {
+    "X_labels": 227,
+    "cabled_s0_shift": -4,
+    "formal_sum": 494,
+    "hom_normalization": -44,
+    "one_handle_gluing_shift": 315
+  },
+  "detector_braid_writhe": 0,
+  "hard_coded_builder_assignments_present": true,
+  "missing": [
+    "data/T73_C_PIVOTAL_GRADING_INPUT.json",
+    "88 ordered V/V_dual endpoint charts with BPW (A.4) atoms",
+    "ordered cup/cap BPW (A.6) terms and geometric movie locators",
+    "Blanchet sign normals for every sign-producing chart",
+    "complete framed-KhR2/BHPW/MN-erratum writhe ledger"
+  ],
+  "pivotal_coefficients_certified": false,
+  "schema": "t73_c_pivotal_grading_report/v1",
+  "status": "OPEN"
+}

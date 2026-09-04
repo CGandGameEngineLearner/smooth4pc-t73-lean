@@ -1,0 +1,43 @@
+{
+  "schema": "t73_gs1_gp3_witness/v1",
+  "required_top_level": [
+    "schema",
+    "w2_boundary",
+    "attaching_spheres",
+    "detector_ball",
+    "normal_surgery_trace",
+    "surgery_result",
+    "four_ball",
+    "attaching_isomorphism"
+  ],
+  "w2_boundary": {
+    "required": ["vertices", "tetrahedra"],
+    "meaning": "A closed combinatorial 3-manifold triangulation of the actual post-2-handle boundary; not a homeomorphism_type label."
+  },
+  "attaching_spheres": {
+    "count": 3,
+    "required_per_sphere": ["name", "triangles"],
+    "meaning": "Pairwise vertex-disjoint triangular subcomplexes of w2_boundary, each checked as a connected closed surface of Euler characteristic two."
+  },
+  "detector_ball": {
+    "required": ["tetrahedra", "shelling_order"],
+    "meaning": "A tetrahedron subcomplex disjoint from all attaching spheres. shelling_order must give a checked shelling down to one tetrahedron."
+  },
+  "normal_surgery_trace": {
+    "required": ["format", "source_sha256", "sphere_sha256s", "steps", "result_sha256"],
+    "format": "explicit_simplicial_cut_cap/v1",
+    "meaning": "A replayable cut-open-and-cap trace deriving surgery_result from w2_boundary and the three sphere subcomplexes. No PASS receipt is accepted."
+  },
+  "surgery_result": {
+    "required": ["vertices", "tetrahedra", "s3_recognition"],
+    "meaning": "The derived closed triangulation, with either a replayable bistellar reduction or an explicit simplicial isomorphism to a fixed standard S3."
+  },
+  "four_ball": {
+    "required": ["vertices", "pentachora"],
+    "meaning": "An explicit combinatorial 4-ball whose boundary triangulation is derived by the verifier."
+  },
+  "attaching_isomorphism": {
+    "required": ["vertex_map"],
+    "meaning": "A vertex bijection carrying the derived boundary of four_ball tetrahedron-for-tetrahedron onto surgery_result."
+  }
+}

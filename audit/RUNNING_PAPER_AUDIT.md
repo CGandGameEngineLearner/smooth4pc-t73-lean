@@ -1210,6 +1210,122 @@ Topology-source checks completed 2026-09-04:
   assurance.  This does not introduce a Lean axiom; direct source inspection
   and the compiler/`#print axioms` audit remain the relevant evidence.
 
+### F-500 — The BPW/BHPW shadow has a precise conditional construction, but its required dg coefficient comparison is absent
+
+- Severity: **Critical**
+- Status: **OPEN; conditional construction isolated**
+- Location: `docs/proofs/T73_C_CHAINMAP_PAPER_PROOF.md`; manuscript equations
+  (17) and `eq:actualShadow`.
+- Source conclusion: BPW's vertical-to-horizontal trace functor and quantum
+  preshadow functoriality, followed by the BHPW strict foam functor and
+  endpoint qHH/Chern identification, do give a map to
+  \(\operatorname{Hom}(E_{86},E_{88})\) after one supplies a homogeneous dg
+  coefficient-bimodule equivalence. This is a valid conditional route and
+  does not require a new published comparison theorem.
+- Missing input: actual natural chain equivalences
+  \(H_{T,T'}:C_R(T,T')\simeq\underline{\mathrm{Hom}}(FT,FT')\{-44\}
+  \otimes A^{\otimes227}\), including inverses/homotopies and both action
+  squares for every homogeneous foam. BPW/BHPW do not construct this
+  candidate-specific datum.
+- Impact: C-H1 and the identification of 2624 with an MWW functional remain
+  unproved.
+
+### F-501 — The C1/C2 programs do not construct the claimed chain maps or action squares
+
+- Severity: **Critical**
+- Status: **CONFIRMED**
+- Locations: `scripts/certify_t73_c1_cut_link.py` and
+  `scripts/certify_t73_c2_comparison.py`.
+- Evidence: C1 stores start/end polyline hashes, not a strict foam movie,
+  complex, differential, chain map, or homotopy. C2's own module docstring
+  says it is not a chain-level Blanchet--Khovanov complex of the actual cut.
+  Its left/right “squares” are two support boxes disjoint from the detector;
+  they do not define or verify the maps for arbitrary \(f,g,m\).
+- Impact: spatial disjointness is useful geometric input, but it does not
+  prove the dg naturality equations needed to descend to coefficient qTrace.
+
+### F-502 — The asserted all-cable comparison lacks owner geometry and statewise types
+
+- Severity: **Critical**
+- Status: **OPEN**
+- Locations: `main.tex:1320--1385`, the count arrays in
+  `scripts/certify_t73_c2_comparison.py`, and the 44 selected rectangles in
+  `audit/t73_c1_cut_link.json`.
+- Evidence: the 44 constructed rectangles cover the selected \(m_2\) and
+  \(r_{xy}\) state. General cable states also use the recorded 189
+  \(y\)-passages of \(m_3\) and two of \(r_{yz}\), with their z partners and
+  residual circles. No corresponding framed simultaneous isotopy, dg
+  comparison, or fixed-target closure is present. The MWW source is a product
+  of 3-ball categories whose endpoint configurations change with the cable
+  state; the manuscript suppresses this typing when it writes a single
+  category of tangles \(P_{86}\to P_{88}\).
+- Impact: neither all-state beta invariance nor all-state psi compatibility
+  follows from the selected-state Hattori picture.
+
+### F-503 — Reynolds and defect-head formalizations assume the substantive beta/psi input
+
+- Severity: **Major**
+- Status: **CONFIRMED**
+- Locations: `Smooth4PC/ReynoldsCableCocone.lean`,
+  `Smooth4PC/HattoriBalancedInput.lean`, and equations (25)--(27) in
+  `main.tex`.
+- Evidence: the Reynolds theorem proves that an average of entries already
+  assumed equal has the common value. The defect-head theorem proves
+  zero/identity for abstract maps defined to increment a label counter.
+  Neither identifies an actual MWW beta or psi foam on the whole typed source.
+  The two separate core counits occur after two-handle attachment and cannot
+  be treated as a raw W1 retraction without first proving the quotient
+  compatibility at issue.
+- Impact: C-H2 remains open even if the selected-state endpoint scalar is
+  accepted.
+
+### F-504 — Pivotal coefficients are underdetermined by the committed endpoint data; checking is now fail-closed
+
+- Severity: **Critical for the claimed geometric identification**
+- Status: **OPEN; fail-closed checker added**
+- Locations: hard-coded assignments at
+  `scripts/build_t73_endpoint_transport.py:238--240`; new
+  `scripts/check_t73_c_pivotal_grading_inputs.py` and
+  `data/T73_C_PIVOTAL_GRADING_INPUT.schema.json`.
+- Evidence: BPW (A.4) includes a basis-dependent \(V^*\to V\)
+  identification with a q-power, BPW (A.6) has ordered cup/cap coefficients,
+  and Blanchet detachment signs require local normal data. The current files
+  contain endpoint orientation and order but no complete V/V-dual chart,
+  nesting data, atomic duality moves, or sign-producing local normals.
+- Positive numerical check: using the standard BPW constant cup and cap
+  signs, \(u=e_2+e_{87}\) and \(\ell=e_{87}^*+e_2^*\), the same committed
+  Burau word still gives epsilon-cubic \(-328\) and h-cubic 2624. Thus this
+  particular sign correction does not destroy the number, but it does not
+  supply the missing categorical identification.
+- Enforcement: the new checker exits nonzero and refuses pivotal or degree
+  certification until all primitive fields are supplied.
+
+### F-505 — The intrinsic four-term degree ledger is plausible, but the comparison grading remains uncertified
+
+- Severity: **Major**
+- Status: **OPEN**
+- Locations: `sec-finite-details.tex:254--271`, the Manolescu--Neithalath
+  erratum, and the new fail-closed checker.
+- Evidence: in intrinsic framed KhR2, the four stated contributions have the
+  expected formal meanings and sum to
+  \(-44+227+315-4=494\). The detector braid itself has writhe zero. What is
+  missing is the framed-KhR2/BHPW convention and writhe entry for every
+  coefficient closure, Hattori target, cup, cap, selected cable state, and
+  comparison family. The erratum requires the conversion shift
+  \(-(N-1)w\) wherever that conversion is made.
+- Impact: arithmetic 494 is confirmed; absolute MWW degree 494 is not.
+
+### F-506 — Constructive C closure attempt stops at explicit, finite missing data
+
+- Severity: **Critical summary**
+- Status: **BLOCKED BY MISSING MATHEMATICAL DATA**
+- Location: `docs/proofs/T73_C_CHAINMAP_PAPER_PROOF.md`.
+- Minimum closure data: the actual MWW product source at every state; strict
+  natural dg maps \(H^r\); the missing \(m_3/r_{yz}\) product movies; every
+  beta/psi comparison square; 88 primitive duality charts; and the complete
+  corrected writhe/grading ledger. Until supplied, 2624 remains a verified
+  endpoint-model value rather than a functional on the genuine W2 quotient.
+
 ### F-600 — The “actual” sphere-system builder assigns, rather than constructs, the embedding in \(\partial W_2\)
 
 - Severity: **Critical**
@@ -1321,6 +1437,49 @@ Topology-source checks completed 2026-09-04:
   of F-600 and (ii) independently, the natural whole-source MWW comparison of
   F-601. After those, a transported or explicit 4-handle attaching map and
   the corrected grading ledger of F-603 are still required.
+
+### F-605 — Existing lower-handle metadata cannot generate the required common \(\partial W_2\) triangulation
+
+- Severity: **Critical**
+- Status: **CONFIRMED / OPEN CONSTRUCTION**
+- Locations: `geometry/t73_actual_W2_boundary.json`;
+  `geometry/t73_actual_ar_link.json`; builders summarized in
+  `docs/proofs/T73_S_P3_PAPER_PROOF.md`, Section 8.
+- Evidence: the W2 artifact contains hashes, handle counts, a desired
+  homeomorphism-type string, and a detector cube, but no tetrahedra or face
+  gluings for the actual post-2-handle boundary. The AR railroad curves and
+  attaching words likewise do not specify a triangulated attaching-region
+  complement or the face identifications resulting from all five 2-handle
+  surgeries. Therefore no deterministic builder can recover a unique common
+  boundary triangulation from the committed data.
+- Required next construction: triangulate the 0/1-handle boundary, embed
+  framed solid-torus attaching regions for all five 2-handles, perform the
+  Dehn fillings simplicially, and transport the detector and three sphere
+  surfaces into that same output complex.
+- Dependency impact: G-S1 cannot be synthesized by rearranging existing
+  hashes or owner ledgers.
+
+### F-606 — New G-S1/G-P3 gate fails closed on current data and refuses unreplayed surgery receipts
+
+- Severity: **Major (positive infrastructure result)**
+- Status: **CONFIRMED**
+- Locations: `audit/t73_gs1_gp3_schema.json`;
+  `scripts/verify_t73_gs1_gp3.py`; `tests/test_t73_gs1_gp3_gate.py`.
+- Contract: the gate requires a closed tetrahedral \(\partial W_2\), three
+  embedded triangular 2-sphere subcomplexes, a disjoint shellable detector
+  ball, a bound explicit cut-and-cap trace, a recognized \(S^3\) result, an
+  explicit 4-ball, and a simplicial attaching isomorphism. It derives the
+  finite incidence, surface, disjointness, shelling, boundary, and
+  simplicial-isomorphism predicates instead of reading PASS booleans.
+- Current result: `python3 scripts/verify_t73_gs1_gp3.py --check-current`
+  returns `verdict=OPEN`, `G_S1=OPEN`, and `G_P3=OPEN` because the current W2
+  JSON is metadata rather than a witness. Three unit tests pass and confirm
+  that the current artifact and boolean-only substitutes are rejected.
+- Deliberate remaining implementation gap: v1 does not yet replay the
+  `explicit_simplicial_cut_cap/v1` primitive. It rejects even a structurally
+  complete receipt at that point instead of trusting source/result hashes.
+  A normal-surface cut-and-cap engine or replayable Regina certificate is
+  required before this gate can return PASS.
 
 ## Proof dependency ledger
 
@@ -1613,3 +1772,21 @@ post-F-017 working tree, including the later Johnson restore hierarchy.
 - Current status: F-401--F-406 show that the current repository does not
   supply these hypotheses.  Thus no unconditional P0/E13 statement is
   available.
+
+### F-408 — A fail-closed global ArmRestore verifier now defines the missing finite target
+
+- Severity: **Remediation / still open**
+- Status: **OPEN ON CURRENT DATA**
+- Locations: `audit/t73_canonical_arm_restore_schema.json`,
+  `scripts/verify_t73_canonical_arm_restore.py`, and
+  `tests/test_t73_canonical_arm_restore_gate.py`.
+- Evidence: the new verifier requires a common tetrahedral source/target map
+  and checks exact determinants, face incidence, opposite-side adjacency,
+  pair separation, chart volume, fixed boundary, owner preservation,
+  protected-cube avoidance and state chaining. It ignores semantic PASS
+  fields. Two tests pass and the legacy restore assembly returns
+  `verdict=OPEN` because it lacks these map data.
+- Remaining impact: several lower artifacts explicitly retain `OPEN` for the
+  paired-saddle ambient cells, while the old restore assembler replaced that
+  state by PASS. A flattening generator must supply an admissible witness
+  before P0 can use the composition-of-homeomorphisms paper argument.

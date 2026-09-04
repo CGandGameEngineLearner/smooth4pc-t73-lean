@@ -424,3 +424,25 @@ predicates actually checked.  P3 reports E13 `PARTIAL` and no Sigma
 identification.  The final wrapper reports the Sigma identification while
 also reporting one missing map.  These replays confirm reproducibility of the
 current finite records; they do not change the mathematical verdict.
+
+## 10. Fail-closed ArmRestore gate
+
+`audit/t73_canonical_arm_restore_schema.json` and
+`scripts/verify_t73_canonical_arm_restore.py` now specify an admissible finite
+replacement for the declaration-only restore assembly. Each layer must give
+one common tetrahedral triangulation, exact source and target vertex
+coordinates, the complete fixed boundary, owner labels, protected-cube data,
+state hashes, and separating hyperplanes for non-face-adjacent pairs.
+
+Using exact rational arithmetic, the verifier checks nondegeneracy and
+orientation, face multiplicities, opposite-side adjacency, pairwise interior
+separation, full chart volume, fixed boundary, owner preservation,
+protected-cube avoidance and state chaining. These predicates make the vertex
+map a fixed-boundary PL homeomorphism of the chart; certified successive
+layers can then be composed by the elementary composition theorem.
+
+The current `geometry/t73_johnson_restore_assembly.json` is deliberately not
+accepted: it contains no common source/target vertex arrays or tetrahedral
+map. The default gate returns `OPEN`. This defines a concrete target for a
+future flattening generator, but does not fill item 1 of the minimal completion
+package.
