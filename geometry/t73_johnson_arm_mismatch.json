@@ -5,7 +5,7 @@
   "johnson_restore_status": "OPEN: mismatch polytopes are decomposed but no fixed-boundary arm homeomorphism has yet been attached",
   "period": 4,
   "schema": "t73_johnson_arm_mismatch/v1",
-  "sha256": "B1F820800F244FD0CCC51C1F0EFFFB61A4DA6EDBFCBE6E2FC0E7E4251D245EBD",
+  "sha256": "201F182E1BDDC05E526292F83EB0A3BAF13E1D831B6D9D47C9A1AC632D2DDF6B",
   "source": "exact rational clipping of the unwrapped period-four affine-image tetrahedra against target unit cubes",
   "template_count": 12,
   "templates": [
@@ -52,6 +52,12 @@
           "transport_support_status": "OPEN"
         }
       ],
+      "boundary_patch_pattern": {
+        "annulus_to_two_disks": 1,
+        "disk_to_disk": 4,
+        "johnson_saddle_pattern": "PASS",
+        "two_disks_to_annulus": 1
+      },
       "component_intersections": {
         "closures_pairwise_disjoint": false,
         "edge_count": 7,
@@ -316,6 +322,28 @@
           "boundary_euler": 2,
           "boundary_faces": 36,
           "boundary_is_sphere": true,
+          "boundary_patches": {
+            "source": {
+              "boundary_components": 2,
+              "boundary_edge_count": 16,
+              "edges": 38,
+              "euler": 0,
+              "facet_count": 20,
+              "surface_components": 1,
+              "topology": "annulus",
+              "vertices": 18
+            },
+            "target": {
+              "boundary_components": 2,
+              "boundary_edge_count": 16,
+              "edges": 32,
+              "euler": 2,
+              "facet_count": 16,
+              "surface_components": 2,
+              "topology": "two_disks",
+              "vertices": 18
+            }
+          },
           "boundary_vertices": 20,
           "component_id": 0,
           "piece_count": 36,
@@ -587,6 +615,28 @@
           "boundary_euler": 2,
           "boundary_faces": 14,
           "boundary_is_sphere": true,
+          "boundary_patches": {
+            "source": {
+              "boundary_components": 1,
+              "boundary_edge_count": 8,
+              "edges": 16,
+              "euler": 1,
+              "facet_count": 8,
+              "surface_components": 1,
+              "topology": "disk",
+              "vertices": 9
+            },
+            "target": {
+              "boundary_components": 1,
+              "boundary_edge_count": 8,
+              "edges": 13,
+              "euler": 1,
+              "facet_count": 6,
+              "surface_components": 1,
+              "topology": "disk",
+              "vertices": 8
+            }
+          },
           "boundary_vertices": 9,
           "component_id": 1,
           "piece_count": 6,
@@ -678,6 +728,28 @@
           "boundary_euler": 2,
           "boundary_faces": 14,
           "boundary_is_sphere": true,
+          "boundary_patches": {
+            "source": {
+              "boundary_components": 1,
+              "boundary_edge_count": 8,
+              "edges": 16,
+              "euler": 1,
+              "facet_count": 8,
+              "surface_components": 1,
+              "topology": "disk",
+              "vertices": 9
+            },
+            "target": {
+              "boundary_components": 1,
+              "boundary_edge_count": 8,
+              "edges": 13,
+              "euler": 1,
+              "facet_count": 6,
+              "surface_components": 1,
+              "topology": "disk",
+              "vertices": 8
+            }
+          },
           "boundary_vertices": 9,
           "component_id": 2,
           "piece_count": 6,
@@ -769,6 +841,28 @@
           "boundary_euler": 2,
           "boundary_faces": 36,
           "boundary_is_sphere": true,
+          "boundary_patches": {
+            "source": {
+              "boundary_components": 2,
+              "boundary_edge_count": 16,
+              "edges": 32,
+              "euler": 2,
+              "facet_count": 16,
+              "surface_components": 2,
+              "topology": "two_disks",
+              "vertices": 18
+            },
+            "target": {
+              "boundary_components": 2,
+              "boundary_edge_count": 16,
+              "edges": 38,
+              "euler": 0,
+              "facet_count": 20,
+              "surface_components": 1,
+              "topology": "annulus",
+              "vertices": 18
+            }
+          },
           "boundary_vertices": 20,
           "component_id": 3,
           "piece_count": 36,
@@ -1040,6 +1134,28 @@
           "boundary_euler": 2,
           "boundary_faces": 14,
           "boundary_is_sphere": true,
+          "boundary_patches": {
+            "source": {
+              "boundary_components": 1,
+              "boundary_edge_count": 8,
+              "edges": 13,
+              "euler": 1,
+              "facet_count": 6,
+              "surface_components": 1,
+              "topology": "disk",
+              "vertices": 8
+            },
+            "target": {
+              "boundary_components": 1,
+              "boundary_edge_count": 8,
+              "edges": 16,
+              "euler": 1,
+              "facet_count": 8,
+              "surface_components": 1,
+              "topology": "disk",
+              "vertices": 9
+            }
+          },
           "boundary_vertices": 9,
           "component_id": 4,
           "piece_count": 6,
@@ -1131,6 +1247,28 @@
           "boundary_euler": 2,
           "boundary_faces": 14,
           "boundary_is_sphere": true,
+          "boundary_patches": {
+            "source": {
+              "boundary_components": 1,
+              "boundary_edge_count": 8,
+              "edges": 13,
+              "euler": 1,
+              "facet_count": 6,
+              "surface_components": 1,
+              "topology": "disk",
+              "vertices": 8
+            },
+            "target": {
+              "boundary_components": 1,
+              "boundary_edge_count": 8,
+              "edges": 16,
+              "euler": 1,
+              "facet_count": 8,
+              "surface_components": 1,
+              "topology": "disk",
+              "vertices": 9
+            }
+          },
           "boundary_vertices": 9,
           "component_id": 5,
           "piece_count": 6,
@@ -4318,7 +4456,7 @@
       "power": -1,
       "prefix_axis": 1,
       "restore_status": "OPEN",
-      "sha256": "C17FDFEC3B86EAF3407DF97311635310E065102FAA870A29870A99D50E0848CD",
+      "sha256": "9EA81F8B34F32467331E3FD4753AD17EB4A357C7787F9DD1F17A9BDD1E5A2B4D",
       "source_axis": 0
     },
     {
@@ -4364,6 +4502,12 @@
           "transport_support_status": "OPEN"
         }
       ],
+      "boundary_patch_pattern": {
+        "annulus_to_two_disks": 1,
+        "disk_to_disk": 4,
+        "johnson_saddle_pattern": "PASS",
+        "two_disks_to_annulus": 1
+      },
       "component_intersections": {
         "closures_pairwise_disjoint": false,
         "edge_count": 7,
@@ -4628,6 +4772,28 @@
           "boundary_euler": 2,
           "boundary_faces": 64,
           "boundary_is_sphere": true,
+          "boundary_patches": {
+            "source": {
+              "boundary_components": 2,
+              "boundary_edge_count": 20,
+              "edges": 58,
+              "euler": 0,
+              "facet_count": 32,
+              "surface_components": 1,
+              "topology": "annulus",
+              "vertices": 26
+            },
+            "target": {
+              "boundary_components": 2,
+              "boundary_edge_count": 20,
+              "edges": 58,
+              "euler": 2,
+              "facet_count": 32,
+              "surface_components": 2,
+              "topology": "two_disks",
+              "vertices": 28
+            }
+          },
           "boundary_vertices": 34,
           "component_id": 0,
           "piece_count": 72,
@@ -5115,6 +5281,28 @@
           "boundary_euler": 2,
           "boundary_faces": 24,
           "boundary_is_sphere": true,
+          "boundary_patches": {
+            "source": {
+              "boundary_components": 1,
+              "boundary_edge_count": 8,
+              "edges": 16,
+              "euler": 1,
+              "facet_count": 8,
+              "surface_components": 1,
+              "topology": "disk",
+              "vertices": 9
+            },
+            "target": {
+              "boundary_components": 1,
+              "boundary_edge_count": 8,
+              "edges": 28,
+              "euler": 1,
+              "facet_count": 16,
+              "surface_components": 1,
+              "topology": "disk",
+              "vertices": 13
+            }
+          },
           "boundary_vertices": 14,
           "component_id": 1,
           "piece_count": 12,
@@ -5242,6 +5430,28 @@
           "boundary_euler": 2,
           "boundary_faces": 24,
           "boundary_is_sphere": true,
+          "boundary_patches": {
+            "source": {
+              "boundary_components": 1,
+              "boundary_edge_count": 8,
+              "edges": 16,
+              "euler": 1,
+              "facet_count": 8,
+              "surface_components": 1,
+              "topology": "disk",
+              "vertices": 9
+            },
+            "target": {
+              "boundary_components": 1,
+              "boundary_edge_count": 8,
+              "edges": 28,
+              "euler": 1,
+              "facet_count": 16,
+              "surface_components": 1,
+              "topology": "disk",
+              "vertices": 13
+            }
+          },
           "boundary_vertices": 14,
           "component_id": 2,
           "piece_count": 12,
@@ -5369,6 +5579,28 @@
           "boundary_euler": 2,
           "boundary_faces": 64,
           "boundary_is_sphere": true,
+          "boundary_patches": {
+            "source": {
+              "boundary_components": 2,
+              "boundary_edge_count": 16,
+              "edges": 32,
+              "euler": 2,
+              "facet_count": 16,
+              "surface_components": 2,
+              "topology": "two_disks",
+              "vertices": 18
+            },
+            "target": {
+              "boundary_components": 2,
+              "boundary_edge_count": 16,
+              "edges": 80,
+              "euler": 0,
+              "facet_count": 48,
+              "surface_components": 1,
+              "topology": "annulus",
+              "vertices": 32
+            }
+          },
           "boundary_vertices": 34,
           "component_id": 3,
           "piece_count": 72,
@@ -5856,6 +6088,28 @@
           "boundary_euler": 2,
           "boundary_faces": 24,
           "boundary_is_sphere": true,
+          "boundary_patches": {
+            "source": {
+              "boundary_components": 1,
+              "boundary_edge_count": 10,
+              "edges": 17,
+              "euler": 1,
+              "facet_count": 8,
+              "surface_components": 1,
+              "topology": "disk",
+              "vertices": 10
+            },
+            "target": {
+              "boundary_components": 1,
+              "boundary_edge_count": 10,
+              "edges": 29,
+              "euler": 1,
+              "facet_count": 16,
+              "surface_components": 1,
+              "topology": "disk",
+              "vertices": 14
+            }
+          },
           "boundary_vertices": 14,
           "component_id": 4,
           "piece_count": 12,
@@ -5983,6 +6237,28 @@
           "boundary_euler": 2,
           "boundary_faces": 24,
           "boundary_is_sphere": true,
+          "boundary_patches": {
+            "source": {
+              "boundary_components": 1,
+              "boundary_edge_count": 10,
+              "edges": 17,
+              "euler": 1,
+              "facet_count": 8,
+              "surface_components": 1,
+              "topology": "disk",
+              "vertices": 10
+            },
+            "target": {
+              "boundary_components": 1,
+              "boundary_edge_count": 10,
+              "edges": 29,
+              "euler": 1,
+              "facet_count": 16,
+              "surface_components": 1,
+              "topology": "disk",
+              "vertices": 14
+            }
+          },
           "boundary_vertices": 14,
           "component_id": 5,
           "piece_count": 12,
@@ -12598,7 +12874,7 @@
       "power": 1,
       "prefix_axis": 1,
       "restore_status": "OPEN",
-      "sha256": "EF48D6396DA7DC433FBED9EC625023709B19D96C18A7047E7A3DF1E724535E82",
+      "sha256": "7852A2F0EF3C3977AEA697BD24580B8C4AA716A6FFD9335529745EF79E5A07B5",
       "source_axis": 0
     },
     {
@@ -12644,6 +12920,12 @@
           "transport_support_status": "OPEN"
         }
       ],
+      "boundary_patch_pattern": {
+        "annulus_to_two_disks": 1,
+        "disk_to_disk": 4,
+        "johnson_saddle_pattern": "PASS",
+        "two_disks_to_annulus": 1
+      },
       "component_intersections": {
         "closures_pairwise_disjoint": false,
         "edge_count": 7,
@@ -12908,6 +13190,28 @@
           "boundary_euler": 2,
           "boundary_faces": 36,
           "boundary_is_sphere": true,
+          "boundary_patches": {
+            "source": {
+              "boundary_components": 2,
+              "boundary_edge_count": 16,
+              "edges": 38,
+              "euler": 0,
+              "facet_count": 20,
+              "surface_components": 1,
+              "topology": "annulus",
+              "vertices": 18
+            },
+            "target": {
+              "boundary_components": 2,
+              "boundary_edge_count": 16,
+              "edges": 32,
+              "euler": 2,
+              "facet_count": 16,
+              "surface_components": 2,
+              "topology": "two_disks",
+              "vertices": 18
+            }
+          },
           "boundary_vertices": 20,
           "component_id": 0,
           "piece_count": 36,
@@ -13179,6 +13483,28 @@
           "boundary_euler": 2,
           "boundary_faces": 14,
           "boundary_is_sphere": true,
+          "boundary_patches": {
+            "source": {
+              "boundary_components": 1,
+              "boundary_edge_count": 8,
+              "edges": 16,
+              "euler": 1,
+              "facet_count": 8,
+              "surface_components": 1,
+              "topology": "disk",
+              "vertices": 9
+            },
+            "target": {
+              "boundary_components": 1,
+              "boundary_edge_count": 8,
+              "edges": 13,
+              "euler": 1,
+              "facet_count": 6,
+              "surface_components": 1,
+              "topology": "disk",
+              "vertices": 8
+            }
+          },
           "boundary_vertices": 9,
           "component_id": 1,
           "piece_count": 6,
@@ -13270,6 +13596,28 @@
           "boundary_euler": 2,
           "boundary_faces": 14,
           "boundary_is_sphere": true,
+          "boundary_patches": {
+            "source": {
+              "boundary_components": 1,
+              "boundary_edge_count": 8,
+              "edges": 16,
+              "euler": 1,
+              "facet_count": 8,
+              "surface_components": 1,
+              "topology": "disk",
+              "vertices": 9
+            },
+            "target": {
+              "boundary_components": 1,
+              "boundary_edge_count": 8,
+              "edges": 13,
+              "euler": 1,
+              "facet_count": 6,
+              "surface_components": 1,
+              "topology": "disk",
+              "vertices": 8
+            }
+          },
           "boundary_vertices": 9,
           "component_id": 2,
           "piece_count": 6,
@@ -13361,6 +13709,28 @@
           "boundary_euler": 2,
           "boundary_faces": 36,
           "boundary_is_sphere": true,
+          "boundary_patches": {
+            "source": {
+              "boundary_components": 2,
+              "boundary_edge_count": 16,
+              "edges": 32,
+              "euler": 2,
+              "facet_count": 16,
+              "surface_components": 2,
+              "topology": "two_disks",
+              "vertices": 18
+            },
+            "target": {
+              "boundary_components": 2,
+              "boundary_edge_count": 16,
+              "edges": 38,
+              "euler": 0,
+              "facet_count": 20,
+              "surface_components": 1,
+              "topology": "annulus",
+              "vertices": 18
+            }
+          },
           "boundary_vertices": 20,
           "component_id": 3,
           "piece_count": 36,
@@ -13632,6 +14002,28 @@
           "boundary_euler": 2,
           "boundary_faces": 14,
           "boundary_is_sphere": true,
+          "boundary_patches": {
+            "source": {
+              "boundary_components": 1,
+              "boundary_edge_count": 8,
+              "edges": 13,
+              "euler": 1,
+              "facet_count": 6,
+              "surface_components": 1,
+              "topology": "disk",
+              "vertices": 8
+            },
+            "target": {
+              "boundary_components": 1,
+              "boundary_edge_count": 8,
+              "edges": 16,
+              "euler": 1,
+              "facet_count": 8,
+              "surface_components": 1,
+              "topology": "disk",
+              "vertices": 9
+            }
+          },
           "boundary_vertices": 9,
           "component_id": 4,
           "piece_count": 6,
@@ -13723,6 +14115,28 @@
           "boundary_euler": 2,
           "boundary_faces": 14,
           "boundary_is_sphere": true,
+          "boundary_patches": {
+            "source": {
+              "boundary_components": 1,
+              "boundary_edge_count": 8,
+              "edges": 13,
+              "euler": 1,
+              "facet_count": 6,
+              "surface_components": 1,
+              "topology": "disk",
+              "vertices": 8
+            },
+            "target": {
+              "boundary_components": 1,
+              "boundary_edge_count": 8,
+              "edges": 16,
+              "euler": 1,
+              "facet_count": 8,
+              "surface_components": 1,
+              "topology": "disk",
+              "vertices": 9
+            }
+          },
           "boundary_vertices": 9,
           "component_id": 5,
           "piece_count": 6,
@@ -16910,7 +17324,7 @@
       "power": -1,
       "prefix_axis": 2,
       "restore_status": "OPEN",
-      "sha256": "D7160447DC2C445252EAD119AC5C17E2CFEEEB3CA03BC8FAFB115680D9EA1DE8",
+      "sha256": "BB6F9ABE07509B7A2761C75644B656C683AF6DAD58FA9D8B879F1B75E865CDD8",
       "source_axis": 0
     },
     {
@@ -16956,6 +17370,12 @@
           "transport_support_status": "OPEN"
         }
       ],
+      "boundary_patch_pattern": {
+        "annulus_to_two_disks": 1,
+        "disk_to_disk": 4,
+        "johnson_saddle_pattern": "PASS",
+        "two_disks_to_annulus": 1
+      },
       "component_intersections": {
         "closures_pairwise_disjoint": false,
         "edge_count": 7,
@@ -17220,6 +17640,28 @@
           "boundary_euler": 2,
           "boundary_faces": 64,
           "boundary_is_sphere": true,
+          "boundary_patches": {
+            "source": {
+              "boundary_components": 2,
+              "boundary_edge_count": 20,
+              "edges": 58,
+              "euler": 0,
+              "facet_count": 32,
+              "surface_components": 1,
+              "topology": "annulus",
+              "vertices": 26
+            },
+            "target": {
+              "boundary_components": 2,
+              "boundary_edge_count": 20,
+              "edges": 58,
+              "euler": 2,
+              "facet_count": 32,
+              "surface_components": 2,
+              "topology": "two_disks",
+              "vertices": 28
+            }
+          },
           "boundary_vertices": 34,
           "component_id": 0,
           "piece_count": 72,
@@ -17707,6 +18149,28 @@
           "boundary_euler": 2,
           "boundary_faces": 24,
           "boundary_is_sphere": true,
+          "boundary_patches": {
+            "source": {
+              "boundary_components": 1,
+              "boundary_edge_count": 8,
+              "edges": 16,
+              "euler": 1,
+              "facet_count": 8,
+              "surface_components": 1,
+              "topology": "disk",
+              "vertices": 9
+            },
+            "target": {
+              "boundary_components": 1,
+              "boundary_edge_count": 8,
+              "edges": 28,
+              "euler": 1,
+              "facet_count": 16,
+              "surface_components": 1,
+              "topology": "disk",
+              "vertices": 13
+            }
+          },
           "boundary_vertices": 14,
           "component_id": 1,
           "piece_count": 12,
@@ -17834,6 +18298,28 @@
           "boundary_euler": 2,
           "boundary_faces": 24,
           "boundary_is_sphere": true,
+          "boundary_patches": {
+            "source": {
+              "boundary_components": 1,
+              "boundary_edge_count": 8,
+              "edges": 16,
+              "euler": 1,
+              "facet_count": 8,
+              "surface_components": 1,
+              "topology": "disk",
+              "vertices": 9
+            },
+            "target": {
+              "boundary_components": 1,
+              "boundary_edge_count": 8,
+              "edges": 28,
+              "euler": 1,
+              "facet_count": 16,
+              "surface_components": 1,
+              "topology": "disk",
+              "vertices": 13
+            }
+          },
           "boundary_vertices": 14,
           "component_id": 2,
           "piece_count": 12,
@@ -17961,6 +18447,28 @@
           "boundary_euler": 2,
           "boundary_faces": 64,
           "boundary_is_sphere": true,
+          "boundary_patches": {
+            "source": {
+              "boundary_components": 2,
+              "boundary_edge_count": 16,
+              "edges": 32,
+              "euler": 2,
+              "facet_count": 16,
+              "surface_components": 2,
+              "topology": "two_disks",
+              "vertices": 18
+            },
+            "target": {
+              "boundary_components": 2,
+              "boundary_edge_count": 16,
+              "edges": 80,
+              "euler": 0,
+              "facet_count": 48,
+              "surface_components": 1,
+              "topology": "annulus",
+              "vertices": 32
+            }
+          },
           "boundary_vertices": 34,
           "component_id": 3,
           "piece_count": 72,
@@ -18448,6 +18956,28 @@
           "boundary_euler": 2,
           "boundary_faces": 24,
           "boundary_is_sphere": true,
+          "boundary_patches": {
+            "source": {
+              "boundary_components": 1,
+              "boundary_edge_count": 10,
+              "edges": 17,
+              "euler": 1,
+              "facet_count": 8,
+              "surface_components": 1,
+              "topology": "disk",
+              "vertices": 10
+            },
+            "target": {
+              "boundary_components": 1,
+              "boundary_edge_count": 10,
+              "edges": 29,
+              "euler": 1,
+              "facet_count": 16,
+              "surface_components": 1,
+              "topology": "disk",
+              "vertices": 14
+            }
+          },
           "boundary_vertices": 14,
           "component_id": 4,
           "piece_count": 12,
@@ -18575,6 +19105,28 @@
           "boundary_euler": 2,
           "boundary_faces": 24,
           "boundary_is_sphere": true,
+          "boundary_patches": {
+            "source": {
+              "boundary_components": 1,
+              "boundary_edge_count": 10,
+              "edges": 17,
+              "euler": 1,
+              "facet_count": 8,
+              "surface_components": 1,
+              "topology": "disk",
+              "vertices": 10
+            },
+            "target": {
+              "boundary_components": 1,
+              "boundary_edge_count": 10,
+              "edges": 29,
+              "euler": 1,
+              "facet_count": 16,
+              "surface_components": 1,
+              "topology": "disk",
+              "vertices": 14
+            }
+          },
           "boundary_vertices": 14,
           "component_id": 5,
           "piece_count": 12,
@@ -25190,7 +25742,7 @@
       "power": 1,
       "prefix_axis": 2,
       "restore_status": "OPEN",
-      "sha256": "00CAF8022CC86EAEB247272BD831FA9132272501CC89AD4FF35ABE1968546BFE",
+      "sha256": "A07E2084C6C240F1B9A8B181E0DCB8F655BBB2EB49C21A501142818DBFD5DFCE",
       "source_axis": 0
     },
     {
@@ -25236,6 +25788,12 @@
           "transport_support_status": "OPEN"
         }
       ],
+      "boundary_patch_pattern": {
+        "annulus_to_two_disks": 1,
+        "disk_to_disk": 4,
+        "johnson_saddle_pattern": "PASS",
+        "two_disks_to_annulus": 1
+      },
       "component_intersections": {
         "closures_pairwise_disjoint": false,
         "edge_count": 7,
@@ -25500,6 +26058,28 @@
           "boundary_euler": 2,
           "boundary_faces": 36,
           "boundary_is_sphere": true,
+          "boundary_patches": {
+            "source": {
+              "boundary_components": 2,
+              "boundary_edge_count": 16,
+              "edges": 38,
+              "euler": 0,
+              "facet_count": 20,
+              "surface_components": 1,
+              "topology": "annulus",
+              "vertices": 18
+            },
+            "target": {
+              "boundary_components": 2,
+              "boundary_edge_count": 16,
+              "edges": 32,
+              "euler": 2,
+              "facet_count": 16,
+              "surface_components": 2,
+              "topology": "two_disks",
+              "vertices": 18
+            }
+          },
           "boundary_vertices": 20,
           "component_id": 0,
           "piece_count": 36,
@@ -25771,6 +26351,28 @@
           "boundary_euler": 2,
           "boundary_faces": 14,
           "boundary_is_sphere": true,
+          "boundary_patches": {
+            "source": {
+              "boundary_components": 1,
+              "boundary_edge_count": 8,
+              "edges": 16,
+              "euler": 1,
+              "facet_count": 8,
+              "surface_components": 1,
+              "topology": "disk",
+              "vertices": 9
+            },
+            "target": {
+              "boundary_components": 1,
+              "boundary_edge_count": 8,
+              "edges": 13,
+              "euler": 1,
+              "facet_count": 6,
+              "surface_components": 1,
+              "topology": "disk",
+              "vertices": 8
+            }
+          },
           "boundary_vertices": 9,
           "component_id": 1,
           "piece_count": 6,
@@ -25862,6 +26464,28 @@
           "boundary_euler": 2,
           "boundary_faces": 14,
           "boundary_is_sphere": true,
+          "boundary_patches": {
+            "source": {
+              "boundary_components": 1,
+              "boundary_edge_count": 8,
+              "edges": 16,
+              "euler": 1,
+              "facet_count": 8,
+              "surface_components": 1,
+              "topology": "disk",
+              "vertices": 9
+            },
+            "target": {
+              "boundary_components": 1,
+              "boundary_edge_count": 8,
+              "edges": 13,
+              "euler": 1,
+              "facet_count": 6,
+              "surface_components": 1,
+              "topology": "disk",
+              "vertices": 8
+            }
+          },
           "boundary_vertices": 9,
           "component_id": 2,
           "piece_count": 6,
@@ -25953,6 +26577,28 @@
           "boundary_euler": 2,
           "boundary_faces": 36,
           "boundary_is_sphere": true,
+          "boundary_patches": {
+            "source": {
+              "boundary_components": 2,
+              "boundary_edge_count": 16,
+              "edges": 32,
+              "euler": 2,
+              "facet_count": 16,
+              "surface_components": 2,
+              "topology": "two_disks",
+              "vertices": 18
+            },
+            "target": {
+              "boundary_components": 2,
+              "boundary_edge_count": 16,
+              "edges": 38,
+              "euler": 0,
+              "facet_count": 20,
+              "surface_components": 1,
+              "topology": "annulus",
+              "vertices": 18
+            }
+          },
           "boundary_vertices": 20,
           "component_id": 3,
           "piece_count": 36,
@@ -26224,6 +26870,28 @@
           "boundary_euler": 2,
           "boundary_faces": 14,
           "boundary_is_sphere": true,
+          "boundary_patches": {
+            "source": {
+              "boundary_components": 1,
+              "boundary_edge_count": 8,
+              "edges": 13,
+              "euler": 1,
+              "facet_count": 6,
+              "surface_components": 1,
+              "topology": "disk",
+              "vertices": 8
+            },
+            "target": {
+              "boundary_components": 1,
+              "boundary_edge_count": 8,
+              "edges": 16,
+              "euler": 1,
+              "facet_count": 8,
+              "surface_components": 1,
+              "topology": "disk",
+              "vertices": 9
+            }
+          },
           "boundary_vertices": 9,
           "component_id": 4,
           "piece_count": 6,
@@ -26315,6 +26983,28 @@
           "boundary_euler": 2,
           "boundary_faces": 14,
           "boundary_is_sphere": true,
+          "boundary_patches": {
+            "source": {
+              "boundary_components": 1,
+              "boundary_edge_count": 8,
+              "edges": 13,
+              "euler": 1,
+              "facet_count": 6,
+              "surface_components": 1,
+              "topology": "disk",
+              "vertices": 8
+            },
+            "target": {
+              "boundary_components": 1,
+              "boundary_edge_count": 8,
+              "edges": 16,
+              "euler": 1,
+              "facet_count": 8,
+              "surface_components": 1,
+              "topology": "disk",
+              "vertices": 9
+            }
+          },
           "boundary_vertices": 9,
           "component_id": 5,
           "piece_count": 6,
@@ -29502,7 +30192,7 @@
       "power": -1,
       "prefix_axis": 0,
       "restore_status": "OPEN",
-      "sha256": "DA86CF94816D7A2A2DA769F1BD9084724D1E0C54ABFF6AA46A9C3593BEE52692",
+      "sha256": "E2B8928FAE72787FE2D5E5E7F32EE7D60AA8FF946ACFA7BDA01EDAAB1A5EEAD9",
       "source_axis": 1
     },
     {
@@ -29548,6 +30238,12 @@
           "transport_support_status": "OPEN"
         }
       ],
+      "boundary_patch_pattern": {
+        "annulus_to_two_disks": 1,
+        "disk_to_disk": 4,
+        "johnson_saddle_pattern": "PASS",
+        "two_disks_to_annulus": 1
+      },
       "component_intersections": {
         "closures_pairwise_disjoint": false,
         "edge_count": 7,
@@ -29812,6 +30508,28 @@
           "boundary_euler": 2,
           "boundary_faces": 64,
           "boundary_is_sphere": true,
+          "boundary_patches": {
+            "source": {
+              "boundary_components": 2,
+              "boundary_edge_count": 20,
+              "edges": 58,
+              "euler": 0,
+              "facet_count": 32,
+              "surface_components": 1,
+              "topology": "annulus",
+              "vertices": 26
+            },
+            "target": {
+              "boundary_components": 2,
+              "boundary_edge_count": 20,
+              "edges": 58,
+              "euler": 2,
+              "facet_count": 32,
+              "surface_components": 2,
+              "topology": "two_disks",
+              "vertices": 28
+            }
+          },
           "boundary_vertices": 34,
           "component_id": 0,
           "piece_count": 72,
@@ -30299,6 +31017,28 @@
           "boundary_euler": 2,
           "boundary_faces": 24,
           "boundary_is_sphere": true,
+          "boundary_patches": {
+            "source": {
+              "boundary_components": 1,
+              "boundary_edge_count": 8,
+              "edges": 16,
+              "euler": 1,
+              "facet_count": 8,
+              "surface_components": 1,
+              "topology": "disk",
+              "vertices": 9
+            },
+            "target": {
+              "boundary_components": 1,
+              "boundary_edge_count": 8,
+              "edges": 28,
+              "euler": 1,
+              "facet_count": 16,
+              "surface_components": 1,
+              "topology": "disk",
+              "vertices": 13
+            }
+          },
           "boundary_vertices": 14,
           "component_id": 1,
           "piece_count": 12,
@@ -30426,6 +31166,28 @@
           "boundary_euler": 2,
           "boundary_faces": 24,
           "boundary_is_sphere": true,
+          "boundary_patches": {
+            "source": {
+              "boundary_components": 1,
+              "boundary_edge_count": 8,
+              "edges": 16,
+              "euler": 1,
+              "facet_count": 8,
+              "surface_components": 1,
+              "topology": "disk",
+              "vertices": 9
+            },
+            "target": {
+              "boundary_components": 1,
+              "boundary_edge_count": 8,
+              "edges": 28,
+              "euler": 1,
+              "facet_count": 16,
+              "surface_components": 1,
+              "topology": "disk",
+              "vertices": 13
+            }
+          },
           "boundary_vertices": 14,
           "component_id": 2,
           "piece_count": 12,
@@ -30553,6 +31315,28 @@
           "boundary_euler": 2,
           "boundary_faces": 64,
           "boundary_is_sphere": true,
+          "boundary_patches": {
+            "source": {
+              "boundary_components": 2,
+              "boundary_edge_count": 16,
+              "edges": 32,
+              "euler": 2,
+              "facet_count": 16,
+              "surface_components": 2,
+              "topology": "two_disks",
+              "vertices": 18
+            },
+            "target": {
+              "boundary_components": 2,
+              "boundary_edge_count": 16,
+              "edges": 80,
+              "euler": 0,
+              "facet_count": 48,
+              "surface_components": 1,
+              "topology": "annulus",
+              "vertices": 32
+            }
+          },
           "boundary_vertices": 34,
           "component_id": 3,
           "piece_count": 72,
@@ -31040,6 +31824,28 @@
           "boundary_euler": 2,
           "boundary_faces": 24,
           "boundary_is_sphere": true,
+          "boundary_patches": {
+            "source": {
+              "boundary_components": 1,
+              "boundary_edge_count": 10,
+              "edges": 17,
+              "euler": 1,
+              "facet_count": 8,
+              "surface_components": 1,
+              "topology": "disk",
+              "vertices": 10
+            },
+            "target": {
+              "boundary_components": 1,
+              "boundary_edge_count": 10,
+              "edges": 29,
+              "euler": 1,
+              "facet_count": 16,
+              "surface_components": 1,
+              "topology": "disk",
+              "vertices": 14
+            }
+          },
           "boundary_vertices": 14,
           "component_id": 4,
           "piece_count": 12,
@@ -31167,6 +31973,28 @@
           "boundary_euler": 2,
           "boundary_faces": 24,
           "boundary_is_sphere": true,
+          "boundary_patches": {
+            "source": {
+              "boundary_components": 1,
+              "boundary_edge_count": 10,
+              "edges": 17,
+              "euler": 1,
+              "facet_count": 8,
+              "surface_components": 1,
+              "topology": "disk",
+              "vertices": 10
+            },
+            "target": {
+              "boundary_components": 1,
+              "boundary_edge_count": 10,
+              "edges": 29,
+              "euler": 1,
+              "facet_count": 16,
+              "surface_components": 1,
+              "topology": "disk",
+              "vertices": 14
+            }
+          },
           "boundary_vertices": 14,
           "component_id": 5,
           "piece_count": 12,
@@ -37782,7 +38610,7 @@
       "power": 1,
       "prefix_axis": 0,
       "restore_status": "OPEN",
-      "sha256": "1080ED2664C86BD94CBE9D6AA2EB2060CE7F37835FC8BBCD36CE0CB05C41E9B5",
+      "sha256": "8399ED3BF2392FC745980BE18F0D85696D867E785C4F7F44F21A6EAE4590D548",
       "source_axis": 1
     },
     {
@@ -37828,6 +38656,12 @@
           "transport_support_status": "OPEN"
         }
       ],
+      "boundary_patch_pattern": {
+        "annulus_to_two_disks": 1,
+        "disk_to_disk": 4,
+        "johnson_saddle_pattern": "PASS",
+        "two_disks_to_annulus": 1
+      },
       "component_intersections": {
         "closures_pairwise_disjoint": false,
         "edge_count": 7,
@@ -38092,6 +38926,28 @@
           "boundary_euler": 2,
           "boundary_faces": 36,
           "boundary_is_sphere": true,
+          "boundary_patches": {
+            "source": {
+              "boundary_components": 2,
+              "boundary_edge_count": 16,
+              "edges": 38,
+              "euler": 0,
+              "facet_count": 20,
+              "surface_components": 1,
+              "topology": "annulus",
+              "vertices": 18
+            },
+            "target": {
+              "boundary_components": 2,
+              "boundary_edge_count": 16,
+              "edges": 32,
+              "euler": 2,
+              "facet_count": 16,
+              "surface_components": 2,
+              "topology": "two_disks",
+              "vertices": 18
+            }
+          },
           "boundary_vertices": 20,
           "component_id": 0,
           "piece_count": 36,
@@ -38363,6 +39219,28 @@
           "boundary_euler": 2,
           "boundary_faces": 14,
           "boundary_is_sphere": true,
+          "boundary_patches": {
+            "source": {
+              "boundary_components": 1,
+              "boundary_edge_count": 8,
+              "edges": 16,
+              "euler": 1,
+              "facet_count": 8,
+              "surface_components": 1,
+              "topology": "disk",
+              "vertices": 9
+            },
+            "target": {
+              "boundary_components": 1,
+              "boundary_edge_count": 8,
+              "edges": 13,
+              "euler": 1,
+              "facet_count": 6,
+              "surface_components": 1,
+              "topology": "disk",
+              "vertices": 8
+            }
+          },
           "boundary_vertices": 9,
           "component_id": 1,
           "piece_count": 6,
@@ -38454,6 +39332,28 @@
           "boundary_euler": 2,
           "boundary_faces": 14,
           "boundary_is_sphere": true,
+          "boundary_patches": {
+            "source": {
+              "boundary_components": 1,
+              "boundary_edge_count": 8,
+              "edges": 16,
+              "euler": 1,
+              "facet_count": 8,
+              "surface_components": 1,
+              "topology": "disk",
+              "vertices": 9
+            },
+            "target": {
+              "boundary_components": 1,
+              "boundary_edge_count": 8,
+              "edges": 13,
+              "euler": 1,
+              "facet_count": 6,
+              "surface_components": 1,
+              "topology": "disk",
+              "vertices": 8
+            }
+          },
           "boundary_vertices": 9,
           "component_id": 2,
           "piece_count": 6,
@@ -38545,6 +39445,28 @@
           "boundary_euler": 2,
           "boundary_faces": 36,
           "boundary_is_sphere": true,
+          "boundary_patches": {
+            "source": {
+              "boundary_components": 2,
+              "boundary_edge_count": 16,
+              "edges": 32,
+              "euler": 2,
+              "facet_count": 16,
+              "surface_components": 2,
+              "topology": "two_disks",
+              "vertices": 18
+            },
+            "target": {
+              "boundary_components": 2,
+              "boundary_edge_count": 16,
+              "edges": 38,
+              "euler": 0,
+              "facet_count": 20,
+              "surface_components": 1,
+              "topology": "annulus",
+              "vertices": 18
+            }
+          },
           "boundary_vertices": 20,
           "component_id": 3,
           "piece_count": 36,
@@ -38816,6 +39738,28 @@
           "boundary_euler": 2,
           "boundary_faces": 14,
           "boundary_is_sphere": true,
+          "boundary_patches": {
+            "source": {
+              "boundary_components": 1,
+              "boundary_edge_count": 8,
+              "edges": 13,
+              "euler": 1,
+              "facet_count": 6,
+              "surface_components": 1,
+              "topology": "disk",
+              "vertices": 8
+            },
+            "target": {
+              "boundary_components": 1,
+              "boundary_edge_count": 8,
+              "edges": 16,
+              "euler": 1,
+              "facet_count": 8,
+              "surface_components": 1,
+              "topology": "disk",
+              "vertices": 9
+            }
+          },
           "boundary_vertices": 9,
           "component_id": 4,
           "piece_count": 6,
@@ -38907,6 +39851,28 @@
           "boundary_euler": 2,
           "boundary_faces": 14,
           "boundary_is_sphere": true,
+          "boundary_patches": {
+            "source": {
+              "boundary_components": 1,
+              "boundary_edge_count": 8,
+              "edges": 13,
+              "euler": 1,
+              "facet_count": 6,
+              "surface_components": 1,
+              "topology": "disk",
+              "vertices": 8
+            },
+            "target": {
+              "boundary_components": 1,
+              "boundary_edge_count": 8,
+              "edges": 16,
+              "euler": 1,
+              "facet_count": 8,
+              "surface_components": 1,
+              "topology": "disk",
+              "vertices": 9
+            }
+          },
           "boundary_vertices": 9,
           "component_id": 5,
           "piece_count": 6,
@@ -42094,7 +43060,7 @@
       "power": -1,
       "prefix_axis": 2,
       "restore_status": "OPEN",
-      "sha256": "F0C41E5684CDDD8CFE880FC0BFDA8783EFD3E9F1CE23135F65A43EAD4932AFE7",
+      "sha256": "CDF1E9C17E9B5538AB644FBCBBDF860FFD2C5ECD2A5F7986D55B076F1D12545D",
       "source_axis": 1
     },
     {
@@ -42140,6 +43106,12 @@
           "transport_support_status": "OPEN"
         }
       ],
+      "boundary_patch_pattern": {
+        "annulus_to_two_disks": 1,
+        "disk_to_disk": 4,
+        "johnson_saddle_pattern": "PASS",
+        "two_disks_to_annulus": 1
+      },
       "component_intersections": {
         "closures_pairwise_disjoint": false,
         "edge_count": 7,
@@ -42404,6 +43376,28 @@
           "boundary_euler": 2,
           "boundary_faces": 64,
           "boundary_is_sphere": true,
+          "boundary_patches": {
+            "source": {
+              "boundary_components": 2,
+              "boundary_edge_count": 20,
+              "edges": 58,
+              "euler": 0,
+              "facet_count": 32,
+              "surface_components": 1,
+              "topology": "annulus",
+              "vertices": 26
+            },
+            "target": {
+              "boundary_components": 2,
+              "boundary_edge_count": 20,
+              "edges": 58,
+              "euler": 2,
+              "facet_count": 32,
+              "surface_components": 2,
+              "topology": "two_disks",
+              "vertices": 28
+            }
+          },
           "boundary_vertices": 34,
           "component_id": 0,
           "piece_count": 72,
@@ -42891,6 +43885,28 @@
           "boundary_euler": 2,
           "boundary_faces": 24,
           "boundary_is_sphere": true,
+          "boundary_patches": {
+            "source": {
+              "boundary_components": 1,
+              "boundary_edge_count": 8,
+              "edges": 16,
+              "euler": 1,
+              "facet_count": 8,
+              "surface_components": 1,
+              "topology": "disk",
+              "vertices": 9
+            },
+            "target": {
+              "boundary_components": 1,
+              "boundary_edge_count": 8,
+              "edges": 28,
+              "euler": 1,
+              "facet_count": 16,
+              "surface_components": 1,
+              "topology": "disk",
+              "vertices": 13
+            }
+          },
           "boundary_vertices": 14,
           "component_id": 1,
           "piece_count": 12,
@@ -43018,6 +44034,28 @@
           "boundary_euler": 2,
           "boundary_faces": 24,
           "boundary_is_sphere": true,
+          "boundary_patches": {
+            "source": {
+              "boundary_components": 1,
+              "boundary_edge_count": 8,
+              "edges": 16,
+              "euler": 1,
+              "facet_count": 8,
+              "surface_components": 1,
+              "topology": "disk",
+              "vertices": 9
+            },
+            "target": {
+              "boundary_components": 1,
+              "boundary_edge_count": 8,
+              "edges": 28,
+              "euler": 1,
+              "facet_count": 16,
+              "surface_components": 1,
+              "topology": "disk",
+              "vertices": 13
+            }
+          },
           "boundary_vertices": 14,
           "component_id": 2,
           "piece_count": 12,
@@ -43145,6 +44183,28 @@
           "boundary_euler": 2,
           "boundary_faces": 64,
           "boundary_is_sphere": true,
+          "boundary_patches": {
+            "source": {
+              "boundary_components": 2,
+              "boundary_edge_count": 16,
+              "edges": 32,
+              "euler": 2,
+              "facet_count": 16,
+              "surface_components": 2,
+              "topology": "two_disks",
+              "vertices": 18
+            },
+            "target": {
+              "boundary_components": 2,
+              "boundary_edge_count": 16,
+              "edges": 80,
+              "euler": 0,
+              "facet_count": 48,
+              "surface_components": 1,
+              "topology": "annulus",
+              "vertices": 32
+            }
+          },
           "boundary_vertices": 34,
           "component_id": 3,
           "piece_count": 72,
@@ -43632,6 +44692,28 @@
           "boundary_euler": 2,
           "boundary_faces": 24,
           "boundary_is_sphere": true,
+          "boundary_patches": {
+            "source": {
+              "boundary_components": 1,
+              "boundary_edge_count": 10,
+              "edges": 17,
+              "euler": 1,
+              "facet_count": 8,
+              "surface_components": 1,
+              "topology": "disk",
+              "vertices": 10
+            },
+            "target": {
+              "boundary_components": 1,
+              "boundary_edge_count": 10,
+              "edges": 29,
+              "euler": 1,
+              "facet_count": 16,
+              "surface_components": 1,
+              "topology": "disk",
+              "vertices": 14
+            }
+          },
           "boundary_vertices": 14,
           "component_id": 4,
           "piece_count": 12,
@@ -43759,6 +44841,28 @@
           "boundary_euler": 2,
           "boundary_faces": 24,
           "boundary_is_sphere": true,
+          "boundary_patches": {
+            "source": {
+              "boundary_components": 1,
+              "boundary_edge_count": 10,
+              "edges": 17,
+              "euler": 1,
+              "facet_count": 8,
+              "surface_components": 1,
+              "topology": "disk",
+              "vertices": 10
+            },
+            "target": {
+              "boundary_components": 1,
+              "boundary_edge_count": 10,
+              "edges": 29,
+              "euler": 1,
+              "facet_count": 16,
+              "surface_components": 1,
+              "topology": "disk",
+              "vertices": 14
+            }
+          },
           "boundary_vertices": 14,
           "component_id": 5,
           "piece_count": 12,
@@ -50374,7 +51478,7 @@
       "power": 1,
       "prefix_axis": 2,
       "restore_status": "OPEN",
-      "sha256": "6820CE3062CA58C378CCE52B8107DE920ADB16856B2156FCD09FB23CB327AA6D",
+      "sha256": "90AAE16AA235B77B88528C3BCF50B8C855FE429762EDA9B2A6005B46CF514143",
       "source_axis": 1
     },
     {
@@ -50420,6 +51524,12 @@
           "transport_support_status": "OPEN"
         }
       ],
+      "boundary_patch_pattern": {
+        "annulus_to_two_disks": 1,
+        "disk_to_disk": 4,
+        "johnson_saddle_pattern": "PASS",
+        "two_disks_to_annulus": 1
+      },
       "component_intersections": {
         "closures_pairwise_disjoint": false,
         "edge_count": 7,
@@ -50684,6 +51794,28 @@
           "boundary_euler": 2,
           "boundary_faces": 36,
           "boundary_is_sphere": true,
+          "boundary_patches": {
+            "source": {
+              "boundary_components": 2,
+              "boundary_edge_count": 16,
+              "edges": 38,
+              "euler": 0,
+              "facet_count": 20,
+              "surface_components": 1,
+              "topology": "annulus",
+              "vertices": 18
+            },
+            "target": {
+              "boundary_components": 2,
+              "boundary_edge_count": 16,
+              "edges": 32,
+              "euler": 2,
+              "facet_count": 16,
+              "surface_components": 2,
+              "topology": "two_disks",
+              "vertices": 18
+            }
+          },
           "boundary_vertices": 20,
           "component_id": 0,
           "piece_count": 36,
@@ -50955,6 +52087,28 @@
           "boundary_euler": 2,
           "boundary_faces": 14,
           "boundary_is_sphere": true,
+          "boundary_patches": {
+            "source": {
+              "boundary_components": 1,
+              "boundary_edge_count": 8,
+              "edges": 16,
+              "euler": 1,
+              "facet_count": 8,
+              "surface_components": 1,
+              "topology": "disk",
+              "vertices": 9
+            },
+            "target": {
+              "boundary_components": 1,
+              "boundary_edge_count": 8,
+              "edges": 13,
+              "euler": 1,
+              "facet_count": 6,
+              "surface_components": 1,
+              "topology": "disk",
+              "vertices": 8
+            }
+          },
           "boundary_vertices": 9,
           "component_id": 1,
           "piece_count": 6,
@@ -51046,6 +52200,28 @@
           "boundary_euler": 2,
           "boundary_faces": 14,
           "boundary_is_sphere": true,
+          "boundary_patches": {
+            "source": {
+              "boundary_components": 1,
+              "boundary_edge_count": 8,
+              "edges": 16,
+              "euler": 1,
+              "facet_count": 8,
+              "surface_components": 1,
+              "topology": "disk",
+              "vertices": 9
+            },
+            "target": {
+              "boundary_components": 1,
+              "boundary_edge_count": 8,
+              "edges": 13,
+              "euler": 1,
+              "facet_count": 6,
+              "surface_components": 1,
+              "topology": "disk",
+              "vertices": 8
+            }
+          },
           "boundary_vertices": 9,
           "component_id": 2,
           "piece_count": 6,
@@ -51137,6 +52313,28 @@
           "boundary_euler": 2,
           "boundary_faces": 36,
           "boundary_is_sphere": true,
+          "boundary_patches": {
+            "source": {
+              "boundary_components": 2,
+              "boundary_edge_count": 16,
+              "edges": 32,
+              "euler": 2,
+              "facet_count": 16,
+              "surface_components": 2,
+              "topology": "two_disks",
+              "vertices": 18
+            },
+            "target": {
+              "boundary_components": 2,
+              "boundary_edge_count": 16,
+              "edges": 38,
+              "euler": 0,
+              "facet_count": 20,
+              "surface_components": 1,
+              "topology": "annulus",
+              "vertices": 18
+            }
+          },
           "boundary_vertices": 20,
           "component_id": 3,
           "piece_count": 36,
@@ -51408,6 +52606,28 @@
           "boundary_euler": 2,
           "boundary_faces": 14,
           "boundary_is_sphere": true,
+          "boundary_patches": {
+            "source": {
+              "boundary_components": 1,
+              "boundary_edge_count": 8,
+              "edges": 13,
+              "euler": 1,
+              "facet_count": 6,
+              "surface_components": 1,
+              "topology": "disk",
+              "vertices": 8
+            },
+            "target": {
+              "boundary_components": 1,
+              "boundary_edge_count": 8,
+              "edges": 16,
+              "euler": 1,
+              "facet_count": 8,
+              "surface_components": 1,
+              "topology": "disk",
+              "vertices": 9
+            }
+          },
           "boundary_vertices": 9,
           "component_id": 4,
           "piece_count": 6,
@@ -51499,6 +52719,28 @@
           "boundary_euler": 2,
           "boundary_faces": 14,
           "boundary_is_sphere": true,
+          "boundary_patches": {
+            "source": {
+              "boundary_components": 1,
+              "boundary_edge_count": 8,
+              "edges": 13,
+              "euler": 1,
+              "facet_count": 6,
+              "surface_components": 1,
+              "topology": "disk",
+              "vertices": 8
+            },
+            "target": {
+              "boundary_components": 1,
+              "boundary_edge_count": 8,
+              "edges": 16,
+              "euler": 1,
+              "facet_count": 8,
+              "surface_components": 1,
+              "topology": "disk",
+              "vertices": 9
+            }
+          },
           "boundary_vertices": 9,
           "component_id": 5,
           "piece_count": 6,
@@ -54686,7 +55928,7 @@
       "power": -1,
       "prefix_axis": 0,
       "restore_status": "OPEN",
-      "sha256": "678FB1D6EEC4EBFF3CC60E1991C8AF53A7F84B3C0B61B6D7FCFE2DFF6ABA3364",
+      "sha256": "DA8EA280667E5ECDAE3E2DC9567F5BCDF4FF70EEDACB9193E815DBCE203D8F5B",
       "source_axis": 2
     },
     {
@@ -54732,6 +55974,12 @@
           "transport_support_status": "OPEN"
         }
       ],
+      "boundary_patch_pattern": {
+        "annulus_to_two_disks": 1,
+        "disk_to_disk": 4,
+        "johnson_saddle_pattern": "PASS",
+        "two_disks_to_annulus": 1
+      },
       "component_intersections": {
         "closures_pairwise_disjoint": false,
         "edge_count": 7,
@@ -54996,6 +56244,28 @@
           "boundary_euler": 2,
           "boundary_faces": 64,
           "boundary_is_sphere": true,
+          "boundary_patches": {
+            "source": {
+              "boundary_components": 2,
+              "boundary_edge_count": 20,
+              "edges": 58,
+              "euler": 0,
+              "facet_count": 32,
+              "surface_components": 1,
+              "topology": "annulus",
+              "vertices": 26
+            },
+            "target": {
+              "boundary_components": 2,
+              "boundary_edge_count": 20,
+              "edges": 58,
+              "euler": 2,
+              "facet_count": 32,
+              "surface_components": 2,
+              "topology": "two_disks",
+              "vertices": 28
+            }
+          },
           "boundary_vertices": 34,
           "component_id": 0,
           "piece_count": 72,
@@ -55483,6 +56753,28 @@
           "boundary_euler": 2,
           "boundary_faces": 24,
           "boundary_is_sphere": true,
+          "boundary_patches": {
+            "source": {
+              "boundary_components": 1,
+              "boundary_edge_count": 8,
+              "edges": 16,
+              "euler": 1,
+              "facet_count": 8,
+              "surface_components": 1,
+              "topology": "disk",
+              "vertices": 9
+            },
+            "target": {
+              "boundary_components": 1,
+              "boundary_edge_count": 8,
+              "edges": 28,
+              "euler": 1,
+              "facet_count": 16,
+              "surface_components": 1,
+              "topology": "disk",
+              "vertices": 13
+            }
+          },
           "boundary_vertices": 14,
           "component_id": 1,
           "piece_count": 12,
@@ -55610,6 +56902,28 @@
           "boundary_euler": 2,
           "boundary_faces": 24,
           "boundary_is_sphere": true,
+          "boundary_patches": {
+            "source": {
+              "boundary_components": 1,
+              "boundary_edge_count": 8,
+              "edges": 16,
+              "euler": 1,
+              "facet_count": 8,
+              "surface_components": 1,
+              "topology": "disk",
+              "vertices": 9
+            },
+            "target": {
+              "boundary_components": 1,
+              "boundary_edge_count": 8,
+              "edges": 28,
+              "euler": 1,
+              "facet_count": 16,
+              "surface_components": 1,
+              "topology": "disk",
+              "vertices": 13
+            }
+          },
           "boundary_vertices": 14,
           "component_id": 2,
           "piece_count": 12,
@@ -55737,6 +57051,28 @@
           "boundary_euler": 2,
           "boundary_faces": 64,
           "boundary_is_sphere": true,
+          "boundary_patches": {
+            "source": {
+              "boundary_components": 2,
+              "boundary_edge_count": 16,
+              "edges": 32,
+              "euler": 2,
+              "facet_count": 16,
+              "surface_components": 2,
+              "topology": "two_disks",
+              "vertices": 18
+            },
+            "target": {
+              "boundary_components": 2,
+              "boundary_edge_count": 16,
+              "edges": 80,
+              "euler": 0,
+              "facet_count": 48,
+              "surface_components": 1,
+              "topology": "annulus",
+              "vertices": 32
+            }
+          },
           "boundary_vertices": 34,
           "component_id": 3,
           "piece_count": 72,
@@ -56224,6 +57560,28 @@
           "boundary_euler": 2,
           "boundary_faces": 24,
           "boundary_is_sphere": true,
+          "boundary_patches": {
+            "source": {
+              "boundary_components": 1,
+              "boundary_edge_count": 10,
+              "edges": 17,
+              "euler": 1,
+              "facet_count": 8,
+              "surface_components": 1,
+              "topology": "disk",
+              "vertices": 10
+            },
+            "target": {
+              "boundary_components": 1,
+              "boundary_edge_count": 10,
+              "edges": 29,
+              "euler": 1,
+              "facet_count": 16,
+              "surface_components": 1,
+              "topology": "disk",
+              "vertices": 14
+            }
+          },
           "boundary_vertices": 14,
           "component_id": 4,
           "piece_count": 12,
@@ -56351,6 +57709,28 @@
           "boundary_euler": 2,
           "boundary_faces": 24,
           "boundary_is_sphere": true,
+          "boundary_patches": {
+            "source": {
+              "boundary_components": 1,
+              "boundary_edge_count": 10,
+              "edges": 17,
+              "euler": 1,
+              "facet_count": 8,
+              "surface_components": 1,
+              "topology": "disk",
+              "vertices": 10
+            },
+            "target": {
+              "boundary_components": 1,
+              "boundary_edge_count": 10,
+              "edges": 29,
+              "euler": 1,
+              "facet_count": 16,
+              "surface_components": 1,
+              "topology": "disk",
+              "vertices": 14
+            }
+          },
           "boundary_vertices": 14,
           "component_id": 5,
           "piece_count": 12,
@@ -62966,7 +64346,7 @@
       "power": 1,
       "prefix_axis": 0,
       "restore_status": "OPEN",
-      "sha256": "49A10CA507E8570BA26115F8A0BF642EBB0539009A85447ABF3503F3B25A8B4C",
+      "sha256": "0C9121F355CC49424D607C4CDDC2C58E03D4146EF3F3338E7B7C9EFE7FA6508E",
       "source_axis": 2
     },
     {
@@ -63012,6 +64392,12 @@
           "transport_support_status": "OPEN"
         }
       ],
+      "boundary_patch_pattern": {
+        "annulus_to_two_disks": 1,
+        "disk_to_disk": 4,
+        "johnson_saddle_pattern": "PASS",
+        "two_disks_to_annulus": 1
+      },
       "component_intersections": {
         "closures_pairwise_disjoint": false,
         "edge_count": 7,
@@ -63276,6 +64662,28 @@
           "boundary_euler": 2,
           "boundary_faces": 36,
           "boundary_is_sphere": true,
+          "boundary_patches": {
+            "source": {
+              "boundary_components": 2,
+              "boundary_edge_count": 16,
+              "edges": 38,
+              "euler": 0,
+              "facet_count": 20,
+              "surface_components": 1,
+              "topology": "annulus",
+              "vertices": 18
+            },
+            "target": {
+              "boundary_components": 2,
+              "boundary_edge_count": 16,
+              "edges": 32,
+              "euler": 2,
+              "facet_count": 16,
+              "surface_components": 2,
+              "topology": "two_disks",
+              "vertices": 18
+            }
+          },
           "boundary_vertices": 20,
           "component_id": 0,
           "piece_count": 36,
@@ -63547,6 +64955,28 @@
           "boundary_euler": 2,
           "boundary_faces": 14,
           "boundary_is_sphere": true,
+          "boundary_patches": {
+            "source": {
+              "boundary_components": 1,
+              "boundary_edge_count": 8,
+              "edges": 16,
+              "euler": 1,
+              "facet_count": 8,
+              "surface_components": 1,
+              "topology": "disk",
+              "vertices": 9
+            },
+            "target": {
+              "boundary_components": 1,
+              "boundary_edge_count": 8,
+              "edges": 13,
+              "euler": 1,
+              "facet_count": 6,
+              "surface_components": 1,
+              "topology": "disk",
+              "vertices": 8
+            }
+          },
           "boundary_vertices": 9,
           "component_id": 1,
           "piece_count": 6,
@@ -63638,6 +65068,28 @@
           "boundary_euler": 2,
           "boundary_faces": 14,
           "boundary_is_sphere": true,
+          "boundary_patches": {
+            "source": {
+              "boundary_components": 1,
+              "boundary_edge_count": 8,
+              "edges": 16,
+              "euler": 1,
+              "facet_count": 8,
+              "surface_components": 1,
+              "topology": "disk",
+              "vertices": 9
+            },
+            "target": {
+              "boundary_components": 1,
+              "boundary_edge_count": 8,
+              "edges": 13,
+              "euler": 1,
+              "facet_count": 6,
+              "surface_components": 1,
+              "topology": "disk",
+              "vertices": 8
+            }
+          },
           "boundary_vertices": 9,
           "component_id": 2,
           "piece_count": 6,
@@ -63729,6 +65181,28 @@
           "boundary_euler": 2,
           "boundary_faces": 36,
           "boundary_is_sphere": true,
+          "boundary_patches": {
+            "source": {
+              "boundary_components": 2,
+              "boundary_edge_count": 16,
+              "edges": 32,
+              "euler": 2,
+              "facet_count": 16,
+              "surface_components": 2,
+              "topology": "two_disks",
+              "vertices": 18
+            },
+            "target": {
+              "boundary_components": 2,
+              "boundary_edge_count": 16,
+              "edges": 38,
+              "euler": 0,
+              "facet_count": 20,
+              "surface_components": 1,
+              "topology": "annulus",
+              "vertices": 18
+            }
+          },
           "boundary_vertices": 20,
           "component_id": 3,
           "piece_count": 36,
@@ -64000,6 +65474,28 @@
           "boundary_euler": 2,
           "boundary_faces": 14,
           "boundary_is_sphere": true,
+          "boundary_patches": {
+            "source": {
+              "boundary_components": 1,
+              "boundary_edge_count": 8,
+              "edges": 13,
+              "euler": 1,
+              "facet_count": 6,
+              "surface_components": 1,
+              "topology": "disk",
+              "vertices": 8
+            },
+            "target": {
+              "boundary_components": 1,
+              "boundary_edge_count": 8,
+              "edges": 16,
+              "euler": 1,
+              "facet_count": 8,
+              "surface_components": 1,
+              "topology": "disk",
+              "vertices": 9
+            }
+          },
           "boundary_vertices": 9,
           "component_id": 4,
           "piece_count": 6,
@@ -64091,6 +65587,28 @@
           "boundary_euler": 2,
           "boundary_faces": 14,
           "boundary_is_sphere": true,
+          "boundary_patches": {
+            "source": {
+              "boundary_components": 1,
+              "boundary_edge_count": 8,
+              "edges": 13,
+              "euler": 1,
+              "facet_count": 6,
+              "surface_components": 1,
+              "topology": "disk",
+              "vertices": 8
+            },
+            "target": {
+              "boundary_components": 1,
+              "boundary_edge_count": 8,
+              "edges": 16,
+              "euler": 1,
+              "facet_count": 8,
+              "surface_components": 1,
+              "topology": "disk",
+              "vertices": 9
+            }
+          },
           "boundary_vertices": 9,
           "component_id": 5,
           "piece_count": 6,
@@ -67278,7 +68796,7 @@
       "power": -1,
       "prefix_axis": 1,
       "restore_status": "OPEN",
-      "sha256": "0136FB483A9989E257681B956B48F87FD744543A9E551F45F55EF22707189F6A",
+      "sha256": "7F7937BB9B8CE8FD361281FC7BCF269F9AF5976EF26EAE5D0A1ED51E5FB03032",
       "source_axis": 2
     },
     {
@@ -67324,6 +68842,12 @@
           "transport_support_status": "OPEN"
         }
       ],
+      "boundary_patch_pattern": {
+        "annulus_to_two_disks": 1,
+        "disk_to_disk": 4,
+        "johnson_saddle_pattern": "PASS",
+        "two_disks_to_annulus": 1
+      },
       "component_intersections": {
         "closures_pairwise_disjoint": false,
         "edge_count": 7,
@@ -67588,6 +69112,28 @@
           "boundary_euler": 2,
           "boundary_faces": 64,
           "boundary_is_sphere": true,
+          "boundary_patches": {
+            "source": {
+              "boundary_components": 2,
+              "boundary_edge_count": 20,
+              "edges": 58,
+              "euler": 0,
+              "facet_count": 32,
+              "surface_components": 1,
+              "topology": "annulus",
+              "vertices": 26
+            },
+            "target": {
+              "boundary_components": 2,
+              "boundary_edge_count": 20,
+              "edges": 58,
+              "euler": 2,
+              "facet_count": 32,
+              "surface_components": 2,
+              "topology": "two_disks",
+              "vertices": 28
+            }
+          },
           "boundary_vertices": 34,
           "component_id": 0,
           "piece_count": 72,
@@ -68075,6 +69621,28 @@
           "boundary_euler": 2,
           "boundary_faces": 24,
           "boundary_is_sphere": true,
+          "boundary_patches": {
+            "source": {
+              "boundary_components": 1,
+              "boundary_edge_count": 8,
+              "edges": 16,
+              "euler": 1,
+              "facet_count": 8,
+              "surface_components": 1,
+              "topology": "disk",
+              "vertices": 9
+            },
+            "target": {
+              "boundary_components": 1,
+              "boundary_edge_count": 8,
+              "edges": 28,
+              "euler": 1,
+              "facet_count": 16,
+              "surface_components": 1,
+              "topology": "disk",
+              "vertices": 13
+            }
+          },
           "boundary_vertices": 14,
           "component_id": 1,
           "piece_count": 12,
@@ -68202,6 +69770,28 @@
           "boundary_euler": 2,
           "boundary_faces": 24,
           "boundary_is_sphere": true,
+          "boundary_patches": {
+            "source": {
+              "boundary_components": 1,
+              "boundary_edge_count": 8,
+              "edges": 16,
+              "euler": 1,
+              "facet_count": 8,
+              "surface_components": 1,
+              "topology": "disk",
+              "vertices": 9
+            },
+            "target": {
+              "boundary_components": 1,
+              "boundary_edge_count": 8,
+              "edges": 28,
+              "euler": 1,
+              "facet_count": 16,
+              "surface_components": 1,
+              "topology": "disk",
+              "vertices": 13
+            }
+          },
           "boundary_vertices": 14,
           "component_id": 2,
           "piece_count": 12,
@@ -68329,6 +69919,28 @@
           "boundary_euler": 2,
           "boundary_faces": 64,
           "boundary_is_sphere": true,
+          "boundary_patches": {
+            "source": {
+              "boundary_components": 2,
+              "boundary_edge_count": 16,
+              "edges": 32,
+              "euler": 2,
+              "facet_count": 16,
+              "surface_components": 2,
+              "topology": "two_disks",
+              "vertices": 18
+            },
+            "target": {
+              "boundary_components": 2,
+              "boundary_edge_count": 16,
+              "edges": 80,
+              "euler": 0,
+              "facet_count": 48,
+              "surface_components": 1,
+              "topology": "annulus",
+              "vertices": 32
+            }
+          },
           "boundary_vertices": 34,
           "component_id": 3,
           "piece_count": 72,
@@ -68816,6 +70428,28 @@
           "boundary_euler": 2,
           "boundary_faces": 24,
           "boundary_is_sphere": true,
+          "boundary_patches": {
+            "source": {
+              "boundary_components": 1,
+              "boundary_edge_count": 10,
+              "edges": 17,
+              "euler": 1,
+              "facet_count": 8,
+              "surface_components": 1,
+              "topology": "disk",
+              "vertices": 10
+            },
+            "target": {
+              "boundary_components": 1,
+              "boundary_edge_count": 10,
+              "edges": 29,
+              "euler": 1,
+              "facet_count": 16,
+              "surface_components": 1,
+              "topology": "disk",
+              "vertices": 14
+            }
+          },
           "boundary_vertices": 14,
           "component_id": 4,
           "piece_count": 12,
@@ -68943,6 +70577,28 @@
           "boundary_euler": 2,
           "boundary_faces": 24,
           "boundary_is_sphere": true,
+          "boundary_patches": {
+            "source": {
+              "boundary_components": 1,
+              "boundary_edge_count": 10,
+              "edges": 17,
+              "euler": 1,
+              "facet_count": 8,
+              "surface_components": 1,
+              "topology": "disk",
+              "vertices": 10
+            },
+            "target": {
+              "boundary_components": 1,
+              "boundary_edge_count": 10,
+              "edges": 29,
+              "euler": 1,
+              "facet_count": 16,
+              "surface_components": 1,
+              "topology": "disk",
+              "vertices": 14
+            }
+          },
           "boundary_vertices": 14,
           "component_id": 5,
           "piece_count": 12,
@@ -75558,7 +77214,7 @@
       "power": 1,
       "prefix_axis": 1,
       "restore_status": "OPEN",
-      "sha256": "FD2418472A02DA8FB8429C87A803B8F7CE145D722AB9DAD19553DA26E65E7ADE",
+      "sha256": "6C17761A68235260D0FB2AFEE0EC8676D2984230993BFFD27FBDDA86534F6FBA",
       "source_axis": 2
     }
   ]

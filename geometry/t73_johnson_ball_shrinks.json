@@ -2,11 +2,11 @@
   "ball_exchange_status": "OPEN",
   "core_scale": "1/4",
   "fixed_boundary_radial_shrinks": "PASS",
-  "mismatch_sha256": "B1F820800F244FD0CCC51C1F0EFFFB61A4DA6EDBFCBE6E2FC0E7E4251D245EBD",
+  "mismatch_sha256": "201F182E1BDDC05E526292F83EB0A3BAF13E1D831B6D9D47C9A1AC632D2DDF6B",
   "outer_scale": "3/2",
   "schema": "t73_johnson_ball_shrinks/v1",
   "scope": "individual mismatch-ball charts",
-  "sha256": "AAC3A2F081220C11CE2B08464FADF783C2CE09440B7FA44FE5731B40FFD8332F",
+  "sha256": "4E2BEB2FAC83E95D4900F45F7C51402D04B957C6A92D72CEA5C64B97B379F7F9",
   "simultaneous_shrink_status": "OPEN: mismatch-ball closures meet along the certified component intersection graph",
   "templates": [
     {

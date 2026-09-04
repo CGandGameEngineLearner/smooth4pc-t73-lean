@@ -303,7 +303,116 @@ def triangulate_component(pl, pieces, component, piece_shifts):
     }
 
 
-def component_summary(pl, pieces):
+def patch_topology(pl, pieces, component, piece_shifts, matrix, owners):
+    inverse = pl.invert3([[Fraction(value) for value in row] for row in matrix])
+    occurrences = defaultdict(list)
+    for piece_index in component:
+        shift = piece_shifts[piece_index]
+        vertices = [
+            pl.add(pl.decode(vertex), shift) for vertex in pieces[piece_index]["vertices"]
+        ]
+        center = tuple(
+            sum(vertex[axis] for vertex in vertices) / len(vertices) for axis in range(3)
+        )
+        for facet in polytope_facets(pl, [pl.encode(vertex) for vertex in vertices]):
+            occurrences[facet].append((piece_index, center))
+    patches = defaultdict(list)
+    for facet, hits in occurrences.items():
+        if len(hits) != 1:
+            continue
+        piece_index, interior = hits[0]
+        facet_center = tuple(
+            sum(vertex[axis] for vertex in facet) / len(facet) for axis in range(3)
+        )
+        outside = tuple(
+            facet_center[axis] + Fraction(1, 100) * (facet_center[axis] - interior[axis])
+            for axis in range(3)
+        )
+        piece = pieces[piece_index]
+        outside_source = pl.point_owner(pl.matvec_frac(inverse, outside), owners)
+        outside_target = pl.point_owner(outside, owners)
+        source_changes = outside_source != piece["source_owner"]
+        target_changes = outside_target != piece["target_owner"]
+        if source_changes == target_changes:
+            raise AssertionError("mismatch boundary facet is not on exactly one Heegaard surface")
+        patches["source" if source_changes else "target"].append(facet)
+    result = {}
+    for name in ("source", "target"):
+        facets = patches[name]
+        edge_counts = Counter(edge for facet in facets for edge in face_edges(pl, facet))
+        vertices = {periodic_vertex(vertex) for facet in facets for vertex in facet}
+        face_edges_map = [face_edges(pl, facet) for facet in facets]
+        edge_faces = defaultdict(list)
+        for face_index, edges in enumerate(face_edges_map):
+            for edge in edges:
+                edge_faces[edge].append(face_index)
+        adjacency = [set() for _ in facets]
+        for hits in edge_faces.values():
+            if len(hits) == 2:
+                first, second = hits
+                adjacency[first].add(second)
+                adjacency[second].add(first)
+        seen = set()
+        surface_components = 0
+        for start in range(len(facets)):
+            if start in seen:
+                continue
+            surface_components += 1
+            stack = [start]
+            seen.add(start)
+            while stack:
+                current = stack.pop()
+                for neighbour in adjacency[current]:
+                    if neighbour not in seen:
+                        seen.add(neighbour)
+                        stack.append(neighbour)
+        boundary_edges = [edge for edge, count in edge_counts.items() if count == 1]
+        boundary_adjacency = defaultdict(set)
+        for first, second in boundary_edges:
+            boundary_adjacency[first].add(second)
+            boundary_adjacency[second].add(first)
+        if any(len(neighbours) != 2 for neighbours in boundary_adjacency.values()):
+            raise AssertionError("patch boundary is not a union of circles")
+        boundary_seen = set()
+        boundary_components = 0
+        for start in boundary_adjacency:
+            if start in boundary_seen:
+                continue
+            boundary_components += 1
+            stack = [start]
+            boundary_seen.add(start)
+            while stack:
+                current = stack.pop()
+                for neighbour in boundary_adjacency[current]:
+                    if neighbour not in boundary_seen:
+                        boundary_seen.add(neighbour)
+                        stack.append(neighbour)
+        euler = len(vertices) - len(edge_counts) + len(facets)
+        topology = (
+            "disk"
+            if surface_components == 1 and boundary_components == 1 and euler == 1
+            else "annulus"
+            if surface_components == 1 and boundary_components == 2 and euler == 0
+            else "two_disks"
+            if surface_components == 2 and boundary_components == 2 and euler == 2
+            else "UNCLASSIFIED"
+        )
+        if topology == "UNCLASSIFIED":
+            raise AssertionError("unexpected Johnson mismatch boundary patch")
+        result[name] = {
+            "facet_count": len(facets),
+            "vertices": len(vertices),
+            "edges": len(edge_counts),
+            "euler": euler,
+            "surface_components": surface_components,
+            "boundary_components": boundary_components,
+            "boundary_edge_count": len(boundary_edges),
+            "topology": topology,
+        }
+    return result
+
+
+def component_summary(pl, pieces, matrix, owners):
     occurrences = defaultdict(list)
     facet_shifts = {}
     for index, piece in enumerate(pieces):
@@ -399,6 +508,9 @@ def component_summary(pl, pieces):
                     piece_shifts[neighbour] = expected
                     stack.append(neighbour)
         triangulation = triangulate_component(pl, pieces, component, piece_shifts)
+        patches = patch_topology(
+            pl, pieces, component, piece_shifts, matrix, owners
+        )
         records.append(
             {
                 "source_owner": next(iter(owner_set)),
@@ -412,6 +524,7 @@ def component_summary(pl, pieces):
                 "boundary_edge_multiplicity_two": True,
                 "boundary_is_sphere": connected and euler == 2,
                 "triangulation": triangulation,
+                "boundary_patches": patches,
                 "piece_lift_shifts": {
                     str(piece_index): [str(value) for value in piece_shifts[piece_index]]
                     for piece_index in component
@@ -632,9 +745,21 @@ def analyze_template(pl, source: int, prefix: int, power: int) -> dict[str, Any]
     ]
     if origin_star_hits:
         raise AssertionError("an exact mismatch polytope meets the origin eight-cube star")
-    components = component_summary(pl, pieces)
+    components = component_summary(pl, pieces, matrix, owners)
     ball_pairs = pair_components(pl, pieces, components, prefix)
     intersections = component_intersections(pl, pieces, components, ball_pairs)
+    patch_patterns = Counter(
+        (
+            component["boundary_patches"]["source"]["topology"],
+            component["boundary_patches"]["target"]["topology"],
+        )
+        for component in components
+    )
+    expected_patterns = Counter(
+        {("disk", "disk"): 4, ("annulus", "two_disks"): 1, ("two_disks", "annulus"): 1}
+    )
+    if patch_patterns != expected_patterns:
+        raise AssertionError(f"unexpected Johnson saddle pattern: {patch_patterns}")
     payload = {
         "source_axis": source,
         "prefix_axis": prefix,
@@ -652,6 +777,12 @@ def analyze_template(pl, source: int, prefix: int, power: int) -> dict[str, Any]
         "ball_pairs": ball_pairs,
         "half_period_ball_pairing": "PASS",
         "component_intersections": intersections,
+        "boundary_patch_pattern": {
+            "disk_to_disk": 4,
+            "annulus_to_two_disks": 1,
+            "two_disks_to_annulus": 1,
+            "johnson_saddle_pattern": "PASS",
+        },
         "restore_status": "OPEN",
     }
     payload["sha256"] = canonical_sha(payload)

@@ -52,6 +52,19 @@ class JohnsonArmMismatchTest(unittest.TestCase):
             self.assertIn(
                 "OPEN", template["component_intersections"]["independent_shrink_composition_status"]
             )
+            self.assertEqual(
+                template["boundary_patch_pattern"]["johnson_saddle_pattern"], "PASS"
+            )
+            patterns = [
+                (
+                    component["boundary_patches"]["source"]["topology"],
+                    component["boundary_patches"]["target"]["topology"],
+                )
+                for component in template["components"]
+            ]
+            self.assertEqual(patterns.count(("disk", "disk")), 4)
+            self.assertEqual(patterns.count(("annulus", "two_disks")), 1)
+            self.assertEqual(patterns.count(("two_disks", "annulus")), 1)
             self.assertEqual(len(template["ball_pairs"]), 3)
             self.assertTrue(
                 all(
