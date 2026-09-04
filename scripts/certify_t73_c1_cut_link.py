@@ -25,6 +25,8 @@ from typing import Any
 ROOT = Path(__file__).resolve().parents[1]
 P0 = ROOT / "audit" / "t73_p0_johnson_certificate.json"
 OUTPUT = ROOT / "audit" / "t73_c1_cut_link.json"
+ACTUAL_RECTANGLES = ROOT / "geometry" / "t73_actual_product_rectangles.json"
+ACTUAL_LEFTOVERS = ROOT / "geometry" / "t73_actual_leftover_z_circles.json"
 SYS_CACHE = "_T73_C1_CUT_LINK_PAYLOAD"
 
 
@@ -216,8 +218,15 @@ def generate() -> dict[str, Any]:
         raise AssertionError("C1 refuses to run on an OPEN P0 certificate")
     collar = p0_reconstruction_collar()
     cut = json.loads((ROOT / "geometry" / "t73_actual_cut_tangle.json").read_text(encoding="utf-8"))
+    actual_rectangles = json.loads(ACTUAL_RECTANGLES.read_text(encoding="utf-8"))
+    actual_leftovers = json.loads(ACTUAL_LEFTOVERS.read_text(encoding="utf-8"))
     if collar["actual_cut_tangle_sha256"] != cut["sha256"]:
         raise AssertionError("C1 collar is stale relative to the actual cut tangle")
+    if actual_rectangles["cut_tangle_sha256"] != cut["sha256"] or actual_rectangles["actual_product_rectangle_transport"] != "PASS":
+        raise AssertionError("C1 requires all 44 actual y/z product rectangles")
+    if actual_leftovers["cut_tangle_sha256"] != cut["sha256"] or actual_leftovers["actual_leftover_circle_transport"] != "PASS":
+        raise AssertionError("C1 requires all 227 actual leftover-circle transports")
+    actual_by_wicket = {item["wicket"]: item for item in actual_rectangles["rectangles"]}
     m2_pairs = [
         {"y_index": item["y_event_index"], "z_index": item["z_event_index"], "y_source_id": item["y_source_id"], "z_source_id": item["z_source_id"]}
         for item in cut["product_rectangle_pairings"] if item["owner"] == "m_2"
@@ -235,6 +244,9 @@ def generate() -> dict[str, Any]:
         y_index = wicket["word_index"]
         pairs = m2_pairs if owner == "m_2" else rxy_pairs
         match = next(row for row in pairs if row["y_index"] == y_index)
+        actual_rectangle = actual_by_wicket[strand_id]
+        if actual_rectangle["actual_y_source_id"] != wicket["actual_source_id"] or actual_rectangle["actual_z_source_id"] != wicket["paired_z_source_id"]:
+            raise AssertionError("C1 normalized strand is not bound to its actual y/z rectangle")
         y_side = strand["vertices"]
         z_side = translate_polyline(y_side, strand["normal_vectors"])
         rectangles.append({
@@ -244,6 +256,7 @@ def generate() -> dict[str, Any]:
             "z_index": match["z_index"],
             "actual_y_source_id": wicket["actual_source_id"],
             "paired_z_source_id": wicket["paired_z_source_id"],
+            "actual_rectangle_sha256": canonical_sha(actual_rectangle),
             "vertex_count": len(y_side),
             "y_side_sha256": canonical_sha(y_side),
             "z_side_sha256": canonical_sha(z_side),
@@ -259,6 +272,9 @@ def generate() -> dict[str, Any]:
                 ],
             },
         })
+    actual_leftover_by_source = {
+        item["actual_z_source_id"]: item for item in actual_leftovers["circles"]
+    }
     circles = [
         {
             "owner": item["owner"],
@@ -267,6 +283,7 @@ def generate() -> dict[str, Any]:
             "vertices": item["circle_in_complement_chart"],
             "transported_product_normal": item["transported_product_normal"],
             "disjoint_from_detector_ball": True,
+            "actual_transport_sha256": canonical_sha(actual_leftover_by_source[item["source_id"]]),
         }
         for item in cut["leftover_z_circles"]
     ]
@@ -274,6 +291,8 @@ def generate() -> dict[str, Any]:
         "schema": "t73_c1_cut_link/v3",
         "p0_certificate_sha256": p0["certificate_sha256"],
         "actual_cut_tangle_sha256": cut["sha256"],
+        "actual_product_rectangles_sha256": actual_rectangles["sha256"],
+        "actual_leftover_z_circles_sha256": actual_leftovers["sha256"],
         "derived_from": (
             "P0 reconstruction strands checked by reconstruct_t73_p0.py, "
             "translated by their certified product normals; not public crossing rows"

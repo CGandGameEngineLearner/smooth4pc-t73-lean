@@ -740,7 +740,7 @@
       }
     }
   },
-  "c1_certificate_sha256": "5644F67A61C0AA734C08C301D3231F86C734F33244BD25F18A894876243CCE0D",
+  "c1_certificate_sha256": "2399F65D3753D57346E191DC8B7DE7373812C2901AE511B85BE80D86631FA544",
   "cable_formula": {
     "leftover_z_s0": 227,
     "n_y": [
@@ -774,7 +774,7 @@
       0
     ]
   },
-  "certificate_sha256": "FF000590BB9B6A7ECC3DC70282EA6DA5865D65FE5201D7C5BCB4811CF37E84E3",
+  "certificate_sha256": "DE0C7C2CB655D8926AD7D3E88D548A978D76C2A0F5192347B36C87167C4738F9",
   "endpoint_constant_term": {
     "rule": "at q=1 a sign-preserving braid has constant term equal to its signed permutation; a pure braid has I, remainder O(h)",
     "source": "BPW oriented cabling / BHPW strict tangle functor",

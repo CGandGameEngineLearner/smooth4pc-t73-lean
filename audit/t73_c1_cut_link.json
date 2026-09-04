@@ -1,10 +1,13 @@
 {
   "C1_status": "PASS",
   "actual_cut_tangle_sha256": "99D86692B5087AC32C87E7CC56EF0AC79C2A07DA63497066E412CDD440E32CF6",
+  "actual_leftover_z_circles_sha256": "DF6635022DBB39536041B77D9F14FD0EB78007D70B1722504120B8FB8CE9156F",
+  "actual_product_rectangles_sha256": "F2C55E7423EC92521D392ADB3593580266A7ABCDAE786B0F33E24A46606152D9",
   "ambient_chart": "P0 reconstruction cube with product-normal translates of the 44 strands",
-  "certificate_sha256": "5644F67A61C0AA734C08C301D3231F86C734F33244BD25F18A894876243CCE0D",
+  "certificate_sha256": "2399F65D3753D57346E191DC8B7DE7373812C2901AE511B85BE80D86631FA544",
   "circles": [
     {
+      "actual_transport_sha256": "936DA7366C4A5A3C6A6922763AAE12840294CF5F1C24413832721E8CBAA4AC21",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:1",
@@ -43,6 +46,7 @@
       "z_index": 1
     },
     {
+      "actual_transport_sha256": "5B569D759CD97BBC2DFE685E746D0A69F4D3454AFF4D0046D26EBF37AA04F6E9",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:2",
@@ -81,6 +85,7 @@
       "z_index": 2
     },
     {
+      "actual_transport_sha256": "6A6A9A1FA1FFA948E8F45EFAAF0D998EE67A40D603953D96256715DC8D6A6101",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:3",
@@ -119,6 +124,7 @@
       "z_index": 3
     },
     {
+      "actual_transport_sha256": "B863D34A95D8E4EBC21CF4D430B47CB296F21EED9A08A17BAC24286BAF6A23F3",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:4",
@@ -157,6 +163,7 @@
       "z_index": 4
     },
     {
+      "actual_transport_sha256": "500B7F175F8473CB0CF1ADFD99533D7CDCF3EE867563FF62C1E80451D0945CD9",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:5",
@@ -195,6 +202,7 @@
       "z_index": 5
     },
     {
+      "actual_transport_sha256": "16B36BF0C807A2C44B4FD049227C8548E937BB72A49576D10BBA4C156B0E635D",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:8",
@@ -233,6 +241,7 @@
       "z_index": 8
     },
     {
+      "actual_transport_sha256": "270C17605CDD726E0EB7357008B44E555637DF94FECB90563F41F7E2FD02EB73",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:9",
@@ -271,6 +280,7 @@
       "z_index": 9
     },
     {
+      "actual_transport_sha256": "A025976C241380BD948D057EF0EEC0F17255F9836351EEE9F39EEAA17FCCD75B",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:10",
@@ -309,6 +319,7 @@
       "z_index": 10
     },
     {
+      "actual_transport_sha256": "32840EAB01E5DD77A134E978A3BA080F5FA1DC5041280A6D560E8DBC53C90A17",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:11",
@@ -347,6 +358,7 @@
       "z_index": 11
     },
     {
+      "actual_transport_sha256": "E9F677ACF2DF1E22F9347B911CD07F3F12200E0FD6A4E52685C4C94DC00C74BB",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:12",
@@ -385,6 +397,7 @@
       "z_index": 12
     },
     {
+      "actual_transport_sha256": "29D56F1CCC79902D030576153D0C5312FD19DCFDB92350E80E930CD46CAD3432",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:13",
@@ -423,6 +436,7 @@
       "z_index": 13
     },
     {
+      "actual_transport_sha256": "F7FE62A24E6DF9A5FDDA1166CC50304E40E66501395E5E0578D0EA074F1ABC2C",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:16",
@@ -461,6 +475,7 @@
       "z_index": 16
     },
     {
+      "actual_transport_sha256": "DAB667375B9811ABF2620402375B0B94302397A093B9854E0560025F128C73EB",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:17",
@@ -499,6 +514,7 @@
       "z_index": 17
     },
     {
+      "actual_transport_sha256": "8F6A7ABF06E44EA985D163A83A2E2F5A29FADE30750FAD8C129315C417E31D2B",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:18",
@@ -537,6 +553,7 @@
       "z_index": 18
     },
     {
+      "actual_transport_sha256": "5AD6A5ACF582F129230253120B29DB920D186511015298EE30280FBBC56EBC6A",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:19",
@@ -575,6 +592,7 @@
       "z_index": 19
     },
     {
+      "actual_transport_sha256": "9D288B9C9ECB998A1ACE560BE2E019E486137B620EA5014F3D9CCD5E4C1CB8FB",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:20",
@@ -613,6 +631,7 @@
       "z_index": 20
     },
     {
+      "actual_transport_sha256": "A7B70BF844BA71003D0C3BECD51492F0441E6B5D18A9669EBE91DE2681FCAFA0",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:23",
@@ -651,6 +670,7 @@
       "z_index": 23
     },
     {
+      "actual_transport_sha256": "CC3F1B52646B0555A91B490E77499BB15531E785551B9BE11487393E010CED82",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:24",
@@ -689,6 +709,7 @@
       "z_index": 24
     },
     {
+      "actual_transport_sha256": "96ABCCB9D81F9CE63E3183DD8493BB9C96154A68089BA52E88025E5455C503BB",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:25",
@@ -727,6 +748,7 @@
       "z_index": 25
     },
     {
+      "actual_transport_sha256": "C9A556A1EA48A5440BBB05700FDDA6FA3A848D799C975D1F1FAC045F23984AE5",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:26",
@@ -765,6 +787,7 @@
       "z_index": 26
     },
     {
+      "actual_transport_sha256": "7399179A7A869385F8732CDB7DD9690490937C4D1937E7C8E598B6B41A6D3281",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:27",
@@ -803,6 +826,7 @@
       "z_index": 27
     },
     {
+      "actual_transport_sha256": "6EA5E34E7E6EBF7B21A99E22E8FFFA7855D18E655CC81703F394A8966A8DCDBE",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:28",
@@ -841,6 +865,7 @@
       "z_index": 28
     },
     {
+      "actual_transport_sha256": "2A229139BA646418E5A2727A61F27C64B0D35E49D4274D5615E0E2B564104C2D",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:31",
@@ -879,6 +904,7 @@
       "z_index": 31
     },
     {
+      "actual_transport_sha256": "8178092CD96927847FA94774816F16982AA2D1B221119961181125B62201595B",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:32",
@@ -917,6 +943,7 @@
       "z_index": 32
     },
     {
+      "actual_transport_sha256": "022B53E3EBD878BEF383502165C39DA70517D77E44B220C251F7BAF1476DE37B",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:33",
@@ -955,6 +982,7 @@
       "z_index": 33
     },
     {
+      "actual_transport_sha256": "CB166D16A72FDAC31774C3011D6D8F5C7A1F778D1EB71EED7DBFC7440379F06C",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:34",
@@ -993,6 +1021,7 @@
       "z_index": 34
     },
     {
+      "actual_transport_sha256": "6F04AF1BB4AC74FC7531789FBD105C54C94287369245325642476FB9C2F03518",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:35",
@@ -1031,6 +1060,7 @@
       "z_index": 35
     },
     {
+      "actual_transport_sha256": "4CBC7A08314549A8073163A46205D0731BC35DD110E74F061F0A9818E1EB4D1F",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:38",
@@ -1069,6 +1099,7 @@
       "z_index": 38
     },
     {
+      "actual_transport_sha256": "877743D778DBB8DDFAB2EBBF7D15ED34335FD1AB87F25C1771EA299DF44087B8",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:39",
@@ -1107,6 +1138,7 @@
       "z_index": 39
     },
     {
+      "actual_transport_sha256": "273C8C7D6A8386593F7FE5095E22058644594E7A0A575B52791C79F71CDDCD59",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:40",
@@ -1145,6 +1177,7 @@
       "z_index": 40
     },
     {
+      "actual_transport_sha256": "C77276E3AB7B80DF13CF8B6483D434FE4142275B9AF85CF906612F995EC1332C",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:41",
@@ -1183,6 +1216,7 @@
       "z_index": 41
     },
     {
+      "actual_transport_sha256": "462F0D9348E5AE3F53706C4537F12231BF26D99179DCCC5AC7020FCD47965B69",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:42",
@@ -1221,6 +1255,7 @@
       "z_index": 42
     },
     {
+      "actual_transport_sha256": "016B0A185073FD80029C0E8A4138CD640CF00AB05DB1FBE99F2613F5C30ADC5A",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:43",
@@ -1259,6 +1294,7 @@
       "z_index": 43
     },
     {
+      "actual_transport_sha256": "71370E945B124479D0D5068BED2E24E9BF8F75E6FFEAFE873C5D8298E5888B32",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:46",
@@ -1297,6 +1333,7 @@
       "z_index": 46
     },
     {
+      "actual_transport_sha256": "1BC974660C7AF2EB8531E81FF38BC98128AD7F88F773F60398D84A405849D768",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:47",
@@ -1335,6 +1372,7 @@
       "z_index": 47
     },
     {
+      "actual_transport_sha256": "8568CA651BB56BD4ABAE118ECB4DA285BD63D523F2D63268406F1CB4A8794E00",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:48",
@@ -1373,6 +1411,7 @@
       "z_index": 48
     },
     {
+      "actual_transport_sha256": "F60643DDFEF4B51DDCFACC9A884649E9A353A74BDE1E208AF630CE4D2B1EF711",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:49",
@@ -1411,6 +1450,7 @@
       "z_index": 49
     },
     {
+      "actual_transport_sha256": "FC82C64EBE02738FC12EA61BAA205712903F9E1F7AFCB0E421480FA2D99196B5",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:50",
@@ -1449,6 +1489,7 @@
       "z_index": 50
     },
     {
+      "actual_transport_sha256": "B1E3C008BEAC2758F0C7F3E6DFBC05DC74CCE7E43F7039A697CF2C771E49079A",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:53",
@@ -1487,6 +1528,7 @@
       "z_index": 53
     },
     {
+      "actual_transport_sha256": "3C220922F4E0C22AE287F888B9F2C0AC48282ABA815034F4C329902125C0C3BE",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:54",
@@ -1525,6 +1567,7 @@
       "z_index": 54
     },
     {
+      "actual_transport_sha256": "20226FE652B0AAC0ACC095CDFA07E3FD6200DCD2169CACEEC845F0DFDD73C794",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:55",
@@ -1563,6 +1606,7 @@
       "z_index": 55
     },
     {
+      "actual_transport_sha256": "C2C21332DDF4059236D2260A0FD47FC073A416A1619CA8202E67F09978364EAB",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:56",
@@ -1601,6 +1645,7 @@
       "z_index": 56
     },
     {
+      "actual_transport_sha256": "A268533B9FE07137A49909EEAFC039C8D0DCC4F6D032855EE5ABF2E23778B125",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:57",
@@ -1639,6 +1684,7 @@
       "z_index": 57
     },
     {
+      "actual_transport_sha256": "4D6F5968E084D7F65766E27ED16952B278FB1687B4263C3EACF05C952BCA8EBA",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:58",
@@ -1677,6 +1723,7 @@
       "z_index": 58
     },
     {
+      "actual_transport_sha256": "0A7C5C7FEF14B626E3FDFC842D7FECC9CFAABFA5CEF23A1BEC99AA9FCA89575E",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:61",
@@ -1715,6 +1762,7 @@
       "z_index": 61
     },
     {
+      "actual_transport_sha256": "BBA2AB62E636EFA68B285308C6B5DA00F56C61BD6674D90704B1BCCD06724B66",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:62",
@@ -1753,6 +1801,7 @@
       "z_index": 62
     },
     {
+      "actual_transport_sha256": "D016360DF903B6C90388F19A1ED10295139FA3B5ABFF29B2FE948D5C998FF34C",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:63",
@@ -1791,6 +1840,7 @@
       "z_index": 63
     },
     {
+      "actual_transport_sha256": "128ED96163E9855704D9161D0741438F04E368195F361BDCA559C1072D1C18A7",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:64",
@@ -1829,6 +1879,7 @@
       "z_index": 64
     },
     {
+      "actual_transport_sha256": "E6424E46B066EC2D8DBC85688D0E78F6810E493E326D29A999AC2D7A61CF3122",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:65",
@@ -1867,6 +1918,7 @@
       "z_index": 65
     },
     {
+      "actual_transport_sha256": "6133EC853CE2A258B6D1A8044ACC851AE00B033906EC0F6628FFB738AB9F3F73",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:66",
@@ -1905,6 +1957,7 @@
       "z_index": 66
     },
     {
+      "actual_transport_sha256": "6FBD0FA92A83BD4CF7FC127094B99D82D0E779B63F0BFC3C36E31EA566C0A687",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:69",
@@ -1943,6 +1996,7 @@
       "z_index": 69
     },
     {
+      "actual_transport_sha256": "41B5C69A03A28841882D9E590A24409DB84A871151553ABAB40F889C5F16B195",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:70",
@@ -1981,6 +2035,7 @@
       "z_index": 70
     },
     {
+      "actual_transport_sha256": "6602EB7D3174C2BFCA7A2B7E50B23186F73491AF99848360295975AA2DFF059F",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:71",
@@ -2019,6 +2074,7 @@
       "z_index": 71
     },
     {
+      "actual_transport_sha256": "8A2E57B774D7603EF67E883D002ED4AB53C592875503D516FFEA4D3CEFFDEEDC",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:72",
@@ -2057,6 +2113,7 @@
       "z_index": 72
     },
     {
+      "actual_transport_sha256": "67EB279D8C9CA5AFD3BC2C9320DB1763B4DFF1C8396C80A926DD0048DA87D694",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:73",
@@ -2095,6 +2152,7 @@
       "z_index": 73
     },
     {
+      "actual_transport_sha256": "E8DD0C10D23AEEF98B1C1B16DC8594398D6A6EC516ACB448B3DAACCAEB34F7D8",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:76",
@@ -2133,6 +2191,7 @@
       "z_index": 76
     },
     {
+      "actual_transport_sha256": "24AC5C9003CE39FD2E65E4ED369AC69CF319F3A83EA33D65AC1E1B952381D790",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:77",
@@ -2171,6 +2230,7 @@
       "z_index": 77
     },
     {
+      "actual_transport_sha256": "F0A35BB5A91E6891AA755DF75944104BABFECA44194D29CE96FC718F3AC1D9CB",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:78",
@@ -2209,6 +2269,7 @@
       "z_index": 78
     },
     {
+      "actual_transport_sha256": "E2E85FF2A420982FD22940A195D8581B13A318922D2F3B013384DD4487233E45",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:79",
@@ -2247,6 +2308,7 @@
       "z_index": 79
     },
     {
+      "actual_transport_sha256": "BC1B56E1EE7A7DDA7C94477E24BDDA6CF9CFF68632EE441B99821C2782251056",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:80",
@@ -2285,6 +2347,7 @@
       "z_index": 80
     },
     {
+      "actual_transport_sha256": "66EE4A1F02591230F4EA00650CA8D9D3E3570CFA72CE8B2A49FEFA6392AD3796",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:81",
@@ -2323,6 +2386,7 @@
       "z_index": 81
     },
     {
+      "actual_transport_sha256": "37DFBBB614894E274AED5A2FFE6121D7DF7486B829C0D4A319A352811D7F6F70",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:84",
@@ -2361,6 +2425,7 @@
       "z_index": 84
     },
     {
+      "actual_transport_sha256": "3EF3820CC573F5312EAF76AE094D4ED45FA8CFEDD4D261CC7A2616DE890286A5",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:85",
@@ -2399,6 +2464,7 @@
       "z_index": 85
     },
     {
+      "actual_transport_sha256": "B51BEB22E278251829F0AE113BAECB9B20E1140F02372017794D1D3813775F93",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:86",
@@ -2437,6 +2503,7 @@
       "z_index": 86
     },
     {
+      "actual_transport_sha256": "CEB1256DF91E8193C2E069A38D1F9215BE166C7EFECE1BF14176EF0E29CE90B9",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:87",
@@ -2475,6 +2542,7 @@
       "z_index": 87
     },
     {
+      "actual_transport_sha256": "64FF1EFD5CB5287585F04A0E3A6671EF7E8C73DD45A33EC7E94EE93F771C1C4B",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:88",
@@ -2513,6 +2581,7 @@
       "z_index": 88
     },
     {
+      "actual_transport_sha256": "AEEE2C23261B5424B9BAC7A8D5073C57E271921F468B4E7E53C939F5ADC0C9D2",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:91",
@@ -2551,6 +2620,7 @@
       "z_index": 91
     },
     {
+      "actual_transport_sha256": "3E48A32A7CED21F756DFFE87F3B1ACC8DE2522AED918CC56C8E337200D3297C4",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:92",
@@ -2589,6 +2659,7 @@
       "z_index": 92
     },
     {
+      "actual_transport_sha256": "6A97C8B01F36D3B36C6BBC38A45ADDBF21AE1C363DAE0730AC726F4CC8483D4B",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:93",
@@ -2627,6 +2698,7 @@
       "z_index": 93
     },
     {
+      "actual_transport_sha256": "5867550CA9F93C387D20D4DA0C2132637BB46719DB0F92B45A90362759B8DEF8",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:94",
@@ -2665,6 +2737,7 @@
       "z_index": 94
     },
     {
+      "actual_transport_sha256": "05FFB698EB414DF19C378F20A7E64F03DCC7F2F17D513F7055A4447FCE4F47E9",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:95",
@@ -2703,6 +2776,7 @@
       "z_index": 95
     },
     {
+      "actual_transport_sha256": "EC53D1A6270E11B411DD6E64400B53A8F869F3E138466138E16E4D04B664AFB4",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:96",
@@ -2741,6 +2815,7 @@
       "z_index": 96
     },
     {
+      "actual_transport_sha256": "079B52CB206E10A23C8CD6C17411631C70C52404999721FF8A591A1708395F16",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:99",
@@ -2779,6 +2854,7 @@
       "z_index": 99
     },
     {
+      "actual_transport_sha256": "DABE4E67C4330F91F9E9108F26D4ACB86173ECB04AF9B28E95DFABEC1A026EFF",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:100",
@@ -2817,6 +2893,7 @@
       "z_index": 100
     },
     {
+      "actual_transport_sha256": "2B4D8FC89A7C16AC325216C176E4C6ECC3E2BF2DADAB3D5408BCF9D805D3CD49",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:101",
@@ -2855,6 +2932,7 @@
       "z_index": 101
     },
     {
+      "actual_transport_sha256": "28B84BF8718E99B0AF069DFFE253A13463A85EE9611911582271BF8C7184EDF3",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:102",
@@ -2893,6 +2971,7 @@
       "z_index": 102
     },
     {
+      "actual_transport_sha256": "466D1410945264C504F0185686F98627D9368B9AFC6D08B4E969864C1E9F71E0",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:103",
@@ -2931,6 +3010,7 @@
       "z_index": 103
     },
     {
+      "actual_transport_sha256": "20BFE6AD9FD1BE5DF69D912C49BC5763A1F5CDB8CAF11FA0F75DC52083DBCFF9",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:106",
@@ -2969,6 +3049,7 @@
       "z_index": 106
     },
     {
+      "actual_transport_sha256": "9903EDADCF80B9114DE47B18E2C0820645255F1B2D9FB284157172307D7F96BC",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:107",
@@ -3007,6 +3088,7 @@
       "z_index": 107
     },
     {
+      "actual_transport_sha256": "D1BAA67EA644EF28A152B1BAF5B6EC1B2D6FD6B0490115AB1BC5A7340E24160C",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:108",
@@ -3045,6 +3127,7 @@
       "z_index": 108
     },
     {
+      "actual_transport_sha256": "B6AC9693768A28AC2D5564F245604BDA7D741DDF481C68AD7A16B633664B1AA8",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:109",
@@ -3083,6 +3166,7 @@
       "z_index": 109
     },
     {
+      "actual_transport_sha256": "5DDEF05419C05B854B8DFEE9D578198C835964F77D63E20CC1E7A81663BF768F",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:110",
@@ -3121,6 +3205,7 @@
       "z_index": 110
     },
     {
+      "actual_transport_sha256": "5A2E85075922943B7A19114A3C98D4C7F58B98B471CA9947BBDD695AE95A9493",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:111",
@@ -3159,6 +3244,7 @@
       "z_index": 111
     },
     {
+      "actual_transport_sha256": "22BF9681F9DB6F429F776924BDF92141FBDC49D72600A654506CA43267FC4F06",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:114",
@@ -3197,6 +3283,7 @@
       "z_index": 114
     },
     {
+      "actual_transport_sha256": "DE9B5811935CE6C937A7FBED5FF73E484F848388AC82DC0BE8309F5A87A14BAF",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:115",
@@ -3235,6 +3322,7 @@
       "z_index": 115
     },
     {
+      "actual_transport_sha256": "EA0FEDB37082CCC5F3BB5FB9FD5AEA6EF34147AE3D7E890F58231BB72A37B73A",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:116",
@@ -3273,6 +3361,7 @@
       "z_index": 116
     },
     {
+      "actual_transport_sha256": "65E94C8085F245B74ADBB93EDDF77FF91ACB0E708A737D86B0A71C7D6B410FC4",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:117",
@@ -3311,6 +3400,7 @@
       "z_index": 117
     },
     {
+      "actual_transport_sha256": "F183641B0D3A59713C794E4B055F76AC4745A07123045F35B820A76CDDC23147",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:118",
@@ -3349,6 +3439,7 @@
       "z_index": 118
     },
     {
+      "actual_transport_sha256": "D60F035DC928F5ED3C286E77EA1607E7D9ABF22632B13AAD87618491C2A4FB93",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:121",
@@ -3387,6 +3478,7 @@
       "z_index": 121
     },
     {
+      "actual_transport_sha256": "29B974ED1A62192EB18CE6ACFCEB9081EC4DCA519610CD9A9401BA4E7B1155BE",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:122",
@@ -3425,6 +3517,7 @@
       "z_index": 122
     },
     {
+      "actual_transport_sha256": "5B992ADBB4D02AFBCDA2AEFC896BD851E10EE30C051792D8BB6C46ECDF40D47C",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:123",
@@ -3463,6 +3556,7 @@
       "z_index": 123
     },
     {
+      "actual_transport_sha256": "E46F523B0DCE73E6A65F5C06B38BB3EAD6FBB5FDED82F0F66F4FB26E4AC153D1",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:124",
@@ -3501,6 +3595,7 @@
       "z_index": 124
     },
     {
+      "actual_transport_sha256": "41DF86718C7E15529DF07304E0343AA2ACA5C73250B631FC9A7D7F4005AF5247",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:125",
@@ -3539,6 +3634,7 @@
       "z_index": 125
     },
     {
+      "actual_transport_sha256": "BE22604C8C90C755846352AE0D16026D3AA7FF8433BEC189DE7C81DD7E7C13DB",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:126",
@@ -3577,6 +3673,7 @@
       "z_index": 126
     },
     {
+      "actual_transport_sha256": "3A2E2C0093FC0C6DDCD1187AE968625BA7C1D5CC0AB34E8177EAEA625BEDC1E3",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:129",
@@ -3615,6 +3712,7 @@
       "z_index": 129
     },
     {
+      "actual_transport_sha256": "024C43212BC90FC6075A1BCD22126ACF1AF91C787AF64693C56768B8DDEC4E91",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:130",
@@ -3653,6 +3751,7 @@
       "z_index": 130
     },
     {
+      "actual_transport_sha256": "CD9A624AB229FBF66768FD3D319F84B11CFE323B9E04B4F890E6014CB970646D",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:131",
@@ -3691,6 +3790,7 @@
       "z_index": 131
     },
     {
+      "actual_transport_sha256": "8BC172A8CF936007CBA9BDB8C41AFC42E6C704A1605ADC157DA958D7861FE995",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:132",
@@ -3729,6 +3829,7 @@
       "z_index": 132
     },
     {
+      "actual_transport_sha256": "54B0664C1EBFEC3B81A4C42833DC8066B49ED93B5573A1E214515800272C019C",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:133",
@@ -3767,6 +3868,7 @@
       "z_index": 133
     },
     {
+      "actual_transport_sha256": "9D0FD22DC8C71AFE08CAD18DBE5B3920E6E67CE985B39465D855E5B9B9D8D8CE",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:134",
@@ -3805,6 +3907,7 @@
       "z_index": 134
     },
     {
+      "actual_transport_sha256": "E9B15C7054CD2637AF52D955679F0690C6851B5F48E19734C6DAEC93BB16A9F9",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:137",
@@ -3843,6 +3946,7 @@
       "z_index": 137
     },
     {
+      "actual_transport_sha256": "88FA02D72942A56F1D0AEC6333AE23C61D1FA579E1AEF17A0F5489F814F34397",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:138",
@@ -3881,6 +3985,7 @@
       "z_index": 138
     },
     {
+      "actual_transport_sha256": "9BEA70BB2B9EEA6C97602E2FB4288D03339AD4680D35061A269A8EE179CCCC4C",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:139",
@@ -3919,6 +4024,7 @@
       "z_index": 139
     },
     {
+      "actual_transport_sha256": "EA171BDFEF50C3CBA0344A2F9BF1D96CA2F79A0CFE2F8CCFBC9DF87BAD52F68D",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:140",
@@ -3957,6 +4063,7 @@
       "z_index": 140
     },
     {
+      "actual_transport_sha256": "F7F676F8196D463A63793C780B085617E50D746F1D6883155E60A611CE0E0A11",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:141",
@@ -3995,6 +4102,7 @@
       "z_index": 141
     },
     {
+      "actual_transport_sha256": "0F0652CFFABAF8E7D6FFF12762A133AE44B1C54582022B4A2889CFBF8BBDCFBE",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:144",
@@ -4033,6 +4141,7 @@
       "z_index": 144
     },
     {
+      "actual_transport_sha256": "AD657AE00370ECAA3B9D1BF5EFC7C252914D150AF7F7F2555EA6F63505EC8EC3",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:145",
@@ -4071,6 +4180,7 @@
       "z_index": 145
     },
     {
+      "actual_transport_sha256": "0238A746831403C29F30950314DD18110388DEAA89F9246F6D9803C79A5A8FE2",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:146",
@@ -4109,6 +4219,7 @@
       "z_index": 146
     },
     {
+      "actual_transport_sha256": "C2D2B26DD5DE6240D085B146049FF360F9B6C1091CE814E6D4CA277FE89F5D06",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:147",
@@ -4147,6 +4258,7 @@
       "z_index": 147
     },
     {
+      "actual_transport_sha256": "F7F051A6B250598E4A4E5D4D6CD1CE7289E357AA8486FEF5B5C799BDA97F42ED",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:148",
@@ -4185,6 +4297,7 @@
       "z_index": 148
     },
     {
+      "actual_transport_sha256": "4C00E61BDC02A4CF49DE3A0397E606989582C2BDF9EC6C6694FFAFA47F61F5EE",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:149",
@@ -4223,6 +4336,7 @@
       "z_index": 149
     },
     {
+      "actual_transport_sha256": "6937EA258B62DF04CFA6E29C608B6194C12C4087377164C8EF06FA2950DEE2AE",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:152",
@@ -4261,6 +4375,7 @@
       "z_index": 152
     },
     {
+      "actual_transport_sha256": "165D127E1D45AB33FC8070E61CB68C3301E3E344AA23D765A2EA9381FCF426EE",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:153",
@@ -4299,6 +4414,7 @@
       "z_index": 153
     },
     {
+      "actual_transport_sha256": "BF8D12EAD0BE4B3DDC4BD382CFB2BB4CBD8B186D285266FD6DB88F55D573D984",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:154",
@@ -4337,6 +4453,7 @@
       "z_index": 154
     },
     {
+      "actual_transport_sha256": "25A5807E5BE97B4369A9A59FA278CCADEE7E6D27ACBD70CE88D13804E9FB7850",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:155",
@@ -4375,6 +4492,7 @@
       "z_index": 155
     },
     {
+      "actual_transport_sha256": "10A4F22C57D3C1206EB431811A18960F3BFD2D63B9A484CBAAFFADB7A8AC0D7E",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:156",
@@ -4413,6 +4531,7 @@
       "z_index": 156
     },
     {
+      "actual_transport_sha256": "EDF96ECD92134472F94EF2E4305D950712FC095DFE50C1F67820B48A6F5B274B",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:159",
@@ -4451,6 +4570,7 @@
       "z_index": 159
     },
     {
+      "actual_transport_sha256": "883AD08DA12E79E883F3D6D9F525FAA5E44629603AC9E9B40777C6C1A5890E1A",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:160",
@@ -4489,6 +4609,7 @@
       "z_index": 160
     },
     {
+      "actual_transport_sha256": "3949D1FC2168B70634801149E2C2690C8CC57853B014097DF69689D75DC18BF6",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:161",
@@ -4527,6 +4648,7 @@
       "z_index": 161
     },
     {
+      "actual_transport_sha256": "BB447FE31B8763EF36C40F2788F2D7DEC8E0FF47FF7E7AC86F03DD58BEC47284",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:162",
@@ -4565,6 +4687,7 @@
       "z_index": 162
     },
     {
+      "actual_transport_sha256": "6ECB93A373C93125DA6F401B5295BBBFDB260040E2AF65F31EEF3A9FBE22DA45",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:163",
@@ -4603,6 +4726,7 @@
       "z_index": 163
     },
     {
+      "actual_transport_sha256": "E8C48F3C089256EC918129AFD63CF7A806BF7ED374C49E7596E904199CC5DCAB",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:164",
@@ -4641,6 +4765,7 @@
       "z_index": 164
     },
     {
+      "actual_transport_sha256": "010E9C6518EC8E5E560DA7EC9C50CBD6ADB3ABC39469ADA5E0D1FD6F106C00E7",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:167",
@@ -4679,6 +4804,7 @@
       "z_index": 167
     },
     {
+      "actual_transport_sha256": "702AB1142335F28EB2EDCDA68AA74C3B1AA96101955DAB08A9BE590CCEF41FC0",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:168",
@@ -4717,6 +4843,7 @@
       "z_index": 168
     },
     {
+      "actual_transport_sha256": "ECDCFB7CE6BCE0D68FC7538C3C2A2539285CDE64C6864BEC8E11451A2658F5B2",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:169",
@@ -4755,6 +4882,7 @@
       "z_index": 169
     },
     {
+      "actual_transport_sha256": "702D4A628FD42808BCED226AEB72E9EABF41D67C3F595FB7150DB8948383F480",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:170",
@@ -4793,6 +4921,7 @@
       "z_index": 170
     },
     {
+      "actual_transport_sha256": "DE0F845806756FD8F140B410BFD0EFCE91FE1E7851F14DC6F25607DF4C0D983C",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:171",
@@ -4831,6 +4960,7 @@
       "z_index": 171
     },
     {
+      "actual_transport_sha256": "95E94F0E0A8BFCD77ED225D09BAF2CDBA8B9F0B8E5F7B65B08EEBDECC651D25E",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:174",
@@ -4869,6 +4999,7 @@
       "z_index": 174
     },
     {
+      "actual_transport_sha256": "7340DA5E3E9257A1E0784344C0BAA887E26C9FA6B1FF028BE953AF6F98EA34DB",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:175",
@@ -4907,6 +5038,7 @@
       "z_index": 175
     },
     {
+      "actual_transport_sha256": "3CDED490E91E5513BDD2A10A3642EF9D1CF2BBC6868A25E883038DE4322B0535",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:176",
@@ -4945,6 +5077,7 @@
       "z_index": 176
     },
     {
+      "actual_transport_sha256": "112D6E56840685FCBBF1DA39688585A57FAE667FDB09253B7360B40E4605A01E",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:177",
@@ -4983,6 +5116,7 @@
       "z_index": 177
     },
     {
+      "actual_transport_sha256": "8E960FBCF577DD11839783F78AD4E7900C8565601B5F59355088D5D97D8B974D",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:178",
@@ -5021,6 +5155,7 @@
       "z_index": 178
     },
     {
+      "actual_transport_sha256": "62BCD572561BEB28367AB239D13225E544557A6598D8DBCE5A20FB8AC653256B",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:179",
@@ -5059,6 +5194,7 @@
       "z_index": 179
     },
     {
+      "actual_transport_sha256": "521FAF41CFB968EB4B0756C1046D25FC6A7EA0199122C9D77D1F6A322C3A02FC",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:182",
@@ -5097,6 +5233,7 @@
       "z_index": 182
     },
     {
+      "actual_transport_sha256": "893FCDB7F5051E9D7427F92894DBF57A39006B2C4A2C5F6AC9F2A839DCC63FA6",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:183",
@@ -5135,6 +5272,7 @@
       "z_index": 183
     },
     {
+      "actual_transport_sha256": "8C5A2701240F7BE96B8EF845313CF1DDAC3746254904C0F351254EDB81259E83",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:184",
@@ -5173,6 +5311,7 @@
       "z_index": 184
     },
     {
+      "actual_transport_sha256": "48C71C2FBA1EE0C20548DD3781D60364BA7ECE6A8C013F63104EE557E72C0F1B",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:185",
@@ -5211,6 +5350,7 @@
       "z_index": 185
     },
     {
+      "actual_transport_sha256": "3BBF38B151E285DC0141DACD02E2F838855A57E12169C2EBF547A8BE291EA2D9",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:186",
@@ -5249,6 +5389,7 @@
       "z_index": 186
     },
     {
+      "actual_transport_sha256": "29702473C7463E2ED6CC4C3ADFE48BD03D33F4781D9B01F6C51C0313C3105629",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:187",
@@ -5287,6 +5428,7 @@
       "z_index": 187
     },
     {
+      "actual_transport_sha256": "BD4953730E817A679D9C72607E900980A7FE68C20AFA2329CD618C06D98EC0E3",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:190",
@@ -5325,6 +5467,7 @@
       "z_index": 190
     },
     {
+      "actual_transport_sha256": "B718019E1D0CCD458DE4AE721EDFFAF1CBFCF0C97B37CA8644DE5D6B84CB7ED7",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:191",
@@ -5363,6 +5506,7 @@
       "z_index": 191
     },
     {
+      "actual_transport_sha256": "6053463FACA5724B841B93DEAF648278EBA9C0D07D38E0401450AAC36AE3757D",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:192",
@@ -5401,6 +5545,7 @@
       "z_index": 192
     },
     {
+      "actual_transport_sha256": "E171673BADC1F14EF3124AEA324FE79E64CE57380F2A2C96EC49A8E0AD8100FB",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:193",
@@ -5439,6 +5584,7 @@
       "z_index": 193
     },
     {
+      "actual_transport_sha256": "8A915D80DEA8CEDBD60B2D00541B15734997D89B3B8486F12A83A8373E6FA4F2",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:194",
@@ -5477,6 +5623,7 @@
       "z_index": 194
     },
     {
+      "actual_transport_sha256": "FD224F653F7CAC5F1BBE27E092DC0A88E5BB36A8F6090109C171F09A07FB754E",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:197",
@@ -5515,6 +5662,7 @@
       "z_index": 197
     },
     {
+      "actual_transport_sha256": "DE9A252D7E09BD8EE1DE9C83443D55CD0DF9ABBF721AEA132377AAB3E96D6437",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:198",
@@ -5553,6 +5701,7 @@
       "z_index": 198
     },
     {
+      "actual_transport_sha256": "FE0DD349194E7202A3FE043F122B14CD7747D1C9C8679A4FF18DEFFED5D09FFA",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:199",
@@ -5591,6 +5740,7 @@
       "z_index": 199
     },
     {
+      "actual_transport_sha256": "B1BEE71894FAA3E5E7F83382608F9B1D269900B03D750F4DCD9C6755017F8F26",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:200",
@@ -5629,6 +5779,7 @@
       "z_index": 200
     },
     {
+      "actual_transport_sha256": "33D35C076F32560353D34BD847DDA027F1D946E44661596B438F9F4C31F02218",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:201",
@@ -5667,6 +5818,7 @@
       "z_index": 201
     },
     {
+      "actual_transport_sha256": "133902F5E0E47EBD68754A3161A9054EC85360585E99CA6E4268E7DE4796D910",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:202",
@@ -5705,6 +5857,7 @@
       "z_index": 202
     },
     {
+      "actual_transport_sha256": "9282083B97D637B5CD1940629C683B52828E053DF5A1169DF4ABC2F49A14AF88",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:205",
@@ -5743,6 +5896,7 @@
       "z_index": 205
     },
     {
+      "actual_transport_sha256": "522FED7C1AC556DB445BC9C561E0481E7975E0987C7B66B3E1E166AAFADDC1D2",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:206",
@@ -5781,6 +5935,7 @@
       "z_index": 206
     },
     {
+      "actual_transport_sha256": "1EE5AAD5BB898FA8991AEF5082D29062DB3109BD7633D9EEF19F0D3A3DAE9BF1",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:207",
@@ -5819,6 +5974,7 @@
       "z_index": 207
     },
     {
+      "actual_transport_sha256": "413216F38CD63B673EEF25D3885D2A77DC08F9DF73793321E76DEB9B1F86E23F",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:208",
@@ -5857,6 +6013,7 @@
       "z_index": 208
     },
     {
+      "actual_transport_sha256": "6A70B36FFCBE590AF8DDDDB1C876A1A1B2F589C82C2FA74A74EF7A201FBADAC0",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:209",
@@ -5895,6 +6052,7 @@
       "z_index": 209
     },
     {
+      "actual_transport_sha256": "D5D5C8B259E03431FAA55808DFCFC23714835665D74C149CD469DF54D538D60D",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:212",
@@ -5933,6 +6091,7 @@
       "z_index": 212
     },
     {
+      "actual_transport_sha256": "B991C5A4776D22A76399B4013F1FFDF1296B5BDA31C012A190915D098A53EA96",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:213",
@@ -5971,6 +6130,7 @@
       "z_index": 213
     },
     {
+      "actual_transport_sha256": "288822606E1E5BB2D18610836D656FE4FE555B556AB934F3BD0FA0B4B802CFA2",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:214",
@@ -6009,6 +6169,7 @@
       "z_index": 214
     },
     {
+      "actual_transport_sha256": "AF925FCA0E2F5C82EB5067C5C6ED26988E4011D9F5B2958E935F83D778911C43",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:215",
@@ -6047,6 +6208,7 @@
       "z_index": 215
     },
     {
+      "actual_transport_sha256": "FF1A5FC25B6EBC8EC7167EA59B936A1126DC6511BE126A1CC810A8BAF3CEFDCB",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:216",
@@ -6085,6 +6247,7 @@
       "z_index": 216
     },
     {
+      "actual_transport_sha256": "1466F913E00F92F25CF6B4F58CE666F9BBA30EFB905B91969E51122DBA876066",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:217",
@@ -6123,6 +6286,7 @@
       "z_index": 217
     },
     {
+      "actual_transport_sha256": "7B2748EAB729F8E0705C61030C86B1B622AD7779867BF2F6C21BC95266EF8FA6",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:220",
@@ -6161,6 +6325,7 @@
       "z_index": 220
     },
     {
+      "actual_transport_sha256": "52AF178D650C94B2E93770F5D75CCE3F2B177FD4E76E2BFAF4BEEFD46AC2FD92",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:221",
@@ -6199,6 +6364,7 @@
       "z_index": 221
     },
     {
+      "actual_transport_sha256": "CEBA35C794E835FB55B2E5EB5C18CBFC596EF2F0DC44587C88B68FDFE8F9CBF3",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:222",
@@ -6237,6 +6403,7 @@
       "z_index": 222
     },
     {
+      "actual_transport_sha256": "970CD607E5774B617B1E0C7FC9C02AF0E0AA09986268F65B44BA04DC0D61762A",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:223",
@@ -6275,6 +6442,7 @@
       "z_index": 223
     },
     {
+      "actual_transport_sha256": "8582ACF0834859439AC4BF5718B9407FA9647B90CF06BA8967C0A922A968C77A",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:224",
@@ -6313,6 +6481,7 @@
       "z_index": 224
     },
     {
+      "actual_transport_sha256": "9E4B426C7EE95C0E49D6A3C209FBEC4F90B8EE742EDA3B51662F39836A280487",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:227",
@@ -6351,6 +6520,7 @@
       "z_index": 227
     },
     {
+      "actual_transport_sha256": "53D4AE47A9AB611B2154CC80563C5E90915BE3C608F25C24680E6F92A024821D",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:228",
@@ -6389,6 +6559,7 @@
       "z_index": 228
     },
     {
+      "actual_transport_sha256": "755F934952B78260DA979F8C87B0A64413796E21A29ED810DAD8AFD2775948DD",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:229",
@@ -6427,6 +6598,7 @@
       "z_index": 229
     },
     {
+      "actual_transport_sha256": "3F27681D48E5F72BBAAF61D9F0D2CFD03B884B289AD0203E1BF8473236D32168",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:230",
@@ -6465,6 +6637,7 @@
       "z_index": 230
     },
     {
+      "actual_transport_sha256": "18DF7BCC2F26E500E129B3FD2336F6EAA2D2F9A147F9CFC3AE76A011105A938B",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:231",
@@ -6503,6 +6676,7 @@
       "z_index": 231
     },
     {
+      "actual_transport_sha256": "27D31E13B0978EF08DDAC00137E3A40091CD164A80225FC7FF15E7F68102A84F",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:232",
@@ -6541,6 +6715,7 @@
       "z_index": 232
     },
     {
+      "actual_transport_sha256": "E91548DCAFD27168BD7A747AA0C57F91A201288CDBB41E1596D570BB5B159A40",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:235",
@@ -6579,6 +6754,7 @@
       "z_index": 235
     },
     {
+      "actual_transport_sha256": "A75ED18113E36B547D6D90DBDA6B97C216D8E06D5481B564FD32A9842EB63A03",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:236",
@@ -6617,6 +6793,7 @@
       "z_index": 236
     },
     {
+      "actual_transport_sha256": "A10AF9B33DDF2C60803A87CED22D1E40E3A45463E687770403E731B8325F44E3",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:237",
@@ -6655,6 +6832,7 @@
       "z_index": 237
     },
     {
+      "actual_transport_sha256": "36265CA2EE22F903A17285154C988D0560D159DCDAF975FF0035C3FEABB72F1C",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:238",
@@ -6693,6 +6871,7 @@
       "z_index": 238
     },
     {
+      "actual_transport_sha256": "CCB9B6AE53B6A3A21F60B3001F1CDA608C5C2B87620E6447CDAB8A7E7AC2ED9E",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:239",
@@ -6731,6 +6910,7 @@
       "z_index": 239
     },
     {
+      "actual_transport_sha256": "CDFF846CA2FEFF11E3A299F9D3D4EFF8D528D8671F85ED8766DB5D55DBDD5313",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:242",
@@ -6769,6 +6949,7 @@
       "z_index": 242
     },
     {
+      "actual_transport_sha256": "6DCD784C6CDAF2FA432276B6DFC1F9CE217A6457DA0DFFA1FE334F665ADFA2B4",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:243",
@@ -6807,6 +6988,7 @@
       "z_index": 243
     },
     {
+      "actual_transport_sha256": "3821BCF17198CCD4644A7C65DEC9830BB51D6D8D17EDF8AB9B0C6DE92D231272",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:244",
@@ -6845,6 +7027,7 @@
       "z_index": 244
     },
     {
+      "actual_transport_sha256": "C4C4988847F78B5C38DA4A31EA2E2DB4DA3A81A4DEFDE08B87B62754BDBE10A0",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:245",
@@ -6883,6 +7066,7 @@
       "z_index": 245
     },
     {
+      "actual_transport_sha256": "38612EB0B78512FE51E2FBD9B43AA88053BBE3C4AD2BECB095B344D5519078B9",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:246",
@@ -6921,6 +7105,7 @@
       "z_index": 246
     },
     {
+      "actual_transport_sha256": "CD4AEC67228F7049FACD261497261B672704ED3C350B6EDFA360F2A2EE1863B8",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:247",
@@ -6959,6 +7144,7 @@
       "z_index": 247
     },
     {
+      "actual_transport_sha256": "D6A1C67CBE02B2B2F15A998C4553AF132BCA1E9FF8E10EF294B9E3B670CC024B",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:250",
@@ -6997,6 +7183,7 @@
       "z_index": 250
     },
     {
+      "actual_transport_sha256": "FC7222A7DD19AB32CD0BD3D681274FB9A3130119D2800553334CB2355B3DB609",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:251",
@@ -7035,6 +7222,7 @@
       "z_index": 251
     },
     {
+      "actual_transport_sha256": "F3B60ADA9B2C6CDC7E59EF016E4DFA4FA125CDD13238FC63A443134641450B66",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:252",
@@ -7073,6 +7261,7 @@
       "z_index": 252
     },
     {
+      "actual_transport_sha256": "FD9546B3B5383A4DE173DEC5543B2401A91909E07B6B254BADCE7CCDE8335B61",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:253",
@@ -7111,6 +7300,7 @@
       "z_index": 253
     },
     {
+      "actual_transport_sha256": "CEA8E2AED13AB097AFEB357F5AE036259E3CBB02886CB731AD881D69E5EC61B7",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:254",
@@ -7149,6 +7339,7 @@
       "z_index": 254
     },
     {
+      "actual_transport_sha256": "78CA4D3BD383026185F5B15032E6FA8385738981C1FC163138FCF000004D287C",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:255",
@@ -7187,6 +7378,7 @@
       "z_index": 255
     },
     {
+      "actual_transport_sha256": "27C51EA13FACCA863370DB6D8F3296968CCC136C3B6BF84CB4E497C8E4A3E5D5",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:258",
@@ -7225,6 +7417,7 @@
       "z_index": 258
     },
     {
+      "actual_transport_sha256": "428D064A61B0CED769CAEBF8B7141E80C5631167E5EAA0CFC3ED7EEAAC659106",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:259",
@@ -7263,6 +7456,7 @@
       "z_index": 259
     },
     {
+      "actual_transport_sha256": "4ABD3542060663E8F131C7D8C0B1B710C81EBB87F6FBAB824F56C0D8B41B96B4",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:260",
@@ -7301,6 +7495,7 @@
       "z_index": 260
     },
     {
+      "actual_transport_sha256": "BAC4AABF44FA70FE7878FA2CF38B5A1E934F0BFE1E18DF2FAE7B559E0E40EDE0",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:261",
@@ -7339,6 +7534,7 @@
       "z_index": 261
     },
     {
+      "actual_transport_sha256": "374D77DB7E368AACE83CB0EAAB40CFDCCBB9574912A3C838435EFA66417C6E8D",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:262",
@@ -7377,6 +7573,7 @@
       "z_index": 262
     },
     {
+      "actual_transport_sha256": "7EDCEB4503FA615496EABD2491D29BEFBC239A59CF6D501EDAA2F8426EA63800",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:265",
@@ -7415,6 +7612,7 @@
       "z_index": 265
     },
     {
+      "actual_transport_sha256": "5B315627E44C7B56EF1645F57B4182AEEE53D5795389D02757ECE16E31AD0E4E",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:266",
@@ -7453,6 +7651,7 @@
       "z_index": 266
     },
     {
+      "actual_transport_sha256": "9979607EA186BC5698D8DE702339BB2776A23E624EF75AD0157B4755EDEC3565",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:267",
@@ -7491,6 +7690,7 @@
       "z_index": 267
     },
     {
+      "actual_transport_sha256": "647FC53CB90C47E8AD7374FDC5F978C7922DC256E84E3D37E8F78EA3F1F8FBB2",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:268",
@@ -7529,6 +7729,7 @@
       "z_index": 268
     },
     {
+      "actual_transport_sha256": "947A98F312D19700344DF2915C324EF08DA192C909FF8EE14683A865740E39C4",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:269",
@@ -7567,6 +7768,7 @@
       "z_index": 269
     },
     {
+      "actual_transport_sha256": "1E344D6B6257467F055BD2CF1A23865AD3A6B11DE979F6101332A203A757AA83",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:270",
@@ -7605,6 +7807,7 @@
       "z_index": 270
     },
     {
+      "actual_transport_sha256": "9D2DF8915882A0CC4B2B720ECA23E5DE904DCEA70C7EEF1404D1F13741C858E6",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:273",
@@ -7643,6 +7846,7 @@
       "z_index": 273
     },
     {
+      "actual_transport_sha256": "2F2F76500CE41CE97E811A9D0DBF1A388A32A6D92344D570DC98B2E39B4EF040",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:274",
@@ -7681,6 +7885,7 @@
       "z_index": 274
     },
     {
+      "actual_transport_sha256": "76ECC5FF1725836E179906D0262868F0BAEEFD65B53849DD776C83D892C74059",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:275",
@@ -7719,6 +7924,7 @@
       "z_index": 275
     },
     {
+      "actual_transport_sha256": "73A396C644E9ABDAEDD3A7980BA0C899CC75BF11191F8543AC6A0A1F78332E9D",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:276",
@@ -7757,6 +7963,7 @@
       "z_index": 276
     },
     {
+      "actual_transport_sha256": "5E415C4431E2C40828A47DD86E6362D30C617A1381501F76119D25CAE758D485",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:277",
@@ -7795,6 +8002,7 @@
       "z_index": 277
     },
     {
+      "actual_transport_sha256": "B0BC444FC279916C192FDBBC92382225BB02FF4A472828BB45572B0FFD10A07E",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:280",
@@ -7833,6 +8041,7 @@
       "z_index": 280
     },
     {
+      "actual_transport_sha256": "D5E1D21786F7203A267D7E850F60F718E01D633896BFA5CBDB403E22CB88F223",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:281",
@@ -7871,6 +8080,7 @@
       "z_index": 281
     },
     {
+      "actual_transport_sha256": "FD804F88AC488889A88360DD837A67704A9E13FCBD8F8E005E2D11AD375A0D6E",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:282",
@@ -7909,6 +8119,7 @@
       "z_index": 282
     },
     {
+      "actual_transport_sha256": "0FFFB56CEA920625D84C109F7C2BC2C7577B06A0B83AEE0B24056ACB914D86BC",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:283",
@@ -7947,6 +8158,7 @@
       "z_index": 283
     },
     {
+      "actual_transport_sha256": "3DD2D67B1E7CB0A66B356C64E5726EF430591229C985A651BFFE18B85E9AE2CE",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:284",
@@ -7985,6 +8197,7 @@
       "z_index": 284
     },
     {
+      "actual_transport_sha256": "A002D154B648CC1D35B27C5F4CBB5141B79ABBAA5B0D8264798E0B280B3B8CE5",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:285",
@@ -8023,6 +8236,7 @@
       "z_index": 285
     },
     {
+      "actual_transport_sha256": "54CFA3200AF47610027CCFAA660D9E4621F194F707F17E956599DD6AA41BB20F",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:288",
@@ -8061,6 +8275,7 @@
       "z_index": 288
     },
     {
+      "actual_transport_sha256": "E9B6486C8E3C57E830EE0BB9873D17C316DD8F3DE13CBA853CC61A0EDD28F15B",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:289",
@@ -8099,6 +8314,7 @@
       "z_index": 289
     },
     {
+      "actual_transport_sha256": "F8FCC77A08EFCB5EE661FA80037F87FDBA10F86C6DC17CD97D504331DB60FB87",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:290",
@@ -8137,6 +8353,7 @@
       "z_index": 290
     },
     {
+      "actual_transport_sha256": "F99FDCAC057C97DAFDF99452673B7D6EC48A37A2C51EE3E3C979384606766992",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:291",
@@ -8175,6 +8392,7 @@
       "z_index": 291
     },
     {
+      "actual_transport_sha256": "D23AD727DDF2F779990A09E54429E1C3E52A99F3004B2DE0BF3F8BC7CC3B0E74",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:292",
@@ -8213,6 +8431,7 @@
       "z_index": 292
     },
     {
+      "actual_transport_sha256": "7A6E6F41B53CE1BDB623A8E1EE21B675DA93503C23C4F791917A3CF636D4D8FB",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:295",
@@ -8251,6 +8470,7 @@
       "z_index": 295
     },
     {
+      "actual_transport_sha256": "0617E53CDE5D0A6D90509B198CA7CDB327D282EFE535EB46ABA6FCECDCCECED4",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:296",
@@ -8289,6 +8509,7 @@
       "z_index": 296
     },
     {
+      "actual_transport_sha256": "64C19E5C3EB1298F13169E5C3C43D42F9132E4130571010D72B49612CF4F02D9",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:297",
@@ -8327,6 +8548,7 @@
       "z_index": 297
     },
     {
+      "actual_transport_sha256": "9F0ABD51892FE83D16DDEC6265B8DC1EDFC64034992DBB01671893801FF54EE7",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:298",
@@ -8365,6 +8587,7 @@
       "z_index": 298
     },
     {
+      "actual_transport_sha256": "80505C52098747A6050A9587028C477A933CE537BC096E93C6D467A4A41C1C48",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:299",
@@ -8403,6 +8626,7 @@
       "z_index": 299
     },
     {
+      "actual_transport_sha256": "1D857EA957D0ECF88CB00022FF3082990C0FF26D144120A21363BE352028A96B",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:300",
@@ -8441,6 +8665,7 @@
       "z_index": 300
     },
     {
+      "actual_transport_sha256": "F6E232EDC4403FD48C7AE482A8C034CB7B22D25057858575FE1D7F5E4ADEE33E",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:303",
@@ -8479,6 +8704,7 @@
       "z_index": 303
     },
     {
+      "actual_transport_sha256": "52F3F8EC073EBF348B8540B1247238550F5EB6CD1FB58CAB69ABC98CA7A15A86",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:304",
@@ -8517,6 +8743,7 @@
       "z_index": 304
     },
     {
+      "actual_transport_sha256": "4C1EE837D19818B632247F2BA161CC44518565487372D1A8A970A52681418893",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:305",
@@ -8555,6 +8782,7 @@
       "z_index": 305
     },
     {
+      "actual_transport_sha256": "A75A0F005E9D37C9C2F1941949D37F1615001FDC1F9D3A1B36FB096C20C887F1",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:306",
@@ -8593,6 +8821,7 @@
       "z_index": 306
     },
     {
+      "actual_transport_sha256": "527B9C96B4E77D4C3B3A0EF58E7D0A4A37AF5FD30FCCA2F6454A95B568587E0E",
       "disjoint_from_detector_ball": true,
       "owner": "m_2",
       "source_id": "c1:letter:307",
@@ -8762,6 +8991,7 @@
   ],
   "rectangles": [
     {
+      "actual_rectangle_sha256": "079AAB699720430F1231D8E1DFC68D96DEC0063673B7241151091D9CD0FAA741",
       "actual_y_source_id": "r_xy:vertex:5",
       "core_arc": [
         [
@@ -8827,6 +9057,7 @@
       "z_side_sha256": "DC2F175AFBC91FB1D9E84E2D0E5E8D568637E4B47FE43F656C872227890114FD"
     },
     {
+      "actual_rectangle_sha256": "8D8877CAB3F363BD0ED3FB33E5356D094BD679776C4162A5385894269CF1716A",
       "actual_y_source_id": "r_xy:vertex:1",
       "core_arc": [
         [
@@ -8892,6 +9123,7 @@
       "z_side_sha256": "64E5DD091AF3E8EB1CEF355AB292C121A23070BB3822AA7D889472B9E3AE63F1"
     },
     {
+      "actual_rectangle_sha256": "BCF3B69B48C018AB8343F901E580D999BAF556F758EDB4CB0236C3A237E2A9D8",
       "actual_y_source_id": "c1:letter:6",
       "core_arc": [
         [
@@ -8957,6 +9189,7 @@
       "z_side_sha256": "02AAF85D4240F8BD8937992D824109A710B38B0BE82525AC403039CBFD8BD103"
     },
     {
+      "actual_rectangle_sha256": "2992DD486842DC93C6B85EA773A7F00F946C29F46C6DB03E5C1943D4077539D9",
       "actual_y_source_id": "c1:letter:14",
       "core_arc": [
         [
@@ -9022,6 +9255,7 @@
       "z_side_sha256": "6CD8C315EAD1BB0CC37125E2546635FD18C580731BE364D1DA0A90435F3CC307"
     },
     {
+      "actual_rectangle_sha256": "A389731FAFA43C0B4A5EC2103257CDE13C5128F5DF84BA4B4935A4EF2C21EB9D",
       "actual_y_source_id": "c1:letter:21",
       "core_arc": [
         [
@@ -9087,6 +9321,7 @@
       "z_side_sha256": "EFB093B09033816ADA5AEAFD3E22731DB03B9EC67B19C18209B2F396457A61D1"
     },
     {
+      "actual_rectangle_sha256": "CB9F35293F9E7417903E711B095750CE5F8DE44F067694A261FE8DDEF17F85F4",
       "actual_y_source_id": "c1:letter:29",
       "core_arc": [
         [
@@ -9152,6 +9387,7 @@
       "z_side_sha256": "474FB24D8B5557E7631EC59D47972578AFC5CA4DE3492153F14A7FCE48EFADC3"
     },
     {
+      "actual_rectangle_sha256": "660FD5E714E4C045CD6A03560D6FD6BF98873F8FD0F22A08EF302CE76D5E41C4",
       "actual_y_source_id": "c1:letter:36",
       "core_arc": [
         [
@@ -9217,6 +9453,7 @@
       "z_side_sha256": "E83D29E75AC1DD2028319EAC6F6124D894D27FFF1A4E75C0F85AE3128E47DC9E"
     },
     {
+      "actual_rectangle_sha256": "EEFD9DD41652B038AB57F15E06BBA26674FDA580FA99C5CBEF568C41DE4DB933",
       "actual_y_source_id": "c1:letter:44",
       "core_arc": [
         [
@@ -9282,6 +9519,7 @@
       "z_side_sha256": "E75D9415354598A5498B8C3921B4E7F80B1CA1A07E75FB6D67116400BEF4034D"
     },
     {
+      "actual_rectangle_sha256": "89DD64682A8D209482079B6A3ACAA0BB0941F41899872CEB9D09A58B92C01CE0",
       "actual_y_source_id": "c1:letter:51",
       "core_arc": [
         [
@@ -9347,6 +9585,7 @@
       "z_side_sha256": "B75FCEE2128C75BCBF0FF264875A79B60F4A0ACD6444584952C8B78FF16DE7B8"
     },
     {
+      "actual_rectangle_sha256": "484399208BB3842C89249A0DE99B4A5D68293B1CD76A58481FA6903ED8006FBC",
       "actual_y_source_id": "c1:letter:59",
       "core_arc": [
         [
@@ -9412,6 +9651,7 @@
       "z_side_sha256": "9AD12920A474DFD3011AC64CE5FAF1F137D1DE20A7F2C9A8D12A9F10AE94FAD1"
     },
     {
+      "actual_rectangle_sha256": "14757F5FFC1F2B5142BD8CD7FAAF71094A2C1BF10A2439722444D77EE8097B18",
       "actual_y_source_id": "c1:letter:67",
       "core_arc": [
         [
@@ -9477,6 +9717,7 @@
       "z_side_sha256": "6C9654DBD0B0AE9A8715EE7AFFFA768893807168D94855775BEC940B6B8DC06B"
     },
     {
+      "actual_rectangle_sha256": "9B54874D36361BE701357BA7A7389DB83045C173F1F5505C0D283419E19A173E",
       "actual_y_source_id": "c1:letter:74",
       "core_arc": [
         [
@@ -9542,6 +9783,7 @@
       "z_side_sha256": "19E7B0A733A8BEBBDDFEBC3B0B36A12CCE32DF4CDE6CAB745AFBCF298A8F0F8D"
     },
     {
+      "actual_rectangle_sha256": "ACC7BAE32B9F18075210721E67FBBCEF1908E47E3C9517C304DF6F86B07F4107",
       "actual_y_source_id": "c1:letter:82",
       "core_arc": [
         [
@@ -9607,6 +9849,7 @@
       "z_side_sha256": "E85DBA17F4EB0B1F57F19282851EB58D13474543F70717CE02E0E40800192513"
     },
     {
+      "actual_rectangle_sha256": "9F83EA32ACAD97A0CD39145EC4D85E89EB669FFAD7CA39DD8C6086628A7C912E",
       "actual_y_source_id": "c1:letter:89",
       "core_arc": [
         [
@@ -9672,6 +9915,7 @@
       "z_side_sha256": "A1F58B97E46920DF18166C0023F3580741BF308D686C083AED5D58649F5C5A2D"
     },
     {
+      "actual_rectangle_sha256": "B4EAE09AF0280E414A6AFC7F251BE5D5D139058C313303159E5D05BE6E0087F6",
       "actual_y_source_id": "c1:letter:97",
       "core_arc": [
         [
@@ -9737,6 +9981,7 @@
       "z_side_sha256": "4F8AD5DB3E43990ADFB82E01DD90BDFB81FEE28B8612F0A7C963FF4F828472EE"
     },
     {
+      "actual_rectangle_sha256": "43BCD7D26F48AC6279948E3084F72BA8EBFB3ACD4995D1CE46633D87AA3DBB97",
       "actual_y_source_id": "c1:letter:104",
       "core_arc": [
         [
@@ -9802,6 +10047,7 @@
       "z_side_sha256": "0CDE169EFE4A6E70CB1AF1BADC438C5CD96576652F08BCD9E8EAE4DC1F411C4D"
     },
     {
+      "actual_rectangle_sha256": "0C7D6A117A8643182A199E2BEDF99834A64CBE9A3B4DEB7280C52A39507C92D4",
       "actual_y_source_id": "c1:letter:112",
       "core_arc": [
         [
@@ -9867,6 +10113,7 @@
       "z_side_sha256": "3822D7F20C484AB1C0B4197D4DBA1883A1F626171A9EBE68905156936CE7A0A8"
     },
     {
+      "actual_rectangle_sha256": "C44E6252F49D6349467984C1CBD035240523D7454224069FF16A4690626EE6E7",
       "actual_y_source_id": "c1:letter:119",
       "core_arc": [
         [
@@ -9932,6 +10179,7 @@
       "z_side_sha256": "AFBA8E633B1E0AFA83414B3BFE3FB3329DEC5198A9F26A35335D627E4AE908B8"
     },
     {
+      "actual_rectangle_sha256": "FB8B38C1C1966DE1650E1DF4596F1FC9EFC009F36EFF945438C11C6AABC1DB41",
       "actual_y_source_id": "c1:letter:127",
       "core_arc": [
         [
@@ -9997,6 +10245,7 @@
       "z_side_sha256": "423D7A664C846269DEFD8A787350517D5E4A40CFDE3F62E95CC8595FF30DB39B"
     },
     {
+      "actual_rectangle_sha256": "5CBE1F4BB1E13A5F10D967FBAEC17E896738BE8695EECF01E7210672AA9FB3F4",
       "actual_y_source_id": "c1:letter:135",
       "core_arc": [
         [
@@ -10062,6 +10311,7 @@
       "z_side_sha256": "2A5F43E3A29E4E5FE74BE212E6209D001A579A9BE97EED7F942070044EA938EE"
     },
     {
+      "actual_rectangle_sha256": "056AA47A80A784039DA322A28896B7B29AB0D13AF8E675A9407EF6725148E71D",
       "actual_y_source_id": "c1:letter:142",
       "core_arc": [
         [
@@ -10127,6 +10377,7 @@
       "z_side_sha256": "23552A709FF70947F01A9337ADFFA1E3C67879E686C1626DFE7DDD19583A6E0A"
     },
     {
+      "actual_rectangle_sha256": "B3421C66021ECF044E65C35676B575690129C7C53BB4DD30D85C23135DBAA63C",
       "actual_y_source_id": "c1:letter:150",
       "core_arc": [
         [
@@ -10192,6 +10443,7 @@
       "z_side_sha256": "F70517112CD42B36EFFBAFE703EB2F56D990A03D8A0F617BE4FB3EEB640DBBA7"
     },
     {
+      "actual_rectangle_sha256": "F281DC6F89CA17C331E2B8B6B9D2D65893D507D03FB9A0C4E323C800AA0BF7BE",
       "actual_y_source_id": "c1:letter:157",
       "core_arc": [
         [
@@ -10257,6 +10509,7 @@
       "z_side_sha256": "337CEF2A80372FC1E715CAD85DB26F3AA35025A759E55423F3586C030E87EF74"
     },
     {
+      "actual_rectangle_sha256": "C98B0B666FE8924188D97112720847EF706BE9028210CE0160848EE8754216B9",
       "actual_y_source_id": "c1:letter:165",
       "core_arc": [
         [
@@ -10322,6 +10575,7 @@
       "z_side_sha256": "22473E768B701523676114DB2D4F53D0BFEE6820E72923C9D5667C8F2B4F583F"
     },
     {
+      "actual_rectangle_sha256": "91DE7E55B502B15F6F3B617E3F0EAB23BA33374FCF512B970435D22D4F3AC174",
       "actual_y_source_id": "c1:letter:172",
       "core_arc": [
         [
@@ -10387,6 +10641,7 @@
       "z_side_sha256": "F9F79F1C0C987C8D8791E46A4257C99C1A13F67BE1734B0B8217C1DF0D0D94EC"
     },
     {
+      "actual_rectangle_sha256": "DF3B807B3AA58584FB5AC171493DB952E1133538E7B005F90C47AD8360F25748",
       "actual_y_source_id": "c1:letter:180",
       "core_arc": [
         [
@@ -10452,6 +10707,7 @@
       "z_side_sha256": "64B6069354D48A16BF5FD6FD5F4C38F877C35D37662AC8E287EB6893D26BF415"
     },
     {
+      "actual_rectangle_sha256": "9495604E0575E9EBE45A9ECA1A0FFF6561B45057AEC1C8634E3EDCB4ABE262A2",
       "actual_y_source_id": "c1:letter:188",
       "core_arc": [
         [
@@ -10517,6 +10773,7 @@
       "z_side_sha256": "3FF896B1EEB1EA60D0ED29294B1F8090A19BAEE65EF27F3EF75339E8356ABDC8"
     },
     {
+      "actual_rectangle_sha256": "82B9A8AA040079F2B51D793C32EBE4A2AD9192082CDB221A8AF194C68C34250C",
       "actual_y_source_id": "c1:letter:195",
       "core_arc": [
         [
@@ -10582,6 +10839,7 @@
       "z_side_sha256": "F9FB17ED67438DEEFF0CAD2FD05D8A62D9BE12164FC1814C26163D02334905F9"
     },
     {
+      "actual_rectangle_sha256": "ABCDF9593805D627B3669EF70F685E3AF26AF028EDCA538A7B74406612437BF7",
       "actual_y_source_id": "c1:letter:203",
       "core_arc": [
         [
@@ -10647,6 +10905,7 @@
       "z_side_sha256": "1D897C721C603EBC6BEA445ABD2B2CBEB4C28C6D344356C14AA37ABAFC9FAAB1"
     },
     {
+      "actual_rectangle_sha256": "AFE8A6F7E172023CB1DDD3459AE95710984B7ADF22498380AD7F665C67D97855",
       "actual_y_source_id": "c1:letter:210",
       "core_arc": [
         [
@@ -10712,6 +10971,7 @@
       "z_side_sha256": "9B689B01DF0DB967FD9A29146BB1EF4F95AA560110C8CF6557A8E9BAE6AB682B"
     },
     {
+      "actual_rectangle_sha256": "9554CA52242D4B8D83A9D7DB8CEE8418A235ADE2AB1B67A19BD15358B8566C16",
       "actual_y_source_id": "c1:letter:218",
       "core_arc": [
         [
@@ -10777,6 +11037,7 @@
       "z_side_sha256": "7DF94D6A04699BEEE289AF5897AF5F3F5FF347376E32D6E1682EA2DA78864ECD"
     },
     {
+      "actual_rectangle_sha256": "78A3BFFCF8C18B66E67A33D354615D747601FF747382906DD446D503FEC2F383",
       "actual_y_source_id": "c1:letter:225",
       "core_arc": [
         [
@@ -10842,6 +11103,7 @@
       "z_side_sha256": "71825C57E01BDAF79CE8DE44AC0A075853897856FF2695531790336D593A8716"
     },
     {
+      "actual_rectangle_sha256": "A4A7572933C39AA3B126884B712A85AB5CEC58694F7D28758B5F218F2AC021B7",
       "actual_y_source_id": "c1:letter:233",
       "core_arc": [
         [
@@ -10907,6 +11169,7 @@
       "z_side_sha256": "06AA51F29084A6534196B6BBDD2E1A60FAF9D5B123B4CD36A40B023140573C55"
     },
     {
+      "actual_rectangle_sha256": "23B49C6B47113D9E3056D5E33C8802EAA41E8517E655B9980181B7A534EE292C",
       "actual_y_source_id": "c1:letter:240",
       "core_arc": [
         [
@@ -10972,6 +11235,7 @@
       "z_side_sha256": "EA8F27E2BF360DB24A681A5EAD0C21E71935F93A8A501FDEB6DA74E07B7EB0FB"
     },
     {
+      "actual_rectangle_sha256": "37C2920F127B709B972379F20356F88B4E082C31B65B75AAF24467941E4C7A65",
       "actual_y_source_id": "c1:letter:248",
       "core_arc": [
         [
@@ -11037,6 +11301,7 @@
       "z_side_sha256": "58577790EE0AF1615C874BFC797CDBF9312480CD110C677F86E0126B9BA0B3E5"
     },
     {
+      "actual_rectangle_sha256": "5C58423E5E402D297A7C9573AB26749A30EB1C5F35F181150F94333F9031B12B",
       "actual_y_source_id": "c1:letter:256",
       "core_arc": [
         [
@@ -11102,6 +11367,7 @@
       "z_side_sha256": "AEBFAD0E96D651CF806C8BECBE5115CEFC5F877123466153F857CD0892F37877"
     },
     {
+      "actual_rectangle_sha256": "2C7F035606BE2F0F8303EE228D6118278F68B504BB26B76B5BD495DFEF5BABAB",
       "actual_y_source_id": "c1:letter:263",
       "core_arc": [
         [
@@ -11167,6 +11433,7 @@
       "z_side_sha256": "A44DE237FC029418C85BCC008588370600FEAB876B90C202261A2B67439FB136"
     },
     {
+      "actual_rectangle_sha256": "076633E287AA19F7DA79DFB4ECA51629FCC53DA07766A31B402FF4066FB0E0BE",
       "actual_y_source_id": "c1:letter:271",
       "core_arc": [
         [
@@ -11232,6 +11499,7 @@
       "z_side_sha256": "0197E17E0EE65EC86ADAE4E4AC636AE6D2A2F51B6BB1328E346F8BB4158F9A1A"
     },
     {
+      "actual_rectangle_sha256": "B5E4A0E16C27BE3B8D40D1CF23902F858C7407D854A02804BE2ECC48BFD53C0E",
       "actual_y_source_id": "c1:letter:278",
       "core_arc": [
         [
@@ -11297,6 +11565,7 @@
       "z_side_sha256": "9392B2CC1707D2112E857C7B8C21719D026DFDF891A2C06F29478BD343EAB75D"
     },
     {
+      "actual_rectangle_sha256": "FC09055100F1AFDC96A84C8A74B0052C6E21F923833B2D56952DFE9F34CDDA9C",
       "actual_y_source_id": "c1:letter:286",
       "core_arc": [
         [
@@ -11362,6 +11631,7 @@
       "z_side_sha256": "CF8C48D11A02118544F49619AD003040781AAFA98B86A8EDD653F8DEF4DF4A68"
     },
     {
+      "actual_rectangle_sha256": "EE15A66DAA5639CEFA4A24BFC21855A050D1268B482A0ACDE9213517B2BB7093",
       "actual_y_source_id": "c1:letter:293",
       "core_arc": [
         [
@@ -11427,6 +11697,7 @@
       "z_side_sha256": "81CAF17C26EADB0045CEA71FEE55483140B695212DBF5784E8CB9681AA2C0F23"
     },
     {
+      "actual_rectangle_sha256": "47EAACDC726AC0E0D5171C696099F97ACE27694922E774FBBCDF9829A8DE0AFA",
       "actual_y_source_id": "c1:letter:301",
       "core_arc": [
         [
@@ -11492,6 +11763,7 @@
       "z_side_sha256": "0C8D57D36AB64C95F5BBB75B99B9329E23F738FF04EC3F582D9CE256C5048B15"
     },
     {
+      "actual_rectangle_sha256": "AC602A472ADDBF6894FF711AF80DBBEF5AC59D56874A33E7346A37FEB8497EB5",
       "actual_y_source_id": "c1:letter:308",
       "core_arc": [
         [
@@ -11557,6 +11829,7 @@
       "z_side_sha256": "A2C77FD926904D685521FDF02825393D29E9D0277579CA8C0D34D16953CAF31E"
     },
     {
+      "actual_rectangle_sha256": "BE48614D07BE852D856D2B43433D2BFD3A4E72F82A0458BFAADCAFD7127A6BE7",
       "actual_y_source_id": "m_2:C_i",
       "core_arc": [
         [

@@ -2,10 +2,10 @@
   "C1_status": "PASS",
   "C2_status": "PASS",
   "C_status": "PASS",
-  "actual_product_ribbon_isotopy_sha256": "B19652C8911F744D1A4FC6A18315708926D1F2CD531D69D639FABD85472C5151",
+  "actual_product_ribbon_isotopy_sha256": "B38B06BE1A3C77FEAD22CACE612B09122B9C18977E42CFAA8B4E9FEB33AB3A2D",
   "coefficient_bimodule_equivalence": {
     "F": "44 west-east cores of the C1 P0-strand product rectangles",
-    "c2_certificate_sha256": "FF000590BB9B6A7ECC3DC70282EA6DA5865D65FE5201D7C5BCB4811CF37E84E3",
+    "c2_certificate_sha256": "DE0C7C2CB655D8926AD7D3E88D548A978D76C2A0F5192347B36C87167C4738F9",
     "dual_boundary": "227 leftover z-circles off the P0 reconstruction cube",
     "left_action_square": "PASS",
     "ordinary_representable_reduction": "Smooth4PC/RepresentableCoefficient.lean coefficientHH0Equiv",
@@ -636,7 +636,7 @@
       "word_length": 311,
       "word_sha256": "E7175C5B3B116EB094C1B78A79589D5B8F8691885BC90EB05695805962DB98C9"
     },
-    "model_cut_link_sha256": "5644F67A61C0AA734C08C301D3231F86C734F33244BD25F18A894876243CCE0D",
+    "model_cut_link_sha256": "2399F65D3753D57346E191DC8B7DE7373812C2901AE511B85BE80D86631FA544",
     "model_rectangles_status": "PASS",
     "r_xy": {
       "disjointness_rule": "each pairing interval is one cyclic word edge and distinct pairs use distinct endpoints",
@@ -717,5 +717,5 @@
     "through_degree_firewall": "a balanced pair on every positive-gate owner adds at least four y endpoints/two cups, so the action-closed undotted image has through degree <=84; r_zx is the unique zero-gate owner",
     "whole_source": true
   },
-  "witness_sha256": "2A5F7AC5038987B2520BA25D64C4EE4E79A2EBBAB977D1E89541E869A80C9886"
+  "witness_sha256": "E6A19E7F237FAEF06D66DB5071B374B2A1F525299052DCFA120657ADD5168C4A"
 }
