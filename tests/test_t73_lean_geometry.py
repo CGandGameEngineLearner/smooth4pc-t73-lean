@@ -48,6 +48,22 @@ class LeanGeometryDataTest(unittest.TestCase):
         self.assertIn(close["certificate_sha256"], index)
         self.assertIn(ident["certificate_sha256"], index)
         self.assertIn(close["attaching_link"]["pd_sha256"], index)
+        for path in (
+            "geometry/t73_actual_ar_link.json",
+            "geometry/t73_actual_cut_tangle.json",
+            "geometry/t73_actual_product_rectangles.json",
+            "geometry/t73_actual_leftover_z_circles.json",
+            "geometry/t73_actual_geometric_braid.json",
+            "geometry/t73_johnson_dual_disk_movie.json",
+            "geometry/t73_three_handle_surface_transport.json",
+            "geometry/t73_actual_sphere_system.json",
+            "geometry/t73_actual_hemisphere_movies.json",
+        ):
+            artifact = json.loads((ROOT / path).read_text(encoding="utf-8"))
+            digest = artifact.get("sha256", artifact.get("witness_sha256"))
+            self.assertIn(digest, index, msg=path)
+        self.assertIn("actualThreeHandleCoreCounts = [12578, 1824, 409]", index)
+        self.assertIn("actualW2LasagnaMapVerified = true", index)
 
     def test_empty_link_inhabitant_is_not_candidate_geometry(self) -> None:
         inhab = (ROOT / "Smooth4PC" / "T73S4Inhabitant.lean").read_text(
