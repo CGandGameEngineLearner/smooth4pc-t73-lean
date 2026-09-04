@@ -79,7 +79,9 @@ def load_module(relative_path: str, stem: str):
 
 def write_json(path: Path, value: Any) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_bytes(json_bytes(value))
+    temporary = path.with_name(path.name + ".tmp")
+    temporary.write_bytes(json_bytes(value))
+    temporary.replace(path)
 
 
 def load_artifacts() -> dict[str, dict[str, Any]]:
@@ -112,6 +114,13 @@ def geometry_counts(artifact_id: str, data: dict[str, Any]) -> dict[str, Any]:
             "cyclic_seams": data["cyclic_seam_count"],
             "endpoints_per_insertion_sphere": data["endpoint_counts_per_sphere"],
             "exterior_intervals": data["exterior_interval_count"],
+            "ruled_ribbon_triangles": sum(
+                len(interval["ruled_ribbon_triangles"])
+                for interval in data["exterior_intervals"]
+            ),
+            "distinct_ribbon_clearance": data["ribbon_clearance"][
+                "strict_clearance"
+            ],
             "total_boundary_endpoints": data["total_boundary_endpoint_count"],
         }
     if artifact_id == "selected_canopolis_target_v2":
@@ -363,6 +372,7 @@ def build_manifest(
         "closed_facts": {
             "saved_boundary_endpoint_count": 1260,
             "saved_source_exterior_interval_count": 630,
+            "saved_source_ruled_ribbon_triangle_count": 2520,
             "target_template_arc_count": 630,
             "wrong_side_active_interval_count": 8,
         },
@@ -474,6 +484,10 @@ def validate_manifest(
     expected_closed_facts = {
         "saved_boundary_endpoint_count": source["total_boundary_endpoint_count"],
         "saved_source_exterior_interval_count": source["exterior_interval_count"],
+        "saved_source_ruled_ribbon_triangle_count": sum(
+            len(interval["ruled_ribbon_triangles"])
+            for interval in source["exterior_intervals"]
+        ),
         "target_template_arc_count": artifacts["selected_canopolis_target_v2"][
             "target_strand_count"
         ],

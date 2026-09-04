@@ -32,6 +32,8 @@ class SelectedSourceExteriorTest(unittest.TestCase):
         )
         self.assertEqual(result["TOTAL_ENDPOINTS"], 1260)
         self.assertEqual(result["EXTERIOR_INTERVALS"], 630)
+        self.assertEqual(result["RULED_RIBBON_TRIANGLES"], 2520)
+        self.assertEqual(result["DISTINCT_RULED_RIBBONS"], "PASS")
         self.assertEqual(
             result["INTERVAL_COUNTS_BY_COPY"],
             {

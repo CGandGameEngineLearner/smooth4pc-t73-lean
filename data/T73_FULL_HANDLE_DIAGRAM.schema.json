@@ -1,0 +1,115 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "T73_FULL_HANDLE_DIAGRAM.schema.json",
+  "title": "Complete rational seven-component Kirby diagram input",
+  "type": "object",
+  "required": ["schema", "ambient", "components"],
+  "properties": {
+    "schema": {"const": "t73_full_handle_diagram_input/v1"},
+    "ambient": {
+      "type": "object",
+      "required": [
+        "chart",
+        "ambient_orientation",
+        "projection_direction",
+        "projection_basis",
+        "height_direction",
+        "genericity_certificate"
+      ],
+      "properties": {
+        "chart": {"const": "oriented_affine_Q3"},
+        "ambient_orientation": {"const": "standard_xyz"},
+        "projection_direction": {"$ref": "#/$defs/vector3"},
+        "projection_basis": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {"$ref": "#/$defs/vector3"}
+        },
+        "height_direction": {"$ref": "#/$defs/vector3"},
+        "genericity_certificate": {
+          "const": {
+            "method": "exact_fraction_recomputation",
+            "claimed": "PASS"
+          }
+        }
+      }
+    },
+    "components": {
+      "type": "array",
+      "minItems": 7,
+      "maxItems": 7,
+      "prefixItems": [
+        {"$ref": "#/$defs/m2"},
+        {"$ref": "#/$defs/m3"},
+        {"$ref": "#/$defs/rxy"},
+        {"$ref": "#/$defs/ryz"},
+        {"$ref": "#/$defs/rzx"},
+        {"$ref": "#/$defs/dottedy"},
+        {"$ref": "#/$defs/dottedz"}
+      ],
+      "items": false
+    }
+  },
+  "$defs": {
+    "rational": {
+      "type": ["string", "integer"],
+      "pattern": "^-?[0-9]+(?:/[1-9][0-9]*)?$"
+    },
+    "vector3": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {"$ref": "#/$defs/rational"}
+    },
+    "closedPolyline": {
+      "type": "array",
+      "minItems": 4,
+      "items": {"$ref": "#/$defs/vector3"}
+    },
+    "successors": {
+      "type": "array",
+      "minItems": 3,
+      "items": {"type": "integer", "minimum": 0}
+    },
+    "twoHandle": {
+      "type": "object",
+      "required": [
+        "name",
+        "component_kind",
+        "closed_core_polyline",
+        "cyclic_segment_successor",
+        "closed_push_off_polyline",
+        "push_off_cyclic_segment_successor"
+      ],
+      "properties": {
+        "component_kind": {"const": "two_handle"},
+        "closed_core_polyline": {"$ref": "#/$defs/closedPolyline"},
+        "cyclic_segment_successor": {"$ref": "#/$defs/successors"},
+        "closed_push_off_polyline": {"$ref": "#/$defs/closedPolyline"},
+        "push_off_cyclic_segment_successor": {"$ref": "#/$defs/successors"}
+      }
+    },
+    "dottedHandle": {
+      "type": "object",
+      "required": [
+        "name",
+        "component_kind",
+        "closed_core_polyline",
+        "cyclic_segment_successor"
+      ],
+      "properties": {
+        "component_kind": {"const": "dotted_one_handle"},
+        "closed_core_polyline": {"$ref": "#/$defs/closedPolyline"},
+        "cyclic_segment_successor": {"$ref": "#/$defs/successors"}
+      }
+    },
+    "m2": {"allOf": [{"$ref": "#/$defs/twoHandle"}, {"properties": {"name": {"const": "m_2"}}}]},
+    "m3": {"allOf": [{"$ref": "#/$defs/twoHandle"}, {"properties": {"name": {"const": "m_3"}}}]},
+    "rxy": {"allOf": [{"$ref": "#/$defs/twoHandle"}, {"properties": {"name": {"const": "r_xy"}}}]},
+    "ryz": {"allOf": [{"$ref": "#/$defs/twoHandle"}, {"properties": {"name": {"const": "r_yz"}}}]},
+    "rzx": {"allOf": [{"$ref": "#/$defs/twoHandle"}, {"properties": {"name": {"const": "r_zx"}}}]},
+    "dottedy": {"allOf": [{"$ref": "#/$defs/dottedHandle"}, {"properties": {"name": {"const": "dotted_y"}}}]},
+    "dottedz": {"allOf": [{"$ref": "#/$defs/dottedHandle"}, {"properties": {"name": {"const": "dotted_z"}}}]}
+  }
+}

@@ -42,8 +42,12 @@ class DefectAwareCurryingTest(unittest.TestCase):
         self.assertEqual(self.result["P86_to_P88_boundary_endpoints"], 174)
         self.assertFalse(self.result["one_defect_derived_from_eight_wrong_intervals"])
         for item in self.result["proposed_endpoint_reconnections"]:
-            self.assertEqual(item["left_or_right_mate"], "UNDETERMINED")
+            self.assertEqual(
+                item["left_or_right_mate"], "NOT_APPLICABLE_TO_RECONNECTION"
+            )
             self.assertEqual(item["Blanchet_sign"], "UNDETERMINED")
+            self.assertTrue(item["orientation_checked"])
+            self.assertEqual(item["status"], "UNREALIZED")
 
 
 if __name__ == "__main__":

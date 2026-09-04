@@ -55,6 +55,8 @@ class CompleteGeometryBundleTest(unittest.TestCase):
         defect = entries["defect_aware_currying_audit"]["geometry_counts"]
         self.assertEqual(source["total_boundary_endpoints"], 1260)
         self.assertEqual(source["exterior_intervals"], 630)
+        self.assertEqual(source["ruled_ribbon_triangles"], 2520)
+        self.assertTrue(source["distinct_ribbon_clearance"])
         self.assertEqual(target["target_arcs"], 630)
         self.assertEqual(target["endpoints_per_insertion_ball"], {
             "Y_source": 88,

@@ -26,6 +26,7 @@
   "source_exterior": {
     "actual_ar_relative_isotopy_proved": false,
     "canonical_representative_only": true,
+    "distinct_ribbon_clearance": true,
     "endpoint_counts_per_sphere": {
       "Y_minus": 88,
       "Y_plus": 88,
@@ -34,6 +35,7 @@
     },
     "exterior_interval_count": 630,
     "has_common_tetrahedral_exterior": false,
+    "ruled_ribbon_triangle_count": 2520,
     "schema": "t73_selected_source_exterior/v1",
     "total_boundary_endpoint_count": 1260
   },

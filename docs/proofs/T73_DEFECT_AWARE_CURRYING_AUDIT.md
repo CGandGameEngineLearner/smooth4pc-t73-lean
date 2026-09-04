@@ -6,18 +6,21 @@ Date: 2026-09-05
 
 The source coefficient exterior contains 176 intervals incident to a y
 insertion sphere. Of these, 168 already have the two-representable
-opposite-side type. The remaining eight form four pairs:
+opposite-side type. Preserving both owner and exit-to-entry orientation gives
+the following unique four band obligations:
 
-| pair | old \(Y_--Z_-\) interval | old \(Y_+-Z_+\) interval |
+| obligation | first old interval | second old interval |
 |---|---|---|
-| \(m_2\), negative cable | m_2:negative:interval:310 | m_2:negative:interval:0 |
-| \(m_2\), positive cable | m_2:positive:interval:310 | m_2:positive:interval:309 |
-| \(r_{xy}\), negative cable | r_xy:negative:interval:3 | r_xy:negative:interval:1 |
-| \(r_{xy}\), positive cable | r_xy:positive:interval:3 | r_xy:positive:interval:1 |
+| \(m_2\), Y to Z | m_2:negative:interval:0 | m_2:positive:interval:310 |
+| \(m_2\), Z to Y | m_2:negative:interval:310 | m_2:positive:interval:309 |
+| \(r_{xy}\), Y to Z | r_xy:positive:interval:1 | r_xy:positive:interval:3 |
+| \(r_{xy}\), Z to Y | r_xy:negative:interval:1 | r_xy:negative:interval:3 |
 
 For each row, audit/t73_defect_aware_currying.json records the four exact
-endpoint IDs and the crosswise re-pairing which sends them to
-\(Y_--Z_+\) and \(Y_+-Z_-\).
+endpoint IDs and lists both new arcs from an exit to an entry. The earlier
+lexicographic four-row proposal is retained separately as a superseded
+diagnostic: its first two rows contained entry--entry and exit--exit arcs and
+were not oriented tangle matchings.
 
 The eight intervals arise from two negative base y passages,
 \[
@@ -37,8 +40,9 @@ A saddle can change matching but is not invertible. A merge--split pair can
 return component count, but is not a pivotal equivalence and has nonzero
 Euler contribution. Without explicit cells, one cannot determine the
 left/right mate, ordered BPW A.6 term, Blanchet sign, number of saddles,
-Euler characteristic, or quantum degree. The artifact records these fields
-as UNDETERMINED.
+Blanchet sign, number of saddles, Euler characteristic, or quantum degree.
+The band orientation is now checked, but the cells remain `UNREALIZED` and
+the remaining fields are `UNDETERMINED`.
 
 ## No reduction from eight intervals to one defect
 

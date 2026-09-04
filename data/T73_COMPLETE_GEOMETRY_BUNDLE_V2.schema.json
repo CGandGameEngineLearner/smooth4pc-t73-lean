@@ -1,0 +1,116 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "T73 complete geometry bundle manifest v2",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "bundle_version",
+    "bundle_status",
+    "artifacts",
+    "t73_completion_gates",
+    "verified_counts",
+    "policy",
+    "manifest_payload_sha256"
+  ],
+  "properties": {
+    "schema": {"const": "t73_complete_geometry_bundle_manifest/v2"},
+    "bundle_version": {"const": 2},
+    "bundle_status": {"const": "OPEN"},
+    "artifacts": {
+      "type": "array",
+      "minItems": 7,
+      "maxItems": 7,
+      "items": {"$ref": "#/$defs/artifact"}
+    },
+    "t73_completion_gates": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "items": {"$ref": "#/$defs/gate"}
+    },
+    "verified_counts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_endpoints",
+        "source_intervals",
+        "source_ruled_ribbon_triangles",
+        "coend_wrong_side_intervals",
+        "coend_oriented_band_obligations",
+        "tetgen_prefix_ribbons",
+        "pd_fixture_core_components"
+      ],
+      "properties": {
+        "source_endpoints": {"const": 1260},
+        "source_intervals": {"const": 630},
+        "source_ruled_ribbon_triangles": {"const": 2520},
+        "coend_wrong_side_intervals": {"const": 8},
+        "coend_oriented_band_obligations": {"const": 4},
+        "tetgen_prefix_ribbons": {"const": 10},
+        "pd_fixture_core_components": {"const": 7}
+      }
+    },
+    "policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "fixture_or_prefix_is_not_t73_completion",
+        "typing_is_not_chain_equivalence",
+        "all_completion_gates_must_pass_before_bundle_completion"
+      ],
+      "properties": {
+        "fixture_or_prefix_is_not_t73_completion": {"const": true},
+        "typing_is_not_chain_equivalence": {"const": true},
+        "all_completion_gates_must_pass_before_bundle_completion": {"const": true}
+      }
+    },
+    "manifest_payload_sha256": {"$ref": "#/$defs/sha256"}
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9A-F]{64}$"},
+    "nullableSha256": {
+      "oneOf": [{"$ref": "#/$defs/sha256"}, {"type": "null"}]
+    },
+    "artifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "path",
+        "schema",
+        "content_sha256",
+        "payload_sha256",
+        "evidence_status",
+        "t73_completion_status"
+      ],
+      "properties": {
+        "id": {"type": "string", "minLength": 1},
+        "path": {"type": "string", "minLength": 1},
+        "schema": {"type": ["string", "null"]},
+        "content_sha256": {"$ref": "#/$defs/sha256"},
+        "payload_sha256": {"$ref": "#/$defs/nullableSha256"},
+        "evidence_status": {
+          "enum": [
+            "VERIFIED_CORE_BUNDLE",
+            "VERIFIED_TYPING_ONLY",
+            "VERIFIED_PREFIX_ONLY",
+            "VERIFIED_FIXTURE_ONLY"
+          ]
+        },
+        "t73_completion_status": {"const": "OPEN"}
+      }
+    },
+    "gate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "required_path", "status", "reason"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1},
+        "required_path": {"type": "string", "minLength": 1},
+        "status": {"const": "OPEN"},
+        "reason": {"type": "string", "minLength": 1}
+      }
+    }
+  }
+}

@@ -183,6 +183,39 @@ class CoefficientExteriorTest(unittest.TestCase):
         module = load()
         module.validate_frame(tetra_ball_with_framed_arc(), expected_components=1)
 
+    def test_subdivided_connectors_and_unequal_side_paths_are_accepted(self) -> None:
+        module = load()
+        # A fan triangulation of a disk with boundary
+        # 0--1--2--3--4--5--0.  Core, push-off and connector paths need not
+        # have matching subdivision counts.
+        frame = {
+            "complex": {
+                "vertices": [[i] for i in range(7)],
+                "tetrahedra": [
+                    [0, 1, 6, 5],
+                    [1, 2, 6, 5],
+                    [2, 3, 6, 5],
+                    [3, 4, 6, 5],
+                ],
+            },
+            "boundary_components": {},
+            "arcs": [],
+            "ribbons": [],
+        }
+        # Exercise only the ribbon-disk helper with an independently valid
+        # abstract disk; full ambient validation is covered by the other tests.
+        triangles = [(0, 1, 6), (1, 2, 6), (2, 3, 6), (3, 4, 6), (4, 5, 6), (5, 0, 6)]
+        boundary, _vertices = module.validate_surface_disk(
+            triangles, module.load_gate(), "subdivided ribbon"
+        )
+        expected = {
+            (0, 1), (1, 2),  # core
+            (3, 4),          # push
+            (2, 3),          # direct end connector
+            (4, 5), (0, 5),  # subdivided start connector
+        }
+        self.assertEqual(boundary, expected)
+
     def test_ribbon_boundary_mutation_is_rejected(self) -> None:
         module = load()
         mutant = tetra_ball_with_framed_arc()

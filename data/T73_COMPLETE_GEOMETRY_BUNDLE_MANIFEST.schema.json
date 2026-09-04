@@ -74,12 +74,14 @@
       "required": [
         "saved_boundary_endpoint_count",
         "saved_source_exterior_interval_count",
+        "saved_source_ruled_ribbon_triangle_count",
         "target_template_arc_count",
         "wrong_side_active_interval_count"
       ],
       "properties": {
         "saved_boundary_endpoint_count": {"const": 1260},
         "saved_source_exterior_interval_count": {"const": 630},
+        "saved_source_ruled_ribbon_triangle_count": {"const": 2520},
         "target_template_arc_count": {"const": 630},
         "wrong_side_active_interval_count": {"const": 8}
       }

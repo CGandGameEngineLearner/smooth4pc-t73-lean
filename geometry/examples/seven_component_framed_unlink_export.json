@@ -1,0 +1,3270 @@
+{
+  "ambient": {
+    "ambient_orientation": "standard_xyz",
+    "chart": "oriented_affine_Q3",
+    "genericity_certificate": {
+      "claimed": "PASS",
+      "method": "exact_fraction_recomputation"
+    },
+    "height_direction": [
+      "0",
+      "0",
+      "1"
+    ],
+    "projection_basis": [
+      [
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "1",
+        "0"
+      ]
+    ],
+    "projection_direction": [
+      "0",
+      "0",
+      "1"
+    ]
+  },
+  "blackboard_writhe": {
+    "dotted_y": -1,
+    "dotted_z": -1,
+    "m_2": -1,
+    "m_3": -1,
+    "r_xy": -1,
+    "r_yz": -1,
+    "r_zx": -1
+  },
+  "component_halfedge_cycles": {
+    "dotted_y": [
+      {
+        "crossing": "X5",
+        "incoming_arc": 11,
+        "outgoing_arc": 10,
+        "parameter": "1/2",
+        "role": "over",
+        "segment": 0,
+        "sign": -1,
+        "successor_crossing": "X5",
+        "successor_role": "under"
+      },
+      {
+        "crossing": "X5",
+        "incoming_arc": 10,
+        "outgoing_arc": 11,
+        "parameter": "1/2",
+        "role": "under",
+        "segment": 2,
+        "sign": -1,
+        "successor_crossing": "X5",
+        "successor_role": "over"
+      }
+    ],
+    "dotted_z": [
+      {
+        "crossing": "X6",
+        "incoming_arc": 13,
+        "outgoing_arc": 12,
+        "parameter": "1/2",
+        "role": "over",
+        "segment": 0,
+        "sign": -1,
+        "successor_crossing": "X6",
+        "successor_role": "under"
+      },
+      {
+        "crossing": "X6",
+        "incoming_arc": 12,
+        "outgoing_arc": 13,
+        "parameter": "1/2",
+        "role": "under",
+        "segment": 2,
+        "sign": -1,
+        "successor_crossing": "X6",
+        "successor_role": "over"
+      }
+    ],
+    "m_2": [
+      {
+        "crossing": "X0",
+        "incoming_arc": 1,
+        "outgoing_arc": 0,
+        "parameter": "1/2",
+        "role": "over",
+        "segment": 0,
+        "sign": -1,
+        "successor_crossing": "X0",
+        "successor_role": "under"
+      },
+      {
+        "crossing": "X0",
+        "incoming_arc": 0,
+        "outgoing_arc": 1,
+        "parameter": "1/2",
+        "role": "under",
+        "segment": 2,
+        "sign": -1,
+        "successor_crossing": "X0",
+        "successor_role": "over"
+      }
+    ],
+    "m_3": [
+      {
+        "crossing": "X1",
+        "incoming_arc": 3,
+        "outgoing_arc": 2,
+        "parameter": "1/2",
+        "role": "over",
+        "segment": 0,
+        "sign": -1,
+        "successor_crossing": "X1",
+        "successor_role": "under"
+      },
+      {
+        "crossing": "X1",
+        "incoming_arc": 2,
+        "outgoing_arc": 3,
+        "parameter": "1/2",
+        "role": "under",
+        "segment": 2,
+        "sign": -1,
+        "successor_crossing": "X1",
+        "successor_role": "over"
+      }
+    ],
+    "r_xy": [
+      {
+        "crossing": "X2",
+        "incoming_arc": 5,
+        "outgoing_arc": 4,
+        "parameter": "1/2",
+        "role": "over",
+        "segment": 0,
+        "sign": -1,
+        "successor_crossing": "X2",
+        "successor_role": "under"
+      },
+      {
+        "crossing": "X2",
+        "incoming_arc": 4,
+        "outgoing_arc": 5,
+        "parameter": "1/2",
+        "role": "under",
+        "segment": 2,
+        "sign": -1,
+        "successor_crossing": "X2",
+        "successor_role": "over"
+      }
+    ],
+    "r_yz": [
+      {
+        "crossing": "X3",
+        "incoming_arc": 7,
+        "outgoing_arc": 6,
+        "parameter": "1/2",
+        "role": "over",
+        "segment": 0,
+        "sign": -1,
+        "successor_crossing": "X3",
+        "successor_role": "under"
+      },
+      {
+        "crossing": "X3",
+        "incoming_arc": 6,
+        "outgoing_arc": 7,
+        "parameter": "1/2",
+        "role": "under",
+        "segment": 2,
+        "sign": -1,
+        "successor_crossing": "X3",
+        "successor_role": "over"
+      }
+    ],
+    "r_zx": [
+      {
+        "crossing": "X4",
+        "incoming_arc": 9,
+        "outgoing_arc": 8,
+        "parameter": "1/2",
+        "role": "over",
+        "segment": 0,
+        "sign": -1,
+        "successor_crossing": "X4",
+        "successor_role": "under"
+      },
+      {
+        "crossing": "X4",
+        "incoming_arc": 8,
+        "outgoing_arc": 9,
+        "parameter": "1/2",
+        "role": "under",
+        "segment": 2,
+        "sign": -1,
+        "successor_crossing": "X4",
+        "successor_role": "over"
+      }
+    ]
+  },
+  "component_order": [
+    "m_2",
+    "m_3",
+    "r_xy",
+    "r_yz",
+    "r_zx",
+    "dotted_y",
+    "dotted_z"
+  ],
+  "crossing_count": 7,
+  "crossing_sign_convention": "sign(det(P(over_tangent),P(under_tangent))) in standard_xyz orientation",
+  "crossingless_components": [],
+  "crossings": [
+    {
+      "id": "X0",
+      "over_height": "1",
+      "over_owner": "m_2",
+      "over_parameter": "1/2",
+      "over_segment": 0,
+      "projection_point": [
+        "0",
+        "0"
+      ],
+      "sign": -1,
+      "under_height": "-1",
+      "under_owner": "m_2",
+      "under_parameter": "1/2",
+      "under_segment": 2
+    },
+    {
+      "id": "X1",
+      "over_height": "1",
+      "over_owner": "m_3",
+      "over_parameter": "1/2",
+      "over_segment": 0,
+      "projection_point": [
+        "10",
+        "0"
+      ],
+      "sign": -1,
+      "under_height": "-1",
+      "under_owner": "m_3",
+      "under_parameter": "1/2",
+      "under_segment": 2
+    },
+    {
+      "id": "X2",
+      "over_height": "1",
+      "over_owner": "r_xy",
+      "over_parameter": "1/2",
+      "over_segment": 0,
+      "projection_point": [
+        "20",
+        "0"
+      ],
+      "sign": -1,
+      "under_height": "-1",
+      "under_owner": "r_xy",
+      "under_parameter": "1/2",
+      "under_segment": 2
+    },
+    {
+      "id": "X3",
+      "over_height": "1",
+      "over_owner": "r_yz",
+      "over_parameter": "1/2",
+      "over_segment": 0,
+      "projection_point": [
+        "30",
+        "0"
+      ],
+      "sign": -1,
+      "under_height": "-1",
+      "under_owner": "r_yz",
+      "under_parameter": "1/2",
+      "under_segment": 2
+    },
+    {
+      "id": "X4",
+      "over_height": "1",
+      "over_owner": "r_zx",
+      "over_parameter": "1/2",
+      "over_segment": 0,
+      "projection_point": [
+        "40",
+        "0"
+      ],
+      "sign": -1,
+      "under_height": "-1",
+      "under_owner": "r_zx",
+      "under_parameter": "1/2",
+      "under_segment": 2
+    },
+    {
+      "id": "X5",
+      "over_height": "1",
+      "over_owner": "dotted_y",
+      "over_parameter": "1/2",
+      "over_segment": 0,
+      "projection_point": [
+        "50",
+        "0"
+      ],
+      "sign": -1,
+      "under_height": "-1",
+      "under_owner": "dotted_y",
+      "under_parameter": "1/2",
+      "under_segment": 2
+    },
+    {
+      "id": "X6",
+      "over_height": "1",
+      "over_owner": "dotted_z",
+      "over_parameter": "1/2",
+      "over_segment": 0,
+      "projection_point": [
+        "60",
+        "0"
+      ],
+      "sign": -1,
+      "under_height": "-1",
+      "under_owner": "dotted_z",
+      "under_parameter": "1/2",
+      "under_segment": 2
+    }
+  ],
+  "framed_link": {
+    "component_halfedge_cycles": {
+      "dotted_y": [
+        {
+          "crossing": "X40",
+          "incoming_arc": 41,
+          "outgoing_arc": 40,
+          "parameter": "1/2",
+          "role": "over",
+          "segment": 0,
+          "sign": -1,
+          "successor_crossing": "X40",
+          "successor_role": "under"
+        },
+        {
+          "crossing": "X40",
+          "incoming_arc": 40,
+          "outgoing_arc": 41,
+          "parameter": "1/2",
+          "role": "under",
+          "segment": 2,
+          "sign": -1,
+          "successor_crossing": "X40",
+          "successor_role": "over"
+        }
+      ],
+      "dotted_z": [
+        {
+          "crossing": "X41",
+          "incoming_arc": 43,
+          "outgoing_arc": 42,
+          "parameter": "1/2",
+          "role": "over",
+          "segment": 0,
+          "sign": -1,
+          "successor_crossing": "X41",
+          "successor_role": "under"
+        },
+        {
+          "crossing": "X41",
+          "incoming_arc": 42,
+          "outgoing_arc": 43,
+          "parameter": "1/2",
+          "role": "under",
+          "segment": 2,
+          "sign": -1,
+          "successor_crossing": "X41",
+          "successor_role": "over"
+        }
+      ],
+      "m_2": [
+        {
+          "crossing": "X0",
+          "incoming_arc": 7,
+          "outgoing_arc": 0,
+          "parameter": "1/22",
+          "role": "over",
+          "segment": 0,
+          "sign": 1,
+          "successor_crossing": "X3",
+          "successor_role": "over"
+        },
+        {
+          "crossing": "X3",
+          "incoming_arc": 0,
+          "outgoing_arc": 1,
+          "parameter": "1/2",
+          "role": "over",
+          "segment": 0,
+          "sign": -1,
+          "successor_crossing": "X5",
+          "successor_role": "over"
+        },
+        {
+          "crossing": "X5",
+          "incoming_arc": 1,
+          "outgoing_arc": 2,
+          "parameter": "333/616",
+          "role": "over",
+          "segment": 0,
+          "sign": -1,
+          "successor_crossing": "X7",
+          "successor_role": "under"
+        },
+        {
+          "crossing": "X7",
+          "incoming_arc": 2,
+          "outgoing_arc": 3,
+          "parameter": "3/308",
+          "role": "under",
+          "segment": 1,
+          "sign": 1,
+          "successor_crossing": "X1",
+          "successor_role": "over"
+        },
+        {
+          "crossing": "X1",
+          "incoming_arc": 3,
+          "outgoing_arc": 4,
+          "parameter": "283/308",
+          "role": "over",
+          "segment": 1,
+          "sign": 1,
+          "successor_crossing": "X2",
+          "successor_role": "under"
+        },
+        {
+          "crossing": "X2",
+          "incoming_arc": 4,
+          "outgoing_arc": 5,
+          "parameter": "305/616",
+          "role": "under",
+          "segment": 2,
+          "sign": -1,
+          "successor_crossing": "X3",
+          "successor_role": "under"
+        },
+        {
+          "crossing": "X3",
+          "incoming_arc": 5,
+          "outgoing_arc": 6,
+          "parameter": "1/2",
+          "role": "under",
+          "segment": 2,
+          "sign": -1,
+          "successor_crossing": "X6",
+          "successor_role": "under"
+        },
+        {
+          "crossing": "X6",
+          "incoming_arc": 6,
+          "outgoing_arc": 7,
+          "parameter": "21/22",
+          "role": "under",
+          "segment": 2,
+          "sign": 1,
+          "successor_crossing": "X0",
+          "successor_role": "over"
+        }
+      ],
+      "m_2__push_off": [
+        {
+          "crossing": "X2",
+          "incoming_arc": 51,
+          "outgoing_arc": 44,
+          "parameter": "283/616",
+          "role": "over",
+          "segment": 0,
+          "sign": -1,
+          "successor_crossing": "X4",
+          "successor_role": "over"
+        },
+        {
+          "crossing": "X4",
+          "incoming_arc": 44,
+          "outgoing_arc": 45,
+          "parameter": "1/2",
+          "role": "over",
+          "segment": 0,
+          "sign": -1,
+          "successor_crossing": "X7",
+          "successor_role": "over"
+        },
+        {
+          "crossing": "X7",
+          "incoming_arc": 45,
+          "outgoing_arc": 46,
+          "parameter": "21/22",
+          "role": "over",
+          "segment": 0,
+          "sign": 1,
+          "successor_crossing": "X1",
+          "successor_role": "under"
+        },
+        {
+          "crossing": "X1",
+          "incoming_arc": 46,
+          "outgoing_arc": 47,
+          "parameter": "1/22",
+          "role": "under",
+          "segment": 2,
+          "sign": 1,
+          "successor_crossing": "X4",
+          "successor_role": "under"
+        },
+        {
+          "crossing": "X4",
+          "incoming_arc": 47,
+          "outgoing_arc": 48,
+          "parameter": "1/2",
+          "role": "under",
+          "segment": 2,
+          "sign": -1,
+          "successor_crossing": "X5",
+          "successor_role": "under"
+        },
+        {
+          "crossing": "X5",
+          "incoming_arc": 48,
+          "outgoing_arc": 49,
+          "parameter": "311/616",
+          "role": "under",
+          "segment": 2,
+          "sign": -1,
+          "successor_crossing": "X6",
+          "successor_role": "over"
+        },
+        {
+          "crossing": "X6",
+          "incoming_arc": 49,
+          "outgoing_arc": 50,
+          "parameter": "25/308",
+          "role": "over",
+          "segment": 3,
+          "sign": 1,
+          "successor_crossing": "X0",
+          "successor_role": "under"
+        },
+        {
+          "crossing": "X0",
+          "incoming_arc": 50,
+          "outgoing_arc": 51,
+          "parameter": "305/308",
+          "role": "under",
+          "segment": 3,
+          "sign": 1,
+          "successor_crossing": "X2",
+          "successor_role": "over"
+        }
+      ],
+      "m_3": [
+        {
+          "crossing": "X8",
+          "incoming_arc": 15,
+          "outgoing_arc": 8,
+          "parameter": "1/22",
+          "role": "over",
+          "segment": 0,
+          "sign": 1,
+          "successor_crossing": "X11",
+          "successor_role": "over"
+        },
+        {
+          "crossing": "X11",
+          "incoming_arc": 8,
+          "outgoing_arc": 9,
+          "parameter": "1/2",
+          "role": "over",
+          "segment": 0,
+          "sign": -1,
+          "successor_crossing": "X13",
+          "successor_role": "over"
+        },
+        {
+          "crossing": "X13",
+          "incoming_arc": 9,
+          "outgoing_arc": 10,
+          "parameter": "333/616",
+          "role": "over",
+          "segment": 0,
+          "sign": -1,
+          "successor_crossing": "X15",
+          "successor_role": "under"
+        },
+        {
+          "crossing": "X15",
+          "incoming_arc": 10,
+          "outgoing_arc": 11,
+          "parameter": "3/308",
+          "role": "under",
+          "segment": 1,
+          "sign": 1,
+          "successor_crossing": "X9",
+          "successor_role": "over"
+        },
+        {
+          "crossing": "X9",
+          "incoming_arc": 11,
+          "outgoing_arc": 12,
+          "parameter": "283/308",
+          "role": "over",
+          "segment": 1,
+          "sign": 1,
+          "successor_crossing": "X10",
+          "successor_role": "under"
+        },
+        {
+          "crossing": "X10",
+          "incoming_arc": 12,
+          "outgoing_arc": 13,
+          "parameter": "305/616",
+          "role": "under",
+          "segment": 2,
+          "sign": -1,
+          "successor_crossing": "X11",
+          "successor_role": "under"
+        },
+        {
+          "crossing": "X11",
+          "incoming_arc": 13,
+          "outgoing_arc": 14,
+          "parameter": "1/2",
+          "role": "under",
+          "segment": 2,
+          "sign": -1,
+          "successor_crossing": "X14",
+          "successor_role": "under"
+        },
+        {
+          "crossing": "X14",
+          "incoming_arc": 14,
+          "outgoing_arc": 15,
+          "parameter": "21/22",
+          "role": "under",
+          "segment": 2,
+          "sign": 1,
+          "successor_crossing": "X8",
+          "successor_role": "over"
+        }
+      ],
+      "m_3__push_off": [
+        {
+          "crossing": "X10",
+          "incoming_arc": 59,
+          "outgoing_arc": 52,
+          "parameter": "283/616",
+          "role": "over",
+          "segment": 0,
+          "sign": -1,
+          "successor_crossing": "X12",
+          "successor_role": "over"
+        },
+        {
+          "crossing": "X12",
+          "incoming_arc": 52,
+          "outgoing_arc": 53,
+          "parameter": "1/2",
+          "role": "over",
+          "segment": 0,
+          "sign": -1,
+          "successor_crossing": "X15",
+          "successor_role": "over"
+        },
+        {
+          "crossing": "X15",
+          "incoming_arc": 53,
+          "outgoing_arc": 54,
+          "parameter": "21/22",
+          "role": "over",
+          "segment": 0,
+          "sign": 1,
+          "successor_crossing": "X9",
+          "successor_role": "under"
+        },
+        {
+          "crossing": "X9",
+          "incoming_arc": 54,
+          "outgoing_arc": 55,
+          "parameter": "1/22",
+          "role": "under",
+          "segment": 2,
+          "sign": 1,
+          "successor_crossing": "X12",
+          "successor_role": "under"
+        },
+        {
+          "crossing": "X12",
+          "incoming_arc": 55,
+          "outgoing_arc": 56,
+          "parameter": "1/2",
+          "role": "under",
+          "segment": 2,
+          "sign": -1,
+          "successor_crossing": "X13",
+          "successor_role": "under"
+        },
+        {
+          "crossing": "X13",
+          "incoming_arc": 56,
+          "outgoing_arc": 57,
+          "parameter": "311/616",
+          "role": "under",
+          "segment": 2,
+          "sign": -1,
+          "successor_crossing": "X14",
+          "successor_role": "over"
+        },
+        {
+          "crossing": "X14",
+          "incoming_arc": 57,
+          "outgoing_arc": 58,
+          "parameter": "25/308",
+          "role": "over",
+          "segment": 3,
+          "sign": 1,
+          "successor_crossing": "X8",
+          "successor_role": "under"
+        },
+        {
+          "crossing": "X8",
+          "incoming_arc": 58,
+          "outgoing_arc": 59,
+          "parameter": "305/308",
+          "role": "under",
+          "segment": 3,
+          "sign": 1,
+          "successor_crossing": "X10",
+          "successor_role": "over"
+        }
+      ],
+      "r_xy": [
+        {
+          "crossing": "X16",
+          "incoming_arc": 23,
+          "outgoing_arc": 16,
+          "parameter": "1/22",
+          "role": "over",
+          "segment": 0,
+          "sign": 1,
+          "successor_crossing": "X19",
+          "successor_role": "over"
+        },
+        {
+          "crossing": "X19",
+          "incoming_arc": 16,
+          "outgoing_arc": 17,
+          "parameter": "1/2",
+          "role": "over",
+          "segment": 0,
+          "sign": -1,
+          "successor_crossing": "X21",
+          "successor_role": "over"
+        },
+        {
+          "crossing": "X21",
+          "incoming_arc": 17,
+          "outgoing_arc": 18,
+          "parameter": "333/616",
+          "role": "over",
+          "segment": 0,
+          "sign": -1,
+          "successor_crossing": "X23",
+          "successor_role": "under"
+        },
+        {
+          "crossing": "X23",
+          "incoming_arc": 18,
+          "outgoing_arc": 19,
+          "parameter": "3/308",
+          "role": "under",
+          "segment": 1,
+          "sign": 1,
+          "successor_crossing": "X17",
+          "successor_role": "over"
+        },
+        {
+          "crossing": "X17",
+          "incoming_arc": 19,
+          "outgoing_arc": 20,
+          "parameter": "283/308",
+          "role": "over",
+          "segment": 1,
+          "sign": 1,
+          "successor_crossing": "X18",
+          "successor_role": "under"
+        },
+        {
+          "crossing": "X18",
+          "incoming_arc": 20,
+          "outgoing_arc": 21,
+          "parameter": "305/616",
+          "role": "under",
+          "segment": 2,
+          "sign": -1,
+          "successor_crossing": "X19",
+          "successor_role": "under"
+        },
+        {
+          "crossing": "X19",
+          "incoming_arc": 21,
+          "outgoing_arc": 22,
+          "parameter": "1/2",
+          "role": "under",
+          "segment": 2,
+          "sign": -1,
+          "successor_crossing": "X22",
+          "successor_role": "under"
+        },
+        {
+          "crossing": "X22",
+          "incoming_arc": 22,
+          "outgoing_arc": 23,
+          "parameter": "21/22",
+          "role": "under",
+          "segment": 2,
+          "sign": 1,
+          "successor_crossing": "X16",
+          "successor_role": "over"
+        }
+      ],
+      "r_xy__push_off": [
+        {
+          "crossing": "X18",
+          "incoming_arc": 67,
+          "outgoing_arc": 60,
+          "parameter": "283/616",
+          "role": "over",
+          "segment": 0,
+          "sign": -1,
+          "successor_crossing": "X20",
+          "successor_role": "over"
+        },
+        {
+          "crossing": "X20",
+          "incoming_arc": 60,
+          "outgoing_arc": 61,
+          "parameter": "1/2",
+          "role": "over",
+          "segment": 0,
+          "sign": -1,
+          "successor_crossing": "X23",
+          "successor_role": "over"
+        },
+        {
+          "crossing": "X23",
+          "incoming_arc": 61,
+          "outgoing_arc": 62,
+          "parameter": "21/22",
+          "role": "over",
+          "segment": 0,
+          "sign": 1,
+          "successor_crossing": "X17",
+          "successor_role": "under"
+        },
+        {
+          "crossing": "X17",
+          "incoming_arc": 62,
+          "outgoing_arc": 63,
+          "parameter": "1/22",
+          "role": "under",
+          "segment": 2,
+          "sign": 1,
+          "successor_crossing": "X20",
+          "successor_role": "under"
+        },
+        {
+          "crossing": "X20",
+          "incoming_arc": 63,
+          "outgoing_arc": 64,
+          "parameter": "1/2",
+          "role": "under",
+          "segment": 2,
+          "sign": -1,
+          "successor_crossing": "X21",
+          "successor_role": "under"
+        },
+        {
+          "crossing": "X21",
+          "incoming_arc": 64,
+          "outgoing_arc": 65,
+          "parameter": "311/616",
+          "role": "under",
+          "segment": 2,
+          "sign": -1,
+          "successor_crossing": "X22",
+          "successor_role": "over"
+        },
+        {
+          "crossing": "X22",
+          "incoming_arc": 65,
+          "outgoing_arc": 66,
+          "parameter": "25/308",
+          "role": "over",
+          "segment": 3,
+          "sign": 1,
+          "successor_crossing": "X16",
+          "successor_role": "under"
+        },
+        {
+          "crossing": "X16",
+          "incoming_arc": 66,
+          "outgoing_arc": 67,
+          "parameter": "305/308",
+          "role": "under",
+          "segment": 3,
+          "sign": 1,
+          "successor_crossing": "X18",
+          "successor_role": "over"
+        }
+      ],
+      "r_yz": [
+        {
+          "crossing": "X24",
+          "incoming_arc": 31,
+          "outgoing_arc": 24,
+          "parameter": "1/22",
+          "role": "over",
+          "segment": 0,
+          "sign": 1,
+          "successor_crossing": "X27",
+          "successor_role": "over"
+        },
+        {
+          "crossing": "X27",
+          "incoming_arc": 24,
+          "outgoing_arc": 25,
+          "parameter": "1/2",
+          "role": "over",
+          "segment": 0,
+          "sign": -1,
+          "successor_crossing": "X29",
+          "successor_role": "over"
+        },
+        {
+          "crossing": "X29",
+          "incoming_arc": 25,
+          "outgoing_arc": 26,
+          "parameter": "333/616",
+          "role": "over",
+          "segment": 0,
+          "sign": -1,
+          "successor_crossing": "X31",
+          "successor_role": "under"
+        },
+        {
+          "crossing": "X31",
+          "incoming_arc": 26,
+          "outgoing_arc": 27,
+          "parameter": "3/308",
+          "role": "under",
+          "segment": 1,
+          "sign": 1,
+          "successor_crossing": "X25",
+          "successor_role": "over"
+        },
+        {
+          "crossing": "X25",
+          "incoming_arc": 27,
+          "outgoing_arc": 28,
+          "parameter": "283/308",
+          "role": "over",
+          "segment": 1,
+          "sign": 1,
+          "successor_crossing": "X26",
+          "successor_role": "under"
+        },
+        {
+          "crossing": "X26",
+          "incoming_arc": 28,
+          "outgoing_arc": 29,
+          "parameter": "305/616",
+          "role": "under",
+          "segment": 2,
+          "sign": -1,
+          "successor_crossing": "X27",
+          "successor_role": "under"
+        },
+        {
+          "crossing": "X27",
+          "incoming_arc": 29,
+          "outgoing_arc": 30,
+          "parameter": "1/2",
+          "role": "under",
+          "segment": 2,
+          "sign": -1,
+          "successor_crossing": "X30",
+          "successor_role": "under"
+        },
+        {
+          "crossing": "X30",
+          "incoming_arc": 30,
+          "outgoing_arc": 31,
+          "parameter": "21/22",
+          "role": "under",
+          "segment": 2,
+          "sign": 1,
+          "successor_crossing": "X24",
+          "successor_role": "over"
+        }
+      ],
+      "r_yz__push_off": [
+        {
+          "crossing": "X26",
+          "incoming_arc": 75,
+          "outgoing_arc": 68,
+          "parameter": "283/616",
+          "role": "over",
+          "segment": 0,
+          "sign": -1,
+          "successor_crossing": "X28",
+          "successor_role": "over"
+        },
+        {
+          "crossing": "X28",
+          "incoming_arc": 68,
+          "outgoing_arc": 69,
+          "parameter": "1/2",
+          "role": "over",
+          "segment": 0,
+          "sign": -1,
+          "successor_crossing": "X31",
+          "successor_role": "over"
+        },
+        {
+          "crossing": "X31",
+          "incoming_arc": 69,
+          "outgoing_arc": 70,
+          "parameter": "21/22",
+          "role": "over",
+          "segment": 0,
+          "sign": 1,
+          "successor_crossing": "X25",
+          "successor_role": "under"
+        },
+        {
+          "crossing": "X25",
+          "incoming_arc": 70,
+          "outgoing_arc": 71,
+          "parameter": "1/22",
+          "role": "under",
+          "segment": 2,
+          "sign": 1,
+          "successor_crossing": "X28",
+          "successor_role": "under"
+        },
+        {
+          "crossing": "X28",
+          "incoming_arc": 71,
+          "outgoing_arc": 72,
+          "parameter": "1/2",
+          "role": "under",
+          "segment": 2,
+          "sign": -1,
+          "successor_crossing": "X29",
+          "successor_role": "under"
+        },
+        {
+          "crossing": "X29",
+          "incoming_arc": 72,
+          "outgoing_arc": 73,
+          "parameter": "311/616",
+          "role": "under",
+          "segment": 2,
+          "sign": -1,
+          "successor_crossing": "X30",
+          "successor_role": "over"
+        },
+        {
+          "crossing": "X30",
+          "incoming_arc": 73,
+          "outgoing_arc": 74,
+          "parameter": "25/308",
+          "role": "over",
+          "segment": 3,
+          "sign": 1,
+          "successor_crossing": "X24",
+          "successor_role": "under"
+        },
+        {
+          "crossing": "X24",
+          "incoming_arc": 74,
+          "outgoing_arc": 75,
+          "parameter": "305/308",
+          "role": "under",
+          "segment": 3,
+          "sign": 1,
+          "successor_crossing": "X26",
+          "successor_role": "over"
+        }
+      ],
+      "r_zx": [
+        {
+          "crossing": "X32",
+          "incoming_arc": 39,
+          "outgoing_arc": 32,
+          "parameter": "1/22",
+          "role": "over",
+          "segment": 0,
+          "sign": 1,
+          "successor_crossing": "X35",
+          "successor_role": "over"
+        },
+        {
+          "crossing": "X35",
+          "incoming_arc": 32,
+          "outgoing_arc": 33,
+          "parameter": "1/2",
+          "role": "over",
+          "segment": 0,
+          "sign": -1,
+          "successor_crossing": "X37",
+          "successor_role": "over"
+        },
+        {
+          "crossing": "X37",
+          "incoming_arc": 33,
+          "outgoing_arc": 34,
+          "parameter": "333/616",
+          "role": "over",
+          "segment": 0,
+          "sign": -1,
+          "successor_crossing": "X39",
+          "successor_role": "under"
+        },
+        {
+          "crossing": "X39",
+          "incoming_arc": 34,
+          "outgoing_arc": 35,
+          "parameter": "3/308",
+          "role": "under",
+          "segment": 1,
+          "sign": 1,
+          "successor_crossing": "X33",
+          "successor_role": "over"
+        },
+        {
+          "crossing": "X33",
+          "incoming_arc": 35,
+          "outgoing_arc": 36,
+          "parameter": "283/308",
+          "role": "over",
+          "segment": 1,
+          "sign": 1,
+          "successor_crossing": "X34",
+          "successor_role": "under"
+        },
+        {
+          "crossing": "X34",
+          "incoming_arc": 36,
+          "outgoing_arc": 37,
+          "parameter": "305/616",
+          "role": "under",
+          "segment": 2,
+          "sign": -1,
+          "successor_crossing": "X35",
+          "successor_role": "under"
+        },
+        {
+          "crossing": "X35",
+          "incoming_arc": 37,
+          "outgoing_arc": 38,
+          "parameter": "1/2",
+          "role": "under",
+          "segment": 2,
+          "sign": -1,
+          "successor_crossing": "X38",
+          "successor_role": "under"
+        },
+        {
+          "crossing": "X38",
+          "incoming_arc": 38,
+          "outgoing_arc": 39,
+          "parameter": "21/22",
+          "role": "under",
+          "segment": 2,
+          "sign": 1,
+          "successor_crossing": "X32",
+          "successor_role": "over"
+        }
+      ],
+      "r_zx__push_off": [
+        {
+          "crossing": "X34",
+          "incoming_arc": 83,
+          "outgoing_arc": 76,
+          "parameter": "283/616",
+          "role": "over",
+          "segment": 0,
+          "sign": -1,
+          "successor_crossing": "X36",
+          "successor_role": "over"
+        },
+        {
+          "crossing": "X36",
+          "incoming_arc": 76,
+          "outgoing_arc": 77,
+          "parameter": "1/2",
+          "role": "over",
+          "segment": 0,
+          "sign": -1,
+          "successor_crossing": "X39",
+          "successor_role": "over"
+        },
+        {
+          "crossing": "X39",
+          "incoming_arc": 77,
+          "outgoing_arc": 78,
+          "parameter": "21/22",
+          "role": "over",
+          "segment": 0,
+          "sign": 1,
+          "successor_crossing": "X33",
+          "successor_role": "under"
+        },
+        {
+          "crossing": "X33",
+          "incoming_arc": 78,
+          "outgoing_arc": 79,
+          "parameter": "1/22",
+          "role": "under",
+          "segment": 2,
+          "sign": 1,
+          "successor_crossing": "X36",
+          "successor_role": "under"
+        },
+        {
+          "crossing": "X36",
+          "incoming_arc": 79,
+          "outgoing_arc": 80,
+          "parameter": "1/2",
+          "role": "under",
+          "segment": 2,
+          "sign": -1,
+          "successor_crossing": "X37",
+          "successor_role": "under"
+        },
+        {
+          "crossing": "X37",
+          "incoming_arc": 80,
+          "outgoing_arc": 81,
+          "parameter": "311/616",
+          "role": "under",
+          "segment": 2,
+          "sign": -1,
+          "successor_crossing": "X38",
+          "successor_role": "over"
+        },
+        {
+          "crossing": "X38",
+          "incoming_arc": 81,
+          "outgoing_arc": 82,
+          "parameter": "25/308",
+          "role": "over",
+          "segment": 3,
+          "sign": 1,
+          "successor_crossing": "X32",
+          "successor_role": "under"
+        },
+        {
+          "crossing": "X32",
+          "incoming_arc": 82,
+          "outgoing_arc": 83,
+          "parameter": "305/308",
+          "role": "under",
+          "segment": 3,
+          "sign": 1,
+          "successor_crossing": "X34",
+          "successor_role": "over"
+        }
+      ]
+    },
+    "component_order": [
+      "m_2",
+      "m_3",
+      "r_xy",
+      "r_yz",
+      "r_zx",
+      "dotted_y",
+      "dotted_z",
+      "m_2__push_off",
+      "m_3__push_off",
+      "r_xy__push_off",
+      "r_yz__push_off",
+      "r_zx__push_off"
+    ],
+    "crossing_count": 42,
+    "crossingless_components": [],
+    "crossings": [
+      {
+        "id": "X0",
+        "over_height": "1/11",
+        "over_owner": "m_2",
+        "over_parameter": "1/22",
+        "over_segment": 0,
+        "projection_point": [
+          "-20/11",
+          "-10/11"
+        ],
+        "sign": 1,
+        "under_height": "115/2002",
+        "under_owner": "m_2__push_off",
+        "under_parameter": "305/308",
+        "under_segment": 3
+      },
+      {
+        "id": "X1",
+        "over_height": "25/154",
+        "over_owner": "m_2",
+        "over_parameter": "283/308",
+        "over_segment": 1,
+        "projection_point": [
+          "-129/77",
+          "1"
+        ],
+        "sign": 1,
+        "under_height": "-2/143",
+        "under_owner": "m_2__push_off",
+        "under_parameter": "1/22",
+        "under_segment": 2
+      },
+      {
+        "id": "X2",
+        "over_height": "3987/4004",
+        "over_owner": "m_2__push_off",
+        "over_parameter": "283/616",
+        "over_segment": 0,
+        "projection_point": [
+          "-3/154",
+          "3/308"
+        ],
+        "sign": -1,
+        "under_height": "-305/308",
+        "under_owner": "m_2",
+        "under_parameter": "305/616",
+        "under_segment": 2
+      },
+      {
+        "id": "X3",
+        "over_height": "1",
+        "over_owner": "m_2",
+        "over_parameter": "1/2",
+        "over_segment": 0,
+        "projection_point": [
+          "0",
+          "0"
+        ],
+        "sign": -1,
+        "under_height": "-1",
+        "under_owner": "m_2",
+        "under_parameter": "1/2",
+        "under_segment": 2
+      },
+      {
+        "id": "X4",
+        "over_height": "14/13",
+        "over_owner": "m_2__push_off",
+        "over_parameter": "1/2",
+        "over_segment": 0,
+        "projection_point": [
+          "1/7",
+          "1/11"
+        ],
+        "sign": -1,
+        "under_height": "-12/13",
+        "under_owner": "m_2__push_off",
+        "under_parameter": "1/2",
+        "under_segment": 2
+      },
+      {
+        "id": "X5",
+        "over_height": "333/308",
+        "over_owner": "m_2",
+        "over_parameter": "333/616",
+        "over_segment": 0,
+        "projection_point": [
+          "25/154",
+          "25/308"
+        ],
+        "sign": -1,
+        "under_height": "-3735/4004",
+        "under_owner": "m_2__push_off",
+        "under_parameter": "311/616",
+        "under_segment": 2
+      },
+      {
+        "id": "X6",
+        "over_height": "-3525/2002",
+        "over_owner": "m_2__push_off",
+        "over_parameter": "25/308",
+        "over_segment": 3,
+        "projection_point": [
+          "20/11",
+          "-10/11"
+        ],
+        "sign": 1,
+        "under_height": "-21/11",
+        "under_owner": "m_2",
+        "under_parameter": "21/22",
+        "under_segment": 2
+      },
+      {
+        "id": "X7",
+        "over_height": "284/143",
+        "over_owner": "m_2__push_off",
+        "over_parameter": "21/22",
+        "over_segment": 0,
+        "projection_point": [
+          "151/77",
+          "1"
+        ],
+        "sign": 1,
+        "under_height": "305/154",
+        "under_owner": "m_2",
+        "under_parameter": "3/308",
+        "under_segment": 1
+      },
+      {
+        "id": "X8",
+        "over_height": "1/11",
+        "over_owner": "m_3",
+        "over_parameter": "1/22",
+        "over_segment": 0,
+        "projection_point": [
+          "90/11",
+          "-10/11"
+        ],
+        "sign": 1,
+        "under_height": "115/2002",
+        "under_owner": "m_3__push_off",
+        "under_parameter": "305/308",
+        "under_segment": 3
+      },
+      {
+        "id": "X9",
+        "over_height": "25/154",
+        "over_owner": "m_3",
+        "over_parameter": "283/308",
+        "over_segment": 1,
+        "projection_point": [
+          "641/77",
+          "1"
+        ],
+        "sign": 1,
+        "under_height": "-2/143",
+        "under_owner": "m_3__push_off",
+        "under_parameter": "1/22",
+        "under_segment": 2
+      },
+      {
+        "id": "X10",
+        "over_height": "3987/4004",
+        "over_owner": "m_3__push_off",
+        "over_parameter": "283/616",
+        "over_segment": 0,
+        "projection_point": [
+          "1537/154",
+          "3/308"
+        ],
+        "sign": -1,
+        "under_height": "-305/308",
+        "under_owner": "m_3",
+        "under_parameter": "305/616",
+        "under_segment": 2
+      },
+      {
+        "id": "X11",
+        "over_height": "1",
+        "over_owner": "m_3",
+        "over_parameter": "1/2",
+        "over_segment": 0,
+        "projection_point": [
+          "10",
+          "0"
+        ],
+        "sign": -1,
+        "under_height": "-1",
+        "under_owner": "m_3",
+        "under_parameter": "1/2",
+        "under_segment": 2
+      },
+      {
+        "id": "X12",
+        "over_height": "14/13",
+        "over_owner": "m_3__push_off",
+        "over_parameter": "1/2",
+        "over_segment": 0,
+        "projection_point": [
+          "71/7",
+          "1/11"
+        ],
+        "sign": -1,
+        "under_height": "-12/13",
+        "under_owner": "m_3__push_off",
+        "under_parameter": "1/2",
+        "under_segment": 2
+      },
+      {
+        "id": "X13",
+        "over_height": "333/308",
+        "over_owner": "m_3",
+        "over_parameter": "333/616",
+        "over_segment": 0,
+        "projection_point": [
+          "1565/154",
+          "25/308"
+        ],
+        "sign": -1,
+        "under_height": "-3735/4004",
+        "under_owner": "m_3__push_off",
+        "under_parameter": "311/616",
+        "under_segment": 2
+      },
+      {
+        "id": "X14",
+        "over_height": "-3525/2002",
+        "over_owner": "m_3__push_off",
+        "over_parameter": "25/308",
+        "over_segment": 3,
+        "projection_point": [
+          "130/11",
+          "-10/11"
+        ],
+        "sign": 1,
+        "under_height": "-21/11",
+        "under_owner": "m_3",
+        "under_parameter": "21/22",
+        "under_segment": 2
+      },
+      {
+        "id": "X15",
+        "over_height": "284/143",
+        "over_owner": "m_3__push_off",
+        "over_parameter": "21/22",
+        "over_segment": 0,
+        "projection_point": [
+          "921/77",
+          "1"
+        ],
+        "sign": 1,
+        "under_height": "305/154",
+        "under_owner": "m_3",
+        "under_parameter": "3/308",
+        "under_segment": 1
+      },
+      {
+        "id": "X16",
+        "over_height": "1/11",
+        "over_owner": "r_xy",
+        "over_parameter": "1/22",
+        "over_segment": 0,
+        "projection_point": [
+          "200/11",
+          "-10/11"
+        ],
+        "sign": 1,
+        "under_height": "115/2002",
+        "under_owner": "r_xy__push_off",
+        "under_parameter": "305/308",
+        "under_segment": 3
+      },
+      {
+        "id": "X17",
+        "over_height": "25/154",
+        "over_owner": "r_xy",
+        "over_parameter": "283/308",
+        "over_segment": 1,
+        "projection_point": [
+          "1411/77",
+          "1"
+        ],
+        "sign": 1,
+        "under_height": "-2/143",
+        "under_owner": "r_xy__push_off",
+        "under_parameter": "1/22",
+        "under_segment": 2
+      },
+      {
+        "id": "X18",
+        "over_height": "3987/4004",
+        "over_owner": "r_xy__push_off",
+        "over_parameter": "283/616",
+        "over_segment": 0,
+        "projection_point": [
+          "3077/154",
+          "3/308"
+        ],
+        "sign": -1,
+        "under_height": "-305/308",
+        "under_owner": "r_xy",
+        "under_parameter": "305/616",
+        "under_segment": 2
+      },
+      {
+        "id": "X19",
+        "over_height": "1",
+        "over_owner": "r_xy",
+        "over_parameter": "1/2",
+        "over_segment": 0,
+        "projection_point": [
+          "20",
+          "0"
+        ],
+        "sign": -1,
+        "under_height": "-1",
+        "under_owner": "r_xy",
+        "under_parameter": "1/2",
+        "under_segment": 2
+      },
+      {
+        "id": "X20",
+        "over_height": "14/13",
+        "over_owner": "r_xy__push_off",
+        "over_parameter": "1/2",
+        "over_segment": 0,
+        "projection_point": [
+          "141/7",
+          "1/11"
+        ],
+        "sign": -1,
+        "under_height": "-12/13",
+        "under_owner": "r_xy__push_off",
+        "under_parameter": "1/2",
+        "under_segment": 2
+      },
+      {
+        "id": "X21",
+        "over_height": "333/308",
+        "over_owner": "r_xy",
+        "over_parameter": "333/616",
+        "over_segment": 0,
+        "projection_point": [
+          "3105/154",
+          "25/308"
+        ],
+        "sign": -1,
+        "under_height": "-3735/4004",
+        "under_owner": "r_xy__push_off",
+        "under_parameter": "311/616",
+        "under_segment": 2
+      },
+      {
+        "id": "X22",
+        "over_height": "-3525/2002",
+        "over_owner": "r_xy__push_off",
+        "over_parameter": "25/308",
+        "over_segment": 3,
+        "projection_point": [
+          "240/11",
+          "-10/11"
+        ],
+        "sign": 1,
+        "under_height": "-21/11",
+        "under_owner": "r_xy",
+        "under_parameter": "21/22",
+        "under_segment": 2
+      },
+      {
+        "id": "X23",
+        "over_height": "284/143",
+        "over_owner": "r_xy__push_off",
+        "over_parameter": "21/22",
+        "over_segment": 0,
+        "projection_point": [
+          "1691/77",
+          "1"
+        ],
+        "sign": 1,
+        "under_height": "305/154",
+        "under_owner": "r_xy",
+        "under_parameter": "3/308",
+        "under_segment": 1
+      },
+      {
+        "id": "X24",
+        "over_height": "1/11",
+        "over_owner": "r_yz",
+        "over_parameter": "1/22",
+        "over_segment": 0,
+        "projection_point": [
+          "310/11",
+          "-10/11"
+        ],
+        "sign": 1,
+        "under_height": "115/2002",
+        "under_owner": "r_yz__push_off",
+        "under_parameter": "305/308",
+        "under_segment": 3
+      },
+      {
+        "id": "X25",
+        "over_height": "25/154",
+        "over_owner": "r_yz",
+        "over_parameter": "283/308",
+        "over_segment": 1,
+        "projection_point": [
+          "2181/77",
+          "1"
+        ],
+        "sign": 1,
+        "under_height": "-2/143",
+        "under_owner": "r_yz__push_off",
+        "under_parameter": "1/22",
+        "under_segment": 2
+      },
+      {
+        "id": "X26",
+        "over_height": "3987/4004",
+        "over_owner": "r_yz__push_off",
+        "over_parameter": "283/616",
+        "over_segment": 0,
+        "projection_point": [
+          "4617/154",
+          "3/308"
+        ],
+        "sign": -1,
+        "under_height": "-305/308",
+        "under_owner": "r_yz",
+        "under_parameter": "305/616",
+        "under_segment": 2
+      },
+      {
+        "id": "X27",
+        "over_height": "1",
+        "over_owner": "r_yz",
+        "over_parameter": "1/2",
+        "over_segment": 0,
+        "projection_point": [
+          "30",
+          "0"
+        ],
+        "sign": -1,
+        "under_height": "-1",
+        "under_owner": "r_yz",
+        "under_parameter": "1/2",
+        "under_segment": 2
+      },
+      {
+        "id": "X28",
+        "over_height": "14/13",
+        "over_owner": "r_yz__push_off",
+        "over_parameter": "1/2",
+        "over_segment": 0,
+        "projection_point": [
+          "211/7",
+          "1/11"
+        ],
+        "sign": -1,
+        "under_height": "-12/13",
+        "under_owner": "r_yz__push_off",
+        "under_parameter": "1/2",
+        "under_segment": 2
+      },
+      {
+        "id": "X29",
+        "over_height": "333/308",
+        "over_owner": "r_yz",
+        "over_parameter": "333/616",
+        "over_segment": 0,
+        "projection_point": [
+          "4645/154",
+          "25/308"
+        ],
+        "sign": -1,
+        "under_height": "-3735/4004",
+        "under_owner": "r_yz__push_off",
+        "under_parameter": "311/616",
+        "under_segment": 2
+      },
+      {
+        "id": "X30",
+        "over_height": "-3525/2002",
+        "over_owner": "r_yz__push_off",
+        "over_parameter": "25/308",
+        "over_segment": 3,
+        "projection_point": [
+          "350/11",
+          "-10/11"
+        ],
+        "sign": 1,
+        "under_height": "-21/11",
+        "under_owner": "r_yz",
+        "under_parameter": "21/22",
+        "under_segment": 2
+      },
+      {
+        "id": "X31",
+        "over_height": "284/143",
+        "over_owner": "r_yz__push_off",
+        "over_parameter": "21/22",
+        "over_segment": 0,
+        "projection_point": [
+          "2461/77",
+          "1"
+        ],
+        "sign": 1,
+        "under_height": "305/154",
+        "under_owner": "r_yz",
+        "under_parameter": "3/308",
+        "under_segment": 1
+      },
+      {
+        "id": "X32",
+        "over_height": "1/11",
+        "over_owner": "r_zx",
+        "over_parameter": "1/22",
+        "over_segment": 0,
+        "projection_point": [
+          "420/11",
+          "-10/11"
+        ],
+        "sign": 1,
+        "under_height": "115/2002",
+        "under_owner": "r_zx__push_off",
+        "under_parameter": "305/308",
+        "under_segment": 3
+      },
+      {
+        "id": "X33",
+        "over_height": "25/154",
+        "over_owner": "r_zx",
+        "over_parameter": "283/308",
+        "over_segment": 1,
+        "projection_point": [
+          "2951/77",
+          "1"
+        ],
+        "sign": 1,
+        "under_height": "-2/143",
+        "under_owner": "r_zx__push_off",
+        "under_parameter": "1/22",
+        "under_segment": 2
+      },
+      {
+        "id": "X34",
+        "over_height": "3987/4004",
+        "over_owner": "r_zx__push_off",
+        "over_parameter": "283/616",
+        "over_segment": 0,
+        "projection_point": [
+          "6157/154",
+          "3/308"
+        ],
+        "sign": -1,
+        "under_height": "-305/308",
+        "under_owner": "r_zx",
+        "under_parameter": "305/616",
+        "under_segment": 2
+      },
+      {
+        "id": "X35",
+        "over_height": "1",
+        "over_owner": "r_zx",
+        "over_parameter": "1/2",
+        "over_segment": 0,
+        "projection_point": [
+          "40",
+          "0"
+        ],
+        "sign": -1,
+        "under_height": "-1",
+        "under_owner": "r_zx",
+        "under_parameter": "1/2",
+        "under_segment": 2
+      },
+      {
+        "id": "X36",
+        "over_height": "14/13",
+        "over_owner": "r_zx__push_off",
+        "over_parameter": "1/2",
+        "over_segment": 0,
+        "projection_point": [
+          "281/7",
+          "1/11"
+        ],
+        "sign": -1,
+        "under_height": "-12/13",
+        "under_owner": "r_zx__push_off",
+        "under_parameter": "1/2",
+        "under_segment": 2
+      },
+      {
+        "id": "X37",
+        "over_height": "333/308",
+        "over_owner": "r_zx",
+        "over_parameter": "333/616",
+        "over_segment": 0,
+        "projection_point": [
+          "6185/154",
+          "25/308"
+        ],
+        "sign": -1,
+        "under_height": "-3735/4004",
+        "under_owner": "r_zx__push_off",
+        "under_parameter": "311/616",
+        "under_segment": 2
+      },
+      {
+        "id": "X38",
+        "over_height": "-3525/2002",
+        "over_owner": "r_zx__push_off",
+        "over_parameter": "25/308",
+        "over_segment": 3,
+        "projection_point": [
+          "460/11",
+          "-10/11"
+        ],
+        "sign": 1,
+        "under_height": "-21/11",
+        "under_owner": "r_zx",
+        "under_parameter": "21/22",
+        "under_segment": 2
+      },
+      {
+        "id": "X39",
+        "over_height": "284/143",
+        "over_owner": "r_zx__push_off",
+        "over_parameter": "21/22",
+        "over_segment": 0,
+        "projection_point": [
+          "3231/77",
+          "1"
+        ],
+        "sign": 1,
+        "under_height": "305/154",
+        "under_owner": "r_zx",
+        "under_parameter": "3/308",
+        "under_segment": 1
+      },
+      {
+        "id": "X40",
+        "over_height": "1",
+        "over_owner": "dotted_y",
+        "over_parameter": "1/2",
+        "over_segment": 0,
+        "projection_point": [
+          "50",
+          "0"
+        ],
+        "sign": -1,
+        "under_height": "-1",
+        "under_owner": "dotted_y",
+        "under_parameter": "1/2",
+        "under_segment": 2
+      },
+      {
+        "id": "X41",
+        "over_height": "1",
+        "over_owner": "dotted_z",
+        "over_parameter": "1/2",
+        "over_segment": 0,
+        "projection_point": [
+          "60",
+          "0"
+        ],
+        "sign": -1,
+        "under_height": "-1",
+        "under_owner": "dotted_z",
+        "under_parameter": "1/2",
+        "under_segment": 2
+      }
+    ],
+    "pairwise_linking_matrix": [
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "standard_pd_code": [
+      [
+        50,
+        0,
+        51,
+        7
+      ],
+      [
+        46,
+        4,
+        47,
+        3
+      ],
+      [
+        4,
+        51,
+        5,
+        44
+      ],
+      [
+        5,
+        0,
+        6,
+        1
+      ],
+      [
+        47,
+        44,
+        48,
+        45
+      ],
+      [
+        48,
+        1,
+        49,
+        2
+      ],
+      [
+        6,
+        50,
+        7,
+        49
+      ],
+      [
+        2,
+        46,
+        3,
+        45
+      ],
+      [
+        58,
+        8,
+        59,
+        15
+      ],
+      [
+        54,
+        12,
+        55,
+        11
+      ],
+      [
+        12,
+        59,
+        13,
+        52
+      ],
+      [
+        13,
+        8,
+        14,
+        9
+      ],
+      [
+        55,
+        52,
+        56,
+        53
+      ],
+      [
+        56,
+        9,
+        57,
+        10
+      ],
+      [
+        14,
+        58,
+        15,
+        57
+      ],
+      [
+        10,
+        54,
+        11,
+        53
+      ],
+      [
+        66,
+        16,
+        67,
+        23
+      ],
+      [
+        62,
+        20,
+        63,
+        19
+      ],
+      [
+        20,
+        67,
+        21,
+        60
+      ],
+      [
+        21,
+        16,
+        22,
+        17
+      ],
+      [
+        63,
+        60,
+        64,
+        61
+      ],
+      [
+        64,
+        17,
+        65,
+        18
+      ],
+      [
+        22,
+        66,
+        23,
+        65
+      ],
+      [
+        18,
+        62,
+        19,
+        61
+      ],
+      [
+        74,
+        24,
+        75,
+        31
+      ],
+      [
+        70,
+        28,
+        71,
+        27
+      ],
+      [
+        28,
+        75,
+        29,
+        68
+      ],
+      [
+        29,
+        24,
+        30,
+        25
+      ],
+      [
+        71,
+        68,
+        72,
+        69
+      ],
+      [
+        72,
+        25,
+        73,
+        26
+      ],
+      [
+        30,
+        74,
+        31,
+        73
+      ],
+      [
+        26,
+        70,
+        27,
+        69
+      ],
+      [
+        82,
+        32,
+        83,
+        39
+      ],
+      [
+        78,
+        36,
+        79,
+        35
+      ],
+      [
+        36,
+        83,
+        37,
+        76
+      ],
+      [
+        37,
+        32,
+        38,
+        33
+      ],
+      [
+        79,
+        76,
+        80,
+        77
+      ],
+      [
+        80,
+        33,
+        81,
+        34
+      ],
+      [
+        38,
+        82,
+        39,
+        81
+      ],
+      [
+        34,
+        78,
+        35,
+        77
+      ],
+      [
+        40,
+        41,
+        41,
+        40
+      ],
+      [
+        42,
+        43,
+        43,
+        42
+      ]
+    ]
+  },
+  "framing_linking_receipts": {
+    "m_2": {
+      "crossings": [
+        {
+          "id": "X0",
+          "over_height": "1/11",
+          "over_owner": "m_2",
+          "over_parameter": "1/22",
+          "over_segment": 0,
+          "projection_point": [
+            "-20/11",
+            "-10/11"
+          ],
+          "sign": 1,
+          "under_height": "115/2002",
+          "under_owner": "m_2__push_off",
+          "under_parameter": "305/308",
+          "under_segment": 3
+        },
+        {
+          "id": "X1",
+          "over_height": "25/154",
+          "over_owner": "m_2",
+          "over_parameter": "283/308",
+          "over_segment": 1,
+          "projection_point": [
+            "-129/77",
+            "1"
+          ],
+          "sign": 1,
+          "under_height": "-2/143",
+          "under_owner": "m_2__push_off",
+          "under_parameter": "1/22",
+          "under_segment": 2
+        },
+        {
+          "id": "X2",
+          "over_height": "3987/4004",
+          "over_owner": "m_2__push_off",
+          "over_parameter": "283/616",
+          "over_segment": 0,
+          "projection_point": [
+            "-3/154",
+            "3/308"
+          ],
+          "sign": -1,
+          "under_height": "-305/308",
+          "under_owner": "m_2",
+          "under_parameter": "305/616",
+          "under_segment": 2
+        },
+        {
+          "id": "X5",
+          "over_height": "333/308",
+          "over_owner": "m_2",
+          "over_parameter": "333/616",
+          "over_segment": 0,
+          "projection_point": [
+            "25/154",
+            "25/308"
+          ],
+          "sign": -1,
+          "under_height": "-3735/4004",
+          "under_owner": "m_2__push_off",
+          "under_parameter": "311/616",
+          "under_segment": 2
+        },
+        {
+          "id": "X6",
+          "over_height": "-3525/2002",
+          "over_owner": "m_2__push_off",
+          "over_parameter": "25/308",
+          "over_segment": 3,
+          "projection_point": [
+            "20/11",
+            "-10/11"
+          ],
+          "sign": 1,
+          "under_height": "-21/11",
+          "under_owner": "m_2",
+          "under_parameter": "21/22",
+          "under_segment": 2
+        },
+        {
+          "id": "X7",
+          "over_height": "284/143",
+          "over_owner": "m_2__push_off",
+          "over_parameter": "21/22",
+          "over_segment": 0,
+          "projection_point": [
+            "151/77",
+            "1"
+          ],
+          "sign": 1,
+          "under_height": "305/154",
+          "under_owner": "m_2",
+          "under_parameter": "3/308",
+          "under_segment": 1
+        }
+      ],
+      "mixed_crossing_sign_sum": 2,
+      "push_off_owner": "m_2__push_off"
+    },
+    "m_3": {
+      "crossings": [
+        {
+          "id": "X8",
+          "over_height": "1/11",
+          "over_owner": "m_3",
+          "over_parameter": "1/22",
+          "over_segment": 0,
+          "projection_point": [
+            "90/11",
+            "-10/11"
+          ],
+          "sign": 1,
+          "under_height": "115/2002",
+          "under_owner": "m_3__push_off",
+          "under_parameter": "305/308",
+          "under_segment": 3
+        },
+        {
+          "id": "X9",
+          "over_height": "25/154",
+          "over_owner": "m_3",
+          "over_parameter": "283/308",
+          "over_segment": 1,
+          "projection_point": [
+            "641/77",
+            "1"
+          ],
+          "sign": 1,
+          "under_height": "-2/143",
+          "under_owner": "m_3__push_off",
+          "under_parameter": "1/22",
+          "under_segment": 2
+        },
+        {
+          "id": "X10",
+          "over_height": "3987/4004",
+          "over_owner": "m_3__push_off",
+          "over_parameter": "283/616",
+          "over_segment": 0,
+          "projection_point": [
+            "1537/154",
+            "3/308"
+          ],
+          "sign": -1,
+          "under_height": "-305/308",
+          "under_owner": "m_3",
+          "under_parameter": "305/616",
+          "under_segment": 2
+        },
+        {
+          "id": "X13",
+          "over_height": "333/308",
+          "over_owner": "m_3",
+          "over_parameter": "333/616",
+          "over_segment": 0,
+          "projection_point": [
+            "1565/154",
+            "25/308"
+          ],
+          "sign": -1,
+          "under_height": "-3735/4004",
+          "under_owner": "m_3__push_off",
+          "under_parameter": "311/616",
+          "under_segment": 2
+        },
+        {
+          "id": "X14",
+          "over_height": "-3525/2002",
+          "over_owner": "m_3__push_off",
+          "over_parameter": "25/308",
+          "over_segment": 3,
+          "projection_point": [
+            "130/11",
+            "-10/11"
+          ],
+          "sign": 1,
+          "under_height": "-21/11",
+          "under_owner": "m_3",
+          "under_parameter": "21/22",
+          "under_segment": 2
+        },
+        {
+          "id": "X15",
+          "over_height": "284/143",
+          "over_owner": "m_3__push_off",
+          "over_parameter": "21/22",
+          "over_segment": 0,
+          "projection_point": [
+            "921/77",
+            "1"
+          ],
+          "sign": 1,
+          "under_height": "305/154",
+          "under_owner": "m_3",
+          "under_parameter": "3/308",
+          "under_segment": 1
+        }
+      ],
+      "mixed_crossing_sign_sum": 2,
+      "push_off_owner": "m_3__push_off"
+    },
+    "r_xy": {
+      "crossings": [
+        {
+          "id": "X16",
+          "over_height": "1/11",
+          "over_owner": "r_xy",
+          "over_parameter": "1/22",
+          "over_segment": 0,
+          "projection_point": [
+            "200/11",
+            "-10/11"
+          ],
+          "sign": 1,
+          "under_height": "115/2002",
+          "under_owner": "r_xy__push_off",
+          "under_parameter": "305/308",
+          "under_segment": 3
+        },
+        {
+          "id": "X17",
+          "over_height": "25/154",
+          "over_owner": "r_xy",
+          "over_parameter": "283/308",
+          "over_segment": 1,
+          "projection_point": [
+            "1411/77",
+            "1"
+          ],
+          "sign": 1,
+          "under_height": "-2/143",
+          "under_owner": "r_xy__push_off",
+          "under_parameter": "1/22",
+          "under_segment": 2
+        },
+        {
+          "id": "X18",
+          "over_height": "3987/4004",
+          "over_owner": "r_xy__push_off",
+          "over_parameter": "283/616",
+          "over_segment": 0,
+          "projection_point": [
+            "3077/154",
+            "3/308"
+          ],
+          "sign": -1,
+          "under_height": "-305/308",
+          "under_owner": "r_xy",
+          "under_parameter": "305/616",
+          "under_segment": 2
+        },
+        {
+          "id": "X21",
+          "over_height": "333/308",
+          "over_owner": "r_xy",
+          "over_parameter": "333/616",
+          "over_segment": 0,
+          "projection_point": [
+            "3105/154",
+            "25/308"
+          ],
+          "sign": -1,
+          "under_height": "-3735/4004",
+          "under_owner": "r_xy__push_off",
+          "under_parameter": "311/616",
+          "under_segment": 2
+        },
+        {
+          "id": "X22",
+          "over_height": "-3525/2002",
+          "over_owner": "r_xy__push_off",
+          "over_parameter": "25/308",
+          "over_segment": 3,
+          "projection_point": [
+            "240/11",
+            "-10/11"
+          ],
+          "sign": 1,
+          "under_height": "-21/11",
+          "under_owner": "r_xy",
+          "under_parameter": "21/22",
+          "under_segment": 2
+        },
+        {
+          "id": "X23",
+          "over_height": "284/143",
+          "over_owner": "r_xy__push_off",
+          "over_parameter": "21/22",
+          "over_segment": 0,
+          "projection_point": [
+            "1691/77",
+            "1"
+          ],
+          "sign": 1,
+          "under_height": "305/154",
+          "under_owner": "r_xy",
+          "under_parameter": "3/308",
+          "under_segment": 1
+        }
+      ],
+      "mixed_crossing_sign_sum": 2,
+      "push_off_owner": "r_xy__push_off"
+    },
+    "r_yz": {
+      "crossings": [
+        {
+          "id": "X24",
+          "over_height": "1/11",
+          "over_owner": "r_yz",
+          "over_parameter": "1/22",
+          "over_segment": 0,
+          "projection_point": [
+            "310/11",
+            "-10/11"
+          ],
+          "sign": 1,
+          "under_height": "115/2002",
+          "under_owner": "r_yz__push_off",
+          "under_parameter": "305/308",
+          "under_segment": 3
+        },
+        {
+          "id": "X25",
+          "over_height": "25/154",
+          "over_owner": "r_yz",
+          "over_parameter": "283/308",
+          "over_segment": 1,
+          "projection_point": [
+            "2181/77",
+            "1"
+          ],
+          "sign": 1,
+          "under_height": "-2/143",
+          "under_owner": "r_yz__push_off",
+          "under_parameter": "1/22",
+          "under_segment": 2
+        },
+        {
+          "id": "X26",
+          "over_height": "3987/4004",
+          "over_owner": "r_yz__push_off",
+          "over_parameter": "283/616",
+          "over_segment": 0,
+          "projection_point": [
+            "4617/154",
+            "3/308"
+          ],
+          "sign": -1,
+          "under_height": "-305/308",
+          "under_owner": "r_yz",
+          "under_parameter": "305/616",
+          "under_segment": 2
+        },
+        {
+          "id": "X29",
+          "over_height": "333/308",
+          "over_owner": "r_yz",
+          "over_parameter": "333/616",
+          "over_segment": 0,
+          "projection_point": [
+            "4645/154",
+            "25/308"
+          ],
+          "sign": -1,
+          "under_height": "-3735/4004",
+          "under_owner": "r_yz__push_off",
+          "under_parameter": "311/616",
+          "under_segment": 2
+        },
+        {
+          "id": "X30",
+          "over_height": "-3525/2002",
+          "over_owner": "r_yz__push_off",
+          "over_parameter": "25/308",
+          "over_segment": 3,
+          "projection_point": [
+            "350/11",
+            "-10/11"
+          ],
+          "sign": 1,
+          "under_height": "-21/11",
+          "under_owner": "r_yz",
+          "under_parameter": "21/22",
+          "under_segment": 2
+        },
+        {
+          "id": "X31",
+          "over_height": "284/143",
+          "over_owner": "r_yz__push_off",
+          "over_parameter": "21/22",
+          "over_segment": 0,
+          "projection_point": [
+            "2461/77",
+            "1"
+          ],
+          "sign": 1,
+          "under_height": "305/154",
+          "under_owner": "r_yz",
+          "under_parameter": "3/308",
+          "under_segment": 1
+        }
+      ],
+      "mixed_crossing_sign_sum": 2,
+      "push_off_owner": "r_yz__push_off"
+    },
+    "r_zx": {
+      "crossings": [
+        {
+          "id": "X32",
+          "over_height": "1/11",
+          "over_owner": "r_zx",
+          "over_parameter": "1/22",
+          "over_segment": 0,
+          "projection_point": [
+            "420/11",
+            "-10/11"
+          ],
+          "sign": 1,
+          "under_height": "115/2002",
+          "under_owner": "r_zx__push_off",
+          "under_parameter": "305/308",
+          "under_segment": 3
+        },
+        {
+          "id": "X33",
+          "over_height": "25/154",
+          "over_owner": "r_zx",
+          "over_parameter": "283/308",
+          "over_segment": 1,
+          "projection_point": [
+            "2951/77",
+            "1"
+          ],
+          "sign": 1,
+          "under_height": "-2/143",
+          "under_owner": "r_zx__push_off",
+          "under_parameter": "1/22",
+          "under_segment": 2
+        },
+        {
+          "id": "X34",
+          "over_height": "3987/4004",
+          "over_owner": "r_zx__push_off",
+          "over_parameter": "283/616",
+          "over_segment": 0,
+          "projection_point": [
+            "6157/154",
+            "3/308"
+          ],
+          "sign": -1,
+          "under_height": "-305/308",
+          "under_owner": "r_zx",
+          "under_parameter": "305/616",
+          "under_segment": 2
+        },
+        {
+          "id": "X37",
+          "over_height": "333/308",
+          "over_owner": "r_zx",
+          "over_parameter": "333/616",
+          "over_segment": 0,
+          "projection_point": [
+            "6185/154",
+            "25/308"
+          ],
+          "sign": -1,
+          "under_height": "-3735/4004",
+          "under_owner": "r_zx__push_off",
+          "under_parameter": "311/616",
+          "under_segment": 2
+        },
+        {
+          "id": "X38",
+          "over_height": "-3525/2002",
+          "over_owner": "r_zx__push_off",
+          "over_parameter": "25/308",
+          "over_segment": 3,
+          "projection_point": [
+            "460/11",
+            "-10/11"
+          ],
+          "sign": 1,
+          "under_height": "-21/11",
+          "under_owner": "r_zx",
+          "under_parameter": "21/22",
+          "under_segment": 2
+        },
+        {
+          "id": "X39",
+          "over_height": "284/143",
+          "over_owner": "r_zx__push_off",
+          "over_parameter": "21/22",
+          "over_segment": 0,
+          "projection_point": [
+            "3231/77",
+            "1"
+          ],
+          "sign": 1,
+          "under_height": "305/154",
+          "under_owner": "r_zx",
+          "under_parameter": "3/308",
+          "under_segment": 1
+        }
+      ],
+      "mixed_crossing_sign_sum": 2,
+      "push_off_owner": "r_zx__push_off"
+    }
+  },
+  "genericity": {
+    "all_cores_and_push_offs_disjoint": "PASS",
+    "exact_rational_recomputation": "PASS",
+    "no_equal_height_crossings": "PASS",
+    "no_projected_triple_points": "PASS",
+    "no_vertex_crossings": "PASS"
+  },
+  "input_sha256": "B198D8FEFA41C0979D6C749638F717690C8C1C7305174DCDFAC2E5AF162CB303",
+  "integer_surgery_framings": {
+    "m_2": 1,
+    "m_3": 1,
+    "r_xy": 1,
+    "r_yz": 1,
+    "r_zx": 1
+  },
+  "pairwise_linking_matrix": {
+    "component_order": [
+      "m_2",
+      "m_3",
+      "r_xy",
+      "r_yz",
+      "r_zx",
+      "dotted_y",
+      "dotted_z"
+    ],
+    "matrix": [
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    ]
+  },
+  "pd_limitation": null,
+  "schema": "t73_full_handle_diagram_export/v1",
+  "sha256": "FC5B7A353CB25BE52FCF7E8BBBFCE585134C56EEF0A5B5E29297AF9766EB4BF0",
+  "standard_pd_code": [
+    [
+      0,
+      1,
+      1,
+      0
+    ],
+    [
+      2,
+      3,
+      3,
+      2
+    ],
+    [
+      4,
+      5,
+      5,
+      4
+    ],
+    [
+      6,
+      7,
+      7,
+      6
+    ],
+    [
+      8,
+      9,
+      9,
+      8
+    ],
+    [
+      10,
+      11,
+      11,
+      10
+    ],
+    [
+      12,
+      13,
+      13,
+      12
+    ]
+  ],
+  "status": "PASS",
+  "structured_gauss_code": {
+    "dotted_y": [
+      {
+        "crossing": "X5",
+        "incoming_arc": 11,
+        "outgoing_arc": 10,
+        "parameter": "1/2",
+        "role": "over",
+        "segment": 0,
+        "sign": -1,
+        "successor_crossing": "X5",
+        "successor_role": "under"
+      },
+      {
+        "crossing": "X5",
+        "incoming_arc": 10,
+        "outgoing_arc": 11,
+        "parameter": "1/2",
+        "role": "under",
+        "segment": 2,
+        "sign": -1,
+        "successor_crossing": "X5",
+        "successor_role": "over"
+      }
+    ],
+    "dotted_z": [
+      {
+        "crossing": "X6",
+        "incoming_arc": 13,
+        "outgoing_arc": 12,
+        "parameter": "1/2",
+        "role": "over",
+        "segment": 0,
+        "sign": -1,
+        "successor_crossing": "X6",
+        "successor_role": "under"
+      },
+      {
+        "crossing": "X6",
+        "incoming_arc": 12,
+        "outgoing_arc": 13,
+        "parameter": "1/2",
+        "role": "under",
+        "segment": 2,
+        "sign": -1,
+        "successor_crossing": "X6",
+        "successor_role": "over"
+      }
+    ],
+    "m_2": [
+      {
+        "crossing": "X0",
+        "incoming_arc": 1,
+        "outgoing_arc": 0,
+        "parameter": "1/2",
+        "role": "over",
+        "segment": 0,
+        "sign": -1,
+        "successor_crossing": "X0",
+        "successor_role": "under"
+      },
+      {
+        "crossing": "X0",
+        "incoming_arc": 0,
+        "outgoing_arc": 1,
+        "parameter": "1/2",
+        "role": "under",
+        "segment": 2,
+        "sign": -1,
+        "successor_crossing": "X0",
+        "successor_role": "over"
+      }
+    ],
+    "m_3": [
+      {
+        "crossing": "X1",
+        "incoming_arc": 3,
+        "outgoing_arc": 2,
+        "parameter": "1/2",
+        "role": "over",
+        "segment": 0,
+        "sign": -1,
+        "successor_crossing": "X1",
+        "successor_role": "under"
+      },
+      {
+        "crossing": "X1",
+        "incoming_arc": 2,
+        "outgoing_arc": 3,
+        "parameter": "1/2",
+        "role": "under",
+        "segment": 2,
+        "sign": -1,
+        "successor_crossing": "X1",
+        "successor_role": "over"
+      }
+    ],
+    "r_xy": [
+      {
+        "crossing": "X2",
+        "incoming_arc": 5,
+        "outgoing_arc": 4,
+        "parameter": "1/2",
+        "role": "over",
+        "segment": 0,
+        "sign": -1,
+        "successor_crossing": "X2",
+        "successor_role": "under"
+      },
+      {
+        "crossing": "X2",
+        "incoming_arc": 4,
+        "outgoing_arc": 5,
+        "parameter": "1/2",
+        "role": "under",
+        "segment": 2,
+        "sign": -1,
+        "successor_crossing": "X2",
+        "successor_role": "over"
+      }
+    ],
+    "r_yz": [
+      {
+        "crossing": "X3",
+        "incoming_arc": 7,
+        "outgoing_arc": 6,
+        "parameter": "1/2",
+        "role": "over",
+        "segment": 0,
+        "sign": -1,
+        "successor_crossing": "X3",
+        "successor_role": "under"
+      },
+      {
+        "crossing": "X3",
+        "incoming_arc": 6,
+        "outgoing_arc": 7,
+        "parameter": "1/2",
+        "role": "under",
+        "segment": 2,
+        "sign": -1,
+        "successor_crossing": "X3",
+        "successor_role": "over"
+      }
+    ],
+    "r_zx": [
+      {
+        "crossing": "X4",
+        "incoming_arc": 9,
+        "outgoing_arc": 8,
+        "parameter": "1/2",
+        "role": "over",
+        "segment": 0,
+        "sign": -1,
+        "successor_crossing": "X4",
+        "successor_role": "under"
+      },
+      {
+        "crossing": "X4",
+        "incoming_arc": 8,
+        "outgoing_arc": 9,
+        "parameter": "1/2",
+        "role": "under",
+        "segment": 2,
+        "sign": -1,
+        "successor_crossing": "X4",
+        "successor_role": "over"
+      }
+    ]
+  },
+  "two_handle_surgery_matrix": {
+    "component_order": [
+      "m_2",
+      "m_3",
+      "r_xy",
+      "r_yz",
+      "r_zx"
+    ],
+    "matrix": [
+      [
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        1
+      ]
+    ]
+  }
+}

@@ -20,10 +20,13 @@ def build() -> dict:
     source = json.loads(SOURCE.read_text(encoding="utf-8"))
     primitives = json.loads(PRIMITIVES.read_text(encoding="utf-8"))
     pivotal = json.loads(PIVOTAL.read_text(encoding="utf-8"))
-    endpoint_sphere = {
-        endpoint["endpoint_id"]: sphere["name"]
+    endpoint_data = {
+        endpoint["endpoint_id"]: {**endpoint, "sphere": sphere["name"]}
         for sphere in source["insertion_spheres"]
         for endpoint in sphere["endpoints"]
+    }
+    endpoint_sphere = {
+        endpoint_id: endpoint["sphere"] for endpoint_id, endpoint in endpoint_data.items()
     }
     active = []
     for interval in source["exterior_intervals"]:
@@ -79,7 +82,7 @@ def build() -> dict:
     )
     if len(yminus_wrong) != 4 or len(yplus_wrong) != 4:
         raise AssertionError("wrong-side endpoints do not split four plus four")
-    proposed_reconnections = [
+    superseded_lexicographic_reconnections = [
         {
             "index": index,
             "old_Yminus_Zminus_interval": minus[2],
@@ -95,6 +98,71 @@ def build() -> dict:
         }
         for index, (minus, plus) in enumerate(zip(yminus_wrong, yplus_wrong))
     ]
+    buckets = {}
+    for item in wrong:
+        endpoints = [item["from_endpoint_id"], item["to_endpoint_id"]]
+        y_endpoint = next(
+            endpoint_id
+            for endpoint_id in endpoints
+            if endpoint_data[endpoint_id]["sphere"].startswith("Y")
+        )
+        direction = (
+            "Y_to_Z" if endpoint_data[y_endpoint]["role"] == "exit" else "Z_to_Y"
+        )
+        side = (
+            "minus"
+            if {item["from_sphere"], item["to_sphere"]}
+            == {"Y_minus", "Z_minus"}
+            else "plus"
+        )
+        buckets[(item["owner"], direction, side)] = item
+    proposed_reconnections = []
+    for owner in ("m_2", "r_xy"):
+        for direction in ("Y_to_Z", "Z_to_Y"):
+            minus = buckets[(owner, direction, "minus")]
+            plus = buckets[(owner, direction, "plus")]
+            by_sphere = {
+                endpoint_data[endpoint_id]["sphere"]: endpoint_id
+                for interval in (minus, plus)
+                for endpoint_id in (
+                    interval["from_endpoint_id"], interval["to_endpoint_id"]
+                )
+            }
+            new_pairs = (
+                [
+                    [by_sphere["Y_minus"], by_sphere["Z_plus"]],
+                    [by_sphere["Y_plus"], by_sphere["Z_minus"]],
+                ]
+                if direction == "Y_to_Z"
+                else [
+                    [by_sphere["Z_minus"], by_sphere["Y_plus"]],
+                    [by_sphere["Z_plus"], by_sphere["Y_minus"]],
+                ]
+            )
+            if any(
+                endpoint_data[initial]["role"] != "exit"
+                or endpoint_data[terminal]["role"] != "entry"
+                for initial, terminal in new_pairs
+            ):
+                raise AssertionError("an oriented reconnection is not exit-to-entry")
+            proposed_reconnections.append(
+                {
+                    "index": len(proposed_reconnections),
+                    "obligation_id": f"band:{owner}:{direction}",
+                    "owner": owner,
+                    "orientation_class": direction,
+                    "old_interval_ids": sorted(
+                        [minus["interval_id"], plus["interval_id"]]
+                    ),
+                    "new_cross_pairs": new_pairs,
+                    "required_operation": "oriented band surgery or equivalent foam movie, not pivotal retyping",
+                    "orientation_checked": True,
+                    "status": "UNREALIZED",
+                    "left_or_right_mate": "NOT_APPLICABLE_TO_RECONNECTION",
+                    "Blanchet_sign": "UNDETERMINED",
+                    "Euler_quantum_degree": "UNDETERMINED",
+                }
+            )
     selected_feet = {
         endpoint_id
         for part in (pivotal["selected_cup_cap"]["cup"], pivotal["selected_cup_cap"]["cap"])
@@ -129,6 +197,7 @@ def build() -> dict:
         ],
         "minimum_independent_reconnections": 4,
         "proposed_endpoint_reconnections": proposed_reconnections,
+        "superseded_lexicographic_reconnections": superseded_lexicographic_reconnections,
         "active_boundary_endpoints_before_mates": 176,
         "active_boundary_endpoints_after_pivotal_mates": 176,
         "P86_to_P88_boundary_endpoints": 174,

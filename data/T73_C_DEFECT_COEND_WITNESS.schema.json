@@ -1,0 +1,119 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "T73 defect-aware coend comparison witness",
+  "description": "A witness is accepted only after the executable verifier checks geometry coverage, a finite chain equivalence, residual naturality, grading, and a no-placeholder formal receipt.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "typing_graph_sha256",
+    "route",
+    "geometric_strategy",
+    "literal_split_used",
+    "source_binding",
+    "boundary_accounting",
+    "reconnection_cells",
+    "chain_certificate",
+    "grading",
+    "formal_receipt"
+  ],
+  "properties": {
+    "schema": {"const": "t73_c_defect_coend_witness/v1"},
+    "typing_graph_sha256": {"$ref": "#/$defs/sha256"},
+    "route": {
+      "enum": [
+        "two_sided_representability",
+        "direct_derived_bar_comparison"
+      ]
+    },
+    "geometric_strategy": {
+      "enum": [
+        "preserve_connected_source_matching",
+        "explicit_oriented_band_movie"
+      ]
+    },
+    "literal_split_used": {"const": false},
+    "source_binding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "endpoint_ids",
+        "interval_ids",
+        "complete_bar_or_arc_algebra_presentation_locator",
+        "presentation_sha256"
+      ],
+      "properties": {
+        "endpoint_ids": {"type": "array", "minItems": 1260, "maxItems": 1260},
+        "interval_ids": {"type": "array", "minItems": 630, "maxItems": 630},
+        "complete_bar_or_arc_algebra_presentation_locator": {"type": "string", "minLength": 1},
+        "presentation_sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "boundary_accounting": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "active_y_endpoints_before",
+        "active_y_endpoints_after_pivotal_retyping",
+        "single_hom_endpoints",
+        "external_cup_endpoint_difference",
+        "external_cup_is_separate"
+      ],
+      "properties": {
+        "active_y_endpoints_before": {"const": 176},
+        "active_y_endpoints_after_pivotal_retyping": {"const": 176},
+        "single_hom_endpoints": {"const": 174},
+        "external_cup_endpoint_difference": {"const": 2},
+        "external_cup_is_separate": {"const": true}
+      }
+    },
+    "reconnection_cells": {"type": "array"},
+    "chain_certificate": {"type": "object"},
+    "grading": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "theta_quantum_degree",
+        "all_X_target_degree",
+        "cable_shift",
+        "actual_q_C"
+      ],
+      "properties": {
+        "theta_quantum_degree": {"type": "integer"},
+        "all_X_target_degree": {"const": 227},
+        "cable_shift": {"const": -4},
+        "actual_q_C": {"type": "integer"}
+      }
+    },
+    "formal_receipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "module_path",
+        "module_sha256",
+        "no_placeholder_report_path",
+        "no_placeholder_report_sha256",
+        "required_theorems"
+      ],
+      "properties": {
+        "module_path": {"const": "Smooth4PC/DefectAwareCoend.lean"},
+        "module_sha256": {"$ref": "#/$defs/sha256"},
+        "no_placeholder_report_path": {"const": "audit/t73_defect_coend_lean_axioms.json"},
+        "no_placeholder_report_sha256": {"$ref": "#/$defs/sha256"},
+        "required_theorems": {
+          "const": [
+            "T73.DefectAwareCoend.selectedSourcePresentation_complete",
+            "T73.DefectAwareCoend.comparison_chainEquivalence",
+            "T73.DefectAwareCoend.comparison_zBalanced",
+            "T73.DefectAwareCoend.comparison_leftNatural",
+            "T73.DefectAwareCoend.comparison_rightNatural",
+            "T73.DefectAwareCoend.comparison_homogeneous"
+          ]
+        }
+      }
+    }
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9A-F]{64}$"}
+  }
+}

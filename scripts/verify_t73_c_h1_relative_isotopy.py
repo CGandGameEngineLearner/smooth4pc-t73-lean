@@ -525,6 +525,13 @@ def generate_report() -> dict[str, Any]:
             "endpoint_counts_per_sphere": source.get("endpoint_counts_per_sphere"),
             "total_boundary_endpoint_count": source.get("total_boundary_endpoint_count"),
             "exterior_interval_count": source.get("exterior_interval_count"),
+            "ruled_ribbon_triangle_count": sum(
+                len(interval.get("ruled_ribbon_triangles", []))
+                for interval in source.get("exterior_intervals", [])
+            ),
+            "distinct_ribbon_clearance": source.get("ribbon_clearance", {}).get(
+                "strict_clearance"
+            ),
             "canonical_representative_only": source.get("canonical_representative_only"),
             "actual_ar_relative_isotopy_proved": source.get("actual_ar_relative_isotopy_proved"),
             "has_common_tetrahedral_exterior": "ambient_exterior" in source,

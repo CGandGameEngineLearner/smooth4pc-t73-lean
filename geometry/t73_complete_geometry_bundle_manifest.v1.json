@@ -2,13 +2,14 @@
   "artifacts": [
     {
       "completion_status": "OPEN",
-      "content_bytes": 1836089,
-      "content_sha256": "071DA9CE27BB96AD27EBAFA4C2C448D88AFCD6CDEBDD008888CFDC33C69B5D67",
-      "embedded_payload_sha256": "81E35ACE16DDC6C7226D6251EE57ADD6B4C253976452EEFFB48BBC49E5857E6C",
+      "content_bytes": 3401002,
+      "content_sha256": "196422AB880E58F98E4E07DE4834D61B6B61E35718D1774E2859EC2F26DE4FBD",
+      "embedded_payload_sha256": "0B5D34B8581E6208D573C1934CE8BE225BAA874AE1120ED6A64027DD007BF741",
       "generator": "scripts/build_t73_selected_source_exterior.py",
       "geometry_counts": {
         "cable_component_cycles": 4,
         "cyclic_seams": 4,
+        "distinct_ribbon_clearance": true,
         "endpoints_per_insertion_sphere": {
           "Y_minus": 88,
           "Y_plus": 88,
@@ -16,6 +17,7 @@
           "Z_plus": 542
         },
         "exterior_intervals": 630,
+        "ruled_ribbon_triangles": 2520,
         "total_boundary_endpoints": 1260
       },
       "id": "selected_source_exterior",
@@ -65,8 +67,8 @@
     {
       "completion_status": "OPEN",
       "content_bytes": 79984,
-      "content_sha256": "C1B926B5698E654CDDA71148F423F800712B0259EFD0977A31C5D24A9A592BDB",
-      "embedded_payload_sha256": "CD6B05CD33DD4DF6D22B1A64E327F2994FD5F8BEF7F494FA908A34EE5CDC1EAD",
+      "content_sha256": "50E5121695E8419D5CA85C80FE51349794313B1D02E581E49491751292C3B126",
+      "embedded_payload_sha256": "65930FC11A654D87B0A1BC53FB7D7BCC18DD305E86FD17A8B38AC93DDE5BC83E",
       "generator": "scripts/build_t73_single_hom_defect_target.py",
       "geometry_counts": {
         "bottom_endpoints": 86,
@@ -92,8 +94,8 @@
     },
     {
       "completion_status": "OPEN",
-      "content_bytes": 6687,
-      "content_sha256": "DEC886BC22C32AAF71B39FFD6452D3C433F8DC9F41B5A492F494C7201426714F",
+      "content_bytes": 9895,
+      "content_sha256": "F32E207C7B1940A12BD8AE42914271C82C02FC694081809B5FB86B46597BFBEE",
       "embedded_payload_sha256": null,
       "generator": "scripts/audit_t73_defect_aware_currying.py",
       "geometry_counts": {
@@ -121,6 +123,7 @@
   "closed_facts": {
     "saved_boundary_endpoint_count": 1260,
     "saved_source_exterior_interval_count": 630,
+    "saved_source_ruled_ribbon_triangle_count": 2520,
     "target_template_arc_count": 630,
     "wrong_side_active_interval_count": 8
   },
@@ -151,7 +154,7 @@
     }
   ],
   "first_open_gate": "construct and verify a relative source-to-target cobordism/currying map from all 630 saved source intervals, including the eight wrong-side intervals",
-  "manifest_payload_sha256": "9C25C25A99AAF5CF0EC2F058218938FDB6E52C0FC506A4688DC214280AA9DEE0",
+  "manifest_payload_sha256": "D4BC24015D8C3E43E0848F871A8A3F24061D4ACBC5EEAEE39856E36968771456",
   "policy": {
     "allowed_status_values": [
       "VERIFIED",

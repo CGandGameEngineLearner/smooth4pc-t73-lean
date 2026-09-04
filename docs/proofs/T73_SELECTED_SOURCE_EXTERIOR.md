@@ -57,13 +57,30 @@ spheres. A constant translation of a bent V-shaped route can intersect the
 original route, so the implementation does not make that false assumption.
 Instead it searches for a rational interior normal at each bend while keeping
 the endpoint normals fixed. The resulting pushed-off polyline is checked
-against every centre route and every earlier push-off. This supplies an
-explicit PL normal field along all 630 intervals.
+against every centre route and every earlier push-off. Each interval also
+saves the four rational triangles of the ruled strip between core and
+push-off, together with its complete boundary. The common endpoint normal is
+the dyadic value \(2^{-20}\) in the product direction and the maximum
+vertexwise \(L^1\) width is \(23/2^{18}\). Candidate centre routes are now
+accepted only when every new segment stays at exact distance greater than
+\(10^{-3}\) from all earlier routes. This avoids numerically acute PLC data
+while retaining a rigorous tubular margin.
+
+An exact global clearance certificate computes the minimum squared distance
+between centre segments belonging to different intervals and the maximum
+vertexwise \(L^1\) ribbon width. It verifies
+\[
+d_{\min}^2>(2w_{\max})^2,
+\]
+which proves that ruled ribbons belonging to distinct intervals are
+disjoint. Thus all 2520 rational ribbon triangles are saved; incorporating
+them as triangle subcomplexes of a common ambient tetrahedralization remains
+the next simplicial step.
 
 The verifier recomputes every event orientation and side, proves that each
 entry and exit endpoint is used exactly once, checks all cyclic seams, insertion
-faces, rational routes and framing push-offs, and performs exact pairwise
-segment intersection tests. Seven mutations fail.
+faces, rational routes, framing push-offs, ruled triangles and the exact
+clearance bound. Nine mutations fail.
 
 ## Exact scope
 

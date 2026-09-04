@@ -1,0 +1,111 @@
+{
+  "artifacts": [
+    {
+      "content_sha256": "91C9E94A7EA29771DF77ED3796A77677CB78BE1F2448EA457DCAB7AAA60A1613",
+      "evidence_status": "VERIFIED_CORE_BUNDLE",
+      "id": "selected_c_v1_bundle",
+      "path": "geometry/t73_complete_geometry_bundle_manifest.v1.json",
+      "payload_sha256": "D4BC24015D8C3E43E0848F871A8A3F24061D4ACBC5EEAEE39856E36968771456",
+      "schema": "t73_complete_geometry_bundle_manifest/v1",
+      "t73_completion_status": "OPEN"
+    },
+    {
+      "content_sha256": "907FF35854FE15B21B519F25EE87F01F6E065C289D8A70CA0126DA66370B719F",
+      "evidence_status": "VERIFIED_TYPING_ONLY",
+      "id": "defect_coend_typing",
+      "path": "geometry/t73_c_defect_coend_typing_graph.json",
+      "payload_sha256": "B2C3A7C2E346CC81877DDC959232394DAEE0367414B241711EA247867E73572F",
+      "schema": "t73_c_defect_coend_typing_graph/v1",
+      "t73_completion_status": "OPEN"
+    },
+    {
+      "content_sha256": "A10ECF22501C2FB86D29F679164E718BF8B3639FA757BA66EA7C046D8EF0A594",
+      "evidence_status": "VERIFIED_PREFIX_ONLY",
+      "id": "ar_source_coordinate_atlas",
+      "path": "geometry/t73_ar_source_coordinate_atlas.json",
+      "payload_sha256": "755D78F7F0B4422360BE2AFA3850ADB5EFF8B1B5C7A9A163DDF82E7B36D0A3D6",
+      "schema": "t73_ar_source_coordinate_atlas/v1",
+      "t73_completion_status": "OPEN"
+    },
+    {
+      "content_sha256": "404CF587CF6779DF050FB0EF4F8B2829D8DFE8CF86B01BF3D0D99ED957F318D7",
+      "evidence_status": "VERIFIED_FIXTURE_ONLY",
+      "id": "pd_truth_input",
+      "path": "geometry/examples/seven_component_framed_unlink_input.json",
+      "payload_sha256": null,
+      "schema": "t73_full_handle_diagram_input/v1",
+      "t73_completion_status": "OPEN"
+    },
+    {
+      "content_sha256": "9431383686B8E9D57265A7C07FFAF91EB7BDBC390540118C754FE835F6A7891E",
+      "evidence_status": "VERIFIED_FIXTURE_ONLY",
+      "id": "pd_truth_export",
+      "path": "geometry/examples/seven_component_framed_unlink_export.json",
+      "payload_sha256": "FC5B7A353CB25BE52FCF7E8BBBFCE585134C56EEF0A5B5E29297AF9766EB4BF0",
+      "schema": "t73_full_handle_diagram_export/v1",
+      "t73_completion_status": "OPEN"
+    },
+    {
+      "content_sha256": "624F39DF74E0D35C95F0F892F2187EB0F645FAAB407C1EE385991AF17C32A5D6",
+      "evidence_status": "VERIFIED_FIXTURE_ONLY",
+      "id": "pd_open_source_receipt",
+      "path": "geometry/examples/seven_component_framed_unlink_open_source_receipt.json",
+      "payload_sha256": "3686AF5A2F9E0F2A3DD4214C4DB2AFCD111B923FCE9471EE74D3EDA9D8520F90",
+      "schema": "t73_full_handle_open_source_receipt/v1",
+      "t73_completion_status": "OPEN"
+    },
+    {
+      "content_sha256": "217CFA250C848865C02F9C908CF75E57EA4756102719262F631C18E2CF55D827",
+      "evidence_status": "VERIFIED_PREFIX_ONLY",
+      "id": "tetgen_source_prefix10",
+      "path": "geometry/examples/t73_selected_source_tetrahedral_prefix10.json",
+      "payload_sha256": "34864703DBAE8A9F00BF6AA592FE34265DC727EE8B390B63295E9C3F2D57C5A3",
+      "schema": "t73_selected_source_tetrahedral_frame/v1",
+      "t73_completion_status": "OPEN"
+    }
+  ],
+  "bundle_status": "OPEN",
+  "bundle_version": 2,
+  "manifest_payload_sha256": "E52DCD162BF9CB08808F3DB932080AB783875BEFE4AC15C6969ACD12741F0DF9",
+  "policy": {
+    "all_completion_gates_must_pass_before_bundle_completion": true,
+    "fixture_or_prefix_is_not_t73_completion": true,
+    "typing_is_not_chain_equivalence": true
+  },
+  "schema": "t73_complete_geometry_bundle_manifest/v2",
+  "t73_completion_gates": [
+    {
+      "id": "actual_defect_coend_chain_equivalence",
+      "reason": "no R1 representability or R2 connected-bar chain-equivalence witness",
+      "required_path": "geometry/t73_c_defect_coend_witness.json",
+      "status": "OPEN"
+    },
+    {
+      "id": "actual_complete_kirby_input",
+      "reason": "AR charts have no common cut/surgery dotted-circle presentation and band splices",
+      "required_path": "geometry/t73_full_handle_diagram_input.json",
+      "status": "OPEN"
+    },
+    {
+      "id": "complete_630_ribbon_tetrahedral_frame",
+      "reason": "ten-ribbon prefix passes; monolithic 20-ribbon TetGen exceeds safe memory",
+      "required_path": "geometry/t73_selected_source_tetrahedral_frame.json",
+      "status": "OPEN"
+    },
+    {
+      "id": "actual_ar_relative_binding",
+      "reason": "canonical selected source still records actual_ar_relative_isotopy_proved=false",
+      "required_path": "geometry/t73_actual_to_selected_source_isotopy.json",
+      "status": "OPEN"
+    }
+  ],
+  "verified_counts": {
+    "coend_oriented_band_obligations": 4,
+    "coend_wrong_side_intervals": 8,
+    "pd_fixture_core_components": 7,
+    "source_endpoints": 1260,
+    "source_intervals": 630,
+    "source_ruled_ribbon_triangles": 2520,
+    "tetgen_prefix_ribbons": 10
+  }
+}

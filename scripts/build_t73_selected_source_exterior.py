@@ -19,7 +19,9 @@ PRIMITIVES = ROOT / "geometry" / "t73_all_owner_product_primitives.json"
 OUTPUT = ROOT / "geometry" / "t73_selected_source_exterior.json"
 OWNERS = ("m_2", "r_xy")
 COPY_SIGNS = ("negative", "positive")
-NORMAL = (Fraction(0), Fraction(1, 10**7), Fraction(0))
+NORMAL_DENOMINATOR = 2**20
+NORMAL = (Fraction(0), Fraction(1, NORMAL_DENOMINATOR), Fraction(0))
+MIN_ROUTE_CLEARANCE = Fraction(1, 1000)
 BOXES = {
     "Y_minus": ((Fraction(-7), Fraction(-7), Fraction(-1)), (Fraction(-5), Fraction(-5), Fraction(1)), Fraction(-5)),
     "Y_plus": ((Fraction(-7), Fraction(5), Fraction(-1)), (Fraction(-5), Fraction(7), Fraction(1)), Fraction(-5)),
@@ -56,6 +58,91 @@ def cross(a, b):
 
 def dot(a, b):
     return sum(a[i] * b[i] for i in range(3))
+
+
+def clamp01(value: Fraction) -> Fraction:
+    return max(Fraction(0), min(Fraction(1), value))
+
+
+def segment_distance_squared(first, second) -> Fraction:
+    """Exact squared Euclidean distance between two closed Q^3 segments."""
+    p1, q1 = first
+    p2, q2 = second
+    d1, d2, relative = sub(q1, p1), sub(q2, p2), sub(p1, p2)
+    a, e = dot(d1, d1), dot(d2, d2)
+    if a == 0 or e == 0:
+        raise AssertionError("zero-length centre segment in clearance audit")
+    b, c, f = dot(d1, d2), dot(d1, relative), dot(d2, relative)
+    denominator = a * e - b * b
+    first_parameter = (
+        clamp01((b * f - c * e) / denominator)
+        if denominator != 0
+        else Fraction(0)
+    )
+    second_parameter = (b * first_parameter + f) / e
+    if second_parameter < 0:
+        second_parameter = Fraction(0)
+        first_parameter = clamp01(-c / a)
+    elif second_parameter > 1:
+        second_parameter = Fraction(1)
+        first_parameter = clamp01((b - c) / a)
+    difference = sub(
+        add(p1, tuple(first_parameter * value for value in d1)),
+        add(p2, tuple(second_parameter * value for value in d2)),
+    )
+    return dot(difference, difference)
+
+
+def ribbon_clearance(routes) -> dict[str, Any]:
+    """Certify different ruled ribbons disjoint by an exact width bound."""
+    centre_segments = []
+    maximum_l1_width = Fraction(0)
+    for route in routes:
+        vertices = [tuple(Fraction(value) for value in point) for point in route["vertices"]]
+        pushed = [
+            tuple(Fraction(value) for value in point)
+            for point in route["positive_push_off_vertices"]
+        ]
+        for centre, push in zip(vertices, pushed):
+            maximum_l1_width = max(
+                maximum_l1_width,
+                sum(abs(value) for value in sub(push, centre)),
+            )
+        centre_segments.extend(
+            (route["route_index"], segment_index, segment)
+            for segment_index, segment in enumerate(zip(vertices, vertices[1:]))
+        )
+    minimum = None
+    minimum_pair = None
+    for first_index, (first_route, first_segment, first) in enumerate(centre_segments):
+        for second_route, second_segment, second in centre_segments[first_index + 1 :]:
+            if first_route == second_route:
+                continue
+            distance_squared = segment_distance_squared(first, second)
+            if minimum is None or distance_squared < minimum:
+                minimum = distance_squared
+                minimum_pair = {
+                    "first_route_index": first_route,
+                    "first_segment_index": first_segment,
+                    "second_route_index": second_route,
+                    "second_segment_index": second_segment,
+                }
+    if minimum is None or minimum_pair is None:
+        raise AssertionError("no distinct route pair for ribbon clearance")
+    threshold = (2 * maximum_l1_width) ** 2
+    if minimum <= MIN_ROUTE_CLEARANCE**2:
+        raise AssertionError("stored route set violates its construction clearance")
+    if minimum <= threshold:
+        raise AssertionError("framing width is not below half the centre-route clearance")
+    return {
+        "method": "exact centre-segment distance and L1 tubular-width bound",
+        "minimum_centre_segment_distance_squared": str(minimum),
+        "attaining_segment_pair": minimum_pair,
+        "maximum_vertex_l1_push_width": str(maximum_l1_width),
+        "twice_width_squared": str(threshold),
+        "strict_clearance": True,
+        "conclusion": "ruled ribbons belonging to distinct exterior intervals are disjoint",
+    }
 
 
 def segment_intersects(first, second) -> bool:
@@ -206,6 +293,12 @@ def build_routes(interval_specs, endpoint_lookup):
                     continue
             if any(segment_intersects(new, old) for new in candidate for old in segments):
                 continue
+            if any(
+                segment_distance_squared(new, old) <= MIN_ROUTE_CLEARANCE**2
+                for new in candidate
+                for old in segments
+            ):
+                continue
             accepted = bend
             break
         if accepted is None:
@@ -231,9 +324,9 @@ def build_routes(interval_specs, endpoint_lookup):
             # normal.  The interior normal is allowed to turn inside the
             # framed tubular neighborhood.
             interior_normal = (
-                Fraction((17 * attempt) % 101 + 1, 10**7),
-                Fraction((29 * attempt) % 103 + 1, 10**7),
-                Fraction((43 * attempt) % 107 + 1, 10**7),
+                Fraction((17 * attempt) % 101 + 1, NORMAL_DENOMINATOR),
+                Fraction((29 * attempt) % 103 + 1, NORMAL_DENOMINATOR),
+                Fraction((43 * attempt) % 107 + 1, NORMAL_DENOMINATOR),
             )
             bend_push = add(vertices[1], interior_normal)
             candidate = [(start_push, bend_push), (bend_push, end_push)]
@@ -251,6 +344,19 @@ def build_routes(interval_specs, endpoint_lookup):
         route["boundary_product_normal"] = encode(NORMAL)
         route["framing_normal_vertices"] = [encode(value) for value in accepted_normal]
         route["positive_push_off_vertices"] = [encode(value) for value in accepted_push]
+        route["ruled_ribbon_triangles"] = [
+            [encode(vertices[index]), encode(vertices[index + 1]), encode(accepted_push[index + 1])]
+            for index in range(2)
+        ] + [
+            [encode(vertices[index]), encode(accepted_push[index + 1]), encode(accepted_push[index])]
+            for index in range(2)
+        ]
+        route["ruled_ribbon_boundary"] = {
+            "core_vertices": route["vertices"],
+            "push_off_vertices": route["positive_push_off_vertices"],
+            "initial_transverse_edge": [route["vertices"][0], route["positive_push_off_vertices"][0]],
+            "terminal_transverse_edge": [route["vertices"][-1], route["positive_push_off_vertices"][-1]],
+        }
         push_segments.extend(zip(accepted_push, accepted_push[1:]))
     return routes
 
@@ -352,6 +458,7 @@ def build():
         "interval_counts_by_copy": interval_counts_by_copy,
         "cyclic_seam_count": sum(route["cyclic_seam"] for route in routes),
         "normal": encode(NORMAL),
+        "ribbon_clearance": ribbon_clearance(routes),
         "canonical_representative_only": True,
         "actual_ar_relative_isotopy_proved": False,
         "contains_braid_word": False,
@@ -368,10 +475,12 @@ def main():
     args = parser.parse_args()
     result = build()
     if args.write:
-        OUTPUT.write_text(
+        temporary = OUTPUT.with_name(OUTPUT.name + ".tmp")
+        temporary.write_text(
             json.dumps(result, indent=2, sort_keys=True) + "\n",
             encoding="utf-8",
         )
+        temporary.replace(OUTPUT)
         print(f"WROTE={OUTPUT}")
     print("T73_SELECTED_SOURCE_EXTERIOR=BUILT")
     print(f"SPHERE_ENDPOINTS={result['endpoint_counts_per_sphere']}")

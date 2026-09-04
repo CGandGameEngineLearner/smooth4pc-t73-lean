@@ -13,6 +13,11 @@
 `geometry/t73_complete_geometry_bundle_manifest.v1.json` 汇总；其机器 schema 是
 `data/T73_COMPLETE_GEOMETRY_BUNDLE_MANIFEST.schema.json`。
 
+扩展清单 `geometry/t73_complete_geometry_bundle_manifest.v2.json` 还纳入
+defect-coend 类型图、AR 源坐标 atlas、七分量 PD 真例与开源软件收据，以及
+TetGen 十-ribbon 前缀。它把 `VERIFIED_TYPING_ONLY`、
+`VERIFIED_PREFIX_ONLY`、`VERIFIED_FIXTURE_ONLY` 与真正的 T73 完成状态分开。
+
 ## 2. 可复现命令
 
 完整重建、保存、运行精确的有理 PL 两两不交检验并重写清单：
@@ -37,11 +42,18 @@ python3 scripts/build_t73_complete_geometry_bundle.py --check-files
 `reconstruction_status` 被强制保持为 `OPEN`，不会因为跳过昂贵检验而得到
 `VERIFIED`。
 
+扩展清单的重建与检查为：
+
+```bash
+python3 scripts/build_t73_complete_geometry_bundle_v2.py --write
+python3 scripts/build_t73_complete_geometry_bundle_v2.py --check
+```
+
 ## 3. 已保存的完整组合数据
 
 当前版本固定并核验下列计数：
 
-- 源外部空间：四条 cable 周期，四个 cyclic seams；`Y_minus`、`Y_plus` 各 88 个端点，`Z_minus`、`Z_plus` 各 542 个端点；合计 1260 个端点、630 条有框外部区间。
+- 源外部空间：四条 cable 周期，四个 cyclic seams；`Y_minus`、`Y_plus` 各 88 个端点，`Z_minus`、`Z_plus` 各 542 个端点；合计 1260 个端点、630 条有框外部区间及 2520 个显式 ruled-ribbon 三角形，并有严格全局宽度/间距证书。
 - v2 抽象目标：两个不交 closure balls；每个 closure 有 88 条 active `Y--Z` 弧和 227 条 boundary-parallel `Z--Z` 弧；合计 630 条弧，四个插入球的端点数为 `88/542/542/88`。
 - single-Hom 目标：86 个底端点、88 个顶端点、86 条贯穿弧和一个 cup。
 - defect incidence：176 条 Y-incident active intervals 中 168 条方向兼容、8 条 wrong-side；若仅做端点重配，至少需要四次独立 reconnection。
@@ -88,3 +100,17 @@ v1 清单的 `OPEN` 状态不得仅凭软件能够导入文件而关闭。
 当前负面适配结果已单独保存为
 `audit/t73_pd_spherogram_adapter_report.json`。它精确列出标准 PD、component
 successor、自交、`r_zx` 嵌入、dotted 分量和整数 framing 等缺项。
+
+## 7. v2 的四个实际完成门
+
+v2 清单严格列出四个仍缺的 T73 witness：
+
+1. 实际 defect-aware coend 的 R1 representability 或 R2 connected-bar
+   chain equivalence；
+2. 实际完整 Kirby 输入，即统一 cut/surgery dotted-circle presentation、
+   两次 band splicing、dotted meridians 与五个 push-offs；
+3. 全部 630 ribbons 的共同四面体 frame；
+4. actual AR coefficient exterior 到所保存 canonical source 的相对绑定。
+
+前缀、真例和类型图均不能关闭这些门。因此 v2 的 bundle status 仍为
+`OPEN`，但每一条已完成的有限构造都有独立哈希和可执行验收。

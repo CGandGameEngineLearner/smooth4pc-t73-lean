@@ -1754,16 +1754,18 @@ Topology-source checks completed 2026-09-04:
 - Status: **FAIL-CLOSED**
 - Location: docs/proofs/T73_DEFECT_AWARE_CURRYING_AUDIT.md and
   audit/t73_defect_aware_currying.json.
-- Pairing table: four rows pair the two wrong \(m_2\) intervals for each
-  cable sign and the two wrong \(r_{xy}\) intervals for each cable sign. The
-  artifact records old intervals and exact proposed cross endpoint pairs.
+- Pairing table correction: the former lexicographic rows are retained only
+  as a superseded diagnostic; two produced entry--entry/exit--exit arcs. The
+  live four rows are instead uniquely grouped by owner and Y-to-Z/Z-to-Y
+  orientation, and every proposed cross arc is listed exit-to-entry.
 - Obstruction: a pivotal mate changes Hom presentation but not pointwise
   relative endpoint matching. The proposed pairs change matching, so they
   require saddle/reconnection cells rather than a bare evaluation or
   coevaluation chart.
-- Missing fields: left/right mate, ordered BPW A.6 atom, Blanchet sign,
-  number of saddles, Euler characteristic and quantum degree. Each is stored
-  as UNDETERMINED.
+- Missing fields: these are band reconnections, so a left/right pivotal mate
+  is marked not applicable. The embedded band/foam movie, Blanchet sign,
+  number of saddles, inverse data, Euler characteristic and quantum degree
+  remain UNREALIZED or UNDETERMINED.
 - Count obstruction: pivotal mates preserve 176 active boundary endpoints;
   \(P_{86}\to P_{88}\) has 174. The one defect comes from the external cup,
   not these four re-pairings.
@@ -1779,8 +1781,8 @@ Topology-source checks completed 2026-09-04:
   `data/T73_COMPLETE_GEOMETRY_BUNDLE_MANIFEST.schema.json`,
   `tests/test_t73_complete_geometry_bundle.py`, and
   `docs/proofs/T73_COMPLETE_GEOMETRY_CONSTRUCTOR.md`.
-- Saved objects: the four-cycle source exterior with 1260 endpoints and 630
-  framed intervals; the v2 target template with the same endpoint and arc
+- Saved objects: the four-cycle source exterior with 1260 endpoints, 630
+  framed intervals and 2520 ruled-ribbon triangles; the v2 target template with the same endpoint and arc
   totals; the auxiliary P86-to-P88 target; and the four-reconnection defect
   audit. Full `--write`, reconstruction `--check`, fast `--check-files`, JSON
   Schema validation, and OPEN-to-VERIFIED mutation tests pass.
@@ -1833,6 +1835,129 @@ Topology-source checks completed 2026-09-04:
   movie, and report generation cannot overwrite that result.
 - Scope: no current simplicial witness exists. These checks specify what a
   future common tetrahedral exterior must contain; they do not construct it.
+
+### F-531 — The source constructor now saves ruled ribbons with an exact global clearance certificate
+
+- Severity: **Geometric constructor remediation**
+- Status: **RESOLVED FOR THE CANONICAL POLYGONAL SOURCE**
+- Evidence: `geometry/t73_selected_source_exterior.json`, its builder,
+  verifier and test.
+- Construction: every one of the 630 intervals stores its three-vertex core,
+  three-vertex push-off, four ruled-ribbon triangles and complete ribbon
+  boundary, for 2520 triangles. New centre routes are accepted only when
+  every segment has exact distance greater than (10^{-3}) from all earlier
+  routes. The common endpoint normal is (2^{-20}) and the largest
+  vertexwise (L^1) width is (23/2^{18}).
+- Certificate: exact rational minimization gives actual minimum centre
+  distance approximately (1.00655\times10^{-3}), while twice the maximum
+  ribbon width is approximately (1.75476\times10^{-4}). The strict squared
+  inequality proves ribbons belonging to distinct intervals are disjoint.
+  Degenerate-ribbon and clearance mutations fail.
+- Scope: this establishes the saved canonical framed polygonal source; it
+  does not identify it with the actual AR exterior or yet make the ribbons
+  subcomplexes of a common ambient tetrahedralization.
+
+### F-532 — The non-literal C route now has an exact four-variable typing graph and acceptance contract
+
+- Severity: **Critical C remediation / remaining theorem isolated**
+- Status: **TYPING COMPLETE; CHAIN EQUIVALENCE OPEN**
+- Evidence: `geometry/t73_c_defect_coend_typing_graph.json`,
+  `data/T73_C_DEFECT_COEND_TYPING_GRAPH.schema.json`,
+  `data/T73_C_DEFECT_COEND_WITNESS.schema.json`,
+  `data/T73_C_DEFECT_COEND_FINITE_PRESENTATION.schema.json`, the builder,
+  fail-closed verifier, focused tests and
+  `docs/proofs/T73_DEFECT_AWARE_COEND_CONTRACT.md`.
+- Type: the source is a profunctor on
+  (mathcal C_{44}^{op}\timesmathcal C_{271}^{op}\times
+  mathcal C_{44}\timesmathcal C_{271}), with all 1260 endpoints, 630
+  intervals, both residual (mathcal C_{44}) actions and all eight
+  wrong-side intervals explicitly represented.
+- Orientation correction: the old lexicographic re-pairing had two invalid
+  entry--entry/exit--exit rows. The corrected audit gives the unique four
+  owner- and exit-to-entry-preserving band obligations. They remain
+  `UNREALIZED` saddle/foam movies, not pivotal mates.
+- Sufficient routes: either a four-variable two-sided representability chain
+  equivalence, or a direct connected-kernel derived bar/coend equivalence
+  (Theta), with inverse homotopies, balancing and both residual naturality
+  homotopies. Arc-algebra relative tensor and sweetness reconstruct gluing but
+  do not themselves prove the target Hom equivalence.
+- Grading: if (deg_qTheta=delta_Theta), then
+  (q_C=223-delta_Theta). The gate checks that formula but leaves both
+  values open because no witness exists.
+
+### F-533 — A complete rational Kirby/PD exporter is verified, while the actual T73 presentation map is absent
+
+- Severity: **Major infrastructure / exact remaining input**
+- Status: **EXPORTER VERIFIED ON TRUTH FIXTURE; T73 INPUT OPEN**
+- Evidence: `scripts/export_t73_full_handle_diagram.py`,
+  `data/T73_FULL_HANDLE_DIAGRAM.schema.json`, the seven-component fixture and
+  export under `geometry/examples`, the Spherogram/SnapPy/Regina receipt,
+  `scripts/check_t73_full_handle_diagram_input_gap.py`, the coordinate atlas,
+  `docs/proofs/T73_AR_TO_KIRBY_STAGE0_ATLAS.md`, tests and
+  `docs/proofs/T73_FULL_HANDLE_DIAGRAM_EXPORTER.md`.
+- Export: from seven closed rational cores and five closed push-offs in one
+  oriented generic chart, exact arithmetic derives all self/mixed crossings,
+  parameters and successor cycles, standard PD, Gauss code, the seven-core
+  linking matrix, five integer framings, the surgery matrix and the complete
+  twelve-component framed-link PD.
+- Open-source cross-check: the fixture gives seven core components and a
+  twelve-component, 42-crossing framed link in Spherogram; SnapPy gives seven
+  cusps and 36 tetrahedra; Regina reconstructs a valid connected orientable
+  ideal triangulation with 36 tetrahedra and seven boundary components.
+- Actual first gap: a cut/surgery presentation atlas is required, not an
+  embedding of (#^g(S^1\times S^2)) into (S^3). Current (m_i) cores use
+  four-coordinate seam charts, dual cells and belt bands use several local
+  three-coordinate charts, and no transition to a common dotted-circle
+  presentation is supplied. After that, both edges and attachment parameters
+  of 6 and 1513 bands, spliced final cores, two dotted meridians and five
+  final push-offs remain required.
+
+### F-534 — TetGen verifies a saved ten-ribbon source frame, but monolithic scaling fails before twenty
+
+- Severity: **Triangulation infrastructure / resource obstruction**
+- Status: **PREFIX VERIFIED; COMPLETE 630-RIBBON FRAME OPEN**
+- Evidence: `scripts/build_t73_selected_source_tetrahedral_frame.py`,
+  `scripts/verify_t73_selected_source_tetrahedral_frame.py`,
+  `data/T73_SELECTED_SOURCE_TETRAHEDRAL_FRAME.schema.json`,
+  `geometry/examples/t73_selected_source_tetrahedral_prefix10.json`, tests and
+  `docs/proofs/T73_SELECTED_SOURCE_TETRAHEDRAL_FRAME.md`.
+- PLC: the outer cube minus four insertion cubes, core and push-off segments,
+  2520 possible ribbon facets and endpoint connectors are supplied with
+  unique markers. TetGen uses exact predicates; the constructor can recover
+  subdivided marked faces and collinear edge paths, restore authoritative
+  rational input vertices and reject lost constraints or zero-volume tets.
+- Saved prefix: ten source ribbons give one connected tetrahedral
+  3-manifold with five triangulated (S^2) boundary components, 101 vertices,
+  858 tetrahedra, ten core paths, ten ribbon disks and exact volume 63968.
+  An independent verifier and JSON Schema accept it as `PASS_PREFIX_ONLY`.
+- Resource falsification: a 50-ribbon monolithic run produced no result after
+  six CPU minutes; a 20-ribbon run reached 14.6 GB RSS (91.7% of the host) in
+  roughly 40 seconds. Allowing facet subdivision did not remove the memory
+  explosion. Both runs were terminated with no accepted artifact.
+- Guard and next route: monolithic requests above ten are now rejected unless
+  an explicit unsafe resource-probe flag is passed. The complete frame needs
+  a partitioned construction with certified matching boundary
+  triangulations and a checked simplicial gluing map; the prefix is not used
+  as evidence for the missing full object.
+
+### F-535 — Bundle v2 inventories typing, atlas, PD fixture and tetrahedral prefix without promoting them
+
+- Severity: **Reproducibility / completion firewall**
+- Status: **RESOLVED FOR CURRENT ARTIFACT INVENTORY; BUNDLE OPEN**
+- Evidence: `scripts/build_t73_complete_geometry_bundle_v2.py`,
+  `geometry/t73_complete_geometry_bundle_manifest.v2.json`,
+  `data/T73_COMPLETE_GEOMETRY_BUNDLE_V2.schema.json`, its tests and the
+  expanded complete-constructor documentation.
+- Inventory: v2 hash-binds the verified v1 source/target bundle, the
+  four-variable coend typing graph, the AR coordinate atlas, the seven-core
+  PD fixture and open-source receipt, and the saved ten-ribbon TetGen prefix.
+  Evidence statuses distinguish core reconstruction, typing-only,
+  prefix-only and fixture-only results.
+- Completion firewall: every artifact still has
+  `t73_completion_status=OPEN`. Four separate gates require the actual coend
+  chain equivalence, actual complete Kirby input, complete 630-ribbon frame,
+  and actual-AR-to-canonical-source binding. Schema and mutation tests reject
+  promotion of any fixture or prefix to T73 completion.
 
 ### F-600 — The “actual” sphere-system builder assigns, rather than constructs, the embedding in \(\partial W_2\)
 
@@ -2854,10 +2979,13 @@ post-F-017 working tree, including the later Johnson restore hierarchy.
   exterior intervals, and four cyclic seams. Each cable-sign closure has 88
   cross-handle intervals and 227 z--z residual intervals.
 - Geometry: all endpoints and two-segment routes have rational coordinates.
-  Exact checks prove complete matching, pairwise route disjointness,
-  insertion-ball avoidance, endpoint product normals and disjoint rational
-  push-offs. The positive and negative m2 cyclic seams are explicitly bound.
-  Seven mutations fail.
+  Every interval now also stores four ruled-ribbon triangles and its complete
+  boundary, for 2520 triangles. The endpoint normal is the dyadic value
+  \(2^{-20}\); an exact
+  minimum-centre-distance versus maximum-\(L^1\)-width certificate proves
+  ribbons belonging to distinct intervals are disjoint. Route, push-off,
+  insertion-ball, cyclic-seam, ribbon and clearance checks pass; nine
+  mutations fail.
 - Scope: this is reconstructed from full reduced event records, not hashes,
   but is still a chosen canonical representative. It does not prove a relative
   isotopy from the actual AR exterior.

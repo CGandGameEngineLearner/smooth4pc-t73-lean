@@ -16,6 +16,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 ARTIFACT = ROOT / "geometry" / "t73_selected_source_exterior.json"
 PRIMITIVES = ROOT / "geometry" / "t73_all_owner_product_primitives.json"
+MIN_ROUTE_CLEARANCE = Fraction(1, 1000)
 
 
 def load_builder():
@@ -46,6 +47,89 @@ def cross(a, b):
         a[2] * b[0] - a[0] * b[2],
         a[0] * b[1] - a[1] * b[0],
     )
+
+
+def dot(a, b):
+    return sum(a[index] * b[index] for index in range(3))
+
+
+def clamp01(value):
+    return max(Fraction(0), min(Fraction(1), value))
+
+
+def segment_distance_squared(first, second):
+    p1, q1 = first
+    p2, q2 = second
+    d1, d2, relative = sub(q1, p1), sub(q2, p2), sub(p1, p2)
+    a, e = dot(d1, d1), dot(d2, d2)
+    if a == 0 or e == 0:
+        raise AssertionError("zero-length centre segment in clearance audit")
+    b, c, f = dot(d1, d2), dot(d1, relative), dot(d2, relative)
+    denominator = a * e - b * b
+    first_parameter = (
+        clamp01((b * f - c * e) / denominator)
+        if denominator != 0
+        else Fraction(0)
+    )
+    second_parameter = (b * first_parameter + f) / e
+    if second_parameter < 0:
+        second_parameter = Fraction(0)
+        first_parameter = clamp01(-c / a)
+    elif second_parameter > 1:
+        second_parameter = Fraction(1)
+        first_parameter = clamp01((b - c) / a)
+    difference = sub(
+        add(p1, tuple(first_parameter * value for value in d1)),
+        add(p2, tuple(second_parameter * value for value in d2)),
+    )
+    return dot(difference, difference)
+
+
+def clearance_certificate(intervals):
+    segments = []
+    maximum_width = Fraction(0)
+    for interval in intervals:
+        vertices = [point(value) for value in interval["vertices"]]
+        pushed = [point(value) for value in interval["positive_push_off_vertices"]]
+        maximum_width = max(
+            maximum_width,
+            *(sum(abs(value) for value in sub(push, centre)) for centre, push in zip(vertices, pushed)),
+        )
+        segments.extend(
+            (interval["route_index"], segment_index, segment)
+            for segment_index, segment in enumerate(zip(vertices, vertices[1:]))
+        )
+    minimum = None
+    pair = None
+    for first_index, (first_route, first_segment, first) in enumerate(segments):
+        for second_route, second_segment, second in segments[first_index + 1 :]:
+            if first_route == second_route:
+                continue
+            candidate = segment_distance_squared(first, second)
+            if minimum is None or candidate < minimum:
+                minimum = candidate
+                pair = {
+                    "first_route_index": first_route,
+                    "first_segment_index": first_segment,
+                    "second_route_index": second_route,
+                    "second_segment_index": second_segment,
+                }
+    if minimum is None or pair is None:
+        raise AssertionError("no distinct centre segments for clearance audit")
+    threshold = (2 * maximum_width) ** 2
+    if minimum <= MIN_ROUTE_CLEARANCE**2:
+        raise AssertionError("centre routes violate the promised construction clearance")
+    if minimum <= threshold:
+        raise AssertionError("the ruled-ribbon width exceeds the route clearance")
+    return {
+        "method": "exact centre-segment distance and L1 tubular-width bound",
+        "minimum_centre_segment_distance_squared": str(minimum),
+        "attaining_segment_pair": pair,
+        "maximum_vertex_l1_push_width": str(maximum_width),
+        "twice_width_squared": str(threshold),
+        "strict_clearance": True,
+        "conclusion": "ruled ribbons belonging to distinct exterior intervals are disjoint",
+    }
 
 
 def segment_intersects(first, second):
@@ -113,6 +197,13 @@ def validate(data, all_owner, check_route_pairs=True):
         raise AssertionError("source exterior improperly claims the AR relative isotopy")
     if data["contains_braid_word"] is not False:
         raise AssertionError("source exterior contains auxiliary braid data")
+    clearance = data.get("ribbon_clearance", {})
+    if (
+        clearance.get("strict_clearance") is not True
+        or clearance.get("method")
+        != "exact centre-segment distance and L1 tubular-width bound"
+    ):
+        raise AssertionError("source exterior has no ruled-ribbon clearance certificate")
     expected = expected_cycles(all_owner)
     cycles = {cycle["cycle_id"]: cycle for cycle in data["cycles"]}
     if set(cycles) != set(expected):
@@ -243,6 +334,37 @@ def validate(data, all_owner, check_route_pairs=True):
             raise AssertionError("route endpoints disagree with the matching")
         if any(pushed[i] != add(vertices[i], normal_vertices[i]) for i in range(3)):
             raise AssertionError("route push-off does not extend the recorded normal field")
+        expected_ribbon = [
+            [vertices[index], vertices[index + 1], pushed[index + 1]]
+            for index in range(2)
+        ] + [
+            [vertices[index], pushed[index + 1], pushed[index]]
+            for index in range(2)
+        ]
+        ribbon = [
+            [point(vertex) for vertex in triangle]
+            for triangle in interval.get("ruled_ribbon_triangles", [])
+        ]
+        if ribbon != expected_ribbon or any(
+            cross(sub(triangle[1], triangle[0]), sub(triangle[2], triangle[0]))
+            == (0, 0, 0)
+            for triangle in ribbon
+        ):
+            raise AssertionError("ruled framing ribbon is absent or degenerate")
+        expected_boundary = {
+            "core_vertices": interval["vertices"],
+            "push_off_vertices": interval["positive_push_off_vertices"],
+            "initial_transverse_edge": [
+                interval["vertices"][0],
+                interval["positive_push_off_vertices"][0],
+            ],
+            "terminal_transverse_edge": [
+                interval["vertices"][-1],
+                interval["positive_push_off_vertices"][-1],
+            ],
+        }
+        if interval.get("ruled_ribbon_boundary") != expected_boundary:
+            raise AssertionError("ruled framing ribbon boundary is incomplete")
         if interval["relative_twist"] != 0:
             raise AssertionError("route relative twist changed")
         if any(not inside_box(value, *outer_bounds, strict=True) for value in vertices + pushed):
@@ -301,6 +423,8 @@ def validate(data, all_owner, check_route_pairs=True):
             for _, second in push_segments:
                 if segment_intersects(first, second):
                     raise AssertionError("canonical route meets a framing push-off")
+        if data.get("ribbon_clearance") != clearance_certificate(intervals):
+            raise AssertionError("stored ruled-ribbon clearance certificate is stale")
     return {
         "CYCLES": 4,
         "CABLED_PASSAGES": {"y": 88, "z": 542},
@@ -312,6 +436,8 @@ def validate(data, all_owner, check_route_pairs=True):
         "FULL_MATCHING": "PASS",
         "RATIONAL_ROUTES": "PASS",
         "PRODUCT_NORMALS": "PASS",
+        "RULED_RIBBON_TRIANGLES": 2520,
+        "DISTINCT_RULED_RIBBONS": "PASS",
         "ACTUAL_AR_RELATIVE_ISOTOPY": "OPEN",
     }
 
@@ -337,6 +463,14 @@ def mutations(data, all_owner):
     mutant = copy.deepcopy(data)
     mutant["exterior_intervals"][0]["boundary_product_normal"] = ["0", "0", "0"]
     cases["normal"] = mutant
+    mutant = copy.deepcopy(data)
+    mutant["ribbon_clearance"]["strict_clearance"] = False
+    cases["ribbon_clearance"] = mutant
+    mutant = copy.deepcopy(data)
+    mutant["exterior_intervals"][0]["ruled_ribbon_triangles"][0][2] = copy.deepcopy(
+        mutant["exterior_intervals"][0]["ruled_ribbon_triangles"][0][1]
+    )
+    cases["ribbon_triangle"] = mutant
     mutant = copy.deepcopy(data)
     mutant["actual_ar_relative_isotopy_proved"] = True
     cases["scope_promotion"] = mutant

@@ -61,6 +61,7 @@ The complete selected-C geometry bundle is rebuilt and checked with:
 ```text
 python3 scripts/build_t73_complete_geometry_bundle.py --write
 python3 scripts/build_t73_complete_geometry_bundle.py --check
+python3 scripts/build_t73_complete_geometry_bundle_v2.py --check
 ```
 
 This saves all currently reconstructible endpoint/arc geometry.  Its manifest

@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Finite bar/arc-algebra presentation used by a T73 coend witness",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "typing_graph_sha256",
+    "route",
+    "fibers",
+    "residual_action_generators",
+    "z_balanced_relation_generators",
+    "completeness_theorem"
+  ],
+  "properties": {
+    "schema": {"const": "t73_c_defect_coend_finite_presentation/v1"},
+    "typing_graph_sha256": {"type": "string", "pattern": "^[0-9A-F]{64}$"},
+    "route": {
+      "enum": ["two_sided_representability", "direct_derived_bar_comparison"]
+    },
+    "fibers": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["fiber_id", "T_object", "T_prime_object"],
+        "properties": {
+          "fiber_id": {"type": "string", "minLength": 1},
+          "T_object": {"type": "string"},
+          "T_prime_object": {"type": "string"}
+        }
+      }
+    },
+    "residual_action_generators": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name", "side", "from_fiber", "to_fiber"],
+        "properties": {
+          "name": {"type": "string", "minLength": 1},
+          "side": {"enum": ["C44_left", "C44_right"]},
+          "from_fiber": {"type": "string", "minLength": 1},
+          "to_fiber": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "z_balanced_relation_generators": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name", "fiber_id", "relation"],
+        "properties": {
+          "name": {"type": "string", "minLength": 1},
+          "fiber_id": {"type": "string", "minLength": 1},
+          "relation": {"const": "P(id,g)=P(g,id)"}
+        }
+      }
+    },
+    "completeness_theorem": {
+      "const": "T73.DefectAwareCoend.selectedSourcePresentation_complete"
+    }
+  }
+}

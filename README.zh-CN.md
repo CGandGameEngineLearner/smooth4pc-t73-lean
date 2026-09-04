@@ -55,6 +55,7 @@ fail-closed gates 为准。
 ```text
 python3 scripts/build_t73_complete_geometry_bundle.py --write
 python3 scripts/build_t73_complete_geometry_bundle.py --check
+python3 scripts/build_t73_complete_geometry_bundle_v2.py --check
 ```
 
 它保存当前可重构的全部端点与弧几何；实际 coend/currying map 未构造，所以

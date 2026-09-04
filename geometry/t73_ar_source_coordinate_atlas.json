@@ -1,0 +1,306 @@
+{
+  "global_embedding_obstruction": {
+    "claim": "neither #4(S1xS2) nor #2(S1xS2) embeds as a closed 3-submanifold of S3",
+    "consequence": "the missing map must be a cut/surgery presentation or a triangulated-manifold isomorphism",
+    "proof": "invariance of domain makes the image of a closed connected 3-manifold open and closed in S3; surjectivity would force a homeomorphism, contradicted by H1=Z^g versus H1(S3)=0"
+  },
+  "known_transitions": [
+    {
+      "formula": "(x,y,z)->(x,y,z,1/2)",
+      "id": "t_belt_to_mapping_torus_slice",
+      "scope": "t belt sphere and six stored band-center paths only",
+      "status": "PASS"
+    },
+    {
+      "formula": "S(v)=v-(1,1,1) on the period-4 scaled mesh",
+      "id": "johnson_to_ar_fiber_similarity",
+      "scope": "single-fiber Heegaard pair only",
+      "status": "PASS"
+    }
+  ],
+  "missing_transitions_in_order": [
+    {
+      "id": "fiber_dual_H2_to_mapping_torus",
+      "required_choice": "the u level/side and compatible seam collar for each dual-cell core and ribbon",
+      "status": "OPEN"
+    },
+    {
+      "id": "x_belt_local_to_mapping_torus_or_cut_handlebody",
+      "required_choice": "a collar map u=u0+epsilon*nu (including seam-side choice and epsilon), not nu=u",
+      "status": "OPEN"
+    },
+    {
+      "id": "cut_handlebody_to_dotted_S3_presentation",
+      "required_choice": "four pre-cancellation 1-handle foot pairs, orientation-reversing disk identifications, lane endpoint maps, and ribbon normal trivializations",
+      "status": "OPEN"
+    },
+    {
+      "id": "full_band_rectangles_and_surgery_splices",
+      "required_choice": "both edges and attachment parameters of 6 t-bands and 1513 x-bands, plus embedded parallel replacement arcs",
+      "status": "OPEN"
+    }
+  ],
+  "pre_cancellation_cores": {
+    "h_CS": {
+      "chart": "mapping_torus_T3xI",
+      "closed_mode": "mapping_torus_seam",
+      "closed_verified": true,
+      "coordinate_dimension": [
+        4
+      ],
+      "core_sha256": "AA4943F7A3719FF35C9F8E9EE07670255162CE905B9D9486D63D0EE9C2914525",
+      "framing": {
+        "framing_sha256": "62EC431E9766ED532A9834D3B0DF620C6CE034F821140676FCB92BA36B4FAD65",
+        "relative_twist": 0,
+        "source_pointer": "/components/h_CS/framing_annulus",
+        "status": "PROCEDURAL_SOURCE_DATA"
+      },
+      "source_pointer": "/components/h_CS/core_polyline_T3xI",
+      "vertex_count": 2
+    },
+    "m_1": {
+      "chart": "mapping_torus_T3xI",
+      "closed_mode": "literal_polyline",
+      "closed_verified": true,
+      "coordinate_dimension": [
+        4
+      ],
+      "core_sha256": "AB332B79C69FFB949462A5295182422B11224610427ACE37CF738F7CEE929344",
+      "framing": {
+        "framing_sha256": "8127A02F97B39A1B0083915FC324652A634050C514276B0D48052DADBFAE8632",
+        "outer_core_rule": "q_i=p_i+width*(1,1,1,0)",
+        "quadrilateral_count": 22,
+        "relative_twist": 0,
+        "source_pointer": "/components/m_1/full_framing_annulus",
+        "status": "PROCEDURAL_SOURCE_DATA"
+      },
+      "source_pointer": "/components/m_1/core_polyline_T3xI",
+      "vertex_count": 23
+    },
+    "m_2": {
+      "chart": "mapping_torus_T3xI",
+      "closed_mode": "literal_polyline",
+      "closed_verified": true,
+      "coordinate_dimension": [
+        4
+      ],
+      "core_sha256": "12063E45CFB955AA6E822C8E713B579FB84331D1FBA391B3AF0232EFB9680013",
+      "framing": {
+        "framing_sha256": "7B6D25E0CB4F897D6B737F596286BC188F730308452C92C4C90E63786EEC5D65",
+        "outer_core_rule": "q_i=p_i+width*(1,1,1,0)",
+        "quadrilateral_count": 1876,
+        "relative_twist": 0,
+        "source_pointer": "/components/m_2/full_framing_annulus",
+        "status": "PROCEDURAL_SOURCE_DATA"
+      },
+      "source_pointer": "/components/m_2/core_polyline_T3xI",
+      "vertex_count": 1877
+    },
+    "m_3": {
+      "chart": "mapping_torus_T3xI",
+      "closed_mode": "literal_polyline",
+      "closed_verified": true,
+      "coordinate_dimension": [
+        4
+      ],
+      "core_sha256": "D7E1592BE5EB8AD5B0BF48ADB5D7E39CF2AF93EB57FE3B684E01044349F85541",
+      "framing": {
+        "framing_sha256": "32A03A7D4B079005EC9063216AA290157A004D544C4D92C689FE411F17B3461B",
+        "outer_core_rule": "q_i=p_i+width*(1,1,1,0)",
+        "quadrilateral_count": 8782,
+        "relative_twist": 0,
+        "source_pointer": "/components/m_3/full_framing_annulus",
+        "status": "PROCEDURAL_SOURCE_DATA"
+      },
+      "source_pointer": "/components/m_3/core_polyline_T3xI",
+      "vertex_count": 8783
+    },
+    "r_xy": {
+      "chart": "fiber_dual_H2_T3",
+      "closed_mode": "literal_polyline",
+      "closed_verified": true,
+      "coordinate_dimension": [
+        3
+      ],
+      "core_sha256": "2A8D5D5791BBD64BA66A585B10CEA2D34C9CCB0B72AE3E076EC94AB2590175A6",
+      "framing": {
+        "reason": "the dual disk and product-framing name are present, but no closed push-off polyline or ribbon vertex/triangle list is stored",
+        "status": "OPEN"
+      },
+      "source_pointer": "/components/r_xy/polyline",
+      "vertex_count": 9
+    },
+    "r_yz": {
+      "chart": "fiber_dual_H2_T3",
+      "closed_mode": "literal_polyline",
+      "closed_verified": true,
+      "coordinate_dimension": [
+        3
+      ],
+      "core_sha256": "9F90D528B1FD28E754E2C64E4742FA8411719197984ADA938D4F1CFFBBD1F20C",
+      "framing": {
+        "reason": "the dual disk and product-framing name are present, but no closed push-off polyline or ribbon vertex/triangle list is stored",
+        "status": "OPEN"
+      },
+      "source_pointer": "/components/r_yz/polyline",
+      "vertex_count": 9
+    },
+    "r_zx": {
+      "chart": "fiber_dual_H2_T3",
+      "closed_mode": "literal_polyline",
+      "closed_verified": true,
+      "coordinate_dimension": [
+        3
+      ],
+      "core_sha256": "C7F7DFF9677587073E7B140516C6B58A968BCF14FDEC4176BED528D849E52A8A",
+      "framing": {
+        "reason": "the dual disk and product-framing name are present, but no closed push-off polyline or ribbon vertex/triangle list is stored",
+        "status": "OPEN"
+      },
+      "source_pointer": "/components/r_zx/polyline",
+      "vertex_count": 9
+    }
+  },
+  "presentation_snapshots": {
+    "post_cancellation": {
+      "one_handle_names": [
+        "y",
+        "z"
+      ],
+      "required_dotted_meridians": 2,
+      "required_two_handle_cores": 5,
+      "two_handle_names": [
+        "m_2",
+        "m_3",
+        "r_xy",
+        "r_yz",
+        "r_zx"
+      ]
+    },
+    "pre_cancellation": {
+      "one_handle_names": [
+        "x",
+        "y",
+        "z",
+        "t"
+      ],
+      "required_dotted_meridians": 4,
+      "required_two_handle_cores": 7,
+      "two_handle_names": [
+        "m_1",
+        "m_2",
+        "m_3",
+        "h_CS",
+        "r_xy",
+        "r_yz",
+        "r_zx"
+      ]
+    }
+  },
+  "schema": "t73_ar_source_coordinate_atlas/v1",
+  "sha256": "755D78F7F0B4422360BE2AFA3850ADB5EFF8B1B5C7A9A163DDF82E7B36D0A3D6",
+  "source_bindings": {
+    "actual_ar_link_sha256": "E5CD3C2A2AD0650D061CFB730F54F32C1F2860D2FD0813067550D545D02D2853",
+    "belt_spheres_sha256": "E582534A0FF674EC2DC19377AEB6A15907BE2D7BCE7BA5C53BAC3AAF3DE9AF1C",
+    "p0a_handlebody_pair_sha256": "C1877B7696E7A44B5DEBE06BDCAC6CA712A83E49A07973107B7F1C4A728D4435",
+    "t_cancellation_sha256": "6BFFC5189F69C3C2A3AA186683FFFDDC63A60573982634BCEC242DA1B67051D6",
+    "x_cancellation_sha256": "B72838D6671FAFBD3D8368E511759D9DE13007C81E4C731EAA661B084B951C1B"
+  },
+  "source_charts": {
+    "fiber_dual_H2_T3": {
+      "coordinate_names": [
+        "x",
+        "y",
+        "z"
+      ],
+      "dimension": 3,
+      "missing_embedding_field": "fiber level/side u and transition into mapping_torus_T3xI",
+      "objects": [
+        "r_xy",
+        "r_yz",
+        "r_zx"
+      ]
+    },
+    "johnson_ar_fiber_pair": {
+      "dimension": 3,
+      "handlebody_B_tetrahedra": 192,
+      "handlebody_D_tetrahedra": 192,
+      "pair_vertex_count": 64,
+      "scope": "one T3 fiber Heegaard pair; not a mapping-torus or Kirby-presentation chart"
+    },
+    "mapping_torus_T3xI": {
+      "coordinate_names": [
+        "x",
+        "y",
+        "z",
+        "u"
+      ],
+      "dimension": 4,
+      "objects": [
+        "m_1",
+        "m_2",
+        "m_3",
+        "h_CS"
+      ],
+      "seam": "(p,1)~(psi_A(p),0); identity only on the protected section ball",
+      "u_interval": [
+        "0",
+        "1"
+      ]
+    },
+    "t_belt_slice": {
+      "ambient_lift": [
+        "x",
+        "y",
+        "z",
+        "1/2"
+      ],
+      "band_center_dimension": [
+        3
+      ],
+      "band_count": 6,
+      "belt_vertex_dimension": [
+        4
+      ],
+      "coordinate_names": [
+        "x",
+        "y",
+        "z"
+      ],
+      "dimension": 3
+    },
+    "x_belt_local": {
+      "ambient_local_coordinates": [
+        "2",
+        "y",
+        "z",
+        "nu"
+      ],
+      "band_center_dimension": [
+        3
+      ],
+      "band_count": 1513,
+      "belt_vertex_dimension": [
+        4
+      ],
+      "coordinate_names": [
+        "y",
+        "z",
+        "nu"
+      ],
+      "dimension": 3,
+      "warning": "nu is the x-handle normal coordinate, not the mapping-torus coordinate u"
+    }
+  },
+  "status": {
+    "all_seven_pre_cancellation_cores_referenced": "PASS",
+    "common_kirby_presentation": "OPEN",
+    "complete_pre_cancellation_framing_ribbons": "OPEN",
+    "data_completeness_conflict": "upstream PASS names the product framings, but r_xy/r_yz/r_zx have no stored ribbon/push-off coordinates and x,y,z,t dotted cores are absent",
+    "explicit_dual_cell_ribbon_count": 0,
+    "explicit_pre_cancellation_dotted_meridian_count": 0,
+    "reason": "the first two missing transition choices precede any honest dotted-circle PD export",
+    "source_chart_inventory": "PASS",
+    "upstream_actual_framed_ar_link_claim": "PASS"
+  }
+}

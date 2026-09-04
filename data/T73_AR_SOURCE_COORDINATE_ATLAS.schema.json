@@ -1,0 +1,218 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "T73_AR_SOURCE_COORDINATE_ATLAS.schema.json",
+  "title": "Stage-0 AR-to-Kirby source coordinate atlas",
+  "type": "object",
+  "required": [
+    "schema",
+    "source_bindings",
+    "source_charts",
+    "pre_cancellation_cores",
+    "known_transitions",
+    "missing_transitions_in_order",
+    "presentation_snapshots",
+    "global_embedding_obstruction",
+    "status",
+    "sha256"
+  ],
+  "properties": {
+    "schema": {"const": "t73_ar_source_coordinate_atlas/v1"},
+    "source_bindings": {
+      "type": "object",
+      "required": [
+        "actual_ar_link_sha256",
+        "belt_spheres_sha256",
+        "t_cancellation_sha256",
+        "x_cancellation_sha256",
+        "p0a_handlebody_pair_sha256"
+      ],
+      "additionalProperties": {"$ref": "#/$defs/sha"}
+    },
+    "source_charts": {
+      "type": "object",
+      "required": [
+        "mapping_torus_T3xI",
+        "fiber_dual_H2_T3",
+        "t_belt_slice",
+        "x_belt_local",
+        "johnson_ar_fiber_pair"
+      ]
+    },
+    "pre_cancellation_cores": {
+      "type": "object",
+      "required": ["m_1", "m_2", "m_3", "h_CS", "r_xy", "r_yz", "r_zx"],
+      "additionalProperties": {"$ref": "#/$defs/core"}
+    },
+    "known_transitions": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "prefixItems": [
+        {"$ref": "#/$defs/knownTTransition"},
+        {"$ref": "#/$defs/knownFiberTransition"}
+      ],
+      "items": false
+    },
+    "missing_transitions_in_order": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "prefixItems": [
+        {"$ref": "#/$defs/missingDualTransition"},
+        {"$ref": "#/$defs/missingXBeltTransition"},
+        {"$ref": "#/$defs/missingKirbyPresentation"},
+        {"$ref": "#/$defs/missingBandSplices"}
+      ],
+      "items": false
+    },
+    "presentation_snapshots": {
+      "type": "object",
+      "required": ["pre_cancellation", "post_cancellation"],
+      "properties": {
+        "pre_cancellation": {"$ref": "#/$defs/snapshot"},
+        "post_cancellation": {"$ref": "#/$defs/snapshot"}
+      }
+    },
+    "global_embedding_obstruction": {
+      "type": "object",
+      "required": ["claim", "proof", "consequence"]
+    },
+    "status": {
+      "type": "object",
+      "required": [
+        "source_chart_inventory",
+        "all_seven_pre_cancellation_cores_referenced",
+        "upstream_actual_framed_ar_link_claim",
+        "complete_pre_cancellation_framing_ribbons",
+        "explicit_dual_cell_ribbon_count",
+        "explicit_pre_cancellation_dotted_meridian_count",
+        "data_completeness_conflict",
+        "common_kirby_presentation",
+        "reason"
+      ]
+    },
+    "sha256": {"$ref": "#/$defs/sha"}
+  },
+  "$defs": {
+    "sha": {"type": "string", "pattern": "^[0-9A-F]{64}$"},
+    "core": {
+      "type": "object",
+      "required": [
+        "chart",
+        "source_pointer",
+        "coordinate_dimension",
+        "vertex_count",
+        "closed_mode",
+        "closed_verified",
+        "core_sha256",
+        "framing"
+      ],
+      "properties": {
+        "coordinate_dimension": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"type": "integer", "minimum": 1}
+        },
+        "vertex_count": {"type": "integer", "minimum": 2},
+        "closed_verified": {"const": true},
+        "core_sha256": {"$ref": "#/$defs/sha"},
+        "framing": {"type": "object", "required": ["status"]}
+      }
+    },
+    "transition": {
+      "type": "object",
+      "required": ["id", "status"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1},
+        "status": {"enum": ["PASS", "OPEN"]}
+      }
+    },
+    "knownTTransition": {
+      "allOf": [
+        {"$ref": "#/$defs/transition"},
+        {
+          "required": ["formula", "scope"],
+          "properties": {
+            "id": {"const": "t_belt_to_mapping_torus_slice"},
+            "status": {"const": "PASS"}
+          }
+        }
+      ]
+    },
+    "knownFiberTransition": {
+      "allOf": [
+        {"$ref": "#/$defs/transition"},
+        {
+          "required": ["formula", "scope"],
+          "properties": {
+            "id": {"const": "johnson_to_ar_fiber_similarity"},
+            "status": {"const": "PASS"}
+          }
+        }
+      ]
+    },
+    "missingDualTransition": {
+      "allOf": [
+        {"$ref": "#/$defs/transition"},
+        {
+          "required": ["required_choice"],
+          "properties": {
+            "id": {"const": "fiber_dual_H2_to_mapping_torus"},
+            "status": {"const": "OPEN"}
+          }
+        }
+      ]
+    },
+    "missingXBeltTransition": {
+      "allOf": [
+        {"$ref": "#/$defs/transition"},
+        {
+          "required": ["required_choice"],
+          "properties": {
+            "id": {"const": "x_belt_local_to_mapping_torus_or_cut_handlebody"},
+            "status": {"const": "OPEN"}
+          }
+        }
+      ]
+    },
+    "missingKirbyPresentation": {
+      "allOf": [
+        {"$ref": "#/$defs/transition"},
+        {
+          "required": ["required_choice"],
+          "properties": {
+            "id": {"const": "cut_handlebody_to_dotted_S3_presentation"},
+            "status": {"const": "OPEN"}
+          }
+        }
+      ]
+    },
+    "missingBandSplices": {
+      "allOf": [
+        {"$ref": "#/$defs/transition"},
+        {
+          "required": ["required_choice"],
+          "properties": {
+            "id": {"const": "full_band_rectangles_and_surgery_splices"},
+            "status": {"const": "OPEN"}
+          }
+        }
+      ]
+    },
+    "snapshot": {
+      "type": "object",
+      "required": [
+        "one_handle_names",
+        "required_dotted_meridians",
+        "two_handle_names",
+        "required_two_handle_cores"
+      ],
+      "properties": {
+        "one_handle_names": {"type": "array", "items": {"type": "string"}},
+        "required_dotted_meridians": {"type": "integer", "minimum": 0},
+        "two_handle_names": {"type": "array", "items": {"type": "string"}},
+        "required_two_handle_cores": {"type": "integer", "minimum": 0}
+      }
+    }
+  }
+}

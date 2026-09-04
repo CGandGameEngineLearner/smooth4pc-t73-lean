@@ -19,6 +19,118 @@
       "Blanchet_sign": "UNDETERMINED",
       "Euler_quantum_degree": "UNDETERMINED",
       "index": 0,
+      "left_or_right_mate": "NOT_APPLICABLE_TO_RECONNECTION",
+      "new_cross_pairs": [
+        [
+          "m_2:positive:event:310:exit",
+          "m_2:negative:event:1:entry"
+        ],
+        [
+          "m_2:negative:event:0:exit",
+          "m_2:positive:event:0:entry"
+        ]
+      ],
+      "obligation_id": "band:m_2:Y_to_Z",
+      "old_interval_ids": [
+        "m_2:negative:interval:0",
+        "m_2:positive:interval:310"
+      ],
+      "orientation_checked": true,
+      "orientation_class": "Y_to_Z",
+      "owner": "m_2",
+      "required_operation": "oriented band surgery or equivalent foam movie, not pivotal retyping",
+      "status": "UNREALIZED"
+    },
+    {
+      "Blanchet_sign": "UNDETERMINED",
+      "Euler_quantum_degree": "UNDETERMINED",
+      "index": 1,
+      "left_or_right_mate": "NOT_APPLICABLE_TO_RECONNECTION",
+      "new_cross_pairs": [
+        [
+          "m_2:negative:event:310:exit",
+          "m_2:positive:event:310:entry"
+        ],
+        [
+          "m_2:positive:event:309:exit",
+          "m_2:negative:event:0:entry"
+        ]
+      ],
+      "obligation_id": "band:m_2:Z_to_Y",
+      "old_interval_ids": [
+        "m_2:negative:interval:310",
+        "m_2:positive:interval:309"
+      ],
+      "orientation_checked": true,
+      "orientation_class": "Z_to_Y",
+      "owner": "m_2",
+      "required_operation": "oriented band surgery or equivalent foam movie, not pivotal retyping",
+      "status": "UNREALIZED"
+    },
+    {
+      "Blanchet_sign": "UNDETERMINED",
+      "Euler_quantum_degree": "UNDETERMINED",
+      "index": 2,
+      "left_or_right_mate": "NOT_APPLICABLE_TO_RECONNECTION",
+      "new_cross_pairs": [
+        [
+          "r_xy:positive:event:3:exit",
+          "r_xy:positive:event:2:entry"
+        ],
+        [
+          "r_xy:positive:event:1:exit",
+          "r_xy:positive:event:0:entry"
+        ]
+      ],
+      "obligation_id": "band:r_xy:Y_to_Z",
+      "old_interval_ids": [
+        "r_xy:positive:interval:1",
+        "r_xy:positive:interval:3"
+      ],
+      "orientation_checked": true,
+      "orientation_class": "Y_to_Z",
+      "owner": "r_xy",
+      "required_operation": "oriented band surgery or equivalent foam movie, not pivotal retyping",
+      "status": "UNREALIZED"
+    },
+    {
+      "Blanchet_sign": "UNDETERMINED",
+      "Euler_quantum_degree": "UNDETERMINED",
+      "index": 3,
+      "left_or_right_mate": "NOT_APPLICABLE_TO_RECONNECTION",
+      "new_cross_pairs": [
+        [
+          "r_xy:negative:event:3:exit",
+          "r_xy:negative:event:2:entry"
+        ],
+        [
+          "r_xy:negative:event:1:exit",
+          "r_xy:negative:event:0:entry"
+        ]
+      ],
+      "obligation_id": "band:r_xy:Z_to_Y",
+      "old_interval_ids": [
+        "r_xy:negative:interval:1",
+        "r_xy:negative:interval:3"
+      ],
+      "orientation_checked": true,
+      "orientation_class": "Z_to_Y",
+      "owner": "r_xy",
+      "required_operation": "oriented band surgery or equivalent foam movie, not pivotal retyping",
+      "status": "UNREALIZED"
+    }
+  ],
+  "schema": "t73_defect_aware_currying_audit/v1",
+  "selected_pivotal_feet": [
+    "actual:m_2:w44:pos:m_2:C_i",
+    "actual:r_xy:w2:neg:r_xy:vertex:7"
+  ],
+  "source_exterior_sha256": "0B5D34B8581E6208D573C1934CE8BE225BAA874AE1120ED6A64027DD007BF741",
+  "superseded_lexicographic_reconnections": [
+    {
+      "Blanchet_sign": "UNDETERMINED",
+      "Euler_quantum_degree": "UNDETERMINED",
+      "index": 0,
       "left_or_right_mate": "UNDETERMINED",
       "new_cross_pairs": [
         [
@@ -92,12 +204,6 @@
       "required_operation": "pivotal mate/reconnection, not ambient isotopy relative endpoints"
     }
   ],
-  "schema": "t73_defect_aware_currying_audit/v1",
-  "selected_pivotal_feet": [
-    "actual:m_2:w44:pos:m_2:C_i",
-    "actual:r_xy:w2:neg:r_xy:vertex:7"
-  ],
-  "source_exterior_sha256": "81E35ACE16DDC6C7226D6251EE57ADD6B4C253976452EEFFB48BBC49E5857E6C",
   "transition_counts": {
     "Y_minus--Z_minus": 4,
     "Y_minus--Z_plus": 84,

@@ -283,7 +283,7 @@ def validate_frame(raw: dict[str, Any], expected_components: int = 5) -> dict[st
             fail(f"ribbon {ribbon['name']} has no typed core arc")
         push = ribbon["push_off_path"]
         if (
-            not isinstance(push, list) or len(push) != len(arcs[ribbon["core_arc"]])
+            not isinstance(push, list) or len(push) < 2
             or any(not isinstance(vertex, int) or vertex < 0 or vertex >= len(complex_data["vertices"]) for vertex in push)
             or len(set(push)) != len(push)
             or any(tuple(sorted(edge)) not in all_edges for edge in zip(push, push[1:]))
@@ -299,13 +299,39 @@ def validate_frame(raw: dict[str, Any], expected_components: int = 5) -> dict[st
             fail(f"ribbon {ribbon['name']} is not a triangle subcomplex")
         disk_boundary, vertices = validate_surface_disk(triangles, gate, f"ribbon {ribbon['name']}")
         core = arcs[ribbon["core_arc"]]
+        connectors = []
+        for key, endpoints in (
+            ("start_connector_path", (core[0], push[0])),
+            ("end_connector_path", (core[-1], push[-1])),
+        ):
+            connector = ribbon.get(key, list(endpoints))
+            if (
+                not isinstance(connector, list)
+                or len(connector) < 2
+                or connector[0] != endpoints[0]
+                or connector[-1] != endpoints[1]
+                or len(set(connector)) != len(connector)
+                or any(
+                    not isinstance(vertex, int)
+                    or vertex < 0
+                    or vertex >= len(complex_data["vertices"])
+                    for vertex in connector
+                )
+                or any(
+                    tuple(sorted(edge)) not in all_edges
+                    for edge in zip(connector, connector[1:])
+                )
+            ):
+                fail(f"ribbon {ribbon['name']} has an invalid {key}")
+            connectors.append(connector)
         expected_boundary = {
             tuple(sorted(edge)) for edge in zip(core, core[1:])
         } | {
             tuple(sorted(edge)) for edge in zip(push, push[1:])
         } | {
-            tuple(sorted((core[0], push[0]))),
-            tuple(sorted((core[-1], push[-1]))),
+            tuple(sorted(edge))
+            for connector in connectors
+            for edge in zip(connector, connector[1:])
         }
         if disk_boundary != expected_boundary:
             fail(f"ribbon {ribbon['name']} boundary is not core plus framed push-off")
@@ -434,6 +460,9 @@ def verify_ambient_isomorphism(before: dict[str, Any], after: dict[str, Any], mo
         transported["push_off_path"] = [
             mapping[vertex] for vertex in record["push_off_path"]
         ]
+        for key in ("start_connector_path", "end_connector_path"):
+            if key in record:
+                transported[key] = [mapping[vertex] for vertex in record[key]]
         transported["triangles"] = [
             sorted(mapping[vertex] for vertex in triangle)
             for triangle in record["triangles"]

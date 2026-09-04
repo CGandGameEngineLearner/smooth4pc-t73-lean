@@ -564,6 +564,19 @@ isomorphism; the current boundary metadata does not satisfy that contract.
 Thus all three gates currently return \texttt{OPEN}, as they must until the
 objects in the third column are constructed.
 
+A separate exact exporter now covers the final Kirby-diagram stage once its
+coordinate input exists.  From seven closed rational cores and five closed
+push-offs in one oriented projection chart it derives all self and mixed
+crossings, component successor cycles, standard PD code, linking matrix,
+integer framings and the surgery matrix.  On a seven-component truth fixture,
+Spherogram recovers the seven cores and the twelve-component framed link,
+while SnapPy and Regina independently produce the same 36-tetrahedron,
+seven-cusped exterior.  This does not repair the T73 input: the first missing
+map is a cut/surgery presentation from the seam-identified AR, belt and
+dual-cell charts to one dotted-circle Kirby chart, followed by complete
+six-band and 1513-band splicing.  The old 1958-row railroad ledger omits that
+map, self-crossings, dotted components and two integer framings.
+
 The numerical part is independently reproducible: the public Artin word has
 length $11340$, its $88$-strand cable has length $45360$, the truncated Burau
 row has cubic coefficient $-328$, and the substitution
@@ -1490,9 +1503,20 @@ cable cycles put $88$ points on each $Y$ insertion sphere and $542$ on each
 $Z$ insertion sphere.  All $1260$ oriented boundary points are matched by
 $630$ rational exterior intervals, including the four cyclic seams; for
 either cable sign these consist of $88$ cross-handle intervals and $227$
-$z$--$z$ intervals.  Exact verification proves the matching and disjoint
-rational framing push-offs, but deliberately leaves its relative isotopy to
-the actual AR exterior open.
+$z$--$z$ intervals.  Each interval stores four rational ruled-ribbon
+triangles.  Exact verification proves the matching, the framing push-offs and
+an all-pairs width/clearance bound for distinct ribbons, but deliberately
+leaves their inclusion in one ambient tetrahedral exterior and the relative
+isotopy to the actual AR exterior open.
+
+As a triangulation prefix, TetGen and an independent rational verifier place
+the first ten ribbons in a five-boundary-component complex with 101 vertices,
+858 tetrahedra and exact exterior volume 63968.  This is not evidence for the
+full frame: a 20-ribbon monolithic run exhausted 14.6 GB of memory and a
+50-ribbon run did not finish in six CPU minutes.  The constructor therefore
+resource-disables monolithic requests above ten; a complete 630-ribbon frame
+requires partitioned meshes with certified matching boundary triangulations
+and checked simplicial gluing.
 
 This complete source table also rules out describing the next step as an
 ambient isotopy to a single $P_{86}\to P_{88}$ diagram.  An ambient isotopy
@@ -1505,6 +1529,31 @@ the external cup $E_{86}\to E_{88}$, not by the eight wrong-side intervals.
 The target-only single-Hom artifact records 86 through strands and one cup,
 but its source-to-target interval map and $z$-coend gluing cells are empty and
 its grading is undetermined.
+
+The defect-aware typing graph keeps the genuine four-variable type
+\(mathcal C_{44}^{\mathrm{op}}\times\mathcal C_{271}^{\mathrm{op}}
+\times\mathcal C_{44}\times\mathcal C_{271}\).  It also corrects an earlier
+lexicographic pairing error: two proposed pairs joined entry to entry and exit
+to exit.  There is a unique owner- and orientation-preserving grouping into
+four band obligations, but all four remain unrealized saddle movies.  A
+non-literal proof of C could instead supply either a four-variable two-sided
+representability equivalence or a direct homogeneous chain equivalence
+\[
+\Theta_{T,T'}:
+B_\bullet(\mathcal C_{271};M_R(T,-;T',-))
+\simeq
+\operatorname{RHom}_{\mathcal C_{44}}(BT,BT')\otimes A^{\otimes227}.
+\]
+The latter must include a chain inverse, inverse homotopies, both residual
+\(\mathcal C_{44}\)-naturality homotopies and the complete balanced
+presentation.  If its quantum degree is \(\delta_\Theta\), the selected
+degree would be
+\[
+q_C=223-\delta_\Theta.
+\]
+The current verifier checks this typing and acceptance contract but has no
+witness for either equivalence, so neither \(\delta_\Theta\) nor \(q_C\) is
+assigned.
 
 For comparison, if a coefficient exterior had the displayed literal split,
 the normalized coefficient would have shift $44+271$, whereas the two
