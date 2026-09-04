@@ -36,6 +36,12 @@ class JohnsonCapCollapseAssemblyTest(unittest.TestCase):
             self.assertEqual(movie["fiber_transport"], "PASS")
             self.assertEqual(movie["paired_saddle_fiber_cells"], "PASS")
             self.assertEqual(movie["paired_saddle_ambient_cells"], "OPEN")
+            self.assertEqual(movie["source_cap_index"], 1)
+            self.assertEqual(movie["target_cap_index"], 0)
+            self.assertEqual(
+                movie["cap_product_collar_direction"],
+                "inverse_of_recorded_cap0_to_cap1",
+            )
             self.assertEqual(movie["jacobian_det_min"], "1/3")
             self.assertEqual(movie["jacobian_det_max"], "3")
             for cap_name in ("source_cap_collapse", "target_cap_collapse"):

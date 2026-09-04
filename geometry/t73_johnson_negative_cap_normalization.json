@@ -1,0 +1,603 @@
+{
+  "all_source_disks_normalize_to_remove_caps": "PASS",
+  "derived_cells_sha256": "FA93FDC69C7F0DA7D9E2F326E7D8A1862E027E9AC1A777223FB374CAF6CF4140",
+  "expanded_ambient_cell_count": 16128,
+  "movies": [
+    {
+      "actual_chart_count": 2,
+      "actual_charts": [
+        {
+          "carrier": [
+            4,
+            14,
+            12,
+            40
+          ],
+          "carrier_index": 30,
+          "determinant": "1/4",
+          "dimension": 2,
+          "free_face": [
+            4,
+            14
+          ],
+          "image_vertices": [
+            [
+              "7/4",
+              "3/2",
+              "7/2"
+            ],
+            [
+              "1",
+              "2",
+              "3"
+            ],
+            [
+              "2",
+              "1",
+              "3"
+            ],
+            [
+              "2",
+              "1",
+              "4"
+            ]
+          ],
+          "inverse_determinant": "4",
+          "inverse_linear": [
+            [
+              "-2",
+              "-1",
+              "0"
+            ],
+            [
+              "0",
+              "-1",
+              "-1"
+            ],
+            [
+              "-2",
+              "-2",
+              "1"
+            ]
+          ],
+          "inverse_translation": [
+            "5",
+            "5",
+            "3"
+          ],
+          "linear": [
+            [
+              "-3/4",
+              "1/4",
+              "1/4"
+            ],
+            [
+              "1/2",
+              "-1/2",
+              "-1/2"
+            ],
+            [
+              "-1/2",
+              "-1/2",
+              "1/2"
+            ]
+          ],
+          "protected_ball_bbox_clearance": "3997/4000",
+          "simplex": [
+            4,
+            14,
+            40
+          ],
+          "standard_ambient_cell_count": 4032,
+          "standard_jacobian_det_max": "3",
+          "standard_jacobian_det_min": "1/3",
+          "standard_vertex_images": [
+            40,
+            4,
+            14,
+            12
+          ],
+          "translation": [
+            "7/4",
+            "3/2",
+            "7/2"
+          ]
+        },
+        {
+          "carrier": [
+            4,
+            14,
+            12,
+            40
+          ],
+          "carrier_index": 30,
+          "determinant": "1/4",
+          "dimension": 1,
+          "free_face": [
+            4
+          ],
+          "image_vertices": [
+            [
+              "7/4",
+              "3/2",
+              "7/2"
+            ],
+            [
+              "1",
+              "2",
+              "3"
+            ],
+            [
+              "2",
+              "1",
+              "3"
+            ],
+            [
+              "2",
+              "1",
+              "4"
+            ]
+          ],
+          "inverse_determinant": "4",
+          "inverse_linear": [
+            [
+              "-2",
+              "-1",
+              "0"
+            ],
+            [
+              "0",
+              "-1",
+              "-1"
+            ],
+            [
+              "-2",
+              "-2",
+              "1"
+            ]
+          ],
+          "inverse_translation": [
+            "5",
+            "5",
+            "3"
+          ],
+          "linear": [
+            [
+              "-3/4",
+              "1/4",
+              "1/4"
+            ],
+            [
+              "1/2",
+              "-1/2",
+              "-1/2"
+            ],
+            [
+              "-1/2",
+              "-1/2",
+              "1/2"
+            ]
+          ],
+          "protected_ball_bbox_clearance": "3997/4000",
+          "simplex": [
+            4,
+            40
+          ],
+          "standard_ambient_cell_count": 4032,
+          "standard_jacobian_det_max": "3",
+          "standard_jacobian_det_min": "1/3",
+          "standard_vertex_images": [
+            40,
+            4,
+            14,
+            12
+          ],
+          "translation": [
+            "7/4",
+            "3/2",
+            "7/2"
+          ]
+        }
+      ],
+      "all_actual_chart_inverses_explicit": true,
+      "all_actual_charts_positive": true,
+      "expanded_ambient_cell_count": 8064,
+      "jacobian_det_max": "3",
+      "jacobian_det_min": "1/3",
+      "power": -1,
+      "relative_collapse": {
+        "dimension_histogram": {
+          "1": 1,
+          "2": 1
+        },
+        "protected_simplex_counts": [
+          3,
+          3,
+          1,
+          0
+        ],
+        "relative_collapse_status": "PASS",
+        "remaining_equals_protected_disk_by_dimension": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "remaining_simplex_counts": [
+          3,
+          3,
+          1,
+          0
+        ],
+        "step_count": 2,
+        "steps": [
+          {
+            "dimension": 2,
+            "free_face": [
+              0,
+              2
+            ],
+            "simplex": [
+              0,
+              2,
+              3
+            ]
+          },
+          {
+            "dimension": 1,
+            "free_face": [
+              0
+            ],
+            "simplex": [
+              0,
+              3
+            ]
+          }
+        ]
+      },
+      "side": "prefix-first",
+      "source_disk_to_remove_cap": "PASS",
+      "source_disk_triangle_count": 2,
+      "target_cap_triangle_count": 1
+    },
+    {
+      "actual_chart_count": 2,
+      "actual_charts": [
+        {
+          "carrier": [
+            14,
+            17,
+            15,
+            47
+          ],
+          "carrier_index": 34,
+          "determinant": "1/4",
+          "dimension": 2,
+          "free_face": [
+            15,
+            17
+          ],
+          "image_vertices": [
+            [
+              "9/4",
+              "-3/2",
+              "7/2"
+            ],
+            [
+              "2",
+              "-1",
+              "4"
+            ],
+            [
+              "2",
+              "-1",
+              "3"
+            ],
+            [
+              "2",
+              "-2",
+              "3"
+            ]
+          ],
+          "inverse_determinant": "4",
+          "inverse_linear": [
+            [
+              "-2",
+              "0",
+              "1"
+            ],
+            [
+              "0",
+              "1",
+              "-1"
+            ],
+            [
+              "-2",
+              "-1",
+              "0"
+            ]
+          ],
+          "inverse_translation": [
+            "1",
+            "5",
+            "3"
+          ],
+          "linear": [
+            [
+              "-1/4",
+              "-1/4",
+              "-1/4"
+            ],
+            [
+              "1/2",
+              "1/2",
+              "-1/2"
+            ],
+            [
+              "1/2",
+              "-1/2",
+              "-1/2"
+            ]
+          ],
+          "protected_ball_bbox_clearance": "13997/8000",
+          "simplex": [
+            15,
+            17,
+            47
+          ],
+          "standard_ambient_cell_count": 4032,
+          "standard_jacobian_det_max": "3",
+          "standard_jacobian_det_min": "1/3",
+          "standard_vertex_images": [
+            47,
+            15,
+            17,
+            14
+          ],
+          "translation": [
+            "9/4",
+            "-3/2",
+            "7/2"
+          ]
+        },
+        {
+          "carrier": [
+            14,
+            17,
+            15,
+            47
+          ],
+          "carrier_index": 34,
+          "determinant": "1/4",
+          "dimension": 1,
+          "free_face": [
+            15
+          ],
+          "image_vertices": [
+            [
+              "9/4",
+              "-3/2",
+              "7/2"
+            ],
+            [
+              "2",
+              "-1",
+              "4"
+            ],
+            [
+              "2",
+              "-1",
+              "3"
+            ],
+            [
+              "2",
+              "-2",
+              "3"
+            ]
+          ],
+          "inverse_determinant": "4",
+          "inverse_linear": [
+            [
+              "-2",
+              "0",
+              "1"
+            ],
+            [
+              "0",
+              "1",
+              "-1"
+            ],
+            [
+              "-2",
+              "-1",
+              "0"
+            ]
+          ],
+          "inverse_translation": [
+            "1",
+            "5",
+            "3"
+          ],
+          "linear": [
+            [
+              "-1/4",
+              "-1/4",
+              "-1/4"
+            ],
+            [
+              "1/2",
+              "1/2",
+              "-1/2"
+            ],
+            [
+              "1/2",
+              "-1/2",
+              "-1/2"
+            ]
+          ],
+          "protected_ball_bbox_clearance": "13997/8000",
+          "simplex": [
+            15,
+            47
+          ],
+          "standard_ambient_cell_count": 4032,
+          "standard_jacobian_det_max": "3",
+          "standard_jacobian_det_min": "1/3",
+          "standard_vertex_images": [
+            47,
+            15,
+            17,
+            14
+          ],
+          "translation": [
+            "9/4",
+            "-3/2",
+            "7/2"
+          ]
+        }
+      ],
+      "all_actual_chart_inverses_explicit": true,
+      "all_actual_charts_positive": true,
+      "expanded_ambient_cell_count": 8064,
+      "jacobian_det_max": "3",
+      "jacobian_det_min": "1/3",
+      "power": -1,
+      "relative_collapse": {
+        "dimension_histogram": {
+          "1": 1,
+          "2": 1
+        },
+        "protected_simplex_counts": [
+          3,
+          3,
+          1,
+          0
+        ],
+        "relative_collapse_status": "PASS",
+        "remaining_equals_protected_disk_by_dimension": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "remaining_simplex_counts": [
+          3,
+          3,
+          1,
+          0
+        ],
+        "step_count": 2,
+        "steps": [
+          {
+            "dimension": 2,
+            "free_face": [
+              0,
+              1
+            ],
+            "simplex": [
+              0,
+              1,
+              3
+            ]
+          },
+          {
+            "dimension": 1,
+            "free_face": [
+              0
+            ],
+            "simplex": [
+              0,
+              3
+            ]
+          }
+        ]
+      },
+      "side": "target-first",
+      "source_disk_to_remove_cap": "PASS",
+      "source_disk_triangle_count": 2,
+      "target_cap_triangle_count": 1
+    },
+    {
+      "actual_chart_count": 0,
+      "actual_charts": [],
+      "all_actual_chart_inverses_explicit": true,
+      "all_actual_charts_positive": true,
+      "expanded_ambient_cell_count": 0,
+      "jacobian_det_max": null,
+      "jacobian_det_min": null,
+      "power": 1,
+      "relative_collapse": {
+        "dimension_histogram": {},
+        "protected_simplex_counts": [
+          3,
+          3,
+          1,
+          0
+        ],
+        "relative_collapse_status": "PASS",
+        "remaining_equals_protected_disk_by_dimension": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "remaining_simplex_counts": [
+          3,
+          3,
+          1,
+          0
+        ],
+        "step_count": 0,
+        "steps": []
+      },
+      "side": "prefix-first",
+      "source_disk_to_remove_cap": "PASS",
+      "source_disk_triangle_count": 1,
+      "target_cap_triangle_count": 1
+    },
+    {
+      "actual_chart_count": 0,
+      "actual_charts": [],
+      "all_actual_chart_inverses_explicit": true,
+      "all_actual_charts_positive": true,
+      "expanded_ambient_cell_count": 0,
+      "jacobian_det_max": null,
+      "jacobian_det_min": null,
+      "power": 1,
+      "relative_collapse": {
+        "dimension_histogram": {},
+        "protected_simplex_counts": [
+          3,
+          3,
+          1,
+          0
+        ],
+        "relative_collapse_status": "PASS",
+        "remaining_equals_protected_disk_by_dimension": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "remaining_simplex_counts": [
+          3,
+          3,
+          1,
+          0
+        ],
+        "step_count": 0,
+        "steps": []
+      },
+      "side": "target-first",
+      "source_disk_to_remove_cap": "PASS",
+      "source_disk_triangle_count": 1,
+      "target_cap_triangle_count": 1
+    }
+  ],
+  "normalization_chart_count": 4,
+  "paired_saddle_final_assembly": "OPEN",
+  "schema": "t73_johnson_negative_cap_normalization/v1",
+  "sha256": "55F6CAFE3D02AC6E7194BE13C01AB8E7508D38F38253C96B6A8FB5319620DBF8",
+  "support_sha256": "3FD397D7D77198F4A8358BD1EE475E6B19F1F4D6B53AC52CF7B3C2BEEC943A55",
+  "sweep_sha256": "188B128AD8D619318F3E5BE1D28A7684082233DFBFC81AB24E69C1F53F5DBA9A"
+}

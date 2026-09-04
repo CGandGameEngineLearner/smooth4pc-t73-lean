@@ -257,27 +257,30 @@ def build_movie(pl, sweep_tools, collar_tools, derived, lookup, movie, support, 
         sweep_tools, tetrahedra, adjacency, support["dual_path"], add_ball, remove_ball
     )
     standard_vertices = [list(vertex) for vertex in derived.STANDARD_VERTICES]
-    caps = [
+    cap_charts = [
         build_cap(pl, standard_vertices, structure, cap, movie["side"], lookup)
         for cap in support["regular_path_neighbourhood"]["caps"]
     ]
     if collar["cap_product_collar"] != "PASS":
         raise AssertionError("cap product collar is not certified")
     total_cells = (
-        caps[0]["expanded_ambient_cell_count"]
+        cap_charts[1]["expanded_ambient_cell_count"]
         + collar["cell_count"]
-        + caps[1]["expanded_ambient_cell_count"]
+        + cap_charts[0]["expanded_ambient_cell_count"]
     )
     return {
         "power": movie["power"],
         "side": movie["side"],
-        "source_cap_collapse": caps[0],
-        "target_cap_collapse": caps[1],
+        "source_cap_index": 1,
+        "target_cap_index": 0,
+        "source_cap_collapse": cap_charts[1],
+        "target_cap_collapse": cap_charts[0],
         "cap_product_collar_sha256": canonical_sha(collar),
         "cap_product_collar_cells": collar["cell_count"],
+        "cap_product_collar_direction": "inverse_of_recorded_cap0_to_cap1",
         "composition_order": [
             "source_cap_collapse",
-            "orientation_selected_cap_product_collar",
+            "inverse_orientation_selected_cap_product_collar",
             "inverse_target_cap_collapse",
         ],
         "expanded_ambient_cell_count": total_cells,
@@ -285,7 +288,7 @@ def build_movie(pl, sweep_tools, collar_tools, derived, lookup, movie, support, 
         "jacobian_det_max": "3",
         "explicit_inverse_order": [
             "target_cap_collapse",
-            "inverse_cap_product_collar",
+            "orientation_selected_cap_product_collar",
             "inverse_source_cap_collapse",
         ],
         "fiber_transport": "PASS",

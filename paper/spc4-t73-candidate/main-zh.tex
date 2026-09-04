@@ -552,13 +552,23 @@ determinant $6/5$，保持映射给出 $-6/5$。因此四个 movie 的唯一保�
 cap-collapse chart；每个 chart 都放在正向 carrier 中并检查其仿射逆。
 按
 \begin{equation*}
-H_{\rm target}^{-1}\circ C_{\rm cap}\circ H_{\rm source}
+H_{\rm cap0}^{-1}\circ C_{\rm cap}^{-1}\circ H_{\rm cap1}
 \end{equation*}
 的次序，四个 movie 分别展开为
 $21579300,21579300,143861796,143861796$ 个胞腔，总计 $330882192$；
 Jacobian 位于 $[1/3,3]$，逆为记录的反序复合。因此内部 fiber transport
 通过。但其边界作用尚未与 $14929152$ 个 paired-support 侧 chart 胞腔
 接合成在支撑外边界恒等的映射；paired-saddle 环境映射仍为 \Open。
+这里每个 movie 的 cap $1$ 都是 current/remove 端，cap $0$ 是 target/add
+端，故必须使用 collar 的逆方向。正 move 的两张 cap 恰为 source/target
+盘；负 move 的 source 盘是 cap $1$ 加一张邻接三角形，所以最终组装前
+还需一个两步相对盘归一化。
+该归一化是把额外三角形相对坍缩到 cap $1$：先作一个维数二的
+triangle/free-edge pair，再作一个维数一的 edge/free-vertex pair。因此
+每个负 movie 使用两个正向实际 carrier chart 与 $8064$ 个展开胞腔；两个
+正 movie 不需要归一化。四个 chart 都有显式逆，故 source-disk 端点现已
+与 cap $1$ 精确一致。把该归一化及内部 fiber transport 接合成在 paired
+支撑外边界固定的映射仍为 \Open。
 
 在约化 $y$ 一柄的标准乘积图 $D^2\times[-1,1]$ 中，取 $B=D^2\times[-1/2,1/2]$。Johnson $m_2$ 词有 41 个正 $y$ 通道与一个负通道；$r_{xy}=[z,y]$ 贡献一个正与一个负通道。$D^2$ 中互异有理点给出两两不相交、横向 framing 恒定的乘积弧。$r_{xy}$ 的定向对偶矩形有六个 point-push 腿；展开所得 252 个几何 L/R 因子得长度为 11340 的 Artin 词，与独立再生的公开词一致。
 
