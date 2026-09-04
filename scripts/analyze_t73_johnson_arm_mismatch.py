@@ -95,15 +95,24 @@ def intersection_vertices(pl, tetrahedron, cube_origin):
 
 
 def source_tetrahedra():
-    model = json.loads(
-        (ROOT / "geometry" / "t73_common_torus_triangulation.json").read_text(
-            encoding="utf-8"
-        )
-    )
+    pl = load("t73_johnson_pl")
+    owners = pl.johnson_owners()
+    axes = ((1, 0, 0), (0, 1, 0), (0, 0, 1))
+    owner_indices = [0, 0]
     result = []
-    for owner in (0, 1):
-        for index, tetrahedron in enumerate(model["johnson_tetrahedra"][f"H{owner}"]):
+    for origin in itertools.product(range(pl.PERIOD), repeat=3):
+        owner = owners[origin]
+        for permutation in itertools.permutations(range(3)):
+            tetrahedron = [origin]
+            current = origin
+            for axis in permutation:
+                current = tuple(current[i] + axes[axis][i] for i in range(3))
+                tetrahedron.append(current)
+            index = owner_indices[owner]
+            owner_indices[owner] += 1
             result.append((owner, index, tetrahedron))
+    if owner_indices != [192, 192]:
+        raise AssertionError("unwrapped Johnson lift is not 192+192 tetrahedra")
     return result
 
 
@@ -168,7 +177,10 @@ def generate() -> dict[str, Any]:
     result = {
         "schema": "t73_johnson_arm_mismatch/v1",
         "period": pl.PERIOD,
-        "source": "exact rational clipping of affine image tetrahedra against target unit cubes",
+        "source": (
+            "exact rational clipping of the unwrapped period-four affine-image "
+            "tetrahedra against target unit cubes"
+        ),
         "template_count": len(templates),
         "templates": templates,
         "all_mismatch_pieces_disjoint_from_origin_star": all(
