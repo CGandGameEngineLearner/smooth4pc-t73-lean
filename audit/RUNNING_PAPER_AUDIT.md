@@ -1338,6 +1338,34 @@ Topology-source checks completed 2026-09-04:
   corrected writhe/grading ledger. Until supplied, 2624 remains a verified
   endpoint-model value rather than a functional on the genuine W2 quotient.
 
+### F-507 — All-owner primitive y/z geometry is constructed in the normalized Johnson collar
+
+- Severity: **Remediation / positive finite-geometric result**
+- Status: **RESOLVED for the conditional collar prefix; not C-H1**
+- Locations: `scripts/build_t73_all_owner_product_primitives.py`,
+  `geometry/t73_all_owner_product_primitives.json`,
+  `tests/test_t73_all_owner_product_primitives.py`, and the all-owner section
+  of `docs/proofs/T73_C_CHAINMAP_PAPER_PROOF.md`.
+- Result: source-bound reduction gives
+  \(n_y=(42,189,2,2,0)\), \(n_z=(269,1271,2,2,0)\), 235 primitive
+  y/z rectangles, and 1309 residual z circles per balanced cable pair. Every
+  surviving z source is partitioned exactly once. The unique m3 terminal
+  reduction and both r-zx product bigons retain their original source IDs.
+- Orientation correction: dual cells are traversed opposite to their stored
+  disk-boundary order, while the x-slide ledger records the forward order.
+  Negating the stored slide orientation gives the exact words
+  `r_xy=z y Z Y`, `r_yz=y z Y Z`, and the empty reduced `r_zx` word. Mixing
+  the two traversals produced the rejected `Z y z Y` word.
+- Arbitrary multiplicities: distinct rational levels inside each product
+  neighborhood prove disjoint parallel-copy existence and the formulas
+  \(\sum r_i n_{y,i}\) and \(\sum r_i(n_{z,i}-n_{y,i})\). Six focused tests
+  and six hostile mutations pass.
+- Scope firewall: the artifact explicitly sets
+  `actual_partial_W2_claimed=false`. It is conditional on the missing P0
+  ambient collar inclusion and supplies no Blanchet--Khovanov dg map or
+  action-naturality homotopy. Thus it closes the primitive geometric prefix
+  of C-H2, not C-H1 or beta/psi descent.
+
 ### F-600 — The “actual” sphere-system builder assigns, rather than constructs, the embedding in \(\partial W_2\)
 
 - Severity: **Critical**
@@ -1517,6 +1545,38 @@ Topology-source checks completed 2026-09-04:
   a prism tetrahedron or altering the claimed result are rejected.
 - Test result: six focused unit tests pass. The current T73 W2 metadata still
   returns `G_S1=OPEN`, `G_P3=OPEN`; no candidate topology is inferred.
+
+### F-608 — A genuine reduced-boundary triangulation prefix exists, but the attaching-link embedding is absent
+
+- Severity: **Major (positive prefix; critical remaining gap)**
+- Status: **PARTIAL**
+- Locations: `scripts/build_t73_reduced_boundary_prefix.py`;
+  `tests/test_t73_reduced_boundary_prefix.py`;
+  `docs/proofs/T73_W2_TRIANGULATION_PREFIX.md`.
+- Verified prefix: two 36-tetrahedron staircase triangulations of
+  \(S^2\times S^1\) are simplicially connected-summed by deleting one
+  tetrahedron from each and applying an explicit reversed boundary vertex
+  identification. The result has 20 vertices and 70 tetrahedra. Closed face
+  pairing, connectedness, absence of duplicates/unused vertices, and
+  2-sphere vertex links are derived. Two embedded three-edge generator loops
+  are labelled \(y,z\).
+- Boundary-update primitive: a canonical 27-tetrahedron solid torus has
+  explicit core, meridian, and longitude edge loops. A deterministic Dehn
+  filling verifier requires the removed neighborhood to be simplicially
+  identical to that solid torus, checks the attaching core and filling
+  meridian/framing curve, deletes the removed interior vertices, canonically
+  reindexes surviving vertices, requires three explicitly fresh filling-core
+  vertices, performs the tetrahedron replacement, and compares the exact
+  closed result. A synthetic double-solid-torus filling passes; framing,
+  removed-interior reuse, and boolean-only mutations fail.
+- First unavailable field: no existing artifact gives a common subdivision
+  and simplicial embedding of all five post-cancellation railroad components
+  and their framing annuli into this (or another explicit) reduced-boundary
+  triangulation. Consequently no actual five-step W2 boundary construction
+  can yet be run. Words and PD owner records do not determine this embedded
+  framed-link map.
+- Tests: three focused tests pass; boundary digest is
+  `A389BDA2DDF42D88E504DFF694BA92CC19476A23D886FC19814A149D80CFAE49`.
 
 ## Proof dependency ledger
 
@@ -1854,3 +1914,19 @@ post-F-017 working tree, including the later Johnson restore hierarchy.
 - Limit: this is an existence theorem, not the missing canonical coordinate
   evaluator. It is not bound to the later stored spine and detector
   transports, so F-401 and global P0/E13 remain open.
+
+### F-410 — Sequential framed Kirby verification stops before the first band
+
+- Severity: **Critical**
+- Status: **BLOCKED BY MISSING BAND INPUTS**
+- Evidence: `audit/t73_sequential_framed_bands_schema.json`,
+  `scripts/check_t73_sequential_framed_band_inputs.py`, and
+  `tests/test_t73_sequential_framed_band_inputs.py` provide a fail-closed
+  contract and four passing gate/mutation tests.
+- First missing datum: t/h_CS band 0 has no complete `current_link_before`;
+  the next absent field is `source_attaching_interval`. The current record
+  has only a centerline, target point, width and declared zero twist.
+- Consequence: band interiors cannot be checked against the evolving whole
+  link, the slid component cannot be rebuilt, and framing twist cannot be
+  derived from a pushed-off band. The 6+1513 schedule remains combinatorial,
+  not a verified Kirby movie.

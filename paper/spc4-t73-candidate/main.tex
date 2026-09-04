@@ -1369,14 +1369,56 @@ cable state.  In owner order $(m_2,m_3,r_{xy},r_{yz},r_{zx})$, put
 \[
 n_y=(42,189,2,2,0),\qquad n_z=(269,1271,2,2,0).
 \]
-For $r\in\mathbb N^5$, cutting the actual cable $K(r,r)$ along the $y$- and
+
+\begin{lemma}[All-owner primitive product ledger]
+\label{lem:all-owner-products}
+In the normalized post-cancellation Johnson collar, the five owners admit
+$235$ primitive $y$--$z$ product pairs and $1309$ primitive leftover
+$z$-circles, partitioned by the two vectors above.  Every surviving event has
+one source identifier, every $z$-event occurs in exactly one pair or in the
+leftover set, and every former $x$-event retains the hash of its oriented
+$x/m_1$ slide.
+\end{lemma}
+
+\begin{proof}
+The builder \texttt{build\_t73\_all\_owner\_product\_primitives.py} starts
+from the labelled Johnson spine arcs, appends the bottom coordinate arc of
+$m_2$ and $m_3$, replaces every $x$-event by the correspondingly oriented
+$z$-parallel recorded by the cancellation movie, and performs free reduction
+while retaining both cancelled source identifiers.  For $m_3$ the unique
+reduction is the terminal pair
+\texttt{c2:letter:1460}--\texttt{m\_3:C\_i}; for $r_{zx}$ the two product
+bigons remove the whole word.  Each surviving $y$ is followed cyclically by
+a distinct $z$, which defines the product subannulus; all other $z$-events are
+leftovers.
+
+The dual-cell components are traversed opposite to the stored disk-boundary
+orientation.  Therefore the stored forward $x$-slide sign is multiplied by
+$-1$ before the $x\mapsto z$ replacement.  With this correction the exact
+oriented words are $zyZY$ for $r_{xy}$ and $yzYZ$ for $r_{yz}$, while
+$r_{zx}$ reduces to the empty word.  Exact replay gives $235$ pairs and
+$1309$ leftovers and rejects count, source, slide-orientation, free-reduction
+and scope mutations.  This is a statement in the normalized collar; its
+inclusion in the genuine $\partial W_2$ remains part of P0.
+\end{proof}
+
+For $r\in\mathbb N^5$, under the P0 collar identification, cutting the cable $K(r,r)$ along the $y$- and
 $z$-cocores gives
 \[
 p_y(r)=\sum_i r_i n_{y,i},\qquad
 p_z(r)=\sum_i r_i n_{z,i}.
 \tag{24}
 \]
-By Lemma~\ref{lem:C1}, parallel copies of the P0 rectangles give a chain isomorphism $H_r$ of the
+Choose the product-neighbourhood width of
+Lemma~\ref{lem:all-owner-products}.  For the $j$th of $r_i$ copies use the
+normal offset
+\[
+\delta_{i,j,r_i}=w_i\frac{2j-r_i+1}{2(r_i+1)},\qquad 0\le j<r_i.
+\]
+The offsets are distinct and have absolute value below $w_i/2$; hence, once
+the primitive product neighborhoods are embedded by P0, compactness and the
+tubular-neighbourhood theorem make all these copies disjoint.  By
+Lemma~\ref{lem:C1}, they give a chain isomorphism $H_r$ of the
 same form as (17), with the corresponding endpoint sets.  The $r_{zx}$
 owner is closed by the same local counit as every other factor; an empty
 free word is not treated as a split unknot.  Since all
@@ -1503,6 +1545,38 @@ $3$-handles attaches three three-dimensional $1$-handles to $S^3$, and hence
 \]
 The actual attaching sphere system has connected complement, since sphere
 surgery on it gives the connected boundary of $W_3$.
+
+\subsection{A verified reduced-boundary construction prefix}
+
+Before the five surviving two-handles are attached, the two cancellations
+leave a four-dimensional $0/1$-handlebody with two $1$-handles.  The script
+\texttt{build\_t73\_reduced\_boundary\_prefix.py} constructs a canonical
+triangulation of its boundary type.  Start with the four-triangle boundary of
+a tetrahedron, take its staircase product with a three-edge cyclic interval,
+and obtain a triangulated $S^2\times S^1$.  Delete one tetrahedron in each of
+two copies and identify the exposed boundary spheres by the reversed vertex
+order.  The result has $20$ vertices and $70$ tetrahedra.  Direct incidence
+checks show that every triangle has multiplicity two, tetrahedron adjacency is
+connected, and every vertex link is a triangulated $2$-sphere.  The explicit
+connected-sum construction therefore identifies it with
+\(\#^2(S^1\times S^2)\).  Two vertex-disjoint three-edge cycles give labelled
+$y$- and $z$-generator loops.
+
+The same program gives a deterministic simplicial model for a two-handle
+boundary update.  A registered tubular neighborhood must be exactly the
+staircase solid torus $(\operatorname{cone}C_3)\times S^1$.  The verifier
+removes it, deletes its interior vertices, canonically reindexes the surviving
+complex, inserts a fresh solid torus with three new interior vertices, checks
+the meridian/framing boundary identification, and compares the entire resulting
+closed complex.  A synthetic filling and framing/vertex-reuse mutations verify
+these finite semantics.
+
+This prefix is not yet a construction of $\partial W_2$: the repository does
+not provide a common subdivision embedding the five railroad components and
+their framing annuli in this $20$-vertex boundary.  Attaching words determine
+homotopy classes but not the required pairwise-disjoint framed edge cycles.
+That embedding is the next input needed before the five deterministic filling
+steps can produce the actual boundary used below.
 
 \begin{lemma}[Kernel invariance under changing a complete sphere system]
 \label{lem:Ssystem}

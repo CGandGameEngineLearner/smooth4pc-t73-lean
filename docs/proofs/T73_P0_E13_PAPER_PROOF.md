@@ -485,3 +485,22 @@ does not identify the arbitrary homeomorphism supplied by the theorem with
 the later stored spine-transport or detector polylines. Consequently this
 repairs one local ArmRestore existence step but does not close the global P0
 or E13 chain.
+
+## 12. Sequential framed-band input gate
+
+The committed cancellation schedules cannot yet be upgraded to genuine
+framed Kirby movies. The fail-closed contract
+`audit/t73_sequential_framed_bands_schema.json` requires, for every band, the
+complete framed link before and after the step, source and target attaching
+intervals, an embedded triangulated rectangle with its four boundary paths, a
+triangulated pushed-off rectangle extending the endpoint framings, and exact
+separation certificates from the current link.
+
+`scripts/check_t73_sequential_framed_band_inputs.py` stops at the first
+missing datum: band 0 of the t/h_CS movie has no `current_link_before`.
+After supplying a placeholder for that field, the next missing datum is its
+`source_attaching_interval`. The existing band core, target point, width and
+declared `relative_twist=0` do not determine either object. In particular,
+the repository has no explicit framed link state after each slide, so the
+obstacle set for the following step cannot be reconstructed. Four mutation
+tests confirm that changing the declared twist cannot bypass this gate.

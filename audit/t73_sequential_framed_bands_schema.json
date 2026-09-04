@@ -1,0 +1,218 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "t73_sequential_framed_kirby_movie/v1",
+  "title": "Exact sequential framed Kirby band movie",
+  "description": "Each slide contains the complete framed link before and after the move, an embedded triangulated band, its four boundary paths, a disjoint pushed-off band extending the endpoint framings, and exact separation certificates. A centerline plus a declared relative twist is not admissible.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "ambient", "cancellations"],
+  "properties": {
+    "schema": {"const": "t73_sequential_framed_kirby_movie/v1"},
+    "ambient": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["manifold", "chart_atlas_sha256"],
+      "properties": {
+        "manifold": {"type": "string", "minLength": 1},
+        "chart_atlas_sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "cancellations": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": {"$ref": "#/$defs/cancellation"}
+    }
+  },
+  "$defs": {
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9A-F]{64}$"
+    },
+    "rational": {
+      "oneOf": [
+        {"type": "integer"},
+        {"type": "string", "pattern": "^-?[0-9]+(?:/[1-9][0-9]*)?$"}
+      ]
+    },
+    "point": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {"$ref": "#/$defs/rational"}
+    },
+    "polyline": {
+      "type": "array",
+      "minItems": 2,
+      "items": {"$ref": "#/$defs/point"}
+    },
+    "component": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "centerline", "push_off", "closed"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1},
+        "centerline": {"$ref": "#/$defs/polyline"},
+        "push_off": {"$ref": "#/$defs/polyline"},
+        "closed": {"type": "boolean"}
+      }
+    },
+    "framed_link": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["components", "sha256"],
+      "properties": {
+        "components": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/component"}
+        },
+        "sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "attaching_interval": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["component", "centerline_path", "push_off_path"],
+      "properties": {
+        "component": {"type": "string", "minLength": 1},
+        "centerline_path": {"$ref": "#/$defs/polyline"},
+        "push_off_path": {"$ref": "#/$defs/polyline"}
+      }
+    },
+    "triangle": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "uniqueItems": true,
+      "items": {"type": "integer", "minimum": 0}
+    },
+    "index_path": {
+      "type": "array",
+      "minItems": 2,
+      "items": {"type": "integer", "minimum": 0}
+    },
+    "band_boundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source", "target", "side_0", "side_1"],
+      "properties": {
+        "source": {"$ref": "#/$defs/index_path"},
+        "target": {"$ref": "#/$defs/index_path"},
+        "side_0": {"$ref": "#/$defs/index_path"},
+        "side_1": {"$ref": "#/$defs/index_path"}
+      }
+    },
+    "separation_certificate": {
+      "type": "object",
+      "description": "Exact rational hyperplane certificates proving that nonincident band triangles, link edges, and pushed-off cells are disjoint.",
+      "additionalProperties": false,
+      "required": ["kind", "left_id", "right_id", "normal", "offset", "margin"],
+      "properties": {
+        "kind": {
+          "enum": ["triangle_triangle", "triangle_link_edge", "band_push_off"]
+        },
+        "left_id": {"type": "string", "minLength": 1},
+        "right_id": {"type": "string", "minLength": 1},
+        "normal": {"$ref": "#/$defs/point"},
+        "offset": {"$ref": "#/$defs/rational"},
+        "margin": {"$ref": "#/$defs/rational"}
+      }
+    },
+    "slide": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "index",
+        "moved_component",
+        "current_link_before",
+        "source_attaching_interval",
+        "target_attaching_interval",
+        "band_vertices",
+        "band_triangles",
+        "band_boundary",
+        "band_push_off_vertices",
+        "band_push_off_triangles",
+        "separation_certificates",
+        "updated_link_after"
+      ],
+      "properties": {
+        "index": {"type": "integer", "minimum": 0},
+        "moved_component": {"type": "string", "minLength": 1},
+        "current_link_before": {"$ref": "#/$defs/framed_link"},
+        "source_attaching_interval": {"$ref": "#/$defs/attaching_interval"},
+        "target_attaching_interval": {"$ref": "#/$defs/attaching_interval"},
+        "band_vertices": {
+          "type": "array",
+          "minItems": 4,
+          "items": {"$ref": "#/$defs/point"}
+        },
+        "band_triangles": {
+          "type": "array",
+          "minItems": 2,
+          "items": {"$ref": "#/$defs/triangle"}
+        },
+        "band_boundary": {"$ref": "#/$defs/band_boundary"},
+        "band_push_off_vertices": {
+          "type": "array",
+          "minItems": 4,
+          "items": {"$ref": "#/$defs/point"}
+        },
+        "band_push_off_triangles": {
+          "type": "array",
+          "minItems": 2,
+          "items": {"$ref": "#/$defs/triangle"}
+        },
+        "separation_certificates": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/separation_certificate"}
+        },
+        "updated_link_after": {"$ref": "#/$defs/framed_link"}
+      }
+    },
+    "cancellation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "pair",
+        "belt_sphere",
+        "slides",
+        "post_slide_attaching_circle",
+        "post_slide_attaching_push_off"
+      ],
+      "properties": {
+        "pair": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {"type": "string", "minLength": 1}
+        },
+        "belt_sphere": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["vertices", "triangles"],
+          "properties": {
+            "vertices": {
+              "type": "array",
+              "minItems": 4,
+              "items": {"$ref": "#/$defs/point"}
+            },
+            "triangles": {
+              "type": "array",
+              "minItems": 4,
+              "items": {"$ref": "#/$defs/triangle"}
+            }
+          }
+        },
+        "slides": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/slide"}
+        },
+        "post_slide_attaching_circle": {"$ref": "#/$defs/polyline"},
+        "post_slide_attaching_push_off": {"$ref": "#/$defs/polyline"}
+      }
+    }
+  }
+}

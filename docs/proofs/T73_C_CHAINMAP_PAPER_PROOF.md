@@ -188,14 +188,69 @@ normals, and a diagram-by-diagram writhe ledger using the corrected
 \(-(N-1)w\) formula.  It will not certify degree 494 merely because the four
 integers add to 494 or because the detector word has writhe zero.
 
+## All-owner primitive product prefix (resolved in the normalized collar)
+
+`geometry/t73_all_owner_product_primitives.json`, rebuilt by
+`scripts/build_t73_all_owner_product_primitives.py`, now binds every surviving
+post-cancellation event to the Johnson spine, the AR link, and the registered
+zero-twist cancellation bands.  In owner order
+\((m_2,m_3,r_{xy},r_{yz},r_{zx})\), it verifies
+
+\[
+n_y=(42,189,2,2,0),\qquad n_z=(269,1271,2,2,0).
+\]
+
+Every surviving z source occurs exactly once, either as the successor of a y
+source in one of 235 primitive product rectangles or as one of 1309 residual
+z circles.  The \(m_3\) free reduction retains the exact cancelled pair
+`c2:letter:1460` and `m_3:C_i`; the two \(r_{zx}\) product bigons are likewise
+retained.  The selected Johnson \(m_3\) representative has the same signed
+letter multiset and length as the compact word but a different order, so the
+artifact uses the explicit Johnson order rather than silently substituting the
+compact word.
+
+There is one necessary orientation correction.  The actual cut traverses each
+dual-cell boundary opposite to the stored disk-boundary order, whereas the
+x-cancellation ledger records slide orientations in the stored forward order.
+Thus a dual-cell x-to-z replacement has orientation equal to the negative of
+the stored slide orientation.  With this correction the exact oriented words
+are
+
+\[
+r_{xy}=zyZY,\qquad r_{yz}=yzYZ,\qquad r_{zx}=1.
+\]
+
+For arbitrary cable multiplicity \(r_i\), choose inside each primitive product
+neighborhood of width \(w_i\) the levels
+
+\[
+\delta_{i,j}=w_i\frac{2j-r_i+1}{2(r_i+1)},
+\qquad 0\leq j<r_i.
+\]
+
+They lie strictly between \(-w_i/2\) and \(w_i/2\), and consecutive levels
+differ by \(w_i/(r_i+1)>0\).  Hence the parallel copies are disjoint and retain
+relative twist zero.  Their counts are
+
+\[
+\sum_i r_i n_{y,i},\qquad
+\sum_i r_i(n_{z,i}-n_{y,i})
+\]
+
+for rectangles and residual circles respectively.  This proves the
+all-multiplicity statement inside the normalized Johnson product collar.
+It remains conditional on an explicit P0 ambient inclusion of that collar and
+does not construct the dg foam maps in (C.1)--(C.2).
+
 ## Minimum data required to close C
 
 1. The precise MWW product source category at every cable state, including
    its endpoint partitions and the coefficient complex \(C_{R_r}\).
 2. A finite strict foam movie defining every \(H^r_{T,T'}\), with chain maps,
    shifts, inverse/homotopy data, and the two equations (C.2).
-3. Actual product rectangles and residual-circle movies for \(m_3\) and
-   \(r_{yz}\), not only the selected \(m_2+r_{xy}\) state.
+3. The all-owner primitive rectangles are now constructed in the normalized
+   Johnson collar.  What remains is their explicit P0 ambient inclusion and
+   promotion to the strict dg maps of item 2.
 4. For every owner and cable state, a commuting square identifying the MWW
    beta and both psi maps with the endpoint/common-target maps used by the
    proposed Reynolds row.
