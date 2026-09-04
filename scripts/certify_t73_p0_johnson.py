@@ -35,11 +35,31 @@ def generate(run_geometric_braid: bool = True):
     side = load("search_t73_johnson_alpha_sides").generate()["known_candidate"]
     square_movie = load("generate_t73_johnson_alpha_movie").generate()
     relative = load("straighten_t73_johnson_relative_ball").generate()
-    cancellation = load("certify_t73_johnson_cancellations").generate()
     collar = load("generate_t73_johnson_ribbon_collar").generate()
     sweeps = load("derive_t73_johnson_six_sweeps").generate(collar)
-    recon = load("build_t73_p0_reconstruction_input").generate() if run_geometric_braid else None
-    recon_pass = recon is not None and recon.get("reconstruction_verdict") == "PASS"
+    if run_geometric_braid:
+        psi_live = load("verify_t73_pl_homeomorphism").verify()
+        ar_live = load("verify_t73_actual_ar_link").verify()
+        cancellation_live = load("verify_t73_handle_cancellation").verify()
+        cut_live = load("verify_t73_actual_cut_tangle").verify()
+        braid_live = load("verify_t73_actual_geometric_braid").verify()
+        braid_artifact = json.loads(
+            (ROOT / "geometry" / "t73_actual_geometric_braid.json").read_text(
+                encoding="utf-8"
+            )
+        )
+    else:
+        psi_live = ar_live = cancellation_live = cut_live = braid_live = None
+        braid_artifact = None
+    actual_pass = all(
+        (
+            psi_live is not None and psi_live["PL_HOMEOMORPHISM"] == "PASS" and psi_live["HEEGAARD_PAIR"] == "PASS",
+            ar_live is not None and ar_live["ACTUAL_AR_LINK"] == "PASS",
+            cancellation_live is not None and cancellation_live["T_HCS"] == "PASS" and cancellation_live["X_M1"] == "PASS",
+            cut_live is not None and cut_live["ACTUAL_CUT_TANGLE"] == "PASS",
+            braid_live is not None and braid_live["ACTUAL_GEOMETRIC_BRAID"] == "PASS",
+        )
+    )
     checks = {
         "johnson_ar_affine_bridge": bridge["p0a_status"] == "PASS" and bridge["heegaard_handlebody_complex"] == "PASS",
         "matrix_factorization": factor["matrix_product_status"] == "PASS",
@@ -49,12 +69,15 @@ def generate(run_geometric_braid: bool = True):
         "zero_relative_ryz_coefficient": side["net_r_yz_coefficient"] == 0,
         "johnson_square_movie": square_movie["spine_pl_movie_status"] == "PASS",
         "relative_fixed_ball": relative["chosen_alpha_representative_local_identity_status"] == "PASS",
-        "two_cancellations": cancellation["cancellation_status"] == "PASS",
-        "embedded_framed_collar": recon_pass,
-        "ar_passage_binding": recon_pass,
+        "actual_heegaard_preserving_psi_A": actual_pass,
+        "actual_framed_ar_link": actual_pass,
+        "two_cancellations": actual_pass,
+        "actual_cut_tangle": actual_pass,
+        "embedded_framed_collar": actual_pass,
+        "ar_passage_binding": actual_pass,
         "six_sweep_word": sweeps["verdict"] == "PASS",
-        "geometric_braid": recon_pass,
-        "noncircular_source_order": recon_pass,
+        "geometric_braid": actual_pass,
+        "noncircular_source_order": actual_pass,
     }
     passed = all(checks.values())
     result = {
@@ -69,12 +92,13 @@ def generate(run_geometric_braid: bool = True):
             "side_candidate": canonical_sha(side),
             "square_movie": square_movie["movie_sha256"],
             "relative_movie": relative["movie_sha256"],
-            "cancellations": cancellation["certificate_sha256"],
+            "cancellations": None if cancellation_live is None else canonical_sha(cancellation_live),
             "collar": collar["collar_sha256"],
             "six_sweeps": sweeps["witness_sha256"],
-            "geometric_braid": None if recon is None else recon["B44_sha256"],
+            "geometric_braid": None if braid_artifact is None else braid_artifact["recovered_word_sha256"],
+            "actual_braid_artifact": None if braid_artifact is None else braid_artifact["witness_sha256"],
         },
-        "mathematical_scope": "explicit Johnson alpha-side AR replacement; not byte identity with the unavailable historical PD",
+        "mathematical_scope": "actual Johnson PL representative, seven-component framed AR link, two Kirby cancellations, 44-channel detector, and geometry-derived braid; no historical PD claim",
     }
     result["certificate_sha256"] = canonical_sha(result)
     return result

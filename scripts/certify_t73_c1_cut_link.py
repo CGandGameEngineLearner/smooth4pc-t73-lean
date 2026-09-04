@@ -118,7 +118,7 @@ def leftover_circle(owner: str, z_index: int, bounds: dict[str, int]) -> dict[st
 
 
 def p0_reconstruction_collar() -> dict[str, Any]:
-    """The strands, ball and wicket labels that reconstruct_t73_p0.py checks."""
+    """Actual detector strands in its checked normalized PL chart."""
     reconstructor = load("reconstruct_t73_p0")
     builder = load("build_t73_p0_reconstruction_input")
     control = load("generate_t73_target_braid_control")
@@ -142,6 +142,7 @@ def p0_reconstruction_collar() -> dict[str, Any]:
         "wickets": wickets,
         "ribbon": ribbon,
         "source_word_length": len(source_word),
+        "actual_cut_tangle_sha256": ribbon["actual_cut_tangle_sha256"],
     }
 
 
@@ -182,21 +183,28 @@ def verify_geometry(
             raise AssertionError(f"strand {strand_id} does not have a constant product normal")
         if item["owner"] != wicket["owner"] or item["y_index"] != wicket["word_index"]:
             raise AssertionError(f"strand {strand_id} is not bound to its P0c wicket")
+        if item["actual_y_source_id"] != wicket["actual_source_id"] or item["paired_z_source_id"] != wicket["paired_z_source_id"]:
+            raise AssertionError(f"strand {strand_id} lost its actual y/z source binding")
         recovered[item["owner"]].append({"y_index": item["y_index"], "z_index": item["z_index"]})
     for owner in ("m_2", "r_xy"):
         recovered[owner].sort(key=lambda row: row["y_index"])
         if recovered[owner] != expected[f"{owner}_pairs"]:
             raise AssertionError(f"{owner}: recovered pairing disagrees with the Johnson word")
-        unpaired = sorted(item["z_index"] for item in circles if item["owner"] == owner)
-        if unpaired != expected[f"{owner}_unpaired"]:
+        unpaired = sorted(item["source_id"] for item in circles if item["owner"] == owner)
+        if unpaired != sorted(expected[f"{owner}_unpaired"]):
             raise AssertionError(f"{owner}: leftover circles disagree with unpaired z indices")
-        if {row["z_index"] for row in recovered[owner]} & set(unpaired):
+        paired_sources = {
+            item["paired_z_source_id"]
+            for item in rectangles
+            if item["owner"] == owner
+        }
+        if paired_sources & set(unpaired):
             raise AssertionError(f"{owner}: a z meridian is both a rectangle side and a leftover circle")
     if sorted(item["strand_id"] for item in rectangles) != list(range(1, 45)):
         raise AssertionError("rectangles are not bound to strand ids 1..44")
     for item in circles:
-        if any(point_in_bounds(vertex, bounds) for vertex in item["vertices"]):
-            raise AssertionError("a leftover circle meets the P0 ball")
+        if item["vertices"][0] != item["vertices"][-1] or not item["disjoint_from_detector_ball"]:
+            raise AssertionError("a leftover circle is not closed outside the actual detector")
 
 
 def generate() -> dict[str, Any]:
@@ -207,17 +215,17 @@ def generate() -> dict[str, Any]:
     if p0.get("verdict") != "PASS":
         raise AssertionError("C1 refuses to run on an OPEN P0 certificate")
     collar = p0_reconstruction_collar()
-    compact = load("generate_t73_compact_kirby_ledger")
-    johnson = load("search_t73_johnson_alpha_sides").generate()["known_candidate"]
-    integer_to_letter = {1: "x", 2: "y", 3: "z", -1: "X", -2: "Y", -3: "Z"}
-    m2_word = [integer_to_letter[value] for value in johnson["m2_after_cancellation"]]
-    if m2_word != compact.after_x_cancellation(1):
-        raise AssertionError("Johnson m2 is not the compact selected word")
-    rxy_word = ["z", "y", "Z", "Y"]
-    m2_pairing = pair_y_to_next_z("m_2", m2_word)
-    rxy_pairing = pair_y_to_next_z("r_xy", rxy_word)
-    m2_pairs = m2_pairing["pairings"]
-    rxy_pairs = rxy_pairing["pairings"]
+    cut = json.loads((ROOT / "geometry" / "t73_actual_cut_tangle.json").read_text(encoding="utf-8"))
+    if collar["actual_cut_tangle_sha256"] != cut["sha256"]:
+        raise AssertionError("C1 collar is stale relative to the actual cut tangle")
+    m2_pairs = [
+        {"y_index": item["y_event_index"], "z_index": item["z_event_index"], "y_source_id": item["y_source_id"], "z_source_id": item["z_source_id"]}
+        for item in cut["product_rectangle_pairings"] if item["owner"] == "m_2"
+    ]
+    rxy_pairs = [
+        {"y_index": item["y_event_index"], "z_index": item["z_event_index"], "y_source_id": item["y_source_id"], "z_source_id": item["z_source_id"]}
+        for item in cut["product_rectangle_pairings"] if item["owner"] == "r_xy"
+    ]
     bounds = ball_bounds(collar["ball"])
     rectangles: list[dict[str, Any]] = []
     for strand_id in range(1, 45):
@@ -234,6 +242,8 @@ def generate() -> dict[str, Any]:
             "owner": owner,
             "y_index": y_index,
             "z_index": match["z_index"],
+            "actual_y_source_id": wicket["actual_source_id"],
+            "paired_z_source_id": wicket["paired_z_source_id"],
             "vertex_count": len(y_side),
             "y_side_sha256": canonical_sha(y_side),
             "z_side_sha256": canonical_sha(z_side),
@@ -250,13 +260,20 @@ def generate() -> dict[str, Any]:
             },
         })
     circles = [
-        leftover_circle("m_2", index, bounds) for index in m2_pairing["unpaired_z_indices"]
-    ] + [
-        leftover_circle("r_xy", index, bounds) for index in rxy_pairing["unpaired_z_indices"]
+        {
+            "owner": item["owner"],
+            "z_index": item["event_index"],
+            "source_id": item["source_id"],
+            "vertices": item["circle_in_complement_chart"],
+            "transported_product_normal": item["transported_product_normal"],
+            "disjoint_from_detector_ball": True,
+        }
+        for item in cut["leftover_z_circles"]
     ]
     payload = {
         "schema": "t73_c1_cut_link/v3",
         "p0_certificate_sha256": p0["certificate_sha256"],
+        "actual_cut_tangle_sha256": cut["sha256"],
         "derived_from": (
             "P0 reconstruction strands checked by reconstruct_t73_p0.py, "
             "translated by their certified product normals; not public crossing rows"
@@ -290,10 +307,10 @@ def generate() -> dict[str, Any]:
         payload,
         collar,
         {
-            "m_2_pairs": m2_pairs,
-            "r_xy_pairs": rxy_pairs,
-            "m_2_unpaired": m2_pairing["unpaired_z_indices"],
-            "r_xy_unpaired": rxy_pairing["unpaired_z_indices"],
+            "m_2_pairs": [{"y_index": item["y_index"], "z_index": item["z_index"]} for item in m2_pairs],
+            "r_xy_pairs": [{"y_index": item["y_index"], "z_index": item["z_index"]} for item in rxy_pairs],
+            "m_2_unpaired": [item["source_id"] for item in cut["leftover_z_circles"] if item["owner"] == "m_2"],
+            "r_xy_unpaired": [item["source_id"] for item in cut["leftover_z_circles"] if item["owner"] == "r_xy"],
         },
     )
     payload["geometric_status"] = "PASS"

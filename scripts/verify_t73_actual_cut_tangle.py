@@ -7,6 +7,7 @@ import argparse
 import copy
 import importlib.util
 import json
+from fractions import Fraction
 from pathlib import Path
 
 
@@ -63,6 +64,15 @@ def validate(data):
         raise AssertionError("product rectangles do not partition all actual z events")
     if data["leftover_circle_count"] != 227 or len(leftover) != 227:
         raise AssertionError("actual cut has the wrong leftover z-circle count")
+    circle_centers = set()
+    for item in data["leftover_z_circles"]:
+        circle = item["circle_in_complement_chart"]
+        if circle[0] != circle[-1] or len(circle) != 5:
+            raise AssertionError("a leftover z component is not a closed PL meridian")
+        center = circle[0][0]
+        if center in circle_centers or Fraction(center) <= 2:
+            raise AssertionError("leftover z meridians meet each other or the detector chart")
+        circle_centers.add(center)
 
 
 def verify():

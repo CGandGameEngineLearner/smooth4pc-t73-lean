@@ -13,6 +13,7 @@ import argparse
 import hashlib
 import importlib.util
 import json
+from fractions import Fraction
 import sys
 from pathlib import Path
 from typing import Any
@@ -74,10 +75,10 @@ def bounds_disjoint(a: dict[str, int], b: dict[str, int]) -> bool:
     )
 
 
-def polyline_bounds(points: list[list[int]]) -> dict[str, int]:
-    xs = [point[0] for point in points]
-    ys = [point[1] for point in points]
-    zs = [point[2] for point in points]
+def polyline_bounds(points: list[list[int | str]]) -> dict[str, Fraction]:
+    xs = [Fraction(point[0]) for point in points]
+    ys = [Fraction(point[1]) for point in points]
+    zs = [Fraction(point[2]) for point in points]
     return {
         "xmin": min(xs),
         "xmax": max(xs),
@@ -214,7 +215,7 @@ def generate() -> dict[str, Any]:
             "status": "PASS",
             "lean": "Smooth4PC/RepresentableCoefficient.lean coefficientHH0Equiv",
         },
-        "scope": "Johnson replacement comparison maps on the C1 P0-strand tangle",
+        "scope": "comparison maps on the actual post-cancellation detector product tangle",
     }
     verify_maps(result, c1)
     passed = (

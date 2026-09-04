@@ -740,7 +740,7 @@
       }
     }
   },
-  "c1_certificate_sha256": "843A80227D8B062F6451013F53D8A5FA0405409548A48854CADE3FF1E5C3BD3A",
+  "c1_certificate_sha256": "5644F67A61C0AA734C08C301D3231F86C734F33244BD25F18A894876243CCE0D",
   "cable_formula": {
     "leftover_z_s0": 227,
     "n_y": [
@@ -774,18 +774,18 @@
       0
     ]
   },
-  "certificate_sha256": "87BA1649CB27CCDB52E2D7092832C63548C0F3B27ACBFC570F3EF6949EDC1D49",
+  "certificate_sha256": "FF000590BB9B6A7ECC3DC70282EA6DA5865D65FE5201D7C5BCB4811CF37E84E3",
   "endpoint_constant_term": {
     "rule": "at q=1 a sign-preserving braid has constant term equal to its signed permutation; a pure braid has I, remainder O(h)",
     "source": "BPW oriented cabling / BHPW strict tangle functor",
     "status": "PASS"
   },
-  "p0_certificate_sha256": "545F5CE8F53F0A9E6D90C516D9C35AB7CA47AA1AD8C2D9820E253E2273769A7C",
+  "p0_certificate_sha256": "F1F9C500B00EDFB55869481DF96D9FA2EDD70DF84347AE46CB8F5882BDBBF8D2",
   "representable_reduction": {
     "lean": "Smooth4PC/RepresentableCoefficient.lean coefficientHH0Equiv",
     "status": "PASS"
   },
   "schema": "t73_c2_comparison/v2",
-  "scope": "Johnson replacement comparison maps on the C1 P0-strand tangle",
+  "scope": "comparison maps on the actual post-cancellation detector product tangle",
   "uniqueness_of_regular_neighborhoods_used": false
 }

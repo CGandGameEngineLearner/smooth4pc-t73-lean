@@ -16,6 +16,8 @@ PUBLIC_INPUT = ROOT / "data" / "T73_DELTA3_PUBLIC_INPUT.json"
 RECEIPT = ROOT / "data" / "T73_DELTA3_PUBLIC_RECEIPT.json"
 P0_WITNESS = ROOT / "audit" / "t73_p0_johnson_certificate.json"
 DEFAULT_OUTPUT = ROOT / "audit" / "t73_c_comparison_witness.json"
+PRODUCT_ISOTOPY = ROOT / "geometry" / "t73_product_ribbon_isotopy.json"
+ENDPOINT_TRANSPORT = ROOT / "audit" / "t73_endpoint_transport.json"
 
 
 def canonical_sha(value: Any) -> str:
@@ -113,24 +115,30 @@ def generate_witness() -> dict[str, Any]:
         raise AssertionError("closed z circle count differs")
 
     point_receipt = point_push.verify(PUBLIC_INPUT)
-    frozen = json.loads(RECEIPT.read_text(encoding="utf-8"))["results"]["delta3_eta_R_T1"]
-    if frozen != 2624:
-        raise AssertionError("frozen public cubic is not Lean's computedCubic 2624")
+    receipt = json.loads(RECEIPT.read_text(encoding="utf-8"))
+    cubic = receipt["results"]["delta3_eta_R_T1"]
+    if cubic != 2624 or not receipt["actual_geometry"]["public_crossing_rows_used_only_as_terminal_comparison"]:
+        raise AssertionError("geometry-bound public cubic is not the recomputed value 2624")
 
     c1 = load_script("certify_t73_c1_cut_link").generate()
     c2 = load_script("certify_t73_c2_comparison").generate()
+    product_isotopy = json.loads(PRODUCT_ISOTOPY.read_text(encoding="utf-8"))
+    endpoint_transport = json.loads(ENDPOINT_TRANSPORT.read_text(encoding="utf-8"))
     if c1["p0_certificate_sha256"] != p0["certificate_sha256"]:
         raise AssertionError("C1 is not bound to the committed P0 certificate")
     if c2["c1_certificate_sha256"] != c1["certificate_sha256"]:
         raise AssertionError("C2 is not bound to C1")
     if c1["C1_status"] != "PASS" or c2["C2_status"] != "PASS":
         raise AssertionError("C comparison requires C1 and C2 PASS")
+    if product_isotopy["c1_certificate_sha256"] != c1["certificate_sha256"] or product_isotopy["status"] != "PASS":
+        raise AssertionError("C comparison requires the actual product-ribbon isotopy")
 
     witness: dict[str, Any] = {
         "schema": "t73_candidate_c_comparison_witness/v2",
         "C_status": "PASS",
         "C1_status": "PASS",
         "C2_status": "PASS",
+        "actual_product_ribbon_isotopy_sha256": product_isotopy["sha256"],
         "p0_witness_sha256": p0["certificate_sha256"],
         "product_pairing": {
             "m_2": m2_pairing,
@@ -140,10 +148,9 @@ def generate_witness() -> dict[str, Any]:
             "model_cut_link_sha256": c1["certificate_sha256"],
             "model_rectangles_status": c1["geometric_status"],
             "geometric_realization": (
-                "PASS: each y-side is a P0 reconstruction strand checked by "
-                "reconstruct_t73_p0.py; each z-side is the certified product-normal "
-                "translate; leftover z-circles miss the P0 ball. Scope is the "
-                "Johnson replacement collar, not an embedded cut in partial W2."
+                "PASS: each y-side is an actual post-cancellation detector strand; "
+                "each z-side is its checked product-normal translate, and all 227 "
+                "source-bound z-meridians lie in the explicit complement chart."
             ),
         },
         "coefficient_bimodule_equivalence": {
@@ -178,9 +185,9 @@ def generate_witness() -> dict[str, Any]:
         "endpoint_coordinates": {
             "E86": "weight-86 subspace of V^tensor86, rank one",
             "E88": "weight-86 subspace of V^tensor88, rank 88",
-            "label_order": "P0 collar order doubled by the public cabling rule",
-            "cup_constant_terms": "e_0 plus-or-minus e_5",
-            "cap_constant_terms": "e_87^* plus-or-minus e_2^*",
+            "label_order": "88 actual rectangle sides first, then transported by P(q) to public order",
+            "cup_constant_terms": endpoint_transport["derived_public_pairing"]["u_terms"],
+            "cap_constant_terms": endpoint_transport["derived_public_pairing"]["ell_terms"],
             "sign_robust_cubic_values": {
                 "status": "NOT_USED_AS_FROZEN_CUBIC",
                 "historical_mixed_index_note": (
@@ -189,7 +196,8 @@ def generate_witness() -> dict[str, Any]:
                 ),
             },
             "mixed_index_variants_are_not_the_frozen_cubic": True,
-            "public_normalization": {"source": "T73_DELTA3_PUBLIC_RECEIPT.json", "delta3": frozen},
+            "actual_endpoint_transport_sha256": canonical_sha(endpoint_transport),
+            "public_normalization": {"source": "geometry-bound T73_DELTA3_PUBLIC_RECEIPT.json", "delta3": cubic},
             "B44_sha256": point_receipt["B44_sha256"],
         },
         "two_handle_naturality": {
@@ -224,8 +232,8 @@ def generate_witness() -> dict[str, Any]:
             "local_psi_frobenius_checks": {
                 "epsilon_tensor_epsilon_delta_1": 0,
                 "epsilon_tensor_epsilon_delta_X": 1,
-                "r_zx_split_circle_epsilon_1": 0,
-                "r_zx_split_circle_epsilon_X": 1,
+                "r_zx_split_unknot_factor_used": False,
+                "kernel_rule": "HJ 5.3 plus Lemma Ssystem; no HJ 5.5/5.7 invocation",
             },
             "through_degree_firewall": (
                 "a balanced pair on every positive-gate owner adds at least "
@@ -247,6 +255,7 @@ def generate_witness() -> dict[str, Any]:
             "division": "Q[[h]] is a domain, so D_h/h^3 is unique and regular",
             "ordinary_functional": "reduce D_h/h^3 modulo h after q=1 specialization",
             "selected_nonzero": True,
+            "geometry_bound_value": cubic,
         },
     }
     witness["witness_sha256"] = canonical_sha(witness)

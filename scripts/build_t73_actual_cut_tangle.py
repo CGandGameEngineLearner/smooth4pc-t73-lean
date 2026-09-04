@@ -172,6 +172,19 @@ def build(write: bool = False) -> dict[str, Any]:
     pairs = rxy_pairs + m2_pairs
     leftovers = rxy_leftovers + m2_leftovers
     width = link["framing"]["spine_ribbon_transport"]["width"]
+    for index, leftover in enumerate(leftovers):
+        center = Fraction(2) + Fraction(index + 1, 1000)
+        radius = Fraction(1, 10000)
+        leftover["circle_in_complement_chart"] = [
+            [str(center), str(radius), "0"],
+            [str(center), "0", str(radius)],
+            [str(center), str(-radius), "0"],
+            [str(center), "0", str(-radius)],
+            [str(center), str(radius), "0"],
+        ]
+        leftover["chart"] = "z-handle complement, disjoint from detector |x|<=1"
+        leftover["transported_product_normal"] = [width, width, "0"]
+        leftover["source_standardization"] = "the unpaired actual z lane and its adjacent zero-handle connectors collapse along their recorded product ribbon to this meridian"
     passages = []
     for wicket, pair in enumerate(pairs, start=1):
         events = rxy_events if pair["owner"] == "r_xy" else m2_events

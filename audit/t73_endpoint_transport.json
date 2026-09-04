@@ -539,7 +539,7 @@
     "pairing_invariant": true,
     "u_public_equals_P_u_geometric": true
   },
-  "convention_sha256": "19A9F1DA4992E354AC096E36318ADD602F6DD39952DC844C30978043CF1F1DA1",
+  "convention_sha256": "113A06C0E776C844E7142905A72335F5C4E936865FF52A0E6D07865FCE59E583",
   "derived_public_pairing": {
     "ell_terms": [
       [

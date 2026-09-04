@@ -2,9 +2,10 @@
   "C1_status": "PASS",
   "C2_status": "PASS",
   "C_status": "PASS",
+  "actual_product_ribbon_isotopy_sha256": "B19652C8911F744D1A4FC6A18315708926D1F2CD531D69D639FABD85472C5151",
   "coefficient_bimodule_equivalence": {
     "F": "44 west-east cores of the C1 P0-strand product rectangles",
-    "c2_certificate_sha256": "87BA1649CB27CCDB52E2D7092832C63548C0F3B27ACBFC570F3EF6949EDC1D49",
+    "c2_certificate_sha256": "FF000590BB9B6A7ECC3DC70282EA6DA5865D65FE5201D7C5BCB4811CF37E84E3",
     "dual_boundary": "227 leftover z-circles off the P0 reconstruction cube",
     "left_action_square": "PASS",
     "ordinary_representable_reduction": "Smooth4PC/RepresentableCoefficient.lean coefficientHH0Equiv",
@@ -17,6 +18,7 @@
   "divided_detector": {
     "division": "Q[[h]] is a domain, so D_h/h^3 is unique and regular",
     "formula": "D_h=cap_h (rho_h(W)-I) Sh_h",
+    "geometry_bound_value": 2624,
     "ordinary_functional": "reduce D_h/h^3 modulo h after q=1 specialization",
     "selected_nonzero": true,
     "uniform_order": "rho_h(W)-I lies in h^3 End(E88) on all 7744 entries"
@@ -25,22 +27,41 @@
     "B44_sha256": "7C2D2F792C2672221A76CAF08A71F560AF0CB7654B4D537C00FAD00B16EFA187",
     "E86": "weight-86 subspace of V^tensor86, rank one",
     "E88": "weight-86 subspace of V^tensor88, rank 88",
-    "cap_constant_terms": "e_87^* plus-or-minus e_2^*",
-    "cup_constant_terms": "e_0 plus-or-minus e_5",
-    "label_order": "P0 collar order doubled by the public cabling rule",
+    "actual_endpoint_transport_sha256": "0D632677DC41ADF4970150A92067BFBFDC0A8625CFC24C2356BE8F3EB9FBC7B4",
+    "cap_constant_terms": [
+      [
+        87,
+        1
+      ],
+      [
+        2,
+        -1
+      ]
+    ],
+    "cup_constant_terms": [
+      [
+        2,
+        1
+      ],
+      [
+        87,
+        -1
+      ]
+    ],
+    "label_order": "88 actual rectangle sides first, then transported by P(q) to public order",
     "mixed_index_variants_are_not_the_frozen_cubic": true,
     "public_normalization": {
       "delta3": 2624,
-      "source": "T73_DELTA3_PUBLIC_RECEIPT.json"
+      "source": "geometry-bound T73_DELTA3_PUBLIC_RECEIPT.json"
     },
     "sign_robust_cubic_values": {
       "historical_mixed_index_note": "cup/cap variants at indices 0,5 and 87,2 mixed two endpoint tables; they are not D3=2624",
       "status": "NOT_USED_AS_FROZEN_CUBIC"
     }
   },
-  "p0_witness_sha256": "545F5CE8F53F0A9E6D90C516D9C35AB7CA47AA1AD8C2D9820E253E2273769A7C",
+  "p0_witness_sha256": "F1F9C500B00EDFB55869481DF96D9FA2EDD70DF84347AE46CB8F5882BDBBF8D2",
   "product_pairing": {
-    "geometric_realization": "PASS: each y-side is a P0 reconstruction strand checked by reconstruct_t73_p0.py; each z-side is the certified product-normal translate; leftover z-circles miss the P0 ball. Scope is the Johnson replacement collar, not an embedded cut in partial W2.",
+    "geometric_realization": "PASS: each y-side is an actual post-cancellation detector strand; each z-side is its checked product-normal translate, and all 227 source-bound z-meridians lie in the explicit complement chart.",
     "m_2": {
       "disjointness_rule": "each pairing interval is one cyclic word edge and distinct pairs use distinct endpoints",
       "pair_count": 42,
@@ -615,7 +636,7 @@
       "word_length": 311,
       "word_sha256": "E7175C5B3B116EB094C1B78A79589D5B8F8691885BC90EB05695805962DB98C9"
     },
-    "model_cut_link_sha256": "843A80227D8B062F6451013F53D8A5FA0405409548A48854CADE3FF1E5C3BD3A",
+    "model_cut_link_sha256": "5644F67A61C0AA734C08C301D3231F86C734F33244BD25F18A894876243CCE0D",
     "model_rectangles_status": "PASS",
     "r_xy": {
       "disjointness_rule": "each pairing interval is one cyclic word edge and distinct pairs use distinct endpoints",
@@ -669,8 +690,8 @@
     "local_psi_frobenius_checks": {
       "epsilon_tensor_epsilon_delta_1": 0,
       "epsilon_tensor_epsilon_delta_X": 1,
-      "r_zx_split_circle_epsilon_1": 0,
-      "r_zx_split_circle_epsilon_X": 1
+      "kernel_rule": "HJ 5.3 plus Lemma Ssystem; no HJ 5.5/5.7 invocation",
+      "r_zx_split_unknot_factor_used": false
     },
     "orbit_normalization": "divide by the nonzero rational orbit size; beta reindexes the sum and successive psi extension ratios telescope",
     "owner_y_passage_counts": {
@@ -696,5 +717,5 @@
     "through_degree_firewall": "a balanced pair on every positive-gate owner adds at least four y endpoints/two cups, so the action-closed undotted image has through degree <=84; r_zx is the unique zero-gate owner",
     "whole_source": true
   },
-  "witness_sha256": "0D7D1CAC871D85C4F909C2B31CC7F01809C2558D6FA0655DE9034C4B1C28E7A3"
+  "witness_sha256": "2A5F7AC5038987B2520BA25D64C4EE4E79A2EBBAB977D1E89541E869A80C9886"
 }
