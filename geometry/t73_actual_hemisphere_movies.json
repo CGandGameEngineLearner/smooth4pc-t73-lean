@@ -1,33 +1,650 @@
 {
   "actual_w2_lasagna_map": false,
+  "c_witness_sha256": "2A5F7AC5038987B2520BA25D64C4EE4E79A2EBBAB977D1E89541E869A80C9886",
   "detector_identities": {
-    "D(v A0) = D(v)": "OPEN",
-    "D(v A1) = 0": "OPEN"
+    "D(v A0) = D(v)": "PASS_REVERSED_MODEL_ONLY",
+    "D(v A1) = 0": "PASS_REVERSED_MODEL_ONLY"
   },
   "movies": [
     {
-      "A0_identity_on_detector": null,
-      "A1_kills_detector": null,
-      "reason": "no actual \u2202W2 hemisphere movie has been triangulated",
+      "A0_detector_action": "identity_in_model",
+      "A1_detector_action": "zero_in_model",
+      "actual_3_handle": "H^3_1",
+      "all_source_summands": "on every finite cable summand apply epsilon^tensor(b) Delta^(b-1) to the listed physical core-disk copies; beta and psi compatibility use the actual C cocone and LocalStabilization",
+      "coequalizer_difference": {
+        "1": 0,
+        "X": 0
+      },
+      "core_disk_boundary_profile": [
+        {
+          "coefficient": -1311,
+          "copy_count": 1311,
+          "orientation": -1,
+          "owner": "r_xy",
+          "product_normal_level_rule": "(copy_index+1)/(1542) inside the actual r_xy framing collar"
+        },
+        {
+          "coefficient": -189,
+          "copy_count": 189,
+          "orientation": -1,
+          "owner": "r_yz",
+          "product_normal_level_rule": "(copy_index+1)/(1542) inside the actual r_yz framing collar"
+        },
+        {
+          "coefficient": 41,
+          "copy_count": 41,
+          "orientation": 1,
+          "owner": "r_zx",
+          "product_normal_level_rule": "(copy_index+1)/(1542) inside the actual r_zx framing collar"
+        }
+      ],
+      "core_disk_intersection_count_b": 1541,
+      "delta_minus": {
+        "disk": {
+          "boundary_edges": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              3
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              3
+            ]
+          ],
+          "connected": true,
+          "euler": 1
+        },
+        "shelling_order": [
+          9,
+          8,
+          7,
+          6,
+          5,
+          4,
+          3,
+          2,
+          1,
+          0
+        ],
+        "triangles": [
+          [
+            4,
+            5,
+            6
+          ],
+          [
+            4,
+            6,
+            7
+          ],
+          [
+            0,
+            1,
+            5
+          ],
+          [
+            0,
+            5,
+            4
+          ],
+          [
+            2,
+            3,
+            7
+          ],
+          [
+            2,
+            7,
+            6
+          ],
+          [
+            1,
+            2,
+            6
+          ],
+          [
+            1,
+            6,
+            5
+          ],
+          [
+            0,
+            4,
+            7
+          ],
+          [
+            0,
+            7,
+            3
+          ]
+        ]
+      },
+      "delta_plus": {
+        "disk": {
+          "boundary_edges": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              3
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              3
+            ]
+          ],
+          "connected": true,
+          "euler": 1
+        },
+        "shelling_order": [
+          1,
+          0
+        ],
+        "triangles": [
+          [
+            0,
+            2,
+            1
+          ],
+          [
+            0,
+            3,
+            2
+          ]
+        ]
+      },
+      "detector_factorization": "PASS_MODEL_COCONE_OPEN_ACTUAL_BOUNDARY_MAP",
+      "endpoint_map_minus": {
+        "1": 0,
+        "X": 1
+      },
+      "endpoint_map_plus": {
+        "1": 0,
+        "X": 1
+      },
+      "equator": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "mixed_braid_rule": "move all mixed endpoint braids to the end by strict functoriality; the same actual endpoint permutation and pivotal map conjugate the detector row and cancel",
+      "morse_movie": {
+        "coproduct_saddles": 1540,
+        "copy_order": "owner order r_xy,r_yz,r_zx, then increasing product-normal level",
+        "counit_caps": 1541
+      },
+      "movie_support": {
+        "xmax": 66,
+        "xmin": 64,
+        "ymax": 4443,
+        "ymin": 4441,
+        "zmax": 45403,
+        "zmin": 45401
+      },
+      "punctured_surface": {
+        "boundary_count": 1541,
+        "construction": "remove the listed product-normal core disks from the actual attaching sphere before transporting it to W1",
+        "euler_characteristic": -1539,
+        "genus": 0
+      },
       "sphere": "A1",
-      "status": "OPEN"
+      "status": "PASS_REVERSED_MODEL_ONLY",
+      "surface_sha256": "9298B9D822313A01D51BDBF641563B7C44E85CA62054BA3BDB9324FD8FDA7339"
     },
     {
-      "A0_identity_on_detector": null,
-      "A1_kills_detector": null,
-      "reason": "no actual \u2202W2 hemisphere movie has been triangulated",
+      "A0_detector_action": "identity_in_model",
+      "A1_detector_action": "zero_in_model",
+      "actual_3_handle": "H^3_2",
+      "all_source_summands": "on every finite cable summand apply epsilon^tensor(b) Delta^(b-1) to the listed physical core-disk copies; beta and psi compatibility use the actual C cocone and LocalStabilization",
+      "coequalizer_difference": {
+        "1": 0,
+        "X": 0
+      },
+      "core_disk_boundary_profile": [
+        {
+          "coefficient": 8608,
+          "copy_count": 8608,
+          "orientation": 1,
+          "owner": "r_xy",
+          "product_normal_level_rule": "(copy_index+1)/(10119) inside the actual r_xy framing collar"
+        },
+        {
+          "coefficient": 1241,
+          "copy_count": 1241,
+          "orientation": 1,
+          "owner": "r_yz",
+          "product_normal_level_rule": "(copy_index+1)/(10119) inside the actual r_yz framing collar"
+        },
+        {
+          "coefficient": -269,
+          "copy_count": 269,
+          "orientation": -1,
+          "owner": "r_zx",
+          "product_normal_level_rule": "(copy_index+1)/(10119) inside the actual r_zx framing collar"
+        }
+      ],
+      "core_disk_intersection_count_b": 10118,
+      "delta_minus": {
+        "disk": {
+          "boundary_edges": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              3
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              3
+            ]
+          ],
+          "connected": true,
+          "euler": 1
+        },
+        "shelling_order": [
+          9,
+          8,
+          7,
+          6,
+          5,
+          4,
+          3,
+          2,
+          1,
+          0
+        ],
+        "triangles": [
+          [
+            4,
+            5,
+            6
+          ],
+          [
+            4,
+            6,
+            7
+          ],
+          [
+            0,
+            1,
+            5
+          ],
+          [
+            0,
+            5,
+            4
+          ],
+          [
+            2,
+            3,
+            7
+          ],
+          [
+            2,
+            7,
+            6
+          ],
+          [
+            1,
+            2,
+            6
+          ],
+          [
+            1,
+            6,
+            5
+          ],
+          [
+            0,
+            4,
+            7
+          ],
+          [
+            0,
+            7,
+            3
+          ]
+        ]
+      },
+      "delta_plus": {
+        "disk": {
+          "boundary_edges": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              3
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              3
+            ]
+          ],
+          "connected": true,
+          "euler": 1
+        },
+        "shelling_order": [
+          1,
+          0
+        ],
+        "triangles": [
+          [
+            0,
+            2,
+            1
+          ],
+          [
+            0,
+            3,
+            2
+          ]
+        ]
+      },
+      "detector_factorization": "PASS_MODEL_COCONE_OPEN_ACTUAL_BOUNDARY_MAP",
+      "endpoint_map_minus": {
+        "1": 0,
+        "X": 1
+      },
+      "endpoint_map_plus": {
+        "1": 0,
+        "X": 1
+      },
+      "equator": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "mixed_braid_rule": "move all mixed endpoint braids to the end by strict functoriality; the same actual endpoint permutation and pivotal map conjugate the detector row and cancel",
+      "morse_movie": {
+        "coproduct_saddles": 10117,
+        "copy_order": "owner order r_xy,r_yz,r_zx, then increasing product-normal level",
+        "counit_caps": 10118
+      },
+      "movie_support": {
+        "xmax": 82,
+        "xmin": 80,
+        "ymax": 4443,
+        "ymin": 4441,
+        "zmax": 45403,
+        "zmin": 45401
+      },
+      "punctured_surface": {
+        "boundary_count": 10118,
+        "construction": "remove the listed product-normal core disks from the actual attaching sphere before transporting it to W1",
+        "euler_characteristic": -10116,
+        "genus": 0
+      },
       "sphere": "A2",
-      "status": "OPEN"
+      "status": "PASS_REVERSED_MODEL_ONLY",
+      "surface_sha256": "739F4CB872A611F1E4456F6F51ADDEEC1E830329E81670281F2EF2EAC6335631"
     },
     {
-      "A0_identity_on_detector": null,
-      "A1_kills_detector": null,
-      "reason": "no actual \u2202W2 hemisphere movie has been triangulated",
+      "A0_detector_action": "identity_in_model",
+      "A1_detector_action": "zero_in_model",
+      "actual_3_handle": "H^3_3",
+      "all_source_summands": "on every finite cable summand apply epsilon^tensor(b) Delta^(b-1) to the listed physical core-disk copies; beta and psi compatibility use the actual C cocone and LocalStabilization",
+      "coequalizer_difference": {
+        "1": 0,
+        "X": 0
+      },
+      "core_disk_boundary_profile": [
+        {
+          "coefficient": -1,
+          "copy_count": 1,
+          "orientation": -1,
+          "owner": "r_xy",
+          "product_normal_level_rule": "(copy_index+1)/(3) inside the actual r_xy framing collar"
+        },
+        {
+          "coefficient": 0,
+          "copy_count": 0,
+          "orientation": 0,
+          "owner": "r_yz",
+          "product_normal_level_rule": "(copy_index+1)/(3) inside the actual r_yz framing collar"
+        },
+        {
+          "coefficient": 1,
+          "copy_count": 1,
+          "orientation": 1,
+          "owner": "r_zx",
+          "product_normal_level_rule": "(copy_index+1)/(3) inside the actual r_zx framing collar"
+        }
+      ],
+      "core_disk_intersection_count_b": 2,
+      "delta_minus": {
+        "disk": {
+          "boundary_edges": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              3
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              3
+            ]
+          ],
+          "connected": true,
+          "euler": 1
+        },
+        "shelling_order": [
+          9,
+          8,
+          7,
+          6,
+          5,
+          4,
+          3,
+          2,
+          1,
+          0
+        ],
+        "triangles": [
+          [
+            4,
+            5,
+            6
+          ],
+          [
+            4,
+            6,
+            7
+          ],
+          [
+            0,
+            1,
+            5
+          ],
+          [
+            0,
+            5,
+            4
+          ],
+          [
+            2,
+            3,
+            7
+          ],
+          [
+            2,
+            7,
+            6
+          ],
+          [
+            1,
+            2,
+            6
+          ],
+          [
+            1,
+            6,
+            5
+          ],
+          [
+            0,
+            4,
+            7
+          ],
+          [
+            0,
+            7,
+            3
+          ]
+        ]
+      },
+      "delta_plus": {
+        "disk": {
+          "boundary_edges": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              3
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              3
+            ]
+          ],
+          "connected": true,
+          "euler": 1
+        },
+        "shelling_order": [
+          1,
+          0
+        ],
+        "triangles": [
+          [
+            0,
+            2,
+            1
+          ],
+          [
+            0,
+            3,
+            2
+          ]
+        ]
+      },
+      "detector_factorization": "PASS_MODEL_COCONE_OPEN_ACTUAL_BOUNDARY_MAP",
+      "endpoint_map_minus": {
+        "1": 0,
+        "X": 1
+      },
+      "endpoint_map_plus": {
+        "1": 0,
+        "X": 1
+      },
+      "equator": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "mixed_braid_rule": "move all mixed endpoint braids to the end by strict functoriality; the same actual endpoint permutation and pivotal map conjugate the detector row and cancel",
+      "morse_movie": {
+        "coproduct_saddles": 1,
+        "copy_order": "owner order r_xy,r_yz,r_zx, then increasing product-normal level",
+        "counit_caps": 2
+      },
+      "movie_support": {
+        "xmax": 98,
+        "xmin": 96,
+        "ymax": 4443,
+        "ymin": 4441,
+        "zmax": 45403,
+        "zmin": 45401
+      },
+      "punctured_surface": {
+        "boundary_count": 2,
+        "construction": "remove the listed product-normal core disks from the actual attaching sphere before transporting it to W1",
+        "euler_characteristic": 0,
+        "genus": 0
+      },
       "sphere": "A3",
-      "status": "OPEN"
+      "status": "PASS_REVERSED_MODEL_ONLY",
+      "surface_sha256": "6E20B4E599CA72CAEA97C3F6B57CD41CC734347FFB9FAD3080442AF404E21E77"
     }
   ],
-  "schema": "t73_actual_hemisphere_movies/v1",
-  "sphere_system_sha256": "7415715547EDE28E8502C129863DAD4FCAD5B393A075AA641695DF809FE4969F",
+  "schema": "t73_actual_hemisphere_movies/v2",
+  "sha256": "EC22496E5348D1292522F45C8AE93AA453F50E557D329E13263385E876517C5D",
+  "sphere_system_sha256": "6776E0A8D8F58FB6F0C5D0A0BF4AFDB4BA4DAC6AA3BC90AE0632FAFDAA6FD1DB",
   "status": "OPEN"
 }

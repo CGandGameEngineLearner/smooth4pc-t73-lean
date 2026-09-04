@@ -32,6 +32,10 @@ C = ROOT / "audit" / "t73_c_comparison_witness.json"
 S = ROOT / "audit" / "t73_s_relative_moves_certificate.json"
 LEAN_FINITE = ROOT / "Smooth4PC" / "T73Finite.lean"
 OUTPUT = ROOT / "audit" / "t73_p3_four_handle.json"
+ACTUAL_SPHERES = ROOT / "geometry" / "t73_actual_sphere_system.json"
+HEMISPHERES = ROOT / "geometry" / "t73_actual_hemisphere_movies.json"
+W2 = ROOT / "geometry" / "t73_actual_W2_boundary.json"
+AR_LINK = ROOT / "geometry" / "t73_actual_ar_link.json"
 
 MATRIX_A = (
     (0, 269, 1240),
@@ -137,6 +141,10 @@ def generate() -> dict[str, Any]:
     p0 = json.loads(P0.read_text(encoding="utf-8"))
     c = json.loads(C.read_text(encoding="utf-8"))
     s = json.loads(S.read_text(encoding="utf-8"))
+    actual_spheres = json.loads(ACTUAL_SPHERES.read_text(encoding="utf-8"))
+    hemispheres = json.loads(HEMISPHERES.read_text(encoding="utf-8"))
+    w2 = json.loads(W2.read_text(encoding="utf-8"))
+    ar_link = json.loads(AR_LINK.read_text(encoding="utf-8"))
     if c["p0_witness_sha256"] != p0["certificate_sha256"]:
         raise AssertionError("C is not bound to the Johnson P0 certificate")
     if s["verdict"] != "PASS":
@@ -150,12 +158,16 @@ def generate() -> dict[str, Any]:
         raise AssertionError("P3 refuses to pass on an OPEN sphere model")
     if spheres["certificate_sha256"] != s["dependencies"]["standard_spheres_sha256"]:
         raise AssertionError("S relative-moves SHA does not match regenerated spheres")
-    if spheres["ambient_3_manifold"]["identified_with_partial_W2"]:
-        raise AssertionError("P3 cannot close a picture identified with partial W2")
     if not spheres["ambient_3_manifold"]["johnson_replacement_reversed_picture"]:
         raise AssertionError("P3 requires the Johnson replacement reversed picture")
     if spheres["closed_hj_53_used_to_fix_B"] or spheres["hj_lemmas_55_57_invoked"]:
         raise AssertionError("P3 refuses the false relative-uniqueness route")
+    if w2["identified_with_partial_W2"] or actual_spheres["status"] != "OPEN":
+        raise AssertionError("P3 refuses a falsely closed partial-W2 sphere system")
+    if hemispheres["sphere_system_sha256"] != actual_spheres["sha256"] or hemispheres["actual_w2_lasagna_map"]:
+        raise AssertionError("P3 refuses a falsely promoted MWW three-handle map")
+    if s.get("actual_w2_lasagna_map") is not False:
+        raise AssertionError("S certificate must retain the actual-map blocker")
 
     ball = spheres["model_ball"]["bounds"]
     cancellations = []
@@ -209,11 +221,14 @@ def generate() -> dict[str, Any]:
         raise AssertionError("quantum degree is not 494")
 
     result: dict[str, Any] = {
-        "schema": "t73_p3_four_handle/v1",
+        "schema": "t73_p3_four_handle/v2",
         "p0_certificate_sha256": p0["certificate_sha256"],
         "c_witness_sha256": c["witness_sha256"],
         "s_relative_sha256": s["certificate_sha256"],
         "s_spheres_sha256": spheres["certificate_sha256"],
+        "actual_sphere_system_sha256": actual_spheres["sha256"],
+        "actual_hemisphere_movies_sha256": hemispheres["sha256"],
+        "actual_W2_boundary_sha256": w2["sha256"],
         "cancellations": cancellations,
         "remaining_boundary": {
             "homeomorphism_type": "S^3",
@@ -238,6 +253,7 @@ def generate() -> dict[str, Any]:
             ),
             "johnson_replacement_picture": True,
             "triangulated_W3": False,
+            "attaching_map": "OPEN on actual W3; explicit only in the reversed model",
         },
         "closed_manifold": {
             "name": "X_J",
@@ -249,11 +265,13 @@ def generate() -> dict[str, Any]:
             "homotopy_sphere_euler_2_certified": False,
             "identified_with_Sigma_A_0": False,
             "identified_with_partial_W2": False,
+            "identification": "OPEN: the relative W2 boundary map carrying the punctured three-handle surfaces is missing",
         },
         "mww_3_10": {
             "source": "arXiv:2206.04616 Theorem 3.10",
             "applied_to_johnson_replacement_picture": True,
             "identifies_iterated_quotient_with_Sigma_A_0": False,
+            "hemisphere_model_sha256": hemispheres["sha256"],
         },
         "e12_s4": {
             "source": "arXiv:2206.04616 Corollary 3.5",
@@ -272,6 +290,7 @@ def generate() -> dict[str, Any]:
             "iwaki_source": "Iwaki 2024 Proposition 2.1, det(A-I)=+-1 iff Sigma_A^0 is a homotopy sphere",
             "applies_to_standard_CS_construction": True,
             "identifies_X_J_with_Sigma_A_0": False,
+            "actual_ar_link_sha256": ar_link["sha256"],
         },
         "diffeomorphism_invariance": {
             "rule": (
@@ -296,20 +315,19 @@ def generate() -> dict[str, Any]:
             "degree_494": degree == 494,
             "identified_with_Sigma_A_0": False,
             "triangulated_W3": False,
+            "actual_w2_lasagna_map": False,
             "s4_reduction_data_inhabited": False,
             "counterexample_not_claimed": True,
         },
-        "E11_status": "PASS_FOR_JOHNSON_REPLACEMENT_FOUR_HANDLE_PICTURE",
+        "E11_status": "PASS_REVERSED_MODEL_ONLY",
         "E12_status": "PASS",
         "E13_status": "PARTIAL",
-        "P3_status": "PASS_FOR_JOHNSON_REPLACEMENT_FOUR_HANDLE_PICTURE",
+        "P3_status": "PASS_REVERSED_MODEL_FOUR_HANDLE_PICTURE",
         "verdict": "PASS",
         "scope": (
-            "Johnson replacement four-handle picture: 1-3 cancellations of the "
-            "reversed 1-handles, a PL 4-ball along the remaining S^3, MWW "
-            "Proposition 3.4 and Corollary 3.5, and det A = det(A-I) = 1.  Not "
-            "a triangulated W3, not an identification with Sigma_A^0, and not "
-            "a counterexample."
+            "The reversed model has three 1/3 cancellations and an explicit PL "
+            "4-ball closure.  Transfer to the actual trace-73 W3 remains blocked "
+            "by the missing relative W2 boundary map for the punctured surfaces."
         ),
     }
     result["certificate_sha256"] = canonical_sha(

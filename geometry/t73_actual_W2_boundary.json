@@ -1,7 +1,136 @@
 {
+  "ar_link_sha256": "E5CD3C2A2AD0650D061CFB730F54F32C1F2860D2FD0813067550D545D02D2853",
+  "c1_certificate_sha256": "5644F67A61C0AA734C08C301D3231F86C734F33244BD25F18A894876243CCE0D",
+  "cancel_t_sha256": "6BFFC5189F69C3C2A3AA186683FFFDDC63A60573982634BCEC242DA1B67051D6",
+  "cancel_x_sha256": "B72838D6671FAFBD3D8368E511759D9DE13007C81E4C731EAA661B084B951C1B",
+  "handle_counts_at_W2": [
+    1,
+    2,
+    5,
+    0,
+    0
+  ],
+  "identification_method": "OPEN: reversing the outgoing 3-handles gives the abstract model, but an explicit relative boundary diffeomorphism carrying all actual 2-handle core collars and the detector is still missing",
   "identified_with_partial_W2": false,
-  "reason": "no 4-dimensional W2 triangulation has been built from the AR link",
-  "schema": "t73_actual_W2_boundary/v1",
-  "sha256": "52D077EEF4CB317B967EE537AC302BC96F8C462F6EC55EEFC5F4EE5117D65E09",
-  "source": "dual-block Heegaard surface of the period-4 cubulation"
+  "outgoing_handles": {
+    "four_handles": 1,
+    "three_handles": 3
+  },
+  "reversed_outgoing_picture": {
+    "belt_spheres_are_actual_3_handle_attaching_spheres": true,
+    "boundary": "#^3(S^1 x S^2)",
+    "detector_chart_carried_to_model_ball": {
+      "boundary_triangles": [
+        [
+          0,
+          2,
+          1
+        ],
+        [
+          0,
+          3,
+          2
+        ],
+        [
+          4,
+          5,
+          6
+        ],
+        [
+          4,
+          6,
+          7
+        ],
+        [
+          0,
+          1,
+          5
+        ],
+        [
+          0,
+          5,
+          4
+        ],
+        [
+          2,
+          3,
+          7
+        ],
+        [
+          2,
+          7,
+          6
+        ],
+        [
+          1,
+          2,
+          6
+        ],
+        [
+          1,
+          6,
+          5
+        ],
+        [
+          0,
+          4,
+          7
+        ],
+        [
+          0,
+          7,
+          3
+        ]
+      ],
+      "certified_topological_type": "3-ball",
+      "chart": "axis-aligned cube containing the Johnson six-sweep collar strands",
+      "vertices": [
+        [
+          -1,
+          -1,
+          -1
+        ],
+        [
+          44,
+          -1,
+          -1
+        ],
+        [
+          44,
+          4401,
+          -1
+        ],
+        [
+          -1,
+          4401,
+          -1
+        ],
+        [
+          -1,
+          -1,
+          45361
+        ],
+        [
+          44,
+          -1,
+          45361
+        ],
+        [
+          44,
+          4401,
+          45361
+        ],
+        [
+          -1,
+          4401,
+          45361
+        ]
+      ]
+    },
+    "one_handles": 3,
+    "zero_handle": 1
+  },
+  "schema": "t73_actual_W2_boundary/v2",
+  "sha256": "E0E99C9E99FD100F8FECD3C9898102DD5E04395C08CC39E0ECEAC1835F344896",
+  "source": "actual seven-component AR handle decomposition transported through both Kirby cancellations"
 }

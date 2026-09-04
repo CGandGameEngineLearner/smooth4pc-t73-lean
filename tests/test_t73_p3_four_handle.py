@@ -21,11 +21,11 @@ class P3FourHandleTest(unittest.TestCase):
     def test_johnson_replacement_four_handle_picture(self) -> None:
         module = load("certify_t73_p3_four_handle")
         result = module.generate()
-        self.assertEqual(result["schema"], "t73_p3_four_handle/v1")
+        self.assertEqual(result["schema"], "t73_p3_four_handle/v2")
         self.assertEqual(result["verdict"], "PASS")
         self.assertEqual(
             result["E11_status"],
-            "PASS_FOR_JOHNSON_REPLACEMENT_FOUR_HANDLE_PICTURE",
+            "PASS_REVERSED_MODEL_ONLY",
         )
         self.assertEqual(result["E12_status"], "PASS")
         self.assertEqual(result["E13_status"], "PARTIAL")

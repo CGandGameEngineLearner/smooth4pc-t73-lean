@@ -1,9 +1,12 @@
 {
-  "E11_status": "PASS_FOR_JOHNSON_REPLACEMENT_FOUR_HANDLE_PICTURE",
+  "E11_status": "PASS_REVERSED_MODEL_ONLY",
   "E12_status": "PASS",
   "E13_status": "PARTIAL",
-  "P3_status": "PASS_FOR_JOHNSON_REPLACEMENT_FOUR_HANDLE_PICTURE",
-  "c_witness_sha256": "0D7D1CAC871D85C4F909C2B31CC7F01809C2558D6FA0655DE9034C4B1C28E7A3",
+  "P3_status": "PASS_REVERSED_MODEL_FOUR_HANDLE_PICTURE",
+  "actual_W2_boundary_sha256": "E0E99C9E99FD100F8FECD3C9898102DD5E04395C08CC39E0ECEAC1835F344896",
+  "actual_hemisphere_movies_sha256": "EC22496E5348D1292522F45C8AE93AA453F50E557D329E13263385E876517C5D",
+  "actual_sphere_system_sha256": "6776E0A8D8F58FB6F0C5D0A0BF4AFDB4BA4DAC6AA3BC90AE0632FAFDAA6FD1DB",
+  "c_witness_sha256": "2A5F7AC5038987B2520BA25D64C4EE4E79A2EBBAB977D1E89541E869A80C9886",
   "cancellations": [
     {
       "axis": "x",
@@ -102,8 +105,9 @@
       "one_handle": "h3"
     }
   ],
-  "certificate_sha256": "B9ED5F7122D69D623F179089EE76B95468EA481863F04C270227E251EE07C7B2",
+  "certificate_sha256": "3C5FAFAF463F5AEAED8E0C1788D4B9F580AEB5C371830C2D22B5CF7EED0121EE",
   "checks": {
+    "actual_w2_lasagna_map": false,
     "boundary_euler_0": true,
     "counterexample_not_claimed": true,
     "degree_494": true,
@@ -124,6 +128,7 @@
     "construction": "Johnson replacement reversed picture, 1-3 cancelled, closed by a 4-ball along the remaining S^3",
     "euler_characteristic": null,
     "homotopy_sphere_euler_2_certified": false,
+    "identification": "OPEN: the relative W2 boundary map carrying the punctured three-handle surfaces is missing",
     "identified_with_Sigma_A_0": false,
     "identified_with_partial_W2": false,
     "name": "X_J"
@@ -143,6 +148,7 @@
     "summand_zero": true
   },
   "e13_determinants": {
+    "actual_ar_link_sha256": "E5CD3C2A2AD0650D061CFB730F54F32C1F2860D2FD0813067550D545D02D2853",
     "applies_to_standard_CS_construction": true,
     "det_A": 1,
     "det_A_minus_I": 1,
@@ -172,6 +178,7 @@
   },
   "four_handle": {
     "attaching": "the remaining S^3",
+    "attaching_map": "OPEN on actual W3; explicit only in the reversed model",
     "bidegree": [
       0,
       0
@@ -404,10 +411,11 @@
   },
   "mww_3_10": {
     "applied_to_johnson_replacement_picture": true,
+    "hemisphere_model_sha256": "EC22496E5348D1292522F45C8AE93AA453F50E557D329E13263385E876517C5D",
     "identifies_iterated_quotient_with_Sigma_A_0": false,
     "source": "arXiv:2206.04616 Theorem 3.10"
   },
-  "p0_certificate_sha256": "545F5CE8F53F0A9E6D90C516D9C35AB7CA47AA1AD8C2D9820E253E2273769A7C",
+  "p0_certificate_sha256": "F1F9C500B00EDFB55869481DF96D9FA2EDD70DF84347AE46CB8F5882BDBBF8D2",
   "remaining_boundary": {
     "contains_p0_ball": true,
     "empty_link": true,
@@ -422,10 +430,10 @@
     },
     "rule": "three 1-3 cancellations restore the original S^3 chart containing the P0 cube; surgery misses that cube"
   },
-  "s_relative_sha256": "72A1AFA6BA914A4DA402CFDC9441C8255D903FFA4B3674043991C42B219A2D74",
-  "s_spheres_sha256": "F3DC5242984F6D56C2D67F16AC8D8996DE40CC74B2BC1BB677963E8298398D2C",
-  "schema": "t73_p3_four_handle/v1",
-  "scope": "Johnson replacement four-handle picture: 1-3 cancellations of the reversed 1-handles, a PL 4-ball along the remaining S^3, MWW Proposition 3.4 and Corollary 3.5, and det A = det(A-I) = 1.  Not a triangulated W3, not an identification with Sigma_A^0, and not a counterexample.",
+  "s_relative_sha256": "B50FD2B7FDF6228C1832B583B2842FE2DE89A1839F8AA0CE50FB04277E4D6F19",
+  "s_spheres_sha256": "32CE45C8D5FC836037F52F006A9E85C04309BE0E6065CF8AD453A366C7A10029",
+  "schema": "t73_p3_four_handle/v2",
+  "scope": "The reversed model has three 1/3 cancellations and an explicit PL 4-ball closure.  Transfer to the actual trace-73 W3 remains blocked by the missing relative W2 boundary map for the punctured surfaces.",
   "uniqueness_of_regular_neighborhoods_used": false,
   "verdict": "PASS"
 }

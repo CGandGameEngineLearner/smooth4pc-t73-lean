@@ -24,7 +24,7 @@ class SRelativeMovesTest(unittest.TestCase):
             generated["mww_hemisphere_table"]["coequalizer_difference"],
             {"1": 0, "X": 0},
         )
-        self.assertTrue(
+        self.assertFalse(
             generated["candidate_binding"]["actual_standard_sphere_endpoint_foam_computed"]
         )
         self.assertEqual(len(generated["relative_geometry"]["relative_sphere_movies"]), 3)
@@ -38,6 +38,9 @@ class SRelativeMovesTest(unittest.TestCase):
         self.assertIn("PASS", generated["relative_geometry"]["collar_motion"])
         self.assertGreater(generated["relative_geometry"]["nielsen_pl_movie_count"], 0)
         self.assertFalse(generated["relative_geometry"]["nielsen_parallel_copies_instantiated"])
+        self.assertFalse(generated["actual_w2_lasagna_map"])
+        self.assertFalse(generated["checks"]["D_vA0_equals_D_v"])
+        self.assertFalse(generated["checks"]["D_vA1_equals_zero"])
 
 
 if __name__ == "__main__":

@@ -76,7 +76,7 @@ def check() -> None:
     )
     require(
         paper_text,
-        "frozen truncated Burau",
+        "geometry-bound truncated Burau",
         PAPER,
     )
     require(

@@ -22,6 +22,7 @@ import hashlib
 import importlib.util
 import json
 import sys
+from fractions import Fraction
 from pathlib import Path
 from typing import Any
 
@@ -225,6 +226,8 @@ def kernel_attaching(surface: dict[str, Any], owner: str, letters: list[str], ba
 
 
 def boxes_disjoint(a: dict[str, int], b: dict[str, int]) -> bool:
+    a = {key: Fraction(value) for key, value in a.items()}
+    b = {key: Fraction(value) for key, value in b.items()}
     return (
         a["xmax"] < b["xmin"]
         or b["xmax"] < a["xmin"]
@@ -240,6 +243,8 @@ def boxes_interior_disjoint(a: dict[str, int], b: dict[str, int]) -> bool:
 
     Dual-loop chart returns may touch an attaching face of a belt cube.
     """
+    a = {key: Fraction(value) for key, value in a.items()}
+    b = {key: Fraction(value) for key, value in b.items()}
     return (
         a["xmax"] <= b["xmin"]
         or b["xmax"] <= a["xmin"]
@@ -377,12 +382,12 @@ def slide_support(source: dict[str, int], target: dict[str, int], ball: dict[str
 
 def polyline_bounds(points: list[list[int]]) -> dict[str, int]:
     return {
-        "xmin": min(point[0] for point in points),
-        "xmax": max(point[0] for point in points),
-        "ymin": min(point[1] for point in points),
-        "ymax": max(point[1] for point in points),
-        "zmin": min(point[2] for point in points),
-        "zmax": max(point[2] for point in points),
+        "xmin": str(min(Fraction(point[0]) for point in points)),
+        "xmax": str(max(Fraction(point[0]) for point in points)),
+        "ymin": str(min(Fraction(point[1]) for point in points)),
+        "ymax": str(max(Fraction(point[1]) for point in points)),
+        "zmin": str(min(Fraction(point[2]) for point in points)),
+        "zmax": str(max(Fraction(point[2]) for point in points)),
     }
 
 

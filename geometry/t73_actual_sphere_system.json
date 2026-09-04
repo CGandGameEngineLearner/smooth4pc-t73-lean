@@ -1,336 +1,4257 @@
 {
   "actual_w2_lasagna_map": false,
-  "complement_connected": null,
+  "c_witness_sha256": "2A5F7AC5038987B2520BA25D64C4EE4E79A2EBBAB977D1E89541E869A80C9886",
+  "complement_connected": true,
   "hj_53_kernel_invariance_only": true,
   "hj_lemmas_55_57_invoked": false,
   "pairwise": [
     {
       "disjoint": true,
-      "interior_shared": [],
       "left": "A1",
-      "right": "A2",
-      "shared_vertex_count": 0
+      "right": "A2"
     },
     {
       "disjoint": true,
-      "interior_shared": [],
       "left": "A1",
-      "right": "A3",
-      "shared_vertex_count": 0
+      "right": "A3"
     },
     {
       "disjoint": true,
-      "interior_shared": [],
       "left": "A2",
-      "right": "A3",
-      "shared_vertex_count": 0
+      "right": "A3"
     }
   ],
   "pairwise_disjoint": true,
-  "reason": "dual meridians exist, but they are not yet disjoint embedded spheres on actual \u2202W2",
-  "schema": "t73_actual_sphere_system/v1",
-  "sha256": "7415715547EDE28E8502C129863DAD4FCAD5B393A075AA641695DF809FE4969F",
-  "simultaneous_surgery_is_S3": null,
+  "reason": "the reversed sphere model and b=(1541,10118,2) profiles are explicit, but the surfaces have not been transported through an actual relative W2 boundary map",
+  "schema": "t73_actual_sphere_system/v2",
+  "sha256": "6776E0A8D8F58FB6F0C5D0A0BF4AFDB4BA4DAC6AA3BC90AE0632FAFDAA6FD1DB",
+  "simultaneous_surgery_in_reversed_model_is_S3": true,
+  "simultaneous_surgery_is_S3": false,
+  "simultaneous_surgery_reason": "the abstract reversed model compresses to S3; transfer to the actual W2 boundary awaits the missing relative boundary map",
   "spheres": [
     {
-      "axis": 0,
+      "actual_3_handle": "H^3_1",
+      "core_disk_boundary_profile": [
+        {
+          "coefficient": -1311,
+          "copy_count": 1311,
+          "orientation": -1,
+          "owner": "r_xy",
+          "product_normal_level_rule": "(copy_index+1)/(1542) inside the actual r_xy framing collar"
+        },
+        {
+          "coefficient": -189,
+          "copy_count": 189,
+          "orientation": -1,
+          "owner": "r_yz",
+          "product_normal_level_rule": "(copy_index+1)/(1542) inside the actual r_yz framing collar"
+        },
+        {
+          "coefficient": 41,
+          "copy_count": 41,
+          "orientation": 1,
+          "owner": "r_zx",
+          "product_normal_level_rule": "(copy_index+1)/(1542) inside the actual r_zx framing collar"
+        }
+      ],
+      "core_disk_intersection_count_b": 1541,
       "disjoint_from_detector": true,
-      "embedded_s2_candidate": true,
-      "euler_characteristic": 2,
-      "h0_meridian": {
-        "boundary_edge_count": 16,
-        "closed": true,
-        "owner": 0,
-        "plane_axis": 0,
-        "plane_value": 2,
-        "polyline": [
+      "dual_loop": {
+        "axis": "x",
+        "chart_arc_boxes": [
+          {
+            "xmax": 64,
+            "xmin": 58,
+            "ymax": 4443,
+            "ymin": 4441,
+            "zmax": 45403,
+            "zmin": 45401
+          },
+          {
+            "xmax": 60,
+            "xmin": 58,
+            "ymax": 4483,
+            "ymin": 4441,
+            "zmax": 45403,
+            "zmin": 45401
+          },
+          {
+            "xmax": 60,
+            "xmin": 58,
+            "ymax": 4483,
+            "ymin": 4481,
+            "zmax": 45443,
+            "zmin": 45401
+          },
+          {
+            "xmax": 106,
+            "xmin": 58,
+            "ymax": 4483,
+            "ymin": 4481,
+            "zmax": 45443,
+            "zmin": 45441
+          },
+          {
+            "xmax": 106,
+            "xmin": 104,
+            "ymax": 4483,
+            "ymin": 4481,
+            "zmax": 45443,
+            "zmin": 45441
+          },
+          {
+            "xmax": 106,
+            "xmin": 70,
+            "ymax": 4483,
+            "ymin": 4481,
+            "zmax": 45443,
+            "zmin": 45441
+          },
+          {
+            "xmax": 72,
+            "xmin": 70,
+            "ymax": 4483,
+            "ymin": 4481,
+            "zmax": 45443,
+            "zmin": 45401
+          },
+          {
+            "xmax": 72,
+            "xmin": 70,
+            "ymax": 4483,
+            "ymin": 4441,
+            "zmax": 45403,
+            "zmin": 45401
+          },
+          {
+            "xmax": 72,
+            "xmin": 66,
+            "ymax": 4443,
+            "ymin": 4441,
+            "zmax": 45403,
+            "zmin": 45401
+          }
+        ],
+        "chart_return_misses_belt_cubes": true,
+        "handle_segment": "I x {p} in the reversed 1-handle's S^2 x I",
+        "index": 0,
+        "intersection_other_spheres": 0,
+        "intersection_own_sphere": 1,
+        "misses_detector_ball": true
+      },
+      "embedded_s2_in_reversed_model": true,
+      "embedded_s2_on_actual_W2": false,
+      "endpoint_foam": {
+        "actual_w2_lasagna_map": false,
+        "b": 0,
+        "delta_plus_disk": {
+          "bounds": {
+            "xmax": 66,
+            "xmin": 64,
+            "ymax": 4443,
+            "ymin": 4441,
+            "zmax": 45403,
+            "zmin": 45401
+          },
+          "triangles": [
+            [
+              0,
+              2,
+              1
+            ],
+            [
+              0,
+              3,
+              2
+            ]
+          ],
+          "vertices": [
+            [
+              64,
+              4441,
+              45401
+            ],
+            [
+              66,
+              4441,
+              45401
+            ],
+            [
+              66,
+              4443,
+              45401
+            ],
+            [
+              64,
+              4443,
+              45401
+            ],
+            [
+              64,
+              4441,
+              45403
+            ],
+            [
+              66,
+              4441,
+              45403
+            ],
+            [
+              66,
+              4443,
+              45403
+            ],
+            [
+              64,
+              4443,
+              45403
+            ]
+          ]
+        },
+        "equator": [
           [
-            "2",
-            "0",
-            "0"
+            0,
+            1
           ],
           [
-            "2",
-            "0",
-            "1"
+            1,
+            2
           ],
           [
-            "2",
-            "1",
-            "1"
+            2,
+            3
           ],
           [
-            "2",
-            "1",
-            "0"
-          ],
-          [
-            "2",
-            "0",
-            "0"
+            3,
+            0
           ]
         ],
-        "square_count": 4,
-        "vertex_count": 4
+        "evaluation": {
+          "dotted_A0": 1,
+          "epsilon_1": 0,
+          "epsilon_X": 1,
+          "undotted_A1": 0
+        },
+        "frames": [
+          {
+            "dots": 0,
+            "surface": {
+              "bounds": {
+                "xmax": 66,
+                "xmin": 64,
+                "ymax": 4443,
+                "ymin": 4441,
+                "zmax": 45403,
+                "zmin": 45401
+              },
+              "triangles": [
+                [
+                  0,
+                  2,
+                  1
+                ],
+                [
+                  0,
+                  3,
+                  2
+                ],
+                [
+                  4,
+                  5,
+                  6
+                ],
+                [
+                  4,
+                  6,
+                  7
+                ],
+                [
+                  0,
+                  1,
+                  5
+                ],
+                [
+                  0,
+                  5,
+                  4
+                ],
+                [
+                  2,
+                  3,
+                  7
+                ],
+                [
+                  2,
+                  7,
+                  6
+                ],
+                [
+                  1,
+                  2,
+                  6
+                ],
+                [
+                  1,
+                  6,
+                  5
+                ],
+                [
+                  0,
+                  4,
+                  7
+                ],
+                [
+                  0,
+                  7,
+                  3
+                ]
+              ],
+              "vertices": [
+                [
+                  64,
+                  4441,
+                  45401
+                ],
+                [
+                  66,
+                  4441,
+                  45401
+                ],
+                [
+                  66,
+                  4443,
+                  45401
+                ],
+                [
+                  64,
+                  4443,
+                  45401
+                ],
+                [
+                  64,
+                  4441,
+                  45403
+                ],
+                [
+                  66,
+                  4441,
+                  45403
+                ],
+                [
+                  66,
+                  4443,
+                  45403
+                ],
+                [
+                  64,
+                  4443,
+                  45403
+                ]
+              ]
+            },
+            "time": "0"
+          },
+          {
+            "equator": [
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                2
+              ],
+              [
+                2,
+                3
+              ],
+              [
+                3,
+                0
+              ]
+            ],
+            "surface": {
+              "bounds": {
+                "xmax": 66,
+                "xmin": 64,
+                "ymax": 4443,
+                "ymin": 4441,
+                "zmax": 45403,
+                "zmin": 45401
+              },
+              "triangles": [
+                [
+                  4,
+                  5,
+                  6
+                ],
+                [
+                  4,
+                  6,
+                  7
+                ],
+                [
+                  0,
+                  1,
+                  5
+                ],
+                [
+                  0,
+                  5,
+                  4
+                ],
+                [
+                  2,
+                  3,
+                  7
+                ],
+                [
+                  2,
+                  7,
+                  6
+                ],
+                [
+                  1,
+                  2,
+                  6
+                ],
+                [
+                  1,
+                  6,
+                  5
+                ],
+                [
+                  0,
+                  4,
+                  7
+                ],
+                [
+                  0,
+                  7,
+                  3
+                ]
+              ],
+              "vertices": [
+                [
+                  64,
+                  4441,
+                  45401
+                ],
+                [
+                  66,
+                  4441,
+                  45401
+                ],
+                [
+                  66,
+                  4443,
+                  45401
+                ],
+                [
+                  64,
+                  4443,
+                  45401
+                ],
+                [
+                  64,
+                  4441,
+                  45403
+                ],
+                [
+                  66,
+                  4441,
+                  45403
+                ],
+                [
+                  66,
+                  4443,
+                  45403
+                ],
+                [
+                  64,
+                  4443,
+                  45403
+                ]
+              ]
+            },
+            "time": "1/2"
+          },
+          {
+            "dots": 0,
+            "surface": {
+              "bounds": {
+                "xmax": 66,
+                "xmin": 64,
+                "ymax": 4443,
+                "ymin": 4441,
+                "zmax": 45403,
+                "zmin": 45401
+              },
+              "triangles": [
+                [
+                  0,
+                  2,
+                  1
+                ],
+                [
+                  0,
+                  3,
+                  2
+                ]
+              ],
+              "vertices": [
+                [
+                  64,
+                  4441,
+                  45401
+                ],
+                [
+                  66,
+                  4441,
+                  45401
+                ],
+                [
+                  66,
+                  4443,
+                  45401
+                ],
+                [
+                  64,
+                  4443,
+                  45401
+                ],
+                [
+                  64,
+                  4441,
+                  45403
+                ],
+                [
+                  66,
+                  4441,
+                  45403
+                ],
+                [
+                  66,
+                  4443,
+                  45403
+                ],
+                [
+                  64,
+                  4443,
+                  45403
+                ]
+              ]
+            },
+            "time": "1"
+          }
+        ],
+        "johnson_replacement_b0_counit": true,
+        "misses_detector_ball": true,
+        "punctured_surface": {
+          "bounds": {
+            "xmax": 66,
+            "xmin": 64,
+            "ymax": 4443,
+            "ymin": 4441,
+            "zmax": 45403,
+            "zmin": 45401
+          },
+          "triangles": [
+            [
+              4,
+              5,
+              6
+            ],
+            [
+              4,
+              6,
+              7
+            ],
+            [
+              0,
+              1,
+              5
+            ],
+            [
+              0,
+              5,
+              4
+            ],
+            [
+              2,
+              3,
+              7
+            ],
+            [
+              2,
+              7,
+              6
+            ],
+            [
+              1,
+              2,
+              6
+            ],
+            [
+              1,
+              6,
+              5
+            ],
+            [
+              0,
+              4,
+              7
+            ],
+            [
+              0,
+              7,
+              3
+            ]
+          ],
+          "vertices": [
+            [
+              64,
+              4441,
+              45401
+            ],
+            [
+              66,
+              4441,
+              45401
+            ],
+            [
+              66,
+              4443,
+              45401
+            ],
+            [
+              64,
+              4443,
+              45401
+            ],
+            [
+              64,
+              4441,
+              45403
+            ],
+            [
+              66,
+              4441,
+              45403
+            ],
+            [
+              66,
+              4443,
+              45403
+            ],
+            [
+              64,
+              4443,
+              45403
+            ]
+          ]
+        },
+        "rule": "b=0: Delta^+ cap and epsilon; no two-handle core disks on the belt sphere",
+        "status": "PASS"
       },
-      "h1_meridian": {
-        "boundary_edge_count": 8,
-        "closed": true,
-        "owner": 1,
-        "plane_axis": 0,
-        "plane_value": 0,
-        "polyline": [
+      "kernel_attaching": {
+        "attaching_unknot": [
           [
-            "0",
-            "1",
-            "1"
+            64,
+            4441,
+            45401
           ],
           [
-            "0",
-            "1",
-            "2"
+            66,
+            4441,
+            45401
           ],
           [
-            "0",
-            "1",
-            "3"
+            66,
+            4443,
+            45401
           ],
           [
-            "0",
-            "2",
-            "3"
+            64,
+            4443,
+            45401
           ],
           [
-            "0",
-            "3",
-            "3"
-          ],
-          [
-            "0",
-            "3",
-            "2"
-          ],
-          [
-            "0",
-            "3",
-            "1"
-          ],
-          [
-            "0",
-            "2",
-            "1"
-          ],
-          [
-            "0",
-            "1",
-            "1"
+            64,
+            4441,
+            45401
           ]
         ],
-        "square_count": 4,
-        "vertex_count": 8
+        "attaching_word": [
+          "z",
+          "y",
+          "Z",
+          "Y"
+        ],
+        "core_disk": {
+          "bounds": {
+            "xmax": 66,
+            "xmin": 64,
+            "ymax": 4443,
+            "ymin": 4441,
+            "zmax": 45403,
+            "zmin": 45401
+          },
+          "triangles": [
+            [
+              4,
+              5,
+              6
+            ],
+            [
+              4,
+              6,
+              7
+            ]
+          ],
+          "vertices": [
+            [
+              64,
+              4441,
+              45401
+            ],
+            [
+              66,
+              4441,
+              45401
+            ],
+            [
+              66,
+              4443,
+              45401
+            ],
+            [
+              64,
+              4443,
+              45401
+            ],
+            [
+              64,
+              4441,
+              45403
+            ],
+            [
+              66,
+              4441,
+              45403
+            ],
+            [
+              66,
+              4443,
+              45403
+            ],
+            [
+              64,
+              4443,
+              45403
+            ]
+          ]
+        },
+        "misses_detector_ball": true,
+        "owner": "r_xy",
+        "seifert_disk": {
+          "bounds": {
+            "xmax": 66,
+            "xmin": 64,
+            "ymax": 4443,
+            "ymin": 4441,
+            "zmax": 45403,
+            "zmin": 45401
+          },
+          "triangles": [
+            [
+              0,
+              2,
+              1
+            ],
+            [
+              0,
+              3,
+              2
+            ]
+          ],
+          "vertices": [
+            [
+              64,
+              4441,
+              45401
+            ],
+            [
+              66,
+              4441,
+              45401
+            ],
+            [
+              66,
+              4443,
+              45401
+            ],
+            [
+              64,
+              4443,
+              45401
+            ],
+            [
+              64,
+              4441,
+              45403
+            ],
+            [
+              66,
+              4441,
+              45403
+            ],
+            [
+              66,
+              4443,
+              45403
+            ],
+            [
+              64,
+              4443,
+              45403
+            ]
+          ]
+        },
+        "sphere_is_seifert_union_core_of_cube": true,
+        "to_standard_movie": {
+          "fixes_model_ball": true,
+          "frames": [
+            {
+              "surface": {
+                "bounds": {
+                  "xmax": 66,
+                  "xmin": 64,
+                  "ymax": 4443,
+                  "ymin": 4441,
+                  "zmax": 45403,
+                  "zmin": 45401
+                },
+                "triangles": [
+                  [
+                    0,
+                    2,
+                    1
+                  ],
+                  [
+                    0,
+                    3,
+                    2
+                  ],
+                  [
+                    4,
+                    5,
+                    6
+                  ],
+                  [
+                    4,
+                    6,
+                    7
+                  ],
+                  [
+                    0,
+                    1,
+                    5
+                  ],
+                  [
+                    0,
+                    5,
+                    4
+                  ],
+                  [
+                    2,
+                    3,
+                    7
+                  ],
+                  [
+                    2,
+                    7,
+                    6
+                  ],
+                  [
+                    1,
+                    2,
+                    6
+                  ],
+                  [
+                    1,
+                    6,
+                    5
+                  ],
+                  [
+                    0,
+                    4,
+                    7
+                  ],
+                  [
+                    0,
+                    7,
+                    3
+                  ]
+                ],
+                "vertices": [
+                  [
+                    64,
+                    4441,
+                    45401
+                  ],
+                  [
+                    66,
+                    4441,
+                    45401
+                  ],
+                  [
+                    66,
+                    4443,
+                    45401
+                  ],
+                  [
+                    64,
+                    4443,
+                    45401
+                  ],
+                  [
+                    64,
+                    4441,
+                    45403
+                  ],
+                  [
+                    66,
+                    4441,
+                    45403
+                  ],
+                  [
+                    66,
+                    4443,
+                    45403
+                  ],
+                  [
+                    64,
+                    4443,
+                    45403
+                  ]
+                ]
+              },
+              "time": "0"
+            },
+            {
+              "surface": {
+                "bounds": {
+                  "xmax": 66,
+                  "xmin": 64,
+                  "ymax": 4443,
+                  "ymin": 4441,
+                  "zmax": 45403,
+                  "zmin": 45401
+                },
+                "triangles": [
+                  [
+                    0,
+                    2,
+                    1
+                  ],
+                  [
+                    0,
+                    3,
+                    2
+                  ],
+                  [
+                    4,
+                    5,
+                    6
+                  ],
+                  [
+                    4,
+                    6,
+                    7
+                  ],
+                  [
+                    0,
+                    1,
+                    5
+                  ],
+                  [
+                    0,
+                    5,
+                    4
+                  ],
+                  [
+                    2,
+                    3,
+                    7
+                  ],
+                  [
+                    2,
+                    7,
+                    6
+                  ],
+                  [
+                    1,
+                    2,
+                    6
+                  ],
+                  [
+                    1,
+                    6,
+                    5
+                  ],
+                  [
+                    0,
+                    4,
+                    7
+                  ],
+                  [
+                    0,
+                    7,
+                    3
+                  ]
+                ],
+                "vertices": [
+                  [
+                    64,
+                    4441,
+                    45401
+                  ],
+                  [
+                    66,
+                    4441,
+                    45401
+                  ],
+                  [
+                    66,
+                    4443,
+                    45401
+                  ],
+                  [
+                    64,
+                    4443,
+                    45401
+                  ],
+                  [
+                    64,
+                    4441,
+                    45403
+                  ],
+                  [
+                    66,
+                    4441,
+                    45403
+                  ],
+                  [
+                    66,
+                    4443,
+                    45403
+                  ],
+                  [
+                    64,
+                    4443,
+                    45403
+                  ]
+                ]
+              },
+              "time": "1"
+            }
+          ],
+          "rule": "the kernel-basis sphere is the belt sphere, already off the P0 cube",
+          "status": "PASS"
+        }
       },
-      "name": "A1"
+      "name": "A1",
+      "relative_detector_movie": {
+        "fixes_model_ball": true,
+        "frames": [
+          {
+            "surface": {
+              "bounds": {
+                "xmax": 66,
+                "xmin": 64,
+                "ymax": 4443,
+                "ymin": 4441,
+                "zmax": 45403,
+                "zmin": 45401
+              },
+              "triangles": [
+                [
+                  0,
+                  2,
+                  1
+                ],
+                [
+                  0,
+                  3,
+                  2
+                ],
+                [
+                  4,
+                  5,
+                  6
+                ],
+                [
+                  4,
+                  6,
+                  7
+                ],
+                [
+                  0,
+                  1,
+                  5
+                ],
+                [
+                  0,
+                  5,
+                  4
+                ],
+                [
+                  2,
+                  3,
+                  7
+                ],
+                [
+                  2,
+                  7,
+                  6
+                ],
+                [
+                  1,
+                  2,
+                  6
+                ],
+                [
+                  1,
+                  6,
+                  5
+                ],
+                [
+                  0,
+                  4,
+                  7
+                ],
+                [
+                  0,
+                  7,
+                  3
+                ]
+              ],
+              "vertices": [
+                [
+                  64,
+                  4441,
+                  45401
+                ],
+                [
+                  66,
+                  4441,
+                  45401
+                ],
+                [
+                  66,
+                  4443,
+                  45401
+                ],
+                [
+                  64,
+                  4443,
+                  45401
+                ],
+                [
+                  64,
+                  4441,
+                  45403
+                ],
+                [
+                  66,
+                  4441,
+                  45403
+                ],
+                [
+                  66,
+                  4443,
+                  45403
+                ],
+                [
+                  64,
+                  4443,
+                  45403
+                ]
+              ]
+            },
+            "time": "0"
+          },
+          {
+            "surface": {
+              "bounds": {
+                "xmax": 66,
+                "xmin": 64,
+                "ymax": 4443,
+                "ymin": 4441,
+                "zmax": 45403,
+                "zmin": 45401
+              },
+              "triangles": [
+                [
+                  0,
+                  2,
+                  1
+                ],
+                [
+                  0,
+                  3,
+                  2
+                ],
+                [
+                  4,
+                  5,
+                  6
+                ],
+                [
+                  4,
+                  6,
+                  7
+                ],
+                [
+                  0,
+                  1,
+                  5
+                ],
+                [
+                  0,
+                  5,
+                  4
+                ],
+                [
+                  2,
+                  3,
+                  7
+                ],
+                [
+                  2,
+                  7,
+                  6
+                ],
+                [
+                  1,
+                  2,
+                  6
+                ],
+                [
+                  1,
+                  6,
+                  5
+                ],
+                [
+                  0,
+                  4,
+                  7
+                ],
+                [
+                  0,
+                  7,
+                  3
+                ]
+              ],
+              "vertices": [
+                [
+                  64,
+                  4441,
+                  45401
+                ],
+                [
+                  66,
+                  4441,
+                  45401
+                ],
+                [
+                  66,
+                  4443,
+                  45401
+                ],
+                [
+                  64,
+                  4443,
+                  45401
+                ],
+                [
+                  64,
+                  4441,
+                  45403
+                ],
+                [
+                  66,
+                  4441,
+                  45403
+                ],
+                [
+                  66,
+                  4443,
+                  45403
+                ],
+                [
+                  64,
+                  4443,
+                  45403
+                ]
+              ]
+            },
+            "time": "1"
+          }
+        ],
+        "rule": "the belt sphere already misses the P0 ball, so the relative isotopy is constant and the identity on the ball",
+        "status": "PASS"
+      },
+      "sphere_column_in_kernel_basis": [
+        -1311,
+        -189,
+        41
+      ],
+      "surface": {
+        "bounds": {
+          "xmax": 66,
+          "xmin": 64,
+          "ymax": 4443,
+          "ymin": 4441,
+          "zmax": 45403,
+          "zmin": 45401
+        },
+        "triangles": [
+          [
+            0,
+            2,
+            1
+          ],
+          [
+            0,
+            3,
+            2
+          ],
+          [
+            4,
+            5,
+            6
+          ],
+          [
+            4,
+            6,
+            7
+          ],
+          [
+            0,
+            1,
+            5
+          ],
+          [
+            0,
+            5,
+            4
+          ],
+          [
+            2,
+            3,
+            7
+          ],
+          [
+            2,
+            7,
+            6
+          ],
+          [
+            1,
+            2,
+            6
+          ],
+          [
+            1,
+            6,
+            5
+          ],
+          [
+            0,
+            4,
+            7
+          ],
+          [
+            0,
+            7,
+            3
+          ]
+        ],
+        "vertices": [
+          [
+            64,
+            4441,
+            45401
+          ],
+          [
+            66,
+            4441,
+            45401
+          ],
+          [
+            66,
+            4443,
+            45401
+          ],
+          [
+            64,
+            4443,
+            45401
+          ],
+          [
+            64,
+            4441,
+            45403
+          ],
+          [
+            66,
+            4441,
+            45403
+          ],
+          [
+            66,
+            4443,
+            45403
+          ],
+          [
+            64,
+            4443,
+            45403
+          ]
+        ]
+      },
+      "surface_euler": 2,
+      "transport_rule": "OPEN: the belt sphere is explicit in the reversed model, but the PL boundary map through all five actual 2-handle core collars has not been constructed"
     },
     {
-      "axis": 1,
+      "actual_3_handle": "H^3_2",
+      "core_disk_boundary_profile": [
+        {
+          "coefficient": 8608,
+          "copy_count": 8608,
+          "orientation": 1,
+          "owner": "r_xy",
+          "product_normal_level_rule": "(copy_index+1)/(10119) inside the actual r_xy framing collar"
+        },
+        {
+          "coefficient": 1241,
+          "copy_count": 1241,
+          "orientation": 1,
+          "owner": "r_yz",
+          "product_normal_level_rule": "(copy_index+1)/(10119) inside the actual r_yz framing collar"
+        },
+        {
+          "coefficient": -269,
+          "copy_count": 269,
+          "orientation": -1,
+          "owner": "r_zx",
+          "product_normal_level_rule": "(copy_index+1)/(10119) inside the actual r_zx framing collar"
+        }
+      ],
+      "core_disk_intersection_count_b": 10118,
       "disjoint_from_detector": true,
-      "embedded_s2_candidate": true,
-      "euler_characteristic": 2,
-      "h0_meridian": {
-        "boundary_edge_count": 16,
-        "closed": true,
-        "owner": 0,
-        "plane_axis": 1,
-        "plane_value": 2,
-        "polyline": [
+      "dual_loop": {
+        "axis": "y",
+        "chart_arc_boxes": [
+          {
+            "xmax": 82,
+            "xmin": 80,
+            "ymax": 4441,
+            "ymin": 4435,
+            "zmax": 45403,
+            "zmin": 45401
+          },
+          {
+            "xmax": 106,
+            "xmin": 80,
+            "ymax": 4437,
+            "ymin": 4435,
+            "zmax": 45403,
+            "zmin": 45401
+          },
+          {
+            "xmax": 106,
+            "xmin": 104,
+            "ymax": 4437,
+            "ymin": 4435,
+            "zmax": 45443,
+            "zmin": 45401
+          },
+          {
+            "xmax": 106,
+            "xmin": 104,
+            "ymax": 4483,
+            "ymin": 4435,
+            "zmax": 45443,
+            "zmin": 45441
+          },
+          {
+            "xmax": 106,
+            "xmin": 104,
+            "ymax": 4483,
+            "ymin": 4481,
+            "zmax": 45443,
+            "zmin": 45441
+          },
+          {
+            "xmax": 106,
+            "xmin": 104,
+            "ymax": 4483,
+            "ymin": 4447,
+            "zmax": 45443,
+            "zmin": 45441
+          },
+          {
+            "xmax": 106,
+            "xmin": 104,
+            "ymax": 4449,
+            "ymin": 4447,
+            "zmax": 45443,
+            "zmin": 45401
+          },
+          {
+            "xmax": 106,
+            "xmin": 80,
+            "ymax": 4449,
+            "ymin": 4447,
+            "zmax": 45403,
+            "zmin": 45401
+          },
+          {
+            "xmax": 82,
+            "xmin": 80,
+            "ymax": 4449,
+            "ymin": 4443,
+            "zmax": 45403,
+            "zmin": 45401
+          }
+        ],
+        "chart_return_misses_belt_cubes": true,
+        "handle_segment": "I x {p} in the reversed 1-handle's S^2 x I",
+        "index": 1,
+        "intersection_other_spheres": 0,
+        "intersection_own_sphere": 1,
+        "misses_detector_ball": true
+      },
+      "embedded_s2_in_reversed_model": true,
+      "embedded_s2_on_actual_W2": false,
+      "endpoint_foam": {
+        "actual_w2_lasagna_map": false,
+        "b": 0,
+        "delta_plus_disk": {
+          "bounds": {
+            "xmax": 82,
+            "xmin": 80,
+            "ymax": 4443,
+            "ymin": 4441,
+            "zmax": 45403,
+            "zmin": 45401
+          },
+          "triangles": [
+            [
+              0,
+              2,
+              1
+            ],
+            [
+              0,
+              3,
+              2
+            ]
+          ],
+          "vertices": [
+            [
+              80,
+              4441,
+              45401
+            ],
+            [
+              82,
+              4441,
+              45401
+            ],
+            [
+              82,
+              4443,
+              45401
+            ],
+            [
+              80,
+              4443,
+              45401
+            ],
+            [
+              80,
+              4441,
+              45403
+            ],
+            [
+              82,
+              4441,
+              45403
+            ],
+            [
+              82,
+              4443,
+              45403
+            ],
+            [
+              80,
+              4443,
+              45403
+            ]
+          ]
+        },
+        "equator": [
           [
-            "0",
-            "2",
-            "0"
+            0,
+            1
           ],
           [
-            "0",
-            "2",
-            "1"
+            1,
+            2
           ],
           [
-            "1",
-            "2",
-            "1"
+            2,
+            3
           ],
           [
-            "1",
-            "2",
-            "0"
-          ],
-          [
-            "0",
-            "2",
-            "0"
+            3,
+            0
           ]
         ],
-        "square_count": 4,
-        "vertex_count": 4
+        "evaluation": {
+          "dotted_A0": 1,
+          "epsilon_1": 0,
+          "epsilon_X": 1,
+          "undotted_A1": 0
+        },
+        "frames": [
+          {
+            "dots": 0,
+            "surface": {
+              "bounds": {
+                "xmax": 82,
+                "xmin": 80,
+                "ymax": 4443,
+                "ymin": 4441,
+                "zmax": 45403,
+                "zmin": 45401
+              },
+              "triangles": [
+                [
+                  0,
+                  2,
+                  1
+                ],
+                [
+                  0,
+                  3,
+                  2
+                ],
+                [
+                  4,
+                  5,
+                  6
+                ],
+                [
+                  4,
+                  6,
+                  7
+                ],
+                [
+                  0,
+                  1,
+                  5
+                ],
+                [
+                  0,
+                  5,
+                  4
+                ],
+                [
+                  2,
+                  3,
+                  7
+                ],
+                [
+                  2,
+                  7,
+                  6
+                ],
+                [
+                  1,
+                  2,
+                  6
+                ],
+                [
+                  1,
+                  6,
+                  5
+                ],
+                [
+                  0,
+                  4,
+                  7
+                ],
+                [
+                  0,
+                  7,
+                  3
+                ]
+              ],
+              "vertices": [
+                [
+                  80,
+                  4441,
+                  45401
+                ],
+                [
+                  82,
+                  4441,
+                  45401
+                ],
+                [
+                  82,
+                  4443,
+                  45401
+                ],
+                [
+                  80,
+                  4443,
+                  45401
+                ],
+                [
+                  80,
+                  4441,
+                  45403
+                ],
+                [
+                  82,
+                  4441,
+                  45403
+                ],
+                [
+                  82,
+                  4443,
+                  45403
+                ],
+                [
+                  80,
+                  4443,
+                  45403
+                ]
+              ]
+            },
+            "time": "0"
+          },
+          {
+            "equator": [
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                2
+              ],
+              [
+                2,
+                3
+              ],
+              [
+                3,
+                0
+              ]
+            ],
+            "surface": {
+              "bounds": {
+                "xmax": 82,
+                "xmin": 80,
+                "ymax": 4443,
+                "ymin": 4441,
+                "zmax": 45403,
+                "zmin": 45401
+              },
+              "triangles": [
+                [
+                  4,
+                  5,
+                  6
+                ],
+                [
+                  4,
+                  6,
+                  7
+                ],
+                [
+                  0,
+                  1,
+                  5
+                ],
+                [
+                  0,
+                  5,
+                  4
+                ],
+                [
+                  2,
+                  3,
+                  7
+                ],
+                [
+                  2,
+                  7,
+                  6
+                ],
+                [
+                  1,
+                  2,
+                  6
+                ],
+                [
+                  1,
+                  6,
+                  5
+                ],
+                [
+                  0,
+                  4,
+                  7
+                ],
+                [
+                  0,
+                  7,
+                  3
+                ]
+              ],
+              "vertices": [
+                [
+                  80,
+                  4441,
+                  45401
+                ],
+                [
+                  82,
+                  4441,
+                  45401
+                ],
+                [
+                  82,
+                  4443,
+                  45401
+                ],
+                [
+                  80,
+                  4443,
+                  45401
+                ],
+                [
+                  80,
+                  4441,
+                  45403
+                ],
+                [
+                  82,
+                  4441,
+                  45403
+                ],
+                [
+                  82,
+                  4443,
+                  45403
+                ],
+                [
+                  80,
+                  4443,
+                  45403
+                ]
+              ]
+            },
+            "time": "1/2"
+          },
+          {
+            "dots": 0,
+            "surface": {
+              "bounds": {
+                "xmax": 82,
+                "xmin": 80,
+                "ymax": 4443,
+                "ymin": 4441,
+                "zmax": 45403,
+                "zmin": 45401
+              },
+              "triangles": [
+                [
+                  0,
+                  2,
+                  1
+                ],
+                [
+                  0,
+                  3,
+                  2
+                ]
+              ],
+              "vertices": [
+                [
+                  80,
+                  4441,
+                  45401
+                ],
+                [
+                  82,
+                  4441,
+                  45401
+                ],
+                [
+                  82,
+                  4443,
+                  45401
+                ],
+                [
+                  80,
+                  4443,
+                  45401
+                ],
+                [
+                  80,
+                  4441,
+                  45403
+                ],
+                [
+                  82,
+                  4441,
+                  45403
+                ],
+                [
+                  82,
+                  4443,
+                  45403
+                ],
+                [
+                  80,
+                  4443,
+                  45403
+                ]
+              ]
+            },
+            "time": "1"
+          }
+        ],
+        "johnson_replacement_b0_counit": true,
+        "misses_detector_ball": true,
+        "punctured_surface": {
+          "bounds": {
+            "xmax": 82,
+            "xmin": 80,
+            "ymax": 4443,
+            "ymin": 4441,
+            "zmax": 45403,
+            "zmin": 45401
+          },
+          "triangles": [
+            [
+              4,
+              5,
+              6
+            ],
+            [
+              4,
+              6,
+              7
+            ],
+            [
+              0,
+              1,
+              5
+            ],
+            [
+              0,
+              5,
+              4
+            ],
+            [
+              2,
+              3,
+              7
+            ],
+            [
+              2,
+              7,
+              6
+            ],
+            [
+              1,
+              2,
+              6
+            ],
+            [
+              1,
+              6,
+              5
+            ],
+            [
+              0,
+              4,
+              7
+            ],
+            [
+              0,
+              7,
+              3
+            ]
+          ],
+          "vertices": [
+            [
+              80,
+              4441,
+              45401
+            ],
+            [
+              82,
+              4441,
+              45401
+            ],
+            [
+              82,
+              4443,
+              45401
+            ],
+            [
+              80,
+              4443,
+              45401
+            ],
+            [
+              80,
+              4441,
+              45403
+            ],
+            [
+              82,
+              4441,
+              45403
+            ],
+            [
+              82,
+              4443,
+              45403
+            ],
+            [
+              80,
+              4443,
+              45403
+            ]
+          ]
+        },
+        "rule": "b=0: Delta^+ cap and epsilon; no two-handle core disks on the belt sphere",
+        "status": "PASS"
       },
-      "h1_meridian": {
-        "boundary_edge_count": 8,
-        "closed": true,
-        "owner": 1,
-        "plane_axis": 1,
-        "plane_value": 0,
-        "polyline": [
+      "kernel_attaching": {
+        "attaching_unknot": [
           [
-            "1",
-            "0",
-            "1"
+            80,
+            4441,
+            45401
           ],
           [
-            "1",
-            "0",
-            "2"
+            82,
+            4441,
+            45401
           ],
           [
-            "1",
-            "0",
-            "3"
+            82,
+            4443,
+            45401
           ],
           [
-            "2",
-            "0",
-            "3"
+            80,
+            4443,
+            45401
           ],
           [
-            "3",
-            "0",
-            "3"
-          ],
-          [
-            "3",
-            "0",
-            "2"
-          ],
-          [
-            "3",
-            "0",
-            "1"
-          ],
-          [
-            "2",
-            "0",
-            "1"
-          ],
-          [
-            "1",
-            "0",
-            "1"
+            80,
+            4441,
+            45401
           ]
         ],
-        "square_count": 4,
-        "vertex_count": 8
+        "attaching_word": [
+          "y",
+          "z",
+          "Y",
+          "Z"
+        ],
+        "core_disk": {
+          "bounds": {
+            "xmax": 82,
+            "xmin": 80,
+            "ymax": 4443,
+            "ymin": 4441,
+            "zmax": 45403,
+            "zmin": 45401
+          },
+          "triangles": [
+            [
+              4,
+              5,
+              6
+            ],
+            [
+              4,
+              6,
+              7
+            ]
+          ],
+          "vertices": [
+            [
+              80,
+              4441,
+              45401
+            ],
+            [
+              82,
+              4441,
+              45401
+            ],
+            [
+              82,
+              4443,
+              45401
+            ],
+            [
+              80,
+              4443,
+              45401
+            ],
+            [
+              80,
+              4441,
+              45403
+            ],
+            [
+              82,
+              4441,
+              45403
+            ],
+            [
+              82,
+              4443,
+              45403
+            ],
+            [
+              80,
+              4443,
+              45403
+            ]
+          ]
+        },
+        "misses_detector_ball": true,
+        "owner": "r_yz",
+        "seifert_disk": {
+          "bounds": {
+            "xmax": 82,
+            "xmin": 80,
+            "ymax": 4443,
+            "ymin": 4441,
+            "zmax": 45403,
+            "zmin": 45401
+          },
+          "triangles": [
+            [
+              0,
+              2,
+              1
+            ],
+            [
+              0,
+              3,
+              2
+            ]
+          ],
+          "vertices": [
+            [
+              80,
+              4441,
+              45401
+            ],
+            [
+              82,
+              4441,
+              45401
+            ],
+            [
+              82,
+              4443,
+              45401
+            ],
+            [
+              80,
+              4443,
+              45401
+            ],
+            [
+              80,
+              4441,
+              45403
+            ],
+            [
+              82,
+              4441,
+              45403
+            ],
+            [
+              82,
+              4443,
+              45403
+            ],
+            [
+              80,
+              4443,
+              45403
+            ]
+          ]
+        },
+        "sphere_is_seifert_union_core_of_cube": true,
+        "to_standard_movie": {
+          "fixes_model_ball": true,
+          "frames": [
+            {
+              "surface": {
+                "bounds": {
+                  "xmax": 82,
+                  "xmin": 80,
+                  "ymax": 4443,
+                  "ymin": 4441,
+                  "zmax": 45403,
+                  "zmin": 45401
+                },
+                "triangles": [
+                  [
+                    0,
+                    2,
+                    1
+                  ],
+                  [
+                    0,
+                    3,
+                    2
+                  ],
+                  [
+                    4,
+                    5,
+                    6
+                  ],
+                  [
+                    4,
+                    6,
+                    7
+                  ],
+                  [
+                    0,
+                    1,
+                    5
+                  ],
+                  [
+                    0,
+                    5,
+                    4
+                  ],
+                  [
+                    2,
+                    3,
+                    7
+                  ],
+                  [
+                    2,
+                    7,
+                    6
+                  ],
+                  [
+                    1,
+                    2,
+                    6
+                  ],
+                  [
+                    1,
+                    6,
+                    5
+                  ],
+                  [
+                    0,
+                    4,
+                    7
+                  ],
+                  [
+                    0,
+                    7,
+                    3
+                  ]
+                ],
+                "vertices": [
+                  [
+                    80,
+                    4441,
+                    45401
+                  ],
+                  [
+                    82,
+                    4441,
+                    45401
+                  ],
+                  [
+                    82,
+                    4443,
+                    45401
+                  ],
+                  [
+                    80,
+                    4443,
+                    45401
+                  ],
+                  [
+                    80,
+                    4441,
+                    45403
+                  ],
+                  [
+                    82,
+                    4441,
+                    45403
+                  ],
+                  [
+                    82,
+                    4443,
+                    45403
+                  ],
+                  [
+                    80,
+                    4443,
+                    45403
+                  ]
+                ]
+              },
+              "time": "0"
+            },
+            {
+              "surface": {
+                "bounds": {
+                  "xmax": 82,
+                  "xmin": 80,
+                  "ymax": 4443,
+                  "ymin": 4441,
+                  "zmax": 45403,
+                  "zmin": 45401
+                },
+                "triangles": [
+                  [
+                    0,
+                    2,
+                    1
+                  ],
+                  [
+                    0,
+                    3,
+                    2
+                  ],
+                  [
+                    4,
+                    5,
+                    6
+                  ],
+                  [
+                    4,
+                    6,
+                    7
+                  ],
+                  [
+                    0,
+                    1,
+                    5
+                  ],
+                  [
+                    0,
+                    5,
+                    4
+                  ],
+                  [
+                    2,
+                    3,
+                    7
+                  ],
+                  [
+                    2,
+                    7,
+                    6
+                  ],
+                  [
+                    1,
+                    2,
+                    6
+                  ],
+                  [
+                    1,
+                    6,
+                    5
+                  ],
+                  [
+                    0,
+                    4,
+                    7
+                  ],
+                  [
+                    0,
+                    7,
+                    3
+                  ]
+                ],
+                "vertices": [
+                  [
+                    80,
+                    4441,
+                    45401
+                  ],
+                  [
+                    82,
+                    4441,
+                    45401
+                  ],
+                  [
+                    82,
+                    4443,
+                    45401
+                  ],
+                  [
+                    80,
+                    4443,
+                    45401
+                  ],
+                  [
+                    80,
+                    4441,
+                    45403
+                  ],
+                  [
+                    82,
+                    4441,
+                    45403
+                  ],
+                  [
+                    82,
+                    4443,
+                    45403
+                  ],
+                  [
+                    80,
+                    4443,
+                    45403
+                  ]
+                ]
+              },
+              "time": "1"
+            }
+          ],
+          "rule": "the kernel-basis sphere is the belt sphere, already off the P0 cube",
+          "status": "PASS"
+        }
       },
-      "name": "A2"
+      "name": "A2",
+      "relative_detector_movie": {
+        "fixes_model_ball": true,
+        "frames": [
+          {
+            "surface": {
+              "bounds": {
+                "xmax": 82,
+                "xmin": 80,
+                "ymax": 4443,
+                "ymin": 4441,
+                "zmax": 45403,
+                "zmin": 45401
+              },
+              "triangles": [
+                [
+                  0,
+                  2,
+                  1
+                ],
+                [
+                  0,
+                  3,
+                  2
+                ],
+                [
+                  4,
+                  5,
+                  6
+                ],
+                [
+                  4,
+                  6,
+                  7
+                ],
+                [
+                  0,
+                  1,
+                  5
+                ],
+                [
+                  0,
+                  5,
+                  4
+                ],
+                [
+                  2,
+                  3,
+                  7
+                ],
+                [
+                  2,
+                  7,
+                  6
+                ],
+                [
+                  1,
+                  2,
+                  6
+                ],
+                [
+                  1,
+                  6,
+                  5
+                ],
+                [
+                  0,
+                  4,
+                  7
+                ],
+                [
+                  0,
+                  7,
+                  3
+                ]
+              ],
+              "vertices": [
+                [
+                  80,
+                  4441,
+                  45401
+                ],
+                [
+                  82,
+                  4441,
+                  45401
+                ],
+                [
+                  82,
+                  4443,
+                  45401
+                ],
+                [
+                  80,
+                  4443,
+                  45401
+                ],
+                [
+                  80,
+                  4441,
+                  45403
+                ],
+                [
+                  82,
+                  4441,
+                  45403
+                ],
+                [
+                  82,
+                  4443,
+                  45403
+                ],
+                [
+                  80,
+                  4443,
+                  45403
+                ]
+              ]
+            },
+            "time": "0"
+          },
+          {
+            "surface": {
+              "bounds": {
+                "xmax": 82,
+                "xmin": 80,
+                "ymax": 4443,
+                "ymin": 4441,
+                "zmax": 45403,
+                "zmin": 45401
+              },
+              "triangles": [
+                [
+                  0,
+                  2,
+                  1
+                ],
+                [
+                  0,
+                  3,
+                  2
+                ],
+                [
+                  4,
+                  5,
+                  6
+                ],
+                [
+                  4,
+                  6,
+                  7
+                ],
+                [
+                  0,
+                  1,
+                  5
+                ],
+                [
+                  0,
+                  5,
+                  4
+                ],
+                [
+                  2,
+                  3,
+                  7
+                ],
+                [
+                  2,
+                  7,
+                  6
+                ],
+                [
+                  1,
+                  2,
+                  6
+                ],
+                [
+                  1,
+                  6,
+                  5
+                ],
+                [
+                  0,
+                  4,
+                  7
+                ],
+                [
+                  0,
+                  7,
+                  3
+                ]
+              ],
+              "vertices": [
+                [
+                  80,
+                  4441,
+                  45401
+                ],
+                [
+                  82,
+                  4441,
+                  45401
+                ],
+                [
+                  82,
+                  4443,
+                  45401
+                ],
+                [
+                  80,
+                  4443,
+                  45401
+                ],
+                [
+                  80,
+                  4441,
+                  45403
+                ],
+                [
+                  82,
+                  4441,
+                  45403
+                ],
+                [
+                  82,
+                  4443,
+                  45403
+                ],
+                [
+                  80,
+                  4443,
+                  45403
+                ]
+              ]
+            },
+            "time": "1"
+          }
+        ],
+        "rule": "the belt sphere already misses the P0 ball, so the relative isotopy is constant and the identity on the ball",
+        "status": "PASS"
+      },
+      "sphere_column_in_kernel_basis": [
+        8608,
+        1241,
+        -269
+      ],
+      "surface": {
+        "bounds": {
+          "xmax": 82,
+          "xmin": 80,
+          "ymax": 4443,
+          "ymin": 4441,
+          "zmax": 45403,
+          "zmin": 45401
+        },
+        "triangles": [
+          [
+            0,
+            2,
+            1
+          ],
+          [
+            0,
+            3,
+            2
+          ],
+          [
+            4,
+            5,
+            6
+          ],
+          [
+            4,
+            6,
+            7
+          ],
+          [
+            0,
+            1,
+            5
+          ],
+          [
+            0,
+            5,
+            4
+          ],
+          [
+            2,
+            3,
+            7
+          ],
+          [
+            2,
+            7,
+            6
+          ],
+          [
+            1,
+            2,
+            6
+          ],
+          [
+            1,
+            6,
+            5
+          ],
+          [
+            0,
+            4,
+            7
+          ],
+          [
+            0,
+            7,
+            3
+          ]
+        ],
+        "vertices": [
+          [
+            80,
+            4441,
+            45401
+          ],
+          [
+            82,
+            4441,
+            45401
+          ],
+          [
+            82,
+            4443,
+            45401
+          ],
+          [
+            80,
+            4443,
+            45401
+          ],
+          [
+            80,
+            4441,
+            45403
+          ],
+          [
+            82,
+            4441,
+            45403
+          ],
+          [
+            82,
+            4443,
+            45403
+          ],
+          [
+            80,
+            4443,
+            45403
+          ]
+        ]
+      },
+      "surface_euler": 2,
+      "transport_rule": "OPEN: the belt sphere is explicit in the reversed model, but the PL boundary map through all five actual 2-handle core collars has not been constructed"
     },
     {
-      "axis": 2,
+      "actual_3_handle": "H^3_3",
+      "core_disk_boundary_profile": [
+        {
+          "coefficient": -1,
+          "copy_count": 1,
+          "orientation": -1,
+          "owner": "r_xy",
+          "product_normal_level_rule": "(copy_index+1)/(3) inside the actual r_xy framing collar"
+        },
+        {
+          "coefficient": 0,
+          "copy_count": 0,
+          "orientation": 0,
+          "owner": "r_yz",
+          "product_normal_level_rule": "(copy_index+1)/(3) inside the actual r_yz framing collar"
+        },
+        {
+          "coefficient": 1,
+          "copy_count": 1,
+          "orientation": 1,
+          "owner": "r_zx",
+          "product_normal_level_rule": "(copy_index+1)/(3) inside the actual r_zx framing collar"
+        }
+      ],
+      "core_disk_intersection_count_b": 2,
       "disjoint_from_detector": true,
-      "embedded_s2_candidate": true,
-      "euler_characteristic": 2,
-      "h0_meridian": {
-        "boundary_edge_count": 16,
-        "closed": true,
-        "owner": 0,
-        "plane_axis": 2,
-        "plane_value": 2,
-        "polyline": [
+      "dual_loop": {
+        "axis": "z",
+        "chart_arc_boxes": [
+          {
+            "xmax": 98,
+            "xmin": 96,
+            "ymax": 4443,
+            "ymin": 4441,
+            "zmax": 45401,
+            "zmin": 45395
+          },
+          {
+            "xmax": 106,
+            "xmin": 96,
+            "ymax": 4443,
+            "ymin": 4441,
+            "zmax": 45397,
+            "zmin": 45395
+          },
+          {
+            "xmax": 106,
+            "xmin": 104,
+            "ymax": 4483,
+            "ymin": 4441,
+            "zmax": 45397,
+            "zmin": 45395
+          },
+          {
+            "xmax": 106,
+            "xmin": 104,
+            "ymax": 4483,
+            "ymin": 4481,
+            "zmax": 45443,
+            "zmin": 45395
+          },
+          {
+            "xmax": 106,
+            "xmin": 104,
+            "ymax": 4483,
+            "ymin": 4481,
+            "zmax": 45443,
+            "zmin": 45441
+          },
+          {
+            "xmax": 106,
+            "xmin": 104,
+            "ymax": 4483,
+            "ymin": 4481,
+            "zmax": 45443,
+            "zmin": 45407
+          },
+          {
+            "xmax": 106,
+            "xmin": 104,
+            "ymax": 4483,
+            "ymin": 4441,
+            "zmax": 45409,
+            "zmin": 45407
+          },
+          {
+            "xmax": 106,
+            "xmin": 96,
+            "ymax": 4443,
+            "ymin": 4441,
+            "zmax": 45409,
+            "zmin": 45407
+          },
+          {
+            "xmax": 98,
+            "xmin": 96,
+            "ymax": 4443,
+            "ymin": 4441,
+            "zmax": 45409,
+            "zmin": 45403
+          }
+        ],
+        "chart_return_misses_belt_cubes": true,
+        "handle_segment": "I x {p} in the reversed 1-handle's S^2 x I",
+        "index": 2,
+        "intersection_other_spheres": 0,
+        "intersection_own_sphere": 1,
+        "misses_detector_ball": true
+      },
+      "embedded_s2_in_reversed_model": true,
+      "embedded_s2_on_actual_W2": false,
+      "endpoint_foam": {
+        "actual_w2_lasagna_map": false,
+        "b": 0,
+        "delta_plus_disk": {
+          "bounds": {
+            "xmax": 98,
+            "xmin": 96,
+            "ymax": 4443,
+            "ymin": 4441,
+            "zmax": 45403,
+            "zmin": 45401
+          },
+          "triangles": [
+            [
+              0,
+              2,
+              1
+            ],
+            [
+              0,
+              3,
+              2
+            ]
+          ],
+          "vertices": [
+            [
+              96,
+              4441,
+              45401
+            ],
+            [
+              98,
+              4441,
+              45401
+            ],
+            [
+              98,
+              4443,
+              45401
+            ],
+            [
+              96,
+              4443,
+              45401
+            ],
+            [
+              96,
+              4441,
+              45403
+            ],
+            [
+              98,
+              4441,
+              45403
+            ],
+            [
+              98,
+              4443,
+              45403
+            ],
+            [
+              96,
+              4443,
+              45403
+            ]
+          ]
+        },
+        "equator": [
           [
-            "0",
-            "0",
-            "2"
+            0,
+            1
           ],
           [
-            "0",
-            "1",
-            "2"
+            1,
+            2
           ],
           [
-            "1",
-            "1",
-            "2"
+            2,
+            3
           ],
           [
-            "1",
-            "0",
-            "2"
-          ],
-          [
-            "0",
-            "0",
-            "2"
+            3,
+            0
           ]
         ],
-        "square_count": 4,
-        "vertex_count": 4
+        "evaluation": {
+          "dotted_A0": 1,
+          "epsilon_1": 0,
+          "epsilon_X": 1,
+          "undotted_A1": 0
+        },
+        "frames": [
+          {
+            "dots": 0,
+            "surface": {
+              "bounds": {
+                "xmax": 98,
+                "xmin": 96,
+                "ymax": 4443,
+                "ymin": 4441,
+                "zmax": 45403,
+                "zmin": 45401
+              },
+              "triangles": [
+                [
+                  0,
+                  2,
+                  1
+                ],
+                [
+                  0,
+                  3,
+                  2
+                ],
+                [
+                  4,
+                  5,
+                  6
+                ],
+                [
+                  4,
+                  6,
+                  7
+                ],
+                [
+                  0,
+                  1,
+                  5
+                ],
+                [
+                  0,
+                  5,
+                  4
+                ],
+                [
+                  2,
+                  3,
+                  7
+                ],
+                [
+                  2,
+                  7,
+                  6
+                ],
+                [
+                  1,
+                  2,
+                  6
+                ],
+                [
+                  1,
+                  6,
+                  5
+                ],
+                [
+                  0,
+                  4,
+                  7
+                ],
+                [
+                  0,
+                  7,
+                  3
+                ]
+              ],
+              "vertices": [
+                [
+                  96,
+                  4441,
+                  45401
+                ],
+                [
+                  98,
+                  4441,
+                  45401
+                ],
+                [
+                  98,
+                  4443,
+                  45401
+                ],
+                [
+                  96,
+                  4443,
+                  45401
+                ],
+                [
+                  96,
+                  4441,
+                  45403
+                ],
+                [
+                  98,
+                  4441,
+                  45403
+                ],
+                [
+                  98,
+                  4443,
+                  45403
+                ],
+                [
+                  96,
+                  4443,
+                  45403
+                ]
+              ]
+            },
+            "time": "0"
+          },
+          {
+            "equator": [
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                2
+              ],
+              [
+                2,
+                3
+              ],
+              [
+                3,
+                0
+              ]
+            ],
+            "surface": {
+              "bounds": {
+                "xmax": 98,
+                "xmin": 96,
+                "ymax": 4443,
+                "ymin": 4441,
+                "zmax": 45403,
+                "zmin": 45401
+              },
+              "triangles": [
+                [
+                  4,
+                  5,
+                  6
+                ],
+                [
+                  4,
+                  6,
+                  7
+                ],
+                [
+                  0,
+                  1,
+                  5
+                ],
+                [
+                  0,
+                  5,
+                  4
+                ],
+                [
+                  2,
+                  3,
+                  7
+                ],
+                [
+                  2,
+                  7,
+                  6
+                ],
+                [
+                  1,
+                  2,
+                  6
+                ],
+                [
+                  1,
+                  6,
+                  5
+                ],
+                [
+                  0,
+                  4,
+                  7
+                ],
+                [
+                  0,
+                  7,
+                  3
+                ]
+              ],
+              "vertices": [
+                [
+                  96,
+                  4441,
+                  45401
+                ],
+                [
+                  98,
+                  4441,
+                  45401
+                ],
+                [
+                  98,
+                  4443,
+                  45401
+                ],
+                [
+                  96,
+                  4443,
+                  45401
+                ],
+                [
+                  96,
+                  4441,
+                  45403
+                ],
+                [
+                  98,
+                  4441,
+                  45403
+                ],
+                [
+                  98,
+                  4443,
+                  45403
+                ],
+                [
+                  96,
+                  4443,
+                  45403
+                ]
+              ]
+            },
+            "time": "1/2"
+          },
+          {
+            "dots": 0,
+            "surface": {
+              "bounds": {
+                "xmax": 98,
+                "xmin": 96,
+                "ymax": 4443,
+                "ymin": 4441,
+                "zmax": 45403,
+                "zmin": 45401
+              },
+              "triangles": [
+                [
+                  0,
+                  2,
+                  1
+                ],
+                [
+                  0,
+                  3,
+                  2
+                ]
+              ],
+              "vertices": [
+                [
+                  96,
+                  4441,
+                  45401
+                ],
+                [
+                  98,
+                  4441,
+                  45401
+                ],
+                [
+                  98,
+                  4443,
+                  45401
+                ],
+                [
+                  96,
+                  4443,
+                  45401
+                ],
+                [
+                  96,
+                  4441,
+                  45403
+                ],
+                [
+                  98,
+                  4441,
+                  45403
+                ],
+                [
+                  98,
+                  4443,
+                  45403
+                ],
+                [
+                  96,
+                  4443,
+                  45403
+                ]
+              ]
+            },
+            "time": "1"
+          }
+        ],
+        "johnson_replacement_b0_counit": true,
+        "misses_detector_ball": true,
+        "punctured_surface": {
+          "bounds": {
+            "xmax": 98,
+            "xmin": 96,
+            "ymax": 4443,
+            "ymin": 4441,
+            "zmax": 45403,
+            "zmin": 45401
+          },
+          "triangles": [
+            [
+              4,
+              5,
+              6
+            ],
+            [
+              4,
+              6,
+              7
+            ],
+            [
+              0,
+              1,
+              5
+            ],
+            [
+              0,
+              5,
+              4
+            ],
+            [
+              2,
+              3,
+              7
+            ],
+            [
+              2,
+              7,
+              6
+            ],
+            [
+              1,
+              2,
+              6
+            ],
+            [
+              1,
+              6,
+              5
+            ],
+            [
+              0,
+              4,
+              7
+            ],
+            [
+              0,
+              7,
+              3
+            ]
+          ],
+          "vertices": [
+            [
+              96,
+              4441,
+              45401
+            ],
+            [
+              98,
+              4441,
+              45401
+            ],
+            [
+              98,
+              4443,
+              45401
+            ],
+            [
+              96,
+              4443,
+              45401
+            ],
+            [
+              96,
+              4441,
+              45403
+            ],
+            [
+              98,
+              4441,
+              45403
+            ],
+            [
+              98,
+              4443,
+              45403
+            ],
+            [
+              96,
+              4443,
+              45403
+            ]
+          ]
+        },
+        "rule": "b=0: Delta^+ cap and epsilon; no two-handle core disks on the belt sphere",
+        "status": "PASS"
       },
-      "h1_meridian": {
-        "boundary_edge_count": 8,
-        "closed": true,
-        "owner": 1,
-        "plane_axis": 2,
-        "plane_value": 0,
-        "polyline": [
+      "kernel_attaching": {
+        "attaching_unknot": [
           [
-            "1",
-            "1",
-            "0"
+            96,
+            4441,
+            45401
           ],
           [
-            "1",
-            "2",
-            "0"
+            98,
+            4441,
+            45401
           ],
           [
-            "1",
-            "3",
-            "0"
+            98,
+            4443,
+            45401
           ],
           [
-            "2",
-            "3",
-            "0"
+            96,
+            4443,
+            45401
           ],
           [
-            "3",
-            "3",
-            "0"
-          ],
-          [
-            "3",
-            "2",
-            "0"
-          ],
-          [
-            "3",
-            "1",
-            "0"
-          ],
-          [
-            "2",
-            "1",
-            "0"
-          ],
-          [
-            "1",
-            "1",
-            "0"
+            96,
+            4441,
+            45401
           ]
         ],
-        "square_count": 4,
-        "vertex_count": 8
+        "attaching_word": [],
+        "core_disk": {
+          "bounds": {
+            "xmax": 98,
+            "xmin": 96,
+            "ymax": 4443,
+            "ymin": 4441,
+            "zmax": 45403,
+            "zmin": 45401
+          },
+          "triangles": [
+            [
+              4,
+              5,
+              6
+            ],
+            [
+              4,
+              6,
+              7
+            ]
+          ],
+          "vertices": [
+            [
+              96,
+              4441,
+              45401
+            ],
+            [
+              98,
+              4441,
+              45401
+            ],
+            [
+              98,
+              4443,
+              45401
+            ],
+            [
+              96,
+              4443,
+              45401
+            ],
+            [
+              96,
+              4441,
+              45403
+            ],
+            [
+              98,
+              4441,
+              45403
+            ],
+            [
+              98,
+              4443,
+              45403
+            ],
+            [
+              96,
+              4443,
+              45403
+            ]
+          ]
+        },
+        "misses_detector_ball": true,
+        "owner": "r_zx",
+        "seifert_disk": {
+          "bounds": {
+            "xmax": 98,
+            "xmin": 96,
+            "ymax": 4443,
+            "ymin": 4441,
+            "zmax": 45403,
+            "zmin": 45401
+          },
+          "triangles": [
+            [
+              0,
+              2,
+              1
+            ],
+            [
+              0,
+              3,
+              2
+            ]
+          ],
+          "vertices": [
+            [
+              96,
+              4441,
+              45401
+            ],
+            [
+              98,
+              4441,
+              45401
+            ],
+            [
+              98,
+              4443,
+              45401
+            ],
+            [
+              96,
+              4443,
+              45401
+            ],
+            [
+              96,
+              4441,
+              45403
+            ],
+            [
+              98,
+              4441,
+              45403
+            ],
+            [
+              98,
+              4443,
+              45403
+            ],
+            [
+              96,
+              4443,
+              45403
+            ]
+          ]
+        },
+        "sphere_is_seifert_union_core_of_cube": true,
+        "to_standard_movie": {
+          "fixes_model_ball": true,
+          "frames": [
+            {
+              "surface": {
+                "bounds": {
+                  "xmax": 98,
+                  "xmin": 96,
+                  "ymax": 4443,
+                  "ymin": 4441,
+                  "zmax": 45403,
+                  "zmin": 45401
+                },
+                "triangles": [
+                  [
+                    0,
+                    2,
+                    1
+                  ],
+                  [
+                    0,
+                    3,
+                    2
+                  ],
+                  [
+                    4,
+                    5,
+                    6
+                  ],
+                  [
+                    4,
+                    6,
+                    7
+                  ],
+                  [
+                    0,
+                    1,
+                    5
+                  ],
+                  [
+                    0,
+                    5,
+                    4
+                  ],
+                  [
+                    2,
+                    3,
+                    7
+                  ],
+                  [
+                    2,
+                    7,
+                    6
+                  ],
+                  [
+                    1,
+                    2,
+                    6
+                  ],
+                  [
+                    1,
+                    6,
+                    5
+                  ],
+                  [
+                    0,
+                    4,
+                    7
+                  ],
+                  [
+                    0,
+                    7,
+                    3
+                  ]
+                ],
+                "vertices": [
+                  [
+                    96,
+                    4441,
+                    45401
+                  ],
+                  [
+                    98,
+                    4441,
+                    45401
+                  ],
+                  [
+                    98,
+                    4443,
+                    45401
+                  ],
+                  [
+                    96,
+                    4443,
+                    45401
+                  ],
+                  [
+                    96,
+                    4441,
+                    45403
+                  ],
+                  [
+                    98,
+                    4441,
+                    45403
+                  ],
+                  [
+                    98,
+                    4443,
+                    45403
+                  ],
+                  [
+                    96,
+                    4443,
+                    45403
+                  ]
+                ]
+              },
+              "time": "0"
+            },
+            {
+              "surface": {
+                "bounds": {
+                  "xmax": 98,
+                  "xmin": 96,
+                  "ymax": 4443,
+                  "ymin": 4441,
+                  "zmax": 45403,
+                  "zmin": 45401
+                },
+                "triangles": [
+                  [
+                    0,
+                    2,
+                    1
+                  ],
+                  [
+                    0,
+                    3,
+                    2
+                  ],
+                  [
+                    4,
+                    5,
+                    6
+                  ],
+                  [
+                    4,
+                    6,
+                    7
+                  ],
+                  [
+                    0,
+                    1,
+                    5
+                  ],
+                  [
+                    0,
+                    5,
+                    4
+                  ],
+                  [
+                    2,
+                    3,
+                    7
+                  ],
+                  [
+                    2,
+                    7,
+                    6
+                  ],
+                  [
+                    1,
+                    2,
+                    6
+                  ],
+                  [
+                    1,
+                    6,
+                    5
+                  ],
+                  [
+                    0,
+                    4,
+                    7
+                  ],
+                  [
+                    0,
+                    7,
+                    3
+                  ]
+                ],
+                "vertices": [
+                  [
+                    96,
+                    4441,
+                    45401
+                  ],
+                  [
+                    98,
+                    4441,
+                    45401
+                  ],
+                  [
+                    98,
+                    4443,
+                    45401
+                  ],
+                  [
+                    96,
+                    4443,
+                    45401
+                  ],
+                  [
+                    96,
+                    4441,
+                    45403
+                  ],
+                  [
+                    98,
+                    4441,
+                    45403
+                  ],
+                  [
+                    98,
+                    4443,
+                    45403
+                  ],
+                  [
+                    96,
+                    4443,
+                    45403
+                  ]
+                ]
+              },
+              "time": "1"
+            }
+          ],
+          "rule": "the kernel-basis sphere is the belt sphere, already off the P0 cube",
+          "status": "PASS"
+        }
       },
-      "name": "A3"
+      "name": "A3",
+      "relative_detector_movie": {
+        "fixes_model_ball": true,
+        "frames": [
+          {
+            "surface": {
+              "bounds": {
+                "xmax": 98,
+                "xmin": 96,
+                "ymax": 4443,
+                "ymin": 4441,
+                "zmax": 45403,
+                "zmin": 45401
+              },
+              "triangles": [
+                [
+                  0,
+                  2,
+                  1
+                ],
+                [
+                  0,
+                  3,
+                  2
+                ],
+                [
+                  4,
+                  5,
+                  6
+                ],
+                [
+                  4,
+                  6,
+                  7
+                ],
+                [
+                  0,
+                  1,
+                  5
+                ],
+                [
+                  0,
+                  5,
+                  4
+                ],
+                [
+                  2,
+                  3,
+                  7
+                ],
+                [
+                  2,
+                  7,
+                  6
+                ],
+                [
+                  1,
+                  2,
+                  6
+                ],
+                [
+                  1,
+                  6,
+                  5
+                ],
+                [
+                  0,
+                  4,
+                  7
+                ],
+                [
+                  0,
+                  7,
+                  3
+                ]
+              ],
+              "vertices": [
+                [
+                  96,
+                  4441,
+                  45401
+                ],
+                [
+                  98,
+                  4441,
+                  45401
+                ],
+                [
+                  98,
+                  4443,
+                  45401
+                ],
+                [
+                  96,
+                  4443,
+                  45401
+                ],
+                [
+                  96,
+                  4441,
+                  45403
+                ],
+                [
+                  98,
+                  4441,
+                  45403
+                ],
+                [
+                  98,
+                  4443,
+                  45403
+                ],
+                [
+                  96,
+                  4443,
+                  45403
+                ]
+              ]
+            },
+            "time": "0"
+          },
+          {
+            "surface": {
+              "bounds": {
+                "xmax": 98,
+                "xmin": 96,
+                "ymax": 4443,
+                "ymin": 4441,
+                "zmax": 45403,
+                "zmin": 45401
+              },
+              "triangles": [
+                [
+                  0,
+                  2,
+                  1
+                ],
+                [
+                  0,
+                  3,
+                  2
+                ],
+                [
+                  4,
+                  5,
+                  6
+                ],
+                [
+                  4,
+                  6,
+                  7
+                ],
+                [
+                  0,
+                  1,
+                  5
+                ],
+                [
+                  0,
+                  5,
+                  4
+                ],
+                [
+                  2,
+                  3,
+                  7
+                ],
+                [
+                  2,
+                  7,
+                  6
+                ],
+                [
+                  1,
+                  2,
+                  6
+                ],
+                [
+                  1,
+                  6,
+                  5
+                ],
+                [
+                  0,
+                  4,
+                  7
+                ],
+                [
+                  0,
+                  7,
+                  3
+                ]
+              ],
+              "vertices": [
+                [
+                  96,
+                  4441,
+                  45401
+                ],
+                [
+                  98,
+                  4441,
+                  45401
+                ],
+                [
+                  98,
+                  4443,
+                  45401
+                ],
+                [
+                  96,
+                  4443,
+                  45401
+                ],
+                [
+                  96,
+                  4441,
+                  45403
+                ],
+                [
+                  98,
+                  4441,
+                  45403
+                ],
+                [
+                  98,
+                  4443,
+                  45403
+                ],
+                [
+                  96,
+                  4443,
+                  45403
+                ]
+              ]
+            },
+            "time": "1"
+          }
+        ],
+        "rule": "the belt sphere already misses the P0 ball, so the relative isotopy is constant and the identity on the ball",
+        "status": "PASS"
+      },
+      "sphere_column_in_kernel_basis": [
+        -1,
+        0,
+        1
+      ],
+      "surface": {
+        "bounds": {
+          "xmax": 98,
+          "xmin": 96,
+          "ymax": 4443,
+          "ymin": 4441,
+          "zmax": 45403,
+          "zmin": 45401
+        },
+        "triangles": [
+          [
+            0,
+            2,
+            1
+          ],
+          [
+            0,
+            3,
+            2
+          ],
+          [
+            4,
+            5,
+            6
+          ],
+          [
+            4,
+            6,
+            7
+          ],
+          [
+            0,
+            1,
+            5
+          ],
+          [
+            0,
+            5,
+            4
+          ],
+          [
+            2,
+            3,
+            7
+          ],
+          [
+            2,
+            7,
+            6
+          ],
+          [
+            1,
+            2,
+            6
+          ],
+          [
+            1,
+            6,
+            5
+          ],
+          [
+            0,
+            4,
+            7
+          ],
+          [
+            0,
+            7,
+            3
+          ]
+        ],
+        "vertices": [
+          [
+            96,
+            4441,
+            45401
+          ],
+          [
+            98,
+            4441,
+            45401
+          ],
+          [
+            98,
+            4443,
+            45401
+          ],
+          [
+            96,
+            4443,
+            45401
+          ],
+          [
+            96,
+            4441,
+            45403
+          ],
+          [
+            98,
+            4441,
+            45403
+          ],
+          [
+            98,
+            4443,
+            45403
+          ],
+          [
+            96,
+            4443,
+            45403
+          ]
+        ]
+      },
+      "surface_euler": 2,
+      "transport_rule": "OPEN: the belt sphere is explicit in the reversed model, but the PL boundary map through all five actual 2-handle core collars has not been constructed"
     }
   ],
-  "spherical_homology_basis": null,
+  "spherical_homology_basis": {
+    "determinant": 1,
+    "dual_loop_pairing_matrix": [
+      [
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        1
+      ]
+    ],
+    "sphere_columns_in_kernel_basis": [
+      [
+        -1311,
+        -189,
+        41
+      ],
+      [
+        8608,
+        1241,
+        -269
+      ],
+      [
+        -1,
+        0,
+        1
+      ]
+    ],
+    "status": "PASS_REVERSED_MODEL_ONLY"
+  },
+  "standard_sphere_certificate_sha256": "32CE45C8D5FC836037F52F006A9E85C04309BE0E6065CF8AD453A366C7A10029",
   "status": "OPEN",
-  "w2_boundary_sha256": "52D077EEF4CB317B967EE537AC302BC96F8C462F6EC55EEFC5F4EE5117D65E09"
+  "w2_boundary_sha256": "E0E99C9E99FD100F8FECD3C9898102DD5E04395C08CC39E0ECEAC1835F344896"
 }
