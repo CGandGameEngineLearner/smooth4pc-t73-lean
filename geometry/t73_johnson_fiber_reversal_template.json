@@ -1,0 +1,142 @@
+{
+  "actual_regular_neighbourhood_chart": "OPEN",
+  "halfturn_sha256": "63926BBDED714E7EC134D323ECC7704CBD259B301EA01BDABE1932DEA77A43CA",
+  "model": "diamond D^2 fibers at x=-1/2 and x=1/2 inside the unit octahedron",
+  "schema": "t73_johnson_fiber_reversal_template/v1",
+  "sha256": "51D3C4E97677D1AEFFBE65ABB093102CD0DCF75B5E072D1C62F7824EA5DF4EE4",
+  "sides": [
+    {
+      "ambient_cell_count": 56,
+      "disk_triangle_count": 4,
+      "explicit_cellwise_inverse": true,
+      "jacobian_det_max": "1",
+      "jacobian_det_min": "1",
+      "outer_boundary_identity": true,
+      "side": "prefix-first",
+      "source_axis_value": "-1/2",
+      "source_boundary": [
+        [
+          "-1/2",
+          "1/2",
+          "0"
+        ],
+        [
+          "-1/2",
+          "0",
+          "1/2"
+        ],
+        [
+          "-1/2",
+          "-1/2",
+          "0"
+        ],
+        [
+          "-1/2",
+          "0",
+          "-1/2"
+        ]
+      ],
+      "source_center": [
+        "-1/2",
+        "0",
+        "0"
+      ],
+      "source_to_target_disk": "PASS",
+      "target_axis_value": "1/2",
+      "target_boundary": [
+        [
+          "1/2",
+          "1/2",
+          "0"
+        ],
+        [
+          "1/2",
+          "0",
+          "1/2"
+        ],
+        [
+          "1/2",
+          "-1/2",
+          "0"
+        ],
+        [
+          "1/2",
+          "0",
+          "-1/2"
+        ]
+      ],
+      "target_center": [
+        "1/2",
+        "0",
+        "0"
+      ]
+    },
+    {
+      "ambient_cell_count": 56,
+      "disk_triangle_count": 4,
+      "explicit_cellwise_inverse": true,
+      "jacobian_det_max": "1",
+      "jacobian_det_min": "1",
+      "outer_boundary_identity": true,
+      "side": "target-first",
+      "source_axis_value": "-1/2",
+      "source_boundary": [
+        [
+          "-1/2",
+          "1/2",
+          "0"
+        ],
+        [
+          "-1/2",
+          "0",
+          "1/2"
+        ],
+        [
+          "-1/2",
+          "-1/2",
+          "0"
+        ],
+        [
+          "-1/2",
+          "0",
+          "-1/2"
+        ]
+      ],
+      "source_center": [
+        "-1/2",
+        "0",
+        "0"
+      ],
+      "source_to_target_disk": "PASS",
+      "target_axis_value": "1/2",
+      "target_boundary": [
+        [
+          "1/2",
+          "1/2",
+          "0"
+        ],
+        [
+          "1/2",
+          "0",
+          "1/2"
+        ],
+        [
+          "1/2",
+          "-1/2",
+          "0"
+        ],
+        [
+          "1/2",
+          "0",
+          "-1/2"
+        ]
+      ],
+      "target_center": [
+        "1/2",
+        "0",
+        "0"
+      ]
+    }
+  ],
+  "standard_fiber_reversal": "PASS"
+}
