@@ -50,7 +50,7 @@ def generate() -> dict[str, Any]:
             "p0_certificate_sha256": p0["certificate_sha256"],
             "c_witness_sha256": c["witness_sha256"],
             "standard_spheres_sha256": spheres["certificate_sha256"],
-            "hj_source": "arXiv:2510.20282 Theorem 5.3, used only for kernel invariance; Lemmas 5.5 and 5.7 are not in that paper",
+            "hj_source": "arXiv:2510.20282 Theorem 5.3, used only for kernel invariance; Lemmas 5.5 and 5.7 appear in the 24 August 2026 version and are not invoked",
             "mww_source": "arXiv:2206.04616, Theorem 3.7 and Example 3.8",
         },
         "relative_geometry": {

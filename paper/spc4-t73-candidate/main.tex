@@ -76,10 +76,11 @@ We study the trace-73 Cappell--Shaneson homotopy $4$-sphere associated with
 \[
 A=\begin{pmatrix}0&269&1240\\0&41&189\\1&0&32\end{pmatrix}.
 \]
-For an explicit Johnson-generator handle presentation we prove the geometric
-inputs P0, C, S, and P3 needed for a skein-lasagna comparison at quantum
-degree $494$, including the identification $X_J\cong\Sigma_A^0$.
-An exact finite calculation gives a nonzero divided cubic $D_3=2624$.
+The geometric inputs P0, C, and S needed for a skein-lasagna comparison at
+quantum degree $494$ remain \Open; they are not treated as proved, and the
+identification $X_J\cong\Sigma_A^0$ is likewise \Open.
+The integer $2624$ is the value of the currently frozen truncated Burau
+computation on the public collar word, not an identified MWW divided cubic.
 An Artin--Magnus certificate and the pure-braid Andreadakis theorem
 establish a third-order property of the public braid word.
 A Lean development formalizes the abstract quotient argument: given interface
@@ -136,13 +137,13 @@ The main contributions are as follows.
 \begin{enumerate}
 \item We record a splitting-preserving Johnson lift and an exact
 six-sweep 44-channel word equal to the public 11340-letter word.  This is a
-finite P0d fact.  Lemmas P0a--c supply the Johnson replacement presentation,
-and P3/E13 identifies that picture with \(\Sigma_A^0\).
-\item Coefficient comparison and the reversed three-handle picture are
-proved for the Johnson replacement.
+finite P0d fact.  Lemmas P0a--c and the identification of that picture with
+\(\Sigma_A^0\) remain \Open.
+\item Coefficient comparison C and the reversed three-handle picture S
+remain \Open\ for the Johnson replacement.
 \item A formal Lean core checks the abstract quotient implication; the
-geometric instances are proved in the body of the paper and summarized in
-Appendix~\ref{sec:reproducibility-extended}.
+geometric instances are not proved in the body of the paper.  Replay
+commands are summarized in Appendix~\ref{sec:reproducibility-extended}.
 \end{enumerate}
 
 \section{The trace-73 Cappell--Shaneson candidate}
@@ -229,8 +230,8 @@ injectivity.
 The Lean theorem corresponding to Theorem~\ref{thm:A} is a conditional
 implication from input structures \texttt{ExternalGeometry} and
 \texttt{CSExternalGeometry}; no inhabitants are constructed in Lean.
-The candidate-specific inputs are stated below and proved in
-Sections~\ref{sec:johnson-presentation}--\ref{sec:final-identifications}.
+The candidate-specific inputs are stated below.  Their geometric status is
+\Open\ in Sections~\ref{sec:johnson-presentation}--\ref{sec:final-identifications}.
 
 \begin{theorem}[Embedded candidate presentation, P0]\label{hyp:P0}
 The explicit Johnson-generator replacement is a labelled and framed handle
@@ -239,7 +240,8 @@ embedded detector ball and the stated cable attachments.
 \end{theorem}
 
 \begin{proof}[Proof of Theorem~\ref{hyp:P0}]
-See Sections~\ref{sec:johnson-presentation} and~\ref{sec:p0-conclusion},
+The geometric evidence required by this statement is presently \Open;
+see Sections~\ref{sec:johnson-presentation} and~\ref{sec:p0-conclusion},
 in particular Theorem~\ref{thm:P0discharge}.
 \end{proof}
 
@@ -254,7 +256,8 @@ The class lies in quantum degree $494$ on the Johnson replacement collar.
 \end{theorem}
 
 \begin{proof}[Proof of Theorem~\ref{hyp:P1}]
-See Section~\ref{sec:c-comparison}, in particular Theorem~\ref{thm:Cdischarge}.
+The geometric evidence required by this statement is presently \Open;
+see Section~\ref{sec:c-comparison}, in particular Theorem~\ref{thm:Cdischarge}.
 \end{proof}
 
 \begin{theorem}[Relative three-handle closure, S]\label{hyp:P2}
@@ -266,7 +269,8 @@ complete three-handle coequalizer.
 \end{theorem}
 
 \begin{proof}[Proof of Theorem~\ref{hyp:P2}]
-See Section~\ref{sec:s-closure}, in particular Theorem~\ref{thm:Sdischarge}.
+The geometric evidence required by this statement is presently \Open;
+see Section~\ref{sec:s-closure}, in particular Theorem~\ref{thm:Sdischarge}.
 \end{proof}
 
 \begin{theorem}[Four-handle closure of the replacement picture, P3]\label{hyp:P3}
@@ -283,9 +287,8 @@ handle picture of Hypothesis~\ref{hyp:P0}, not these determinants.
 \end{theorem}
 
 \begin{proof}[Proof of Theorem~\ref{hyp:P3}]
-The reversed $1$-handle picture yields boundary $S^3$ after three
-$1$--$3$ cancellations; attaching a PL $4$-ball gives the closed manifold
-$X_J$.  The empty-link Khovanov ranks in quantum degrees $0$ and $494$, the
+Three-handle attachment along each belt sphere restores the boundary
+$S^3$; attaching a PL $4$-ball gives the closed manifold $X_J$.  The empty-link Khovanov ranks in quantum degrees $0$ and $494$, the
 Euler characteristic of the attaching $4$-ball, and the grading sum
 $-44+227+315-4=494$ are computed directly.  The isomorphisms
 $\mathcal S^2_0(B^4)\cong\mathcal S^2_0(S^4)$ and
@@ -309,9 +312,8 @@ That interface is not constructed in Lean, so no counterexample is claimed.
 
 \begin{proof}[Proof of Theorem~\ref{thm:joined}]
 Theorem~\ref{thm:A} gives the smooth obstruction once
-\texttt{ExternalGeometry} is inhabited.  The identification
-$X_J\cong\Sigma_A^0$ and Theorems~\ref{thm:P0discharge},
-\ref{thm:Cdischarge}, and~\ref{thm:Sdischarge} supply the hypotheses.
+\texttt{ExternalGeometry} is inhabited.  Hypotheses~\ref{hyp:P0}--\ref{hyp:P2}
+remain \Open, so the geometric hypotheses are not supplied.
 \end{proof}
 
 \input{sec-published-results}
@@ -360,19 +362,22 @@ reproduced public result is
 \end{equation}
 An earlier draft mixed two endpoint coordinate tables and reported
 $-59072$; with the collar endpoints of Section~\ref{sec:exact-algebra} the
-value is $2624$, which is still nonzero.\footnote{Independent replay:
+frozen truncated Burau value is $2624$.  That integer is presently only the
+value of this frozen Burau computation; it is not identified with an MWW
+divided cubic.\footnote{Independent replay:
 \texttt{scripts/recompute\_t73\_delta3.py --check}.}
 
 \begin{proposition}[Exact scope of the computation]\label{prop:scope}
 Equation~\eqref{eq:burau} concerns the truncated Burau model with the collar
-endpoints of \eqref{eq:u} and \eqref{eq:ell}.  Identifying the result with
-the MWW divided cubic is the content of Theorem~\ref{hyp:P1}.
+endpoints of \eqref{eq:u} and \eqref{eq:ell}.  The integer is a frozen Burau
+scalar.  Identifying it with the MWW divided cubic is the content of
+Theorem~\ref{hyp:P1}, which remains \Open.
 \end{proposition}
 
 \begin{proof}
-The Burau calculation supplies an integer; Theorem~\ref{hyp:P1} and
-Section~\ref{sec:c-comparison} identify it with the MWW detector on the
-Johnson replacement collar.
+The Burau calculation supplies an integer.  Theorem~\ref{hyp:P1} and
+Section~\ref{sec:c-comparison} would identify it with the MWW detector on the
+Johnson replacement collar, and remain \Open.
 \end{proof}
 
 Thus the finite recomputation and the categorical comparison have distinct
@@ -414,12 +419,14 @@ relations, and transports the resulting nonzero class through the
 four-handle isomorphism.
 
 The formal algebra correctly captures the last sentence.  The next sections
-prove the geometric identifications required for P0, C and S.
+record the geometric identifications required for P0, C and S; each remains
+\Open.
 
 \section{Johnson product-ribbon presentation and P0}\label{sec:johnson-presentation}
 
 We record the AR-side construction, summarize rejected compact lifts, and
-give the Johnson-generator replacement proving Hypothesis~\ref{hyp:P0}.
+give the Johnson-generator replacement.  Hypothesis~\ref{hyp:P0} remains
+\Open.
 
 \subsection{The actual AR link}
 
@@ -546,8 +553,8 @@ reduces to length $309$.  It contains 40 $y/Y$ passages, rather than 42; with
 the two $r_{xy}$ passages its detector has 42 channels rather than 44.  Thus
 the 309/311 discrepancy is a genuine representative discrepancy, not merely
 a printing convention.
-The transported $r_{zx}$ has empty free word, but no split-unknot conclusion
-is needed or inferred from that fact.
+The transported $r_{zx}$ has empty free word.  That is a word-level fact
+only: it does not determine an embedded split unknot.
 
 \subsection{The actual detector ball}
 
@@ -670,15 +677,15 @@ recovers the public $11340$-letter word.
 
 \subsection{P0 conclusion}\label{sec:p0-conclusion}
 
-\begin{theorem}[Johnson replacement discharges P0]\label{thm:P0discharge}
-Hypothesis~\ref{hyp:P0} holds for the Johnson replacement presentation.
+\begin{theorem}[P0 status for the Johnson replacement]\label{thm:P0discharge}
+Hypothesis~\ref{hyp:P0} remains \Open.
 \end{theorem}
 
 \begin{proof}
-Lemmas~\ref{lem:P0a}--\ref{lem:P0c} and~\ref{lem:P0d-link} supply the
-handlebody bridge, cancellations, cabling compatibility, and vanishing
-mixed linking.  The staged Kirby pipeline identifies the resulting closed
-picture with $\Sigma_A^0$.
+Lemmas~\ref{lem:P0a}--\ref{lem:P0c} and~\ref{lem:P0d-link} record the
+intended handlebody bridge, cancellations, cabling compatibility, and
+vanishing mixed linking.  They do not presently supply a complete geometric
+identification of the closed picture with $\Sigma_A^0$.
 \end{proof}
 
 \section{The coefficient-trace comparison}\label{sec:c-comparison}
@@ -824,14 +831,10 @@ W\mapsto PWP^{-1},\qquad u\mapsto Pu,\qquad
 \ell\mapsto\ell P^{-1}.
 \]
 The matrix coefficient is unchanged; we choose the public endpoint labels
-after this common transport.  BPW's cup/cap formulas then imply
-that the constant terms, after the same position change, are
-\[
-u_0=e_0\pm e_5,\qquad
-\ell_0=e_{87}^*\pm e_2^*.
-\]
-All omitted factors are invertible q-monomials or positive-order
-$h$-corrections.
+after this common transport.  Unresolved $\pm$ formulae for the constant
+terms are not used.  In the frozen collar coordinates of
+Section~\ref{sec:exact-algebra} the constant pairing is the definite
+identity recorded there, not a sign ansatz.
 
 Over $\Q[[h]]$ define
 \[
@@ -840,11 +843,14 @@ D_h=\ell_h(\rho_h(W)-I)\operatorname{Sh}_h.
 This is well defined on the quantum coefficient trace because
 \eqref{eq:actualShadow} has already imposed quantum cyclicity.  The exact
 Magnus calculation and Darn\'e's Andreadakis theorem give
-$W\in\Gamma_3(P_{44})$ \cite[Theorem~6.2]{Darne2021}; equivalently, and also
-by direct evaluation of all 7,744 entries,
+$W\in\Gamma_3(P_{44})$ \cite[Theorem~6.2]{Darne2021}.  This implies
 \[
 \rho_h(W)-I\in h^3\operatorname{End}(E_{88}).
 \]
+An independent verification evaluates all $7{,}744$ matrix entries of the
+truncated Burau representation directly; that computation is not treated as
+equivalent to Andreadakis membership, but as a separate check of the same
+cubic vanishing.
 Thus $D_h$ takes values in $h^3\Q[[h]]$.  Division by $h^3$ is unique, and
 reduction modulo $h$ gives a lift-independent ordinary functional
 \[
@@ -858,11 +864,12 @@ The four mixed-index Burau sign variants
 -53824,\quad -53760,\quad -59008,\quad -59072
 \]
 are nonzero, but they are not the frozen cubic.  The frozen public receipt and
-Lean give
+Lean record the truncated Burau scalar
 \begin{equation}\label{eq:selectedD3}
-D_3([v_T])=2624\ne0
+D_3([v_T])=2624
 \end{equation}
-after the endpoint-indexing erratum.  Nonvanishing does not close S.
+after the endpoint-indexing erratum.  This integer is presently only that
+frozen Burau value.  It does not close C or S.
 
 \subsection{The complete two-handle cocone}
 
@@ -950,8 +957,8 @@ whole source that calculation is
 (\epsilon\otimes\epsilon)\Delta(1)=0,\qquad
 (\epsilon\otimes\epsilon)\Delta(X)=1.
 \]
-For $r_{zx}$ these are the identical counit equations on its split-unknot
-factor.  Forgetting the distinguished new pair has constant-size fibers
+The same local counit equations are used for every owner, including
+$r_{zx}$; they are not inferred from vanishing of a free word.  Forgetting the distinguished new pair has constant-size fibers
 between placement sets, and the normalizations in (25) cancel their
 cardinalities.  The dotted raw degree $+2$ is cancelled by the target cabled
 shift $-2$.  Consequently, for every owner and state,
@@ -1002,13 +1009,13 @@ Diagram (28) sends it to a class $x_2$ satisfying
 $\overline D_3(x_2)=2624\ne0$ on the Johnson replacement collar.
 
 \begin{theorem}[Coefficient comparison C]\label{thm:Cdischarge}
-Hypothesis~\ref{hyp:P1} holds for the P0 replacement.  In particular, the
-selected degree-$494$ class is nonzero after all MWW two-handle relations.
+Hypothesis~\ref{hyp:P1} remains \Open.
 \end{theorem}
 
 \begin{proof}
-This is discharged for the Johnson replacement collar by
-Lemmas~\ref{lem:C1} and~\ref{lem:C2}.
+Lemmas~\ref{lem:C1} and~\ref{lem:C2} record the intended comparison for the
+Johnson replacement collar.  They do not presently supply a complete
+coefficient-bimodule identification.
 \end{proof}
 
 \paragraph{C/S firewall.}
@@ -1054,8 +1061,13 @@ Closed-manifold HJ Theorem~5.3 is not used to conclude that $B$ is fixed.
 It is used only with Lemma~\ref{lem:Ssystem}: any other complete system,
 including a going-up Kirby attaching system, is related by isotopy,
 permutation and slides in the closed manifold, so the kernels agree.
-Horvat--Jab\l{}onowski Lemmas~5.5 and~5.7 do not appear in
-\cite{HorvatJablonowski2025} and are not invoked.
+The current Horvat--Jab\l{}onowski preprint \cite{HorvatJablonowski2025},
+dated 24 August 2026, contains Lemma~5.5 (the spotted-ball slide lemma) and
+Lemma~5.7 (relative uniqueness of complete sphere systems).  Neither lemma
+is invoked here: kernel invariance uses only their Theorem~5.3 together with
+Lemma~\ref{lem:Ssystem}.  Lemma~5.7 concerns a relative sphere system in a
+manifold with spherical boundary, which is not the setting used in this
+section.
 In the reversed $1$-handle picture, three belt spheres miss the P0 cube,
 with dual loops pairing to the identity, $b=0$ endpoint foams, and
 disjointness from the C1 leftover link and C2 supports.
@@ -1179,12 +1191,14 @@ whose lower maps are the actual counit row and actual \(A_j\)-action by the
 movie decomposition in Lemma~\ref{lem:Sendpoint}.
 
 \begin{theorem}[Relative three-handle closure S]\label{thm:Sdischarge}
-Hypothesis~\ref{hyp:P2} holds for the P0 replacement.
+Hypothesis~\ref{hyp:P2} remains \Open.
 \end{theorem}
 
 \begin{proof}
-By Lemmas~\ref{lem:Ssystem} and~\ref{lem:Sendpoint} and Proposition
-\ref{thm:Sgeometry}.
+Lemmas~\ref{lem:Ssystem} and~\ref{lem:Sendpoint} and Proposition
+\ref{thm:Sgeometry} record the intended kernel invariance and endpoint
+factorization.  They do not presently supply actual three-handle maps on
+$\partial W_2$.
 \end{proof}
 
 \section{Final identifications}\label{sec:final-identifications}
@@ -1192,20 +1206,20 @@ By Lemmas~\ref{lem:Ssystem} and~\ref{lem:Sendpoint} and Proposition
 MWW Theorem~3.10 identifies the iterated quotient with the module after the
 three-handles, and Proposition~3.4 gives the four-handle isomorphism
 \cite{ManolescuWalkerWedrich2023}.  Theorem~\ref{thm:P0discharge},
-Theorem~\ref{thm:Cdischarge}, and Theorem~\ref{thm:Sdischarge} establish
-Hypotheses~\ref{hyp:P0}--\ref{hyp:P2}.  For the Johnson replacement
-four-handle picture $X_J$, three $1$--$3$ cancellations restore $S^3$, a PL
-$4$-ball is attached, and the quantum degree-$494$ summand of the standard
-sphere module vanishes by the computation in the proof of
-Hypothesis~\ref{hyp:P3} together with MWW Corollary~3.5.  The staged Kirby
-pipeline identifies $X_J$ with $\Sigma_A^0$.
+Theorem~\ref{thm:Cdischarge}, and Theorem~\ref{thm:Sdischarge} record that
+Hypotheses~\ref{hyp:P0}--\ref{hyp:P2} remain \Open.  For the Johnson
+replacement four-handle picture $X_J$, three-handle attachment along each
+belt sphere restores the boundary $S^3$, a PL $4$-ball is attached, and the
+quantum degree-$494$ summand of the standard sphere module vanishes by the
+computation in the proof of Hypothesis~\ref{hyp:P3} together with MWW
+Corollary~3.5.  The identification of $X_J$ with $\Sigma_A^0$ remains \Open.
 
 \begin{remark}[Formalization boundary]\label{rem:lean-boundary}
 A Lean development \cite{Lean4} proves Theorem~\ref{thm:A} as a conditional
 implication from structures \texttt{ExternalGeometry} and
-\texttt{CSExternalGeometry}.  It checks the matrix arithmetic, the value
+\texttt{CSExternalGeometry}.  It checks the matrix arithmetic, the frozen Burau value
 $2624$, the degree $494$, and the abstract quotient lemmas, but does not
-construct the geometric instances proved in this paper.  Appendix~\ref{app:lean-fields}
+construct geometric instances.  Appendix~\ref{app:lean-fields}
 lists the correspondence with the Lean fields.
 \end{remark}
 
@@ -1237,18 +1251,19 @@ theorem.
 Horvat--Jab\l{}onowski's recent work gives a useful geometric criterion for
 recognizing three-handle attaching systems \cite{HorvatJablonowski2025}.
 Theorem~5.3 is used only with Lemma~\ref{lem:Ssystem} for kernel invariance
-in the closed manifold, not to fix $B$.  Lemmas~5.5 and~5.7 do not appear in
-that paper and are not invoked.
+in the closed manifold, not to fix $B$.  The current version of that preprint,
+dated 24 August 2026, contains Lemma~5.5 and Lemma~5.7; neither is invoked.
 
 \section{Conclusion}
 
-For the Johnson replacement we have proved Hypotheses~\ref{hyp:P0}--\ref{hyp:P3}
-and identified $X_J\cong\Sigma_A^0$.  Together with Theorem~\ref{thm:A} and
-Iwaki's homotopy-sphere criterion, this gives a conditional smooth
-obstruction in quantum degree $494$ once the geometric data are assembled
-into the Lean interface \texttt{ExternalGeometry}.  That interface is not
-constructed here, so no counterexample is claimed.  Independent replay
-commands are listed in Appendix~\ref{sec:reproducibility-extended}.
+For the Johnson replacement, Hypotheses~\ref{hyp:P0}--\ref{hyp:P3} remain
+\Open, as does the identification $X_J\cong\Sigma_A^0$.  Together with
+Theorem~\ref{thm:A} and Iwaki's homotopy-sphere criterion, this would give a
+conditional smooth obstruction in quantum degree $494$ once the geometric
+data are assembled into the Lean interface \texttt{ExternalGeometry}.  That
+interface is not constructed here, so no counterexample is claimed.
+Independent replay commands are listed in
+Appendix~\ref{sec:reproducibility-extended}.
 
 \appendix
 
@@ -1315,8 +1330,8 @@ Lean field & Mathematical obligation \\
 \end{tabularx}
 \end{center}
 
-The geometric inputs discharged in Sections~\ref{sec:johnson-presentation}--\ref{sec:final-identifications}
-remain to be assembled into a single Lean inhabitant of
+The geometric inputs recorded in Sections~\ref{sec:johnson-presentation}--\ref{sec:final-identifications}
+remain \Open, and remain to be assembled into a single Lean inhabitant of
 \texttt{ExternalGeometry}; that assembly is \Open\ for the Johnson candidate.
 The empty-link control in \texttt{T73S4Inhabitant.lean} packages only
 \texttt{EmptyKhQ}.  The Lean theorem consumes no stronger statement, and it

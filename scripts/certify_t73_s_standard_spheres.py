@@ -9,9 +9,10 @@ pair to the identity.  The spheres miss the P0 cube, the C1 leftover
 circles and the C2 supports, so the endpoint foams are the b=0 counit.
 
 HJ Theorem 5.3 is used only with Lemma Ssystem for kernel invariance, not
-to fix B.  Horvat--Jablonowski Lemmas 5.5 and 5.7 are not in arXiv:2510.20282
-and are not invoked.  This is the Johnson replacement reversed picture, not
-the historical PD, and not a triangulated 4-dimensional W2 lasagna movie.
+to fix B.  The current Horvat--Jablonowski preprint (24 August 2026)
+contains Lemmas 5.5 and 5.7; neither is invoked.  This is the Johnson
+replacement reversed picture, not the historical PD, and not a triangulated
+4-dimensional W2 lasagna movie.
 """
 
 from __future__ import annotations

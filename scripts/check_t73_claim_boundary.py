@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 """Check that the controlling paper keeps a conditional claim boundary.
 
-The English manuscript discharges Johnson P0/C/S/P3 in the body, but must not
-claim an unconditional smooth counterexample: Lean ExternalGeometry remains
-uninhabited, and MWW 3.4/3.5 are cited rather than proved here.
+The English manuscript marks Johnson P0/C/S as Open until actual geometry
+is supplied, and must not claim an unconditional smooth counterexample:
+Lean ExternalGeometry remains uninhabited, and MWW 3.4/3.5 are cited rather
+than proved here.
 """
 
 from __future__ import annotations
@@ -58,6 +59,32 @@ def check() -> None:
     ):
         require(paper_text, marker, PAPER)
 
+    require(
+        paper_text,
+        r"Hypothesis~\ref{hyp:P0} remains \Open",
+        PAPER,
+    )
+    require(
+        paper_text,
+        r"Hypothesis~\ref{hyp:P1} remains \Open",
+        PAPER,
+    )
+    require(
+        paper_text,
+        r"Hypothesis~\ref{hyp:P2} remains \Open",
+        PAPER,
+    )
+    require(
+        paper_text,
+        "frozen truncated Burau",
+        PAPER,
+    )
+    require(
+        paper_text,
+        "dated 24 August 2026, contains Lemma~5.5",
+        PAPER,
+    )
+
     # Finite / cited layers that must remain visible in the manuscript.
     require(paper_text, "2624", PAPER)
     require(paper_text, "494", PAPER)
@@ -81,6 +108,10 @@ def check() -> None:
     reject(paper_text, r"P2/E10/S & \Open", PAPER)
     reject(paper_text, r"C3 & \Open", PAPER)
     reject(paper_text, r"P2/E7 & \Open", PAPER)
+    reject(paper_text, "Lemmas~5.5 and~5.7 do not appear", PAPER)
+    reject(paper_text, r"u_0=e_0\pm e_5", PAPER)
+    reject(paper_text, "1--3 cancellations restore", PAPER)
+    reject(paper_text, "we have proved Hypotheses", PAPER)
 
 
 def main() -> None:

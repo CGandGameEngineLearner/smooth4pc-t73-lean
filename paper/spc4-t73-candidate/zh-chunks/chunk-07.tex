@@ -141,14 +141,10 @@ W\mapsto PWP^{-1},\qquad u\mapsto Pu,\qquad
 \ell\mapsto\ell P^{-1}.
 \]
 The matrix coefficient is unchanged; we choose the public endpoint labels
-after this common transport.  BPW's cup/cap formulas then imply
-that the constant terms, after the same position change, are
-\[
-u_0=e_0\pm e_5,\qquad
-\ell_0=e_{87}^*\pm e_2^*.
-\]
-All omitted factors are invertible q-monomials or positive-order
-$h$-corrections.
+after this common transport.  Unresolved $\pm$ formulae for the constant
+terms are not used.  In the frozen collar coordinates of
+Section~\ref{sec:exact-algebra} the constant pairing is the definite
+identity recorded there, not a sign ansatz.
 
 Over $\Q[[h]]$ define
 \[
@@ -157,11 +153,14 @@ D_h=\ell_h(\rho_h(W)-I)\operatorname{Sh}_h.
 This is well defined on the quantum coefficient trace because
 \eqref{eq:actualShadow} has already imposed quantum cyclicity.  The exact
 Magnus calculation and Darn\'e's Andreadakis theorem give
-$W\in\Gamma_3(P_{44})$ \cite[Theorem~6.2]{Darne2021}; equivalently, and also
-by direct evaluation of all 7,744 entries,
+$W\in\Gamma_3(P_{44})$ \cite[Theorem~6.2]{Darne2021}.  This implies
 \[
 \rho_h(W)-I\in h^3\operatorname{End}(E_{88}).
 \]
+An independent verification evaluates all $7{,}744$ matrix entries of the
+truncated Burau representation directly; that computation is not treated as
+equivalent to Andreadakis membership, but as a separate check of the same
+cubic vanishing.
 Thus $D_h$ takes values in $h^3\Q[[h]]$.  Division by $h^3$ is unique, and
 reduction modulo $h$ gives a lift-independent ordinary functional
 \[

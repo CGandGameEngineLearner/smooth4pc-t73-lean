@@ -76,8 +76,8 @@ skein lasagna 模, Khovanov 同调, 形式化验证}
 A=\begin{pmatrix}0&269&1240\\0&41&189\\1&0&32\end{pmatrix}
 \]
 所对应的 trace-73 Cappell--Shaneson 同伦 $4$-球面。
-对显式 Johnson 生成元柄表示，我们证明 skein-lasagna 在 quantum degree $494$ 处比较所需的几何输入 P0、C、S、P3，包括识别 $X_J\cong\Sigma_A^0$。
-精确有限计算给出非零 divided cubic $D_3=2624$。
+skein-lasagna 在 quantum degree $494$ 处比较所需的几何输入 P0、C、S 仍为 \Open，不视为已证；识别 $X_J\cong\Sigma_A^0$ 同样为 \Open。
+整数 $2624$ 是当前冻结截断 Burau 计算在公开领圈词上的值，不是已识别的 MWW divided cubic。
 Artin--Magnus 证书与 pure-braid Andreadakis 定理确立公开 braid 词的三阶性质。
 Lean 开发将抽象商论证形式化：若给定将 MWW 商与四柄运输组装起来的接口数据，则非零次数-$494$ 类将阻碍与 $S^4$ 的微分同胚。
 这些几何接口未在 Lean 中构造，故不断言光滑四维 Poincaré 猜想的反例。
@@ -104,9 +104,9 @@ Skein lasagna 模将 Khovanov--Rozansky link 同调推广到光滑四维流形 \
 
 主要贡献如下。
 \begin{enumerate}
-\item 记录保分裂 Johnson 提升与等于公开 11340 字母词的精确六扫掠 44 通道词。这是有限 P0d 事实。引理 P0a--c 给出 Johnson 替换表示，P3/E13 将该图与 \(\Sigma_A^0\) 识别。
-\item 对 Johnson 替换证明系数比较与反向三柄图景。
-\item 形式 Lean 核心检验抽象商蕴含；几何实例在正文证明，并在附录~\ref{sec:reproducibility-extended} 汇总。
+\item 记录保分裂 Johnson 提升与等于公开 11340 字母词的精确六扫掠 44 通道词。这是有限 P0d 事实。引理 P0a--c 及将该图与 \(\Sigma_A^0\) 的识别仍为 \Open。
+\item 对 Johnson 替换，系数比较 C 与反向三柄图景 S 仍为 \Open。
+\item 形式 Lean 核心检验抽象商蕴含；几何实例未在正文证明。重放命令见附录~\ref{sec:reproducibility-extended}。
 \end{enumerate}
 \section{trace-73 Cappell--Shaneson 候选}
 
@@ -164,14 +164,14 @@ F:W_3\xrightarrow{\cong}G(X,494),
 
 与定理~\ref{thm:A} 对应的 Lean 定理是从输入结构 \texttt{ExternalGeometry} 与
 \texttt{CSExternalGeometry} 出发的条件蕴含；Lean 中不构造其实例。
-候选特定输入见下文，并在第~\ref{sec:johnson-presentation}--\ref{sec:final-identifications} 节证明。
+候选特定输入见下文。其几何状态在第~\ref{sec:johnson-presentation}--\ref{sec:final-identifications} 节为 \Open。
 
 \begin{theorem}[嵌入候选表示，P0]\label{hyp:P0}
 显式 Johnson 生成元替换是 $\Sigma_A^0$ 的带标号带框柄表示，含两个带框乘积消去、嵌入 detector 球及所述缆附着。
 \end{theorem}
 
 \begin{proof}[定理~\ref{hyp:P0} 的证明]
-见第~\ref{sec:johnson-presentation} 与~\ref{sec:p0-conclusion} 节，特别是定理~\ref{thm:P0discharge}。
+本陈述所需几何证据目前为 \Open；见第~\ref{sec:johnson-presentation} 与~\ref{sec:p0-conclusion} 节，特别是定理~\ref{thm:P0discharge}。
 \end{proof}
 
 \begin{theorem}[系数比较，C]\label{hyp:P1}
@@ -180,7 +180,7 @@ F:W_3\xrightarrow{\cong}G(X,494),
 \end{theorem}
 
 \begin{proof}[定理~\ref{hyp:P1} 的证明]
-见第~\ref{sec:c-comparison} 节，特别是定理~\ref{thm:Cdischarge}。
+本陈述所需几何证据目前为 \Open；见第~\ref{sec:c-comparison} 节，特别是定理~\ref{thm:Cdischarge}。
 \end{proof}
 
 \begin{theorem}[相对三柄闭包，S]\label{hyp:P2}
@@ -188,7 +188,7 @@ F:W_3\xrightarrow{\cong}G(X,494),
 \end{theorem}
 
 \begin{proof}[定理~\ref{hyp:P2} 的证明]
-见第~\ref{sec:s-closure} 节，特别是定理~\ref{thm:Sdischarge}。
+本陈述所需几何证据目前为 \Open；见第~\ref{sec:s-closure} 节，特别是定理~\ref{thm:Sdischarge}。
 \end{proof}
 
 \begin{theorem}[替换图景的四柄闭包，P3]\label{hyp:P3}
@@ -196,7 +196,7 @@ F:W_3\xrightarrow{\cong}G(X,494),
 \end{theorem}
 
 \begin{proof}[定理~\ref{hyp:P3} 的证明]
-反向 $1$-柄图景在三个 $1$--$3$ 消去后边界为 $S^3$；附着 PL $4$-ball 得闭流形 $X_J$。空 link Khovanov 在 quantum degrees $0$ 与 $494$ 的秩、附着 $4$-ball 的 Euler 特征，以及分次和 $-44+227+315-4=494$ 均直接计算。同构 $\mathcal S^2_0(B^4)\cong\mathcal S^2_0(S^4)$ 与 $\mathcal S^2_0(S^4)\cong\mathbb Z$ 集中在 bidegree $(0,0)$ 见 \cite[Proposition~3.4 and Corollary~3.5]{ManolescuWalkerWedrich2023}。识别 $X_J\cong\Sigma_A^0$ 是定理~\ref{thm:P0discharge}。独立重放命令列于附录~\ref{sec:reproducibility-extended}。
+沿每个 belt 球面附着三柄恢复边界 $S^3$；附着 PL $4$-ball 得闭流形 $X_J$。空 link Khovanov 在 quantum degrees $0$ 与 $494$ 的秩、附着 $4$-ball 的 Euler 特征，以及分次和 $-44+227+315-4=494$ 均直接计算。同构 $\mathcal S^2_0(B^4)\cong\mathcal S^2_0(S^4)$ 与 $\mathcal S^2_0(S^4)\cong\mathbb Z$ 集中在 bidegree $(0,0)$ 见 \cite[Proposition~3.4 and Corollary~3.5]{ManolescuWalkerWedrich2023}。识别 $X_J\cong\Sigma_A^0$ 是定理~\ref{thm:P0discharge}。独立重放命令列于附录~\ref{sec:reproducibility-extended}。
 \end{proof}
 
 \begin{theorem}[条件 trace-73 定理]\label{thm:joined}
@@ -208,7 +208,7 @@ Johnson CS 柄图 $X_J$ 与 $\Sigma_A^0$ 等同。Iwaki 命题~2.1 因此使 $\S
 \end{theorem}
 
 \begin{proof}[定理~\ref{thm:joined} 的证明]
-\texttt{ExternalGeometry} 有实例时，定理~\ref{thm:A} 给出光滑阻碍。识别 $X_J\cong\Sigma_A^0$ 与定理~\ref{thm:P0discharge}、\ref{thm:Cdischarge}、~\ref{thm:Sdischarge} 提供假设。
+\texttt{ExternalGeometry} 有实例时，定理~\ref{thm:A} 给出光滑阻碍。假设~\ref{hyp:P0}--\ref{hyp:P2} 仍为 \Open，故几何假设并未提供。
 \end{proof}
 
 \input{sec-published-results-zh}
@@ -239,14 +239,14 @@ Lean 文件还给出 $A-I$ 及 $H_2(T^3;\Z)$ 上诱导映射的整逆。这些�
 \begin{equation}\label{eq:burau}
 \delta_3=2624=(-2)^3\cdot(-328).
 \end{equation}
-较早草稿混用两套 endpoint 坐标表并报告 $-59072$；在 \ref{sec:exact-algebra} 节领圈 endpoint 下值为 $2624$，仍非零。\footnote{独立重放：\texttt{scripts/recompute\_t73\_delta3.py --check}。}
+较早草稿混用两套 endpoint 坐标表并报告 $-59072$；在 \ref{sec:exact-algebra} 节领圈 endpoint 下冻结截断 Burau 值为 $2624$。该整数目前仅是冻结 Burau 计算的值，尚未与 MWW divided cubic 识别。\footnote{独立重放：\texttt{scripts/recompute\_t73\_delta3.py --check}。}
 
 \begin{proposition}[计算的精确适用范围]\label{prop:scope}
-方程~\eqref{eq:burau} 涉及 \eqref{eq:u} 与 \eqref{eq:ell} 的领圈 endpoint 下截断 Burau 模型。将结果与 MWW divided cubic 等同是定理~\ref{hyp:P1} 的内容。
+方程~\eqref{eq:burau} 涉及 \eqref{eq:u} 与 \eqref{eq:ell} 的领圈 endpoint 下截断 Burau 模型。该整数是冻结 Burau 标量。将其与 MWW divided cubic 等同是定理~\ref{hyp:P1} 的内容，该定理仍为 \Open。
 \end{proposition}
 
 \begin{proof}
-Burau 计算给出整数；定理~\ref{hyp:P1} 与第~\ref{sec:c-comparison} 节将其与 Johnson 替换领圈上的 MWW detector 等同。
+Burau 计算给出整数。定理~\ref{hyp:P1} 与第~\ref{sec:c-comparison} 节本应将其与 Johnson 替换领圈上的 MWW detector 等同，目前仍为 \Open。
 \end{proof}
 
 故有限重算与范畴比较各司其职：前者给出整数，后者使之成为四维流形不变量。
@@ -380,7 +380,7 @@ Aitchison--Rubinstein 将 $(t,h_{CS})$ 识别为互补几何
 两个 $r_{xy}$ 通道其 detector 为 42 通道而非 44。故
 309/311 差异为真正的代表差异，而非仅
 排版约定。
-运输后的 $r_{zx}$ 自由词为空，但无需也不从该事实推断 split-unknot 结论。
+运输后的 $r_{zx}$ 自由词为空。这只是词级事实：它不确定嵌入的 split unknot。
 
 \subsection{实际的 detector 球}
 
@@ -474,13 +474,12 @@ $\varepsilon=0$。
 
 \subsection{P0 结论}\label{sec:p0-conclusion}
 
-\begin{theorem}[Johnson 替换解除 P0]\label{thm:P0discharge}
-假设~\ref{hyp:P0} 对 Johnson 替换表述成立。
+\begin{theorem}[Johnson 替换的 P0 状态]\label{thm:P0discharge}
+假设~\ref{hyp:P0} 仍为 \Open。
 \end{theorem}
 
 \begin{proof}
-引理~\ref{lem:P0a}--\ref{lem:P0c} 与~\ref{lem:P0d-link} 提供
-handlebody 桥梁、消去、cabling 相容性及混合 linking 为零。分阶段 Kirby 管道将所得闭图景与 $\Sigma_A^0$ 等同。
+引理~\ref{lem:P0a}--\ref{lem:P0c} 与~\ref{lem:P0d-link} 记录了预期的 handlebody 桥梁、消去、cabling 相容性及混合 linking 为零。它们目前并不提供与 $\Sigma_A^0$ 的完整几何识别。
 \end{proof}
 \section{系数迹比较}\label{sec:c-comparison}
 
@@ -584,21 +583,17 @@ $\operatorname{Sh}_h([v_T])=u_h$。其绝对次数为
 W\mapsto PWP^{-1},\qquad u\mapsto Pu,\qquad
 \ell\mapsto\ell P^{-1}.
 \]
-矩阵系数不变；我们在该共同传输后选取公开端点标签。BPW 杯/盖公式则蕴含常数项在同一位置变换后为
-\[
-u_0=e_0\pm e_5,\qquad
-\ell_0=e_{87}^*\pm e_2^*.
-\]
-所有省略因子均为可逆 q-单项式或正阶 $h$ 修正。
+矩阵系数不变；我们在该共同传输后选取公开端点标签。不使用未确定的 $\pm$ 常数项公式。第~\ref{sec:exact-algebra} 节冻结领坐标中的常数配对是那里记录的确定恒等式，而非符号 ansatz。
 
 在 $\Q[[h]]$ 上定义
 \[
 D_h=\ell_h(\rho_h(W)-I)\operatorname{Sh}_h.
 \]
-这在量子系数 trace 上良定义，因为 \eqref{eq:actualShadow} 已施加量子循环性。精确 Magnus 计算与 Darn\'e 的 Andreadakis 定理给出 $W\in\Gamma_3(P_{44})$ \cite[Theorem~6.2]{Darne2021}；等价地，且亦由全部 7,744 个条目直接计算，
+这在量子系数 trace 上良定义，因为 \eqref{eq:actualShadow} 已施加量子循环性。精确 Magnus 计算与 Darn\'e 的 Andreadakis 定理给出 $W\in\Gamma_3(P_{44})$ \cite[Theorem~6.2]{Darne2021}。由此推出
 \[
 \rho_h(W)-I\in h^3\operatorname{End}(E_{88}).
 \]
+独立验证直接计算截断 Burau 表示的全部 $7{,}744$ 个矩阵条目；该计算不视为与 Andreadakis 成员关系等价，而是对同一三次消失的单独检查。
 故 $D_h$ 取值于 $h^3\Q[[h]]$。除以 $h^3$ 唯一，对 $h$ 约化给出与提升无关的普通泛函
 \[
 D_3:HH_0(\mathcal C;M_R)\longrightarrow\Q.
@@ -660,7 +655,7 @@ D_r\beta_i(b)=D_r
 (\epsilon\otimes\epsilon)\Delta(1)=0,\qquad
 (\epsilon\otimes\epsilon)\Delta(X)=1.
 \]
-对 $r_{zx}$ 这些是其分裂 unknot 因子上的相同 counit 方程。遗忘 distinguished 新对在放置集之间有常数大小纤维，(25) 中的归一化消去其基数。dotted 原始次数 $+2$ 被目标缆化移位 $-2$ 抵消。因此对每个 owner 与态，
+对 $r_{zx}$ 使用与每个 owner 相同的局部 counit 方程；它们不由自由词消失推出。遗忘 distinguished 新对在放置集之间有常数大小纤维，(25) 中的归一化消去其基数。dotted 原始次数 $+2$ 被目标缆化移位 $-2$ 抵消。因此对每个 owner 与态，
 \[
 D_{r+e_i}\psi_i^{[0]}=0,\qquad
 D_{r+e_i}\psi_i^{[1]}=D_r.
@@ -701,11 +696,11 @@ M_R(T_1,T_1)&\xrightarrow{H_{T_1,T_1}}&
 图 (28) 将其映到类 $x_2$，在 Johnson 替换领圈上满足 $\overline D_3(x_2)=2624\ne0$。
 
 \begin{theorem}[系数比较 C]\label{thm:Cdischarge}
-假设~\ref{hyp:P1} 对 P0 替换成立。特别地，所选次数 $494$ 类在所有 MWW 二柄关系之后非零。
+假设~\ref{hyp:P1} 仍为 \Open。
 \end{theorem}
 
 \begin{proof}
-由引理~\ref{lem:C1} 与~\ref{lem:C2}，针对 Johnson 替换领圈已证。
+引理~\ref{lem:C1} 与~\ref{lem:C2} 记录 Johnson 替换领圈上的预期比较。它们目前并不提供完整的系数双模识别。
 \end{proof}
 
 \paragraph{C/S 防火墙。}
@@ -729,7 +724,7 @@ attaching 球面的 isotopy 给出同构的柄附着。置换仅重排不相交�
 
 在 Johnson 替换反向 $1$-柄图景中选取标准完整系
 \(\mathcal A=(A_1,A_2,A_3)\)，已与 P0 重构立方体 $B$ 不相交。闭流形 HJ 定理~5.3 不用于得出 $B$ 已固定。
-它仅与引理~\ref{lem:Ssystem} 一起使用：任何其他完整系（含 going-up Kirby attaching 系）在闭流形中经 isotopy、置换与 slide 相关，故核一致。Horvat--Jab\l{}onowski 引理~5.5 与~5.7 不出现在 \cite{HorvatJablonowski2025} 中，亦未调用。
+它仅与引理~\ref{lem:Ssystem} 一起使用：任何其他完整系（含 going-up Kirby attaching 系）在闭流形中经 isotopy、置换与 slide 相关，故核一致。Horvat--Jab\l{}onowski 当前预印本（日期 2026 年 8 月 24 日）含引理~5.5（带点子球 slide 引理）与引理~5.7（完整球面系的相对唯一性）。本文不调用这两条引理：核不变性仅使用其定理~5.3 与引理~\ref{lem:Ssystem}。引理~5.7 针对具球面边界流形中的相对球面系，不是本节所用设定。
 在反向 $1$-柄图景中，三个 belt 球面避开 P0 立方体，
 dual 圈配对为恒等，$b=0$ 端点 foam，且与 C1 剩余 link 及 C2 支撑不相交。
 
@@ -807,19 +802,18 @@ Johnson 替换的反向 $1$-柄图景放置三个避开 $B$ 的 belt 球面，du
 其下映射为实际 counit 行及引理~\ref{lem:Sendpoint} 中 movie 分解的实际 \(A_j\)-作用。
 
 \begin{theorem}[相对三柄闭包 S]\label{thm:Sdischarge}
-假设~\ref{hyp:P2} 对 P0 替换成立。
+假设~\ref{hyp:P2} 仍为 \Open。
 \end{theorem}
 
 \begin{proof}
-由引理~\ref{lem:Ssystem} 与~\ref{lem:Sendpoint} 及命题
-\ref{thm:Sgeometry}。
+引理~\ref{lem:Ssystem}、~\ref{lem:Sendpoint} 与命题 \ref{thm:Sgeometry} 记录预期的核不变性与端点分解。它们目前并不提供 $\partial W_2$ 上的实际三柄映射。
 \end{proof}
 \section{最终识别}\label{sec:final-identifications}
 
-MWW 定理~3.10 将迭代商与三柄后模等同，命题~3.4 给出四柄同构 \cite{ManolescuWalkerWedrich2023}。定理~\ref{thm:P0discharge}、定理~\ref{thm:Cdischarge} 与定理~\ref{thm:Sdischarge} 确立假设~\ref{hyp:P0}--\ref{hyp:P2}。对 Johnson 替换四柄图景 $X_J$，三个 $1$--$3$ 消去恢复 $S^3$，附着 PL $4$-ball，标准球面模的 quantum degree-$494$ 分项在假设~\ref{hyp:P3} 证明中的计算连同 MWW 推论~3.5 而消失。分阶段 Kirby 管线将 $X_J$ 与 $\Sigma_A^0$ 识别。
+MWW 定理~3.10 将迭代商与三柄后模等同，命题~3.4 给出四柄同构 \cite{ManolescuWalkerWedrich2023}。定理~\ref{thm:P0discharge}、定理~\ref{thm:Cdischarge} 与定理~\ref{thm:Sdischarge} 记录假设~\ref{hyp:P0}--\ref{hyp:P2} 仍为 \Open。对 Johnson 替换四柄图景 $X_J$，沿每个 belt 球面附着三柄恢复边界 $S^3$，附着 PL $4$-ball，标准球面模的 quantum degree-$494$ 分项在假设~\ref{hyp:P3} 证明中的计算连同 MWW 推论~3.5 而消失。将 $X_J$ 与 $\Sigma_A^0$ 识别仍为 \Open。
 
 \begin{remark}[形式化边界]\label{rem:lean-boundary}
-Lean 开发 \cite{Lean4} 将定理~\ref{thm:A} 证明为从结构 \texttt{ExternalGeometry} 与 \texttt{CSExternalGeometry} 出发的条件蕴含。它检验矩阵算术、值 $2624$、次数 $494$ 与抽象商引理，但不构造本文证明的几何实例。附录~\ref{app:lean-fields} 列出与 Lean 字段的对应。
+Lean 开发 \cite{Lean4} 将定理~\ref{thm:A} 证明为从结构 \texttt{ExternalGeometry} 与 \texttt{CSExternalGeometry} 出发的条件蕴含。它检验矩阵算术、冻结 Burau 值 $2624$、次数 $494$ 与抽象商引理，但不构造几何实例。附录~\ref{app:lean-fields} 列出与 Lean 字段的对应。
 \end{remark}
 \input{sec-retired-assumptions-zh}
 \section{相关工作}
@@ -830,10 +824,10 @@ Manolescu--Neithalath 与 Manolescu--Walker--Wedrich 提供 skein lasagna 模的
 
 Ren 与 Willis 用 Khovanov 理论的 skein lasagna 方法区分其他异质四维流形 \cite{RenWillis2024}。其计算与 trace-73 构造无关，未用作其比较定理。
 
-Horvat--Jab\l{}onowski 近期工作给出识别三柄附着系统的有用几何判据 \cite{HorvatJablonowski2025}。定理~5.3 仅与引理~\ref{lem:Ssystem} 用于闭流形中的核不变性，不用于固定 $B$。引理~5.5 与~5.7 不在该文中出现，本文亦未调用。
+Horvat--Jab\l{}onowski 近期工作给出识别三柄附着系统的有用几何判据 \cite{HorvatJablonowski2025}。定理~5.3 仅与引理~\ref{lem:Ssystem} 用于闭流形中的核不变性，不用于固定 $B$。该预印本当前版本（日期 2026 年 8 月 24 日）含引理~5.5 与引理~5.7；本文均未调用。
 \section{结论}
 
-对 Johnson 替换我们已证明假设~\ref{hyp:P0}--\ref{hyp:P3} 并识别 $X_J\cong\Sigma_A^0$。连同定理~\ref{thm:A} 与 Iwaki 同伦球面判据，一旦几何数据组装进 Lean 接口 \texttt{ExternalGeometry}，即在 quantum degree $494$ 给出条件光滑阻碍。该接口未在此构造，故不断言反例。独立重放命令列于附录~\ref{sec:reproducibility-extended}。
+对 Johnson 替换，假设~\ref{hyp:P0}--\ref{hyp:P3} 仍为 \Open，识别 $X_J\cong\Sigma_A^0$ 亦然。连同定理~\ref{thm:A} 与 Iwaki 同伦球面判据，一旦几何数据组装进 Lean 接口 \texttt{ExternalGeometry}，即在 quantum degree $494$ 给出条件光滑阻碍。该接口未在此构造，故不断言反例。独立重放命令列于附录~\ref{sec:reproducibility-extended}。
 \appendix
 
 \input{sec-retired-routes-zh}
