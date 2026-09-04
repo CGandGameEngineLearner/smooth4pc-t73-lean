@@ -667,6 +667,18 @@ step Jacobian $1/17$ and $1/9$.  Nevertheless both leave $16$ cube-centre and
 $96$ tetrahedron-barycentre owner errors.  This fiber-preserving route is
 therefore rejected: the restore must use transverse Johnson-square motion in
 the flexible cells.
+The common overlay also admits a fully checked combinatorial sweep.  Every
+single-tetrahedron move is accepted only when its attachment is a nonempty
+proper disk and the updated boundary remains a connected genus-three
+two-manifold with both sides face-connected.  The negative prefix-first and
+target-first movies use respectively $302$ and $304$ such moves; both positive
+movies use $794$.  Each movie then has exactly two residual collapsible balls:
+an add-ball attached along two disks and a remove-ball attached along an
+annulus.  Treating these together as one paired saddle leaves no residual
+tetrahedron and reproduces the target handlebody simplex by simplex, with
+boundary Euler characteristic $-4$.  Turning each recorded disk move and the
+paired saddle into explicit ambient PL cells with positive Jacobian remains
+\Open.
 
 In the standard product chart $D^2\times[-1,1]$ for the reduced $y$
 one-handle, take $B=D^2\times[-1/2,1/2]$.  The Johnson $m_2$ word has $41$

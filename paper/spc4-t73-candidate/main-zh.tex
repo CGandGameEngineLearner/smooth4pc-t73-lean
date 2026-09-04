@@ -462,6 +462,14 @@ $96,96,192$。仅改变 prefix 坐标的移动 cutoff 能精确运输全部 mism
 Jacobian 为 $1/17$ 与 $1/9$。但两者都仍有 $16$ 个立方中心及 $96$ 个
 四面体重心 owner 错误。因此该纯纤维路线被否定；restore 必须在可选
 胞腔中使用横向 Johnson 方块运动。
+公共 overlay 还给出一个完整现场检查的组合 sweep。每个单四面体 move
+仅在附着片为非空真圆盘、更新后边界仍为连通 genus-three 二流形且两侧
+均面连通时才被接受。负向 prefix-first 与 target-first movie 分别使用
+$302$ 与 $304$ 个这样的 move；两个正向 movie 均使用 $794$ 个。随后每个
+movie 恰剩两个可坍缩球：沿两个圆盘附着的 add 球与沿环带附着的 remove
+球。把二者作为一个 paired saddle 同时处理后没有剩余四面体，并逐单形
+得到目标柄体，边界 Euler 特征仍为 $-4$。把每个已记录盘移动与 paired
+saddle 展开成具正 Jacobian 的显式环境 PL 胞腔仍为 \Open。
 
 在约化 $y$ 一柄的标准乘积图 $D^2\times[-1,1]$ 中，取 $B=D^2\times[-1/2,1/2]$。Johnson $m_2$ 词有 41 个正 $y$ 通道与一个负通道；$r_{xy}=[z,y]$ 贡献一个正与一个负通道。$D^2$ 中互异有理点给出两两不相交、横向 framing 恒定的乘积弧。$r_{xy}$ 的定向对偶矩形有六个 point-push 腿；展开所得 252 个几何 L/R 因子得长度为 11340 的 Artin 词，与独立再生的公开词一致。
 
