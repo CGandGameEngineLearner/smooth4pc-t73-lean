@@ -17,3 +17,13 @@ tmp/
 *.toc
 texput.log
 paper/spc4-t73-candidate/main.pdf
+
+# Local T73 reconstruction and visualization products (never source inputs).
+.tmp/
+=7.0
+audit/t73_geometry_views/
+audit/t73_p0_reconstruction_input.json
+paper/spc4-t73-candidate/main-zh.pdf
+scripts/t73_interactive_viewer.html
+scripts/visualize_t73_interactive.py
+scripts/visualize_t73_kirby_2d.py
