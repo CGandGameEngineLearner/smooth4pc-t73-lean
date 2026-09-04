@@ -8,13 +8,14 @@
     "source_exterior_sha256",
     "scope",
     "actual_ar_relative_isotopy_proved",
-    "tetgen",
-    "tetgen_input_embedding",
-    "plc_counts",
     "frame",
     "initial_source_binding",
     "verification",
     "sha256"
+  ],
+  "anyOf": [
+    {"required": ["tetgen", "tetgen_input_embedding", "plc_counts"]},
+    {"required": ["gmsh"]}
   ],
   "properties": {
     "schema": {"const": "t73_selected_source_tetrahedral_frame/v1"},
@@ -29,6 +30,10 @@
     "tetgen": {
       "type": "object",
       "required": ["python_wrapper_version"]
+    },
+    "gmsh": {
+      "type": "object",
+      "required": ["version", "algorithm_3d"]
     },
     "tetgen_input_embedding": {"type": "object"},
     "plc_counts": {

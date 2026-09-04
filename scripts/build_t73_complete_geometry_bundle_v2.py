@@ -24,6 +24,8 @@ SPECS = (
     ("pd_open_source_receipt", "geometry/examples/seven_component_framed_unlink_open_source_receipt.json", "VERIFIED_FIXTURE_ONLY"),
     ("tetgen_source_prefix10", "geometry/examples/t73_selected_source_tetrahedral_prefix10.json", "VERIFIED_PREFIX_ONLY"),
     ("gmsh_source_prefix20_receipt", "audit/t73_selected_source_gmsh_prefix20.json", "VERIFIED_RESOURCE_RECEIPT_ONLY"),
+    ("gmsh_source_prefix10_frame", "geometry/examples/t73_selected_source_gmsh_prefix10_frame.json", "VERIFIED_PREFIX_ONLY"),
+    ("gmsh_source_prefix10_verification", "audit/t73_selected_source_gmsh_prefix10_frame_verification.json", "VERIFIED_PREFIX_RECEIPT_ONLY"),
 )
 
 
@@ -89,6 +91,11 @@ def verify_live_artifacts() -> dict[str, dict[str, Any]]:
     )
     if tetra_result.get("verdict") != "PASS_PREFIX_ONLY":
         raise AssertionError(f"TetGen prefix is not independently verified: {tetra_result}")
+    gmsh_frame_receipt = load_module(
+        "scripts/build_t73_gmsh_frame_verification_receipt.py",
+        "t73_gmsh_frame_receipt_for_v2",
+    )
+    gmsh_frame_receipt.check_files(data["gmsh_source_prefix10_verification"])
 
     gmsh_verifier = load_module(
         "scripts/verify_t73_selected_source_gmsh_probe.py",
@@ -210,6 +217,9 @@ def build() -> dict[str, Any]:
             "gmsh_probe_ribbons": data["gmsh_source_prefix20_receipt"][
                 "route_prefix"
             ],
+            "gmsh_frame_ribbons": data["gmsh_source_prefix10_frame"][
+                "verification"
+            ]["ribbons"],
         },
         "policy": {
             "fixture_or_prefix_is_not_t73_completion": True,

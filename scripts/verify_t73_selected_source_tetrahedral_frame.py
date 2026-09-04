@@ -96,6 +96,18 @@ def point_in_triangle(point, triangle, axes):
     )
 
 
+def coplanar(point, triangle):
+    first = tuple(triangle[1][axis] - triangle[0][axis] for axis in range(3))
+    second = tuple(triangle[2][axis] - triangle[0][axis] for axis in range(3))
+    relative = tuple(point[axis] - triangle[0][axis] for axis in range(3))
+    normal = (
+        first[1] * second[2] - first[2] * second[1],
+        first[2] * second[0] - first[0] * second[2],
+        first[0] * second[1] - first[1] * second[0],
+    )
+    return sum(normal[axis] * relative[axis] for axis in range(3)) == 0
+
+
 def verify_triangle_subdivision(vertices, actual_indices, originals, where):
     """Check exact planar containment and projected-area exhaustion."""
     axes = [triangle_axes(triangle) for triangle in originals]
@@ -111,11 +123,18 @@ def verify_triangle_subdivision(vertices, actual_indices, originals, where):
         carriers = [
             index
             for index, (original, axis) in enumerate(zip(originals, axes))
-            if all(point_in_triangle(point, original, axis) for point in triangle)
+            if all(
+                coplanar(point, original)
+                and point_in_triangle(point, original, axis)
+                for point in triangle
+            )
             and orient2(*triangle, axis) != 0
         ]
         if len(carriers) != 1:
-            raise FrameError(f"{where} subtriangle has no unique saved carrier")
+            raise FrameError(
+                f"{where} subtriangle has no unique saved carrier: "
+                f"triangle={triangle!r}, carriers={carriers!r}, originals={originals!r}"
+            )
         carrier = carriers[0]
         actual_areas[carrier] += abs(orient2(*triangle, axes[carrier]))
     if actual_areas != expected_areas:
@@ -233,7 +252,10 @@ def verify(payload: dict[str, Any], source: dict[str, Any]) -> dict[str, Any]:
         expected_core = [qpoint(point, f"source core {interval_id}") for point in interval["vertices"]]
         actual_core = exterior.edge_path_points(frame, arc["edge_path"], f"frame core {arc_name}")
         if actual_core != expected_core:
-            raise FrameError(f"frame core {arc_name} is not the saved rational polyline")
+            raise FrameError(
+                f"frame core {arc_name} is not the saved rational polyline: "
+                f"actual={actual_core!r}, expected={expected_core!r}"
+            )
         expected_push = [
             qpoint(point, f"source push-off {interval_id}")
             for point in interval["positive_push_off_vertices"]
@@ -303,7 +325,11 @@ def verify(payload: dict[str, Any], source: dict[str, Any]) -> dict[str, Any]:
 
 def inspect(path: Path = FRAME) -> dict[str, Any]:
     if not path.exists():
-        return {"verdict": "OPEN", "reason": f"missing {path.relative_to(ROOT)}"}
+        try:
+            display = path.relative_to(ROOT)
+        except ValueError:
+            display = path
+        return {"verdict": "OPEN", "reason": f"missing {display}"}
     try:
         payload = json.loads(path.read_text(encoding="utf-8"))
         source = json.loads(SOURCE.read_text(encoding="utf-8"))

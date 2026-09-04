@@ -153,10 +153,16 @@ def validate_manifold_with_boundary(raw: dict[str, Any], where: str) -> dict[str
         fail(f"{where} has unused vertices")
     # Each vertex link must be S2 (interior) or D2 (boundary).
     boundary_vertices = {vertex for face in boundary for vertex in face}
+    vertex_stars: dict[int, list[tuple[int, ...]]] = {
+        vertex: [] for vertex in range(len(vertices))
+    }
+    for tetrahedron in tetrahedra:
+        for vertex in tetrahedron:
+            vertex_stars[vertex].append(tetrahedron)
     for vertex in range(len(vertices)):
         link_triangles = [
             tuple(item for item in tet if item != vertex)
-            for tet in tetrahedra if vertex in tet
+            for tet in vertex_stars[vertex]
         ]
         link_edges = Counter(
             edge for triangle in link_triangles for edge in gate.faces(triangle)

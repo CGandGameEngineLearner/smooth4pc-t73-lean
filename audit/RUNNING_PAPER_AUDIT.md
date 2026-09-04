@@ -1965,7 +1965,8 @@ Topology-source checks completed 2026-09-04:
 - Status: **PREFIX-20 RESOURCE PROBE PASS; COMPLETE FRAME OPEN**
 - Evidence: `scripts/probe_t73_selected_source_gmsh.py`,
   `audit/t73_selected_source_gmsh_prefix20.json`, its fail-closed receipt
-  verifier/tests and `docs/proofs/T73_SELECTED_SOURCE_GMSH_PROBE.md`.
+  verifier/tests, the complete prefix-10 frame and verification receipt, and
+  `docs/proofs/T73_SELECTED_SOURCE_GMSH_PROBE.md`.
 - First failure and repair: embedding the ribbon surface only in the volume
   left each core--push endpoint connector crossing an unrefined hole-boundary
   facet. The corrected OCC model first embeds each connector in its unique
@@ -1975,15 +1976,21 @@ Topology-source checks completed 2026-09-04:
   prefix-20 run has 80 ribbon surfaces, 40 boundary connectors, 4134 nodes and
   23725 tetrahedra. This is substantially better than TetGen's 14.6 GB
   failure at the same prefix.
-- Scope firewall: the saved object contains counts, source SHA and a receipt
-  hash, not the nodes/tetrahedra and physical-group incidence. Its verifier
-  returns `PASS_RECEIPT_ONLY`, rejects count/status mutations, and explicitly
-  leaves the 630-ribbon frame open. A prefix-50 run was interrupted before a
-  result and is recorded as neither pass nor fail.
-- Next construction: export the complete mesh and physical memberships, then
-  independently recover five (S^2) boundaries, subdivided core/push paths,
-  subdivided ribbon disks, rational tetrahedron orientations and total volume
-  63968.
+- Stronger prefix artifact: the ten-ribbon mesh is also exported with 2664
+  rationally restored nodes, 14599 tetrahedra, all boundary/curve/surface
+  memberships and exact source binding. A Gmsh-free verifier recovers five
+  \(S^2\) boundaries, ten subdivided core/push paths and ribbon disks,
+  consistent nonzero rational tetrahedron orientations and total volume
+  63968; it returns `PASS_PREFIX_ONLY`.
+- Scope firewall: the prefix-20 object remains a counts-only receipt whose
+  verifier returns `PASS_RECEIPT_ONLY`; the prefix-10 frame is a genuine but
+  incomplete frame. Both explicitly leave the 630-ribbon frame open. A
+  prefix-50 run was interrupted before a result and is recorded as neither
+  pass nor fail.
+- Next construction: run the now-implemented export/restoration path at
+  increasing prefixes and ultimately all 630 ribbons, retaining the same
+  independent exact checks. A prefix-20 complete export was interrupted before
+  writing and is not treated as a result.
 
 ### F-600 — The “actual” sphere-system builder assigns, rather than constructs, the embedding in \(\partial W_2\)
 

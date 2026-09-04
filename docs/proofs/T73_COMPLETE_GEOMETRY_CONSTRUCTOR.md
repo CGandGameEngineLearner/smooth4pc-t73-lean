@@ -15,7 +15,8 @@
 
 扩展清单 `geometry/t73_complete_geometry_bundle_manifest.v2.json` 还纳入
 defect-coend 类型图、AR 源坐标 atlas、七分量 PD 真例与开源软件收据，以及
-TetGen 十-ribbon 前缀和 Gmsh 二十-ribbon资源收据。它把 `VERIFIED_TYPING_ONLY`、
+TetGen 十-ribbon 前缀、Gmsh 二十-ribbon资源收据和 Gmsh 十-ribbon完整
+frame 前缀。它把 `VERIFIED_TYPING_ONLY`、
 `VERIFIED_PREFIX_ONLY`、`VERIFIED_FIXTURE_ONLY` 与真正的 T73 完成状态分开。
 
 ## 2. 可复现命令

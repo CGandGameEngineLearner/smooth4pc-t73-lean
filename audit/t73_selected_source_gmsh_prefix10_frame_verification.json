@@ -1,0 +1,21 @@
+{
+  "frame_content_sha256": "543A94131232886DBDA455E2C8E01C9E06074FF2E3817B9B8289D5375F4545DE",
+  "frame_path": "geometry/examples/t73_selected_source_gmsh_prefix10_frame.json",
+  "frame_payload_sha256": "DCCB7ACB9A2C1200AE347F350C5BF4C47DFE8D8E21F82A12EC2D44B66A274744",
+  "result": {
+    "arcs": 10,
+    "boundary_components": 5,
+    "exact_exterior_volume": "63968",
+    "ribbons": 10,
+    "sha256": "DCCB7ACB9A2C1200AE347F350C5BF4C47DFE8D8E21F82A12EC2D44B66A274744",
+    "source_exterior_sha256": "0B5D34B8581E6208D573C1934CE8BE225BAA874AE1120ED6A64027DD007BF741",
+    "tetrahedra": 14599,
+    "verdict": "PASS_PREFIX_ONLY",
+    "vertices": 2664
+  },
+  "schema": "t73_gmsh_frame_verification_receipt/v1",
+  "sha256": "DE5AD06CA4804F6439BC4E320C512E157FC7B17A2C5EB8AC2806CD2D942B24DF",
+  "source_exterior_sha256": "0B5D34B8581E6208D573C1934CE8BE225BAA874AE1120ED6A64027DD007BF741",
+  "status": "PASS_PREFIX_ONLY",
+  "verifier": "scripts/verify_t73_selected_source_tetrahedral_frame.py"
+}

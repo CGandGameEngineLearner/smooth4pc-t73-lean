@@ -71,11 +71,29 @@
       "payload_sha256": "BD64FFD2360502D0E681480DB0DACADA5992EE64B3FF09A74A3C50EC90B8EC3E",
       "schema": "t73_selected_source_gmsh_probe/v1",
       "t73_completion_status": "OPEN"
+    },
+    {
+      "content_sha256": "543A94131232886DBDA455E2C8E01C9E06074FF2E3817B9B8289D5375F4545DE",
+      "evidence_status": "VERIFIED_PREFIX_ONLY",
+      "id": "gmsh_source_prefix10_frame",
+      "path": "geometry/examples/t73_selected_source_gmsh_prefix10_frame.json",
+      "payload_sha256": "DCCB7ACB9A2C1200AE347F350C5BF4C47DFE8D8E21F82A12EC2D44B66A274744",
+      "schema": "t73_selected_source_tetrahedral_frame/v1",
+      "t73_completion_status": "OPEN"
+    },
+    {
+      "content_sha256": "35C93E3EEDB2EFDC3245F51C05C6301E1AB157BB744C5D5CB384B72B9751D493",
+      "evidence_status": "VERIFIED_PREFIX_RECEIPT_ONLY",
+      "id": "gmsh_source_prefix10_verification",
+      "path": "audit/t73_selected_source_gmsh_prefix10_frame_verification.json",
+      "payload_sha256": "DE5AD06CA4804F6439BC4E320C512E157FC7B17A2C5EB8AC2806CD2D942B24DF",
+      "schema": "t73_gmsh_frame_verification_receipt/v1",
+      "t73_completion_status": "OPEN"
     }
   ],
   "bundle_status": "OPEN",
   "bundle_version": 2,
-  "manifest_payload_sha256": "7329C49BC8D545EC8EA35745F2DDB91344212AE5074CC592AFEA979698B1181F",
+  "manifest_payload_sha256": "C692806B2D6753D8BAD186345B853C6487C0D963203E177C07BAD23BFBAAB0D6",
   "policy": {
     "all_completion_gates_must_pass_before_bundle_completion": true,
     "fixture_or_prefix_is_not_t73_completion": true,
@@ -111,6 +129,7 @@
   "verified_counts": {
     "coend_oriented_band_obligations": 4,
     "coend_wrong_side_intervals": 8,
+    "gmsh_frame_ribbons": 10,
     "gmsh_probe_ribbons": 20,
     "pd_fixture_core_components": 7,
     "source_endpoints": 1260,
