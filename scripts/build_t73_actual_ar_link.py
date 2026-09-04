@@ -59,20 +59,39 @@ def mapping_torus_core(
         image = compose.apply_psi(pl, generators, point)
         bottom.append(pl.encode(point))
         top.append(pl.encode(image))
-    q = ["0", "0", "0"]
-    offset_dir = [Fraction(0), Fraction(0), Fraction(0)]
-    offset_dir[(axis + 1) % 3] = Fraction(1, 1000)
-    lambda_arc = [lift(q, "0"), lift(pl.encode(offset_dir), "1/2"), lift(top[0], "1")]
-    minus_offset = pl.scale(Fraction(-1), offset_dir)
-    mu_arc = [lift(top[-1], "1"), lift(pl.encode(minus_offset), "1/2"), lift(q, "0")]
+    origin = [Fraction(0), Fraction(0), Fraction(0)]
+    end_src = [Fraction(0), Fraction(0), Fraction(0)]
+    end_src[axis] = Fraction(1)
+    # Mapping-torus 1-handles: the I-interval at the fixed origin, and the
+    # straight I-arc joining psi(C_i)(1) to C_i(1).  These are not schematic
+    # offsets in a transverse direction.
+    lambda_arc = [
+        lift(pl.encode(origin), "0"),
+        lift(pl.encode(origin), "1/2"),
+        lift(pl.encode(origin), "1"),
+    ]
+    end_img = compose.apply_psi(pl, generators, end_src)
+    mu_mid = [(end_img[i] + end_src[i]) / 2 for i in range(3)]
+    mu_arc = [
+        lift(pl.encode(end_img), "1"),
+        lift(pl.encode(mu_mid), "1/2"),
+        lift(pl.encode(end_src), "0"),
+    ]
     core = (
         [lift(point, "0") for point in reversed(bottom)]
         + lambda_arc[1:]
         + [lift(point, "1") for point in top[1:]]
         + mu_arc[1:]
     )
-    annulus = pl.framing_annulus(bottom, [Fraction(1, 100), Fraction(1, 100), Fraction(1, 100)])
-    image_annulus = pl.framing_annulus(top, [Fraction(1, 100), Fraction(1, 100), Fraction(1, 100)])
+    n1 = (axis + 1) % 3
+    n2 = (axis + 2) % 3
+    radius = Fraction(1, 100)
+    offsets = (
+        [radius if index == n1 else Fraction(0) for index in range(3)],
+        [radius if index == n2 else Fraction(0) for index in range(3)],
+    )
+    annulus = pl.framing_annulus(bottom, offsets[0])
+    image_annulus = pl.framing_annulus(top, offsets[0])
     return {
         "axis": axis,
         "formula": "C_i^- union lambda_i union psi_A(C_i)^+ union mu_i",
@@ -145,9 +164,12 @@ def build(write: bool = False) -> dict[str, Any]:
             },
         },
         "framing": {
-            "rule": "parallel (1,1,1) strip on each core and product normal on lambda/mu",
+            "rule": (
+                "normal circle in a coordinate plane orthogonal to C_i, "
+                "transported by psi_A on the top slice; lambda/mu are I-arcs"
+            ),
             "epsilon": 0,
-            "source": "Aitchison-Rubinstein pp. 16-17",
+            "source": "Aitchison-Rubinstein mapping-torus 1-handles, not a (1,1,1) translate",
         },
         "status": {
             "actual_psi_images": "PASS",
