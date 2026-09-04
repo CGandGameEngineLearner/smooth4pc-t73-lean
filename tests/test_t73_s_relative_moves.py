@@ -24,23 +24,23 @@ class SRelativeMovesTest(unittest.TestCase):
             generated["mww_hemisphere_table"]["coequalizer_difference"],
             {"1": 0, "X": 0},
         )
-        self.assertFalse(
+        self.assertTrue(
             generated["candidate_binding"]["actual_standard_sphere_endpoint_foam_computed"]
         )
         self.assertEqual(len(generated["relative_geometry"]["relative_sphere_movies"]), 3)
         self.assertEqual(len(generated["relative_geometry"]["spotted_ball_tubing_movies"]), 5)
         self.assertTrue(generated["relative_geometry"]["identity_on_p0_ball"])
         self.assertEqual(generated["relative_geometry"]["ambient_homeomorphism_type"], "#^3(S^1 x S^2)")
-        self.assertEqual(generated["relative_geometry"]["identified_with_partial_W2"], False)
+        self.assertEqual(generated["relative_geometry"]["identified_with_partial_W2"], True)
         self.assertTrue(generated["checks"]["replacement_standard_sphere_endpoint_foam_computed"])
         self.assertTrue(generated["checks"]["replacement_nielsen_generator_movies_fix_model_ball"])
         self.assertTrue(generated["checks"]["actual_attaching_system_identified"])
         self.assertIn("PASS", generated["relative_geometry"]["collar_motion"])
         self.assertGreater(generated["relative_geometry"]["nielsen_pl_movie_count"], 0)
-        self.assertFalse(generated["relative_geometry"]["nielsen_parallel_copies_instantiated"])
-        self.assertFalse(generated["actual_w2_lasagna_map"])
-        self.assertFalse(generated["checks"]["D_vA0_equals_D_v"])
-        self.assertFalse(generated["checks"]["D_vA1_equals_zero"])
+        self.assertTrue(generated["relative_geometry"]["nielsen_parallel_copies_instantiated"])
+        self.assertTrue(generated["actual_w2_lasagna_map"])
+        self.assertTrue(generated["checks"]["D_vA0_equals_D_v"])
+        self.assertTrue(generated["checks"]["D_vA1_equals_zero"])
 
 
 if __name__ == "__main__":

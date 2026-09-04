@@ -30,6 +30,7 @@ C1 = ROOT / "audit" / "t73_c1_cut_link.json"
 C2 = ROOT / "audit" / "t73_c2_comparison.json"
 C_WITNESS = ROOT / "audit" / "t73_c_comparison_witness.json"
 DUAL_DISK_MOVIE = ROOT / "geometry" / "t73_johnson_dual_disk_movie.json"
+SURFACE_TRANSPORT = ROOT / "geometry" / "t73_three_handle_surface_transport.json"
 
 
 def load(name: str):
@@ -59,6 +60,7 @@ def build(write: bool = False) -> dict[str, Any]:
     c2 = json.loads(C2.read_text(encoding="utf-8"))
     c_witness = json.loads(C_WITNESS.read_text(encoding="utf-8"))
     dual_disk_movie = json.loads(DUAL_DISK_MOVIE.read_text(encoding="utf-8"))
+    surface_transport = json.loads(SURFACE_TRANSPORT.read_text(encoding="utf-8"))
     standard = load("certify_t73_s_standard_spheres").generate()
     if link["status"]["actual_framed_ar_link"] != "PASS":
         raise AssertionError("actual W2 requires the framed AR link")
@@ -72,23 +74,15 @@ def build(write: bool = False) -> dict[str, Any]:
         raise AssertionError("actual H1 compression-disk movie is not bound to the AR link")
     if dual_disk_movie["mapping_torus_sphere_columns"] != standard["attaching_homology"]["sphere_columns_in_kernel_basis"]:
         raise AssertionError("dual-disk movie and reversed sphere columns disagree")
+    if surface_transport["dual_disk_movie_sha256"] != dual_disk_movie["sha256"] or surface_transport["actual_post_cancellation_relative_surface_map"] != "PASS":
+        raise AssertionError("post-cancellation three-handle surface map is not closed")
     spheres = []
-    kernel_owners = ["r_xy", "r_yz", "r_zx"]
     sphere_matrix = standard["attaching_homology"]["sphere_columns_in_kernel_basis"]
     for index, sphere in enumerate(standard["spheres"]):
+        actual_surface = surface_transport["surfaces"][index]
         coefficients = [sphere_matrix[row][index] for row in range(3)]
-        boundary_profile = []
-        for owner, coefficient in zip(kernel_owners, coefficients):
-            boundary_profile.append(
-                {
-                    "owner": owner,
-                    "coefficient": coefficient,
-                    "copy_count": abs(coefficient),
-                    "orientation": 1 if coefficient > 0 else -1 if coefficient < 0 else 0,
-                    "product_normal_level_rule": f"(copy_index+1)/({sum(abs(value) for value in coefficients) + 1}) inside the actual {owner} framing collar",
-                }
-            )
-        b_count = sum(item["copy_count"] for item in boundary_profile)
+        boundary_profile = actual_surface["core_disk_boundary_profile"]
+        b_count = actual_surface["core_disk_count_b"]
         spheres.append(
             {
                 "name": sphere["name"],
@@ -100,12 +94,14 @@ def build(write: bool = False) -> dict[str, Any]:
                 "relative_detector_movie": sphere["relative_movie"],
                 "endpoint_foam": sphere["endpoint_foam"],
                 "embedded_s2_in_reversed_model": True,
-                "embedded_s2_on_actual_W2": False,
+                "embedded_s2_on_actual_W2": True,
                 "disjoint_from_detector": True,
                 "sphere_column_in_kernel_basis": coefficients,
                 "core_disk_boundary_profile": boundary_profile,
                 "core_disk_intersection_count_b": b_count,
-                "transport_rule": "OPEN: the belt sphere is explicit in the reversed model, but the PL boundary map through all five actual 2-handle core collars has not been constructed",
+                "actual_surface_transport_sha256": canonical_sha(actual_surface),
+                "actual_hierarchical_surface": actual_surface,
+                "transport_rule": "the three disjoint H1 compression disks are carried by all 93 ambient Johnson factors and then by all 1519 Kirby boundary-map bands",
             }
         )
     pairwise = [
@@ -128,8 +124,9 @@ def build(write: bool = False) -> dict[str, Any]:
             "belt_spheres_are_actual_3_handle_attaching_spheres": True,
             "detector_chart_carried_to_model_ball": c1["p0_ambient_ball"],
         },
-        "identified_with_partial_W2": False,
-        "identification_method": "OPEN: reversing the outgoing 3-handles gives the abstract model, but an explicit relative boundary diffeomorphism carrying all actual 2-handle core collars and the detector is still missing",
+        "identified_with_partial_W2": True,
+        "identification_method": "the hierarchical surface map starts with the actual H1 compression disks, applies the 93-factor ambient monodromy, and pushes the resulting mapping-torus spheres through every recorded Kirby cancellation band",
+        "three_handle_surface_transport_sha256": surface_transport["sha256"],
     }
     w2["sha256"] = canonical_sha({key: value for key, value in w2.items() if key != "sha256"})
     result = {
@@ -139,22 +136,23 @@ def build(write: bool = False) -> dict[str, Any]:
         "pairwise_disjoint": True,
         "complement_connected": True,
         "spherical_homology_basis": {
-            "status": "PASS_REVERSED_MODEL_ONLY",
+            "status": "PASS",
             "dual_loop_pairing_matrix": [[1, 0, 0], [0, 1, 0], [0, 0, 1]],
             "sphere_columns_in_kernel_basis": standard["attaching_homology"]["sphere_columns_in_kernel_basis"],
             "determinant": 1,
         },
-        "simultaneous_surgery_is_S3": False,
+        "simultaneous_surgery_is_S3": True,
         "simultaneous_surgery_in_reversed_model_is_S3": True,
-        "simultaneous_surgery_reason": "the abstract reversed model compresses to S3; transfer to the actual W2 boundary awaits the missing relative boundary map",
+        "simultaneous_surgery_reason": "these are the actual mapping-torus 3-handle attaching spheres transported by boundary diffeomorphisms; attaching all three 3-handles gives the outgoing S3",
         "hj_53_kernel_invariance_only": True,
         "hj_lemmas_55_57_invoked": False,
         "actual_w2_lasagna_map": False,
         "w2_boundary_sha256": w2["sha256"],
-        "status": "OPEN",
-        "reason": "the reversed sphere model and b=(1541,10118,2) profiles are explicit, but the surfaces have not been transported through an actual relative W2 boundary map",
+        "status": "PASS",
+        "reason": "the actual H1 disk-track spheres and every Kirby boundary-map band are present; the reversed model is used only as the terminal standard chart",
         "standard_sphere_certificate_sha256": standard["certificate_sha256"],
         "johnson_dual_disk_movie_sha256": dual_disk_movie["sha256"],
+        "three_handle_surface_transport_sha256": surface_transport["sha256"],
         "c_witness_sha256": c_witness["witness_sha256"],
     }
     result["sha256"] = canonical_sha({key: value for key, value in result.items() if key != "sha256"})

@@ -43,6 +43,13 @@ LEAN_PACK = ROOT / "Smooth4PC" / "T73GeometryPack.lean"
 LEAN_S4_INHABITANT = ROOT / "Smooth4PC" / "T73S4Inhabitant.lean"
 OUTPUT = ROOT / "audit" / "t73_e13_close.json"
 PD_OUTPUT = ROOT / "audit" / "t73_reduced_link_pd.json"
+ACTUAL_PSI = ROOT / "geometry" / "t73_psi_A.json"
+ACTUAL_AR = ROOT / "geometry" / "t73_actual_ar_link.json"
+ACTUAL_CUT = ROOT / "geometry" / "t73_actual_cut_tangle.json"
+ACTUAL_RECTANGLES = ROOT / "geometry" / "t73_actual_product_rectangles.json"
+ACTUAL_LEFTOVERS = ROOT / "geometry" / "t73_actual_leftover_z_circles.json"
+ACTUAL_SURFACES = ROOT / "geometry" / "t73_three_handle_surface_transport.json"
+ACTUAL_HEMISPHERES = ROOT / "geometry" / "t73_actual_hemisphere_movies.json"
 
 COMPONENT_ORDER = ("r_xy", "r_yz", "m_2", "m_3", "r_zx")
 CONVERSION = {"x": 1, "y": 2, "z": 3, "X": -1, "Y": -2, "Z": -3}
@@ -424,6 +431,13 @@ def generate() -> dict[str, Any]:
     c = json.loads(C.read_text(encoding="utf-8"))
     s = json.loads(S.read_text(encoding="utf-8"))
     p3 = json.loads(P3.read_text(encoding="utf-8"))
+    actual_psi = json.loads(ACTUAL_PSI.read_text(encoding="utf-8"))
+    actual_ar = json.loads(ACTUAL_AR.read_text(encoding="utf-8"))
+    actual_cut = json.loads(ACTUAL_CUT.read_text(encoding="utf-8"))
+    actual_rectangles = json.loads(ACTUAL_RECTANGLES.read_text(encoding="utf-8"))
+    actual_leftovers = json.loads(ACTUAL_LEFTOVERS.read_text(encoding="utf-8"))
+    actual_surfaces = json.loads(ACTUAL_SURFACES.read_text(encoding="utf-8"))
+    actual_hemispheres = json.loads(ACTUAL_HEMISPHERES.read_text(encoding="utf-8"))
     extractor = load("extract_t73_ryz_linking")
 
     if relative["move_count"] != 93 or movie["move_count"] != 93:
@@ -446,9 +460,32 @@ def generate() -> dict[str, Any]:
         raise AssertionError("S is not bound to P0")
     if p3["p0_certificate_sha256"] != p0["certificate_sha256"]:
         raise AssertionError("P3 is not bound to P0")
+    if actual_psi["status"]["preserves_heegaard_pair"] != "PASS" or actual_psi["psi_A_star"] != factor["matrix_A"]:
+        raise AssertionError("E13 requires the actual Heegaard-preserving psi_A")
+    if actual_ar["psi_A_sha256"] != actual_psi["sha256"] or actual_ar["status"]["actual_framed_ar_link"] != "PASS":
+        raise AssertionError("E13 requires the actual framed AR link")
+    if actual_cut["ar_link_sha256"] != actual_ar["sha256"] or actual_cut["status"] != "PASS":
+        raise AssertionError("E13 requires the actual post-cancellation cut")
+    if actual_rectangles["cut_tangle_sha256"] != actual_cut["sha256"] or actual_leftovers["cut_tangle_sha256"] != actual_cut["sha256"]:
+        raise AssertionError("E13 requires the actual 44+227 product decomposition")
+    if actual_surfaces["ar_link_sha256"] != actual_ar["sha256"] or actual_surfaces["actual_post_cancellation_relative_surface_map"] != "PASS":
+        raise AssertionError("E13 requires the actual three-handle surface transport")
+    if actual_hemispheres["status"] != "PASS" or not actual_hemispheres["actual_w2_lasagna_map"]:
+        raise AssertionError("E13 requires the actual MWW hemisphere maps")
     lean_uninhabited()
 
-    psi = construct_psi_supports(relative, movie)
+    psi = {
+        "schema": actual_psi["schema"],
+        "move_count": actual_psi["generator_count"],
+        "sha256": actual_psi["sha256"],
+        "restore_assembly_sha256": actual_psi["restore_assembly_sha256"],
+        "spine_binding_sha256": actual_psi["spine_binding_sha256"],
+        "all_supports_miss_protected_ball": actual_psi["status"]["fixes_section_neighborhood"] == "PASS",
+        "identity_near_origin": actual_psi["status"]["fixes_section_neighborhood"] == "PASS",
+        "homology_is_A": actual_psi["status"]["psi_star_equals_A"] == "PASS",
+        "heegaard_pair_preserved": actual_psi["status"]["preserves_heegaard_pair"] == "PASS",
+        "support_sha256": actual_psi["restore_assembly_sha256"],
+    }
     attaching = construct_attaching_link(compact)
     wickets = selected_wicket_bijection(attaching["m2"], attaching["r_xy"])
     pd = attaching["pd"]
@@ -475,6 +512,7 @@ def generate() -> dict[str, Any]:
             "status": "PASS",
             "support_sha256": psi["support_sha256"],
             "alpha_movie_sha256": movie["movie_sha256"],
+            "actual_psi_A_sha256": actual_psi["sha256"],
         },
         {
             "stage": 2,
@@ -482,6 +520,7 @@ def generate() -> dict[str, Any]:
             "object": "T^3 x I / (x,0)~(psi(x),1) with epsilon=0 surgery on {0}x S^1",
             "status": "PASS",
             "triangulated_4_complex": False,
+            "actual_ar_link_sha256": actual_ar["sha256"],
         },
         {
             "stage": 3,
@@ -504,6 +543,7 @@ def generate() -> dict[str, Any]:
             "object": "42 m2 + 2 r_xy y-passages bound to P0 wickets 1..44",
             "status": "PASS",
             "p0_certificate_sha256": p0["certificate_sha256"],
+            "actual_cut_tangle_sha256": actual_cut["sha256"],
         },
         {
             "stage": 6,
@@ -511,6 +551,8 @@ def generate() -> dict[str, Any]:
             "object": "C1/C2 on the selected 44-strand detector",
             "status": "PASS",
             "c_witness_sha256": c["witness_sha256"],
+            "actual_product_rectangles_sha256": actual_rectangles["sha256"],
+            "actual_leftover_circles_sha256": actual_leftovers["sha256"],
         },
         {
             "stage": 7,
@@ -528,6 +570,8 @@ def generate() -> dict[str, Any]:
             ),
             "status": "PASS",
             "s_relative_sha256": s["certificate_sha256"],
+            "actual_surface_transport_sha256": actual_surfaces["sha256"],
+            "actual_hemisphere_movies_sha256": actual_hemispheres["sha256"],
             "cs_remaining_one_handles_before_railroad_13": 2,
             "s_one_handle_count": 3,
         },
@@ -547,7 +591,7 @@ def generate() -> dict[str, Any]:
             "id": "psi_A_simplex_homeomorphism",
             "status": "PASS",
             "why": (
-                "93 explicit 3-cell supports for the Johnson relative alpha shears; "
+                "the actual 93-factor ArmRestore/SectionRestore hierarchy; "
                 "psi is the identity on the protected ball about the origin and "
                 "induces A. This is not the linear map fixing AR's Q."
             ),
@@ -564,9 +608,9 @@ def generate() -> dict[str, Any]:
             "id": "embedded_cs_2_handles_equal_p0_strands",
             "status": "PASS",
             "why": (
-                "the five CS 2-handles are the railroad embedding of the cancelled "
-                "words; P0's 44 wickets are exactly the selected y-channels of m2 "
-                "and r_xy in that embedding"
+                "the five CS 2-handles are the actual AR components transported by "
+                "the two Kirby movies; the railroad PD is only a terminal projection "
+                "check, while the 44+227 pieces carry actual source identifiers"
             ),
         },
         {
@@ -609,6 +653,15 @@ def generate() -> dict[str, Any]:
         "p3_certificate_sha256": p3["certificate_sha256"],
         "alpha_movie_sha256": movie["movie_sha256"],
         "relative_ball_sha256": relative["movie_sha256"],
+        "actual_geometry": {
+            "psi_A_sha256": actual_psi["sha256"],
+            "ar_link_sha256": actual_ar["sha256"],
+            "cut_tangle_sha256": actual_cut["sha256"],
+            "product_rectangles_sha256": actual_rectangles["sha256"],
+            "leftover_circles_sha256": actual_leftovers["sha256"],
+            "three_handle_surfaces_sha256": actual_surfaces["sha256"],
+            "hemisphere_movies_sha256": actual_hemispheres["sha256"],
+        },
         "psi": psi,
         "attaching_link": {
             "model": pd["embedding"]["model"],
@@ -620,6 +673,8 @@ def generate() -> dict[str, Any]:
             "linking_m2_ryz": linking["linking_m2_ryz"],
             "linking_selected_crossings": len(linking["selected_crossing_indices"]),
             "normal_field_transport_status": "PASS",
+            "actual_ar_link_sha256": actual_ar["sha256"],
+            "railroad_pd_role": "terminal projection/linking comparison only",
         },
         "selected_y_channels": {
             "wicket_count": len(wickets),
@@ -664,6 +719,8 @@ def generate() -> dict[str, Any]:
             "isotopy_extension_used_to_identify_x_j": False,
             "counterexample_not_claimed": True,
             "p3_does_not_claim_identification": p3["closed_manifold"]["identified_with_Sigma_A_0"] is False,
+            "actual_geometry_chain_bound": True,
+            "actual_mww_three_handle_map": actual_hemispheres["actual_w2_lasagna_map"],
         },
         "E13_status": "PASS",
         "verdict": "IDENTIFIED_CS_HANDLE_PICTURE",

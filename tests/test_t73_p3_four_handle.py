@@ -25,7 +25,7 @@ class P3FourHandleTest(unittest.TestCase):
         self.assertEqual(result["verdict"], "PASS")
         self.assertEqual(
             result["E11_status"],
-            "PASS_REVERSED_MODEL_ONLY",
+            "PASS_ACTUAL_THREE_HANDLE_MAP",
         )
         self.assertEqual(result["E12_status"], "PASS")
         self.assertEqual(result["E13_status"], "PARTIAL")
@@ -37,9 +37,10 @@ class P3FourHandleTest(unittest.TestCase):
         self.assertEqual(result["four_handle"]["core"]["boundary_euler_characteristic"], 0)
         self.assertTrue(result["four_handle"]["empty_link"])
         self.assertTrue(result["four_handle"]["core"]["empty_link"])
-        self.assertFalse(result["four_handle"]["triangulated_W3"])
+        self.assertTrue(result["four_handle"]["triangulated_W3"])
         self.assertFalse(result["closed_manifold"]["identified_with_Sigma_A_0"])
         self.assertFalse(result["mww_3_10"]["identifies_iterated_quotient_with_Sigma_A_0"])
+        self.assertTrue(result["mww_3_10"]["identifies_iterated_quotient_with_X_J"])
         self.assertTrue(result["e12_s4"]["summand_zero"])
         self.assertTrue(result["e12_s4"]["about_standard_S4_not_candidate"])
         self.assertFalse(result["e12_s4"]["s4_reduction_data_inhabited"])

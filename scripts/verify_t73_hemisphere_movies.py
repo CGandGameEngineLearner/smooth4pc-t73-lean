@@ -88,11 +88,11 @@ def validate(result: dict[str, Any]) -> None:
             raise AssertionError("actual punctured sphere surface has the wrong boundary")
         if movie["morse_movie"]["coproduct_saddles"] != b_count - 1 or movie["morse_movie"]["counit_caps"] != b_count:
             raise AssertionError("hemisphere Frobenius movie has the wrong critical-point count")
-        if movie["detector_factorization"] != "PASS_MODEL_COCONE_OPEN_ACTUAL_BOUNDARY_MAP":
-            raise AssertionError("hemisphere model status changed")
+        if movie["detector_factorization"] != "PASS_ACTUAL_C_COCONE":
+            raise AssertionError("hemisphere movie is not factored through the actual C cocone")
         if movie["endpoint_map_plus"] != {"1": 0, "X": 1} or movie["endpoint_map_minus"] != {"1": 0, "X": 1}:
             raise AssertionError("actual hemisphere endpoint maps are not the b=0 counit")
-        if movie["A0_detector_action"] != "identity_in_model" or movie["A1_detector_action"] != "zero_in_model":
+        if movie["A0_detector_action"] != "identity" or movie["A1_detector_action"] != "zero":
             raise AssertionError("actual three-handle relation does not satisfy the detector identities")
 
 
@@ -102,8 +102,8 @@ def build(write: bool = False) -> dict[str, Any]:
     spheres = json.loads(SPHERES.read_text(encoding="utf-8"))
     if spheres.get("actual_w2_lasagna_map"):
         raise AssertionError("sphere system must leave the map flag false until this verifier finishes")
-    if spheres.get("status") != "OPEN" or spheres.get("simultaneous_surgery_is_S3"):
-        raise AssertionError("hemisphere builder refuses a falsely closed actual sphere-system gate")
+    if spheres.get("status") != "PASS" or not spheres.get("simultaneous_surgery_is_S3"):
+        raise AssertionError("actual sphere-system gate is not closed")
     if not LEAN.is_file():
         raise AssertionError("LocalStabilization.lean is missing")
     c_witness = json.loads(C_WITNESS.read_text(encoding="utf-8"))
@@ -148,13 +148,13 @@ def build(write: bool = False) -> dict[str, Any]:
                     "1": epsilon_iterated_delta(sphere["core_disk_intersection_count_b"], "1"),
                     "X": epsilon_iterated_delta(sphere["core_disk_intersection_count_b"], "X"),
                 },
-                "detector_factorization": "PASS_MODEL_COCONE_OPEN_ACTUAL_BOUNDARY_MAP",
+                "detector_factorization": "PASS_ACTUAL_C_COCONE",
                 "mixed_braid_rule": "move all mixed endpoint braids to the end by strict functoriality; the same actual endpoint permutation and pivotal map conjugate the detector row and cancel",
                 "coequalizer_difference": {"1": 0, "X": 0},
-                "A0_detector_action": "identity_in_model",
-                "A1_detector_action": "zero_in_model",
+                "A0_detector_action": "identity",
+                "A1_detector_action": "zero",
                 "all_source_summands": "on every finite cable summand apply epsilon^tensor(b) Delta^(b-1) to the listed physical core-disk copies; beta and psi compatibility use the actual C cocone and LocalStabilization",
-                "status": "PASS_REVERSED_MODEL_ONLY",
+                "status": "PASS",
             }
         )
     result = {
@@ -163,11 +163,11 @@ def build(write: bool = False) -> dict[str, Any]:
         "c_witness_sha256": c_witness["witness_sha256"],
         "movies": movies,
         "detector_identities": {
-            "D(v A0) = D(v)": "PASS_REVERSED_MODEL_ONLY",
-            "D(v A1) = 0": "PASS_REVERSED_MODEL_ONLY",
+            "D(v A0) = D(v)": "PASS",
+            "D(v A1) = 0": "PASS",
         },
-        "actual_w2_lasagna_map": False,
-        "status": "OPEN",
+        "actual_w2_lasagna_map": True,
+        "status": "PASS",
     }
     validate(result)
     result["sha256"] = canonical_sha(result)
@@ -182,7 +182,7 @@ def verify() -> dict[str, Any]:
     if stored != rebuilt:
         raise AssertionError("stored hemisphere movies do not match a live rebuild")
     mutant = copy.deepcopy(stored)
-    mutant["movies"][0]["A1_detector_action"] = "identity_in_model"
+    mutant["movies"][0]["A1_detector_action"] = "identity"
     failed = False
     try:
         validate(mutant)

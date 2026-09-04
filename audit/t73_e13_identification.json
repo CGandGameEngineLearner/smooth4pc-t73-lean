@@ -1,7 +1,7 @@
 {
   "E13_status": "PASS",
-  "c_witness_sha256": "0D7D1CAC871D85C4F909C2B31CC7F01809C2558D6FA0655DE9034C4B1C28E7A3",
-  "certificate_sha256": "F497862B2E116D2993C721FB92979A0AD45ACA9E69863AF6B6DD3B910C859F0F",
+  "c_witness_sha256": "E6A19E7F237FAEF06D66DB5071B374B2A1F525299052DCFA120657ADD5168C4A",
+  "certificate_sha256": "9344845E53F50B86C5D1BE297290CCB8FF9A93FB31A9679F99EF315C5A60FDC2",
   "checks": {
     "all_present_maps": true,
     "counterexample_not_claimed": true,
@@ -12,7 +12,7 @@
     "missing_map_count": 1,
     "uniqueness_of_regular_neighborhoods_used": false
   },
-  "e13_close_sha256": "42309427FB78FCFD3208E7F9537C2C7B2B3AFF5484D9E373A69336ABB856B00F",
+  "e13_close_sha256": "0EBF95B31ACF84ED33732B089BB79CA3D0503EBDC3B8DBE8D6D95C1FCB120E53",
   "missing_maps": [
     {
       "id": "lean_cs_topology_data",
@@ -20,8 +20,8 @@
       "why": "CSTopologyData / CSExternalGeometry have no inhabitants"
     }
   ],
-  "p0_certificate_sha256": "545F5CE8F53F0A9E6D90C516D9C35AB7CA47AA1AD8C2D9820E253E2273769A7C",
-  "p3_certificate_sha256": "B9ED5F7122D69D623F179089EE76B95468EA481863F04C270227E251EE07C7B2",
+  "p0_certificate_sha256": "F1F9C500B00EDFB55869481DF96D9FA2EDD70DF84347AE46CB8F5882BDBBF8D2",
+  "p3_certificate_sha256": "26B5677C5C39A3F39C4D19FCFF015F5AD0FF1102CE1CE447E916ACC8291FAE76",
   "present_maps": {
     "A_minus_I_invertible_over_Z": true,
     "ar_conjugacy_C_AR_R_eq_R_A": true,
@@ -43,7 +43,7 @@
     {
       "id": "psi_A_simplex_homeomorphism",
       "status": "PASS",
-      "why": "93 explicit 3-cell supports for the Johnson relative alpha shears; psi is the identity on the protected ball about the origin and induces A. This is not the linear map fixing AR's Q."
+      "why": "the actual 93-factor ArmRestore/SectionRestore hierarchy; psi is the identity on the protected ball about the origin and induces A. This is not the linear map fixing AR's Q."
     },
     {
       "id": "mapping_torus_as_triangulated_4_complex",
@@ -53,7 +53,7 @@
     {
       "id": "embedded_cs_2_handles_equal_p0_strands",
       "status": "PASS",
-      "why": "the five CS 2-handles are the railroad embedding of the cancelled words; P0's 44 wickets are exactly the selected y-channels of m2 and r_xy in that embedding"
+      "why": "the five CS 2-handles are the actual AR components transported by the two Kirby movies; the railroad PD is only a terminal projection check, while the 44+227 pieces carry actual source identifiers"
     },
     {
       "id": "lk_m2_ryz_from_reduced_pd",
@@ -76,7 +76,7 @@
       "why": "CSTopologyData / CSExternalGeometry have no inhabitants"
     }
   ],
-  "s_relative_sha256": "72A1AFA6BA914A4DA402CFDC9441C8255D903FFA4B3674043991C42B219A2D74",
+  "s_relative_sha256": "7C4F321CDAE08FA112DBADFB986E51F4FC75CC5926006B88B8F8E068CEBF0FC6",
   "schema": "t73_e13_identification/v2",
   "scope": "Standard Cappell-Shaneson surgery object Sigma_A^0 together with the constructed Johnson CS handle picture of X_J.  Iwaki 2.1 applies to this identified pair.  Lean CSTopologyData remains uninhabited, and no counterexample is claimed.",
   "standard_cs_object": {
@@ -2191,7 +2191,7 @@
       "remove": "neighbourhood S^1 x D^3 of the section"
     },
     "surviving_2_handles": {
-      "compact_ledger_sha256": "BA45C92B6A5605CB259F29E3550BC367C0783BBA9206E2633582B2ABE81DE1BC",
+      "compact_ledger_sha256": "BB48F41A1278FA8047C247E9326A954FB587C29A3AFF9EA1674423A14577E32F",
       "handle_counts_after_two_cancellations": {
         "h0": 1,
         "h1": 2,

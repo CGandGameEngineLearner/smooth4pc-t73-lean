@@ -1,7 +1,17 @@
 {
   "E13_status": "PASS",
+  "actual_geometry": {
+    "ar_link_sha256": "E5CD3C2A2AD0650D061CFB730F54F32C1F2860D2FD0813067550D545D02D2853",
+    "cut_tangle_sha256": "99D86692B5087AC32C87E7CC56EF0AC79C2A07DA63497066E412CDD440E32CF6",
+    "hemisphere_movies_sha256": "6BD9F0E816A8D54801BAF6C7F910B81FA16EEFB5AEBFB81ACF208F16A0413E7B",
+    "leftover_circles_sha256": "DF6635022DBB39536041B77D9F14FD0EB78007D70B1722504120B8FB8CE9156F",
+    "product_rectangles_sha256": "F2C55E7423EC92521D392ADB3593580266A7ABCDAE786B0F33E24A46606152D9",
+    "psi_A_sha256": "D39346634778A7DAFDB39E0F8644932D2AE925B14FED691F25623399CD6424E1",
+    "three_handle_surfaces_sha256": "4860CFDABFE62EF2458130995AA80665D0CB1BC310CCF3DE5DB4B3DF8A118B3C"
+  },
   "alpha_movie_sha256": "DBE744C045104CE01860EC925C34A07CCB44C9B398CFB828AFE6562DBE050A19",
   "attaching_link": {
+    "actual_ar_link_sha256": "E5CD3C2A2AD0650D061CFB730F54F32C1F2860D2FD0813067550D545D02D2853",
     "connector_counts": {
       "m_2": 84,
       "m_3": 378,
@@ -15,7 +25,8 @@
     "normal_field_transport_status": "PASS",
     "pd_crossing_count": 1958,
     "pd_schema": "t73_reduced_link_pd/v1",
-    "pd_sha256": "E8C0B066D2FC2C7CD01C58BEE404B8063C72C6D7D3E2A937FE3ED99D9298F92A",
+    "pd_sha256": "4D1D71FB1B63C5E53C7D0007BD7D5631F00C43996AAD164728F9846A33666C8C",
+    "railroad_pd_role": "terminal projection/linking comparison only",
     "words": {
       "m_2": {
         "length": 311,
@@ -44,9 +55,11 @@
       }
     }
   },
-  "c_witness_sha256": "0D7D1CAC871D85C4F909C2B31CC7F01809C2558D6FA0655DE9034C4B1C28E7A3",
-  "certificate_sha256": "42309427FB78FCFD3208E7F9537C2C7B2B3AFF5484D9E373A69336ABB856B00F",
+  "c_witness_sha256": "E6A19E7F237FAEF06D66DB5071B374B2A1F525299052DCFA120657ADD5168C4A",
+  "certificate_sha256": "0EBF95B31ACF84ED33732B089BB79CA3D0503EBDC3B8DBE8D6D95C1FCB120E53",
   "checks": {
+    "actual_geometry_chain_bound": true,
+    "actual_mww_three_handle_map": true,
     "counterexample_not_claimed": true,
     "identified_with_Sigma_A_0": true,
     "isotopy_extension_used_to_identify_x_j": false,
@@ -95,8 +108,8 @@
       }
     ]
   },
-  "p0_certificate_sha256": "545F5CE8F53F0A9E6D90C516D9C35AB7CA47AA1AD8C2D9820E253E2273769A7C",
-  "p3_certificate_sha256": "B9ED5F7122D69D623F179089EE76B95468EA481863F04C270227E251EE07C7B2",
+  "p0_certificate_sha256": "F1F9C500B00EDFB55869481DF96D9FA2EDD70DF84347AE46CB8F5882BDBBF8D2",
+  "p3_certificate_sha256": "26B5677C5C39A3F39C4D19FCFF015F5AD0FF1102CE1CE447E916ACC8291FAE76",
   "pipeline": [
     {
       "name": "linear_monodromy_A",
@@ -105,14 +118,16 @@
       "status": "PASS"
     },
     {
+      "actual_psi_A_sha256": "D39346634778A7DAFDB39E0F8644932D2AE925B14FED691F25623399CD6424E1",
       "alpha_movie_sha256": "DBE744C045104CE01860EC925C34A07CCB44C9B398CFB828AFE6562DBE050A19",
       "name": "johnson_pl_psi",
       "object": "93 3-cell shears, identity on the protected ball, psi_*=A",
       "stage": 1,
       "status": "PASS",
-      "support_sha256": "46F26CE339BF565971119EE510B9FB7C53E2AFAC5E60A61E2952F499289F5EBD"
+      "support_sha256": "899ABA9A7B67AD9B263A4E53FC99E1B47703B673C653A577DAEF9772641F3561"
     },
     {
+      "actual_ar_link_sha256": "E5CD3C2A2AD0650D061CFB730F54F32C1F2860D2FD0813067550D545D02D2853",
       "name": "mapping_torus_zero_surgery",
       "object": "T^3 x I / (x,0)~(psi(x),1) with epsilon=0 surgery on {0}x S^1",
       "stage": 2,
@@ -141,14 +156,17 @@
       "status": "PASS"
     },
     {
+      "actual_cut_tangle_sha256": "99D86692B5087AC32C87E7CC56EF0AC79C2A07DA63497066E412CDD440E32CF6",
       "name": "selected_y_channels_to_p0_wickets",
       "object": "42 m2 + 2 r_xy y-passages bound to P0 wickets 1..44",
-      "p0_certificate_sha256": "545F5CE8F53F0A9E6D90C516D9C35AB7CA47AA1AD8C2D9820E253E2273769A7C",
+      "p0_certificate_sha256": "F1F9C500B00EDFB55869481DF96D9FA2EDD70DF84347AE46CB8F5882BDBBF8D2",
       "stage": 5,
       "status": "PASS"
     },
     {
-      "c_witness_sha256": "0D7D1CAC871D85C4F909C2B31CC7F01809C2558D6FA0655DE9034C4B1C28E7A3",
+      "actual_leftover_circles_sha256": "DF6635022DBB39536041B77D9F14FD0EB78007D70B1722504120B8FB8CE9156F",
+      "actual_product_rectangles_sha256": "F2C55E7423EC92521D392ADB3593580266A7ABCDAE786B0F33E24A46606152D9",
+      "c_witness_sha256": "E6A19E7F237FAEF06D66DB5071B374B2A1F525299052DCFA120657ADD5168C4A",
       "name": "c_product_ribbons",
       "object": "C1/C2 on the selected 44-strand detector",
       "stage": 6,
@@ -162,296 +180,42 @@
       "status": "PASS"
     },
     {
+      "actual_hemisphere_movies_sha256": "6BD9F0E816A8D54801BAF6C7F910B81FA16EEFB5AEBFB81ACF208F16A0413E7B",
+      "actual_surface_transport_sha256": "4860CFDABFE62EF2458130995AA80665D0CB1BC310CCF3DE5DB4B3DF8A118B3C",
       "cs_remaining_one_handles_before_railroad_13": 2,
       "name": "s_extra_one_three_pairs",
       "object": "S places three far-octant reversed 1-handles missing the P0 cube; x is the already cancelled CS axis; y,z are extra after railroad 1-3",
       "s_one_handle_count": 3,
-      "s_relative_sha256": "72A1AFA6BA914A4DA402CFDC9441C8255D903FFA4B3674043991C42B219A2D74",
+      "s_relative_sha256": "7C4F321CDAE08FA112DBADFB986E51F4FC75CC5926006B88B8F8E068CEBF0FC6",
       "stage": 8,
       "status": "PASS"
     },
     {
       "name": "p3_four_handle",
       "object": "P3 1-3 of the extra S handles and PL I^4 along the remaining S^3",
-      "p3_certificate_sha256": "B9ED5F7122D69D623F179089EE76B95468EA481863F04C270227E251EE07C7B2",
+      "p3_certificate_sha256": "26B5677C5C39A3F39C4D19FCFF015F5AD0FF1102CE1CE447E916ACC8291FAE76",
       "stage": 9,
       "status": "PASS"
     }
   ],
   "psi": {
     "all_supports_miss_protected_ball": true,
-    "ambient": "T^3 = R^3 / Z^3",
-    "fixes_ar_section_at_Q": false,
+    "heegaard_pair_preserved": true,
     "homology_is_A": true,
     "identity_near_origin": true,
-    "kind": "composition of 93 PL shears supported on triangular prisms",
     "move_count": 93,
-    "protected_ball_radius": "1/196104",
-    "rule": "each support is the triangular prism on the relative bent path extruded along the Johnson square normal; psi is the identity on the protected ball and the Johnson square isotopy in the prism",
-    "support_sha256": "46F26CE339BF565971119EE510B9FB7C53E2AFAC5E60A61E2952F499289F5EBD",
-    "supports_prefix": [
-      {
-        "alpha_prefix": 1,
-        "alpha_target": 2,
-        "identity_on_protected_ball": true,
-        "index": 0,
-        "middle_triangle": [
-          [
-            "0",
-            "1/4",
-            "1/4"
-          ],
-          [
-            "0",
-            "3/4",
-            "1/4"
-          ],
-          [
-            "0",
-            "3/4",
-            "3/4"
-          ]
-        ],
-        "misses_protected_ball": true,
-        "power": 1,
-        "prism_vertices": [
-          [
-            "-1/10000",
-            "1/4",
-            "1/4"
-          ],
-          [
-            "-1/10000",
-            "3/4",
-            "1/4"
-          ],
-          [
-            "-1/10000",
-            "3/4",
-            "3/4"
-          ],
-          [
-            "1/10000",
-            "1/4",
-            "1/4"
-          ],
-          [
-            "1/10000",
-            "3/4",
-            "1/4"
-          ],
-          [
-            "1/10000",
-            "3/4",
-            "3/4"
-          ]
-        ],
-        "side": "prefix-first",
-        "square_normal": [
-          -1,
-          0,
-          0
-        ]
-      },
-      {
-        "alpha_prefix": 1,
-        "alpha_target": 2,
-        "identity_on_protected_ball": true,
-        "index": 1,
-        "middle_triangle": [
-          [
-            "0",
-            "1/2",
-            "1/4"
-          ],
-          [
-            "0",
-            "1",
-            "1/4"
-          ],
-          [
-            "0",
-            "3/2",
-            "3/4"
-          ]
-        ],
-        "misses_protected_ball": true,
-        "power": 1,
-        "prism_vertices": [
-          [
-            "-1/10000",
-            "1/2",
-            "1/4"
-          ],
-          [
-            "-1/10000",
-            "1",
-            "1/4"
-          ],
-          [
-            "-1/10000",
-            "3/2",
-            "3/4"
-          ],
-          [
-            "1/10000",
-            "1/2",
-            "1/4"
-          ],
-          [
-            "1/10000",
-            "1",
-            "1/4"
-          ],
-          [
-            "1/10000",
-            "3/2",
-            "3/4"
-          ]
-        ],
-        "side": "prefix-first",
-        "square_normal": [
-          -1,
-          0,
-          0
-        ]
-      }
-    ],
-    "supports_suffix": [
-      {
-        "alpha_prefix": 2,
-        "alpha_target": 0,
-        "identity_on_protected_ball": true,
-        "index": 91,
-        "middle_triangle": [
-          [
-            "1273/4",
-            "189/4",
-            "-310"
-          ],
-          [
-            "1275/4",
-            "189/4",
-            "-310"
-          ],
-          [
-            "3819/4",
-            "567/4",
-            "-930"
-          ]
-        ],
-        "misses_protected_ball": true,
-        "power": 1,
-        "prism_vertices": [
-          [
-            "1273/4",
-            "472501/10000",
-            "-3843999811/12400000"
-          ],
-          [
-            "1275/4",
-            "472501/10000",
-            "-3843999811/12400000"
-          ],
-          [
-            "3819/4",
-            "1417501/10000",
-            "-11531999811/12400000"
-          ],
-          [
-            "1273/4",
-            "472499/10000",
-            "-3844000189/12400000"
-          ],
-          [
-            "1275/4",
-            "472499/10000",
-            "-3844000189/12400000"
-          ],
-          [
-            "3819/4",
-            "1417499/10000",
-            "-11532000189/12400000"
-          ]
-        ],
-        "side": "target-first",
-        "square_normal": [
-          0,
-          1240,
-          189
-        ]
-      },
-      {
-        "alpha_prefix": 0,
-        "alpha_target": 2,
-        "identity_on_protected_ball": true,
-        "index": 92,
-        "middle_triangle": [
-          [
-            "1271/4",
-            "189/4",
-            "31/4"
-          ],
-          [
-            "1269/4",
-            "189/4",
-            "29/4"
-          ],
-          [
-            "3813/4",
-            "567/4",
-            "93/4"
-          ]
-        ],
-        "misses_protected_ball": true,
-        "power": -1,
-        "prism_vertices": [
-          [
-            "3940099811/12400000",
-            "472501/10000",
-            "96100189/12400000"
-          ],
-          [
-            "3933899811/12400000",
-            "472501/10000",
-            "89900189/12400000"
-          ],
-          [
-            "11820299811/12400000",
-            "1417501/10000",
-            "288300189/12400000"
-          ],
-          [
-            "3940100189/12400000",
-            "472499/10000",
-            "96099811/12400000"
-          ],
-          [
-            "3933900189/12400000",
-            "472499/10000",
-            "89899811/12400000"
-          ],
-          [
-            "11820300189/12400000",
-            "1417499/10000",
-            "288299811/12400000"
-          ]
-        ],
-        "side": "prefix-first",
-        "square_normal": [
-          -189,
-          1240,
-          189
-        ]
-      }
-    ]
+    "restore_assembly_sha256": "899ABA9A7B67AD9B263A4E53FC99E1B47703B673C653A577DAEF9772641F3561",
+    "schema": "t73_psi_A/v2",
+    "sha256": "D39346634778A7DAFDB39E0F8644932D2AE925B14FED691F25623399CD6424E1",
+    "spine_binding_sha256": "0E217A8634B0DAC40CE055DAA360C6AC55B9F2EC8778256DB4C5BECCF3E6C883",
+    "support_sha256": "899ABA9A7B67AD9B263A4E53FC99E1B47703B673C653A577DAEF9772641F3561"
   },
   "relative_ball_sha256": "75D83C5FAA9C2B426C4207162B8380DF8B6BFC6648A5D481541F740ACB4EF342",
   "resolved_maps": [
     {
       "id": "psi_A_simplex_homeomorphism",
       "status": "PASS",
-      "why": "93 explicit 3-cell supports for the Johnson relative alpha shears; psi is the identity on the protected ball about the origin and induces A. This is not the linear map fixing AR's Q."
+      "why": "the actual 93-factor ArmRestore/SectionRestore hierarchy; psi is the identity on the protected ball about the origin and induces A. This is not the linear map fixing AR's Q."
     },
     {
       "id": "mapping_torus_as_triangulated_4_complex",
@@ -461,7 +225,7 @@
     {
       "id": "embedded_cs_2_handles_equal_p0_strands",
       "status": "PASS",
-      "why": "the five CS 2-handles are the railroad embedding of the cancelled words; P0's 44 wickets are exactly the selected y-channels of m2 and r_xy in that embedding"
+      "why": "the five CS 2-handles are the actual AR components transported by the two Kirby movies; the railroad PD is only a terminal projection check, while the 44+227 pieces carry actual source identifiers"
     },
     {
       "id": "lk_m2_ryz_from_reduced_pd",
@@ -484,7 +248,7 @@
       "why": "CSTopologyData / CSExternalGeometry have no inhabitants"
     }
   ],
-  "s_relative_sha256": "72A1AFA6BA914A4DA402CFDC9441C8255D903FFA4B3674043991C42B219A2D74",
+  "s_relative_sha256": "7C4F321CDAE08FA112DBADFB986E51F4FC75CC5926006B88B8F8E068CEBF0FC6",
   "schema": "t73_e13_close/v1",
   "scope": "Constructed PL psi, railroad attaching link, reduced PD, and staged Kirby pipeline identifying the Johnson replacement closed picture, with unselected 2-handles retained in the railroad diagram, with Sigma_A^0. Lean CSTopologyData remains uninhabited.",
   "selected_y_channels": {

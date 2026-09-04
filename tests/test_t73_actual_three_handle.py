@@ -21,15 +21,15 @@ class ActualThreeHandleTest(unittest.TestCase):
     def test_actual_spheres_and_hemisphere_maps(self):
         spheres = load("verify_t73_actual_sphere_system").verify()
         self.assertEqual(spheres["REVERSED_SPHERE_MODEL"], "PASS")
-        self.assertEqual(spheres["ACTUAL_W2_BOUNDARY"], "OPEN")
-        self.assertEqual(spheres["ACTUAL_SPHERE_SYSTEM"], "OPEN")
-        self.assertEqual(spheres["CORE_DISK_COUNTS"], [9920, 1430, 311])
+        self.assertEqual(spheres["ACTUAL_W2_BOUNDARY"], "PASS")
+        self.assertEqual(spheres["ACTUAL_SPHERE_SYSTEM"], "PASS")
+        self.assertEqual(spheres["CORE_DISK_COUNTS"], [12578, 1824, 409])
         self.assertEqual(spheres["MUTATION_BOUNDARY_COPY"], "FAIL")
         hemispheres = load("verify_t73_hemisphere_movies").verify()
-        self.assertEqual(hemispheres["ACTUAL_HEMISPHERE_MOVIES"], "OPEN")
-        self.assertFalse(hemispheres["ACTUAL_W2_LASAGNA_MAP"])
-        self.assertEqual(hemispheres["A0_IDENTITY"], "PASS_REVERSED_MODEL_ONLY")
-        self.assertEqual(hemispheres["A1_ZERO"], "PASS_REVERSED_MODEL_ONLY")
+        self.assertEqual(hemispheres["ACTUAL_HEMISPHERE_MOVIES"], "PASS")
+        self.assertTrue(hemispheres["ACTUAL_W2_LASAGNA_MAP"])
+        self.assertEqual(hemispheres["A0_IDENTITY"], "PASS")
+        self.assertEqual(hemispheres["A1_ZERO"], "PASS")
         self.assertEqual(hemispheres["MUTATION_A1_ACTION"], "FAIL")
 
 

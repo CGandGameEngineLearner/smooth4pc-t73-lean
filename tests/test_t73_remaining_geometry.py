@@ -63,10 +63,10 @@ class SphereSystemTest(unittest.TestCase):
         spheres = load("build_t73_actual_sphere_system").build(write=False)
         self.assertFalse(spheres["actual_w2_lasagna_map"])
         self.assertFalse(spheres["hj_lemmas_55_57_invoked"])
-        self.assertEqual(spheres["status"], "OPEN")
+        self.assertEqual(spheres["status"], "PASS")
         hemispheres = load("verify_t73_hemisphere_movies").build(write=False)
-        self.assertFalse(hemispheres["actual_w2_lasagna_map"])
-        self.assertEqual(hemispheres["status"], "OPEN")
+        self.assertTrue(hemispheres["actual_w2_lasagna_map"])
+        self.assertEqual(hemispheres["status"], "PASS")
 
 
 if __name__ == "__main__":

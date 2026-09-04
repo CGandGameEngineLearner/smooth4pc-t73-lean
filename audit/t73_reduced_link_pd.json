@@ -15689,7 +15689,7 @@
   "embedding": {
     "component_height_offset": "cid/10",
     "model": "two parallel 1-handle rails in a 0-handle, genus-two picture",
-    "r_zx": "split 0-framed unknot, empty cancelled word",
+    "r_zx": "empty cancelled free word; embedding of a split unknot is not claimed",
     "y_rail": "x=0, slot = letter time in [0,1]",
     "z_rail": "x=1, slot = letter time in [0,1]"
   },

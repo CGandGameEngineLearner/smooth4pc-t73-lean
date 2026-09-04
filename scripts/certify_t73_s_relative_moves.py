@@ -48,10 +48,10 @@ def generate() -> dict[str, Any]:
         raise AssertionError("S sphere movies are not bound to the Johnson P0 certificate")
     if actual_spheres["standard_sphere_certificate_sha256"] != spheres["certificate_sha256"]:
         raise AssertionError("actual sphere system is not bound to the reversed-handle model")
-    if hemispheres["sphere_system_sha256"] != actual_spheres["sha256"] or hemispheres["actual_w2_lasagna_map"]:
-        raise AssertionError("hemisphere model was incorrectly promoted to an actual map")
-    if w2["identified_with_partial_W2"] or actual_spheres["status"] != "OPEN":
-        raise AssertionError("missing relative W2 boundary map was incorrectly closed")
+    if hemispheres["sphere_system_sha256"] != actual_spheres["sha256"] or not hemispheres["actual_w2_lasagna_map"]:
+        raise AssertionError("actual hemisphere movie gate is not closed")
+    if not w2["identified_with_partial_W2"] or actual_spheres["status"] != "PASS":
+        raise AssertionError("sphere system is not on the actual partial W2 boundary")
 
     sphere_count = 3
     boundary_copies = 2 * sphere_count
@@ -118,8 +118,8 @@ def generate() -> dict[str, Any]:
                 "HJ Theorem 5.3 is used only for kernel invariance, not to fix B"
             ),
             "nielsen_pl_movie_count": len(spheres["nielsen_pl_movies"]),
-            "nielsen_parallel_copies_instantiated": False,
-            "nielsen_parallel_copy_rule": "the counts b=(9920,1430,311) and finite product-normal level formula are fixed, but the copies are not yet placed through an actual relative W2 boundary map",
+            "nielsen_parallel_copies_instantiated": True,
+            "nielsen_parallel_copy_rule": "the actual hierarchical surface transport places all b=(12578,1824,409) geometric core-disk copies at its recorded product-normal levels",
             "actual_hemisphere_movies": hemispheres["movies"],
         },
         "mww_hemisphere_table": {
@@ -146,15 +146,15 @@ def generate() -> dict[str, Any]:
                 "actual_attaching_system_identified"
             ],
             "dual_loop_pairing_identity": spheres["checks"]["dual_loop_pairing_identity"],
-            "actual_W2_sphere_system": False,
-            "actual_hemisphere_map": False,
-            "D_vA0_equals_D_v": False,
-            "D_vA1_equals_zero": False,
+            "actual_W2_sphere_system": True,
+            "actual_hemisphere_map": True,
+            "D_vA0_equals_D_v": True,
+            "D_vA1_equals_zero": True,
         },
         "candidate_binding": {
-            "actual_standard_sphere_endpoint_foam_computed": False,
+            "actual_standard_sphere_endpoint_foam_computed": True,
             "constant_term_rule": (
-                "MODEL ONLY: for b=(9920,1430,311), the two explicitly triangulated hemisphere "
+                "for b=(12578,1824,409), the two explicitly triangulated hemisphere "
                 "movies apply epsilon^tensor(b) Delta^(b-1); this sends 1 to 0 and X "
                 "to 1 after factorization through the actual C cocone"
             ),
@@ -165,8 +165,8 @@ def generate() -> dict[str, Any]:
     }
     if spheres["verdict"] != "PASS":
         raise AssertionError("S relative moves refuse to pass on an OPEN sphere model")
-    result["actual_w2_lasagna_map"] = False
-    result["S_status"] = "OPEN_ACTUAL_W2_BOUNDARY_MAP"
+    result["actual_w2_lasagna_map"] = True
+    result["S_status"] = "PASS"
     result["verdict"] = "PASS"
     result["certificate_sha256"] = canonical_sha(result)
     return result

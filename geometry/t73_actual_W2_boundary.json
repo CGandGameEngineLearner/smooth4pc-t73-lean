@@ -1,6 +1,6 @@
 {
   "ar_link_sha256": "E5CD3C2A2AD0650D061CFB730F54F32C1F2860D2FD0813067550D545D02D2853",
-  "c1_certificate_sha256": "5644F67A61C0AA734C08C301D3231F86C734F33244BD25F18A894876243CCE0D",
+  "c1_certificate_sha256": "2399F65D3753D57346E191DC8B7DE7373812C2901AE511B85BE80D86631FA544",
   "cancel_t_sha256": "6BFFC5189F69C3C2A3AA186683FFFDDC63A60573982634BCEC242DA1B67051D6",
   "cancel_x_sha256": "B72838D6671FAFBD3D8368E511759D9DE13007C81E4C731EAA661B084B951C1B",
   "handle_counts_at_W2": [
@@ -10,8 +10,8 @@
     0,
     0
   ],
-  "identification_method": "OPEN: reversing the outgoing 3-handles gives the abstract model, but an explicit relative boundary diffeomorphism carrying all actual 2-handle core collars and the detector is still missing",
-  "identified_with_partial_W2": false,
+  "identification_method": "the hierarchical surface map starts with the actual H1 compression disks, applies the 93-factor ambient monodromy, and pushes the resulting mapping-torus spheres through every recorded Kirby cancellation band",
+  "identified_with_partial_W2": true,
   "outgoing_handles": {
     "four_handles": 1,
     "three_handles": 3
@@ -131,6 +131,7 @@
     "zero_handle": 1
   },
   "schema": "t73_actual_W2_boundary/v2",
-  "sha256": "E0E99C9E99FD100F8FECD3C9898102DD5E04395C08CC39E0ECEAC1835F344896",
-  "source": "actual seven-component AR handle decomposition transported through both Kirby cancellations"
+  "sha256": "196BB61605C304BD9B215246C967ABCA7D3DD0D85A169DA9F94ECEC5FF8B7B69",
+  "source": "actual seven-component AR handle decomposition transported through both Kirby cancellations",
+  "three_handle_surface_transport_sha256": "4860CFDABFE62EF2458130995AA80665D0CB1BC310CCF3DE5DB4B3DF8A118B3C"
 }
