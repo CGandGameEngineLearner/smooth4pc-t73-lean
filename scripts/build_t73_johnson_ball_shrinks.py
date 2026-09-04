@@ -194,6 +194,10 @@ def generate():
         "outer_scale": str(OUTER_SCALE),
         "templates": templates,
         "fixed_boundary_radial_shrinks": "PASS",
+        "scope": "individual mismatch-ball charts",
+        "simultaneous_shrink_status": (
+            "OPEN: mismatch-ball closures meet along the certified component intersection graph"
+        ),
         "ball_exchange_status": "OPEN",
     }
     result["sha256"] = canonical_sha(result)

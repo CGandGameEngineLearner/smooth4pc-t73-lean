@@ -482,6 +482,62 @@ def pair_components(pl, pieces, components, prefix):
     return pairs
 
 
+def component_intersections(pl, pieces, components, ball_pairs):
+    vertex_sets = {}
+    for component in components:
+        vertex_sets[component["component_id"]] = {
+            tuple(value % pl.PERIOD for value in pl.decode(vertex))
+            for piece_index in component["piece_indices"]
+            for vertex in pieces[piece_index]["vertices"]
+        }
+    records = []
+    graph_edges = set()
+    for first, second in itertools.combinations(components, 2):
+        common = sorted(
+            vertex_sets[first["component_id"]] & vertex_sets[second["component_id"]]
+        )
+        if not common:
+            continue
+        dimension = 0
+        differences = [pl.sub(vertex, common[0]) for vertex in common[1:]]
+        if any(vector != [0, 0, 0] for vector in differences):
+            dimension = 1
+        if any(cross(a, b) != (0, 0, 0) for a, b in itertools.combinations(differences, 2)):
+            dimension = 2
+        graph_edges.add(tuple(sorted((first["component_id"], second["component_id"]))))
+        records.append(
+            {
+                "components": [first["component_id"], second["component_id"]],
+                "common_vertex_count": len(common),
+                "affine_dimension": dimension,
+                "common_vertices": [pl.encode(vertex) for vertex in common],
+            }
+        )
+    involution = {}
+    for pair in ball_pairs:
+        first = pair["excess_component_id"]
+        second = pair["deficiency_component_id"]
+        involution[first] = second
+        involution[second] = first
+    transported_edges = {
+        tuple(sorted((involution[first], involution[second]))) for first, second in graph_edges
+    }
+    if transported_edges != graph_edges:
+        raise AssertionError("half-period ball pairing does not preserve the intersection graph")
+    return {
+        "records": records,
+        "edge_count": len(graph_edges),
+        "edges": [list(edge) for edge in sorted(graph_edges)],
+        "closures_pairwise_disjoint": not records,
+        "half_period_involution": {str(key): value for key, value in sorted(involution.items())},
+        "half_period_involution_preserves_graph": True,
+        "independent_shrink_composition_status": (
+            "OPEN: component closures meet, so the individual radial charts do not compose "
+            "without a common-intersection movie"
+        ),
+    }
+
+
 def tetrahedron_halfspaces(pl, vertices):
     base = vertices[0]
     columns = [[vertices[j][i] - base[i] for j in range(1, 4)] for i in range(3)]
@@ -578,6 +634,7 @@ def analyze_template(pl, source: int, prefix: int, power: int) -> dict[str, Any]
         raise AssertionError("an exact mismatch polytope meets the origin eight-cube star")
     components = component_summary(pl, pieces)
     ball_pairs = pair_components(pl, pieces, components, prefix)
+    intersections = component_intersections(pl, pieces, components, ball_pairs)
     payload = {
         "source_axis": source,
         "prefix_axis": prefix,
@@ -594,6 +651,7 @@ def analyze_template(pl, source: int, prefix: int, power: int) -> dict[str, Any]
         ),
         "ball_pairs": ball_pairs,
         "half_period_ball_pairing": "PASS",
+        "component_intersections": intersections,
         "restore_status": "OPEN",
     }
     payload["sha256"] = canonical_sha(payload)

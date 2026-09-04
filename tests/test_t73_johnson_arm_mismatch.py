@@ -45,6 +45,13 @@ class JohnsonArmMismatchTest(unittest.TestCase):
                 all(component["triangulation"]["star_shaped"] for component in template["components"])
             )
             self.assertEqual(template["half_period_ball_pairing"], "PASS")
+            self.assertFalse(template["component_intersections"]["closures_pairwise_disjoint"])
+            self.assertTrue(
+                template["component_intersections"]["half_period_involution_preserves_graph"]
+            )
+            self.assertIn(
+                "OPEN", template["component_intersections"]["independent_shrink_composition_status"]
+            )
             self.assertEqual(len(template["ball_pairs"]), 3)
             self.assertTrue(
                 all(

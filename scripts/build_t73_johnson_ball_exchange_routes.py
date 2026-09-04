@@ -210,6 +210,8 @@ def generate():
         "all_routes_disjoint": all(
             template["disjoint_exchange_routes"] == "PASS" for template in templates
         ),
+        "scope": "routes for the scale-1/4 interior cores",
+        "requires_compatible_global_shrink": True,
         "ball_exchange_status": "OPEN: routes are certified but compact translation cells are not yet attached",
     }
     result["sha256"] = canonical_sha(result)

@@ -28,6 +28,7 @@ class JohnsonBallExchangeRouteTest(unittest.TestCase):
         rebuilt = load_script().generate()
         self.assertEqual(stored, rebuilt)
         self.assertTrue(rebuilt["all_routes_disjoint"])
+        self.assertTrue(rebuilt["requires_compatible_global_shrink"])
         self.assertIn("OPEN", rebuilt["ball_exchange_status"])
         for template in rebuilt["templates"]:
             self.assertEqual(template["route_count"], 6)

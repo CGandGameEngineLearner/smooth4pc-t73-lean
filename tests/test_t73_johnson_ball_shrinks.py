@@ -28,6 +28,7 @@ class JohnsonBallShrinkTest(unittest.TestCase):
         rebuilt = load_script().generate()
         self.assertEqual(stored, rebuilt)
         self.assertEqual(rebuilt["fixed_boundary_radial_shrinks"], "PASS")
+        self.assertIn("OPEN", rebuilt["simultaneous_shrink_status"])
         self.assertEqual(rebuilt["ball_exchange_status"], "OPEN")
         for template in rebuilt["templates"]:
             self.assertEqual(len(template["components"]), 6)

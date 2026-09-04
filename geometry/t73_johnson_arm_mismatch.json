@@ -5,7 +5,7 @@
   "johnson_restore_status": "OPEN: mismatch polytopes are decomposed but no fixed-boundary arm homeomorphism has yet been attached",
   "period": 4,
   "schema": "t73_johnson_arm_mismatch/v1",
-  "sha256": "45CC55D318D52A4230535AAE2E1B7048D2E297A02544CE6F537CCD48A602C2EC",
+  "sha256": "B1F820800F244FD0CCC51C1F0EFFFB61A4DA6EDBFCBE6E2FC0E7E4251D245EBD",
   "source": "exact rational clipping of the unwrapped period-four affine-image tetrahedra against target unit cubes",
   "template_count": 12,
   "templates": [
@@ -52,6 +52,262 @@
           "transport_support_status": "OPEN"
         }
       ],
+      "component_intersections": {
+        "closures_pairwise_disjoint": false,
+        "edge_count": 7,
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            5
+          ]
+        ],
+        "half_period_involution": {
+          "0": 3,
+          "1": 4,
+          "2": 5,
+          "3": 0,
+          "4": 1,
+          "5": 2
+        },
+        "half_period_involution_preserves_graph": true,
+        "independent_shrink_composition_status": "OPEN: component closures meet, so the individual radial charts do not compose without a common-intersection movie",
+        "records": [
+          {
+            "affine_dimension": 2,
+            "common_vertex_count": 4,
+            "common_vertices": [
+              [
+                "1",
+                "2",
+                "1"
+              ],
+              [
+                "1",
+                "2",
+                "3"
+              ],
+              [
+                "1",
+                "3",
+                "1"
+              ],
+              [
+                "1",
+                "3",
+                "3"
+              ]
+            ],
+            "components": [
+              0,
+              1
+            ]
+          },
+          {
+            "affine_dimension": 2,
+            "common_vertex_count": 4,
+            "common_vertices": [
+              [
+                "3",
+                "1",
+                "1"
+              ],
+              [
+                "3",
+                "1",
+                "3"
+              ],
+              [
+                "3",
+                "2",
+                "1"
+              ],
+              [
+                "3",
+                "2",
+                "3"
+              ]
+            ],
+            "components": [
+              0,
+              2
+            ]
+          },
+          {
+            "affine_dimension": 2,
+            "common_vertex_count": 6,
+            "common_vertices": [
+              [
+                "2",
+                "1",
+                "0"
+              ],
+              [
+                "2",
+                "1",
+                "1"
+              ],
+              [
+                "2",
+                "1",
+                "3"
+              ],
+              [
+                "2",
+                "3",
+                "0"
+              ],
+              [
+                "2",
+                "3",
+                "1"
+              ],
+              [
+                "2",
+                "3",
+                "3"
+              ]
+            ],
+            "components": [
+              0,
+              3
+            ]
+          },
+          {
+            "affine_dimension": 1,
+            "common_vertex_count": 3,
+            "common_vertices": [
+              [
+                "0",
+                "3",
+                "1"
+              ],
+              [
+                "0",
+                "3",
+                "2"
+              ],
+              [
+                "0",
+                "3",
+                "3"
+              ]
+            ],
+            "components": [
+              1,
+              5
+            ]
+          },
+          {
+            "affine_dimension": 1,
+            "common_vertex_count": 3,
+            "common_vertices": [
+              [
+                "0",
+                "1",
+                "1"
+              ],
+              [
+                "0",
+                "1",
+                "2"
+              ],
+              [
+                "0",
+                "1",
+                "3"
+              ]
+            ],
+            "components": [
+              2,
+              4
+            ]
+          },
+          {
+            "affine_dimension": 2,
+            "common_vertex_count": 4,
+            "common_vertices": [
+              [
+                "1",
+                "0",
+                "1"
+              ],
+              [
+                "1",
+                "0",
+                "3"
+              ],
+              [
+                "1",
+                "1",
+                "1"
+              ],
+              [
+                "1",
+                "1",
+                "3"
+              ]
+            ],
+            "components": [
+              3,
+              4
+            ]
+          },
+          {
+            "affine_dimension": 2,
+            "common_vertex_count": 4,
+            "common_vertices": [
+              [
+                "3",
+                "0",
+                "1"
+              ],
+              [
+                "3",
+                "0",
+                "3"
+              ],
+              [
+                "3",
+                "3",
+                "1"
+              ],
+              [
+                "3",
+                "3",
+                "3"
+              ]
+            ],
+            "components": [
+              3,
+              5
+            ]
+          }
+        ]
+      },
       "components": [
         {
           "boundary_connected": true,
@@ -4062,7 +4318,7 @@
       "power": -1,
       "prefix_axis": 1,
       "restore_status": "OPEN",
-      "sha256": "F5A0A121411AFD25B0F0F7E37E61A64220C5B266045E1A482A4AD25E02FC88FF",
+      "sha256": "C17FDFEC3B86EAF3407DF97311635310E065102FAA870A29870A99D50E0848CD",
       "source_axis": 0
     },
     {
@@ -4108,6 +4364,262 @@
           "transport_support_status": "OPEN"
         }
       ],
+      "component_intersections": {
+        "closures_pairwise_disjoint": false,
+        "edge_count": 7,
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            5
+          ]
+        ],
+        "half_period_involution": {
+          "0": 3,
+          "1": 4,
+          "2": 5,
+          "3": 0,
+          "4": 1,
+          "5": 2
+        },
+        "half_period_involution_preserves_graph": true,
+        "independent_shrink_composition_status": "OPEN: component closures meet, so the individual radial charts do not compose without a common-intersection movie",
+        "records": [
+          {
+            "affine_dimension": 2,
+            "common_vertex_count": 4,
+            "common_vertices": [
+              [
+                "1",
+                "1",
+                "1"
+              ],
+              [
+                "1",
+                "1",
+                "3"
+              ],
+              [
+                "1",
+                "2",
+                "1"
+              ],
+              [
+                "1",
+                "2",
+                "3"
+              ]
+            ],
+            "components": [
+              0,
+              1
+            ]
+          },
+          {
+            "affine_dimension": 2,
+            "common_vertex_count": 4,
+            "common_vertices": [
+              [
+                "3",
+                "2",
+                "1"
+              ],
+              [
+                "3",
+                "2",
+                "3"
+              ],
+              [
+                "3",
+                "3",
+                "1"
+              ],
+              [
+                "3",
+                "3",
+                "3"
+              ]
+            ],
+            "components": [
+              0,
+              2
+            ]
+          },
+          {
+            "affine_dimension": 2,
+            "common_vertex_count": 6,
+            "common_vertices": [
+              [
+                "2",
+                "1",
+                "0"
+              ],
+              [
+                "2",
+                "1",
+                "1"
+              ],
+              [
+                "2",
+                "1",
+                "3"
+              ],
+              [
+                "2",
+                "3",
+                "0"
+              ],
+              [
+                "2",
+                "3",
+                "1"
+              ],
+              [
+                "2",
+                "3",
+                "3"
+              ]
+            ],
+            "components": [
+              0,
+              3
+            ]
+          },
+          {
+            "affine_dimension": 1,
+            "common_vertex_count": 3,
+            "common_vertices": [
+              [
+                "0",
+                "1",
+                "1"
+              ],
+              [
+                "0",
+                "1",
+                "2"
+              ],
+              [
+                "0",
+                "1",
+                "3"
+              ]
+            ],
+            "components": [
+              1,
+              5
+            ]
+          },
+          {
+            "affine_dimension": 1,
+            "common_vertex_count": 3,
+            "common_vertices": [
+              [
+                "0",
+                "3",
+                "1"
+              ],
+              [
+                "0",
+                "3",
+                "2"
+              ],
+              [
+                "0",
+                "3",
+                "3"
+              ]
+            ],
+            "components": [
+              2,
+              4
+            ]
+          },
+          {
+            "affine_dimension": 2,
+            "common_vertex_count": 4,
+            "common_vertices": [
+              [
+                "1",
+                "0",
+                "1"
+              ],
+              [
+                "1",
+                "0",
+                "3"
+              ],
+              [
+                "1",
+                "3",
+                "1"
+              ],
+              [
+                "1",
+                "3",
+                "3"
+              ]
+            ],
+            "components": [
+              3,
+              4
+            ]
+          },
+          {
+            "affine_dimension": 2,
+            "common_vertex_count": 4,
+            "common_vertices": [
+              [
+                "3",
+                "0",
+                "1"
+              ],
+              [
+                "3",
+                "0",
+                "3"
+              ],
+              [
+                "3",
+                "1",
+                "1"
+              ],
+              [
+                "3",
+                "1",
+                "3"
+              ]
+            ],
+            "components": [
+              3,
+              5
+            ]
+          }
+        ]
+      },
       "components": [
         {
           "boundary_connected": true,
@@ -12086,7 +12598,7 @@
       "power": 1,
       "prefix_axis": 1,
       "restore_status": "OPEN",
-      "sha256": "51C8824E7E6482979229CCC1E496D5E3A59CA44E2CA1EE3FDAA559FC6BE486E7",
+      "sha256": "EF48D6396DA7DC433FBED9EC625023709B19D96C18A7047E7A3DF1E724535E82",
       "source_axis": 0
     },
     {
@@ -12132,6 +12644,262 @@
           "transport_support_status": "OPEN"
         }
       ],
+      "component_intersections": {
+        "closures_pairwise_disjoint": false,
+        "edge_count": 7,
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            5
+          ]
+        ],
+        "half_period_involution": {
+          "0": 3,
+          "1": 4,
+          "2": 5,
+          "3": 0,
+          "4": 1,
+          "5": 2
+        },
+        "half_period_involution_preserves_graph": true,
+        "independent_shrink_composition_status": "OPEN: component closures meet, so the individual radial charts do not compose without a common-intersection movie",
+        "records": [
+          {
+            "affine_dimension": 2,
+            "common_vertex_count": 4,
+            "common_vertices": [
+              [
+                "1",
+                "1",
+                "2"
+              ],
+              [
+                "1",
+                "1",
+                "3"
+              ],
+              [
+                "1",
+                "3",
+                "2"
+              ],
+              [
+                "1",
+                "3",
+                "3"
+              ]
+            ],
+            "components": [
+              0,
+              1
+            ]
+          },
+          {
+            "affine_dimension": 2,
+            "common_vertex_count": 4,
+            "common_vertices": [
+              [
+                "3",
+                "1",
+                "1"
+              ],
+              [
+                "3",
+                "1",
+                "2"
+              ],
+              [
+                "3",
+                "3",
+                "1"
+              ],
+              [
+                "3",
+                "3",
+                "2"
+              ]
+            ],
+            "components": [
+              0,
+              2
+            ]
+          },
+          {
+            "affine_dimension": 2,
+            "common_vertex_count": 6,
+            "common_vertices": [
+              [
+                "2",
+                "0",
+                "1"
+              ],
+              [
+                "2",
+                "0",
+                "3"
+              ],
+              [
+                "2",
+                "1",
+                "1"
+              ],
+              [
+                "2",
+                "1",
+                "3"
+              ],
+              [
+                "2",
+                "3",
+                "1"
+              ],
+              [
+                "2",
+                "3",
+                "3"
+              ]
+            ],
+            "components": [
+              0,
+              3
+            ]
+          },
+          {
+            "affine_dimension": 1,
+            "common_vertex_count": 3,
+            "common_vertices": [
+              [
+                "0",
+                "1",
+                "3"
+              ],
+              [
+                "0",
+                "2",
+                "3"
+              ],
+              [
+                "0",
+                "3",
+                "3"
+              ]
+            ],
+            "components": [
+              1,
+              5
+            ]
+          },
+          {
+            "affine_dimension": 1,
+            "common_vertex_count": 3,
+            "common_vertices": [
+              [
+                "0",
+                "1",
+                "1"
+              ],
+              [
+                "0",
+                "2",
+                "1"
+              ],
+              [
+                "0",
+                "3",
+                "1"
+              ]
+            ],
+            "components": [
+              2,
+              4
+            ]
+          },
+          {
+            "affine_dimension": 2,
+            "common_vertex_count": 4,
+            "common_vertices": [
+              [
+                "1",
+                "1",
+                "0"
+              ],
+              [
+                "1",
+                "1",
+                "1"
+              ],
+              [
+                "1",
+                "3",
+                "0"
+              ],
+              [
+                "1",
+                "3",
+                "1"
+              ]
+            ],
+            "components": [
+              3,
+              4
+            ]
+          },
+          {
+            "affine_dimension": 2,
+            "common_vertex_count": 4,
+            "common_vertices": [
+              [
+                "3",
+                "1",
+                "0"
+              ],
+              [
+                "3",
+                "1",
+                "3"
+              ],
+              [
+                "3",
+                "3",
+                "0"
+              ],
+              [
+                "3",
+                "3",
+                "3"
+              ]
+            ],
+            "components": [
+              3,
+              5
+            ]
+          }
+        ]
+      },
       "components": [
         {
           "boundary_connected": true,
@@ -16142,7 +16910,7 @@
       "power": -1,
       "prefix_axis": 2,
       "restore_status": "OPEN",
-      "sha256": "D2C7366D7323AF2FA0D79275786ACE446B93FA15BF6309B7ACB81F77CCE1BE7F",
+      "sha256": "D7160447DC2C445252EAD119AC5C17E2CFEEEB3CA03BC8FAFB115680D9EA1DE8",
       "source_axis": 0
     },
     {
@@ -16188,6 +16956,262 @@
           "transport_support_status": "OPEN"
         }
       ],
+      "component_intersections": {
+        "closures_pairwise_disjoint": false,
+        "edge_count": 7,
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            5
+          ]
+        ],
+        "half_period_involution": {
+          "0": 3,
+          "1": 4,
+          "2": 5,
+          "3": 0,
+          "4": 1,
+          "5": 2
+        },
+        "half_period_involution_preserves_graph": true,
+        "independent_shrink_composition_status": "OPEN: component closures meet, so the individual radial charts do not compose without a common-intersection movie",
+        "records": [
+          {
+            "affine_dimension": 2,
+            "common_vertex_count": 4,
+            "common_vertices": [
+              [
+                "1",
+                "1",
+                "1"
+              ],
+              [
+                "1",
+                "1",
+                "2"
+              ],
+              [
+                "1",
+                "3",
+                "1"
+              ],
+              [
+                "1",
+                "3",
+                "2"
+              ]
+            ],
+            "components": [
+              0,
+              1
+            ]
+          },
+          {
+            "affine_dimension": 2,
+            "common_vertex_count": 4,
+            "common_vertices": [
+              [
+                "3",
+                "1",
+                "2"
+              ],
+              [
+                "3",
+                "1",
+                "3"
+              ],
+              [
+                "3",
+                "3",
+                "2"
+              ],
+              [
+                "3",
+                "3",
+                "3"
+              ]
+            ],
+            "components": [
+              0,
+              2
+            ]
+          },
+          {
+            "affine_dimension": 2,
+            "common_vertex_count": 6,
+            "common_vertices": [
+              [
+                "2",
+                "0",
+                "1"
+              ],
+              [
+                "2",
+                "0",
+                "3"
+              ],
+              [
+                "2",
+                "1",
+                "1"
+              ],
+              [
+                "2",
+                "1",
+                "3"
+              ],
+              [
+                "2",
+                "3",
+                "1"
+              ],
+              [
+                "2",
+                "3",
+                "3"
+              ]
+            ],
+            "components": [
+              0,
+              3
+            ]
+          },
+          {
+            "affine_dimension": 1,
+            "common_vertex_count": 3,
+            "common_vertices": [
+              [
+                "0",
+                "1",
+                "1"
+              ],
+              [
+                "0",
+                "2",
+                "1"
+              ],
+              [
+                "0",
+                "3",
+                "1"
+              ]
+            ],
+            "components": [
+              1,
+              5
+            ]
+          },
+          {
+            "affine_dimension": 1,
+            "common_vertex_count": 3,
+            "common_vertices": [
+              [
+                "0",
+                "1",
+                "3"
+              ],
+              [
+                "0",
+                "2",
+                "3"
+              ],
+              [
+                "0",
+                "3",
+                "3"
+              ]
+            ],
+            "components": [
+              2,
+              4
+            ]
+          },
+          {
+            "affine_dimension": 2,
+            "common_vertex_count": 4,
+            "common_vertices": [
+              [
+                "1",
+                "1",
+                "0"
+              ],
+              [
+                "1",
+                "1",
+                "3"
+              ],
+              [
+                "1",
+                "3",
+                "0"
+              ],
+              [
+                "1",
+                "3",
+                "3"
+              ]
+            ],
+            "components": [
+              3,
+              4
+            ]
+          },
+          {
+            "affine_dimension": 2,
+            "common_vertex_count": 4,
+            "common_vertices": [
+              [
+                "3",
+                "1",
+                "0"
+              ],
+              [
+                "3",
+                "1",
+                "1"
+              ],
+              [
+                "3",
+                "3",
+                "0"
+              ],
+              [
+                "3",
+                "3",
+                "1"
+              ]
+            ],
+            "components": [
+              3,
+              5
+            ]
+          }
+        ]
+      },
       "components": [
         {
           "boundary_connected": true,
@@ -24166,7 +25190,7 @@
       "power": 1,
       "prefix_axis": 2,
       "restore_status": "OPEN",
-      "sha256": "EEE3AE6B2009177B120B72183894787EF69481812E0D36A68F8CB09105E1101F",
+      "sha256": "00CAF8022CC86EAEB247272BD831FA9132272501CC89AD4FF35ABE1968546BFE",
       "source_axis": 0
     },
     {
@@ -24212,6 +25236,262 @@
           "transport_support_status": "OPEN"
         }
       ],
+      "component_intersections": {
+        "closures_pairwise_disjoint": false,
+        "edge_count": 7,
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            2,
+            5
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            5
+          ]
+        ],
+        "half_period_involution": {
+          "0": 3,
+          "1": 5,
+          "2": 4,
+          "3": 0,
+          "4": 2,
+          "5": 1
+        },
+        "half_period_involution_preserves_graph": true,
+        "independent_shrink_composition_status": "OPEN: component closures meet, so the individual radial charts do not compose without a common-intersection movie",
+        "records": [
+          {
+            "affine_dimension": 2,
+            "common_vertex_count": 4,
+            "common_vertices": [
+              [
+                "1",
+                "3",
+                "1"
+              ],
+              [
+                "1",
+                "3",
+                "3"
+              ],
+              [
+                "2",
+                "3",
+                "1"
+              ],
+              [
+                "2",
+                "3",
+                "3"
+              ]
+            ],
+            "components": [
+              0,
+              1
+            ]
+          },
+          {
+            "affine_dimension": 2,
+            "common_vertex_count": 4,
+            "common_vertices": [
+              [
+                "2",
+                "1",
+                "1"
+              ],
+              [
+                "2",
+                "1",
+                "3"
+              ],
+              [
+                "3",
+                "1",
+                "1"
+              ],
+              [
+                "3",
+                "1",
+                "3"
+              ]
+            ],
+            "components": [
+              0,
+              2
+            ]
+          },
+          {
+            "affine_dimension": 2,
+            "common_vertex_count": 6,
+            "common_vertices": [
+              [
+                "1",
+                "2",
+                "0"
+              ],
+              [
+                "1",
+                "2",
+                "1"
+              ],
+              [
+                "1",
+                "2",
+                "3"
+              ],
+              [
+                "3",
+                "2",
+                "0"
+              ],
+              [
+                "3",
+                "2",
+                "1"
+              ],
+              [
+                "3",
+                "2",
+                "3"
+              ]
+            ],
+            "components": [
+              0,
+              3
+            ]
+          },
+          {
+            "affine_dimension": 1,
+            "common_vertex_count": 3,
+            "common_vertices": [
+              [
+                "1",
+                "0",
+                "1"
+              ],
+              [
+                "1",
+                "0",
+                "2"
+              ],
+              [
+                "1",
+                "0",
+                "3"
+              ]
+            ],
+            "components": [
+              1,
+              4
+            ]
+          },
+          {
+            "affine_dimension": 1,
+            "common_vertex_count": 3,
+            "common_vertices": [
+              [
+                "3",
+                "0",
+                "1"
+              ],
+              [
+                "3",
+                "0",
+                "2"
+              ],
+              [
+                "3",
+                "0",
+                "3"
+              ]
+            ],
+            "components": [
+              2,
+              5
+            ]
+          },
+          {
+            "affine_dimension": 2,
+            "common_vertex_count": 4,
+            "common_vertices": [
+              [
+                "0",
+                "1",
+                "1"
+              ],
+              [
+                "0",
+                "1",
+                "3"
+              ],
+              [
+                "1",
+                "1",
+                "1"
+              ],
+              [
+                "1",
+                "1",
+                "3"
+              ]
+            ],
+            "components": [
+              3,
+              4
+            ]
+          },
+          {
+            "affine_dimension": 2,
+            "common_vertex_count": 4,
+            "common_vertices": [
+              [
+                "0",
+                "3",
+                "1"
+              ],
+              [
+                "0",
+                "3",
+                "3"
+              ],
+              [
+                "3",
+                "3",
+                "1"
+              ],
+              [
+                "3",
+                "3",
+                "3"
+              ]
+            ],
+            "components": [
+              3,
+              5
+            ]
+          }
+        ]
+      },
       "components": [
         {
           "boundary_connected": true,
@@ -28222,7 +29502,7 @@
       "power": -1,
       "prefix_axis": 0,
       "restore_status": "OPEN",
-      "sha256": "3A83A3FF89484B0F9AD020BAF358B00FDE8527F2B65D4FE9DA5B0F95E3E0D833",
+      "sha256": "DA86CF94816D7A2A2DA769F1BD9084724D1E0C54ABFF6AA46A9C3593BEE52692",
       "source_axis": 1
     },
     {
@@ -28268,6 +29548,262 @@
           "transport_support_status": "OPEN"
         }
       ],
+      "component_intersections": {
+        "closures_pairwise_disjoint": false,
+        "edge_count": 7,
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            2,
+            5
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            5
+          ]
+        ],
+        "half_period_involution": {
+          "0": 3,
+          "1": 5,
+          "2": 4,
+          "3": 0,
+          "4": 2,
+          "5": 1
+        },
+        "half_period_involution_preserves_graph": true,
+        "independent_shrink_composition_status": "OPEN: component closures meet, so the individual radial charts do not compose without a common-intersection movie",
+        "records": [
+          {
+            "affine_dimension": 2,
+            "common_vertex_count": 4,
+            "common_vertices": [
+              [
+                "1",
+                "1",
+                "1"
+              ],
+              [
+                "1",
+                "1",
+                "3"
+              ],
+              [
+                "2",
+                "1",
+                "1"
+              ],
+              [
+                "2",
+                "1",
+                "3"
+              ]
+            ],
+            "components": [
+              0,
+              1
+            ]
+          },
+          {
+            "affine_dimension": 2,
+            "common_vertex_count": 4,
+            "common_vertices": [
+              [
+                "2",
+                "3",
+                "1"
+              ],
+              [
+                "2",
+                "3",
+                "3"
+              ],
+              [
+                "3",
+                "3",
+                "1"
+              ],
+              [
+                "3",
+                "3",
+                "3"
+              ]
+            ],
+            "components": [
+              0,
+              2
+            ]
+          },
+          {
+            "affine_dimension": 2,
+            "common_vertex_count": 6,
+            "common_vertices": [
+              [
+                "1",
+                "2",
+                "0"
+              ],
+              [
+                "1",
+                "2",
+                "1"
+              ],
+              [
+                "1",
+                "2",
+                "3"
+              ],
+              [
+                "3",
+                "2",
+                "0"
+              ],
+              [
+                "3",
+                "2",
+                "1"
+              ],
+              [
+                "3",
+                "2",
+                "3"
+              ]
+            ],
+            "components": [
+              0,
+              3
+            ]
+          },
+          {
+            "affine_dimension": 1,
+            "common_vertex_count": 3,
+            "common_vertices": [
+              [
+                "1",
+                "0",
+                "1"
+              ],
+              [
+                "1",
+                "0",
+                "2"
+              ],
+              [
+                "1",
+                "0",
+                "3"
+              ]
+            ],
+            "components": [
+              1,
+              4
+            ]
+          },
+          {
+            "affine_dimension": 1,
+            "common_vertex_count": 3,
+            "common_vertices": [
+              [
+                "3",
+                "0",
+                "1"
+              ],
+              [
+                "3",
+                "0",
+                "2"
+              ],
+              [
+                "3",
+                "0",
+                "3"
+              ]
+            ],
+            "components": [
+              2,
+              5
+            ]
+          },
+          {
+            "affine_dimension": 2,
+            "common_vertex_count": 4,
+            "common_vertices": [
+              [
+                "0",
+                "3",
+                "1"
+              ],
+              [
+                "0",
+                "3",
+                "3"
+              ],
+              [
+                "1",
+                "3",
+                "1"
+              ],
+              [
+                "1",
+                "3",
+                "3"
+              ]
+            ],
+            "components": [
+              3,
+              4
+            ]
+          },
+          {
+            "affine_dimension": 2,
+            "common_vertex_count": 4,
+            "common_vertices": [
+              [
+                "0",
+                "1",
+                "1"
+              ],
+              [
+                "0",
+                "1",
+                "3"
+              ],
+              [
+                "3",
+                "1",
+                "1"
+              ],
+              [
+                "3",
+                "1",
+                "3"
+              ]
+            ],
+            "components": [
+              3,
+              5
+            ]
+          }
+        ]
+      },
       "components": [
         {
           "boundary_connected": true,
@@ -36246,7 +37782,7 @@
       "power": 1,
       "prefix_axis": 0,
       "restore_status": "OPEN",
-      "sha256": "BB99BF648C6D53970D884171A3A8A090153C946532A4E353C51B737BED1782D5",
+      "sha256": "1080ED2664C86BD94CBE9D6AA2EB2060CE7F37835FC8BBCD36CE0CB05C41E9B5",
       "source_axis": 1
     },
     {
@@ -36292,6 +37828,262 @@
           "transport_support_status": "OPEN"
         }
       ],
+      "component_intersections": {
+        "closures_pairwise_disjoint": false,
+        "edge_count": 7,
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            5
+          ]
+        ],
+        "half_period_involution": {
+          "0": 3,
+          "1": 4,
+          "2": 5,
+          "3": 0,
+          "4": 1,
+          "5": 2
+        },
+        "half_period_involution_preserves_graph": true,
+        "independent_shrink_composition_status": "OPEN: component closures meet, so the individual radial charts do not compose without a common-intersection movie",
+        "records": [
+          {
+            "affine_dimension": 2,
+            "common_vertex_count": 4,
+            "common_vertices": [
+              [
+                "1",
+                "1",
+                "2"
+              ],
+              [
+                "1",
+                "1",
+                "3"
+              ],
+              [
+                "3",
+                "1",
+                "2"
+              ],
+              [
+                "3",
+                "1",
+                "3"
+              ]
+            ],
+            "components": [
+              0,
+              1
+            ]
+          },
+          {
+            "affine_dimension": 2,
+            "common_vertex_count": 4,
+            "common_vertices": [
+              [
+                "1",
+                "3",
+                "1"
+              ],
+              [
+                "1",
+                "3",
+                "2"
+              ],
+              [
+                "3",
+                "3",
+                "1"
+              ],
+              [
+                "3",
+                "3",
+                "2"
+              ]
+            ],
+            "components": [
+              0,
+              2
+            ]
+          },
+          {
+            "affine_dimension": 2,
+            "common_vertex_count": 6,
+            "common_vertices": [
+              [
+                "0",
+                "2",
+                "1"
+              ],
+              [
+                "0",
+                "2",
+                "3"
+              ],
+              [
+                "1",
+                "2",
+                "1"
+              ],
+              [
+                "1",
+                "2",
+                "3"
+              ],
+              [
+                "3",
+                "2",
+                "1"
+              ],
+              [
+                "3",
+                "2",
+                "3"
+              ]
+            ],
+            "components": [
+              0,
+              3
+            ]
+          },
+          {
+            "affine_dimension": 1,
+            "common_vertex_count": 3,
+            "common_vertices": [
+              [
+                "1",
+                "0",
+                "3"
+              ],
+              [
+                "2",
+                "0",
+                "3"
+              ],
+              [
+                "3",
+                "0",
+                "3"
+              ]
+            ],
+            "components": [
+              1,
+              5
+            ]
+          },
+          {
+            "affine_dimension": 1,
+            "common_vertex_count": 3,
+            "common_vertices": [
+              [
+                "1",
+                "0",
+                "1"
+              ],
+              [
+                "2",
+                "0",
+                "1"
+              ],
+              [
+                "3",
+                "0",
+                "1"
+              ]
+            ],
+            "components": [
+              2,
+              4
+            ]
+          },
+          {
+            "affine_dimension": 2,
+            "common_vertex_count": 4,
+            "common_vertices": [
+              [
+                "1",
+                "1",
+                "0"
+              ],
+              [
+                "1",
+                "1",
+                "1"
+              ],
+              [
+                "3",
+                "1",
+                "0"
+              ],
+              [
+                "3",
+                "1",
+                "1"
+              ]
+            ],
+            "components": [
+              3,
+              4
+            ]
+          },
+          {
+            "affine_dimension": 2,
+            "common_vertex_count": 4,
+            "common_vertices": [
+              [
+                "1",
+                "3",
+                "0"
+              ],
+              [
+                "1",
+                "3",
+                "3"
+              ],
+              [
+                "3",
+                "3",
+                "0"
+              ],
+              [
+                "3",
+                "3",
+                "3"
+              ]
+            ],
+            "components": [
+              3,
+              5
+            ]
+          }
+        ]
+      },
       "components": [
         {
           "boundary_connected": true,
@@ -40302,7 +42094,7 @@
       "power": -1,
       "prefix_axis": 2,
       "restore_status": "OPEN",
-      "sha256": "6CCDDDADB6C99D07700EB9366D4076B50D2E9BD8CDE0238444584A773206BE25",
+      "sha256": "F0C41E5684CDDD8CFE880FC0BFDA8783EFD3E9F1CE23135F65A43EAD4932AFE7",
       "source_axis": 1
     },
     {
@@ -40348,6 +42140,262 @@
           "transport_support_status": "OPEN"
         }
       ],
+      "component_intersections": {
+        "closures_pairwise_disjoint": false,
+        "edge_count": 7,
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            5
+          ]
+        ],
+        "half_period_involution": {
+          "0": 3,
+          "1": 4,
+          "2": 5,
+          "3": 0,
+          "4": 1,
+          "5": 2
+        },
+        "half_period_involution_preserves_graph": true,
+        "independent_shrink_composition_status": "OPEN: component closures meet, so the individual radial charts do not compose without a common-intersection movie",
+        "records": [
+          {
+            "affine_dimension": 2,
+            "common_vertex_count": 4,
+            "common_vertices": [
+              [
+                "1",
+                "1",
+                "1"
+              ],
+              [
+                "1",
+                "1",
+                "2"
+              ],
+              [
+                "3",
+                "1",
+                "1"
+              ],
+              [
+                "3",
+                "1",
+                "2"
+              ]
+            ],
+            "components": [
+              0,
+              1
+            ]
+          },
+          {
+            "affine_dimension": 2,
+            "common_vertex_count": 4,
+            "common_vertices": [
+              [
+                "1",
+                "3",
+                "2"
+              ],
+              [
+                "1",
+                "3",
+                "3"
+              ],
+              [
+                "3",
+                "3",
+                "2"
+              ],
+              [
+                "3",
+                "3",
+                "3"
+              ]
+            ],
+            "components": [
+              0,
+              2
+            ]
+          },
+          {
+            "affine_dimension": 2,
+            "common_vertex_count": 6,
+            "common_vertices": [
+              [
+                "0",
+                "2",
+                "1"
+              ],
+              [
+                "0",
+                "2",
+                "3"
+              ],
+              [
+                "1",
+                "2",
+                "1"
+              ],
+              [
+                "1",
+                "2",
+                "3"
+              ],
+              [
+                "3",
+                "2",
+                "1"
+              ],
+              [
+                "3",
+                "2",
+                "3"
+              ]
+            ],
+            "components": [
+              0,
+              3
+            ]
+          },
+          {
+            "affine_dimension": 1,
+            "common_vertex_count": 3,
+            "common_vertices": [
+              [
+                "1",
+                "0",
+                "1"
+              ],
+              [
+                "2",
+                "0",
+                "1"
+              ],
+              [
+                "3",
+                "0",
+                "1"
+              ]
+            ],
+            "components": [
+              1,
+              5
+            ]
+          },
+          {
+            "affine_dimension": 1,
+            "common_vertex_count": 3,
+            "common_vertices": [
+              [
+                "1",
+                "0",
+                "3"
+              ],
+              [
+                "2",
+                "0",
+                "3"
+              ],
+              [
+                "3",
+                "0",
+                "3"
+              ]
+            ],
+            "components": [
+              2,
+              4
+            ]
+          },
+          {
+            "affine_dimension": 2,
+            "common_vertex_count": 4,
+            "common_vertices": [
+              [
+                "1",
+                "1",
+                "0"
+              ],
+              [
+                "1",
+                "1",
+                "3"
+              ],
+              [
+                "3",
+                "1",
+                "0"
+              ],
+              [
+                "3",
+                "1",
+                "3"
+              ]
+            ],
+            "components": [
+              3,
+              4
+            ]
+          },
+          {
+            "affine_dimension": 2,
+            "common_vertex_count": 4,
+            "common_vertices": [
+              [
+                "1",
+                "3",
+                "0"
+              ],
+              [
+                "1",
+                "3",
+                "1"
+              ],
+              [
+                "3",
+                "3",
+                "0"
+              ],
+              [
+                "3",
+                "3",
+                "1"
+              ]
+            ],
+            "components": [
+              3,
+              5
+            ]
+          }
+        ]
+      },
       "components": [
         {
           "boundary_connected": true,
@@ -48326,7 +50374,7 @@
       "power": 1,
       "prefix_axis": 2,
       "restore_status": "OPEN",
-      "sha256": "ECB2A6F30B5501731D2F4DB4063CE2402558C23DFC63D006E2948E64B486A2BA",
+      "sha256": "6820CE3062CA58C378CCE52B8107DE920ADB16856B2156FCD09FB23CB327AA6D",
       "source_axis": 1
     },
     {
@@ -48372,6 +50420,262 @@
           "transport_support_status": "OPEN"
         }
       ],
+      "component_intersections": {
+        "closures_pairwise_disjoint": false,
+        "edge_count": 7,
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            2,
+            5
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            5
+          ]
+        ],
+        "half_period_involution": {
+          "0": 3,
+          "1": 5,
+          "2": 4,
+          "3": 0,
+          "4": 2,
+          "5": 1
+        },
+        "half_period_involution_preserves_graph": true,
+        "independent_shrink_composition_status": "OPEN: component closures meet, so the individual radial charts do not compose without a common-intersection movie",
+        "records": [
+          {
+            "affine_dimension": 2,
+            "common_vertex_count": 4,
+            "common_vertices": [
+              [
+                "1",
+                "1",
+                "3"
+              ],
+              [
+                "1",
+                "3",
+                "3"
+              ],
+              [
+                "2",
+                "1",
+                "3"
+              ],
+              [
+                "2",
+                "3",
+                "3"
+              ]
+            ],
+            "components": [
+              0,
+              1
+            ]
+          },
+          {
+            "affine_dimension": 2,
+            "common_vertex_count": 4,
+            "common_vertices": [
+              [
+                "2",
+                "1",
+                "1"
+              ],
+              [
+                "2",
+                "3",
+                "1"
+              ],
+              [
+                "3",
+                "1",
+                "1"
+              ],
+              [
+                "3",
+                "3",
+                "1"
+              ]
+            ],
+            "components": [
+              0,
+              2
+            ]
+          },
+          {
+            "affine_dimension": 2,
+            "common_vertex_count": 6,
+            "common_vertices": [
+              [
+                "1",
+                "0",
+                "2"
+              ],
+              [
+                "1",
+                "1",
+                "2"
+              ],
+              [
+                "1",
+                "3",
+                "2"
+              ],
+              [
+                "3",
+                "0",
+                "2"
+              ],
+              [
+                "3",
+                "1",
+                "2"
+              ],
+              [
+                "3",
+                "3",
+                "2"
+              ]
+            ],
+            "components": [
+              0,
+              3
+            ]
+          },
+          {
+            "affine_dimension": 1,
+            "common_vertex_count": 3,
+            "common_vertices": [
+              [
+                "1",
+                "1",
+                "0"
+              ],
+              [
+                "1",
+                "2",
+                "0"
+              ],
+              [
+                "1",
+                "3",
+                "0"
+              ]
+            ],
+            "components": [
+              1,
+              4
+            ]
+          },
+          {
+            "affine_dimension": 1,
+            "common_vertex_count": 3,
+            "common_vertices": [
+              [
+                "3",
+                "1",
+                "0"
+              ],
+              [
+                "3",
+                "2",
+                "0"
+              ],
+              [
+                "3",
+                "3",
+                "0"
+              ]
+            ],
+            "components": [
+              2,
+              5
+            ]
+          },
+          {
+            "affine_dimension": 2,
+            "common_vertex_count": 4,
+            "common_vertices": [
+              [
+                "0",
+                "1",
+                "1"
+              ],
+              [
+                "0",
+                "3",
+                "1"
+              ],
+              [
+                "1",
+                "1",
+                "1"
+              ],
+              [
+                "1",
+                "3",
+                "1"
+              ]
+            ],
+            "components": [
+              3,
+              4
+            ]
+          },
+          {
+            "affine_dimension": 2,
+            "common_vertex_count": 4,
+            "common_vertices": [
+              [
+                "0",
+                "1",
+                "3"
+              ],
+              [
+                "0",
+                "3",
+                "3"
+              ],
+              [
+                "3",
+                "1",
+                "3"
+              ],
+              [
+                "3",
+                "3",
+                "3"
+              ]
+            ],
+            "components": [
+              3,
+              5
+            ]
+          }
+        ]
+      },
       "components": [
         {
           "boundary_connected": true,
@@ -52382,7 +54686,7 @@
       "power": -1,
       "prefix_axis": 0,
       "restore_status": "OPEN",
-      "sha256": "524C704B392AC622D333E33C618C3B647199E694F7DB0E4A9055BC3C52B50BAA",
+      "sha256": "678FB1D6EEC4EBFF3CC60E1991C8AF53A7F84B3C0B61B6D7FCFE2DFF6ABA3364",
       "source_axis": 2
     },
     {
@@ -52428,6 +54732,262 @@
           "transport_support_status": "OPEN"
         }
       ],
+      "component_intersections": {
+        "closures_pairwise_disjoint": false,
+        "edge_count": 7,
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            2,
+            5
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            5
+          ]
+        ],
+        "half_period_involution": {
+          "0": 3,
+          "1": 5,
+          "2": 4,
+          "3": 0,
+          "4": 2,
+          "5": 1
+        },
+        "half_period_involution_preserves_graph": true,
+        "independent_shrink_composition_status": "OPEN: component closures meet, so the individual radial charts do not compose without a common-intersection movie",
+        "records": [
+          {
+            "affine_dimension": 2,
+            "common_vertex_count": 4,
+            "common_vertices": [
+              [
+                "1",
+                "1",
+                "1"
+              ],
+              [
+                "1",
+                "3",
+                "1"
+              ],
+              [
+                "2",
+                "1",
+                "1"
+              ],
+              [
+                "2",
+                "3",
+                "1"
+              ]
+            ],
+            "components": [
+              0,
+              1
+            ]
+          },
+          {
+            "affine_dimension": 2,
+            "common_vertex_count": 4,
+            "common_vertices": [
+              [
+                "2",
+                "1",
+                "3"
+              ],
+              [
+                "2",
+                "3",
+                "3"
+              ],
+              [
+                "3",
+                "1",
+                "3"
+              ],
+              [
+                "3",
+                "3",
+                "3"
+              ]
+            ],
+            "components": [
+              0,
+              2
+            ]
+          },
+          {
+            "affine_dimension": 2,
+            "common_vertex_count": 6,
+            "common_vertices": [
+              [
+                "1",
+                "0",
+                "2"
+              ],
+              [
+                "1",
+                "1",
+                "2"
+              ],
+              [
+                "1",
+                "3",
+                "2"
+              ],
+              [
+                "3",
+                "0",
+                "2"
+              ],
+              [
+                "3",
+                "1",
+                "2"
+              ],
+              [
+                "3",
+                "3",
+                "2"
+              ]
+            ],
+            "components": [
+              0,
+              3
+            ]
+          },
+          {
+            "affine_dimension": 1,
+            "common_vertex_count": 3,
+            "common_vertices": [
+              [
+                "1",
+                "1",
+                "0"
+              ],
+              [
+                "1",
+                "2",
+                "0"
+              ],
+              [
+                "1",
+                "3",
+                "0"
+              ]
+            ],
+            "components": [
+              1,
+              4
+            ]
+          },
+          {
+            "affine_dimension": 1,
+            "common_vertex_count": 3,
+            "common_vertices": [
+              [
+                "3",
+                "1",
+                "0"
+              ],
+              [
+                "3",
+                "2",
+                "0"
+              ],
+              [
+                "3",
+                "3",
+                "0"
+              ]
+            ],
+            "components": [
+              2,
+              5
+            ]
+          },
+          {
+            "affine_dimension": 2,
+            "common_vertex_count": 4,
+            "common_vertices": [
+              [
+                "0",
+                "1",
+                "3"
+              ],
+              [
+                "0",
+                "3",
+                "3"
+              ],
+              [
+                "1",
+                "1",
+                "3"
+              ],
+              [
+                "1",
+                "3",
+                "3"
+              ]
+            ],
+            "components": [
+              3,
+              4
+            ]
+          },
+          {
+            "affine_dimension": 2,
+            "common_vertex_count": 4,
+            "common_vertices": [
+              [
+                "0",
+                "1",
+                "1"
+              ],
+              [
+                "0",
+                "3",
+                "1"
+              ],
+              [
+                "3",
+                "1",
+                "1"
+              ],
+              [
+                "3",
+                "3",
+                "1"
+              ]
+            ],
+            "components": [
+              3,
+              5
+            ]
+          }
+        ]
+      },
       "components": [
         {
           "boundary_connected": true,
@@ -60406,7 +62966,7 @@
       "power": 1,
       "prefix_axis": 0,
       "restore_status": "OPEN",
-      "sha256": "34332421EB540E54365ABCA7A45723FABF91133B1AB2A1D532FB36FC705D6D5E",
+      "sha256": "49A10CA507E8570BA26115F8A0BF642EBB0539009A85447ABF3503F3B25A8B4C",
       "source_axis": 2
     },
     {
@@ -60452,6 +63012,262 @@
           "transport_support_status": "OPEN"
         }
       ],
+      "component_intersections": {
+        "closures_pairwise_disjoint": false,
+        "edge_count": 7,
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            2,
+            5
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            5
+          ]
+        ],
+        "half_period_involution": {
+          "0": 3,
+          "1": 5,
+          "2": 4,
+          "3": 0,
+          "4": 2,
+          "5": 1
+        },
+        "half_period_involution_preserves_graph": true,
+        "independent_shrink_composition_status": "OPEN: component closures meet, so the individual radial charts do not compose without a common-intersection movie",
+        "records": [
+          {
+            "affine_dimension": 2,
+            "common_vertex_count": 4,
+            "common_vertices": [
+              [
+                "1",
+                "1",
+                "3"
+              ],
+              [
+                "1",
+                "2",
+                "3"
+              ],
+              [
+                "3",
+                "1",
+                "3"
+              ],
+              [
+                "3",
+                "2",
+                "3"
+              ]
+            ],
+            "components": [
+              0,
+              1
+            ]
+          },
+          {
+            "affine_dimension": 2,
+            "common_vertex_count": 4,
+            "common_vertices": [
+              [
+                "1",
+                "2",
+                "1"
+              ],
+              [
+                "1",
+                "3",
+                "1"
+              ],
+              [
+                "3",
+                "2",
+                "1"
+              ],
+              [
+                "3",
+                "3",
+                "1"
+              ]
+            ],
+            "components": [
+              0,
+              2
+            ]
+          },
+          {
+            "affine_dimension": 2,
+            "common_vertex_count": 6,
+            "common_vertices": [
+              [
+                "0",
+                "1",
+                "2"
+              ],
+              [
+                "0",
+                "3",
+                "2"
+              ],
+              [
+                "1",
+                "1",
+                "2"
+              ],
+              [
+                "1",
+                "3",
+                "2"
+              ],
+              [
+                "3",
+                "1",
+                "2"
+              ],
+              [
+                "3",
+                "3",
+                "2"
+              ]
+            ],
+            "components": [
+              0,
+              3
+            ]
+          },
+          {
+            "affine_dimension": 1,
+            "common_vertex_count": 3,
+            "common_vertices": [
+              [
+                "1",
+                "1",
+                "0"
+              ],
+              [
+                "2",
+                "1",
+                "0"
+              ],
+              [
+                "3",
+                "1",
+                "0"
+              ]
+            ],
+            "components": [
+              1,
+              4
+            ]
+          },
+          {
+            "affine_dimension": 1,
+            "common_vertex_count": 3,
+            "common_vertices": [
+              [
+                "1",
+                "3",
+                "0"
+              ],
+              [
+                "2",
+                "3",
+                "0"
+              ],
+              [
+                "3",
+                "3",
+                "0"
+              ]
+            ],
+            "components": [
+              2,
+              5
+            ]
+          },
+          {
+            "affine_dimension": 2,
+            "common_vertex_count": 4,
+            "common_vertices": [
+              [
+                "1",
+                "0",
+                "1"
+              ],
+              [
+                "1",
+                "1",
+                "1"
+              ],
+              [
+                "3",
+                "0",
+                "1"
+              ],
+              [
+                "3",
+                "1",
+                "1"
+              ]
+            ],
+            "components": [
+              3,
+              4
+            ]
+          },
+          {
+            "affine_dimension": 2,
+            "common_vertex_count": 4,
+            "common_vertices": [
+              [
+                "1",
+                "0",
+                "3"
+              ],
+              [
+                "1",
+                "3",
+                "3"
+              ],
+              [
+                "3",
+                "0",
+                "3"
+              ],
+              [
+                "3",
+                "3",
+                "3"
+              ]
+            ],
+            "components": [
+              3,
+              5
+            ]
+          }
+        ]
+      },
       "components": [
         {
           "boundary_connected": true,
@@ -64462,7 +67278,7 @@
       "power": -1,
       "prefix_axis": 1,
       "restore_status": "OPEN",
-      "sha256": "FBEC9CE1E8EFDA45841CB84210A3D55EAD8BC184F7AA11E215048A3B88033FCA",
+      "sha256": "0136FB483A9989E257681B956B48F87FD744543A9E551F45F55EF22707189F6A",
       "source_axis": 2
     },
     {
@@ -64508,6 +67324,262 @@
           "transport_support_status": "OPEN"
         }
       ],
+      "component_intersections": {
+        "closures_pairwise_disjoint": false,
+        "edge_count": 7,
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            2,
+            5
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            5
+          ]
+        ],
+        "half_period_involution": {
+          "0": 3,
+          "1": 5,
+          "2": 4,
+          "3": 0,
+          "4": 2,
+          "5": 1
+        },
+        "half_period_involution_preserves_graph": true,
+        "independent_shrink_composition_status": "OPEN: component closures meet, so the individual radial charts do not compose without a common-intersection movie",
+        "records": [
+          {
+            "affine_dimension": 2,
+            "common_vertex_count": 4,
+            "common_vertices": [
+              [
+                "1",
+                "1",
+                "1"
+              ],
+              [
+                "1",
+                "2",
+                "1"
+              ],
+              [
+                "3",
+                "1",
+                "1"
+              ],
+              [
+                "3",
+                "2",
+                "1"
+              ]
+            ],
+            "components": [
+              0,
+              1
+            ]
+          },
+          {
+            "affine_dimension": 2,
+            "common_vertex_count": 4,
+            "common_vertices": [
+              [
+                "1",
+                "2",
+                "3"
+              ],
+              [
+                "1",
+                "3",
+                "3"
+              ],
+              [
+                "3",
+                "2",
+                "3"
+              ],
+              [
+                "3",
+                "3",
+                "3"
+              ]
+            ],
+            "components": [
+              0,
+              2
+            ]
+          },
+          {
+            "affine_dimension": 2,
+            "common_vertex_count": 6,
+            "common_vertices": [
+              [
+                "0",
+                "1",
+                "2"
+              ],
+              [
+                "0",
+                "3",
+                "2"
+              ],
+              [
+                "1",
+                "1",
+                "2"
+              ],
+              [
+                "1",
+                "3",
+                "2"
+              ],
+              [
+                "3",
+                "1",
+                "2"
+              ],
+              [
+                "3",
+                "3",
+                "2"
+              ]
+            ],
+            "components": [
+              0,
+              3
+            ]
+          },
+          {
+            "affine_dimension": 1,
+            "common_vertex_count": 3,
+            "common_vertices": [
+              [
+                "1",
+                "1",
+                "0"
+              ],
+              [
+                "2",
+                "1",
+                "0"
+              ],
+              [
+                "3",
+                "1",
+                "0"
+              ]
+            ],
+            "components": [
+              1,
+              4
+            ]
+          },
+          {
+            "affine_dimension": 1,
+            "common_vertex_count": 3,
+            "common_vertices": [
+              [
+                "1",
+                "3",
+                "0"
+              ],
+              [
+                "2",
+                "3",
+                "0"
+              ],
+              [
+                "3",
+                "3",
+                "0"
+              ]
+            ],
+            "components": [
+              2,
+              5
+            ]
+          },
+          {
+            "affine_dimension": 2,
+            "common_vertex_count": 4,
+            "common_vertices": [
+              [
+                "1",
+                "0",
+                "3"
+              ],
+              [
+                "1",
+                "1",
+                "3"
+              ],
+              [
+                "3",
+                "0",
+                "3"
+              ],
+              [
+                "3",
+                "1",
+                "3"
+              ]
+            ],
+            "components": [
+              3,
+              4
+            ]
+          },
+          {
+            "affine_dimension": 2,
+            "common_vertex_count": 4,
+            "common_vertices": [
+              [
+                "1",
+                "0",
+                "1"
+              ],
+              [
+                "1",
+                "3",
+                "1"
+              ],
+              [
+                "3",
+                "0",
+                "1"
+              ],
+              [
+                "3",
+                "3",
+                "1"
+              ]
+            ],
+            "components": [
+              3,
+              5
+            ]
+          }
+        ]
+      },
       "components": [
         {
           "boundary_connected": true,
@@ -72486,7 +75558,7 @@
       "power": 1,
       "prefix_axis": 1,
       "restore_status": "OPEN",
-      "sha256": "7B8647E5CCC5C3F83A16DF9A5549D73ED4FF0ECE356EE88607775BCE80BB3C5D",
+      "sha256": "FD2418472A02DA8FB8429C87A803B8F7CE145D722AB9DAD19553DA26E65E7ADE",
       "source_axis": 2
     }
   ]

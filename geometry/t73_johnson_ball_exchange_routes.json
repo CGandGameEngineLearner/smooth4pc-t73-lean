@@ -1,10 +1,12 @@
 {
   "all_routes_disjoint": true,
   "ball_exchange_status": "OPEN: routes are certified but compact translation cells are not yet attached",
-  "mismatch_sha256": "45CC55D318D52A4230535AAE2E1B7048D2E297A02544CE6F537CCD48A602C2EC",
+  "mismatch_sha256": "B1F820800F244FD0CCC51C1F0EFFFB61A4DA6EDBFCBE6E2FC0E7E4251D245EBD",
+  "requires_compatible_global_shrink": true,
   "schema": "t73_johnson_ball_exchange_routes/v1",
-  "sha256": "4E3CF129C0E8403D014549840DE3C6CB81CA1BF0B8DB5A32CEE125BAA104238C",
-  "shrinks_sha256": "DCA11F308A9AF6948F27DD94E14C5A6B41C15FD3ACBC6A26FA180743BFD0FC97",
+  "scope": "routes for the scale-1/4 interior cores",
+  "sha256": "07B3A0CE27AE2CA2F73B69E57CB0E3D3EAC96CABFC48ABB0CEBC0CB927BC9F9F",
+  "shrinks_sha256": "AAC3A2F081220C11CE2B08464FADF783C2CE09440B7FA44FE5731B40FFD8332F",
   "support_scale": "3/8",
   "templates": [
     {
