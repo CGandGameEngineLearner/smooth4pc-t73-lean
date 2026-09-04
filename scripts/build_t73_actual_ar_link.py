@@ -113,6 +113,11 @@ def build(write: bool = False) -> dict[str, Any]:
         raise AssertionError("psi_A and Johnson generators must be written first")
     manifest = json.loads(MANIFEST.read_text(encoding="utf-8"))
     psi = json.loads(PSI.read_text(encoding="utf-8"))
+    if psi.get("status", {}).get("actual_curve_transport_evaluator") != "PASS":
+        raise AssertionError(
+            "current hierarchical psi_A has no actual curve-transport evaluator; "
+            "the AR link must not be rebuilt from the legacy point evaluator"
+        )
     generators = [
         json.loads((ROOT / record["path"]).read_text(encoding="utf-8"))
         for record in manifest["generators"]

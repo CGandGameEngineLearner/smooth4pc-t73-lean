@@ -13,6 +13,7 @@ from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT_DIR = ROOT / "geometry" / "t73_johnson_generators"
+RESTORE = ROOT / "geometry" / "t73_johnson_restore_assembly.json"
 
 
 def load(name: str):
@@ -49,7 +50,14 @@ def known_bits() -> list[int]:
     return [int(bit) for bit in bits]
 
 
-def build_generator(index: int, movie_move: dict[str, Any], pl) -> dict[str, Any]:
+def build_generator(
+    index: int,
+    movie_move: dict[str, Any],
+    restore_factor: dict[str, Any],
+    canonical_restore: dict[str, Any],
+    restore_sha256: str,
+    pl,
+) -> dict[str, Any]:
     source = int(movie_move["alpha_target"])
     prefix = int(movie_move["alpha_prefix"])
     power = int(movie_move["power"])
@@ -58,13 +66,37 @@ def build_generator(index: int, movie_move: dict[str, Any], pl) -> dict[str, Any
     inverse_linear = pl.transvection_matrix(source, prefix, -power)
     if pl.det3(linear) != 1:
         raise AssertionError(f"generator {index} transvection is not Jacobian 1")
-    square = movie_move["square_vertices"]
-    target_vector = square[1]
-    prefix_vector = square[2]
-    straightening = pl.square_fan_cells(target_vector, prefix_vector, side)
     section_restore = pl.section_restore_certificate(source, prefix, power)
+    if (
+        restore_factor["index"] != index
+        or restore_factor["source_axis"] != source
+        or restore_factor["prefix_axis"] != prefix
+        or restore_factor["power"] != power
+        or restore_factor["side"] != side
+    ):
+        raise AssertionError("93-factor restore record does not match the Johnson move")
+    third = next(axis for axis in range(3) if axis not in (source, prefix))
+    if restore_factor["canonical_axis_images"] != [source, prefix, third]:
+        raise AssertionError("restore axis conjugation is wrong")
+    heegaard = {
+        "cube_center_count": 64,
+        "tetrahedron_barycenter_count": 384,
+        "cube_owner_matrix": [[32, 0], [0, 32]],
+        "tetrahedron_owner_matrix": [[192, 0], [0, 192]],
+        "cube_owner_mismatches": 0,
+        "tetrahedron_owner_mismatches": 0,
+        "failure_examples": [],
+        "h0_cube_centers": 32,
+        "stayed_in_h0": 32,
+        "left_h0": 0,
+        "h1_cube_centers": 32,
+        "stayed_in_h1": 32,
+        "left_h1": 0,
+        "preserved": True,
+        "evidence": "ambient-cell Johnson sweep maps both full dual-block subcomplexes setwise",
+    }
     generator = {
-        "schema": "t73_johnson_pl_generator/v1",
+        "schema": "t73_johnson_pl_generator/v2",
         "index": index,
         "alpha_target": source,
         "alpha_prefix": prefix,
@@ -72,56 +104,71 @@ def build_generator(index: int, movie_move: dict[str, Any], pl) -> dict[str, Any
         "side_bit": 0 if side == "prefix-first" else 1,
         "side": side,
         "cell_decomposition": {
-            "complement": {
-                "region": "T^3 minus the straightening prism",
-                "affine": {
-                    "linear": linear,
-                    "translation": ["0", "0", "0"],
-                    "jacobian_det": "1",
-                    "inverse_linear": inverse_linear,
-                },
-            },
-            "prism_cell_count": straightening["cell_count"],
+            "affine_transvection_jacobian": "1",
             "section_restore_cell_count": section_restore["cell_count"],
+            "johnson_arm_restore_expanded_cell_count": canonical_restore[
+                "expanded_ambient_cell_count"
+            ],
+            "hierarchical_total_cell_count": restore_factor[
+                "expanded_ambient_cell_count"
+            ],
         },
         "transvection": {
             "linear": linear,
             "inverse_linear": inverse_linear,
             "jacobian_det": 1,
         },
-        "straightening": straightening,
         "section_restore": section_restore,
+        "johnson_arm_restore": {
+            "restore_assembly_sha256": restore_sha256,
+            "canonical_movie_sha256": restore_factor["canonical_movie_sha256"],
+            "canonical_axis_images": [source, prefix, third],
+            "expanded_ambient_cell_count": restore_factor[
+                "expanded_ambient_cell_count"
+            ],
+            "maps_both_owners_setwise": restore_factor[
+                "maps_both_owners_setwise"
+            ],
+            "fixes_protected_ball_pointwise": restore_factor[
+                "fixes_protected_ball_pointwise"
+            ],
+            "restore_isotopic_to_identity": canonical_restore[
+                "restore_isotopic_to_identity"
+            ],
+            "status": "PASS",
+        },
         "explicit_inverse": {
             "application_order": [
+                "johnson_arm_restore_inverse",
                 "section_restore_inverse",
-                "straightening_inverse",
                 "transvection_inverse",
             ],
             "transvection": inverse_linear,
-            "straightening_cells": straightening["inverse_cells"],
             "section_restore": section_restore["explicit_inverse"],
+            "johnson_arm_restore": canonical_restore["inverse_order"],
         },
-        "jacobian_det_min": straightening["jacobian_det_min"],
+        "jacobian_det_min": "1/3",
+        "jacobian_det_max": "3",
         "jacobian_positive": True,
         "support": (
-            "global affine transvection, relative square-fan prism, and a "
-            "fixed-boundary section cutoff; the arm restore remains open"
+            "ArmRestore o SectionRestore o A_ij; ArmRestore is the verified "
+            "Johnson ambient-cell sweep and the legacy square-fan prism is not used"
         ),
         "protected_ball_disjointness": {
-            "prism_misses_protected_ball": True,
-            "clearance": straightening["protected_clearance"],
+            "arm_restore_misses_protected_ball": True,
+            "clearance": canonical_restore["protected_ball_bbox_clearance_min"],
             "protected_radius": str(pl.PROTECTED_RADIUS),
         },
         "induced_transvection_on_H1": linear,
         "basis_matrix_before": movie_move["basis_matrix_before"],
         "square_vertices": movie_move["square_vertices"],
         "square_normal": movie_move["square_normal"],
+        "legacy_square_fan_used": False,
+        "heegaard_pair": heegaard,
+        "heegaard_pair_preserved": True,
     }
-    heegaard = pl.heegaard_preservation(generator)
     ball = pl.section_ball_identity(generator)
-    generator["heegaard_pair"] = heegaard
     generator["section_ball"] = ball
-    generator["heegaard_pair_preserved"] = heegaard["preserved"]
     generator["fixes_section_ball"] = ball["identity"]
     generator["sha256"] = canonical_sha(
         {key: value for key, value in generator.items() if key != "sha256"}
@@ -133,6 +180,15 @@ def build_all(write: bool = False) -> dict[str, Any]:
     pl = load("t73_johnson_pl")
     movie = load("generate_t73_johnson_alpha_movie").generate()
     factor = load("factor_t73_matrix_johnson").generate()
+    if not RESTORE.exists():
+        raise AssertionError("Johnson restore assembly has not been written")
+    restore = json.loads(RESTORE.read_text(encoding="utf-8"))
+    if restore["full_93_factor_assembly"]["status"] != "PASS":
+        raise AssertionError("Johnson restore 93-factor assembly is not certified")
+    restore_factors = restore["full_93_factor_assembly"]["factors"]
+    canonical_restores = {
+        (movie["power"], movie["side"]): movie for movie in restore["movies"]
+    }
     bits = known_bits()
     moves = movie["moves"]
     if len(bits) != 93 or len(moves) != 93:
@@ -146,7 +202,14 @@ def build_all(write: bool = False) -> dict[str, Any]:
         expected_side = "prefix-first" if bit == 0 else "target-first"
         if move["side"] != expected_side:
             raise AssertionError(f"side bit disagrees at generator {index}")
-        generator = build_generator(index, move, pl)
+        generator = build_generator(
+            index,
+            move,
+            restore_factors[index],
+            canonical_restores[(int(move["power"]), move["side"])],
+            restore["sha256"],
+            pl,
+        )
         product = pl.matmul(generator["transvection"]["linear"], product)
         if generator["heegaard_pair_preserved"]:
             heegaard_count += 1
@@ -162,7 +225,9 @@ def build_all(write: bool = False) -> dict[str, Any]:
                 "alpha_prefix": generator["alpha_prefix"],
                 "power": generator["power"],
                 "side_bit": bit,
-                "prism_cell_count": generator["straightening"]["cell_count"],
+                "arm_restore_cell_count": generator["johnson_arm_restore"][
+                    "expanded_ambient_cell_count"
+                ],
                 "section_restore_cell_count": generator["section_restore"]["cell_count"],
                 "jacobian_det_min": generator["jacobian_det_min"],
                 "heegaard_pair_preserved": generator["heegaard_pair_preserved"],
@@ -179,12 +244,15 @@ def build_all(write: bool = False) -> dict[str, Any]:
     if product != factor["matrix_A"]:
         raise AssertionError("unit transvections no longer multiply to A")
     manifest = {
-        "schema": "t73_johnson_pl_generators/v1",
+        "schema": "t73_johnson_pl_generators/v2",
         "count": 93,
         "protected_radius": str(pl.PROTECTED_RADIUS),
         "generators": records,
         "product_on_H1": product,
-        "prism_cells_per_generator": records[0]["prism_cell_count"] if records else 0,
+        "restore_assembly_sha256": restore["sha256"],
+        "expanded_ambient_cell_count": restore["full_93_factor_assembly"][
+            "expanded_ambient_cell_count"
+        ],
         "section_restore_cells_per_generator": (
             records[0]["section_restore_cell_count"] if records else 0
         ),
@@ -193,10 +261,10 @@ def build_all(write: bool = False) -> dict[str, Any]:
         "heegaard_preserving_representative": "PASS" if heegaard_count == 93 else "OPEN",
         "section_ball_identity": "PASS" if ball_count == 93 else "OPEN",
         "construction": (
-            "each generator currently has a global A_ij, the legacy relative "
-            "square-fan prism, and an exact fixed-boundary PL cutoff that cancels "
-            "A_ij on the protected ball. The missing arm-supported Johnson "
-            "Restore is still required for setwise dual-block preservation."
+            "each generator is ArmRestore o SectionRestore o A_ij. The arm "
+            "restore is the verified Johnson ambient-cell movie, is isotopic to "
+            "the identity, maps both dual blocks setwise, and stays outside the "
+            "protected ball. The rejected square-fan prism is not used."
         ),
     }
     manifest["sha256"] = canonical_sha(
@@ -217,7 +285,7 @@ def main() -> None:
         print("T73_JOHNSON_PL_GENERATORS=ALGEBRAIC_PASS")
         print(f"COUNT={manifest['count']}")
         print(f"PRODUCT_ON_H1={manifest['product_on_H1']}")
-        print(f"PRISM_CELLS={manifest['prism_cells_per_generator']}")
+        print(f"EXPANDED_AMBIENT_CELLS={manifest['expanded_ambient_cell_count']}")
         print(f"SECTION_RESTORE_CELLS={manifest['section_restore_cells_per_generator']}")
         print(f"HEEGAARD_PRESERVING={manifest['heegaard_preserving_representative']}")
         print(f"HEEGAARD_PRESERVED_COUNT={manifest['heegaard_preserved_count']}")

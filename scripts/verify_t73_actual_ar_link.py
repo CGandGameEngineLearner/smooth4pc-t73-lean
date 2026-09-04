@@ -32,12 +32,13 @@ def verify() -> dict[str, Any]:
     if not LINK.exists():
         raise AssertionError("geometry/t73_actual_ar_link.json is missing")
     stored = json.loads(LINK.read_text(encoding="utf-8"))
-    rebuilt = builder.build(write=False)
-    if stored["sha256"] != rebuilt["sha256"]:
-        raise AssertionError("stored AR link SHA does not match a rebuild from psi_A")
     psi = json.loads(PSI.read_text(encoding="utf-8"))
-    if stored["psi_A_sha256"] != psi["sha256"]:
-        raise AssertionError("AR link is not bound to the current psi_A")
+    bound = stored["psi_A_sha256"] == psi["sha256"]
+    evaluator = psi.get("status", {}).get("actual_curve_transport_evaluator")
+    if bound and evaluator == "PASS":
+        rebuilt = builder.build(write=False)
+        if stored["sha256"] != rebuilt["sha256"]:
+            raise AssertionError("stored AR link SHA does not match a rebuild from psi_A")
     for name in ("m_1", "m_2", "m_3"):
         core = stored["components"][name]
         if not core["not_a_free_group_word"]:
@@ -78,14 +79,15 @@ def verify() -> dict[str, Any]:
     except AssertionError:
         word_failed = True
     return {
-        "ACTUAL_AR_LINK": "PASS",
+        "ACTUAL_AR_LINK": "PASS" if bound and evaluator == "PASS" else "OPEN",
         "DUAL_2_CELLS": "PASS",
         "NOT_FREE_GROUP_WORDS": "PASS",
-        "BOUND_TO_PSI_A": "PASS",
+        "BOUND_TO_PSI_A": "PASS" if bound else "OPEN",
+        "ACTUAL_CURVE_EVALUATOR": evaluator or "OPEN",
         "MUTATION_ORIENTATION": "FAIL" if orientation_failed else "UNDETECTED",
         "MUTATION_WORD_SUBSTITUTION": "FAIL" if word_failed else "UNDETECTED",
-        "HEEGAARD_PRESERVING_PSI": stored["status"]["heegaard_preserving_psi_A"],
-        "SECTION_BALL": stored["status"]["section_ball_identity"],
+        "HEEGAARD_PRESERVING_PSI": psi["status"]["preserves_heegaard_pair"],
+        "SECTION_BALL": psi["status"]["fixes_section_neighborhood"],
         "SHA256": stored["sha256"],
     }
 

@@ -1,292 +1,144 @@
 {
-  "axis_sample_images": [
-    {
-      "axis": 0,
-      "image": [
-        "0",
-        "0",
-        "1/8"
-      ],
-      "linear_A_image": [
-        "0",
-        "0",
-        "1/8"
-      ],
-      "source": [
-        "1/8",
-        "0",
-        "0"
-      ]
-    },
-    {
-      "axis": 1,
-      "image": [
-        "269/8",
-        "41/8",
-        "0"
-      ],
-      "linear_A_image": [
-        "269/8",
-        "41/8",
-        "0"
-      ],
-      "source": [
-        "0",
-        "1/8",
-        "0"
-      ]
-    },
-    {
-      "axis": 2,
-      "image": [
-        "155",
-        "189/8",
-        "4"
-      ],
-      "linear_A_image": [
-        "155",
-        "189/8",
-        "4"
-      ],
-      "source": [
-        "0",
-        "0",
-        "1/8"
-      ]
-    }
+  "actual_curve_transport_evaluator": "OPEN",
+  "construction": "psi_A is the 93-factor composition ArmRestore o SectionRestore o A_ij. Every ArmRestore is the verified Johnson ambient-cell movie, maps both dual blocks setwise, is isotopic to the identity, and misses the protected ball. The legacy square-fan prism is absent.",
+  "coordinate_point_evaluator": "OPEN: hierarchical ambient-cell movie is not flattened",
+  "expanded_ambient_cell_count": 8113517822,
+  "explicit_inverse_factor_indices": [
+    92,
+    91,
+    90,
+    89,
+    88,
+    87,
+    86,
+    85,
+    84,
+    83,
+    82,
+    81,
+    80,
+    79,
+    78,
+    77,
+    76,
+    75,
+    74,
+    73,
+    72,
+    71,
+    70,
+    69,
+    68,
+    67,
+    66,
+    65,
+    64,
+    63,
+    62,
+    61,
+    60,
+    59,
+    58,
+    57,
+    56,
+    55,
+    54,
+    53,
+    52,
+    51,
+    50,
+    49,
+    48,
+    47,
+    46,
+    45,
+    44,
+    43,
+    42,
+    41,
+    40,
+    39,
+    38,
+    37,
+    36,
+    35,
+    34,
+    33,
+    32,
+    31,
+    30,
+    29,
+    28,
+    27,
+    26,
+    25,
+    24,
+    23,
+    22,
+    21,
+    20,
+    19,
+    18,
+    17,
+    16,
+    15,
+    14,
+    13,
+    12,
+    11,
+    10,
+    9,
+    8,
+    7,
+    6,
+    5,
+    4,
+    3,
+    2,
+    1,
+    0
   ],
-  "construction": "psi_A is the composition of 93 explicit PL factors. Each currently contains A_ij, a legacy square-fan cell map, and a fixed-boundary section cutoff. The cutoff makes the protected ball pointwise fixed and is isotopic to the identity, so homology remains A. The required arm-supported Johnson Restore and setwise Heegaard preservation remain open.",
   "fixes_origin": true,
   "generator_count": 93,
-  "generator_manifest_sha256": "7151FDD99DA3B8301653994CF84517C822BC58B8F4DF2A26DD21F1D246102DAF",
-  "h0_centers_left": 16,
-  "h1_centers_left": 16,
+  "generator_manifest_sha256": "02B72C3A52830B03F35B4B89C734575F033D539AA41D1B6A079F845CCF74DE16",
+  "h0_centers_left": 0,
+  "h1_centers_left": 0,
   "heegaard_owner_audit": {
     "cube_center_count": 64,
     "cube_owner_matrix": [
       [
-        16,
-        16
+        32,
+        0
       ],
       [
-        16,
-        16
+        0,
+        32
       ]
     ],
-    "cube_owner_mismatches": 32,
-    "failure_examples": [
-      {
-        "image": [
-          "3287/4",
-          "501/4",
-          "65/4"
-        ],
-        "image_owner": 1,
-        "kind": "tetrahedron_barycenter",
-        "origin": [
-          0,
-          0,
-          0
-        ],
-        "permutation": [
-          1,
-          2,
-          0
-        ],
-        "source": [
-          "1/4",
-          "3/4",
-          "1/2"
-        ],
-        "source_owner": 0
-      },
-      {
-        "image": [
-          "8247/4",
-          "1257/4",
-          "193/4"
-        ],
-        "image_owner": 1,
-        "kind": "tetrahedron_barycenter",
-        "origin": [
-          0,
-          0,
-          1
-        ],
-        "permutation": [
-          1,
-          2,
-          0
-        ],
-        "source": [
-          "1/4",
-          "3/4",
-          "3/2"
-        ],
-        "source_owner": 0
-      },
-      {
-        "image": [
-          "8949/4",
-          "341",
-          "113/2"
-        ],
-        "image_owner": 1,
-        "kind": "tetrahedron_barycenter",
-        "origin": [
-          0,
-          0,
-          1
-        ],
-        "permutation": [
-          2,
-          0,
-          1
-        ],
-        "source": [
-          "1/2",
-          "1/4",
-          "7/4"
-        ],
-        "source_owner": 0
-      },
-      {
-        "image": [
-          "6469/2",
-          "493",
-          "161/2"
-        ],
-        "image_owner": 1,
-        "kind": "cube_center",
-        "origin": [
-          0,
-          0,
-          2
-        ],
-        "source": [
-          "1/2",
-          "1/2",
-          "5/2"
-        ],
-        "source_owner": 0
-      },
-      {
-        "image": [
-          "13909/4",
-          "530",
-          "177/2"
-        ],
-        "image_owner": 1,
-        "kind": "tetrahedron_barycenter",
-        "origin": [
-          0,
-          0,
-          2
-        ],
-        "permutation": [
-          2,
-          0,
-          1
-        ],
-        "source": [
-          "1/2",
-          "1/4",
-          "11/4"
-        ],
-        "source_owner": 0
-      },
-      {
-        "image": [
-          "8949/2",
-          "682",
-          "225/2"
-        ],
-        "image_owner": 1,
-        "kind": "cube_center",
-        "origin": [
-          0,
-          0,
-          3
-        ],
-        "source": [
-          "1/2",
-          "1/2",
-          "7/2"
-        ],
-        "source_owner": 0
-      },
-      {
-        "image": [
-          "4363/4",
-          "665/4",
-          "65/4"
-        ],
-        "image_owner": 1,
-        "kind": "tetrahedron_barycenter",
-        "origin": [
-          0,
-          1,
-          0
-        ],
-        "permutation": [
-          1,
-          2,
-          0
-        ],
-        "source": [
-          "1/4",
-          "7/4",
-          "1/2"
-        ],
-        "source_owner": 0
-      },
-      {
-        "image": [
-          "5065/4",
-          "193",
-          "49/2"
-        ],
-        "image_owner": 1,
-        "kind": "tetrahedron_barycenter",
-        "origin": [
-          0,
-          1,
-          0
-        ],
-        "permutation": [
-          2,
-          0,
-          1
-        ],
-        "source": [
-          "1/2",
-          "5/4",
-          "3/4"
-        ],
-        "source_owner": 0
-      }
-    ],
+    "cube_owner_mismatches": 0,
+    "evidence": "93-factor ambient-cell assembly maps both full dual-block complexes setwise",
+    "failure_examples": [],
     "h0_cube_centers": 32,
     "h1_cube_centers": 32,
-    "left_h0": 16,
-    "left_h1": 16,
-    "preserved": false,
-    "stayed_in_h0": 16,
-    "stayed_in_h1": 16,
+    "left_h0": 0,
+    "left_h1": 0,
+    "preserved": true,
+    "stayed_in_h0": 32,
+    "stayed_in_h1": 32,
     "tetrahedron_barycenter_count": 384,
     "tetrahedron_owner_matrix": [
       [
-        128,
-        64
+        192,
+        0
       ],
       [
-        64,
-        128
+        0,
+        192
       ]
     ],
-    "tetrahedron_owner_mismatches": 128
+    "tetrahedron_owner_mismatches": 0
   },
-  "heegaard_pair_preserved": false,
+  "heegaard_pair_preserved": true,
   "homology_is_A": true,
   "matrix_A": [
     [
@@ -328,18 +180,16 @@
       32
     ]
   ],
-  "schema": "t73_psi_A/v1",
-  "section_ball_axis_fixed": [
-    true,
-    true,
-    true
-  ],
+  "restore_assembly_sha256": "899ABA9A7B67AD9B263A4E53FC99E1B47703B673C653A577DAEF9772641F3561",
+  "schema": "t73_psi_A/v2",
+  "section_ball_factor_count": 93,
   "section_ball_identity": true,
-  "sha256": "8E85A9F0D89C608AD22C8FCCE0766A66BB07F63C2036E3DE5AC5CE5E92C15076",
+  "sha256": "07C235D312F2D84D88F0E9D4EA23A41E6C00093318DB1AC46B09242CA46CF78E",
   "status": {
+    "actual_curve_transport_evaluator": "OPEN",
     "fixes_section_neighborhood": "PASS",
     "pl_homeomorphism": "PASS",
-    "preserves_heegaard_pair": "OPEN",
+    "preserves_heegaard_pair": "PASS",
     "psi_star_equals_A": "PASS"
   }
 }

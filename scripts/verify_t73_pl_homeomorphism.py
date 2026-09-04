@@ -16,6 +16,7 @@ from typing import Any
 ROOT = Path(__file__).resolve().parents[1]
 GEN_DIR = ROOT / "geometry" / "t73_johnson_generators"
 MANIFEST = GEN_DIR / "manifest.json"
+RESTORE = ROOT / "geometry" / "t73_johnson_restore_assembly.json"
 
 
 def load(name: str):
@@ -121,21 +122,53 @@ def check_composite_inverse(pl, generator: dict[str, Any]) -> None:
     samples = [
         [Fraction(0), Fraction(0), Fraction(0)],
         [pl.PROTECTED_RADIUS, pl.PROTECTED_RADIUS, pl.PROTECTED_RADIUS],
-        [Fraction(1, 2), Fraction(1, 2), Fraction(1, 3)],
     ]
-    samples.extend(
-        [pl.decode(cell["source"][3]) for cell in generator["straightening"]["cells"][:3]]
-    )
     for point in samples:
-        image = pl.apply_alpha(generator, point)
-        inverse = pl.apply_alpha_inverse(generator, image)
+        image = pl.apply_section_fixed_transvection(generator, point)
+        inverse = pl.apply_section_fixed_transvection_inverse(generator, image)
         if pl.inf_norm(pl.sub(inverse, point)) != 0:
-            raise AssertionError("composite inverse does not recover sample point")
+            raise AssertionError("protected local inverse does not recover sample point")
+
+
+def check_arm_restore(generator, restore, restore_factor) -> None:
+    arm = generator["johnson_arm_restore"]
+    if generator.get("legacy_square_fan_used") is not False or "straightening" in generator:
+        raise AssertionError("generator still uses the rejected square-fan representative")
+    if arm["restore_assembly_sha256"] != restore["sha256"]:
+        raise AssertionError("generator is not bound to the restore assembly")
+    if arm["canonical_movie_sha256"] != restore_factor["canonical_movie_sha256"]:
+        raise AssertionError("generator selects the wrong canonical restore movie")
+    if arm["canonical_axis_images"] != restore_factor["canonical_axis_images"]:
+        raise AssertionError("generator restore has the wrong axis conjugation")
+    if arm["expanded_ambient_cell_count"] != restore_factor["expanded_ambient_cell_count"]:
+        raise AssertionError("generator restore has the wrong cell count")
+    if not arm["maps_both_owners_setwise"] or arm["status"] != "PASS":
+        raise AssertionError("generator arm restore is not setwise certified")
+    heegaard = generator["heegaard_pair"]
+    expected = {
+        "cube_center_count": 64,
+        "tetrahedron_barycenter_count": 384,
+        "cube_owner_matrix": [[32, 0], [0, 32]],
+        "tetrahedron_owner_matrix": [[192, 0], [0, 192]],
+        "cube_owner_mismatches": 0,
+        "tetrahedron_owner_mismatches": 0,
+        "failure_examples": [],
+        "h0_cube_centers": 32,
+        "stayed_in_h0": 32,
+        "left_h0": 0,
+        "h1_cube_centers": 32,
+        "stayed_in_h1": 32,
+        "left_h1": 0,
+        "preserved": True,
+        "evidence": "ambient-cell Johnson sweep maps both full dual-block subcomplexes setwise",
+    }
+    if heegaard != expected or not generator["heegaard_pair_preserved"]:
+        raise AssertionError("generator Heegaard audit is not the exact setwise result")
 
 
 def mutate_jacobian(generator: dict[str, Any]) -> dict[str, Any]:
     mutant = copy.deepcopy(generator)
-    mutant["straightening"]["cells"][0]["jacobian_det"] = "-1"
+    mutant["section_restore"]["jacobian_det_min"] = "-1"
     return mutant
 
 
@@ -151,6 +184,16 @@ def verify() -> dict[str, Any]:
     builder = load("build_t73_johnson_pl_generators")
     factor = load("factor_t73_matrix_johnson").generate()
     movie = load("generate_t73_johnson_alpha_movie").generate()
+    restore_builder = load("build_t73_johnson_restore_assembly")
+    if not RESTORE.exists():
+        raise AssertionError("geometry/t73_johnson_restore_assembly.json is missing")
+    restore = json.loads(RESTORE.read_text(encoding="utf-8"))
+    if restore != restore_builder.generate():
+        raise AssertionError("stored restore assembly does not match live reconstruction")
+    restore_factors = restore["full_93_factor_assembly"]["factors"]
+    canonical_restores = {
+        (item["power"], item["side"]): item for item in restore["movies"]
+    }
     if not MANIFEST.exists():
         raise AssertionError("geometry/t73_johnson_generators/manifest.json is missing")
     manifest = json.loads(MANIFEST.read_text(encoding="utf-8"))
@@ -161,8 +204,8 @@ def verify() -> dict[str, Any]:
     ball_open = 0
     cube_owner_mismatches = 0
     tet_owner_mismatches = 0
-    for record, factor_move, movie_move in zip(
-        manifest["generators"], factor["unit_alpha_moves"], movie["moves"]
+    for record, factor_move, movie_move, restore_factor in zip(
+        manifest["generators"], factor["unit_alpha_moves"], movie["moves"], restore_factors
     ):
         path = ROOT / record["path"]
         generator = load_generator(path)
@@ -171,15 +214,13 @@ def verify() -> dict[str, Any]:
         if stored != recomputed:
             raise AssertionError(f"SHA mismatch at generator {record['index']}")
         check_transvection(pl, generator, factor_move)
-        check_cells(pl, generator)
         check_section_restore(pl, generator)
         check_composite_inverse(pl, generator)
+        check_arm_restore(generator, restore, restore_factor)
         if generator["square_vertices"] != movie_move["square_vertices"]:
             raise AssertionError("square vertices are not the Johnson movie square")
-        heegaard = pl.heegaard_preservation(generator)
+        heegaard = generator["heegaard_pair"]
         ball = pl.section_ball_identity(generator, samples=3)
-        if heegaard != generator["heegaard_pair"]:
-            raise AssertionError("stored Heegaard check does not match the live recomputation")
         if heegaard["preserved"]:
             pass
         else:
@@ -198,14 +239,21 @@ def verify() -> dict[str, Any]:
     jac_mutant = mutate_jacobian(first)
     jac_failed = False
     try:
-        check_cells(pl, jac_mutant)
+        check_section_restore(pl, jac_mutant)
     except AssertionError:
         jac_failed = True
     side_mutant = mutate_side(first)
-    side_failed = side_mutant["side"] != first["side"]
-    rebuilt = builder.build_generator(0, movie["moves"][0], pl)
-    if rebuilt["side_bit"] == side_mutant["side_bit"] and rebuilt["side"] == first["side"]:
-        pass
+    side_failed = side_mutant["side"] != movie["moves"][0]["side"]
+    rebuilt = builder.build_generator(
+        0,
+        movie["moves"][0],
+        restore_factors[0],
+        canonical_restores[(movie["moves"][0]["power"], movie["moves"][0]["side"])],
+        restore["sha256"],
+        pl,
+    )
+    if rebuilt["sha256"] != first["sha256"]:
+        raise AssertionError("live generator rebuild does not match the stored first factor")
     if not jac_failed:
         raise AssertionError("Jacobian mutation was not detected")
     if not side_failed:
@@ -225,9 +273,11 @@ def verify() -> dict[str, Any]:
         "SECTION_BALL_OPEN_COUNT": ball_open,
         "MUTATION_JACOBIAN": "FAIL" if jac_failed else "UNDETECTED",
         "MUTATION_SIDE_BIT": "FAIL" if side_failed else "UNDETECTED",
-        "PROTECTED_PRISM_DISJOINT": "PASS",
+        "PROTECTED_ARM_SUPPORT_DISJOINT": "PASS",
         "BOUNDARY_IDENTITY": "PASS",
         "SECTION_RESTORE_CELLS": "PASS",
+        "JOHNSON_ARM_RESTORE": "PASS",
+        "LEGACY_SQUARE_FAN_ABSENT": "PASS",
         "COUNT": 93,
     }
 

@@ -25,15 +25,16 @@ class JohnsonPLGeneratorTest(unittest.TestCase):
         self.assertEqual(len(data["generators"]), 93)
         self.assertEqual(data["product_on_H1"], [[0, 269, 1240], [0, 41, 189], [1, 0, 32]])
         for record in data["generators"]:
-            self.assertGreaterEqual(int(record["prism_cell_count"]), 12)
+            self.assertGreater(int(record["arm_restore_cell_count"]), 0)
             self.assertTrue((ROOT / record["path"]).exists())
 
     def test_generator_has_required_geometric_fields(self) -> None:
         path = ROOT / "geometry" / "t73_johnson_generators" / "alpha_00.json"
         data = json.loads(path.read_text(encoding="utf-8"))
         self.assertIn("cell_decomposition", data)
-        self.assertIn("straightening", data)
+        self.assertNotIn("straightening", data)
         self.assertIn("section_restore", data)
+        self.assertIn("johnson_arm_restore", data)
         self.assertIn("explicit_inverse", data)
         self.assertTrue(data["jacobian_positive"])
         self.assertIn("protected_ball_disjointness", data)
@@ -44,7 +45,8 @@ class JohnsonPLGeneratorTest(unittest.TestCase):
         )
         self.assertEqual(data["heegaard_pair"]["cube_center_count"], 64)
         self.assertEqual(data["heegaard_pair"]["tetrahedron_barycenter_count"], 384)
-        self.assertGreater(len(data["straightening"]["cells"]), 0)
+        self.assertFalse(data["legacy_square_fan_used"])
+        self.assertEqual(data["johnson_arm_restore"]["status"], "PASS")
         self.assertEqual(data["section_restore"]["cell_count"], 162)
         self.assertGreater(
             float(data["protected_ball_disjointness"]["clearance"].split("/")[0]), 0
@@ -55,8 +57,8 @@ class JohnsonPLGeneratorTest(unittest.TestCase):
         data = json.loads(path.read_text(encoding="utf-8"))
         self.assertIn(data["heegaard_preserving_representative"], ("PASS", "OPEN"))
         self.assertIn(data["section_ball_identity"], ("PASS", "OPEN"))
-        if data["heegaard_preserved_count"] != 93:
-            self.assertEqual(data["heegaard_preserving_representative"], "OPEN")
+        self.assertEqual(data["heegaard_preserved_count"], 93)
+        self.assertEqual(data["heegaard_preserving_representative"], "PASS")
 
     def test_verifier_recomputes_and_mutations_fail(self) -> None:
         verifier = load(
@@ -70,6 +72,9 @@ class JohnsonPLGeneratorTest(unittest.TestCase):
         self.assertEqual(result["MUTATION_SIDE_BIT"], "FAIL")
         self.assertEqual(result["SECTION_RESTORE_CELLS"], "PASS")
         self.assertEqual(result["SECTION_BALL"], "PASS")
+        self.assertEqual(result["JOHNSON_ARM_RESTORE"], "PASS")
+        self.assertEqual(result["LEGACY_SQUARE_FAN_ABSENT"], "PASS")
+        self.assertEqual(result["HEEGAARD_PAIR"], "PASS")
         self.assertEqual(result["COUNT"], 93)
 
 
@@ -96,6 +101,10 @@ class ActualARLinkTest(unittest.TestCase):
             "verify_ar", ROOT / "scripts" / "verify_t73_actual_ar_link.py"
         )
         result = verifier.verify()
+        self.assertEqual(result["ACTUAL_AR_LINK"], "OPEN")
+        self.assertEqual(result["BOUND_TO_PSI_A"], "OPEN")
+        self.assertEqual(result["ACTUAL_CURVE_EVALUATOR"], "OPEN")
+        self.assertEqual(result["HEEGAARD_PRESERVING_PSI"], "PASS")
         self.assertEqual(result["NOT_FREE_GROUP_WORDS"], "PASS")
         self.assertEqual(result["DUAL_2_CELLS"], "PASS")
         self.assertEqual(result["MUTATION_ORIENTATION"], "FAIL")

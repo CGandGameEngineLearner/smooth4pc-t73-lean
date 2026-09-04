@@ -493,6 +493,11 @@ def apply_section_restore_inverse(
 
 
 def apply_alpha(generator: dict[str, Any], point: Iterable[Fraction]) -> list[Fraction]:
+    if "johnson_arm_restore" in generator:
+        raise RuntimeError(
+            "hierarchical Johnson ArmRestore has no flattened point evaluator; "
+            "use the ambient-cell movie certificate"
+        )
     linear = generator["transvection"]["linear"]
     after_a = matvec(linear, point)
     after_square = apply_cells(generator["straightening"]["cells"], after_a)
@@ -504,7 +509,37 @@ def apply_alpha(generator: dict[str, Any], point: Iterable[Fraction]) -> list[Fr
     )
 
 
+def apply_section_fixed_transvection(
+    generator: dict[str, Any], point: Iterable[Fraction]
+) -> list[Fraction]:
+    """Evaluate SectionRestore o A on the protected local chart."""
+
+    after_a = matvec(generator["transvection"]["linear"], point)
+    return apply_section_restore(
+        int(generator["alpha_target"]),
+        int(generator["alpha_prefix"]),
+        int(generator["power"]),
+        after_a,
+    )
+
+
+def apply_section_fixed_transvection_inverse(
+    generator: dict[str, Any], point: Iterable[Fraction]
+) -> list[Fraction]:
+    before_restore = apply_section_restore_inverse(
+        int(generator["alpha_target"]),
+        int(generator["alpha_prefix"]),
+        int(generator["power"]),
+        point,
+    )
+    return matvec(generator["transvection"]["inverse_linear"], before_restore)
+
+
 def apply_alpha_inverse(generator: dict[str, Any], point: Iterable[Fraction]) -> list[Fraction]:
+    if "johnson_arm_restore" in generator:
+        raise RuntimeError(
+            "hierarchical Johnson ArmRestore inverse has no flattened point evaluator"
+        )
     before_restore = apply_section_restore_inverse(
         int(generator["alpha_target"]),
         int(generator["alpha_prefix"]),
@@ -654,7 +689,11 @@ def section_ball_identity(generator: dict[str, Any], samples: int = 8) -> dict[s
         for index in range(1, samples + 1):
             coeff = radius * Fraction(index, samples) / max(abs(component) for component in direction)
             point = [coeff * direction[i] for i in range(3)]
-            image = apply_alpha(generator, point)
+            image = (
+                apply_section_fixed_transvection(generator, point)
+                if "johnson_arm_restore" in generator
+                else apply_alpha(generator, point)
+            )
             count += 1
             delta = inf_norm(sub(image, point))
             if delta != 0:

@@ -812,6 +812,32 @@ movies require no normalization.  All four charts have explicit inverses, so
 the source-disk endpoint now agrees exactly with cap $1$.  Joining this
 normalization and the internal fiber transport to a map fixed on the outer
 paired-support boundary remains \Open.
+On the support sphere, the source and target boundary curves differ by a
+unique finite triangle region: a five-triangle disk in each negative movie and
+a forty-triangle annulus in each positive movie.  XOR-ing the triangle
+boundaries in the certified order keeps a single simple closed curve at every
+stage and ends at the target curve.  Thickening each $1\leftrightarrow2$
+edge move by an outward point at scale $1/1000$ and conjugating the standard
+dimension-two map gives $90$ actual collar moves and $362880$ positive cells.
+All carrier charts and inverses are explicit, and the expanded carrier boxes
+miss the protected ball.  Hence the outer boundary extension passes.
+
+Combining the single disk moves, source side charts, negative normalization,
+cap-$1$ to cap-$0$ transport, inverse target side charts, outer curve collar,
+and section cutoff gives four canonical unit restores with $346313864$
+expanded cells.  Axis-permutation conjugation places them at all $93$ Johnson
+factors; the resulting hierarchy represents $8113517822$ cells, fixes the
+protected ball, maps both owners setwise, has explicit reverse-order inverse,
+and its transvection product is $A$.  Changing the first side bit is detected.
+The hierarchical restore assembly therefore passes.  The version-two
+generator serialization removes the legacy square-fan map and records
+$\operatorname{ArmRestore}\circ\operatorname{SectionRestore}\circ A_{ij}$ at
+all $93$ factors.  Its live verifier reports zero owner mismatch at all $64$
+cube centres and $384$ tetrahedron barycentres, fixes the protected ball, and
+recomputes the product on $H_1$ as $A$.  Thus the setwise Heegaard-preserving
+PL homeomorphism is complete.  The hierarchy has not yet been evaluated on the
+actual spine curves, so the Johnson-side spine transport and the rebuilt AR
+attaching link remain \Open; the old AR-link SHA is rejected.
 
 In the standard product chart $D^2\times[-1,1]$ for the reduced $y$
 one-handle, take $B=D^2\times[-1/2,1/2]$.  The Johnson $m_2$ word has $41$

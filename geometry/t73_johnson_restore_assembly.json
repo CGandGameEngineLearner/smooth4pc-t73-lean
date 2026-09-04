@@ -1,0 +1,1918 @@
+{
+  "all_inverses_explicit": true,
+  "all_movies_fix_protected_ball": true,
+  "all_movies_map_both_owners_setwise": true,
+  "all_restores_isotopic_to_identity": true,
+  "alpha_movie_sha256": "DBE744C045104CE01860EC925C34A07CCB44C9B398CFB828AFE6562DBE050A19",
+  "axis_permutation_conjugates": "PASS",
+  "canonical_axis_pair": [
+    0,
+    1
+  ],
+  "expanded_ambient_cell_count": 346313864,
+  "full_93_factor_assembly": {
+    "all_factor_inverses_explicit": true,
+    "all_factors_fix_protected_ball": true,
+    "all_factors_map_both_owners_setwise": true,
+    "expanded_ambient_cell_count": 8113517822,
+    "factor_count": 93,
+    "factors": [
+      {
+        "canonical_axis_images": [
+          2,
+          1,
+          0
+        ],
+        "canonical_movie_sha256": "B05280314B1E7D43D8BBBE268C61F34DC16E6AB968D83A32737E2775956A8732",
+        "expanded_ambient_cell_count": 148556662,
+        "explicit_inverse": true,
+        "fixes_protected_ball_pointwise": true,
+        "index": 0,
+        "maps_both_owners_setwise": true,
+        "power": 1,
+        "prefix_axis": 1,
+        "side": "prefix-first",
+        "source_axis": 2,
+        "third_axis": 0
+      },
+      {
+        "canonical_axis_images": [
+          2,
+          1,
+          0
+        ],
+        "canonical_movie_sha256": "B05280314B1E7D43D8BBBE268C61F34DC16E6AB968D83A32737E2775956A8732",
+        "expanded_ambient_cell_count": 148556662,
+        "explicit_inverse": true,
+        "fixes_protected_ball_pointwise": true,
+        "index": 1,
+        "maps_both_owners_setwise": true,
+        "power": 1,
+        "prefix_axis": 1,
+        "side": "prefix-first",
+        "source_axis": 2,
+        "third_axis": 0
+      },
+      {
+        "canonical_axis_images": [
+          2,
+          1,
+          0
+        ],
+        "canonical_movie_sha256": "5F30521016184379A4D6C6E5365461AC16ADFAC98DDD0C03DCFD1B5395FD3654",
+        "expanded_ambient_cell_count": 148556662,
+        "explicit_inverse": true,
+        "fixes_protected_ball_pointwise": true,
+        "index": 2,
+        "maps_both_owners_setwise": true,
+        "power": 1,
+        "prefix_axis": 1,
+        "side": "target-first",
+        "source_axis": 2,
+        "third_axis": 0
+      },
+      {
+        "canonical_axis_images": [
+          2,
+          1,
+          0
+        ],
+        "canonical_movie_sha256": "B05280314B1E7D43D8BBBE268C61F34DC16E6AB968D83A32737E2775956A8732",
+        "expanded_ambient_cell_count": 148556662,
+        "explicit_inverse": true,
+        "fixes_protected_ball_pointwise": true,
+        "index": 3,
+        "maps_both_owners_setwise": true,
+        "power": 1,
+        "prefix_axis": 1,
+        "side": "prefix-first",
+        "source_axis": 2,
+        "third_axis": 0
+      },
+      {
+        "canonical_axis_images": [
+          2,
+          0,
+          1
+        ],
+        "canonical_movie_sha256": "B05280314B1E7D43D8BBBE268C61F34DC16E6AB968D83A32737E2775956A8732",
+        "expanded_ambient_cell_count": 148556662,
+        "explicit_inverse": true,
+        "fixes_protected_ball_pointwise": true,
+        "index": 4,
+        "maps_both_owners_setwise": true,
+        "power": 1,
+        "prefix_axis": 0,
+        "side": "prefix-first",
+        "source_axis": 2,
+        "third_axis": 1
+      },
+      {
+        "canonical_axis_images": [
+          2,
+          0,
+          1
+        ],
+        "canonical_movie_sha256": "5F30521016184379A4D6C6E5365461AC16ADFAC98DDD0C03DCFD1B5395FD3654",
+        "expanded_ambient_cell_count": 148556662,
+        "explicit_inverse": true,
+        "fixes_protected_ball_pointwise": true,
+        "index": 5,
+        "maps_both_owners_setwise": true,
+        "power": 1,
+        "prefix_axis": 0,
+        "side": "target-first",
+        "source_axis": 2,
+        "third_axis": 1
+      },
+      {
+        "canonical_axis_images": [
+          2,
+          0,
+          1
+        ],
+        "canonical_movie_sha256": "5F30521016184379A4D6C6E5365461AC16ADFAC98DDD0C03DCFD1B5395FD3654",
+        "expanded_ambient_cell_count": 148556662,
+        "explicit_inverse": true,
+        "fixes_protected_ball_pointwise": true,
+        "index": 6,
+        "maps_both_owners_setwise": true,
+        "power": 1,
+        "prefix_axis": 0,
+        "side": "target-first",
+        "source_axis": 2,
+        "third_axis": 1
+      },
+      {
+        "canonical_axis_images": [
+          2,
+          0,
+          1
+        ],
+        "canonical_movie_sha256": "B05280314B1E7D43D8BBBE268C61F34DC16E6AB968D83A32737E2775956A8732",
+        "expanded_ambient_cell_count": 148556662,
+        "explicit_inverse": true,
+        "fixes_protected_ball_pointwise": true,
+        "index": 7,
+        "maps_both_owners_setwise": true,
+        "power": 1,
+        "prefix_axis": 0,
+        "side": "prefix-first",
+        "source_axis": 2,
+        "third_axis": 1
+      },
+      {
+        "canonical_axis_images": [
+          2,
+          0,
+          1
+        ],
+        "canonical_movie_sha256": "5F30521016184379A4D6C6E5365461AC16ADFAC98DDD0C03DCFD1B5395FD3654",
+        "expanded_ambient_cell_count": 148556662,
+        "explicit_inverse": true,
+        "fixes_protected_ball_pointwise": true,
+        "index": 8,
+        "maps_both_owners_setwise": true,
+        "power": 1,
+        "prefix_axis": 0,
+        "side": "target-first",
+        "source_axis": 2,
+        "third_axis": 1
+      },
+      {
+        "canonical_axis_images": [
+          2,
+          0,
+          1
+        ],
+        "canonical_movie_sha256": "B05280314B1E7D43D8BBBE268C61F34DC16E6AB968D83A32737E2775956A8732",
+        "expanded_ambient_cell_count": 148556662,
+        "explicit_inverse": true,
+        "fixes_protected_ball_pointwise": true,
+        "index": 9,
+        "maps_both_owners_setwise": true,
+        "power": 1,
+        "prefix_axis": 0,
+        "side": "prefix-first",
+        "source_axis": 2,
+        "third_axis": 1
+      },
+      {
+        "canonical_axis_images": [
+          2,
+          0,
+          1
+        ],
+        "canonical_movie_sha256": "5F30521016184379A4D6C6E5365461AC16ADFAC98DDD0C03DCFD1B5395FD3654",
+        "expanded_ambient_cell_count": 148556662,
+        "explicit_inverse": true,
+        "fixes_protected_ball_pointwise": true,
+        "index": 10,
+        "maps_both_owners_setwise": true,
+        "power": 1,
+        "prefix_axis": 0,
+        "side": "target-first",
+        "source_axis": 2,
+        "third_axis": 1
+      },
+      {
+        "canonical_axis_images": [
+          2,
+          0,
+          1
+        ],
+        "canonical_movie_sha256": "B05280314B1E7D43D8BBBE268C61F34DC16E6AB968D83A32737E2775956A8732",
+        "expanded_ambient_cell_count": 148556662,
+        "explicit_inverse": true,
+        "fixes_protected_ball_pointwise": true,
+        "index": 11,
+        "maps_both_owners_setwise": true,
+        "power": 1,
+        "prefix_axis": 0,
+        "side": "prefix-first",
+        "source_axis": 2,
+        "third_axis": 1
+      },
+      {
+        "canonical_axis_images": [
+          2,
+          0,
+          1
+        ],
+        "canonical_movie_sha256": "5F30521016184379A4D6C6E5365461AC16ADFAC98DDD0C03DCFD1B5395FD3654",
+        "expanded_ambient_cell_count": 148556662,
+        "explicit_inverse": true,
+        "fixes_protected_ball_pointwise": true,
+        "index": 12,
+        "maps_both_owners_setwise": true,
+        "power": 1,
+        "prefix_axis": 0,
+        "side": "target-first",
+        "source_axis": 2,
+        "third_axis": 1
+      },
+      {
+        "canonical_axis_images": [
+          2,
+          0,
+          1
+        ],
+        "canonical_movie_sha256": "5F30521016184379A4D6C6E5365461AC16ADFAC98DDD0C03DCFD1B5395FD3654",
+        "expanded_ambient_cell_count": 148556662,
+        "explicit_inverse": true,
+        "fixes_protected_ball_pointwise": true,
+        "index": 13,
+        "maps_both_owners_setwise": true,
+        "power": 1,
+        "prefix_axis": 0,
+        "side": "target-first",
+        "source_axis": 2,
+        "third_axis": 1
+      },
+      {
+        "canonical_axis_images": [
+          2,
+          0,
+          1
+        ],
+        "canonical_movie_sha256": "5F30521016184379A4D6C6E5365461AC16ADFAC98DDD0C03DCFD1B5395FD3654",
+        "expanded_ambient_cell_count": 148556662,
+        "explicit_inverse": true,
+        "fixes_protected_ball_pointwise": true,
+        "index": 14,
+        "maps_both_owners_setwise": true,
+        "power": 1,
+        "prefix_axis": 0,
+        "side": "target-first",
+        "source_axis": 2,
+        "third_axis": 1
+      },
+      {
+        "canonical_axis_images": [
+          2,
+          0,
+          1
+        ],
+        "canonical_movie_sha256": "B05280314B1E7D43D8BBBE268C61F34DC16E6AB968D83A32737E2775956A8732",
+        "expanded_ambient_cell_count": 148556662,
+        "explicit_inverse": true,
+        "fixes_protected_ball_pointwise": true,
+        "index": 15,
+        "maps_both_owners_setwise": true,
+        "power": 1,
+        "prefix_axis": 0,
+        "side": "prefix-first",
+        "source_axis": 2,
+        "third_axis": 1
+      },
+      {
+        "canonical_axis_images": [
+          2,
+          0,
+          1
+        ],
+        "canonical_movie_sha256": "5F30521016184379A4D6C6E5365461AC16ADFAC98DDD0C03DCFD1B5395FD3654",
+        "expanded_ambient_cell_count": 148556662,
+        "explicit_inverse": true,
+        "fixes_protected_ball_pointwise": true,
+        "index": 16,
+        "maps_both_owners_setwise": true,
+        "power": 1,
+        "prefix_axis": 0,
+        "side": "target-first",
+        "source_axis": 2,
+        "third_axis": 1
+      },
+      {
+        "canonical_axis_images": [
+          2,
+          0,
+          1
+        ],
+        "canonical_movie_sha256": "5F30521016184379A4D6C6E5365461AC16ADFAC98DDD0C03DCFD1B5395FD3654",
+        "expanded_ambient_cell_count": 148556662,
+        "explicit_inverse": true,
+        "fixes_protected_ball_pointwise": true,
+        "index": 17,
+        "maps_both_owners_setwise": true,
+        "power": 1,
+        "prefix_axis": 0,
+        "side": "target-first",
+        "source_axis": 2,
+        "third_axis": 1
+      },
+      {
+        "canonical_axis_images": [
+          2,
+          0,
+          1
+        ],
+        "canonical_movie_sha256": "5F30521016184379A4D6C6E5365461AC16ADFAC98DDD0C03DCFD1B5395FD3654",
+        "expanded_ambient_cell_count": 148556662,
+        "explicit_inverse": true,
+        "fixes_protected_ball_pointwise": true,
+        "index": 18,
+        "maps_both_owners_setwise": true,
+        "power": 1,
+        "prefix_axis": 0,
+        "side": "target-first",
+        "source_axis": 2,
+        "third_axis": 1
+      },
+      {
+        "canonical_axis_images": [
+          2,
+          0,
+          1
+        ],
+        "canonical_movie_sha256": "5F30521016184379A4D6C6E5365461AC16ADFAC98DDD0C03DCFD1B5395FD3654",
+        "expanded_ambient_cell_count": 148556662,
+        "explicit_inverse": true,
+        "fixes_protected_ball_pointwise": true,
+        "index": 19,
+        "maps_both_owners_setwise": true,
+        "power": 1,
+        "prefix_axis": 0,
+        "side": "target-first",
+        "source_axis": 2,
+        "third_axis": 1
+      },
+      {
+        "canonical_axis_images": [
+          2,
+          0,
+          1
+        ],
+        "canonical_movie_sha256": "B05280314B1E7D43D8BBBE268C61F34DC16E6AB968D83A32737E2775956A8732",
+        "expanded_ambient_cell_count": 148556662,
+        "explicit_inverse": true,
+        "fixes_protected_ball_pointwise": true,
+        "index": 20,
+        "maps_both_owners_setwise": true,
+        "power": 1,
+        "prefix_axis": 0,
+        "side": "prefix-first",
+        "source_axis": 2,
+        "third_axis": 1
+      },
+      {
+        "canonical_axis_images": [
+          2,
+          0,
+          1
+        ],
+        "canonical_movie_sha256": "B05280314B1E7D43D8BBBE268C61F34DC16E6AB968D83A32737E2775956A8732",
+        "expanded_ambient_cell_count": 148556662,
+        "explicit_inverse": true,
+        "fixes_protected_ball_pointwise": true,
+        "index": 21,
+        "maps_both_owners_setwise": true,
+        "power": 1,
+        "prefix_axis": 0,
+        "side": "prefix-first",
+        "source_axis": 2,
+        "third_axis": 1
+      },
+      {
+        "canonical_axis_images": [
+          2,
+          0,
+          1
+        ],
+        "canonical_movie_sha256": "B05280314B1E7D43D8BBBE268C61F34DC16E6AB968D83A32737E2775956A8732",
+        "expanded_ambient_cell_count": 148556662,
+        "explicit_inverse": true,
+        "fixes_protected_ball_pointwise": true,
+        "index": 22,
+        "maps_both_owners_setwise": true,
+        "power": 1,
+        "prefix_axis": 0,
+        "side": "prefix-first",
+        "source_axis": 2,
+        "third_axis": 1
+      },
+      {
+        "canonical_axis_images": [
+          2,
+          0,
+          1
+        ],
+        "canonical_movie_sha256": "B05280314B1E7D43D8BBBE268C61F34DC16E6AB968D83A32737E2775956A8732",
+        "expanded_ambient_cell_count": 148556662,
+        "explicit_inverse": true,
+        "fixes_protected_ball_pointwise": true,
+        "index": 23,
+        "maps_both_owners_setwise": true,
+        "power": 1,
+        "prefix_axis": 0,
+        "side": "prefix-first",
+        "source_axis": 2,
+        "third_axis": 1
+      },
+      {
+        "canonical_axis_images": [
+          2,
+          0,
+          1
+        ],
+        "canonical_movie_sha256": "B05280314B1E7D43D8BBBE268C61F34DC16E6AB968D83A32737E2775956A8732",
+        "expanded_ambient_cell_count": 148556662,
+        "explicit_inverse": true,
+        "fixes_protected_ball_pointwise": true,
+        "index": 24,
+        "maps_both_owners_setwise": true,
+        "power": 1,
+        "prefix_axis": 0,
+        "side": "prefix-first",
+        "source_axis": 2,
+        "third_axis": 1
+      },
+      {
+        "canonical_axis_images": [
+          2,
+          0,
+          1
+        ],
+        "canonical_movie_sha256": "5F30521016184379A4D6C6E5365461AC16ADFAC98DDD0C03DCFD1B5395FD3654",
+        "expanded_ambient_cell_count": 148556662,
+        "explicit_inverse": true,
+        "fixes_protected_ball_pointwise": true,
+        "index": 25,
+        "maps_both_owners_setwise": true,
+        "power": 1,
+        "prefix_axis": 0,
+        "side": "target-first",
+        "source_axis": 2,
+        "third_axis": 1
+      },
+      {
+        "canonical_axis_images": [
+          2,
+          0,
+          1
+        ],
+        "canonical_movie_sha256": "5F30521016184379A4D6C6E5365461AC16ADFAC98DDD0C03DCFD1B5395FD3654",
+        "expanded_ambient_cell_count": 148556662,
+        "explicit_inverse": true,
+        "fixes_protected_ball_pointwise": true,
+        "index": 26,
+        "maps_both_owners_setwise": true,
+        "power": 1,
+        "prefix_axis": 0,
+        "side": "target-first",
+        "source_axis": 2,
+        "third_axis": 1
+      },
+      {
+        "canonical_axis_images": [
+          2,
+          0,
+          1
+        ],
+        "canonical_movie_sha256": "B05280314B1E7D43D8BBBE268C61F34DC16E6AB968D83A32737E2775956A8732",
+        "expanded_ambient_cell_count": 148556662,
+        "explicit_inverse": true,
+        "fixes_protected_ball_pointwise": true,
+        "index": 27,
+        "maps_both_owners_setwise": true,
+        "power": 1,
+        "prefix_axis": 0,
+        "side": "prefix-first",
+        "source_axis": 2,
+        "third_axis": 1
+      },
+      {
+        "canonical_axis_images": [
+          2,
+          0,
+          1
+        ],
+        "canonical_movie_sha256": "5F30521016184379A4D6C6E5365461AC16ADFAC98DDD0C03DCFD1B5395FD3654",
+        "expanded_ambient_cell_count": 148556662,
+        "explicit_inverse": true,
+        "fixes_protected_ball_pointwise": true,
+        "index": 28,
+        "maps_both_owners_setwise": true,
+        "power": 1,
+        "prefix_axis": 0,
+        "side": "target-first",
+        "source_axis": 2,
+        "third_axis": 1
+      },
+      {
+        "canonical_axis_images": [
+          2,
+          0,
+          1
+        ],
+        "canonical_movie_sha256": "5F30521016184379A4D6C6E5365461AC16ADFAC98DDD0C03DCFD1B5395FD3654",
+        "expanded_ambient_cell_count": 148556662,
+        "explicit_inverse": true,
+        "fixes_protected_ball_pointwise": true,
+        "index": 29,
+        "maps_both_owners_setwise": true,
+        "power": 1,
+        "prefix_axis": 0,
+        "side": "target-first",
+        "source_axis": 2,
+        "third_axis": 1
+      },
+      {
+        "canonical_axis_images": [
+          2,
+          0,
+          1
+        ],
+        "canonical_movie_sha256": "B05280314B1E7D43D8BBBE268C61F34DC16E6AB968D83A32737E2775956A8732",
+        "expanded_ambient_cell_count": 148556662,
+        "explicit_inverse": true,
+        "fixes_protected_ball_pointwise": true,
+        "index": 30,
+        "maps_both_owners_setwise": true,
+        "power": 1,
+        "prefix_axis": 0,
+        "side": "prefix-first",
+        "source_axis": 2,
+        "third_axis": 1
+      },
+      {
+        "canonical_axis_images": [
+          2,
+          0,
+          1
+        ],
+        "canonical_movie_sha256": "B05280314B1E7D43D8BBBE268C61F34DC16E6AB968D83A32737E2775956A8732",
+        "expanded_ambient_cell_count": 148556662,
+        "explicit_inverse": true,
+        "fixes_protected_ball_pointwise": true,
+        "index": 31,
+        "maps_both_owners_setwise": true,
+        "power": 1,
+        "prefix_axis": 0,
+        "side": "prefix-first",
+        "source_axis": 2,
+        "third_axis": 1
+      },
+      {
+        "canonical_axis_images": [
+          2,
+          0,
+          1
+        ],
+        "canonical_movie_sha256": "B05280314B1E7D43D8BBBE268C61F34DC16E6AB968D83A32737E2775956A8732",
+        "expanded_ambient_cell_count": 148556662,
+        "explicit_inverse": true,
+        "fixes_protected_ball_pointwise": true,
+        "index": 32,
+        "maps_both_owners_setwise": true,
+        "power": 1,
+        "prefix_axis": 0,
+        "side": "prefix-first",
+        "source_axis": 2,
+        "third_axis": 1
+      },
+      {
+        "canonical_axis_images": [
+          2,
+          0,
+          1
+        ],
+        "canonical_movie_sha256": "B05280314B1E7D43D8BBBE268C61F34DC16E6AB968D83A32737E2775956A8732",
+        "expanded_ambient_cell_count": 148556662,
+        "explicit_inverse": true,
+        "fixes_protected_ball_pointwise": true,
+        "index": 33,
+        "maps_both_owners_setwise": true,
+        "power": 1,
+        "prefix_axis": 0,
+        "side": "prefix-first",
+        "source_axis": 2,
+        "third_axis": 1
+      },
+      {
+        "canonical_axis_images": [
+          2,
+          0,
+          1
+        ],
+        "canonical_movie_sha256": "B05280314B1E7D43D8BBBE268C61F34DC16E6AB968D83A32737E2775956A8732",
+        "expanded_ambient_cell_count": 148556662,
+        "explicit_inverse": true,
+        "fixes_protected_ball_pointwise": true,
+        "index": 34,
+        "maps_both_owners_setwise": true,
+        "power": 1,
+        "prefix_axis": 0,
+        "side": "prefix-first",
+        "source_axis": 2,
+        "third_axis": 1
+      },
+      {
+        "canonical_axis_images": [
+          2,
+          0,
+          1
+        ],
+        "canonical_movie_sha256": "5F30521016184379A4D6C6E5365461AC16ADFAC98DDD0C03DCFD1B5395FD3654",
+        "expanded_ambient_cell_count": 148556662,
+        "explicit_inverse": true,
+        "fixes_protected_ball_pointwise": true,
+        "index": 35,
+        "maps_both_owners_setwise": true,
+        "power": 1,
+        "prefix_axis": 0,
+        "side": "target-first",
+        "source_axis": 2,
+        "third_axis": 1
+      },
+      {
+        "canonical_axis_images": [
+          2,
+          1,
+          0
+        ],
+        "canonical_movie_sha256": "BFAADF50DE53494FF0CFF490FD2FCE9B8DB48025F7A2A0332B2A553B3E101E1E",
+        "expanded_ambient_cell_count": 24557318,
+        "explicit_inverse": true,
+        "fixes_protected_ball_pointwise": true,
+        "index": 36,
+        "maps_both_owners_setwise": true,
+        "power": -1,
+        "prefix_axis": 1,
+        "side": "target-first",
+        "source_axis": 2,
+        "third_axis": 0
+      },
+      {
+        "canonical_axis_images": [
+          1,
+          2,
+          0
+        ],
+        "canonical_movie_sha256": "5F30521016184379A4D6C6E5365461AC16ADFAC98DDD0C03DCFD1B5395FD3654",
+        "expanded_ambient_cell_count": 148556662,
+        "explicit_inverse": true,
+        "fixes_protected_ball_pointwise": true,
+        "index": 37,
+        "maps_both_owners_setwise": true,
+        "power": 1,
+        "prefix_axis": 2,
+        "side": "target-first",
+        "source_axis": 1,
+        "third_axis": 0
+      },
+      {
+        "canonical_axis_images": [
+          2,
+          1,
+          0
+        ],
+        "canonical_movie_sha256": "7574D33723FB591DAA3CA5AFF98959A0228198E7A4FAFEA48B26F413A56602D1",
+        "expanded_ambient_cell_count": 24643222,
+        "explicit_inverse": true,
+        "fixes_protected_ball_pointwise": true,
+        "index": 38,
+        "maps_both_owners_setwise": true,
+        "power": -1,
+        "prefix_axis": 1,
+        "side": "prefix-first",
+        "source_axis": 2,
+        "third_axis": 0
+      },
+      {
+        "canonical_axis_images": [
+          2,
+          1,
+          0
+        ],
+        "canonical_movie_sha256": "BFAADF50DE53494FF0CFF490FD2FCE9B8DB48025F7A2A0332B2A553B3E101E1E",
+        "expanded_ambient_cell_count": 24557318,
+        "explicit_inverse": true,
+        "fixes_protected_ball_pointwise": true,
+        "index": 39,
+        "maps_both_owners_setwise": true,
+        "power": -1,
+        "prefix_axis": 1,
+        "side": "target-first",
+        "source_axis": 2,
+        "third_axis": 0
+      },
+      {
+        "canonical_axis_images": [
+          2,
+          1,
+          0
+        ],
+        "canonical_movie_sha256": "BFAADF50DE53494FF0CFF490FD2FCE9B8DB48025F7A2A0332B2A553B3E101E1E",
+        "expanded_ambient_cell_count": 24557318,
+        "explicit_inverse": true,
+        "fixes_protected_ball_pointwise": true,
+        "index": 40,
+        "maps_both_owners_setwise": true,
+        "power": -1,
+        "prefix_axis": 1,
+        "side": "target-first",
+        "source_axis": 2,
+        "third_axis": 0
+      },
+      {
+        "canonical_axis_images": [
+          2,
+          1,
+          0
+        ],
+        "canonical_movie_sha256": "7574D33723FB591DAA3CA5AFF98959A0228198E7A4FAFEA48B26F413A56602D1",
+        "expanded_ambient_cell_count": 24643222,
+        "explicit_inverse": true,
+        "fixes_protected_ball_pointwise": true,
+        "index": 41,
+        "maps_both_owners_setwise": true,
+        "power": -1,
+        "prefix_axis": 1,
+        "side": "prefix-first",
+        "source_axis": 2,
+        "third_axis": 0
+      },
+      {
+        "canonical_axis_images": [
+          1,
+          2,
+          0
+        ],
+        "canonical_movie_sha256": "5F30521016184379A4D6C6E5365461AC16ADFAC98DDD0C03DCFD1B5395FD3654",
+        "expanded_ambient_cell_count": 148556662,
+        "explicit_inverse": true,
+        "fixes_protected_ball_pointwise": true,
+        "index": 42,
+        "maps_both_owners_setwise": true,
+        "power": 1,
+        "prefix_axis": 2,
+        "side": "target-first",
+        "source_axis": 1,
+        "third_axis": 0
+      },
+      {
+        "canonical_axis_images": [
+          2,
+          1,
+          0
+        ],
+        "canonical_movie_sha256": "7574D33723FB591DAA3CA5AFF98959A0228198E7A4FAFEA48B26F413A56602D1",
+        "expanded_ambient_cell_count": 24643222,
+        "explicit_inverse": true,
+        "fixes_protected_ball_pointwise": true,
+        "index": 43,
+        "maps_both_owners_setwise": true,
+        "power": -1,
+        "prefix_axis": 1,
+        "side": "prefix-first",
+        "source_axis": 2,
+        "third_axis": 0
+      },
+      {
+        "canonical_axis_images": [
+          2,
+          1,
+          0
+        ],
+        "canonical_movie_sha256": "7574D33723FB591DAA3CA5AFF98959A0228198E7A4FAFEA48B26F413A56602D1",
+        "expanded_ambient_cell_count": 24643222,
+        "explicit_inverse": true,
+        "fixes_protected_ball_pointwise": true,
+        "index": 44,
+        "maps_both_owners_setwise": true,
+        "power": -1,
+        "prefix_axis": 1,
+        "side": "prefix-first",
+        "source_axis": 2,
+        "third_axis": 0
+      },
+      {
+        "canonical_axis_images": [
+          2,
+          1,
+          0
+        ],
+        "canonical_movie_sha256": "BFAADF50DE53494FF0CFF490FD2FCE9B8DB48025F7A2A0332B2A553B3E101E1E",
+        "expanded_ambient_cell_count": 24557318,
+        "explicit_inverse": true,
+        "fixes_protected_ball_pointwise": true,
+        "index": 45,
+        "maps_both_owners_setwise": true,
+        "power": -1,
+        "prefix_axis": 1,
+        "side": "target-first",
+        "source_axis": 2,
+        "third_axis": 0
+      },
+      {
+        "canonical_axis_images": [
+          2,
+          1,
+          0
+        ],
+        "canonical_movie_sha256": "7574D33723FB591DAA3CA5AFF98959A0228198E7A4FAFEA48B26F413A56602D1",
+        "expanded_ambient_cell_count": 24643222,
+        "explicit_inverse": true,
+        "fixes_protected_ball_pointwise": true,
+        "index": 46,
+        "maps_both_owners_setwise": true,
+        "power": -1,
+        "prefix_axis": 1,
+        "side": "prefix-first",
+        "source_axis": 2,
+        "third_axis": 0
+      },
+      {
+        "canonical_axis_images": [
+          2,
+          1,
+          0
+        ],
+        "canonical_movie_sha256": "BFAADF50DE53494FF0CFF490FD2FCE9B8DB48025F7A2A0332B2A553B3E101E1E",
+        "expanded_ambient_cell_count": 24557318,
+        "explicit_inverse": true,
+        "fixes_protected_ball_pointwise": true,
+        "index": 47,
+        "maps_both_owners_setwise": true,
+        "power": -1,
+        "prefix_axis": 1,
+        "side": "target-first",
+        "source_axis": 2,
+        "third_axis": 0
+      },
+      {
+        "canonical_axis_images": [
+          1,
+          2,
+          0
+        ],
+        "canonical_movie_sha256": "5F30521016184379A4D6C6E5365461AC16ADFAC98DDD0C03DCFD1B5395FD3654",
+        "expanded_ambient_cell_count": 148556662,
+        "explicit_inverse": true,
+        "fixes_protected_ball_pointwise": true,
+        "index": 48,
+        "maps_both_owners_setwise": true,
+        "power": 1,
+        "prefix_axis": 2,
+        "side": "target-first",
+        "source_axis": 1,
+        "third_axis": 0
+      },
+      {
+        "canonical_axis_images": [
+          2,
+          1,
+          0
+        ],
+        "canonical_movie_sha256": "BFAADF50DE53494FF0CFF490FD2FCE9B8DB48025F7A2A0332B2A553B3E101E1E",
+        "expanded_ambient_cell_count": 24557318,
+        "explicit_inverse": true,
+        "fixes_protected_ball_pointwise": true,
+        "index": 49,
+        "maps_both_owners_setwise": true,
+        "power": -1,
+        "prefix_axis": 1,
+        "side": "target-first",
+        "source_axis": 2,
+        "third_axis": 0
+      },
+      {
+        "canonical_axis_images": [
+          2,
+          1,
+          0
+        ],
+        "canonical_movie_sha256": "BFAADF50DE53494FF0CFF490FD2FCE9B8DB48025F7A2A0332B2A553B3E101E1E",
+        "expanded_ambient_cell_count": 24557318,
+        "explicit_inverse": true,
+        "fixes_protected_ball_pointwise": true,
+        "index": 50,
+        "maps_both_owners_setwise": true,
+        "power": -1,
+        "prefix_axis": 1,
+        "side": "target-first",
+        "source_axis": 2,
+        "third_axis": 0
+      },
+      {
+        "canonical_axis_images": [
+          2,
+          1,
+          0
+        ],
+        "canonical_movie_sha256": "BFAADF50DE53494FF0CFF490FD2FCE9B8DB48025F7A2A0332B2A553B3E101E1E",
+        "expanded_ambient_cell_count": 24557318,
+        "explicit_inverse": true,
+        "fixes_protected_ball_pointwise": true,
+        "index": 51,
+        "maps_both_owners_setwise": true,
+        "power": -1,
+        "prefix_axis": 1,
+        "side": "target-first",
+        "source_axis": 2,
+        "third_axis": 0
+      },
+      {
+        "canonical_axis_images": [
+          2,
+          1,
+          0
+        ],
+        "canonical_movie_sha256": "7574D33723FB591DAA3CA5AFF98959A0228198E7A4FAFEA48B26F413A56602D1",
+        "expanded_ambient_cell_count": 24643222,
+        "explicit_inverse": true,
+        "fixes_protected_ball_pointwise": true,
+        "index": 52,
+        "maps_both_owners_setwise": true,
+        "power": -1,
+        "prefix_axis": 1,
+        "side": "prefix-first",
+        "source_axis": 2,
+        "third_axis": 0
+      },
+      {
+        "canonical_axis_images": [
+          2,
+          1,
+          0
+        ],
+        "canonical_movie_sha256": "BFAADF50DE53494FF0CFF490FD2FCE9B8DB48025F7A2A0332B2A553B3E101E1E",
+        "expanded_ambient_cell_count": 24557318,
+        "explicit_inverse": true,
+        "fixes_protected_ball_pointwise": true,
+        "index": 53,
+        "maps_both_owners_setwise": true,
+        "power": -1,
+        "prefix_axis": 1,
+        "side": "target-first",
+        "source_axis": 2,
+        "third_axis": 0
+      },
+      {
+        "canonical_axis_images": [
+          2,
+          1,
+          0
+        ],
+        "canonical_movie_sha256": "BFAADF50DE53494FF0CFF490FD2FCE9B8DB48025F7A2A0332B2A553B3E101E1E",
+        "expanded_ambient_cell_count": 24557318,
+        "explicit_inverse": true,
+        "fixes_protected_ball_pointwise": true,
+        "index": 54,
+        "maps_both_owners_setwise": true,
+        "power": -1,
+        "prefix_axis": 1,
+        "side": "target-first",
+        "source_axis": 2,
+        "third_axis": 0
+      },
+      {
+        "canonical_axis_images": [
+          2,
+          1,
+          0
+        ],
+        "canonical_movie_sha256": "BFAADF50DE53494FF0CFF490FD2FCE9B8DB48025F7A2A0332B2A553B3E101E1E",
+        "expanded_ambient_cell_count": 24557318,
+        "explicit_inverse": true,
+        "fixes_protected_ball_pointwise": true,
+        "index": 55,
+        "maps_both_owners_setwise": true,
+        "power": -1,
+        "prefix_axis": 1,
+        "side": "target-first",
+        "source_axis": 2,
+        "third_axis": 0
+      },
+      {
+        "canonical_axis_images": [
+          1,
+          2,
+          0
+        ],
+        "canonical_movie_sha256": "5F30521016184379A4D6C6E5365461AC16ADFAC98DDD0C03DCFD1B5395FD3654",
+        "expanded_ambient_cell_count": 148556662,
+        "explicit_inverse": true,
+        "fixes_protected_ball_pointwise": true,
+        "index": 56,
+        "maps_both_owners_setwise": true,
+        "power": 1,
+        "prefix_axis": 2,
+        "side": "target-first",
+        "source_axis": 1,
+        "third_axis": 0
+      },
+      {
+        "canonical_axis_images": [
+          2,
+          1,
+          0
+        ],
+        "canonical_movie_sha256": "BFAADF50DE53494FF0CFF490FD2FCE9B8DB48025F7A2A0332B2A553B3E101E1E",
+        "expanded_ambient_cell_count": 24557318,
+        "explicit_inverse": true,
+        "fixes_protected_ball_pointwise": true,
+        "index": 57,
+        "maps_both_owners_setwise": true,
+        "power": -1,
+        "prefix_axis": 1,
+        "side": "target-first",
+        "source_axis": 2,
+        "third_axis": 0
+      },
+      {
+        "canonical_axis_images": [
+          2,
+          1,
+          0
+        ],
+        "canonical_movie_sha256": "7574D33723FB591DAA3CA5AFF98959A0228198E7A4FAFEA48B26F413A56602D1",
+        "expanded_ambient_cell_count": 24643222,
+        "explicit_inverse": true,
+        "fixes_protected_ball_pointwise": true,
+        "index": 58,
+        "maps_both_owners_setwise": true,
+        "power": -1,
+        "prefix_axis": 1,
+        "side": "prefix-first",
+        "source_axis": 2,
+        "third_axis": 0
+      },
+      {
+        "canonical_axis_images": [
+          2,
+          1,
+          0
+        ],
+        "canonical_movie_sha256": "BFAADF50DE53494FF0CFF490FD2FCE9B8DB48025F7A2A0332B2A553B3E101E1E",
+        "expanded_ambient_cell_count": 24557318,
+        "explicit_inverse": true,
+        "fixes_protected_ball_pointwise": true,
+        "index": 59,
+        "maps_both_owners_setwise": true,
+        "power": -1,
+        "prefix_axis": 1,
+        "side": "target-first",
+        "source_axis": 2,
+        "third_axis": 0
+      },
+      {
+        "canonical_axis_images": [
+          2,
+          1,
+          0
+        ],
+        "canonical_movie_sha256": "BFAADF50DE53494FF0CFF490FD2FCE9B8DB48025F7A2A0332B2A553B3E101E1E",
+        "expanded_ambient_cell_count": 24557318,
+        "explicit_inverse": true,
+        "fixes_protected_ball_pointwise": true,
+        "index": 60,
+        "maps_both_owners_setwise": true,
+        "power": -1,
+        "prefix_axis": 1,
+        "side": "target-first",
+        "source_axis": 2,
+        "third_axis": 0
+      },
+      {
+        "canonical_axis_images": [
+          2,
+          1,
+          0
+        ],
+        "canonical_movie_sha256": "7574D33723FB591DAA3CA5AFF98959A0228198E7A4FAFEA48B26F413A56602D1",
+        "expanded_ambient_cell_count": 24643222,
+        "explicit_inverse": true,
+        "fixes_protected_ball_pointwise": true,
+        "index": 61,
+        "maps_both_owners_setwise": true,
+        "power": -1,
+        "prefix_axis": 1,
+        "side": "prefix-first",
+        "source_axis": 2,
+        "third_axis": 0
+      },
+      {
+        "canonical_axis_images": [
+          1,
+          2,
+          0
+        ],
+        "canonical_movie_sha256": "B05280314B1E7D43D8BBBE268C61F34DC16E6AB968D83A32737E2775956A8732",
+        "expanded_ambient_cell_count": 148556662,
+        "explicit_inverse": true,
+        "fixes_protected_ball_pointwise": true,
+        "index": 62,
+        "maps_both_owners_setwise": true,
+        "power": 1,
+        "prefix_axis": 2,
+        "side": "prefix-first",
+        "source_axis": 1,
+        "third_axis": 0
+      },
+      {
+        "canonical_axis_images": [
+          2,
+          1,
+          0
+        ],
+        "canonical_movie_sha256": "7574D33723FB591DAA3CA5AFF98959A0228198E7A4FAFEA48B26F413A56602D1",
+        "expanded_ambient_cell_count": 24643222,
+        "explicit_inverse": true,
+        "fixes_protected_ball_pointwise": true,
+        "index": 63,
+        "maps_both_owners_setwise": true,
+        "power": -1,
+        "prefix_axis": 1,
+        "side": "prefix-first",
+        "source_axis": 2,
+        "third_axis": 0
+      },
+      {
+        "canonical_axis_images": [
+          2,
+          1,
+          0
+        ],
+        "canonical_movie_sha256": "7574D33723FB591DAA3CA5AFF98959A0228198E7A4FAFEA48B26F413A56602D1",
+        "expanded_ambient_cell_count": 24643222,
+        "explicit_inverse": true,
+        "fixes_protected_ball_pointwise": true,
+        "index": 64,
+        "maps_both_owners_setwise": true,
+        "power": -1,
+        "prefix_axis": 1,
+        "side": "prefix-first",
+        "source_axis": 2,
+        "third_axis": 0
+      },
+      {
+        "canonical_axis_images": [
+          2,
+          1,
+          0
+        ],
+        "canonical_movie_sha256": "BFAADF50DE53494FF0CFF490FD2FCE9B8DB48025F7A2A0332B2A553B3E101E1E",
+        "expanded_ambient_cell_count": 24557318,
+        "explicit_inverse": true,
+        "fixes_protected_ball_pointwise": true,
+        "index": 65,
+        "maps_both_owners_setwise": true,
+        "power": -1,
+        "prefix_axis": 1,
+        "side": "target-first",
+        "source_axis": 2,
+        "third_axis": 0
+      },
+      {
+        "canonical_axis_images": [
+          2,
+          1,
+          0
+        ],
+        "canonical_movie_sha256": "BFAADF50DE53494FF0CFF490FD2FCE9B8DB48025F7A2A0332B2A553B3E101E1E",
+        "expanded_ambient_cell_count": 24557318,
+        "explicit_inverse": true,
+        "fixes_protected_ball_pointwise": true,
+        "index": 66,
+        "maps_both_owners_setwise": true,
+        "power": -1,
+        "prefix_axis": 1,
+        "side": "target-first",
+        "source_axis": 2,
+        "third_axis": 0
+      },
+      {
+        "canonical_axis_images": [
+          1,
+          2,
+          0
+        ],
+        "canonical_movie_sha256": "B05280314B1E7D43D8BBBE268C61F34DC16E6AB968D83A32737E2775956A8732",
+        "expanded_ambient_cell_count": 148556662,
+        "explicit_inverse": true,
+        "fixes_protected_ball_pointwise": true,
+        "index": 67,
+        "maps_both_owners_setwise": true,
+        "power": 1,
+        "prefix_axis": 2,
+        "side": "prefix-first",
+        "source_axis": 1,
+        "third_axis": 0
+      },
+      {
+        "canonical_axis_images": [
+          2,
+          1,
+          0
+        ],
+        "canonical_movie_sha256": "7574D33723FB591DAA3CA5AFF98959A0228198E7A4FAFEA48B26F413A56602D1",
+        "expanded_ambient_cell_count": 24643222,
+        "explicit_inverse": true,
+        "fixes_protected_ball_pointwise": true,
+        "index": 68,
+        "maps_both_owners_setwise": true,
+        "power": -1,
+        "prefix_axis": 1,
+        "side": "prefix-first",
+        "source_axis": 2,
+        "third_axis": 0
+      },
+      {
+        "canonical_axis_images": [
+          2,
+          1,
+          0
+        ],
+        "canonical_movie_sha256": "BFAADF50DE53494FF0CFF490FD2FCE9B8DB48025F7A2A0332B2A553B3E101E1E",
+        "expanded_ambient_cell_count": 24557318,
+        "explicit_inverse": true,
+        "fixes_protected_ball_pointwise": true,
+        "index": 69,
+        "maps_both_owners_setwise": true,
+        "power": -1,
+        "prefix_axis": 1,
+        "side": "target-first",
+        "source_axis": 2,
+        "third_axis": 0
+      },
+      {
+        "canonical_axis_images": [
+          2,
+          1,
+          0
+        ],
+        "canonical_movie_sha256": "7574D33723FB591DAA3CA5AFF98959A0228198E7A4FAFEA48B26F413A56602D1",
+        "expanded_ambient_cell_count": 24643222,
+        "explicit_inverse": true,
+        "fixes_protected_ball_pointwise": true,
+        "index": 70,
+        "maps_both_owners_setwise": true,
+        "power": -1,
+        "prefix_axis": 1,
+        "side": "prefix-first",
+        "source_axis": 2,
+        "third_axis": 0
+      },
+      {
+        "canonical_axis_images": [
+          2,
+          1,
+          0
+        ],
+        "canonical_movie_sha256": "BFAADF50DE53494FF0CFF490FD2FCE9B8DB48025F7A2A0332B2A553B3E101E1E",
+        "expanded_ambient_cell_count": 24557318,
+        "explicit_inverse": true,
+        "fixes_protected_ball_pointwise": true,
+        "index": 71,
+        "maps_both_owners_setwise": true,
+        "power": -1,
+        "prefix_axis": 1,
+        "side": "target-first",
+        "source_axis": 2,
+        "third_axis": 0
+      },
+      {
+        "canonical_axis_images": [
+          1,
+          2,
+          0
+        ],
+        "canonical_movie_sha256": "B05280314B1E7D43D8BBBE268C61F34DC16E6AB968D83A32737E2775956A8732",
+        "expanded_ambient_cell_count": 148556662,
+        "explicit_inverse": true,
+        "fixes_protected_ball_pointwise": true,
+        "index": 72,
+        "maps_both_owners_setwise": true,
+        "power": 1,
+        "prefix_axis": 2,
+        "side": "prefix-first",
+        "source_axis": 1,
+        "third_axis": 0
+      },
+      {
+        "canonical_axis_images": [
+          2,
+          1,
+          0
+        ],
+        "canonical_movie_sha256": "7574D33723FB591DAA3CA5AFF98959A0228198E7A4FAFEA48B26F413A56602D1",
+        "expanded_ambient_cell_count": 24643222,
+        "explicit_inverse": true,
+        "fixes_protected_ball_pointwise": true,
+        "index": 73,
+        "maps_both_owners_setwise": true,
+        "power": -1,
+        "prefix_axis": 1,
+        "side": "prefix-first",
+        "source_axis": 2,
+        "third_axis": 0
+      },
+      {
+        "canonical_axis_images": [
+          2,
+          1,
+          0
+        ],
+        "canonical_movie_sha256": "7574D33723FB591DAA3CA5AFF98959A0228198E7A4FAFEA48B26F413A56602D1",
+        "expanded_ambient_cell_count": 24643222,
+        "explicit_inverse": true,
+        "fixes_protected_ball_pointwise": true,
+        "index": 74,
+        "maps_both_owners_setwise": true,
+        "power": -1,
+        "prefix_axis": 1,
+        "side": "prefix-first",
+        "source_axis": 2,
+        "third_axis": 0
+      },
+      {
+        "canonical_axis_images": [
+          2,
+          1,
+          0
+        ],
+        "canonical_movie_sha256": "BFAADF50DE53494FF0CFF490FD2FCE9B8DB48025F7A2A0332B2A553B3E101E1E",
+        "expanded_ambient_cell_count": 24557318,
+        "explicit_inverse": true,
+        "fixes_protected_ball_pointwise": true,
+        "index": 75,
+        "maps_both_owners_setwise": true,
+        "power": -1,
+        "prefix_axis": 1,
+        "side": "target-first",
+        "source_axis": 2,
+        "third_axis": 0
+      },
+      {
+        "canonical_axis_images": [
+          2,
+          1,
+          0
+        ],
+        "canonical_movie_sha256": "BFAADF50DE53494FF0CFF490FD2FCE9B8DB48025F7A2A0332B2A553B3E101E1E",
+        "expanded_ambient_cell_count": 24557318,
+        "explicit_inverse": true,
+        "fixes_protected_ball_pointwise": true,
+        "index": 76,
+        "maps_both_owners_setwise": true,
+        "power": -1,
+        "prefix_axis": 1,
+        "side": "target-first",
+        "source_axis": 2,
+        "third_axis": 0
+      },
+      {
+        "canonical_axis_images": [
+          1,
+          2,
+          0
+        ],
+        "canonical_movie_sha256": "B05280314B1E7D43D8BBBE268C61F34DC16E6AB968D83A32737E2775956A8732",
+        "expanded_ambient_cell_count": 148556662,
+        "explicit_inverse": true,
+        "fixes_protected_ball_pointwise": true,
+        "index": 77,
+        "maps_both_owners_setwise": true,
+        "power": 1,
+        "prefix_axis": 2,
+        "side": "prefix-first",
+        "source_axis": 1,
+        "third_axis": 0
+      },
+      {
+        "canonical_axis_images": [
+          2,
+          1,
+          0
+        ],
+        "canonical_movie_sha256": "BFAADF50DE53494FF0CFF490FD2FCE9B8DB48025F7A2A0332B2A553B3E101E1E",
+        "expanded_ambient_cell_count": 24557318,
+        "explicit_inverse": true,
+        "fixes_protected_ball_pointwise": true,
+        "index": 78,
+        "maps_both_owners_setwise": true,
+        "power": -1,
+        "prefix_axis": 1,
+        "side": "target-first",
+        "source_axis": 2,
+        "third_axis": 0
+      },
+      {
+        "canonical_axis_images": [
+          2,
+          1,
+          0
+        ],
+        "canonical_movie_sha256": "BFAADF50DE53494FF0CFF490FD2FCE9B8DB48025F7A2A0332B2A553B3E101E1E",
+        "expanded_ambient_cell_count": 24557318,
+        "explicit_inverse": true,
+        "fixes_protected_ball_pointwise": true,
+        "index": 79,
+        "maps_both_owners_setwise": true,
+        "power": -1,
+        "prefix_axis": 1,
+        "side": "target-first",
+        "source_axis": 2,
+        "third_axis": 0
+      },
+      {
+        "canonical_axis_images": [
+          2,
+          1,
+          0
+        ],
+        "canonical_movie_sha256": "7574D33723FB591DAA3CA5AFF98959A0228198E7A4FAFEA48B26F413A56602D1",
+        "expanded_ambient_cell_count": 24643222,
+        "explicit_inverse": true,
+        "fixes_protected_ball_pointwise": true,
+        "index": 80,
+        "maps_both_owners_setwise": true,
+        "power": -1,
+        "prefix_axis": 1,
+        "side": "prefix-first",
+        "source_axis": 2,
+        "third_axis": 0
+      },
+      {
+        "canonical_axis_images": [
+          2,
+          1,
+          0
+        ],
+        "canonical_movie_sha256": "BFAADF50DE53494FF0CFF490FD2FCE9B8DB48025F7A2A0332B2A553B3E101E1E",
+        "expanded_ambient_cell_count": 24557318,
+        "explicit_inverse": true,
+        "fixes_protected_ball_pointwise": true,
+        "index": 81,
+        "maps_both_owners_setwise": true,
+        "power": -1,
+        "prefix_axis": 1,
+        "side": "target-first",
+        "source_axis": 2,
+        "third_axis": 0
+      },
+      {
+        "canonical_axis_images": [
+          1,
+          2,
+          0
+        ],
+        "canonical_movie_sha256": "5F30521016184379A4D6C6E5365461AC16ADFAC98DDD0C03DCFD1B5395FD3654",
+        "expanded_ambient_cell_count": 148556662,
+        "explicit_inverse": true,
+        "fixes_protected_ball_pointwise": true,
+        "index": 82,
+        "maps_both_owners_setwise": true,
+        "power": 1,
+        "prefix_axis": 2,
+        "side": "target-first",
+        "source_axis": 1,
+        "third_axis": 0
+      },
+      {
+        "canonical_axis_images": [
+          2,
+          1,
+          0
+        ],
+        "canonical_movie_sha256": "7574D33723FB591DAA3CA5AFF98959A0228198E7A4FAFEA48B26F413A56602D1",
+        "expanded_ambient_cell_count": 24643222,
+        "explicit_inverse": true,
+        "fixes_protected_ball_pointwise": true,
+        "index": 83,
+        "maps_both_owners_setwise": true,
+        "power": -1,
+        "prefix_axis": 1,
+        "side": "prefix-first",
+        "source_axis": 2,
+        "third_axis": 0
+      },
+      {
+        "canonical_axis_images": [
+          2,
+          1,
+          0
+        ],
+        "canonical_movie_sha256": "BFAADF50DE53494FF0CFF490FD2FCE9B8DB48025F7A2A0332B2A553B3E101E1E",
+        "expanded_ambient_cell_count": 24557318,
+        "explicit_inverse": true,
+        "fixes_protected_ball_pointwise": true,
+        "index": 84,
+        "maps_both_owners_setwise": true,
+        "power": -1,
+        "prefix_axis": 1,
+        "side": "target-first",
+        "source_axis": 2,
+        "third_axis": 0
+      },
+      {
+        "canonical_axis_images": [
+          2,
+          1,
+          0
+        ],
+        "canonical_movie_sha256": "BFAADF50DE53494FF0CFF490FD2FCE9B8DB48025F7A2A0332B2A553B3E101E1E",
+        "expanded_ambient_cell_count": 24557318,
+        "explicit_inverse": true,
+        "fixes_protected_ball_pointwise": true,
+        "index": 85,
+        "maps_both_owners_setwise": true,
+        "power": -1,
+        "prefix_axis": 1,
+        "side": "target-first",
+        "source_axis": 2,
+        "third_axis": 0
+      },
+      {
+        "canonical_axis_images": [
+          2,
+          1,
+          0
+        ],
+        "canonical_movie_sha256": "7574D33723FB591DAA3CA5AFF98959A0228198E7A4FAFEA48B26F413A56602D1",
+        "expanded_ambient_cell_count": 24643222,
+        "explicit_inverse": true,
+        "fixes_protected_ball_pointwise": true,
+        "index": 86,
+        "maps_both_owners_setwise": true,
+        "power": -1,
+        "prefix_axis": 1,
+        "side": "prefix-first",
+        "source_axis": 2,
+        "third_axis": 0
+      },
+      {
+        "canonical_axis_images": [
+          1,
+          2,
+          0
+        ],
+        "canonical_movie_sha256": "5F30521016184379A4D6C6E5365461AC16ADFAC98DDD0C03DCFD1B5395FD3654",
+        "expanded_ambient_cell_count": 148556662,
+        "explicit_inverse": true,
+        "fixes_protected_ball_pointwise": true,
+        "index": 87,
+        "maps_both_owners_setwise": true,
+        "power": 1,
+        "prefix_axis": 2,
+        "side": "target-first",
+        "source_axis": 1,
+        "third_axis": 0
+      },
+      {
+        "canonical_axis_images": [
+          2,
+          1,
+          0
+        ],
+        "canonical_movie_sha256": "7574D33723FB591DAA3CA5AFF98959A0228198E7A4FAFEA48B26F413A56602D1",
+        "expanded_ambient_cell_count": 24643222,
+        "explicit_inverse": true,
+        "fixes_protected_ball_pointwise": true,
+        "index": 88,
+        "maps_both_owners_setwise": true,
+        "power": -1,
+        "prefix_axis": 1,
+        "side": "prefix-first",
+        "source_axis": 2,
+        "third_axis": 0
+      },
+      {
+        "canonical_axis_images": [
+          2,
+          1,
+          0
+        ],
+        "canonical_movie_sha256": "7574D33723FB591DAA3CA5AFF98959A0228198E7A4FAFEA48B26F413A56602D1",
+        "expanded_ambient_cell_count": 24643222,
+        "explicit_inverse": true,
+        "fixes_protected_ball_pointwise": true,
+        "index": 89,
+        "maps_both_owners_setwise": true,
+        "power": -1,
+        "prefix_axis": 1,
+        "side": "prefix-first",
+        "source_axis": 2,
+        "third_axis": 0
+      },
+      {
+        "canonical_axis_images": [
+          2,
+          0,
+          1
+        ],
+        "canonical_movie_sha256": "BFAADF50DE53494FF0CFF490FD2FCE9B8DB48025F7A2A0332B2A553B3E101E1E",
+        "expanded_ambient_cell_count": 24557318,
+        "explicit_inverse": true,
+        "fixes_protected_ball_pointwise": true,
+        "index": 90,
+        "maps_both_owners_setwise": true,
+        "power": -1,
+        "prefix_axis": 0,
+        "side": "target-first",
+        "source_axis": 2,
+        "third_axis": 1
+      },
+      {
+        "canonical_axis_images": [
+          0,
+          2,
+          1
+        ],
+        "canonical_movie_sha256": "5F30521016184379A4D6C6E5365461AC16ADFAC98DDD0C03DCFD1B5395FD3654",
+        "expanded_ambient_cell_count": 148556662,
+        "explicit_inverse": true,
+        "fixes_protected_ball_pointwise": true,
+        "index": 91,
+        "maps_both_owners_setwise": true,
+        "power": 1,
+        "prefix_axis": 2,
+        "side": "target-first",
+        "source_axis": 0,
+        "third_axis": 1
+      },
+      {
+        "canonical_axis_images": [
+          2,
+          0,
+          1
+        ],
+        "canonical_movie_sha256": "7574D33723FB591DAA3CA5AFF98959A0228198E7A4FAFEA48B26F413A56602D1",
+        "expanded_ambient_cell_count": 24643222,
+        "explicit_inverse": true,
+        "fixes_protected_ball_pointwise": true,
+        "index": 92,
+        "maps_both_owners_setwise": true,
+        "power": -1,
+        "prefix_axis": 0,
+        "side": "prefix-first",
+        "source_axis": 2,
+        "third_axis": 1
+      }
+    ],
+    "matrix_A": [
+      [
+        0,
+        269,
+        1240
+      ],
+      [
+        0,
+        41,
+        189
+      ],
+      [
+        1,
+        0,
+        32
+      ]
+    ],
+    "product_on_H1": [
+      [
+        0,
+        269,
+        1240
+      ],
+      [
+        0,
+        41,
+        189
+      ],
+      [
+        1,
+        0,
+        32
+      ]
+    ],
+    "psi_star_equals_A": true,
+    "status": "PASS"
+  },
+  "heegaard_preserving_unit_generators": "PASS",
+  "johnson_arm_restore": "PASS",
+  "layer_sha256": {
+    "collapses": "542BA1BB19941BE0EB4AB844505BEAACAB1BB585F0A6FA4E923BAD2C28E0F114",
+    "fiber": "3A658F5CF20EDE98AABDE6A82FE40D5BD5B6D9EACBA0372FBD42F86483171DE1",
+    "normalization": "55F6CAFE3D02AC6E7194BE13C01AB8E7508D38F38253C96B6A8FB5319620DBF8",
+    "outer": "605E13BA3E213CFE8C3C83DEF10F380E5E5491259B15B7FE52BFA066DDD7B327",
+    "side": "E884E099B9501E9C7C3B350CC9C1A37763BBF7892B95918E18EBB55EB572A6A8",
+    "single": "DB5C177FBE1F079130B81AF1F9ECC1857FECDC511CE003886B5E28F702D55BF4",
+    "support": "3FD397D7D77198F4A8358BD1EE475E6B19F1F4D6B53AC52CF7B3C2BEEC943A55",
+    "sweep": "188B128AD8D619318F3E5BE1D28A7684082233DFBFC81AB24E69C1F53F5DBA9A"
+  },
+  "movies": [
+    {
+      "composition_order": [
+        "single_disk_moves",
+        "source_side_charts",
+        "negative_source_disk_normalization",
+        "internal_cap1_to_cap0_fiber_transport",
+        "inverse_target_side_charts",
+        "outer_curve_collar_to_identity",
+        "section_cutoff_after_affine_transvection"
+      ],
+      "expanded_ambient_cell_count": 24643222,
+      "explicit_inverse": true,
+      "fixes_protected_ball_pointwise": true,
+      "inverse_order": [
+        "inverse_section_cutoff",
+        "inverse_outer_curve_collar",
+        "target_side_charts",
+        "inverse_internal_cap1_to_cap0_fiber_transport",
+        "inverse_negative_source_disk_normalization",
+        "inverse_source_side_charts",
+        "inverse_single_disk_moves"
+      ],
+      "jacobian_det_max": "3",
+      "jacobian_det_min": "1/3",
+      "johnson_arm_restore": "PASS",
+      "layer_cell_counts": {
+        "internal_fiber_transport": 21579300,
+        "inverse_target_side_charts": 1513344,
+        "negative_source_disk_normalization": 8064,
+        "outer_curve_collar": 20160,
+        "section_cutoff": 162,
+        "single_disk_moves": 16912,
+        "source_side_charts": 1505280
+      },
+      "maps_affine_image_handlebody_to_target": true,
+      "maps_both_owners_setwise": true,
+      "paired_saddle_ambient_cells": "PASS",
+      "power": -1,
+      "protected_ball_bbox_clearance_min": "7989/8000",
+      "restore_isotopic_to_identity": true,
+      "side": "prefix-first"
+    },
+    {
+      "composition_order": [
+        "single_disk_moves",
+        "source_side_charts",
+        "negative_source_disk_normalization",
+        "internal_cap1_to_cap0_fiber_transport",
+        "inverse_target_side_charts",
+        "outer_curve_collar_to_identity",
+        "section_cutoff_after_affine_transvection"
+      ],
+      "expanded_ambient_cell_count": 24557318,
+      "explicit_inverse": true,
+      "fixes_protected_ball_pointwise": true,
+      "inverse_order": [
+        "inverse_section_cutoff",
+        "inverse_outer_curve_collar",
+        "target_side_charts",
+        "inverse_internal_cap1_to_cap0_fiber_transport",
+        "inverse_negative_source_disk_normalization",
+        "inverse_source_side_charts",
+        "inverse_single_disk_moves"
+      ],
+      "jacobian_det_max": "3",
+      "jacobian_det_min": "1/3",
+      "johnson_arm_restore": "PASS",
+      "layer_cell_counts": {
+        "internal_fiber_transport": 21579300,
+        "inverse_target_side_charts": 1470336,
+        "negative_source_disk_normalization": 8064,
+        "outer_curve_collar": 20160,
+        "section_cutoff": 162,
+        "single_disk_moves": 17024,
+        "source_side_charts": 1462272
+      },
+      "maps_affine_image_handlebody_to_target": true,
+      "maps_both_owners_setwise": true,
+      "paired_saddle_ambient_cells": "PASS",
+      "power": -1,
+      "protected_ball_bbox_clearance_min": "7989/8000",
+      "restore_isotopic_to_identity": true,
+      "side": "target-first"
+    },
+    {
+      "composition_order": [
+        "single_disk_moves",
+        "source_side_charts",
+        "identity_normalization",
+        "internal_cap1_to_cap0_fiber_transport",
+        "inverse_target_side_charts",
+        "outer_curve_collar_to_identity",
+        "section_cutoff_after_affine_transvection"
+      ],
+      "expanded_ambient_cell_count": 148556662,
+      "explicit_inverse": true,
+      "fixes_protected_ball_pointwise": true,
+      "inverse_order": [
+        "inverse_section_cutoff",
+        "inverse_outer_curve_collar",
+        "target_side_charts",
+        "inverse_internal_cap1_to_cap0_fiber_transport",
+        "identity_normalization",
+        "inverse_source_side_charts",
+        "inverse_single_disk_moves"
+      ],
+      "jacobian_det_max": "3",
+      "jacobian_det_min": "1/3",
+      "johnson_arm_restore": "PASS",
+      "layer_cell_counts": {
+        "internal_fiber_transport": 143861796,
+        "inverse_target_side_charts": 2244480,
+        "negative_source_disk_normalization": 0,
+        "outer_curve_collar": 161280,
+        "section_cutoff": 162,
+        "single_disk_moves": 44464,
+        "source_side_charts": 2244480
+      },
+      "maps_affine_image_handlebody_to_target": true,
+      "maps_both_owners_setwise": true,
+      "paired_saddle_ambient_cells": "PASS",
+      "power": 1,
+      "protected_ball_bbox_clearance_min": "19973/20000",
+      "restore_isotopic_to_identity": true,
+      "side": "prefix-first"
+    },
+    {
+      "composition_order": [
+        "single_disk_moves",
+        "source_side_charts",
+        "identity_normalization",
+        "internal_cap1_to_cap0_fiber_transport",
+        "inverse_target_side_charts",
+        "outer_curve_collar_to_identity",
+        "section_cutoff_after_affine_transvection"
+      ],
+      "expanded_ambient_cell_count": 148556662,
+      "explicit_inverse": true,
+      "fixes_protected_ball_pointwise": true,
+      "inverse_order": [
+        "inverse_section_cutoff",
+        "inverse_outer_curve_collar",
+        "target_side_charts",
+        "inverse_internal_cap1_to_cap0_fiber_transport",
+        "identity_normalization",
+        "inverse_source_side_charts",
+        "inverse_single_disk_moves"
+      ],
+      "jacobian_det_max": "3",
+      "jacobian_det_min": "1/3",
+      "johnson_arm_restore": "PASS",
+      "layer_cell_counts": {
+        "internal_fiber_transport": 143861796,
+        "inverse_target_side_charts": 2244480,
+        "negative_source_disk_normalization": 0,
+        "outer_curve_collar": 161280,
+        "section_cutoff": 162,
+        "single_disk_moves": 44464,
+        "source_side_charts": 2244480
+      },
+      "maps_affine_image_handlebody_to_target": true,
+      "maps_both_owners_setwise": true,
+      "paired_saddle_ambient_cells": "PASS",
+      "power": 1,
+      "protected_ball_bbox_clearance_min": "19973/20000",
+      "restore_isotopic_to_identity": true,
+      "side": "target-first"
+    }
+  ],
+  "mutation_side_bit": "FAIL",
+  "paired_saddle_ambient_cells": "PASS",
+  "schema": "t73_johnson_restore_assembly/v1",
+  "sha256": "899ABA9A7B67AD9B263A4E53FC99E1B47703B673C653A577DAEF9772641F3561"
+}

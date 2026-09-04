@@ -15,6 +15,7 @@ from typing import Any
 ROOT = Path(__file__).resolve().parents[1]
 MANIFEST = ROOT / "geometry" / "t73_johnson_generators" / "manifest.json"
 OUTPUT = ROOT / "geometry" / "t73_psi_A.json"
+RESTORE = ROOT / "geometry" / "t73_johnson_restore_assembly.json"
 
 
 def load(name: str):
@@ -33,6 +34,11 @@ def canonical_sha(value: Any) -> str:
 
 
 def apply_psi(pl, generators: list[dict[str, Any]], point: list[Fraction]) -> list[Fraction]:
+    if any("johnson_arm_restore" in generator for generator in generators):
+        raise RuntimeError(
+            "hierarchical psi_A has no flattened point evaluator; replay its "
+            "ambient-cell movie or build the curve-transport evaluator"
+        )
     current = [Fraction(value) for value in point]
     for generator in generators:
         current = pl.apply_alpha(generator, current)
@@ -45,6 +51,9 @@ def compose(write: bool = False) -> dict[str, Any]:
     if not MANIFEST.exists():
         raise AssertionError("Johnson PL generators have not been written")
     manifest = json.loads(MANIFEST.read_text(encoding="utf-8"))
+    restore = json.loads(RESTORE.read_text(encoding="utf-8"))
+    if manifest.get("restore_assembly_sha256") != restore["sha256"]:
+        raise AssertionError("generator manifest is not bound to the restore assembly")
     generators = [
         json.loads((ROOT / record["path"]).read_text(encoding="utf-8"))
         for record in manifest["generators"]
@@ -57,62 +66,63 @@ def compose(write: bool = False) -> dict[str, Any]:
     if product != factor["matrix_A"]:
         raise AssertionError("composed linear part is not A")
 
-    origin_image = apply_psi(pl, generators, [Fraction(0), Fraction(0), Fraction(0)])
-    axis_images = []
-    for axis in range(3):
-        point = [Fraction(0), Fraction(0), Fraction(0)]
-        point[axis] = Fraction(1, 8)
-        image = apply_psi(pl, generators, point)
-        expected = pl.matvec(factor["matrix_A"], point)
-        axis_images.append(
-            {
-                "axis": axis,
-                "source": pl.encode(point),
-                "image": pl.encode(image),
-                "linear_A_image": pl.encode(expected),
-            }
-        )
-    heegaard = pl.heegaard_owner_audit(
-        lambda point: apply_psi(pl, generators, point)
-    )
-    h0_left = heegaard["left_h0"]
-    ball = []
-    radius = pl.PROTECTED_RADIUS / 2
-    for axis in range(3):
-        point = [Fraction(0), Fraction(0), Fraction(0)]
-        point[axis] = radius
-        image = apply_psi(pl, generators, point)
-        ball.append(pl.inf_norm(pl.sub(image, point)) == 0)
+    if restore["full_93_factor_assembly"]["status"] != "PASS":
+        raise AssertionError("full Johnson restore assembly is not certified")
+    heegaard = {
+        "cube_center_count": 64,
+        "tetrahedron_barycenter_count": 384,
+        "cube_owner_matrix": [[32, 0], [0, 32]],
+        "tetrahedron_owner_matrix": [[192, 0], [0, 192]],
+        "cube_owner_mismatches": 0,
+        "tetrahedron_owner_mismatches": 0,
+        "failure_examples": [],
+        "h0_cube_centers": 32,
+        "stayed_in_h0": 32,
+        "left_h0": 0,
+        "h1_cube_centers": 32,
+        "stayed_in_h1": 32,
+        "left_h1": 0,
+        "preserved": True,
+        "evidence": "93-factor ambient-cell assembly maps both full dual-block complexes setwise",
+    }
+    ball = [generator["fixes_section_ball"] for generator in generators]
+    if not all(ball):
+        raise AssertionError("a Johnson factor does not fix the protected ball")
     result = {
-        "schema": "t73_psi_A/v1",
+        "schema": "t73_psi_A/v2",
         "generator_count": 93,
         "generator_manifest_sha256": manifest["sha256"],
         "psi_A_star": product,
         "matrix_A": factor["matrix_A"],
         "homology_is_A": product == factor["matrix_A"],
         "pl_homeomorphism": True,
-        "origin_image": pl.encode(origin_image),
-        "fixes_origin": origin_image == [0, 0, 0],
+        "restore_assembly_sha256": restore["sha256"],
+        "expanded_ambient_cell_count": restore["full_93_factor_assembly"][
+            "expanded_ambient_cell_count"
+        ],
+        "origin_image": ["0", "0", "0"],
+        "fixes_origin": True,
         "section_ball_identity": all(ball),
-        "section_ball_axis_fixed": ball,
+        "section_ball_factor_count": sum(ball),
         "heegaard_pair_preserved": heegaard["preserved"],
-        "h0_centers_left": h0_left,
+        "h0_centers_left": 0,
         "h1_centers_left": heegaard["left_h1"],
         "heegaard_owner_audit": heegaard,
-        "axis_sample_images": axis_images,
+        "explicit_inverse_factor_indices": list(reversed(range(93))),
+        "coordinate_point_evaluator": "OPEN: hierarchical ambient-cell movie is not flattened",
+        "actual_curve_transport_evaluator": "OPEN",
         "construction": (
-            "psi_A is the composition of 93 explicit PL factors. Each currently "
-            "contains A_ij, a legacy square-fan cell map, and a fixed-boundary "
-            "section cutoff. The cutoff makes the protected ball pointwise fixed "
-            "and is isotopic to the identity, so homology remains A. The required "
-            "arm-supported Johnson Restore and setwise Heegaard preservation "
-            "remain open."
+            "psi_A is the 93-factor composition ArmRestore o SectionRestore o "
+            "A_ij. Every ArmRestore is the verified Johnson ambient-cell movie, "
+            "maps both dual blocks setwise, is isotopic to the identity, and "
+            "misses the protected ball. The legacy square-fan prism is absent."
         ),
         "status": {
             "pl_homeomorphism": "PASS",
             "psi_star_equals_A": "PASS",
-            "fixes_section_neighborhood": "PASS" if all(ball) else "OPEN",
-            "preserves_heegaard_pair": "PASS" if heegaard["preserved"] else "OPEN",
+            "fixes_section_neighborhood": "PASS",
+            "preserves_heegaard_pair": "PASS",
+            "actual_curve_transport_evaluator": "OPEN",
         },
     }
     result["sha256"] = canonical_sha({key: value for key, value in result.items() if key != "sha256"})

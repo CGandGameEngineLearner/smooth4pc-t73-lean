@@ -569,6 +569,26 @@ triangle/free-edge pair，再作一个维数一的 edge/free-vertex pair。因�
 正 movie 不需要归一化。四个 chart 都有显式逆，故 source-disk 端点现已
 与 cap $1$ 精确一致。把该归一化及内部 fiber transport 接合成在 paired
 支撑外边界固定的映射仍为 \Open。
+在支撑球面上，source/target 边界曲线的差由唯一有限三角区域给出：每个
+负 movie 是含五个三角形的圆盘，每个正 movie 是含四十个三角形的环带。按认证次序
+对三角形边界作 XOR，每个中间态仍是一条简单闭曲线并最终得到 target。
+把每个 $1\leftrightarrow2$ 边 move 用尺度 $1/1000$ 的外侧点加厚，并
+共轭标准维数二映射，得到 $90$ 个实际衣领 move 与 $362880$ 个正胞腔。
+全部 carrier chart 与逆均显式，展开 carrier 盒都避开保护球。因此外
+边界延拓通过。
+
+复合单盘 move、source 侧 chart、负归一化、cap $1$ 到 cap $0$ transport、
+target 侧 chart 的逆、外曲线衣领与 section cutoff，得到四个 canonical
+单位 Restore，共 $346313864$ 个展开胞腔。经轴置换共轭把它们放到全部
+$93$ 个 Johnson 因子，层级表示 $8113517822$ 个胞腔；它固定保护球、集合
+意义保持两个 owner、具有反序显式逆，且 transvection 乘积为 $A$。改变
+首个 side bit 会被检测。因此层级 Restore assembly 通过。第二版
+generator 序列化删除旧 square-fan 映射，并在全部 $93$ 个因子记录
+$\operatorname{ArmRestore}\circ\operatorname{SectionRestore}\circ A_{ij}$。
+现场 verifier 在全部 $64$ 个立方中心与 $384$ 个四面体重心上报告零
+owner mismatch，固定保护球，并把 $H_1$ 作用重算为 $A$。因此集合意义
+保 Heegaard 的 PL 同胚已经完成。该层级尚未在实际脊曲线上求值，所以
+Johnson 侧位脊运输及重建 AR 附着链仍为 \Open；旧 AR-link SHA 被拒绝。
 
 在约化 $y$ 一柄的标准乘积图 $D^2\times[-1,1]$ 中，取 $B=D^2\times[-1/2,1/2]$。Johnson $m_2$ 词有 41 个正 $y$ 通道与一个负通道；$r_{xy}=[z,y]$ 贡献一个正与一个负通道。$D^2$ 中互异有理点给出两两不相交、横向 framing 恒定的乘积弧。$r_{xy}$ 的定向对偶矩形有六个 point-push 腿；展开所得 252 个几何 L/R 因子得长度为 11340 的 Artin 词，与独立再生的公开词一致。
 
