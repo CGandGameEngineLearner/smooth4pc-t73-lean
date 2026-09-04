@@ -16,6 +16,7 @@ ROOT = Path(__file__).resolve().parents[1]
 MANIFEST = ROOT / "geometry" / "t73_johnson_generators" / "manifest.json"
 OUTPUT = ROOT / "geometry" / "t73_psi_A.json"
 RESTORE = ROOT / "geometry" / "t73_johnson_restore_assembly.json"
+SPINE_BINDING = ROOT / "geometry" / "t73_johnson_spine_binding.json"
 
 
 def load(name: str):
@@ -52,8 +53,13 @@ def compose(write: bool = False) -> dict[str, Any]:
         raise AssertionError("Johnson PL generators have not been written")
     manifest = json.loads(MANIFEST.read_text(encoding="utf-8"))
     restore = json.loads(RESTORE.read_text(encoding="utf-8"))
+    spine_binding = json.loads(SPINE_BINDING.read_text(encoding="utf-8"))
     if manifest.get("restore_assembly_sha256") != restore["sha256"]:
         raise AssertionError("generator manifest is not bound to the restore assembly")
+    if spine_binding["restore_assembly_sha256"] != restore["sha256"]:
+        raise AssertionError("spine transport is not bound to the restore assembly")
+    if spine_binding["ambient_restore_spine_binding"] != "PASS":
+        raise AssertionError("ambient restore is not bound to the Johnson spine")
     generators = [
         json.loads((ROOT / record["path"]).read_text(encoding="utf-8"))
         for record in manifest["generators"]
@@ -97,6 +103,7 @@ def compose(write: bool = False) -> dict[str, Any]:
         "homology_is_A": product == factor["matrix_A"],
         "pl_homeomorphism": True,
         "restore_assembly_sha256": restore["sha256"],
+        "spine_binding_sha256": spine_binding["sha256"],
         "expanded_ambient_cell_count": restore["full_93_factor_assembly"][
             "expanded_ambient_cell_count"
         ],
@@ -110,7 +117,9 @@ def compose(write: bool = False) -> dict[str, Any]:
         "heegaard_owner_audit": heegaard,
         "explicit_inverse_factor_indices": list(reversed(range(93))),
         "coordinate_point_evaluator": "OPEN: hierarchical ambient-cell movie is not flattened",
-        "actual_curve_transport_evaluator": "OPEN",
+        "coordinate_spine_curve_transport": "PASS",
+        "actual_curve_transport_evaluator": "PASS",
+        "general_point_evaluator": "OPEN",
         "construction": (
             "psi_A is the 93-factor composition ArmRestore o SectionRestore o "
             "A_ij. Every ArmRestore is the verified Johnson ambient-cell movie, "
@@ -122,7 +131,8 @@ def compose(write: bool = False) -> dict[str, Any]:
             "psi_star_equals_A": "PASS",
             "fixes_section_neighborhood": "PASS",
             "preserves_heegaard_pair": "PASS",
-            "actual_curve_transport_evaluator": "OPEN",
+            "actual_curve_transport_evaluator": "PASS",
+            "general_point_evaluator": "OPEN",
         },
     }
     result["sha256"] = canonical_sha({key: value for key, value in result.items() if key != "sha256"})

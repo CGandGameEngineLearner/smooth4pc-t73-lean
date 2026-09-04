@@ -1,7 +1,8 @@
 {
-  "actual_curve_transport_evaluator": "OPEN",
+  "actual_curve_transport_evaluator": "PASS",
   "construction": "psi_A is the 93-factor composition ArmRestore o SectionRestore o A_ij. Every ArmRestore is the verified Johnson ambient-cell movie, maps both dual blocks setwise, is isotopic to the identity, and misses the protected ball. The legacy square-fan prism is absent.",
   "coordinate_point_evaluator": "OPEN: hierarchical ambient-cell movie is not flattened",
+  "coordinate_spine_curve_transport": "PASS",
   "expanded_ambient_cell_count": 8113517822,
   "explicit_inverse_factor_indices": [
     92,
@@ -99,6 +100,7 @@
     0
   ],
   "fixes_origin": true,
+  "general_point_evaluator": "OPEN",
   "generator_count": 93,
   "generator_manifest_sha256": "02B72C3A52830B03F35B4B89C734575F033D539AA41D1B6A079F845CCF74DE16",
   "h0_centers_left": 0,
@@ -184,10 +186,12 @@
   "schema": "t73_psi_A/v2",
   "section_ball_factor_count": 93,
   "section_ball_identity": true,
-  "sha256": "07C235D312F2D84D88F0E9D4EA23A41E6C00093318DB1AC46B09242CA46CF78E",
+  "sha256": "D39346634778A7DAFDB39E0F8644932D2AE925B14FED691F25623399CD6424E1",
+  "spine_binding_sha256": "0E217A8634B0DAC40CE055DAA360C6AC55B9F2EC8778256DB4C5BECCF3E6C883",
   "status": {
-    "actual_curve_transport_evaluator": "OPEN",
+    "actual_curve_transport_evaluator": "PASS",
     "fixes_section_neighborhood": "PASS",
+    "general_point_evaluator": "OPEN",
     "pl_homeomorphism": "PASS",
     "preserves_heegaard_pair": "PASS",
     "psi_star_equals_A": "PASS"

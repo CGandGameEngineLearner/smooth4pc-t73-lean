@@ -103,7 +103,10 @@ class ActualARLinkTest(unittest.TestCase):
         result = verifier.verify()
         self.assertEqual(result["ACTUAL_AR_LINK"], "OPEN")
         self.assertEqual(result["BOUND_TO_PSI_A"], "OPEN")
-        self.assertEqual(result["ACTUAL_CURVE_EVALUATOR"], "OPEN")
+        # The coordinate-spine evaluator is now closed by the independent
+        # ambient-restore/lane binding, while this stale AR artifact remains
+        # deliberately OPEN until it is rebuilt against the new psi_A hash.
+        self.assertEqual(result["ACTUAL_CURVE_EVALUATOR"], "PASS")
         self.assertEqual(result["HEEGAARD_PRESERVING_PSI"], "PASS")
         self.assertEqual(result["NOT_FREE_GROUP_WORDS"], "PASS")
         self.assertEqual(result["DUAL_2_CELLS"], "PASS")

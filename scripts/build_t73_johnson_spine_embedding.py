@@ -324,8 +324,8 @@ def build(write: bool = False):
     tube_radius = Fraction(1, 100000 * (len(connector_specs) + 1))
     result = {
         "schema": "t73_johnson_spine_embedding/v1",
-        "psi_A_sha256": psi["sha256"],
         "restore_assembly_sha256": restore["sha256"],
+        "matrix_A": psi["matrix_A"],
         "side_candidate_sha256": canonical_sha(side_search),
         "component_word_lengths": [len(word) for word in words],
         "handle_occurrence_counts": {

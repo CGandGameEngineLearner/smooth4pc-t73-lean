@@ -232524,7 +232524,23 @@
     "1": 230,
     "2": 33
   },
-  "psi_A_sha256": "07C235D312F2D84D88F0E9D4EA23A41E6C00093318DB1AC46B09242CA46CF78E",
+  "matrix_A": [
+    [
+      0,
+      269,
+      1240
+    ],
+    [
+      0,
+      41,
+      189
+    ],
+    [
+      1,
+      0,
+      32
+    ]
+  ],
   "receipts": {
     "abelianization_is_A": true,
     "all_connector_columns_distinct": true,
@@ -232539,7 +232555,7 @@
   },
   "restore_assembly_sha256": "899ABA9A7B67AD9B263A4E53FC99E1B47703B673C653A577DAEF9772641F3561",
   "schema": "t73_johnson_spine_embedding/v1",
-  "sha256": "74CEA473FB42911D587391ECD26B86811E496EE588B9F6969D544B5AA4CF8B4A",
+  "sha256": "57BC99BE08ED805EF268049F1EEE961D25F6889A6BDEC142B8715072B7F51AC1",
   "side_candidate_sha256": "2A5283BE2ECD4ECCC90057C2C74A1D163CB4F3AD9BE2CB10480A9142CCBD7340",
   "tube_radius": "1/177600000"
 }
