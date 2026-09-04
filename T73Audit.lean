@@ -6,6 +6,8 @@ import Smooth4PC.T73GeometryPack
 import Smooth4PC.CoefficientTrace
 import Smooth4PC.QuotientEquiv
 import Smooth4PC.FilteredCubicNaturality
+import Smooth4PC.LocalStabilization
+import Smooth4PC.ReynoldsCableCocone
 
 open Lean Elab Command Meta
 
@@ -57,7 +59,14 @@ def finiteAuditDeclarations : List Name := [
   `Smooth4PC.T73.emptyLink_s4ComputedDegreeZero,
   `Smooth4PC.T73.detectorLine_not_linearEquiv_emptyKhQ,
   `Smooth4PC.T73.detectorTransport_on_emptyLink_impossible,
-  `Smooth4PC.T73.conditionalCounterexample_of_pack
+  `Smooth4PC.T73.conditionalCounterexample_of_pack,
+  `Smooth4PC.localStabilization,
+  `Smooth4PC.localStabilization_psi0,
+  `Smooth4PC.localStabilization_psi1,
+  `Smooth4PC.doubleCounitDelta_one,
+  `Smooth4PC.doubleCounitDelta_X,
+  `Smooth4PC.reynoldsAverage_const,
+  `Smooth4PC.reynoldsAverage_orbitConst
 ]
 
 elab "dumpT73Finite" : command => do
@@ -121,5 +130,12 @@ dumpT73Finite
 #print axioms Smooth4PC.cubicScalar_of_order_three
 #print axioms Smooth4PC.simultaneousConjugation_pairing
 #print axioms Smooth4PC.cubicScalar_conjugation_invariant
+#print axioms Smooth4PC.localStabilization
+#print axioms Smooth4PC.localStabilization_psi0
+#print axioms Smooth4PC.localStabilization_psi1
+#print axioms Smooth4PC.doubleCounitDelta_one
+#print axioms Smooth4PC.doubleCounitDelta_X
+#print axioms Smooth4PC.reynoldsAverage_const
+#print axioms Smooth4PC.reynoldsAverage_orbitConst
 
 end Smooth4PC.T73

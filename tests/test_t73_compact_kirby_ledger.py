@@ -26,11 +26,12 @@ class CompactKirbyLedgerTests(unittest.TestCase):
         self.assertEqual(components["m_3"]["exponent_sums"]["y"], 189)
         self.assertEqual(components["m_3"]["exponent_sums"]["z"], 1271)
 
-    def test_rzx_is_a_split_product_bigon_word(self) -> None:
+    def test_rzx_empty_word_is_not_a_split_unknot(self) -> None:
         ledger = self.module.generate_ledger()
-        self.assertEqual(
-            ledger["surviving_components"]["r_zx_split_unknot"]["word"], []
-        )
+        component = ledger["surviving_components"]["r_zx"]
+        self.assertEqual(component["word"], [])
+        self.assertTrue(component["empty_free_word"])
+        self.assertFalse(component["split_unknot"])
 
 
 if __name__ == "__main__":

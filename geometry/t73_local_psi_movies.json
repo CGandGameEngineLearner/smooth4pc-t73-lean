@@ -1,0 +1,110 @@
+{
+  "category": "pre-quotient foam / rank-two Frobenius",
+  "double_counit_delta": {
+    "1": 0,
+    "X": 1
+  },
+  "lean": "Smooth4PC/LocalStabilization.lean",
+  "movies": [
+    {
+      "empty_free_word_is_not_split_unknot": false,
+      "owner": "m_2",
+      "psi0": {
+        "chi": 0,
+        "double_counit_delta": 0,
+        "identity": "chi o psi^[0] = 0",
+        "input": "1"
+      },
+      "psi1": {
+        "chi": 1,
+        "double_counit_delta": 1,
+        "identity": "chi o psi^[1] = chi",
+        "input": "X"
+      },
+      "split_unknot_used": false,
+      "status": "PASS"
+    },
+    {
+      "empty_free_word_is_not_split_unknot": false,
+      "owner": "m_3",
+      "psi0": {
+        "chi": 0,
+        "double_counit_delta": 0,
+        "identity": "chi o psi^[0] = 0",
+        "input": "1"
+      },
+      "psi1": {
+        "chi": 1,
+        "double_counit_delta": 1,
+        "identity": "chi o psi^[1] = chi",
+        "input": "X"
+      },
+      "split_unknot_used": false,
+      "status": "PASS"
+    },
+    {
+      "empty_free_word_is_not_split_unknot": false,
+      "owner": "r_xy",
+      "psi0": {
+        "chi": 0,
+        "double_counit_delta": 0,
+        "identity": "chi o psi^[0] = 0",
+        "input": "1"
+      },
+      "psi1": {
+        "chi": 1,
+        "double_counit_delta": 1,
+        "identity": "chi o psi^[1] = chi",
+        "input": "X"
+      },
+      "split_unknot_used": false,
+      "status": "PASS"
+    },
+    {
+      "empty_free_word_is_not_split_unknot": false,
+      "owner": "r_yz",
+      "psi0": {
+        "chi": 0,
+        "double_counit_delta": 0,
+        "identity": "chi o psi^[0] = 0",
+        "input": "1"
+      },
+      "psi1": {
+        "chi": 1,
+        "double_counit_delta": 1,
+        "identity": "chi o psi^[1] = chi",
+        "input": "X"
+      },
+      "split_unknot_used": false,
+      "status": "PASS"
+    },
+    {
+      "empty_free_word_is_not_split_unknot": true,
+      "owner": "r_zx",
+      "psi0": {
+        "chi": 0,
+        "double_counit_delta": 0,
+        "identity": "chi o psi^[0] = 0",
+        "input": "1"
+      },
+      "psi1": {
+        "chi": 1,
+        "double_counit_delta": 1,
+        "identity": "chi o psi^[1] = chi",
+        "input": "X"
+      },
+      "split_unknot_used": false,
+      "status": "PASS"
+    }
+  ],
+  "owners": [
+    "m_2",
+    "m_3",
+    "r_xy",
+    "r_yz",
+    "r_zx"
+  ],
+  "schema": "t73_local_psi_movies/v1",
+  "sha256": "BEAFE3EAC9DE01855F3F24AC71AA115CCCA4EDD68B4E38FCB9EAFD54B78F9019",
+  "split_unknot_frobenius_factor": false
+}

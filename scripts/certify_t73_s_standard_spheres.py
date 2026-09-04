@@ -201,7 +201,7 @@ def kernel_attaching(surface: dict[str, Any], owner: str, letters: list[str], ba
         raise AssertionError(f"{owner} attaching unknot meets the P0 ball")
     if owner == "r_zx":
         if letters:
-            raise AssertionError("r_zx is not the split unknot")
+            raise AssertionError("r_zx free word is not empty")
     elif len(letters) != 4:
         raise AssertionError(f"{owner} attaching word is not a 4-letter commutator")
     return {

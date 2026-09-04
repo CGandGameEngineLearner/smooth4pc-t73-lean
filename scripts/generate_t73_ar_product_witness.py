@@ -114,9 +114,11 @@ def generate_witness() -> dict[str, Any]:
     hattori_receipt = hattori.verify(PUBLIC_INPUT, replacement_binding=False)
     bridge = matrix_bridge()
     transported_components = dict(compact_ledger["surviving_components"])
-    transported_components.pop("r_zx_split_unknot")
+    transported_components.pop("r_zx_split_unknot", None)
+    rzx = transported_components.pop("r_zx", {"word": []})
     transported_components["r_zx_actual_image"] = {
-        "free_word_after_x_cancellation": [],
+        "free_word_after_x_cancellation": rzx.get("word", []),
+        "split_unknot": False,
         "geometric_scope": (
             "the actual AR component transported through both cancellations; "
             "no split-unknot conclusion is inferred from the empty word"

@@ -284,7 +284,7 @@ def construct_attaching_link(compact: Any) -> dict[str, Any]:
     if words["r_yz"] != [2, 3, -2, -3]:
         raise AssertionError("r_yz is not y z Y Z")
     if words["r_zx"]:
-        raise AssertionError("r_zx did not reduce to the split unknot")
+        raise AssertionError("r_zx free word did not cancel; empty word is not a split unknot")
     if len(words["m_2"]) != 311 or len(words["m_3"]) != 1460:
         raise AssertionError("cancelled CS attaching words have unexpected length")
 
@@ -334,7 +334,7 @@ def construct_attaching_link(compact: Any) -> dict[str, Any]:
             "y_rail": "x=0, slot = letter time in [0,1]",
             "z_rail": "x=1, slot = letter time in [0,1]",
             "component_height_offset": "cid/10",
-            "r_zx": "split 0-framed unknot, empty cancelled word",
+            "r_zx": "empty cancelled free word; embedding of a split unknot is not claimed",
         },
     }
     linking = load("extract_t73_ryz_linking").compute(pd)

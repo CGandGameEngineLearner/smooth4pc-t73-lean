@@ -163,9 +163,12 @@ def generate_ledger() -> dict[str, Any]:
         "surviving_components": {
             "r_xy": word_record(r_xy),
             "r_yz": word_record(r_yz),
-            "r_zx_split_unknot": {
+            "r_zx": {
                 "word": [],
                 "framing": "zero relative to the transported product disk",
+                "empty_free_word": True,
+                "split_unknot": False,
+                "embedding": "OPEN: an empty cancelled word is not an embedded split unknot",
             },
             "m_2": word_record(after_x["m_2"]),
             "m_3": word_record(after_x["m_3"]),
