@@ -1959,6 +1959,32 @@ Topology-source checks completed 2026-09-04:
   and actual-AR-to-canonical-source binding. Schema and mutation tests reject
   promotion of any fixture or prefix to T73 completion.
 
+### F-536 — Gmsh HXT scales to a 20-ribbon conformal probe after boundary connectors are embedded
+
+- Severity: **Alternative triangulation progress / receipt only**
+- Status: **PREFIX-20 RESOURCE PROBE PASS; COMPLETE FRAME OPEN**
+- Evidence: `scripts/probe_t73_selected_source_gmsh.py`,
+  `audit/t73_selected_source_gmsh_prefix20.json`, its fail-closed receipt
+  verifier/tests and `docs/proofs/T73_SELECTED_SOURCE_GMSH_PROBE.md`.
+- First failure and repair: embedding the ribbon surface only in the volume
+  left each core--push endpoint connector crossing an unrefined hole-boundary
+  facet. The corrected OCC model first embeds each connector in its unique
+  insertion-ball boundary surface, then embeds all ribbon surfaces and curves
+  in the holed volume.
+- Gmsh 4.15.2/HXT observations: prefixes 1, 10 and 20 pass meshing. The
+  prefix-20 run has 80 ribbon surfaces, 40 boundary connectors, 4134 nodes and
+  23725 tetrahedra. This is substantially better than TetGen's 14.6 GB
+  failure at the same prefix.
+- Scope firewall: the saved object contains counts, source SHA and a receipt
+  hash, not the nodes/tetrahedra and physical-group incidence. Its verifier
+  returns `PASS_RECEIPT_ONLY`, rejects count/status mutations, and explicitly
+  leaves the 630-ribbon frame open. A prefix-50 run was interrupted before a
+  result and is recorded as neither pass nor fail.
+- Next construction: export the complete mesh and physical memberships, then
+  independently recover five (S^2) boundaries, subdivided core/push paths,
+  subdivided ribbon disks, rational tetrahedron orientations and total volume
+  63968.
+
 ### F-600 — The “actual” sphere-system builder assigns, rather than constructs, the embedding in \(\partial W_2\)
 
 - Severity: **Critical**

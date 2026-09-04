@@ -19,8 +19,8 @@
     "bundle_status": {"const": "OPEN"},
     "artifacts": {
       "type": "array",
-      "minItems": 7,
-      "maxItems": 7,
+      "minItems": 8,
+      "maxItems": 8,
       "items": {"$ref": "#/$defs/artifact"}
     },
     "t73_completion_gates": {
@@ -39,7 +39,8 @@
         "coend_wrong_side_intervals",
         "coend_oriented_band_obligations",
         "tetgen_prefix_ribbons",
-        "pd_fixture_core_components"
+        "pd_fixture_core_components",
+        "gmsh_probe_ribbons"
       ],
       "properties": {
         "source_endpoints": {"const": 1260},
@@ -48,7 +49,8 @@
         "coend_wrong_side_intervals": {"const": 8},
         "coend_oriented_band_obligations": {"const": 4},
         "tetgen_prefix_ribbons": {"const": 10},
-        "pd_fixture_core_components": {"const": 7}
+        "pd_fixture_core_components": {"const": 7},
+        "gmsh_probe_ribbons": {"const": 20}
       }
     },
     "policy": {
@@ -95,7 +97,8 @@
             "VERIFIED_CORE_BUNDLE",
             "VERIFIED_TYPING_ONLY",
             "VERIFIED_PREFIX_ONLY",
-            "VERIFIED_FIXTURE_ONLY"
+            "VERIFIED_FIXTURE_ONLY",
+            "VERIFIED_RESOURCE_RECEIPT_ONLY"
           ]
         },
         "t73_completion_status": {"const": "OPEN"}

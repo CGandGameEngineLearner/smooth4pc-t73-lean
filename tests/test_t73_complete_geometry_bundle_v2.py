@@ -30,7 +30,7 @@ class CompleteGeometryBundleV2Test(unittest.TestCase):
     def test_manifest_is_exact_live_rebuild(self):
         self.builder.validate(self.manifest)
         self.assertEqual(self.manifest["bundle_status"], "OPEN")
-        self.assertEqual(len(self.manifest["artifacts"]), 7)
+        self.assertEqual(len(self.manifest["artifacts"]), 8)
         self.assertEqual(len(self.manifest["t73_completion_gates"]), 4)
 
     def test_schema_and_closed_counts(self):
@@ -49,6 +49,7 @@ class CompleteGeometryBundleV2Test(unittest.TestCase):
                 "coend_oriented_band_obligations": 4,
                 "tetgen_prefix_ribbons": 10,
                 "pd_fixture_core_components": 7,
+                "gmsh_probe_ribbons": 20,
             },
         )
 

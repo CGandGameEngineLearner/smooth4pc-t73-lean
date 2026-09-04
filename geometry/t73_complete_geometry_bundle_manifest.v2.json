@@ -62,11 +62,20 @@
       "payload_sha256": "34864703DBAE8A9F00BF6AA592FE34265DC727EE8B390B63295E9C3F2D57C5A3",
       "schema": "t73_selected_source_tetrahedral_frame/v1",
       "t73_completion_status": "OPEN"
+    },
+    {
+      "content_sha256": "F4A72FA90A8C703FA411262F98FAB7034516561672A886F9DC8960C49A20D822",
+      "evidence_status": "VERIFIED_RESOURCE_RECEIPT_ONLY",
+      "id": "gmsh_source_prefix20_receipt",
+      "path": "audit/t73_selected_source_gmsh_prefix20.json",
+      "payload_sha256": "BD64FFD2360502D0E681480DB0DACADA5992EE64B3FF09A74A3C50EC90B8EC3E",
+      "schema": "t73_selected_source_gmsh_probe/v1",
+      "t73_completion_status": "OPEN"
     }
   ],
   "bundle_status": "OPEN",
   "bundle_version": 2,
-  "manifest_payload_sha256": "E52DCD162BF9CB08808F3DB932080AB783875BEFE4AC15C6969ACD12741F0DF9",
+  "manifest_payload_sha256": "7329C49BC8D545EC8EA35745F2DDB91344212AE5074CC592AFEA979698B1181F",
   "policy": {
     "all_completion_gates_must_pass_before_bundle_completion": true,
     "fixture_or_prefix_is_not_t73_completion": true,
@@ -102,6 +111,7 @@
   "verified_counts": {
     "coend_oriented_band_obligations": 4,
     "coend_wrong_side_intervals": 8,
+    "gmsh_probe_ribbons": 20,
     "pd_fixture_core_components": 7,
     "source_endpoints": 1260,
     "source_intervals": 630,

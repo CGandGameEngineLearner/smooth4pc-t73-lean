@@ -1518,6 +1518,15 @@ resource-disables monolithic requests above ten; a complete 630-ribbon frame
 requires partitioned meshes with certified matching boundary triangulations
 and checked simplicial gluing.
 
+An alternative Gmsh/HXT probe embeds every endpoint connector in its
+insertion-ball boundary surface before embedding the ruled ribbons in the
+volume.  It meshes prefixes of one, ten and twenty ribbons; the last has 4134
+nodes and 23725 tetrahedra, without the TetGen memory explosion.  The saved
+object is deliberately only a hash-bound resource receipt: it does not contain
+the tetrahedron and physical-group arrays required by the independent frame
+verifier.  Export and verification of those arrays for all 630 ribbons remain
+open.
+
 This complete source table also rules out describing the next step as an
 ambient isotopy to a single $P_{86}\to P_{88}$ diagram.  An ambient isotopy
 preserves boundary components and point counts.  Here the $1084$ $Z$-sphere

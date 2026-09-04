@@ -1,0 +1,13 @@
+{
+  "boundary_surfaces": 30,
+  "endpoint_connectors": 40,
+  "gmsh_algorithm_3d": 10,
+  "mesh_nodes": 4134,
+  "ribbon_surfaces": 80,
+  "route_prefix": 20,
+  "schema": "t73_selected_source_gmsh_probe/v1",
+  "sha256": "BD64FFD2360502D0E681480DB0DACADA5992EE64B3FF09A74A3C50EC90B8EC3E",
+  "source_exterior_sha256": "0B5D34B8581E6208D573C1934CE8BE225BAA874AE1120ED6A64027DD007BF741",
+  "status": "PASS_PROBE_ONLY",
+  "tetrahedra": 23725
+}
