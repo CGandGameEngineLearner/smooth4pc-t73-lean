@@ -1,0 +1,11 @@
+{
+  "cut_tangle_sha256": "9746F9B45A45EFB959866AD9EB00D41A7FAB0F319DEC4506C5EC8914EFD89CCD",
+  "exhibited_product_isotopy": false,
+  "fixes_boundary": false,
+  "fixes_detector_ball": false,
+  "fixes_gluing_supports": false,
+  "reason": "no boundary-fixing product isotopy of the actual cut tangle has been exhibited",
+  "reynolds_average_on_all_copy_counts": "PASS_ALGEBRA",
+  "schema": "t73_product_ribbon_isotopy/v1",
+  "status": "OPEN"
+}

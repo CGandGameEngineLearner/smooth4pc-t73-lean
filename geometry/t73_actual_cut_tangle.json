@@ -1,0 +1,41 @@
+{
+  "ar_link_sha256": "2794D4F4B482BC37433CEADD1466C0F55CF58DFA5DE3DC793CD06B06CCF1AEBC",
+  "belt_sha256": "8EBFCB377CC59047CAFF508AC45DF966E4F31C117FBA44A5A2EC62BB4AC529E5",
+  "cut_along": [
+    "t_belt",
+    "x_belt"
+  ],
+  "derived_from_expected_B44": false,
+  "frozen_B44_comparison_only": {
+    "B44_length": 11340,
+    "B44_sha256": "7C2D2F792C2672221A76CAF08A71F560AF0CB7654B4D537C00FAD00B16EFA187"
+  },
+  "input_cores": {
+    "m_1": {
+      "vertex_count": 37
+    },
+    "m_2": {
+      "vertex_count": 37
+    },
+    "m_3": {
+      "vertex_count": 37
+    }
+  },
+  "input_duals": {
+    "r_xy": {
+      "vertex_count": 8
+    },
+    "r_yz": {
+      "vertex_count": 8
+    },
+    "r_zx": {
+      "vertex_count": 8
+    }
+  },
+  "leftover_circle_count": null,
+  "passage_count": null,
+  "reason": "belt intersections are not both 1, so the cut tangle is not a cancellation of the actual link",
+  "schema": "t73_actual_cut_tangle/v1",
+  "sha256": "9746F9B45A45EFB959866AD9EB00D41A7FAB0F319DEC4506C5EC8914EFD89CCD",
+  "status": "OPEN"
+}
