@@ -1,7 +1,7 @@
 {
   "E12_status": "PASS",
   "about_standard_S4_not_candidate": true,
-  "certificate_sha256": "E7EB5367D63B0D590F850CFAF8878BFBE9094AB98669AD2FD5384E6CD4885069",
+  "certificate_sha256": "F402BA82E98238A8990A6B552CDC6B3E9CB4CCB9C35E8AF8895DED14AD3A468D",
   "checks": {
     "about_standard_S4_not_candidate": true,
     "boundary_euler_0": true,
@@ -23,7 +23,7 @@
     "statement": "S^N_0(S^4) isomorphic to Z, concentrated in bidegree (0,0)",
     "unpacked_as": "S4ReductionData.evalB4 and attach4 on the computed I^4 and empty Khovanov"
   },
-  "p3_certificate_sha256": "B9ED5F7122D69D623F179089EE76B95468EA481863F04C270227E251EE07C7B2",
+  "p3_certificate_sha256": "26B5677C5C39A3F39C4D19FCFF015F5AD0FF1102CE1CE447E916ACC8291FAE76",
   "s4_reduction": {
     "B4": {
       "boundary": "S^3",

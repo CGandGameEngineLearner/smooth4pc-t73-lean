@@ -94,7 +94,8 @@ def generate() -> dict[str, Any]:
         p3_certificate.get("verdict") == "PASS"
         and "PASS" in str(p3_certificate.get("E11_status", ""))
         and p3_certificate.get("closed_manifold", {}).get("identified_with_Sigma_A_0") is False
-        and p3_certificate.get("four_handle", {}).get("triangulated_W3") is False
+        and p3_certificate.get("four_handle", {}).get("triangulated_W3") is True
+        and p3_certificate.get("checks", {}).get("actual_w2_lasagna_map") is True
     )
     if p3_e11_pass and not s_pass:
         raise AssertionError("P3/E11 cannot be PASS without S")

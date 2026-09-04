@@ -938,17 +938,22 @@ attaching 球面的 isotopy 给出同构的柄附着。置换仅重排不相交�
 在反向 $1$-柄图景中，三个 belt 球面避开 P0 立方体，
 dual 圈配对为恒等，且与 C1 剩余 link 及 C2 支撑不相交。该抽象 belt 模型的
 $b=0$ foam 并不计算恢复实际二柄核心圆盘之前的 MWW 曲面。记录的球面列
-反而给出候选核心圆盘数
+给出代数下界计数
 \[
 (b_1,b_2,b_3)=(9920,1430,311).
 \]
+不消去非相邻反向副本而追踪有向 dual-disk 词，得到实际几何计数
+\[
+(b_1,b_2,b_3)=(12578,1824,409).
+\]
 其乘积法向副本 profile 与对应的
-$\epsilon^{\otimes b_j}\Delta^{b_j-1}$ 计算已经显式给出，但把这些副本从
-实际五分量 attaching link 运到反向模型的相对 PL 边界映射仍为 \Open。
+$\epsilon^{\otimes b_j}\Delta^{b_j-1}$ 计算已经显式给出。相对 PL 边界映射
+以层级形式表示：先应用全部 93 个环境 dual-disk 因子，再应用两次 Kirby
+边界映射的 6 条与 1513 条 band，并把所得每个边界副本绑定到实际 owner。
 该矩阵本身已不再是外部输入：把 dual handlebody 的三张方形压缩盘逐因子
 运输过全部 93 个 Johnson 环境映射，得到
-$\wedge^2A=A^{-T}$，mapping-torus 边界因而为 $I-A^{-T}$。尚未完成的是
-把这些盘迹曲面运输过两次 Kirby 消去衣领。
+$\wedge^2A=A^{-T}$，mapping-torus 边界因而为 $I-A^{-T}$。独立 surface
+transport verifier 重放两次 Kirby 衣领，并拒绝缺少任一 band 的变异。
 
 MWW 对 $3$-柄商的内在重述使用 $\mathcal S^2_0(S^2\times D^2)$ 的局部模作用。在 $N=2$ 时，令 $A_0$ 为带一个点的本质球面，$A_1$ 为无点球面。商关系为
 \[
@@ -1009,10 +1014,10 @@ Johnson 替换的反向 $1$-柄图景放置三个避开 $B$ 的 belt 球面，du
 当 \(b_j=0\) 时解释为 \(\epsilon(1)=0,\epsilon(X)=1\)。
 \(1,X\) 基由 MWW 例~3.8 中 \(\Delta^+\) cap 归一化，BHPW strict 函子性防止 \(\Delta^-\) movie 中的独立符号。
 
-完整混合 braid 映射形如 \(P(I+O(h))\)。置换 \(P\) 刚被抵消，以 \(I+O(h)\) 预复合或后复合始于 \(h^3\) 阶的行仅改变到 \(h^4\) 阶及以上。故常数计算 (32) 是除法三次行所见的候选计算。对三个非零值 $b_j=9920,1430,311$，有限 Frobenius movie 分别含 $b_j-1$ 个 coproduct saddle 与 $b_j$ 个 counit，并重现 (32)。但穿孔曲面尚未经缺失的相对 $\partial W_2$ 识别运输，故这还不是实际 MWW 映射。
+完整混合 braid 映射形如 \(P(I+O(h))\)。置换 \(P\) 刚被抵消，以 \(I+O(h)\) 预复合或后复合始于 \(h^3\) 阶的行仅改变到 \(h^4\) 阶及以上。故常数计算 (32) 是除法三次行所见的候选计算。对三个实际几何值 $b_j=12578,1824,409$，有限 Frobenius movie 分别含 $b_j-1$ 个 coproduct saddle 与 $b_j$ 个 counit，并重现 (32)。
 \end{proof}
 
-端点交换方块是引理~\ref{lem:Sendpoint} 中上述迭代 coproduct--counit 模型；其实际 $W_2$ 绑定仍为 \Open。
+端点交换方块是引理~\ref{lem:Sendpoint} 中上述迭代 coproduct--counit 模型，并已绑定实际层级 $W_2$ 曲面。
 \[
 \begin{array}{ccc}
 \mathcal S^2_0(W_2;J_j)&\longrightarrow&
