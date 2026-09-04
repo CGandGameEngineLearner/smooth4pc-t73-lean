@@ -1,0 +1,55 @@
+{
+  "axis_permutation_symmetry": true,
+  "canonical_axis_pair": [
+    0,
+    1
+  ],
+  "fiber_preserving_restore_status": "REJECTED",
+  "johnson_restore_status": "OPEN",
+  "schema": "t73_johnson_restore_overlay/v1",
+  "sha256": "787B1C5BD502E919A42E4E841BC8DAB190921C4778BDF551971D3DA5F52690DF",
+  "templates": [
+    {
+      "canonical_prefix_axis": 1,
+      "canonical_source_axis": 0,
+      "cube_owner_mismatches": 16,
+      "endpoint_classification": {
+        "flexible": 192,
+        "mandatory_active": 96,
+        "mandatory_inactive": 96
+      },
+      "fiber_cutoff_delta": "2/9",
+      "fiber_cutoff_step_jacobian_min": "1/9",
+      "fiber_cutoff_steps": 9,
+      "fiber_preserving_restore_status": "REJECTED",
+      "mismatch_vertex_count": 50,
+      "mismatch_vertex_transport_failures": 0,
+      "overlay_piece_count": 384,
+      "overlay_tetrahedron_count": 1536,
+      "power": -1,
+      "required_next_geometry": "transverse Johnson-square motion through the flexible overlay cells",
+      "tetrahedron_owner_mismatches": 96
+    },
+    {
+      "canonical_prefix_axis": 1,
+      "canonical_source_axis": 0,
+      "cube_owner_mismatches": 16,
+      "endpoint_classification": {
+        "flexible": 384,
+        "mandatory_active": 192,
+        "mandatory_inactive": 192
+      },
+      "fiber_cutoff_delta": "2/17",
+      "fiber_cutoff_step_jacobian_min": "1/17",
+      "fiber_cutoff_steps": 17,
+      "fiber_preserving_restore_status": "REJECTED",
+      "mismatch_vertex_count": 110,
+      "mismatch_vertex_transport_failures": 0,
+      "overlay_piece_count": 768,
+      "overlay_tetrahedron_count": 3584,
+      "power": 1,
+      "required_next_geometry": "transverse Johnson-square motion through the flexible overlay cells",
+      "tetrahedron_owner_mismatches": 96
+    }
+  ]
+}

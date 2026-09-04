@@ -650,6 +650,17 @@ swept-box tests for all three path phases and all twelve signed axis templates
 find no support-interior collision and no protected-ball hit.  The routes are
 therefore fixed; attaching positive-Jacobian compact translation cells along
 them and joining them to a common-intersection shrink movie remain \Open.
+The complete affine/cubical overlay makes the required side choice finite.
+For positive unit transvections it has $3584$ tetrahedra grouped into $192$
+mandatory-transport cells, $192$ mandatory-fixed cells and $384$ flexible
+cells; the negative template has half as many polyhedral cells and respective
+counts $96,96,192$.  A moving cutoff that changes only the prefix coordinate
+can transport every mismatch vertex exactly.  Exact positivity forces $17$
+steps in the positive template and $9$ in the negative template, with minimum
+step Jacobian $1/17$ and $1/9$.  Nevertheless both leave $16$ cube-centre and
+$96$ tetrahedron-barycentre owner errors.  This fiber-preserving route is
+therefore rejected: the restore must use transverse Johnson-square motion in
+the flexible cells.
 
 In the standard product chart $D^2\times[-1,1]$ for the reduced $y$
 one-handle, take $B=D^2\times[-1/2,1/2]$.  The Johnson $m_2$ word has $41$
