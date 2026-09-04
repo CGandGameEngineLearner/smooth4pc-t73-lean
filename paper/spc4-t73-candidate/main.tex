@@ -1106,10 +1106,38 @@ section framing class \(\varepsilon=0\).
 \end{lemma}
 
 \begin{proof}
-For the selected Johnson lift, $\psi_A(x)=z$ and $m_1=zx^{-1}$.  Each pair
-admits a local product $1/2$-handle cancellation of geometric intersection
-$1$ that transports the labelled attaching link and preserves
-$\varepsilon=0$.
+In the AR mapping-handle chart, the section-surgery circle $h_{CS}$ meets the
+belt sphere of $t$ at its section point and nowhere else.  Its framing annulus
+is the product annulus, so the relative cancellation framing is zero.  Let
+$p_1,\ldots,p_6$ be the remaining intersections of the attaching link with
+that belt sphere.  In a collar $S^2\times[-\eta,\eta]$ choose a fresh parallel
+of the cancelling attaching arc and an embedded band from the attaching
+interval at $p_i$ to that parallel.  At the $i$th step the obstacles are a
+finite family of vertical product arcs in this collar.  Their projections are
+finitely many points of $S^2$, so the band core can be chosen in the punctured
+sphere and then thickened narrowly without meeting them.  Slides are performed sequentially, so the band
+need not be disjoint from bands already consumed.  Each slide removes the
+chosen passage and introduces none over $t$.  After six slides only $h_{CS}$
+meets the belt sphere, and the standard geometric cancellation theorem removes
+the pair $(t,h_{CS})$.
+
+For the selected Johnson lift, $\psi_A(x)=z$, hence after the first
+cancellation the actual framed core is $m_1=zx^{-1}$.  The $z$ segment misses
+the $x$-belt sphere and the bottom $x^{-1}$ segment meets it once transversely.
+Thus $(x,m_1)$ satisfies the same geometric criterion.  Applying the preceding
+collar construction successively to its $1513$ other passages replaces every
+oriented $x$-lane by the equally oriented $z$-parallel of $m_1$ and then
+cancels $(x,m_1)$.
+
+All bands lie in the recorded product collars and use parallels of the
+cancelling framing annuli.  The framed handle-slide formula therefore gives
+relative twist zero at every step.  Labels and normal fields are carried by
+the ambient band sums, and the original untwisted section-surgery choice is
+unchanged.  This is the usual whole-link form of the Kirby cancellation
+theorem \cite{Kirby1978}; it establishes existence of the sequential bands.
+The fail-closed band schema in the repository asks for explicit coordinates
+for an independent machine replay, which is stronger than this paper-level
+existence argument and currently remains unfilled.
 \end{proof}
 
 \begin{lemma}[Compatibility with MWW cabling]\label{lem:P0c}

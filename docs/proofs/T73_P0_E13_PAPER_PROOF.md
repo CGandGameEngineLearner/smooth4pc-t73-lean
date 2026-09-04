@@ -504,3 +504,27 @@ declared `relative_twist=0` do not determine either object. In particular,
 the repository has no explicit framed link state after each slide, so the
 obstacle set for the following step cannot be reconstructed. Four mutation
 tests confirm that changing the declared twist cannot bypass this gate.
+
+## 13. Paper-level existence of the cancellation bands
+
+The explicit coordinate replay in Section 12 is stronger than what is needed
+for a paper proof. Conditional on the genuine AR framed link and its product
+handle charts, the standard whole-link cancellation argument supplies the
+bands. The cancelling 2-handle meets the relevant belt sphere once with zero
+relative twist. In a collar of that sphere every other passage is a vertical
+product arc. At each step, choose a path from the passage to a fresh parallel
+of the cancelling attaching arc in the sphere punctured at the other finitely
+many passage points, and thicken it narrowly in the collar. This gives an
+embedded band missing the current link except at its prescribed attaching
+intervals. Perform the slides sequentially and repeat. Product framings and
+the framed slide formula keep the relative twist zero.
+
+After six such slides the pair `(t,h_CS)` cancels. The identity
+`psi_A(x)=z` makes the remaining core `m_1=z x^{-1}`, whose bottom segment
+meets the x-belt sphere exactly once; the same construction handles its 1513
+other passages and cancels `(x,m_1)`. Thus explicit sequential band
+coordinates are not a separate paper-level hypothesis once the common AR
+collar exists. The fail-closed gate remains valuable as an independent
+machine replay and correctly stays open. The unresolved issue moves back to
+the earlier one: constructing the genuine AR collar and binding the later
+spine/detector data to the same global map.

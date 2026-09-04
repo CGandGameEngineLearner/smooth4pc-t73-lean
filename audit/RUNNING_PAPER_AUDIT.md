@@ -1930,3 +1930,21 @@ post-F-017 working tree, including the later Johnson restore hierarchy.
   link, the slid component cannot be rebuilt, and framing twist cannot be
   derived from a pushed-off band. The 6+1513 schedule remains combinatorial,
   not a verified Kirby movie.
+
+### F-411 — Paper-level cancellation existence does not require storing all sequential band coordinates
+
+- Severity: **Remediation / conditional positive result**
+- Status: **RESOLVED GIVEN THE ACTUAL AR PRODUCT-COLLAR HYPOTHESIS**
+- Location: expanded proof of Lemma `lem:P0b` in `main.tex`.
+- Argument: once the actual AR framed link is present, the cancelling component
+  meets the belt sphere once with product framing. In a belt-sphere collar the
+  other passages are finitely many vertical product arcs. At each step an arc
+  in the sphere punctured at the remaining passage points gives an embedded
+  narrow band to a fresh parallel. Sequential slides remove every passage;
+  the standard geometric 1/2-handle cancellation theorem then applies, and
+  the product annuli give relative twist zero.
+- Scope: this is an existence proof rather than a coordinate replay of the
+  stored 1519-band schedule. It closes explicit-band existence in the paper
+  conditional on the genuine common AR collar. The independent fail-closed
+  computational gate correctly stays OPEN, and the earlier P0 ambient-link
+  construction remains necessary.
