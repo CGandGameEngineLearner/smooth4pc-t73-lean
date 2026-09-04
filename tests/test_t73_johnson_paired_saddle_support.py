@@ -32,10 +32,17 @@ class JohnsonPairedSaddleSupportTest(unittest.TestCase):
         self.assertEqual(rebuilt["paired_saddle_ambient_cells"], "OPEN")
         self.assertFalse(rebuilt["all_component_boundary_partitions_match"])
         self.assertTrue(rebuilt["all_boundary_loop_permutations_are_halfturns"])
+        self.assertFalse(rebuilt["all_supports_are_balls"])
+        self.assertFalse(rebuilt["all_loop_permutations_preserve_nesting"])
         for movie in rebuilt["movies"]:
             self.assertEqual(movie["paired_saddle_support"], "OPEN")
             self.assertTrue(movie["support_collapses_to_point"])
-            self.assertEqual(movie["support_boundary"]["topology"], "sphere")
+            nonmanifold = movie["power"] > 0 and movie["side"] == "prefix-first"
+            self.assertEqual(
+                movie["support_boundary"]["topology"],
+                "UNCLASSIFIED" if nonmanifold else "sphere",
+            )
+            self.assertEqual(movie["support_boundary"]["surface_manifold"], not nonmanifold)
             self.assertEqual(movie["source_patch"]["total_genus"], 0)
             self.assertEqual(movie["target_patch"]["total_genus"], 0)
             self.assertTrue(movie["boundary_curves_equal"])
@@ -44,6 +51,7 @@ class JohnsonPairedSaddleSupportTest(unittest.TestCase):
             self.assertTrue(
                 movie["boundary_loop_permutation"]["all_cycles_are_transpositions"]
             )
+            self.assertEqual(movie["boundary_loop_tree"]["is_tree"], not nonmanifold)
             expected_cycles = 1 if movie["power"] < 0 else 2
             self.assertEqual(
                 len(movie["boundary_loop_permutation"]["nontrivial_cycles"]),

@@ -288,6 +288,89 @@ def minimal_loop_permutation(source_groups, target_groups):
     }
 
 
+def loop_tree(sweep_tools, support_boundary, source_patch, loop_permutation):
+    source_groups = boundary_loop_groups(sweep_tools, source_patch)
+    loops = sorted({loop for group in source_groups for loop in group})
+    loop_index = {edge: index for index, loop in enumerate(loops) for edge in loop}
+    edge_faces = collections.defaultdict(list)
+    serialized_face_edges = []
+    for face_index, face in enumerate(support_boundary):
+        edges = []
+        for first, second in ((0, 1), (0, 2), (1, 2)):
+            edge = tuple(
+                tuple(str(value) for value in vertex)
+                for vertex in sorted(
+                    (
+                        sweep_tools.periodic_vertex(face[first]),
+                        sweep_tools.periodic_vertex(face[second]),
+                    )
+                )
+            )
+            edges.append(edge)
+            edge_faces[edge].append(face_index)
+        serialized_face_edges.append(edges)
+    adjacency = [set() for _ in support_boundary]
+    for edge, hits in edge_faces.items():
+        if edge in loop_index:
+            continue
+        if len(hits) != 2:
+            raise AssertionError(
+                f"support sphere edge does not have two faces: {edge} -> {hits}"
+            )
+        first, second = hits
+        adjacency[first].add(second)
+        adjacency[second].add(first)
+    face_region = {}
+    regions = []
+    for start in range(len(support_boundary)):
+        if start in face_region:
+            continue
+        region_id = len(regions)
+        stack = [start]
+        face_region[start] = region_id
+        region = []
+        while stack:
+            current = stack.pop()
+            region.append(current)
+            for neighbour in adjacency[current]:
+                if neighbour not in face_region:
+                    face_region[neighbour] = region_id
+                    stack.append(neighbour)
+        regions.append(sorted(region))
+    incidence = []
+    for loop in loops:
+        adjacent_regions = set()
+        for edge in loop:
+            for face_index in edge_faces[edge]:
+                adjacent_regions.add(face_region[face_index])
+        if len(adjacent_regions) != 2:
+            raise AssertionError("boundary loop does not separate two sphere regions")
+        incidence.append(tuple(sorted(adjacent_regions)))
+    if len(regions) != len(loops) + 1:
+        raise AssertionError("loop complement graph is not a tree")
+    permutation = tuple(loop_permutation["permutation"])
+    region_permutation = None
+    for candidate in itertools.permutations(range(len(regions))):
+        if all(
+            tuple(sorted((candidate[first], candidate[second])))
+            == incidence[permutation[index]]
+            for index, (first, second) in enumerate(incidence)
+        ):
+            region_permutation = candidate
+            break
+    if region_permutation is None:
+        raise AssertionError("boundary loop permutation does not preserve nesting")
+    return {
+        "loop_count": len(loops),
+        "region_count": len(regions),
+        "region_face_counts": [len(region) for region in regions],
+        "loop_region_incidence": [list(edge) for edge in incidence],
+        "region_permutation": list(region_permutation),
+        "is_tree": True,
+        "loop_permutation_extends_to_tree_automorphism": True,
+    }
+
+
 def build_movie(analyzer, pl, sweep_tools, movie):
     tetrahedra, adjacency, face_occurrences = sweep_tools.build_tetrahedra(
         analyzer, pl, movie["power"]
@@ -343,6 +426,15 @@ def build_movie(analyzer, pl, sweep_tools, movie):
         boundary_loop_groups(sweep_tools, source_patch),
         boundary_loop_groups(sweep_tools, target_patch),
     )
+    nesting_tree = (
+        loop_tree(sweep_tools, support_boundary, source_patch, loop_permutation)
+        if boundary_invariants["surface_manifold"]
+        else {
+            "is_tree": False,
+            "loop_permutation_extends_to_tree_automorphism": False,
+            "status": "OPEN: candidate support boundary is not a surface",
+        }
+    )
     collapse = analyzer.collapse_to_point(
         [
             tuple(sweep_tools.periodic_vertex(vertex) for vertex in tetrahedra[index]["vertices"])
@@ -390,6 +482,7 @@ def build_movie(analyzer, pl, sweep_tools, movie):
         "boundary_loop_permutation_status": (
             "PASS" if loop_permutation["all_cycles_are_transpositions"] else "OPEN"
         ),
+        "boundary_loop_tree": nesting_tree,
         "outer_boundary_membership_agrees": boundary_agrees,
         "protected_ball_bbox_clearance": str(clearance),
         "paired_saddle_support": "PASS" if passed else "OPEN",
@@ -413,12 +506,20 @@ def generate():
         "sweep_sha256": sweep["sha256"],
         "disk_cells_sha256": disk_cells["sha256"],
         "movies": movies,
-        "all_supports_are_balls": all(movie["support_collapses_to_point"] for movie in movies),
+        "all_supports_are_balls": all(
+            movie["support_collapses_to_point"]
+            and movie["support_boundary"]["topology"] == "sphere"
+            for movie in movies
+        ),
         "all_component_boundary_partitions_match": all(
             movie["component_boundary_partitions_equal"] for movie in movies
         ),
         "all_boundary_loop_permutations_are_halfturns": all(
             movie["boundary_loop_permutation_status"] == "PASS" for movie in movies
+        ),
+        "all_loop_permutations_preserve_nesting": all(
+            movie["boundary_loop_tree"]["loop_permutation_extends_to_tree_automorphism"]
+            for movie in movies
         ),
         "paired_saddle_support": (
             "PASS"

@@ -158,15 +158,17 @@ def patch_invariants(faces):
                         boundary_seen.add(neighbour)
                         stack.append(neighbour)
     euler = len(vertices) - len(edge_counts) + len(faces)
+    edge_multiplicity_histogram = dict(sorted(collections.Counter(edge_counts.values()).items()))
+    surface_manifold = all(count in (1, 2) for count in edge_counts.values())
     topology = (
         "disk"
-        if components == 1 and boundary_components == 1 and euler == 1
+        if surface_manifold and components == 1 and boundary_components == 1 and euler == 1
         else "annulus"
-        if components == 1 and boundary_components == 2 and euler == 0
+        if surface_manifold and components == 1 and boundary_components == 2 and euler == 0
         else "two_disks"
-        if components == 2 and boundary_components == 2 and euler == 2
+        if surface_manifold and components == 2 and boundary_components == 2 and euler == 2
         else "sphere"
-        if components == 1 and boundary_components == 0 and euler == 2
+        if surface_manifold and components == 1 and boundary_components == 0 and euler == 2
         else "UNCLASSIFIED"
     )
     return {
@@ -176,6 +178,10 @@ def patch_invariants(faces):
         "euler": euler,
         "surface_components": components,
         "boundary_components": boundary_components,
+        "edge_multiplicity_histogram": {
+            str(key): value for key, value in edge_multiplicity_histogram.items()
+        },
+        "surface_manifold": surface_manifold,
         "topology": topology,
         "is_disk": topology == "disk",
     }

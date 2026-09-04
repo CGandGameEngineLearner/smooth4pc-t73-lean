@@ -25,22 +25,31 @@
         {
           "attachment_patch": {
             "boundary_components": 2,
+            "edge_multiplicity_histogram": {
+              "1": 16,
+              "2": 64
+            },
             "edges": 80,
             "euler": 2,
             "faces": 48,
             "is_disk": false,
             "surface_components": 2,
+            "surface_manifold": true,
             "topology": "two_disks",
             "vertices": 34
           },
           "operation": "add",
           "support_boundary": {
             "boundary_components": 0,
+            "edge_multiplicity_histogram": {
+              "2": 96
+            },
             "edges": 96,
             "euler": 2,
             "faces": 64,
             "is_disk": false,
             "surface_components": 1,
+            "surface_manifold": true,
             "topology": "sphere",
             "vertices": 34
           },
@@ -125,22 +134,31 @@
         {
           "attachment_patch": {
             "boundary_components": 2,
+            "edge_multiplicity_histogram": {
+              "1": 6,
+              "2": 27
+            },
             "edges": 33,
             "euler": 0,
             "faces": 20,
             "is_disk": false,
             "surface_components": 1,
+            "surface_manifold": true,
             "topology": "annulus",
             "vertices": 13
           },
           "operation": "remove",
           "support_boundary": {
             "boundary_components": 0,
+            "edge_multiplicity_histogram": {
+              "2": 33
+            },
             "edges": 33,
             "euler": 2,
             "faces": 22,
             "is_disk": false,
             "surface_components": 1,
+            "surface_manifold": true,
             "topology": "sphere",
             "vertices": 13
           },
@@ -530,22 +548,31 @@
         {
           "attachment_patch": {
             "boundary_components": 2,
+            "edge_multiplicity_histogram": {
+              "1": 6,
+              "2": 21
+            },
             "edges": 27,
             "euler": 0,
             "faces": 16,
             "is_disk": false,
             "surface_components": 1,
+            "surface_manifold": true,
             "topology": "annulus",
             "vertices": 11
           },
           "operation": "remove",
           "support_boundary": {
             "boundary_components": 0,
+            "edge_multiplicity_histogram": {
+              "2": 27
+            },
             "edges": 27,
             "euler": 2,
             "faces": 18,
             "is_disk": false,
             "surface_components": 1,
+            "surface_manifold": true,
             "topology": "sphere",
             "vertices": 11
           },
@@ -566,22 +593,31 @@
         {
           "attachment_patch": {
             "boundary_components": 2,
+            "edge_multiplicity_histogram": {
+              "1": 16,
+              "2": 64
+            },
             "edges": 80,
             "euler": 2,
             "faces": 48,
             "is_disk": false,
             "surface_components": 2,
+            "surface_manifold": true,
             "topology": "two_disks",
             "vertices": 34
           },
           "operation": "add",
           "support_boundary": {
             "boundary_components": 0,
+            "edge_multiplicity_histogram": {
+              "2": 96
+            },
             "edges": 96,
             "euler": 2,
             "faces": 64,
             "is_disk": false,
             "surface_components": 1,
+            "surface_manifold": true,
             "topology": "sphere",
             "vertices": 34
           },
@@ -1035,22 +1071,31 @@
         {
           "attachment_patch": {
             "boundary_components": 2,
+            "edge_multiplicity_histogram": {
+              "1": 20,
+              "2": 74
+            },
             "edges": 94,
             "euler": 2,
             "faces": 56,
             "is_disk": false,
             "surface_components": 2,
+            "surface_manifold": true,
             "topology": "two_disks",
             "vertices": 40
           },
           "operation": "add",
           "support_boundary": {
             "boundary_components": 0,
+            "edge_multiplicity_histogram": {
+              "2": 114
+            },
             "edges": 114,
             "euler": 2,
             "faces": 76,
             "is_disk": false,
             "surface_components": 1,
+            "surface_manifold": true,
             "topology": "sphere",
             "vertices": 40
           },
@@ -1151,22 +1196,31 @@
         {
           "attachment_patch": {
             "boundary_components": 2,
+            "edge_multiplicity_histogram": {
+              "1": 6,
+              "2": 39
+            },
             "edges": 45,
             "euler": 0,
             "faces": 28,
             "is_disk": false,
             "surface_components": 1,
+            "surface_manifold": true,
             "topology": "annulus",
             "vertices": 17
           },
           "operation": "remove",
           "support_boundary": {
             "boundary_components": 0,
+            "edge_multiplicity_histogram": {
+              "2": 45
+            },
             "edges": 45,
             "euler": 2,
             "faces": 30,
             "is_disk": false,
             "surface_components": 1,
+            "surface_manifold": true,
             "topology": "sphere",
             "vertices": 17
           },
@@ -2052,22 +2106,31 @@
         {
           "attachment_patch": {
             "boundary_components": 2,
+            "edge_multiplicity_histogram": {
+              "1": 20,
+              "2": 74
+            },
             "edges": 94,
             "euler": 2,
             "faces": 56,
             "is_disk": false,
             "surface_components": 2,
+            "surface_manifold": true,
             "topology": "two_disks",
             "vertices": 40
           },
           "operation": "add",
           "support_boundary": {
             "boundary_components": 0,
+            "edge_multiplicity_histogram": {
+              "2": 114
+            },
             "edges": 114,
             "euler": 2,
             "faces": 76,
             "is_disk": false,
             "surface_components": 1,
+            "surface_manifold": true,
             "topology": "sphere",
             "vertices": 40
           },
@@ -2168,22 +2231,31 @@
         {
           "attachment_patch": {
             "boundary_components": 2,
+            "edge_multiplicity_histogram": {
+              "1": 6,
+              "2": 39
+            },
             "edges": 45,
             "euler": 0,
             "faces": 28,
             "is_disk": false,
             "surface_components": 1,
+            "surface_manifold": true,
             "topology": "annulus",
             "vertices": 17
           },
           "operation": "remove",
           "support_boundary": {
             "boundary_components": 0,
+            "edge_multiplicity_histogram": {
+              "2": 45
+            },
             "edges": 45,
             "euler": 2,
             "faces": 30,
             "is_disk": false,
             "surface_components": 1,
+            "surface_manifold": true,
             "topology": "sphere",
             "vertices": 17
           },
@@ -3053,5 +3125,5 @@
     }
   ],
   "schema": "t73_johnson_elementary_sweep/v1",
-  "sha256": "AAF176ABD6DF5133E66061E3256119DF508CEBA65741C8944C62025A6C0E2494"
+  "sha256": "188B128AD8D619318F3E5BE1D28A7684082233DFBFC81AB24E69C1F53F5DBA9A"
 }

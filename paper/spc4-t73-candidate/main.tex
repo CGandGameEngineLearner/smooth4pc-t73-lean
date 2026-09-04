@@ -693,26 +693,23 @@ and image is face-to-face, its eight outer triangles agree pointwise, and the
 minimum periodic bounding-box clearance from the protected ball is
 $7989/8000$.  Thus all single-move ambient collars are complete; constructing
 the paired-saddle collar remains \Open.
-For that final collar, join the residual add and remove balls by the shortest
-dual-face path and add one full agreement layer.  The four resulting supports
-contain respectively $129,125,180,179$ tetrahedra; each has a spherical
-boundary and an explicit collapse to a point.  Current and target membership
-agree on the outer boundary, and the two interior surface patches have exactly
-the same boundary-edge set.  For negative moves each patch is a disjoint union
-of a disk and an annulus; for positive moves it is a union of two disks and an
-annulus.  All components are planar, and the support bounding boxes have
-distance at least $1$ from every protected-ball centre.  This does not yet give
-a relative support homeomorphism: although the union of boundary edges agrees,
-the partition of those edges among the disk and annulus components differs
-between source and target.  A boundary-fixed homeomorphism cannot change that
-partition.  The paired-saddle support and its ambient PL cell map therefore
-remain \Open.  The discrepancy is nevertheless finite and standard: in the
+For that final collar, joining the residual balls by the shortest dual-face
+path and adding one agreement layer gives candidate subcomplexes of sizes
+$129,125,180,179$.  They collapse to a point and stay at least distance $1$
+from every protected-ball centre.  The first, second and fourth have manifold
+sphere boundary; the $180$-tetrahedron positive prefix-first candidate has one
+edge of multiplicity four and is rejected.  All four remain insufficient:
+even for the three ball supports, the partition of their common boundary
+circles among disk and annulus components differs between source and target,
+so no boundary-fixed homeomorphism has yet been supplied.  The discrepancy is finite: in the
 negative templates the common boundary has three circles and a single
 transposition carries the source component partition to the target partition;
 in the positive templates there are four circles and the minimal permutation
 is a product of two disjoint transpositions.  Thus the required inner boundary
-map is one or two sphere half-turns.  Its placement and the outer fixed-boundary
-polar collars remain to be constructed.
+map would be one or two sphere half-turns.  For the three manifold candidates
+the loop permutation also preserves the sphere nesting tree.  A subdivided
+regular neighbourhood is still needed for positive prefix-first; placing the
+loop half-turns and fixed-boundary polar collars remains \Open in every case.
 
 In the standard product chart $D^2\times[-1,1]$ for the reduced $y$
 one-handle, take $B=D^2\times[-1/2,1/2]$.  The Johnson $m_2$ word has $41$
