@@ -41,6 +41,9 @@ class JohnsonArmMismatchTest(unittest.TestCase):
                 all(component["boundary_is_sphere"] for component in template["components"])
             )
             self.assertTrue(template["all_components_are_collapsible_balls"])
+            self.assertTrue(
+                all(component["triangulation"]["star_shaped"] for component in template["components"])
+            )
             self.assertEqual(template["half_period_ball_pairing"], "PASS")
             self.assertEqual(len(template["ball_pairs"]), 3)
             self.assertTrue(

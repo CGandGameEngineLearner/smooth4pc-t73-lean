@@ -218,6 +218,7 @@ def collapse_to_point(tetrahedra):
 def triangulate_component(pl, pieces, component, piece_shifts):
     tetrahedra = []
     all_vertices = set()
+    facet_occurrences = defaultdict(list)
     for piece_index in component:
         shift = piece_shifts[piece_index]
         vertices = [
@@ -229,7 +230,9 @@ def triangulate_component(pl, pieces, component, piece_shifts):
         )
         all_vertices.update(vertices)
         all_vertices.add(center)
-        for facet in polytope_facets(pl, [pl.encode(vertex) for vertex in vertices]):
+        facets = polytope_facets(pl, [pl.encode(vertex) for vertex in vertices])
+        for facet in facets:
+            facet_occurrences[facet].append(center)
             for triangle in triangulate_face(pl, facet):
                 tetrahedron = [triangle[0], triangle[1], triangle[2], center]
                 determinant = pl.det3(
@@ -252,6 +255,33 @@ def triangulate_component(pl, pieces, component, piece_shifts):
     collapse = collapse_to_point(tetrahedra)
     lows = [min(vertex[axis] for vertex in all_vertices) for axis in range(3)]
     highs = [max(vertex[axis] for vertex in all_vertices) for axis in range(3)]
+    boundary_facets = [
+        (facet, centers[0])
+        for facet, centers in facet_occurrences.items()
+        if len(centers) == 1
+    ]
+    candidate_centers = [
+        tuple((lows[axis] + highs[axis]) / 2 for axis in range(3)),
+        tuple(
+            sum(vertex[axis] for vertex in all_vertices) / len(all_vertices)
+            for axis in range(3)
+        ),
+    ]
+    candidate_centers.extend(center for centers in facet_occurrences.values() for center in centers)
+    star_center = None
+    for candidate in candidate_centers:
+        visible = True
+        for facet, interior_point in boundary_facets:
+            first, second, third = facet[:3]
+            normal = cross(pl.sub(second, first), pl.sub(third, first))
+            interior_sign = dot(normal, pl.sub(interior_point, first))
+            candidate_sign = dot(normal, pl.sub(candidate, first))
+            if interior_sign == 0 or interior_sign * candidate_sign <= 0:
+                visible = False
+                break
+        if visible:
+            star_center = candidate
+            break
     return {
         "tetrahedron_count": len(tetrahedra),
         "triangle_multiplicities": {
@@ -264,6 +294,11 @@ def triangulate_component(pl, pieces, component, piece_shifts):
             "span": [str(highs[axis] - lows[axis]) for axis in range(3)],
         },
         "contained_in_embedded_period_box": all(highs[axis] - lows[axis] < 4 for axis in range(3)),
+        "star_shaped": star_center is not None,
+        "star_center": (
+            [str(value) for value in star_center] if star_center is not None else None
+        ),
+        "boundary_facet_count": len(boundary_facets),
         **collapse,
     }
 
@@ -377,6 +412,10 @@ def component_summary(pl, pieces):
                 "boundary_edge_multiplicity_two": True,
                 "boundary_is_sphere": connected and euler == 2,
                 "triangulation": triangulation,
+                "piece_lift_shifts": {
+                    str(piece_index): [str(value) for value in piece_shifts[piece_index]]
+                    for piece_index in component
+                },
                 "support_ball_status": (
                     "PASS"
                     if connected
