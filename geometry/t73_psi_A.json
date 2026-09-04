@@ -58,8 +58,234 @@
   "construction": "psi_A is the composition of 93 explicit PL factors. Each currently contains A_ij, a legacy square-fan cell map, and a fixed-boundary section cutoff. The cutoff makes the protected ball pointwise fixed and is isotopic to the identity, so homology remains A. The required arm-supported Johnson Restore and setwise Heegaard preservation remain open.",
   "fixes_origin": true,
   "generator_count": 93,
-  "generator_manifest_sha256": "C416F58C96269BD87E8A734226EA9FD02A57E8684EA05E6BF3699C6CED4544DE",
+  "generator_manifest_sha256": "7151FDD99DA3B8301653994CF84517C822BC58B8F4DF2A26DD21F1D246102DAF",
   "h0_centers_left": 16,
+  "h1_centers_left": 16,
+  "heegaard_owner_audit": {
+    "cube_center_count": 64,
+    "cube_owner_matrix": [
+      [
+        16,
+        16
+      ],
+      [
+        16,
+        16
+      ]
+    ],
+    "cube_owner_mismatches": 32,
+    "failure_examples": [
+      {
+        "image": [
+          "3287/4",
+          "501/4",
+          "65/4"
+        ],
+        "image_owner": 1,
+        "kind": "tetrahedron_barycenter",
+        "origin": [
+          0,
+          0,
+          0
+        ],
+        "permutation": [
+          1,
+          2,
+          0
+        ],
+        "source": [
+          "1/4",
+          "3/4",
+          "1/2"
+        ],
+        "source_owner": 0
+      },
+      {
+        "image": [
+          "8247/4",
+          "1257/4",
+          "193/4"
+        ],
+        "image_owner": 1,
+        "kind": "tetrahedron_barycenter",
+        "origin": [
+          0,
+          0,
+          1
+        ],
+        "permutation": [
+          1,
+          2,
+          0
+        ],
+        "source": [
+          "1/4",
+          "3/4",
+          "3/2"
+        ],
+        "source_owner": 0
+      },
+      {
+        "image": [
+          "8949/4",
+          "341",
+          "113/2"
+        ],
+        "image_owner": 1,
+        "kind": "tetrahedron_barycenter",
+        "origin": [
+          0,
+          0,
+          1
+        ],
+        "permutation": [
+          2,
+          0,
+          1
+        ],
+        "source": [
+          "1/2",
+          "1/4",
+          "7/4"
+        ],
+        "source_owner": 0
+      },
+      {
+        "image": [
+          "6469/2",
+          "493",
+          "161/2"
+        ],
+        "image_owner": 1,
+        "kind": "cube_center",
+        "origin": [
+          0,
+          0,
+          2
+        ],
+        "source": [
+          "1/2",
+          "1/2",
+          "5/2"
+        ],
+        "source_owner": 0
+      },
+      {
+        "image": [
+          "13909/4",
+          "530",
+          "177/2"
+        ],
+        "image_owner": 1,
+        "kind": "tetrahedron_barycenter",
+        "origin": [
+          0,
+          0,
+          2
+        ],
+        "permutation": [
+          2,
+          0,
+          1
+        ],
+        "source": [
+          "1/2",
+          "1/4",
+          "11/4"
+        ],
+        "source_owner": 0
+      },
+      {
+        "image": [
+          "8949/2",
+          "682",
+          "225/2"
+        ],
+        "image_owner": 1,
+        "kind": "cube_center",
+        "origin": [
+          0,
+          0,
+          3
+        ],
+        "source": [
+          "1/2",
+          "1/2",
+          "7/2"
+        ],
+        "source_owner": 0
+      },
+      {
+        "image": [
+          "4363/4",
+          "665/4",
+          "65/4"
+        ],
+        "image_owner": 1,
+        "kind": "tetrahedron_barycenter",
+        "origin": [
+          0,
+          1,
+          0
+        ],
+        "permutation": [
+          1,
+          2,
+          0
+        ],
+        "source": [
+          "1/4",
+          "7/4",
+          "1/2"
+        ],
+        "source_owner": 0
+      },
+      {
+        "image": [
+          "5065/4",
+          "193",
+          "49/2"
+        ],
+        "image_owner": 1,
+        "kind": "tetrahedron_barycenter",
+        "origin": [
+          0,
+          1,
+          0
+        ],
+        "permutation": [
+          2,
+          0,
+          1
+        ],
+        "source": [
+          "1/2",
+          "5/4",
+          "3/4"
+        ],
+        "source_owner": 0
+      }
+    ],
+    "h0_cube_centers": 32,
+    "h1_cube_centers": 32,
+    "left_h0": 16,
+    "left_h1": 16,
+    "preserved": false,
+    "stayed_in_h0": 16,
+    "stayed_in_h1": 16,
+    "tetrahedron_barycenter_count": 384,
+    "tetrahedron_owner_matrix": [
+      [
+        128,
+        64
+      ],
+      [
+        64,
+        128
+      ]
+    ],
+    "tetrahedron_owner_mismatches": 128
+  },
   "heegaard_pair_preserved": false,
   "homology_is_A": true,
   "matrix_A": [
@@ -109,7 +335,7 @@
     true
   ],
   "section_ball_identity": true,
-  "sha256": "CC85E11F08D95179B1526DC2AAEABC6FBBDB254789C291E480525800BE331691",
+  "sha256": "8E85A9F0D89C608AD22C8FCCE0766A66BB07F63C2036E3DE5AC5CE5E92C15076",
   "status": {
     "fixes_section_neighborhood": "PASS",
     "pl_homeomorphism": "PASS",

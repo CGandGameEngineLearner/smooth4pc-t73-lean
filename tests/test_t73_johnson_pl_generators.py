@@ -42,6 +42,8 @@ class JohnsonPLGeneratorTest(unittest.TestCase):
         self.assertEqual(
             data["heegaard_pair_preserved"], data["heegaard_pair"]["preserved"]
         )
+        self.assertEqual(data["heegaard_pair"]["cube_center_count"], 64)
+        self.assertEqual(data["heegaard_pair"]["tetrahedron_barycenter_count"], 384)
         self.assertGreater(len(data["straightening"]["cells"]), 0)
         self.assertEqual(data["section_restore"]["cell_count"], 162)
         self.assertGreater(

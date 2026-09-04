@@ -924,10 +924,229 @@
   },
   "fixes_section_ball": true,
   "heegaard_pair": {
+    "cube_center_count": 64,
+    "cube_owner_matrix": [
+      [
+        24,
+        8
+      ],
+      [
+        8,
+        24
+      ]
+    ],
+    "cube_owner_mismatches": 16,
+    "failure_examples": [
+      {
+        "image": [
+          "1/2",
+          "3/2",
+          "2"
+        ],
+        "image_owner": 1,
+        "kind": "cube_center",
+        "origin": [
+          0,
+          1,
+          0
+        ],
+        "source": [
+          "1/2",
+          "3/2",
+          "1/2"
+        ],
+        "source_owner": 0
+      },
+      {
+        "image": [
+          "3/4",
+          "3/2",
+          "7/4"
+        ],
+        "image_owner": 1,
+        "kind": "tetrahedron_barycenter",
+        "origin": [
+          0,
+          1,
+          0
+        ],
+        "permutation": [
+          0,
+          1,
+          2
+        ],
+        "source": [
+          "3/4",
+          "3/2",
+          "1/4"
+        ],
+        "source_owner": 0
+      },
+      {
+        "image": [
+          "3/4",
+          "5/4",
+          "7/4"
+        ],
+        "image_owner": 1,
+        "kind": "tetrahedron_barycenter",
+        "origin": [
+          0,
+          1,
+          0
+        ],
+        "permutation": [
+          0,
+          2,
+          1
+        ],
+        "source": [
+          "3/4",
+          "5/4",
+          "1/2"
+        ],
+        "source_owner": 0
+      },
+      {
+        "image": [
+          "1/2",
+          "7/4",
+          "2"
+        ],
+        "image_owner": 1,
+        "kind": "tetrahedron_barycenter",
+        "origin": [
+          0,
+          1,
+          0
+        ],
+        "permutation": [
+          1,
+          0,
+          2
+        ],
+        "source": [
+          "1/2",
+          "7/4",
+          "1/4"
+        ],
+        "source_owner": 0
+      },
+      {
+        "image": [
+          "1/4",
+          "7/4",
+          "9/4"
+        ],
+        "image_owner": 1,
+        "kind": "tetrahedron_barycenter",
+        "origin": [
+          0,
+          1,
+          0
+        ],
+        "permutation": [
+          1,
+          2,
+          0
+        ],
+        "source": [
+          "1/4",
+          "7/4",
+          "1/2"
+        ],
+        "source_owner": 0
+      },
+      {
+        "image": [
+          "1/2",
+          "5/4",
+          "2"
+        ],
+        "image_owner": 1,
+        "kind": "tetrahedron_barycenter",
+        "origin": [
+          0,
+          1,
+          0
+        ],
+        "permutation": [
+          2,
+          0,
+          1
+        ],
+        "source": [
+          "1/2",
+          "5/4",
+          "3/4"
+        ],
+        "source_owner": 0
+      },
+      {
+        "image": [
+          "1/4",
+          "3/2",
+          "9/4"
+        ],
+        "image_owner": 1,
+        "kind": "tetrahedron_barycenter",
+        "origin": [
+          0,
+          1,
+          0
+        ],
+        "permutation": [
+          2,
+          1,
+          0
+        ],
+        "source": [
+          "1/4",
+          "3/2",
+          "3/4"
+        ],
+        "source_owner": 0
+      },
+      {
+        "image": [
+          "1/2",
+          "3/2",
+          "3"
+        ],
+        "image_owner": 0,
+        "kind": "cube_center",
+        "origin": [
+          0,
+          1,
+          1
+        ],
+        "source": [
+          "1/2",
+          "3/2",
+          "3/2"
+        ],
+        "source_owner": 1
+      }
+    ],
     "h0_cube_centers": 32,
+    "h1_cube_centers": 32,
     "left_h0": 8,
+    "left_h1": 8,
     "preserved": false,
-    "stayed_in_h0": 24
+    "stayed_in_h0": 24,
+    "stayed_in_h1": 24,
+    "tetrahedron_barycenter_count": 384,
+    "tetrahedron_owner_matrix": [
+      [
+        144,
+        48
+      ],
+      [
+        48,
+        144
+      ]
+    ],
+    "tetrahedron_owner_mismatches": 96
   },
   "heegaard_pair_preserved": false,
   "index": 56,
@@ -986,7 +1205,7 @@
     "source_axis": 1,
     "vertex_rule": "v_prefix -= power * chi(v) * v_source"
   },
-  "sha256": "59CE6BC2AB5FE4DD858006CE2F68AD6C86991F21F4F7FE405DD496F6560A341F",
+  "sha256": "B990A150EEEDCA2BDDBB7BD536DA9241D2EB18434805D3C30EE1898FCCD7CBEA",
   "side": "target-first",
   "side_bit": 1,
   "square_normal": [

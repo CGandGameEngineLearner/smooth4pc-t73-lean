@@ -565,22 +565,74 @@ def point_owner(point: Iterable[Fraction], owners: dict[Vertex, int] | None = No
 
 
 def heegaard_preservation(generator: dict[str, Any]) -> dict[str, Any]:
+    return heegaard_owner_audit(lambda point: apply_alpha(generator, point))
+
+
+def heegaard_owner_audit(map_point) -> dict[str, Any]:
+    """Check both owners at every cube center and Freudenthal barycenter."""
+
     owners = johnson_owners()
-    h0 = [origin for origin, owner in owners.items() if owner == 0]
-    stayed = 0
-    left = 0
-    for origin in h0:
+    cube_counts = [[0, 0], [0, 0]]
+    tet_counts = [[0, 0], [0, 0]]
+    failures = []
+    for origin, source_owner in sorted(owners.items()):
         center = [Fraction(origin[i]) + Fraction(1, 2) for i in range(3)]
-        image = apply_alpha(generator, center)
-        if point_owner(image, owners) == 0:
-            stayed += 1
-        else:
-            left += 1
+        image = map_point(center)
+        image_owner = point_owner(image, owners)
+        cube_counts[source_owner][image_owner] += 1
+        if source_owner != image_owner and len(failures) < 8:
+            failures.append(
+                {
+                    "kind": "cube_center",
+                    "origin": list(origin),
+                    "source": encode(center),
+                    "image": encode(image),
+                    "source_owner": source_owner,
+                    "image_owner": image_owner,
+                }
+            )
+        for permutation in itertools.permutations(range(3)):
+            vertices = [[Fraction(value) for value in origin]]
+            current = vertices[0]
+            for axis in permutation:
+                current = list(current)
+                current[axis] += 1
+                vertices.append(current)
+            barycenter = [
+                sum(vertex[axis] for vertex in vertices) / 4 for axis in range(3)
+            ]
+            tet_image = map_point(barycenter)
+            tet_owner = point_owner(tet_image, owners)
+            tet_counts[source_owner][tet_owner] += 1
+            if source_owner != tet_owner and len(failures) < 8:
+                failures.append(
+                    {
+                        "kind": "tetrahedron_barycenter",
+                        "origin": list(origin),
+                        "permutation": list(permutation),
+                        "source": encode(barycenter),
+                        "image": encode(tet_image),
+                        "source_owner": source_owner,
+                        "image_owner": tet_owner,
+                    }
+                )
+    cube_mismatches = cube_counts[0][1] + cube_counts[1][0]
+    tet_mismatches = tet_counts[0][1] + tet_counts[1][0]
     return {
-        "h0_cube_centers": len(h0),
-        "stayed_in_h0": stayed,
-        "left_h0": left,
-        "preserved": left == 0,
+        "cube_center_count": 64,
+        "tetrahedron_barycenter_count": 384,
+        "cube_owner_matrix": cube_counts,
+        "tetrahedron_owner_matrix": tet_counts,
+        "cube_owner_mismatches": cube_mismatches,
+        "tetrahedron_owner_mismatches": tet_mismatches,
+        "failure_examples": failures,
+        "h0_cube_centers": sum(cube_counts[0]),
+        "stayed_in_h0": cube_counts[0][0],
+        "left_h0": cube_counts[0][1],
+        "h1_cube_centers": sum(cube_counts[1]),
+        "stayed_in_h1": cube_counts[1][1],
+        "left_h1": cube_counts[1][0],
+        "preserved": cube_mismatches == 0 and tet_mismatches == 0,
     }
 
 

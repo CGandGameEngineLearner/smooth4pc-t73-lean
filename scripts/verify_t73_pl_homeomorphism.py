@@ -159,6 +159,8 @@ def verify() -> dict[str, Any]:
     product = pl.identity3()
     heegaard_open = 0
     ball_open = 0
+    cube_owner_mismatches = 0
+    tet_owner_mismatches = 0
     for record, factor_move, movie_move in zip(
         manifest["generators"], factor["unit_alpha_moves"], movie["moves"]
     ):
@@ -182,6 +184,8 @@ def verify() -> dict[str, Any]:
             pass
         else:
             heegaard_open += 1
+        cube_owner_mismatches += heegaard["cube_owner_mismatches"]
+        tet_owner_mismatches += heegaard["tetrahedron_owner_mismatches"]
         if not ball["identity"]:
             ball_open += 1
         if generator["heegaard_pair_preserved"] != heegaard["preserved"]:
@@ -215,6 +219,8 @@ def verify() -> dict[str, Any]:
         "PRODUCT_ON_H1": product,
         "HEEGAARD_PAIR": "PASS" if heegaard_open == 0 else "OPEN",
         "HEEGAARD_OPEN_COUNT": heegaard_open,
+        "CUBE_OWNER_MISMATCHES": cube_owner_mismatches,
+        "TET_BARYCENTER_MISMATCHES": tet_owner_mismatches,
         "SECTION_BALL": "PASS" if ball_open == 0 else "OPEN",
         "SECTION_BALL_OPEN_COUNT": ball_open,
         "MUTATION_JACOBIAN": "FAIL" if jac_failed else "UNDETECTED",

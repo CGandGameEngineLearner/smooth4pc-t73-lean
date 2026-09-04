@@ -924,10 +924,234 @@
   },
   "fixes_section_ball": true,
   "heegaard_pair": {
+    "cube_center_count": 64,
+    "cube_owner_matrix": [
+      [
+        24,
+        8
+      ],
+      [
+        8,
+        24
+      ]
+    ],
+    "cube_owner_mismatches": 16,
+    "failure_examples": [
+      {
+        "image": [
+          "3/4",
+          "-5/4",
+          "3/2"
+        ],
+        "image_owner": 1,
+        "kind": "tetrahedron_barycenter",
+        "origin": [
+          0,
+          0,
+          1
+        ],
+        "permutation": [
+          0,
+          2,
+          1
+        ],
+        "source": [
+          "3/4",
+          "1/4",
+          "3/2"
+        ],
+        "source_owner": 0
+      },
+      {
+        "image": [
+          "1/2",
+          "-3/2",
+          "7/4"
+        ],
+        "image_owner": 1,
+        "kind": "tetrahedron_barycenter",
+        "origin": [
+          0,
+          0,
+          1
+        ],
+        "permutation": [
+          2,
+          0,
+          1
+        ],
+        "source": [
+          "1/2",
+          "1/4",
+          "7/4"
+        ],
+        "source_owner": 0
+      },
+      {
+        "image": [
+          "1/4",
+          "-5/4",
+          "7/4"
+        ],
+        "image_owner": 1,
+        "kind": "tetrahedron_barycenter",
+        "origin": [
+          0,
+          0,
+          1
+        ],
+        "permutation": [
+          2,
+          1,
+          0
+        ],
+        "source": [
+          "1/4",
+          "1/2",
+          "7/4"
+        ],
+        "source_owner": 0
+      },
+      {
+        "image": [
+          "1/2",
+          "-2",
+          "5/2"
+        ],
+        "image_owner": 1,
+        "kind": "cube_center",
+        "origin": [
+          0,
+          0,
+          2
+        ],
+        "source": [
+          "1/2",
+          "1/2",
+          "5/2"
+        ],
+        "source_owner": 0
+      },
+      {
+        "image": [
+          "3/4",
+          "-7/4",
+          "9/4"
+        ],
+        "image_owner": 1,
+        "kind": "tetrahedron_barycenter",
+        "origin": [
+          0,
+          0,
+          2
+        ],
+        "permutation": [
+          0,
+          1,
+          2
+        ],
+        "source": [
+          "3/4",
+          "1/2",
+          "9/4"
+        ],
+        "source_owner": 0
+      },
+      {
+        "image": [
+          "3/4",
+          "-9/4",
+          "5/2"
+        ],
+        "image_owner": 1,
+        "kind": "tetrahedron_barycenter",
+        "origin": [
+          0,
+          0,
+          2
+        ],
+        "permutation": [
+          0,
+          2,
+          1
+        ],
+        "source": [
+          "3/4",
+          "1/4",
+          "5/2"
+        ],
+        "source_owner": 0
+      },
+      {
+        "image": [
+          "1/2",
+          "-3/2",
+          "9/4"
+        ],
+        "image_owner": 1,
+        "kind": "tetrahedron_barycenter",
+        "origin": [
+          0,
+          0,
+          2
+        ],
+        "permutation": [
+          1,
+          0,
+          2
+        ],
+        "source": [
+          "1/2",
+          "3/4",
+          "9/4"
+        ],
+        "source_owner": 0
+      },
+      {
+        "image": [
+          "1/4",
+          "-7/4",
+          "5/2"
+        ],
+        "image_owner": 1,
+        "kind": "tetrahedron_barycenter",
+        "origin": [
+          0,
+          0,
+          2
+        ],
+        "permutation": [
+          1,
+          2,
+          0
+        ],
+        "source": [
+          "1/4",
+          "3/4",
+          "5/2"
+        ],
+        "source_owner": 0
+      }
+    ],
     "h0_cube_centers": 32,
+    "h1_cube_centers": 32,
     "left_h0": 8,
+    "left_h1": 8,
     "preserved": false,
-    "stayed_in_h0": 24
+    "stayed_in_h0": 24,
+    "stayed_in_h1": 24,
+    "tetrahedron_barycenter_count": 384,
+    "tetrahedron_owner_matrix": [
+      [
+        144,
+        48
+      ],
+      [
+        48,
+        144
+      ]
+    ],
+    "tetrahedron_owner_mismatches": 96
   },
   "heegaard_pair_preserved": false,
   "index": 58,
@@ -986,7 +1210,7 @@
     "source_axis": 2,
     "vertex_rule": "v_prefix -= power * chi(v) * v_source"
   },
-  "sha256": "3081B725EA97A8565372A0DD3185133AF7389657B9BDC899DF79DF9068DE47BD",
+  "sha256": "A24ABB39D81F20B6C2F0B8BF42BE0E0D2691558A214B088F8A00535A134E54DA",
   "side": "prefix-first",
   "side_bit": 0,
   "square_normal": [

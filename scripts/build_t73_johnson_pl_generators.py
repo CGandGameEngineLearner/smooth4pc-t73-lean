@@ -168,6 +168,10 @@ def build_all(write: bool = False) -> dict[str, Any]:
                 "heegaard_pair_preserved": generator["heegaard_pair_preserved"],
                 "fixes_section_ball": generator["fixes_section_ball"],
                 "h0_centers_left": generator["heegaard_pair"]["left_h0"],
+                "h1_centers_left": generator["heegaard_pair"]["left_h1"],
+                "tetrahedron_owner_mismatches": generator["heegaard_pair"][
+                    "tetrahedron_owner_mismatches"
+                ],
             }
         )
         if write:

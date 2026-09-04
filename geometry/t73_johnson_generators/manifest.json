@@ -7,6 +7,7 @@
       "alpha_target": 2,
       "fixes_section_ball": true,
       "h0_centers_left": 8,
+      "h1_centers_left": 8,
       "heegaard_pair_preserved": false,
       "index": 0,
       "jacobian_det_min": "1/4",
@@ -14,14 +15,16 @@
       "power": 1,
       "prism_cell_count": 12,
       "section_restore_cell_count": 162,
-      "sha256": "CA1DFCBEC4B5F1CE5705E17B150130222C3E3C4AEB3E6680B77A12260B0196F7",
-      "side_bit": 0
+      "sha256": "763467A8A63D065FB50AD7D142BD8F26A645B321C37E202550285D9809DCC4D5",
+      "side_bit": 0,
+      "tetrahedron_owner_mismatches": 96
     },
     {
       "alpha_prefix": 1,
       "alpha_target": 2,
       "fixes_section_ball": true,
       "h0_centers_left": 8,
+      "h1_centers_left": 8,
       "heegaard_pair_preserved": false,
       "index": 1,
       "jacobian_det_min": "1/4",
@@ -29,14 +32,16 @@
       "power": 1,
       "prism_cell_count": 12,
       "section_restore_cell_count": 162,
-      "sha256": "FC4EB042B52EB7AD78E90F39F11939FD6D2B961D6225C0E1407DFEACB9413575",
-      "side_bit": 0
+      "sha256": "37E48899A6CF4669DBA19EA7196DC02231B3CFE9F4038D061C227228D17DD3B2",
+      "side_bit": 0,
+      "tetrahedron_owner_mismatches": 96
     },
     {
       "alpha_prefix": 1,
       "alpha_target": 2,
       "fixes_section_ball": true,
       "h0_centers_left": 8,
+      "h1_centers_left": 8,
       "heegaard_pair_preserved": false,
       "index": 2,
       "jacobian_det_min": "1/4",
@@ -44,14 +49,16 @@
       "power": 1,
       "prism_cell_count": 12,
       "section_restore_cell_count": 162,
-      "sha256": "B5E7CD4EAFFA6D12E7F7652D8F5723ACABECD792B1DE50C2B03B858C7B5419BC",
-      "side_bit": 1
+      "sha256": "F71102A5F6EE05B1834222FDDD6363A8670D8A7578C58B3D6529957BC398F867",
+      "side_bit": 1,
+      "tetrahedron_owner_mismatches": 96
     },
     {
       "alpha_prefix": 1,
       "alpha_target": 2,
       "fixes_section_ball": true,
       "h0_centers_left": 8,
+      "h1_centers_left": 8,
       "heegaard_pair_preserved": false,
       "index": 3,
       "jacobian_det_min": "1/4",
@@ -59,14 +66,16 @@
       "power": 1,
       "prism_cell_count": 12,
       "section_restore_cell_count": 162,
-      "sha256": "A2F11192E60F4EE5749F147F6E77541A4D53DA0EF2E3DB3E811377E2FCE1826C",
-      "side_bit": 0
+      "sha256": "BC1C0EC03C017B293A23B4DB32B8978B76EDE0345993068C052DBC5664CCA9EF",
+      "side_bit": 0,
+      "tetrahedron_owner_mismatches": 96
     },
     {
       "alpha_prefix": 0,
       "alpha_target": 2,
       "fixes_section_ball": true,
       "h0_centers_left": 8,
+      "h1_centers_left": 8,
       "heegaard_pair_preserved": false,
       "index": 4,
       "jacobian_det_min": "1/4",
@@ -74,14 +83,16 @@
       "power": 1,
       "prism_cell_count": 12,
       "section_restore_cell_count": 162,
-      "sha256": "0A36A646895E159D52304FFECB37067DAD0613127BCA8F9EDE5E804EE2C9D790",
-      "side_bit": 0
+      "sha256": "2C32AFD8428A77A4A6B21AD50FBD5BF94342EFE8F7DCB8E57CDA2591C19C7664",
+      "side_bit": 0,
+      "tetrahedron_owner_mismatches": 96
     },
     {
       "alpha_prefix": 0,
       "alpha_target": 2,
       "fixes_section_ball": true,
       "h0_centers_left": 8,
+      "h1_centers_left": 8,
       "heegaard_pair_preserved": false,
       "index": 5,
       "jacobian_det_min": "1/4",
@@ -89,14 +100,16 @@
       "power": 1,
       "prism_cell_count": 12,
       "section_restore_cell_count": 162,
-      "sha256": "8CE98144C8FF23C8974491513E8BF8503A81B1F49158890EDB4BA017F8547249",
-      "side_bit": 1
+      "sha256": "510B5FABA67C5EFB43975FEBB366D60B35E976A1318EA499EDCC61E14E773589",
+      "side_bit": 1,
+      "tetrahedron_owner_mismatches": 96
     },
     {
       "alpha_prefix": 0,
       "alpha_target": 2,
       "fixes_section_ball": true,
       "h0_centers_left": 8,
+      "h1_centers_left": 8,
       "heegaard_pair_preserved": false,
       "index": 6,
       "jacobian_det_min": "1/4",
@@ -104,14 +117,16 @@
       "power": 1,
       "prism_cell_count": 12,
       "section_restore_cell_count": 162,
-      "sha256": "879EE4E0C8103D08BCAB3FA6B798325CFC4F9B533B1DB437361B3F11307C4730",
-      "side_bit": 1
+      "sha256": "17F44059A5AA709F4659133389BB71CA0D22F7D20EB7284231F493B5637ABD18",
+      "side_bit": 1,
+      "tetrahedron_owner_mismatches": 96
     },
     {
       "alpha_prefix": 0,
       "alpha_target": 2,
       "fixes_section_ball": true,
       "h0_centers_left": 8,
+      "h1_centers_left": 8,
       "heegaard_pair_preserved": false,
       "index": 7,
       "jacobian_det_min": "1/4",
@@ -119,14 +134,16 @@
       "power": 1,
       "prism_cell_count": 12,
       "section_restore_cell_count": 162,
-      "sha256": "99D9F4357FC259596630B7D52D9BB436337E1B9E41C28465B3B69CF881133CE5",
-      "side_bit": 0
+      "sha256": "EEDBE9D620A9525ED8190559A769E65C2391CE62CCD9C6CBEC74540F7B44354D",
+      "side_bit": 0,
+      "tetrahedron_owner_mismatches": 96
     },
     {
       "alpha_prefix": 0,
       "alpha_target": 2,
       "fixes_section_ball": true,
       "h0_centers_left": 8,
+      "h1_centers_left": 8,
       "heegaard_pair_preserved": false,
       "index": 8,
       "jacobian_det_min": "1/4",
@@ -134,14 +151,16 @@
       "power": 1,
       "prism_cell_count": 12,
       "section_restore_cell_count": 162,
-      "sha256": "72EB41383038C3562A878F296FB43A0C682920C720FF66D04CA251E1FA1081E4",
-      "side_bit": 1
+      "sha256": "6CB447F8BFE5535B67C5E340A9CE0848120BE45A1F6300E9FC75059667849DB0",
+      "side_bit": 1,
+      "tetrahedron_owner_mismatches": 96
     },
     {
       "alpha_prefix": 0,
       "alpha_target": 2,
       "fixes_section_ball": true,
       "h0_centers_left": 8,
+      "h1_centers_left": 8,
       "heegaard_pair_preserved": false,
       "index": 9,
       "jacobian_det_min": "1/4",
@@ -149,14 +168,16 @@
       "power": 1,
       "prism_cell_count": 12,
       "section_restore_cell_count": 162,
-      "sha256": "13A3489869F33EA1AE38619B757CC4CA09ED511A0DD36B59DF02013B0BBFD2DC",
-      "side_bit": 0
+      "sha256": "F81DD6F7A8C86A4F3A129DBC8510DACFF7E99728EFB72D228B851AF13092CC78",
+      "side_bit": 0,
+      "tetrahedron_owner_mismatches": 96
     },
     {
       "alpha_prefix": 0,
       "alpha_target": 2,
       "fixes_section_ball": true,
       "h0_centers_left": 8,
+      "h1_centers_left": 8,
       "heegaard_pair_preserved": false,
       "index": 10,
       "jacobian_det_min": "1/4",
@@ -164,14 +185,16 @@
       "power": 1,
       "prism_cell_count": 12,
       "section_restore_cell_count": 162,
-      "sha256": "229210958F3E3515D41936F9D0ED0175C4F849F3A326435BE64E7F4CE273B89A",
-      "side_bit": 1
+      "sha256": "A3DACED9DBBA4E329DFFFCB3DB7BD16D43CFEA7B6145669A121137EA1D8AE2AD",
+      "side_bit": 1,
+      "tetrahedron_owner_mismatches": 96
     },
     {
       "alpha_prefix": 0,
       "alpha_target": 2,
       "fixes_section_ball": true,
       "h0_centers_left": 8,
+      "h1_centers_left": 8,
       "heegaard_pair_preserved": false,
       "index": 11,
       "jacobian_det_min": "1/4",
@@ -179,14 +202,16 @@
       "power": 1,
       "prism_cell_count": 12,
       "section_restore_cell_count": 162,
-      "sha256": "CCCD3FAC051F35A915F885F54D8026D0A6F10AA9DA7A913C528CCCF68BBB1E46",
-      "side_bit": 0
+      "sha256": "FC07F1982359B9CA3444FBB4E8520E8D212E9AC327B27B88B796590E2281227D",
+      "side_bit": 0,
+      "tetrahedron_owner_mismatches": 96
     },
     {
       "alpha_prefix": 0,
       "alpha_target": 2,
       "fixes_section_ball": true,
       "h0_centers_left": 8,
+      "h1_centers_left": 8,
       "heegaard_pair_preserved": false,
       "index": 12,
       "jacobian_det_min": "1/4",
@@ -194,14 +219,16 @@
       "power": 1,
       "prism_cell_count": 12,
       "section_restore_cell_count": 162,
-      "sha256": "20E79487DAF480FF677655100BA85E7EFE3FF5E2DE58A094FFDC4783BD1AD08D",
-      "side_bit": 1
+      "sha256": "1626745A96157568A906130A720CC1990D82F224B4310C4ADCEEA69518D78213",
+      "side_bit": 1,
+      "tetrahedron_owner_mismatches": 96
     },
     {
       "alpha_prefix": 0,
       "alpha_target": 2,
       "fixes_section_ball": true,
       "h0_centers_left": 8,
+      "h1_centers_left": 8,
       "heegaard_pair_preserved": false,
       "index": 13,
       "jacobian_det_min": "1/4",
@@ -209,14 +236,16 @@
       "power": 1,
       "prism_cell_count": 12,
       "section_restore_cell_count": 162,
-      "sha256": "5AC059A885C109C290EA0CBAA4CC2FA0ED51B57A03932983E42D310CFFA3AEE7",
-      "side_bit": 1
+      "sha256": "0FBDA046EC0378716F94F834D8A59F4CDCB099462BF34D73302D81B65B61BC58",
+      "side_bit": 1,
+      "tetrahedron_owner_mismatches": 96
     },
     {
       "alpha_prefix": 0,
       "alpha_target": 2,
       "fixes_section_ball": true,
       "h0_centers_left": 8,
+      "h1_centers_left": 8,
       "heegaard_pair_preserved": false,
       "index": 14,
       "jacobian_det_min": "1/4",
@@ -224,14 +253,16 @@
       "power": 1,
       "prism_cell_count": 12,
       "section_restore_cell_count": 162,
-      "sha256": "2525060A7802FDD248F6728573CAFD2DE62657FBF282D4B935E2B026225D1859",
-      "side_bit": 1
+      "sha256": "3A8D0492F7ADD07C4CED72AAE5CEE9032287FF4B49782E27EB7264BBDC73976E",
+      "side_bit": 1,
+      "tetrahedron_owner_mismatches": 96
     },
     {
       "alpha_prefix": 0,
       "alpha_target": 2,
       "fixes_section_ball": true,
       "h0_centers_left": 8,
+      "h1_centers_left": 8,
       "heegaard_pair_preserved": false,
       "index": 15,
       "jacobian_det_min": "1/4",
@@ -239,14 +270,16 @@
       "power": 1,
       "prism_cell_count": 12,
       "section_restore_cell_count": 162,
-      "sha256": "40D95CBF84C94CA538D707FE137DBC22BB9C9B7E80B2EA26C5DCD36FDAB198CF",
-      "side_bit": 0
+      "sha256": "E1D0690F74753240841A7501BA2212AADF1341CCB69EA407AEAA3F4F31685120",
+      "side_bit": 0,
+      "tetrahedron_owner_mismatches": 96
     },
     {
       "alpha_prefix": 0,
       "alpha_target": 2,
       "fixes_section_ball": true,
       "h0_centers_left": 8,
+      "h1_centers_left": 8,
       "heegaard_pair_preserved": false,
       "index": 16,
       "jacobian_det_min": "1/4",
@@ -254,14 +287,16 @@
       "power": 1,
       "prism_cell_count": 12,
       "section_restore_cell_count": 162,
-      "sha256": "B2A0BDEB2E349D8B603A025752249741B918C97F93007F068D267B464F40CCAF",
-      "side_bit": 1
+      "sha256": "A8591D7F2D6C81D3B1E926A5AA3DDAA75950B883F4472B28E6F9A2731CE6BD02",
+      "side_bit": 1,
+      "tetrahedron_owner_mismatches": 96
     },
     {
       "alpha_prefix": 0,
       "alpha_target": 2,
       "fixes_section_ball": true,
       "h0_centers_left": 8,
+      "h1_centers_left": 8,
       "heegaard_pair_preserved": false,
       "index": 17,
       "jacobian_det_min": "1/4",
@@ -269,14 +304,16 @@
       "power": 1,
       "prism_cell_count": 12,
       "section_restore_cell_count": 162,
-      "sha256": "F6E00722F110774A74856D94E1DC31C9D1CD0059CF72C0C49C9E0EF5BFC12A19",
-      "side_bit": 1
+      "sha256": "B79567B1FC200321E67AD5A91D58B073EAC1FC559301F37028A9160E89E29FD2",
+      "side_bit": 1,
+      "tetrahedron_owner_mismatches": 96
     },
     {
       "alpha_prefix": 0,
       "alpha_target": 2,
       "fixes_section_ball": true,
       "h0_centers_left": 8,
+      "h1_centers_left": 8,
       "heegaard_pair_preserved": false,
       "index": 18,
       "jacobian_det_min": "1/4",
@@ -284,14 +321,16 @@
       "power": 1,
       "prism_cell_count": 12,
       "section_restore_cell_count": 162,
-      "sha256": "9BDE22984567F9AF64C2C28EF4235A7F7D69C41D93221EEC70CAE2F67164268D",
-      "side_bit": 1
+      "sha256": "6E520C047644F926FD3724E14720617E0AA8D3BF8378E7A7FD8EB6B7742A0883",
+      "side_bit": 1,
+      "tetrahedron_owner_mismatches": 96
     },
     {
       "alpha_prefix": 0,
       "alpha_target": 2,
       "fixes_section_ball": true,
       "h0_centers_left": 8,
+      "h1_centers_left": 8,
       "heegaard_pair_preserved": false,
       "index": 19,
       "jacobian_det_min": "1/4",
@@ -299,14 +338,16 @@
       "power": 1,
       "prism_cell_count": 12,
       "section_restore_cell_count": 162,
-      "sha256": "49CCF87F630522EBA299FD115BC3A0DEA714A9A47CAB8A0205BCA0D440A08A33",
-      "side_bit": 1
+      "sha256": "F3FA63B11A044478E6E7D53D2FE59D8F422A35D707CF1A1E0F7D49D65D646E4A",
+      "side_bit": 1,
+      "tetrahedron_owner_mismatches": 96
     },
     {
       "alpha_prefix": 0,
       "alpha_target": 2,
       "fixes_section_ball": true,
       "h0_centers_left": 8,
+      "h1_centers_left": 8,
       "heegaard_pair_preserved": false,
       "index": 20,
       "jacobian_det_min": "1/4",
@@ -314,14 +355,16 @@
       "power": 1,
       "prism_cell_count": 12,
       "section_restore_cell_count": 162,
-      "sha256": "50BC53F343C7D496550601D75BE8E225530CB819BE6919B12B333E0B603B5E86",
-      "side_bit": 0
+      "sha256": "411AB407F992FA2F1870887618B15B3D0F179FC91C2B84914D7ED3A1D72979DF",
+      "side_bit": 0,
+      "tetrahedron_owner_mismatches": 96
     },
     {
       "alpha_prefix": 0,
       "alpha_target": 2,
       "fixes_section_ball": true,
       "h0_centers_left": 8,
+      "h1_centers_left": 8,
       "heegaard_pair_preserved": false,
       "index": 21,
       "jacobian_det_min": "1/4",
@@ -329,14 +372,16 @@
       "power": 1,
       "prism_cell_count": 12,
       "section_restore_cell_count": 162,
-      "sha256": "5A5FCC1ABF7320045FB81F253E98DE0E0E73EB7A1E4371BB761917BFBAEA1BA1",
-      "side_bit": 0
+      "sha256": "035BFC94B765D486172AC724FABE8093401DB39515CDE8A682727DB1FD2573EC",
+      "side_bit": 0,
+      "tetrahedron_owner_mismatches": 96
     },
     {
       "alpha_prefix": 0,
       "alpha_target": 2,
       "fixes_section_ball": true,
       "h0_centers_left": 8,
+      "h1_centers_left": 8,
       "heegaard_pair_preserved": false,
       "index": 22,
       "jacobian_det_min": "1/4",
@@ -344,14 +389,16 @@
       "power": 1,
       "prism_cell_count": 12,
       "section_restore_cell_count": 162,
-      "sha256": "E378503F9362C2EB3A62F116B883ACC9935B9AD7AB3D6A53C85C01E56E6C6867",
-      "side_bit": 0
+      "sha256": "2BA5DEF90C4CABBD8C3E863E262C4ADE03BAF3EBAC86CE07433709564F9040AB",
+      "side_bit": 0,
+      "tetrahedron_owner_mismatches": 96
     },
     {
       "alpha_prefix": 0,
       "alpha_target": 2,
       "fixes_section_ball": true,
       "h0_centers_left": 8,
+      "h1_centers_left": 8,
       "heegaard_pair_preserved": false,
       "index": 23,
       "jacobian_det_min": "1/4",
@@ -359,14 +406,16 @@
       "power": 1,
       "prism_cell_count": 12,
       "section_restore_cell_count": 162,
-      "sha256": "0E1FF15C224465C3AF57F1D7D9EA14B5A0281FDDD9C4E32DC3E437E85894FE8A",
-      "side_bit": 0
+      "sha256": "3E49ACE2BE4F0E8158161AE9DC2A1FC09949C09051457BA02831F9272A1F9AFC",
+      "side_bit": 0,
+      "tetrahedron_owner_mismatches": 96
     },
     {
       "alpha_prefix": 0,
       "alpha_target": 2,
       "fixes_section_ball": true,
       "h0_centers_left": 8,
+      "h1_centers_left": 8,
       "heegaard_pair_preserved": false,
       "index": 24,
       "jacobian_det_min": "1/4",
@@ -374,14 +423,16 @@
       "power": 1,
       "prism_cell_count": 12,
       "section_restore_cell_count": 162,
-      "sha256": "B2FD3130A8869802CAE21941AE8C670EFAB5333D34733326B1EE991B44450922",
-      "side_bit": 0
+      "sha256": "1E66CB1E578D90773EE5D4E19E512859FD4553858C6D240AE20E409EF3E33172",
+      "side_bit": 0,
+      "tetrahedron_owner_mismatches": 96
     },
     {
       "alpha_prefix": 0,
       "alpha_target": 2,
       "fixes_section_ball": true,
       "h0_centers_left": 8,
+      "h1_centers_left": 8,
       "heegaard_pair_preserved": false,
       "index": 25,
       "jacobian_det_min": "1/4",
@@ -389,14 +440,16 @@
       "power": 1,
       "prism_cell_count": 12,
       "section_restore_cell_count": 162,
-      "sha256": "8EDFC4DE46D0FEA3C7DF05E7038678A3AAAE182966C9B8BBED659CBF0FD9BBE3",
-      "side_bit": 1
+      "sha256": "C09CE12FF4E1D95629795D7E08F549C7D0C1DC2C0278F6119B08A1C31A84E310",
+      "side_bit": 1,
+      "tetrahedron_owner_mismatches": 96
     },
     {
       "alpha_prefix": 0,
       "alpha_target": 2,
       "fixes_section_ball": true,
       "h0_centers_left": 8,
+      "h1_centers_left": 8,
       "heegaard_pair_preserved": false,
       "index": 26,
       "jacobian_det_min": "1/4",
@@ -404,14 +457,16 @@
       "power": 1,
       "prism_cell_count": 12,
       "section_restore_cell_count": 162,
-      "sha256": "2A9B6B0A5523FE69B4BF99BF4E05F9ADB90893A9AB80525803C15274CD805E75",
-      "side_bit": 1
+      "sha256": "BBE73D2AD4199626638F0B2FD72156C50292423E409595BB1866184624B18C4F",
+      "side_bit": 1,
+      "tetrahedron_owner_mismatches": 96
     },
     {
       "alpha_prefix": 0,
       "alpha_target": 2,
       "fixes_section_ball": true,
       "h0_centers_left": 8,
+      "h1_centers_left": 8,
       "heegaard_pair_preserved": false,
       "index": 27,
       "jacobian_det_min": "1/4",
@@ -419,14 +474,16 @@
       "power": 1,
       "prism_cell_count": 12,
       "section_restore_cell_count": 162,
-      "sha256": "260ED929EDD2CE5DBE9CEAFBA6CB30825215AC3CE77D323D86D9C5B923AC816A",
-      "side_bit": 0
+      "sha256": "6EF876939EDB583CB1BC74B1AA5C232D567D35FDE3A19C037422CB9CD50A8F33",
+      "side_bit": 0,
+      "tetrahedron_owner_mismatches": 96
     },
     {
       "alpha_prefix": 0,
       "alpha_target": 2,
       "fixes_section_ball": true,
       "h0_centers_left": 8,
+      "h1_centers_left": 8,
       "heegaard_pair_preserved": false,
       "index": 28,
       "jacobian_det_min": "1/4",
@@ -434,14 +491,16 @@
       "power": 1,
       "prism_cell_count": 12,
       "section_restore_cell_count": 162,
-      "sha256": "E396FC19BF4D1C31F62E5DC44CD116E86A0447F104E94C7964496A50C584F351",
-      "side_bit": 1
+      "sha256": "4C98198ABA23FC8BE8488361AAA72A4EC18642FAE2078C4E94EBA75A7AD08780",
+      "side_bit": 1,
+      "tetrahedron_owner_mismatches": 96
     },
     {
       "alpha_prefix": 0,
       "alpha_target": 2,
       "fixes_section_ball": true,
       "h0_centers_left": 8,
+      "h1_centers_left": 8,
       "heegaard_pair_preserved": false,
       "index": 29,
       "jacobian_det_min": "1/4",
@@ -449,14 +508,16 @@
       "power": 1,
       "prism_cell_count": 12,
       "section_restore_cell_count": 162,
-      "sha256": "3720D53AD408C5BE8062C06A4CC08CA6B46BA708A6AD5B909B0484746E0C75D5",
-      "side_bit": 1
+      "sha256": "1EC761949994F463E9FE1EDDE1463F22558AC70822F8469B58144FD2DB7F6588",
+      "side_bit": 1,
+      "tetrahedron_owner_mismatches": 96
     },
     {
       "alpha_prefix": 0,
       "alpha_target": 2,
       "fixes_section_ball": true,
       "h0_centers_left": 8,
+      "h1_centers_left": 8,
       "heegaard_pair_preserved": false,
       "index": 30,
       "jacobian_det_min": "1/4",
@@ -464,14 +525,16 @@
       "power": 1,
       "prism_cell_count": 12,
       "section_restore_cell_count": 162,
-      "sha256": "E53D5683DE09BC14A9BADC7263630E54E5FB6389173BDAB4D5A3E65168674C8A",
-      "side_bit": 0
+      "sha256": "2BDF2CD58C1A7A72F7169F3D722183F6679C9E1795B68048A3AB826DD0CE2FD6",
+      "side_bit": 0,
+      "tetrahedron_owner_mismatches": 96
     },
     {
       "alpha_prefix": 0,
       "alpha_target": 2,
       "fixes_section_ball": true,
       "h0_centers_left": 8,
+      "h1_centers_left": 8,
       "heegaard_pair_preserved": false,
       "index": 31,
       "jacobian_det_min": "1/4",
@@ -479,14 +542,16 @@
       "power": 1,
       "prism_cell_count": 12,
       "section_restore_cell_count": 162,
-      "sha256": "ED07809E607F56472031FFF138D8D8CF64BEE374DF81ACC4C4F3C81D65965E1C",
-      "side_bit": 0
+      "sha256": "48C80A0E5BEA4A0277F117365549E96F58A526C5E559052DA63164B6459D460F",
+      "side_bit": 0,
+      "tetrahedron_owner_mismatches": 96
     },
     {
       "alpha_prefix": 0,
       "alpha_target": 2,
       "fixes_section_ball": true,
       "h0_centers_left": 8,
+      "h1_centers_left": 8,
       "heegaard_pair_preserved": false,
       "index": 32,
       "jacobian_det_min": "1/4",
@@ -494,14 +559,16 @@
       "power": 1,
       "prism_cell_count": 12,
       "section_restore_cell_count": 162,
-      "sha256": "CDEDEAE191080EE828B50E7BA80EE6292274E24DF1CE9394A7E04AA8D2FC5793",
-      "side_bit": 0
+      "sha256": "20C564C2127FB4ACEA8D030414311167CD0359B21C5F8926F1956901003784D5",
+      "side_bit": 0,
+      "tetrahedron_owner_mismatches": 96
     },
     {
       "alpha_prefix": 0,
       "alpha_target": 2,
       "fixes_section_ball": true,
       "h0_centers_left": 8,
+      "h1_centers_left": 8,
       "heegaard_pair_preserved": false,
       "index": 33,
       "jacobian_det_min": "1/4",
@@ -509,14 +576,16 @@
       "power": 1,
       "prism_cell_count": 12,
       "section_restore_cell_count": 162,
-      "sha256": "39BCA5E46F7990A9807CED5C7972FEB5EFF4A25F94FBA45AC0B507E3BDC50346",
-      "side_bit": 0
+      "sha256": "BDFF74D8B097865DC72F14E892681AFD1F1CFC52DC7FC3D795125A7D4CC110B2",
+      "side_bit": 0,
+      "tetrahedron_owner_mismatches": 96
     },
     {
       "alpha_prefix": 0,
       "alpha_target": 2,
       "fixes_section_ball": true,
       "h0_centers_left": 8,
+      "h1_centers_left": 8,
       "heegaard_pair_preserved": false,
       "index": 34,
       "jacobian_det_min": "1/4",
@@ -524,14 +593,16 @@
       "power": 1,
       "prism_cell_count": 12,
       "section_restore_cell_count": 162,
-      "sha256": "6CEF38665ED8D6831AA538CA34814C00447846E1EA713A991F5300D8C02C73B6",
-      "side_bit": 0
+      "sha256": "69046907BF3F20B647C8F3542E4FEE01F32CBCF54BC8AA24ACB575710C457104",
+      "side_bit": 0,
+      "tetrahedron_owner_mismatches": 96
     },
     {
       "alpha_prefix": 0,
       "alpha_target": 2,
       "fixes_section_ball": true,
       "h0_centers_left": 8,
+      "h1_centers_left": 8,
       "heegaard_pair_preserved": false,
       "index": 35,
       "jacobian_det_min": "1/4",
@@ -539,14 +610,16 @@
       "power": 1,
       "prism_cell_count": 12,
       "section_restore_cell_count": 162,
-      "sha256": "8EE38075F98034E2D57A9B071407A2257437C380A119CD6C946AF1EE68DA16D0",
-      "side_bit": 1
+      "sha256": "0EAF23D30739BC58607BCEB4F97AABE347455ADAA0ED56A93C0FF065A4BE30FA",
+      "side_bit": 1,
+      "tetrahedron_owner_mismatches": 96
     },
     {
       "alpha_prefix": 1,
       "alpha_target": 2,
       "fixes_section_ball": true,
       "h0_centers_left": 8,
+      "h1_centers_left": 8,
       "heegaard_pair_preserved": false,
       "index": 36,
       "jacobian_det_min": "1/4",
@@ -554,14 +627,16 @@
       "power": -1,
       "prism_cell_count": 12,
       "section_restore_cell_count": 162,
-      "sha256": "2D443305AA1D3B8F75490FFC4F8F4ADB7B97E2184C398407BAECD8AF431F997D",
-      "side_bit": 1
+      "sha256": "C596AF3E6FDAA7C6B55E5663CE1BDB3F44525796A0A605AF19CA9C076A194CE0",
+      "side_bit": 1,
+      "tetrahedron_owner_mismatches": 96
     },
     {
       "alpha_prefix": 2,
       "alpha_target": 1,
       "fixes_section_ball": true,
       "h0_centers_left": 8,
+      "h1_centers_left": 8,
       "heegaard_pair_preserved": false,
       "index": 37,
       "jacobian_det_min": "1/4",
@@ -569,14 +644,16 @@
       "power": 1,
       "prism_cell_count": 12,
       "section_restore_cell_count": 162,
-      "sha256": "E96E35FEA1D972515F8D4675AC314D12B825716196EECB861785E4BC6235C7C8",
-      "side_bit": 1
+      "sha256": "6D320275F48B711D297A96115DDEFEE0BE5225075F41B3D43C0ED185ECBB79C3",
+      "side_bit": 1,
+      "tetrahedron_owner_mismatches": 96
     },
     {
       "alpha_prefix": 1,
       "alpha_target": 2,
       "fixes_section_ball": true,
       "h0_centers_left": 8,
+      "h1_centers_left": 8,
       "heegaard_pair_preserved": false,
       "index": 38,
       "jacobian_det_min": "1/4",
@@ -584,14 +661,16 @@
       "power": -1,
       "prism_cell_count": 12,
       "section_restore_cell_count": 162,
-      "sha256": "E4BCA4D64BFB8DEAF0BBEA3FE3162D6ED75B75DFEDB0B9C6848C71EB831438B9",
-      "side_bit": 0
+      "sha256": "5B39A2E61590BABB4E8E678443AB2715531F80A58E7157A8B81C7CDA845826F9",
+      "side_bit": 0,
+      "tetrahedron_owner_mismatches": 96
     },
     {
       "alpha_prefix": 1,
       "alpha_target": 2,
       "fixes_section_ball": true,
       "h0_centers_left": 8,
+      "h1_centers_left": 8,
       "heegaard_pair_preserved": false,
       "index": 39,
       "jacobian_det_min": "1/4",
@@ -599,14 +678,16 @@
       "power": -1,
       "prism_cell_count": 12,
       "section_restore_cell_count": 162,
-      "sha256": "40DDBED7C67392EB5FE04FFB7F61E0083DEB7B709562E519384AB9B05E0C1C7C",
-      "side_bit": 1
+      "sha256": "650590686927D5A472107507D4C1EE7F60DE65DEA3B73E00E867FE177372E687",
+      "side_bit": 1,
+      "tetrahedron_owner_mismatches": 96
     },
     {
       "alpha_prefix": 1,
       "alpha_target": 2,
       "fixes_section_ball": true,
       "h0_centers_left": 8,
+      "h1_centers_left": 8,
       "heegaard_pair_preserved": false,
       "index": 40,
       "jacobian_det_min": "1/4",
@@ -614,14 +695,16 @@
       "power": -1,
       "prism_cell_count": 12,
       "section_restore_cell_count": 162,
-      "sha256": "68ADE19661C364E08F8413A1F27C35BDCA482477188E191C0F11720CC41911BE",
-      "side_bit": 1
+      "sha256": "0D4C9549B69C4156AB9727884239326FE2701E1CDC68BB9ED0512C4B9E2736BA",
+      "side_bit": 1,
+      "tetrahedron_owner_mismatches": 96
     },
     {
       "alpha_prefix": 1,
       "alpha_target": 2,
       "fixes_section_ball": true,
       "h0_centers_left": 8,
+      "h1_centers_left": 8,
       "heegaard_pair_preserved": false,
       "index": 41,
       "jacobian_det_min": "1/4",
@@ -629,14 +712,16 @@
       "power": -1,
       "prism_cell_count": 12,
       "section_restore_cell_count": 162,
-      "sha256": "22548E0F66891A0D8F0D6EE42DF04ECE7A11EA35B4A4C56F5716D5FFE38C7776",
-      "side_bit": 0
+      "sha256": "BB4548C201D984482CBFEC5EF7465E994065C31D216FF9EEB8A7A613B4AF2709",
+      "side_bit": 0,
+      "tetrahedron_owner_mismatches": 96
     },
     {
       "alpha_prefix": 2,
       "alpha_target": 1,
       "fixes_section_ball": true,
       "h0_centers_left": 8,
+      "h1_centers_left": 8,
       "heegaard_pair_preserved": false,
       "index": 42,
       "jacobian_det_min": "1/4",
@@ -644,14 +729,16 @@
       "power": 1,
       "prism_cell_count": 12,
       "section_restore_cell_count": 162,
-      "sha256": "78CCBE32330A804C820C0C3717E316B981095353266614948FEA431F3AC0FDC7",
-      "side_bit": 1
+      "sha256": "D12AE9D3DD30F10E7E9A1C70EF56E34EC74000B4261798DA4B471B9F06570E1B",
+      "side_bit": 1,
+      "tetrahedron_owner_mismatches": 96
     },
     {
       "alpha_prefix": 1,
       "alpha_target": 2,
       "fixes_section_ball": true,
       "h0_centers_left": 8,
+      "h1_centers_left": 8,
       "heegaard_pair_preserved": false,
       "index": 43,
       "jacobian_det_min": "1/4",
@@ -659,14 +746,16 @@
       "power": -1,
       "prism_cell_count": 12,
       "section_restore_cell_count": 162,
-      "sha256": "53FFCB171D6ED2F9796DD9B8BC60DAA5191360B626B8418701761CF0BCC65D2E",
-      "side_bit": 0
+      "sha256": "CABA24C96CAE993B3253359F168A041F394D10D92600DCE1E48A6FE8828BFA73",
+      "side_bit": 0,
+      "tetrahedron_owner_mismatches": 96
     },
     {
       "alpha_prefix": 1,
       "alpha_target": 2,
       "fixes_section_ball": true,
       "h0_centers_left": 8,
+      "h1_centers_left": 8,
       "heegaard_pair_preserved": false,
       "index": 44,
       "jacobian_det_min": "1/4",
@@ -674,14 +763,16 @@
       "power": -1,
       "prism_cell_count": 12,
       "section_restore_cell_count": 162,
-      "sha256": "8BCA04DF672CBD8F92D18C16F29FBCA7AB47BCC73FDFF54AFF6AB5B90AE7AB25",
-      "side_bit": 0
+      "sha256": "B2C87F111600F4944AB6898C2A05AA875812937863A7F66EEBABBB2371B89CF0",
+      "side_bit": 0,
+      "tetrahedron_owner_mismatches": 96
     },
     {
       "alpha_prefix": 1,
       "alpha_target": 2,
       "fixes_section_ball": true,
       "h0_centers_left": 8,
+      "h1_centers_left": 8,
       "heegaard_pair_preserved": false,
       "index": 45,
       "jacobian_det_min": "1/4",
@@ -689,14 +780,16 @@
       "power": -1,
       "prism_cell_count": 12,
       "section_restore_cell_count": 162,
-      "sha256": "A1268F61FD1CB50E0BAA4870E12C924FC1A7A7B149D881B57B70F89E5A8B68A0",
-      "side_bit": 1
+      "sha256": "25BBF5E3ABB8E3EC553F2CC36CBF2DAE56C9EC2DE16784E529CF353A831C39E6",
+      "side_bit": 1,
+      "tetrahedron_owner_mismatches": 96
     },
     {
       "alpha_prefix": 1,
       "alpha_target": 2,
       "fixes_section_ball": true,
       "h0_centers_left": 8,
+      "h1_centers_left": 8,
       "heegaard_pair_preserved": false,
       "index": 46,
       "jacobian_det_min": "1/4",
@@ -704,14 +797,16 @@
       "power": -1,
       "prism_cell_count": 12,
       "section_restore_cell_count": 162,
-      "sha256": "FEE70F6C7D88E629BA423160A31681B52D448B0B37AE82A567FC4953A37A72B9",
-      "side_bit": 0
+      "sha256": "963DBE1804C04A73E6268E1FAAD603BEB6EE98F660DDB9CFED037CED435A989F",
+      "side_bit": 0,
+      "tetrahedron_owner_mismatches": 96
     },
     {
       "alpha_prefix": 1,
       "alpha_target": 2,
       "fixes_section_ball": true,
       "h0_centers_left": 8,
+      "h1_centers_left": 8,
       "heegaard_pair_preserved": false,
       "index": 47,
       "jacobian_det_min": "1/4",
@@ -719,14 +814,16 @@
       "power": -1,
       "prism_cell_count": 12,
       "section_restore_cell_count": 162,
-      "sha256": "A5C03A47E09FEA93F7CFE5F2C56F536E115A8506D842AAB513C5546B63EB4252",
-      "side_bit": 1
+      "sha256": "5E0B0ABA344A4D8C11DA8729C4A7793792FBEB82F9AF4CDBE1D85E5B70018701",
+      "side_bit": 1,
+      "tetrahedron_owner_mismatches": 96
     },
     {
       "alpha_prefix": 2,
       "alpha_target": 1,
       "fixes_section_ball": true,
       "h0_centers_left": 8,
+      "h1_centers_left": 8,
       "heegaard_pair_preserved": false,
       "index": 48,
       "jacobian_det_min": "1/4",
@@ -734,14 +831,16 @@
       "power": 1,
       "prism_cell_count": 12,
       "section_restore_cell_count": 162,
-      "sha256": "FF12780AA7F84AAAF7F4A9D6C4E766CBE0FF3B8D1E13D43E9FD731925AA3424C",
-      "side_bit": 1
+      "sha256": "4A555AE73C7D0CA1B28D5A916071F1EF79CE166609A492C96CF864DAD2983C95",
+      "side_bit": 1,
+      "tetrahedron_owner_mismatches": 96
     },
     {
       "alpha_prefix": 1,
       "alpha_target": 2,
       "fixes_section_ball": true,
       "h0_centers_left": 8,
+      "h1_centers_left": 8,
       "heegaard_pair_preserved": false,
       "index": 49,
       "jacobian_det_min": "1/4",
@@ -749,14 +848,16 @@
       "power": -1,
       "prism_cell_count": 12,
       "section_restore_cell_count": 162,
-      "sha256": "67B076C7DB1A798EA048B1234AC071AA315780C7536C5AB0529EE7E1F23ECDD0",
-      "side_bit": 1
+      "sha256": "79DFC7B09BEADB58F6446C2BA6DFBB8B538192EA1EA44312FB668A39843C4EF1",
+      "side_bit": 1,
+      "tetrahedron_owner_mismatches": 96
     },
     {
       "alpha_prefix": 1,
       "alpha_target": 2,
       "fixes_section_ball": true,
       "h0_centers_left": 8,
+      "h1_centers_left": 8,
       "heegaard_pair_preserved": false,
       "index": 50,
       "jacobian_det_min": "1/4",
@@ -764,14 +865,16 @@
       "power": -1,
       "prism_cell_count": 12,
       "section_restore_cell_count": 162,
-      "sha256": "F87D54EB3D169C8405995702A4567C15AD93EF055E272A17CACE84A390E777B8",
-      "side_bit": 1
+      "sha256": "E80C4AA3E872D702D353AB66A8C0ADFA0331502F2FA950C070BDAB9384F70B11",
+      "side_bit": 1,
+      "tetrahedron_owner_mismatches": 96
     },
     {
       "alpha_prefix": 1,
       "alpha_target": 2,
       "fixes_section_ball": true,
       "h0_centers_left": 8,
+      "h1_centers_left": 8,
       "heegaard_pair_preserved": false,
       "index": 51,
       "jacobian_det_min": "1/4",
@@ -779,14 +882,16 @@
       "power": -1,
       "prism_cell_count": 12,
       "section_restore_cell_count": 162,
-      "sha256": "1E9366A449075A803E70BFFBECB222E563CF10D14AF48B0ADDAADD2285C4CB94",
-      "side_bit": 1
+      "sha256": "9A1CDDA8E1140C29A77BA6BCA8A1DF0C33571A617975DF67094DE6329B00F2E6",
+      "side_bit": 1,
+      "tetrahedron_owner_mismatches": 96
     },
     {
       "alpha_prefix": 1,
       "alpha_target": 2,
       "fixes_section_ball": true,
       "h0_centers_left": 8,
+      "h1_centers_left": 8,
       "heegaard_pair_preserved": false,
       "index": 52,
       "jacobian_det_min": "1/4",
@@ -794,14 +899,16 @@
       "power": -1,
       "prism_cell_count": 12,
       "section_restore_cell_count": 162,
-      "sha256": "DCDBE0851EDD4BC7B9FD260A168CC49B9390997273E3EEF064623CFE4C90652D",
-      "side_bit": 0
+      "sha256": "FE7649217940D2D4B4AF079D023A1D16BF053DEA4CBD75CEE57E5D4F1D6E2085",
+      "side_bit": 0,
+      "tetrahedron_owner_mismatches": 96
     },
     {
       "alpha_prefix": 1,
       "alpha_target": 2,
       "fixes_section_ball": true,
       "h0_centers_left": 8,
+      "h1_centers_left": 8,
       "heegaard_pair_preserved": false,
       "index": 53,
       "jacobian_det_min": "1/4",
@@ -809,14 +916,16 @@
       "power": -1,
       "prism_cell_count": 12,
       "section_restore_cell_count": 162,
-      "sha256": "DFDB2CEA4264E21D5930630BC6087E49412E9E6F1D5A0C25BA44F2844439D06D",
-      "side_bit": 1
+      "sha256": "5A0FF97DABB0F1F2F4EE5CB1FAF2437CFDDB37D40FB6CB4E1ED0D01182ECD901",
+      "side_bit": 1,
+      "tetrahedron_owner_mismatches": 96
     },
     {
       "alpha_prefix": 1,
       "alpha_target": 2,
       "fixes_section_ball": true,
       "h0_centers_left": 8,
+      "h1_centers_left": 8,
       "heegaard_pair_preserved": false,
       "index": 54,
       "jacobian_det_min": "1/4",
@@ -824,14 +933,16 @@
       "power": -1,
       "prism_cell_count": 12,
       "section_restore_cell_count": 162,
-      "sha256": "DDA843D017E777691B9B1599EA6343B9E3095C4F0E8A1B0C1E1291EBC0C6B0E1",
-      "side_bit": 1
+      "sha256": "1BB923E99AD63F2A984ACA39660E3D9A9B588E4D77633358835558658F4CA555",
+      "side_bit": 1,
+      "tetrahedron_owner_mismatches": 96
     },
     {
       "alpha_prefix": 1,
       "alpha_target": 2,
       "fixes_section_ball": true,
       "h0_centers_left": 8,
+      "h1_centers_left": 8,
       "heegaard_pair_preserved": false,
       "index": 55,
       "jacobian_det_min": "1/4",
@@ -839,14 +950,16 @@
       "power": -1,
       "prism_cell_count": 12,
       "section_restore_cell_count": 162,
-      "sha256": "39B8082DF433FB7C35EB9C9EFB46073B2642ED8E6B99FF1E7736D998BD1439FD",
-      "side_bit": 1
+      "sha256": "619D678258D7797CCAD8D937C483D6AE991E2A37B7DDEA773E8280F38B337F87",
+      "side_bit": 1,
+      "tetrahedron_owner_mismatches": 96
     },
     {
       "alpha_prefix": 2,
       "alpha_target": 1,
       "fixes_section_ball": true,
       "h0_centers_left": 8,
+      "h1_centers_left": 8,
       "heegaard_pair_preserved": false,
       "index": 56,
       "jacobian_det_min": "1/4",
@@ -854,14 +967,16 @@
       "power": 1,
       "prism_cell_count": 12,
       "section_restore_cell_count": 162,
-      "sha256": "59CE6BC2AB5FE4DD858006CE2F68AD6C86991F21F4F7FE405DD496F6560A341F",
-      "side_bit": 1
+      "sha256": "B990A150EEEDCA2BDDBB7BD536DA9241D2EB18434805D3C30EE1898FCCD7CBEA",
+      "side_bit": 1,
+      "tetrahedron_owner_mismatches": 96
     },
     {
       "alpha_prefix": 1,
       "alpha_target": 2,
       "fixes_section_ball": true,
       "h0_centers_left": 8,
+      "h1_centers_left": 8,
       "heegaard_pair_preserved": false,
       "index": 57,
       "jacobian_det_min": "1/4",
@@ -869,14 +984,16 @@
       "power": -1,
       "prism_cell_count": 12,
       "section_restore_cell_count": 162,
-      "sha256": "3EC0EBB189255AD4EEAAEF7E34A75A464FD511D9D4E9413F43A4F02FADC5F8CA",
-      "side_bit": 1
+      "sha256": "046683A81A12B80A5DFAD9E24C593A695578698FAAFE466DE366FDB8191A8141",
+      "side_bit": 1,
+      "tetrahedron_owner_mismatches": 96
     },
     {
       "alpha_prefix": 1,
       "alpha_target": 2,
       "fixes_section_ball": true,
       "h0_centers_left": 8,
+      "h1_centers_left": 8,
       "heegaard_pair_preserved": false,
       "index": 58,
       "jacobian_det_min": "1/4",
@@ -884,14 +1001,16 @@
       "power": -1,
       "prism_cell_count": 12,
       "section_restore_cell_count": 162,
-      "sha256": "3081B725EA97A8565372A0DD3185133AF7389657B9BDC899DF79DF9068DE47BD",
-      "side_bit": 0
+      "sha256": "A24ABB39D81F20B6C2F0B8BF42BE0E0D2691558A214B088F8A00535A134E54DA",
+      "side_bit": 0,
+      "tetrahedron_owner_mismatches": 96
     },
     {
       "alpha_prefix": 1,
       "alpha_target": 2,
       "fixes_section_ball": true,
       "h0_centers_left": 8,
+      "h1_centers_left": 8,
       "heegaard_pair_preserved": false,
       "index": 59,
       "jacobian_det_min": "1/4",
@@ -899,14 +1018,16 @@
       "power": -1,
       "prism_cell_count": 12,
       "section_restore_cell_count": 162,
-      "sha256": "973871E21601B2D4C85FFA1D3762003F692FA3667CB4929E837A40F99AC0261F",
-      "side_bit": 1
+      "sha256": "28C9A0CC1366732C8067B97CF0556BB0A6D8DDBDBDA5AFCA8E294012F7242281",
+      "side_bit": 1,
+      "tetrahedron_owner_mismatches": 96
     },
     {
       "alpha_prefix": 1,
       "alpha_target": 2,
       "fixes_section_ball": true,
       "h0_centers_left": 8,
+      "h1_centers_left": 8,
       "heegaard_pair_preserved": false,
       "index": 60,
       "jacobian_det_min": "1/4",
@@ -914,14 +1035,16 @@
       "power": -1,
       "prism_cell_count": 12,
       "section_restore_cell_count": 162,
-      "sha256": "F5927CE125DC7470DB4F7859F1E955DD50CC66BCBBFDB12FFFD7584BB5DF1FB0",
-      "side_bit": 1
+      "sha256": "729F2704F59F4A4A7FBEA66BF3C3A46BCADEC18D1724FF7BA67118BC8CA78B1B",
+      "side_bit": 1,
+      "tetrahedron_owner_mismatches": 96
     },
     {
       "alpha_prefix": 1,
       "alpha_target": 2,
       "fixes_section_ball": true,
       "h0_centers_left": 8,
+      "h1_centers_left": 8,
       "heegaard_pair_preserved": false,
       "index": 61,
       "jacobian_det_min": "1/4",
@@ -929,14 +1052,16 @@
       "power": -1,
       "prism_cell_count": 12,
       "section_restore_cell_count": 162,
-      "sha256": "87C63E8B497D161FCB1B20F1C118E1E18AB2D77F6B43FD84DDBB74985FB3FC52",
-      "side_bit": 0
+      "sha256": "E7CBC40A338FC44B5A9A85E9B8F0466E9879072EBCBAC8541C6BAE99B09CD343",
+      "side_bit": 0,
+      "tetrahedron_owner_mismatches": 96
     },
     {
       "alpha_prefix": 2,
       "alpha_target": 1,
       "fixes_section_ball": true,
       "h0_centers_left": 8,
+      "h1_centers_left": 8,
       "heegaard_pair_preserved": false,
       "index": 62,
       "jacobian_det_min": "1/4",
@@ -944,14 +1069,16 @@
       "power": 1,
       "prism_cell_count": 12,
       "section_restore_cell_count": 162,
-      "sha256": "64E7CAC3BCAF8105E2A594B3DDD1837EC52FB2E9ABCED7BCB2FD4FCE34403DCB",
-      "side_bit": 0
+      "sha256": "031A1D562B1319770A91B79A9E09F321DF245BC73CB6DC925C8DAF7523405345",
+      "side_bit": 0,
+      "tetrahedron_owner_mismatches": 96
     },
     {
       "alpha_prefix": 1,
       "alpha_target": 2,
       "fixes_section_ball": true,
       "h0_centers_left": 8,
+      "h1_centers_left": 8,
       "heegaard_pair_preserved": false,
       "index": 63,
       "jacobian_det_min": "1/4",
@@ -959,14 +1086,16 @@
       "power": -1,
       "prism_cell_count": 12,
       "section_restore_cell_count": 162,
-      "sha256": "20438A5B23D9B813F660374808928EA962811A86A7ABB5006CE54EA1DDD1912F",
-      "side_bit": 0
+      "sha256": "0AC34AE7461965847ADE1AF51EB5F16FB7D58E5D1495F03A4825E896358682AA",
+      "side_bit": 0,
+      "tetrahedron_owner_mismatches": 96
     },
     {
       "alpha_prefix": 1,
       "alpha_target": 2,
       "fixes_section_ball": true,
       "h0_centers_left": 8,
+      "h1_centers_left": 8,
       "heegaard_pair_preserved": false,
       "index": 64,
       "jacobian_det_min": "1/4",
@@ -974,14 +1103,16 @@
       "power": -1,
       "prism_cell_count": 12,
       "section_restore_cell_count": 162,
-      "sha256": "F57F3BF83AEC6ED2EAA36ACD80192FDDF007DE44533577D06218E8AD32A03040",
-      "side_bit": 0
+      "sha256": "B2C804F8D4F0E804F1ADFF3452214B4AA12F412F0A427211056E7DF9763725F6",
+      "side_bit": 0,
+      "tetrahedron_owner_mismatches": 96
     },
     {
       "alpha_prefix": 1,
       "alpha_target": 2,
       "fixes_section_ball": true,
       "h0_centers_left": 8,
+      "h1_centers_left": 8,
       "heegaard_pair_preserved": false,
       "index": 65,
       "jacobian_det_min": "1/4",
@@ -989,14 +1120,16 @@
       "power": -1,
       "prism_cell_count": 12,
       "section_restore_cell_count": 162,
-      "sha256": "AC337BF05ADD518BECC3EA74809A54237A4FDB2EA4F42C04C210C1E926575B6E",
-      "side_bit": 1
+      "sha256": "C199C6ACDC3D6AA2C8B4B6117E05BAA487FD48C609EDB9EAAA85B37443328A9C",
+      "side_bit": 1,
+      "tetrahedron_owner_mismatches": 96
     },
     {
       "alpha_prefix": 1,
       "alpha_target": 2,
       "fixes_section_ball": true,
       "h0_centers_left": 8,
+      "h1_centers_left": 8,
       "heegaard_pair_preserved": false,
       "index": 66,
       "jacobian_det_min": "1/4",
@@ -1004,14 +1137,16 @@
       "power": -1,
       "prism_cell_count": 12,
       "section_restore_cell_count": 162,
-      "sha256": "675091EEA0A3F39C3A645F4AE884651DA80F6DE552E400718EE0E44EDEC051C0",
-      "side_bit": 1
+      "sha256": "CAAE7FA1723B45A0965D9304268107A05C453192B72417958BDC6EAC55E83CB1",
+      "side_bit": 1,
+      "tetrahedron_owner_mismatches": 96
     },
     {
       "alpha_prefix": 2,
       "alpha_target": 1,
       "fixes_section_ball": true,
       "h0_centers_left": 8,
+      "h1_centers_left": 8,
       "heegaard_pair_preserved": false,
       "index": 67,
       "jacobian_det_min": "1/4",
@@ -1019,14 +1154,16 @@
       "power": 1,
       "prism_cell_count": 12,
       "section_restore_cell_count": 162,
-      "sha256": "1D84D746AA19959B614F5B7E6729ED2345AA32A5E951C5E900694A4DA5727304",
-      "side_bit": 0
+      "sha256": "A7285340A7E5F71C911C3826BA8BA55FBF807A3BECF854CCAE3289034FA003CD",
+      "side_bit": 0,
+      "tetrahedron_owner_mismatches": 96
     },
     {
       "alpha_prefix": 1,
       "alpha_target": 2,
       "fixes_section_ball": true,
       "h0_centers_left": 8,
+      "h1_centers_left": 8,
       "heegaard_pair_preserved": false,
       "index": 68,
       "jacobian_det_min": "1/4",
@@ -1034,14 +1171,16 @@
       "power": -1,
       "prism_cell_count": 12,
       "section_restore_cell_count": 162,
-      "sha256": "86906799240E1B2EBC09A64B4E2EA549FF852800C02CEF35F426469CF722AE2A",
-      "side_bit": 0
+      "sha256": "0F782EA4A26F93873DBF73CAC00D08842495A3B9ECCD9A0A776844B5E0D02AD5",
+      "side_bit": 0,
+      "tetrahedron_owner_mismatches": 96
     },
     {
       "alpha_prefix": 1,
       "alpha_target": 2,
       "fixes_section_ball": true,
       "h0_centers_left": 8,
+      "h1_centers_left": 8,
       "heegaard_pair_preserved": false,
       "index": 69,
       "jacobian_det_min": "1/4",
@@ -1049,14 +1188,16 @@
       "power": -1,
       "prism_cell_count": 12,
       "section_restore_cell_count": 162,
-      "sha256": "98F8CBD118A85DFF32BCF11507F774C3BDB38B1DBFD544D61D13F20DD06C9AC7",
-      "side_bit": 1
+      "sha256": "397CAFFE4F882C2A294371ACB127FF3E24AFC726892EEF46F4E0EA9C0CD2641C",
+      "side_bit": 1,
+      "tetrahedron_owner_mismatches": 96
     },
     {
       "alpha_prefix": 1,
       "alpha_target": 2,
       "fixes_section_ball": true,
       "h0_centers_left": 8,
+      "h1_centers_left": 8,
       "heegaard_pair_preserved": false,
       "index": 70,
       "jacobian_det_min": "1/4",
@@ -1064,14 +1205,16 @@
       "power": -1,
       "prism_cell_count": 12,
       "section_restore_cell_count": 162,
-      "sha256": "44AD2A5106BBD81C2AB998C1B64393F4F9FE5811F43D4032F03DA28241A77957",
-      "side_bit": 0
+      "sha256": "9AC00644FC7DF329A1EE002B8196BC963A6B4BCE0DB6AE0D2B226D9DEBC311A8",
+      "side_bit": 0,
+      "tetrahedron_owner_mismatches": 96
     },
     {
       "alpha_prefix": 1,
       "alpha_target": 2,
       "fixes_section_ball": true,
       "h0_centers_left": 8,
+      "h1_centers_left": 8,
       "heegaard_pair_preserved": false,
       "index": 71,
       "jacobian_det_min": "1/4",
@@ -1079,14 +1222,16 @@
       "power": -1,
       "prism_cell_count": 12,
       "section_restore_cell_count": 162,
-      "sha256": "A1347CFD7F8C4F6AB9F51E4CD348EFD62ABD288ACC23F52215076249557C6C2D",
-      "side_bit": 1
+      "sha256": "9B5D8C78C356E33D65512592FDA0CEC2C0ED4DD02C98DC942F4C05DABDFD7C57",
+      "side_bit": 1,
+      "tetrahedron_owner_mismatches": 96
     },
     {
       "alpha_prefix": 2,
       "alpha_target": 1,
       "fixes_section_ball": true,
       "h0_centers_left": 8,
+      "h1_centers_left": 8,
       "heegaard_pair_preserved": false,
       "index": 72,
       "jacobian_det_min": "1/4",
@@ -1094,14 +1239,16 @@
       "power": 1,
       "prism_cell_count": 12,
       "section_restore_cell_count": 162,
-      "sha256": "0D2052F32FE31EB6AA2048037C3DF9A9766A528693116591D84BC896F8A53710",
-      "side_bit": 0
+      "sha256": "95FF276598C1D4238CF9CC05A8B009D453D009548C3A6E0E8FF326F7F71EA891",
+      "side_bit": 0,
+      "tetrahedron_owner_mismatches": 96
     },
     {
       "alpha_prefix": 1,
       "alpha_target": 2,
       "fixes_section_ball": true,
       "h0_centers_left": 8,
+      "h1_centers_left": 8,
       "heegaard_pair_preserved": false,
       "index": 73,
       "jacobian_det_min": "1/4",
@@ -1109,14 +1256,16 @@
       "power": -1,
       "prism_cell_count": 12,
       "section_restore_cell_count": 162,
-      "sha256": "3E7CD4E1ECE1FAC277D1171B52D6787ABF18295E02CB05630B3CFB4F6E975021",
-      "side_bit": 0
+      "sha256": "EE199B74CA322B6D5111EA714AAF6A3D274B6AAD1A4DD11D8C747D55B44EC624",
+      "side_bit": 0,
+      "tetrahedron_owner_mismatches": 96
     },
     {
       "alpha_prefix": 1,
       "alpha_target": 2,
       "fixes_section_ball": true,
       "h0_centers_left": 8,
+      "h1_centers_left": 8,
       "heegaard_pair_preserved": false,
       "index": 74,
       "jacobian_det_min": "1/4",
@@ -1124,14 +1273,16 @@
       "power": -1,
       "prism_cell_count": 12,
       "section_restore_cell_count": 162,
-      "sha256": "99A8033CD78DDB97BF7C35717B1046021BAA72EA36C195FD19F4F7409C16E8F9",
-      "side_bit": 0
+      "sha256": "4A61E35058206E667F3D6DCA7795E35044FDCF7638CCE7B78E5E871B90BC3D52",
+      "side_bit": 0,
+      "tetrahedron_owner_mismatches": 96
     },
     {
       "alpha_prefix": 1,
       "alpha_target": 2,
       "fixes_section_ball": true,
       "h0_centers_left": 8,
+      "h1_centers_left": 8,
       "heegaard_pair_preserved": false,
       "index": 75,
       "jacobian_det_min": "1/4",
@@ -1139,14 +1290,16 @@
       "power": -1,
       "prism_cell_count": 12,
       "section_restore_cell_count": 162,
-      "sha256": "128D0277B7362A84A6EE95B84B7BF0C365DEB843ECF27DCBDC44EDB0EA474075",
-      "side_bit": 1
+      "sha256": "FFADE90F8CF3BC0B936B31AB182B9EB48B14B9B5AB2AA6F085DA9FC540FB2975",
+      "side_bit": 1,
+      "tetrahedron_owner_mismatches": 96
     },
     {
       "alpha_prefix": 1,
       "alpha_target": 2,
       "fixes_section_ball": true,
       "h0_centers_left": 8,
+      "h1_centers_left": 8,
       "heegaard_pair_preserved": false,
       "index": 76,
       "jacobian_det_min": "1/4",
@@ -1154,14 +1307,16 @@
       "power": -1,
       "prism_cell_count": 12,
       "section_restore_cell_count": 162,
-      "sha256": "35302ED9F809020E151B23CA11BF5CA8DBBC6D66720A42AC00AAFDFAFCC03EB0",
-      "side_bit": 1
+      "sha256": "1A1203DAD707E40E78074E0F2C574600B0B0B3BA27F497D3882B4AA46AA3F1A6",
+      "side_bit": 1,
+      "tetrahedron_owner_mismatches": 96
     },
     {
       "alpha_prefix": 2,
       "alpha_target": 1,
       "fixes_section_ball": true,
       "h0_centers_left": 8,
+      "h1_centers_left": 8,
       "heegaard_pair_preserved": false,
       "index": 77,
       "jacobian_det_min": "1/4",
@@ -1169,14 +1324,16 @@
       "power": 1,
       "prism_cell_count": 12,
       "section_restore_cell_count": 162,
-      "sha256": "E11E7CA6A09F95908E82521B32E11EF6DD469328CF20D8C12FBECE28E7AAFB78",
-      "side_bit": 0
+      "sha256": "A7BE00A4D372A90558221BB38329E5B142D6DE6A852187095C070C9A7CC47AC8",
+      "side_bit": 0,
+      "tetrahedron_owner_mismatches": 96
     },
     {
       "alpha_prefix": 1,
       "alpha_target": 2,
       "fixes_section_ball": true,
       "h0_centers_left": 8,
+      "h1_centers_left": 8,
       "heegaard_pair_preserved": false,
       "index": 78,
       "jacobian_det_min": "1/4",
@@ -1184,14 +1341,16 @@
       "power": -1,
       "prism_cell_count": 12,
       "section_restore_cell_count": 162,
-      "sha256": "37D839DDDA33CA3D1FF76549A3026FC8DC7AD937CC2D67F32D3D88A3C694E5D9",
-      "side_bit": 1
+      "sha256": "8D23120F49466F0924218AA32818E7425EB104E82356A37F84616C1D01E51F2F",
+      "side_bit": 1,
+      "tetrahedron_owner_mismatches": 96
     },
     {
       "alpha_prefix": 1,
       "alpha_target": 2,
       "fixes_section_ball": true,
       "h0_centers_left": 8,
+      "h1_centers_left": 8,
       "heegaard_pair_preserved": false,
       "index": 79,
       "jacobian_det_min": "1/4",
@@ -1199,14 +1358,16 @@
       "power": -1,
       "prism_cell_count": 12,
       "section_restore_cell_count": 162,
-      "sha256": "44F7A000758BA8F8F69536CE727F5F996C1599CFF6219263D95A564281B8C1DE",
-      "side_bit": 1
+      "sha256": "79FA743AFD1C309295DC93428775578F2938C72A0AB509750F0FD638B6F57EA8",
+      "side_bit": 1,
+      "tetrahedron_owner_mismatches": 96
     },
     {
       "alpha_prefix": 1,
       "alpha_target": 2,
       "fixes_section_ball": true,
       "h0_centers_left": 8,
+      "h1_centers_left": 8,
       "heegaard_pair_preserved": false,
       "index": 80,
       "jacobian_det_min": "1/4",
@@ -1214,14 +1375,16 @@
       "power": -1,
       "prism_cell_count": 12,
       "section_restore_cell_count": 162,
-      "sha256": "6346F549B05BED1D0A9E27F02536AC22C42D419D1BEB09D5183D082214CBDECF",
-      "side_bit": 0
+      "sha256": "CBC0A09E0696BCB5D7CAB9D1DE8174B21724E4DC57E6C03E50259BAB9917E0E2",
+      "side_bit": 0,
+      "tetrahedron_owner_mismatches": 96
     },
     {
       "alpha_prefix": 1,
       "alpha_target": 2,
       "fixes_section_ball": true,
       "h0_centers_left": 8,
+      "h1_centers_left": 8,
       "heegaard_pair_preserved": false,
       "index": 81,
       "jacobian_det_min": "1/4",
@@ -1229,14 +1392,16 @@
       "power": -1,
       "prism_cell_count": 12,
       "section_restore_cell_count": 162,
-      "sha256": "B4D90714953FF1E65276560F96C33AA90AAB1058962D49AFB484C2AD80717FB3",
-      "side_bit": 1
+      "sha256": "868DA6D05AAA9A8C0DB8B6DD49E8CB81E3AAA11FCD71D8FBBB375C70C9542D6F",
+      "side_bit": 1,
+      "tetrahedron_owner_mismatches": 96
     },
     {
       "alpha_prefix": 2,
       "alpha_target": 1,
       "fixes_section_ball": true,
       "h0_centers_left": 8,
+      "h1_centers_left": 8,
       "heegaard_pair_preserved": false,
       "index": 82,
       "jacobian_det_min": "1/4",
@@ -1244,14 +1409,16 @@
       "power": 1,
       "prism_cell_count": 12,
       "section_restore_cell_count": 162,
-      "sha256": "683E0FA8B6DD4FADD33C15D6B84D0B84334FCF2CC815F391A2B912357FF6BB58",
-      "side_bit": 1
+      "sha256": "F15D25B9CAFA36ED6E2B124B7C90CAE41DA37AED97166E02FCACFF4450815994",
+      "side_bit": 1,
+      "tetrahedron_owner_mismatches": 96
     },
     {
       "alpha_prefix": 1,
       "alpha_target": 2,
       "fixes_section_ball": true,
       "h0_centers_left": 8,
+      "h1_centers_left": 8,
       "heegaard_pair_preserved": false,
       "index": 83,
       "jacobian_det_min": "1/4",
@@ -1259,14 +1426,16 @@
       "power": -1,
       "prism_cell_count": 12,
       "section_restore_cell_count": 162,
-      "sha256": "1872278636555D6587218613F3729A10DB779293D618B22E6A9614D7E875EB81",
-      "side_bit": 0
+      "sha256": "90029210495AEC54FC1D01054CF8802C91081F253FF300CF321C55AA5F62A00D",
+      "side_bit": 0,
+      "tetrahedron_owner_mismatches": 96
     },
     {
       "alpha_prefix": 1,
       "alpha_target": 2,
       "fixes_section_ball": true,
       "h0_centers_left": 8,
+      "h1_centers_left": 8,
       "heegaard_pair_preserved": false,
       "index": 84,
       "jacobian_det_min": "1/4",
@@ -1274,14 +1443,16 @@
       "power": -1,
       "prism_cell_count": 12,
       "section_restore_cell_count": 162,
-      "sha256": "0D1E5805EA3D69E18AC74DE0F5F2190358962CC158625F99715B63BAF4B34F31",
-      "side_bit": 1
+      "sha256": "BF2DF02FAFFD674AD332B45D5094B18D71E2F738FF02F34D6FB8CBAD2472F8FE",
+      "side_bit": 1,
+      "tetrahedron_owner_mismatches": 96
     },
     {
       "alpha_prefix": 1,
       "alpha_target": 2,
       "fixes_section_ball": true,
       "h0_centers_left": 8,
+      "h1_centers_left": 8,
       "heegaard_pair_preserved": false,
       "index": 85,
       "jacobian_det_min": "1/4",
@@ -1289,14 +1460,16 @@
       "power": -1,
       "prism_cell_count": 12,
       "section_restore_cell_count": 162,
-      "sha256": "AAA5BF721595B9C723D658A3A7D1DBBD74E91E5F76F25D4EC5CDBEF837F38945",
-      "side_bit": 1
+      "sha256": "D5E5903B09308324927E91A66D5F4BB6B3B4C46C3F671FA094FC23CED88609C0",
+      "side_bit": 1,
+      "tetrahedron_owner_mismatches": 96
     },
     {
       "alpha_prefix": 1,
       "alpha_target": 2,
       "fixes_section_ball": true,
       "h0_centers_left": 8,
+      "h1_centers_left": 8,
       "heegaard_pair_preserved": false,
       "index": 86,
       "jacobian_det_min": "1/4",
@@ -1304,14 +1477,16 @@
       "power": -1,
       "prism_cell_count": 12,
       "section_restore_cell_count": 162,
-      "sha256": "2E860ECC2CDACA4A50E331919A26CDB1CBCA6057BCAEFCACFEACB193E49FC88B",
-      "side_bit": 0
+      "sha256": "8CEEEF2D21C356F2964F0D7277975F9908672DACFCD91305B6F1B9F4ECBB9E80",
+      "side_bit": 0,
+      "tetrahedron_owner_mismatches": 96
     },
     {
       "alpha_prefix": 2,
       "alpha_target": 1,
       "fixes_section_ball": true,
       "h0_centers_left": 8,
+      "h1_centers_left": 8,
       "heegaard_pair_preserved": false,
       "index": 87,
       "jacobian_det_min": "1/4",
@@ -1319,14 +1494,16 @@
       "power": 1,
       "prism_cell_count": 12,
       "section_restore_cell_count": 162,
-      "sha256": "7B5368D322B32A625BA7D0A383565F621CF11238B0F4D1C20CB38DEA042880C2",
-      "side_bit": 1
+      "sha256": "B9273742FDE23F9DEDC89139DB694D35808E25BEE8B2B7953C44E6777F2A4689",
+      "side_bit": 1,
+      "tetrahedron_owner_mismatches": 96
     },
     {
       "alpha_prefix": 1,
       "alpha_target": 2,
       "fixes_section_ball": true,
       "h0_centers_left": 8,
+      "h1_centers_left": 8,
       "heegaard_pair_preserved": false,
       "index": 88,
       "jacobian_det_min": "1/4",
@@ -1334,14 +1511,16 @@
       "power": -1,
       "prism_cell_count": 12,
       "section_restore_cell_count": 162,
-      "sha256": "C39E06CEA3C35411610796200A0F543C983B635AD675E926EF0281A602F737A8",
-      "side_bit": 0
+      "sha256": "6E3E9952DCE1081696B34B3FCDAC6EAF4AC5951A138F1259D006527A2AA818B9",
+      "side_bit": 0,
+      "tetrahedron_owner_mismatches": 96
     },
     {
       "alpha_prefix": 1,
       "alpha_target": 2,
       "fixes_section_ball": true,
       "h0_centers_left": 8,
+      "h1_centers_left": 8,
       "heegaard_pair_preserved": false,
       "index": 89,
       "jacobian_det_min": "1/4",
@@ -1349,14 +1528,16 @@
       "power": -1,
       "prism_cell_count": 12,
       "section_restore_cell_count": 162,
-      "sha256": "F8939016F41B78E20E994202C4814CB08B7D650DB781E8D3DE44929AAB50CA40",
-      "side_bit": 0
+      "sha256": "9A89B3FC23D1C735272B5230C228E8AB18F45B04AA5F3001B1E6DD603643F49C",
+      "side_bit": 0,
+      "tetrahedron_owner_mismatches": 96
     },
     {
       "alpha_prefix": 0,
       "alpha_target": 2,
       "fixes_section_ball": true,
       "h0_centers_left": 8,
+      "h1_centers_left": 8,
       "heegaard_pair_preserved": false,
       "index": 90,
       "jacobian_det_min": "1/4",
@@ -1364,14 +1545,16 @@
       "power": -1,
       "prism_cell_count": 12,
       "section_restore_cell_count": 162,
-      "sha256": "2BA829130F2EBEBAACA93345E42E0B34D5964593E2B2EB0F6634A84FB4E044E0",
-      "side_bit": 1
+      "sha256": "D903D7E60B72FDB4C188C9BD2BF1BBB435F480927F46E49E6E8BC4309E132CC7",
+      "side_bit": 1,
+      "tetrahedron_owner_mismatches": 96
     },
     {
       "alpha_prefix": 2,
       "alpha_target": 0,
       "fixes_section_ball": true,
       "h0_centers_left": 8,
+      "h1_centers_left": 8,
       "heegaard_pair_preserved": false,
       "index": 91,
       "jacobian_det_min": "1/4",
@@ -1379,14 +1562,16 @@
       "power": 1,
       "prism_cell_count": 12,
       "section_restore_cell_count": 162,
-      "sha256": "394F9CE466F00DA6541E8FFF76A299859FBEF938B604C3642A67DAD9019370FB",
-      "side_bit": 1
+      "sha256": "D6A3073078F5AC5D535AA05CCF7C845CBA0B86C9DC5A4C055F7AAB25C77F82DD",
+      "side_bit": 1,
+      "tetrahedron_owner_mismatches": 96
     },
     {
       "alpha_prefix": 0,
       "alpha_target": 2,
       "fixes_section_ball": true,
       "h0_centers_left": 8,
+      "h1_centers_left": 8,
       "heegaard_pair_preserved": false,
       "index": 92,
       "jacobian_det_min": "1/4",
@@ -1394,8 +1579,9 @@
       "power": -1,
       "prism_cell_count": 12,
       "section_restore_cell_count": 162,
-      "sha256": "39ED8917F4530E81158E2115BE06B785261029D002CB456B1E4B51261A2E8A18",
-      "side_bit": 0
+      "sha256": "005136EB330B17570280AD9470B350771BAB426711741CE08353198B2A439244",
+      "side_bit": 0,
+      "tetrahedron_owner_mismatches": 96
     }
   ],
   "heegaard_preserved_count": 0,
@@ -1423,5 +1609,5 @@
   "section_ball_identity": "PASS",
   "section_ball_identity_count": 93,
   "section_restore_cells_per_generator": 162,
-  "sha256": "C416F58C96269BD87E8A734226EA9FD02A57E8684EA05E6BF3699C6CED4544DE"
+  "sha256": "7151FDD99DA3B8301653994CF84517C822BC58B8F4DF2A26DD21F1D246102DAF"
 }

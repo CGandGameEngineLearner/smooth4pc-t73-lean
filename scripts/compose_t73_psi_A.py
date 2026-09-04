@@ -72,15 +72,10 @@ def compose(write: bool = False) -> dict[str, Any]:
                 "linear_A_image": pl.encode(expected),
             }
         )
-    owners = pl.johnson_owners()
-    h0_left = 0
-    for origin, owner in owners.items():
-        if owner != 0:
-            continue
-        center = [Fraction(origin[i]) + Fraction(1, 2) for i in range(3)]
-        image = apply_psi(pl, generators, center)
-        if pl.point_owner(image, owners) != 0:
-            h0_left += 1
+    heegaard = pl.heegaard_owner_audit(
+        lambda point: apply_psi(pl, generators, point)
+    )
+    h0_left = heegaard["left_h0"]
     ball = []
     radius = pl.PROTECTED_RADIUS / 2
     for axis in range(3):
@@ -100,8 +95,10 @@ def compose(write: bool = False) -> dict[str, Any]:
         "fixes_origin": origin_image == [0, 0, 0],
         "section_ball_identity": all(ball),
         "section_ball_axis_fixed": ball,
-        "heegaard_pair_preserved": h0_left == 0,
+        "heegaard_pair_preserved": heegaard["preserved"],
         "h0_centers_left": h0_left,
+        "h1_centers_left": heegaard["left_h1"],
+        "heegaard_owner_audit": heegaard,
         "axis_sample_images": axis_images,
         "construction": (
             "psi_A is the composition of 93 explicit PL factors. Each currently "
@@ -115,7 +112,7 @@ def compose(write: bool = False) -> dict[str, Any]:
             "pl_homeomorphism": "PASS",
             "psi_star_equals_A": "PASS",
             "fixes_section_neighborhood": "PASS" if all(ball) else "OPEN",
-            "preserves_heegaard_pair": "PASS" if h0_left == 0 else "OPEN",
+            "preserves_heegaard_pair": "PASS" if heegaard["preserved"] else "OPEN",
         },
     }
     result["sha256"] = canonical_sha({key: value for key, value in result.items() if key != "sha256"})
@@ -137,6 +134,11 @@ def main() -> None:
         print(f"FIXES_SECTION_NEIGHBORHOOD={result['status']['fixes_section_neighborhood']}")
         print(f"PRESERVES_HEEGAARD_PAIR={result['status']['preserves_heegaard_pair']}")
         print(f"H0_CENTERS_LEFT={result['h0_centers_left']}")
+        print(f"H1_CENTERS_LEFT={result['h1_centers_left']}")
+        print(
+            "TET_BARYCENTER_MISMATCHES="
+            f"{result['heegaard_owner_audit']['tetrahedron_owner_mismatches']}"
+        )
         print(f"SHA256={result['sha256']}")
         return
     print(json.dumps(result["status"], indent=2, sort_keys=True))
