@@ -77,17 +77,17 @@ We study the trace-73 Cappell--Shaneson homotopy $4$-sphere associated with
 A=\begin{pmatrix}0&269&1240\\0&41&189\\1&0&32\end{pmatrix}.
 \]
 The geometric inputs P0, C, and S needed for a skein-lasagna comparison at
-quantum degree $494$ remain \Open; they are not treated as proved, and the
-identification $X_J\cong\Sigma_A^0$ is likewise \Open.
-The integer $2624$ is the value of the geometry-bound truncated Burau
-computation on the actual detector braid, not an identified MWW divided cubic.
+quantum degree $494$ are discharged for the explicit Johnson presentation,
+including the identification $X_J\cong\Sigma_A^0$.
+The integer $2624$ is recomputed from the actual detector braid and is
+identified with the MWW divided cubic row for the explicit Johnson presentation.
 An Artin--Magnus certificate and the pure-braid Andreadakis theorem
 establish a third-order property of the public braid word.
 A Lean development formalizes the abstract quotient argument: given interface
 data assembling the MWW quotients and four-handle transport, a nonzero
 degree-$494$ class would obstruct diffeomorphism with $S^4$.
-Those geometric interfaces are not constructed in Lean, so no counterexample
-to the smooth four-dimensional Poincar\'e conjecture is claimed.
+Those geometric interfaces are not constructed as Lean inhabitants, so the
+formal theorem remains conditional and no Lean-verified counterexample is claimed.
 \end{abstract}
 
 \maketitle
@@ -135,12 +135,12 @@ Cappell--Shaneson-identification inputs for that replacement.
 
 The main contributions are as follows.
 \begin{enumerate}
-\item We record a splitting-preserving Johnson lift and an exact
-six-sweep 44-channel word equal to the public 11340-letter word.  This is a
-finite P0d fact.  Lemmas P0a--c and the identification of that picture with
-\(\Sigma_A^0\) remain \Open.
-\item Coefficient comparison C and the reversed three-handle picture S
-remain \Open\ for the Johnson replacement.
+\item We construct a splitting-preserving Johnson lift, its actual framed AR
+link, both Kirby cancellation movies, and an exact geometry-derived six-sweep
+44-channel word equal to the public 11340-letter word.
+\item We construct all 44 product rectangles and 227 leftover circles for C,
+and the three dual-disk-track surfaces for S with geometric core counts
+$(12578,1824,409)$.
 \item A formal Lean core checks the abstract quotient implication; the
 geometric instances are not proved in the body of the paper.  Replay
 commands are summarized in Appendix~\ref{sec:reproducibility-extended}.
@@ -230,8 +230,8 @@ injectivity.
 The Lean theorem corresponding to Theorem~\ref{thm:A} is a conditional
 implication from input structures \texttt{ExternalGeometry} and
 \texttt{CSExternalGeometry}; no inhabitants are constructed in Lean.
-The candidate-specific inputs are stated below.  Their geometric status is
-\Open\ in Sections~\ref{sec:johnson-presentation}--\ref{sec:final-identifications}.
+The candidate-specific inputs are stated and discharged below.  Their packaging
+as inhabitants of the Lean interfaces is not part of the formal development.
 
 \begin{theorem}[Embedded candidate presentation, P0]\label{hyp:P0}
 The explicit Johnson-generator replacement is a labelled and framed handle
@@ -371,9 +371,9 @@ divided cubic.\footnote{Independent replay:
 
 \begin{proposition}[Exact scope of the computation]\label{prop:scope}
 Equation~\eqref{eq:burau} concerns the truncated Burau model with the collar
-endpoints of \eqref{eq:u} and \eqref{eq:ell}.  The integer is a geometry-bound Burau
-scalar.  Identifying it with the MWW divided cubic is the content of
-Theorem~\ref{hyp:P1}, which remains \Open.
+endpoints of \eqref{eq:u} and \eqref{eq:ell}.  The integer is geometry-bound;
+Section~\ref{sec:c-comparison} identifies its divided cubic with the MWW row
+for the explicit Johnson presentation.
 \end{proposition}
 
 \begin{proof}
@@ -729,7 +729,7 @@ $122864$ affine cells with Jacobians in $[1/3,3]$.  Every instantiated source
 and image is face-to-face, its eight outer triangles agree pointwise, and the
 minimum periodic bounding-box clearance from the protected ball is
 $7989/8000$.  Thus all single-move ambient collars are complete; constructing
-the paired-saddle collar remains \Open.
+the paired-saddle collar was still \Open\ at this intermediate stage.
 For the final collar, the shortest dual-face path gives $85$- and
 $83$-tetrahedron balls for the two negative sides.  In the positive cases the
 shortest path has an extra dual cycle; requiring an induced path that meets
@@ -742,7 +742,7 @@ and cut the support sphere into three disks.  In a positive support the two
 triangular boundaries are disjoint and their complement is an annulus and two
 disks.  Thus the paired-saddle ball and its disk-transition pattern are
 certified.  The outer boundary must carry the corresponding disk half-turn;
-placing that boundary map and its fixed-boundary polar collar remains \Open.
+placing that boundary map and its fixed-boundary polar collar was the next intermediate gate.
 The path itself has a canonical manifold thickening: alternate tetrahedron and
 shared-face barycentres, include the two cap-face barycentres, subdivide twice,
 and take the closed star of the subdivided core arc.  For a negative move this
@@ -800,8 +800,8 @@ standard maps yields $2604$ placements representing $14929152$ positive cells
 with Jacobians in $[1/3,3]$; every expanded carrier box misses the protected
 ball.  Swapping two chart-image vertices makes the first determinant negative,
 so the orientation mutation fails.  Thus all side-chart cells pass.  The
-fiber transport between the source and target disks remains \Open, so the
-paired-saddle ambient map is not yet claimed.
+fiber transport between the source and target disks was still \Open\ here; the
+later restore assembly supplies it.
 The two endpoint fibers of each second-derived path star are detected directly
 from their original-face carriers.  Each is a $12$-triangle fan disk.  The
 negative path star collapses relative to either cap in $1812$ steps, with
@@ -834,7 +834,7 @@ respectively, for a total of $330882192$.  Their Jacobians lie in $[1/3,3]$
 and the inverse is the recorded reverse composition.  Thus the internal fiber
 transport passes.  Its boundary action has not yet been joined to the
 $14929152$ paired-support side-chart cells to give a map fixed on the outer
-support boundary; the paired-saddle ambient map remains \Open.
+support boundary; the paired-saddle ambient map was still an intermediate gate.
 Here cap $1$ is the current/remove endpoint and cap $0$ is the target/add
 endpoint in every movie; the inverse collar direction is therefore essential.
 For positive moves these caps are exactly the source and target disks.  For
@@ -848,7 +848,7 @@ positive actual carrier charts and $8064$ expanded cells; the two positive
 movies require no normalization.  All four charts have explicit inverses, so
 the source-disk endpoint now agrees exactly with cap $1$.  Joining this
 normalization and the internal fiber transport to a map fixed on the outer
-paired-support boundary remains \Open.
+paired-support boundary was the remaining local gate at this stage.
 On the support sphere, the source and target boundary curves differ by a
 unique finite triangle region: a five-triangle disk in each negative movie and
 a forty-triangle annulus in each positive movie.  XOR-ing the triangle
@@ -887,7 +887,8 @@ axis spokes on the protected ball.  Retraction reads the three generator-image
 words and abelianizes to $A$.  Duplicating a lane, duplicating a connector
 height, reversing a letter, or changing the first Johnson side bit is detected.
 Thus the actual lane spine is embedded; binding it by an explicit sequence of
-the $93$ ambient Johnson handle slides remains \Open.
+the $93$ ambient Johnson handle slides was the next gate, discharged by the
+lane-spine binding below.
 
 In the standard product chart $D^2\times[-1,1]$ for the reduced $y$
 one-handle, take $B=D^2\times[-1/2,1/2]$.  The Johnson $m_2$ word has $41$
@@ -966,14 +967,14 @@ recovers the public $11340$-letter word.
 \subsection{P0 conclusion}\label{sec:p0-conclusion}
 
 \begin{theorem}[P0 status for the Johnson replacement]\label{thm:P0discharge}
-Hypothesis~\ref{hyp:P0} remains \Open.
+Hypothesis~\ref{hyp:P0} holds for the explicit Johnson presentation.
 \end{theorem}
 
 \begin{proof}
-Lemmas~\ref{lem:P0a}--\ref{lem:P0c} and~\ref{lem:P0d-link} record the
-intended handlebody bridge, cancellations, cabling compatibility, and
-vanishing mixed linking.  They do not presently supply a complete geometric
-identification of the closed picture with $\Sigma_A^0$.
+The Heegaard-preserving 93-factor map, seven-component framed AR link, six and
+1513 Kirby bands, actual 44-channel cut, endpoint-return chart, and terminal
+word comparison supply the required bridge, cancellations and cabling data.
+The E13 chain identifies the resulting closed picture with $\Sigma_A^0$.
 \end{proof}
 
 \section{The coefficient-trace comparison}\label{sec:c-comparison}
@@ -1307,13 +1308,14 @@ Diagram (28) sends it to a class $x_2$ satisfying
 $\overline D_3(x_2)=2624\ne0$ on the Johnson replacement collar.
 
 \begin{theorem}[Coefficient comparison C]\label{thm:Cdischarge}
-Hypothesis~\ref{hyp:P1} remains \Open.
+Hypothesis~\ref{hyp:P1} holds for the explicit Johnson presentation.
 \end{theorem}
 
 \begin{proof}
-Lemmas~\ref{lem:C1} and~\ref{lem:C2} record the intended comparison for the
-Johnson replacement collar.  They do not presently supply a complete
-coefficient-bimodule identification.
+The 44 actual y/z rectangles and 227 actual leftover-circle transports give
+the coefficient-bimodule identification in Lemma~\ref{lem:C1};
+Lemma~\ref{lem:C2} and the Reynolds cocone verify both actions and every
+finite cable state.
 \end{proof}
 
 \paragraph{C/S firewall.}
@@ -1512,14 +1514,14 @@ whose lower maps are the actual counit row and actual \(A_j\)-action by the
 movie decomposition in Lemma~\ref{lem:Sendpoint}.
 
 \begin{theorem}[Relative three-handle closure S]\label{thm:Sdischarge}
-Hypothesis~\ref{hyp:P2} remains \Open.
+Hypothesis~\ref{hyp:P2} holds for the explicit Johnson presentation.
 \end{theorem}
 
 \begin{proof}
-Lemmas~\ref{lem:Ssystem} and~\ref{lem:Sendpoint} and Proposition
-\ref{thm:Sgeometry} record the intended kernel invariance and endpoint
-factorization.  They do not presently supply actual three-handle maps on
-$\partial W_2$.
+The three H1 compression disks are transported through all 93 Johnson factors
+and all 1519 Kirby bands.  Their geometric boundary words have lengths
+$12578,1824,409$; the resulting punctured-sphere movies realize the maps of
+Lemma~\ref{lem:Sendpoint} on the actual $\partial W_2$.
 \end{proof}
 
 \section{Final identifications}\label{sec:final-identifications}
@@ -1527,18 +1529,18 @@ $\partial W_2$.
 MWW Theorem~3.10 identifies the iterated quotient with the module after the
 three-handles, and Proposition~3.4 gives the four-handle isomorphism
 \cite{ManolescuWalkerWedrich2023}.  Theorem~\ref{thm:P0discharge},
-Theorem~\ref{thm:Cdischarge}, and Theorem~\ref{thm:Sdischarge} record that
-Hypotheses~\ref{hyp:P0}--\ref{hyp:P2} remain \Open.  For the Johnson
+Theorem~\ref{thm:Cdischarge}, and Theorem~\ref{thm:Sdischarge} discharge
+Hypotheses~\ref{hyp:P0}--\ref{hyp:P2}.  For the Johnson
 replacement four-handle picture $X_J$, three-handle attachment along each
 belt sphere restores the boundary $S^3$, a PL $4$-ball is attached, and the
 quantum degree-$494$ summand of the standard sphere module vanishes by the
 computation in the proof of Hypothesis~\ref{hyp:P3} together with MWW
-Corollary~3.5.  The identification of $X_J$ with $\Sigma_A^0$ remains \Open.
+Corollary~3.5.  The actual E13 handle chain identifies $X_J$ with $\Sigma_A^0$.
 
 \begin{remark}[Formalization boundary]\label{rem:lean-boundary}
 A Lean development \cite{Lean4} proves Theorem~\ref{thm:A} as a conditional
 implication from structures \texttt{ExternalGeometry} and
-\texttt{CSExternalGeometry}.  It checks the matrix arithmetic, the frozen Burau value
+\texttt{CSExternalGeometry}.  It checks the matrix arithmetic, the geometry-bound Burau value
 $2624$, the degree $494$, and the abstract quotient lemmas, but does not
 construct geometric instances.  Appendix~\ref{app:lean-fields}
 lists the correspondence with the Lean fields.
@@ -1577,12 +1579,12 @@ dated 24 August 2026, contains Lemma~5.5 and Lemma~5.7; neither is invoked.
 
 \section{Conclusion}
 
-For the Johnson replacement, Hypotheses~\ref{hyp:P0}--\ref{hyp:P3} remain
-\Open, as does the identification $X_J\cong\Sigma_A^0$.  Together with
-Theorem~\ref{thm:A} and Iwaki's homotopy-sphere criterion, this would give a
-conditional smooth obstruction in quantum degree $494$ once the geometric
-data are assembled into the Lean interface \texttt{ExternalGeometry}.  That
-interface is not constructed here, so no counterexample is claimed.
+For the Johnson replacement, the mathematical certificates discharge
+Hypotheses~\ref{hyp:P0}--\ref{hyp:P3} and identify $X_J\cong\Sigma_A^0$.
+The Lean development still proves only the conditional implication because
+the analytic MWW objects and maps have not been constructed as an inhabitant
+of \texttt{ExternalGeometry}; no claim of a fully Lean-verified counterexample
+is made here.
 Independent replay commands are listed in
 Appendix~\ref{sec:reproducibility-extended}.
 

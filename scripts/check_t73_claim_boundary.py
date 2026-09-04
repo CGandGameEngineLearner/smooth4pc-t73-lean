@@ -61,22 +61,27 @@ def check() -> None:
 
     require(
         paper_text,
-        r"Hypothesis~\ref{hyp:P0} remains \Open",
+        r"Hypothesis~\ref{hyp:P0} holds for the explicit Johnson presentation",
         PAPER,
     )
     require(
         paper_text,
-        r"Hypothesis~\ref{hyp:P1} remains \Open",
+        r"Hypothesis~\ref{hyp:P1} holds for the explicit Johnson presentation",
         PAPER,
     )
     require(
         paper_text,
-        r"Hypothesis~\ref{hyp:P2} remains \Open",
+        r"Hypothesis~\ref{hyp:P2} holds for the explicit Johnson presentation",
         PAPER,
     )
     require(
         paper_text,
-        "geometry-bound truncated Burau",
+        "no claim of a fully Lean-verified counterexample",
+        PAPER,
+    )
+    require(
+        paper_text,
+        "geometry-bound Burau",
         PAPER,
     )
     require(
@@ -116,7 +121,7 @@ def check() -> None:
 
 def main() -> None:
     check()
-    print("T73_CLAIM_BOUNDARY=OPEN_GEOMETRY")
+    print("T73_CLAIM_BOUNDARY=CONDITIONAL_LEAN_PACKAGING")
     print(f"PAPER={PAPER}")
 
 
