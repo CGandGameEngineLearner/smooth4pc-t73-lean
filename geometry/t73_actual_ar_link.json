@@ -1,5 +1,45 @@
 {
+  "component_count": 7,
   "components": {
+    "h_CS": {
+      "closed_by_mapping_torus_seam": true,
+      "core_polyline_T3xI": [
+        [
+          "1/1176624",
+          "1/1176624",
+          "1/1176624",
+          "0"
+        ],
+        [
+          "1/1176624",
+          "1/1176624",
+          "1/1176624",
+          "1"
+        ]
+      ],
+      "framing_annulus": {
+        "epsilon": 0,
+        "inner_ref": "core_polyline_T3xI",
+        "offset": [
+          "1/966168032564887818144771979446684556481785375614268766815882016226779224957803800996698674701322551650243862539154864795189493164673124967869559763558446901654667457299819294243318309865917665372209217641147898873873782588689020438607246956835519209217938948980759190321896032028032863559519758190926897812326626256905306476813819604519704997856003678116249600",
+          "-1/966168032564887818144771979446684556481785375614268766815882016226779224957803800996698674701322551650243862539154864795189493164673124967869559763558446901654667457299819294243318309865917665372209217641147898873873782588689020438607246956835519209217938948980759190321896032028032863559519758190926897812326626256905306476813819604519704997856003678116249600",
+          "0"
+        ],
+        "outer_rule": "q_i=p_i+width*(1,-1,0,0)",
+        "relative_twist": 0
+      },
+      "kind": "section_surgery_2_handle",
+      "mapping_torus_seam_identification": "(section_point,1)=(section_point,0)",
+      "product_framing": "PASS",
+      "section_point": [
+        "1/1176624",
+        "1/1176624",
+        "1/1176624"
+      ],
+      "source_reference": "Aitchison--Rubinstein (1984), p. 6, Figure 2d",
+      "t_handle_cross_section": "octahedral S^2: |x|+|y|+|z|=cut_radius",
+      "t_handle_passage_count": 1
+    },
     "m_1": {
       "C_i": [
         [
@@ -119447,12 +119487,13 @@
   "johnson_spine_sha256": "57BC99BE08ED805EF268049F1EEE961D25F6889A6BDEC142B8715072B7F51AC1",
   "psi_A_sha256": "D39346634778A7DAFDB39E0F8644932D2AE925B14FED691F25623399CD6424E1",
   "schema": "t73_actual_ar_link/v2",
-  "sha256": "000C5C6ACBD456574AFCD7341E7AD834E4023FEF4F5444850C10A27CC02A3739",
+  "sha256": "E5CD3C2A2AD0650D061CFB730F54F32C1F2860D2FD0813067550D545D02D2853",
   "status": {
     "actual_cut_mapping_torus_cores": "PASS",
     "actual_framed_ar_link": "PASS",
     "actual_framing_annuli": "PASS",
     "actual_psi_images": "PASS",
+    "all_seven_2_handle_components_present": "PASS",
     "dual_2_cells_from_cubulation": "PASS",
     "free_words_are_not_embeddings": "PASS",
     "heegaard_preserving_psi_A": "PASS",

@@ -40,7 +40,13 @@ class HandleCancellationTest(unittest.TestCase):
         verifier = load("verify_t73_handle_cancellation")
         verifier.build(write=True)
         result = verifier.verify()
+        self.assertEqual(result["T_HCS"], "PASS")
+        self.assertEqual(result["X_M1"], "PASS")
+        self.assertEqual(result["T_SLIDE_COUNT"], 6)
+        self.assertEqual(result["X_SLIDE_COUNT"], 1513)
         self.assertEqual(result["MUTATION_INTERSECTION"], "FAIL")
+        self.assertEqual(result["MUTATION_SLIDE_BAND"], "FAIL")
+        self.assertEqual(result["MUTATION_X_SLIDE_BAND"], "FAIL")
         self.assertEqual(result["SELF_REPORTED_PASS_REJECTED"], "PASS")
 
 

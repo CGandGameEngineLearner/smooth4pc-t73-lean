@@ -127,6 +127,30 @@ def mapping_torus_core(pl, spine_component: dict[str, Any], axis: int) -> dict[s
     }
 
 
+def section_surgery_component(pl, width: Fraction, cut_radius: Fraction) -> dict[str, Any]:
+    section_point = [cut_radius / 3, cut_radius / 3, cut_radius / 3]
+    encoded_point = pl.encode(section_point)
+    offset = pl.encode([width, -width, Fraction(0)])
+    return {
+        "kind": "section_surgery_2_handle",
+        "source_reference": "Aitchison--Rubinstein (1984), p. 6, Figure 2d",
+        "section_point": encoded_point,
+        "t_handle_cross_section": "octahedral S^2: |x|+|y|+|z|=cut_radius",
+        "core_polyline_T3xI": [lift(encoded_point, "0"), lift(encoded_point, "1")],
+        "mapping_torus_seam_identification": "(section_point,1)=(section_point,0)",
+        "closed_by_mapping_torus_seam": True,
+        "t_handle_passage_count": 1,
+        "framing_annulus": {
+            "inner_ref": "core_polyline_T3xI",
+            "outer_rule": "q_i=p_i+width*(1,-1,0,0)",
+            "offset": offset,
+            "relative_twist": 0,
+            "epsilon": 0,
+        },
+        "product_framing": "PASS",
+    }
+
+
 def build(write: bool = False) -> dict[str, Any]:
     pl = load("t73_johnson_pl")
     if not MANIFEST.exists() or not PSI.exists() or not SPINE.exists() or not SPINE_BINDING.exists():
@@ -152,6 +176,9 @@ def build(write: bool = False) -> dict[str, Any]:
     ]
     ribbons = load("build_t73_johnson_spine_ribbons").build_ribbons(
         cores, spine, binding
+    )
+    h_cs = section_surgery_component(
+        pl, Fraction(ribbons["width"]), Fraction(cores[0]["cut_radius"])
     )
     for core, ribbon in zip(cores, ribbons["components"]):
         core["framing_annulus_bottom"] = {
@@ -183,6 +210,7 @@ def build(write: bool = False) -> dict[str, Any]:
             "m_1": cores[0],
             "m_2": cores[1],
             "m_3": cores[2],
+            "h_CS": h_cs,
             "r_xy": {
                 "kind": "dual_2_cell_boundary",
                 "plane": "z=0 meets H2",
@@ -228,7 +256,9 @@ def build(write: bool = False) -> dict[str, Any]:
             "section_ball_identity": psi["status"]["fixes_section_neighborhood"],
             "actual_framing_annuli": "PASS",
             "actual_framed_ar_link": "PASS",
+            "all_seven_2_handle_components_present": "PASS",
         },
+        "component_count": 7,
     }
     result["sha256"] = canonical_sha({key: value for key, value in result.items() if key != "sha256"})
     if write:

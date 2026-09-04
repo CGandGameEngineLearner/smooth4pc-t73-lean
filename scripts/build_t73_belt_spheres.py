@@ -20,6 +20,7 @@ from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
 LINK = ROOT / "geometry" / "t73_actual_ar_link.json"
+SPINE = ROOT / "geometry" / "t73_johnson_spine_embedding.json"
 OUTPUT = ROOT / "geometry" / "t73_belt_spheres.json"
 RADIUS = Fraction(1, 64)
 
@@ -79,6 +80,33 @@ def lift_sphere(sphere: dict[str, Any], u: str) -> dict[str, Any]:
     return lifted
 
 
+def cubical_x_belt() -> dict[str, Any]:
+    vertices = []
+    for y in (-1, 1):
+        for z in (-1, 1):
+            for normal in (-1, 1):
+                vertices.append(["2", str(y), str(z), str(normal)])
+    return {
+        "chart": "x=2, boundary of [-1,1]_(y,z,normal)^3",
+        "center": ["2", "0", "0", "0"],
+        "radius": "1",
+        "vertices": vertices,
+        "face_triangulation_rule": "each of the six square faces uses its increasing-index diagonal",
+        "vertex_count": 8,
+        "edge_count": 12,
+        "triangle_count": 12,
+        "euler": 2,
+    }
+
+
+def centered_residue(value: Fraction) -> Fraction:
+    while value > 2:
+        value -= 4
+    while value <= -2:
+        value += 4
+    return value
+
+
 def segment_hits_octahedron(
     start: list[Fraction], end: list[Fraction], center: list[Fraction], radius: Fraction
 ) -> bool:
@@ -108,37 +136,139 @@ def build(write: bool = False) -> dict[str, Any]:
     if not LINK.exists():
         raise AssertionError("geometry/t73_actual_ar_link.json is missing")
     link = json.loads(LINK.read_text(encoding="utf-8"))
+    spine = json.loads(SPINE.read_text(encoding="utf-8"))
+    if link.get("component_count") != 7 or link["status"]["actual_framed_ar_link"] != "PASS":
+        raise AssertionError("belt spheres require the complete framed seven-component AR link")
     origin = [Fraction(0), Fraction(0), Fraction(0)]
-    x_point = [Fraction(1, 8), Fraction(0), Fraction(0)]
-    belt_t = lift_sphere(octahedron(origin, RADIUS), "1/2")
-    belt_x = lift_sphere(octahedron(x_point, RADIUS), "0")
     m1 = link["components"]["m_1"]
-    lambda_hits_t = polyline_hits(m1["lambda_i"], origin, RADIUS, coords=3)
-    mu_hits_t = polyline_hits(m1["mu_i"], origin, RADIUS, coords=3)
-    core_hits_t = polyline_hits(m1["core_polyline_T3xI"], origin, RADIUS, coords=3)
-    c_hits_x = polyline_hits(m1["C_i"], x_point, RADIUS, coords=3)
+    h_cs = link["components"]["h_CS"]
+    cut_radius = Fraction(m1["cut_radius"])
+    belt_t = lift_sphere(octahedron(origin, cut_radius), "1/2")
+    t_passages = [
+        {
+            "component": "h_CS",
+            "arc": "core_polyline_T3xI",
+            "point_on_belt": h_cs["section_point"],
+            "orientation": 1,
+        }
+    ]
+    for component in range(1, 4):
+        core = link["components"][f"m_{component}"]
+        t_passages.extend(
+            [
+                {
+                    "component": f"m_{component}",
+                    "arc": "lambda_i",
+                    "point_on_belt": core["cut_endpoints"]["positive"],
+                    "orientation": 1,
+                },
+                {
+                    "component": f"m_{component}",
+                    "arc": "mu_i",
+                    "point_on_belt": core["cut_endpoints"]["negative"],
+                    "orientation": -1,
+                },
+            ]
+        )
+    for passage in t_passages:
+        if sum(abs(Fraction(value)) for value in passage["point_on_belt"]) != cut_radius:
+            raise AssertionError("a purported t passage does not meet the octahedral belt sphere")
+    if len({tuple(item["point_on_belt"]) for item in t_passages}) != len(t_passages):
+        raise AssertionError("t-handle passages are not geometrically distinct")
+
+    belt_x = cubical_x_belt()
+    bottom_lift = [
+        [Fraction(value) for value in point]
+        for point in m1["C_i_universal_cover_lift"]
+    ]
+    x_events = [
+        point
+        for point in bottom_lift
+        if point[0] == 2 and point[1:] == [Fraction(0), Fraction(0)]
+    ]
+    hcs_hits_t = sum(item["component"] == "h_CS" for item in t_passages)
+    c_hits_x = len(x_events)
+    x_passages = [
+        {
+            "component": "m_1",
+            "source_kind": "bottom_coordinate_arc",
+            "source_id": "m_1:C_i",
+            "belt_face_point": ["0", "0", "1"],
+            "orientation": -1,
+        }
+    ]
+    for arc in spine["handle_arcs"]:
+        if int(arc["axis"]) != 0:
+            continue
+        start = [Fraction(value) for value in arc["start_lane"]]
+        end = [Fraction(value) for value in arc["end_lane"]]
+        midpoint = [(start[index] + end[index]) / 2 for index in range(2)]
+        x_passages.append(
+            {
+                "component": f"m_{int(arc['component']) + 1}",
+                "source_kind": "johnson_handle_lane",
+                "source_id": arc["arc_id"],
+                "belt_face_point": [str(midpoint[0]), str(midpoint[1]), "1"],
+                "orientation": int(arc["sign"]),
+            }
+        )
+    for name in ("r_xy", "r_yz", "r_zx"):
+        points = [
+            [Fraction(value) for value in point]
+            for point in link["components"][name]["polyline"]
+        ]
+        for index in range(1, len(points) - 1):
+            point = points[index]
+            if point[0] != 2:
+                continue
+            previous, following = points[index - 1], points[index + 1]
+            if previous[0] == following[0] or previous[0] == 2 or following[0] == 2:
+                continue
+            orientation = 1 if following[0] > previous[0] else -1
+            x_passages.append(
+                {
+                    "component": name,
+                    "source_kind": "dual_cell_boundary",
+                    "source_id": f"{name}:vertex:{index}",
+                    "belt_face_point": [
+                        str(centered_residue(point[1])),
+                        str(centered_residue(point[2])),
+                        "1",
+                    ],
+                    "orientation": orientation,
+                }
+            )
+    if len({tuple(item["belt_face_point"]) for item in x_passages}) != len(x_passages):
+        raise AssertionError("x-handle passages are not distinct on the belt chart")
     result = {
-        "schema": "t73_belt_spheres/v1",
+        "schema": "t73_belt_spheres/v2",
         "ar_link_sha256": link["sha256"],
         "t_handle": {
             "belt_sphere": belt_t,
-            "attaching_polyline": m1["lambda_i"],
-            "segment_hits_on_lambda": lambda_hits_t,
-            "segment_hits_on_mu": mu_hits_t,
-            "segment_hits_on_core": core_hits_t,
-            "geometric_intersection": lambda_hits_t,
-            "transverse_intersection_one": lambda_hits_t == 1,
+            "handle_chart": "D^1_t x octahedral D^3; belt={1/2}x boundary(D^3)",
+            "attaching_polyline": h_cs["core_polyline_T3xI"],
+            "attaching_component": "h_CS",
+            "passages": t_passages,
+            "noncancelling_passage_count": len(t_passages) - 1,
+            "geometric_intersection": hcs_hits_t,
+            "transverse_intersection_one": hcs_hits_t == 1,
+            "relative_twist": h_cs["framing_annulus"]["relative_twist"],
         },
         "x_handle": {
             "belt_sphere": belt_x,
-            "attaching_polyline": m1["C_i"],
-            "segment_hits_on_C_i": c_hits_x,
+            "handle_chart": "x-arm universal-cover lane; belt cross-section x=2",
+            "attaching_polyline": m1["C_i_universal_cover_lift"],
+            "attaching_component": "m_1",
+            "intersection_points": [encode(point) for point in x_events],
+            "passages": x_passages,
+            "noncancelling_passage_count": len(x_passages) - 1,
             "geometric_intersection": c_hits_x,
             "transverse_intersection_one": c_hits_x == 1,
+            "relative_twist": 0,
         },
         "status": {
             "belt_spheres_triangulated": "PASS",
-            "t_hcs_intersection_one": "PASS" if lambda_hits_t == 1 else "OPEN",
+            "t_hcs_intersection_one": "PASS" if hcs_hits_t == 1 else "OPEN",
             "x_m1_intersection_one": "PASS" if c_hits_x == 1 else "OPEN",
         },
     }

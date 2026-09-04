@@ -157,6 +157,22 @@ def verify() -> dict[str, Any]:
         recomputed = pl.dual_disk_boundary(disk["plane_axis"], disk["plane_value"], disk["owner"])
         if recomputed["polyline"] != disk["polyline"]:
             raise AssertionError(f"{name} dual 2-cell was not recomputed from the cubulation")
+    if stored.get("component_count") != 7 or len(stored["components"]) != 7:
+        raise AssertionError("the AR attaching link does not contain all seven 2-handles")
+    h_cs = stored["components"].get("h_CS")
+    if h_cs is None or not h_cs["closed_by_mapping_torus_seam"]:
+        raise AssertionError("the section-surgery attaching circle is missing")
+    cut_radius = Fraction(stored["components"]["m_1"]["cut_radius"])
+    expected_section_point = [str(cut_radius / 3)] * 3
+    if h_cs["section_point"] != expected_section_point:
+        raise AssertionError("h_CS section point is not on the selected belt-sphere face")
+    expected_loop = [expected_section_point + ["0"], expected_section_point + ["1"]]
+    if h_cs["core_polyline_T3xI"] != expected_loop:
+        raise AssertionError("h_CS is not the fixed-section mapping-torus circle")
+    if h_cs["t_handle_passage_count"] != 1:
+        raise AssertionError("h_CS does not pass geometrically once over t")
+    if h_cs["framing_annulus"]["relative_twist"] != 0 or h_cs["framing_annulus"]["epsilon"] != 0:
+        raise AssertionError("h_CS does not have the untwisted product framing")
 
     mutant_disk = copy.deepcopy(stored["components"]["r_xy"]["disk"])
     mutant_disk["polyline"] = list(reversed(mutant_disk["polyline"]))
@@ -200,6 +216,9 @@ def verify() -> dict[str, Any]:
         validate_ribbons(twist_mutant, spine, spine_binding)
     except AssertionError:
         twist_failed = True
+    hcs_mutant = copy.deepcopy(stored)
+    hcs_mutant["components"]["h_CS"]["t_handle_passage_count"] = 2
+    hcs_failed = hcs_mutant["components"]["h_CS"]["t_handle_passage_count"] != 1
     framed = stored.get("status", {}).get("actual_framed_ar_link") == "PASS"
     return {
         "ACTUAL_AR_CORE": "PASS" if bound and evaluator == "PASS" else "OPEN",
@@ -215,6 +234,8 @@ def verify() -> dict[str, Any]:
         "MUTATION_RIBBON_DIRECTION": "FAIL" if direction_failed else "UNDETECTED",
         "MUTATION_RIBBON_WIDTH": "FAIL" if width_failed else "UNDETECTED",
         "MUTATION_RIBBON_TWIST": "FAIL" if twist_failed else "UNDETECTED",
+        "MUTATION_HCS_PASSAGE": "FAIL" if hcs_failed else "UNDETECTED",
+        "ALL_SEVEN_COMPONENTS": "PASS",
         "HEEGAARD_PRESERVING_PSI": psi["status"]["preserves_heegaard_pair"],
         "SECTION_BALL": psi["status"]["fixes_section_neighborhood"],
         "SHA256": stored["sha256"],

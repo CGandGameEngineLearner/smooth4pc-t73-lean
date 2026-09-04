@@ -95,6 +95,9 @@ class ActualARLinkTest(unittest.TestCase):
             self.assertFalse(component["embedded_from_free_word"])
             self.assertTrue(component["disk"]["closed"])
             self.assertGreaterEqual(component["disk"]["vertex_count"], 3)
+        self.assertEqual(data["component_count"], 7)
+        self.assertEqual(data["components"]["h_CS"]["t_handle_passage_count"], 1)
+        self.assertEqual(data["components"]["h_CS"]["framing_annulus"]["relative_twist"], 0)
 
     def test_verifier_rejects_word_substitution(self) -> None:
         verifier = load(
@@ -118,6 +121,8 @@ class ActualARLinkTest(unittest.TestCase):
         self.assertEqual(result["MUTATION_RIBBON_DIRECTION"], "FAIL")
         self.assertEqual(result["MUTATION_RIBBON_WIDTH"], "FAIL")
         self.assertEqual(result["MUTATION_RIBBON_TWIST"], "FAIL")
+        self.assertEqual(result["MUTATION_HCS_PASSAGE"], "FAIL")
+        self.assertEqual(result["ALL_SEVEN_COMPONENTS"], "PASS")
 
 
 if __name__ == "__main__":
