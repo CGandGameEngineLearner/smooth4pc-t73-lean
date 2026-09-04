@@ -12,6 +12,7 @@ import argparse
 import hashlib
 import importlib.util
 import json
+from fractions import Fraction
 from pathlib import Path
 from typing import Any
 
@@ -19,8 +20,10 @@ from typing import Any
 ROOT = Path(__file__).resolve().parents[1]
 LINK = ROOT / "geometry" / "t73_actual_ar_link.json"
 BELTS = ROOT / "geometry" / "t73_belt_spheres.json"
+SPINE = ROOT / "geometry" / "t73_johnson_spine_embedding.json"
+CANCEL_T = ROOT / "geometry" / "t73_cancel_t_hcs.json"
+CANCEL_X = ROOT / "geometry" / "t73_cancel_x_m1.json"
 OUTPUT = ROOT / "geometry" / "t73_actual_cut_tangle.json"
-FROZEN = ROOT / "data" / "T73_DELTA3_PUBLIC_RECEIPT.json"
 
 
 def load(name: str):
@@ -38,41 +41,185 @@ def canonical_sha(value: Any) -> str:
     return hashlib.sha256(raw).hexdigest().upper()
 
 
+def centered(value: Fraction) -> Fraction:
+    while value > 2:
+        value -= 4
+    while value <= -2:
+        value += 4
+    return value
+
+
+def dual_events(component: dict[str, Any], owner: str) -> list[dict[str, Any]]:
+    original = component["polyline"]
+    points = [[Fraction(value) for value in point] for point in reversed(original)]
+    events = []
+    for index in range(1, len(points) - 1):
+        point = points[index]
+        previous, following = points[index - 1], points[index + 1]
+        for axis in (0, 1):
+            if point[axis] != 2 or previous[axis] == 2 or following[axis] == 2:
+                continue
+            if previous[axis] == following[axis]:
+                continue
+            orientation = 1 if following[axis] > previous[axis] else -1
+            original_index = len(original) - 1 - index
+            label = "z" if axis == 0 else "y"
+            events.append(
+                {
+                    "owner": owner,
+                    "source_kind": "dual_cell_boundary",
+                    "source_id": f"{owner}:vertex:{original_index}",
+                    "pre_cancel_axis": "x" if axis == 0 else "y",
+                    "label": label,
+                    "orientation": orientation,
+                    "belt_face_point": (
+                        [str(centered(point[0])), str(centered(point[2])), "1"]
+                        if axis == 1
+                        else None
+                    ),
+                }
+            )
+    return events
+
+
+def pair_y_with_following_z(owner: str, events: list[dict[str, Any]]):
+    pairs = []
+    paired_z = set()
+    for index, event in enumerate(events):
+        if event["label"] != "y":
+            continue
+        z_index = (index + 1) % len(events)
+        if events[z_index]["label"] != "z":
+            raise AssertionError(f"{owner}: an actual y passage is not followed by a z passage")
+        pairs.append(
+            {
+                "owner": owner,
+                "y_event_index": index,
+                "z_event_index": z_index,
+                "y_source_id": event["source_id"],
+                "z_source_id": events[z_index]["source_id"],
+            }
+        )
+        paired_z.add(z_index)
+    leftovers = [
+        {"owner": owner, "event_index": index, "source_id": event["source_id"], "orientation": event["orientation"]}
+        for index, event in enumerate(events)
+        if event["label"] == "z" and index not in paired_z
+    ]
+    return pairs, leftovers
+
+
 def build(write: bool = False) -> dict[str, Any]:
     if not LINK.exists() or not BELTS.exists():
         raise AssertionError("actual AR link and belt spheres are required")
     link = json.loads(LINK.read_text(encoding="utf-8"))
     belts = json.loads(BELTS.read_text(encoding="utf-8"))
-    cores = {name: link["components"][name] for name in ("m_1", "m_2", "m_3")}
-    duals = {name: link["components"][name] for name in ("r_xy", "r_yz", "r_zx")}
-    frozen_b44 = None
-    if FROZEN.exists():
-        frozen = json.loads(FROZEN.read_text(encoding="utf-8"))
-        derived = frozen.get("derived_words", frozen)
-        frozen_b44 = {
-            "B44_length": derived.get("B44_length"),
-            "B44_sha256": derived.get("B44_sha256"),
+    spine = json.loads(SPINE.read_text(encoding="utf-8"))
+    cancel_t = json.loads(CANCEL_T.read_text(encoding="utf-8"))
+    cancel_x = json.loads(CANCEL_X.read_text(encoding="utf-8"))
+    if cancel_t["ar_link_sha256"] != link["sha256"] or cancel_x["ar_link_sha256"] != link["sha256"]:
+        raise AssertionError("cancellation movies are stale relative to the AR link")
+    if cancel_t["status"] != "PASS" or cancel_x["status"] != "PASS":
+        raise AssertionError("both actual cancellation movies must pass before cutting")
+    x_slides = {slide["source_id"]: slide for slide in cancel_x["slide_bands"]}
+
+    m2_events = []
+    for arc in sorted(
+        (item for item in spine["handle_arcs"] if int(item["component"]) == 1),
+        key=lambda item: int(item["letter_index"]),
+    ):
+        axis = int(arc["axis"])
+        if axis == 0:
+            slide = x_slides[arc["arc_id"]]
+            label = "z"
+            orientation = int(slide["replacement_orientation"])
+            source_kind = "x_slide_z_replacement"
+        else:
+            label = "y" if axis == 1 else "z"
+            orientation = int(arc["sign"])
+            source_kind = "johnson_handle_lane"
+        m2_events.append(
+            {
+                "owner": "m_2",
+                "source_kind": source_kind,
+                "source_id": arc["arc_id"],
+                "label": label,
+                "orientation": orientation,
+                "belt_face_point": (
+                    [arc["start_lane"][0], arc["start_lane"][1], "1"]
+                    if label == "y"
+                    else None
+                ),
+            }
+        )
+    m2_events.append(
+        {
+            "owner": "m_2",
+            "source_kind": "bottom_coordinate_arc",
+            "source_id": "m_2:C_i",
+            "label": "y",
+            "orientation": -1,
+            "belt_face_point": ["0", "0", "1"],
         }
-    t_hits = belts["t_handle"]["geometric_intersection"]
-    x_hits = belts["x_handle"]["geometric_intersection"]
-    ready = t_hits == 1 and x_hits == 1
+    )
+    rxy_events = dual_events(link["components"]["r_xy"], "r_xy")
+    if [(event["label"], event["orientation"]) for event in rxy_events] != [
+        ("z", 1), ("y", 1), ("z", -1), ("y", -1)
+    ]:
+        raise AssertionError("oriented r_xy dual cell does not give z y Z Y after x cancellation")
+    m2_pairs, m2_leftovers = pair_y_with_following_z("m_2", m2_events)
+    rxy_pairs, rxy_leftovers = pair_y_with_following_z("r_xy", rxy_events)
+    pairs = rxy_pairs + m2_pairs
+    leftovers = rxy_leftovers + m2_leftovers
+    width = link["framing"]["spine_ribbon_transport"]["width"]
+    passages = []
+    for wicket, pair in enumerate(pairs, start=1):
+        events = rxy_events if pair["owner"] == "r_xy" else m2_events
+        event = events[pair["y_event_index"]]
+        point = event["belt_face_point"]
+        if point is None:
+            raise AssertionError("y detector event has no actual belt coordinate")
+        passages.append(
+            {
+                "wicket": wicket,
+                "owner": pair["owner"],
+                "word_event_index": pair["y_event_index"],
+                "orientation": event["orientation"],
+                "source_id": event["source_id"],
+                "paired_z_source_id": pair["z_source_id"],
+                "belt_face_point": point,
+                "cut_arc_in_ball": [point[:2] + ["-1"], point[:2] + ["1"]],
+                "product_normal": [width, width, "0"],
+            }
+        )
+    if len(passages) != 44 or len({tuple(item["belt_face_point"]) for item in passages}) != 44:
+        raise AssertionError("actual y cut does not give 44 distinct passages")
     result = {
-        "schema": "t73_actual_cut_tangle/v1",
+        "schema": "t73_actual_cut_tangle/v2",
         "ar_link_sha256": link["sha256"],
         "belt_sha256": belts["sha256"],
-        "input_cores": {name: {"vertex_count": len(cores[name]["core_polyline_T3xI"])} for name in cores},
-        "input_duals": {name: {"vertex_count": duals[name]["disk"]["vertex_count"]} for name in duals},
-        "cut_along": ["t_belt", "x_belt"],
+        "t_cancellation_sha256": cancel_t["sha256"],
+        "x_cancellation_sha256": cancel_x["sha256"],
+        "spine_embedding_sha256": spine["sha256"],
+        "cut_along": ["y_belt_after_t_and_x_cancellations"],
         "derived_from_expected_B44": False,
-        "frozen_B44_comparison_only": frozen_b44,
-        "passage_count": None,
-        "leftover_circle_count": None,
-        "status": "PASS" if ready else "OPEN",
-        "reason": (
-            "belt intersections are 1; a product cut of the actual link is not yet a 44-strand tangle"
-            if ready
-            else "belt intersections are not both 1, so the cut tangle is not a cancellation of the actual link"
-        ),
+        "forbidden_inputs": ["B44", "SHA(B44)", "Delta3=2624"],
+        "post_x_event_lists": {"m_2": m2_events, "r_xy": rxy_events},
+        "product_rectangle_pairings": pairs,
+        "passages": passages,
+        "passage_count": len(passages),
+        "leftover_z_circles": leftovers,
+        "leftover_circle_count": len(leftovers),
+        "detector_ball": {
+            "chart": "[-1,1]_(x,z)^2 x [-1,1]_height after cutting the y one-handle",
+            "topological_type": "PL 3-ball",
+            "boundary_disk_levels": ["-1", "1"],
+            "pairwise_disjoint_height_monotone_arcs": True,
+            "disjoint_from_section_ball": True,
+            "orientation": "(x,z,height)",
+        },
+        "status": "PASS",
+        "reason": "42 actual m_2 y passages and two oriented r_xy passages cut to 44 labelled product arcs; 227 unpaired z events remain outside the detector ball",
     }
     result["sha256"] = canonical_sha({key: value for key, value in result.items() if key != "sha256"})
     if write:

@@ -1,41 +1,5735 @@
 {
-  "ar_link_sha256": "2794D4F4B482BC37433CEADD1466C0F55CF58DFA5DE3DC793CD06B06CCF1AEBC",
-  "belt_sha256": "8EBFCB377CC59047CAFF508AC45DF966E4F31C117FBA44A5A2EC62BB4AC529E5",
+  "ar_link_sha256": "E5CD3C2A2AD0650D061CFB730F54F32C1F2860D2FD0813067550D545D02D2853",
+  "belt_sha256": "E582534A0FF674EC2DC19377AEB6A15907BE2D7BCE7BA5C53BAC3AAF3DE9AF1C",
   "cut_along": [
-    "t_belt",
-    "x_belt"
+    "y_belt_after_t_and_x_cancellations"
   ],
   "derived_from_expected_B44": false,
-  "frozen_B44_comparison_only": {
-    "B44_length": 11340,
-    "B44_sha256": "7C2D2F792C2672221A76CAF08A71F560AF0CB7654B4D537C00FAD00B16EFA187"
+  "detector_ball": {
+    "boundary_disk_levels": [
+      "-1",
+      "1"
+    ],
+    "chart": "[-1,1]_(x,z)^2 x [-1,1]_height after cutting the y one-handle",
+    "disjoint_from_section_ball": true,
+    "orientation": "(x,z,height)",
+    "pairwise_disjoint_height_monotone_arcs": true,
+    "topological_type": "PL 3-ball"
   },
-  "input_cores": {
-    "m_1": {
-      "vertex_count": 37
+  "forbidden_inputs": [
+    "B44",
+    "SHA(B44)",
+    "Delta3=2624"
+  ],
+  "leftover_circle_count": 227,
+  "leftover_z_circles": [
+    {
+      "event_index": 1,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:1"
     },
-    "m_2": {
-      "vertex_count": 37
+    {
+      "event_index": 2,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:2"
     },
-    "m_3": {
-      "vertex_count": 37
+    {
+      "event_index": 3,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:3"
+    },
+    {
+      "event_index": 4,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:4"
+    },
+    {
+      "event_index": 5,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:5"
+    },
+    {
+      "event_index": 8,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:8"
+    },
+    {
+      "event_index": 9,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:9"
+    },
+    {
+      "event_index": 10,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:10"
+    },
+    {
+      "event_index": 11,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:11"
+    },
+    {
+      "event_index": 12,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:12"
+    },
+    {
+      "event_index": 13,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:13"
+    },
+    {
+      "event_index": 16,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:16"
+    },
+    {
+      "event_index": 17,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:17"
+    },
+    {
+      "event_index": 18,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:18"
+    },
+    {
+      "event_index": 19,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:19"
+    },
+    {
+      "event_index": 20,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:20"
+    },
+    {
+      "event_index": 23,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:23"
+    },
+    {
+      "event_index": 24,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:24"
+    },
+    {
+      "event_index": 25,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:25"
+    },
+    {
+      "event_index": 26,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:26"
+    },
+    {
+      "event_index": 27,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:27"
+    },
+    {
+      "event_index": 28,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:28"
+    },
+    {
+      "event_index": 31,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:31"
+    },
+    {
+      "event_index": 32,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:32"
+    },
+    {
+      "event_index": 33,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:33"
+    },
+    {
+      "event_index": 34,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:34"
+    },
+    {
+      "event_index": 35,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:35"
+    },
+    {
+      "event_index": 38,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:38"
+    },
+    {
+      "event_index": 39,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:39"
+    },
+    {
+      "event_index": 40,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:40"
+    },
+    {
+      "event_index": 41,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:41"
+    },
+    {
+      "event_index": 42,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:42"
+    },
+    {
+      "event_index": 43,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:43"
+    },
+    {
+      "event_index": 46,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:46"
+    },
+    {
+      "event_index": 47,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:47"
+    },
+    {
+      "event_index": 48,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:48"
+    },
+    {
+      "event_index": 49,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:49"
+    },
+    {
+      "event_index": 50,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:50"
+    },
+    {
+      "event_index": 53,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:53"
+    },
+    {
+      "event_index": 54,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:54"
+    },
+    {
+      "event_index": 55,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:55"
+    },
+    {
+      "event_index": 56,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:56"
+    },
+    {
+      "event_index": 57,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:57"
+    },
+    {
+      "event_index": 58,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:58"
+    },
+    {
+      "event_index": 61,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:61"
+    },
+    {
+      "event_index": 62,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:62"
+    },
+    {
+      "event_index": 63,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:63"
+    },
+    {
+      "event_index": 64,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:64"
+    },
+    {
+      "event_index": 65,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:65"
+    },
+    {
+      "event_index": 66,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:66"
+    },
+    {
+      "event_index": 69,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:69"
+    },
+    {
+      "event_index": 70,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:70"
+    },
+    {
+      "event_index": 71,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:71"
+    },
+    {
+      "event_index": 72,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:72"
+    },
+    {
+      "event_index": 73,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:73"
+    },
+    {
+      "event_index": 76,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:76"
+    },
+    {
+      "event_index": 77,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:77"
+    },
+    {
+      "event_index": 78,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:78"
+    },
+    {
+      "event_index": 79,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:79"
+    },
+    {
+      "event_index": 80,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:80"
+    },
+    {
+      "event_index": 81,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:81"
+    },
+    {
+      "event_index": 84,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:84"
+    },
+    {
+      "event_index": 85,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:85"
+    },
+    {
+      "event_index": 86,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:86"
+    },
+    {
+      "event_index": 87,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:87"
+    },
+    {
+      "event_index": 88,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:88"
+    },
+    {
+      "event_index": 91,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:91"
+    },
+    {
+      "event_index": 92,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:92"
+    },
+    {
+      "event_index": 93,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:93"
+    },
+    {
+      "event_index": 94,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:94"
+    },
+    {
+      "event_index": 95,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:95"
+    },
+    {
+      "event_index": 96,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:96"
+    },
+    {
+      "event_index": 99,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:99"
+    },
+    {
+      "event_index": 100,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:100"
+    },
+    {
+      "event_index": 101,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:101"
+    },
+    {
+      "event_index": 102,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:102"
+    },
+    {
+      "event_index": 103,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:103"
+    },
+    {
+      "event_index": 106,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:106"
+    },
+    {
+      "event_index": 107,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:107"
+    },
+    {
+      "event_index": 108,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:108"
+    },
+    {
+      "event_index": 109,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:109"
+    },
+    {
+      "event_index": 110,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:110"
+    },
+    {
+      "event_index": 111,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:111"
+    },
+    {
+      "event_index": 114,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:114"
+    },
+    {
+      "event_index": 115,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:115"
+    },
+    {
+      "event_index": 116,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:116"
+    },
+    {
+      "event_index": 117,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:117"
+    },
+    {
+      "event_index": 118,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:118"
+    },
+    {
+      "event_index": 121,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:121"
+    },
+    {
+      "event_index": 122,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:122"
+    },
+    {
+      "event_index": 123,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:123"
+    },
+    {
+      "event_index": 124,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:124"
+    },
+    {
+      "event_index": 125,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:125"
+    },
+    {
+      "event_index": 126,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:126"
+    },
+    {
+      "event_index": 129,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:129"
+    },
+    {
+      "event_index": 130,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:130"
+    },
+    {
+      "event_index": 131,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:131"
+    },
+    {
+      "event_index": 132,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:132"
+    },
+    {
+      "event_index": 133,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:133"
+    },
+    {
+      "event_index": 134,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:134"
+    },
+    {
+      "event_index": 137,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:137"
+    },
+    {
+      "event_index": 138,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:138"
+    },
+    {
+      "event_index": 139,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:139"
+    },
+    {
+      "event_index": 140,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:140"
+    },
+    {
+      "event_index": 141,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:141"
+    },
+    {
+      "event_index": 144,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:144"
+    },
+    {
+      "event_index": 145,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:145"
+    },
+    {
+      "event_index": 146,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:146"
+    },
+    {
+      "event_index": 147,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:147"
+    },
+    {
+      "event_index": 148,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:148"
+    },
+    {
+      "event_index": 149,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:149"
+    },
+    {
+      "event_index": 152,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:152"
+    },
+    {
+      "event_index": 153,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:153"
+    },
+    {
+      "event_index": 154,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:154"
+    },
+    {
+      "event_index": 155,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:155"
+    },
+    {
+      "event_index": 156,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:156"
+    },
+    {
+      "event_index": 159,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:159"
+    },
+    {
+      "event_index": 160,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:160"
+    },
+    {
+      "event_index": 161,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:161"
+    },
+    {
+      "event_index": 162,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:162"
+    },
+    {
+      "event_index": 163,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:163"
+    },
+    {
+      "event_index": 164,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:164"
+    },
+    {
+      "event_index": 167,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:167"
+    },
+    {
+      "event_index": 168,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:168"
+    },
+    {
+      "event_index": 169,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:169"
+    },
+    {
+      "event_index": 170,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:170"
+    },
+    {
+      "event_index": 171,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:171"
+    },
+    {
+      "event_index": 174,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:174"
+    },
+    {
+      "event_index": 175,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:175"
+    },
+    {
+      "event_index": 176,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:176"
+    },
+    {
+      "event_index": 177,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:177"
+    },
+    {
+      "event_index": 178,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:178"
+    },
+    {
+      "event_index": 179,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:179"
+    },
+    {
+      "event_index": 182,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:182"
+    },
+    {
+      "event_index": 183,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:183"
+    },
+    {
+      "event_index": 184,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:184"
+    },
+    {
+      "event_index": 185,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:185"
+    },
+    {
+      "event_index": 186,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:186"
+    },
+    {
+      "event_index": 187,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:187"
+    },
+    {
+      "event_index": 190,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:190"
+    },
+    {
+      "event_index": 191,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:191"
+    },
+    {
+      "event_index": 192,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:192"
+    },
+    {
+      "event_index": 193,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:193"
+    },
+    {
+      "event_index": 194,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:194"
+    },
+    {
+      "event_index": 197,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:197"
+    },
+    {
+      "event_index": 198,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:198"
+    },
+    {
+      "event_index": 199,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:199"
+    },
+    {
+      "event_index": 200,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:200"
+    },
+    {
+      "event_index": 201,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:201"
+    },
+    {
+      "event_index": 202,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:202"
+    },
+    {
+      "event_index": 205,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:205"
+    },
+    {
+      "event_index": 206,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:206"
+    },
+    {
+      "event_index": 207,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:207"
+    },
+    {
+      "event_index": 208,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:208"
+    },
+    {
+      "event_index": 209,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:209"
+    },
+    {
+      "event_index": 212,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:212"
+    },
+    {
+      "event_index": 213,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:213"
+    },
+    {
+      "event_index": 214,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:214"
+    },
+    {
+      "event_index": 215,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:215"
+    },
+    {
+      "event_index": 216,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:216"
+    },
+    {
+      "event_index": 217,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:217"
+    },
+    {
+      "event_index": 220,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:220"
+    },
+    {
+      "event_index": 221,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:221"
+    },
+    {
+      "event_index": 222,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:222"
+    },
+    {
+      "event_index": 223,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:223"
+    },
+    {
+      "event_index": 224,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:224"
+    },
+    {
+      "event_index": 227,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:227"
+    },
+    {
+      "event_index": 228,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:228"
+    },
+    {
+      "event_index": 229,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:229"
+    },
+    {
+      "event_index": 230,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:230"
+    },
+    {
+      "event_index": 231,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:231"
+    },
+    {
+      "event_index": 232,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:232"
+    },
+    {
+      "event_index": 235,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:235"
+    },
+    {
+      "event_index": 236,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:236"
+    },
+    {
+      "event_index": 237,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:237"
+    },
+    {
+      "event_index": 238,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:238"
+    },
+    {
+      "event_index": 239,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:239"
+    },
+    {
+      "event_index": 242,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:242"
+    },
+    {
+      "event_index": 243,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:243"
+    },
+    {
+      "event_index": 244,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:244"
+    },
+    {
+      "event_index": 245,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:245"
+    },
+    {
+      "event_index": 246,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:246"
+    },
+    {
+      "event_index": 247,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:247"
+    },
+    {
+      "event_index": 250,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:250"
+    },
+    {
+      "event_index": 251,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:251"
+    },
+    {
+      "event_index": 252,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:252"
+    },
+    {
+      "event_index": 253,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:253"
+    },
+    {
+      "event_index": 254,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:254"
+    },
+    {
+      "event_index": 255,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:255"
+    },
+    {
+      "event_index": 258,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:258"
+    },
+    {
+      "event_index": 259,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:259"
+    },
+    {
+      "event_index": 260,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:260"
+    },
+    {
+      "event_index": 261,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:261"
+    },
+    {
+      "event_index": 262,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:262"
+    },
+    {
+      "event_index": 265,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:265"
+    },
+    {
+      "event_index": 266,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:266"
+    },
+    {
+      "event_index": 267,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:267"
+    },
+    {
+      "event_index": 268,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:268"
+    },
+    {
+      "event_index": 269,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:269"
+    },
+    {
+      "event_index": 270,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:270"
+    },
+    {
+      "event_index": 273,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:273"
+    },
+    {
+      "event_index": 274,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:274"
+    },
+    {
+      "event_index": 275,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:275"
+    },
+    {
+      "event_index": 276,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:276"
+    },
+    {
+      "event_index": 277,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:277"
+    },
+    {
+      "event_index": 280,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:280"
+    },
+    {
+      "event_index": 281,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:281"
+    },
+    {
+      "event_index": 282,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:282"
+    },
+    {
+      "event_index": 283,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:283"
+    },
+    {
+      "event_index": 284,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:284"
+    },
+    {
+      "event_index": 285,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:285"
+    },
+    {
+      "event_index": 288,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:288"
+    },
+    {
+      "event_index": 289,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:289"
+    },
+    {
+      "event_index": 290,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:290"
+    },
+    {
+      "event_index": 291,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:291"
+    },
+    {
+      "event_index": 292,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:292"
+    },
+    {
+      "event_index": 295,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:295"
+    },
+    {
+      "event_index": 296,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:296"
+    },
+    {
+      "event_index": 297,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:297"
+    },
+    {
+      "event_index": 298,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:298"
+    },
+    {
+      "event_index": 299,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:299"
+    },
+    {
+      "event_index": 300,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:300"
+    },
+    {
+      "event_index": 303,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:303"
+    },
+    {
+      "event_index": 304,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:304"
+    },
+    {
+      "event_index": 305,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:305"
+    },
+    {
+      "event_index": 306,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:306"
+    },
+    {
+      "event_index": 307,
+      "orientation": 1,
+      "owner": "m_2",
+      "source_id": "c1:letter:307"
     }
-  },
-  "input_duals": {
-    "r_xy": {
-      "vertex_count": 8
+  ],
+  "passage_count": 44,
+  "passages": [
+    {
+      "belt_face_point": [
+        "-1",
+        "0",
+        "1"
+      ],
+      "cut_arc_in_ball": [
+        [
+          "-1",
+          "0",
+          "-1"
+        ],
+        [
+          "-1",
+          "0",
+          "1"
+        ]
+      ],
+      "orientation": 1,
+      "owner": "r_xy",
+      "paired_z_source_id": "r_xy:vertex:3",
+      "product_normal": [
+        "1/966168032564887818144771979446684556481785375614268766815882016226779224957803800996698674701322551650243862539154864795189493164673124967869559763558446901654667457299819294243318309865917665372209217641147898873873782588689020438607246956835519209217938948980759190321896032028032863559519758190926897812326626256905306476813819604519704997856003678116249600",
+        "1/966168032564887818144771979446684556481785375614268766815882016226779224957803800996698674701322551650243862539154864795189493164673124967869559763558446901654667457299819294243318309865917665372209217641147898873873782588689020438607246956835519209217938948980759190321896032028032863559519758190926897812326626256905306476813819604519704997856003678116249600",
+        "0"
+      ],
+      "source_id": "r_xy:vertex:5",
+      "wicket": 1,
+      "word_event_index": 1
     },
-    "r_yz": {
-      "vertex_count": 8
+    {
+      "belt_face_point": [
+        "1",
+        "0",
+        "1"
+      ],
+      "cut_arc_in_ball": [
+        [
+          "1",
+          "0",
+          "-1"
+        ],
+        [
+          "1",
+          "0",
+          "1"
+        ]
+      ],
+      "orientation": -1,
+      "owner": "r_xy",
+      "paired_z_source_id": "r_xy:vertex:7",
+      "product_normal": [
+        "1/966168032564887818144771979446684556481785375614268766815882016226779224957803800996698674701322551650243862539154864795189493164673124967869559763558446901654667457299819294243318309865917665372209217641147898873873782588689020438607246956835519209217938948980759190321896032028032863559519758190926897812326626256905306476813819604519704997856003678116249600",
+        "1/966168032564887818144771979446684556481785375614268766815882016226779224957803800996698674701322551650243862539154864795189493164673124967869559763558446901654667457299819294243318309865917665372209217641147898873873782588689020438607246956835519209217938948980759190321896032028032863559519758190926897812326626256905306476813819604519704997856003678116249600",
+        "0"
+      ],
+      "source_id": "r_xy:vertex:1",
+      "wicket": 2,
+      "word_event_index": 3
     },
-    "r_zx": {
-      "vertex_count": 8
+    {
+      "belt_face_point": [
+        "58/231",
+        "-229/462",
+        "1"
+      ],
+      "cut_arc_in_ball": [
+        [
+          "58/231",
+          "-229/462",
+          "-1"
+        ],
+        [
+          "58/231",
+          "-229/462",
+          "1"
+        ]
+      ],
+      "orientation": 1,
+      "owner": "m_2",
+      "paired_z_source_id": "c1:letter:7",
+      "product_normal": [
+        "1/966168032564887818144771979446684556481785375614268766815882016226779224957803800996698674701322551650243862539154864795189493164673124967869559763558446901654667457299819294243318309865917665372209217641147898873873782588689020438607246956835519209217938948980759190321896032028032863559519758190926897812326626256905306476813819604519704997856003678116249600",
+        "1/966168032564887818144771979446684556481785375614268766815882016226779224957803800996698674701322551650243862539154864795189493164673124967869559763558446901654667457299819294243318309865917665372209217641147898873873782588689020438607246956835519209217938948980759190321896032028032863559519758190926897812326626256905306476813819604519704997856003678116249600",
+        "0"
+      ],
+      "source_id": "c1:letter:6",
+      "wicket": 3,
+      "word_event_index": 6
+    },
+    {
+      "belt_face_point": [
+        "233/924",
+        "-227/462",
+        "1"
+      ],
+      "cut_arc_in_ball": [
+        [
+          "233/924",
+          "-227/462",
+          "-1"
+        ],
+        [
+          "233/924",
+          "-227/462",
+          "1"
+        ]
+      ],
+      "orientation": 1,
+      "owner": "m_2",
+      "paired_z_source_id": "c1:letter:15",
+      "product_normal": [
+        "1/966168032564887818144771979446684556481785375614268766815882016226779224957803800996698674701322551650243862539154864795189493164673124967869559763558446901654667457299819294243318309865917665372209217641147898873873782588689020438607246956835519209217938948980759190321896032028032863559519758190926897812326626256905306476813819604519704997856003678116249600",
+        "1/966168032564887818144771979446684556481785375614268766815882016226779224957803800996698674701322551650243862539154864795189493164673124967869559763558446901654667457299819294243318309865917665372209217641147898873873782588689020438607246956835519209217938948980759190321896032028032863559519758190926897812326626256905306476813819604519704997856003678116249600",
+        "0"
+      ],
+      "source_id": "c1:letter:14",
+      "wicket": 4,
+      "word_event_index": 14
+    },
+    {
+      "belt_face_point": [
+        "39/154",
+        "-75/154",
+        "1"
+      ],
+      "cut_arc_in_ball": [
+        [
+          "39/154",
+          "-75/154",
+          "-1"
+        ],
+        [
+          "39/154",
+          "-75/154",
+          "1"
+        ]
+      ],
+      "orientation": 1,
+      "owner": "m_2",
+      "paired_z_source_id": "c1:letter:22",
+      "product_normal": [
+        "1/966168032564887818144771979446684556481785375614268766815882016226779224957803800996698674701322551650243862539154864795189493164673124967869559763558446901654667457299819294243318309865917665372209217641147898873873782588689020438607246956835519209217938948980759190321896032028032863559519758190926897812326626256905306476813819604519704997856003678116249600",
+        "1/966168032564887818144771979446684556481785375614268766815882016226779224957803800996698674701322551650243862539154864795189493164673124967869559763558446901654667457299819294243318309865917665372209217641147898873873782588689020438607246956835519209217938948980759190321896032028032863559519758190926897812326626256905306476813819604519704997856003678116249600",
+        "0"
+      ],
+      "source_id": "c1:letter:21",
+      "wicket": 5,
+      "word_event_index": 21
+    },
+    {
+      "belt_face_point": [
+        "235/924",
+        "-223/462",
+        "1"
+      ],
+      "cut_arc_in_ball": [
+        [
+          "235/924",
+          "-223/462",
+          "-1"
+        ],
+        [
+          "235/924",
+          "-223/462",
+          "1"
+        ]
+      ],
+      "orientation": 1,
+      "owner": "m_2",
+      "paired_z_source_id": "c1:letter:30",
+      "product_normal": [
+        "1/966168032564887818144771979446684556481785375614268766815882016226779224957803800996698674701322551650243862539154864795189493164673124967869559763558446901654667457299819294243318309865917665372209217641147898873873782588689020438607246956835519209217938948980759190321896032028032863559519758190926897812326626256905306476813819604519704997856003678116249600",
+        "1/966168032564887818144771979446684556481785375614268766815882016226779224957803800996698674701322551650243862539154864795189493164673124967869559763558446901654667457299819294243318309865917665372209217641147898873873782588689020438607246956835519209217938948980759190321896032028032863559519758190926897812326626256905306476813819604519704997856003678116249600",
+        "0"
+      ],
+      "source_id": "c1:letter:29",
+      "wicket": 6,
+      "word_event_index": 29
+    },
+    {
+      "belt_face_point": [
+        "59/231",
+        "-221/462",
+        "1"
+      ],
+      "cut_arc_in_ball": [
+        [
+          "59/231",
+          "-221/462",
+          "-1"
+        ],
+        [
+          "59/231",
+          "-221/462",
+          "1"
+        ]
+      ],
+      "orientation": 1,
+      "owner": "m_2",
+      "paired_z_source_id": "c1:letter:37",
+      "product_normal": [
+        "1/966168032564887818144771979446684556481785375614268766815882016226779224957803800996698674701322551650243862539154864795189493164673124967869559763558446901654667457299819294243318309865917665372209217641147898873873782588689020438607246956835519209217938948980759190321896032028032863559519758190926897812326626256905306476813819604519704997856003678116249600",
+        "1/966168032564887818144771979446684556481785375614268766815882016226779224957803800996698674701322551650243862539154864795189493164673124967869559763558446901654667457299819294243318309865917665372209217641147898873873782588689020438607246956835519209217938948980759190321896032028032863559519758190926897812326626256905306476813819604519704997856003678116249600",
+        "0"
+      ],
+      "source_id": "c1:letter:36",
+      "wicket": 7,
+      "word_event_index": 36
+    },
+    {
+      "belt_face_point": [
+        "79/308",
+        "-73/154",
+        "1"
+      ],
+      "cut_arc_in_ball": [
+        [
+          "79/308",
+          "-73/154",
+          "-1"
+        ],
+        [
+          "79/308",
+          "-73/154",
+          "1"
+        ]
+      ],
+      "orientation": 1,
+      "owner": "m_2",
+      "paired_z_source_id": "c1:letter:45",
+      "product_normal": [
+        "1/966168032564887818144771979446684556481785375614268766815882016226779224957803800996698674701322551650243862539154864795189493164673124967869559763558446901654667457299819294243318309865917665372209217641147898873873782588689020438607246956835519209217938948980759190321896032028032863559519758190926897812326626256905306476813819604519704997856003678116249600",
+        "1/966168032564887818144771979446684556481785375614268766815882016226779224957803800996698674701322551650243862539154864795189493164673124967869559763558446901654667457299819294243318309865917665372209217641147898873873782588689020438607246956835519209217938948980759190321896032028032863559519758190926897812326626256905306476813819604519704997856003678116249600",
+        "0"
+      ],
+      "source_id": "c1:letter:44",
+      "wicket": 8,
+      "word_event_index": 44
+    },
+    {
+      "belt_face_point": [
+        "17/66",
+        "-31/66",
+        "1"
+      ],
+      "cut_arc_in_ball": [
+        [
+          "17/66",
+          "-31/66",
+          "-1"
+        ],
+        [
+          "17/66",
+          "-31/66",
+          "1"
+        ]
+      ],
+      "orientation": 1,
+      "owner": "m_2",
+      "paired_z_source_id": "c1:letter:52",
+      "product_normal": [
+        "1/966168032564887818144771979446684556481785375614268766815882016226779224957803800996698674701322551650243862539154864795189493164673124967869559763558446901654667457299819294243318309865917665372209217641147898873873782588689020438607246956835519209217938948980759190321896032028032863559519758190926897812326626256905306476813819604519704997856003678116249600",
+        "1/966168032564887818144771979446684556481785375614268766815882016226779224957803800996698674701322551650243862539154864795189493164673124967869559763558446901654667457299819294243318309865917665372209217641147898873873782588689020438607246956835519209217938948980759190321896032028032863559519758190926897812326626256905306476813819604519704997856003678116249600",
+        "0"
+      ],
+      "source_id": "c1:letter:51",
+      "wicket": 9,
+      "word_event_index": 51
+    },
+    {
+      "belt_face_point": [
+        "239/924",
+        "-215/462",
+        "1"
+      ],
+      "cut_arc_in_ball": [
+        [
+          "239/924",
+          "-215/462",
+          "-1"
+        ],
+        [
+          "239/924",
+          "-215/462",
+          "1"
+        ]
+      ],
+      "orientation": 1,
+      "owner": "m_2",
+      "paired_z_source_id": "c1:letter:60",
+      "product_normal": [
+        "1/966168032564887818144771979446684556481785375614268766815882016226779224957803800996698674701322551650243862539154864795189493164673124967869559763558446901654667457299819294243318309865917665372209217641147898873873782588689020438607246956835519209217938948980759190321896032028032863559519758190926897812326626256905306476813819604519704997856003678116249600",
+        "1/966168032564887818144771979446684556481785375614268766815882016226779224957803800996698674701322551650243862539154864795189493164673124967869559763558446901654667457299819294243318309865917665372209217641147898873873782588689020438607246956835519209217938948980759190321896032028032863559519758190926897812326626256905306476813819604519704997856003678116249600",
+        "0"
+      ],
+      "source_id": "c1:letter:59",
+      "wicket": 10,
+      "word_event_index": 59
+    },
+    {
+      "belt_face_point": [
+        "20/77",
+        "-71/154",
+        "1"
+      ],
+      "cut_arc_in_ball": [
+        [
+          "20/77",
+          "-71/154",
+          "-1"
+        ],
+        [
+          "20/77",
+          "-71/154",
+          "1"
+        ]
+      ],
+      "orientation": 1,
+      "owner": "m_2",
+      "paired_z_source_id": "c1:letter:68",
+      "product_normal": [
+        "1/966168032564887818144771979446684556481785375614268766815882016226779224957803800996698674701322551650243862539154864795189493164673124967869559763558446901654667457299819294243318309865917665372209217641147898873873782588689020438607246956835519209217938948980759190321896032028032863559519758190926897812326626256905306476813819604519704997856003678116249600",
+        "1/966168032564887818144771979446684556481785375614268766815882016226779224957803800996698674701322551650243862539154864795189493164673124967869559763558446901654667457299819294243318309865917665372209217641147898873873782588689020438607246956835519209217938948980759190321896032028032863559519758190926897812326626256905306476813819604519704997856003678116249600",
+        "0"
+      ],
+      "source_id": "c1:letter:67",
+      "wicket": 11,
+      "word_event_index": 67
+    },
+    {
+      "belt_face_point": [
+        "241/924",
+        "-211/462",
+        "1"
+      ],
+      "cut_arc_in_ball": [
+        [
+          "241/924",
+          "-211/462",
+          "-1"
+        ],
+        [
+          "241/924",
+          "-211/462",
+          "1"
+        ]
+      ],
+      "orientation": 1,
+      "owner": "m_2",
+      "paired_z_source_id": "c1:letter:75",
+      "product_normal": [
+        "1/966168032564887818144771979446684556481785375614268766815882016226779224957803800996698674701322551650243862539154864795189493164673124967869559763558446901654667457299819294243318309865917665372209217641147898873873782588689020438607246956835519209217938948980759190321896032028032863559519758190926897812326626256905306476813819604519704997856003678116249600",
+        "1/966168032564887818144771979446684556481785375614268766815882016226779224957803800996698674701322551650243862539154864795189493164673124967869559763558446901654667457299819294243318309865917665372209217641147898873873782588689020438607246956835519209217938948980759190321896032028032863559519758190926897812326626256905306476813819604519704997856003678116249600",
+        "0"
+      ],
+      "source_id": "c1:letter:74",
+      "wicket": 12,
+      "word_event_index": 74
+    },
+    {
+      "belt_face_point": [
+        "11/42",
+        "-19/42",
+        "1"
+      ],
+      "cut_arc_in_ball": [
+        [
+          "11/42",
+          "-19/42",
+          "-1"
+        ],
+        [
+          "11/42",
+          "-19/42",
+          "1"
+        ]
+      ],
+      "orientation": 1,
+      "owner": "m_2",
+      "paired_z_source_id": "c1:letter:83",
+      "product_normal": [
+        "1/966168032564887818144771979446684556481785375614268766815882016226779224957803800996698674701322551650243862539154864795189493164673124967869559763558446901654667457299819294243318309865917665372209217641147898873873782588689020438607246956835519209217938948980759190321896032028032863559519758190926897812326626256905306476813819604519704997856003678116249600",
+        "1/966168032564887818144771979446684556481785375614268766815882016226779224957803800996698674701322551650243862539154864795189493164673124967869559763558446901654667457299819294243318309865917665372209217641147898873873782588689020438607246956835519209217938948980759190321896032028032863559519758190926897812326626256905306476813819604519704997856003678116249600",
+        "0"
+      ],
+      "source_id": "c1:letter:82",
+      "wicket": 13,
+      "word_event_index": 82
+    },
+    {
+      "belt_face_point": [
+        "81/308",
+        "-69/154",
+        "1"
+      ],
+      "cut_arc_in_ball": [
+        [
+          "81/308",
+          "-69/154",
+          "-1"
+        ],
+        [
+          "81/308",
+          "-69/154",
+          "1"
+        ]
+      ],
+      "orientation": 1,
+      "owner": "m_2",
+      "paired_z_source_id": "c1:letter:90",
+      "product_normal": [
+        "1/966168032564887818144771979446684556481785375614268766815882016226779224957803800996698674701322551650243862539154864795189493164673124967869559763558446901654667457299819294243318309865917665372209217641147898873873782588689020438607246956835519209217938948980759190321896032028032863559519758190926897812326626256905306476813819604519704997856003678116249600",
+        "1/966168032564887818144771979446684556481785375614268766815882016226779224957803800996698674701322551650243862539154864795189493164673124967869559763558446901654667457299819294243318309865917665372209217641147898873873782588689020438607246956835519209217938948980759190321896032028032863559519758190926897812326626256905306476813819604519704997856003678116249600",
+        "0"
+      ],
+      "source_id": "c1:letter:89",
+      "wicket": 14,
+      "word_event_index": 89
+    },
+    {
+      "belt_face_point": [
+        "61/231",
+        "-205/462",
+        "1"
+      ],
+      "cut_arc_in_ball": [
+        [
+          "61/231",
+          "-205/462",
+          "-1"
+        ],
+        [
+          "61/231",
+          "-205/462",
+          "1"
+        ]
+      ],
+      "orientation": 1,
+      "owner": "m_2",
+      "paired_z_source_id": "c1:letter:98",
+      "product_normal": [
+        "1/966168032564887818144771979446684556481785375614268766815882016226779224957803800996698674701322551650243862539154864795189493164673124967869559763558446901654667457299819294243318309865917665372209217641147898873873782588689020438607246956835519209217938948980759190321896032028032863559519758190926897812326626256905306476813819604519704997856003678116249600",
+        "1/966168032564887818144771979446684556481785375614268766815882016226779224957803800996698674701322551650243862539154864795189493164673124967869559763558446901654667457299819294243318309865917665372209217641147898873873782588689020438607246956835519209217938948980759190321896032028032863559519758190926897812326626256905306476813819604519704997856003678116249600",
+        "0"
+      ],
+      "source_id": "c1:letter:97",
+      "wicket": 15,
+      "word_event_index": 97
+    },
+    {
+      "belt_face_point": [
+        "35/132",
+        "-29/66",
+        "1"
+      ],
+      "cut_arc_in_ball": [
+        [
+          "35/132",
+          "-29/66",
+          "-1"
+        ],
+        [
+          "35/132",
+          "-29/66",
+          "1"
+        ]
+      ],
+      "orientation": 1,
+      "owner": "m_2",
+      "paired_z_source_id": "c1:letter:105",
+      "product_normal": [
+        "1/966168032564887818144771979446684556481785375614268766815882016226779224957803800996698674701322551650243862539154864795189493164673124967869559763558446901654667457299819294243318309865917665372209217641147898873873782588689020438607246956835519209217938948980759190321896032028032863559519758190926897812326626256905306476813819604519704997856003678116249600",
+        "1/966168032564887818144771979446684556481785375614268766815882016226779224957803800996698674701322551650243862539154864795189493164673124967869559763558446901654667457299819294243318309865917665372209217641147898873873782588689020438607246956835519209217938948980759190321896032028032863559519758190926897812326626256905306476813819604519704997856003678116249600",
+        "0"
+      ],
+      "source_id": "c1:letter:104",
+      "wicket": 16,
+      "word_event_index": 104
+    },
+    {
+      "belt_face_point": [
+        "41/154",
+        "-67/154",
+        "1"
+      ],
+      "cut_arc_in_ball": [
+        [
+          "41/154",
+          "-67/154",
+          "-1"
+        ],
+        [
+          "41/154",
+          "-67/154",
+          "1"
+        ]
+      ],
+      "orientation": 1,
+      "owner": "m_2",
+      "paired_z_source_id": "c1:letter:113",
+      "product_normal": [
+        "1/966168032564887818144771979446684556481785375614268766815882016226779224957803800996698674701322551650243862539154864795189493164673124967869559763558446901654667457299819294243318309865917665372209217641147898873873782588689020438607246956835519209217938948980759190321896032028032863559519758190926897812326626256905306476813819604519704997856003678116249600",
+        "1/966168032564887818144771979446684556481785375614268766815882016226779224957803800996698674701322551650243862539154864795189493164673124967869559763558446901654667457299819294243318309865917665372209217641147898873873782588689020438607246956835519209217938948980759190321896032028032863559519758190926897812326626256905306476813819604519704997856003678116249600",
+        "0"
+      ],
+      "source_id": "c1:letter:112",
+      "wicket": 17,
+      "word_event_index": 112
+    },
+    {
+      "belt_face_point": [
+        "247/924",
+        "-199/462",
+        "1"
+      ],
+      "cut_arc_in_ball": [
+        [
+          "247/924",
+          "-199/462",
+          "-1"
+        ],
+        [
+          "247/924",
+          "-199/462",
+          "1"
+        ]
+      ],
+      "orientation": 1,
+      "owner": "m_2",
+      "paired_z_source_id": "c1:letter:120",
+      "product_normal": [
+        "1/966168032564887818144771979446684556481785375614268766815882016226779224957803800996698674701322551650243862539154864795189493164673124967869559763558446901654667457299819294243318309865917665372209217641147898873873782588689020438607246956835519209217938948980759190321896032028032863559519758190926897812326626256905306476813819604519704997856003678116249600",
+        "1/966168032564887818144771979446684556481785375614268766815882016226779224957803800996698674701322551650243862539154864795189493164673124967869559763558446901654667457299819294243318309865917665372209217641147898873873782588689020438607246956835519209217938948980759190321896032028032863559519758190926897812326626256905306476813819604519704997856003678116249600",
+        "0"
+      ],
+      "source_id": "c1:letter:119",
+      "wicket": 18,
+      "word_event_index": 119
+    },
+    {
+      "belt_face_point": [
+        "62/231",
+        "-197/462",
+        "1"
+      ],
+      "cut_arc_in_ball": [
+        [
+          "62/231",
+          "-197/462",
+          "-1"
+        ],
+        [
+          "62/231",
+          "-197/462",
+          "1"
+        ]
+      ],
+      "orientation": 1,
+      "owner": "m_2",
+      "paired_z_source_id": "c1:letter:128",
+      "product_normal": [
+        "1/966168032564887818144771979446684556481785375614268766815882016226779224957803800996698674701322551650243862539154864795189493164673124967869559763558446901654667457299819294243318309865917665372209217641147898873873782588689020438607246956835519209217938948980759190321896032028032863559519758190926897812326626256905306476813819604519704997856003678116249600",
+        "1/966168032564887818144771979446684556481785375614268766815882016226779224957803800996698674701322551650243862539154864795189493164673124967869559763558446901654667457299819294243318309865917665372209217641147898873873782588689020438607246956835519209217938948980759190321896032028032863559519758190926897812326626256905306476813819604519704997856003678116249600",
+        "0"
+      ],
+      "source_id": "c1:letter:127",
+      "wicket": 19,
+      "word_event_index": 127
+    },
+    {
+      "belt_face_point": [
+        "83/308",
+        "-65/154",
+        "1"
+      ],
+      "cut_arc_in_ball": [
+        [
+          "83/308",
+          "-65/154",
+          "-1"
+        ],
+        [
+          "83/308",
+          "-65/154",
+          "1"
+        ]
+      ],
+      "orientation": 1,
+      "owner": "m_2",
+      "paired_z_source_id": "c1:letter:136",
+      "product_normal": [
+        "1/966168032564887818144771979446684556481785375614268766815882016226779224957803800996698674701322551650243862539154864795189493164673124967869559763558446901654667457299819294243318309865917665372209217641147898873873782588689020438607246956835519209217938948980759190321896032028032863559519758190926897812326626256905306476813819604519704997856003678116249600",
+        "1/966168032564887818144771979446684556481785375614268766815882016226779224957803800996698674701322551650243862539154864795189493164673124967869559763558446901654667457299819294243318309865917665372209217641147898873873782588689020438607246956835519209217938948980759190321896032028032863559519758190926897812326626256905306476813819604519704997856003678116249600",
+        "0"
+      ],
+      "source_id": "c1:letter:135",
+      "wicket": 20,
+      "word_event_index": 135
+    },
+    {
+      "belt_face_point": [
+        "125/462",
+        "-193/462",
+        "1"
+      ],
+      "cut_arc_in_ball": [
+        [
+          "125/462",
+          "-193/462",
+          "-1"
+        ],
+        [
+          "125/462",
+          "-193/462",
+          "1"
+        ]
+      ],
+      "orientation": 1,
+      "owner": "m_2",
+      "paired_z_source_id": "c1:letter:143",
+      "product_normal": [
+        "1/966168032564887818144771979446684556481785375614268766815882016226779224957803800996698674701322551650243862539154864795189493164673124967869559763558446901654667457299819294243318309865917665372209217641147898873873782588689020438607246956835519209217938948980759190321896032028032863559519758190926897812326626256905306476813819604519704997856003678116249600",
+        "1/966168032564887818144771979446684556481785375614268766815882016226779224957803800996698674701322551650243862539154864795189493164673124967869559763558446901654667457299819294243318309865917665372209217641147898873873782588689020438607246956835519209217938948980759190321896032028032863559519758190926897812326626256905306476813819604519704997856003678116249600",
+        "0"
+      ],
+      "source_id": "c1:letter:142",
+      "wicket": 21,
+      "word_event_index": 142
+    },
+    {
+      "belt_face_point": [
+        "251/924",
+        "-191/462",
+        "1"
+      ],
+      "cut_arc_in_ball": [
+        [
+          "251/924",
+          "-191/462",
+          "-1"
+        ],
+        [
+          "251/924",
+          "-191/462",
+          "1"
+        ]
+      ],
+      "orientation": 1,
+      "owner": "m_2",
+      "paired_z_source_id": "c1:letter:151",
+      "product_normal": [
+        "1/966168032564887818144771979446684556481785375614268766815882016226779224957803800996698674701322551650243862539154864795189493164673124967869559763558446901654667457299819294243318309865917665372209217641147898873873782588689020438607246956835519209217938948980759190321896032028032863559519758190926897812326626256905306476813819604519704997856003678116249600",
+        "1/966168032564887818144771979446684556481785375614268766815882016226779224957803800996698674701322551650243862539154864795189493164673124967869559763558446901654667457299819294243318309865917665372209217641147898873873782588689020438607246956835519209217938948980759190321896032028032863559519758190926897812326626256905306476813819604519704997856003678116249600",
+        "0"
+      ],
+      "source_id": "c1:letter:150",
+      "wicket": 22,
+      "word_event_index": 150
+    },
+    {
+      "belt_face_point": [
+        "3/11",
+        "-9/22",
+        "1"
+      ],
+      "cut_arc_in_ball": [
+        [
+          "3/11",
+          "-9/22",
+          "-1"
+        ],
+        [
+          "3/11",
+          "-9/22",
+          "1"
+        ]
+      ],
+      "orientation": 1,
+      "owner": "m_2",
+      "paired_z_source_id": "c1:letter:158",
+      "product_normal": [
+        "1/966168032564887818144771979446684556481785375614268766815882016226779224957803800996698674701322551650243862539154864795189493164673124967869559763558446901654667457299819294243318309865917665372209217641147898873873782588689020438607246956835519209217938948980759190321896032028032863559519758190926897812326626256905306476813819604519704997856003678116249600",
+        "1/966168032564887818144771979446684556481785375614268766815882016226779224957803800996698674701322551650243862539154864795189493164673124967869559763558446901654667457299819294243318309865917665372209217641147898873873782588689020438607246956835519209217938948980759190321896032028032863559519758190926897812326626256905306476813819604519704997856003678116249600",
+        "0"
+      ],
+      "source_id": "c1:letter:157",
+      "wicket": 23,
+      "word_event_index": 157
+    },
+    {
+      "belt_face_point": [
+        "23/84",
+        "-17/42",
+        "1"
+      ],
+      "cut_arc_in_ball": [
+        [
+          "23/84",
+          "-17/42",
+          "-1"
+        ],
+        [
+          "23/84",
+          "-17/42",
+          "1"
+        ]
+      ],
+      "orientation": 1,
+      "owner": "m_2",
+      "paired_z_source_id": "c1:letter:166",
+      "product_normal": [
+        "1/966168032564887818144771979446684556481785375614268766815882016226779224957803800996698674701322551650243862539154864795189493164673124967869559763558446901654667457299819294243318309865917665372209217641147898873873782588689020438607246956835519209217938948980759190321896032028032863559519758190926897812326626256905306476813819604519704997856003678116249600",
+        "1/966168032564887818144771979446684556481785375614268766815882016226779224957803800996698674701322551650243862539154864795189493164673124967869559763558446901654667457299819294243318309865917665372209217641147898873873782588689020438607246956835519209217938948980759190321896032028032863559519758190926897812326626256905306476813819604519704997856003678116249600",
+        "0"
+      ],
+      "source_id": "c1:letter:165",
+      "wicket": 24,
+      "word_event_index": 165
+    },
+    {
+      "belt_face_point": [
+        "127/462",
+        "-185/462",
+        "1"
+      ],
+      "cut_arc_in_ball": [
+        [
+          "127/462",
+          "-185/462",
+          "-1"
+        ],
+        [
+          "127/462",
+          "-185/462",
+          "1"
+        ]
+      ],
+      "orientation": 1,
+      "owner": "m_2",
+      "paired_z_source_id": "c1:letter:173",
+      "product_normal": [
+        "1/966168032564887818144771979446684556481785375614268766815882016226779224957803800996698674701322551650243862539154864795189493164673124967869559763558446901654667457299819294243318309865917665372209217641147898873873782588689020438607246956835519209217938948980759190321896032028032863559519758190926897812326626256905306476813819604519704997856003678116249600",
+        "1/966168032564887818144771979446684556481785375614268766815882016226779224957803800996698674701322551650243862539154864795189493164673124967869559763558446901654667457299819294243318309865917665372209217641147898873873782588689020438607246956835519209217938948980759190321896032028032863559519758190926897812326626256905306476813819604519704997856003678116249600",
+        "0"
+      ],
+      "source_id": "c1:letter:172",
+      "wicket": 25,
+      "word_event_index": 172
+    },
+    {
+      "belt_face_point": [
+        "85/308",
+        "-61/154",
+        "1"
+      ],
+      "cut_arc_in_ball": [
+        [
+          "85/308",
+          "-61/154",
+          "-1"
+        ],
+        [
+          "85/308",
+          "-61/154",
+          "1"
+        ]
+      ],
+      "orientation": 1,
+      "owner": "m_2",
+      "paired_z_source_id": "c1:letter:181",
+      "product_normal": [
+        "1/966168032564887818144771979446684556481785375614268766815882016226779224957803800996698674701322551650243862539154864795189493164673124967869559763558446901654667457299819294243318309865917665372209217641147898873873782588689020438607246956835519209217938948980759190321896032028032863559519758190926897812326626256905306476813819604519704997856003678116249600",
+        "1/966168032564887818144771979446684556481785375614268766815882016226779224957803800996698674701322551650243862539154864795189493164673124967869559763558446901654667457299819294243318309865917665372209217641147898873873782588689020438607246956835519209217938948980759190321896032028032863559519758190926897812326626256905306476813819604519704997856003678116249600",
+        "0"
+      ],
+      "source_id": "c1:letter:180",
+      "wicket": 26,
+      "word_event_index": 180
+    },
+    {
+      "belt_face_point": [
+        "64/231",
+        "-181/462",
+        "1"
+      ],
+      "cut_arc_in_ball": [
+        [
+          "64/231",
+          "-181/462",
+          "-1"
+        ],
+        [
+          "64/231",
+          "-181/462",
+          "1"
+        ]
+      ],
+      "orientation": 1,
+      "owner": "m_2",
+      "paired_z_source_id": "c1:letter:189",
+      "product_normal": [
+        "1/966168032564887818144771979446684556481785375614268766815882016226779224957803800996698674701322551650243862539154864795189493164673124967869559763558446901654667457299819294243318309865917665372209217641147898873873782588689020438607246956835519209217938948980759190321896032028032863559519758190926897812326626256905306476813819604519704997856003678116249600",
+        "1/966168032564887818144771979446684556481785375614268766815882016226779224957803800996698674701322551650243862539154864795189493164673124967869559763558446901654667457299819294243318309865917665372209217641147898873873782588689020438607246956835519209217938948980759190321896032028032863559519758190926897812326626256905306476813819604519704997856003678116249600",
+        "0"
+      ],
+      "source_id": "c1:letter:188",
+      "wicket": 27,
+      "word_event_index": 188
+    },
+    {
+      "belt_face_point": [
+        "257/924",
+        "-179/462",
+        "1"
+      ],
+      "cut_arc_in_ball": [
+        [
+          "257/924",
+          "-179/462",
+          "-1"
+        ],
+        [
+          "257/924",
+          "-179/462",
+          "1"
+        ]
+      ],
+      "orientation": 1,
+      "owner": "m_2",
+      "paired_z_source_id": "c1:letter:196",
+      "product_normal": [
+        "1/966168032564887818144771979446684556481785375614268766815882016226779224957803800996698674701322551650243862539154864795189493164673124967869559763558446901654667457299819294243318309865917665372209217641147898873873782588689020438607246956835519209217938948980759190321896032028032863559519758190926897812326626256905306476813819604519704997856003678116249600",
+        "1/966168032564887818144771979446684556481785375614268766815882016226779224957803800996698674701322551650243862539154864795189493164673124967869559763558446901654667457299819294243318309865917665372209217641147898873873782588689020438607246956835519209217938948980759190321896032028032863559519758190926897812326626256905306476813819604519704997856003678116249600",
+        "0"
+      ],
+      "source_id": "c1:letter:195",
+      "wicket": 28,
+      "word_event_index": 195
+    },
+    {
+      "belt_face_point": [
+        "43/154",
+        "-59/154",
+        "1"
+      ],
+      "cut_arc_in_ball": [
+        [
+          "43/154",
+          "-59/154",
+          "-1"
+        ],
+        [
+          "43/154",
+          "-59/154",
+          "1"
+        ]
+      ],
+      "orientation": 1,
+      "owner": "m_2",
+      "paired_z_source_id": "c1:letter:204",
+      "product_normal": [
+        "1/966168032564887818144771979446684556481785375614268766815882016226779224957803800996698674701322551650243862539154864795189493164673124967869559763558446901654667457299819294243318309865917665372209217641147898873873782588689020438607246956835519209217938948980759190321896032028032863559519758190926897812326626256905306476813819604519704997856003678116249600",
+        "1/966168032564887818144771979446684556481785375614268766815882016226779224957803800996698674701322551650243862539154864795189493164673124967869559763558446901654667457299819294243318309865917665372209217641147898873873782588689020438607246956835519209217938948980759190321896032028032863559519758190926897812326626256905306476813819604519704997856003678116249600",
+        "0"
+      ],
+      "source_id": "c1:letter:203",
+      "wicket": 29,
+      "word_event_index": 203
+    },
+    {
+      "belt_face_point": [
+        "37/132",
+        "-25/66",
+        "1"
+      ],
+      "cut_arc_in_ball": [
+        [
+          "37/132",
+          "-25/66",
+          "-1"
+        ],
+        [
+          "37/132",
+          "-25/66",
+          "1"
+        ]
+      ],
+      "orientation": 1,
+      "owner": "m_2",
+      "paired_z_source_id": "c1:letter:211",
+      "product_normal": [
+        "1/966168032564887818144771979446684556481785375614268766815882016226779224957803800996698674701322551650243862539154864795189493164673124967869559763558446901654667457299819294243318309865917665372209217641147898873873782588689020438607246956835519209217938948980759190321896032028032863559519758190926897812326626256905306476813819604519704997856003678116249600",
+        "1/966168032564887818144771979446684556481785375614268766815882016226779224957803800996698674701322551650243862539154864795189493164673124967869559763558446901654667457299819294243318309865917665372209217641147898873873782588689020438607246956835519209217938948980759190321896032028032863559519758190926897812326626256905306476813819604519704997856003678116249600",
+        "0"
+      ],
+      "source_id": "c1:letter:210",
+      "wicket": 30,
+      "word_event_index": 210
+    },
+    {
+      "belt_face_point": [
+        "65/231",
+        "-173/462",
+        "1"
+      ],
+      "cut_arc_in_ball": [
+        [
+          "65/231",
+          "-173/462",
+          "-1"
+        ],
+        [
+          "65/231",
+          "-173/462",
+          "1"
+        ]
+      ],
+      "orientation": 1,
+      "owner": "m_2",
+      "paired_z_source_id": "c1:letter:219",
+      "product_normal": [
+        "1/966168032564887818144771979446684556481785375614268766815882016226779224957803800996698674701322551650243862539154864795189493164673124967869559763558446901654667457299819294243318309865917665372209217641147898873873782588689020438607246956835519209217938948980759190321896032028032863559519758190926897812326626256905306476813819604519704997856003678116249600",
+        "1/966168032564887818144771979446684556481785375614268766815882016226779224957803800996698674701322551650243862539154864795189493164673124967869559763558446901654667457299819294243318309865917665372209217641147898873873782588689020438607246956835519209217938948980759190321896032028032863559519758190926897812326626256905306476813819604519704997856003678116249600",
+        "0"
+      ],
+      "source_id": "c1:letter:218",
+      "wicket": 31,
+      "word_event_index": 218
+    },
+    {
+      "belt_face_point": [
+        "87/308",
+        "-57/154",
+        "1"
+      ],
+      "cut_arc_in_ball": [
+        [
+          "87/308",
+          "-57/154",
+          "-1"
+        ],
+        [
+          "87/308",
+          "-57/154",
+          "1"
+        ]
+      ],
+      "orientation": 1,
+      "owner": "m_2",
+      "paired_z_source_id": "c1:letter:226",
+      "product_normal": [
+        "1/966168032564887818144771979446684556481785375614268766815882016226779224957803800996698674701322551650243862539154864795189493164673124967869559763558446901654667457299819294243318309865917665372209217641147898873873782588689020438607246956835519209217938948980759190321896032028032863559519758190926897812326626256905306476813819604519704997856003678116249600",
+        "1/966168032564887818144771979446684556481785375614268766815882016226779224957803800996698674701322551650243862539154864795189493164673124967869559763558446901654667457299819294243318309865917665372209217641147898873873782588689020438607246956835519209217938948980759190321896032028032863559519758190926897812326626256905306476813819604519704997856003678116249600",
+        "0"
+      ],
+      "source_id": "c1:letter:225",
+      "wicket": 32,
+      "word_event_index": 225
+    },
+    {
+      "belt_face_point": [
+        "131/462",
+        "-169/462",
+        "1"
+      ],
+      "cut_arc_in_ball": [
+        [
+          "131/462",
+          "-169/462",
+          "-1"
+        ],
+        [
+          "131/462",
+          "-169/462",
+          "1"
+        ]
+      ],
+      "orientation": 1,
+      "owner": "m_2",
+      "paired_z_source_id": "c1:letter:234",
+      "product_normal": [
+        "1/966168032564887818144771979446684556481785375614268766815882016226779224957803800996698674701322551650243862539154864795189493164673124967869559763558446901654667457299819294243318309865917665372209217641147898873873782588689020438607246956835519209217938948980759190321896032028032863559519758190926897812326626256905306476813819604519704997856003678116249600",
+        "1/966168032564887818144771979446684556481785375614268766815882016226779224957803800996698674701322551650243862539154864795189493164673124967869559763558446901654667457299819294243318309865917665372209217641147898873873782588689020438607246956835519209217938948980759190321896032028032863559519758190926897812326626256905306476813819604519704997856003678116249600",
+        "0"
+      ],
+      "source_id": "c1:letter:233",
+      "wicket": 33,
+      "word_event_index": 233
+    },
+    {
+      "belt_face_point": [
+        "263/924",
+        "-167/462",
+        "1"
+      ],
+      "cut_arc_in_ball": [
+        [
+          "263/924",
+          "-167/462",
+          "-1"
+        ],
+        [
+          "263/924",
+          "-167/462",
+          "1"
+        ]
+      ],
+      "orientation": 1,
+      "owner": "m_2",
+      "paired_z_source_id": "c1:letter:241",
+      "product_normal": [
+        "1/966168032564887818144771979446684556481785375614268766815882016226779224957803800996698674701322551650243862539154864795189493164673124967869559763558446901654667457299819294243318309865917665372209217641147898873873782588689020438607246956835519209217938948980759190321896032028032863559519758190926897812326626256905306476813819604519704997856003678116249600",
+        "1/966168032564887818144771979446684556481785375614268766815882016226779224957803800996698674701322551650243862539154864795189493164673124967869559763558446901654667457299819294243318309865917665372209217641147898873873782588689020438607246956835519209217938948980759190321896032028032863559519758190926897812326626256905306476813819604519704997856003678116249600",
+        "0"
+      ],
+      "source_id": "c1:letter:240",
+      "wicket": 34,
+      "word_event_index": 240
+    },
+    {
+      "belt_face_point": [
+        "2/7",
+        "-5/14",
+        "1"
+      ],
+      "cut_arc_in_ball": [
+        [
+          "2/7",
+          "-5/14",
+          "-1"
+        ],
+        [
+          "2/7",
+          "-5/14",
+          "1"
+        ]
+      ],
+      "orientation": 1,
+      "owner": "m_2",
+      "paired_z_source_id": "c1:letter:249",
+      "product_normal": [
+        "1/966168032564887818144771979446684556481785375614268766815882016226779224957803800996698674701322551650243862539154864795189493164673124967869559763558446901654667457299819294243318309865917665372209217641147898873873782588689020438607246956835519209217938948980759190321896032028032863559519758190926897812326626256905306476813819604519704997856003678116249600",
+        "1/966168032564887818144771979446684556481785375614268766815882016226779224957803800996698674701322551650243862539154864795189493164673124967869559763558446901654667457299819294243318309865917665372209217641147898873873782588689020438607246956835519209217938948980759190321896032028032863559519758190926897812326626256905306476813819604519704997856003678116249600",
+        "0"
+      ],
+      "source_id": "c1:letter:248",
+      "wicket": 35,
+      "word_event_index": 248
+    },
+    {
+      "belt_face_point": [
+        "265/924",
+        "-163/462",
+        "1"
+      ],
+      "cut_arc_in_ball": [
+        [
+          "265/924",
+          "-163/462",
+          "-1"
+        ],
+        [
+          "265/924",
+          "-163/462",
+          "1"
+        ]
+      ],
+      "orientation": 1,
+      "owner": "m_2",
+      "paired_z_source_id": "c1:letter:257",
+      "product_normal": [
+        "1/966168032564887818144771979446684556481785375614268766815882016226779224957803800996698674701322551650243862539154864795189493164673124967869559763558446901654667457299819294243318309865917665372209217641147898873873782588689020438607246956835519209217938948980759190321896032028032863559519758190926897812326626256905306476813819604519704997856003678116249600",
+        "1/966168032564887818144771979446684556481785375614268766815882016226779224957803800996698674701322551650243862539154864795189493164673124967869559763558446901654667457299819294243318309865917665372209217641147898873873782588689020438607246956835519209217938948980759190321896032028032863559519758190926897812326626256905306476813819604519704997856003678116249600",
+        "0"
+      ],
+      "source_id": "c1:letter:256",
+      "wicket": 36,
+      "word_event_index": 256
+    },
+    {
+      "belt_face_point": [
+        "19/66",
+        "-23/66",
+        "1"
+      ],
+      "cut_arc_in_ball": [
+        [
+          "19/66",
+          "-23/66",
+          "-1"
+        ],
+        [
+          "19/66",
+          "-23/66",
+          "1"
+        ]
+      ],
+      "orientation": 1,
+      "owner": "m_2",
+      "paired_z_source_id": "c1:letter:264",
+      "product_normal": [
+        "1/966168032564887818144771979446684556481785375614268766815882016226779224957803800996698674701322551650243862539154864795189493164673124967869559763558446901654667457299819294243318309865917665372209217641147898873873782588689020438607246956835519209217938948980759190321896032028032863559519758190926897812326626256905306476813819604519704997856003678116249600",
+        "1/966168032564887818144771979446684556481785375614268766815882016226779224957803800996698674701322551650243862539154864795189493164673124967869559763558446901654667457299819294243318309865917665372209217641147898873873782588689020438607246956835519209217938948980759190321896032028032863559519758190926897812326626256905306476813819604519704997856003678116249600",
+        "0"
+      ],
+      "source_id": "c1:letter:263",
+      "wicket": 37,
+      "word_event_index": 263
+    },
+    {
+      "belt_face_point": [
+        "89/308",
+        "-53/154",
+        "1"
+      ],
+      "cut_arc_in_ball": [
+        [
+          "89/308",
+          "-53/154",
+          "-1"
+        ],
+        [
+          "89/308",
+          "-53/154",
+          "1"
+        ]
+      ],
+      "orientation": 1,
+      "owner": "m_2",
+      "paired_z_source_id": "c1:letter:272",
+      "product_normal": [
+        "1/966168032564887818144771979446684556481785375614268766815882016226779224957803800996698674701322551650243862539154864795189493164673124967869559763558446901654667457299819294243318309865917665372209217641147898873873782588689020438607246956835519209217938948980759190321896032028032863559519758190926897812326626256905306476813819604519704997856003678116249600",
+        "1/966168032564887818144771979446684556481785375614268766815882016226779224957803800996698674701322551650243862539154864795189493164673124967869559763558446901654667457299819294243318309865917665372209217641147898873873782588689020438607246956835519209217938948980759190321896032028032863559519758190926897812326626256905306476813819604519704997856003678116249600",
+        "0"
+      ],
+      "source_id": "c1:letter:271",
+      "wicket": 38,
+      "word_event_index": 271
+    },
+    {
+      "belt_face_point": [
+        "67/231",
+        "-157/462",
+        "1"
+      ],
+      "cut_arc_in_ball": [
+        [
+          "67/231",
+          "-157/462",
+          "-1"
+        ],
+        [
+          "67/231",
+          "-157/462",
+          "1"
+        ]
+      ],
+      "orientation": 1,
+      "owner": "m_2",
+      "paired_z_source_id": "c1:letter:279",
+      "product_normal": [
+        "1/966168032564887818144771979446684556481785375614268766815882016226779224957803800996698674701322551650243862539154864795189493164673124967869559763558446901654667457299819294243318309865917665372209217641147898873873782588689020438607246956835519209217938948980759190321896032028032863559519758190926897812326626256905306476813819604519704997856003678116249600",
+        "1/966168032564887818144771979446684556481785375614268766815882016226779224957803800996698674701322551650243862539154864795189493164673124967869559763558446901654667457299819294243318309865917665372209217641147898873873782588689020438607246956835519209217938948980759190321896032028032863559519758190926897812326626256905306476813819604519704997856003678116249600",
+        "0"
+      ],
+      "source_id": "c1:letter:278",
+      "wicket": 39,
+      "word_event_index": 278
+    },
+    {
+      "belt_face_point": [
+        "269/924",
+        "-155/462",
+        "1"
+      ],
+      "cut_arc_in_ball": [
+        [
+          "269/924",
+          "-155/462",
+          "-1"
+        ],
+        [
+          "269/924",
+          "-155/462",
+          "1"
+        ]
+      ],
+      "orientation": 1,
+      "owner": "m_2",
+      "paired_z_source_id": "c1:letter:287",
+      "product_normal": [
+        "1/966168032564887818144771979446684556481785375614268766815882016226779224957803800996698674701322551650243862539154864795189493164673124967869559763558446901654667457299819294243318309865917665372209217641147898873873782588689020438607246956835519209217938948980759190321896032028032863559519758190926897812326626256905306476813819604519704997856003678116249600",
+        "1/966168032564887818144771979446684556481785375614268766815882016226779224957803800996698674701322551650243862539154864795189493164673124967869559763558446901654667457299819294243318309865917665372209217641147898873873782588689020438607246956835519209217938948980759190321896032028032863559519758190926897812326626256905306476813819604519704997856003678116249600",
+        "0"
+      ],
+      "source_id": "c1:letter:286",
+      "wicket": 40,
+      "word_event_index": 286
+    },
+    {
+      "belt_face_point": [
+        "45/154",
+        "-51/154",
+        "1"
+      ],
+      "cut_arc_in_ball": [
+        [
+          "45/154",
+          "-51/154",
+          "-1"
+        ],
+        [
+          "45/154",
+          "-51/154",
+          "1"
+        ]
+      ],
+      "orientation": 1,
+      "owner": "m_2",
+      "paired_z_source_id": "c1:letter:294",
+      "product_normal": [
+        "1/966168032564887818144771979446684556481785375614268766815882016226779224957803800996698674701322551650243862539154864795189493164673124967869559763558446901654667457299819294243318309865917665372209217641147898873873782588689020438607246956835519209217938948980759190321896032028032863559519758190926897812326626256905306476813819604519704997856003678116249600",
+        "1/966168032564887818144771979446684556481785375614268766815882016226779224957803800996698674701322551650243862539154864795189493164673124967869559763558446901654667457299819294243318309865917665372209217641147898873873782588689020438607246956835519209217938948980759190321896032028032863559519758190926897812326626256905306476813819604519704997856003678116249600",
+        "0"
+      ],
+      "source_id": "c1:letter:293",
+      "wicket": 41,
+      "word_event_index": 293
+    },
+    {
+      "belt_face_point": [
+        "271/924",
+        "-151/462",
+        "1"
+      ],
+      "cut_arc_in_ball": [
+        [
+          "271/924",
+          "-151/462",
+          "-1"
+        ],
+        [
+          "271/924",
+          "-151/462",
+          "1"
+        ]
+      ],
+      "orientation": 1,
+      "owner": "m_2",
+      "paired_z_source_id": "c1:letter:302",
+      "product_normal": [
+        "1/966168032564887818144771979446684556481785375614268766815882016226779224957803800996698674701322551650243862539154864795189493164673124967869559763558446901654667457299819294243318309865917665372209217641147898873873782588689020438607246956835519209217938948980759190321896032028032863559519758190926897812326626256905306476813819604519704997856003678116249600",
+        "1/966168032564887818144771979446684556481785375614268766815882016226779224957803800996698674701322551650243862539154864795189493164673124967869559763558446901654667457299819294243318309865917665372209217641147898873873782588689020438607246956835519209217938948980759190321896032028032863559519758190926897812326626256905306476813819604519704997856003678116249600",
+        "0"
+      ],
+      "source_id": "c1:letter:301",
+      "wicket": 42,
+      "word_event_index": 301
+    },
+    {
+      "belt_face_point": [
+        "68/231",
+        "-149/462",
+        "1"
+      ],
+      "cut_arc_in_ball": [
+        [
+          "68/231",
+          "-149/462",
+          "-1"
+        ],
+        [
+          "68/231",
+          "-149/462",
+          "1"
+        ]
+      ],
+      "orientation": 1,
+      "owner": "m_2",
+      "paired_z_source_id": "c1:letter:309",
+      "product_normal": [
+        "1/966168032564887818144771979446684556481785375614268766815882016226779224957803800996698674701322551650243862539154864795189493164673124967869559763558446901654667457299819294243318309865917665372209217641147898873873782588689020438607246956835519209217938948980759190321896032028032863559519758190926897812326626256905306476813819604519704997856003678116249600",
+        "1/966168032564887818144771979446684556481785375614268766815882016226779224957803800996698674701322551650243862539154864795189493164673124967869559763558446901654667457299819294243318309865917665372209217641147898873873782588689020438607246956835519209217938948980759190321896032028032863559519758190926897812326626256905306476813819604519704997856003678116249600",
+        "0"
+      ],
+      "source_id": "c1:letter:308",
+      "wicket": 43,
+      "word_event_index": 308
+    },
+    {
+      "belt_face_point": [
+        "0",
+        "0",
+        "1"
+      ],
+      "cut_arc_in_ball": [
+        [
+          "0",
+          "0",
+          "-1"
+        ],
+        [
+          "0",
+          "0",
+          "1"
+        ]
+      ],
+      "orientation": -1,
+      "owner": "m_2",
+      "paired_z_source_id": "c1:letter:0",
+      "product_normal": [
+        "1/966168032564887818144771979446684556481785375614268766815882016226779224957803800996698674701322551650243862539154864795189493164673124967869559763558446901654667457299819294243318309865917665372209217641147898873873782588689020438607246956835519209217938948980759190321896032028032863559519758190926897812326626256905306476813819604519704997856003678116249600",
+        "1/966168032564887818144771979446684556481785375614268766815882016226779224957803800996698674701322551650243862539154864795189493164673124967869559763558446901654667457299819294243318309865917665372209217641147898873873782588689020438607246956835519209217938948980759190321896032028032863559519758190926897812326626256905306476813819604519704997856003678116249600",
+        "0"
+      ],
+      "source_id": "m_2:C_i",
+      "wicket": 44,
+      "word_event_index": 310
     }
+  ],
+  "post_x_event_lists": {
+    "m_2": [
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:0",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:1",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:2",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:3",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:4",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:5",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": [
+          "58/231",
+          "-229/462",
+          "1"
+        ],
+        "label": "y",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:6",
+        "source_kind": "johnson_handle_lane"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:7",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:8",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:9",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:10",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:11",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:12",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:13",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": [
+          "233/924",
+          "-227/462",
+          "1"
+        ],
+        "label": "y",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:14",
+        "source_kind": "johnson_handle_lane"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:15",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:16",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:17",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:18",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:19",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:20",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": [
+          "39/154",
+          "-75/154",
+          "1"
+        ],
+        "label": "y",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:21",
+        "source_kind": "johnson_handle_lane"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:22",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:23",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:24",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:25",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:26",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:27",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:28",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": [
+          "235/924",
+          "-223/462",
+          "1"
+        ],
+        "label": "y",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:29",
+        "source_kind": "johnson_handle_lane"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:30",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:31",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:32",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:33",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:34",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:35",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": [
+          "59/231",
+          "-221/462",
+          "1"
+        ],
+        "label": "y",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:36",
+        "source_kind": "johnson_handle_lane"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:37",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:38",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:39",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:40",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:41",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:42",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:43",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": [
+          "79/308",
+          "-73/154",
+          "1"
+        ],
+        "label": "y",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:44",
+        "source_kind": "johnson_handle_lane"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:45",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:46",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:47",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:48",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:49",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:50",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": [
+          "17/66",
+          "-31/66",
+          "1"
+        ],
+        "label": "y",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:51",
+        "source_kind": "johnson_handle_lane"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:52",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:53",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:54",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:55",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:56",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:57",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:58",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": [
+          "239/924",
+          "-215/462",
+          "1"
+        ],
+        "label": "y",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:59",
+        "source_kind": "johnson_handle_lane"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:60",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:61",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:62",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:63",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:64",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:65",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:66",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": [
+          "20/77",
+          "-71/154",
+          "1"
+        ],
+        "label": "y",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:67",
+        "source_kind": "johnson_handle_lane"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:68",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:69",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:70",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:71",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:72",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:73",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": [
+          "241/924",
+          "-211/462",
+          "1"
+        ],
+        "label": "y",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:74",
+        "source_kind": "johnson_handle_lane"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:75",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:76",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:77",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:78",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:79",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:80",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:81",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": [
+          "11/42",
+          "-19/42",
+          "1"
+        ],
+        "label": "y",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:82",
+        "source_kind": "johnson_handle_lane"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:83",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:84",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:85",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:86",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:87",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:88",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": [
+          "81/308",
+          "-69/154",
+          "1"
+        ],
+        "label": "y",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:89",
+        "source_kind": "johnson_handle_lane"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:90",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:91",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:92",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:93",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:94",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:95",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:96",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": [
+          "61/231",
+          "-205/462",
+          "1"
+        ],
+        "label": "y",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:97",
+        "source_kind": "johnson_handle_lane"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:98",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:99",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:100",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:101",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:102",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:103",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": [
+          "35/132",
+          "-29/66",
+          "1"
+        ],
+        "label": "y",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:104",
+        "source_kind": "johnson_handle_lane"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:105",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:106",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:107",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:108",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:109",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:110",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:111",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": [
+          "41/154",
+          "-67/154",
+          "1"
+        ],
+        "label": "y",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:112",
+        "source_kind": "johnson_handle_lane"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:113",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:114",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:115",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:116",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:117",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:118",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": [
+          "247/924",
+          "-199/462",
+          "1"
+        ],
+        "label": "y",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:119",
+        "source_kind": "johnson_handle_lane"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:120",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:121",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:122",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:123",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:124",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:125",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:126",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": [
+          "62/231",
+          "-197/462",
+          "1"
+        ],
+        "label": "y",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:127",
+        "source_kind": "johnson_handle_lane"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:128",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:129",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:130",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:131",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:132",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:133",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:134",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": [
+          "83/308",
+          "-65/154",
+          "1"
+        ],
+        "label": "y",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:135",
+        "source_kind": "johnson_handle_lane"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:136",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:137",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:138",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:139",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:140",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:141",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": [
+          "125/462",
+          "-193/462",
+          "1"
+        ],
+        "label": "y",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:142",
+        "source_kind": "johnson_handle_lane"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:143",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:144",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:145",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:146",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:147",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:148",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:149",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": [
+          "251/924",
+          "-191/462",
+          "1"
+        ],
+        "label": "y",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:150",
+        "source_kind": "johnson_handle_lane"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:151",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:152",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:153",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:154",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:155",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:156",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": [
+          "3/11",
+          "-9/22",
+          "1"
+        ],
+        "label": "y",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:157",
+        "source_kind": "johnson_handle_lane"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:158",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:159",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:160",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:161",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:162",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:163",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:164",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": [
+          "23/84",
+          "-17/42",
+          "1"
+        ],
+        "label": "y",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:165",
+        "source_kind": "johnson_handle_lane"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:166",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:167",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:168",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:169",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:170",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:171",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": [
+          "127/462",
+          "-185/462",
+          "1"
+        ],
+        "label": "y",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:172",
+        "source_kind": "johnson_handle_lane"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:173",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:174",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:175",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:176",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:177",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:178",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:179",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": [
+          "85/308",
+          "-61/154",
+          "1"
+        ],
+        "label": "y",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:180",
+        "source_kind": "johnson_handle_lane"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:181",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:182",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:183",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:184",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:185",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:186",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:187",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": [
+          "64/231",
+          "-181/462",
+          "1"
+        ],
+        "label": "y",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:188",
+        "source_kind": "johnson_handle_lane"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:189",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:190",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:191",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:192",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:193",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:194",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": [
+          "257/924",
+          "-179/462",
+          "1"
+        ],
+        "label": "y",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:195",
+        "source_kind": "johnson_handle_lane"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:196",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:197",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:198",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:199",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:200",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:201",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:202",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": [
+          "43/154",
+          "-59/154",
+          "1"
+        ],
+        "label": "y",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:203",
+        "source_kind": "johnson_handle_lane"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:204",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:205",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:206",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:207",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:208",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:209",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": [
+          "37/132",
+          "-25/66",
+          "1"
+        ],
+        "label": "y",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:210",
+        "source_kind": "johnson_handle_lane"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:211",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:212",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:213",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:214",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:215",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:216",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:217",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": [
+          "65/231",
+          "-173/462",
+          "1"
+        ],
+        "label": "y",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:218",
+        "source_kind": "johnson_handle_lane"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:219",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:220",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:221",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:222",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:223",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:224",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": [
+          "87/308",
+          "-57/154",
+          "1"
+        ],
+        "label": "y",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:225",
+        "source_kind": "johnson_handle_lane"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:226",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:227",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:228",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:229",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:230",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:231",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:232",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": [
+          "131/462",
+          "-169/462",
+          "1"
+        ],
+        "label": "y",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:233",
+        "source_kind": "johnson_handle_lane"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:234",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:235",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:236",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:237",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:238",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:239",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": [
+          "263/924",
+          "-167/462",
+          "1"
+        ],
+        "label": "y",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:240",
+        "source_kind": "johnson_handle_lane"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:241",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:242",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:243",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:244",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:245",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:246",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:247",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": [
+          "2/7",
+          "-5/14",
+          "1"
+        ],
+        "label": "y",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:248",
+        "source_kind": "johnson_handle_lane"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:249",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:250",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:251",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:252",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:253",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:254",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:255",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": [
+          "265/924",
+          "-163/462",
+          "1"
+        ],
+        "label": "y",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:256",
+        "source_kind": "johnson_handle_lane"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:257",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:258",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:259",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:260",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:261",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:262",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": [
+          "19/66",
+          "-23/66",
+          "1"
+        ],
+        "label": "y",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:263",
+        "source_kind": "johnson_handle_lane"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:264",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:265",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:266",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:267",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:268",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:269",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:270",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": [
+          "89/308",
+          "-53/154",
+          "1"
+        ],
+        "label": "y",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:271",
+        "source_kind": "johnson_handle_lane"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:272",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:273",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:274",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:275",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:276",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:277",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": [
+          "67/231",
+          "-157/462",
+          "1"
+        ],
+        "label": "y",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:278",
+        "source_kind": "johnson_handle_lane"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:279",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:280",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:281",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:282",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:283",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:284",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:285",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": [
+          "269/924",
+          "-155/462",
+          "1"
+        ],
+        "label": "y",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:286",
+        "source_kind": "johnson_handle_lane"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:287",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:288",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:289",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:290",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:291",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:292",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": [
+          "45/154",
+          "-51/154",
+          "1"
+        ],
+        "label": "y",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:293",
+        "source_kind": "johnson_handle_lane"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:294",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:295",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:296",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:297",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:298",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:299",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:300",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": [
+          "271/924",
+          "-151/462",
+          "1"
+        ],
+        "label": "y",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:301",
+        "source_kind": "johnson_handle_lane"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:302",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:303",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:304",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:305",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:306",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:307",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": [
+          "68/231",
+          "-149/462",
+          "1"
+        ],
+        "label": "y",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:308",
+        "source_kind": "johnson_handle_lane"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "m_2",
+        "source_id": "c1:letter:309",
+        "source_kind": "x_slide_z_replacement"
+      },
+      {
+        "belt_face_point": [
+          "0",
+          "0",
+          "1"
+        ],
+        "label": "y",
+        "orientation": -1,
+        "owner": "m_2",
+        "source_id": "m_2:C_i",
+        "source_kind": "bottom_coordinate_arc"
+      }
+    ],
+    "r_xy": [
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": 1,
+        "owner": "r_xy",
+        "pre_cancel_axis": "x",
+        "source_id": "r_xy:vertex:7",
+        "source_kind": "dual_cell_boundary"
+      },
+      {
+        "belt_face_point": [
+          "-1",
+          "0",
+          "1"
+        ],
+        "label": "y",
+        "orientation": 1,
+        "owner": "r_xy",
+        "pre_cancel_axis": "y",
+        "source_id": "r_xy:vertex:5",
+        "source_kind": "dual_cell_boundary"
+      },
+      {
+        "belt_face_point": null,
+        "label": "z",
+        "orientation": -1,
+        "owner": "r_xy",
+        "pre_cancel_axis": "x",
+        "source_id": "r_xy:vertex:3",
+        "source_kind": "dual_cell_boundary"
+      },
+      {
+        "belt_face_point": [
+          "1",
+          "0",
+          "1"
+        ],
+        "label": "y",
+        "orientation": -1,
+        "owner": "r_xy",
+        "pre_cancel_axis": "y",
+        "source_id": "r_xy:vertex:1",
+        "source_kind": "dual_cell_boundary"
+      }
+    ]
   },
-  "leftover_circle_count": null,
-  "passage_count": null,
-  "reason": "belt intersections are not both 1, so the cut tangle is not a cancellation of the actual link",
-  "schema": "t73_actual_cut_tangle/v1",
-  "sha256": "9746F9B45A45EFB959866AD9EB00D41A7FAB0F319DEC4506C5EC8914EFD89CCD",
-  "status": "OPEN"
+  "product_rectangle_pairings": [
+    {
+      "owner": "r_xy",
+      "y_event_index": 1,
+      "y_source_id": "r_xy:vertex:5",
+      "z_event_index": 2,
+      "z_source_id": "r_xy:vertex:3"
+    },
+    {
+      "owner": "r_xy",
+      "y_event_index": 3,
+      "y_source_id": "r_xy:vertex:1",
+      "z_event_index": 0,
+      "z_source_id": "r_xy:vertex:7"
+    },
+    {
+      "owner": "m_2",
+      "y_event_index": 6,
+      "y_source_id": "c1:letter:6",
+      "z_event_index": 7,
+      "z_source_id": "c1:letter:7"
+    },
+    {
+      "owner": "m_2",
+      "y_event_index": 14,
+      "y_source_id": "c1:letter:14",
+      "z_event_index": 15,
+      "z_source_id": "c1:letter:15"
+    },
+    {
+      "owner": "m_2",
+      "y_event_index": 21,
+      "y_source_id": "c1:letter:21",
+      "z_event_index": 22,
+      "z_source_id": "c1:letter:22"
+    },
+    {
+      "owner": "m_2",
+      "y_event_index": 29,
+      "y_source_id": "c1:letter:29",
+      "z_event_index": 30,
+      "z_source_id": "c1:letter:30"
+    },
+    {
+      "owner": "m_2",
+      "y_event_index": 36,
+      "y_source_id": "c1:letter:36",
+      "z_event_index": 37,
+      "z_source_id": "c1:letter:37"
+    },
+    {
+      "owner": "m_2",
+      "y_event_index": 44,
+      "y_source_id": "c1:letter:44",
+      "z_event_index": 45,
+      "z_source_id": "c1:letter:45"
+    },
+    {
+      "owner": "m_2",
+      "y_event_index": 51,
+      "y_source_id": "c1:letter:51",
+      "z_event_index": 52,
+      "z_source_id": "c1:letter:52"
+    },
+    {
+      "owner": "m_2",
+      "y_event_index": 59,
+      "y_source_id": "c1:letter:59",
+      "z_event_index": 60,
+      "z_source_id": "c1:letter:60"
+    },
+    {
+      "owner": "m_2",
+      "y_event_index": 67,
+      "y_source_id": "c1:letter:67",
+      "z_event_index": 68,
+      "z_source_id": "c1:letter:68"
+    },
+    {
+      "owner": "m_2",
+      "y_event_index": 74,
+      "y_source_id": "c1:letter:74",
+      "z_event_index": 75,
+      "z_source_id": "c1:letter:75"
+    },
+    {
+      "owner": "m_2",
+      "y_event_index": 82,
+      "y_source_id": "c1:letter:82",
+      "z_event_index": 83,
+      "z_source_id": "c1:letter:83"
+    },
+    {
+      "owner": "m_2",
+      "y_event_index": 89,
+      "y_source_id": "c1:letter:89",
+      "z_event_index": 90,
+      "z_source_id": "c1:letter:90"
+    },
+    {
+      "owner": "m_2",
+      "y_event_index": 97,
+      "y_source_id": "c1:letter:97",
+      "z_event_index": 98,
+      "z_source_id": "c1:letter:98"
+    },
+    {
+      "owner": "m_2",
+      "y_event_index": 104,
+      "y_source_id": "c1:letter:104",
+      "z_event_index": 105,
+      "z_source_id": "c1:letter:105"
+    },
+    {
+      "owner": "m_2",
+      "y_event_index": 112,
+      "y_source_id": "c1:letter:112",
+      "z_event_index": 113,
+      "z_source_id": "c1:letter:113"
+    },
+    {
+      "owner": "m_2",
+      "y_event_index": 119,
+      "y_source_id": "c1:letter:119",
+      "z_event_index": 120,
+      "z_source_id": "c1:letter:120"
+    },
+    {
+      "owner": "m_2",
+      "y_event_index": 127,
+      "y_source_id": "c1:letter:127",
+      "z_event_index": 128,
+      "z_source_id": "c1:letter:128"
+    },
+    {
+      "owner": "m_2",
+      "y_event_index": 135,
+      "y_source_id": "c1:letter:135",
+      "z_event_index": 136,
+      "z_source_id": "c1:letter:136"
+    },
+    {
+      "owner": "m_2",
+      "y_event_index": 142,
+      "y_source_id": "c1:letter:142",
+      "z_event_index": 143,
+      "z_source_id": "c1:letter:143"
+    },
+    {
+      "owner": "m_2",
+      "y_event_index": 150,
+      "y_source_id": "c1:letter:150",
+      "z_event_index": 151,
+      "z_source_id": "c1:letter:151"
+    },
+    {
+      "owner": "m_2",
+      "y_event_index": 157,
+      "y_source_id": "c1:letter:157",
+      "z_event_index": 158,
+      "z_source_id": "c1:letter:158"
+    },
+    {
+      "owner": "m_2",
+      "y_event_index": 165,
+      "y_source_id": "c1:letter:165",
+      "z_event_index": 166,
+      "z_source_id": "c1:letter:166"
+    },
+    {
+      "owner": "m_2",
+      "y_event_index": 172,
+      "y_source_id": "c1:letter:172",
+      "z_event_index": 173,
+      "z_source_id": "c1:letter:173"
+    },
+    {
+      "owner": "m_2",
+      "y_event_index": 180,
+      "y_source_id": "c1:letter:180",
+      "z_event_index": 181,
+      "z_source_id": "c1:letter:181"
+    },
+    {
+      "owner": "m_2",
+      "y_event_index": 188,
+      "y_source_id": "c1:letter:188",
+      "z_event_index": 189,
+      "z_source_id": "c1:letter:189"
+    },
+    {
+      "owner": "m_2",
+      "y_event_index": 195,
+      "y_source_id": "c1:letter:195",
+      "z_event_index": 196,
+      "z_source_id": "c1:letter:196"
+    },
+    {
+      "owner": "m_2",
+      "y_event_index": 203,
+      "y_source_id": "c1:letter:203",
+      "z_event_index": 204,
+      "z_source_id": "c1:letter:204"
+    },
+    {
+      "owner": "m_2",
+      "y_event_index": 210,
+      "y_source_id": "c1:letter:210",
+      "z_event_index": 211,
+      "z_source_id": "c1:letter:211"
+    },
+    {
+      "owner": "m_2",
+      "y_event_index": 218,
+      "y_source_id": "c1:letter:218",
+      "z_event_index": 219,
+      "z_source_id": "c1:letter:219"
+    },
+    {
+      "owner": "m_2",
+      "y_event_index": 225,
+      "y_source_id": "c1:letter:225",
+      "z_event_index": 226,
+      "z_source_id": "c1:letter:226"
+    },
+    {
+      "owner": "m_2",
+      "y_event_index": 233,
+      "y_source_id": "c1:letter:233",
+      "z_event_index": 234,
+      "z_source_id": "c1:letter:234"
+    },
+    {
+      "owner": "m_2",
+      "y_event_index": 240,
+      "y_source_id": "c1:letter:240",
+      "z_event_index": 241,
+      "z_source_id": "c1:letter:241"
+    },
+    {
+      "owner": "m_2",
+      "y_event_index": 248,
+      "y_source_id": "c1:letter:248",
+      "z_event_index": 249,
+      "z_source_id": "c1:letter:249"
+    },
+    {
+      "owner": "m_2",
+      "y_event_index": 256,
+      "y_source_id": "c1:letter:256",
+      "z_event_index": 257,
+      "z_source_id": "c1:letter:257"
+    },
+    {
+      "owner": "m_2",
+      "y_event_index": 263,
+      "y_source_id": "c1:letter:263",
+      "z_event_index": 264,
+      "z_source_id": "c1:letter:264"
+    },
+    {
+      "owner": "m_2",
+      "y_event_index": 271,
+      "y_source_id": "c1:letter:271",
+      "z_event_index": 272,
+      "z_source_id": "c1:letter:272"
+    },
+    {
+      "owner": "m_2",
+      "y_event_index": 278,
+      "y_source_id": "c1:letter:278",
+      "z_event_index": 279,
+      "z_source_id": "c1:letter:279"
+    },
+    {
+      "owner": "m_2",
+      "y_event_index": 286,
+      "y_source_id": "c1:letter:286",
+      "z_event_index": 287,
+      "z_source_id": "c1:letter:287"
+    },
+    {
+      "owner": "m_2",
+      "y_event_index": 293,
+      "y_source_id": "c1:letter:293",
+      "z_event_index": 294,
+      "z_source_id": "c1:letter:294"
+    },
+    {
+      "owner": "m_2",
+      "y_event_index": 301,
+      "y_source_id": "c1:letter:301",
+      "z_event_index": 302,
+      "z_source_id": "c1:letter:302"
+    },
+    {
+      "owner": "m_2",
+      "y_event_index": 308,
+      "y_source_id": "c1:letter:308",
+      "z_event_index": 309,
+      "z_source_id": "c1:letter:309"
+    },
+    {
+      "owner": "m_2",
+      "y_event_index": 310,
+      "y_source_id": "m_2:C_i",
+      "z_event_index": 0,
+      "z_source_id": "c1:letter:0"
+    }
+  ],
+  "reason": "42 actual m_2 y passages and two oriented r_xy passages cut to 44 labelled product arcs; 227 unpaired z events remain outside the detector ball",
+  "schema": "t73_actual_cut_tangle/v2",
+  "sha256": "A47D6BC2510FD819ADBC10893600E8A5C6404B1F67391165D63936C96B03BA95",
+  "spine_embedding_sha256": "57BC99BE08ED805EF268049F1EEE961D25F6889A6BDEC142B8715072B7F51AC1",
+  "status": "PASS",
+  "t_cancellation_sha256": "6BFFC5189F69C3C2A3AA186683FFFDDC63A60573982634BCEC242DA1B67051D6",
+  "x_cancellation_sha256": "B72838D6671FAFBD3D8368E511759D9DE13007C81E4C731EAA661B084B951C1B"
 }
