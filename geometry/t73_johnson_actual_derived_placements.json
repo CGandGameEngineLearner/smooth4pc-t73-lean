@@ -4,7 +4,7 @@
   "all_actual_charts_orientation_preserving": true,
   "all_actual_conjugated_cells_positive": true,
   "cells_sha256": "FA93FDC69C7F0DA7D9E2F326E7D8A1862E027E9AC1A777223FB374CAF6CF4140",
-  "collapses_sha256": "0A8AD56A1DBF4A1A8B8A2BA7B8A956F9A8E0E5BB0EF52132BC005C460B159B48",
+  "collapses_sha256": "AABB9FB653B6E666B51D5AC627D9921E268C98B775FDB794209CD37E3A703B6F",
   "expanded_ambient_cell_count": 14929152,
   "movies": [
     {
@@ -258799,5 +258799,5 @@
   "paired_saddle_side_chart_cells": "PASS",
   "placement_count": 2604,
   "schema": "t73_johnson_actual_derived_placements/v1",
-  "sha256": "AC8084EFE8A928B99014F79616EEDA215419E454A04B87768C8440435139A401"
+  "sha256": "0BFC08C316067F4487A43290C5DA6BCBABE8A56A01B340B2CF945645B249F066"
 }

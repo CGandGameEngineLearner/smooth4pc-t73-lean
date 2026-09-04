@@ -1,6 +1,7 @@
 {
   "all_disk_transition_patterns_pass": true,
   "all_outer_boundaries_require_halfturns": true,
+  "all_regular_path_caps_collapse_relatively": true,
   "all_regular_path_neighbourhoods_pass": true,
   "all_supports_are_balls": true,
   "disk_cells_sha256": "DB5C177FBE1F079130B81AF1F9ECC1857FECDC511CE003886B5E28F702D55BF4",
@@ -74,6 +75,8 @@
       "power": -1,
       "protected_ball_bbox_clearance": "1",
       "regular_path_neighbourhood": {
+        "both_cap_relative_collapses": "PASS",
+        "both_caps_are_twelve_triangle_disks": true,
         "boundary_connected": true,
         "boundary_edge_multiplicities": {
           "2": 792
@@ -118,6 +121,222 @@
               "3"
             ]
           ]
+        ],
+        "caps": [
+          {
+            "relative_collapse": {
+              "dimension_histogram": {
+                "1": 264,
+                "2": 900,
+                "3": 648
+              },
+              "protected_simplex_counts": [
+                13,
+                24,
+                12,
+                0
+              ],
+              "relative_collapse_status": "PASS",
+              "remaining_equals_cap_by_dimension": [
+                true,
+                true,
+                true,
+                true
+              ],
+              "remaining_simplex_counts": [
+                13,
+                24,
+                12,
+                0
+              ],
+              "step_count": 1812,
+              "step_sequence_sha256": "DF530B8813EF6A7E97DE2C1FD87E358D381D5743A818B866360BEFF5366C0733"
+            },
+            "surface": {
+              "boundary_components": 1,
+              "edge_multiplicities": {
+                "1": 12,
+                "2": 12
+              },
+              "edges": 24,
+              "euler": 1,
+              "faces": 12,
+              "surface_components": 1,
+              "surface_manifold": true,
+              "topology": "disk",
+              "vertices": 13
+            },
+            "triangle_count": 12,
+            "triangles": [
+              [
+                4,
+                2,
+                7
+              ],
+              [
+                10,
+                4,
+                7
+              ],
+              [
+                4,
+                1,
+                2
+              ],
+              [
+                4,
+                0,
+                1
+              ],
+              [
+                4,
+                3,
+                9
+              ],
+              [
+                10,
+                4,
+                9
+              ],
+              [
+                134,
+                4,
+                3
+              ],
+              [
+                134,
+                4,
+                135
+              ],
+              [
+                136,
+                4,
+                132
+              ],
+              [
+                4,
+                0,
+                132
+              ],
+              [
+                136,
+                4,
+                133
+              ],
+              [
+                4,
+                133,
+                135
+              ]
+            ]
+          },
+          {
+            "relative_collapse": {
+              "dimension_histogram": {
+                "1": 264,
+                "2": 900,
+                "3": 648
+              },
+              "protected_simplex_counts": [
+                13,
+                24,
+                12,
+                0
+              ],
+              "relative_collapse_status": "PASS",
+              "remaining_equals_cap_by_dimension": [
+                true,
+                true,
+                true,
+                true
+              ],
+              "remaining_simplex_counts": [
+                13,
+                24,
+                12,
+                0
+              ],
+              "step_count": 1812,
+              "step_sequence_sha256": "C14B454DEFFE9D7A2ED1DFBDDA578F4CEBAD76BED8C5059DCCE502C8C63A77E9"
+            },
+            "surface": {
+              "boundary_components": 1,
+              "edge_multiplicities": {
+                "1": 12,
+                "2": 12
+              },
+              "edges": 24,
+              "euler": 1,
+              "faces": 12,
+              "surface_components": 1,
+              "surface_manifold": true,
+              "topology": "disk",
+              "vertices": 13
+            },
+            "triangle_count": 12,
+            "triangles": [
+              [
+                198,
+                212,
+                211
+              ],
+              [
+                199,
+                198,
+                212
+              ],
+              [
+                267,
+                212,
+                211
+              ],
+              [
+                269,
+                267,
+                212
+              ],
+              [
+                210,
+                212,
+                197
+              ],
+              [
+                199,
+                212,
+                197
+              ],
+              [
+                210,
+                208,
+                212
+              ],
+              [
+                208,
+                212,
+                209
+              ],
+              [
+                270,
+                212,
+                268
+              ],
+              [
+                269,
+                212,
+                268
+              ],
+              [
+                270,
+                266,
+                212
+              ],
+              [
+                266,
+                212,
+                209
+              ]
+            ]
+          }
         ],
         "collapse_steps": 1836,
         "collapses_to_point": true,
@@ -345,6 +564,8 @@
       "power": -1,
       "protected_ball_bbox_clearance": "1",
       "regular_path_neighbourhood": {
+        "both_cap_relative_collapses": "PASS",
+        "both_caps_are_twelve_triangle_disks": true,
         "boundary_connected": true,
         "boundary_edge_multiplicities": {
           "2": 792
@@ -389,6 +610,222 @@
               "0"
             ]
           ]
+        ],
+        "caps": [
+          {
+            "relative_collapse": {
+              "dimension_histogram": {
+                "1": 264,
+                "2": 900,
+                "3": 648
+              },
+              "protected_simplex_counts": [
+                13,
+                24,
+                12,
+                0
+              ],
+              "relative_collapse_status": "PASS",
+              "remaining_equals_cap_by_dimension": [
+                true,
+                true,
+                true,
+                true
+              ],
+              "remaining_simplex_counts": [
+                13,
+                24,
+                12,
+                0
+              ],
+              "step_count": 1812,
+              "step_sequence_sha256": "FF683B774F35F669A652B438B2CAF8A96F8168DCFB9B29BEB7043809A54759C5"
+            },
+            "surface": {
+              "boundary_components": 1,
+              "edge_multiplicities": {
+                "1": 12,
+                "2": 12
+              },
+              "edges": 24,
+              "euler": 1,
+              "faces": 12,
+              "surface_components": 1,
+              "surface_manifold": true,
+              "topology": "disk",
+              "vertices": 13
+            },
+            "triangle_count": 12,
+            "triangles": [
+              [
+                151,
+                140,
+                192
+              ],
+              [
+                40,
+                140,
+                192
+              ],
+              [
+                151,
+                205,
+                192
+              ],
+              [
+                207,
+                205,
+                192
+              ],
+              [
+                38,
+                190,
+                192
+              ],
+              [
+                38,
+                40,
+                192
+              ],
+              [
+                186,
+                190,
+                192
+              ],
+              [
+                188,
+                186,
+                192
+              ],
+              [
+                231,
+                210,
+                192
+              ],
+              [
+                207,
+                210,
+                192
+              ],
+              [
+                228,
+                231,
+                192
+              ],
+              [
+                228,
+                188,
+                192
+              ]
+            ]
+          },
+          {
+            "relative_collapse": {
+              "dimension_histogram": {
+                "1": 264,
+                "2": 900,
+                "3": 648
+              },
+              "protected_simplex_counts": [
+                13,
+                24,
+                12,
+                0
+              ],
+              "relative_collapse_status": "PASS",
+              "remaining_equals_cap_by_dimension": [
+                true,
+                true,
+                true,
+                true
+              ],
+              "remaining_simplex_counts": [
+                13,
+                24,
+                12,
+                0
+              ],
+              "step_count": 1812,
+              "step_sequence_sha256": "88C654234A380892381CD9D130EA1A7449BB1F073773C43FC9BD46D0D14F008E"
+            },
+            "surface": {
+              "boundary_components": 1,
+              "edge_multiplicities": {
+                "1": 12,
+                "2": 12
+              },
+              "edges": 24,
+              "euler": 1,
+              "faces": 12,
+              "surface_components": 1,
+              "surface_manifold": true,
+              "topology": "disk",
+              "vertices": 13
+            },
+            "triangle_count": 12,
+            "triangles": [
+              [
+                149,
+                148,
+                117
+              ],
+              [
+                148,
+                117,
+                49
+              ],
+              [
+                149,
+                117,
+                127
+              ],
+              [
+                121,
+                117,
+                127
+              ],
+              [
+                183,
+                117,
+                184
+              ],
+              [
+                183,
+                117,
+                49
+              ],
+              [
+                272,
+                117,
+                184
+              ],
+              [
+                272,
+                270,
+                117
+              ],
+              [
+                129,
+                117,
+                276
+              ],
+              [
+                129,
+                121,
+                117
+              ],
+              [
+                274,
+                117,
+                276
+              ],
+              [
+                274,
+                270,
+                117
+              ]
+            ]
+          }
         ],
         "collapse_steps": 1836,
         "collapses_to_point": true,
@@ -630,6 +1067,8 @@
       "power": 1,
       "protected_ball_bbox_clearance": "1",
       "regular_path_neighbourhood": {
+        "both_cap_relative_collapses": "PASS",
+        "both_caps_are_twelve_triangle_disks": true,
         "boundary_connected": true,
         "boundary_edge_multiplicities": {
           "2": 5076
@@ -674,6 +1113,222 @@
               "37/10"
             ]
           ]
+        ],
+        "caps": [
+          {
+            "relative_collapse": {
+              "dimension_histogram": {
+                "1": 1760,
+                "2": 6000,
+                "3": 4320
+              },
+              "protected_simplex_counts": [
+                13,
+                24,
+                12,
+                0
+              ],
+              "relative_collapse_status": "PASS",
+              "remaining_equals_cap_by_dimension": [
+                true,
+                true,
+                true,
+                true
+              ],
+              "remaining_simplex_counts": [
+                13,
+                24,
+                12,
+                0
+              ],
+              "step_count": 12080,
+              "step_sequence_sha256": "EF4D520AFBA03E25B2833C2B6342283DC2466864630920D1B1C12E76018C5BF4"
+            },
+            "surface": {
+              "boundary_components": 1,
+              "edge_multiplicities": {
+                "1": 12,
+                "2": 12
+              },
+              "edges": 24,
+              "euler": 1,
+              "faces": 12,
+              "surface_components": 1,
+              "surface_manifold": true,
+              "topology": "disk",
+              "vertices": 13
+            },
+            "triangle_count": 12,
+            "triangles": [
+              [
+                982,
+                983,
+                979
+              ],
+              [
+                979,
+                980,
+                983
+              ],
+              [
+                982,
+                983,
+                986
+              ],
+              [
+                983,
+                974,
+                986
+              ],
+              [
+                976,
+                983,
+                971
+              ],
+              [
+                976,
+                980,
+                983
+              ],
+              [
+                983,
+                971,
+                835
+              ],
+              [
+                983,
+                837,
+                835
+              ],
+              [
+                1087,
+                983,
+                1088
+              ],
+              [
+                1087,
+                983,
+                974
+              ],
+              [
+                847,
+                983,
+                1088
+              ],
+              [
+                847,
+                983,
+                837
+              ]
+            ]
+          },
+          {
+            "relative_collapse": {
+              "dimension_histogram": {
+                "1": 1760,
+                "2": 6000,
+                "3": 4320
+              },
+              "protected_simplex_counts": [
+                13,
+                24,
+                12,
+                0
+              ],
+              "relative_collapse_status": "PASS",
+              "remaining_equals_cap_by_dimension": [
+                true,
+                true,
+                true,
+                true
+              ],
+              "remaining_simplex_counts": [
+                13,
+                24,
+                12,
+                0
+              ],
+              "step_count": 12080,
+              "step_sequence_sha256": "16E17E9D2819278F3F39F8B171F6B3AF9C6B40793D581F3690DAF1C1FB6A686E"
+            },
+            "surface": {
+              "boundary_components": 1,
+              "edge_multiplicities": {
+                "1": 12,
+                "2": 12
+              },
+              "edges": 24,
+              "euler": 1,
+              "faces": 12,
+              "surface_components": 1,
+              "surface_manifold": true,
+              "topology": "disk",
+              "vertices": 13
+            },
+            "triangle_count": 12,
+            "triangles": [
+              [
+                205,
+                208,
+                210
+              ],
+              [
+                205,
+                207,
+                210
+              ],
+              [
+                208,
+                221,
+                210
+              ],
+              [
+                222,
+                221,
+                210
+              ],
+              [
+                209,
+                206,
+                210
+              ],
+              [
+                206,
+                207,
+                210
+              ],
+              [
+                209,
+                57,
+                210
+              ],
+              [
+                57,
+                58,
+                210
+              ],
+              [
+                219,
+                67,
+                210
+              ],
+              [
+                222,
+                219,
+                210
+              ],
+              [
+                64,
+                67,
+                210
+              ],
+              [
+                64,
+                58,
+                210
+              ]
+            ]
+          }
         ],
         "collapse_steps": 12104,
         "collapses_to_point": true,
@@ -953,6 +1608,8 @@
       "power": 1,
       "protected_ball_bbox_clearance": "1",
       "regular_path_neighbourhood": {
+        "both_cap_relative_collapses": "PASS",
+        "both_caps_are_twelve_triangle_disks": true,
         "boundary_connected": true,
         "boundary_edge_multiplicities": {
           "2": 5076
@@ -997,6 +1654,222 @@
               "37/10"
             ]
           ]
+        ],
+        "caps": [
+          {
+            "relative_collapse": {
+              "dimension_histogram": {
+                "1": 1760,
+                "2": 6000,
+                "3": 4320
+              },
+              "protected_simplex_counts": [
+                13,
+                24,
+                12,
+                0
+              ],
+              "relative_collapse_status": "PASS",
+              "remaining_equals_cap_by_dimension": [
+                true,
+                true,
+                true,
+                true
+              ],
+              "remaining_simplex_counts": [
+                13,
+                24,
+                12,
+                0
+              ],
+              "step_count": 12080,
+              "step_sequence_sha256": "EF4D520AFBA03E25B2833C2B6342283DC2466864630920D1B1C12E76018C5BF4"
+            },
+            "surface": {
+              "boundary_components": 1,
+              "edge_multiplicities": {
+                "1": 12,
+                "2": 12
+              },
+              "edges": 24,
+              "euler": 1,
+              "faces": 12,
+              "surface_components": 1,
+              "surface_manifold": true,
+              "topology": "disk",
+              "vertices": 13
+            },
+            "triangle_count": 12,
+            "triangles": [
+              [
+                982,
+                983,
+                979
+              ],
+              [
+                979,
+                980,
+                983
+              ],
+              [
+                982,
+                983,
+                986
+              ],
+              [
+                983,
+                974,
+                986
+              ],
+              [
+                976,
+                983,
+                971
+              ],
+              [
+                976,
+                980,
+                983
+              ],
+              [
+                983,
+                971,
+                835
+              ],
+              [
+                983,
+                837,
+                835
+              ],
+              [
+                1087,
+                983,
+                1088
+              ],
+              [
+                1087,
+                983,
+                974
+              ],
+              [
+                847,
+                983,
+                1088
+              ],
+              [
+                847,
+                983,
+                837
+              ]
+            ]
+          },
+          {
+            "relative_collapse": {
+              "dimension_histogram": {
+                "1": 1760,
+                "2": 6000,
+                "3": 4320
+              },
+              "protected_simplex_counts": [
+                13,
+                24,
+                12,
+                0
+              ],
+              "relative_collapse_status": "PASS",
+              "remaining_equals_cap_by_dimension": [
+                true,
+                true,
+                true,
+                true
+              ],
+              "remaining_simplex_counts": [
+                13,
+                24,
+                12,
+                0
+              ],
+              "step_count": 12080,
+              "step_sequence_sha256": "16E17E9D2819278F3F39F8B171F6B3AF9C6B40793D581F3690DAF1C1FB6A686E"
+            },
+            "surface": {
+              "boundary_components": 1,
+              "edge_multiplicities": {
+                "1": 12,
+                "2": 12
+              },
+              "edges": 24,
+              "euler": 1,
+              "faces": 12,
+              "surface_components": 1,
+              "surface_manifold": true,
+              "topology": "disk",
+              "vertices": 13
+            },
+            "triangle_count": 12,
+            "triangles": [
+              [
+                205,
+                208,
+                210
+              ],
+              [
+                205,
+                207,
+                210
+              ],
+              [
+                208,
+                221,
+                210
+              ],
+              [
+                222,
+                221,
+                210
+              ],
+              [
+                209,
+                206,
+                210
+              ],
+              [
+                206,
+                207,
+                210
+              ],
+              [
+                209,
+                57,
+                210
+              ],
+              [
+                57,
+                58,
+                210
+              ],
+              [
+                219,
+                67,
+                210
+              ],
+              [
+                222,
+                219,
+                210
+              ],
+              [
+                64,
+                67,
+                210
+              ],
+              [
+                64,
+                58,
+                210
+              ]
+            ]
+          }
         ],
         "collapse_steps": 12104,
         "collapses_to_point": true,
@@ -1195,6 +2068,6 @@
   "paired_saddle_ambient_cells": "OPEN",
   "paired_saddle_support": "PASS",
   "schema": "t73_johnson_paired_saddle_support/v1",
-  "sha256": "140D1DDA9E887C784DF8B79350B9165AAAB3DF08097E1F1C163BE0B3A5176078",
+  "sha256": "B40C6860DE6F94622A5C38E906E3E96D477675BE24801942F928ED11D22427A1",
   "sweep_sha256": "188B128AD8D619318F3E5BE1D28A7684082233DFBFC81AB24E69C1F53F5DBA9A"
 }

@@ -34,6 +34,7 @@ class JohnsonPairedSaddleSupportTest(unittest.TestCase):
         self.assertTrue(rebuilt["all_disk_transition_patterns_pass"])
         self.assertTrue(rebuilt["all_outer_boundaries_require_halfturns"])
         self.assertTrue(rebuilt["all_regular_path_neighbourhoods_pass"])
+        self.assertTrue(rebuilt["all_regular_path_caps_collapse_relatively"])
         for movie in rebuilt["movies"]:
             self.assertEqual(movie["paired_saddle_support"], "PASS")
             self.assertTrue(movie["support_collapses_to_point"])
@@ -51,6 +52,20 @@ class JohnsonPairedSaddleSupportTest(unittest.TestCase):
             self.assertTrue(neighbourhood["collapses_to_point"])
             expected = 648 if movie["power"] < 0 else 4320
             self.assertEqual(neighbourhood["star_tetrahedra"], expected)
+            self.assertTrue(neighbourhood["both_caps_are_twelve_triangle_disks"])
+            self.assertEqual(neighbourhood["both_cap_relative_collapses"], "PASS")
+            expected_steps = 1812 if movie["power"] < 0 else 12080
+            for cap in neighbourhood["caps"]:
+                self.assertEqual(cap["triangle_count"], 12)
+                self.assertEqual(cap["surface"]["topology"], "disk")
+                self.assertEqual(
+                    cap["relative_collapse"]["relative_collapse_status"], "PASS"
+                )
+                self.assertEqual(cap["relative_collapse"]["step_count"], expected_steps)
+                self.assertEqual(
+                    cap["relative_collapse"]["remaining_equals_cap_by_dimension"],
+                    [True, True, True, True],
+                )
             self.assertFalse(movie["outer_boundary_membership_agrees"])
             self.assertTrue(movie["outer_boundary_requires_halfturn"])
             self.assertGreater(

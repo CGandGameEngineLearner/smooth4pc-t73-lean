@@ -11,6 +11,7 @@ import itertools
 import json
 import math
 import functools
+import heapq
 from fractions import Fraction
 from pathlib import Path
 from typing import Any
@@ -238,6 +239,84 @@ def fast_collapse_to_point(tetrahedra):
     }
 
 
+def fast_relative_collapse(tetrahedra, protected_faces):
+    simplices = [set() for _ in range(4)]
+    for tetrahedron in tetrahedra:
+        for size in range(1, 5):
+            simplices[size - 1].update(
+                frozenset(simplex) for simplex in itertools.combinations(tetrahedron, size)
+            )
+    protected = [set() for _ in range(4)]
+    for face in protected_faces:
+        for size in range(1, 4):
+            protected[size - 1].update(
+                frozenset(simplex) for simplex in itertools.combinations(face, size)
+            )
+    histogram = collections.Counter()
+    step_digest_rows = []
+    for dimension in (3, 2, 1):
+        cofaces = collections.defaultdict(set)
+        for simplex in simplices[dimension]:
+            for face in itertools.combinations(simplex, dimension):
+                cofaces[frozenset(face)].add(simplex)
+        queue = []
+        for face in simplices[dimension - 1] - protected[dimension - 1]:
+            hosts = cofaces[face] & simplices[dimension]
+            if len(hosts) == 1:
+                simplex = next(iter(hosts))
+                if simplex not in protected[dimension]:
+                    heapq.heappush(
+                        queue,
+                        (tuple(sorted(simplex)), tuple(sorted(face))),
+                    )
+        while queue:
+            simplex_key, face_key = heapq.heappop(queue)
+            simplex = frozenset(simplex_key)
+            face = frozenset(face_key)
+            if (
+                simplex not in simplices[dimension]
+                or face not in simplices[dimension - 1]
+                or face in protected[dimension - 1]
+            ):
+                continue
+            hosts = cofaces[face] & simplices[dimension]
+            if hosts != {simplex}:
+                continue
+            simplices[dimension].remove(simplex)
+            simplices[dimension - 1].remove(face)
+            histogram[dimension] += 1
+            step_digest_rows.append((dimension, simplex_key, face_key))
+            for facet in itertools.combinations(simplex, dimension):
+                facet = frozenset(facet)
+                cofaces[facet].discard(simplex)
+                hosts = cofaces[facet] & simplices[dimension]
+                if (
+                    facet in simplices[dimension - 1]
+                    and facet not in protected[dimension - 1]
+                    and len(hosts) == 1
+                ):
+                    host = next(iter(hosts))
+                    if host not in protected[dimension]:
+                        heapq.heappush(
+                            queue,
+                            (tuple(sorted(host)), tuple(sorted(facet))),
+                        )
+    equality = [simplices[dimension] == protected[dimension] for dimension in range(4)]
+    if equality != [True, True, True, True]:
+        raise AssertionError("derived path star does not collapse exactly to its cap disk")
+    return {
+        "step_count": len(step_digest_rows),
+        "dimension_histogram": {
+            str(key): value for key, value in sorted(histogram.items())
+        },
+        "remaining_simplex_counts": [len(simplices[dimension]) for dimension in range(4)],
+        "protected_simplex_counts": [len(protected[dimension]) for dimension in range(4)],
+        "remaining_equals_cap_by_dimension": equality,
+        "step_sequence_sha256": canonical_sha(step_digest_rows),
+        "relative_collapse_status": "PASS",
+    }
+
+
 def abstract_ball_invariants(tetrahedra):
     face_counts = collections.Counter(
         frozenset(tetrahedron[index] for index in range(4) if index != omitted)
@@ -282,6 +361,77 @@ def abstract_ball_invariants(tetrahedra):
             len(reached) == len(boundary)
             and set(edge_counts.values()) == {2}
             and len(vertices) - len(edge_counts) + len(boundary) == 2
+        ),
+    }
+
+
+def abstract_surface_invariants(faces):
+    edge_counts = collections.Counter(
+        frozenset(edge) for face in faces for edge in itertools.combinations(face, 2)
+    )
+    vertices = {vertex for face in faces for vertex in face}
+    face_adjacency = [set() for _ in faces]
+    edge_faces = collections.defaultdict(list)
+    for face_index, face in enumerate(faces):
+        for edge in itertools.combinations(face, 2):
+            edge_faces[frozenset(edge)].append(face_index)
+    for hits in edge_faces.values():
+        if len(hits) == 2:
+            first, second = hits
+            face_adjacency[first].add(second)
+            face_adjacency[second].add(first)
+    seen = set()
+    components = 0
+    for start in range(len(faces)):
+        if start in seen:
+            continue
+        components += 1
+        stack = [start]
+        seen.add(start)
+        while stack:
+            current = stack.pop()
+            for neighbour in face_adjacency[current]:
+                if neighbour not in seen:
+                    seen.add(neighbour)
+                    stack.append(neighbour)
+    boundary_edges = [edge for edge, count in edge_counts.items() if count == 1]
+    boundary_adjacency = collections.defaultdict(set)
+    for edge in boundary_edges:
+        first, second = tuple(edge)
+        boundary_adjacency[first].add(second)
+        boundary_adjacency[second].add(first)
+    boundary_seen = set()
+    boundary_components = 0
+    for start in boundary_adjacency:
+        if start in boundary_seen:
+            continue
+        boundary_components += 1
+        stack = [start]
+        boundary_seen.add(start)
+        while stack:
+            current = stack.pop()
+            for neighbour in boundary_adjacency[current]:
+                if neighbour not in boundary_seen:
+                    boundary_seen.add(neighbour)
+                    stack.append(neighbour)
+    euler = len(vertices) - len(edge_counts) + len(faces)
+    manifold = all(count in (1, 2) for count in edge_counts.values())
+    return {
+        "vertices": len(vertices),
+        "edges": len(edge_counts),
+        "faces": len(faces),
+        "euler": euler,
+        "surface_components": components,
+        "boundary_components": boundary_components,
+        "edge_multiplicities": {
+            str(key): value
+            for key, value in sorted(collections.Counter(edge_counts.values()).items())
+        },
+        "surface_manifold": manifold,
+        "topology": (
+            "disk"
+            if manifold and components == 1 and boundary_components == 1 and euler == 1
+            else "OPEN"
         ),
     }
 
@@ -359,6 +509,42 @@ def regular_path_neighbourhood(sweep_tools, tetrahedra, adjacency, path, add_bal
     indexed = [
         tuple(vertex_index[vertex] for vertex in tetrahedron) for tetrahedron in star
     ]
+    face_counts = collections.Counter(
+        frozenset(tetrahedron[index] for index in range(4) if index != omitted)
+        for tetrahedron in star
+        for omitted in range(4)
+    )
+    boundary_faces = [face for face, count in face_counts.items() if count == 1]
+
+    def original_carrier(second_vertex):
+        return frozenset(
+            original_vertex
+            for first_vertex in second_vertex
+            for original_vertex in first_vertex
+        )
+
+    cap_records = []
+    for cap_face in cap_faces:
+        cap_triangles_nested = [
+            face
+            for face in boundary_faces
+            if all(original_carrier(vertex) <= cap_face for vertex in face)
+        ]
+        cap_triangles = [
+            tuple(vertex_index[vertex] for vertex in face)
+            for face in cap_triangles_nested
+        ]
+        cap_invariants = abstract_surface_invariants(cap_triangles)
+        if cap_invariants["topology"] != "disk" or len(cap_triangles) != 12:
+            raise AssertionError("derived path cap is not a twelve-triangle disk")
+        cap_records.append(
+            {
+                "triangle_count": len(cap_triangles),
+                "triangles": [list(face) for face in cap_triangles],
+                "surface": cap_invariants,
+                "relative_collapse": fast_relative_collapse(indexed, cap_triangles),
+            }
+        )
     invariants = abstract_ball_invariants(indexed)
     collapse = fast_collapse_to_point(indexed)
     if not invariants["boundary_is_sphere"] or not collapse["collapses_to_point"]:
@@ -375,6 +561,19 @@ def regular_path_neighbourhood(sweep_tools, tetrahedra, adjacency, path, add_bal
             [[str(value) for value in vertex] for vertex in sorted(face)]
             for face in cap_faces
         ],
+        "caps": cap_records,
+        "both_caps_are_twelve_triangle_disks": all(
+            cap["triangle_count"] == 12 and cap["surface"]["topology"] == "disk"
+            for cap in cap_records
+        ),
+        "both_cap_relative_collapses": (
+            "PASS"
+            if all(
+                cap["relative_collapse"]["relative_collapse_status"] == "PASS"
+                for cap in cap_records
+            )
+            else "OPEN"
+        ),
         **invariants,
         **collapse,
         "regular_neighbourhood_status": "PASS",
@@ -833,6 +1032,11 @@ def generate():
         ),
         "all_regular_path_neighbourhoods_pass": all(
             movie["regular_path_neighbourhood"]["regular_neighbourhood_status"]
+            == "PASS"
+            for movie in movies
+        ),
+        "all_regular_path_caps_collapse_relatively": all(
+            movie["regular_path_neighbourhood"]["both_cap_relative_collapses"]
             == "PASS"
             for movie in movies
         ),
