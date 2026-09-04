@@ -388,7 +388,59 @@ def component_summary(pl, pieces):
             }
         )
     records.sort(key=lambda item: (item["source_owner"], -item["piece_count"]))
+    for index, record in enumerate(records):
+        record["component_id"] = index
     return records
+
+
+def periodic_polytope_set(pl, pieces, component, prefix, translation=0):
+    result = set()
+    for piece_index in component["piece_indices"]:
+        vertices = []
+        for encoded in pieces[piece_index]["vertices"]:
+            vertex = pl.decode(encoded)
+            vertex[prefix] += translation
+            vertices.append(tuple(value % pl.PERIOD for value in vertex))
+        result.add(tuple(sorted(vertices)))
+    return result
+
+
+def pair_components(pl, pieces, components, prefix):
+    excess = [component for component in components if component["source_owner"] == 0]
+    deficiency = [component for component in components if component["source_owner"] == 1]
+    pairs = []
+    used = set()
+    for source_component in excess:
+        translated = periodic_polytope_set(
+            pl, pieces, source_component, prefix, Fraction(2)
+        )
+        matches = [
+            target_component
+            for target_component in deficiency
+            if periodic_polytope_set(pl, pieces, target_component, prefix) == translated
+        ]
+        if len(matches) != 1:
+            raise AssertionError("half-period translation does not give a unique ball pair")
+        target_component = matches[0]
+        if target_component["component_id"] in used:
+            raise AssertionError("a deficiency ball is paired twice")
+        used.add(target_component["component_id"])
+        pairs.append(
+            {
+                "pair_id": len(pairs),
+                "excess_component_id": source_component["component_id"],
+                "deficiency_component_id": target_component["component_id"],
+                "piece_count": source_component["piece_count"],
+                "translation": [
+                    "2" if axis == prefix else "0" for axis in range(3)
+                ],
+                "polyhedral_decompositions_match_exactly": True,
+                "transport_support_status": "OPEN",
+            }
+        )
+    if len(pairs) != 3 or len(used) != 3:
+        raise AssertionError("mismatch balls do not form three bijective pairs")
+    return pairs
 
 
 def tetrahedron_halfspaces(pl, vertices):
@@ -486,6 +538,7 @@ def analyze_template(pl, source: int, prefix: int, power: int) -> dict[str, Any]
     if origin_star_hits:
         raise AssertionError("an exact mismatch polytope meets the origin eight-cube star")
     components = component_summary(pl, pieces)
+    ball_pairs = pair_components(pl, pieces, components, prefix)
     payload = {
         "source_axis": source,
         "prefix_axis": prefix,
@@ -500,6 +553,8 @@ def analyze_template(pl, source: int, prefix: int, power: int) -> dict[str, Any]
         "all_components_are_collapsible_balls": all(
             component["support_ball_status"] == "PASS" for component in components
         ),
+        "ball_pairs": ball_pairs,
+        "half_period_ball_pairing": "PASS",
         "restore_status": "OPEN",
     }
     payload["sha256"] = canonical_sha(payload)
@@ -528,6 +583,9 @@ def generate() -> dict[str, Any]:
         "all_mismatch_components_are_collapsible_balls": all(
             template["all_components_are_collapsible_balls"] for template in templates
         ),
+        "all_half_period_ball_pairings": all(
+            template["half_period_ball_pairing"] == "PASS" for template in templates
+        ),
         "johnson_restore_status": "OPEN: mismatch polytopes are decomposed but no fixed-boundary arm homeomorphism has yet been attached",
     }
     result["sha256"] = canonical_sha(result)
@@ -553,6 +611,7 @@ def main() -> None:
             "COMPONENTS_ARE_BALLS="
             f"{result['all_mismatch_components_are_collapsible_balls']}"
         )
+        print(f"HALF_PERIOD_BALL_PAIRS={result['all_half_period_ball_pairings']}")
         print(f"RESTORE_STATUS={result['johnson_restore_status']}")
         print(f"SHA256={result['sha256']}")
     else:

@@ -1,15 +1,57 @@
 {
+  "all_half_period_ball_pairings": true,
   "all_mismatch_components_are_collapsible_balls": true,
   "all_mismatch_pieces_disjoint_from_origin_star": true,
   "johnson_restore_status": "OPEN: mismatch polytopes are decomposed but no fixed-boundary arm homeomorphism has yet been attached",
   "period": 4,
   "schema": "t73_johnson_arm_mismatch/v1",
-  "sha256": "5A6491FCA8AAE72CD254858549BD8B62D75BFEFE5B37AD17B9111B076DCF96E4",
+  "sha256": "18D941B92756779333313380C908826DC464E3C8C0A17BCA3D706D5A65589078",
   "source": "exact rational clipping of the unwrapped period-four affine-image tetrahedra against target unit cubes",
   "template_count": 12,
   "templates": [
     {
       "all_components_are_collapsible_balls": true,
+      "ball_pairs": [
+        {
+          "deficiency_component_id": 3,
+          "excess_component_id": 0,
+          "pair_id": 0,
+          "piece_count": 36,
+          "polyhedral_decompositions_match_exactly": true,
+          "translation": [
+            "0",
+            "2",
+            "0"
+          ],
+          "transport_support_status": "OPEN"
+        },
+        {
+          "deficiency_component_id": 4,
+          "excess_component_id": 1,
+          "pair_id": 1,
+          "piece_count": 6,
+          "polyhedral_decompositions_match_exactly": true,
+          "translation": [
+            "0",
+            "2",
+            "0"
+          ],
+          "transport_support_status": "OPEN"
+        },
+        {
+          "deficiency_component_id": 5,
+          "excess_component_id": 2,
+          "pair_id": 2,
+          "piece_count": 6,
+          "polyhedral_decompositions_match_exactly": true,
+          "translation": [
+            "0",
+            "2",
+            "0"
+          ],
+          "transport_support_status": "OPEN"
+        }
+      ],
       "components": [
         {
           "boundary_connected": true,
@@ -19,6 +61,7 @@
           "boundary_faces": 36,
           "boundary_is_sphere": true,
           "boundary_vertices": 20,
+          "component_id": 0,
           "piece_count": 36,
           "piece_indices": [
             12,
@@ -100,6 +143,7 @@
           "boundary_faces": 14,
           "boundary_is_sphere": true,
           "boundary_vertices": 9,
+          "component_id": 1,
           "piece_count": 6,
           "piece_indices": [
             6,
@@ -151,6 +195,7 @@
           "boundary_faces": 14,
           "boundary_is_sphere": true,
           "boundary_vertices": 9,
+          "component_id": 2,
           "piece_count": 6,
           "piece_indices": [
             84,
@@ -202,6 +247,7 @@
           "boundary_faces": 36,
           "boundary_is_sphere": true,
           "boundary_vertices": 20,
+          "component_id": 3,
           "piece_count": 36,
           "piece_indices": [
             18,
@@ -283,6 +329,7 @@
           "boundary_faces": 14,
           "boundary_is_sphere": true,
           "boundary_vertices": 9,
+          "component_id": 4,
           "piece_count": 6,
           "piece_indices": [
             0,
@@ -334,6 +381,7 @@
           "boundary_faces": 14,
           "boundary_is_sphere": true,
           "boundary_vertices": 9,
+          "component_id": 5,
           "piece_count": 6,
           "piece_indices": [
             90,
@@ -378,6 +426,7 @@
           }
         }
       ],
+      "half_period_ball_pairing": "PASS",
       "matrix": [
         [
           1,
@@ -3479,11 +3528,52 @@
       "power": -1,
       "prefix_axis": 1,
       "restore_status": "OPEN",
-      "sha256": "D622540A958856FBDC912788D06F258F498D887647D2CCDFF18986711BF108F4",
+      "sha256": "438BA3CD6C3B67B82EB8EF67774353A1A83583632111444D20DFB1B632B07DCB",
       "source_axis": 0
     },
     {
       "all_components_are_collapsible_balls": true,
+      "ball_pairs": [
+        {
+          "deficiency_component_id": 3,
+          "excess_component_id": 0,
+          "pair_id": 0,
+          "piece_count": 72,
+          "polyhedral_decompositions_match_exactly": true,
+          "translation": [
+            "0",
+            "2",
+            "0"
+          ],
+          "transport_support_status": "OPEN"
+        },
+        {
+          "deficiency_component_id": 4,
+          "excess_component_id": 1,
+          "pair_id": 1,
+          "piece_count": 12,
+          "polyhedral_decompositions_match_exactly": true,
+          "translation": [
+            "0",
+            "2",
+            "0"
+          ],
+          "transport_support_status": "OPEN"
+        },
+        {
+          "deficiency_component_id": 5,
+          "excess_component_id": 2,
+          "pair_id": 2,
+          "piece_count": 12,
+          "polyhedral_decompositions_match_exactly": true,
+          "translation": [
+            "0",
+            "2",
+            "0"
+          ],
+          "transport_support_status": "OPEN"
+        }
+      ],
       "components": [
         {
           "boundary_connected": true,
@@ -3493,6 +3583,7 @@
           "boundary_faces": 64,
           "boundary_is_sphere": true,
           "boundary_vertices": 34,
+          "component_id": 0,
           "piece_count": 72,
           "piece_indices": [
             24,
@@ -3610,6 +3701,7 @@
           "boundary_faces": 24,
           "boundary_is_sphere": true,
           "boundary_vertices": 14,
+          "component_id": 1,
           "piece_count": 12,
           "piece_indices": [
             0,
@@ -3667,6 +3759,7 @@
           "boundary_faces": 24,
           "boundary_is_sphere": true,
           "boundary_vertices": 14,
+          "component_id": 2,
           "piece_count": 12,
           "piece_indices": [
             180,
@@ -3724,6 +3817,7 @@
           "boundary_faces": 64,
           "boundary_is_sphere": true,
           "boundary_vertices": 34,
+          "component_id": 3,
           "piece_count": 72,
           "piece_indices": [
             48,
@@ -3841,6 +3935,7 @@
           "boundary_faces": 24,
           "boundary_is_sphere": true,
           "boundary_vertices": 14,
+          "component_id": 4,
           "piece_count": 12,
           "piece_indices": [
             12,
@@ -3898,6 +3993,7 @@
           "boundary_faces": 24,
           "boundary_is_sphere": true,
           "boundary_vertices": 14,
+          "component_id": 5,
           "piece_count": 12,
           "piece_indices": [
             168,
@@ -3948,6 +4044,7 @@
           }
         }
       ],
+      "half_period_ball_pairing": "PASS",
       "matrix": [
         [
           1,
@@ -10441,11 +10538,52 @@
       "power": 1,
       "prefix_axis": 1,
       "restore_status": "OPEN",
-      "sha256": "46F0363E51E4FEAE247676C9915B86F959E86AFCD9FE050B55DC6D1196133A89",
+      "sha256": "2FCD15577936B74276E25B3E56F350B3C4A52E937892617A25482ED3105ECB7D",
       "source_axis": 0
     },
     {
       "all_components_are_collapsible_balls": true,
+      "ball_pairs": [
+        {
+          "deficiency_component_id": 3,
+          "excess_component_id": 0,
+          "pair_id": 0,
+          "piece_count": 36,
+          "polyhedral_decompositions_match_exactly": true,
+          "translation": [
+            "0",
+            "0",
+            "2"
+          ],
+          "transport_support_status": "OPEN"
+        },
+        {
+          "deficiency_component_id": 4,
+          "excess_component_id": 1,
+          "pair_id": 1,
+          "piece_count": 6,
+          "polyhedral_decompositions_match_exactly": true,
+          "translation": [
+            "0",
+            "0",
+            "2"
+          ],
+          "transport_support_status": "OPEN"
+        },
+        {
+          "deficiency_component_id": 5,
+          "excess_component_id": 2,
+          "pair_id": 2,
+          "piece_count": 6,
+          "polyhedral_decompositions_match_exactly": true,
+          "translation": [
+            "0",
+            "0",
+            "2"
+          ],
+          "transport_support_status": "OPEN"
+        }
+      ],
       "components": [
         {
           "boundary_connected": true,
@@ -10455,6 +10593,7 @@
           "boundary_faces": 36,
           "boundary_is_sphere": true,
           "boundary_vertices": 20,
+          "component_id": 0,
           "piece_count": 36,
           "piece_indices": [
             12,
@@ -10536,6 +10675,7 @@
           "boundary_faces": 14,
           "boundary_is_sphere": true,
           "boundary_vertices": 9,
+          "component_id": 1,
           "piece_count": 6,
           "piece_indices": [
             3,
@@ -10587,6 +10727,7 @@
           "boundary_faces": 14,
           "boundary_is_sphere": true,
           "boundary_vertices": 9,
+          "component_id": 2,
           "piece_count": 6,
           "piece_indices": [
             84,
@@ -10638,6 +10779,7 @@
           "boundary_faces": 36,
           "boundary_is_sphere": true,
           "boundary_vertices": 20,
+          "component_id": 3,
           "piece_count": 36,
           "piece_indices": [
             15,
@@ -10719,6 +10861,7 @@
           "boundary_faces": 14,
           "boundary_is_sphere": true,
           "boundary_vertices": 9,
+          "component_id": 4,
           "piece_count": 6,
           "piece_indices": [
             0,
@@ -10770,6 +10913,7 @@
           "boundary_faces": 14,
           "boundary_is_sphere": true,
           "boundary_vertices": 9,
+          "component_id": 5,
           "piece_count": 6,
           "piece_indices": [
             87,
@@ -10814,6 +10958,7 @@
           }
         }
       ],
+      "half_period_ball_pairing": "PASS",
       "matrix": [
         [
           1,
@@ -13915,11 +14060,52 @@
       "power": -1,
       "prefix_axis": 2,
       "restore_status": "OPEN",
-      "sha256": "49C2DA74D219F54D4CD92E6E6BB1DE18402D80CFEAC2F9F7A6481F40F4417105",
+      "sha256": "AC720F0D3552A05634E9E9A930C4D39961699FF753D2AFC1F630D39D0F79BAB9",
       "source_axis": 0
     },
     {
       "all_components_are_collapsible_balls": true,
+      "ball_pairs": [
+        {
+          "deficiency_component_id": 3,
+          "excess_component_id": 0,
+          "pair_id": 0,
+          "piece_count": 72,
+          "polyhedral_decompositions_match_exactly": true,
+          "translation": [
+            "0",
+            "0",
+            "2"
+          ],
+          "transport_support_status": "OPEN"
+        },
+        {
+          "deficiency_component_id": 4,
+          "excess_component_id": 1,
+          "pair_id": 1,
+          "piece_count": 12,
+          "polyhedral_decompositions_match_exactly": true,
+          "translation": [
+            "0",
+            "0",
+            "2"
+          ],
+          "transport_support_status": "OPEN"
+        },
+        {
+          "deficiency_component_id": 5,
+          "excess_component_id": 2,
+          "pair_id": 2,
+          "piece_count": 12,
+          "polyhedral_decompositions_match_exactly": true,
+          "translation": [
+            "0",
+            "0",
+            "2"
+          ],
+          "transport_support_status": "OPEN"
+        }
+      ],
       "components": [
         {
           "boundary_connected": true,
@@ -13929,6 +14115,7 @@
           "boundary_faces": 64,
           "boundary_is_sphere": true,
           "boundary_vertices": 34,
+          "component_id": 0,
           "piece_count": 72,
           "piece_indices": [
             24,
@@ -14046,6 +14233,7 @@
           "boundary_faces": 24,
           "boundary_is_sphere": true,
           "boundary_vertices": 14,
+          "component_id": 1,
           "piece_count": 12,
           "piece_indices": [
             0,
@@ -14103,6 +14291,7 @@
           "boundary_faces": 24,
           "boundary_is_sphere": true,
           "boundary_vertices": 14,
+          "component_id": 2,
           "piece_count": 12,
           "piece_indices": [
             174,
@@ -14160,6 +14349,7 @@
           "boundary_faces": 64,
           "boundary_is_sphere": true,
           "boundary_vertices": 34,
+          "component_id": 3,
           "piece_count": 72,
           "piece_indices": [
             36,
@@ -14277,6 +14467,7 @@
           "boundary_faces": 24,
           "boundary_is_sphere": true,
           "boundary_vertices": 14,
+          "component_id": 4,
           "piece_count": 12,
           "piece_indices": [
             6,
@@ -14334,6 +14525,7 @@
           "boundary_faces": 24,
           "boundary_is_sphere": true,
           "boundary_vertices": 14,
+          "component_id": 5,
           "piece_count": 12,
           "piece_indices": [
             168,
@@ -14384,6 +14576,7 @@
           }
         }
       ],
+      "half_period_ball_pairing": "PASS",
       "matrix": [
         [
           1,
@@ -20877,11 +21070,52 @@
       "power": 1,
       "prefix_axis": 2,
       "restore_status": "OPEN",
-      "sha256": "C6649F34EC0697059366E5E9AAB8C30BB916CE5AEA770BB1740613BB93F95991",
+      "sha256": "D9541DF160212C2EB743688CDDD4F42ECD6BB1AA2B1F8DE0A764BDFB2888956D",
       "source_axis": 0
     },
     {
       "all_components_are_collapsible_balls": true,
+      "ball_pairs": [
+        {
+          "deficiency_component_id": 3,
+          "excess_component_id": 0,
+          "pair_id": 0,
+          "piece_count": 36,
+          "polyhedral_decompositions_match_exactly": true,
+          "translation": [
+            "2",
+            "0",
+            "0"
+          ],
+          "transport_support_status": "OPEN"
+        },
+        {
+          "deficiency_component_id": 5,
+          "excess_component_id": 1,
+          "pair_id": 1,
+          "piece_count": 6,
+          "polyhedral_decompositions_match_exactly": true,
+          "translation": [
+            "2",
+            "0",
+            "0"
+          ],
+          "transport_support_status": "OPEN"
+        },
+        {
+          "deficiency_component_id": 4,
+          "excess_component_id": 2,
+          "pair_id": 2,
+          "piece_count": 6,
+          "polyhedral_decompositions_match_exactly": true,
+          "translation": [
+            "2",
+            "0",
+            "0"
+          ],
+          "transport_support_status": "OPEN"
+        }
+      ],
       "components": [
         {
           "boundary_connected": true,
@@ -20891,6 +21125,7 @@
           "boundary_faces": 36,
           "boundary_is_sphere": true,
           "boundary_vertices": 20,
+          "component_id": 0,
           "piece_count": 36,
           "piece_indices": [
             0,
@@ -20972,6 +21207,7 @@
           "boundary_faces": 14,
           "boundary_is_sphere": true,
           "boundary_vertices": 9,
+          "component_id": 1,
           "piece_count": 6,
           "piece_indices": [
             18,
@@ -21023,6 +21259,7 @@
           "boundary_faces": 14,
           "boundary_is_sphere": true,
           "boundary_vertices": 9,
+          "component_id": 2,
           "piece_count": 6,
           "piece_indices": [
             72,
@@ -21074,6 +21311,7 @@
           "boundary_faces": 36,
           "boundary_is_sphere": true,
           "boundary_vertices": 20,
+          "component_id": 3,
           "piece_count": 36,
           "piece_indices": [
             30,
@@ -21155,6 +21393,7 @@
           "boundary_faces": 14,
           "boundary_is_sphere": true,
           "boundary_vertices": 9,
+          "component_id": 4,
           "piece_count": 6,
           "piece_indices": [
             24,
@@ -21206,6 +21445,7 @@
           "boundary_faces": 14,
           "boundary_is_sphere": true,
           "boundary_vertices": 9,
+          "component_id": 5,
           "piece_count": 6,
           "piece_indices": [
             66,
@@ -21250,6 +21490,7 @@
           }
         }
       ],
+      "half_period_ball_pairing": "PASS",
       "matrix": [
         [
           1,
@@ -24351,11 +24592,52 @@
       "power": -1,
       "prefix_axis": 0,
       "restore_status": "OPEN",
-      "sha256": "081694B0C9BAAEF85D4D9909989717DA0413C317036B64B4EB388D5ADE795287",
+      "sha256": "265B76488BD6D31E816295B21BC60DE3FEDEED979C7F3DD13DABEFCA6435933F",
       "source_axis": 1
     },
     {
       "all_components_are_collapsible_balls": true,
+      "ball_pairs": [
+        {
+          "deficiency_component_id": 3,
+          "excess_component_id": 0,
+          "pair_id": 0,
+          "piece_count": 72,
+          "polyhedral_decompositions_match_exactly": true,
+          "translation": [
+            "2",
+            "0",
+            "0"
+          ],
+          "transport_support_status": "OPEN"
+        },
+        {
+          "deficiency_component_id": 5,
+          "excess_component_id": 1,
+          "pair_id": 1,
+          "piece_count": 12,
+          "polyhedral_decompositions_match_exactly": true,
+          "translation": [
+            "2",
+            "0",
+            "0"
+          ],
+          "transport_support_status": "OPEN"
+        },
+        {
+          "deficiency_component_id": 4,
+          "excess_component_id": 2,
+          "pair_id": 2,
+          "piece_count": 12,
+          "polyhedral_decompositions_match_exactly": true,
+          "translation": [
+            "2",
+            "0",
+            "0"
+          ],
+          "transport_support_status": "OPEN"
+        }
+      ],
       "components": [
         {
           "boundary_connected": true,
@@ -24365,6 +24647,7 @@
           "boundary_faces": 64,
           "boundary_is_sphere": true,
           "boundary_vertices": 34,
+          "component_id": 0,
           "piece_count": 72,
           "piece_indices": [
             12,
@@ -24482,6 +24765,7 @@
           "boundary_faces": 24,
           "boundary_is_sphere": true,
           "boundary_vertices": 14,
+          "component_id": 1,
           "piece_count": 12,
           "piece_indices": [
             0,
@@ -24539,6 +24823,7 @@
           "boundary_faces": 24,
           "boundary_is_sphere": true,
           "boundary_vertices": 14,
+          "component_id": 2,
           "piece_count": 12,
           "piece_indices": [
             180,
@@ -24596,6 +24881,7 @@
           "boundary_faces": 64,
           "boundary_is_sphere": true,
           "boundary_vertices": 34,
+          "component_id": 3,
           "piece_count": 72,
           "piece_indices": [
             48,
@@ -24713,6 +24999,7 @@
           "boundary_faces": 24,
           "boundary_is_sphere": true,
           "boundary_vertices": 14,
+          "component_id": 4,
           "piece_count": 12,
           "piece_indices": [
             84,
@@ -24770,6 +25057,7 @@
           "boundary_faces": 24,
           "boundary_is_sphere": true,
           "boundary_vertices": 14,
+          "component_id": 5,
           "piece_count": 12,
           "piece_indices": [
             96,
@@ -24820,6 +25108,7 @@
           }
         }
       ],
+      "half_period_ball_pairing": "PASS",
       "matrix": [
         [
           1,
@@ -31313,11 +31602,52 @@
       "power": 1,
       "prefix_axis": 0,
       "restore_status": "OPEN",
-      "sha256": "F6F3837BA8CA4F5E1500DF95BE109972B42A7CFB761106907D608C04FBCA3A2C",
+      "sha256": "26CEA0F235238F273BAEF3CEB25246497AA9BC0A66FC33CFE27894B876CC641E",
       "source_axis": 1
     },
     {
       "all_components_are_collapsible_balls": true,
+      "ball_pairs": [
+        {
+          "deficiency_component_id": 3,
+          "excess_component_id": 0,
+          "pair_id": 0,
+          "piece_count": 36,
+          "polyhedral_decompositions_match_exactly": true,
+          "translation": [
+            "0",
+            "0",
+            "2"
+          ],
+          "transport_support_status": "OPEN"
+        },
+        {
+          "deficiency_component_id": 4,
+          "excess_component_id": 1,
+          "pair_id": 1,
+          "piece_count": 6,
+          "polyhedral_decompositions_match_exactly": true,
+          "translation": [
+            "0",
+            "0",
+            "2"
+          ],
+          "transport_support_status": "OPEN"
+        },
+        {
+          "deficiency_component_id": 5,
+          "excess_component_id": 2,
+          "pair_id": 2,
+          "piece_count": 6,
+          "polyhedral_decompositions_match_exactly": true,
+          "translation": [
+            "0",
+            "0",
+            "2"
+          ],
+          "transport_support_status": "OPEN"
+        }
+      ],
       "components": [
         {
           "boundary_connected": true,
@@ -31327,6 +31657,7 @@
           "boundary_faces": 36,
           "boundary_is_sphere": true,
           "boundary_vertices": 20,
+          "component_id": 0,
           "piece_count": 36,
           "piece_indices": [
             0,
@@ -31408,6 +31739,7 @@
           "boundary_faces": 14,
           "boundary_is_sphere": true,
           "boundary_vertices": 9,
+          "component_id": 1,
           "piece_count": 6,
           "piece_indices": [
             39,
@@ -31459,6 +31791,7 @@
           "boundary_faces": 14,
           "boundary_is_sphere": true,
           "boundary_vertices": 9,
+          "component_id": 2,
           "piece_count": 6,
           "piece_indices": [
             42,
@@ -31510,6 +31843,7 @@
           "boundary_faces": 36,
           "boundary_is_sphere": true,
           "boundary_vertices": 20,
+          "component_id": 3,
           "piece_count": 36,
           "piece_indices": [
             3,
@@ -31591,6 +31925,7 @@
           "boundary_faces": 14,
           "boundary_is_sphere": true,
           "boundary_vertices": 9,
+          "component_id": 4,
           "piece_count": 6,
           "piece_indices": [
             36,
@@ -31642,6 +31977,7 @@
           "boundary_faces": 14,
           "boundary_is_sphere": true,
           "boundary_vertices": 9,
+          "component_id": 5,
           "piece_count": 6,
           "piece_indices": [
             45,
@@ -31686,6 +32022,7 @@
           }
         }
       ],
+      "half_period_ball_pairing": "PASS",
       "matrix": [
         [
           1,
@@ -34787,11 +35124,52 @@
       "power": -1,
       "prefix_axis": 2,
       "restore_status": "OPEN",
-      "sha256": "6B5880C090D95A79010A05EF0741EDDFCCAF901E77E18F9CC0EEBA1B78C4B7BB",
+      "sha256": "3DD087A08D213B24D01F1BBE6639535B1D03FCFFF88B052966FDE44F75E1B50B",
       "source_axis": 1
     },
     {
       "all_components_are_collapsible_balls": true,
+      "ball_pairs": [
+        {
+          "deficiency_component_id": 3,
+          "excess_component_id": 0,
+          "pair_id": 0,
+          "piece_count": 72,
+          "polyhedral_decompositions_match_exactly": true,
+          "translation": [
+            "0",
+            "0",
+            "2"
+          ],
+          "transport_support_status": "OPEN"
+        },
+        {
+          "deficiency_component_id": 4,
+          "excess_component_id": 1,
+          "pair_id": 1,
+          "piece_count": 12,
+          "polyhedral_decompositions_match_exactly": true,
+          "translation": [
+            "0",
+            "0",
+            "2"
+          ],
+          "transport_support_status": "OPEN"
+        },
+        {
+          "deficiency_component_id": 5,
+          "excess_component_id": 2,
+          "pair_id": 2,
+          "piece_count": 12,
+          "polyhedral_decompositions_match_exactly": true,
+          "translation": [
+            "0",
+            "0",
+            "2"
+          ],
+          "transport_support_status": "OPEN"
+        }
+      ],
       "components": [
         {
           "boundary_connected": true,
@@ -34801,6 +35179,7 @@
           "boundary_faces": 64,
           "boundary_is_sphere": true,
           "boundary_vertices": 34,
+          "component_id": 0,
           "piece_count": 72,
           "piece_indices": [
             0,
@@ -34918,6 +35297,7 @@
           "boundary_faces": 24,
           "boundary_is_sphere": true,
           "boundary_vertices": 14,
+          "component_id": 1,
           "piece_count": 12,
           "piece_indices": [
             72,
@@ -34975,6 +35355,7 @@
           "boundary_faces": 24,
           "boundary_is_sphere": true,
           "boundary_vertices": 14,
+          "component_id": 2,
           "piece_count": 12,
           "piece_indices": [
             90,
@@ -35032,6 +35413,7 @@
           "boundary_faces": 64,
           "boundary_is_sphere": true,
           "boundary_vertices": 34,
+          "component_id": 3,
           "piece_count": 72,
           "piece_indices": [
             12,
@@ -35149,6 +35531,7 @@
           "boundary_faces": 24,
           "boundary_is_sphere": true,
           "boundary_vertices": 14,
+          "component_id": 4,
           "piece_count": 12,
           "piece_indices": [
             78,
@@ -35206,6 +35589,7 @@
           "boundary_faces": 24,
           "boundary_is_sphere": true,
           "boundary_vertices": 14,
+          "component_id": 5,
           "piece_count": 12,
           "piece_indices": [
             84,
@@ -35256,6 +35640,7 @@
           }
         }
       ],
+      "half_period_ball_pairing": "PASS",
       "matrix": [
         [
           1,
@@ -41749,11 +42134,52 @@
       "power": 1,
       "prefix_axis": 2,
       "restore_status": "OPEN",
-      "sha256": "06B702CD2220920C0605FC5F8DAEA3BD06111364E46AE65CA2BC30494C22E5B6",
+      "sha256": "F1F0371AEC7464F305BCF237E9C113D3DEE88ED40C3092BE9F476118E6218F49",
       "source_axis": 1
     },
     {
       "all_components_are_collapsible_balls": true,
+      "ball_pairs": [
+        {
+          "deficiency_component_id": 3,
+          "excess_component_id": 0,
+          "pair_id": 0,
+          "piece_count": 36,
+          "polyhedral_decompositions_match_exactly": true,
+          "translation": [
+            "2",
+            "0",
+            "0"
+          ],
+          "transport_support_status": "OPEN"
+        },
+        {
+          "deficiency_component_id": 5,
+          "excess_component_id": 1,
+          "pair_id": 1,
+          "piece_count": 6,
+          "polyhedral_decompositions_match_exactly": true,
+          "translation": [
+            "2",
+            "0",
+            "0"
+          ],
+          "transport_support_status": "OPEN"
+        },
+        {
+          "deficiency_component_id": 4,
+          "excess_component_id": 2,
+          "pair_id": 2,
+          "piece_count": 6,
+          "polyhedral_decompositions_match_exactly": true,
+          "translation": [
+            "2",
+            "0",
+            "0"
+          ],
+          "transport_support_status": "OPEN"
+        }
+      ],
       "components": [
         {
           "boundary_connected": true,
@@ -41763,6 +42189,7 @@
           "boundary_faces": 36,
           "boundary_is_sphere": true,
           "boundary_vertices": 20,
+          "component_id": 0,
           "piece_count": 36,
           "piece_indices": [
             0,
@@ -41844,6 +42271,7 @@
           "boundary_faces": 14,
           "boundary_is_sphere": true,
           "boundary_vertices": 9,
+          "component_id": 1,
           "piece_count": 6,
           "piece_indices": [
             9,
@@ -41895,6 +42323,7 @@
           "boundary_faces": 14,
           "boundary_is_sphere": true,
           "boundary_vertices": 9,
+          "component_id": 2,
           "piece_count": 6,
           "piece_indices": [
             81,
@@ -41946,6 +42375,7 @@
           "boundary_faces": 36,
           "boundary_is_sphere": true,
           "boundary_vertices": 20,
+          "component_id": 3,
           "piece_count": 36,
           "piece_indices": [
             24,
@@ -42027,6 +42457,7 @@
           "boundary_faces": 14,
           "boundary_is_sphere": true,
           "boundary_vertices": 9,
+          "component_id": 4,
           "piece_count": 6,
           "piece_indices": [
             33,
@@ -42078,6 +42509,7 @@
           "boundary_faces": 14,
           "boundary_is_sphere": true,
           "boundary_vertices": 9,
+          "component_id": 5,
           "piece_count": 6,
           "piece_indices": [
             57,
@@ -42122,6 +42554,7 @@
           }
         }
       ],
+      "half_period_ball_pairing": "PASS",
       "matrix": [
         [
           1,
@@ -45223,11 +45656,52 @@
       "power": -1,
       "prefix_axis": 0,
       "restore_status": "OPEN",
-      "sha256": "F72A5563A3F291C7A0F91A264F67FE640C15705AB4D2A490586E334DF60613EA",
+      "sha256": "6956AD42F601771EFB71E61DF2AEE4B8F27B65EE5C0D012AFBE360193692C466",
       "source_axis": 2
     },
     {
       "all_components_are_collapsible_balls": true,
+      "ball_pairs": [
+        {
+          "deficiency_component_id": 3,
+          "excess_component_id": 0,
+          "pair_id": 0,
+          "piece_count": 72,
+          "polyhedral_decompositions_match_exactly": true,
+          "translation": [
+            "2",
+            "0",
+            "0"
+          ],
+          "transport_support_status": "OPEN"
+        },
+        {
+          "deficiency_component_id": 5,
+          "excess_component_id": 1,
+          "pair_id": 1,
+          "piece_count": 12,
+          "polyhedral_decompositions_match_exactly": true,
+          "translation": [
+            "2",
+            "0",
+            "0"
+          ],
+          "transport_support_status": "OPEN"
+        },
+        {
+          "deficiency_component_id": 4,
+          "excess_component_id": 2,
+          "pair_id": 2,
+          "piece_count": 12,
+          "polyhedral_decompositions_match_exactly": true,
+          "translation": [
+            "2",
+            "0",
+            "0"
+          ],
+          "transport_support_status": "OPEN"
+        }
+      ],
       "components": [
         {
           "boundary_connected": true,
@@ -45237,6 +45711,7 @@
           "boundary_faces": 64,
           "boundary_is_sphere": true,
           "boundary_vertices": 34,
+          "component_id": 0,
           "piece_count": 72,
           "piece_indices": [
             0,
@@ -45354,6 +45829,7 @@
           "boundary_faces": 24,
           "boundary_is_sphere": true,
           "boundary_vertices": 14,
+          "component_id": 1,
           "piece_count": 12,
           "piece_indices": [
             18,
@@ -45411,6 +45887,7 @@
           "boundary_faces": 24,
           "boundary_is_sphere": true,
           "boundary_vertices": 14,
+          "component_id": 2,
           "piece_count": 12,
           "piece_indices": [
             162,
@@ -45468,6 +45945,7 @@
           "boundary_faces": 64,
           "boundary_is_sphere": true,
           "boundary_vertices": 34,
+          "component_id": 3,
           "piece_count": 72,
           "piece_indices": [
             48,
@@ -45585,6 +46063,7 @@
           "boundary_faces": 24,
           "boundary_is_sphere": true,
           "boundary_vertices": 14,
+          "component_id": 4,
           "piece_count": 12,
           "piece_indices": [
             66,
@@ -45642,6 +46121,7 @@
           "boundary_faces": 24,
           "boundary_is_sphere": true,
           "boundary_vertices": 14,
+          "component_id": 5,
           "piece_count": 12,
           "piece_indices": [
             114,
@@ -45692,6 +46172,7 @@
           }
         }
       ],
+      "half_period_ball_pairing": "PASS",
       "matrix": [
         [
           1,
@@ -52185,11 +52666,52 @@
       "power": 1,
       "prefix_axis": 0,
       "restore_status": "OPEN",
-      "sha256": "AA386E21AD72ED1F6F54E34BF46590DAD6BEA7D3BFA0F8FF4C5FB74DDEB84BD5",
+      "sha256": "AAE75F59DBD51FFE3C33F94FAA01AA8F92056FBE7AB23B8AD3C5EF5E0FA4947A",
       "source_axis": 2
     },
     {
       "all_components_are_collapsible_balls": true,
+      "ball_pairs": [
+        {
+          "deficiency_component_id": 3,
+          "excess_component_id": 0,
+          "pair_id": 0,
+          "piece_count": 36,
+          "polyhedral_decompositions_match_exactly": true,
+          "translation": [
+            "0",
+            "2",
+            "0"
+          ],
+          "transport_support_status": "OPEN"
+        },
+        {
+          "deficiency_component_id": 5,
+          "excess_component_id": 1,
+          "pair_id": 1,
+          "piece_count": 6,
+          "polyhedral_decompositions_match_exactly": true,
+          "translation": [
+            "0",
+            "2",
+            "0"
+          ],
+          "transport_support_status": "OPEN"
+        },
+        {
+          "deficiency_component_id": 4,
+          "excess_component_id": 2,
+          "pair_id": 2,
+          "piece_count": 6,
+          "polyhedral_decompositions_match_exactly": true,
+          "translation": [
+            "0",
+            "2",
+            "0"
+          ],
+          "transport_support_status": "OPEN"
+        }
+      ],
       "components": [
         {
           "boundary_connected": true,
@@ -52199,6 +52721,7 @@
           "boundary_faces": 36,
           "boundary_is_sphere": true,
           "boundary_vertices": 20,
+          "component_id": 0,
           "piece_count": 36,
           "piece_indices": [
             0,
@@ -52280,6 +52803,7 @@
           "boundary_faces": 14,
           "boundary_is_sphere": true,
           "boundary_vertices": 9,
+          "component_id": 1,
           "piece_count": 6,
           "piece_indices": [
             36,
@@ -52331,6 +52855,7 @@
           "boundary_faces": 14,
           "boundary_is_sphere": true,
           "boundary_vertices": 9,
+          "component_id": 2,
           "piece_count": 6,
           "piece_indices": [
             45,
@@ -52382,6 +52907,7 @@
           "boundary_faces": 36,
           "boundary_is_sphere": true,
           "boundary_vertices": 20,
+          "component_id": 3,
           "piece_count": 36,
           "piece_indices": [
             9,
@@ -52463,6 +52989,7 @@
           "boundary_faces": 14,
           "boundary_is_sphere": true,
           "boundary_vertices": 9,
+          "component_id": 4,
           "piece_count": 6,
           "piece_indices": [
             39,
@@ -52514,6 +53041,7 @@
           "boundary_faces": 14,
           "boundary_is_sphere": true,
           "boundary_vertices": 9,
+          "component_id": 5,
           "piece_count": 6,
           "piece_indices": [
             42,
@@ -52558,6 +53086,7 @@
           }
         }
       ],
+      "half_period_ball_pairing": "PASS",
       "matrix": [
         [
           1,
@@ -55659,11 +56188,52 @@
       "power": -1,
       "prefix_axis": 1,
       "restore_status": "OPEN",
-      "sha256": "1903F5567F53706572512044B3FAFD17B53CE7934F48FAF7948A244F880554EC",
+      "sha256": "C958F1F53ED893FD693B388CE07AA3B413D8E0EF4EEDEA58C7A80F79437F150B",
       "source_axis": 2
     },
     {
       "all_components_are_collapsible_balls": true,
+      "ball_pairs": [
+        {
+          "deficiency_component_id": 3,
+          "excess_component_id": 0,
+          "pair_id": 0,
+          "piece_count": 72,
+          "polyhedral_decompositions_match_exactly": true,
+          "translation": [
+            "0",
+            "2",
+            "0"
+          ],
+          "transport_support_status": "OPEN"
+        },
+        {
+          "deficiency_component_id": 5,
+          "excess_component_id": 1,
+          "pair_id": 1,
+          "piece_count": 12,
+          "polyhedral_decompositions_match_exactly": true,
+          "translation": [
+            "0",
+            "2",
+            "0"
+          ],
+          "transport_support_status": "OPEN"
+        },
+        {
+          "deficiency_component_id": 4,
+          "excess_component_id": 2,
+          "pair_id": 2,
+          "piece_count": 12,
+          "polyhedral_decompositions_match_exactly": true,
+          "translation": [
+            "0",
+            "2",
+            "0"
+          ],
+          "transport_support_status": "OPEN"
+        }
+      ],
       "components": [
         {
           "boundary_connected": true,
@@ -55673,6 +56243,7 @@
           "boundary_faces": 64,
           "boundary_is_sphere": true,
           "boundary_vertices": 34,
+          "component_id": 0,
           "piece_count": 72,
           "piece_indices": [
             0,
@@ -55790,6 +56361,7 @@
           "boundary_faces": 24,
           "boundary_is_sphere": true,
           "boundary_vertices": 14,
+          "component_id": 1,
           "piece_count": 12,
           "piece_indices": [
             72,
@@ -55847,6 +56419,7 @@
           "boundary_faces": 24,
           "boundary_is_sphere": true,
           "boundary_vertices": 14,
+          "component_id": 2,
           "piece_count": 12,
           "piece_indices": [
             90,
@@ -55904,6 +56477,7 @@
           "boundary_faces": 64,
           "boundary_is_sphere": true,
           "boundary_vertices": 34,
+          "component_id": 3,
           "piece_count": 72,
           "piece_indices": [
             18,
@@ -56021,6 +56595,7 @@
           "boundary_faces": 24,
           "boundary_is_sphere": true,
           "boundary_vertices": 14,
+          "component_id": 4,
           "piece_count": 12,
           "piece_indices": [
             78,
@@ -56078,6 +56653,7 @@
           "boundary_faces": 24,
           "boundary_is_sphere": true,
           "boundary_vertices": 14,
+          "component_id": 5,
           "piece_count": 12,
           "piece_indices": [
             84,
@@ -56128,6 +56704,7 @@
           }
         }
       ],
+      "half_period_ball_pairing": "PASS",
       "matrix": [
         [
           1,
@@ -62621,7 +63198,7 @@
       "power": 1,
       "prefix_axis": 1,
       "restore_status": "OPEN",
-      "sha256": "67436123A0BD479ED52E0B5133AFD07E4401B39B49464B4C2E9BCF16B26FA1AF",
+      "sha256": "DAE96C1FA2560E4030043185D7F91B4796B0438DB27C4AFD1D44148AAB9A6342",
       "source_axis": 2
     }
   ]

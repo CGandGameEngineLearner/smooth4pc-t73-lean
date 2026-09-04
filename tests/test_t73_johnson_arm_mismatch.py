@@ -30,6 +30,7 @@ class JohnsonArmMismatchTest(unittest.TestCase):
         self.assertEqual(rebuilt["template_count"], 12)
         self.assertTrue(rebuilt["all_mismatch_pieces_disjoint_from_origin_star"])
         self.assertTrue(rebuilt["all_mismatch_components_are_collapsible_balls"])
+        self.assertTrue(rebuilt["all_half_period_ball_pairings"])
         self.assertIn("OPEN", rebuilt["johnson_restore_status"])
         for template in rebuilt["templates"]:
             self.assertGreater(template["piece_count"], 0)
@@ -40,6 +41,14 @@ class JohnsonArmMismatchTest(unittest.TestCase):
                 all(component["boundary_is_sphere"] for component in template["components"])
             )
             self.assertTrue(template["all_components_are_collapsible_balls"])
+            self.assertEqual(template["half_period_ball_pairing"], "PASS")
+            self.assertEqual(len(template["ball_pairs"]), 3)
+            self.assertTrue(
+                all(
+                    pair["polyhedral_decompositions_match_exactly"]
+                    for pair in template["ball_pairs"]
+                )
+            )
             self.assertTrue(
                 all(component["support_ball_status"] == "PASS" for component in template["components"])
             )
