@@ -21,24 +21,24 @@
           "copy_count": 1311,
           "orientation": -1,
           "owner": "r_xy",
-          "product_normal_level_rule": "(copy_index+1)/(1542) inside the actual r_xy framing collar"
+          "product_normal_level_rule": "(copy_index+1)/(9921) inside the actual r_xy framing collar"
         },
         {
-          "coefficient": -189,
-          "copy_count": 189,
-          "orientation": -1,
-          "owner": "r_yz",
-          "product_normal_level_rule": "(copy_index+1)/(1542) inside the actual r_yz framing collar"
-        },
-        {
-          "coefficient": 41,
-          "copy_count": 41,
+          "coefficient": 8608,
+          "copy_count": 8608,
           "orientation": 1,
+          "owner": "r_yz",
+          "product_normal_level_rule": "(copy_index+1)/(9921) inside the actual r_yz framing collar"
+        },
+        {
+          "coefficient": -1,
+          "copy_count": 1,
+          "orientation": -1,
           "owner": "r_zx",
-          "product_normal_level_rule": "(copy_index+1)/(1542) inside the actual r_zx framing collar"
+          "product_normal_level_rule": "(copy_index+1)/(9921) inside the actual r_zx framing collar"
         }
       ],
-      "core_disk_intersection_count_b": 1541,
+      "core_disk_intersection_count_b": 9920,
       "delta_minus": {
         "disk": {
           "boundary_edges": [
@@ -196,9 +196,9 @@
       ],
       "mixed_braid_rule": "move all mixed endpoint braids to the end by strict functoriality; the same actual endpoint permutation and pivotal map conjugate the detector row and cancel",
       "morse_movie": {
-        "coproduct_saddles": 1540,
+        "coproduct_saddles": 9919,
         "copy_order": "owner order r_xy,r_yz,r_zx, then increasing product-normal level",
-        "counit_caps": 1541
+        "counit_caps": 9920
       },
       "movie_support": {
         "xmax": 66,
@@ -209,9 +209,9 @@
         "zmin": 45401
       },
       "punctured_surface": {
-        "boundary_count": 1541,
+        "boundary_count": 9920,
         "construction": "remove the listed product-normal core disks from the actual attaching sphere before transporting it to W1",
-        "euler_characteristic": -1539,
+        "euler_characteristic": -9918,
         "genus": 0
       },
       "sphere": "A1",
@@ -229,28 +229,28 @@
       },
       "core_disk_boundary_profile": [
         {
-          "coefficient": 8608,
-          "copy_count": 8608,
-          "orientation": 1,
+          "coefficient": -189,
+          "copy_count": 189,
+          "orientation": -1,
           "owner": "r_xy",
-          "product_normal_level_rule": "(copy_index+1)/(10119) inside the actual r_xy framing collar"
+          "product_normal_level_rule": "(copy_index+1)/(1431) inside the actual r_xy framing collar"
         },
         {
           "coefficient": 1241,
           "copy_count": 1241,
           "orientation": 1,
           "owner": "r_yz",
-          "product_normal_level_rule": "(copy_index+1)/(10119) inside the actual r_yz framing collar"
+          "product_normal_level_rule": "(copy_index+1)/(1431) inside the actual r_yz framing collar"
         },
         {
-          "coefficient": -269,
-          "copy_count": 269,
-          "orientation": -1,
+          "coefficient": 0,
+          "copy_count": 0,
+          "orientation": 0,
           "owner": "r_zx",
-          "product_normal_level_rule": "(copy_index+1)/(10119) inside the actual r_zx framing collar"
+          "product_normal_level_rule": "(copy_index+1)/(1431) inside the actual r_zx framing collar"
         }
       ],
-      "core_disk_intersection_count_b": 10118,
+      "core_disk_intersection_count_b": 1430,
       "delta_minus": {
         "disk": {
           "boundary_edges": [
@@ -408,9 +408,9 @@
       ],
       "mixed_braid_rule": "move all mixed endpoint braids to the end by strict functoriality; the same actual endpoint permutation and pivotal map conjugate the detector row and cancel",
       "morse_movie": {
-        "coproduct_saddles": 10117,
+        "coproduct_saddles": 1429,
         "copy_order": "owner order r_xy,r_yz,r_zx, then increasing product-normal level",
-        "counit_caps": 10118
+        "counit_caps": 1430
       },
       "movie_support": {
         "xmax": 82,
@@ -421,9 +421,9 @@
         "zmin": 45401
       },
       "punctured_surface": {
-        "boundary_count": 10118,
+        "boundary_count": 1430,
         "construction": "remove the listed product-normal core disks from the actual attaching sphere before transporting it to W1",
-        "euler_characteristic": -10116,
+        "euler_characteristic": -1428,
         "genus": 0
       },
       "sphere": "A2",
@@ -441,28 +441,28 @@
       },
       "core_disk_boundary_profile": [
         {
-          "coefficient": -1,
-          "copy_count": 1,
-          "orientation": -1,
+          "coefficient": 41,
+          "copy_count": 41,
+          "orientation": 1,
           "owner": "r_xy",
-          "product_normal_level_rule": "(copy_index+1)/(3) inside the actual r_xy framing collar"
+          "product_normal_level_rule": "(copy_index+1)/(312) inside the actual r_xy framing collar"
         },
         {
-          "coefficient": 0,
-          "copy_count": 0,
-          "orientation": 0,
+          "coefficient": -269,
+          "copy_count": 269,
+          "orientation": -1,
           "owner": "r_yz",
-          "product_normal_level_rule": "(copy_index+1)/(3) inside the actual r_yz framing collar"
+          "product_normal_level_rule": "(copy_index+1)/(312) inside the actual r_yz framing collar"
         },
         {
           "coefficient": 1,
           "copy_count": 1,
           "orientation": 1,
           "owner": "r_zx",
-          "product_normal_level_rule": "(copy_index+1)/(3) inside the actual r_zx framing collar"
+          "product_normal_level_rule": "(copy_index+1)/(312) inside the actual r_zx framing collar"
         }
       ],
-      "core_disk_intersection_count_b": 2,
+      "core_disk_intersection_count_b": 311,
       "delta_minus": {
         "disk": {
           "boundary_edges": [
@@ -620,9 +620,9 @@
       ],
       "mixed_braid_rule": "move all mixed endpoint braids to the end by strict functoriality; the same actual endpoint permutation and pivotal map conjugate the detector row and cancel",
       "morse_movie": {
-        "coproduct_saddles": 1,
+        "coproduct_saddles": 310,
         "copy_order": "owner order r_xy,r_yz,r_zx, then increasing product-normal level",
-        "counit_caps": 2
+        "counit_caps": 311
       },
       "movie_support": {
         "xmax": 98,
@@ -633,9 +633,9 @@
         "zmin": 45401
       },
       "punctured_surface": {
-        "boundary_count": 2,
+        "boundary_count": 311,
         "construction": "remove the listed product-normal core disks from the actual attaching sphere before transporting it to W1",
-        "euler_characteristic": 0,
+        "euler_characteristic": -309,
         "genus": 0
       },
       "sphere": "A3",
@@ -644,7 +644,7 @@
     }
   ],
   "schema": "t73_actual_hemisphere_movies/v2",
-  "sha256": "EC22496E5348D1292522F45C8AE93AA453F50E557D329E13263385E876517C5D",
-  "sphere_system_sha256": "6776E0A8D8F58FB6F0C5D0A0BF4AFDB4BA4DAC6AA3BC90AE0632FAFDAA6FD1DB",
+  "sha256": "20CDB6F442E8A967A359FEE3600DED64918A703661B95DE685D8D1B7050B856E",
+  "sphere_system_sha256": "5916E912798FBAC11A9DCEEE85A760FEA1DBDA93172FAD71E0A1437FC1B0284C",
   "status": "OPEN"
 }

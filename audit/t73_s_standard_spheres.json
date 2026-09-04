@@ -2,7 +2,7 @@
   "S_status": "PASS_FOR_JOHNSON_REPLACEMENT_REVERSED_PICTURE",
   "algebraic_nielsen_slides": {
     "fixes_B": false,
-    "ledger_sha256": "CDE42731F661C8C720B52F0D176EE9B526E28CF9884EDAA7290214AEA32F9E3B",
+    "ledger_sha256": "3BF56134A901424FFDAF2DE9CD14BD48DFA8C7A489ABA1DA0DE0F479ED062D42",
     "operation_count": 32,
     "rule": "SL(3,Z) reduction of the sphere-coordinate matrix; not a PL movie in Q"
   },
@@ -3053,7 +3053,7 @@
     }
   },
   "c_witness_sha256": "2A5F7AC5038987B2520BA25D64C4EE4E79A2EBBAB977D1E89541E869A80C9886",
-  "certificate_sha256": "32CE45C8D5FC836037F52F006A9E85C04309BE0E6065CF8AD453A366C7A10029",
+  "certificate_sha256": "6A5C37B5CB3709DE337A2C78279B8A4E9E146042CACE8B21AF8A6FA23FBE42F5",
   "checks": {
     "actual_attaching_system_identified": true,
     "actual_standard_sphere_endpoint_foam_computed": true,
@@ -5892,7 +5892,7 @@
       "name": "h3"
     }
   ],
-  "owner_lift_sha256": "7B98F11A9D27F05A73FE15805DB64DC50AEBFA5F7AB7134282F1F343D9690429",
+  "owner_lift_sha256": "44F007EC6797BA06D0BA9EADDA65A4C00C7A3E00ED4220376078F561AF0B2A36",
   "p0_certificate_sha256": "F1F9C500B00EDFB55869481DF96D9FA2EDD70DF84347AE46CB8F5882BDBBF8D2",
   "schema": "t73_s_standard_spheres/v6",
   "scope": "Johnson replacement reversed 3-handle picture: S^3 chart containing the P0 cube, three 1-handles whose belt spheres miss that cube, the C1 leftover circles and the C2 supports, dual loops pairing to the identity, b=0 foams by MWW Example 3.8, and identity movies on the cube. HJ Theorem 5.3 is used only for kernel invariance via Lemma Ssystem, not to fix B. Not the historical PD, and not a triangulated 4-dimensional W2 lasagna movie.",

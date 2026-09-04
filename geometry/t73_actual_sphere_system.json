@@ -24,7 +24,7 @@
   "pairwise_disjoint": true,
   "reason": "the reversed sphere model and b=(1541,10118,2) profiles are explicit, but the surfaces have not been transported through an actual relative W2 boundary map",
   "schema": "t73_actual_sphere_system/v2",
-  "sha256": "6776E0A8D8F58FB6F0C5D0A0BF4AFDB4BA4DAC6AA3BC90AE0632FAFDAA6FD1DB",
+  "sha256": "5916E912798FBAC11A9DCEEE85A760FEA1DBDA93172FAD71E0A1437FC1B0284C",
   "simultaneous_surgery_in_reversed_model_is_S3": true,
   "simultaneous_surgery_is_S3": false,
   "simultaneous_surgery_reason": "the abstract reversed model compresses to S3; transfer to the actual W2 boundary awaits the missing relative boundary map",
@@ -37,24 +37,24 @@
           "copy_count": 1311,
           "orientation": -1,
           "owner": "r_xy",
-          "product_normal_level_rule": "(copy_index+1)/(1542) inside the actual r_xy framing collar"
+          "product_normal_level_rule": "(copy_index+1)/(9921) inside the actual r_xy framing collar"
         },
         {
-          "coefficient": -189,
-          "copy_count": 189,
-          "orientation": -1,
-          "owner": "r_yz",
-          "product_normal_level_rule": "(copy_index+1)/(1542) inside the actual r_yz framing collar"
-        },
-        {
-          "coefficient": 41,
-          "copy_count": 41,
+          "coefficient": 8608,
+          "copy_count": 8608,
           "orientation": 1,
+          "owner": "r_yz",
+          "product_normal_level_rule": "(copy_index+1)/(9921) inside the actual r_yz framing collar"
+        },
+        {
+          "coefficient": -1,
+          "copy_count": 1,
+          "orientation": -1,
           "owner": "r_zx",
-          "product_normal_level_rule": "(copy_index+1)/(1542) inside the actual r_zx framing collar"
+          "product_normal_level_rule": "(copy_index+1)/(9921) inside the actual r_zx framing collar"
         }
       ],
-      "core_disk_intersection_count_b": 1541,
+      "core_disk_intersection_count_b": 9920,
       "disjoint_from_detector": true,
       "dual_loop": {
         "axis": "x",
@@ -1305,8 +1305,8 @@
       },
       "sphere_column_in_kernel_basis": [
         -1311,
-        -189,
-        41
+        8608,
+        -1
       ],
       "surface": {
         "bounds": {
@@ -1429,28 +1429,28 @@
       "actual_3_handle": "H^3_2",
       "core_disk_boundary_profile": [
         {
-          "coefficient": 8608,
-          "copy_count": 8608,
-          "orientation": 1,
+          "coefficient": -189,
+          "copy_count": 189,
+          "orientation": -1,
           "owner": "r_xy",
-          "product_normal_level_rule": "(copy_index+1)/(10119) inside the actual r_xy framing collar"
+          "product_normal_level_rule": "(copy_index+1)/(1431) inside the actual r_xy framing collar"
         },
         {
           "coefficient": 1241,
           "copy_count": 1241,
           "orientation": 1,
           "owner": "r_yz",
-          "product_normal_level_rule": "(copy_index+1)/(10119) inside the actual r_yz framing collar"
+          "product_normal_level_rule": "(copy_index+1)/(1431) inside the actual r_yz framing collar"
         },
         {
-          "coefficient": -269,
-          "copy_count": 269,
-          "orientation": -1,
+          "coefficient": 0,
+          "copy_count": 0,
+          "orientation": 0,
           "owner": "r_zx",
-          "product_normal_level_rule": "(copy_index+1)/(10119) inside the actual r_zx framing collar"
+          "product_normal_level_rule": "(copy_index+1)/(1431) inside the actual r_zx framing collar"
         }
       ],
-      "core_disk_intersection_count_b": 10118,
+      "core_disk_intersection_count_b": 1430,
       "disjoint_from_detector": true,
       "dual_loop": {
         "axis": "y",
@@ -2700,9 +2700,9 @@
         "status": "PASS"
       },
       "sphere_column_in_kernel_basis": [
-        8608,
+        -189,
         1241,
-        -269
+        0
       ],
       "surface": {
         "bounds": {
@@ -2825,28 +2825,28 @@
       "actual_3_handle": "H^3_3",
       "core_disk_boundary_profile": [
         {
-          "coefficient": -1,
-          "copy_count": 1,
-          "orientation": -1,
+          "coefficient": 41,
+          "copy_count": 41,
+          "orientation": 1,
           "owner": "r_xy",
-          "product_normal_level_rule": "(copy_index+1)/(3) inside the actual r_xy framing collar"
+          "product_normal_level_rule": "(copy_index+1)/(312) inside the actual r_xy framing collar"
         },
         {
-          "coefficient": 0,
-          "copy_count": 0,
-          "orientation": 0,
+          "coefficient": -269,
+          "copy_count": 269,
+          "orientation": -1,
           "owner": "r_yz",
-          "product_normal_level_rule": "(copy_index+1)/(3) inside the actual r_yz framing collar"
+          "product_normal_level_rule": "(copy_index+1)/(312) inside the actual r_yz framing collar"
         },
         {
           "coefficient": 1,
           "copy_count": 1,
           "orientation": 1,
           "owner": "r_zx",
-          "product_normal_level_rule": "(copy_index+1)/(3) inside the actual r_zx framing collar"
+          "product_normal_level_rule": "(copy_index+1)/(312) inside the actual r_zx framing collar"
         }
       ],
-      "core_disk_intersection_count_b": 2,
+      "core_disk_intersection_count_b": 311,
       "disjoint_from_detector": true,
       "dual_loop": {
         "axis": "z",
@@ -4091,8 +4091,8 @@
         "status": "PASS"
       },
       "sphere_column_in_kernel_basis": [
-        -1,
-        0,
+        41,
+        -269,
         1
       ],
       "surface": {
@@ -4251,7 +4251,7 @@
     ],
     "status": "PASS_REVERSED_MODEL_ONLY"
   },
-  "standard_sphere_certificate_sha256": "32CE45C8D5FC836037F52F006A9E85C04309BE0E6065CF8AD453A366C7A10029",
+  "standard_sphere_certificate_sha256": "6A5C37B5CB3709DE337A2C78279B8A4E9E146042CACE8B21AF8A6FA23FBE42F5",
   "status": "OPEN",
   "w2_boundary_sha256": "E0E99C9E99FD100F8FECD3C9898102DD5E04395C08CC39E0ECEAC1835F344896"
 }

@@ -5,14 +5,12 @@ from __future__ import annotations
 
 import hashlib
 import json
+from pathlib import Path
 from typing import Any
 
 
-SPHERE_COLUMNS = [
-    [-1311, -189, 41],
-    [8608, 1241, -269],
-    [-1, 0, 1],
-]
+ROOT = Path(__file__).resolve().parents[1]
+PSI = ROOT / "geometry" / "t73_psi_A.json"
 
 
 def canonical_sha(value: Any) -> str:
@@ -22,6 +20,41 @@ def canonical_sha(value: Any) -> str:
 
 def identity(size: int) -> list[list[int]]:
     return [[int(row == column) for column in range(size)] for row in range(size)]
+
+
+def det3(matrix: list[list[int]]) -> int:
+    a, b, c = matrix[0]
+    d, e, f = matrix[1]
+    g, h, i = matrix[2]
+    return a * (e * i - f * h) - b * (d * i - f * g) + c * (d * h - e * g)
+
+
+def inverse_transpose_unimodular(matrix: list[list[int]]) -> list[list[int]]:
+    det = det3(matrix)
+    if det != 1:
+        raise AssertionError("psi_A homology matrix is not orientation-unimodular")
+    a = matrix
+    # Cofactor matrix is A^{-T} when det(A)=1.
+    return [
+        [a[1][1] * a[2][2] - a[1][2] * a[2][1], -(a[1][0] * a[2][2] - a[1][2] * a[2][0]), a[1][0] * a[2][1] - a[1][1] * a[2][0]],
+        [-(a[0][1] * a[2][2] - a[0][2] * a[2][1]), a[0][0] * a[2][2] - a[0][2] * a[2][0], -(a[0][0] * a[2][1] - a[0][1] * a[2][0])],
+        [a[0][1] * a[1][2] - a[0][2] * a[1][1], -(a[0][0] * a[1][2] - a[0][2] * a[1][0]), a[0][0] * a[1][1] - a[0][1] * a[1][0]],
+    ]
+
+
+def derive_sphere_columns(matrix_a: list[list[int]]) -> tuple[list[list[int]], list[list[int]]]:
+    wedge2_a = inverse_transpose_unimodular(matrix_a)
+    columns = [
+        [int(i == j) - wedge2_a[i][j] for j in range(3)]
+        for i in range(3)
+    ]
+    return wedge2_a, columns
+
+
+# Compatibility name for downstream tests and ledgers; its value is derived
+# from the committed actual psi_A matrix rather than frozen literal entries.
+_INITIAL_PSI = json.loads(PSI.read_text(encoding="utf-8"))
+_INITIAL_WEDGE2, SPHERE_COLUMNS = derive_sphere_columns(_INITIAL_PSI["matrix_A"])
 
 
 def apply(matrix: list[list[int]], operation: dict[str, int | str]) -> None:
@@ -113,18 +146,27 @@ def reduction_operations(matrix: list[list[int]]) -> list[dict[str, int | str]]:
 
 
 def generate_ledger() -> dict[str, Any]:
-    reduction = reduction_operations(SPHERE_COLUMNS)
+    psi = json.loads(PSI.read_text(encoding="utf-8"))
+    matrix_a = psi["matrix_A"]
+    wedge2_a, sphere_columns = derive_sphere_columns(matrix_a)
+    if det3(sphere_columns) != 1:
+        raise AssertionError("I-wedge^2(A) is not unimodular")
+    reduction = reduction_operations(sphere_columns)
     reconstruction = [inverse_operation(operation) for operation in reversed(reduction)]
 
     check = identity(3)
     for operation in reconstruction:
         apply(check, operation)
-    if check != SPHERE_COLUMNS:
+    if check != sphere_columns:
         raise AssertionError("reverse Nielsen program does not reconstruct C")
 
     ledger = {
         "schema": "t73_sphere_basis_nielsen_ledger/v1",
-        "sphere_coordinate_matrix": SPHERE_COLUMNS,
+        "psi_A_sha256": psi["sha256"],
+        "matrix_A": matrix_a,
+        "wedge2_A_equals_A_inverse_transpose": wedge2_a,
+        "sphere_coordinate_rule": "I - wedge^2(A)",
+        "sphere_coordinate_matrix": sphere_columns,
         "determinant": 1,
         "reduction_to_identity": reduction,
         "construction_from_standard_basis": reconstruction,

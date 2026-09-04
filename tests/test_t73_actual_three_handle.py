@@ -23,7 +23,7 @@ class ActualThreeHandleTest(unittest.TestCase):
         self.assertEqual(spheres["REVERSED_SPHERE_MODEL"], "PASS")
         self.assertEqual(spheres["ACTUAL_W2_BOUNDARY"], "OPEN")
         self.assertEqual(spheres["ACTUAL_SPHERE_SYSTEM"], "OPEN")
-        self.assertEqual(spheres["CORE_DISK_COUNTS"], [1541, 10118, 2])
+        self.assertEqual(spheres["CORE_DISK_COUNTS"], [9920, 1430, 311])
         self.assertEqual(spheres["MUTATION_BOUNDARY_COPY"], "FAIL")
         hemispheres = load("verify_t73_hemisphere_movies").verify()
         self.assertEqual(hemispheres["ACTUAL_HEMISPHERE_MOVIES"], "OPEN")

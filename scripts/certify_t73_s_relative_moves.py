@@ -119,7 +119,7 @@ def generate() -> dict[str, Any]:
             ),
             "nielsen_pl_movie_count": len(spheres["nielsen_pl_movies"]),
             "nielsen_parallel_copies_instantiated": False,
-            "nielsen_parallel_copy_rule": "the counts b=(1541,10118,2) and finite product-normal level formula are fixed, but the copies are not yet placed through an actual relative W2 boundary map",
+            "nielsen_parallel_copy_rule": "the counts b=(9920,1430,311) and finite product-normal level formula are fixed, but the copies are not yet placed through an actual relative W2 boundary map",
             "actual_hemisphere_movies": hemispheres["movies"],
         },
         "mww_hemisphere_table": {
@@ -154,7 +154,7 @@ def generate() -> dict[str, Any]:
         "candidate_binding": {
             "actual_standard_sphere_endpoint_foam_computed": False,
             "constant_term_rule": (
-                "MODEL ONLY: for b=(1541,10118,2), the two explicitly triangulated hemisphere "
+                "MODEL ONLY: for b=(9920,1430,311), the two explicitly triangulated hemisphere "
                 "movies apply epsilon^tensor(b) Delta^(b-1); this sends 1 to 0 and X "
                 "to 1 after factorization through the actual C cocone"
             ),

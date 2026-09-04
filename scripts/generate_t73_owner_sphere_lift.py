@@ -11,12 +11,11 @@ from types import ModuleType
 from typing import Any
 
 
-SPHERE_COLUMNS = [
-    [-1311, -189, 41],
-    [8608, 1241, -269],
-    [-1, 0, 1],
-]
 OWNER_ORDER = ["m_2", "m_3", "r_xy", "r_yz", "r_zx"]
+ROOT = Path(__file__).resolve().parents[1]
+SPINE = ROOT / "geometry" / "t73_johnson_spine_embedding.json"
+CANCEL_X = ROOT / "geometry" / "t73_cancel_x_m1.json"
+CUT = ROOT / "geometry" / "t73_actual_cut_tangle.json"
 
 
 def load_kirby() -> ModuleType:
@@ -43,9 +42,27 @@ def multiply(matrix: list[list[int]], vector: list[int]) -> list[int]:
 
 
 def generate_ledger() -> dict[str, Any]:
-    kirby = load_kirby()
-    m2 = kirby.exponent_sums(kirby.after_x_cancellation(1))
-    m3 = kirby.exponent_sums(kirby.after_x_cancellation(2))
+    cut = json.loads(CUT.read_text(encoding="utf-8"))
+    spine = json.loads(SPINE.read_text(encoding="utf-8"))
+    cancel_x = json.loads(CANCEL_X.read_text(encoding="utf-8"))
+    sphere_ledger_path = Path(__file__).resolve().parent / "generate_t73_sphere_slide_ledger.py"
+    spec = importlib.util.spec_from_file_location("sphere_ledger", sphere_ledger_path)
+    if spec is None or spec.loader is None:
+        raise RuntimeError("cannot import sphere slide ledger")
+    sphere_module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(sphere_module)
+    sphere_data = sphere_module.generate_ledger()
+    sphere_columns = sphere_data["sphere_coordinate_matrix"]
+    m2_events = cut["post_x_event_lists"]["m_2"]
+    m2 = {
+        axis: sum(event["orientation"] for event in m2_events if event["label"] == axis)
+        for axis in ("y", "z")
+    }
+    m3_arcs = [arc for arc in spine["handle_arcs"] if int(arc["component"]) == 2]
+    m3 = {
+        "y": sum(int(arc["sign"]) for arc in m3_arcs if int(arc["axis"]) == 1),
+        "z": sum(int(arc["sign"]) for arc in m3_arcs if int(arc["axis"]) in (0, 2)) - 1,
+    }
     boundary = [
         [m2["y"], m3["y"], 0, 0, 0],
         [m2["z"], m3["z"], 0, 0, 0],
@@ -57,7 +74,7 @@ def generate_ledger() -> dict[str, Any]:
         raise AssertionError("m2/m3 boundary minor is not unimodular")
 
     owner_lifts = [
-        [0, 0, SPHERE_COLUMNS[0][column], SPHERE_COLUMNS[1][column], SPHERE_COLUMNS[2][column]]
+        [0, 0, sphere_columns[0][column], sphere_columns[1][column], sphere_columns[2][column]]
         for column in range(3)
     ]
     for lift in owner_lifts:
@@ -78,7 +95,11 @@ def generate_ledger() -> dict[str, Any]:
             [0, 0, 0, 1, 0],
             [0, 0, 0, 0, 1],
         ],
-        "sphere_columns_in_kernel_basis": SPHERE_COLUMNS,
+        "sphere_columns_in_kernel_basis": sphere_columns,
+        "sphere_slide_ledger_sha256": sphere_data["ledger_sha256"],
+        "actual_cut_tangle_sha256": cut["sha256"],
+        "actual_spine_embedding_sha256": spine["sha256"],
+        "actual_x_cancellation_sha256": cancel_x["sha256"],
         "owner_lifts": owner_lifts,
         "conclusion": (
             "the three five-owner lifts are unique integral two-cycles and "

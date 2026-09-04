@@ -68,8 +68,9 @@ def build(write: bool = False) -> dict[str, Any]:
         raise AssertionError("reversed three-handle sphere model is not verified")
     spheres = []
     kernel_owners = ["r_xy", "r_yz", "r_zx"]
+    sphere_matrix = standard["attaching_homology"]["sphere_columns_in_kernel_basis"]
     for index, sphere in enumerate(standard["spheres"]):
-        coefficients = standard["attaching_homology"]["sphere_columns_in_kernel_basis"][index]
+        coefficients = [sphere_matrix[row][index] for row in range(3)]
         boundary_profile = []
         for owner, coefficient in zip(kernel_owners, coefficients):
             boundary_profile.append(

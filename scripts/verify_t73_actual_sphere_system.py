@@ -32,7 +32,7 @@ def validate(data, w2):
         raise AssertionError("actual three-handle sphere system is incomplete")
     if data["simultaneous_surgery_is_S3"] or not data["simultaneous_surgery_in_reversed_model_is_S3"]:
         raise AssertionError("actual and model sphere-surgery claims were conflated")
-    expected_b = [1541, 10118, 2]
+    expected_b = [9920, 1430, 311]
     for sphere, b_count in zip(data["spheres"], expected_b):
         if sphere["surface_euler"] != 2 or not sphere["embedded_s2_in_reversed_model"] or sphere["embedded_s2_on_actual_W2"]:
             raise AssertionError("reversed-model and actual attaching-sphere claims were conflated")
@@ -68,7 +68,7 @@ def verify():
         "REVERSED_SPHERE_MODEL": "PASS",
         "ACTUAL_W2_BOUNDARY": "OPEN",
         "ACTUAL_SPHERE_SYSTEM": "OPEN",
-        "CORE_DISK_COUNTS": [1541, 10118, 2],
+        "CORE_DISK_COUNTS": [9920, 1430, 311],
         "SIMULTANEOUS_SURGERY": "PASS_REVERSED_MODEL_ONLY",
         "HJ_55_57_INVOKED": False,
         "MUTATION_BOUNDARY_COPY": "FAIL",
