@@ -1210,6 +1210,118 @@ Topology-source checks completed 2026-09-04:
   assurance.  This does not introduce a Lean axiom; direct source inspection
   and the compiler/`#print axioms` audit remain the relevant evidence.
 
+### F-600 — The “actual” sphere-system builder assigns, rather than constructs, the embedding in \(\partial W_2\)
+
+- Severity: **Critical**
+- Status: **CONFIRMED; FIRST MISSING GEOMETRIC DATUM**
+- Locations: `main.tex:1365--1401`, Proposition `thm:Sgeometry` at
+  `main.tex:1436--1451`, Theorem `thm:Sdischarge` at `main.tex:1524--1533`;
+  `scripts/build_t73_actual_sphere_system.py:79--109` and `:111--152`;
+  `scripts/build_t73_three_handle_surface_transport.py:83--123`;
+  `scripts/verify_t73_actual_sphere_system.py:30--49`.
+- Evidence: the builder copies three cube-boundary spheres from an abstract
+  reversed model, then assigns `embedded_s2_on_actual_W2`, disjointness,
+  connected complement, identification with partial \(W_2\), and
+  simultaneous surgery-to-\(S^3\) as booleans. The lower “surface transport”
+  contains boundary words, counts, and hashes, but no vertices/triangles of
+  the transported surfaces and no ambient map; its embeddedness and relative
+  map are again assigned. The verifier checks the assigned booleans, counts,
+  and Euler arithmetic.
+- First missing datum: a common triangulated model of the actual
+  \(\partial W_2\), explicit embeddings of the three spheres and detector
+  ball, and a checked ambient map through every genuine Kirby move; or a
+  complete conventional Kirby proof providing the same identifications.
+- Source limitation: Horvat--Jab\l{}onowski Theorem 5.3 can compare a *given
+  geometric basis* with the actual attaching system. A unimodular homology
+  matrix does not construct the embedded geometric basis in the actual
+  boundary.
+- Dependency impact: S and the asserted post-three-handle boundary are not
+  established.
+
+### F-601 — The hemisphere verifier computes only a local Frobenius scalar and assigns the whole-source MWW factorization
+
+- Severity: **Critical**
+- Status: **CONFIRMED; FIRST MISSING CATEGORICAL THEOREM**
+- Locations: Lemma `lem:Sendpoint`, `main.tex:1455--1509`, especially its own
+  caveat at `:1506--1508`; `scripts/verify_t73_hemisphere_movies.py:63--96`
+  and `:99--172`.
+- Evidence: the finite function correctly computes
+  \(\epsilon^{\otimes b}\Delta^{b-1}(1)=0\) and
+  \(\epsilon^{\otimes b}\Delta^{b-1}(X)=1\). The builder then assigns
+  `PASS_ACTUAL_C_COCONE`, identical endpoint maps, identity/zero detector
+  actions, compatibility on all source summands, and finally
+  `actual_w2_lasagna_map=True`. No Khovanov complex, MWW hemisphere map,
+  natural transformation, or quotient-compatibility square is constructed.
+- Missing theorem: for every cable summand and each actual sphere, identify
+  both MWW hemisphere maps under the genuine C comparison with an old-source
+  map tensor the punctured-sphere TQFT map, compatibly with every beta/psi
+  relation, pivotal/orientation map, and passage to the two-handle quotient.
+- Source limitation: MWW Theorems 3.7/3.10 and Example 3.8 provide the
+  coequalizer and local essential-sphere relation, not this new detector
+  factorization. Strict functoriality removes sign ambiguity inside its own
+  theory; it does not prove the asserted tensor factorization.
+- Dependency impact: the detector is not shown to descend through any actual
+  three-handle coequalizer, even if the topology in F-600 is granted.
+
+### F-602 — P3 has a valid conditional upper-handle proof, but the current certificate lacks the boundary recognition and attaching map
+
+- Severity: **Critical as currently claimed; conditional argument valid**
+- Status: **OPEN**
+- Locations: Theorem `hyp:P3`, `main.tex:279--303`, final identifications at
+  `main.tex:1535--1546`; `scripts/certify_t73_p3_four_handle.py:77--112`,
+  `:172--209`, and `:233--257`.
+- Evidence: if a genuine P0 diffeomorphism transports the *entire* original
+  AR handle decomposition, then its original three 3-handles leave the
+  original 4-handle boundary \(S^3\), and the transported original 4-handle
+  supplies the attachment. Laudenbach--Po\'enaru removes upper-handle gluing
+  ambiguity under the same established boundary hypotheses. This is a sound
+  conditional proof.
+- Present gap: the P3 script calls boundary-dual surgery a “1--3
+  cancellation,” trusts the sphere-system booleans, and constructs only an
+  abstract cubical \(I^4\). It supplies no recognition of the actual
+  surgered boundary and no orientation-compatible PL homeomorphism
+  \(\partial I^4\to\partial W_3\). Homology or an identity dual-loop pairing
+  does not recognize \(S^3\).
+- Correct language: the 3-handle attaches along a sphere which appears as a
+  belt sphere in an upside-down boundary 1-handle presentation; there is no
+  index-1/index-3 handle cancellation or canceling “1--3 pair.”
+- Dependency impact: MWW Proposition 3.4 is correctly cited for an actual
+  empty-link 4-handle, but its geometric premise is not discharged.
+
+### F-603 — The absolute degree 494 has not been reconciled with the Manolescu--Neithalath grading erratum
+
+- Severity: **Major**
+- Status: **OPEN**
+- Locations: `main.tex:258`, `main.tex:294--299`, grading calculation in
+  `sec-finite-details.tex:257--276`, and S endpoint argument
+  `main.tex:1495--1503`.
+- Primary-source evidence: the author-posted erratum to Manolescu--Neithalath,
+  *Skein lasagna modules for 2-handlebodies*, corrects the rational
+  normalization by the writhe shift \(\{-(N-1)w(L)\}\), and corrects its
+  equation (6). It says the rest of that paper is unaffected because it uses
+  the \(\operatorname{KhR}_2\) convention, but every conversion to ordinary
+  Khovanov conventions must retain this term.
+- Gap: the ledger \(-44+227+315-4=494\) does not mention the erratum. Total
+  writhe zero for the 11,340-letter detector braid does not establish zero
+  correction for every oriented closure/cable summand, cup/cap map, and
+  hemisphere map. No single-convention grading table is given.
+- Required resolution: list the exact oriented diagram and writhe for each
+  complex and the degree of each cobordism, including the corrected
+  \(-(N-1)w\) term, then prove the whole-source maps of F-601 have absolute
+  degree zero. Degree 494 may survive, but it is not presently proved.
+
+### F-604 — Constructive closure attempt stops at two independent missing interfaces
+
+- Severity: **Critical summary**
+- Status: **BLOCKED BY MISSING MATHEMATICAL DATA (not by computation time)**
+- Location: `docs/proofs/T73_S_P3_PAPER_PROOF.md`.
+- Result: the local Frobenius identity is proved, and P3 is standard
+  conditional on a transported full AR handle decomposition. Unconditional
+  closure first requires (i) the actual embedded sphere/ambient-boundary data
+  of F-600 and (ii) independently, the natural whole-source MWW comparison of
+  F-601. After those, a transported or explicit 4-handle attaching map and
+  the corrected grading ledger of F-603 are still required.
+
 ## Proof dependency ledger
 
 The main theorem will be expanded into atomic premises.  For each premise this
@@ -1279,3 +1391,225 @@ explicit checked contracts.
   fresh full compilation/38-axiom-report pass. Static whole-tree search found
   no forbidden proof escape declaration; the focused finite tests above did
   pass.
+
+### F-500 — The C verifier contains no chain-level coefficient map
+
+- Severity: **Critical**
+- Status: **CONFIRMED**
+- Locations: `scripts/certify_t73_c2_comparison.py:1-8,92-128,167-228`;
+  `main.tex` Lemma `lem:C1` and equation (17).
+- Evidence: the script expressly says it is not a chain-level
+  Blanchet--Khovanov complex of the actual `W2` cut.  Its object `H` stores 44
+  start/end arc hashes and PASS strings; the action squares are two disjoint
+  bounding boxes.  No complexes, differentials, foam maps, or naturality
+  homotopies are defined.
+- Impact: the first required datum C-H1 in
+  `docs/proofs/T73_C_CHAINMAP_PAPER_PROOF.md` is absent, so 2624 is not yet an
+  MWW quotient functional.
+
+### F-501 — Selected-state rectangles do not establish the claimed all-cable comparison
+
+- Severity: **Critical**
+- Status: **CONFIRMED**
+- Locations: `scripts/certify_t73_c2_comparison.py:138-149,200-208` and the
+  all-state construction following equation (24) in `main.tex`.
+- Evidence: C1 constructs the 44 pairings for
+  `s0=e_m2+e_rxy`.  The code lists owner counts for `m3`, `r_yz` and other
+  cable states but does not construct their primitive rectangles or a uniform
+  verified tubular-neighbourhood map producing every `H_r`.
+- Impact: whole-source beta/psi equations cannot be inferred from the selected
+  state certificate.  The missing datum is C-H2 in the proof note.
+
+### F-502 — Endpoint pivotal data remain assumed
+
+- Severity: **Critical**
+- Status: **CONFIRMED**
+- Location: `scripts/build_t73_endpoint_transport.py:228-265`.
+- Evidence: every endpoint receives literal assignments
+  `pivotal_sign=1`, `q_power=0`; orientation and framing fields are stored but
+  do not compute these values.
+- Impact: the endpoint vector and cubic evaluation are conditional on an
+  unproved convention choice.  C-H3 requires a derivation in the actual
+  BPW/BHPW pivotal category.
+
+### F-503 — The BPW/BHPW theorems give only a conditional route after the missing `H` is supplied
+
+- Severity: **Major**
+- Status: **CONFIRMED**
+- Evidence: BPW trace/shadow results require the relevant dual and pregraded
+  categories; BHPW strict functoriality applies after the concrete tangles and
+  cobordisms are placed in its foam theory.  Neither source constructs the
+  candidate-specific MWW coefficient isomorphism C-H1.
+- Impact: citing strict functoriality cannot replace a definition of the
+  actual chain map or its two action squares.
+
+### F-504 — Constructive C attempt stops at four explicit missing inputs
+
+- Severity: **Critical**
+- Status: **BLOCKED ON NEW MATHEMATICAL DATA, NOT ON LEAN**
+- Evidence: `docs/proofs/T73_C_CHAINMAP_PAPER_PROOF.md` isolates C-H1 (actual
+  dg coefficient map), C-H2 (all-owner/all-cable rectangles), C-H3 (pivotal
+  coefficients), and C-H4 (erratum-corrected absolute grading ledger).
+- Impact: the valid conclusion is conditional on C-H1--C-H4.  None can be
+  recovered from current status strings, hashes, or abstract Lean parameters.
+
+## P0/E13 focused paper-proof attempt (F-400 onward)
+
+The full argument and the exact completion package are recorded in
+`docs/proofs/T73_P0_E13_PAPER_PROOF.md`.  These findings evaluate the current
+post-F-017 working tree, including the later Johnson restore hierarchy.
+
+### F-400 — The affine Johnson--AR Heegaard-pair bridge has a direct paper proof
+
+- Severity: **Remediation / positive result**
+- Status: **RESOLVED for the affine pair bridge only**
+- Locations: `main.tex`, Lemma `lem:P0a`; the detailed proof in
+  `docs/proofs/T73_P0_E13_PAPER_PROOF.md`, Section 1.
+- Proof: the formula
+  (S([u])=[2u-(1/2,1/2,1/2)]) is well defined from
+  (mathbb R^3/mathbb Z^3) to (mathbb R^3/(2mathbb Z)^3), has the
+  displayed affine inverse and positive determinant (8), sends the two
+  coordinate roses to the AR roses at $Q,\\bar Q$, and scales all torus
+  distances by two.  It therefore sends Johnson's actual Euclidean Voronoi
+  Heegaard pair to a valid AR coordinate-spine pair.
+- Scope: this closes only the background identification of the two standard
+  Heegaard-pair models.  It does not prove that the candidate's 93-factor
+  hierarchy is a homeomorphism preserving that pair.
+
+### F-401 — The final Johnson `ArmRestore` assembly is not a defined global PL map
+
+- Severity: **Critical**
+- Status: **BLOCKED BY MISSING MAP DATA**
+- Locations: `scripts/build_t73_johnson_restore_assembly.py:118-152`;
+  `scripts/build_t73_johnson_pl_generators.py:77-104`;
+  `scripts/compose_t73_psi_A.py:37-42,119-135`;
+  `scripts/verify_t73_pl_homeomorphism.py`, function `check_arm_restore`.
+- Evidence: the restore assembler records strings naming seven layers and
+  their inverse order, totals cell counts, and then directly sets the global
+  map, owner-preservation, relative identity, isotopy and inverse fields to
+  `True`.  It constructs no common subdivision and checks no layer interface
+  or composite inverse.  The generator builder hard-codes the zero-mismatch
+  Heegaard owner table.  Most decisively, the compositor raises an error when
+  asked to evaluate a hierarchical restore at a point and records its general
+  point evaluator as `OPEN`.
+- Unchecked obligations: top-cell coverage, equality on every shared and
+  periodic face, disjoint image interiors, target coverage, both inverse
+  composites, and exact images of the two handlebody and protected-ball
+  subcomplexes.
+- Consequence: the claimed (\psi_A) is not presently a mathematical map in
+  the supplied data.  This is the first candidate-specific break in P0 and
+  blocks every later use of (\psi_A(C_i)) or its boundary transport.
+- Required resolution: provide a flattened source/image simplex table and
+  inverse on a common periodic subdivision, or exact layer evaluators with
+  proved interface and inverse laws, and verify the four global obligations
+  listed in the detailed proof attempt.
+
+### F-402 — The 6+1513 records do not certify sequential framed Kirby slides
+
+- Severity: **Critical**
+- Status: **BLOCKED BY MISSING EMBEDDED BANDS AND FRAMING TRANSPORT**
+- Locations: `scripts/build_t73_p0_reconstruction_input.py:92-147`;
+  `scripts/build_t73_belt_spheres.py:110-132,135-268`;
+  `scripts/verify_t73_handle_cancellation.py:64-205,240-280`;
+  `scripts/build_t73_johnson_spine_embedding.py:103-135`.
+- Evidence: the verifier checks passage counts, that band-core vertices lie
+  on a coordinate belt face, distinct target points, and a stored
+  `relative_twist=0`.  It does not construct each band as an embedded
+  rectangle in the current boundary, test its interior against the current
+  full link, update that full embedded link after each slide, or derive the
+  pushed framing from the actual normal fields.  `choose_bend` avoids only a
+  finite set of obstacle points, not obstacle edges or evolving link curves.
+- Source boundary: AR and standard Kirby calculus validate cancellation after
+  geometric intersection one and the cancelling framing have been proved;
+  neither source proves these candidate-specific band hypotheses.
+- Consequence: the word substitutions and handle counts do not establish
+  equality of framed handle presentations.  P0 and E13 remain open even if
+  F-401 is repaired.
+
+### F-403 — The detector cube and 44+227 pieces are not embedded in a constructed post-cancellation boundary
+
+- Severity: **Critical**
+- Status: **BLOCKED BY MISSING AMBIENT INCLUSION**
+- Locations: `scripts/build_t73_actual_cut_tangle.py:126-265` and
+  `scripts/reconstruct_t73_p0.py:89-176`.
+- Evidence: the cut-tangle builder derives event labels and assigns them new
+  vertical intervals in a declared cube; it directly sets pairwise
+  disjointness and disjointness from the section ball.  The 227 leftovers are
+  replaced by coordinate meridians with only a prose standardization.  The
+  reconstruction checker accepts the ambient solid as a ball from the input
+  `certified_topological_type` field and accepts strand disjointness, normal
+  fields and AR binding from stored status fields.
+- Consequence: the extracted 11340-letter braid is a reproducible calculation
+  in an abstract ball, but no inclusion of that ball and its framed strands
+  into the same boundary produced by the proposed Kirby movies is proved.
+
+### F-404 — `actual_W2_boundary` is a declaration ledger, not an ambient boundary model
+
+- Severity: **Critical**
+- Status: **CONFIRMED**
+- Locations: `geometry/t73_actual_W2_boundary.json`;
+  `scripts/build_t73_actual_sphere_system.py:111-151`;
+  `scripts/verify_t73_actual_sphere_system.py:30-47`.
+- Evidence: the 2.7 kB W2 file contains counts, hashes and strings, but no
+  triangulation/cell decomposition.  Its builder directly assigns the
+  boundary type (#^3(S^1\times S^2)), the actual-sphere identification,
+  pairwise disjointness, connected complement and simultaneous surgery
+  (S^3).  The verifier merely requires those same Boolean fields and does
+  not perform boundary recognition or sphere surgery.
+- Consequence: neither the actual P3 sphere attachments nor the remaining
+  (S^3) follow from this artifact.
+
+### F-405 — P3 uses invalid `1--3 cancellation` language and supplies no four-handle attaching map
+
+- Severity: **Critical**
+- Status: **CONFIRMED**
+- Locations: `scripts/certify_t73_p3_four_handle.py:1-14,172-207,233-256`.
+- Evidence: an intersection-one dual loop is converted directly into
+  `cancels=True` for a 1/3 pair.  Ordinary four-dimensional handle
+  cancellation is between consecutive indices.  A 3-handle attached along
+  the belt sphere of a 1-handle is a boundary-dual surgery description, not
+  a cancellation of those nonconsecutive handles in the same decomposition.
+  The script then declares the boundary to be (S^3) and identifies the
+  boundary of an unrelated abstract (I^4) with it without constructing a
+  homeomorphism.  Its own module header says it is not a triangulation of
+  (W_3) and does not identify (X_J) with (Sigma_A^0).
+- Source boundary: Laudenbach--Poenaru gives uniqueness/extension only after
+  the required 1-handlebody boundary hypotheses are established.  It does
+  not recognize the present declared boundary or supply the absent sphere
+  system.
+
+### F-406 — E13 changes handle inventories by asserted stages rather than Kirby/PL maps
+
+- Severity: **Critical**
+- Status: **CONFIRMED**
+- Locations: `scripts/certify_t73_e13_close.py:501-646,686-723` and
+  `scripts/certify_t73_e13_identification.py:270-388`.
+- Evidence: E13 creates ten prose pipeline stages and assigns every stage
+  `PASS`.  It first calls the two surviving railroad 1-handles 1/3-cancelled,
+  then introduces three “extra 1--3 pairs”, without a legal stabilization or
+  ambient handle move connecting the new inventory to the CS decomposition.
+  The `resolved_maps` statuses and final identification Boolean are assigned,
+  not derived from a map.  The outer wrapper then sets
+  `identified_with_X_J=True` and `identified_with_Sigma_A_0=True`.
+- Live replay: P3 prints `E13=PARTIAL` and
+  `IDENTIFIED_WITH_SIGMA=False`; the final wrapper prints `E13=PASS`,
+  `IDENTIFIED_WITH_SIGMA=True`, and simultaneously `MISSING_MAPS=1`.
+- Consequence: E13 supplies no ambient Kirby/PL equivalence
+  (X_J\cong\Sigma_A^0).
+
+### F-407 — The correct P0/E13 paper implication is available only conditionally
+
+- Severity: **Remediation / dependency clarification**
+- Status: **RESOLVED AS A CONDITIONAL THEOREM; hypotheses OPEN**
+- Location: `docs/proofs/T73_P0_E13_PAPER_PROOF.md`, Section 6.
+- Statement: a relative splitting-preserving representative of (A), the
+  actual AR framed handle decomposition, two legitimate whole-link Kirby
+  cancellations, an actual complete 3-handle sphere system with post-surgery
+  (S^3), and a four-handle attaching identification imply
+  (X_J\cong\Sigma_A^0).  The proof is the mapping-torus relative-isotopy
+  map, invariance under genuine Kirby moves, and the
+  Laudenbach--Poenaru upper-handle extension theorem after its boundary
+  hypotheses are verified.
+- Current status: F-401--F-406 show that the current repository does not
+  supply these hypotheses.  Thus no unconditional P0/E13 statement is
+  available.
