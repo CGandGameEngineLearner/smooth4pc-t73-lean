@@ -1,0 +1,321 @@
+{
+  "all_derived_stars_are_ball_disk_moves": true,
+  "ambient_cell_maps": "OPEN",
+  "schema": "t73_johnson_derived_collapse_templates/v1",
+  "sha256": "5BE3A93574FF1B883F7D47A049AB0100D72C3F9810EF45F911B21672934357F5",
+  "standard_vertices": [
+    [
+      "0",
+      "0",
+      "0"
+    ],
+    [
+      "1",
+      "0",
+      "0"
+    ],
+    [
+      "0",
+      "1",
+      "0"
+    ],
+    [
+      "0",
+      "0",
+      "1"
+    ]
+  ],
+  "templates": [
+    {
+      "after_boundary": {
+        "boundary_components": 0,
+        "boundary_edge_count": 0,
+        "edge_multiplicities": {
+          "2": 72
+        },
+        "edges": 72,
+        "euler": 2,
+        "faces": 48,
+        "surface_components": 1,
+        "surface_manifold": true,
+        "topology": "sphere",
+        "vertices": 26
+      },
+      "after_collapse": {
+        "collapse_steps": 121,
+        "collapses_to_point": true,
+        "remaining_edges": 0,
+        "remaining_faces": 0,
+        "remaining_tetrahedra": 0,
+        "remaining_vertices": 1
+      },
+      "after_patch": {
+        "boundary_components": 1,
+        "boundary_edge_count": 6,
+        "edge_multiplicities": {
+          "1": 6,
+          "2": 3
+        },
+        "edges": 9,
+        "euler": 1,
+        "faces": 4,
+        "surface_components": 1,
+        "surface_manifold": true,
+        "topology": "disk",
+        "vertices": 6
+      },
+      "after_star_tetrahedra": 36,
+      "ambient_cell_map": "OPEN",
+      "before_boundary": {
+        "boundary_components": 0,
+        "boundary_edge_count": 0,
+        "edge_multiplicities": {
+          "2": 168
+        },
+        "edges": 168,
+        "euler": 2,
+        "faces": 112,
+        "surface_components": 1,
+        "surface_manifold": true,
+        "topology": "sphere",
+        "vertices": 58
+      },
+      "before_collapse": {
+        "collapse_steps": 305,
+        "collapses_to_point": true,
+        "remaining_edges": 0,
+        "remaining_faces": 0,
+        "remaining_tetrahedra": 0,
+        "remaining_vertices": 1
+      },
+      "before_patch": {
+        "boundary_components": 1,
+        "boundary_edge_count": 6,
+        "edge_multiplicities": {
+          "1": 6,
+          "2": 99
+        },
+        "edges": 105,
+        "euler": 1,
+        "faces": 68,
+        "surface_components": 1,
+        "surface_manifold": true,
+        "topology": "disk",
+        "vertices": 38
+      },
+      "before_star_tetrahedra": 96,
+      "collapse_dimension": 1,
+      "common_boundary_faces": 44,
+      "common_tetrahedra": 36,
+      "coordinate_denominator_lcm": 48,
+      "derived_disk_move_support": "PASS",
+      "difference_tetrahedra": 60,
+      "first_subdivision_tetrahedra": 24,
+      "free_face": [
+        1
+      ],
+      "geometric_tetrahedra_nondegenerate": true,
+      "second_subdivision_tetrahedra": 576,
+      "simplex": [
+        0,
+        1
+      ]
+    },
+    {
+      "after_boundary": {
+        "boundary_components": 0,
+        "boundary_edge_count": 0,
+        "edge_multiplicities": {
+          "2": 264
+        },
+        "edges": 264,
+        "euler": 2,
+        "faces": 176,
+        "surface_components": 1,
+        "surface_manifold": true,
+        "topology": "sphere",
+        "vertices": 90
+      },
+      "after_collapse": {
+        "collapse_steps": 489,
+        "collapses_to_point": true,
+        "remaining_edges": 0,
+        "remaining_faces": 0,
+        "remaining_tetrahedra": 0,
+        "remaining_vertices": 1
+      },
+      "after_patch": {
+        "boundary_components": 1,
+        "boundary_edge_count": 30,
+        "edge_multiplicities": {
+          "1": 30,
+          "2": 27
+        },
+        "edges": 57,
+        "euler": 1,
+        "faces": 28,
+        "surface_components": 1,
+        "surface_manifold": true,
+        "topology": "disk",
+        "vertices": 30
+      },
+      "after_star_tetrahedra": 156,
+      "ambient_cell_map": "OPEN",
+      "before_boundary": {
+        "boundary_components": 0,
+        "boundary_edge_count": 0,
+        "edge_multiplicities": {
+          "2": 288
+        },
+        "edges": 288,
+        "euler": 2,
+        "faces": 192,
+        "surface_components": 1,
+        "surface_manifold": true,
+        "topology": "sphere",
+        "vertices": 98
+      },
+      "before_collapse": {
+        "collapse_steps": 625,
+        "collapses_to_point": true,
+        "remaining_edges": 0,
+        "remaining_faces": 0,
+        "remaining_tetrahedra": 0,
+        "remaining_vertices": 1
+      },
+      "before_patch": {
+        "boundary_components": 1,
+        "boundary_edge_count": 30,
+        "edge_multiplicities": {
+          "1": 30,
+          "2": 51
+        },
+        "edges": 81,
+        "euler": 1,
+        "faces": 44,
+        "surface_components": 1,
+        "surface_manifold": true,
+        "topology": "disk",
+        "vertices": 38
+      },
+      "before_star_tetrahedra": 216,
+      "collapse_dimension": 2,
+      "common_boundary_faces": 148,
+      "common_tetrahedra": 156,
+      "coordinate_denominator_lcm": 48,
+      "derived_disk_move_support": "PASS",
+      "difference_tetrahedra": 60,
+      "first_subdivision_tetrahedra": 24,
+      "free_face": [
+        1,
+        2
+      ],
+      "geometric_tetrahedra_nondegenerate": true,
+      "second_subdivision_tetrahedra": 576,
+      "simplex": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "after_boundary": {
+        "boundary_components": 0,
+        "boundary_edge_count": 0,
+        "edge_multiplicities": {
+          "2": 432
+        },
+        "edges": 432,
+        "euler": 2,
+        "faces": 288,
+        "surface_components": 1,
+        "surface_manifold": true,
+        "topology": "sphere",
+        "vertices": 146
+      },
+      "after_collapse": {
+        "collapse_steps": 1081,
+        "collapses_to_point": true,
+        "remaining_edges": 0,
+        "remaining_faces": 0,
+        "remaining_tetrahedra": 0,
+        "remaining_vertices": 1
+      },
+      "after_patch": {
+        "boundary_components": 1,
+        "boundary_edge_count": 12,
+        "edge_multiplicities": {
+          "1": 12,
+          "2": 228
+        },
+        "edges": 240,
+        "euler": 1,
+        "faces": 156,
+        "surface_components": 1,
+        "surface_manifold": true,
+        "topology": "disk",
+        "vertices": 85
+      },
+      "after_star_tetrahedra": 396,
+      "ambient_cell_map": "OPEN",
+      "before_boundary": {
+        "boundary_components": 0,
+        "boundary_edge_count": 0,
+        "edge_multiplicities": {
+          "2": 216
+        },
+        "edges": 216,
+        "euler": 2,
+        "faces": 144,
+        "surface_components": 1,
+        "surface_manifold": true,
+        "topology": "sphere",
+        "vertices": 74
+      },
+      "before_collapse": {
+        "collapse_steps": 1372,
+        "collapses_to_point": true,
+        "remaining_edges": 0,
+        "remaining_faces": 0,
+        "remaining_tetrahedra": 0,
+        "remaining_vertices": 1
+      },
+      "before_patch": {
+        "boundary_components": 1,
+        "boundary_edge_count": 12,
+        "edge_multiplicities": {
+          "1": 12,
+          "2": 12
+        },
+        "edges": 24,
+        "euler": 1,
+        "faces": 12,
+        "surface_components": 1,
+        "surface_manifold": true,
+        "topology": "disk",
+        "vertices": 13
+      },
+      "before_star_tetrahedra": 576,
+      "collapse_dimension": 3,
+      "common_boundary_faces": 132,
+      "common_tetrahedra": 396,
+      "coordinate_denominator_lcm": 48,
+      "derived_disk_move_support": "PASS",
+      "difference_tetrahedra": 180,
+      "first_subdivision_tetrahedra": 24,
+      "free_face": [
+        1,
+        2,
+        3
+      ],
+      "geometric_tetrahedra_nondegenerate": true,
+      "second_subdivision_tetrahedra": 576,
+      "simplex": [
+        0,
+        1,
+        2,
+        3
+      ]
+    }
+  ]
+}
