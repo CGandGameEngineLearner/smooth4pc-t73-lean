@@ -28,36 +28,31 @@ class JohnsonPairedSaddleSupportTest(unittest.TestCase):
         )
         rebuilt = load_script().generate()
         self.assertEqual(stored, rebuilt)
-        self.assertEqual(rebuilt["paired_saddle_support"], "OPEN")
+        self.assertEqual(rebuilt["paired_saddle_support"], "PASS")
         self.assertEqual(rebuilt["paired_saddle_ambient_cells"], "OPEN")
-        self.assertFalse(rebuilt["all_component_boundary_partitions_match"])
-        self.assertTrue(rebuilt["all_boundary_loop_permutations_are_halfturns"])
-        self.assertFalse(rebuilt["all_supports_are_balls"])
-        self.assertFalse(rebuilt["all_loop_permutations_preserve_nesting"])
+        self.assertTrue(rebuilt["all_supports_are_balls"])
+        self.assertTrue(rebuilt["all_disk_transition_patterns_pass"])
+        self.assertTrue(rebuilt["all_outer_boundaries_require_halfturns"])
+        self.assertTrue(rebuilt["all_regular_path_neighbourhoods_pass"])
         for movie in rebuilt["movies"]:
-            self.assertEqual(movie["paired_saddle_support"], "OPEN")
+            self.assertEqual(movie["paired_saddle_support"], "PASS")
             self.assertTrue(movie["support_collapses_to_point"])
-            nonmanifold = movie["power"] > 0 and movie["side"] == "prefix-first"
-            self.assertEqual(
-                movie["support_boundary"]["topology"],
-                "UNCLASSIFIED" if nonmanifold else "sphere",
-            )
-            self.assertEqual(movie["support_boundary"]["surface_manifold"], not nonmanifold)
+            self.assertEqual(movie["support_boundary"]["topology"], "sphere")
+            self.assertTrue(movie["support_boundary"]["surface_manifold"])
             self.assertEqual(movie["source_patch"]["total_genus"], 0)
             self.assertEqual(movie["target_patch"]["total_genus"], 0)
-            self.assertTrue(movie["boundary_curves_equal"])
-            self.assertFalse(movie["component_boundary_partitions_equal"])
-            self.assertEqual(movie["boundary_loop_permutation_status"], "PASS")
-            self.assertTrue(
-                movie["boundary_loop_permutation"]["all_cycles_are_transpositions"]
-            )
-            self.assertEqual(movie["boundary_loop_tree"]["is_tree"], not nonmanifold)
-            expected_cycles = 1 if movie["power"] < 0 else 2
-            self.assertEqual(
-                len(movie["boundary_loop_permutation"]["nontrivial_cycles"]),
-                expected_cycles,
-            )
-            self.assertTrue(movie["outer_boundary_membership_agrees"])
+            self.assertEqual(movie["source_patch"]["topology"], "disk")
+            self.assertEqual(movie["target_patch"]["topology"], "disk")
+            self.assertEqual(movie["disk_transition_pattern"], "PASS")
+            self.assertEqual(movie["boundary_halfturn_cells"], "OPEN")
+            neighbourhood = movie["regular_path_neighbourhood"]
+            self.assertEqual(neighbourhood["regular_neighbourhood_status"], "PASS")
+            self.assertTrue(neighbourhood["boundary_is_sphere"])
+            self.assertTrue(neighbourhood["collapses_to_point"])
+            expected = 648 if movie["power"] < 0 else 4320
+            self.assertEqual(neighbourhood["star_tetrahedra"], expected)
+            self.assertFalse(movie["outer_boundary_membership_agrees"])
+            self.assertTrue(movie["outer_boundary_requires_halfturn"])
             self.assertGreater(
                 Fraction(movie["protected_ball_bbox_clearance"]),
                 Fraction(1, 196104),

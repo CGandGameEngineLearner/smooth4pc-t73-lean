@@ -693,23 +693,29 @@ and image is face-to-face, its eight outer triangles agree pointwise, and the
 minimum periodic bounding-box clearance from the protected ball is
 $7989/8000$.  Thus all single-move ambient collars are complete; constructing
 the paired-saddle collar remains \Open.
-For that final collar, joining the residual balls by the shortest dual-face
-path and adding one agreement layer gives candidate subcomplexes of sizes
-$129,125,180,179$.  They collapse to a point and stay at least distance $1$
-from every protected-ball centre.  The first, second and fourth have manifold
-sphere boundary; the $180$-tetrahedron positive prefix-first candidate has one
-edge of multiplicity four and is rejected.  All four remain insufficient:
-even for the three ball supports, the partition of their common boundary
-circles among disk and annulus components differs between source and target,
-so no boundary-fixed homeomorphism has yet been supplied.  The discrepancy is finite: in the
-negative templates the common boundary has three circles and a single
-transposition carries the source component partition to the target partition;
-in the positive templates there are four circles and the minimal permutation
-is a product of two disjoint transpositions.  Thus the required inner boundary
-map would be one or two sphere half-turns.  For the three manifold candidates
-the loop permutation also preserves the sphere nesting tree.  A subdivided
-regular neighbourhood is still needed for positive prefix-first; placing the
-loop half-turns and fixed-boundary polar collars remains \Open in every case.
+For the final collar, the shortest dual-face path gives $85$- and
+$83$-tetrahedron balls for the two negative sides.  In the positive cases the
+shortest path has an extra dual cycle; requiring an induced path that meets
+each residual ball through exactly one face gives a $20$-step path and a
+$122$-tetrahedron ball for either side.  All four supports have manifold sphere
+boundary, collapse to a point, and miss every protected-ball centre by at
+least distance $1$.  The current and target surfaces cut each support in a
+single disk.  In a negative support the two boundary polygons share one edge
+and cut the support sphere into three disks.  In a positive support the two
+triangular boundaries are disjoint and their complement is an annulus and two
+disks.  Thus the paired-saddle ball and its disk-transition pattern are
+certified.  The outer boundary must carry the corresponding disk half-turn;
+placing that boundary map and its fixed-boundary polar collar remains \Open.
+The path itself has a canonical manifold thickening: alternate tetrahedron and
+shared-face barycentres, include the two cap-face barycentres, subdivide twice,
+and take the closed star of the subdivided core arc.  For a negative move this
+star has $648$ tetrahedra and boundary data $(V,E,F)=(266,792,528)$; for a
+positive move it has $4320$ tetrahedra and
+$(V,E,F)=(1694,5076,3384)$.  In both cases every boundary edge has multiplicity
+two, the boundary has Euler characteristic $2$, and an explicit incremental
+free-face sequence collapses the star to a point.  Thus the cap-to-cap
+$D^2\times I$ regular neighbourhood is certified; its fiber-reversing PL map
+is the remaining paired-saddle cell problem.
 
 In the standard product chart $D^2\times[-1,1]$ for the reduced $y$
 one-handle, take $B=D^2\times[-1/2,1/2]$.  The Johnson $m_2$ word has $41$

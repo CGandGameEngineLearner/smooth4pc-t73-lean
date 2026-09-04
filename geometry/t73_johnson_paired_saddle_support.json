@@ -1,88 +1,64 @@
 {
-  "all_boundary_loop_permutations_are_halfturns": true,
-  "all_component_boundary_partitions_match": false,
-  "all_loop_permutations_preserve_nesting": false,
-  "all_supports_are_balls": false,
+  "all_disk_transition_patterns_pass": true,
+  "all_outer_boundaries_require_halfturns": true,
+  "all_regular_path_neighbourhoods_pass": true,
+  "all_supports_are_balls": true,
   "disk_cells_sha256": "DB5C177FBE1F079130B81AF1F9ECC1857FECDC511CE003886B5E28F702D55BF4",
   "movies": [
     {
       "add_ball_tetrahedra": 72,
       "ambient_pl_cells": "OPEN",
-      "boundary_curves_equal": true,
-      "boundary_loop_permutation": {
-        "all_cycles_are_transpositions": true,
-        "loop_count": 3,
-        "loop_edge_counts": [
-          8,
-          3,
-          9
-        ],
-        "nontrivial_cycles": [
-          [
-            0,
-            1
-          ]
-        ],
-        "permutation": [
-          1,
-          0,
-          2
-        ],
-        "source_groups": [
-          [
-            0
-          ],
-          [
-            1,
-            2
-          ]
-        ],
-        "target_groups": [
-          [
-            0,
-            2
-          ],
-          [
-            1
-          ]
-        ]
-      },
-      "boundary_loop_permutation_status": "PASS",
-      "boundary_loop_tree": {
-        "is_tree": true,
-        "loop_count": 3,
-        "loop_permutation_extends_to_tree_automorphism": true,
-        "loop_region_incidence": [
-          [
-            1,
-            2
-          ],
-          [
-            0,
-            1
-          ],
-          [
-            1,
-            3
-          ]
-        ],
-        "region_count": 4,
-        "region_face_counts": [
-          3,
-          56,
-          8,
-          11
-        ],
-        "region_permutation": [
-          2,
-          1,
-          0,
-          3
-        ]
-      },
-      "common_boundary_edge_count": 20,
-      "component_boundary_partitions_equal": false,
+      "boundary_curves_equal": false,
+      "boundary_halfturn_cells": "OPEN",
       "core_tetrahedron_count": 85,
+      "curve_complement_regions": [
+        {
+          "boundary_components": 1,
+          "edge_multiplicity_histogram": {
+            "1": 4,
+            "2": 28
+          },
+          "edges": 32,
+          "euler": 1,
+          "faces": 20,
+          "is_disk": true,
+          "surface_components": 1,
+          "surface_manifold": true,
+          "topology": "disk",
+          "vertices": 13
+        },
+        {
+          "boundary_components": 1,
+          "edge_multiplicity_histogram": {
+            "1": 3,
+            "2": 93
+          },
+          "edges": 96,
+          "euler": 1,
+          "faces": 63,
+          "is_disk": true,
+          "surface_components": 1,
+          "surface_manifold": true,
+          "topology": "disk",
+          "vertices": 34
+        },
+        {
+          "boundary_components": 1,
+          "edge_multiplicity_histogram": {
+            "1": 5,
+            "2": 5
+          },
+          "edges": 10,
+          "euler": 1,
+          "faces": 5,
+          "is_disk": true,
+          "surface_components": 1,
+          "surface_manifold": true,
+          "topology": "disk",
+          "vertices": 6
+        }
+      ],
+      "disk_transition_pattern": "PASS",
       "dual_path": [
         658,
         657,
@@ -90,54 +66,116 @@
         750
       ],
       "dual_path_length": 4,
-      "outer_boundary_membership_agrees": true,
-      "paired_saddle_support": "OPEN",
+      "outer_boundary_membership_agrees": false,
+      "outer_boundary_requires_halfturn": true,
+      "paired_saddle_ball_support": "PASS",
+      "paired_saddle_support": "PASS",
+      "path_kind": "shortest",
       "power": -1,
       "protected_ball_bbox_clearance": "1",
-      "remove_ball_tetrahedra": 10,
-      "side": "prefix-first",
-      "source_component_boundary_partition_sha256": "3CAE4DC8AF39F1ECB78B7733ADC9DCBA27730387539136F4AD1D04D28BE9F36F",
-      "source_patch": {
-        "boundary_components": 3,
-        "edge_multiplicity_histogram": {
-          "1": 20,
-          "2": 92
+      "regular_path_neighbourhood": {
+        "boundary_connected": true,
+        "boundary_edge_multiplicities": {
+          "2": 792
         },
-        "edges": 112,
+        "boundary_edges": 792,
+        "boundary_euler": 2,
+        "boundary_faces": 528,
+        "boundary_is_sphere": true,
+        "boundary_vertices": 266,
+        "cap_faces": [
+          [
+            [
+              "1",
+              "1",
+              "3"
+            ],
+            [
+              "2",
+              "1",
+              "0"
+            ],
+            [
+              "2",
+              "1",
+              "3"
+            ]
+          ],
+          [
+            [
+              "7/4",
+              "3/2",
+              "7/2"
+            ],
+            [
+              "2",
+              "1",
+              "0"
+            ],
+            [
+              "2",
+              "1",
+              "3"
+            ]
+          ]
+        ],
+        "collapse_steps": 1836,
+        "collapses_to_point": true,
+        "core_edges": 6,
+        "core_vertices": 7,
+        "first_subdivision_tetrahedra": 72,
+        "path_tetrahedra": 3,
+        "regular_neighbourhood_status": "PASS",
+        "remaining_edges": 0,
+        "remaining_faces": 0,
+        "remaining_tetrahedra": 0,
+        "remaining_vertices": 1,
+        "second_subdivision_tetrahedra": 1728,
+        "star_tetrahedra": 648,
+        "subdivision": "closed star of the subdivided dual path in sd^2",
+        "tetrahedra": 648
+      },
+      "remove_ball_tetrahedra": 10,
+      "shared_boundary_edge_count": 1,
+      "shared_boundary_vertex_count": 2,
+      "side": "prefix-first",
+      "source_boundary_edge_count": 4,
+      "source_patch": {
+        "boundary_components": 1,
+        "edge_multiplicity_histogram": {
+          "1": 4,
+          "2": 1
+        },
+        "edges": 5,
         "euler": 1,
-        "faces": 68,
-        "is_disk": false,
-        "surface_components": 2,
+        "faces": 2,
+        "is_disk": true,
+        "surface_components": 1,
         "surface_manifold": true,
-        "topology": "UNCLASSIFIED",
+        "topology": "disk",
         "total_genus": 0,
-        "vertices": 45
+        "vertices": 4
       },
       "support_boundary": {
         "boundary_components": 0,
         "edge_multiplicity_histogram": {
-          "2": 117
+          "2": 132
         },
-        "edges": 117,
+        "edges": 132,
         "euler": 2,
-        "faces": 78,
+        "faces": 88,
         "is_disk": false,
         "surface_components": 1,
         "surface_manifold": true,
         "topology": "sphere",
-        "vertices": 41
+        "vertices": 46
       },
       "support_collapses_to_point": true,
       "support_tetrahedra": [
-        361,
-        547,
-        550,
         552,
         553,
         554,
-        555,
         560,
-        561,
         562,
         563,
         576,
@@ -147,49 +185,30 @@
         580,
         581,
         582,
-        583,
-        586,
         592,
         593,
-        594,
         595,
-        598,
-        600,
-        642,
         648,
         649,
         650,
-        651,
         652,
         653,
         654,
         655,
-        656,
         657,
         658,
-        659,
         664,
         665,
         666,
-        667,
-        668,
         744,
-        745,
-        746,
         747,
         748,
-        749,
         750,
         751,
         752,
         753,
-        754,
-        755,
-        756,
         757,
-        758,
         759,
-        864,
         872,
         873,
         874,
@@ -197,44 +216,31 @@
         876,
         877,
         878,
-        879,
-        883,
         884,
         885,
-        886,
         887,
-        899,
-        935,
-        938,
         944,
-        945,
         946,
         947,
         948,
         949,
         950,
         951,
-        955,
         956,
         957,
-        958,
         959,
         960,
         961,
         962,
-        963,
         964,
-        965,
         966,
         967,
         968,
-        969,
         970,
         971,
         972,
         973,
         974,
-        975,
         976,
         977,
         978,
@@ -243,119 +249,87 @@
         981,
         982,
         983,
-        987,
-        995,
         1048,
-        1049,
         1050,
         1051,
-        1052,
         1053,
         1054,
         1055,
-        1146,
-        1148,
-        1149,
         1150,
         1151
       ],
-      "support_tetrahedron_count": 129,
-      "target_component_boundary_partition_sha256": "FBA70482A48EAF31AB3AE078F0DE267E31A3759DB01EF33E0468B1F6DCFBE601",
+      "support_tetrahedron_count": 85,
+      "target_boundary_edge_count": 3,
       "target_patch": {
-        "boundary_components": 3,
+        "boundary_components": 1,
         "edge_multiplicity_histogram": {
-          "1": 20,
-          "2": 17
+          "1": 3
         },
-        "edges": 37,
+        "edges": 3,
         "euler": 1,
-        "faces": 18,
-        "is_disk": false,
-        "surface_components": 2,
+        "faces": 1,
+        "is_disk": true,
+        "surface_components": 1,
         "surface_manifold": true,
-        "topology": "UNCLASSIFIED",
+        "topology": "disk",
         "total_genus": 0,
-        "vertices": 20
+        "vertices": 3
       }
     },
     {
       "add_ball_tetrahedra": 72,
       "ambient_pl_cells": "OPEN",
-      "boundary_curves_equal": true,
-      "boundary_loop_permutation": {
-        "all_cycles_are_transpositions": true,
-        "loop_count": 3,
-        "loop_edge_counts": [
-          9,
-          8,
-          3
-        ],
-        "nontrivial_cycles": [
-          [
-            1,
-            2
-          ]
-        ],
-        "permutation": [
-          0,
-          2,
-          1
-        ],
-        "source_groups": [
-          [
-            0,
-            2
-          ],
-          [
-            1
-          ]
-        ],
-        "target_groups": [
-          [
-            0,
-            1
-          ],
-          [
-            2
-          ]
-        ]
-      },
-      "boundary_loop_permutation_status": "PASS",
-      "boundary_loop_tree": {
-        "is_tree": true,
-        "loop_count": 3,
-        "loop_permutation_extends_to_tree_automorphism": true,
-        "loop_region_incidence": [
-          [
-            0,
-            1
-          ],
-          [
-            0,
-            2
-          ],
-          [
-            0,
-            3
-          ]
-        ],
-        "region_count": 4,
-        "region_face_counts": [
-          54,
-          11,
-          8,
-          3
-        ],
-        "region_permutation": [
-          0,
-          1,
-          3,
-          2
-        ]
-      },
-      "common_boundary_edge_count": 20,
-      "component_boundary_partitions_equal": false,
+      "boundary_curves_equal": false,
+      "boundary_halfturn_cells": "OPEN",
       "core_tetrahedron_count": 83,
+      "curve_complement_regions": [
+        {
+          "boundary_components": 1,
+          "edge_multiplicity_histogram": {
+            "1": 4,
+            "2": 22
+          },
+          "edges": 26,
+          "euler": 1,
+          "faces": 16,
+          "is_disk": true,
+          "surface_components": 1,
+          "surface_manifold": true,
+          "topology": "disk",
+          "vertices": 11
+        },
+        {
+          "boundary_components": 1,
+          "edge_multiplicity_histogram": {
+            "1": 3,
+            "2": 93
+          },
+          "edges": 96,
+          "euler": 1,
+          "faces": 63,
+          "is_disk": true,
+          "surface_components": 1,
+          "surface_manifold": true,
+          "topology": "disk",
+          "vertices": 34
+        },
+        {
+          "boundary_components": 1,
+          "edge_multiplicity_histogram": {
+            "1": 5,
+            "2": 5
+          },
+          "edges": 10,
+          "euler": 1,
+          "faces": 5,
+          "is_disk": true,
+          "surface_components": 1,
+          "surface_manifold": true,
+          "topology": "disk",
+          "vertices": 6
+        }
+      ],
+      "disk_transition_pattern": "PASS",
       "dual_path": [
         955,
         952,
@@ -363,58 +337,118 @@
         852
       ],
       "dual_path_length": 4,
-      "outer_boundary_membership_agrees": true,
-      "paired_saddle_support": "OPEN",
+      "outer_boundary_membership_agrees": false,
+      "outer_boundary_requires_halfturn": true,
+      "paired_saddle_ball_support": "PASS",
+      "paired_saddle_support": "PASS",
+      "path_kind": "shortest",
       "power": -1,
       "protected_ball_bbox_clearance": "1",
-      "remove_ball_tetrahedra": 8,
-      "side": "target-first",
-      "source_component_boundary_partition_sha256": "F19320D3CF8AABC442CE2467067C6BC911531CFC21768704437D5EE5DCE2E068",
-      "source_patch": {
-        "boundary_components": 3,
-        "edge_multiplicity_histogram": {
-          "1": 20,
-          "2": 86
+      "regular_path_neighbourhood": {
+        "boundary_connected": true,
+        "boundary_edge_multiplicities": {
+          "2": 792
         },
-        "edges": 106,
+        "boundary_edges": 792,
+        "boundary_euler": 2,
+        "boundary_faces": 528,
+        "boundary_is_sphere": true,
+        "boundary_vertices": 266,
+        "cap_faces": [
+          [
+            [
+              "2",
+              "3",
+              "0"
+            ],
+            [
+              "2",
+              "3",
+              "3"
+            ],
+            [
+              "3",
+              "3",
+              "0"
+            ]
+          ],
+          [
+            [
+              "2",
+              "3",
+              "3"
+            ],
+            [
+              "9/4",
+              "5/2",
+              "7/2"
+            ],
+            [
+              "3",
+              "2",
+              "0"
+            ]
+          ]
+        ],
+        "collapse_steps": 1836,
+        "collapses_to_point": true,
+        "core_edges": 6,
+        "core_vertices": 7,
+        "first_subdivision_tetrahedra": 72,
+        "path_tetrahedra": 3,
+        "regular_neighbourhood_status": "PASS",
+        "remaining_edges": 0,
+        "remaining_faces": 0,
+        "remaining_tetrahedra": 0,
+        "remaining_vertices": 1,
+        "second_subdivision_tetrahedra": 1728,
+        "star_tetrahedra": 648,
+        "subdivision": "closed star of the subdivided dual path in sd^2",
+        "tetrahedra": 648
+      },
+      "remove_ball_tetrahedra": 8,
+      "shared_boundary_edge_count": 1,
+      "shared_boundary_vertex_count": 2,
+      "side": "target-first",
+      "source_boundary_edge_count": 4,
+      "source_patch": {
+        "boundary_components": 1,
+        "edge_multiplicity_histogram": {
+          "1": 4,
+          "2": 1
+        },
+        "edges": 5,
         "euler": 1,
-        "faces": 64,
-        "is_disk": false,
-        "surface_components": 2,
+        "faces": 2,
+        "is_disk": true,
+        "surface_components": 1,
         "surface_manifold": true,
-        "topology": "UNCLASSIFIED",
+        "topology": "disk",
         "total_genus": 0,
-        "vertices": 43
+        "vertices": 4
       },
       "support_boundary": {
         "boundary_components": 0,
         "edge_multiplicity_histogram": {
-          "2": 114
+          "2": 126
         },
-        "edges": 114,
+        "edges": 126,
         "euler": 2,
-        "faces": 76,
+        "faces": 84,
         "is_disk": false,
         "surface_components": 1,
         "surface_manifold": true,
         "topology": "sphere",
-        "vertices": 40
+        "vertices": 44
       },
       "support_collapses_to_point": true,
       "support_tetrahedra": [
         456,
         457,
-        458,
-        459,
-        465,
-        547,
-        550,
         552,
         553,
         554,
-        555,
         560,
-        561,
         562,
         563,
         576,
@@ -424,42 +458,26 @@
         580,
         581,
         582,
-        583,
-        586,
         592,
         593,
-        594,
         595,
-        598,
-        600,
-        642,
         648,
         649,
         650,
-        651,
         652,
         653,
         654,
         655,
-        658,
         664,
         665,
         666,
-        667,
-        668,
         840,
-        841,
-        842,
         843,
         848,
-        849,
-        850,
         851,
         852,
         853,
         854,
-        855,
-        864,
         872,
         873,
         874,
@@ -467,17 +485,10 @@
         876,
         877,
         878,
-        879,
-        883,
         884,
         885,
-        886,
         887,
-        899,
-        935,
-        938,
         944,
-        945,
         946,
         947,
         948,
@@ -485,29 +496,22 @@
         950,
         951,
         952,
-        953,
-        954,
         955,
         956,
         957,
-        958,
         959,
         960,
         961,
         962,
-        963,
         964,
-        965,
         966,
         967,
         968,
-        969,
         970,
         971,
         972,
         973,
         974,
-        975,
         976,
         977,
         978,
@@ -516,547 +520,256 @@
         981,
         982,
         983,
-        987,
-        995,
         1048,
-        1049,
         1050,
         1051,
-        1052,
         1053,
         1054,
-        1055,
-        1236
+        1055
       ],
-      "support_tetrahedron_count": 125,
-      "target_component_boundary_partition_sha256": "5F67F28655E52B061B0795213CCC052619B620568003D2CC66842DED6F89E3BB",
+      "support_tetrahedron_count": 83,
+      "target_boundary_edge_count": 3,
       "target_patch": {
-        "boundary_components": 3,
+        "boundary_components": 1,
         "edge_multiplicity_histogram": {
-          "1": 20,
-          "2": 17
+          "1": 3
         },
-        "edges": 37,
+        "edges": 3,
         "euler": 1,
-        "faces": 18,
-        "is_disk": false,
-        "surface_components": 2,
-        "surface_manifold": true,
-        "topology": "UNCLASSIFIED",
-        "total_genus": 0,
-        "vertices": 20
-      }
-    },
-    {
-      "add_ball_tetrahedra": 88,
-      "ambient_pl_cells": "OPEN",
-      "boundary_curves_equal": true,
-      "boundary_loop_permutation": {
-        "all_cycles_are_transpositions": true,
-        "loop_count": 4,
-        "loop_edge_counts": [
-          12,
-          3,
-          8,
-          3
-        ],
-        "nontrivial_cycles": [
-          [
-            0,
-            1
-          ],
-          [
-            2,
-            3
-          ]
-        ],
-        "permutation": [
-          1,
-          0,
-          3,
-          2
-        ],
-        "source_groups": [
-          [
-            0
-          ],
-          [
-            1,
-            3
-          ],
-          [
-            2
-          ]
-        ],
-        "target_groups": [
-          [
-            0,
-            2
-          ],
-          [
-            1
-          ],
-          [
-            3
-          ]
-        ]
-      },
-      "boundary_loop_permutation_status": "PASS",
-      "boundary_loop_tree": {
-        "is_tree": false,
-        "loop_permutation_extends_to_tree_automorphism": false,
-        "status": "OPEN: candidate support boundary is not a surface"
-      },
-      "common_boundary_edge_count": 26,
-      "component_boundary_partitions_equal": false,
-      "core_tetrahedron_count": 110,
-      "dual_path": [
-        2412,
-        2413,
-        2414,
-        2432,
-        2433,
-        2642,
-        2644,
-        2648,
-        2646
-      ],
-      "dual_path_length": 9,
-      "outer_boundary_membership_agrees": true,
-      "paired_saddle_support": "OPEN",
-      "power": 1,
-      "protected_ball_bbox_clearance": "1",
-      "remove_ball_tetrahedra": 14,
-      "side": "prefix-first",
-      "source_component_boundary_partition_sha256": "DAD2EEE05A6F3BDFE0AEAA7D26D219734AF0D3328175095F8307B49FE20B73D3",
-      "source_patch": {
-        "boundary_components": 4,
-        "edge_multiplicity_histogram": {
-          "1": 26,
-          "2": 113
-        },
-        "edges": 139,
-        "euler": 2,
-        "faces": 84,
-        "is_disk": false,
-        "surface_components": 3,
-        "surface_manifold": true,
-        "topology": "UNCLASSIFIED",
-        "total_genus": 0,
-        "vertices": 57
-      },
-      "support_boundary": {
-        "boundary_components": 0,
-        "edge_multiplicity_histogram": {
-          "2": 175,
-          "4": 1
-        },
-        "edges": 176,
-        "euler": 2,
-        "faces": 118,
-        "is_disk": false,
+        "faces": 1,
+        "is_disk": true,
         "surface_components": 1,
-        "surface_manifold": false,
-        "topology": "UNCLASSIFIED",
-        "vertices": 60
-      },
-      "support_collapses_to_point": true,
-      "support_tetrahedra": [
-        1121,
-        1124,
-        1125,
-        1126,
-        1127,
-        1128,
-        1129,
-        1132,
-        1134,
-        1135,
-        1136,
-        1137,
-        1160,
-        1162,
-        1163,
-        1164,
-        1165,
-        1185,
-        1274,
-        1289,
-        1292,
-        1293,
-        1294,
-        1295,
-        1296,
-        1297,
-        1301,
-        1302,
-        1303,
-        1304,
-        1305,
-        1327,
-        1330,
-        1331,
-        1332,
-        1333,
-        1746,
-        1750,
-        1751,
-        1752,
-        1753,
-        2034,
-        2035,
-        2036,
-        2037,
-        2038,
-        2039,
-        2040,
-        2041,
-        2042,
-        2043,
-        2044,
-        2045,
-        2046,
-        2047,
-        2048,
-        2049,
-        2050,
-        2051,
-        2062,
-        2063,
-        2064,
-        2065,
-        2066,
-        2067,
-        2068,
-        2069,
-        2070,
-        2071,
-        2090,
-        2097,
-        2175,
-        2181,
-        2202,
-        2203,
-        2204,
-        2205,
-        2206,
-        2207,
-        2208,
-        2209,
-        2210,
-        2211,
-        2212,
-        2213,
-        2214,
-        2215,
-        2216,
-        2217,
-        2218,
-        2219,
-        2230,
-        2231,
-        2232,
-        2233,
-        2234,
-        2235,
-        2236,
-        2237,
-        2238,
-        2239,
-        2240,
-        2241,
-        2242,
-        2243,
-        2249,
-        2250,
-        2251,
-        2252,
-        2253,
-        2255,
-        2276,
-        2277,
-        2278,
-        2279,
-        2280,
-        2281,
-        2282,
-        2298,
-        2389,
-        2408,
-        2409,
-        2410,
-        2411,
-        2412,
-        2413,
-        2414,
-        2415,
-        2416,
-        2417,
-        2418,
-        2419,
-        2420,
-        2421,
-        2424,
-        2431,
-        2432,
-        2433,
-        2434,
-        2435,
-        2444,
-        2445,
-        2446,
-        2447,
-        2448,
-        2449,
-        2450,
-        2636,
-        2637,
-        2638,
-        2639,
-        2640,
-        2642,
-        2643,
-        2644,
-        2645,
-        2646,
-        2647,
-        2648,
-        2649,
-        2654,
-        2655,
-        2657,
-        2658,
-        2659,
-        2660,
-        2661,
-        2662,
-        2663,
-        2664,
-        2665,
-        2666,
-        2667,
-        2678,
-        2679,
-        2680,
-        2681,
-        2682,
-        2683,
-        3578
-      ],
-      "support_tetrahedron_count": 180,
-      "target_component_boundary_partition_sha256": "8C724C4EA00E861B799B9BB9B8D563FA48DC49782F0CBB43D1DBDE2C75E9E230",
-      "target_patch": {
-        "boundary_components": 4,
-        "edge_multiplicity_histogram": {
-          "1": 26,
-          "2": 20
-        },
-        "edges": 46,
-        "euler": 2,
-        "faces": 22,
-        "is_disk": false,
-        "surface_components": 3,
         "surface_manifold": true,
-        "topology": "UNCLASSIFIED",
+        "topology": "disk",
         "total_genus": 0,
-        "vertices": 26
+        "vertices": 3
       }
     },
     {
       "add_ball_tetrahedra": 88,
       "ambient_pl_cells": "OPEN",
-      "boundary_curves_equal": true,
-      "boundary_loop_permutation": {
-        "all_cycles_are_transpositions": true,
-        "loop_count": 4,
-        "loop_edge_counts": [
-          12,
-          3,
-          8,
-          3
-        ],
-        "nontrivial_cycles": [
-          [
-            0,
-            1
-          ],
-          [
-            2,
-            3
-          ]
-        ],
-        "permutation": [
-          1,
-          0,
-          3,
-          2
-        ],
-        "source_groups": [
-          [
-            0
-          ],
-          [
-            1,
-            3
-          ],
-          [
-            2
-          ]
-        ],
-        "target_groups": [
-          [
-            0,
-            2
-          ],
-          [
-            1
-          ],
-          [
-            3
-          ]
-        ]
-      },
-      "boundary_loop_permutation_status": "PASS",
-      "boundary_loop_tree": {
-        "is_tree": true,
-        "loop_count": 4,
-        "loop_permutation_extends_to_tree_automorphism": true,
-        "loop_region_incidence": [
-          [
-            0,
-            1
-          ],
-          [
-            0,
-            2
-          ],
-          [
-            0,
-            3
-          ],
-          [
-            0,
-            4
-          ]
-        ],
-        "region_count": 5,
-        "region_face_counts": [
-          84,
-          12,
-          3,
-          12,
-          3
-        ],
-        "region_permutation": [
-          0,
-          2,
-          1,
-          4,
-          3
-        ]
-      },
-      "common_boundary_edge_count": 26,
-      "component_boundary_partitions_equal": false,
-      "core_tetrahedron_count": 110,
-      "dual_path": [
-        2412,
-        2413,
-        2414,
-        2432,
-        2433,
-        2642,
-        2644,
-        2648,
-        2646
+      "boundary_curves_equal": false,
+      "boundary_halfturn_cells": "OPEN",
+      "core_tetrahedron_count": 122,
+      "curve_complement_regions": [
+        {
+          "boundary_components": 2,
+          "edge_multiplicity_histogram": {
+            "1": 6,
+            "2": 57
+          },
+          "edges": 63,
+          "euler": 0,
+          "faces": 40,
+          "is_disk": false,
+          "surface_components": 1,
+          "surface_manifold": true,
+          "topology": "annulus",
+          "vertices": 23
+        },
+        {
+          "boundary_components": 1,
+          "edge_multiplicity_histogram": {
+            "1": 3,
+            "2": 111
+          },
+          "edges": 114,
+          "euler": 1,
+          "faces": 75,
+          "is_disk": true,
+          "surface_components": 1,
+          "surface_manifold": true,
+          "topology": "disk",
+          "vertices": 40
+        },
+        {
+          "boundary_components": 1,
+          "edge_multiplicity_histogram": {
+            "1": 3,
+            "2": 42
+          },
+          "edges": 45,
+          "euler": 1,
+          "faces": 29,
+          "is_disk": true,
+          "surface_components": 1,
+          "surface_manifold": true,
+          "topology": "disk",
+          "vertices": 17
+        }
       ],
-      "dual_path_length": 9,
-      "outer_boundary_membership_agrees": true,
-      "paired_saddle_support": "OPEN",
+      "disk_transition_pattern": "PASS",
+      "dual_path": [
+        1132,
+        1133,
+        920,
+        919,
+        901,
+        900,
+        902,
+        899,
+        896,
+        906,
+        908,
+        1595,
+        1591,
+        1574,
+        1572,
+        2493,
+        2492,
+        2482,
+        2485,
+        2678
+      ],
+      "dual_path_length": 20,
+      "outer_boundary_membership_agrees": false,
+      "outer_boundary_requires_halfturn": true,
+      "paired_saddle_ball_support": "PASS",
+      "paired_saddle_support": "PASS",
+      "path_kind": "induced_ball",
       "power": 1,
       "protected_ball_bbox_clearance": "1",
-      "remove_ball_tetrahedra": 14,
-      "side": "target-first",
-      "source_component_boundary_partition_sha256": "DAD2EEE05A6F3BDFE0AEAA7D26D219734AF0D3328175095F8307B49FE20B73D3",
-      "source_patch": {
-        "boundary_components": 4,
-        "edge_multiplicity_histogram": {
-          "1": 26,
-          "2": 113
+      "regular_path_neighbourhood": {
+        "boundary_connected": true,
+        "boundary_edge_multiplicities": {
+          "2": 5076
         },
-        "edges": 139,
-        "euler": 2,
-        "faces": 84,
-        "is_disk": false,
-        "surface_components": 3,
+        "boundary_edges": 5076,
+        "boundary_euler": 2,
+        "boundary_faces": 3384,
+        "boundary_is_sphere": true,
+        "boundary_vertices": 1694,
+        "cap_faces": [
+          [
+            [
+              "3/2",
+              "3",
+              "1/2"
+            ],
+            [
+              "2",
+              "3",
+              "0"
+            ],
+            [
+              "2",
+              "3",
+              "1"
+            ]
+          ],
+          [
+            [
+              "2",
+              "1",
+              "0"
+            ],
+            [
+              "2",
+              "2",
+              "0"
+            ],
+            [
+              "11/5",
+              "8/5",
+              "37/10"
+            ]
+          ]
+        ],
+        "collapse_steps": 12104,
+        "collapses_to_point": true,
+        "core_edges": 40,
+        "core_vertices": 41,
+        "first_subdivision_tetrahedra": 480,
+        "path_tetrahedra": 20,
+        "regular_neighbourhood_status": "PASS",
+        "remaining_edges": 0,
+        "remaining_faces": 0,
+        "remaining_tetrahedra": 0,
+        "remaining_vertices": 1,
+        "second_subdivision_tetrahedra": 11520,
+        "star_tetrahedra": 4320,
+        "subdivision": "closed star of the subdivided dual path in sd^2",
+        "tetrahedra": 4320
+      },
+      "remove_ball_tetrahedra": 14,
+      "shared_boundary_edge_count": 0,
+      "shared_boundary_vertex_count": 0,
+      "side": "prefix-first",
+      "source_boundary_edge_count": 3,
+      "source_patch": {
+        "boundary_components": 1,
+        "edge_multiplicity_histogram": {
+          "1": 3
+        },
+        "edges": 3,
+        "euler": 1,
+        "faces": 1,
+        "is_disk": true,
+        "surface_components": 1,
         "surface_manifold": true,
-        "topology": "UNCLASSIFIED",
+        "topology": "disk",
         "total_genus": 0,
-        "vertices": 57
+        "vertices": 3
       },
       "support_boundary": {
         "boundary_components": 0,
         "edge_multiplicity_histogram": {
-          "2": 171
+          "2": 216
         },
-        "edges": 171,
+        "edges": 216,
         "euler": 2,
-        "faces": 114,
+        "faces": 144,
         "is_disk": false,
         "surface_components": 1,
         "surface_manifold": true,
         "topology": "sphere",
-        "vertices": 59
+        "vertices": 74
       },
       "support_collapses_to_point": true,
       "support_tetrahedra": [
-        1121,
+        896,
+        899,
+        900,
+        901,
+        902,
+        906,
+        908,
+        919,
+        920,
         1124,
         1125,
-        1126,
-        1127,
         1128,
         1129,
         1132,
+        1133,
         1134,
         1135,
         1136,
         1137,
-        1160,
-        1162,
         1163,
         1164,
         1165,
-        1185,
-        1274,
-        1289,
-        1292,
-        1293,
         1294,
         1295,
         1296,
         1297,
-        1301,
         1302,
         1303,
         1304,
         1305,
-        1327,
         1330,
         1331,
         1332,
-        1333,
-        1746,
+        1572,
+        1574,
+        1591,
+        1595,
         1750,
-        1751,
         1752,
-        1753,
         2034,
         2035,
-        2036,
         2037,
         2038,
-        2039,
-        2040,
         2041,
         2042,
         2043,
@@ -1069,25 +782,15 @@
         2050,
         2051,
         2062,
-        2063,
-        2064,
         2065,
         2066,
         2067,
-        2068,
         2069,
         2070,
         2071,
-        2090,
-        2097,
-        2175,
-        2181,
         2202,
         2203,
         2204,
-        2205,
-        2206,
-        2207,
         2208,
         2209,
         2210,
@@ -1103,115 +806,395 @@
         2230,
         2231,
         2232,
-        2233,
-        2234,
         2235,
-        2236,
         2237,
         2238,
         2239,
         2240,
         2241,
-        2242,
         2243,
-        2249,
         2250,
         2251,
         2252,
         2253,
-        2255,
-        2276,
-        2277,
         2278,
         2279,
         2280,
         2281,
-        2282,
-        2298,
-        2389,
-        2408,
         2409,
         2410,
         2411,
-        2412,
-        2413,
-        2414,
-        2415,
-        2416,
-        2417,
         2418,
         2419,
         2420,
         2421,
-        2424,
-        2431,
-        2432,
-        2433,
-        2434,
-        2435,
-        2444,
-        2445,
         2446,
         2447,
         2448,
         2449,
-        2450,
-        2632,
-        2633,
-        2634,
-        2635,
+        2482,
+        2485,
+        2492,
+        2493,
         2636,
-        2637,
         2638,
-        2640,
-        2641,
-        2642,
-        2643,
-        2644,
-        2645,
         2646,
         2647,
-        2648,
-        2649,
-        2650,
-        2651,
-        2652,
-        2653,
+        2654,
+        2657,
         2660,
-        2661,
+        2662,
+        2664,
+        2667,
+        2678,
+        2679,
+        2683
+      ],
+      "support_tetrahedron_count": 122,
+      "target_boundary_edge_count": 3,
+      "target_patch": {
+        "boundary_components": 1,
+        "edge_multiplicity_histogram": {
+          "1": 3
+        },
+        "edges": 3,
+        "euler": 1,
+        "faces": 1,
+        "is_disk": true,
+        "surface_components": 1,
+        "surface_manifold": true,
+        "topology": "disk",
+        "total_genus": 0,
+        "vertices": 3
+      }
+    },
+    {
+      "add_ball_tetrahedra": 88,
+      "ambient_pl_cells": "OPEN",
+      "boundary_curves_equal": false,
+      "boundary_halfturn_cells": "OPEN",
+      "core_tetrahedron_count": 122,
+      "curve_complement_regions": [
+        {
+          "boundary_components": 2,
+          "edge_multiplicity_histogram": {
+            "1": 6,
+            "2": 57
+          },
+          "edges": 63,
+          "euler": 0,
+          "faces": 40,
+          "is_disk": false,
+          "surface_components": 1,
+          "surface_manifold": true,
+          "topology": "annulus",
+          "vertices": 23
+        },
+        {
+          "boundary_components": 1,
+          "edge_multiplicity_histogram": {
+            "1": 3,
+            "2": 111
+          },
+          "edges": 114,
+          "euler": 1,
+          "faces": 75,
+          "is_disk": true,
+          "surface_components": 1,
+          "surface_manifold": true,
+          "topology": "disk",
+          "vertices": 40
+        },
+        {
+          "boundary_components": 1,
+          "edge_multiplicity_histogram": {
+            "1": 3,
+            "2": 42
+          },
+          "edges": 45,
+          "euler": 1,
+          "faces": 29,
+          "is_disk": true,
+          "surface_components": 1,
+          "surface_manifold": true,
+          "topology": "disk",
+          "vertices": 17
+        }
+      ],
+      "disk_transition_pattern": "PASS",
+      "dual_path": [
+        1132,
+        1133,
+        920,
+        919,
+        901,
+        900,
+        902,
+        899,
+        896,
+        906,
+        908,
+        1595,
+        1591,
+        1574,
+        1572,
+        2493,
+        2492,
+        2482,
+        2485,
+        2678
+      ],
+      "dual_path_length": 20,
+      "outer_boundary_membership_agrees": false,
+      "outer_boundary_requires_halfturn": true,
+      "paired_saddle_ball_support": "PASS",
+      "paired_saddle_support": "PASS",
+      "path_kind": "induced_ball",
+      "power": 1,
+      "protected_ball_bbox_clearance": "1",
+      "regular_path_neighbourhood": {
+        "boundary_connected": true,
+        "boundary_edge_multiplicities": {
+          "2": 5076
+        },
+        "boundary_edges": 5076,
+        "boundary_euler": 2,
+        "boundary_faces": 3384,
+        "boundary_is_sphere": true,
+        "boundary_vertices": 1694,
+        "cap_faces": [
+          [
+            [
+              "3/2",
+              "3",
+              "1/2"
+            ],
+            [
+              "2",
+              "3",
+              "0"
+            ],
+            [
+              "2",
+              "3",
+              "1"
+            ]
+          ],
+          [
+            [
+              "2",
+              "1",
+              "0"
+            ],
+            [
+              "2",
+              "2",
+              "0"
+            ],
+            [
+              "11/5",
+              "8/5",
+              "37/10"
+            ]
+          ]
+        ],
+        "collapse_steps": 12104,
+        "collapses_to_point": true,
+        "core_edges": 40,
+        "core_vertices": 41,
+        "first_subdivision_tetrahedra": 480,
+        "path_tetrahedra": 20,
+        "regular_neighbourhood_status": "PASS",
+        "remaining_edges": 0,
+        "remaining_faces": 0,
+        "remaining_tetrahedra": 0,
+        "remaining_vertices": 1,
+        "second_subdivision_tetrahedra": 11520,
+        "star_tetrahedra": 4320,
+        "subdivision": "closed star of the subdivided dual path in sd^2",
+        "tetrahedra": 4320
+      },
+      "remove_ball_tetrahedra": 14,
+      "shared_boundary_edge_count": 0,
+      "shared_boundary_vertex_count": 0,
+      "side": "target-first",
+      "source_boundary_edge_count": 3,
+      "source_patch": {
+        "boundary_components": 1,
+        "edge_multiplicity_histogram": {
+          "1": 3
+        },
+        "edges": 3,
+        "euler": 1,
+        "faces": 1,
+        "is_disk": true,
+        "surface_components": 1,
+        "surface_manifold": true,
+        "topology": "disk",
+        "total_genus": 0,
+        "vertices": 3
+      },
+      "support_boundary": {
+        "boundary_components": 0,
+        "edge_multiplicity_histogram": {
+          "2": 216
+        },
+        "edges": 216,
+        "euler": 2,
+        "faces": 144,
+        "is_disk": false,
+        "surface_components": 1,
+        "surface_manifold": true,
+        "topology": "sphere",
+        "vertices": 74
+      },
+      "support_collapses_to_point": true,
+      "support_tetrahedra": [
+        896,
+        899,
+        900,
+        901,
+        902,
+        906,
+        908,
+        919,
+        920,
+        1124,
+        1125,
+        1128,
+        1129,
+        1132,
+        1133,
+        1134,
+        1135,
+        1136,
+        1137,
+        1163,
+        1164,
+        1165,
+        1294,
+        1295,
+        1296,
+        1297,
+        1302,
+        1303,
+        1304,
+        1305,
+        1330,
+        1331,
+        1332,
+        1572,
+        1574,
+        1591,
+        1595,
+        1750,
+        1752,
+        2034,
+        2035,
+        2037,
+        2038,
+        2041,
+        2042,
+        2043,
+        2044,
+        2045,
+        2046,
+        2047,
+        2048,
+        2049,
+        2050,
+        2051,
+        2062,
+        2065,
+        2066,
+        2067,
+        2069,
+        2070,
+        2071,
+        2202,
+        2203,
+        2204,
+        2208,
+        2209,
+        2210,
+        2211,
+        2212,
+        2213,
+        2214,
+        2215,
+        2216,
+        2217,
+        2218,
+        2219,
+        2230,
+        2231,
+        2232,
+        2235,
+        2237,
+        2238,
+        2239,
+        2240,
+        2241,
+        2243,
+        2250,
+        2251,
+        2252,
+        2253,
+        2278,
+        2279,
+        2280,
+        2281,
+        2409,
+        2410,
+        2411,
+        2418,
+        2419,
+        2420,
+        2421,
+        2446,
+        2447,
+        2448,
+        2449,
+        2482,
+        2485,
+        2492,
+        2493,
+        2632,
+        2634,
+        2636,
+        2640,
+        2646,
+        2647,
+        2650,
+        2653,
         2662,
         2663,
         2678,
         2679,
-        2680,
-        2681,
-        2682,
-        2683,
-        3578
+        2683
       ],
-      "support_tetrahedron_count": 179,
-      "target_component_boundary_partition_sha256": "8C724C4EA00E861B799B9BB9B8D563FA48DC49782F0CBB43D1DBDE2C75E9E230",
+      "support_tetrahedron_count": 122,
+      "target_boundary_edge_count": 3,
       "target_patch": {
-        "boundary_components": 4,
+        "boundary_components": 1,
         "edge_multiplicity_histogram": {
-          "1": 26,
-          "2": 20
+          "1": 3
         },
-        "edges": 46,
-        "euler": 2,
-        "faces": 22,
-        "is_disk": false,
-        "surface_components": 3,
+        "edges": 3,
+        "euler": 1,
+        "faces": 1,
+        "is_disk": true,
+        "surface_components": 1,
         "surface_manifold": true,
-        "topology": "UNCLASSIFIED",
+        "topology": "disk",
         "total_genus": 0,
-        "vertices": 26
+        "vertices": 3
       }
     }
   ],
   "paired_saddle_ambient_cells": "OPEN",
-  "paired_saddle_support": "OPEN",
+  "paired_saddle_support": "PASS",
   "schema": "t73_johnson_paired_saddle_support/v1",
-  "sha256": "7978827841787758CFF9F6E8952173AD2BA0BEB976AFD235C664D35F62C14E48",
+  "sha256": "140D1DDA9E887C784DF8B79350B9165AAAB3DF08097E1F1C163BE0B3A5176078",
   "sweep_sha256": "188B128AD8D619318F3E5BE1D28A7684082233DFBFC81AB24E69C1F53F5DBA9A"
 }

@@ -10,6 +10,7 @@ import importlib.util
 import itertools
 import json
 import math
+import functools
 from fractions import Fraction
 from pathlib import Path
 from typing import Any
@@ -75,6 +76,309 @@ def shortest_path(adjacency, starts, targets):
         current = parent[current]
     path.reverse()
     return path
+
+
+def induced_ball_path(analyzer, sweep_tools, tetrahedra, adjacency, face_occurrences, starts, targets):
+    outside = set(range(len(tetrahedra))) - starts - targets
+    entries = [
+        index
+        for index in outside
+        if sum(neighbour in starts for neighbour in adjacency[index]) == 1
+        and not any(neighbour in targets for neighbour in adjacency[index])
+    ]
+    exits = {
+        index
+        for index in outside
+        if sum(neighbour in targets for neighbour in adjacency[index]) == 1
+        and not any(neighbour in starts for neighbour in adjacency[index])
+    }
+    internal = {
+        index
+        for index in outside
+        if not any(
+            neighbour in starts or neighbour in targets for neighbour in adjacency[index]
+        )
+    }
+    allowed = internal | set(entries) | exits
+    for entry in sorted(entries):
+        queue = collections.deque([entry])
+        parent = {entry: None}
+        while queue:
+            current = queue.popleft()
+            if current in exits:
+                path = []
+                vertex = current
+                while vertex is not None:
+                    path.append(vertex)
+                    vertex = parent[vertex]
+                path.reverse()
+                support = starts | targets | set(path)
+                boundary = [
+                    face
+                    for face, hits in face_occurrences.items()
+                    if sum(index in support for index, _ in hits) == 1
+                ]
+                collapse = analyzer.collapse_to_point(
+                    [
+                        tuple(
+                            sweep_tools.periodic_vertex(vertex)
+                            for vertex in tetrahedra[index]["vertices"]
+                        )
+                        for index in support
+                    ]
+                )
+                if (
+                    sweep_tools.patch_invariants(boundary)["topology"] == "sphere"
+                    and collapse["collapses_to_point"]
+                ):
+                    return path
+            for neighbour in sorted(adjacency[current]):
+                if neighbour in allowed and neighbour not in parent:
+                    parent[neighbour] = current
+                    queue.append(neighbour)
+    raise AssertionError("no induced ball path joins the paired saddle cores")
+
+
+def curve_complement_regions(sweep_tools, support_boundary, cut_edges):
+    edge_faces = collections.defaultdict(list)
+    for face_index, face in enumerate(support_boundary):
+        for first, second in ((0, 1), (0, 2), (1, 2)):
+            edge = tuple(
+                sorted(
+                    (
+                        sweep_tools.periodic_vertex(face[first]),
+                        sweep_tools.periodic_vertex(face[second]),
+                    )
+                )
+            )
+            edge_faces[edge].append(face_index)
+    adjacency = [set() for _ in support_boundary]
+    for edge, hits in edge_faces.items():
+        if edge in cut_edges:
+            continue
+        if len(hits) != 2:
+            raise AssertionError("support boundary is not a triangulated surface")
+        first, second = hits
+        adjacency[first].add(second)
+        adjacency[second].add(first)
+    seen = set()
+    regions = []
+    for start in range(len(support_boundary)):
+        if start in seen:
+            continue
+        stack = [start]
+        seen.add(start)
+        component = []
+        while stack:
+            current = stack.pop()
+            component.append(current)
+            for neighbour in adjacency[current]:
+                if neighbour not in seen:
+                    seen.add(neighbour)
+                    stack.append(neighbour)
+        regions.append(
+            sweep_tools.patch_invariants(
+                [support_boundary[index] for index in component]
+            )
+        )
+    return regions
+
+
+def subdivide_tetrahedron(tetrahedron):
+    return [
+        tuple(frozenset(permutation[:size]) for size in range(1, 5))
+        for permutation in itertools.permutations(tetrahedron)
+    ]
+
+
+def fast_collapse_to_point(tetrahedra):
+    simplices = [set() for _ in range(4)]
+    for tetrahedron in tetrahedra:
+        for size in range(1, 5):
+            simplices[size - 1].update(
+                frozenset(simplex) for simplex in itertools.combinations(tetrahedron, size)
+            )
+    steps = 0
+    for dimension in (3, 2, 1):
+        cofaces = collections.defaultdict(set)
+        for simplex in simplices[dimension]:
+            for face in itertools.combinations(simplex, dimension):
+                cofaces[frozenset(face)].add(simplex)
+        queue = collections.deque(
+            face for face in simplices[dimension - 1] if len(cofaces[face]) == 1
+        )
+        while queue:
+            face = queue.popleft()
+            if face not in simplices[dimension - 1]:
+                continue
+            hosts = cofaces[face] & simplices[dimension]
+            if len(hosts) != 1:
+                continue
+            simplex = next(iter(hosts))
+            simplices[dimension].remove(simplex)
+            simplices[dimension - 1].remove(face)
+            steps += 1
+            for facet in itertools.combinations(simplex, dimension):
+                facet = frozenset(facet)
+                cofaces[facet].discard(simplex)
+                if facet in simplices[dimension - 1] and len(cofaces[facet]) == 1:
+                    queue.append(facet)
+    return {
+        "collapse_steps": steps,
+        "remaining_vertices": len(simplices[0]),
+        "remaining_edges": len(simplices[1]),
+        "remaining_faces": len(simplices[2]),
+        "remaining_tetrahedra": len(simplices[3]),
+        "collapses_to_point": (
+            len(simplices[0]) == 1
+            and not simplices[1]
+            and not simplices[2]
+            and not simplices[3]
+        ),
+    }
+
+
+def abstract_ball_invariants(tetrahedra):
+    face_counts = collections.Counter(
+        frozenset(tetrahedron[index] for index in range(4) if index != omitted)
+        for tetrahedron in tetrahedra
+        for omitted in range(4)
+    )
+    boundary = [face for face, count in face_counts.items() if count == 1]
+    edge_counts = collections.Counter(
+        frozenset(edge) for face in boundary for edge in itertools.combinations(face, 2)
+    )
+    vertices = {vertex for face in boundary for vertex in face}
+    face_adjacency = [set() for _ in boundary]
+    edge_faces = collections.defaultdict(list)
+    for face_index, face in enumerate(boundary):
+        for edge in itertools.combinations(face, 2):
+            edge_faces[frozenset(edge)].append(face_index)
+    for hits in edge_faces.values():
+        if len(hits) == 2:
+            first, second = hits
+            face_adjacency[first].add(second)
+            face_adjacency[second].add(first)
+    reached = {0}
+    stack = [0]
+    while stack:
+        current = stack.pop()
+        for neighbour in face_adjacency[current]:
+            if neighbour not in reached:
+                reached.add(neighbour)
+                stack.append(neighbour)
+    return {
+        "tetrahedra": len(tetrahedra),
+        "boundary_vertices": len(vertices),
+        "boundary_edges": len(edge_counts),
+        "boundary_faces": len(boundary),
+        "boundary_euler": len(vertices) - len(edge_counts) + len(boundary),
+        "boundary_edge_multiplicities": {
+            str(key): value
+            for key, value in sorted(collections.Counter(edge_counts.values()).items())
+        },
+        "boundary_connected": len(reached) == len(boundary),
+        "boundary_is_sphere": (
+            len(reached) == len(boundary)
+            and set(edge_counts.values()) == {2}
+            and len(vertices) - len(edge_counts) + len(boundary) == 2
+        ),
+    }
+
+
+def regular_path_neighbourhood(sweep_tools, tetrahedra, adjacency, path, add_ball, remove_ball):
+    core_path = [index for index in path if index not in add_ball and index not in remove_ball]
+    if not core_path:
+        raise AssertionError("paired saddle has no agreement path")
+    original = [
+        tuple(sweep_tools.periodic_vertex(vertex) for vertex in tetrahedra[index]["vertices"])
+        for index in core_path
+    ]
+    full_barycentres = [frozenset(tetrahedron) for tetrahedron in original]
+    shared_faces = [
+        frozenset(set(original[index]) & set(original[index + 1]))
+        for index in range(len(original) - 1)
+    ]
+    if any(len(face) != 3 for face in shared_faces):
+        raise AssertionError("dual path does not cross triangular faces")
+    add_neighbour = next(
+        neighbour for neighbour in adjacency[core_path[0]] if neighbour in add_ball
+    )
+    remove_neighbour = next(
+        neighbour for neighbour in adjacency[core_path[-1]] if neighbour in remove_ball
+    )
+    cap_faces = [
+        frozenset(
+            set(original[0])
+            & {
+                sweep_tools.periodic_vertex(vertex)
+                for vertex in tetrahedra[add_neighbour]["vertices"]
+            }
+        ),
+        frozenset(
+            set(original[-1])
+            & {
+                sweep_tools.periodic_vertex(vertex)
+                for vertex in tetrahedra[remove_neighbour]["vertices"]
+            }
+        ),
+    ]
+    if any(len(face) != 3 for face in cap_faces):
+        raise AssertionError("path cap is not a triangular face")
+    core_vertices = set(full_barycentres) | set(shared_faces) | set(cap_faces)
+    core_edges = {
+        frozenset((cap_faces[0], full_barycentres[0])),
+        frozenset((full_barycentres[-1], cap_faces[1])),
+    }
+    core_edges.update(
+        frozenset((full_barycentres[index], shared_faces[index]))
+        for index in range(len(shared_faces))
+    )
+    core_edges.update(
+        frozenset((shared_faces[index], full_barycentres[index + 1]))
+        for index in range(len(shared_faces))
+    )
+    subdivided_core = {frozenset((vertex,)) for vertex in core_vertices} | core_edges
+    first_subdivision = [
+        simplex
+        for tetrahedron in original
+        for simplex in subdivide_tetrahedron(tetrahedron)
+    ]
+    second_subdivision = [
+        simplex
+        for tetrahedron in first_subdivision
+        for simplex in subdivide_tetrahedron(tetrahedron)
+    ]
+    star = [
+        tetrahedron
+        for tetrahedron in second_subdivision
+        if any(vertex in subdivided_core for vertex in tetrahedron)
+    ]
+    vertices = sorted({vertex for tetrahedron in star for vertex in tetrahedron}, key=repr)
+    vertex_index = {vertex: index for index, vertex in enumerate(vertices)}
+    indexed = [
+        tuple(vertex_index[vertex] for vertex in tetrahedron) for tetrahedron in star
+    ]
+    invariants = abstract_ball_invariants(indexed)
+    collapse = fast_collapse_to_point(indexed)
+    if not invariants["boundary_is_sphere"] or not collapse["collapses_to_point"]:
+        raise AssertionError("second-derived path star is not a collapsible ball")
+    return {
+        "subdivision": "closed star of the subdivided dual path in sd^2",
+        "path_tetrahedra": len(core_path),
+        "core_vertices": len(core_vertices),
+        "core_edges": len(core_edges),
+        "first_subdivision_tetrahedra": len(first_subdivision),
+        "second_subdivision_tetrahedra": len(second_subdivision),
+        "star_tetrahedra": len(star),
+        "cap_faces": [
+            [[str(value) for value in vertex] for vertex in sorted(face)]
+            for face in cap_faces
+        ],
+        **invariants,
+        **collapse,
+        "regular_neighbourhood_status": "PASS",
+    }
 
 
 def bbox_clearance(tetrahedra, support):
@@ -391,9 +695,21 @@ def build_movie(analyzer, pl, sweep_tools, movie):
             if move["operation"] == "remove"
         )
     )
-    path = shortest_path(adjacency, add_ball, remove_ball)
+    path = (
+        shortest_path(adjacency, add_ball, remove_ball)
+        if movie["power"] < 0
+        else induced_ball_path(
+            analyzer,
+            sweep_tools,
+            tetrahedra,
+            adjacency,
+            face_occurrences,
+            add_ball,
+            remove_ball,
+        )
+    )
     core = add_ball | remove_ball | set(path)
-    support = core | {neighbour for index in core for neighbour in adjacency[index]}
+    support = core
     support_boundary = []
     source_patch = []
     target_patch = []
@@ -420,20 +736,13 @@ def build_movie(analyzer, pl, sweep_tools, movie):
     target_invariants["total_genus"] = planar_genus(target_invariants)
     source_curve = boundary_edges(sweep_tools, source_patch)
     target_curve = boundary_edges(sweep_tools, target_patch)
-    source_partition = component_boundary_partition(sweep_tools, source_patch)
-    target_partition = component_boundary_partition(sweep_tools, target_patch)
-    loop_permutation = minimal_loop_permutation(
-        boundary_loop_groups(sweep_tools, source_patch),
-        boundary_loop_groups(sweep_tools, target_patch),
+    source_vertices = {vertex for edge in source_curve for vertex in edge}
+    target_vertices = {vertex for edge in target_curve for vertex in edge}
+    complement_regions = curve_complement_regions(
+        sweep_tools, support_boundary, source_curve | target_curve
     )
-    nesting_tree = (
-        loop_tree(sweep_tools, support_boundary, source_patch, loop_permutation)
-        if boundary_invariants["surface_manifold"]
-        else {
-            "is_tree": False,
-            "loop_permutation_extends_to_tree_automorphism": False,
-            "status": "OPEN: candidate support boundary is not a surface",
-        }
+    regular_neighbourhood = regular_path_neighbourhood(
+        sweep_tools, tetrahedra, adjacency, path, add_ball, remove_ball
     )
     collapse = analyzer.collapse_to_point(
         [
@@ -444,20 +753,23 @@ def build_movie(analyzer, pl, sweep_tools, movie):
     clearance = bbox_clearance(tetrahedra, support)
     if clearance <= pl.PROTECTED_RADIUS:
         raise AssertionError("paired saddle support meets the protected ball")
-    expected_components = 2 if movie["power"] < 0 else 3
-    expected_boundaries = 3 if movie["power"] < 0 else 4
+    transition_pattern = (
+        len(source_curve & target_curve) == 1
+        and len(source_vertices & target_vertices) == 2
+        and len(complement_regions) == 3
+        and all(region["topology"] == "disk" for region in complement_regions)
+        if movie["power"] < 0
+        else not (source_curve & target_curve)
+        and not (source_vertices & target_vertices)
+        and sorted(region["topology"] for region in complement_regions)
+        == ["annulus", "disk", "disk"]
+    )
     passed = (
         boundary_invariants["topology"] == "sphere"
         and collapse["collapses_to_point"]
-        and boundary_agrees
-        and source_curve == target_curve
-        and source_partition == target_partition
-        and source_invariants["surface_components"] == expected_components
-        and target_invariants["surface_components"] == expected_components
-        and source_invariants["boundary_components"] == expected_boundaries
-        and target_invariants["boundary_components"] == expected_boundaries
-        and source_invariants["total_genus"] == 0
-        and target_invariants["total_genus"] == 0
+        and source_invariants["topology"] == "disk"
+        and target_invariants["topology"] == "disk"
+        and transition_pattern
     )
     return {
         "power": movie["power"],
@@ -467,25 +779,27 @@ def build_movie(analyzer, pl, sweep_tools, movie):
         "dual_path": path,
         "dual_path_length": len(path),
         "core_tetrahedron_count": len(core),
+        "path_kind": "shortest" if movie["power"] < 0 else "induced_ball",
         "support_tetrahedron_count": len(support),
         "support_tetrahedra": sorted(support),
         "support_boundary": boundary_invariants,
         "support_collapses_to_point": collapse["collapses_to_point"],
         "source_patch": source_invariants,
         "target_patch": target_invariants,
-        "common_boundary_edge_count": len(source_curve),
+        "source_boundary_edge_count": len(source_curve),
+        "target_boundary_edge_count": len(target_curve),
+        "shared_boundary_edge_count": len(source_curve & target_curve),
+        "shared_boundary_vertex_count": len(source_vertices & target_vertices),
         "boundary_curves_equal": source_curve == target_curve,
-        "component_boundary_partitions_equal": source_partition == target_partition,
-        "source_component_boundary_partition_sha256": canonical_sha(source_partition),
-        "target_component_boundary_partition_sha256": canonical_sha(target_partition),
-        "boundary_loop_permutation": loop_permutation,
-        "boundary_loop_permutation_status": (
-            "PASS" if loop_permutation["all_cycles_are_transpositions"] else "OPEN"
-        ),
-        "boundary_loop_tree": nesting_tree,
+        "curve_complement_regions": complement_regions,
+        "disk_transition_pattern": "PASS" if transition_pattern else "OPEN",
+        "regular_path_neighbourhood": regular_neighbourhood,
         "outer_boundary_membership_agrees": boundary_agrees,
+        "outer_boundary_requires_halfturn": not boundary_agrees,
         "protected_ball_bbox_clearance": str(clearance),
+        "paired_saddle_ball_support": "PASS" if passed else "OPEN",
         "paired_saddle_support": "PASS" if passed else "OPEN",
+        "boundary_halfturn_cells": "OPEN",
         "ambient_pl_cells": "OPEN",
     }
 
@@ -511,14 +825,15 @@ def generate():
             and movie["support_boundary"]["topology"] == "sphere"
             for movie in movies
         ),
-        "all_component_boundary_partitions_match": all(
-            movie["component_boundary_partitions_equal"] for movie in movies
+        "all_disk_transition_patterns_pass": all(
+            movie["disk_transition_pattern"] == "PASS" for movie in movies
         ),
-        "all_boundary_loop_permutations_are_halfturns": all(
-            movie["boundary_loop_permutation_status"] == "PASS" for movie in movies
+        "all_outer_boundaries_require_halfturns": all(
+            movie["outer_boundary_requires_halfturn"] for movie in movies
         ),
-        "all_loop_permutations_preserve_nesting": all(
-            movie["boundary_loop_tree"]["loop_permutation_extends_to_tree_automorphism"]
+        "all_regular_path_neighbourhoods_pass": all(
+            movie["regular_path_neighbourhood"]["regular_neighbourhood_status"]
+            == "PASS"
             for movie in movies
         ),
         "paired_saddle_support": (
