@@ -6,6 +6,12 @@ paper_dir="$repo_root/paper/spc4-t73-candidate"
 output_dir="$repo_root/output/pdf"
 mode="${1:---english}"
 
+# Make the reviewed PDFs byte-reproducible instead of embedding wall-clock
+# timestamps on every local rebuild.
+export SOURCE_DATE_EPOCH="${SOURCE_DATE_EPOCH:-$(git -C "$repo_root" log -1 --format=%ct -- paper/spc4-t73-candidate/main.tex)}"
+export FORCE_SOURCE_DATE=1
+export TZ=UTC
+
 mkdir -p "$output_dir"
 
 build_english() {
