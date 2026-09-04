@@ -1,0 +1,132 @@
+{
+  "attaching_polyline": [
+    [
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    [
+      "0",
+      "0",
+      "0",
+      "1/2"
+    ],
+    [
+      "0",
+      "0",
+      "0",
+      "1"
+    ]
+  ],
+  "belt_sphere": {
+    "center": [
+      "0",
+      "0",
+      "0"
+    ],
+    "euler": 2,
+    "faces": [
+      [
+        0,
+        2,
+        4
+      ],
+      [
+        2,
+        1,
+        4
+      ],
+      [
+        1,
+        3,
+        4
+      ],
+      [
+        3,
+        0,
+        4
+      ],
+      [
+        0,
+        5,
+        2
+      ],
+      [
+        2,
+        5,
+        1
+      ],
+      [
+        1,
+        5,
+        3
+      ],
+      [
+        3,
+        5,
+        0
+      ]
+    ],
+    "radius": "1/64",
+    "slice": "1/2",
+    "vertices": [
+      [
+        "1/64",
+        "0",
+        "0",
+        "1/2"
+      ],
+      [
+        "-1/64",
+        "0",
+        "0",
+        "1/2"
+      ],
+      [
+        "0",
+        "1/64",
+        "0",
+        "1/2"
+      ],
+      [
+        "0",
+        "-1/64",
+        "0",
+        "1/2"
+      ],
+      [
+        "0",
+        "0",
+        "1/64",
+        "1/2"
+      ],
+      [
+        "0",
+        "0",
+        "-1/64",
+        "1/2"
+      ]
+    ]
+  },
+  "framing_parity": 0,
+  "geometric_intersection": 0,
+  "local_3_ball": {
+    "center": [
+      "0",
+      "0",
+      "0"
+    ],
+    "radius": "1/64"
+  },
+  "pair": [
+    "t",
+    "h_CS"
+  ],
+  "reason": "live segment test did not count a unique belt hit; cancellation is not assumed",
+  "relative_twist": 0,
+  "schema": "t73_cancel_t_hcs/v1",
+  "sha256": "539DE4C197C397279E9FFFCE2E9CA0B6DECE0577D8867CD78F2E6AA70EF47089",
+  "status": "OPEN",
+  "transverse_intersection_one": false
+}

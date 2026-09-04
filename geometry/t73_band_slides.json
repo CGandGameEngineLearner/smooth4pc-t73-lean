@@ -1,0 +1,92 @@
+{
+  "all_identity_transports": false,
+  "ar_link_sha256": "2794D4F4B482BC37433CEADD1466C0F55CF58DFA5DE3DC793CD06B06CCF1AEBC",
+  "schema": "t73_band_slides/v1",
+  "sha256": "38354C5F8358C41528F3EEB8E323A133598E9A5E733F04A97AE02A26128F16A4",
+  "slides": {
+    "after_t_hcs": [
+      {
+        "band_interior_disjoint": false,
+        "component": "m_1",
+        "misses_cancellation_ball": false,
+        "status": "OPEN",
+        "transport": "OPEN"
+      },
+      {
+        "band_interior_disjoint": false,
+        "component": "m_2",
+        "misses_cancellation_ball": false,
+        "status": "OPEN",
+        "transport": "OPEN"
+      },
+      {
+        "band_interior_disjoint": false,
+        "component": "m_3",
+        "misses_cancellation_ball": false,
+        "status": "OPEN",
+        "transport": "OPEN"
+      },
+      {
+        "band_interior_disjoint": true,
+        "component": "r_xy",
+        "misses_cancellation_ball": true,
+        "status": "PASS",
+        "transport": "identity"
+      },
+      {
+        "band_interior_disjoint": true,
+        "component": "r_yz",
+        "misses_cancellation_ball": true,
+        "status": "PASS",
+        "transport": "identity"
+      },
+      {
+        "band_interior_disjoint": true,
+        "component": "r_zx",
+        "misses_cancellation_ball": true,
+        "status": "PASS",
+        "transport": "identity"
+      }
+    ],
+    "after_x_m1": [
+      {
+        "band_interior_disjoint": true,
+        "component": "m_2",
+        "misses_cancellation_ball": true,
+        "status": "PASS",
+        "transport": "identity"
+      },
+      {
+        "band_interior_disjoint": true,
+        "component": "m_3",
+        "misses_cancellation_ball": true,
+        "status": "PASS",
+        "transport": "identity"
+      },
+      {
+        "band_interior_disjoint": true,
+        "component": "r_xy",
+        "misses_cancellation_ball": true,
+        "status": "PASS",
+        "transport": "identity"
+      },
+      {
+        "band_interior_disjoint": true,
+        "component": "r_yz",
+        "misses_cancellation_ball": true,
+        "status": "PASS",
+        "transport": "identity"
+      },
+      {
+        "band_interior_disjoint": true,
+        "component": "r_zx",
+        "misses_cancellation_ball": true,
+        "status": "PASS",
+        "transport": "identity"
+      }
+    ]
+  },
+  "status": "OPEN",
+  "t_hcs_sha256": "539DE4C197C397279E9FFFCE2E9CA0B6DECE0577D8867CD78F2E6AA70EF47089",
+  "x_m1_sha256": "9721B0985452DE446FA06D16EBFC01FF5C18E3A605CE2B62E8AB7E92A19F9943"
+}

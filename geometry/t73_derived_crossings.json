@@ -1,0 +1,10 @@
+{
+  "cut_tangle_sha256": "9746F9B45A45EFB959866AD9EB00D41A7FAB0F319DEC4506C5EC8914EFD89CCD",
+  "derived_letter_count": null,
+  "frozen_B44_length": 11340,
+  "matches_frozen_B44": false,
+  "reason": "cancelled actual link does not yet supply a 44-strand crossing word",
+  "schema": "t73_derived_crossings/v1",
+  "status": "OPEN",
+  "used_expected_B44_as_input": false
+}
