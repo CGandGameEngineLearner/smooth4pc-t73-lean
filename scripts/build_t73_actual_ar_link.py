@@ -100,6 +100,8 @@ def mapping_torus_core(pl, spine_component: dict[str, Any], axis: int) -> dict[s
     if core[0] != core[-1]:
         raise AssertionError("cut AR pieces do not close to a circle")
 
+    # A provisional value is replaced below by the common width selected by
+    # the checked ribbon builder.
     ribbon_offset = [pl.PROTECTED_RADIUS / 16] * 3
     bottom_band = pl.framing_annulus(bottom, ribbon_offset)
     return {
@@ -148,6 +150,17 @@ def build(write: bool = False) -> dict[str, Any]:
         mapping_torus_core(pl, spine["components"][axis], axis)
         for axis in range(3)
     ]
+    ribbons = load("build_t73_johnson_spine_ribbons").build_ribbons(
+        cores, spine, binding
+    )
+    for core, ribbon in zip(cores, ribbons["components"]):
+        core["framing_annulus_bottom"] = {
+            "inner_ref": "C_i",
+            "outer_rule": "q_i=p_i+width*(1,1,1)",
+            "offset": ribbon["top_band"]["offset"],
+        }
+        core["framing_annulus_top"] = ribbon["top_band"]
+        core["full_framing_annulus"] = ribbon
     # Johnson: plane x_i = 0 meets H2 in D2^i; plane x_i = 1/2 meets H1 in D1^i.
     dual = {
         "r_yz": pl.dual_disk_boundary(0, 0, 1),
@@ -202,7 +215,8 @@ def build(write: bool = False) -> dict[str, Any]:
             ),
             "epsilon": 0,
             "source": "Aitchison--Rubinstein p. 6, Figure 2c",
-            "transported_top_ribbon": "OPEN",
+            "transported_top_ribbon": "PASS",
+            "spine_ribbon_transport": ribbons,
         },
         "status": {
             "actual_cut_mapping_torus_cores": "PASS",
@@ -212,8 +226,8 @@ def build(write: bool = False) -> dict[str, Any]:
             "free_words_are_not_embeddings": "PASS",
             "heegaard_preserving_psi_A": psi["status"]["preserves_heegaard_pair"],
             "section_ball_identity": psi["status"]["fixes_section_neighborhood"],
-            "actual_framing_annuli": "OPEN",
-            "actual_framed_ar_link": "OPEN",
+            "actual_framing_annuli": "PASS",
+            "actual_framed_ar_link": "PASS",
         },
     }
     result["sha256"] = canonical_sha({key: value for key, value in result.items() if key != "sha256"})

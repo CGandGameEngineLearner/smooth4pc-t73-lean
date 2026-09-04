@@ -7,6 +7,7 @@ import argparse
 import copy
 import importlib.util
 import json
+from fractions import Fraction
 from pathlib import Path
 from typing import Any
 
@@ -28,6 +29,75 @@ def load(name: str):
     return module
 
 
+def validate_ribbons(
+    stored: dict[str, Any],
+    spine: dict[str, Any],
+    spine_binding: dict[str, Any],
+) -> None:
+    ribbon_module = load("build_t73_johnson_spine_ribbons")
+    ribbons = stored["framing"]["spine_ribbon_transport"]
+    width = Fraction(ribbons["width"])
+    direction = [Fraction(value) for value in ribbons["product_direction"]]
+    denominator_bound = max(
+        Fraction(value).denominator
+        for name in ("m_1", "m_2", "m_3")
+        for point in stored["components"][name]["core_polyline_T3xI"]
+        for value in point
+    )
+    if ribbons["coordinate_denominator_bound"] != denominator_bound:
+        raise AssertionError("framing rational-separation denominator is stale")
+    incidence_bound = Fraction(1, denominator_bound ** int(ribbons["rational_separation_exponent"]))
+    if Fraction(ribbons["rational_incidence_lower_bound"]) != incidence_bound:
+        raise AssertionError("framing rational-incidence lower bound changed")
+    if not 0 < 100 * width <= incidence_bound:
+        raise AssertionError("framing width is not below every rational incidence wall")
+    if ribbons["factor_count"] != 93 or len(ribbons["factor_product_prisms"]) != 93:
+        raise AssertionError("framing movie does not cover all 93 Johnson slides")
+    if not 0 < 2 * width < Fraction(spine["tube_radius"]):
+        raise AssertionError("framing width leaves the certified lane tubes")
+    for record, factor in zip(ribbons["factor_product_prisms"], spine_binding["factors"]):
+        normal = [int(value) for value in factor["square_normal"]]
+        dot = sum(Fraction(normal[index]) * direction[index] for index in range(3))
+        if record["square_normal"] != normal or Fraction(record["product_direction_dot_normal"]) != dot:
+            raise AssertionError("framing prism changed its Johnson slide normal")
+        if dot == 0 or record["relative_twist"] != 0:
+            raise AssertionError("a Johnson slide framing prism is degenerate or twisted")
+    for axis, ribbon in enumerate(ribbons["components"]):
+        core = stored["components"][f"m_{axis + 1}"]
+        inner = [[Fraction(value) for value in point] for point in core["core_polyline_T3xI"]]
+        outer = [
+            [
+                point[index] + (width * direction[index] if index < 3 else 0)
+                for index in range(4)
+            ]
+            for point in inner
+        ]
+        if ribbon["inner_core_ref"] != f"components/m_{axis + 1}/core_polyline_T3xI":
+            raise AssertionError("framing annulus is not attached to the AR core")
+        if ribbon["outer_core_rule"] != "q_i=p_i+width*(1,1,1,0)":
+            raise AssertionError("framing outer-boundary coordinate rule changed")
+        if ribbon["top_band"]["inner_ref"] != f"components/m_{axis + 1}/psi_A_C_i":
+            raise AssertionError("top framing band is not attached to psi_A(C_i)")
+        if len(inner) != len(outer) or ribbon["quadrilateral_count"] != len(inner) - 1:
+            raise AssertionError("framing annulus has the wrong product-cell count")
+        for point, pushed in zip(inner, outer):
+            expected = [
+                point[index] + (width * direction[index] if index < 3 else 0)
+                for index in range(4)
+            ]
+            if pushed != expected:
+                raise AssertionError("framing outer boundary is not the selected product push-off")
+        if any(
+            not ribbon_module.segment_transverse_to_product_direction(a, b, direction)
+            for a, b in zip(inner, inner[1:])
+        ):
+            raise AssertionError("framing product direction became tangent to a core edge")
+        if not ribbon["closed_annulus"] or ribbon["relative_twist"] != 0:
+            raise AssertionError("framing ribbon is not a closed zero-twist annulus")
+    if not all(ribbons["receipts"].values()):
+        raise AssertionError("a framing-ribbon separation receipt is not closed")
+
+
 def verify() -> dict[str, Any]:
     pl = load("t73_johnson_pl")
     builder = load("build_t73_actual_ar_link")
@@ -47,6 +117,7 @@ def verify() -> dict[str, Any]:
         rebuilt = builder.build(write=False)
         if stored != rebuilt:
             raise AssertionError("stored AR link SHA does not match a rebuild from psi_A")
+    validate_ribbons(stored, spine, spine_binding)
     cut_endpoints = set()
     for name in ("m_1", "m_2", "m_3"):
         core = stored["components"][name]
@@ -108,6 +179,27 @@ def verify() -> dict[str, Any]:
         cut_mutant["components"]["m_1"]["lambda_i"][0][:-1]
         != cut_mutant["components"]["m_1"]["cut_endpoints"]["positive"]
     )
+    direction_mutant = copy.deepcopy(stored)
+    direction_mutant["framing"]["spine_ribbon_transport"]["product_direction"] = ["1", "0", "0"]
+    direction_failed = False
+    try:
+        validate_ribbons(direction_mutant, spine, spine_binding)
+    except AssertionError:
+        direction_failed = True
+    width_mutant = copy.deepcopy(stored)
+    width_mutant["framing"]["spine_ribbon_transport"]["width"] = spine["tube_radius"]
+    width_failed = False
+    try:
+        validate_ribbons(width_mutant, spine, spine_binding)
+    except AssertionError:
+        width_failed = True
+    twist_mutant = copy.deepcopy(stored)
+    twist_mutant["framing"]["spine_ribbon_transport"]["factor_product_prisms"][0]["relative_twist"] = 1
+    twist_failed = False
+    try:
+        validate_ribbons(twist_mutant, spine, spine_binding)
+    except AssertionError:
+        twist_failed = True
     framed = stored.get("status", {}).get("actual_framed_ar_link") == "PASS"
     return {
         "ACTUAL_AR_CORE": "PASS" if bound and evaluator == "PASS" else "OPEN",
@@ -120,6 +212,9 @@ def verify() -> dict[str, Any]:
         "MUTATION_ORIENTATION": "FAIL" if orientation_failed else "UNDETECTED",
         "MUTATION_WORD_SUBSTITUTION": "FAIL" if word_failed else "UNDETECTED",
         "MUTATION_CUT_ENDPOINT": "FAIL" if cut_failed else "UNDETECTED",
+        "MUTATION_RIBBON_DIRECTION": "FAIL" if direction_failed else "UNDETECTED",
+        "MUTATION_RIBBON_WIDTH": "FAIL" if width_failed else "UNDETECTED",
+        "MUTATION_RIBBON_TWIST": "FAIL" if twist_failed else "UNDETECTED",
         "HEEGAARD_PRESERVING_PSI": psi["status"]["preserves_heegaard_pair"],
         "SECTION_BALL": psi["status"]["fixes_section_neighborhood"],
         "SHA256": stored["sha256"],

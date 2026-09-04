@@ -102,8 +102,8 @@ class ActualARLinkTest(unittest.TestCase):
         )
         result = verifier.verify()
         self.assertEqual(result["ACTUAL_AR_CORE"], "PASS")
-        self.assertEqual(result["ACTUAL_AR_LINK"], "OPEN")
-        self.assertEqual(result["ACTUAL_FRAMING_ANNULI"], "OPEN")
+        self.assertEqual(result["ACTUAL_AR_LINK"], "PASS")
+        self.assertEqual(result["ACTUAL_FRAMING_ANNULI"], "PASS")
         self.assertEqual(result["BOUND_TO_PSI_A"], "PASS")
         # The coordinate-spine evaluator is now closed by the independent
         # ambient-restore/lane binding.  The whole AR link remains OPEN until
@@ -115,6 +115,9 @@ class ActualARLinkTest(unittest.TestCase):
         self.assertEqual(result["MUTATION_ORIENTATION"], "FAIL")
         self.assertEqual(result["MUTATION_WORD_SUBSTITUTION"], "FAIL")
         self.assertEqual(result["MUTATION_CUT_ENDPOINT"], "FAIL")
+        self.assertEqual(result["MUTATION_RIBBON_DIRECTION"], "FAIL")
+        self.assertEqual(result["MUTATION_RIBBON_WIDTH"], "FAIL")
+        self.assertEqual(result["MUTATION_RIBBON_TWIST"], "FAIL")
 
 
 if __name__ == "__main__":
