@@ -701,9 +701,18 @@ agree on the outer boundary, and the two interior surface patches have exactly
 the same boundary-edge set.  For negative moves each patch is a disjoint union
 of a disk and an annulus; for positive moves it is a union of two disks and an
 annulus.  All components are planar, and the support bounding boxes have
-distance at least $1$ from every protected-ball centre.  Thus the relative
-ball support for the paired saddle is complete; its ambient PL cell map remains
-\Open.
+distance at least $1$ from every protected-ball centre.  This does not yet give
+a relative support homeomorphism: although the union of boundary edges agrees,
+the partition of those edges among the disk and annulus components differs
+between source and target.  A boundary-fixed homeomorphism cannot change that
+partition.  The paired-saddle support and its ambient PL cell map therefore
+remain \Open.  The discrepancy is nevertheless finite and standard: in the
+negative templates the common boundary has three circles and a single
+transposition carries the source component partition to the target partition;
+in the positive templates there are four circles and the minimal permutation
+is a product of two disjoint transpositions.  Thus the required inner boundary
+map is one or two sphere half-turns.  Its placement and the outer fixed-boundary
+polar collars remain to be constructed.
 
 In the standard product chart $D^2\times[-1,1]$ for the reduced $y$
 one-handle, take $B=D^2\times[-1/2,1/2]$.  The Johnson $m_2$ word has $41$

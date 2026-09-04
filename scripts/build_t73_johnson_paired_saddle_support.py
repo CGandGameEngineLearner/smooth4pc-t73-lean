@@ -119,6 +119,175 @@ def planar_genus(invariants):
     return numerator // 2
 
 
+def component_boundary_partition(sweep_tools, faces):
+    face_edges = []
+    edge_faces = collections.defaultdict(list)
+    for index, face in enumerate(faces):
+        edges = {
+            tuple(
+                sorted(
+                    (
+                        sweep_tools.periodic_vertex(face[first]),
+                        sweep_tools.periodic_vertex(face[second]),
+                    )
+                )
+            )
+            for first, second in ((0, 1), (0, 2), (1, 2))
+        }
+        face_edges.append(edges)
+        for edge in edges:
+            edge_faces[edge].append(index)
+    adjacency = [set() for _ in faces]
+    for hits in edge_faces.values():
+        if len(hits) == 2:
+            first, second = hits
+            adjacency[first].add(second)
+            adjacency[second].add(first)
+    seen = set()
+    partitions = []
+    for start in range(len(faces)):
+        if start in seen:
+            continue
+        stack = [start]
+        seen.add(start)
+        component = []
+        while stack:
+            current = stack.pop()
+            component.append(current)
+            for neighbour in adjacency[current]:
+                if neighbour not in seen:
+                    seen.add(neighbour)
+                    stack.append(neighbour)
+        counts = collections.Counter(
+            edge for face_index in component for edge in face_edges[face_index]
+        )
+        partitions.append(
+            tuple(
+                sorted(
+                    tuple(tuple(str(value) for value in vertex) for vertex in edge)
+                    for edge, count in counts.items()
+                    if count == 1
+                )
+            )
+        )
+    return sorted(partitions)
+
+
+def boundary_loop_groups(sweep_tools, faces):
+    face_edges = []
+    edge_faces = collections.defaultdict(list)
+    for index, face in enumerate(faces):
+        edges = {
+            tuple(
+                sorted(
+                    (
+                        sweep_tools.periodic_vertex(face[first]),
+                        sweep_tools.periodic_vertex(face[second]),
+                    )
+                )
+            )
+            for first, second in ((0, 1), (0, 2), (1, 2))
+        }
+        face_edges.append(edges)
+        for edge in edges:
+            edge_faces[edge].append(index)
+    face_adjacency = [set() for _ in faces]
+    for hits in edge_faces.values():
+        if len(hits) == 2:
+            first, second = hits
+            face_adjacency[first].add(second)
+            face_adjacency[second].add(first)
+    seen_faces = set()
+    groups = []
+    for start in range(len(faces)):
+        if start in seen_faces:
+            continue
+        stack = [start]
+        seen_faces.add(start)
+        component = []
+        while stack:
+            current = stack.pop()
+            component.append(current)
+            for neighbour in face_adjacency[current]:
+                if neighbour not in seen_faces:
+                    seen_faces.add(neighbour)
+                    stack.append(neighbour)
+        counts = collections.Counter(
+            edge for face_index in component for edge in face_edges[face_index]
+        )
+        boundary = {edge for edge, count in counts.items() if count == 1}
+        vertex_edges = collections.defaultdict(set)
+        for edge in boundary:
+            vertex_edges[edge[0]].add(edge)
+            vertex_edges[edge[1]].add(edge)
+        unseen_edges = set(boundary)
+        loops = []
+        while unseen_edges:
+            edge = min(unseen_edges)
+            unseen_edges.remove(edge)
+            loop = {edge}
+            vertices = list(edge)
+            while vertices:
+                vertex = vertices.pop()
+                for neighbour_edge in vertex_edges[vertex]:
+                    if neighbour_edge in unseen_edges:
+                        unseen_edges.remove(neighbour_edge)
+                        loop.add(neighbour_edge)
+                        vertices.extend(neighbour_edge)
+            loops.append(
+                tuple(
+                    sorted(
+                        tuple(tuple(str(value) for value in vertex) for vertex in item)
+                        for item in loop
+                    )
+                )
+            )
+        groups.append(sorted(loops))
+    return sorted(groups)
+
+
+def minimal_loop_permutation(source_groups, target_groups):
+    loops = sorted({loop for group in source_groups for loop in group})
+    if loops != sorted({loop for group in target_groups for loop in group}):
+        raise AssertionError("source and target do not have the same boundary loops")
+    loop_index = {loop: index for index, loop in enumerate(loops)}
+    source = sorted(tuple(sorted(loop_index[loop] for loop in group)) for group in source_groups)
+    target = sorted(tuple(sorted(loop_index[loop] for loop in group)) for group in target_groups)
+    candidates = []
+    for permutation in itertools.permutations(range(len(loops))):
+        image = sorted(
+            tuple(sorted(permutation[index] for index in group)) for group in source
+        )
+        if image == target:
+            moved = sum(index != image_index for index, image_index in enumerate(permutation))
+            candidates.append((moved, permutation))
+    if not candidates:
+        raise AssertionError("no boundary-loop permutation matches component partitions")
+    _, permutation = min(candidates)
+    seen = set()
+    cycles = []
+    for start in range(len(permutation)):
+        if start in seen or permutation[start] == start:
+            seen.add(start)
+            continue
+        cycle = []
+        current = start
+        while current not in seen:
+            seen.add(current)
+            cycle.append(current)
+            current = permutation[current]
+        cycles.append(cycle)
+    return {
+        "loop_count": len(loops),
+        "source_groups": [list(group) for group in source],
+        "target_groups": [list(group) for group in target],
+        "permutation": list(permutation),
+        "nontrivial_cycles": cycles,
+        "all_cycles_are_transpositions": all(len(cycle) == 2 for cycle in cycles),
+        "loop_edge_counts": [len(loop) for loop in loops],
+    }
+
+
 def build_movie(analyzer, pl, sweep_tools, movie):
     tetrahedra, adjacency, face_occurrences = sweep_tools.build_tetrahedra(
         analyzer, pl, movie["power"]
@@ -168,6 +337,12 @@ def build_movie(analyzer, pl, sweep_tools, movie):
     target_invariants["total_genus"] = planar_genus(target_invariants)
     source_curve = boundary_edges(sweep_tools, source_patch)
     target_curve = boundary_edges(sweep_tools, target_patch)
+    source_partition = component_boundary_partition(sweep_tools, source_patch)
+    target_partition = component_boundary_partition(sweep_tools, target_patch)
+    loop_permutation = minimal_loop_permutation(
+        boundary_loop_groups(sweep_tools, source_patch),
+        boundary_loop_groups(sweep_tools, target_patch),
+    )
     collapse = analyzer.collapse_to_point(
         [
             tuple(sweep_tools.periodic_vertex(vertex) for vertex in tetrahedra[index]["vertices"])
@@ -184,6 +359,7 @@ def build_movie(analyzer, pl, sweep_tools, movie):
         and collapse["collapses_to_point"]
         and boundary_agrees
         and source_curve == target_curve
+        and source_partition == target_partition
         and source_invariants["surface_components"] == expected_components
         and target_invariants["surface_components"] == expected_components
         and source_invariants["boundary_components"] == expected_boundaries
@@ -207,6 +383,13 @@ def build_movie(analyzer, pl, sweep_tools, movie):
         "target_patch": target_invariants,
         "common_boundary_edge_count": len(source_curve),
         "boundary_curves_equal": source_curve == target_curve,
+        "component_boundary_partitions_equal": source_partition == target_partition,
+        "source_component_boundary_partition_sha256": canonical_sha(source_partition),
+        "target_component_boundary_partition_sha256": canonical_sha(target_partition),
+        "boundary_loop_permutation": loop_permutation,
+        "boundary_loop_permutation_status": (
+            "PASS" if loop_permutation["all_cycles_are_transpositions"] else "OPEN"
+        ),
         "outer_boundary_membership_agrees": boundary_agrees,
         "protected_ball_bbox_clearance": str(clearance),
         "paired_saddle_support": "PASS" if passed else "OPEN",
@@ -230,10 +413,18 @@ def generate():
         "sweep_sha256": sweep["sha256"],
         "disk_cells_sha256": disk_cells["sha256"],
         "movies": movies,
-        "all_supports_are_balls": all(
-            movie["paired_saddle_support"] == "PASS" for movie in movies
+        "all_supports_are_balls": all(movie["support_collapses_to_point"] for movie in movies),
+        "all_component_boundary_partitions_match": all(
+            movie["component_boundary_partitions_equal"] for movie in movies
         ),
-        "paired_saddle_support": "PASS",
+        "all_boundary_loop_permutations_are_halfturns": all(
+            movie["boundary_loop_permutation_status"] == "PASS" for movie in movies
+        ),
+        "paired_saddle_support": (
+            "PASS"
+            if all(movie["paired_saddle_support"] == "PASS" for movie in movies)
+            else "OPEN"
+        ),
         "paired_saddle_ambient_cells": "OPEN",
     }
     result["sha256"] = canonical_sha(result)

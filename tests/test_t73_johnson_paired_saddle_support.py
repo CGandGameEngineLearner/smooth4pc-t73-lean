@@ -28,15 +28,27 @@ class JohnsonPairedSaddleSupportTest(unittest.TestCase):
         )
         rebuilt = load_script().generate()
         self.assertEqual(stored, rebuilt)
-        self.assertEqual(rebuilt["paired_saddle_support"], "PASS")
+        self.assertEqual(rebuilt["paired_saddle_support"], "OPEN")
         self.assertEqual(rebuilt["paired_saddle_ambient_cells"], "OPEN")
+        self.assertFalse(rebuilt["all_component_boundary_partitions_match"])
+        self.assertTrue(rebuilt["all_boundary_loop_permutations_are_halfturns"])
         for movie in rebuilt["movies"]:
-            self.assertEqual(movie["paired_saddle_support"], "PASS")
+            self.assertEqual(movie["paired_saddle_support"], "OPEN")
             self.assertTrue(movie["support_collapses_to_point"])
             self.assertEqual(movie["support_boundary"]["topology"], "sphere")
             self.assertEqual(movie["source_patch"]["total_genus"], 0)
             self.assertEqual(movie["target_patch"]["total_genus"], 0)
             self.assertTrue(movie["boundary_curves_equal"])
+            self.assertFalse(movie["component_boundary_partitions_equal"])
+            self.assertEqual(movie["boundary_loop_permutation_status"], "PASS")
+            self.assertTrue(
+                movie["boundary_loop_permutation"]["all_cycles_are_transpositions"]
+            )
+            expected_cycles = 1 if movie["power"] < 0 else 2
+            self.assertEqual(
+                len(movie["boundary_loop_permutation"]["nontrivial_cycles"]),
+                expected_cycles,
+            )
             self.assertTrue(movie["outer_boundary_membership_agrees"])
             self.assertGreater(
                 Fraction(movie["protected_ball_bbox_clearance"]),
