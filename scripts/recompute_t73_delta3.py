@@ -12,6 +12,7 @@ from __future__ import annotations
 
 import argparse
 import hashlib
+import importlib.util
 import json
 from pathlib import Path
 from typing import Any
@@ -303,6 +304,23 @@ def build_receipt(input_path: Path) -> dict[str, Any]:
         raise ValueError("unsupported input schema")
     check_binding(data)
 
+    builder_path = HERE / "build_t73_endpoint_transport.py"
+    spec = importlib.util.spec_from_file_location(
+        "build_t73_endpoint_transport", builder_path
+    )
+    if spec is None or spec.loader is None:
+        raise ValueError("cannot load endpoint transport builder")
+    builder = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(builder)
+    convention_path = HERE.parent / "data" / "T73_ENDPOINT_CONVENTION.json"
+    if convention_path.is_file():
+        convention = json.loads(convention_path.read_text(encoding="utf-8"))
+    else:
+        convention = builder.build_convention()
+    pairing = builder.public_pairing_terms(convention)
+    u_terms = pairing["u_terms"]
+    ell_terms = pairing["ell_terms"]
+
     degree = data["endpoint_model"]["truncation_degree"]
     dimension = data["endpoint_model"]["dimension"]
     if (degree, dimension) != (6, 88):
@@ -326,26 +344,22 @@ def build_receipt(input_path: Path) -> dict[str, Any]:
     if canonical_sha(b88) != integrity["B88_sha256"]:
         raise ValueError("B88 SHA mismatch")
 
-    vector = sparse_vector(
-        dimension, degree, data["endpoint_model"]["u_terms"]
-    )
+    vector = sparse_vector(dimension, degree, u_terms)
     delta_vector = delta_apply(b88, vector)
-    eta_epsilon = apply_covector(
-        delta_vector, data["endpoint_model"]["ell_terms"]
-    )
+    eta_epsilon = apply_covector(delta_vector, ell_terms)
     delta_xi_vector = delta_apply(b88, delta_vector)
-    xi_epsilon = apply_covector(
-        delta_xi_vector, data["endpoint_model"]["ell_terms"]
-    )
+    xi_epsilon = apply_covector(delta_xi_vector, ell_terms)
     eta_h = substitute_epsilon_with_h(eta_epsilon, degree)
     xi_h = substitute_epsilon_with_h(xi_epsilon, degree)
+    delta3 = eta_h[3]
 
     return {
         "schema": "t73_delta3_public_receipt/v1",
         "input_sha256": sha256_bytes(input_bytes),
         "endpoint_model": {
-            "u_terms": data["endpoint_model"]["u_terms"],
-            "ell_terms": data["endpoint_model"]["ell_terms"],
+            "u_terms": u_terms,
+            "ell_terms": ell_terms,
+            "pairing_source": "T73_ENDPOINT_CONVENTION.json via P(q)",
             "position_table_sha256": position_table_sha,
         },
         "derived_words": {
@@ -364,9 +378,10 @@ def build_receipt(input_path: Path) -> dict[str, Any]:
             "ell_(rhoW-I)^2_u_degrees_0_to_6": xi_h,
         },
         "results": {
-            "delta3_eta_R_T1": eta_h[3],
+            "delta3_eta_R_T1": delta3,
             "delta3_xi": xi_h[3],
-            "plain_shadow_cubic_of_xi": eta_h[3],
+            "plain_shadow_cubic_of_xi": delta3,
+            "cubic_exoticness_claim": "STOP" if delta3 == 0 else "FROZEN_BURAU_ONLY",
         },
     }
 
@@ -392,8 +407,10 @@ def print_text(receipt: dict[str, Any]) -> None:
         )
     )
     print(f"DELTA3_ETA_T1={results['delta3_eta_R_T1']}")
+    print(f"DELTA3={results['delta3_eta_R_T1']}")
     print(f"DELTA3_XI={results['delta3_xi']}")
     print(f"PLAIN_SHADOW_CUBIC_XI={results['plain_shadow_cubic_of_xi']}")
+    print(f"CUBIC_EXOTICNESS_CLAIM={results['cubic_exoticness_claim']}")
     print("VERIFY=PASS")
 
 

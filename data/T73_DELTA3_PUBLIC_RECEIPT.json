@@ -16,6 +16,7 @@
         -1
       ]
     ],
+    "pairing_source": "T73_ENDPOINT_CONVENTION.json via P(q)",
     "position_table_sha256": "119C7E9E74AE6C820DA72A84CDFD5D445D81E6C3AACCC209C25D37C323961508",
     "u_terms": [
       [
@@ -79,6 +80,7 @@
   },
   "input_sha256": "0F0F4A568D966367313C29C25CEDDE4FD9ABAD32B9375519E9CDF9168AE0A764",
   "results": {
+    "cubic_exoticness_claim": "FROZEN_BURAU_ONLY",
     "delta3_eta_R_T1": 2624,
     "delta3_xi": 0,
     "plain_shadow_cubic_of_xi": 2624

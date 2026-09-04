@@ -5,6 +5,7 @@ import Smooth4PC.T73S4Inhabitant
 import Smooth4PC.T73GeometryPack
 import Smooth4PC.CoefficientTrace
 import Smooth4PC.QuotientEquiv
+import Smooth4PC.FilteredCubicNaturality
 
 open Lean Elab Command Meta
 
@@ -117,5 +118,8 @@ dumpT73Finite
 #print axioms detectorLine_not_linearEquiv_emptyKhQ
 #print axioms detectorTransport_on_emptyLink_impossible
 #print axioms conditionalCounterexample_of_pack
+#print axioms Smooth4PC.cubicScalar_of_order_three
+#print axioms Smooth4PC.simultaneousConjugation_pairing
+#print axioms Smooth4PC.cubicScalar_conjugation_invariant
 
 end Smooth4PC.T73

@@ -1,0 +1,576 @@
+{
+  "ENDPOINT_TRANSPORT": "PASS",
+  "NO_UNRESOLVED_SIGNS": "PASS",
+  "P_q_entries": [
+    {
+      "column_geometric": 0,
+      "q_power": 0,
+      "row_public": 0,
+      "sign": 1
+    },
+    {
+      "column_geometric": 1,
+      "q_power": 0,
+      "row_public": 1,
+      "sign": 1
+    },
+    {
+      "column_geometric": 2,
+      "q_power": 0,
+      "row_public": 2,
+      "sign": 1
+    },
+    {
+      "column_geometric": 3,
+      "q_power": 0,
+      "row_public": 3,
+      "sign": 1
+    },
+    {
+      "column_geometric": 86,
+      "q_power": 0,
+      "row_public": 4,
+      "sign": 1
+    },
+    {
+      "column_geometric": 87,
+      "q_power": 0,
+      "row_public": 5,
+      "sign": 1
+    },
+    {
+      "column_geometric": 84,
+      "q_power": 0,
+      "row_public": 6,
+      "sign": 1
+    },
+    {
+      "column_geometric": 85,
+      "q_power": 0,
+      "row_public": 7,
+      "sign": 1
+    },
+    {
+      "column_geometric": 82,
+      "q_power": 0,
+      "row_public": 8,
+      "sign": 1
+    },
+    {
+      "column_geometric": 83,
+      "q_power": 0,
+      "row_public": 9,
+      "sign": 1
+    },
+    {
+      "column_geometric": 80,
+      "q_power": 0,
+      "row_public": 10,
+      "sign": 1
+    },
+    {
+      "column_geometric": 81,
+      "q_power": 0,
+      "row_public": 11,
+      "sign": 1
+    },
+    {
+      "column_geometric": 78,
+      "q_power": 0,
+      "row_public": 12,
+      "sign": 1
+    },
+    {
+      "column_geometric": 79,
+      "q_power": 0,
+      "row_public": 13,
+      "sign": 1
+    },
+    {
+      "column_geometric": 76,
+      "q_power": 0,
+      "row_public": 14,
+      "sign": 1
+    },
+    {
+      "column_geometric": 77,
+      "q_power": 0,
+      "row_public": 15,
+      "sign": 1
+    },
+    {
+      "column_geometric": 74,
+      "q_power": 0,
+      "row_public": 16,
+      "sign": 1
+    },
+    {
+      "column_geometric": 75,
+      "q_power": 0,
+      "row_public": 17,
+      "sign": 1
+    },
+    {
+      "column_geometric": 72,
+      "q_power": 0,
+      "row_public": 18,
+      "sign": 1
+    },
+    {
+      "column_geometric": 73,
+      "q_power": 0,
+      "row_public": 19,
+      "sign": 1
+    },
+    {
+      "column_geometric": 70,
+      "q_power": 0,
+      "row_public": 20,
+      "sign": 1
+    },
+    {
+      "column_geometric": 71,
+      "q_power": 0,
+      "row_public": 21,
+      "sign": 1
+    },
+    {
+      "column_geometric": 68,
+      "q_power": 0,
+      "row_public": 22,
+      "sign": 1
+    },
+    {
+      "column_geometric": 69,
+      "q_power": 0,
+      "row_public": 23,
+      "sign": 1
+    },
+    {
+      "column_geometric": 66,
+      "q_power": 0,
+      "row_public": 24,
+      "sign": 1
+    },
+    {
+      "column_geometric": 67,
+      "q_power": 0,
+      "row_public": 25,
+      "sign": 1
+    },
+    {
+      "column_geometric": 64,
+      "q_power": 0,
+      "row_public": 26,
+      "sign": 1
+    },
+    {
+      "column_geometric": 65,
+      "q_power": 0,
+      "row_public": 27,
+      "sign": 1
+    },
+    {
+      "column_geometric": 62,
+      "q_power": 0,
+      "row_public": 28,
+      "sign": 1
+    },
+    {
+      "column_geometric": 63,
+      "q_power": 0,
+      "row_public": 29,
+      "sign": 1
+    },
+    {
+      "column_geometric": 60,
+      "q_power": 0,
+      "row_public": 30,
+      "sign": 1
+    },
+    {
+      "column_geometric": 61,
+      "q_power": 0,
+      "row_public": 31,
+      "sign": 1
+    },
+    {
+      "column_geometric": 58,
+      "q_power": 0,
+      "row_public": 32,
+      "sign": 1
+    },
+    {
+      "column_geometric": 59,
+      "q_power": 0,
+      "row_public": 33,
+      "sign": 1
+    },
+    {
+      "column_geometric": 56,
+      "q_power": 0,
+      "row_public": 34,
+      "sign": 1
+    },
+    {
+      "column_geometric": 57,
+      "q_power": 0,
+      "row_public": 35,
+      "sign": 1
+    },
+    {
+      "column_geometric": 54,
+      "q_power": 0,
+      "row_public": 36,
+      "sign": 1
+    },
+    {
+      "column_geometric": 55,
+      "q_power": 0,
+      "row_public": 37,
+      "sign": 1
+    },
+    {
+      "column_geometric": 52,
+      "q_power": 0,
+      "row_public": 38,
+      "sign": 1
+    },
+    {
+      "column_geometric": 53,
+      "q_power": 0,
+      "row_public": 39,
+      "sign": 1
+    },
+    {
+      "column_geometric": 50,
+      "q_power": 0,
+      "row_public": 40,
+      "sign": 1
+    },
+    {
+      "column_geometric": 51,
+      "q_power": 0,
+      "row_public": 41,
+      "sign": 1
+    },
+    {
+      "column_geometric": 48,
+      "q_power": 0,
+      "row_public": 42,
+      "sign": 1
+    },
+    {
+      "column_geometric": 49,
+      "q_power": 0,
+      "row_public": 43,
+      "sign": 1
+    },
+    {
+      "column_geometric": 46,
+      "q_power": 0,
+      "row_public": 44,
+      "sign": 1
+    },
+    {
+      "column_geometric": 47,
+      "q_power": 0,
+      "row_public": 45,
+      "sign": 1
+    },
+    {
+      "column_geometric": 44,
+      "q_power": 0,
+      "row_public": 46,
+      "sign": 1
+    },
+    {
+      "column_geometric": 45,
+      "q_power": 0,
+      "row_public": 47,
+      "sign": 1
+    },
+    {
+      "column_geometric": 42,
+      "q_power": 0,
+      "row_public": 48,
+      "sign": 1
+    },
+    {
+      "column_geometric": 43,
+      "q_power": 0,
+      "row_public": 49,
+      "sign": 1
+    },
+    {
+      "column_geometric": 40,
+      "q_power": 0,
+      "row_public": 50,
+      "sign": 1
+    },
+    {
+      "column_geometric": 41,
+      "q_power": 0,
+      "row_public": 51,
+      "sign": 1
+    },
+    {
+      "column_geometric": 38,
+      "q_power": 0,
+      "row_public": 52,
+      "sign": 1
+    },
+    {
+      "column_geometric": 39,
+      "q_power": 0,
+      "row_public": 53,
+      "sign": 1
+    },
+    {
+      "column_geometric": 36,
+      "q_power": 0,
+      "row_public": 54,
+      "sign": 1
+    },
+    {
+      "column_geometric": 37,
+      "q_power": 0,
+      "row_public": 55,
+      "sign": 1
+    },
+    {
+      "column_geometric": 34,
+      "q_power": 0,
+      "row_public": 56,
+      "sign": 1
+    },
+    {
+      "column_geometric": 35,
+      "q_power": 0,
+      "row_public": 57,
+      "sign": 1
+    },
+    {
+      "column_geometric": 32,
+      "q_power": 0,
+      "row_public": 58,
+      "sign": 1
+    },
+    {
+      "column_geometric": 33,
+      "q_power": 0,
+      "row_public": 59,
+      "sign": 1
+    },
+    {
+      "column_geometric": 30,
+      "q_power": 0,
+      "row_public": 60,
+      "sign": 1
+    },
+    {
+      "column_geometric": 31,
+      "q_power": 0,
+      "row_public": 61,
+      "sign": 1
+    },
+    {
+      "column_geometric": 28,
+      "q_power": 0,
+      "row_public": 62,
+      "sign": 1
+    },
+    {
+      "column_geometric": 29,
+      "q_power": 0,
+      "row_public": 63,
+      "sign": 1
+    },
+    {
+      "column_geometric": 26,
+      "q_power": 0,
+      "row_public": 64,
+      "sign": 1
+    },
+    {
+      "column_geometric": 27,
+      "q_power": 0,
+      "row_public": 65,
+      "sign": 1
+    },
+    {
+      "column_geometric": 24,
+      "q_power": 0,
+      "row_public": 66,
+      "sign": 1
+    },
+    {
+      "column_geometric": 25,
+      "q_power": 0,
+      "row_public": 67,
+      "sign": 1
+    },
+    {
+      "column_geometric": 22,
+      "q_power": 0,
+      "row_public": 68,
+      "sign": 1
+    },
+    {
+      "column_geometric": 23,
+      "q_power": 0,
+      "row_public": 69,
+      "sign": 1
+    },
+    {
+      "column_geometric": 20,
+      "q_power": 0,
+      "row_public": 70,
+      "sign": 1
+    },
+    {
+      "column_geometric": 21,
+      "q_power": 0,
+      "row_public": 71,
+      "sign": 1
+    },
+    {
+      "column_geometric": 18,
+      "q_power": 0,
+      "row_public": 72,
+      "sign": 1
+    },
+    {
+      "column_geometric": 19,
+      "q_power": 0,
+      "row_public": 73,
+      "sign": 1
+    },
+    {
+      "column_geometric": 16,
+      "q_power": 0,
+      "row_public": 74,
+      "sign": 1
+    },
+    {
+      "column_geometric": 17,
+      "q_power": 0,
+      "row_public": 75,
+      "sign": 1
+    },
+    {
+      "column_geometric": 14,
+      "q_power": 0,
+      "row_public": 76,
+      "sign": 1
+    },
+    {
+      "column_geometric": 15,
+      "q_power": 0,
+      "row_public": 77,
+      "sign": 1
+    },
+    {
+      "column_geometric": 12,
+      "q_power": 0,
+      "row_public": 78,
+      "sign": 1
+    },
+    {
+      "column_geometric": 13,
+      "q_power": 0,
+      "row_public": 79,
+      "sign": 1
+    },
+    {
+      "column_geometric": 10,
+      "q_power": 0,
+      "row_public": 80,
+      "sign": 1
+    },
+    {
+      "column_geometric": 11,
+      "q_power": 0,
+      "row_public": 81,
+      "sign": 1
+    },
+    {
+      "column_geometric": 8,
+      "q_power": 0,
+      "row_public": 82,
+      "sign": 1
+    },
+    {
+      "column_geometric": 9,
+      "q_power": 0,
+      "row_public": 83,
+      "sign": 1
+    },
+    {
+      "column_geometric": 6,
+      "q_power": 0,
+      "row_public": 84,
+      "sign": 1
+    },
+    {
+      "column_geometric": 7,
+      "q_power": 0,
+      "row_public": 85,
+      "sign": 1
+    },
+    {
+      "column_geometric": 4,
+      "q_power": 0,
+      "row_public": 86,
+      "sign": 1
+    },
+    {
+      "column_geometric": 5,
+      "q_power": 0,
+      "row_public": 87,
+      "sign": 1
+    }
+  ],
+  "checks": {
+    "P_times_Pinv_is_identity": true,
+    "W_public_conjugation": true,
+    "ell_public_equals_ell_geometric_Pinv": true,
+    "no_unresolved_signs": true,
+    "pairing_invariant": true,
+    "u_public_equals_P_u_geometric": true
+  },
+  "convention_sha256": "99C0E0ABD2A3D94C2D1C866AB05917C57BB42637A6718D94BC7810D95A6B87B4",
+  "derived_public_pairing": {
+    "ell_terms": [
+      [
+        87,
+        1
+      ],
+      [
+        2,
+        -1
+      ]
+    ],
+    "source": "P(q) applied to the geometric cup/cap of the physical U1 feet",
+    "u_terms": [
+      [
+        2,
+        1
+      ],
+      [
+        87,
+        -1
+      ]
+    ]
+  },
+  "dimension": 88,
+  "schema": "t73_endpoint_transport/v1",
+  "selected_cup": {
+    "minus_geometric_order": 5,
+    "minus_physical_endpoint_id": "ep:c_m_2_pos:0310",
+    "minus_public_order": 87,
+    "plus_geometric_order": 2,
+    "plus_physical_endpoint_id": "ep:c_r_xy_neg:0000",
+    "plus_public_order": 2
+  }
+}
