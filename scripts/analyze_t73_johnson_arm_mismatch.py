@@ -16,6 +16,7 @@ import importlib.util
 import itertools
 import json
 import math
+from collections import Counter, defaultdict
 from fractions import Fraction
 from pathlib import Path
 from typing import Any
@@ -55,6 +56,339 @@ def rank3(pl, vertices) -> bool:
         if pl.det3(matrix) != 0:
             return True
     return False
+
+
+def dot(first, second):
+    return sum(first[index] * second[index] for index in range(3))
+
+
+def cross(first, second):
+    return (
+        first[1] * second[2] - first[2] * second[1],
+        first[2] * second[0] - first[0] * second[2],
+        first[0] * second[1] - first[1] * second[0],
+    )
+
+
+def polytope_facets(pl, encoded_vertices):
+    vertices = [tuple(pl.decode(vertex)) for vertex in encoded_vertices]
+    facets = set()
+    for first, second, third in itertools.combinations(vertices, 3):
+        normal = cross(pl.sub(second, first), pl.sub(third, first))
+        if normal == (0, 0, 0):
+            continue
+        constant = dot(normal, first)
+        signs = []
+        for vertex in vertices:
+            value = dot(normal, vertex) - constant
+            signs.append((value > 0) - (value < 0))
+        if 1 in signs and -1 in signs:
+            continue
+        facet = tuple(sorted(vertices[index] for index, sign in enumerate(signs) if sign == 0))
+        if len(facet) >= 3:
+            facets.add(facet)
+    return facets
+
+
+def canonical_periodic_face_with_shift(face):
+    anchor = min(face)
+    shift = tuple((anchor[index] // 4) * 4 for index in range(3))
+    canonical = tuple(
+        sorted(
+            tuple(vertex[index] - shift[index] for index in range(3))
+            for vertex in face
+        )
+    )
+    return canonical, shift
+
+
+def canonical_periodic_face(face):
+    return canonical_periodic_face_with_shift(face)[0]
+
+
+def periodic_vertex(vertex):
+    return tuple(value % 4 for value in vertex)
+
+
+def face_edges(pl, face, periodic=True):
+    vertices = list(face)
+    normal = None
+    for first, second, third in itertools.combinations(vertices, 3):
+        candidate = cross(pl.sub(second, first), pl.sub(third, first))
+        if candidate != (0, 0, 0):
+            normal = candidate
+            break
+    if normal is None:
+        raise AssertionError("facet vertices are collinear")
+    edges = set()
+    for first, second in itertools.combinations(vertices, 2):
+        direction = pl.sub(second, first)
+        side_normal = cross(normal, direction)
+        signs = []
+        for vertex in vertices:
+            value = dot(side_normal, pl.sub(vertex, first))
+            signs.append((value > 0) - (value < 0))
+        if 1 in signs and -1 in signs:
+            continue
+        has_between_vertex = False
+        length_squared = dot(direction, direction)
+        for vertex in vertices:
+            offset = pl.sub(vertex, first)
+            if cross(direction, offset) != (0, 0, 0):
+                continue
+            parameter_numerator = dot(offset, direction)
+            if 0 < parameter_numerator < length_squared:
+                has_between_vertex = True
+                break
+        if not has_between_vertex:
+            endpoints = (
+                (periodic_vertex(first), periodic_vertex(second))
+                if periodic
+                else (first, second)
+            )
+            edges.add(tuple(sorted(endpoints)))
+    return edges
+
+
+def triangulate_face(pl, face):
+    edges = face_edges(pl, face, periodic=False)
+    adjacency = defaultdict(list)
+    for first, second in edges:
+        adjacency[first].append(second)
+        adjacency[second].append(first)
+    if any(len(neighbours) != 2 for neighbours in adjacency.values()):
+        raise AssertionError("convex facet edge graph is not a cycle")
+    start = min(adjacency)
+    cycle = [start]
+    previous = None
+    while True:
+        choices = sorted(vertex for vertex in adjacency[cycle[-1]] if vertex != previous)
+        following = choices[0]
+        if following == start:
+            break
+        cycle.append(following)
+        previous = cycle[-2]
+        if len(cycle) > len(face):
+            raise AssertionError("facet boundary did not close")
+    if len(cycle) != len(face):
+        raise AssertionError("facet cycle omits a vertex")
+    return [(cycle[0], cycle[index], cycle[index + 1]) for index in range(1, len(cycle) - 1)]
+
+
+def collapse_to_point(tetrahedra):
+    simplices = [set() for _ in range(4)]
+    for tetrahedron in tetrahedra:
+        for size in range(1, 5):
+            for simplex in itertools.combinations(tetrahedron, size):
+                simplices[size - 1].add(frozenset(simplex))
+    steps = 0
+    for dimension in (3, 2, 1):
+        while True:
+            coface_counts = Counter()
+            for simplex in simplices[dimension]:
+                for face in itertools.combinations(simplex, dimension):
+                    coface_counts[frozenset(face)] += 1
+            candidates = []
+            for simplex in simplices[dimension]:
+                for face in itertools.combinations(simplex, dimension):
+                    face = frozenset(face)
+                    if coface_counts[face] == 1:
+                        candidates.append((tuple(sorted(simplex)), tuple(sorted(face)), simplex, face))
+            if not candidates:
+                break
+            _, _, simplex, face = min(candidates)
+            simplices[dimension].remove(simplex)
+            simplices[dimension - 1].remove(face)
+            steps += 1
+    return {
+        "collapse_steps": steps,
+        "remaining_vertices": len(simplices[0]),
+        "remaining_edges": len(simplices[1]),
+        "remaining_faces": len(simplices[2]),
+        "remaining_tetrahedra": len(simplices[3]),
+        "collapses_to_point": (
+            len(simplices[0]) == 1
+            and not simplices[1]
+            and not simplices[2]
+            and not simplices[3]
+        ),
+    }
+
+
+def triangulate_component(pl, pieces, component, piece_shifts):
+    tetrahedra = []
+    all_vertices = set()
+    for piece_index in component:
+        shift = piece_shifts[piece_index]
+        vertices = [
+            tuple(pl.decode(vertex)[axis] + shift[axis] for axis in range(3))
+            for vertex in pieces[piece_index]["vertices"]
+        ]
+        center = tuple(
+            sum(vertex[axis] for vertex in vertices) / len(vertices) for axis in range(3)
+        )
+        all_vertices.update(vertices)
+        all_vertices.add(center)
+        for facet in polytope_facets(pl, [pl.encode(vertex) for vertex in vertices]):
+            for triangle in triangulate_face(pl, facet):
+                tetrahedron = [triangle[0], triangle[1], triangle[2], center]
+                determinant = pl.det3(
+                    [
+                        [tetrahedron[column][row] - tetrahedron[0][row] for column in range(1, 4)]
+                        for row in range(3)
+                    ]
+                )
+                if determinant == 0:
+                    raise AssertionError("component cone tetrahedron is degenerate")
+                if determinant < 0:
+                    tetrahedron[1], tetrahedron[2] = tetrahedron[2], tetrahedron[1]
+                tetrahedra.append(tuple(tetrahedron))
+    face_counts = Counter()
+    for tetrahedron in tetrahedra:
+        for omitted in range(4):
+            face_counts[frozenset(tetrahedron[index] for index in range(4) if index != omitted)] += 1
+    if any(count not in (1, 2) for count in face_counts.values()):
+        raise AssertionError("component tetrahedralization is not face-to-face")
+    collapse = collapse_to_point(tetrahedra)
+    lows = [min(vertex[axis] for vertex in all_vertices) for axis in range(3)]
+    highs = [max(vertex[axis] for vertex in all_vertices) for axis in range(3)]
+    return {
+        "tetrahedron_count": len(tetrahedra),
+        "triangle_multiplicities": {
+            str(multiplicity): count
+            for multiplicity, count in sorted(Counter(face_counts.values()).items())
+        },
+        "lift_bounding_box": {
+            "min": [str(value) for value in lows],
+            "max": [str(value) for value in highs],
+            "span": [str(highs[axis] - lows[axis]) for axis in range(3)],
+        },
+        "contained_in_embedded_period_box": all(highs[axis] - lows[axis] < 4 for axis in range(3)),
+        **collapse,
+    }
+
+
+def component_summary(pl, pieces):
+    occurrences = defaultdict(list)
+    facet_shifts = {}
+    for index, piece in enumerate(pieces):
+        for facet in polytope_facets(pl, piece["vertices"]):
+            canonical, shift = canonical_periodic_face_with_shift(facet)
+            occurrences[canonical].append(index)
+            facet_shifts[(index, canonical)] = shift
+    if any(len(hits) not in (1, 2) for hits in occurrences.values()):
+        raise AssertionError("mismatch clipping is not a face-to-face complex")
+    adjacency = [set() for _ in pieces]
+    adjacency_with_shift = [[] for _ in pieces]
+    for hits in occurrences.values():
+        if len(hits) == 2:
+            first, second = hits
+            adjacency[first].add(second)
+            adjacency[second].add(first)
+    for face, hits in occurrences.items():
+        if len(hits) == 2:
+            first, second = hits
+            first_shift = facet_shifts[(first, face)]
+            second_shift = facet_shifts[(second, face)]
+            delta = tuple(first_shift[axis] - second_shift[axis] for axis in range(3))
+            adjacency_with_shift[first].append((second, delta))
+            adjacency_with_shift[second].append((first, tuple(-value for value in delta)))
+    seen = set()
+    components = []
+    for start in range(len(pieces)):
+        if start in seen:
+            continue
+        stack = [start]
+        seen.add(start)
+        component = []
+        while stack:
+            current = stack.pop()
+            component.append(current)
+            for neighbour in adjacency[current]:
+                if neighbour not in seen:
+                    seen.add(neighbour)
+                    stack.append(neighbour)
+        components.append(sorted(component))
+    records = []
+    for component in components:
+        component_set = set(component)
+        owner_set = {pieces[index]["source_owner"] for index in component}
+        if len(owner_set) != 1:
+            raise AssertionError("a mismatch component mixes owner directions")
+        boundary_faces = [
+            face
+            for face, hits in occurrences.items()
+            if len(hits) == 1 and hits[0] in component_set
+        ]
+        edge_counts = Counter(
+            edge for face in boundary_faces for edge in face_edges(pl, face)
+        )
+        if set(edge_counts.values()) != {2}:
+            raise AssertionError("mismatch boundary is not a closed surface")
+        boundary_vertices = {
+            periodic_vertex(vertex) for face in boundary_faces for vertex in face
+        }
+        face_adjacency = [set() for _ in boundary_faces]
+        edge_faces = defaultdict(list)
+        for face_index, face in enumerate(boundary_faces):
+            for edge in face_edges(pl, face):
+                edge_faces[edge].append(face_index)
+        for hits in edge_faces.values():
+            first, second = hits
+            face_adjacency[first].add(second)
+            face_adjacency[second].add(first)
+        reached = {0}
+        stack = [0]
+        while stack:
+            current = stack.pop()
+            for neighbour in face_adjacency[current]:
+                if neighbour not in reached:
+                    reached.add(neighbour)
+                    stack.append(neighbour)
+        connected = len(reached) == len(boundary_faces)
+        euler = len(boundary_vertices) - len(edge_counts) + len(boundary_faces)
+        piece_shifts = {component[0]: (Fraction(0), Fraction(0), Fraction(0))}
+        stack = [component[0]]
+        while stack:
+            current = stack.pop()
+            for neighbour, delta in adjacency_with_shift[current]:
+                if neighbour not in component_set:
+                    continue
+                expected = tuple(
+                    piece_shifts[current][axis] + delta[axis] for axis in range(3)
+                )
+                if neighbour in piece_shifts:
+                    if piece_shifts[neighbour] != expected:
+                        raise AssertionError("component lift has inconsistent periods")
+                else:
+                    piece_shifts[neighbour] = expected
+                    stack.append(neighbour)
+        triangulation = triangulate_component(pl, pieces, component, piece_shifts)
+        records.append(
+            {
+                "source_owner": next(iter(owner_set)),
+                "piece_count": len(component),
+                "piece_indices": component,
+                "boundary_vertices": len(boundary_vertices),
+                "boundary_edges": len(edge_counts),
+                "boundary_faces": len(boundary_faces),
+                "boundary_euler": euler,
+                "boundary_connected": connected,
+                "boundary_edge_multiplicity_two": True,
+                "boundary_is_sphere": connected and euler == 2,
+                "triangulation": triangulation,
+                "support_ball_status": (
+                    "PASS"
+                    if connected
+                    and euler == 2
+                    and triangulation["contained_in_embedded_period_box"]
+                    and triangulation["collapses_to_point"]
+                    else "OPEN"
+                ),
+            }
+        )
+    records.sort(key=lambda item: (item["source_owner"], -item["piece_count"]))
+    return records
 
 
 def tetrahedron_halfspaces(pl, vertices):
@@ -151,6 +485,7 @@ def analyze_template(pl, source: int, prefix: int, power: int) -> dict[str, Any]
     ]
     if origin_star_hits:
         raise AssertionError("an exact mismatch polytope meets the origin eight-cube star")
+    components = component_summary(pl, pieces)
     payload = {
         "source_axis": source,
         "prefix_axis": prefix,
@@ -161,6 +496,10 @@ def analyze_template(pl, source: int, prefix: int, power: int) -> dict[str, Any]
         "origin_star_piece_count": 0,
         "mismatch_disjoint_from_origin_star": True,
         "pieces": pieces,
+        "components": components,
+        "all_components_are_collapsible_balls": all(
+            component["support_ball_status"] == "PASS" for component in components
+        ),
         "restore_status": "OPEN",
     }
     payload["sha256"] = canonical_sha(payload)
@@ -186,6 +525,9 @@ def generate() -> dict[str, Any]:
         "all_mismatch_pieces_disjoint_from_origin_star": all(
             template["mismatch_disjoint_from_origin_star"] for template in templates
         ),
+        "all_mismatch_components_are_collapsible_balls": all(
+            template["all_components_are_collapsible_balls"] for template in templates
+        ),
         "johnson_restore_status": "OPEN: mismatch polytopes are decomposed but no fixed-boundary arm homeomorphism has yet been attached",
     }
     result["sha256"] = canonical_sha(result)
@@ -206,6 +548,10 @@ def main() -> None:
         print(
             "DISJOINT_FROM_ORIGIN_STAR="
             f"{result['all_mismatch_pieces_disjoint_from_origin_star']}"
+        )
+        print(
+            "COMPONENTS_ARE_BALLS="
+            f"{result['all_mismatch_components_are_collapsible_balls']}"
         )
         print(f"RESTORE_STATUS={result['johnson_restore_status']}")
         print(f"SHA256={result['sha256']}")

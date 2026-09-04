@@ -29,11 +29,20 @@ class JohnsonArmMismatchTest(unittest.TestCase):
         self.assertEqual(stored, rebuilt)
         self.assertEqual(rebuilt["template_count"], 12)
         self.assertTrue(rebuilt["all_mismatch_pieces_disjoint_from_origin_star"])
+        self.assertTrue(rebuilt["all_mismatch_components_are_collapsible_balls"])
         self.assertIn("OPEN", rebuilt["johnson_restore_status"])
         for template in rebuilt["templates"]:
             self.assertGreater(template["piece_count"], 0)
             self.assertEqual(template["origin_star_piece_count"], 0)
             self.assertEqual(template["restore_status"], "OPEN")
+            self.assertEqual(len(template["components"]), 6)
+            self.assertTrue(
+                all(component["boundary_is_sphere"] for component in template["components"])
+            )
+            self.assertTrue(template["all_components_are_collapsible_balls"])
+            self.assertTrue(
+                all(component["support_ball_status"] == "PASS" for component in template["components"])
+            )
 
 
 if __name__ == "__main__":
