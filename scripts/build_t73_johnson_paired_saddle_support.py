@@ -436,6 +436,105 @@ def abstract_surface_invariants(faces):
     }
 
 
+def fan_disk_data(faces):
+    edge_counts = collections.Counter(
+        frozenset(edge) for face in faces for edge in itertools.combinations(face, 2)
+    )
+    boundary_edges = [edge for edge, count in edge_counts.items() if count == 1]
+    boundary_vertices = {vertex for edge in boundary_edges for vertex in edge}
+    all_vertices = {vertex for face in faces for vertex in face}
+    interior_vertices = all_vertices - boundary_vertices
+    if len(interior_vertices) != 1:
+        raise AssertionError("cap disk is not a one-centre fan")
+    center = next(iter(interior_vertices))
+    adjacency = collections.defaultdict(set)
+    for edge in boundary_edges:
+        first, second = tuple(edge)
+        adjacency[first].add(second)
+        adjacency[second].add(first)
+    if any(len(neighbours) != 2 for neighbours in adjacency.values()):
+        raise AssertionError("fan boundary is not a cycle")
+    start = min(boundary_vertices)
+    cycle = [start]
+    previous = None
+    while True:
+        candidates = sorted(
+            vertex for vertex in adjacency[cycle[-1]] if vertex != previous
+        )
+        following = candidates[0]
+        if following == start:
+            break
+        cycle.append(following)
+        previous = cycle[-2]
+        if len(cycle) > len(boundary_vertices):
+            raise AssertionError("fan boundary cycle does not close")
+    if len(cycle) != len(boundary_vertices):
+        raise AssertionError("fan boundary cycle omits vertices")
+    expected = {
+        frozenset((center, cycle[index], cycle[(index + 1) % len(cycle)]))
+        for index in range(len(cycle))
+    }
+    if expected != {frozenset(face) for face in faces}:
+        raise AssertionError("cap triangles are not the cone on the boundary cycle")
+    return {
+        "center": center,
+        "boundary_cycle": cycle,
+        "boundary_length": len(cycle),
+        "fan_triangle_count": len(faces),
+        "fan_status": "PASS",
+    }
+
+
+def cap_isomorphism(source, target, orientation):
+    source_cycle = source["boundary_cycle"]
+    target_cycle = target["boundary_cycle"]
+    if len(source_cycle) != len(target_cycle):
+        raise AssertionError("cap cycles have different lengths")
+    if orientation == "preserving":
+        ordered_target = target_cycle
+    elif orientation == "reversing":
+        ordered_target = [target_cycle[0], *reversed(target_cycle[1:])]
+    else:
+        raise AssertionError("unknown cap orientation")
+    vertex_map = {source["center"]: target["center"]}
+    vertex_map.update(zip(source_cycle, ordered_target))
+    source_triangles = {
+        frozenset(
+            (
+                source["center"],
+                source_cycle[index],
+                source_cycle[(index + 1) % len(source_cycle)],
+            )
+        )
+        for index in range(len(source_cycle))
+    }
+    target_triangles = {
+        frozenset(
+            (
+                target["center"],
+                target_cycle[index],
+                target_cycle[(index + 1) % len(target_cycle)],
+            )
+        )
+        for index in range(len(target_cycle))
+    }
+    images = {
+        frozenset(vertex_map[vertex] for vertex in triangle)
+        for triangle in source_triangles
+    }
+    if images != target_triangles:
+        raise AssertionError("cap fan map does not carry triangles bijectively")
+    return {
+        "orientation": orientation,
+        "vertex_map": [
+            [source_vertex, target_vertex]
+            for source_vertex, target_vertex in sorted(vertex_map.items())
+        ],
+        "triangle_bijection": True,
+        "simplicial_disk_isomorphism": "PASS",
+    }
+
+
 def regular_path_neighbourhood(sweep_tools, tetrahedra, adjacency, path, add_ball, remove_ball):
     core_path = [index for index in path if index not in add_ball and index not in remove_ball]
     if not core_path:
@@ -542,9 +641,14 @@ def regular_path_neighbourhood(sweep_tools, tetrahedra, adjacency, path, add_bal
                 "triangle_count": len(cap_triangles),
                 "triangles": [list(face) for face in cap_triangles],
                 "surface": cap_invariants,
+                "fan": fan_disk_data(cap_triangles),
                 "relative_collapse": fast_relative_collapse(indexed, cap_triangles),
             }
         )
+    cap_maps = [
+        cap_isomorphism(cap_records[0]["fan"], cap_records[1]["fan"], orientation)
+        for orientation in ("preserving", "reversing")
+    ]
     invariants = abstract_ball_invariants(indexed)
     collapse = fast_collapse_to_point(indexed)
     if not invariants["boundary_is_sphere"] or not collapse["collapses_to_point"]:
@@ -573,6 +677,10 @@ def regular_path_neighbourhood(sweep_tools, tetrahedra, adjacency, path, add_bal
                 for cap in cap_records
             )
             else "OPEN"
+        ),
+        "cap_isomorphisms": cap_maps,
+        "both_cap_orientations_have_simplicial_isomorphisms": all(
+            item["simplicial_disk_isomorphism"] == "PASS" for item in cap_maps
         ),
         **invariants,
         **collapse,

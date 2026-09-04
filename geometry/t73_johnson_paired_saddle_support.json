@@ -75,6 +75,7 @@
       "power": -1,
       "protected_ball_bbox_clearance": "1",
       "regular_path_neighbourhood": {
+        "both_cap_orientations_have_simplicial_isomorphisms": true,
         "both_cap_relative_collapses": "PASS",
         "both_caps_are_twelve_triangle_disks": true,
         "boundary_connected": true,
@@ -122,8 +123,148 @@
             ]
           ]
         ],
+        "cap_isomorphisms": [
+          {
+            "orientation": "preserving",
+            "simplicial_disk_isomorphism": "PASS",
+            "triangle_bijection": true,
+            "vertex_map": [
+              [
+                0,
+                197
+              ],
+              [
+                1,
+                199
+              ],
+              [
+                2,
+                198
+              ],
+              [
+                3,
+                268
+              ],
+              [
+                4,
+                212
+              ],
+              [
+                7,
+                211
+              ],
+              [
+                9,
+                269
+              ],
+              [
+                10,
+                267
+              ],
+              [
+                132,
+                210
+              ],
+              [
+                133,
+                209
+              ],
+              [
+                134,
+                270
+              ],
+              [
+                135,
+                266
+              ],
+              [
+                136,
+                208
+              ]
+            ]
+          },
+          {
+            "orientation": "reversing",
+            "simplicial_disk_isomorphism": "PASS",
+            "triangle_bijection": true,
+            "vertex_map": [
+              [
+                0,
+                197
+              ],
+              [
+                1,
+                210
+              ],
+              [
+                2,
+                208
+              ],
+              [
+                3,
+                268
+              ],
+              [
+                4,
+                212
+              ],
+              [
+                7,
+                209
+              ],
+              [
+                9,
+                270
+              ],
+              [
+                10,
+                266
+              ],
+              [
+                132,
+                199
+              ],
+              [
+                133,
+                211
+              ],
+              [
+                134,
+                269
+              ],
+              [
+                135,
+                267
+              ],
+              [
+                136,
+                198
+              ]
+            ]
+          }
+        ],
         "caps": [
           {
+            "fan": {
+              "boundary_cycle": [
+                0,
+                1,
+                2,
+                7,
+                10,
+                9,
+                3,
+                134,
+                135,
+                133,
+                136,
+                132
+              ],
+              "boundary_length": 12,
+              "center": 4,
+              "fan_status": "PASS",
+              "fan_triangle_count": 12
+            },
             "relative_collapse": {
               "dimension_histogram": {
                 "1": 264,
@@ -231,6 +372,26 @@
             ]
           },
           {
+            "fan": {
+              "boundary_cycle": [
+                197,
+                199,
+                198,
+                211,
+                267,
+                269,
+                268,
+                270,
+                266,
+                209,
+                208,
+                210
+              ],
+              "boundary_length": 12,
+              "center": 212,
+              "fan_status": "PASS",
+              "fan_triangle_count": 12
+            },
             "relative_collapse": {
               "dimension_histogram": {
                 "1": 264,
@@ -564,6 +725,7 @@
       "power": -1,
       "protected_ball_bbox_clearance": "1",
       "regular_path_neighbourhood": {
+        "both_cap_orientations_have_simplicial_isomorphisms": true,
         "both_cap_relative_collapses": "PASS",
         "both_caps_are_twelve_triangle_disks": true,
         "boundary_connected": true,
@@ -611,8 +773,148 @@
             ]
           ]
         ],
+        "cap_isomorphisms": [
+          {
+            "orientation": "preserving",
+            "simplicial_disk_isomorphism": "PASS",
+            "triangle_bijection": true,
+            "vertex_map": [
+              [
+                38,
+                49
+              ],
+              [
+                40,
+                148
+              ],
+              [
+                140,
+                149
+              ],
+              [
+                151,
+                127
+              ],
+              [
+                186,
+                184
+              ],
+              [
+                188,
+                272
+              ],
+              [
+                190,
+                183
+              ],
+              [
+                192,
+                117
+              ],
+              [
+                205,
+                121
+              ],
+              [
+                207,
+                129
+              ],
+              [
+                210,
+                276
+              ],
+              [
+                228,
+                270
+              ],
+              [
+                231,
+                274
+              ]
+            ]
+          },
+          {
+            "orientation": "reversing",
+            "simplicial_disk_isomorphism": "PASS",
+            "triangle_bijection": true,
+            "vertex_map": [
+              [
+                38,
+                49
+              ],
+              [
+                40,
+                183
+              ],
+              [
+                140,
+                184
+              ],
+              [
+                151,
+                272
+              ],
+              [
+                186,
+                149
+              ],
+              [
+                188,
+                127
+              ],
+              [
+                190,
+                148
+              ],
+              [
+                192,
+                117
+              ],
+              [
+                205,
+                270
+              ],
+              [
+                207,
+                274
+              ],
+              [
+                210,
+                276
+              ],
+              [
+                228,
+                121
+              ],
+              [
+                231,
+                129
+              ]
+            ]
+          }
+        ],
         "caps": [
           {
+            "fan": {
+              "boundary_cycle": [
+                38,
+                40,
+                140,
+                151,
+                205,
+                207,
+                210,
+                231,
+                228,
+                188,
+                186,
+                190
+              ],
+              "boundary_length": 12,
+              "center": 192,
+              "fan_status": "PASS",
+              "fan_triangle_count": 12
+            },
             "relative_collapse": {
               "dimension_histogram": {
                 "1": 264,
@@ -720,6 +1022,26 @@
             ]
           },
           {
+            "fan": {
+              "boundary_cycle": [
+                49,
+                148,
+                149,
+                127,
+                121,
+                129,
+                276,
+                274,
+                270,
+                272,
+                184,
+                183
+              ],
+              "boundary_length": 12,
+              "center": 117,
+              "fan_status": "PASS",
+              "fan_triangle_count": 12
+            },
             "relative_collapse": {
               "dimension_histogram": {
                 "1": 264,
@@ -1067,6 +1389,7 @@
       "power": 1,
       "protected_ball_bbox_clearance": "1",
       "regular_path_neighbourhood": {
+        "both_cap_orientations_have_simplicial_isomorphisms": true,
         "both_cap_relative_collapses": "PASS",
         "both_caps_are_twelve_triangle_disks": true,
         "boundary_connected": true,
@@ -1114,8 +1437,148 @@
             ]
           ]
         ],
+        "cap_isomorphisms": [
+          {
+            "orientation": "preserving",
+            "simplicial_disk_isomorphism": "PASS",
+            "triangle_bijection": true,
+            "vertex_map": [
+              [
+                835,
+                57
+              ],
+              [
+                837,
+                58
+              ],
+              [
+                847,
+                64
+              ],
+              [
+                971,
+                209
+              ],
+              [
+                974,
+                222
+              ],
+              [
+                976,
+                206
+              ],
+              [
+                979,
+                205
+              ],
+              [
+                980,
+                207
+              ],
+              [
+                982,
+                208
+              ],
+              [
+                983,
+                210
+              ],
+              [
+                986,
+                221
+              ],
+              [
+                1087,
+                219
+              ],
+              [
+                1088,
+                67
+              ]
+            ]
+          },
+          {
+            "orientation": "reversing",
+            "simplicial_disk_isomorphism": "PASS",
+            "triangle_bijection": true,
+            "vertex_map": [
+              [
+                835,
+                57
+              ],
+              [
+                837,
+                209
+              ],
+              [
+                847,
+                206
+              ],
+              [
+                971,
+                58
+              ],
+              [
+                974,
+                208
+              ],
+              [
+                976,
+                64
+              ],
+              [
+                979,
+                219
+              ],
+              [
+                980,
+                67
+              ],
+              [
+                982,
+                222
+              ],
+              [
+                983,
+                210
+              ],
+              [
+                986,
+                221
+              ],
+              [
+                1087,
+                205
+              ],
+              [
+                1088,
+                207
+              ]
+            ]
+          }
+        ],
         "caps": [
           {
+            "fan": {
+              "boundary_cycle": [
+                835,
+                837,
+                847,
+                1088,
+                1087,
+                974,
+                986,
+                982,
+                979,
+                980,
+                976,
+                971
+              ],
+              "boundary_length": 12,
+              "center": 983,
+              "fan_status": "PASS",
+              "fan_triangle_count": 12
+            },
             "relative_collapse": {
               "dimension_histogram": {
                 "1": 1760,
@@ -1223,6 +1686,26 @@
             ]
           },
           {
+            "fan": {
+              "boundary_cycle": [
+                57,
+                58,
+                64,
+                67,
+                219,
+                222,
+                221,
+                208,
+                205,
+                207,
+                206,
+                209
+              ],
+              "boundary_length": 12,
+              "center": 210,
+              "fan_status": "PASS",
+              "fan_triangle_count": 12
+            },
             "relative_collapse": {
               "dimension_histogram": {
                 "1": 1760,
@@ -1608,6 +2091,7 @@
       "power": 1,
       "protected_ball_bbox_clearance": "1",
       "regular_path_neighbourhood": {
+        "both_cap_orientations_have_simplicial_isomorphisms": true,
         "both_cap_relative_collapses": "PASS",
         "both_caps_are_twelve_triangle_disks": true,
         "boundary_connected": true,
@@ -1655,8 +2139,148 @@
             ]
           ]
         ],
+        "cap_isomorphisms": [
+          {
+            "orientation": "preserving",
+            "simplicial_disk_isomorphism": "PASS",
+            "triangle_bijection": true,
+            "vertex_map": [
+              [
+                835,
+                57
+              ],
+              [
+                837,
+                58
+              ],
+              [
+                847,
+                64
+              ],
+              [
+                971,
+                209
+              ],
+              [
+                974,
+                222
+              ],
+              [
+                976,
+                206
+              ],
+              [
+                979,
+                205
+              ],
+              [
+                980,
+                207
+              ],
+              [
+                982,
+                208
+              ],
+              [
+                983,
+                210
+              ],
+              [
+                986,
+                221
+              ],
+              [
+                1087,
+                219
+              ],
+              [
+                1088,
+                67
+              ]
+            ]
+          },
+          {
+            "orientation": "reversing",
+            "simplicial_disk_isomorphism": "PASS",
+            "triangle_bijection": true,
+            "vertex_map": [
+              [
+                835,
+                57
+              ],
+              [
+                837,
+                209
+              ],
+              [
+                847,
+                206
+              ],
+              [
+                971,
+                58
+              ],
+              [
+                974,
+                208
+              ],
+              [
+                976,
+                64
+              ],
+              [
+                979,
+                219
+              ],
+              [
+                980,
+                67
+              ],
+              [
+                982,
+                222
+              ],
+              [
+                983,
+                210
+              ],
+              [
+                986,
+                221
+              ],
+              [
+                1087,
+                205
+              ],
+              [
+                1088,
+                207
+              ]
+            ]
+          }
+        ],
         "caps": [
           {
+            "fan": {
+              "boundary_cycle": [
+                835,
+                837,
+                847,
+                1088,
+                1087,
+                974,
+                986,
+                982,
+                979,
+                980,
+                976,
+                971
+              ],
+              "boundary_length": 12,
+              "center": 983,
+              "fan_status": "PASS",
+              "fan_triangle_count": 12
+            },
             "relative_collapse": {
               "dimension_histogram": {
                 "1": 1760,
@@ -1764,6 +2388,26 @@
             ]
           },
           {
+            "fan": {
+              "boundary_cycle": [
+                57,
+                58,
+                64,
+                67,
+                219,
+                222,
+                221,
+                208,
+                205,
+                207,
+                206,
+                209
+              ],
+              "boundary_length": 12,
+              "center": 210,
+              "fan_status": "PASS",
+              "fan_triangle_count": 12
+            },
             "relative_collapse": {
               "dimension_histogram": {
                 "1": 1760,
@@ -2068,6 +2712,6 @@
   "paired_saddle_ambient_cells": "OPEN",
   "paired_saddle_support": "PASS",
   "schema": "t73_johnson_paired_saddle_support/v1",
-  "sha256": "B40C6860DE6F94622A5C38E906E3E96D477675BE24801942F928ED11D22427A1",
+  "sha256": "3FD397D7D77198F4A8358BD1EE475E6B19F1F4D6B53AC52CF7B3C2BEEC943A55",
   "sweep_sha256": "188B128AD8D619318F3E5BE1D28A7684082233DFBFC81AB24E69C1F53F5DBA9A"
 }

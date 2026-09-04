@@ -54,10 +54,21 @@ class JohnsonPairedSaddleSupportTest(unittest.TestCase):
             self.assertEqual(neighbourhood["star_tetrahedra"], expected)
             self.assertTrue(neighbourhood["both_caps_are_twelve_triangle_disks"])
             self.assertEqual(neighbourhood["both_cap_relative_collapses"], "PASS")
+            self.assertTrue(
+                neighbourhood["both_cap_orientations_have_simplicial_isomorphisms"]
+            )
+            self.assertEqual(len(neighbourhood["cap_isomorphisms"]), 2)
+            for isomorphism in neighbourhood["cap_isomorphisms"]:
+                self.assertEqual(
+                    isomorphism["simplicial_disk_isomorphism"], "PASS"
+                )
+                self.assertTrue(isomorphism["triangle_bijection"])
             expected_steps = 1812 if movie["power"] < 0 else 12080
             for cap in neighbourhood["caps"]:
                 self.assertEqual(cap["triangle_count"], 12)
                 self.assertEqual(cap["surface"]["topology"], "disk")
+                self.assertEqual(cap["fan"]["fan_status"], "PASS")
+                self.assertEqual(cap["fan"]["boundary_length"], 12)
                 self.assertEqual(
                     cap["relative_collapse"]["relative_collapse_status"], "PASS"
                 )
