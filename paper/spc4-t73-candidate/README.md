@@ -6,13 +6,14 @@ This directory contains the **controlling** English `amsart` preprint
 sphere*
 
 (`main.tex`; Chinese edition `main-zh.tex`).  For an explicit Johnson-generator
-handle presentation the paper proves geometric inputs P0, C, S, and P3 at
-quantum degree \(494\), including \(X_J\cong\Sigma_A^0\).  An exact finite
+handle presentation the paper proves P0 and transports the complete AR upper
+handles to obtain E13/P3, including \(X_J\cong\Sigma_A^0\).  The corrected
+literal-split route would lie in quantum degree \(223\), but its relative
+coefficient split and the C/S statewise shadow remain open.  An exact finite
 calculation gives \(D_3=2624\).  Lean formalizes the abstract quotient
 implication from `ExternalGeometry`; that interface is not inhabited.  The
-paper nevertheless states an unconditional mathematical counterexample theorem
-from its geometric arguments; this is not yet a fully Lean-verified or
-peer-accepted claim.
+paper therefore states a conditional obstruction rather than an unconditional
+counterexample theorem.
 No historical-PD identity is claimed.  Retired September assumptions A1--A5
 are recorded under Hypotheses P0/C/S/P3 and the retired-assumption remark.
 

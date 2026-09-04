@@ -681,11 +681,12 @@ all-owner primitive incidence data do not prove it.
 Define \(J(T)=T\sqcup I^{\sqcup227}\), placing the 227 boundary-parallel z
 arcs in a separated sub-ball of a newly standardized z insertion ball.  This
 is a valid canopolis operation.  Co-Yoneda would close C-H1 if the full
-off-diagonal coefficient admitted the relative factorization
+off-diagonal normalized coefficient
+\(\widehat M_R=M_R\{44+271\}\) admitted the relative factorization
 \[
-M_R((T,Z),(T',Z'))\cong
+\widehat M_R((T,Z),(T',Z'))\cong
 \operatorname{Hom}_{z}(JBT,Z')\otimes
-\operatorname{Hom}_{z}(Z,JBT')
+\operatorname{Hom}_{z}(Z,JBT')\{-227\}
 \tag{C.split}
 \]
 for arbitrary insertion tangles.
@@ -719,3 +720,143 @@ the four parametrized insertion boxes and all coefficient strands, together
 with a simultaneous ambient movie carrying the cyclic connector and all 227
 residual tracks to opposite split sides.  Until then the two-representable
 route remains possible but unproved.
+
+## Conditional two-representable theorem, with all shifts
+
+The preceding missing sphere is exactly the extra hypothesis needed for an
+ordinary tensor/Kunneth proof.  The general statement is as follows.
+
+Let \(p_y\leq p_z\), put \(\ell=p_z-p_y\), let
+\(\mathcal C=\mathcal C_{p_y}\), \(\mathcal D=\mathcal C_{p_z}\), and let
+\[
+J:\mathcal C\longrightarrow\mathcal D,\qquad
+J(T)=T\sqcup I^{\sqcup\ell}.
+\]
+Let \(B\) be the product tangle on the \(p_y\) active channels and write
+\(K=J\circ B\).  Let
+\(\widehat M_R=M_R\{p_y+p_z\}\) denote the MWW coefficient with its
+one-handle normalization.
+
+Assume the relative four-box presentation contains a separating 2-sphere,
+disjoint from all coefficient strands and all four insertion boxes, such
+that for every \(T,T'\in\mathcal C\) and \(Z,Z'\in\mathcal D\) its two sides
+are precisely the closed links defining
+\[
+\operatorname{Hom}_{\mathcal D}(KT,Z')
+\quad\text{and}\quad
+\operatorname{Hom}_{\mathcal D}(Z,KT').
+\tag{C.split-hom}
+\]
+Then there is a homogeneous natural isomorphism
+\[
+\widehat M_R((T,Z),(T',Z'))
+\cong
+\operatorname{Hom}_{\mathcal D}(KT,Z')
+\otimes_{\mathbb Q}
+\operatorname{Hom}_{\mathcal D}(Z,KT')\{p_y-p_z\}.
+\tag{C.rep2}
+\]
+
+The tensor in (C.rep2) is the ordinary tensor over \(\mathbb Q\), not a
+relative tensor over an arc algebra.  Indeed, the separating sphere realizes
+the coefficient link as a split disjoint union, and monoidality/Kunneth for
+the strict foam theory over the field \(\mathbb Q\) gives the displayed
+tensor product.  Extending the same relative split by identities on the four
+insertion boxes proves naturality in all variables.  The first
+\(\mathcal D\) action is postcomposition on the first representable, the
+second is precomposition on the second, and the two \(\mathcal C\) actions
+are induced by \(K(f)=J(Bf)\).
+
+The shift in (C.rep2) is forced directly by the literal split.  The
+normalized coefficient has shift \(p_y+p_z\), whereas the tensor of two
+normalized \(\mathcal D\)-Hom spaces has shift \(2p_z\).  Their difference
+is \(p_y-p_z=-\ell\).  Taking the enriched coend over
+\(\mathcal D\) and composing gives
+\[
+\begin{aligned}
+\widehat M_R^z(T,T')
+&=
+\int^{Z\in\mathcal D}
+\widehat M_R((T,Z),(T',Z))\\
+&\cong
+\int^{Z\in\mathcal D}
+\operatorname{Hom}_{\mathcal D}(KT,Z)
+\otimes
+\operatorname{Hom}_{\mathcal D}(Z,KT')\{-\ell\}\\
+&\cong
+\operatorname{Hom}_{\mathcal D}(KT,KT')\{-\ell\}.
+\end{aligned}
+\tag{C.Yoneda}
+\]
+The last arrow is enriched co-Yoneda.  Explicitly,
+\([a\otimes b]\mapsto b\circ a\), with inverse
+\(c\mapsto[\operatorname{id}_{KT}\otimes c]\); the coend relation is exactly
+associativity of composition.  Hence all mixing \(\mathcal D\)-morphisms,
+including (C.mix1)--(C.mix2), are absorbed before any counit is applied.
+
+The closure of \(JT'\cup\overline{JT}\) is the split union of the closure of
+\(T'\cup\overline T\) and \(\ell\) unknots.  From MWW Definition 4.5,
+\[
+\begin{aligned}
+\operatorname{Hom}_{\mathcal D}(JBT,JBT')
+&\cong
+\operatorname{KhR}_2\!\left(
+(BT'\cup\overline{BT})\sqcup U^{\sqcup\ell}
+\right)\{p_z\}\\
+&\cong
+\operatorname{Hom}_{\mathcal C}(BT,BT')\{\ell\}
+\otimes A^{\otimes\ell}.
+\end{aligned}
+\tag{C.Kunneth}
+\]
+Combining (C.Yoneda) and (C.Kunneth) yields
+\[
+\widehat M_R^z(T,T')
+\cong
+\operatorname{Hom}_{\mathcal C}(BT,BT')
+\otimes A^{\otimes\ell}.
+\tag{C.Hnorm}
+\]
+Removing the global MWW shift \(\{p_y+p_z\}\) gives the raw comparison
+\[
+M_R^z(T,T')
+\cong
+\operatorname{Hom}_{\mathcal C}(BT,BT')\{-(p_y+p_z)\}
+\otimes A^{\otimes\ell}.
+\tag{C.Hraw}
+\]
+Thus at \((p_y,p_z,\ell)=(44,271,227)\), the normalized reduced coefficient
+has no Hom shift.  The all-\(X\) diagonal has degree \(227\), and the cabled
+shift \(-4\) gives degree \(223\).  Equivalently, the raw reduced comparison
+has shift \(-315\), after which the global \(+315\) cancels it.
+
+This contradicts, rather than derives, the manuscript's raw shift \(-44\)
+and degree \(494\).  The latter shift belongs to a different proposed
+single-Hom factorization.  A literal tensor of two normalized
+\(\mathcal C_{271}\)-representables cannot simultaneously have the
+manuscript's grading.
+
+Both remaining \(\mathcal C\) action squares commute by (C.rep2) naturality,
+co-Yoneda associativity, and the split Kunneth map.  After applying
+\(\epsilon^{\otimes\ell}\), BPW Proposition 3.12 sends the regular
+coefficient qTrace to vertical trace; Propositions 3.20--3.21 send it to
+horizontal trace.  Oriented doubling and the BHPW qHH functor give
+\[
+\operatorname{Sh}^{p_y}_h:
+q\operatorname{Tr}(\mathcal C_{p_y};M_R^z)
+\longrightarrow
+\operatorname{End}(E_{2p_y,h}).
+\tag{C.state-shadow}
+\]
+For \(p_y=44\), this is the required endomorphism of \(E_{88,h}\), and the
+external cup/cap give the correctly typed detector (C.H1h).
+
+Without the separating sphere, canopolis gluing supplies a composition of
+tangle bimodules, modeled at chain level by a relative tensor over an arc
+algebra.  It does not supply the ordinary tensor of Hom homologies in
+(C.rep2), and composition is not generally an isomorphism.  Sweetness of the
+bimodules removes some derived-projectivity issues but does not turn a
+connected planar composite into a split-link Kunneth tensor.  Therefore a
+literal separating sphere, or a separate excision theorem proving the same
+monoidal equivalence, is mathematically required for this particular
+two-representable proof.

@@ -9,18 +9,21 @@ A=\begin{pmatrix}0&269&1240\\0&41&189\\1&0&32\end{pmatrix}
 \]
 (Iwaki standard form \(X_{41,189,73}\)).
 
-**The manuscript claims a mathematical counterexample to the smooth
-four-dimensional Poincaré conjecture. It is not yet fully Lean-verified or
-peer accepted.** The controlling manuscript is
+**The manuscript currently proves P0/E13 at paper level and gives a
+conditional skein-lasagna obstruction; C and S remain open at the corrected
+coefficient comparison.  No unconditional counterexample is claimed.** The controlling manuscript is
 [`paper/spc4-t73-candidate/main.tex`](paper/spc4-t73-candidate/main.tex)
 (*A skein-lasagna obstruction for a trace-73 Cappell--Shaneson
 sphere*).
 
 ## What is proved, and what is open
 
-For an explicit **Johnson-generator** handle presentation the paper proves the
-geometric inputs **P0, C, S, and P3** needed for a skein-lasagna comparison at
-quantum degree \(494\), including the identification \(X_J\cong\Sigma_A^0\).
+For an explicit **Johnson-generator** handle presentation the paper now gives
+a paper-level construction of **P0** and transports the complete AR upper
+handles to obtain **E13/P3**, including \(X_J\cong\Sigma_A^0\).  The
+two-representable coefficient route has corrected candidate degree \(223\),
+but its relative four-box split and the resulting **C/S** statewise shadow are
+not yet constructed.
 
 An exact finite calculation gives a nonzero divided cubic \(D_3=2624\). An
 Artin--Magnus certificate and the pure-braid Andreadakis theorem establish a
@@ -28,15 +31,16 @@ third-order property of the public braid word.
 
 A Lean development formalizes the **abstract quotient argument**: given
 interface data assembling the MWW quotients and four-handle transport
-(`ExternalGeometry`), a nonzero degree-\(494\) class would obstruct
+(`ExternalGeometry`), a nonzero class in any nonzero quantum degree would obstruct
 diffeomorphism with \(S^4\). Those geometric interfaces are **not** constructed
 in Lean.
 
 | Layer | Status |
 | --- | --- |
-| Finite algebra (\(2624\), degree \(494\), \(\det A=\det(A-I)=1\)) | Checked in Lean |
+| Finite algebra (\(2624\), legacy degree \(494\), \(\det A=\det(A-I)=1\)) | Checked in Lean; Lean degree not migrated to corrected \(223\) route |
 | Abstract conditional implication | Checked in Lean |
-| Johnson P0 / C / S / P3 (paper geometry + certificates) | Discharged in the paper |
+| Johnson P0 / E13 / topological P3 | Proved at paper level after detector retyping |
+| C / S coefficient and hemisphere comparison | **Open** at the relative split/statewise shadow |
 | Lean inhabitant of `ExternalGeometry` | **Open** |
 
 The exact Lean boundary is
@@ -46,8 +50,9 @@ The exact Lean boundary is
 python3 scripts/audit_t73_premises.py --check
 ```
 
-Expected summary: `P0/C/S/P3=PASS`,
-`OVERALL=PASS_MATHEMATICAL_LEAN_PARTIAL`, `COUNTEREXAMPLE=True`.
+The legacy script still prints historical PASS labels and is not an
+authoritative completion test; use `audit/RUNNING_PAPER_AUDIT.md` and the new
+fail-closed gates instead.
 
 **Erratum (2 September 2026).** An earlier draft mixed two endpoint index
 tables and reported \(-59072\). With both objects in the collar table used by
@@ -148,7 +153,7 @@ python -B scripts/verify_t73_actual_sphere_system.py --check
 python -B scripts/verify_t73_hemisphere_movies.py --check
 python -B scripts/certify_t73_s_relative_moves.py --check
 
-# P3: four-handle picture, standard-S^4 degree 494, CS identification
+# P3: four-handle picture, standard-S^4 support, CS identification
 python -B scripts/certify_t73_p3_four_handle.py --check
 python -B scripts/certify_t73_e12_s4.py --check
 python -B scripts/certify_t73_e13_close.py --check
@@ -175,7 +180,7 @@ python -B scripts/check_t73_claim_boundary.py
 | `verify_t73_actual_sphere_system.py` | Actual partial-W2 sphere system | `ACTUAL_SPHERE_SYSTEM=PASS` |
 | `verify_t73_hemisphere_movies.py` | Actual MWW three-handle maps | `ACTUAL_W2_LASAGNA_MAP=True` |
 | `certify_t73_p3_four_handle.py` | \(X_J\) four-handle layer | `E11`/`E12` PASS; `E13=PARTIAL` by design |
-| `certify_t73_e12_s4.py` | Empty-link degree \(494\) on standard \(S^4\) | `S4_DEGREE_494_ZERO=True` |
+| `certify_t73_e12_s4.py` | Legacy empty-link degree \(494\) check; MWW vanishing holds at corrected \(223\) as well | `S4_DEGREE_494_ZERO=True` |
 | `certify_t73_e13_*.py` | \(X_J\cong\Sigma_A^0\) pipeline | `IDENTIFIED_WITH_SIGMA=True` |
 | `audit_t73_premises.py` | Aggregate status | `PASS_MATHEMATICAL_LEAN_PARTIAL`, `COUNTEREXAMPLE=True` |
 | `check_t73_claim_boundary.py` | Paper/Lean claim boundary | `T73_CLAIM_BOUNDARY=UNCONDITIONAL_PAPER_LEAN_PARTIAL` |
@@ -233,11 +238,10 @@ local dependency copies are not part of the source contract.
 
 ## Scope
 
-This is a public verification package for an **unconditional paper-level
-counterexample theorem**, not a claim of peer acceptance or complete Lean
-formalization. The most useful adverse review attacks the Johnson geometric
-bindings, the analytic MWW comparison, and the remaining Lean
-`ExternalGeometry` assembly, not the already checked integer arithmetic.
+This is a public verification package for a **conditional obstruction**, not
+an unconditional counterexample or a claim of complete Lean formalization.
+The remaining load-bearing problem is the relative two-representable MWW
+coefficient split and its statewise beta/psi/hemisphere naturality.
 
 ## Why this is being released on GitHub first
 

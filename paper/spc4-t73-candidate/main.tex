@@ -76,7 +76,8 @@ We study the trace-73 Cappell--Shaneson homotopy $4$-sphere associated with
 A=\begin{pmatrix}0&269&1240\\0&41&189\\1&0&32\end{pmatrix}.
 \]
 Finite certificates reconstruct the Johnson presentation data, the public
-detector braid, the integer $2624$, and the proposed degree $494$ ledger.
+detector braid, the integer $2624$, and the corrected literal-split degree
+$223$ ledger.
 The interpretation of those certificates as the actual P0, C, S and P3/E13
 geometric and categorical inputs is separated explicitly below from the
 predicates checked by code.
@@ -86,8 +87,8 @@ Conditional on the ambient Johnson--AR identification, the MWW coefficient
 comparison, and the actual three- and four-handle bindings stated below, the
 calculation would show that $\Sigma_A^0$ is not diffeomorphic to $S^4$.
 A Lean development formalizes the abstract quotient argument: given interface
-data assembling the MWW quotients and four-handle transport, a nonzero
-degree-$494$ class would obstruct diffeomorphism with $S^4$.
+data assembling the MWW quotients and four-handle transport, a nonzero class
+in any nonzero quantum degree would obstruct diffeomorphism with $S^4$.
 Those geometric interfaces are not constructed as Lean inhabitants, so the
 formal theorem remains conditional and no Lean-verified counterexample is claimed.
 \end{abstract}
@@ -187,12 +188,12 @@ explain the choice of candidate but do not decide its diffeomorphism type.
 
 \section{Precise statements}
 
-We first state the abstract theorem in the form actually proved by the Lean
-development.  This prevents geometric intuition from silently strengthening
-the result.
+We first state the abstract theorem in a degree-parametrized form.  The current
+Lean file contains its earlier specialization at degree $494$; the corrected
+literal-split comparison below instead has degree $223$.
 
 Fix a collection of manifold labels, a graded family of rational vector
-spaces $G(M,q)$, labels $X$ and $S^4$, and predicates
+spaces $G(M,q)$, a nonzero integer $q_*$, labels $X$ and $S^4$, and predicates
 \(\operatorname{HS}(M)\) and \(\operatorname{Diff}(M,N)\).
 
 \begin{theorem}[Abstract nonstandardness theorem]\label{thm:A}
@@ -207,7 +208,7 @@ and linear isomorphisms
 \[
 T:W_2\xrightarrow{\cong}W_3,
 \qquad
-F:W_3\xrightarrow{\cong}G(X,494),
+F:W_3\xrightarrow{\cong}G(X,q_*),
 \]
 such that
 \begin{align}
@@ -215,9 +216,9 @@ such that
 \ell_1q_{01}&=\ell_0,\label{eq:q01}\\
 \ell_2q_{12}&=\ell_1.\label{eq:q12}
 \end{align}
-Assume also that every element of $G(S^4,494)$ is zero and that every
+Assume also that every element of $G(S^4,q_*)$ is zero and that every
 diffeomorphism $X\to S^4$ induces a linear isomorphism
-\(G(X,494)\cong G(S^4,494)\).  Then $X$ is not diffeomorphic to $S^4$.
+\(G(X,q_*)\cong G(S^4,q_*)\).  Then $X$ is not diffeomorphic to $S^4$.
 \end{theorem}
 
 \begin{proof}
@@ -225,7 +226,7 @@ Set $v=F(T(q_{12}(q_{01}(x_0))))$.  If $v=0$, injectivity of $F$ and $T$
 implies $q_{12}(q_{01}(x_0))=0$.  Applying $\ell_2$ and using
 \eqref{eq:q01}--\eqref{eq:q12} gives $2624=0$, a contradiction.  Thus
 $v\ne0$.  If $X$ were diffeomorphic to $S^4$, the induced isomorphism would
-send $v$ to an element of $G(S^4,494)$, hence to zero, contradicting
+send $v$ to an element of $G(S^4,q_*)$, hence to zero, contradicting
 injectivity.
 \end{proof}
 
@@ -258,7 +259,8 @@ representation, natural also for boundary cobordisms supported away from
 $B$.  Under this map the point-push action is the public Burau
 representation, and the divided cubic row descends through every beta and psi
 relation.  Its value on the selected class is $2624$.
-The class lies in quantum degree $494$ on the Johnson replacement collar.
+For the literal two-representable split route below, the class lies in quantum
+degree $223$ on the Johnson replacement collar.
 \end{hypothesis}
 
 \begin{remark}[Computational support for C]
@@ -291,7 +293,7 @@ remaining boundary is $S^3$.  Attaching a $4$-ball along that $S^3$ yields a
 closed $4$-manifold $X_J$.  MWW Proposition~3.4 identifies the empty-link
 lasagna module of this $W_3$ picture with $\mathcal S^2_0(X_J)$.  MWW
 Corollary~3.5 gives $\mathcal S^2_0(S^4)\cong\mathbb Z$ concentrated in
-bidegree $(0,0)$, so the quantum-$494$ summand vanishes.  Diffeomorphisms
+bidegree $(0,0)$, so the quantum-$223$ summand vanishes.  Diffeomorphisms
 induce grading-preserving equivalences.  $\det A=\det(A-I)=1$ is the
 homotopy-sphere criterion for the standard Cappell--Shaneson construction.
 The identification $X_J\cong\Sigma_A^0$ is the constructed Johnson CS
@@ -300,9 +302,11 @@ handle picture of Hypothesis~\ref{hyp:P0}, not these determinants.
 
 \begin{remark}[Computational and published support for P3]
 Three-handle attachment along each belt sphere restores the boundary
-$S^3$; attaching a PL $4$-ball gives the closed manifold $X_J$.  The empty-link Khovanov ranks in quantum degrees $0$ and $494$, the
-Euler characteristic of the attaching $4$-ball, and the grading sum
-$-44+227+315-4=494$ are computed directly.  The isomorphisms
+$S^3$; attaching a PL $4$-ball gives the closed manifold $X_J$.  The
+empty-link complex is supported in quantum degree zero, so its degree-$223$
+summand vanishes; the older finite verifier instantiated the same observation
+at degree $494$.  The corrected split-route grading $227-4=223$ is derived in
+Proposition~\ref{prop:degree-223}.  The isomorphisms
 $\mathcal S^2_0(B^4)\cong\mathcal S^2_0(S^4)$ and
 $\mathcal S^2_0(S^4)\cong\mathbb Z$ concentrated in bidegree $(0,0)$ are
 \cite[Proposition~3.4 and Corollary~3.5]{ManolescuWalkerWedrich2023}.
@@ -328,7 +332,7 @@ four-dimensional Poincar\'e conjecture.
 
 \begin{proof}[Proof of Theorem~\ref{thm:joined}]
 The stated hypotheses supply the mathematical data of Theorem~\ref{thm:A}.  Hence
-the nonzero degree-$494$ class obstructs a diffeomorphism to $S^4$.
+the nonzero degree-$223$ class obstructs a diffeomorphism to $S^4$.
 Iwaki Proposition~2.1 and $\det(A-I)=1$ show independently that
 $\Sigma_A^0$ is a homotopy sphere.  The Lean development formalizes the
 finite algebra and the abstract implication but not this geometric and
@@ -552,8 +556,10 @@ addition.  The rational Khovanov--Rozansky comparison must use the corrected
 writhe normalization in the published erratum to Manolescu--Neithalath
 \cite{ManolescuNeithalathErrata2026}.
 Thus the shifts $-44,+227,+315,-4$ must be derived in one consistent
-orientation and framing convention before the sum $494$ can be used as an
-absolute MWW quantum degree.
+orientation and framing convention before the corrected sum $223$ can be used
+as an absolute MWW quantum degree.  The former $494$ ledger corresponds to
+the rejected single-Hom normalization and is retained only in historical
+artifacts.
 
 \section{Lasagna modules and the comparison framework}
 
@@ -581,7 +587,7 @@ isomorphism for the empty boundary link.
 $\SN(S^4)\cong\Z$, concentrated in bidegree $(0,0)$.
 \end{itemize}
 
-At $N=2$, a nonzero class in bidegree $(0,494)$ would therefore obstruct a
+At $N=2$, a nonzero class in bidegree $(0,223)$ would therefore obstruct a
 diffeomorphism to $S^4$.  The intended proof constructs a functional at the
 one-handle stage, shows that it annihilates the two-handle and three-handle
 relations, and transports the resulting nonzero class through the
@@ -1356,30 +1362,36 @@ $P_{86}\to P_{88}$.  It is the product
 \]
 with coefficient profunctor $M_R$ and global one-handle shift
 $\{44+271\}=\{315\}$ \cite[Theorem~4.7]{ManolescuWalkerWedrich2023}.
-First take the coefficient coend in the $z$ variable,
+Write $\widehat M_R=M_R\{315\}$ for this normalized coefficient.  First take
+the coefficient coend in the $z$ variable,
 \begin{equation}\label{eq:zcoend}
-M_R^z(T,T')=
+\widehat M_R^z(T,T')=
 \int^{Z\in\mathcal C_{271}}
-M_R\bigl((T,Z),(T',Z)\bigr).
+\widehat M_R\bigl((T,Z),(T',Z)\bigr).
 \end{equation}
 Reordering the generators and relations of the two coends gives
 \[
-HH_0(\mathcal C_{44}\boxtimes\mathcal C_{271};M_R)
-\cong HH_0(\mathcal C_{44};M_R^z).
+HH_0(\mathcal C_{44}\boxtimes\mathcal C_{271};\widehat M_R)
+\cong HH_0(\mathcal C_{44};\widehat M_R^z).
 \]
 
 The coefficient comparison required by C is the following natural
 representability statement:
 \begin{equation}\label{eq:HattoriActual}
-H^z_{T,T'}:M_R^z(T,T')\xrightarrow{\cong}
-\operatorname{Hom}_{\mathcal C_{44}}(BT,BT')\{-44\}
+\widehat H^z_{T,T'}:\widehat M_R^z(T,T')\xrightarrow{\cong}
+\operatorname{Hom}_{\mathcal C_{44}}(BT,BT')
 \otimes A^{\otimes227},
 \qquad A=\Q[X]/(X^2).
 \end{equation}
-Here $B$ is the 44-strand product tangle.  The shift $-44$ now has the correct
-type: objects of $\mathcal C_{44}$ have 88 boundary points and MWW Definition
-4.5 puts the shift $+44$ in their Hom spaces.  The noninvertible cup
-$P_{86}\to P_{88}$ is not part of this coefficient equivalence.
+Here $B$ is the 44-strand product tangle.  This is the normalized form; for
+the raw coefficient it is equivalently
+\[
+M_R^z(T,T')\cong
+\operatorname{Hom}_{\mathcal C_{44}}(BT,BT')\{-315\}
+\otimes A^{\otimes227}.
+\]
+The noninvertible cup $P_{86}\to P_{88}$ is not part of this coefficient
+equivalence.
 
 Equation~\eqref{eq:HattoriActual} must be proved before splitting off and
 capping the 227 circles.  A naive K\"unneth/counit operation before the
@@ -1398,40 +1410,77 @@ Thus the correct order is: prove a two-sided representable factorization of
 the full coefficient, evaluate the complete $\mathcal C_{271}$ coend by
 co-Yoneda, and only then apply K\"unneth and the circle counits.
 
-Concretely, the missing construction is a boundary-parametrized canopolis
-operation $J:\mathcal C_{44}\to\mathcal C_{271}$ adding the 227 standard
-$z$-arcs, together with an isotopy relative to every insertion box which
-factors the off-diagonal coefficient into the two representable $z$-Hom
-factors.  BHPW strict functoriality would then prove both residual
-$\mathcal C_{44}$ action squares, and co-Yoneda would prove
-\eqref{eq:HattoriActual}.  The all-owner ledger constructs the fixed attaching
-arcs but not this arbitrary-insertion factorization.  Accordingly
-\eqref{eq:HattoriActual} remains the substantive coefficient-shadow clause of
-Hypothesis~\ref{hyp:P1}, rather than a consequence of the circle count.
+\begin{proposition}[Candidate four-box target normal form]\label{prop:four-box-normal-form}
+There is an explicit rational target pattern with the following form relative
+to four parametrized insertion balls.  Two
+disjoint closure balls contain respectively the left and right representable
+closures.  Each contains $44$ active $y$--$z$ product corridors and $227$
+boundary-parallel $z$ identity arcs, all in distinct product levels with
+relative twist zero.  The cyclic corridor
+\[
+\texttt{m\_2:C\_i}\longrightarrow\texttt{c1:letter:0}
+\]
+occupies its own product level.  The boundary sphere of either closure ball
+separates the two target factors relative to all four insertion balls.
+\end{proposition}
 
-The first missing geometric piece is explicit.  Of the 42 selected $m_2$
-pairs, 41 use ordinary Johnson central connectors.  The final pair joins the
-bottom arc \texttt{m\_2:C\_i} cyclically to
-\texttt{c1:letter:0} through both mapping-handle arcs and the
-$t/h_{CS}$ cancellation collar.  The repository records hashes and a routing
-rule for this connector but no separating $2$-sphere, split-side assignment,
-or simultaneous ambient movie relative to both $z$ insertion boxes.  The 227
-leftover transports are likewise stored individually, not as one such relative
-movie.  Therefore the literal two-representable factorization is not presently
-a paper consequence of the finite incidence ledger.
+\begin{proof}
+The artifact
+\texttt{t73\_selected\_canopolis\_normal\_form.json} places the four boxes in
+two disjoint rational cuboids separated by the plane $x=0$, realizes the
+$271$ strands on each side at distinct rational levels, and records the cyclic
+connector in level $43$.  Its verifier reconstructs the $44+227$ source IDs,
+checks the two separating cubical spheres, product framings and disjointness,
+and rejects cyclic-connector, count, box, separator, lane and framing
+mutations.
+\end{proof}
+
+The target pattern in Proposition~\ref{prop:four-box-normal-form} defines
+the canopolis operation
+\[
+J:\mathcal C_{44}\longrightarrow\mathcal C_{271},
+\qquad J(T)=BT\sqcup I^{\sqcup227},
+\]
+relative to arbitrary tangles placed in the four insertion balls.  What is not
+yet supplied is a complete boundary endpoint incidence table for the actual
+coefficient exterior and a framed ambient isotopy, relative to those four
+boxes, from that exterior to the target.  Primitive source identifiers do not
+determine the endpoint pairing of a canopolis tangle.  In particular, the
+cyclic connector and the $227$ individually standardized tracks have not been
+shown to lie on the two target sides simultaneously.
+
+If the missing relative isotopy exists, the two closure balls give a literal
+split union.  The normalized coefficient has shift $44+271$, whereas the two
+normalized $\mathcal C_{271}$ Hom factors have total shift $2\cdot271$;
+therefore the two-representable factorization carries shift $-227$.
+Enriched co-Yoneda retains that shift, while the split-circle K\"unneth
+identification
+\[
+\operatorname{Hom}_{\mathcal C_{271}}(JBT,JBT')
+\cong\operatorname{Hom}_{\mathcal C_{44}}(BT,BT')\{227\}
+\otimes A^{\otimes227}
+\]
+cancels it.  BHPW strict functoriality proves both residual
+$\mathcal C_{44}$ action squares, giving \eqref{eq:HattoriActual}.  If changing the pairing instead requires a saddle
+cobordism, this is not an isotopy and its Euler/quantum degree must be included;
+the displayed normalized formula does not account for such an extra
+cobordism.
 
 The ordinary quotient algebra after this representability input, including
 both cyclic-relation spans, is checked in the formal development.\footnote{See
 \texttt{Smooth4PC/RepresentableCoefficient.lean}.}
 
 \begin{lemma}[Corrected coefficient reduction]\label{lem:C1}
-If the boundary-parametrized two-sided factorization just described exists,
-then \eqref{eq:HattoriActual} is a homogeneous natural isomorphism of
+If the actual coefficient exterior is framed-isotopic relative to the four
+insertion balls to the target of
+Proposition~\ref{prop:four-box-normal-form}, then
+\eqref{eq:HattoriActual} is a homogeneous natural isomorphism of
 $\mathcal C_{44}$-coefficient bimodules, with both residual gluing actions.
 \end{lemma}
 
 \begin{proof}
-Apply the factorization relative to arbitrary insertion boxes.  Composition
+Apply the factorization relative to arbitrary insertion boxes, with the
+$-227$ normalization just computed.  Composition
 in the two representable $\mathcal C_{271}$ Hom factors is exactly the two
 $z$-actions, so the enriched co-Yoneda lemma evaluates
 \eqref{eq:zcoend}.  What remains is the $B$-transported
@@ -1439,7 +1488,7 @@ $\mathcal C_{44}$ Hom coefficient and 227 split circle factors.  K\"unneth
 over $\Q$ gives the tensor product in \eqref{eq:HattoriActual}.  Extending the
 same product-ribbon isotopy by an arbitrary residual morphism shows that the
 left and right action squares are the same glued foam; BHPW strictness fixes
-their signs.  The $-44$ shift removes the MWW Hom normalization.
+their signs.  The $-227$ co-Yoneda shift and $+227$ K\"unneth shift cancel.
 \end{proof}
 
 \subsection{Quantum trace and the endpoint map}
@@ -1453,7 +1502,7 @@ homogeneous coefficient morphisms on the Johnson replacement collar.  BPW's
 canonical vertical-to-horizontal functor and the BHPW strict tangle/foam
 functor, followed by oriented doubling of the 44 wickets, give
 \begin{equation}\label{eq:actualShadow}
-\operatorname{Sh}^{44}_q:q\operatorname{Tr}(\mathcal C_{44};M_R^z)
+\operatorname{Sh}^{44}_q:q\operatorname{Tr}(\mathcal C_{44};\widehat M_R^z)
 \longrightarrow\operatorname{End}_{R_q}(E_{88}),
 \end{equation}
 after the flat-base qHH$_0$/Chern identification
@@ -1478,15 +1527,15 @@ last assertion.
 Let $I_{44}$ be the standard identity object in $\mathcal C_{44}$ and choose
 $T_1$ with $BT_1=I_{44}$.  Define
 \[
-v_T=(H^z_{T_1,T_1})^{-1}
+v_T=(\widehat H^z_{T_1,T_1})^{-1}
   (\operatorname{Id}_{I_{44}}\otimes X^{\otimes227}).
 \]
 The circle counits give
 $\operatorname{Sh}^{44}_h([v_T])=\operatorname{Id}_{E_{88,h}}$.
 The external standard cup gives $u_h\in E_{88,h}$.  The intrinsic
-framed-$\KhR_2$ ledger is
+framed-$\KhR_2$ ledger for the literal-split route is
 \[
--44+227+315-4=494.
+227-4=223.
 \]
 
 Before any public index is assigned, the 44 product rectangles give
@@ -1533,7 +1582,7 @@ This certifies the standard pivotal convention, not yet the word ``absolute''
 in the degree statement above.  The coefficient closure, Hattori target,
 selected cabled state and MWW--BHPW comparison diagrams still need one common
 writhe/framing ledger using the Manolescu--Neithalath erratum.  Until that
-ledger is supplied, $494$ is the intrinsic formal sum and its absolute
+ledger is supplied, $223$ is the intrinsic formal sum and its absolute
 comparison remains part of Hypothesis~\ref{hyp:P1}.
 
 Over $\Q[[h]]$ define
@@ -1554,7 +1603,7 @@ cubic vanishing.
 Thus $D_h$ takes values in $h^3\Q[[h]]$.  Division by $h^3$ is unique, and
 reduction modulo $h$ gives a lift-independent ordinary functional
 \[
-D_3:HH_0(\mathcal C;M_R)\longrightarrow\Q.
+D_3:HH_0(\mathcal C_{44};\widehat M_R^z)\longrightarrow\Q.
 \]
 Positive-order corrections in the cup, cap, and basis change do not alter
 the cubic coefficient.
@@ -1728,13 +1777,13 @@ D_3(\psi_i^{[1]}x-x)=0.
 The quotient universal property and MWW Theorem~3.2 therefore give
 $\overline D_3:\mathcal S^2_0(W_2;\Q)\to\Q$.
 
-\subsection{C conclusion and the degree-$494$ square}
+\subsection{C conclusion and the corrected degree-$223$ square}
 
 The MWW one- and two-handle maps fit into the commuting diagram
 \[
 \begin{array}{ccccccc}
-M_R^z(T_1,T_1)&\xrightarrow{H^z_{T_1,T_1}}&
-\operatorname{End}_{\mathcal C_{44}}(I_{44})\{-44\}\otimes A^{\otimes227}
+\widehat M_R^z(T_1,T_1)&\xrightarrow{\widehat H^z_{T_1,T_1}}&
+\operatorname{End}_{\mathcal C_{44}}(I_{44})\otimes A^{\otimes227}
 &\xrightarrow{\ q\operatorname{Tr},\epsilon^{\otimes227},\operatorname{Sh}^{44}\ }&
 \operatorname{End}(E_{88})&\xrightarrow{\ x\mapsto[h^3]\ell(\rho(W)-I)xu\ }&\Q\\
 \big\downarrow{\mathrm{Glue}_{1h}}&&&&&&\big\Vert\\
@@ -1748,9 +1797,10 @@ M_R^z(T_1,T_1)&\xrightarrow{H^z_{T_1,T_1}}&
 \]
 The left vertical map and its shift are MWW Theorem~4.7, and the bottom
 isomorphism is MWW Theorem~3.2.  The upper selected element is
-$\operatorname{Id}_{I_{44}}\otimes X^{\otimes227}$.  Its successive degrees are
+$\operatorname{Id}_{I_{44}}\otimes X^{\otimes227}$.  Its normalized
+one-handle degree and cabled degree are
 \[
--44+227=183,\qquad183+315=498,\qquad498-4=494.
+227,\qquad227-4=223.
 \]
 Under Hypothesis~\ref{hyp:P1}, Diagram (28) sends it to a class $x_2$ satisfying
 $\overline D_3(x_2)=2624\ne0$ on the Johnson replacement collar.
@@ -2092,7 +2142,7 @@ identifications,
 for the Johnson
 replacement four-handle picture $X_J$, three-handle attachment along each
 belt sphere restores the boundary $S^3$, a PL $4$-ball is attached, and the
-quantum degree-$494$ summand of the standard sphere module vanishes by the
+quantum degree-$223$ summand of the standard sphere module vanishes by the
 computation in the proof of Hypothesis~\ref{hyp:P3} together with MWW
 Corollary~3.5.  Hypothesis~\ref{hyp:P0} identifies $X_J$ with $\Sigma_A^0$.
 
@@ -2100,8 +2150,9 @@ Corollary~3.5.  Hypothesis~\ref{hyp:P0} identifies $X_J$ with $\Sigma_A^0$.
 A Lean development \cite{Lean4} proves Theorem~\ref{thm:A} as a conditional
 implication from structures \texttt{ExternalGeometry} and
 \texttt{CSExternalGeometry}.  It checks the matrix arithmetic, the final
-identity $(-2)^3(-328)=2624$, the integer grading sum, and the abstract
-quotient lemmas, but does not
+identity $(-2)^3(-328)=2624$, the earlier degree-$494$ integer sum, and the
+abstract quotient lemmas.  It has not yet been migrated to the corrected
+degree $223$ and does not
 construct geometric instances.  Appendix~\ref{app:lean-fields}
 lists the correspondence with the Lean fields.
 \end{remark}
@@ -2213,7 +2264,7 @@ Lean field & Mathematical obligation \\
 \texttt{q01}, \texttt{ell1\_comp\_q01} & Complete two-handle beta/psi quotient and descent. \\
 \texttt{q12}, \texttt{ell2\_comp\_q12} & Reversed belt spheres of S, MWW hemisphere maps, and complete coequalizer.  Not the E7 ``$B$ is fixed'' claim. \\
 \texttt{transport}, \texttt{fourIso} & E11 for the Johnson replacement $X_J$, not $\Sigma_A^0$. \\
-\texttt{s4DegreeZero} & Computed \texttt{EmptyKhQ}(494)=0 and PL $S^4$ Euler data from \texttt{certify\_t73\_e12\_s4.py}.  The isomorphisms $G(B^4)\simeq G(S^4)$ and $\mathcal S^2_0(S^4)\cong\mathbb Z$ are MWW Proposition~3.4 and Corollary~3.5, cited not formalized.  Empty-link Lean inhabitant only. \\
+\texttt{s4DegreeZero} & The current Lean control computes \texttt{EmptyKhQ}(494)=0; it has not yet been regenerated at the corrected degree $223$.  MWW Corollary~3.5 proves vanishing in every nonzero quantum degree, including $223$, while Proposition~3.4 supplies the four-handle isomorphism.  These cited analytic identifications are not formalized. \\
 \texttt{diffeomorphismEquiv} & Graded diffeomorphism invariance of lasagna modules. \\
 \texttt{matrixConditionsToHomotopySphere} & E13 constructed CS handle picture; Lean \texttt{CSTopologyData} uninhabited. \\
 \bottomrule

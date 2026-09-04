@@ -45,8 +45,9 @@ at independent categorical bridges:
    into a functional on the genuine two-handle quotient (`D-03`--`D-05`);
 2. no proof of the actual three-handle endpoint factorization on the whole
    MWW source (`D-06`);
-3. pivotal coefficients are hard-coded, and a 2026 grading erratum has not
-   been reconciled with the claimed absolute degree `494`.
+3. the standard pivotal coefficients are now derived, but the relative split
+   is not constructed and therefore the corrected absolute degree `223`
+   remains conditional.
 
 The repository's own source and git history confirm these are proof gaps, not
 merely missing Lean packaging: the prior conditional theorem was promoted to
@@ -1563,6 +1564,92 @@ Topology-source checks completed 2026-09-04:
   C-H1 requires the relative separating sphere and simultaneous ambient movie
   before (C.split) and co-Yoneda can be used.
 
+### F-515 — Exact two-representable/co-Yoneda theorem is valid under a relative split hypothesis
+
+- Severity: **Remediation theorem; Critical missing hypothesis**
+- Status: **CONDITIONAL PROOF COMPLETE; RELATIVE SPLIT OPEN**
+- Location: equations (C.rep2)--(C.state-shadow) in
+  docs/proofs/T73_C_CHAINMAP_PAPER_PROOF.md.
+- Exact theorem: for \(p_y\leq p_z\), \(\ell=p_z-p_y\), set
+  \(J(T)=T\sqcup I^{\sqcup\ell}\). If a separating sphere relative to all
+  four insertion boxes identifies the coefficient link with the two Hom
+  closures, then the normalized coefficient is the ordinary tensor of the
+  two representables with shift
+  \(\{p_y-p_z\}=\{-\ell\}\).
+- Co-Yoneda: taking the full \(\mathcal C_{p_z}\)-coend absorbs every mixing
+  morphism and gives
+  \(\operatorname{Hom}_{\mathcal C_{p_z}}(JBT,JBT')\{-\ell\}\).
+  Only afterwards is Kunneth applied.
+- Kunneth and shifts:
+  \[
+  \widehat M_R^z\cong
+  \operatorname{Hom}_{\mathcal C_{p_y}}(BT,BT')
+  \otimes A^{\otimes\ell},
+  \]
+  and removing the global \(\{p_y+p_z\}\) gives raw shift
+  \(-(p_y+p_z)\).
+- Correct endpoint: oriented doubling after the coend produces a statewise
+  shadow into \(\operatorname{End}(E_{2p_y})\); at \(p_y=44\) this is
+  \(\operatorname{End}(E_{88})\). The cup \(E_{86}\to E_{88}\) remains
+  external.
+- Why a split is needed: without the separating sphere, canopolis gluing is
+  composition/relative tensor over an arc algebra, not an ordinary tensor
+  Kunneth isomorphism of Hom homologies. BHPW sweetness does not identify a
+  connected planar composite with a split link.
+- Remaining gap: F-514's relative separating sphere and simultaneous ambient
+  movie are not present, so the theorem does not yet instantiate C-H1.
+- Grading consequence: at \((44,271,227)\) the all-\(X\) normalized class
+  has degree 227 and cabled degree 223, not 494. Therefore a literal
+  two-representable split factorization is incompatible with the
+  manuscript's \(-44,+315\) ledger even if the missing sphere exists.
+
+### F-516 — Shift audit refutes using the literal two-representable split to recover degree 494
+
+- Severity: **Critical**
+- Status: **CONFIRMED ARITHMETIC/TYPE CONTRADICTION**
+- Location: corrected shift computation in the conditional
+  two-representable theorem.
+- Computation: the normalized MWW coefficient has shift \(p_y+p_z\), while
+  two normalized \(\mathcal C_{p_z}\)-Hom factors have total shift \(2p_z\).
+  Hence (C.rep2) must carry shift \(p_y-p_z=-\ell\), not \(+p_y\).
+  Co-Yoneda retains \(-\ell\), and split-circle Kunneth contributes
+  \(+\ell\); the shifts cancel.
+- At the selected state, the normalized reduced coefficient is
+  \(\operatorname{Hom}_{\mathcal C_{44}}(BT,BT')\otimes A^{\otimes227}\).
+  The all-\(X\) class has degree 227 and, after the cabled shift \(-4\),
+  degree 223. The raw reduced shift is \(-315\), canceled by the global
+  \(+315\).
+- Consequence: a literal tensor of two representables cannot yield both the
+  claimed raw \(-44\) comparison and degree 494. Recovering those numbers
+  would require a different single-Hom factorization, not the proposed
+  two-representable/co-Yoneda split.
+
+### F-517 — Under the literal-split hypothesis, degree 223 propagates and still obstructs \(S^4\)
+
+- Severity: **Conditional remediation / correction inventory**
+- Status: **CONDITIONAL PROOF COMPLETE; SPLIT AND C/S MAPS OPEN**
+- Location: docs/proofs/T73_SPLIT_ROUTE_DEGREE_223.md.
+- Degree: the normalized reduced coefficient is
+  \(\operatorname{Hom}_{\mathcal C_{44}}(BT,BT')\otimes A^{\otimes227}\);
+  the all-\(X\) class has degree 227 and the cabled shift gives 223.
+- Detector: \(\epsilon^{\otimes227}\) has degree \(-227\). On the source
+  shifted by \(-4\), the divided cubic row has degree \(-223\). The external
+  h-adic coefficient extraction has degree zero, so evaluation 2624 is
+  compatible with a homogeneous degree-223 class.
+- Handle propagation: MWW Theorems 3.2 and 3.7 and Proposition 3.4 are
+  absolute-bigrading preserving in the relevant handle maps. Thus, assuming
+  the beta/psi and hemisphere cocones, the class remains in degree 223
+  through the two-, three-, and four-handle stages.
+- Standard sphere: MWW Corollary 3.5 places the standard \(S^4\) module in
+  bidegree \((0,0)\); after rational base change its degree-223 summand is
+  zero. A genuine nonzero closed degree-223 class gives the same obstruction
+  as any other nonzero degree.
+- Inventory: the proof note lists every active paper, Lean interface,
+  executable test, generated JSON, and proof document semantically hardcoded
+  to 494, and separately excludes geometric uses of 494 as an index.
+- Firewall: none of those files should be rewritten to 223 while the
+  relative split hypothesis and subsequent C/S maps remain unproved.
+
 ### F-600 — The “actual” sphere-system builder assigns, rather than constructs, the embedding in \(\partial W_2\)
 
 - Severity: **Critical**
@@ -1905,6 +1992,66 @@ Topology-source checks completed 2026-09-04:
   `6B680BF1EE75336DD357DCD7B44546D360D1C303460069401DCCFE8EF88D7E23`.
   The generated status remains `S_status=OPEN`.
 
+### F-613 — Cyclic \(m_2\) connector standardization is conditionally harmless but presently undecidable from the artifacts
+
+- Severity: **Critical remaining C/P0 interface**
+- Status: **OPEN**
+- Locations: `main.tex:1412--1421`;
+  `geometry/t73_actual_product_rectangles.json#/rectangles/43`;
+  `docs/proofs/T73_CYCLIC_CONNECTOR_ISOTOPY.md`.
+- Exact sufficient theorem: in the complement of both insertion boxes, all
+  fixed link strands, cancellation collars, and 227 leftover tracks, an
+  embedded rectangle between the actual and desired proper arcs, with fixed
+  endpoint germs and zero relative framing twist, gives a framed arc isotopy.
+  Isotopy extension then gives an ambient boundary isotopy. Transporting the
+  whole framed attaching link and every upper-handle attaching map preserves
+  the complete \(\Sigma_A^0\) presentation and all linking/framing data.
+- Necessary obstruction hierarchy: the relative groupoid element
+  \([a_0\bar a_1]\in\pi_1(M\setminus F)\), its linking/intersection
+  abelianization, the relative framing integer in \(\pi_1(SO(2))\), and local
+  proper-arc knotting. The complete invariant is the component in
+  \(\pi_0\operatorname{Emb}^{fr}_{\partial}(I,M\setminus F)\).
+- Current evidence: the record supplies a bottom-side polyline, a referenced
+  z-lane, two band hashes, and a prose transport rule. It supplies neither
+  the cyclic connector in one common complement nor the fixed complement,
+  a rectangle/isotopy movie, groupoid word, or twist computation.
+- Conclusion: there is no proven obstruction showing the isotopy impossible,
+  but even its first necessary invariant cannot be computed from present
+  data. Replacing the connector without the relative framed isotopy may
+  change the attaching link or framing and would not preserve the closed
+  presentation by definition.
+
+### F-614 — Independent MWW grading audit confirms degree 223 for the two-representable route
+
+- Severity: **Critical correction; obstruction survives conditionally**
+- Status: **CONFIRMED**
+- Locations: `docs/proofs/T73_SHIFT_223_INDEPENDENT_AUDIT.md`;
+  MWW `1handles.tex:140--156,173--192,242--274` and
+  `kirby.tex:19--35,331--346`; conflicting manuscript ledger at
+  `main.tex:1371--1382` and `main.tex:1783--1805`.
+- Exact derivation: at \(N=2\), the normalized coefficient has one-handle
+  shift \(p_y+p_z=315\). Two normalized
+  \(\mathcal C_{271}\)-Hom factors have total shift \(2p_z=542\), forcing
+  residual shift \(p_y-p_z=-227\). Grading-preserving co-Yoneda retains
+  \(-227\); split-circle Kunneth changes
+  \(\operatorname{Hom}_{271}\) to
+  \(\operatorname{Hom}_{44}\{+227\}\otimes A^{\otimes227}\), canceling it.
+  The normalized reduced coefficient therefore has no Hom shift.
+- Selected class: the normalized Hom identity has degree zero. MWW's Euler
+  rule makes a cap disk degree \(-1\), so the counit-nonzero unknot generator
+  \(X\) has degree \(+1\); \(X^{\otimes227}\) has degree 227. Definition 3.1
+  gives the selected state \(|r|=2,\alpha=0\) shift \(-4\). The absolute
+  intrinsic MWW degree is \(227-4=223\).
+- Euler audit: \(+315\) already compensates one-handle sheet gluing; normalized
+  Hom composition makes co-Yoneda degree zero; Kunneth is not a cobordism;
+  later 227 cap maps have degree \(-227\) but evaluate rather than regrade the
+  source; and the four core-disk Euler contribution is exactly the cabled
+  \(-4\). No omitted Euler term restores 494.
+- Consequence: MWW Corollary 3.5 is concentrated in quantum degree zero, so a
+  nonzero \((0,223)\) class would still obstruct \(S^4\). C and S remain open.
+  Adopting this route requires replacing or parameterizing every hard-coded
+  494 in the paper and Lean interfaces.
+
 ## Proof dependency ledger
 
 The main theorem will be expanded into atomic premises.  For each premise this
@@ -1915,13 +2062,13 @@ and unresolved semantic gaps.
 |---|---|---|---|
 | D-01 | `det A=1`, `det(A-I)=1` and CS homotopy-sphere criterion | finite arithmetic plus Iwaki Proposition 2.1; **CONFIRMED for the standard surgery object** (F-100) | establishes homotopy-sphere status of `Sigma_A^0`, not the `X_J` identification |
 | D-02 | Johnson framed handle picture is the actual `Sigma_A^0` picture | **RESOLVED AT PAPER LEVEL AFTER RETYPING**: Johnson mapping classes and local straightening give the unlabelled AR presentation; standard cancellation/collar lemmas give P0; the auxiliary `B44` is C data, not attaching-link geometry (F-409, F-411--F-413) | supplies the actual manifold/collar without relying on the old E13 booleans |
-| D-03 | selected raw class is a genuine, correctly graded MWW one-handle class | the standard pivotal convention is now derived and reproduces 2624, but the Hattori/statewise coefficient shadow is absent and absolute grading remains open; **PARTIAL** (F-201--F-202, F-209--F-210, F-510) | required to interpret detector categorically |
-| D-04 | Burau divided cubic equals an MWW/BPW/BHPW natural functional on the entire typed source | no cited theorem supplies the claimed shadow map; paper itself says comparison remains OPEN; **UNPROVED** (F-007, F-201) | required before quotient descent |
+| D-03 | selected raw class is a genuine, correctly graded MWW one-handle class | standard pivotal data are derived and the literal-split normalization is independently corrected to degree 223, but the source-to-target relative split is absent; **PARTIAL** (F-510, F-512--F-517, F-614) | required to interpret detector categorically |
+| D-04 | Burau divided cubic equals an MWW/BPW/BHPW natural functional on the entire typed source | the corrected coend/shadow theorem is proved conditional on the two-representable relative split, whose cyclic connector class is not determined by current artifacts; **OPEN** (F-512--F-516, F-613) | required before quotient descent |
 | D-05 | functional kills every two-handle beta/psi relation | abstract/finite cocone exists, but identification of every actual MWW beta/psi map is missing; **OPEN** (F-203) | required for nonzero `W2` class |
-| D-06 | actual complete 3-handle sphere system and endpoint maps give undotted-zero/dotted-identity on whole source | MWW local formulas are sound, but global detector factorization and actual `W2` geometry are unproved; **OPEN** (F-012, F-204--F-205) | required for surviving `W3` class |
+| D-06 | actual complete 3-handle sphere system and endpoint maps give undotted-zero/dotted-identity on whole source | typed Sigma-minus movies and local Frobenius formulas are constructed; MWW reduces the rest to statewise shadow naturality, which depends on D-04/D-05; **PARTIAL** (F-611--F-612) | required for surviving `W3` class |
 | D-07 | four-handle attachment transports class by grading-preserving isomorphism | **TOPOLOGICAL PART RESOLVED** by transporting the complete original AR upper-handle maps (F-609); MWW Proposition 3.4 has the correct empty-link scope | transports a class only after D-06 establishes that one survives the actual three-handle maps |
-| D-08 | standard `S^4` module vanishes in quantum degree 494 | MWW Corollary 3.5 and proof chain **CONFIRMED**, with `Q`/`Z` wording qualification (F-200, F-206, F-208) | target obstruction is available if an actual degree-494 class exists |
-| D-09 | diffeomorphisms induce absolute-grading-preserving isomorphisms in exactly the theory/coefficient convention used | general invariant framework appears sound, but a 2026 grading erratum is not reconciled with this paper's absolute shifts; **RECHECK REQUIRED** (F-209) | converts class mismatch to nondiffeomorphism only after convention audit |
+| D-08 | standard `S^4` module vanishes in quantum degree 223 | MWW Corollary 3.5 and proof chain **CONFIRMED**, with `Q`/`Z` wording qualification (F-200, F-206, F-208, F-517) | target obstruction is available if the conditional degree-223 class exists |
+| D-09 | diffeomorphisms induce absolute-grading-preserving isomorphisms in exactly the theory/coefficient convention used | intrinsic MWW split-route audit gives 223 and the standard pivotal convention is fixed; an extra shift is still possible if the missing source-to-target comparison is a saddle cobordism rather than isotopy; **CONDITIONAL** (F-510, F-614) | converts class mismatch to nondiffeomorphism after the relative split is proved |
 
 At present D-03 through D-06 remain fatal. The abstract linear-algebra theorem
 and the P0/E13 topological realization are available, but the Burau detector
@@ -2376,3 +2523,31 @@ post-F-017 working tree, including the later Johnson restore hierarchy.
 - Boundary: product rectangle pairing, 227 simultaneous leftovers, the
   coefficient shadow, beta/psi descent and hemisphere maps remain C/S. They
   are not consequences of P0.
+
+### F-416 — The four-box artifact proves only the split target, not a relative split of the source coefficient link
+
+- Severity: **Critical for C-H1 / grading**
+- Status: **OPEN; NO TOPOLOGICAL OBSTRUCTION PROVED**
+- Evidence: geometry/t73_selected_canopolis_normal_form.json,
+  scripts/build_t73_selected_canopolis_normal_form.py,
+  scripts/verify_t73_selected_canopolis_normal_form.py,
+  tests/test_t73_selected_canopolis_normal_form.py, and
+  docs/proofs/T73_SELECTED_CANOPOLIS_NORMAL_FORM.md.
+- Positive result: the target has four rational insertion boxes, two disjoint
+  closure balls, 44 active corridors, 227 added z arcs, product framings and
+  cyclic private lane 43. Six target mutations fail.
+- First missing datum: the actual coefficient exterior has no complete
+  oriented endpoint incidence/matching table on the four parametrized
+  insertion spheres. Primitive source IDs and private target levels do not
+  determine the relative tangle type. No simultaneous framed ambient isotopy
+  moves the cyclic connector and all 227 residual tracks while fixing all
+  four spheres.
+- Grading consequence: if the missing map is an ambient isotopy, its trace has
+  Euler characteristic zero and ordinary Kunneth introduces no extra shift.
+  If endpoint pairings require saddle reconnection, the cobordism has a new
+  Euler/framing degree not contained in the minus-44 Hom normalization. Thus
+  the p_y/p_z count alone does not certify degree 494.
+- Remediation: the verifier now reports PASS_TARGET_ONLY together with
+  SOURCE_RELATIVE_ISOTOPY=OPEN, BOUNDARY_ENDPOINT_INCIDENCE=OPEN, and an
+  undetermined grading correction. Lemma C1 in main.tex remains conditional
+  on the missing relative four-box isotopy.

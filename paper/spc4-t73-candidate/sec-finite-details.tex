@@ -253,21 +253,22 @@ $2624$, but that plain shadow is not $D_3(\xi)$.
 
 \subsection{The grading calculation}
 
-\begin{proposition}[Quantum degree]\label{prop:degree-494}
-For the Johnson replacement collar, the selected raw class has quantum
-degree $494$.
+\begin{proposition}[Corrected split-route quantum degree]\label{prop:degree-223}
+Assuming the relative two-representable split of Hypothesis~\ref{hyp:P1}, the
+selected normalized one-handle class has quantum degree $227$, and its image
+in the two-handle quotient has degree $223$.
 \end{proposition}
 
 \begin{proof}
-There are four contributions:
-\begin{align}
-d_1&=-44 &&\text{(remove the $44$ Hom normalizations for $N=2$)},\\
-d_2&=+227 &&\text{($227$ distinct Frobenius labels)},\\
-d_3&=+315 &&\text{($44$ $y$-pairs and $271=44+227$ $z$-pairs)},\\
-d_4&=-4 &&\text{(cabled shift for $N=2$, $\alpha=0$, $|r|=2$)}.
-\end{align}
-Adding gives $-44+227+315-4=494$.  Appendix~\ref{app:grading} collects the
-same table without abbreviation.
+The MWW normalized coefficient has shift $44+271=315$.  A literal split into
+two normalized $\mathcal C_{271}$ Hom factors initially contributes the
+residual shift $315-2\cdot271=-227$.  Enriched co-Yoneda is degree zero, and
+the subsequent split-circle K\"unneth identification changes
+$\mathcal C_{271}$ Hom normalization to $\mathcal C_{44}$ normalization by
+$+227$.  These shifts cancel.  The identity has degree zero and the 227
+separate $X$ labels contribute $+227$.  Finally MWW's selected cable shift is
+$(1-2)(2\cdot2+0)=-4$.  Hence the degree is $227-4=223$.
+Appendix~\ref{app:grading} records the complete normalization ledger.
 \end{proof}
 
 \subsection{Quotient algebra and the abstract descent chain}
@@ -291,26 +292,25 @@ $\ell_2(q_{12}q_{01}x_0)=2624$.  In particular, $q_{12}q_{01}x_0\ne0$.
 
 \begin{proof}
 Lemma~\ref{lem:HH0-descent} descends the quantum shadow detector through the
-coefficient trace.  Theorem~\ref{thm:Cdischarge} and
-Lemma~\ref{lem:quotient-detector} descend it through $q_{01}$.  Theorem
-\ref{thm:Sdischarge} and the same quotient lemma descend it through $q_{12}$.
+coefficient trace.  Hypothesis~\ref{hyp:P1} and
+Lemma~\ref{lem:quotient-detector} descend it through $q_{01}$.
+Hypothesis~\ref{hyp:P2} and the same quotient lemma descend it through $q_{12}$.
 At every stage the pullback agrees with the preceding row, so
 Proposition~\ref{prop:D3-vT} gives the value $2624$.
 \end{proof}
 
 \begin{proposition}[Closed candidate class]\label{prop:closed-class}
-Suppose Hypotheses~\ref{hyp:P2} and~\ref{hyp:P3} hold and an inhabitant of
-Lean \texttt{ExternalGeometry} transports the class through the four-handle
-isomorphism.  Then the class of Proposition~\ref{prop:nonzero-W2} maps to a
-nonzero element of $\Stwo(X_J)_{0,494}$.  No such inhabitant is constructed.
+Suppose Hypotheses~\ref{hyp:P1}--\ref{hyp:P3} hold.  Then the class of
+Proposition~\ref{prop:nonzero-W2} maps to a nonzero element of
+$\Stwo(X_J)_{0,223}$.
 \end{proposition}
 
 \begin{proof}
 MWW Theorems~3.7 and~3.10 identify the three-handle quotient, and
 Proposition~3.4 identifies the four-handle stage once cited.
 Hypothesis~\ref{hyp:P3} separates the computed empty-link ranks from those
-citations.  The Lean implication in Theorem~\ref{thm:A} is conditional on
-\texttt{ExternalGeometry}.
+citations and transports the degree-$223$ class through the four-handle
+isomorphism.  Injectivity preserves nonvanishing.
 \end{proof}
 
 \begin{remark}[Presentation and serialization dependence]\label{rem:serialization}
