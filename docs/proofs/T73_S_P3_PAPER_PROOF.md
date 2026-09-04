@@ -300,3 +300,76 @@ two mutations exercise this primitive.
 This removes one verifier implementation gap but supplies no candidate data.
 The current T73 artifact still has no ambient tetrahedra, embedded product
 neighborhoods, or step results, so it continues to return `OPEN`.
+
+## 9. Transporting the full AR decomposition
+
+There is a conceptual route that removes the need for a W2 triangulation from
+the closed-manifold identification.
+
+### Transport theorem
+
+Let \(\psi:T^3\to T^3\) be a genuine splitting-preserving diffeomorphism,
+isotopic to \(f_A\) relative to a neighborhood of the section point. Apply
+the Aitchison--Rubinstein construction to obtain the complete framed handle
+decomposition \(\mathcal H(\psi)\) of \(\Sigma_A^0\), including its three
+3-handles and 4-handle. Suppose the proposed two 1/2 cancellations are
+genuine framed Kirby moves and let
+\[
+F:\mathcal H(\psi)\longrightarrow\mathcal H_J
+\]
+denote the resulting composition of handle slides and cancellations.
+Transport every still-unattached upper-handle attaching map by the induced
+boundary diffeomorphisms at each stage. Then the complete resulting handle
+decomposition \(\mathcal H_J\) presents a manifold diffeomorphic to
+\(\Sigma_A^0\).
+
+This is standard handle calculus: a handle slide changes the attaching map
+inside the same manifold, and deletion of a genuine complementary
+\(k/(k+1)\) pair is realized by a diffeomorphism. Transporting all remaining
+attaching maps along those diffeomorphisms preserves the complete manifold.
+No recognition of the intermediate \(\partial W_2\) is required.
+
+If \(X_J\) is *defined* to be the closed manifold of this transported full
+decomposition, then \(X_J\cong\Sigma_A^0\) and P3 are immediate. The
+post-three-handle boundary is the transported attaching boundary of the
+original AR 4-handle, hence \(S^3\), and the transported original 4-handle
+supplies its attaching map. Laudenbach--Poenaru is unnecessary when the
+actual upper maps are retained. It becomes relevant only if those maps are
+discarded and one wishes to replace the upper handlebody by an arbitrary
+one after independently proving the required
+\(\#^3(S^1\times S^2)\) boundary.
+
+### What this route does not prove
+
+The route is not presently an unconditional proof because its first two
+premises are exactly the unresolved P0 content: a genuine global Johnson
+diffeomorphism relative to the section and genuine framed cancellation
+movies carrying the whole attaching data. Calling hashes or word
+substitutions \(F\) would be circular.
+
+More importantly, this route identifies the closed manifold but does not
+close S. MWW's three-handle map depends on the embedded attaching spheres in
+the actual \(\partial W_2\). Transporting the full AR decomposition gives
+well-defined actual spheres and therefore well-defined MWW maps, but the
+paper has not computed those maps under its detector.
+
+One may replace the transported sphere system by another complete geometric
+basis using relative handle calculus, Horvat--Jab\l{}onowski, or
+Laudenbach--Poenaru, once all hypotheses are proved. Naturality then
+postcomposes the total quotient map with an isomorphism, so its kernel is
+unchanged. This can avoid explicitly drawing the original upper spheres.
+It still does not imply
+\[
+\ell(vA_0)=\ell(v),\qquad \ell(vA_1)=0.
+\]
+Those identities require the independent whole-source comparison C-S1:
+compatibility of the detector with the two actual hemisphere maps, all
+mixed braid/pivotal maps, and the beta/psi quotient. Diffeomorphism
+invariance and equality of kernels do not manufacture that comparison.
+
+Thus redefining \(X_J\) as the transported full AR decomposition is a
+legitimate simplification of E13/P3, not a solution of the obstruction
+argument. If the manuscript keeps the independently specified
+standard-sphere/P3 object as its definition of \(X_J\), then asserting it is
+the transported object without constructing the relative upper-handle
+equivalence merely renames the missing identification.

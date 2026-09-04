@@ -1366,6 +1366,31 @@ Topology-source checks completed 2026-09-04:
   action-naturality homotopy. Thus it closes the primitive geometric prefix
   of C-H2, not C-H1 or beta/psi descent.
 
+### F-508 — The cubic is conjugation-gauge invariant but not invariant under the point-push loop choice
+
+- Severity: **Critical for the claim that 2624 is forced by P0 geometry**
+- Status: **CONFIRMED by exact calculation**
+- Locations: `main.tex:724--731`, the external factor
+  \(\rho_h(W)-I\) in the C detector; `scripts/audit_t73_point_push_gauge.py`,
+  `audit/t73_point_push_gauge.json`, and
+  `tests/test_t73_point_push_gauge.py`.
+- Naturality calculation: a chart change transports
+  \((A,u,\ell)\) to \((PAP^{-1},Pu,\ell P^{-1})\), and hence
+  \((\ell P^{-1})(PAP^{-1}-I)(Pu)=\ell(A-I)u\) exactly. BPW/MWW
+  naturality does not force this scalar to vanish.
+- Loop-choice counterexample: precomposing the selected returned loop by
+  \(P\) replaces (A) by \(\rho(P)A\), not by a conjugate. At order three
+  the cubic changes by \(\ell K_Pu\). Taking (P=W^{-1}) preserves returned
+  endpoints, returned first-order normals and zero writhe, while changing the
+  computed cubic from 2624 to zero.
+- Consequence: the six-sweep loop chosen by isotopy extension is not selected
+  by the static collar data. It may be used as an explicitly auxiliary,
+  noncanonical self-cobordism only after independent beta/psi descent; it
+  cannot itself discharge P0/C-H1. To claim geometric canonicity, the paper
+  must construct a relative cobordism class selected by the AR collar and
+  prove that every allowed presentation change acts only by simultaneous
+  conjugation.
+
 ### F-600 — The “actual” sphere-system builder assigns, rather than constructs, the embedding in \(\partial W_2\)
 
 - Severity: **Critical**
@@ -1577,6 +1602,39 @@ Topology-source checks completed 2026-09-04:
   framed-link map.
 - Tests: three focused tests pass; boundary digest is
   `A389BDA2DDF42D88E504DFF694BA92CC19476A23D886FC19814A149D80CFAE49`.
+
+### F-609 — Transporting the complete AR decomposition can close E13/P3, but not S
+
+- Severity: **Critical distinction / constructive simplification**
+- Status: **CONDITIONAL**
+- Locations: conceptual proof in
+  `docs/proofs/T73_S_P3_PAPER_PROOF.md`, Section 9; current uses at
+  `main.tex:977--986` and `main.tex:1535--1546`.
+- Exact conditional theorem: a genuine splitting-preserving
+  \(\psi\simeq f_A\) relative to the section gives the full AR handle
+  decomposition of \(\Sigma_A^0\). Genuine framed handle slides and
+  complementary 1/2 cancellations induce boundary diffeomorphisms. If every
+  unattached 3/4-handle attaching map is transported by those
+  diffeomorphisms, the resulting complete Johnson decomposition presents the
+  same manifold. Defining \(X_J\) as that full transported decomposition
+  makes \(X_J\cong\Sigma_A^0\), the post-three-handle \(S^3\), and its
+  4-handle attachment tautological. No W2 triangulation or
+  Laudenbach--Poenaru theorem is needed for this identification.
+- Remaining P0 dependency: the theorem requires the global relative Johnson
+  diffeomorphism and genuine whole-link framed cancellation movies. The
+  current finite certificates do not establish those premises (F-102,
+  F-106, F-107). Naming their hash-linked stages “transport” is circular.
+- Why S remains open: the transported full decomposition supplies actual
+  embedded 3-handle spheres and hence actual MWW hemisphere maps, but it does
+  not evaluate those maps under the new detector. Sphere-system uniqueness
+  or upper-handle naturality can identify total kernels after a genuine
+  geometric basis is supplied; neither proves the whole-source tensor
+  factorization and beta/psi compatibility required in F-601.
+- Conclusion: this route can legitimately remove the independent P3/E13
+  construction from the proof once P0 is proved, but it cannot establish the
+  nonzero class after the 3-handles. If \(X_J\) remains defined by the
+  independently modelled standard-sphere/P3 artifacts, asserting that it is
+  the transported decomposition simply renames the missing equivalence.
 
 ## Proof dependency ledger
 
@@ -1948,3 +2006,28 @@ post-F-017 working tree, including the later Johnson restore hierarchy.
   conditional on the genuine common AR collar. The independent fail-closed
   computational gate correctly stays OPEN, and the earlier P0 ambient-link
   construction remains necessary.
+
+### F-412 — Point-push closes only unlabelled E13, not the fixed-marked detector P0
+
+- Severity: **Critical scope distinction / partial remediation**
+- Status: **RESOLVED FOR UNLABELLED EXISTENCE; BLOCKED FOR LABELLED P0**
+- Location: docs/proofs/T73_P0_E13_CONCEPTUAL_CLOSURE.md.
+- Positive result: the 93 Johnson mapping classes give a
+  splitting-preserving monodromy inducing A. Local straightening with an
+  explicitly chosen even normal-frame path gives epsilon zero. Applying AR,
+  performing standard one/two cancellations, and transporting the original
+  upper handles gives an unlabelled handle decomposition of Sigma_A^0 without
+  a coordinate PL evaluator or any one/three cancellation.
+- Obstruction: a boundary-fixed ambient isotopy of the detector cylinder can
+  produce only the trivial braid. A point-push producing nontrivial B44
+  changes the marked top disk. Applied to the complete presentation, it also
+  transports the source, detector, outside closure and endpoint actions, so
+  naturality conjugates the apparent Burau operator. Inserted while those
+  data stay fixed, it is not a presentation isotopy and loses the Sigma_A^0
+  and upper-handle identification.
+- Additional mismatch: two selected passages belong to r_xy rather than a
+  monodromy spine image, so postcomposing monodromy alone cannot create the
+  full committed 44-strand braid.
+- Consequence: arbitrary local braid insertion does not justify 2624. A
+  direct fixed-marking derivation of the actual tangle and all endpoint data
+  is still required.

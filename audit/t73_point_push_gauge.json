@@ -1,0 +1,43 @@
+{
+  "adjudication": {
+    "bpw_mww_naturality_forces_zero": false,
+    "chosen_loop_isotopy_invariant": false,
+    "original_minus_inverse_composed_cubic": 2624,
+    "required_geometric_anchor": "a relative isotopy/surface-cobordism class determined by the embedded AR collar, with proof that every permitted presentation change acts by simultaneous conjugation",
+    "simultaneous_conjugation_is_gauge_invariant": true
+  },
+  "inverse_loop_composition": {
+    "free_reduced_length": 0,
+    "h3_cubic": 0,
+    "same_first_order_normal_return_condition": true,
+    "same_returned_endpoint_condition": true,
+    "unreduced_length": 90720,
+    "word": "W^{-1}W",
+    "writhe": 0
+  },
+  "naturality_calculation": {
+    "coordinate_change": {
+      "identity": "(ell P^{-1})(P A P^{-1}-I)(P u)=ell(A-I)u",
+      "invariant": true,
+      "transform": [
+        "A -> P A P^{-1}",
+        "u -> P u",
+        "ell -> ell P^{-1}"
+      ]
+    },
+    "loop_composition": {
+      "cubic_change": "ell K_P u",
+      "invariant": false,
+      "order_three_formula": "K_{PW}=K_P+K_W when P,W are I+O(h^3)",
+      "transform": "A -> P A with u,ell fixed"
+    }
+  },
+  "original": {
+    "h3_cubic": 2624,
+    "permutation": "identity (pure braid, independently checked upstream)",
+    "word_length": 45360,
+    "word_sha256": "C13D0A3BA9B05F41A6D2C5B4AB12DDECDABEFC1883835891AD3BD2B8955B5FFB",
+    "writhe": 0
+  },
+  "schema": "t73_point_push_gauge_audit/v1"
+}

@@ -242,6 +242,60 @@ all-multiplicity statement inside the normalized Johnson product collar.
 It remains conditional on an explicit P0 ambient inclusion of that collar and
 does not construct the dg foam maps in (C.1)--(C.2).
 
+## Point-push gauge and naturality
+
+Let (A=ho_h(W)).  A genuine change of endpoint coordinates by an
+invertible (P) transports operator, cup, and cap simultaneously:
+
+\[
+A\mapsto PAP^{-1},\qquad u\mapsto Pu,\qquad
+\ell\mapsto\ell P^{-1}.
+\]
+
+BPW/BHPW naturality therefore gives the exact identity
+
+\[
+(\ell P^{-1})(PAP^{-1}-I)(Pu)=\ell(A-I)u.
+\tag{C.3}
+\]
+
+Thus naturality does not force the cubic to vanish; it makes it invariant
+under simultaneous conjugation.
+
+Changing the chosen point-push *loop* is different.  Precomposing it by a
+returned pure loop (P), with the fixed cup and cap unchanged, replaces (A)
+by (ho_h(P)A).  If (P,W\in\Gamma_3), then
+
+\[
+\rho_h(P)=I+h^3K_P+O(h^4),\quad
+\rho_h(W)=I+h^3K_W+O(h^4),
+\]
+
+so
+
+\[
+K_{PW}=K_P+K_W,\qquad
+D_3(PW)-D_3(W)=\ell K_Pu.
+\tag{C.4}
+\]
+
+Taking the equally supported inverse loop (P=W^{-1}) gives a concrete
+counterexample: (W^{-1}W=1), its endpoints and first-order normals return
+and its writhe is still zero, but the cubic changes from 2624 to zero.  This
+is replayed by `scripts/audit_t73_point_push_gauge.py` and recorded in
+`audit/t73_point_push_gauge.json`.
+
+This does not contradict BPW: a chosen point-push surface may act
+nontrivially, and a noncanonical linear detector may still prove a class is
+nonzero if its quotient descent is independently established.  It does show
+that the current P0 recipe---normalize the points, choose the six-sweep loop
+by isotopy extension, and return them---does not make 2624 a
+presentation-independent consequence of the static AR collar.  A repair must
+either declare (W) to be an auxiliary chosen endpoint self-cobordism, which
+cannot discharge P0 or (C.1), or construct a relative cobordism class selected
+by the embedded AR geometry and prove that every permitted presentation
+change is only the conjugation (C.3), never the multiplication (C.4).
+
 ## Minimum data required to close C
 
 1. The precise MWW product source category at every cable state, including

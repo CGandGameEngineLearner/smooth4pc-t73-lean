@@ -399,6 +399,46 @@ detector on the Johnson replacement collar is precisely the additional
 content of Hypothesis~\ref{hyp:P1}.
 \end{proof}
 
+\begin{proposition}[Point-push choice versus coordinate gauge]
+\label{prop:point-push-gauge}
+The cubic scalar is invariant under a simultaneous change of endpoint
+coordinates, but it is not determined by the returned endpoint configuration,
+normal fields and writhe alone.  In particular, precomposing the registered
+loop $W$ by $W^{-1}$ changes the scalar from $2624$ to $0$ while retaining
+those three terminal properties.
+\end{proposition}
+
+\begin{proof}
+Write $A_W=\rho_h(W)$.  A coordinate change $P$ transports the operator,
+source and row as
+\[
+(A_W,u,\ell)\longmapsto
+(PA_WP^{-1},Pu,\ell P^{-1}).
+\]
+Therefore
+\[
+(\ell P^{-1})(PA_WP^{-1}-I)(Pu)=\ell(A_W-I)u,
+\]
+so every coefficient, including the cubic, is unchanged.
+
+Changing the returned point-push loop is composition rather than coordinate
+conjugation.  If $P,W\in\Gamma_3$, write
+$\rho_h(P)=I+h^3K_P+O(h^4)$ and similarly for $W$.  Then
+\[
+[h^3](\rho_h(PW)-I)=K_P+K_W,
+\]
+and the detector changes by $\ell K_Pu$.  Taking $P=W^{-1}$ gives the identity
+loop and hence zero, whereas the registered $W$ gives $2624$.  Both loops are
+pure, have returned endpoints and product normals, and have writhe zero.  The
+script \texttt{audit\_t73\_point\_push\_gauge.py} replays both calculations.
+\end{proof}
+
+Consequently the six-sweep loop must be part of a geometrically anchored
+relative cobordism datum.  To use it in C one must prove that every allowed
+change of the actual handle presentation transports the operator, source and
+detector row simultaneously as a conjugation.  Static endpoint and framing
+data alone do not select the loop.
+
 Thus the finite recomputation and the categorical comparison have distinct
 roles: the former supplies the integer, while the latter makes it a
 four-manifold invariant.
@@ -1152,6 +1192,47 @@ the Johnson $y$-wickets in the certified handlebody pair.  Reconstruction
 recovers the public $11340$-letter word.
 \end{proof}
 
+\begin{proposition}[Unlabelled Johnson--AR realization]
+\label{prop:unlabelled-P0}
+The recorded $93$-factor Johnson word has a splitting-preserving
+diffeomorphism representative $\psi$ inducing $A$ on $H_1(T^3)$.  It may be
+chosen equal to the identity on a section ball and with the even normal-frame
+path defining $\varepsilon=0$.  Applying the complete AR construction and the
+two cancellations of Lemma~\ref{lem:P0b}, while transporting all upper-handle
+attaching maps, gives a complete handle decomposition of $\Sigma_A^0$.
+\end{proposition}
+
+\begin{proof}
+Each Johnson generator has an orientation-preserving representative preserving
+the genus-three splitting \cite{Johnson2011}; their product induces the
+verified product of elementary transvections, namely $A$.  Choose the common
+spine vertex inside one handlebody.  An isotopy supported in a small ball in
+that handlebody first fixes the vertex and then, by local straightening and
+the Alexander trick, makes $\psi$ the identity on a smaller ball without
+changing its mapping class or the splitting.  The two homotopy classes of
+oriented normal-frame paths differ by the generator of $\pi_1(SO(3))$; choose
+the even class, so section surgery uses $\varepsilon=0$.
+
+Aitchison--Rubinstein then supplies the complete embedded framed handle
+decomposition for this representative.  Lemma~\ref{lem:P0b} performs genuine
+lower-handle moves, and carrying every unattached upper map through their
+boundary diffeomorphisms preserves the closed manifold.  Since $\psi$ is
+isotopic to $f_A$ relative to the section neighborhood, that manifold is
+$\Sigma_A^0$.
+\end{proof}
+
+Proposition~\ref{prop:unlabelled-P0} does not yet prove the marked part of P0.
+A nontrivial pure braid cannot be inserted into the vertical detector tangle
+by an ambient isotopy fixed on the entire detector-cylinder boundary.  If the
+point-push instead changes the top marking, the outside closure, source vector,
+detector row and endpoint actions must all be transported.  Their simultaneous
+transport is a coordinate conjugation, so the old fixed row and vector cannot
+be retained with only the new $B_{44}$ operator.  The two selected $r_{xy}$
+passages also do not arise merely by postcomposing the monodromy.  Thus the
+unlabelled realization and the independently computed marked detector require
+an additional relative-cobordism identification, which remains the marked P0
+hypothesis.
+
 \subsection{P0 conclusion}\label{sec:p0-conclusion}
 
 \begin{proposition}[Finite P0 certificate for the Johnson replacement]\label{thm:P0discharge}
@@ -1798,6 +1879,38 @@ mathematical content of Hypothesis~\ref{hyp:P2}.
 \end{proof}
 
 \section{Final identifications}\label{sec:final-identifications}
+
+\begin{lemma}[Transport of the complete AR decomposition]
+\label{lem:upper-handle-transport}
+Let $\psi:T^3\to T^3$ be a splitting-preserving diffeomorphism isotopic to
+$f_A$ relative to the section neighborhood, and apply the full
+Aitchison--Rubinstein construction to $\psi$.  If the two lower-handle moves
+of Lemma~\ref{lem:P0b} are genuine framed slides and cancellations, transport
+the three upper attaching maps and the final four-handle attaching map through
+the induced boundary diffeomorphisms.  The resulting complete handle
+decomposition defines a closed manifold $X_J$ diffeomorphic to
+$\Sigma_A^0$; after its transported three-handles the boundary is $S^3$ and
+the transported four-handle supplies its attaching map.
+\end{lemma}
+
+\begin{proof}
+The AR construction applied to a representative isotopic to $f_A$ relative
+to the section gives the same mapping-torus surgery $\Sigma_A^0$.  A framed
+handle slide changes an attaching map inside the same manifold, and deletion
+of a genuine complementary $k/(k+1)$ pair is realized by a diffeomorphism.
+At each step carry every unattached upper-handle map by the resulting boundary
+diffeomorphism.  Thus the complete handle decomposition, not only its lower
+word ledger, is transported through diffeomorphic manifolds.  The original AR
+four-handle was attached to an $S^3$ boundary component; its transported map
+proves the last assertion.  No separate recognition of the intermediate
+$\partial W_2$ and no ``$1$--$3$ cancellation'' are involved.
+\end{proof}
+
+Lemma~\ref{lem:upper-handle-transport} makes E13 and the topological part of
+P3 consequences of a genuine P0 construction if $X_J$ is defined using the
+transported complete decomposition.  It does not prove S: the detector must
+still be compared with the actual transported hemisphere maps on every MWW
+cable summand.
 
 MWW Theorem~3.10 identifies the iterated quotient with the module after the
 three-handles, and Proposition~3.4 gives the four-handle isomorphism
