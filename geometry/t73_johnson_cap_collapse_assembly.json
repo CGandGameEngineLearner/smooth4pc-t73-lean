@@ -1,0 +1,239 @@
+{
+  "all_fiber_transports": "PASS",
+  "collars_sha256": "BF036DA9AFC1BF8DF5B60C478867DB1EA08424317F1B542A17D9CBE6F7C7FB9C",
+  "derived_cells_sha256": "FA93FDC69C7F0DA7D9E2F326E7D8A1862E027E9AC1A777223FB374CAF6CF4140",
+  "expanded_ambient_cell_count": 330882192,
+  "johnson_restore_ambient_cells": "OPEN",
+  "movies": [
+    {
+      "cap_product_collar_cells": 36,
+      "cap_product_collar_sha256": "392FA2963F7C33740B8D138AA2662767F3BD787891A8A09178EE9941502E8178",
+      "composition_order": [
+        "source_cap_collapse",
+        "orientation_selected_cap_product_collar",
+        "inverse_target_cap_collapse"
+      ],
+      "expanded_ambient_cell_count": 21579300,
+      "explicit_inverse_order": [
+        "target_cap_collapse",
+        "inverse_cap_product_collar",
+        "inverse_source_cap_collapse"
+      ],
+      "fiber_transport": "PASS",
+      "jacobian_det_max": "3",
+      "jacobian_det_min": "1/3",
+      "paired_saddle_ambient_cells": "OPEN",
+      "paired_saddle_fiber_cells": "PASS",
+      "power": -1,
+      "side": "prefix-first",
+      "source_cap_collapse": {
+        "all_chart_inverses_explicit": true,
+        "all_charts_positive": true,
+        "cap_collapse_chart": "PASS",
+        "chart_determinant_max": "1/2304",
+        "chart_determinant_min": "1/2304",
+        "chart_sequence_sha256": "487E3B59FE5D92330D47E845D24ED59ACC4EADFECA2E91A9F845E9F27CC6C5BE",
+        "collapse_step_count": 1812,
+        "conjugated_jacobian_det_max": "3",
+        "conjugated_jacobian_det_min": "1/3",
+        "dimension_histogram": {
+          "1": 264,
+          "2": 900,
+          "3": 648
+        },
+        "expanded_ambient_cell_count": 10789632
+      },
+      "target_cap_collapse": {
+        "all_chart_inverses_explicit": true,
+        "all_charts_positive": true,
+        "cap_collapse_chart": "PASS",
+        "chart_determinant_max": "1/2304",
+        "chart_determinant_min": "1/2304",
+        "chart_sequence_sha256": "644F1D2C3E285CF944354B072CA5769BF27886BDD7EF51D56D2F924423628685",
+        "collapse_step_count": 1812,
+        "conjugated_jacobian_det_max": "3",
+        "conjugated_jacobian_det_min": "1/3",
+        "dimension_histogram": {
+          "1": 264,
+          "2": 900,
+          "3": 648
+        },
+        "expanded_ambient_cell_count": 10789632
+      }
+    },
+    {
+      "cap_product_collar_cells": 36,
+      "cap_product_collar_sha256": "6C55F374500C19D5AAB4B92F3D4B47A0E45271A8F242DEF540A62DEF365CE9DE",
+      "composition_order": [
+        "source_cap_collapse",
+        "orientation_selected_cap_product_collar",
+        "inverse_target_cap_collapse"
+      ],
+      "expanded_ambient_cell_count": 21579300,
+      "explicit_inverse_order": [
+        "target_cap_collapse",
+        "inverse_cap_product_collar",
+        "inverse_source_cap_collapse"
+      ],
+      "fiber_transport": "PASS",
+      "jacobian_det_max": "3",
+      "jacobian_det_min": "1/3",
+      "paired_saddle_ambient_cells": "OPEN",
+      "paired_saddle_fiber_cells": "PASS",
+      "power": -1,
+      "side": "target-first",
+      "source_cap_collapse": {
+        "all_chart_inverses_explicit": true,
+        "all_charts_positive": true,
+        "cap_collapse_chart": "PASS",
+        "chart_determinant_max": "1/2304",
+        "chart_determinant_min": "1/2304",
+        "chart_sequence_sha256": "EE85D91848E04DAEB1D5D0E84B489C8BCC16DB9D3C5D1C6AC6B948A981216555",
+        "collapse_step_count": 1812,
+        "conjugated_jacobian_det_max": "3",
+        "conjugated_jacobian_det_min": "1/3",
+        "dimension_histogram": {
+          "1": 264,
+          "2": 900,
+          "3": 648
+        },
+        "expanded_ambient_cell_count": 10789632
+      },
+      "target_cap_collapse": {
+        "all_chart_inverses_explicit": true,
+        "all_charts_positive": true,
+        "cap_collapse_chart": "PASS",
+        "chart_determinant_max": "1/2304",
+        "chart_determinant_min": "1/2304",
+        "chart_sequence_sha256": "5F11696B8CFFA6E6DE6E2A2999E53C8D457E6C00A6578D3498CD1AB8CD52E0FD",
+        "collapse_step_count": 1812,
+        "conjugated_jacobian_det_max": "3",
+        "conjugated_jacobian_det_min": "1/3",
+        "dimension_histogram": {
+          "1": 264,
+          "2": 900,
+          "3": 648
+        },
+        "expanded_ambient_cell_count": 10789632
+      }
+    },
+    {
+      "cap_product_collar_cells": 36,
+      "cap_product_collar_sha256": "644BE314B5E17C6F082F58FB71B1CB9732279210AEB7C6B75866C69ED6380C28",
+      "composition_order": [
+        "source_cap_collapse",
+        "orientation_selected_cap_product_collar",
+        "inverse_target_cap_collapse"
+      ],
+      "expanded_ambient_cell_count": 143861796,
+      "explicit_inverse_order": [
+        "target_cap_collapse",
+        "inverse_cap_product_collar",
+        "inverse_source_cap_collapse"
+      ],
+      "fiber_transport": "PASS",
+      "jacobian_det_max": "3",
+      "jacobian_det_min": "1/3",
+      "paired_saddle_ambient_cells": "OPEN",
+      "paired_saddle_fiber_cells": "PASS",
+      "power": 1,
+      "side": "prefix-first",
+      "source_cap_collapse": {
+        "all_chart_inverses_explicit": true,
+        "all_charts_positive": true,
+        "cap_collapse_chart": "PASS",
+        "chart_determinant_max": "1/2880",
+        "chart_determinant_min": "1/11520",
+        "chart_sequence_sha256": "106028BE8ACCAE946248998161A2AD34F9833EDDDB79974759A75C21398B320F",
+        "collapse_step_count": 12080,
+        "conjugated_jacobian_det_max": "3",
+        "conjugated_jacobian_det_min": "1/3",
+        "dimension_histogram": {
+          "1": 1760,
+          "2": 6000,
+          "3": 4320
+        },
+        "expanded_ambient_cell_count": 71930880
+      },
+      "target_cap_collapse": {
+        "all_chart_inverses_explicit": true,
+        "all_charts_positive": true,
+        "cap_collapse_chart": "PASS",
+        "chart_determinant_max": "1/2880",
+        "chart_determinant_min": "1/11520",
+        "chart_sequence_sha256": "889247FC08857EED720CD85ABDF03ECD1ACC01962BE33BC37E066CC99844F0CF",
+        "collapse_step_count": 12080,
+        "conjugated_jacobian_det_max": "3",
+        "conjugated_jacobian_det_min": "1/3",
+        "dimension_histogram": {
+          "1": 1760,
+          "2": 6000,
+          "3": 4320
+        },
+        "expanded_ambient_cell_count": 71930880
+      }
+    },
+    {
+      "cap_product_collar_cells": 36,
+      "cap_product_collar_sha256": "0D05EEE5DFE8747F9F0653B5BAF99AD94E22E067DB758C46E22D08BE8A9CD449",
+      "composition_order": [
+        "source_cap_collapse",
+        "orientation_selected_cap_product_collar",
+        "inverse_target_cap_collapse"
+      ],
+      "expanded_ambient_cell_count": 143861796,
+      "explicit_inverse_order": [
+        "target_cap_collapse",
+        "inverse_cap_product_collar",
+        "inverse_source_cap_collapse"
+      ],
+      "fiber_transport": "PASS",
+      "jacobian_det_max": "3",
+      "jacobian_det_min": "1/3",
+      "paired_saddle_ambient_cells": "OPEN",
+      "paired_saddle_fiber_cells": "PASS",
+      "power": 1,
+      "side": "target-first",
+      "source_cap_collapse": {
+        "all_chart_inverses_explicit": true,
+        "all_charts_positive": true,
+        "cap_collapse_chart": "PASS",
+        "chart_determinant_max": "1/2880",
+        "chart_determinant_min": "1/11520",
+        "chart_sequence_sha256": "106028BE8ACCAE946248998161A2AD34F9833EDDDB79974759A75C21398B320F",
+        "collapse_step_count": 12080,
+        "conjugated_jacobian_det_max": "3",
+        "conjugated_jacobian_det_min": "1/3",
+        "dimension_histogram": {
+          "1": 1760,
+          "2": 6000,
+          "3": 4320
+        },
+        "expanded_ambient_cell_count": 71930880
+      },
+      "target_cap_collapse": {
+        "all_chart_inverses_explicit": true,
+        "all_charts_positive": true,
+        "cap_collapse_chart": "PASS",
+        "chart_determinant_max": "1/2880",
+        "chart_determinant_min": "1/11520",
+        "chart_sequence_sha256": "889247FC08857EED720CD85ABDF03ECD1ACC01962BE33BC37E066CC99844F0CF",
+        "collapse_step_count": 12080,
+        "conjugated_jacobian_det_max": "3",
+        "conjugated_jacobian_det_min": "1/3",
+        "dimension_histogram": {
+          "1": 1760,
+          "2": 6000,
+          "3": 4320
+        },
+        "expanded_ambient_cell_count": 71930880
+      }
+    }
+  ],
+  "paired_saddle_ambient_cells": "OPEN",
+  "paired_saddle_fiber_transport": "PASS",
+  "schema": "t73_johnson_cap_collapse_assembly/v1",
+  "sha256": "04252806EA4726753F21801D2B0AF0BC43D9D98C7A7AA4E37B3A23878E1C45EB",
+  "support_sha256": "3FD397D7D77198F4A8358BD1EE475E6B19F1F4D6B53AC52CF7B3C2BEEC943A55",
+  "sweep_sha256": "188B128AD8D619318F3E5BE1D28A7684082233DFBFC81AB24E69C1F53F5DBA9A"
+}
