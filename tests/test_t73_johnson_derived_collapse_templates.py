@@ -45,6 +45,23 @@ class JohnsonDerivedCollapseTemplateTest(unittest.TestCase):
             self.assertTrue(template["before_collapse"]["collapses_to_point"])
             self.assertTrue(template["after_collapse"]["collapses_to_point"])
             self.assertTrue(template["geometric_tetrahedra_nondegenerate"])
+            difference_ball = template["difference_ball"]
+            self.assertEqual(difference_ball["difference_ball_status"], "PASS")
+            self.assertEqual(difference_ball["boundary"]["topology"], "sphere")
+            self.assertTrue(difference_ball["collapse"]["collapses_to_point"])
+            self.assertTrue(
+                difference_ball["boundary_equals_before_and_after_patches"]
+            )
+            self.assertGreater(
+                __import__("fractions").Fraction(
+                    difference_ball["strict_visibility_margin_min"]
+                ),
+                0,
+            )
+            self.assertEqual(
+                difference_ball["cone_tetrahedra"], 72 if dimension in (1, 2) else 168
+            )
+            self.assertTrue(difference_ball["cone_determinants_nonzero"])
 
 
 if __name__ == "__main__":

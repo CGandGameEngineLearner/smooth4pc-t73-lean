@@ -22,6 +22,11 @@ STANDARD_VERTICES = (
     (Fraction(0), Fraction(1), Fraction(0)),
     (Fraction(0), Fraction(0), Fraction(1)),
 )
+STAR_CENTERS = {
+    1: (Fraction(4, 5), Fraction(1, 44), Fraction(1, 44)),
+    2: (Fraction(295, 576), Fraction(211, 576), Fraction(1, 64)),
+    3: (Fraction(277, 1056), Fraction(277, 1056), Fraction(277, 1056)),
+}
 
 
 def load(name: str):
@@ -51,6 +56,22 @@ def det3(matrix):
         - matrix[0][1] * (matrix[1][0] * matrix[2][2] - matrix[1][2] * matrix[2][0])
         + matrix[0][2] * (matrix[1][0] * matrix[2][1] - matrix[1][1] * matrix[2][0])
     )
+
+
+def subtract(first, second):
+    return tuple(first[axis] - second[axis] for axis in range(3))
+
+
+def cross(first, second):
+    return (
+        first[1] * second[2] - first[2] * second[1],
+        first[2] * second[0] - first[0] * second[2],
+        first[0] * second[1] - first[1] * second[0],
+    )
+
+
+def dot(first, second):
+    return sum(first[axis] * second[axis] for axis in range(3))
 
 
 def subdivide_simplex(simplex):
@@ -209,6 +230,11 @@ def build_dimension(dimension, collapse_tools):
     common_boundary = before_boundary & after_boundary
     before_patch = before_boundary - common_boundary
     after_patch = after_boundary - common_boundary
+    difference = [
+        tetrahedron
+        for tetrahedron in before
+        if frozenset(tetrahedron) not in after_set
+    ]
     before_vertices, before_indexed = indexed_tetrahedra(before)
     after_vertices, after_indexed = indexed_tetrahedra(after)
     before_ball = collapse_tools.fast_collapse_to_point(before_indexed)
@@ -217,6 +243,61 @@ def build_dimension(dimension, collapse_tools):
     after_boundary_invariants = surface_invariants(after_boundary)
     before_patch_invariants = surface_invariants(before_patch)
     after_patch_invariants = surface_invariants(after_patch)
+    difference_vertices, difference_indexed = indexed_tetrahedra(difference)
+    difference_boundary = boundary_faces(difference)
+    difference_boundary_invariants = surface_invariants(difference_boundary)
+    difference_collapse = collapse_tools.fast_collapse_to_point(difference_indexed)
+    if difference_boundary != before_patch | after_patch:
+        raise AssertionError("difference-ball boundary is not the two disk patches")
+    star_center = STAR_CENTERS[dimension]
+    face_incidence = collections.defaultdict(list)
+    for tetrahedron_index, tetrahedron in enumerate(difference):
+        for omitted in range(4):
+            face_incidence[
+                frozenset(
+                    tetrahedron[index] for index in range(4) if index != omitted
+                )
+            ].append(tetrahedron_index)
+    strict_margins = []
+    cone_tetrahedra = []
+    for face in difference_boundary:
+        face_points = [second_coordinate(vertex) for vertex in face]
+        incident = face_incidence[face]
+        if len(incident) != 1:
+            raise AssertionError("difference boundary face is not free")
+        interior = average(
+            [second_coordinate(vertex) for vertex in difference[incident[0]]]
+        )
+        normal = cross(
+            subtract(face_points[1], face_points[0]),
+            subtract(face_points[2], face_points[0]),
+        )
+        margin = dot(normal, subtract(interior, face_points[0])) * dot(
+            normal, subtract(star_center, face_points[0])
+        )
+        strict_margins.append(margin)
+        cone_tetrahedra.append((star_center, *face_points))
+    if min(strict_margins) <= 0:
+        raise AssertionError("recorded difference-ball star center is not strict")
+    cone_faces = collections.Counter(
+        frozenset(tetrahedron[index] for index in range(4) if index != omitted)
+        for tetrahedron in cone_tetrahedra
+        for omitted in range(4)
+    )
+    if set(cone_faces.values()) != {1, 2}:
+        raise AssertionError("star cone is not a face-to-face ball")
+    cone_determinants = []
+    for tetrahedron in cone_tetrahedra:
+        matrix = [
+            [
+                tetrahedron[column][row] - tetrahedron[0][row]
+                for column in range(1, 4)
+            ]
+            for row in range(3)
+        ]
+        cone_determinants.append(det3(matrix))
+    if any(determinant == 0 for determinant in cone_determinants):
+        raise AssertionError("star-cone tetrahedron is degenerate")
     if (
         before_boundary_invariants["topology"] != "sphere"
         or after_boundary_invariants["topology"] != "sphere"
@@ -248,6 +329,22 @@ def build_dimension(dimension, collapse_tools):
         "after_star_tetrahedra": len(after),
         "common_tetrahedra": len(before_set & after_set),
         "difference_tetrahedra": len(before_set - after_set),
+        "difference_ball": {
+            "tetrahedra": len(difference),
+            "boundary": difference_boundary_invariants,
+            "collapse": difference_collapse,
+            "boundary_equals_before_and_after_patches": True,
+            "strict_star_center": [str(value) for value in star_center],
+            "strict_visibility_margin_min": str(min(strict_margins)),
+            "cone_tetrahedra": len(cone_tetrahedra),
+            "cone_face_multiplicities": {
+                str(key): value
+                for key, value in sorted(collections.Counter(cone_faces.values()).items())
+            },
+            "cone_determinants_nonzero": True,
+            "cone_retriangulation_status": "PASS",
+            "difference_ball_status": "PASS",
+        },
         "before_boundary": before_boundary_invariants,
         "after_boundary": after_boundary_invariants,
         "common_boundary_faces": len(common_boundary),

@@ -2,7 +2,7 @@
   "all_derived_stars_are_ball_disk_moves": true,
   "ambient_cell_maps": "OPEN",
   "schema": "t73_johnson_derived_collapse_templates/v1",
-  "sha256": "5BE3A93574FF1B883F7D47A049AB0100D72C3F9810EF45F911B21672934357F5",
+  "sha256": "D055AE760C78095DCF224CEEAE1EA811C787518E305763F043DB90B1798DC0C2",
   "standard_vertices": [
     [
       "0",
@@ -109,6 +109,46 @@
       "common_tetrahedra": 36,
       "coordinate_denominator_lcm": 48,
       "derived_disk_move_support": "PASS",
+      "difference_ball": {
+        "boundary": {
+          "boundary_components": 0,
+          "boundary_edge_count": 0,
+          "edge_multiplicities": {
+            "2": 108
+          },
+          "edges": 108,
+          "euler": 2,
+          "faces": 72,
+          "surface_components": 1,
+          "surface_manifold": true,
+          "topology": "sphere",
+          "vertices": 38
+        },
+        "boundary_equals_before_and_after_patches": true,
+        "collapse": {
+          "collapse_steps": 193,
+          "collapses_to_point": true,
+          "remaining_edges": 0,
+          "remaining_faces": 0,
+          "remaining_tetrahedra": 0,
+          "remaining_vertices": 1
+        },
+        "cone_determinants_nonzero": true,
+        "cone_face_multiplicities": {
+          "1": 72,
+          "2": 108
+        },
+        "cone_retriangulation_status": "PASS",
+        "cone_tetrahedra": 72,
+        "difference_ball_status": "PASS",
+        "strict_star_center": [
+          "4/5",
+          "1/44",
+          "1/44"
+        ],
+        "strict_visibility_margin_min": "7/58392576",
+        "tetrahedra": 60
+      },
       "difference_tetrahedra": 60,
       "first_subdivision_tetrahedra": 24,
       "free_face": [
@@ -204,6 +244,46 @@
       "common_tetrahedra": 156,
       "coordinate_denominator_lcm": 48,
       "derived_disk_move_support": "PASS",
+      "difference_ball": {
+        "boundary": {
+          "boundary_components": 0,
+          "boundary_edge_count": 0,
+          "edge_multiplicities": {
+            "2": 108
+          },
+          "edges": 108,
+          "euler": 2,
+          "faces": 72,
+          "surface_components": 1,
+          "surface_manifold": true,
+          "topology": "sphere",
+          "vertices": 38
+        },
+        "boundary_equals_before_and_after_patches": true,
+        "collapse": {
+          "collapse_steps": 193,
+          "collapses_to_point": true,
+          "remaining_edges": 0,
+          "remaining_faces": 0,
+          "remaining_tetrahedra": 0,
+          "remaining_vertices": 1
+        },
+        "cone_determinants_nonzero": true,
+        "cone_face_multiplicities": {
+          "1": 72,
+          "2": 108
+        },
+        "cone_retriangulation_status": "PASS",
+        "cone_tetrahedra": 72,
+        "difference_ball_status": "PASS",
+        "strict_star_center": [
+          "295/576",
+          "211/576",
+          "1/64"
+        ],
+        "strict_visibility_margin_min": "1/10616832",
+        "tetrahedra": 60
+      },
       "difference_tetrahedra": 60,
       "first_subdivision_tetrahedra": 24,
       "free_face": [
@@ -301,6 +381,46 @@
       "common_tetrahedra": 396,
       "coordinate_denominator_lcm": 48,
       "derived_disk_move_support": "PASS",
+      "difference_ball": {
+        "boundary": {
+          "boundary_components": 0,
+          "boundary_edge_count": 0,
+          "edge_multiplicities": {
+            "2": 252
+          },
+          "edges": 252,
+          "euler": 2,
+          "faces": 168,
+          "surface_components": 1,
+          "surface_manifold": true,
+          "topology": "sphere",
+          "vertices": 86
+        },
+        "boundary_equals_before_and_after_patches": true,
+        "collapse": {
+          "collapse_steps": 531,
+          "collapses_to_point": true,
+          "remaining_edges": 0,
+          "remaining_faces": 0,
+          "remaining_tetrahedra": 0,
+          "remaining_vertices": 1
+        },
+        "cone_determinants_nonzero": true,
+        "cone_face_multiplicities": {
+          "1": 168,
+          "2": 252
+        },
+        "cone_retriangulation_status": "PASS",
+        "cone_tetrahedra": 168,
+        "difference_ball_status": "PASS",
+        "strict_star_center": [
+          "277/1056",
+          "277/1056",
+          "277/1056"
+        ],
+        "strict_visibility_margin_min": "13/116785152",
+        "tetrahedra": 180
+      },
       "difference_tetrahedra": 180,
       "first_subdivision_tetrahedra": 24,
       "free_face": [

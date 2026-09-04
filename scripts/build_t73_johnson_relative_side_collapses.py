@@ -167,6 +167,13 @@ def build_movie(analyzer, pl, sweep_tools, movie, support):
                 )
                 for index in component
             ]
+            tetrahedron_lifts = [
+                [
+                    [str(value) for value in vertex]
+                    for vertex in tetrahedra[index]["vertices"]
+                ]
+                for index in component
+            ]
             indexed_disk = [
                 tuple(
                     vertex_index[sweep_tools.periodic_vertex(vertex)] for vertex in face
@@ -189,6 +196,8 @@ def build_movie(analyzer, pl, sweep_tools, movie, support):
                     ],
                     "disk_face_count": len(indexed_disk),
                     "disk_faces": [list(face) for face in indexed_disk],
+                    "tetrahedra": [list(tetrahedron) for tetrahedron in indexed_tetrahedra],
+                    "tetrahedron_lifts": tetrahedron_lifts,
                     "collapse": collapse,
                 }
             )
