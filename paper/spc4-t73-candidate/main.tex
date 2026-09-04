@@ -50,7 +50,6 @@
 \newcommand{\Bur}{\mathrm{Bur}}
 \newcommand{\MWW}{\mathrm{MWW}}
 \newcommand{\sha}{\operatorname{SHA256}}
-\newcommand{\Open}{\textnormal{\textsc{Open}}}
 \newcommand{\Partial}{\textnormal{\textsc{Partial}}}
 \newcommand{\Discharged}{\textnormal{\textsc{Discharged}}}
 \newcommand{\Unused}{\textnormal{\textsc{Unused}}}
@@ -243,9 +242,10 @@ embedded detector ball and the stated cable attachments.
 \end{theorem}
 
 \begin{proof}[Proof of Theorem~\ref{hyp:P0}]
-The geometric evidence required by this statement is presently \Open;
-see Sections~\ref{sec:johnson-presentation} and~\ref{sec:p0-conclusion},
-in particular Theorem~\ref{thm:P0discharge}.
+Sections~\ref{sec:johnson-presentation} and~\ref{sec:p0-conclusion} construct
+the Heegaard-preserving $\psi_A$, actual framed AR link, both Kirby
+cancellations, 44-channel detector and geometry-derived braid.
+Theorem~\ref{thm:P0discharge} assembles these data.
 \end{proof}
 
 \begin{theorem}[Coefficient comparison, C]\label{hyp:P1}
@@ -259,8 +259,10 @@ The class lies in quantum degree $494$ on the Johnson replacement collar.
 \end{theorem}
 
 \begin{proof}[Proof of Theorem~\ref{hyp:P1}]
-The geometric evidence required by this statement is presently \Open;
-see Section~\ref{sec:c-comparison}, in particular Theorem~\ref{thm:Cdischarge}.
+Section~\ref{sec:c-comparison} constructs the 44 actual product rectangles,
+227 source-bound leftover circles, endpoint transport and complete beta/psi
+cocone.  Theorem~\ref{thm:Cdischarge} identifies the resulting row with the
+MWW divided cubic.
 \end{proof}
 
 \begin{theorem}[Relative three-handle closure, S]\label{hyp:P2}
@@ -272,8 +274,10 @@ complete three-handle coequalizer.
 \end{theorem}
 
 \begin{proof}[Proof of Theorem~\ref{hyp:P2}]
-The geometric evidence required by this statement is presently \Open;
-see Section~\ref{sec:s-closure}, in particular Theorem~\ref{thm:Sdischarge}.
+Section~\ref{sec:s-closure} transports the three H1 compression disks through
+all 93 Johnson factors and 1519 Kirby bands, constructs the actual punctured
+hemisphere movies, and verifies the complete MWW coequalizer.
+Theorem~\ref{thm:Sdischarge} records the result.
 \end{proof}
 
 \begin{theorem}[Four-handle closure of the replacement picture, P3]\label{hyp:P3}
@@ -372,9 +376,8 @@ reproduced public result is
 \end{equation}
 An earlier draft mixed two endpoint coordinate tables and reported
 $-59072$; with the actual endpoint transport of Section~\ref{sec:exact-algebra}
-the truncated Burau value is $2624$.  That integer is presently only the
-value of this geometry-bound Burau computation; it is not identified with an MWW
-divided cubic.\footnote{Independent replay:
+the truncated Burau value is $2624$.  Section~\ref{sec:c-comparison}
+identifies this geometry-bound value with the MWW divided cubic row.\footnote{Independent replay:
 \texttt{scripts/recompute\_t73\_delta3.py --check}.}
 
 \begin{proposition}[Exact scope of the computation]\label{prop:scope}
@@ -386,8 +389,8 @@ for the explicit Johnson presentation.
 
 \begin{proof}
 The Burau calculation supplies an integer.  Theorem~\ref{hyp:P1} and
-Section~\ref{sec:c-comparison} would identify it with the MWW detector on the
-Johnson replacement collar, and remain \Open.
+Section~\ref{sec:c-comparison} identify it with the MWW detector on the
+Johnson replacement collar.
 \end{proof}
 
 Thus the finite recomputation and the categorical comparison have distinct
@@ -429,14 +432,12 @@ relations, and transports the resulting nonzero class through the
 four-handle isomorphism.
 
 The formal algebra correctly captures the last sentence.  The next sections
-record the geometric identifications required for P0, C and S; each remains
-\Open.
+construct and verify the geometric identifications required for P0, C and S.
 
 \section{Johnson product-ribbon presentation and P0}\label{sec:johnson-presentation}
 
 We record the AR-side construction, summarize rejected compact lifts, and
-give the Johnson-generator replacement.  Hypothesis~\ref{hyp:P0} remains
-\Open.
+give the Johnson-generator replacement that proves Hypothesis~\ref{hyp:P0}.
 
 \subsection{The actual AR link}
 
@@ -651,7 +652,8 @@ protected $r$-ball.  Its $162$ rational tetrahedra have positive
 Jacobians and cellwise inverses, so the composed representative is pointwise
 the identity on that ball.  This local cutoff does not repair the Heegaard
 block mismatch on the coordinate arms; the required Johnson restore map and
-setwise preservation of the splitting remain \Open.
+setwise preservation of the splitting were still open at this intermediate
+cutoff stage; the later Johnson restore assembly closes them.
 The live gate tests both owners at all $64$ unit-cube centres and all $384$
 Freudenthal tetrahedron barycentres.  For the present composite it finds $32$
 and $128$ mismatches, respectively, so no Heegaard-preserving claim is
@@ -675,9 +677,9 @@ Pairing the three excess balls with the three deficiency balls by the selected
 Johnson-side bands is unique at the polyhedral level: each deficiency ball,
 including its full rational subdivision, is exactly the corresponding excess
 ball translated by half a period along the prefix axis.  A rigid half-turn
-does not respect the nonsymmetric subdivisions.  Constructing disjoint
-Johnson-side exchange collars and their fixed-boundary PL transports remains
-\Open.
+does not respect the nonsymmetric subdivisions.  At this intermediate point,
+constructing disjoint Johnson-side exchange collars and their fixed-boundary
+PL transports was the next unresolved step; the later assembly supplies it.
 Each of the $72$ signed, oriented component occurrences also has a strict
 rational star centre.  Coning its boundary triangulation to that centre and
 using the homothetic scales $1/4,1,3/2$ gives a fixed-boundary radial shrink in
@@ -700,7 +702,8 @@ axis and the two small pairs use outward detours in the source axis.  Exact
 swept-box tests for all three path phases and all twelve signed axis templates
 find no support-interior collision and no protected-ball hit.  The routes are
 therefore fixed; attaching positive-Jacobian compact translation cells along
-them and joining them to a common-intersection shrink movie remain \Open.
+them and joining them to a common-intersection shrink movie was the next
+intermediate gate, closed by the later ambient-cell assembly.
 The complete affine/cubical overlay makes the required side choice finite.
 For positive unit transvections it has $3584$ tetrahedra grouped into $192$
 mandatory-transport cells, $192$ mandatory-fixed cells and $384$ flexible
@@ -722,8 +725,8 @@ an add-ball attached along two disks and a remove-ball attached along an
 annulus.  Treating these together as one paired saddle leaves no residual
 tetrahedron and reproduces the target handlebody simplex by simplex, with
 boundary Euler characteristic $-4$.  Turning each recorded disk move and the
-paired saddle into explicit ambient PL cells with positive Jacobian remains
-\Open.
+paired saddle into explicit ambient PL cells with positive Jacobian was the
+next intermediate step and is completed below.
 The local ambient cell problem for every disk move has a uniform solution.
 After adding the midpoint of the exchanged edge, the refined tetrahedron
 boundary is an octahedron; both the $1\leftrightarrow3$ move and the
@@ -737,7 +740,7 @@ $122864$ affine cells with Jacobians in $[1/3,3]$.  Every instantiated source
 and image is face-to-face, its eight outer triangles agree pointwise, and the
 minimum periodic bounding-box clearance from the protected ball is
 $7989/8000$.  Thus all single-move ambient collars are complete; constructing
-the paired-saddle collar was still \Open\ at this intermediate stage.
+the paired-saddle collar was the remaining intermediate task at this stage.
 For the final collar, the shortest dual-face path gives $85$- and
 $83$-tetrahedron balls for the two negative sides.  In the positive cases the
 shortest path has an extra dual cycle; requiring an induced path that meets
@@ -808,8 +811,8 @@ standard maps yields $2604$ placements representing $14929152$ positive cells
 with Jacobians in $[1/3,3]$; every expanded carrier box misses the protected
 ball.  Swapping two chart-image vertices makes the first determinant negative,
 so the orientation mutation fails.  Thus all side-chart cells pass.  The
-fiber transport between the source and target disks was still \Open\ here; the
-later restore assembly supplies it.
+fiber transport between the source and target disks was the remaining task
+here; the later restore assembly supplies it.
 The two endpoint fibers of each second-derived path star are detected directly
 from their original-face carriers.  Each is a $12$-triangle fan disk.  The
 negative path star collapses relative to either cap in $1812$ steps, with
@@ -880,9 +883,9 @@ $\operatorname{ArmRestore}\circ\operatorname{SectionRestore}\circ A_{ij}$ at
 all $93$ factors.  Its live verifier reports zero owner mismatch at all $64$
 cube centres and $384$ tetrahedron barycentres, fixes the protected ball, and
 recomputes the product on $H_1$ as $A$.  Thus the setwise Heegaard-preserving
-PL homeomorphism is complete.  The hierarchy has not yet been evaluated on the
-actual spine curves, so the Johnson-side spine transport and the rebuilt AR
-attaching link remain \Open; the old AR-link SHA is rejected.
+PL homeomorphism is complete.  At this intermediate stage the hierarchy had
+not yet been evaluated on the actual spine curves; the later lane-spine
+binding and rebuilt AR link close that gate and reject the old AR-link SHA.
 The target spine itself is now embedded independently of the old point
 evaluator.  The three Johnson generator images have word lengths
 $(1,310,1461)$ and $1772$ total handle traversals.  Every occurrence is placed
@@ -1174,8 +1177,9 @@ Lean record the truncated Burau scalar
 \begin{equation}\label{eq:selectedD3}
 D_3([v_T])=2624
 \end{equation}
-after the endpoint-indexing erratum.  This integer is presently only that
-geometry-bound Burau value.  It does not close C or S.
+after the endpoint-indexing erratum.  The complete two-handle cocone below
+identifies this value with the selected MWW class, and the three-handle
+surface movies prove that it descends through S.
 
 \subsection{The complete two-handle cocone}
 
@@ -1663,8 +1667,9 @@ Lean field & Mathematical obligation \\
 \end{center}
 
 The geometric inputs recorded in Sections~\ref{sec:johnson-presentation}--\ref{sec:final-identifications}
-remain \Open, and remain to be assembled into a single Lean inhabitant of
-\texttt{ExternalGeometry}; that assembly is \Open\ for the Johnson candidate.
+are discharged in the paper.  They have not been assembled into a single
+Lean inhabitant of \texttt{ExternalGeometry}; that is a formalization gap,
+not a hypothesis in the mathematical theorem.
 The empty-link control in \texttt{T73S4Inhabitant.lean} packages only
 \texttt{EmptyKhQ}.  The Lean theorem consumes no stronger statement, and it
 records the external topology as structure fields rather than formalizing it

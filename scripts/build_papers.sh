@@ -14,7 +14,8 @@ build_english() {
   bibtex main
   pdflatex -interaction=nonstopmode -halt-on-error main.tex
   pdflatex -interaction=nonstopmode -halt-on-error main.tex
-  cp main.pdf "$output_dir/spc4-t73-candidate.pdf"
+  cp main.pdf "$output_dir/.spc4-t73-candidate.new.pdf"
+  mv -f "$output_dir/.spc4-t73-candidate.new.pdf" "$output_dir/spc4-t73-candidate.pdf"
   echo "Wrote $output_dir/spc4-t73-candidate.pdf"
 }
 
