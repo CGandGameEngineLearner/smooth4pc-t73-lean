@@ -16,16 +16,15 @@ are recorded under Hypotheses P0/C/S/P3 and the retired-assumption remark.
 
 ## Build
 
-From this directory in WSL:
+From the repository root, the default build is:
 
 ```text
-pdflatex -interaction=nonstopmode -halt-on-error main.tex
-bibtex main
-pdflatex -interaction=nonstopmode -halt-on-error main.tex
-pdflatex -interaction=nonstopmode -halt-on-error main.tex
-mkdir -p ../../output/pdf
-cp main.pdf ../../output/pdf/spc4-t73-candidate.pdf
+bash scripts/build_papers.sh
 ```
+
+It writes `output/pdf/spc4-t73-candidate.pdf`, corresponding on the tested
+Windows checkout to
+`C:\Users\Administrator\Documents\ChatGPT\smooth4pc-t73-lean\output\pdf`.
 
 ### Chinese edition (`main-zh.tex`)
 
@@ -36,7 +35,7 @@ Translated section files use the `-zh` suffix; body chunks live in
 From the repository root in WSL (requires `lualatex` and `texlive-lang-chinese`):
 
 ```text
-bash scripts/build_zh_paper.sh
+bash scripts/build_papers.sh --zh
 ```
 
 Or manually:

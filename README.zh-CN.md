@@ -53,6 +53,15 @@ python3 scripts/audit_t73_premises.py --check
 文稿与编译说明：
 [`paper/spc4-t73-candidate/README.md`](paper/spc4-t73-candidate/README.md)。
 
+默认论文构建会把英文 PDF 保存到仓库输出目录（Windows 路径
+`C:\Users\Administrator\Documents\ChatGPT\smooth4pc-t73-lean\output\pdf`）：
+
+```text
+bash scripts/build_papers.sh          # 默认：英文
+bash scripts/build_papers.sh --zh     # 仅中文
+bash scripts/build_papers.sh --all    # 两者
+```
+
 ## 从哪里开始
 
 1. 阅读论文摘要与第 3 节（精确陈述）：
@@ -180,6 +189,7 @@ python3 -m unittest \
   tests.test_t73_e13_close tests.test_t73_e13_identification
 
 python3 scripts/generate_t73_lean_geometry.py --check
+python3 scripts/check_t73_external_geometry_boundary.py
 lake env lean Smooth4PC/T73CertificateIndex.lean
 lake env lean Smooth4PC/T73JohnsonTransvections.lean
 lake env lean Smooth4PC/T73GeometryPack.lean
@@ -189,6 +199,8 @@ lake env lean Smooth4PC/T73Conditional.lean
 本仓库的 `lake build` 没有默认 target，请使用上述显式模块命令。生成的 Lean
 索引记录 actual artifact SHA 以及精确计数 `44`、`227`、`93`、
 `[12578,1824,409]`、`6`、`1513`。
+边界检查必须报告 `OPEN_MISSING_ANALYTIC_MWW_FOUNDATIONS`；只有真正形式化
+MWW 模与映射后才能改为 PASS，不能由证书布尔值替代。
 
 ## 复现约定
 

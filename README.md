@@ -59,6 +59,16 @@ the braid word, the exact value is \(+2624\) (still nonzero).
 Paper sources and build notes:
 [`paper/spc4-t73-candidate/README.md`](paper/spc4-t73-candidate/README.md).
 
+The default paper build writes the reviewed English PDF directly to the
+repository output directory (Windows path
+`C:\Users\Administrator\Documents\ChatGPT\smooth4pc-t73-lean\output\pdf`):
+
+```text
+bash scripts/build_papers.sh          # English, default
+bash scripts/build_papers.sh --zh     # Chinese only
+bash scripts/build_papers.sh --all    # both
+```
+
 ## Start here
 
 1. Read the paper abstract and §3 (precise statements) in
@@ -191,6 +201,7 @@ python3 -m unittest \
   tests.test_t73_e13_close tests.test_t73_e13_identification
 
 python3 scripts/generate_t73_lean_geometry.py --check
+python3 scripts/check_t73_external_geometry_boundary.py
 lake env lean Smooth4PC/T73CertificateIndex.lean
 lake env lean Smooth4PC/T73JohnsonTransvections.lean
 lake env lean Smooth4PC/T73GeometryPack.lean
@@ -200,6 +211,9 @@ lake env lean Smooth4PC/T73Conditional.lean
 `lake build` has no default target in this repository; use the explicit module
 commands above. The generated Lean index records the actual artifact hashes and
 the exact counts `44`, `227`, `93`, `[12578,1824,409]`, `6`, and `1513`.
+The boundary checker must report
+`OPEN_MISSING_ANALYTIC_MWW_FOUNDATIONS`; changing this to PASS requires actual
+Lean definitions of the MWW modules and maps, not a certificate flag.
 
 ## Reproducibility contract
 
