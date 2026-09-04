@@ -1,0 +1,2002 @@
+{
+  "actual_cut_tangle_sha256": "A47D6BC2510FD819ADBC10893600E8A5C6404B1F67391165D63936C96B03BA95",
+  "ar_lane_binding_status": "PASS",
+  "collar_sha256": "130BA2B7B8FD4AB6178C0357AB8C90916E42A4B21DC95346859655CAC05AAD96",
+  "coordinate_chart_status": "PASS",
+  "elementary_crossing_count": 11340,
+  "endpoint_return_status": "PASS",
+  "geometry_source": "actual post-cancellation detector, its 44-point PL chart, and the oriented r_xy six-leg point-push route",
+  "historical_pd_status": "NOT_USED_OR_CLAIMED",
+  "independent_ar_derivation_status": "PASS",
+  "interpretation": "The 44 actual y-belt points are moved by the recorded collision-free PL chart to normalized lanes.  The six geometry-derived point-push sweeps are realized there, their crossings are independently re-extracted, and the inverse chart returns every labelled actual endpoint and its product normal.",
+  "recovered_word_sha256": "7C2D2F792C2672221A76CAF08A71F560AF0CB7654B4D537C00FAD00B16EFA187",
+  "relative_endpoint_word_status": "PASS",
+  "replacement_presentation_status": "PASS_ACTUAL_DETECTOR_POLYLINES",
+  "schema": "t73_johnson_geometric_braid/v2",
+  "six_sweep_sha256": "F55EA01FA1BF8166ADB355CBB87FE5680A93F6AD46265399318B644CD2C20103",
+  "strand_count": 44,
+  "strand_receipts": [
+    {
+      "actual_endpoint_transport": {
+        "actual_belt_point": [
+          "-1",
+          "0"
+        ],
+        "all_other_points_fixed": true,
+        "movie_order": 0,
+        "normalized_point": [
+          "-43/100",
+          "1/100"
+        ],
+        "point_path": [
+          [
+            "-1",
+            "0"
+          ],
+          [
+            "-889/1994",
+            "-827/1982"
+          ],
+          [
+            "-43/100",
+            "1/100"
+          ]
+        ],
+        "wicket": 1
+      },
+      "normal_sha256": "87F0117804EACEC3BE5EED44F8B0A0CC9CE80289E7014394A567212788421406",
+      "normalized_endpoints": [
+        [
+          "-43/100",
+          "1/100",
+          "0"
+        ],
+        [
+          "-43/100",
+          "1/100",
+          "1"
+        ]
+      ],
+      "polyline_sha256": "9A00ADBE44F985E78976FDA30F6D9EAAD2F4C8B53FB4976E23433E5378BAB4F6",
+      "strand_id": 1,
+      "vertex_count": 34021
+    },
+    {
+      "actual_endpoint_transport": {
+        "actual_belt_point": [
+          "1",
+          "0"
+        ],
+        "all_other_points_fixed": true,
+        "movie_order": 1,
+        "normalized_point": [
+          "-41/100",
+          "1/50"
+        ],
+        "point_path": [
+          [
+            "1",
+            "0"
+          ],
+          [
+            "-815/1994",
+            "-721/1982"
+          ],
+          [
+            "-41/100",
+            "1/50"
+          ]
+        ],
+        "wicket": 2
+      },
+      "normal_sha256": "87F0117804EACEC3BE5EED44F8B0A0CC9CE80289E7014394A567212788421406",
+      "normalized_endpoints": [
+        [
+          "-41/100",
+          "1/50",
+          "0"
+        ],
+        [
+          "-41/100",
+          "1/50",
+          "1"
+        ]
+      ],
+      "polyline_sha256": "EF3FFE19B5735C04A7B691D439CF3DF745061069FA9FC5E93404BFE498F4AEAD",
+      "strand_id": 2,
+      "vertex_count": 34021
+    },
+    {
+      "actual_endpoint_transport": {
+        "actual_belt_point": [
+          "58/231",
+          "-229/462"
+        ],
+        "all_other_points_fixed": true,
+        "movie_order": 2,
+        "normalized_point": [
+          "-39/100",
+          "3/100"
+        ],
+        "point_path": [
+          [
+            "58/231",
+            "-229/462"
+          ],
+          [
+            "-741/1994",
+            "-615/1982"
+          ],
+          [
+            "-39/100",
+            "3/100"
+          ]
+        ],
+        "wicket": 3
+      },
+      "normal_sha256": "87F0117804EACEC3BE5EED44F8B0A0CC9CE80289E7014394A567212788421406",
+      "normalized_endpoints": [
+        [
+          "-39/100",
+          "3/100",
+          "0"
+        ],
+        [
+          "-39/100",
+          "3/100",
+          "1"
+        ]
+      ],
+      "polyline_sha256": "25FE591241B1D6030F16BC7FEE80DB8AC7544D69C66EBC8B06F37896F00003C6",
+      "strand_id": 3,
+      "vertex_count": 34021
+    },
+    {
+      "actual_endpoint_transport": {
+        "actual_belt_point": [
+          "233/924",
+          "-227/462"
+        ],
+        "all_other_points_fixed": true,
+        "movie_order": 3,
+        "normalized_point": [
+          "-37/100",
+          "1/25"
+        ],
+        "point_path": [
+          [
+            "233/924",
+            "-227/462"
+          ],
+          [
+            "-667/1994",
+            "-509/1982"
+          ],
+          [
+            "-37/100",
+            "1/25"
+          ]
+        ],
+        "wicket": 4
+      },
+      "normal_sha256": "87F0117804EACEC3BE5EED44F8B0A0CC9CE80289E7014394A567212788421406",
+      "normalized_endpoints": [
+        [
+          "-37/100",
+          "1/25",
+          "0"
+        ],
+        [
+          "-37/100",
+          "1/25",
+          "1"
+        ]
+      ],
+      "polyline_sha256": "779BC91A63B9B8177DC7D1EC5A5C14EF35C1424A0D6FB5D7C6597928418E1195",
+      "strand_id": 4,
+      "vertex_count": 34021
+    },
+    {
+      "actual_endpoint_transport": {
+        "actual_belt_point": [
+          "39/154",
+          "-75/154"
+        ],
+        "all_other_points_fixed": true,
+        "movie_order": 4,
+        "normalized_point": [
+          "-7/20",
+          "1/20"
+        ],
+        "point_path": [
+          [
+            "39/154",
+            "-75/154"
+          ],
+          [
+            "-593/1994",
+            "-403/1982"
+          ],
+          [
+            "-7/20",
+            "1/20"
+          ]
+        ],
+        "wicket": 5
+      },
+      "normal_sha256": "87F0117804EACEC3BE5EED44F8B0A0CC9CE80289E7014394A567212788421406",
+      "normalized_endpoints": [
+        [
+          "-7/20",
+          "1/20",
+          "0"
+        ],
+        [
+          "-7/20",
+          "1/20",
+          "1"
+        ]
+      ],
+      "polyline_sha256": "6C862182CF4125470D2C1E30C573C2569FEAAF89FF87554D18CDD995BE83F68B",
+      "strand_id": 5,
+      "vertex_count": 34021
+    },
+    {
+      "actual_endpoint_transport": {
+        "actual_belt_point": [
+          "235/924",
+          "-223/462"
+        ],
+        "all_other_points_fixed": true,
+        "movie_order": 5,
+        "normalized_point": [
+          "-33/100",
+          "3/50"
+        ],
+        "point_path": [
+          [
+            "235/924",
+            "-223/462"
+          ],
+          [
+            "-519/1994",
+            "-297/1982"
+          ],
+          [
+            "-33/100",
+            "3/50"
+          ]
+        ],
+        "wicket": 6
+      },
+      "normal_sha256": "87F0117804EACEC3BE5EED44F8B0A0CC9CE80289E7014394A567212788421406",
+      "normalized_endpoints": [
+        [
+          "-33/100",
+          "3/50",
+          "0"
+        ],
+        [
+          "-33/100",
+          "3/50",
+          "1"
+        ]
+      ],
+      "polyline_sha256": "182654324C88BDBFB7FFCFDAA70EE4C221F91AF3863D22A0FC9F18ABBD307301",
+      "strand_id": 6,
+      "vertex_count": 34021
+    },
+    {
+      "actual_endpoint_transport": {
+        "actual_belt_point": [
+          "59/231",
+          "-221/462"
+        ],
+        "all_other_points_fixed": true,
+        "movie_order": 6,
+        "normalized_point": [
+          "-31/100",
+          "7/100"
+        ],
+        "point_path": [
+          [
+            "59/231",
+            "-221/462"
+          ],
+          [
+            "-445/1994",
+            "-191/1982"
+          ],
+          [
+            "-31/100",
+            "7/100"
+          ]
+        ],
+        "wicket": 7
+      },
+      "normal_sha256": "87F0117804EACEC3BE5EED44F8B0A0CC9CE80289E7014394A567212788421406",
+      "normalized_endpoints": [
+        [
+          "-31/100",
+          "7/100",
+          "0"
+        ],
+        [
+          "-31/100",
+          "7/100",
+          "1"
+        ]
+      ],
+      "polyline_sha256": "A2CD11999D6E9C8FFACB28C6524CB8AF45457DA6E17BD8DDBAB69268D39EA684",
+      "strand_id": 7,
+      "vertex_count": 34021
+    },
+    {
+      "actual_endpoint_transport": {
+        "actual_belt_point": [
+          "79/308",
+          "-73/154"
+        ],
+        "all_other_points_fixed": true,
+        "movie_order": 7,
+        "normalized_point": [
+          "-29/100",
+          "2/25"
+        ],
+        "point_path": [
+          [
+            "79/308",
+            "-73/154"
+          ],
+          [
+            "-371/1994",
+            "-85/1982"
+          ],
+          [
+            "-29/100",
+            "2/25"
+          ]
+        ],
+        "wicket": 8
+      },
+      "normal_sha256": "87F0117804EACEC3BE5EED44F8B0A0CC9CE80289E7014394A567212788421406",
+      "normalized_endpoints": [
+        [
+          "-29/100",
+          "2/25",
+          "0"
+        ],
+        [
+          "-29/100",
+          "2/25",
+          "1"
+        ]
+      ],
+      "polyline_sha256": "AAABA8C3B0FD596656EB13B20AA251F94009AA1B73FF0BC1FA997FD8149CAF36",
+      "strand_id": 8,
+      "vertex_count": 34021
+    },
+    {
+      "actual_endpoint_transport": {
+        "actual_belt_point": [
+          "17/66",
+          "-31/66"
+        ],
+        "all_other_points_fixed": true,
+        "movie_order": 8,
+        "normalized_point": [
+          "-27/100",
+          "9/100"
+        ],
+        "point_path": [
+          [
+            "17/66",
+            "-31/66"
+          ],
+          [
+            "-297/1994",
+            "21/1982"
+          ],
+          [
+            "-27/100",
+            "9/100"
+          ]
+        ],
+        "wicket": 9
+      },
+      "normal_sha256": "87F0117804EACEC3BE5EED44F8B0A0CC9CE80289E7014394A567212788421406",
+      "normalized_endpoints": [
+        [
+          "-27/100",
+          "9/100",
+          "0"
+        ],
+        [
+          "-27/100",
+          "9/100",
+          "1"
+        ]
+      ],
+      "polyline_sha256": "45559F394E7EE87A0FB45550DCB460B9DFA8C0CA0DBC07252B823C64B472D287",
+      "strand_id": 9,
+      "vertex_count": 34021
+    },
+    {
+      "actual_endpoint_transport": {
+        "actual_belt_point": [
+          "239/924",
+          "-215/462"
+        ],
+        "all_other_points_fixed": true,
+        "movie_order": 9,
+        "normalized_point": [
+          "-1/4",
+          "1/10"
+        ],
+        "point_path": [
+          [
+            "239/924",
+            "-215/462"
+          ],
+          [
+            "-223/1994",
+            "127/1982"
+          ],
+          [
+            "-1/4",
+            "1/10"
+          ]
+        ],
+        "wicket": 10
+      },
+      "normal_sha256": "87F0117804EACEC3BE5EED44F8B0A0CC9CE80289E7014394A567212788421406",
+      "normalized_endpoints": [
+        [
+          "-1/4",
+          "1/10",
+          "0"
+        ],
+        [
+          "-1/4",
+          "1/10",
+          "1"
+        ]
+      ],
+      "polyline_sha256": "1072348C643E06AC39F4B7EEAC9B474B051573CB56FA7DEF0351707FBEBB1241",
+      "strand_id": 10,
+      "vertex_count": 34021
+    },
+    {
+      "actual_endpoint_transport": {
+        "actual_belt_point": [
+          "20/77",
+          "-71/154"
+        ],
+        "all_other_points_fixed": true,
+        "movie_order": 10,
+        "normalized_point": [
+          "-23/100",
+          "11/100"
+        ],
+        "point_path": [
+          [
+            "20/77",
+            "-71/154"
+          ],
+          [
+            "-149/1994",
+            "233/1982"
+          ],
+          [
+            "-23/100",
+            "11/100"
+          ]
+        ],
+        "wicket": 11
+      },
+      "normal_sha256": "87F0117804EACEC3BE5EED44F8B0A0CC9CE80289E7014394A567212788421406",
+      "normalized_endpoints": [
+        [
+          "-23/100",
+          "11/100",
+          "0"
+        ],
+        [
+          "-23/100",
+          "11/100",
+          "1"
+        ]
+      ],
+      "polyline_sha256": "0A0E31820622F04E5DA224BB168D5FBFC11022EE24FCAB606705A6AAC9D592AE",
+      "strand_id": 11,
+      "vertex_count": 34021
+    },
+    {
+      "actual_endpoint_transport": {
+        "actual_belt_point": [
+          "241/924",
+          "-211/462"
+        ],
+        "all_other_points_fixed": true,
+        "movie_order": 11,
+        "normalized_point": [
+          "-21/100",
+          "3/25"
+        ],
+        "point_path": [
+          [
+            "241/924",
+            "-211/462"
+          ],
+          [
+            "-75/1994",
+            "339/1982"
+          ],
+          [
+            "-21/100",
+            "3/25"
+          ]
+        ],
+        "wicket": 12
+      },
+      "normal_sha256": "87F0117804EACEC3BE5EED44F8B0A0CC9CE80289E7014394A567212788421406",
+      "normalized_endpoints": [
+        [
+          "-21/100",
+          "3/25",
+          "0"
+        ],
+        [
+          "-21/100",
+          "3/25",
+          "1"
+        ]
+      ],
+      "polyline_sha256": "6685F66837FC5AB78F7D7BF5CDD2BEFE91FFC5ECF5115351F5E3B07576BB5983",
+      "strand_id": 12,
+      "vertex_count": 34021
+    },
+    {
+      "actual_endpoint_transport": {
+        "actual_belt_point": [
+          "11/42",
+          "-19/42"
+        ],
+        "all_other_points_fixed": true,
+        "movie_order": 12,
+        "normalized_point": [
+          "-19/100",
+          "13/100"
+        ],
+        "point_path": [
+          [
+            "11/42",
+            "-19/42"
+          ],
+          [
+            "-1/1994",
+            "445/1982"
+          ],
+          [
+            "-19/100",
+            "13/100"
+          ]
+        ],
+        "wicket": 13
+      },
+      "normal_sha256": "87F0117804EACEC3BE5EED44F8B0A0CC9CE80289E7014394A567212788421406",
+      "normalized_endpoints": [
+        [
+          "-19/100",
+          "13/100",
+          "0"
+        ],
+        [
+          "-19/100",
+          "13/100",
+          "1"
+        ]
+      ],
+      "polyline_sha256": "DD91268F901D02107B90A2373DDCD4D6CED7CE22B85A02FFB6CA888097AC4863",
+      "strand_id": 13,
+      "vertex_count": 34021
+    },
+    {
+      "actual_endpoint_transport": {
+        "actual_belt_point": [
+          "81/308",
+          "-69/154"
+        ],
+        "all_other_points_fixed": true,
+        "movie_order": 13,
+        "normalized_point": [
+          "-17/100",
+          "7/50"
+        ],
+        "point_path": [
+          [
+            "81/308",
+            "-69/154"
+          ],
+          [
+            "73/1994",
+            "551/1982"
+          ],
+          [
+            "-17/100",
+            "7/50"
+          ]
+        ],
+        "wicket": 14
+      },
+      "normal_sha256": "87F0117804EACEC3BE5EED44F8B0A0CC9CE80289E7014394A567212788421406",
+      "normalized_endpoints": [
+        [
+          "-17/100",
+          "7/50",
+          "0"
+        ],
+        [
+          "-17/100",
+          "7/50",
+          "1"
+        ]
+      ],
+      "polyline_sha256": "980A8B883F3391D08E134CA2D4E58497140F5284D3E6B9266BF7750015EBB662",
+      "strand_id": 14,
+      "vertex_count": 34021
+    },
+    {
+      "actual_endpoint_transport": {
+        "actual_belt_point": [
+          "61/231",
+          "-205/462"
+        ],
+        "all_other_points_fixed": true,
+        "movie_order": 14,
+        "normalized_point": [
+          "-3/20",
+          "3/20"
+        ],
+        "point_path": [
+          [
+            "61/231",
+            "-205/462"
+          ],
+          [
+            "147/1994",
+            "657/1982"
+          ],
+          [
+            "-3/20",
+            "3/20"
+          ]
+        ],
+        "wicket": 15
+      },
+      "normal_sha256": "87F0117804EACEC3BE5EED44F8B0A0CC9CE80289E7014394A567212788421406",
+      "normalized_endpoints": [
+        [
+          "-3/20",
+          "3/20",
+          "0"
+        ],
+        [
+          "-3/20",
+          "3/20",
+          "1"
+        ]
+      ],
+      "polyline_sha256": "805D336694A5BBF68439EFDA4AC8F08F9ECD097E1211BCCE3C5A60788A39C808",
+      "strand_id": 15,
+      "vertex_count": 34021
+    },
+    {
+      "actual_endpoint_transport": {
+        "actual_belt_point": [
+          "35/132",
+          "-29/66"
+        ],
+        "all_other_points_fixed": true,
+        "movie_order": 15,
+        "normalized_point": [
+          "-13/100",
+          "4/25"
+        ],
+        "point_path": [
+          [
+            "35/132",
+            "-29/66"
+          ],
+          [
+            "221/1994",
+            "763/1982"
+          ],
+          [
+            "-13/100",
+            "4/25"
+          ]
+        ],
+        "wicket": 16
+      },
+      "normal_sha256": "87F0117804EACEC3BE5EED44F8B0A0CC9CE80289E7014394A567212788421406",
+      "normalized_endpoints": [
+        [
+          "-13/100",
+          "4/25",
+          "0"
+        ],
+        [
+          "-13/100",
+          "4/25",
+          "1"
+        ]
+      ],
+      "polyline_sha256": "884CAD7890A6CE7AC3E05351C331DCF2BCC45288AE44D5A0FEFD3AD5C5E194FB",
+      "strand_id": 16,
+      "vertex_count": 34021
+    },
+    {
+      "actual_endpoint_transport": {
+        "actual_belt_point": [
+          "41/154",
+          "-67/154"
+        ],
+        "all_other_points_fixed": true,
+        "movie_order": 16,
+        "normalized_point": [
+          "-11/100",
+          "17/100"
+        ],
+        "point_path": [
+          [
+            "41/154",
+            "-67/154"
+          ],
+          [
+            "295/1994",
+            "869/1982"
+          ],
+          [
+            "-11/100",
+            "17/100"
+          ]
+        ],
+        "wicket": 17
+      },
+      "normal_sha256": "87F0117804EACEC3BE5EED44F8B0A0CC9CE80289E7014394A567212788421406",
+      "normalized_endpoints": [
+        [
+          "-11/100",
+          "17/100",
+          "0"
+        ],
+        [
+          "-11/100",
+          "17/100",
+          "1"
+        ]
+      ],
+      "polyline_sha256": "A38075320CF7309A0310D7EB05686D597034134516CE6DF12CE477A6D9EE4EAF",
+      "strand_id": 17,
+      "vertex_count": 34021
+    },
+    {
+      "actual_endpoint_transport": {
+        "actual_belt_point": [
+          "247/924",
+          "-199/462"
+        ],
+        "all_other_points_fixed": true,
+        "movie_order": 17,
+        "normalized_point": [
+          "-9/100",
+          "9/50"
+        ],
+        "point_path": [
+          [
+            "247/924",
+            "-199/462"
+          ],
+          [
+            "369/1994",
+            "975/1982"
+          ],
+          [
+            "-9/100",
+            "9/50"
+          ]
+        ],
+        "wicket": 18
+      },
+      "normal_sha256": "87F0117804EACEC3BE5EED44F8B0A0CC9CE80289E7014394A567212788421406",
+      "normalized_endpoints": [
+        [
+          "-9/100",
+          "9/50",
+          "0"
+        ],
+        [
+          "-9/100",
+          "9/50",
+          "1"
+        ]
+      ],
+      "polyline_sha256": "9EC01154068A508256C0878956760CAECC3EF1F368DA41FCBEB340C47375A77D",
+      "strand_id": 18,
+      "vertex_count": 34021
+    },
+    {
+      "actual_endpoint_transport": {
+        "actual_belt_point": [
+          "62/231",
+          "-197/462"
+        ],
+        "all_other_points_fixed": true,
+        "movie_order": 18,
+        "normalized_point": [
+          "-7/100",
+          "19/100"
+        ],
+        "point_path": [
+          [
+            "62/231",
+            "-197/462"
+          ],
+          [
+            "443/1994",
+            "-901/1982"
+          ],
+          [
+            "-7/100",
+            "19/100"
+          ]
+        ],
+        "wicket": 19
+      },
+      "normal_sha256": "87F0117804EACEC3BE5EED44F8B0A0CC9CE80289E7014394A567212788421406",
+      "normalized_endpoints": [
+        [
+          "-7/100",
+          "19/100",
+          "0"
+        ],
+        [
+          "-7/100",
+          "19/100",
+          "1"
+        ]
+      ],
+      "polyline_sha256": "750A5575DDA1922CF2A8FD48D4B7E3739618FBD27FB65B85DFF7CE3EFEC01149",
+      "strand_id": 19,
+      "vertex_count": 34021
+    },
+    {
+      "actual_endpoint_transport": {
+        "actual_belt_point": [
+          "83/308",
+          "-65/154"
+        ],
+        "all_other_points_fixed": true,
+        "movie_order": 19,
+        "normalized_point": [
+          "-1/20",
+          "1/5"
+        ],
+        "point_path": [
+          [
+            "83/308",
+            "-65/154"
+          ],
+          [
+            "517/1994",
+            "-795/1982"
+          ],
+          [
+            "-1/20",
+            "1/5"
+          ]
+        ],
+        "wicket": 20
+      },
+      "normal_sha256": "87F0117804EACEC3BE5EED44F8B0A0CC9CE80289E7014394A567212788421406",
+      "normalized_endpoints": [
+        [
+          "-1/20",
+          "1/5",
+          "0"
+        ],
+        [
+          "-1/20",
+          "1/5",
+          "1"
+        ]
+      ],
+      "polyline_sha256": "68C18E90CF0306AE79CA74FAB3EC67900FE8AB71AE5EC419445541D52C3F6EE2",
+      "strand_id": 20,
+      "vertex_count": 34021
+    },
+    {
+      "actual_endpoint_transport": {
+        "actual_belt_point": [
+          "125/462",
+          "-193/462"
+        ],
+        "all_other_points_fixed": true,
+        "movie_order": 20,
+        "normalized_point": [
+          "-3/100",
+          "21/100"
+        ],
+        "point_path": [
+          [
+            "125/462",
+            "-193/462"
+          ],
+          [
+            "591/1994",
+            "-689/1982"
+          ],
+          [
+            "-3/100",
+            "21/100"
+          ]
+        ],
+        "wicket": 21
+      },
+      "normal_sha256": "87F0117804EACEC3BE5EED44F8B0A0CC9CE80289E7014394A567212788421406",
+      "normalized_endpoints": [
+        [
+          "-3/100",
+          "21/100",
+          "0"
+        ],
+        [
+          "-3/100",
+          "21/100",
+          "1"
+        ]
+      ],
+      "polyline_sha256": "6BED9D687CACACF0709BEA2578481518A9F23BF48326C540F84A47C7CAC126B2",
+      "strand_id": 21,
+      "vertex_count": 34021
+    },
+    {
+      "actual_endpoint_transport": {
+        "actual_belt_point": [
+          "251/924",
+          "-191/462"
+        ],
+        "all_other_points_fixed": true,
+        "movie_order": 21,
+        "normalized_point": [
+          "-1/100",
+          "11/50"
+        ],
+        "point_path": [
+          [
+            "251/924",
+            "-191/462"
+          ],
+          [
+            "665/1994",
+            "-583/1982"
+          ],
+          [
+            "-1/100",
+            "11/50"
+          ]
+        ],
+        "wicket": 22
+      },
+      "normal_sha256": "87F0117804EACEC3BE5EED44F8B0A0CC9CE80289E7014394A567212788421406",
+      "normalized_endpoints": [
+        [
+          "-1/100",
+          "11/50",
+          "0"
+        ],
+        [
+          "-1/100",
+          "11/50",
+          "1"
+        ]
+      ],
+      "polyline_sha256": "8DEB9527ACE29DE5C14EE8C027B57BD888D433223CF5699091BEFD3EB02C30F8",
+      "strand_id": 22,
+      "vertex_count": 34021
+    },
+    {
+      "actual_endpoint_transport": {
+        "actual_belt_point": [
+          "3/11",
+          "-9/22"
+        ],
+        "all_other_points_fixed": true,
+        "movie_order": 22,
+        "normalized_point": [
+          "1/100",
+          "23/100"
+        ],
+        "point_path": [
+          [
+            "3/11",
+            "-9/22"
+          ],
+          [
+            "739/1994",
+            "-477/1982"
+          ],
+          [
+            "1/100",
+            "23/100"
+          ]
+        ],
+        "wicket": 23
+      },
+      "normal_sha256": "87F0117804EACEC3BE5EED44F8B0A0CC9CE80289E7014394A567212788421406",
+      "normalized_endpoints": [
+        [
+          "1/100",
+          "23/100",
+          "0"
+        ],
+        [
+          "1/100",
+          "23/100",
+          "1"
+        ]
+      ],
+      "polyline_sha256": "4A4A4B137120CA310D86E90B597C35583590651046B60E1ADD00DECDCE12B022",
+      "strand_id": 23,
+      "vertex_count": 34021
+    },
+    {
+      "actual_endpoint_transport": {
+        "actual_belt_point": [
+          "23/84",
+          "-17/42"
+        ],
+        "all_other_points_fixed": true,
+        "movie_order": 23,
+        "normalized_point": [
+          "3/100",
+          "6/25"
+        ],
+        "point_path": [
+          [
+            "23/84",
+            "-17/42"
+          ],
+          [
+            "813/1994",
+            "-371/1982"
+          ],
+          [
+            "3/100",
+            "6/25"
+          ]
+        ],
+        "wicket": 24
+      },
+      "normal_sha256": "87F0117804EACEC3BE5EED44F8B0A0CC9CE80289E7014394A567212788421406",
+      "normalized_endpoints": [
+        [
+          "3/100",
+          "6/25",
+          "0"
+        ],
+        [
+          "3/100",
+          "6/25",
+          "1"
+        ]
+      ],
+      "polyline_sha256": "1D6EC1FFDF99AE474FA35049EBFA21CC8175CF78B0B15BDFF921824282CA103A",
+      "strand_id": 24,
+      "vertex_count": 34021
+    },
+    {
+      "actual_endpoint_transport": {
+        "actual_belt_point": [
+          "127/462",
+          "-185/462"
+        ],
+        "all_other_points_fixed": true,
+        "movie_order": 24,
+        "normalized_point": [
+          "1/20",
+          "1/4"
+        ],
+        "point_path": [
+          [
+            "127/462",
+            "-185/462"
+          ],
+          [
+            "887/1994",
+            "-265/1982"
+          ],
+          [
+            "1/20",
+            "1/4"
+          ]
+        ],
+        "wicket": 25
+      },
+      "normal_sha256": "87F0117804EACEC3BE5EED44F8B0A0CC9CE80289E7014394A567212788421406",
+      "normalized_endpoints": [
+        [
+          "1/20",
+          "1/4",
+          "0"
+        ],
+        [
+          "1/20",
+          "1/4",
+          "1"
+        ]
+      ],
+      "polyline_sha256": "7A45C63E97AA2388DCB90D01507832163245CA681D001B6BE00AC9974C94094C",
+      "strand_id": 25,
+      "vertex_count": 34021
+    },
+    {
+      "actual_endpoint_transport": {
+        "actual_belt_point": [
+          "85/308",
+          "-61/154"
+        ],
+        "all_other_points_fixed": true,
+        "movie_order": 25,
+        "normalized_point": [
+          "7/100",
+          "13/50"
+        ],
+        "point_path": [
+          [
+            "85/308",
+            "-61/154"
+          ],
+          [
+            "961/1994",
+            "-159/1982"
+          ],
+          [
+            "7/100",
+            "13/50"
+          ]
+        ],
+        "wicket": 26
+      },
+      "normal_sha256": "87F0117804EACEC3BE5EED44F8B0A0CC9CE80289E7014394A567212788421406",
+      "normalized_endpoints": [
+        [
+          "7/100",
+          "13/50",
+          "0"
+        ],
+        [
+          "7/100",
+          "13/50",
+          "1"
+        ]
+      ],
+      "polyline_sha256": "FC745F61FCE4807C14D04C2B2EE5738768F966EF9133726524D2697175693C5E",
+      "strand_id": 26,
+      "vertex_count": 34021
+    },
+    {
+      "actual_endpoint_transport": {
+        "actual_belt_point": [
+          "64/231",
+          "-181/462"
+        ],
+        "all_other_points_fixed": true,
+        "movie_order": 26,
+        "normalized_point": [
+          "9/100",
+          "27/100"
+        ],
+        "point_path": [
+          [
+            "64/231",
+            "-181/462"
+          ],
+          [
+            "-959/1994",
+            "-53/1982"
+          ],
+          [
+            "9/100",
+            "27/100"
+          ]
+        ],
+        "wicket": 27
+      },
+      "normal_sha256": "87F0117804EACEC3BE5EED44F8B0A0CC9CE80289E7014394A567212788421406",
+      "normalized_endpoints": [
+        [
+          "9/100",
+          "27/100",
+          "0"
+        ],
+        [
+          "9/100",
+          "27/100",
+          "1"
+        ]
+      ],
+      "polyline_sha256": "A5DDE3847A04EA20256D7FD80B295F5F73F97FF007013D951875BDAD511345DA",
+      "strand_id": 27,
+      "vertex_count": 34021
+    },
+    {
+      "actual_endpoint_transport": {
+        "actual_belt_point": [
+          "257/924",
+          "-179/462"
+        ],
+        "all_other_points_fixed": true,
+        "movie_order": 27,
+        "normalized_point": [
+          "11/100",
+          "7/25"
+        ],
+        "point_path": [
+          [
+            "257/924",
+            "-179/462"
+          ],
+          [
+            "-885/1994",
+            "53/1982"
+          ],
+          [
+            "11/100",
+            "7/25"
+          ]
+        ],
+        "wicket": 28
+      },
+      "normal_sha256": "87F0117804EACEC3BE5EED44F8B0A0CC9CE80289E7014394A567212788421406",
+      "normalized_endpoints": [
+        [
+          "11/100",
+          "7/25",
+          "0"
+        ],
+        [
+          "11/100",
+          "7/25",
+          "1"
+        ]
+      ],
+      "polyline_sha256": "F646E4A4B8C23C7EA5D94F5297FE8E10C0FF849A50E167997AA7EEA432F08251",
+      "strand_id": 28,
+      "vertex_count": 34021
+    },
+    {
+      "actual_endpoint_transport": {
+        "actual_belt_point": [
+          "43/154",
+          "-59/154"
+        ],
+        "all_other_points_fixed": true,
+        "movie_order": 28,
+        "normalized_point": [
+          "13/100",
+          "29/100"
+        ],
+        "point_path": [
+          [
+            "43/154",
+            "-59/154"
+          ],
+          [
+            "-811/1994",
+            "159/1982"
+          ],
+          [
+            "13/100",
+            "29/100"
+          ]
+        ],
+        "wicket": 29
+      },
+      "normal_sha256": "87F0117804EACEC3BE5EED44F8B0A0CC9CE80289E7014394A567212788421406",
+      "normalized_endpoints": [
+        [
+          "13/100",
+          "29/100",
+          "0"
+        ],
+        [
+          "13/100",
+          "29/100",
+          "1"
+        ]
+      ],
+      "polyline_sha256": "960A41A4BB32485E5D7A4D881AC6E8EC83EEC61CFEF33FA4B818A11A7442A7B0",
+      "strand_id": 29,
+      "vertex_count": 34021
+    },
+    {
+      "actual_endpoint_transport": {
+        "actual_belt_point": [
+          "37/132",
+          "-25/66"
+        ],
+        "all_other_points_fixed": true,
+        "movie_order": 29,
+        "normalized_point": [
+          "3/20",
+          "3/10"
+        ],
+        "point_path": [
+          [
+            "37/132",
+            "-25/66"
+          ],
+          [
+            "-737/1994",
+            "265/1982"
+          ],
+          [
+            "3/20",
+            "3/10"
+          ]
+        ],
+        "wicket": 30
+      },
+      "normal_sha256": "87F0117804EACEC3BE5EED44F8B0A0CC9CE80289E7014394A567212788421406",
+      "normalized_endpoints": [
+        [
+          "3/20",
+          "3/10",
+          "0"
+        ],
+        [
+          "3/20",
+          "3/10",
+          "1"
+        ]
+      ],
+      "polyline_sha256": "65AC2E780752985D68E5A96D358196B33E97DC9D41F5D0A37A04803C70806C5D",
+      "strand_id": 30,
+      "vertex_count": 34021
+    },
+    {
+      "actual_endpoint_transport": {
+        "actual_belt_point": [
+          "65/231",
+          "-173/462"
+        ],
+        "all_other_points_fixed": true,
+        "movie_order": 30,
+        "normalized_point": [
+          "17/100",
+          "31/100"
+        ],
+        "point_path": [
+          [
+            "65/231",
+            "-173/462"
+          ],
+          [
+            "-663/1994",
+            "371/1982"
+          ],
+          [
+            "17/100",
+            "31/100"
+          ]
+        ],
+        "wicket": 31
+      },
+      "normal_sha256": "87F0117804EACEC3BE5EED44F8B0A0CC9CE80289E7014394A567212788421406",
+      "normalized_endpoints": [
+        [
+          "17/100",
+          "31/100",
+          "0"
+        ],
+        [
+          "17/100",
+          "31/100",
+          "1"
+        ]
+      ],
+      "polyline_sha256": "71035011EB945D88F2969BD41B2D4F44FBB037B81383F380C6F316F8CDD2C5F6",
+      "strand_id": 31,
+      "vertex_count": 34021
+    },
+    {
+      "actual_endpoint_transport": {
+        "actual_belt_point": [
+          "87/308",
+          "-57/154"
+        ],
+        "all_other_points_fixed": true,
+        "movie_order": 31,
+        "normalized_point": [
+          "19/100",
+          "8/25"
+        ],
+        "point_path": [
+          [
+            "87/308",
+            "-57/154"
+          ],
+          [
+            "-589/1994",
+            "477/1982"
+          ],
+          [
+            "19/100",
+            "8/25"
+          ]
+        ],
+        "wicket": 32
+      },
+      "normal_sha256": "87F0117804EACEC3BE5EED44F8B0A0CC9CE80289E7014394A567212788421406",
+      "normalized_endpoints": [
+        [
+          "19/100",
+          "8/25",
+          "0"
+        ],
+        [
+          "19/100",
+          "8/25",
+          "1"
+        ]
+      ],
+      "polyline_sha256": "E9B3C64F7D74F898D4068B471ACE10F22C9541859B2D0DC19B2B5ECE49CED326",
+      "strand_id": 32,
+      "vertex_count": 34021
+    },
+    {
+      "actual_endpoint_transport": {
+        "actual_belt_point": [
+          "131/462",
+          "-169/462"
+        ],
+        "all_other_points_fixed": true,
+        "movie_order": 32,
+        "normalized_point": [
+          "21/100",
+          "33/100"
+        ],
+        "point_path": [
+          [
+            "131/462",
+            "-169/462"
+          ],
+          [
+            "-515/1994",
+            "583/1982"
+          ],
+          [
+            "21/100",
+            "33/100"
+          ]
+        ],
+        "wicket": 33
+      },
+      "normal_sha256": "87F0117804EACEC3BE5EED44F8B0A0CC9CE80289E7014394A567212788421406",
+      "normalized_endpoints": [
+        [
+          "21/100",
+          "33/100",
+          "0"
+        ],
+        [
+          "21/100",
+          "33/100",
+          "1"
+        ]
+      ],
+      "polyline_sha256": "A09B96622F55CEE5BD8522796E4364E9AEFAB7A104E70E3DF021D90460282118",
+      "strand_id": 33,
+      "vertex_count": 34021
+    },
+    {
+      "actual_endpoint_transport": {
+        "actual_belt_point": [
+          "263/924",
+          "-167/462"
+        ],
+        "all_other_points_fixed": true,
+        "movie_order": 33,
+        "normalized_point": [
+          "23/100",
+          "17/50"
+        ],
+        "point_path": [
+          [
+            "263/924",
+            "-167/462"
+          ],
+          [
+            "-441/1994",
+            "689/1982"
+          ],
+          [
+            "23/100",
+            "17/50"
+          ]
+        ],
+        "wicket": 34
+      },
+      "normal_sha256": "87F0117804EACEC3BE5EED44F8B0A0CC9CE80289E7014394A567212788421406",
+      "normalized_endpoints": [
+        [
+          "23/100",
+          "17/50",
+          "0"
+        ],
+        [
+          "23/100",
+          "17/50",
+          "1"
+        ]
+      ],
+      "polyline_sha256": "9EEA5B84F36B01ACD1983409DB902B39D149C8E8C59D9353798893DE854B095B",
+      "strand_id": 34,
+      "vertex_count": 34021
+    },
+    {
+      "actual_endpoint_transport": {
+        "actual_belt_point": [
+          "2/7",
+          "-5/14"
+        ],
+        "all_other_points_fixed": true,
+        "movie_order": 34,
+        "normalized_point": [
+          "1/4",
+          "7/20"
+        ],
+        "point_path": [
+          [
+            "2/7",
+            "-5/14"
+          ],
+          [
+            "-367/1994",
+            "795/1982"
+          ],
+          [
+            "1/4",
+            "7/20"
+          ]
+        ],
+        "wicket": 35
+      },
+      "normal_sha256": "87F0117804EACEC3BE5EED44F8B0A0CC9CE80289E7014394A567212788421406",
+      "normalized_endpoints": [
+        [
+          "1/4",
+          "7/20",
+          "0"
+        ],
+        [
+          "1/4",
+          "7/20",
+          "1"
+        ]
+      ],
+      "polyline_sha256": "97D92EB76DFFBB867E6536E54B86659994F9015B6206ABC4EDD7D024CBD9C3BE",
+      "strand_id": 35,
+      "vertex_count": 34021
+    },
+    {
+      "actual_endpoint_transport": {
+        "actual_belt_point": [
+          "265/924",
+          "-163/462"
+        ],
+        "all_other_points_fixed": true,
+        "movie_order": 35,
+        "normalized_point": [
+          "27/100",
+          "9/25"
+        ],
+        "point_path": [
+          [
+            "265/924",
+            "-163/462"
+          ],
+          [
+            "-293/1994",
+            "901/1982"
+          ],
+          [
+            "27/100",
+            "9/25"
+          ]
+        ],
+        "wicket": 36
+      },
+      "normal_sha256": "87F0117804EACEC3BE5EED44F8B0A0CC9CE80289E7014394A567212788421406",
+      "normalized_endpoints": [
+        [
+          "27/100",
+          "9/25",
+          "0"
+        ],
+        [
+          "27/100",
+          "9/25",
+          "1"
+        ]
+      ],
+      "polyline_sha256": "D6879654D18F1013F433C1F54499EB67D3ECA796A56864532191E456D5046E28",
+      "strand_id": 36,
+      "vertex_count": 34021
+    },
+    {
+      "actual_endpoint_transport": {
+        "actual_belt_point": [
+          "19/66",
+          "-23/66"
+        ],
+        "all_other_points_fixed": true,
+        "movie_order": 36,
+        "normalized_point": [
+          "29/100",
+          "37/100"
+        ],
+        "point_path": [
+          [
+            "19/66",
+            "-23/66"
+          ],
+          [
+            "-219/1994",
+            "-975/1982"
+          ],
+          [
+            "29/100",
+            "37/100"
+          ]
+        ],
+        "wicket": 37
+      },
+      "normal_sha256": "87F0117804EACEC3BE5EED44F8B0A0CC9CE80289E7014394A567212788421406",
+      "normalized_endpoints": [
+        [
+          "29/100",
+          "37/100",
+          "0"
+        ],
+        [
+          "29/100",
+          "37/100",
+          "1"
+        ]
+      ],
+      "polyline_sha256": "E0360EE6C214E819E06780E04FB3E2A1DCE7657A904EC787ED8AA29251703DF2",
+      "strand_id": 37,
+      "vertex_count": 34021
+    },
+    {
+      "actual_endpoint_transport": {
+        "actual_belt_point": [
+          "89/308",
+          "-53/154"
+        ],
+        "all_other_points_fixed": true,
+        "movie_order": 37,
+        "normalized_point": [
+          "31/100",
+          "19/50"
+        ],
+        "point_path": [
+          [
+            "89/308",
+            "-53/154"
+          ],
+          [
+            "-145/1994",
+            "-869/1982"
+          ],
+          [
+            "31/100",
+            "19/50"
+          ]
+        ],
+        "wicket": 38
+      },
+      "normal_sha256": "87F0117804EACEC3BE5EED44F8B0A0CC9CE80289E7014394A567212788421406",
+      "normalized_endpoints": [
+        [
+          "31/100",
+          "19/50",
+          "0"
+        ],
+        [
+          "31/100",
+          "19/50",
+          "1"
+        ]
+      ],
+      "polyline_sha256": "F5C89AF83F364A1B118AC45C5E8D64EB47C61E7D43487E82FD8DB10EBDCEB648",
+      "strand_id": 38,
+      "vertex_count": 34021
+    },
+    {
+      "actual_endpoint_transport": {
+        "actual_belt_point": [
+          "67/231",
+          "-157/462"
+        ],
+        "all_other_points_fixed": true,
+        "movie_order": 38,
+        "normalized_point": [
+          "33/100",
+          "39/100"
+        ],
+        "point_path": [
+          [
+            "67/231",
+            "-157/462"
+          ],
+          [
+            "-71/1994",
+            "-763/1982"
+          ],
+          [
+            "33/100",
+            "39/100"
+          ]
+        ],
+        "wicket": 39
+      },
+      "normal_sha256": "87F0117804EACEC3BE5EED44F8B0A0CC9CE80289E7014394A567212788421406",
+      "normalized_endpoints": [
+        [
+          "33/100",
+          "39/100",
+          "0"
+        ],
+        [
+          "33/100",
+          "39/100",
+          "1"
+        ]
+      ],
+      "polyline_sha256": "4B68880EA94038B9E1652A5A5A1B58224F0A38816BD9128E204FE36B2F629787",
+      "strand_id": 39,
+      "vertex_count": 34021
+    },
+    {
+      "actual_endpoint_transport": {
+        "actual_belt_point": [
+          "269/924",
+          "-155/462"
+        ],
+        "all_other_points_fixed": true,
+        "movie_order": 39,
+        "normalized_point": [
+          "7/20",
+          "2/5"
+        ],
+        "point_path": [
+          [
+            "269/924",
+            "-155/462"
+          ],
+          [
+            "3/1994",
+            "-657/1982"
+          ],
+          [
+            "7/20",
+            "2/5"
+          ]
+        ],
+        "wicket": 40
+      },
+      "normal_sha256": "87F0117804EACEC3BE5EED44F8B0A0CC9CE80289E7014394A567212788421406",
+      "normalized_endpoints": [
+        [
+          "7/20",
+          "2/5",
+          "0"
+        ],
+        [
+          "7/20",
+          "2/5",
+          "1"
+        ]
+      ],
+      "polyline_sha256": "C3056658E49C6511FB67AA3F2169ECFCE89895301139973F5CB9E2E4212348CC",
+      "strand_id": 40,
+      "vertex_count": 34021
+    },
+    {
+      "actual_endpoint_transport": {
+        "actual_belt_point": [
+          "45/154",
+          "-51/154"
+        ],
+        "all_other_points_fixed": true,
+        "movie_order": 40,
+        "normalized_point": [
+          "37/100",
+          "41/100"
+        ],
+        "point_path": [
+          [
+            "45/154",
+            "-51/154"
+          ],
+          [
+            "77/1994",
+            "-551/1982"
+          ],
+          [
+            "37/100",
+            "41/100"
+          ]
+        ],
+        "wicket": 41
+      },
+      "normal_sha256": "87F0117804EACEC3BE5EED44F8B0A0CC9CE80289E7014394A567212788421406",
+      "normalized_endpoints": [
+        [
+          "37/100",
+          "41/100",
+          "0"
+        ],
+        [
+          "37/100",
+          "41/100",
+          "1"
+        ]
+      ],
+      "polyline_sha256": "47D5D8B848B0DB6E2E83B0A2AAA9665B2CC62CF7C8F37C69143FAE8C7C6AB2D1",
+      "strand_id": 41,
+      "vertex_count": 34021
+    },
+    {
+      "actual_endpoint_transport": {
+        "actual_belt_point": [
+          "271/924",
+          "-151/462"
+        ],
+        "all_other_points_fixed": true,
+        "movie_order": 41,
+        "normalized_point": [
+          "39/100",
+          "21/50"
+        ],
+        "point_path": [
+          [
+            "271/924",
+            "-151/462"
+          ],
+          [
+            "151/1994",
+            "-445/1982"
+          ],
+          [
+            "39/100",
+            "21/50"
+          ]
+        ],
+        "wicket": 42
+      },
+      "normal_sha256": "87F0117804EACEC3BE5EED44F8B0A0CC9CE80289E7014394A567212788421406",
+      "normalized_endpoints": [
+        [
+          "39/100",
+          "21/50",
+          "0"
+        ],
+        [
+          "39/100",
+          "21/50",
+          "1"
+        ]
+      ],
+      "polyline_sha256": "C641190BA6EC5F3FBBB7A2CCBDA6FC714B6342C529A8226048710F30C0709F35",
+      "strand_id": 42,
+      "vertex_count": 34021
+    },
+    {
+      "actual_endpoint_transport": {
+        "actual_belt_point": [
+          "68/231",
+          "-149/462"
+        ],
+        "all_other_points_fixed": true,
+        "movie_order": 42,
+        "normalized_point": [
+          "41/100",
+          "43/100"
+        ],
+        "point_path": [
+          [
+            "68/231",
+            "-149/462"
+          ],
+          [
+            "225/1994",
+            "-339/1982"
+          ],
+          [
+            "41/100",
+            "43/100"
+          ]
+        ],
+        "wicket": 43
+      },
+      "normal_sha256": "87F0117804EACEC3BE5EED44F8B0A0CC9CE80289E7014394A567212788421406",
+      "normalized_endpoints": [
+        [
+          "41/100",
+          "43/100",
+          "0"
+        ],
+        [
+          "41/100",
+          "43/100",
+          "1"
+        ]
+      ],
+      "polyline_sha256": "26836F49E3A7907F1A065AD3B5A18412ECD042D32B1F97021ECA39A11D5F448B",
+      "strand_id": 43,
+      "vertex_count": 34021
+    },
+    {
+      "actual_endpoint_transport": {
+        "actual_belt_point": [
+          "0",
+          "0"
+        ],
+        "all_other_points_fixed": true,
+        "movie_order": 43,
+        "normalized_point": [
+          "43/100",
+          "11/25"
+        ],
+        "point_path": [
+          [
+            "0",
+            "0"
+          ],
+          [
+            "299/1994",
+            "-233/1982"
+          ],
+          [
+            "43/100",
+            "11/25"
+          ]
+        ],
+        "wicket": 44
+      },
+      "normal_sha256": "87F0117804EACEC3BE5EED44F8B0A0CC9CE80289E7014394A567212788421406",
+      "normalized_endpoints": [
+        [
+          "43/100",
+          "11/25",
+          "0"
+        ],
+        [
+          "43/100",
+          "11/25",
+          "1"
+        ]
+      ],
+      "polyline_sha256": "DC7631DA8CBE7DC4D610FBF61C46A30A72813B3FD4917078A5309A0FD6DAD877",
+      "strand_id": 44,
+      "vertex_count": 34021
+    }
+  ],
+  "target_word_sha256": "7C2D2F792C2672221A76CAF08A71F560AF0CB7654B4D537C00FAD00B16EFA187",
+  "witness_sha256": "F64D8ADBE29C439C7E8CF8EAECE33872BA4A5490766F6F6327DC7EE2FA07F1CB"
+}
