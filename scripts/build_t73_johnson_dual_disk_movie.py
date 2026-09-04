@@ -84,6 +84,8 @@ def build(write: bool = False):
     if binding["restore_assembly_sha256"] != restore["sha256"] or psi["restore_assembly_sha256"] != restore["sha256"]:
         raise AssertionError("dual-disk movie inputs are not on one ambient restore")
     current = identity()
+    free = load("compose_t73_free_group_psi")
+    disk_words = free.identity_map()
     records = []
     for index, (factor, bound, alpha) in enumerate(zip(factors, binding["factors"], alpha_movie["moves"])):
         source = int(factor["source_axis"])
@@ -93,6 +95,14 @@ def build(write: bool = False):
         local_dual[source][prefix] = -power
         before = [row[:] for row in current]
         current = matmul(local_dual, current)
+        local_words = free.identity_map()
+        dual_letter = -power * (source + 1)
+        local_words[prefix] = (
+            [dual_letter, prefix + 1]
+            if factor["side"] == "prefix-first"
+            else [prefix + 1, dual_letter]
+        )
+        disk_words = free.compose(local_words, disk_words)
         if bound["ambient_restore_factor_sha256"] != canonical_sha(factor):
             raise AssertionError("dual disk transition is not bound to its ambient factor")
         if not factor["maps_both_owners_setwise"] or not factor["explicit_inverse"]:
@@ -119,6 +129,24 @@ def build(write: bool = False):
     expected_wedge, sphere_columns = sphere_module.derive_sphere_columns(psi["matrix_A"])
     if current != expected_wedge:
         raise AssertionError("93 dual disk slides do not give wedge^2(A)=A^{-T}")
+    if free.abelianization(disk_words) != current:
+        raise AssertionError("dual disk words do not abelianize to wedge^2(A)")
+    sphere_boundary_words = [
+        free.reduce_word([axis + 1] + free.inverse_word(word))
+        for axis, word in enumerate(disk_words)
+    ]
+    sphere_word_columns = [
+        [
+            sum(
+                1 if letter == basis + 1 else -1 if letter == -(basis + 1) else 0
+                for letter in word
+            )
+            for basis in range(3)
+        ]
+        for word in sphere_boundary_words
+    ]
+    if sphere_word_columns != [list(column) for column in zip(*sphere_columns)]:
+        raise AssertionError("geometric sphere boundary words do not give the columns of I-wedge^2(A)")
     initial_disks = []
     for axis in range(3):
         boundary = load("t73_johnson_pl").dual_disk_boundary(axis, 2, 0)
@@ -144,9 +172,13 @@ def build(write: bool = False):
         "factor_count": len(records),
         "factors": records,
         "final_H2_matrix": current,
+        "final_dual_disk_words": disk_words,
+        "final_dual_disk_word_lengths": [len(word) for word in disk_words],
         "wedge2_A_equals_A_inverse_transpose": expected_wedge,
         "mapping_torus_sphere_boundary_rule": "I-wedge^2(A)",
         "mapping_torus_sphere_columns": sphere_columns,
+        "mapping_torus_sphere_boundary_words": sphere_boundary_words,
+        "mapping_torus_sphere_geometric_core_counts": [len(word) for word in sphere_boundary_words],
         "actual_H1_disk_transport": "PASS",
         "actual_mapping_torus_3_handle_movie": "PASS_BEFORE_KIRBY_CANCELLATION_TRANSPORT",
         "post_cancellation_relative_surface_map": "OPEN",

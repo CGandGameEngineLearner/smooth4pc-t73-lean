@@ -27,6 +27,8 @@ class JohnsonDualDiskMovieTest(unittest.TestCase):
             [[-1311, -189, 41], [8608, 1241, -269], [-1, 0, 1]],
         )
         self.assertEqual(result["MUTATION_DISK_SLIDE_ORIENTATION"], "FAIL")
+        self.assertEqual(result["MUTATION_DISK_SLIDE_SIDE"], "FAIL")
+        self.assertEqual(result["GEOMETRIC_CORE_COUNTS"], [12578, 1824, 409])
         self.assertEqual(result["POST_CANCELLATION_SURFACE_MAP"], "OPEN")
 
 
