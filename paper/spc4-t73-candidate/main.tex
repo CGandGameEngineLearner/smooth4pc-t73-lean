@@ -635,12 +635,18 @@ Johnson-side exchange collars and their fixed-boundary PL transports remains
 \Open.
 Each of the $72$ signed, oriented component occurrences also has a strict
 rational star centre.  Coning its boundary triangulation to that centre and
-using the homothetic scales $1/2,1,3/2$ gives a fixed-boundary radial shrink in
+using the homothetic scales $1/4,1,3/2$ gives a fixed-boundary radial shrink in
 the outer $3/2$-ball.  The $8448$ resulting affine tetrahedra have Jacobians
-between $1/8$ and $2$, and swapping source and image tetrahedra gives the
+between $1/64$ and $5/2$, and swapping source and image tetrahedra gives the
 explicit inverse.  Thus shrinking and re-expanding the mismatch balls is
 certified; routing the shrunken balls through disjoint exchange collars is the
-remaining restore step.
+remaining restore step.  At core scale $1/4$, support scale $3/8$ leaves
+enough periodic clearance: the large pair uses opposite detours in the third
+axis and the two small pairs use outward detours in the source axis.  Exact
+swept-box tests for all three path phases and all twelve signed axis templates
+find no support-interior collision and no protected-ball hit.  The routes are
+therefore fixed; attaching positive-Jacobian compact translation cells along
+them remains \Open.
 
 In the standard product chart $D^2\times[-1,1]$ for the reduced $y$
 one-handle, take $B=D^2\times[-1/2,1/2]$.  The Johnson $m_2$ word has $41$

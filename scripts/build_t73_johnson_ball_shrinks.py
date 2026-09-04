@@ -16,7 +16,7 @@ from typing import Any
 ROOT = Path(__file__).resolve().parents[1]
 MISMATCH = ROOT / "geometry" / "t73_johnson_arm_mismatch.json"
 OUTPUT = ROOT / "geometry" / "t73_johnson_ball_shrinks.json"
-CORE_SCALE = Fraction(1, 2)
+CORE_SCALE = Fraction(1, 4)
 OUTER_SCALE = Fraction(3, 2)
 
 
