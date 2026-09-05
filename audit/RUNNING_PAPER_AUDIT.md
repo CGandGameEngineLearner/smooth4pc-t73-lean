@@ -2209,8 +2209,12 @@ Topology-source checks completed 2026-09-04:
 - Partial external clearance: 453 exact deck-translate intersection candidates
   prove that the candidate post-slide core misses the actual m2 and m3
   universal-cover cores, reporting `PASS_CANDIDATE_M2_M3_CLEARANCE_ONLY`.
-- Boundary: the three dual-cell components have no common lift yet; framed
-  push-off embeddedness and actual Kirby-slide equivalence remain open.
+- Candidate dual clearance: the three dual-cell boundaries have exact
+  zero-deck-translation lifts after the explicit candidate choice `u=1/2`.
+  Including them gives `PASS_CANDIDATE_ALL_CORE_CLEARANCE_ONLY` against all
+  five other attaching cores.
+- Boundary: the dual fiber level is not yet an actual AR chart transition;
+  framed push-off embeddedness and actual Kirby-slide equivalence remain open.
 
 ### F-600 — The “actual” sphere-system builder assigns, rather than constructs, the embedding in \(\partial W_2\)
 
