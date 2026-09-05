@@ -2064,6 +2064,19 @@ Topology-source checks completed 2026-09-04:
   and cannot be called a common 630-ribbon frame until both block meshes and a
   simplicial-gluing verifier exist.
 
+### F-541 — The z=0 block interface now has a fixed rational triangulation with the four insertion holes
+
+- Severity: **Partitioned-frame interface progress / two-dimensional only**
+- Status: **COMMON INTERFACE TRIANGULATION PASS; BLOCK VOLUMES OPEN**
+- Evidence: `scripts/build_t73_z0_interface_triangulation.py` and
+  `geometry/t73_z0_interface_triangulation.json`.
+- Construction: the plane `z=0` is triangulated as the outer square
+  `[-20,20]^2` minus the four projected insertion squares. Its rational grid
+  has 36 vertices and 42 triangles. Both future block meshes must use this
+  exact interface simplex set.
+- Boundary: no lower or upper tetrahedra have yet been generated, so this is
+  neither a mesh gluing proof nor a tetrahedral-frame certificate.
+
 ### F-600 — The “actual” sphere-system builder assigns, rather than constructs, the embedding in \(\partial W_2\)
 
 - Severity: **Critical**
