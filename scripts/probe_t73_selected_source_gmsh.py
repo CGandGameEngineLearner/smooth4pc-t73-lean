@@ -73,7 +73,11 @@ def ordered_curve_path(gmsh, line_tags, node_index, exact_nodes, start_point):
     expected = tuple(Fraction(value) for value in start_point)
     starts = [vertex for vertex in endpoints if exact_nodes[vertex] == expected]
     if len(starts) != 1:
-        raise RuntimeError("Gmsh curve path lost its specified initial endpoint")
+        raise RuntimeError(
+            "Gmsh curve path lost its specified initial endpoint: "
+            f"lines={line_tags}, expected={expected!r}, "
+            f"actual_endpoints={[exact_nodes[vertex] for vertex in endpoints]!r}"
+        )
     path, previous, current = [starts[0]], None, starts[0]
     while True:
         following = adjacency[current] - ({previous} if previous is not None else set())
@@ -168,7 +172,9 @@ def extract_frame(
         if len(candidates) != 1:
             raise RuntimeError("cannot restore an exact OCC boundary plane")
         fixed = candidates[0]
-        tags = gmsh.model.mesh.getNodes(2, surface, True, False)[0]
+        tags = {
+            tag for row in element_rows(gmsh, 2, surface, 3) for tag in row
+        }
         for raw_tag in tags:
             index = node_index[int(raw_tag)]
             value = list(exact_nodes[index])
@@ -184,7 +190,9 @@ def extract_frame(
             if abs(direction1[pair[0]] * direction2[pair[1]] - direction1[pair[1]] * direction2[pair[0]]) > 1e-30
         )
         determinant = direction1[axes[0]] * direction2[axes[1]] - direction1[axes[1]] * direction2[axes[0]]
-        tags = gmsh.model.mesh.getNodes(2, surface, True, False)[0]
+        tags = {
+            tag for row in element_rows(gmsh, 2, surface, 3) for tag in row
+        }
         for raw_tag in tags:
             tag = int(raw_tag)
             raw = raw_node_coordinates[tag]
@@ -203,17 +211,25 @@ def extract_frame(
     for line, (first, second) in line_exact_endpoints.items():
         direction = tuple(float(second[axis] - first[axis]) for axis in range(3))
         denominator = sum(value * value for value in direction)
-        tags = gmsh.model.mesh.getNodes(1, line, True, False)[0]
+        tags = {
+            tag for row in element_rows(gmsh, 1, line, 2) for tag in row
+        }
         for raw_tag in tags:
             tag = int(raw_tag)
             raw = raw_node_coordinates[tag]
+            first_error = max(
+                abs(raw[axis] - float(first[axis])) for axis in range(3)
+            )
+            second_error = max(
+                abs(raw[axis] - float(second[axis])) for axis in range(3)
+            )
             parameter = sum(
                 (raw[axis] - float(first[axis])) * direction[axis]
                 for axis in range(3)
             ) / denominator
-            if abs(parameter) < 1e-12:
+            if first_error < 1e-12:
                 parameter_q = Fraction(0)
-            elif abs(parameter - 1) < 1e-12:
+            elif second_error < 1e-12:
                 parameter_q = Fraction(1)
             else:
                 parameter_q = Fraction(parameter)
@@ -385,6 +401,8 @@ def run(
     algorithm: int = 10,
     include_frame: bool = False,
     perform_independent_verify: bool = True,
+    msh_output: Path | None = None,
+    entity_map_output: Path | None = None,
 ) -> dict:
     if limit < 1 or limit > 630:
         raise ValueError("limit must lie in 1..630")
@@ -531,6 +549,40 @@ def run(
         gmsh.option.setNumber("Mesh.MeshSizeMax", 5)
         gmsh.option.setNumber("Mesh.MeshSizeMin", 1e-6)
         gmsh.model.mesh.generate(3)
+        if msh_output is not None:
+            gmsh.write(str(msh_output))
+        if entity_map_output is not None:
+            entity_map = {
+                "schema": "t73_selected_source_gmsh_entity_map/v1",
+                "source_exterior_sha256": source["sha256"],
+                "route_prefix": limit,
+                "gmsh_algorithm_3d": algorithm,
+                "volume": volume,
+                "boundary_surfaces": boundary_surfaces,
+                "routes": [
+                    {
+                        "route_index": item["route"]["route_index"],
+                        "surfaces": item["surfaces"],
+                        "core_lines": item["core_lines"],
+                        "push_lines": item["push_lines"],
+                        "connectors": item["connectors"],
+                    }
+                    for item in route_entities
+                ],
+                "line_exact_endpoints": {
+                    str(tag): [encoded(first), encoded(second)]
+                    for tag, (first, second) in line_exact_endpoints.items()
+                },
+                "surface_exact_triangles": {
+                    str(tag): [encoded(vertex) for vertex in triangle]
+                    for tag, triangle in surface_exact_triangles.items()
+                },
+            }
+            entity_map["sha256"] = canonical_sha(entity_map)
+            entity_map_output.write_text(
+                json.dumps(entity_map, indent=2, sort_keys=True) + "\n",
+                encoding="utf-8",
+            )
         tetrahedra = sum(
             len(tags) for tags in gmsh.model.mesh.getElements(3, volume)[1]
         )
@@ -571,12 +623,16 @@ def main():
     parser.add_argument("--output", type=Path)
     parser.add_argument("--frame-output", type=Path)
     parser.add_argument("--defer-independent-verify", action="store_true")
+    parser.add_argument("--msh-output", type=Path)
+    parser.add_argument("--entity-map-output", type=Path)
     args = parser.parse_args()
     result = run(
         args.limit,
         args.algorithm,
         include_frame=args.frame_output is not None,
         perform_independent_verify=not args.defer_independent_verify,
+        msh_output=args.msh_output,
+        entity_map_output=args.entity_map_output,
     )
     frame_payload = result.pop("frame_payload", None)
     if args.frame_output:
