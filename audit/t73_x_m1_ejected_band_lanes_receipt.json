@@ -1,0 +1,22 @@
+{
+  "band_count": 1513,
+  "builder_sha256": "955D4656392E9F583FEDB1646D6F3A987BE2E2C06ECB5AC73CAA2B595332E0A1",
+  "cache_path": "C:\\Users\\Administrator\\.cache\\t73_x_m1_ejected_band_lanes.jsonl.gz",
+  "cache_sha256": "3CF153DBF037A00DA95B0C50DD0722D940BFCD87F7E50F3221999B7487D47DD5",
+  "cache_size": 58205733,
+  "component_counts": {
+    "m_2": 269,
+    "m_3": 1240,
+    "r_xy": 2,
+    "r_zx": 2
+  },
+  "piecewise_affine_image_segment_count": 30144,
+  "post_x_receipt_sha256": "25DA696216B176D816E0CE5FBDF5781C038791A6E001A1F65FA95C7DF5CE9B8D",
+  "product_extension_sha256": "EFB6CBB2B2B32F4A37FB8D257DBA69C9D0F0ED32C9624A92185B6343A5D30775",
+  "record_stream_sha256": "1DC3EFCB0DD8E9AB6E343554BBE77420D345F401CCD87CEF74E53242DE0E2507",
+  "schema": "t73_x_m1_ejected_band_lanes_receipt/v1",
+  "scope_boundary": "band lanes and exteriorized pushes only; fixed source stubs and m1 complements remain to be merged into full hybrid path images",
+  "sha256": "059A9E2DEE7A749BB26EF7079AA8BB31C19DCD4F7D7F073292FB6D0A2F0B675B",
+  "source_core_and_push_segment_count": 12104,
+  "verdict": "PASS_X_M1_EXACT_PIECEWISE_AFFINE_BAND_LANE_IMAGES"
+}

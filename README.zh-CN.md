@@ -200,6 +200,17 @@ framing 修复全部越界，使12104+6052条 pushed segments 均位于 collar �
 使用 `python3 scripts/build_t73_x_m1_collar_product_extension.py --check` 与
 `python3 scripts/verify_t73_x_m1_collar_product_extension.py` 验收。完整 hybrid
 paths 的逐片仿射像仍待输出。
+非平凡求像现已保存在
+`C:\Users\Administrator\.cache\t73_x_m1_ejected_band_lanes.jsonl.gz`
+（约58.2 MB），收据为
+[`audit/t73_x_m1_ejected_band_lanes_receipt.json`](audit/t73_x_m1_ejected_band_lanes_receipt.json)。
+精确 product-simplex 相交将12104条 core/outward-push lane segments 细分为
+30144条 affine image segments。完整 verifier 逐片重算重心坐标 containment、
+source interpolation、target image 与连续性：`python
+scripts/verify_t73_x_m1_ejected_band_lanes.py --full --input-cache
+C:\Users\Administrator\.cache\t73_post_x_framed_replacement_cells.jsonl.gz
+--check-cache-sha`。下一步把位于 fixed region 的其余54468条 source-stub 与
+m1-complement segments 合并进这些像。
 三个原先缺坐标的 pre-cancellation dual-cell product ribbons 现已显式保存于
 [`geometry/t73_actual_dual_product_ribbons.json`](geometry/t73_actual_dual_product_ribbons.json)。
 每条平面 dual boundary 都有通向有理法向 push-off 的8个四边形/16个三角形

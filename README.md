@@ -220,6 +220,17 @@ all of them and puts 12104+6052 pushed segments in the collar domain. Run
 `python3 scripts/build_t73_x_m1_collar_product_extension.py --check` and
 `python3 scripts/verify_t73_x_m1_collar_product_extension.py`. Piecewise-affine
 images of the full hybrid paths remain to be emitted.
+Those nontrivial images are now stored at
+`C:\Users\Administrator\.cache\t73_x_m1_ejected_band_lanes.jsonl.gz`
+(about 58.2 MB), with receipt
+[`audit/t73_x_m1_ejected_band_lanes_receipt.json`](audit/t73_x_m1_ejected_band_lanes_receipt.json).
+The exact product-simplex intersections subdivide 12104 core/outward-push lane
+segments into 30144 affine image segments. Full verification recomputes every
+barycentric containment, source interpolation, target image and adjacency:
+`python scripts/verify_t73_x_m1_ejected_band_lanes.py --full --input-cache
+C:\Users\Administrator\.cache\t73_post_x_framed_replacement_cells.jsonl.gz
+--check-cache-sha`. The remaining 54468 fixed-region source-stub and
+m1-complement segments must now be merged with these images.
 The three missing pre-cancellation dual-cell product ribbons are now explicit
 in [`geometry/t73_actual_dual_product_ribbons.json`](geometry/t73_actual_dual_product_ribbons.json).
 Each planar dual boundary has an eight-quadrilateral/16-triangle annulus to a

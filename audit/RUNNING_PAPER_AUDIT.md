@@ -3331,10 +3331,40 @@ Topology-source checks completed 2026-09-04:
   push segments and all 6052 pushed band-lane segments lie in the product
   shell. Verdict:
   `PASS_X_M1_COLLAR_PRODUCT_EXTENSION_AND_OUTWARD_FRAMING_DOMAIN`.
-- Boundary: the map and its framed domain are now explicit, but the 60,520
-  full hybrid path segments have not yet been subdivided at product-simplex
-  faces and written with their affine target images. The unified S3 embedding
-  and diagonal framings remain open until that application is complete.
+- Boundary: F-590 now applies the map to all 6052 core and 6052 outward-push
+  band-lane segments. The 54,468 fixed-region source-stub and m1-complement
+  segments still need to be merged with those images. The unified S3 embedding
+  and diagonal framings remain open until the complete paths are emitted.
+
+### F-590 — Every nontrivial x/m1 band-lane image is computed simplex by simplex
+
+- Severity: **x/m1 cancellation / explicit framed path image**
+- Status: **ALL BAND-LANE IMAGES PASS; FIXED PATH PIECES NOT YET MERGED**
+- Evidence: `scripts/build_t73_x_m1_ejected_band_lanes.py`,
+  `scripts/verify_t73_x_m1_ejected_band_lanes.py`,
+  `audit/t73_x_m1_ejected_band_lanes_receipt.json`, its test, and the gzip
+  JSONL cache named by the receipt.
+- Construction: for each of 1513 bands, both two-segment boundary lanes and
+  their F-589 uniform outward pushes are intersected with all 144 product
+  4-simplices using exact barycentric inequalities. Every source segment is
+  cut at all simplex-face parameters and each subsegment is sent by the unique
+  affine vertex map. The result has 12,104 source segments and 30,144 target
+  image segments.
+- Independent verification: the verifier streams the F-583 source cache and
+  F-590 image cache together, checks all source/band/component indices, exact
+  `[0,1]` parameter coverage, nonnegative barycentric coordinates, source
+  interpolation, target affine coordinates and adjacent-piece continuity.
+  The deterministic 58,205,733-byte cache SHA also passes. Verdict:
+  `PASS_X_M1_EJECTED_BAND_LANES_FULL`.
+- Runtime/storage: WSL exhausted its host memory under repeated Fraction
+  simplex clipping, and direct Windows reads through `wsl.localhost` were not
+  stable. A byte-identical SHA-checked copy of the F-583 input cache was used
+  under Windows Python; no geometric or arithmetic rule changed.
+- Boundary: source stubs and oriented m1 complements account for the other
+  54,468 core pieces and are fixed by the collar outside its support. They must
+  be copied and joined with these nontrivial images, with the corresponding
+  source/gluing chart maps checked, before a complete 60,520-segment
+  cancellation image can be claimed.
 
 ### F-600 — The “actual” sphere-system builder assigns, rather than constructs, the embedding in \(\partial W_2\)
 
