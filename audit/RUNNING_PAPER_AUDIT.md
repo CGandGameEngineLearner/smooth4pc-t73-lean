@@ -3633,10 +3633,10 @@ Topology-source checks completed 2026-09-04:
   push corridors and proved disjoint from this core before integer framings or
   a complete framed PD can be computed.
 
-### F-599B — The core and all five product pushes share one affine-S3 embedding
+### F-599B — The core and five disjoint companion cycles share one affine-S3 embedding
 
 - Severity: **actual Kirby input / single-chart framed realization**
-- Status: **AFFINE FRAMED LINK EMBEDDING PASS; COMPLETE PD OPEN**
+- Status: **AFFINE DISJOINT COMPANIONS PASS; PRODUCT-RIBBON CLAIM WITHDRAWN BY F-599B1**
 - Evidence: `geometry/t73_affine_s3_framed_realization.json`,
   `scripts/build_t73_affine_s3_framed_realization.py`,
   `scripts/verify_t73_affine_s3_framed_realization.py`,
@@ -3654,11 +3654,28 @@ Topology-source checks completed 2026-09-04:
   checked exactly; none meets. The source AR pairwise-disjoint ribbon receipt
   and F-599A core receipt remain bound. Verdict:
   `PASS_CANONICAL_AFFINE_S3_FRAMED_LINK_EMBEDDING`.
-- Boundary: this completes the actual affine framed link embedding. Its
-  corridor fibers collapse in the F-579 projection, so that projection cannot
-  be reused. A new regular generic projection must be selected and all
-  core/core, core/push and dotted crossings exported before integer self-linkings and
-  the complete framed PD are available.
+- Boundary: this completes an affine embedding of the core and five disjoint
+  companion cycles. F-599B1 shows that the corridor portions lack product
+  ribbons, so the companions are not yet certified framing push-offs. A
+  corridor-ribbon repair is required before projection or integer linking.
+
+### F-599B1 — The affine push corridors are disjoint companions but not yet product push-offs
+
+- Severity: **Critical framing correction**
+- Status: **DISJOINT CYCLES PASS; PRODUCT FRAMING NOT CERTIFIED**
+- Evidence: `audit/t73_affine_push_corridor_framing_gap.json` and its test.
+- Finding: F-599B sends each push corridor to an independent height
+  `-20000-j`, while its core corridor lies at `-10000-j`. No ribbon vertices,
+  triangles or nonzero normal field join the two. Disjointness of the resulting
+  closed companion cycles therefore does not identify their linking number
+  with the transported atlas framing.
+- Consequence: the F-599B coordinates and disjointness receipt remain valid,
+  but the words “product push” and “complete affine framed link” are withdrawn
+  for those corridor portions. Integer framings computed from them would be
+  arbitrary and are forbidden.
+- Repair: replace or supplement all 3558 push corridors by ruled parallel
+  fields along the core corridors, matching the verified product normals at
+  both ends, and prove all resulting ribbon triangles embedded/disjoint.
 
 ### F-599C — Monolithic linear projections of the affine framed link are computationally unsuitable
 
@@ -3675,7 +3692,9 @@ Topology-source checks completed 2026-09-04:
   projection is rejected as an implementation route. The next builder must
   assemble a regular diagram piecewise from the already verified 1,758,060
   central crossings, 3570 local Hopf crossings and analytically controlled
-  corridor charts, then independently check the combined crossing order.
+  corridor charts, then independently check the combined crossing order. The
+  candidate counts refer to the F-599B companion cycles and must be rerun after
+  the F-599B1 product-ribbon repair changes their coordinates.
 
 ### F-600 — The “actual” sphere-system builder assigns, rather than constructs, the embedding in \(\partial W_2\)
 

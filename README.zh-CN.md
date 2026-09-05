@@ -273,8 +273,11 @@ Hopf arcs，并使用3558条各四段的外部 corridors，共23109条 core segm
 [`audit/t73_affine_s3_framed_realization_verification.json`](audit/t73_affine_s3_framed_realization_verification.json)
 记录50,637,456次 push-waypoint/fiber 检查及4,567,172次非相邻
 endpoint-fiber/base-segment 精确检查。verdict 为
-`PASS_CANONICAL_AFFINE_S3_FRAMED_LINK_EMBEDDING`。现在整数 framing 前只剩
-regular generic projection 与完整 framed PD。
+`PASS_CANONICAL_AFFINE_S3_FRAMED_LINK_EMBEDDING`。这证明五条 disjoint
+companion cycles，但尚未证明 product framing：3558条独立路由的 push corridors
+没有通向 core corridors 的 ruled ribbons。fail-closed 订正位于
+[`audit/t73_affine_push_corridor_framing_gap.json`](audit/t73_affine_push_corridor_framing_gap.json)。
+投影或计算整数 framing 前必须先构造 corridor product ribbons。
 全局线性投影探测记录于
 [`audit/t73_affine_s3_projection_probe.json`](audit/t73_affine_s3_projection_probe.json)。
 xz/yz 会压扁 dotted edges；三个 regular tilts 至少产生258,453,247个 broad

@@ -327,8 +327,12 @@ full receipt
 [`audit/t73_affine_s3_framed_realization_verification.json`](audit/t73_affine_s3_framed_realization_verification.json)
 records 50,637,456 push-waypoint/fiber checks and 4,567,172 exact nonincident
 endpoint-fiber/base-segment checks. Verdict:
-`PASS_CANONICAL_AFFINE_S3_FRAMED_LINK_EMBEDDING`. A regular generic projection
-and complete framed PD are now the remaining inputs for integer framings.
+`PASS_CANONICAL_AFFINE_S3_FRAMED_LINK_EMBEDDING`. This proves five disjoint
+companion cycles, but not yet the product framing: the 3558 independently
+routed push corridors have no ruled ribbons to the core corridors. The
+fail-closed correction is
+[`audit/t73_affine_push_corridor_framing_gap.json`](audit/t73_affine_push_corridor_framing_gap.json).
+Corridor product ribbons must be built before projection or integer framing.
 Global linear projection probes are recorded in
 [`audit/t73_affine_s3_projection_probe.json`](audit/t73_affine_s3_projection_probe.json).
 xz/yz collapse dotted edges; three regular tilts produce at least 258,453,247

@@ -1,0 +1,14 @@
+{
+  "affine_framed_realization_sha256": "3DCDD28B573EAE501ADBE3C2E85FC782DE9005D57E804FD40764FC8356DE3DB7",
+  "affine_framed_verification_sha256": "25503EEB219126EEF8437144E98939ACBE29A551E3768AABAFD610E61DFEB59C",
+  "completion_status": "AFFINE_PUSH_CORRIDOR_PRODUCT_RIBBONS_MISSING",
+  "core_corridor_count": 3558,
+  "corridor_ribbon_triangle_count": 0,
+  "disjoint_companion_cycles_verified": true,
+  "integer_framing_usable": false,
+  "product_framing_transport_verified": false,
+  "push_corridor_count": 3558,
+  "required_repair": "replace independent low-height push corridors by explicit nonvanishing parallel fields along core corridors and verify 3558 ruled ribbons",
+  "schema": "t73_affine_push_corridor_framing_gap/v1",
+  "sha256": "B11B866DB20A493E6760FC828219D92D8B929E47A3485EACD4C77D4C718A58F3"
+}
