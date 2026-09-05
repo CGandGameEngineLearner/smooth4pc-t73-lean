@@ -141,8 +141,8 @@ m2/m3 lift 与下述 candidate dual-cell lift 的相关 deck translates 做精�
 三条 candidate dual-core lift 保存于
 [`geometry/t73_candidate_dual_core_lifts.json`](geometry/t73_candidate_dual_core_lifts.json)，
 使用 `python3 scripts/build_t73_candidate_dual_core_lifts.py --check` 重建。
-加入 candidate `u=1/2` lift 后，clearance verifier 返回
-`PASS_CANDIDATE_ALL_CORE_CLEARANCE_ONLY`。
+加入 candidate `u=1/2` lift 后，clearance verifier 同时检查 post-slide core
+及其 push-off，并返回 `PASS_CANDIDATE_FRAMED_ALL_CORE_CLEARANCE_ONLY`。
 
 1513 步 x-cancellation candidate movie 位于
 [`geometry/t73_candidate_x_band_movie.json`](geometry/t73_candidate_x_band_movie.json)，

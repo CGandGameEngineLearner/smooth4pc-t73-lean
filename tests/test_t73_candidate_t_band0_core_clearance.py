@@ -17,7 +17,7 @@ class CandidateTBand0CoreClearanceTest(unittest.TestCase):
         module = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(module)
         result = module.verify()
-        self.assertEqual(result["verdict"], "PASS_CANDIDATE_ALL_CORE_CLEARANCE_ONLY")
+        self.assertEqual(result["verdict"], "PASS_CANDIDATE_FRAMED_ALL_CORE_CLEARANCE_ONLY")
         self.assertGreater(result["exact_deck_checks"], 0)
 
 

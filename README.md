@@ -156,8 +156,9 @@ candidate dual-cell lifts described below.
 The three candidate dual-core lifts are saved in
 [`geometry/t73_candidate_dual_core_lifts.json`](geometry/t73_candidate_dual_core_lifts.json),
 rebuilt with `python3 scripts/build_t73_candidate_dual_core_lifts.py --check`.
-With these candidate `u=1/2` lifts included, the clearance verifier reports
-`PASS_CANDIDATE_ALL_CORE_CLEARANCE_ONLY`.
+With these candidate `u=1/2` lifts included, the clearance verifier checks both
+the post-slide core and its push-off and reports
+`PASS_CANDIDATE_FRAMED_ALL_CORE_CLEARANCE_ONLY`.
 
 The 1513-step x-cancellation candidate movie is
 [`geometry/t73_candidate_x_band_movie.json`](geometry/t73_candidate_x_band_movie.json),

@@ -2214,8 +2214,9 @@ Topology-source checks completed 2026-09-04:
   universal-cover cores, reporting `PASS_CANDIDATE_M2_M3_CLEARANCE_ONLY`.
 - Candidate dual clearance: the three dual-cell boundaries have exact
   zero-deck-translation lifts after the explicit candidate choice `u=1/2`.
-  Including them gives `PASS_CANDIDATE_ALL_CORE_CLEARANCE_ONLY` against all
-  five other attaching cores.
+  Including them gives `PASS_CANDIDATE_FRAMED_ALL_CORE_CLEARANCE_ONLY` for both
+  the post-slide core and its push-off against all five other attaching cores;
+  906 exact deck candidates pass.
 - Boundary: the dual fiber level is not yet an actual AR chart transition;
   framed push-off embeddedness and actual Kirby-slide equivalence remain open.
 

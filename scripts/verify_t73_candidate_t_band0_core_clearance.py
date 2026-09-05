@@ -27,8 +27,10 @@ def verify() -> dict:
     splice = json.loads(SPLICE.read_text(encoding="utf-8"))
     lifts = json.loads(LIFTS.read_text(encoding="utf-8"))
     dual_lifts = json.loads(DUAL_LIFTS.read_text(encoding="utf-8"))
-    candidate_points = [tuple(Fraction(value) for value in point) for point in splice["lifted_polyline"]]
-    candidate_segments = segments(candidate_points)
+    candidate_paths = {
+        "core": [tuple(Fraction(value) for value in point) for point in splice["lifted_polyline"]],
+        "push_off": [tuple(Fraction(value) for value in point) for point in splice["push_off_lifted_polyline"]],
+    }
     seam = set(splice["mapping_torus_seam_segment_indices"])
     exact_checks = 0
     other_components = {
@@ -41,24 +43,26 @@ def verify() -> dict:
             tuple(Fraction(value) for value in point)
             for point in component_lift["lifted_vertices"]
         ]
-        for candidate_index, candidate_segment in enumerate(candidate_segments):
-            if candidate_index in seam:
-                continue
-            for other_index, other_segment in enumerate(segments(other_points)):
-                for deck in candidate_deck_translations(candidate_segment, other_segment):
-                    exact_checks += 1
-                    translated = translate_segment(other_segment, tuple(deck))
-                    if exact_segment_intersection(candidate_segment, translated):
-                        return {
-                            "verdict": "FAIL_CANDIDATE_CORE_CLEARANCE",
-                            "other_component": component,
-                            "candidate_segment": candidate_index,
-                            "other_segment": other_index,
-                            "deck_translation": list(deck),
-                            "exact_checks_before_failure": exact_checks,
-                        }
+        for candidate_kind, candidate_points in candidate_paths.items():
+            for candidate_index, candidate_segment in enumerate(segments(candidate_points)):
+                if candidate_index in seam:
+                    continue
+                for other_index, other_segment in enumerate(segments(other_points)):
+                    for deck in candidate_deck_translations(candidate_segment, other_segment):
+                        exact_checks += 1
+                        translated = translate_segment(other_segment, tuple(deck))
+                        if exact_segment_intersection(candidate_segment, translated):
+                            return {
+                                "verdict": "FAIL_CANDIDATE_FRAMED_CORE_CLEARANCE",
+                                "candidate_kind": candidate_kind,
+                                "other_component": component,
+                                "candidate_segment": candidate_index,
+                                "other_segment": other_index,
+                                "deck_translation": list(deck),
+                                "exact_checks_before_failure": exact_checks,
+                            }
     return {
-        "verdict": "PASS_CANDIDATE_ALL_CORE_CLEARANCE_ONLY",
+        "verdict": "PASS_CANDIDATE_FRAMED_ALL_CORE_CLEARANCE_ONLY",
         "checked_actual_components": ["m_2", "m_3"],
         "checked_candidate_dual_components": ["r_xy", "r_yz", "r_zx"],
         "exact_deck_checks": exact_checks,
