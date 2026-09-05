@@ -230,6 +230,14 @@ nonincident tetrahedra clearance 现已通过并记录于
 573次精确有理凸包可行性检查未发现 quotient 中的非相邻 tetrahedron 相交。
 verdict 为 `PASS_M1_PARALLEL_ANNULUS_NONINCIDENT_TETRAHEDRON_CLEARANCE`；现在可用
 此 tube 运输48416条 middle complement segments。
+紧支撑 ambient ejection 本身位于
+[`geometry/t73_m1_parallel_annulus_ambient_ejection.json`](geometry/t73_m1_parallel_annulus_ambient_ejection.json)。
+其 PL 区间映射把层 `(-1,0,2)` 送到 `(-1,1,2)`，固定支撑两侧边界，共含
+408个保向 tetrahedra。完整收据
+[`audit/t73_m1_parallel_annulus_ambient_ejection_receipt.json`](audit/t73_m1_parallel_annulus_ambient_ejection_receipt.json)
+记录2100次非相邻精确凸包检查，verdict 为
+`PASS_M1_PARALLEL_ANNULUS_AMBIENT_EJECTION_SUPPORT_CLEARANCE`。下一步将该
+homeomorphism 应用于 middle paths。
 三个原先缺坐标的 pre-cancellation dual-cell product ribbons 现已显式保存于
 [`geometry/t73_actual_dual_product_ribbons.json`](geometry/t73_actual_dual_product_ribbons.json)。
 每条平面 dual boundary 都有通向有理法向 push-off 的8个四边形/16个三角形

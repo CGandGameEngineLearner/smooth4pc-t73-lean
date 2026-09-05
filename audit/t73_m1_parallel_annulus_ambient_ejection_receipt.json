@@ -1,0 +1,19 @@
+{
+  "ambient_ejection_sha256": "A05A7B319BB75C2429EA2FF8758DF7BC3D1EFED16BCFBB02CF51996DA6578E8F",
+  "completion_status": "M1_PARALLEL_ANNULUS_COMPACTLY_SUPPORTED_AMBIENT_HOMEOMORPHISM_VERIFIED",
+  "full_verifier_result": {
+    "adjacency_skips": 5437,
+    "compactly_supported_ambient_homeomorphism": true,
+    "deck_candidates": 10141,
+    "exact_box_candidates": 2100,
+    "exact_convex_feasibility_checks": 2100,
+    "seam_skips": 2604,
+    "tetrahedra": 408,
+    "verdict": "PASS_M1_PARALLEL_ANNULUS_AMBIENT_EJECTION_SUPPORT_CLEARANCE"
+  },
+  "schema": "t73_m1_parallel_annulus_ambient_ejection_receipt/v1",
+  "sha256": "4F25838F6FFCEF75571AEBCB86EE89B8695647FF5424543A836EC075C52625ED",
+  "verdict": "PASS_M1_PARALLEL_ANNULUS_AMBIENT_EJECTION_SUPPORT_CLEARANCE",
+  "verifier_path": "scripts/verify_t73_m1_parallel_annulus_ambient_ejection_clearance.py",
+  "verifier_sha256": "B687F22964B6788B21F9CBE0BE9F495E04D82B5A7BDF18CA7B36CFB4B3D2DB11"
+}

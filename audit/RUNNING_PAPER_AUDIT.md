@@ -3427,6 +3427,32 @@ Topology-source checks completed 2026-09-04:
   ejection map still has to be applied to the 48,416 middle complement core
   segments and their pushes before the full cancellation image is complete.
 
+### F-593 — A compactly supported ambient ejection of the full m1 annulus is verified
+
+- Severity: **x/m1 cancellation / actual ambient map**
+- Status: **COMPACTLY SUPPORTED AMBIENT HOMEOMORPHISM PASS**
+- Evidence: `geometry/t73_m1_parallel_annulus_ambient_ejection.json`,
+  `scripts/build_t73_m1_parallel_annulus_ambient_ejection.py`,
+  `scripts/verify_t73_m1_parallel_annulus_ambient_ejection.py`,
+  `scripts/verify_t73_m1_parallel_annulus_ambient_ejection_clearance.py`,
+  `audit/t73_m1_parallel_annulus_ambient_ejection_receipt.json`, and tests.
+- Map: the verified F-592 tube is extended to normal parameter levels
+  `b=-1,0,2`. The target levels are `-1,1,2`, so the central annulus is
+  ejected from zero to one while both support boundaries remain pointwise
+  fixed. The two linear slopes are 2 and 1/2; all 408 tetrahedra are
+  orientation preserving, with 204 of each determinant ratio.
+- Global support clearance: 10,141 quotient deck candidates are enumerated.
+  After 5437 combinatorial adjacency and 2604 seam-gluing cases, all 2100
+  remaining exact AABB candidates pass rational convex-hull feasibility.
+  The symmetric first/last seam ordering is checked with the inverse deck as
+  well as the forward deck. Verdict:
+  `PASS_M1_PARALLEL_ANNULUS_AMBIENT_EJECTION_SUPPORT_CLEARANCE`.
+- Consequence/boundary: this is an actual compactly supported PL ambient
+  homeomorphism on the tubular neighborhood, not merely a normal field. The
+  48,416 middle complement core segments and their framed copies still need
+  their literal target coordinates written and independently replayed through
+  these cells before the complete x/m1 cancellation image is closed.
+
 ### F-600 — The “actual” sphere-system builder assigns, rather than constructs, the embedding in \(\partial W_2\)
 
 - Severity: **Critical**

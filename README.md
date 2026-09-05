@@ -252,6 +252,14 @@ tetrahedron clearance now passes and is recorded in
 tetrahedron intersection in the quotient. Verdict:
 `PASS_M1_PARALLEL_ANNULUS_NONINCIDENT_TETRAHEDRON_CLEARANCE`. The tube can now
 be used to transport the 48416 middle complement segments.
+The compactly supported ambient ejection itself is
+[`geometry/t73_m1_parallel_annulus_ambient_ejection.json`](geometry/t73_m1_parallel_annulus_ambient_ejection.json).
+Its PL interval map sends levels `(-1,0,2)` to `(-1,1,2)`, fixes both support
+boundaries, and has 408 orientation-preserving tetrahedra. The full receipt
+[`audit/t73_m1_parallel_annulus_ambient_ejection_receipt.json`](audit/t73_m1_parallel_annulus_ambient_ejection_receipt.json)
+records 2100 exact nonincident convex-hull checks and verdict
+`PASS_M1_PARALLEL_ANNULUS_AMBIENT_EJECTION_SUPPORT_CLEARANCE`. Applying this
+homeomorphism to the middle paths is next.
 The three missing pre-cancellation dual-cell product ribbons are now explicit
 in [`geometry/t73_actual_dual_product_ribbons.json`](geometry/t73_actual_dual_product_ribbons.json).
 Each planar dual boundary has an eight-quadrilateral/16-triangle annulus to a
