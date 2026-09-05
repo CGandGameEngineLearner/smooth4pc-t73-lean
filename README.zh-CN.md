@@ -211,6 +211,20 @@ endpoints，包括 Figure-2a reflections。使用
 `python3 scripts/build_t73_dotted_s3_foot_collars.py --check` 与
 `python3 scripts/verify_t73_dotted_s3_foot_collars.py` 重建/验收。剩余 gluing
 缺口是中央 connector complement，不再是 marked foot strips。
+m2/m3 actual connector 与 product push 的完整精确 crossing ledger 保存在
+SQLite cache
+`C:\Users\Administrator\.cache\t73_actual_source_connector_push_projection.sqlite`
+（约579 MB），收据为
+[`audit/t73_actual_source_connector_push_projection_receipt.json`](audit/t73_actual_source_connector_push_projection_receipt.json)。
+它从6,936,192个 broad candidates 得到2,528,401个 exact crossings；
+connector-only signed sums 分别为 m2=`-345`、m3=`-1206`。m2 的奇数结果以
+fail-closed 方式证明开放 connector cells 尚不能定义整数 framing，必须加入
+band-splice/collar contributions。重建命令为 `python
+scripts/build_t73_actual_source_connector_push_projection.py --output
+C:\Users\Administrator\.cache\t73_actual_source_connector_push_projection.sqlite`；
+完整验收命令为 `python
+scripts/verify_t73_actual_source_connector_push_projection.py --full
+--check-database-sha`。
 
 另一个独立层次中，C-cut 的 44-lane candidate realization 为
 [`geometry/t73_y_foot_lane_candidate.json`](geometry/t73_y_foot_lane_candidate.json)：

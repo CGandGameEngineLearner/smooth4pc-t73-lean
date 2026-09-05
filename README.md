@@ -230,6 +230,20 @@ endpoints, including the Figure-2a reflections. Rebuild/verify with
 `python3 scripts/build_t73_dotted_s3_foot_collars.py --check` and
 `python3 scripts/verify_t73_dotted_s3_foot_collars.py`. The remaining gluing
 problem is the central connector complement, not the marked foot strips.
+The exact actual connector/product-push crossing ledger for m2 and m3 is the
+SQLite cache
+`C:\Users\Administrator\.cache\t73_actual_source_connector_push_projection.sqlite`
+(about 579 MB), bound by
+[`audit/t73_actual_source_connector_push_projection_receipt.json`](audit/t73_actual_source_connector_push_projection_receipt.json).
+It contains 2,528,401 crossings reconstructed from 6,936,192 broad candidates.
+The connector-only signed sums are `-345` for m2 and `-1206` for m3. The odd
+m2 sum is a fail-closed proof that these open connector cells cannot yet define
+an integer framing; band-splice/collar contributions must be added. Rebuild
+with `python scripts/build_t73_actual_source_connector_push_projection.py
+--output C:\Users\Administrator\.cache\t73_actual_source_connector_push_projection.sqlite`;
+full verification is `python
+scripts/verify_t73_actual_source_connector_push_projection.py --full
+--check-database-sha`.
 
 Separately, the C-cut 44-lane candidate realization is
 [`geometry/t73_y_foot_lane_candidate.json`](geometry/t73_y_foot_lane_candidate.json):

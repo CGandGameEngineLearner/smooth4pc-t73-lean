@@ -3222,6 +3222,40 @@ Topology-source checks completed 2026-09-04:
   connector complement must still be extended and checked for disjointness;
   only then do the component cores and pushes close in one S3 chart.
 
+### F-586 — Actual m2/m3 connector/product-push crossings are fully projected
+
+- Severity: **actual source-native framing / connector contribution**
+- Status: **FULL CONNECTOR PROJECTION PASS; SPLICE CONTRIBUTIONS OPEN**
+- Evidence: `scripts/build_t73_actual_source_connector_push_projection.py`,
+  `scripts/verify_t73_actual_source_connector_push_projection.py`,
+  `audit/t73_actual_source_connector_push_projection_receipt.json`, its test,
+  and the cached SQLite database named in the receipt.
+- Construction: the 1244 m2 and 5848 m3 actual Johnson central-connector
+  segments are paired with the literal constant `(width,width,width)` push
+  from their source AR product annuli. Shapely screens 6,936,192 AABB pairs;
+  every survivor is solved again by exact Fraction equations in the same
+  receipt-bound near-XY projection used by the source-native core PD.
+- Full result: the database stores 101,683 m2 and 2,426,718 m3 core/push
+  crossings, 2,528,401 total, with unique exact projection-point hashes,
+  segment/PD provenance, over role and sign. Exact intersection parameters
+  and coordinates are deterministically reconstructed from each stored
+  segment pair, avoiding 4.9 GB of redundant decimal numerators/denominators;
+  the final database is 578,727,936 bytes.
+- Independent verification: SQLite integrity and full database SHA pass. The
+  verifier re-solves all 2,528,401 rational intersections, checks every point
+  hash, height order, crossing sign and PD segment number, and recovers signed
+  sums m2=`-345`, m3=`-1206`. Verdict:
+  `PASS_ACTUAL_SOURCE_CONNECTOR_PRODUCT_PUSH_PROJECTION_FULL`.
+- Fail-closed boundary: m2's odd connector-only signed sum cannot be halved
+  and is direct evidence that open connector pieces are not closed framed
+  curves. Even m3's `-1206` is only a connector contribution, not framing
+  `-603`. The missing band-splice and collar crossings must be appended to
+  form five closed push cycles before any integer diagonal is reported.
+- Runtime: WSL's host process exhausted memory during the indexed build; the
+  identical Python/Shapely 2.1.2 computation completed under Windows Python.
+  The verifier transparently maps the Windows receipt path through `/mnt/c`
+  when it is run from WSL.
+
 ### F-600 — The “actual” sphere-system builder assigns, rather than constructs, the embedding in \(\partial W_2\)
 
 - Severity: **Critical**
