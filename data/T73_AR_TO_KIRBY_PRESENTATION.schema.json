@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "T73 actual AR to common Kirby presentation witness",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "source_bindings", "chart_transitions", "one_handle_feet", "band_rectangles", "surgery_splices", "post_cancellation_components"],
+  "properties": {
+    "schema": {"const": "t73_ar_to_kirby_presentation/v1"},
+    "source_bindings": {"type": "object", "required": ["actual_ar_link_sha256", "t_cancellation_sha256", "x_cancellation_sha256"]},
+    "chart_transitions": {"type": "array", "minItems": 3},
+    "one_handle_feet": {"type": "array", "minItems": 4},
+    "band_rectangles": {"type": "array", "minItems": 1519},
+    "surgery_splices": {"type": "array", "minItems": 1519},
+    "post_cancellation_components": {"type": "array", "minItems": 7, "maxItems": 7}
+  }
+}
