@@ -2619,6 +2619,35 @@ Topology-source checks completed 2026-09-04:
   chart-typed splices and inverses. This annulus closes global target existence
   and clearance, not the source-side hybrid state replay or x/m1 deletion.
 
+### F-565 — Every x-band source has a unique actual global chart germ
+
+- Severity: **Global source geometry for the x movie / complete endpoint set**
+- Status: **ALL 1513 GLOBAL SOURCE GERMS PASS; HYBRID PIECE-WORD REPLAY OPEN**
+- Evidence: `scripts/build_t73_x_source_chart_germs.py`,
+  `scripts/verify_t73_x_source_chart_germs.py`,
+  `geometry/t73_x_source_chart_germs.json`, and its test.
+- Johnson sources: all 1509 x-axis word arcs are located in the post-t-cancel
+  m2 or m3 universal-cover state as unique consecutive triples. Each record
+  stores its component, exact vertex range, deck translation, local oriented
+  arc, and global oriented arc. These are actual top-fiber germs inherited
+  from the Johnson spine embedding.
+- Dual sources: the last four bands are matched to the two oppositely oriented
+  x edges of the explicit r_xy and r_zx square boundaries. Their period shifts,
+  actual vertex ranges, and orientations are checked directly in the dual
+  fiber chart.
+- Independent result: all 1513 ranges are unique within their component and
+  reproduce the positive-belt local arcs under their saved deck shifts.
+  Counts are 1509 Johnson germs and four dual germs. Verdict:
+  `PASS_ALL_1513_X_SOURCE_CHART_GERMS`.
+- Coordinate firewall: the records are chart germs at the attaching boundary;
+  they do not identify x-handle normal `nu` with mapping-torus `u`. Global
+  Johnson and dual charts remain typed separately and meet only through the
+  already verified x-belt local cells.
+- Boundary: F-564 supplies every complete target parallel and this finding
+  supplies every source germ. The remaining task is to assemble bands 1--1512
+  into component-level hybrid piece words, propagate inherited seams, verify
+  every chart gluing and inverse, and then construct the x/m1 pair deletion.
+
 ### F-600 — The “actual” sphere-system builder assigns, rather than constructs, the embedding in \(\partial W_2\)
 
 - Severity: **Critical**

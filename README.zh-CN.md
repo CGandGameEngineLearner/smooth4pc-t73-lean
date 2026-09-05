@@ -220,6 +220,12 @@ m1-parallel stub 的 1514 个状态，返回
 `verify_t73_x_m1_parallel_foliation.py` 重建/验收。后者返回
 `PASS_ALL_1513_M1_PARALLELS_IN_EMBEDDED_QUOTIENT_ANNULUS`；4 个 mapping-torus
 seam triangles 被正确视为 gluing cells，而非 affine triangle。
+全部 source-side global chart germ 保存于
+[`geometry/t73_x_source_chart_germs.json`](geometry/t73_x_source_chart_germs.json)。
+使用 `build_t73_x_source_chart_germs.py --check` 与
+`verify_t73_x_source_chart_germs.py` 重建/验收。它在实际分量中唯一定位 1509 条
+Johnson top arc 与 4 条有向 dual-disk boundary arc，返回
+`PASS_ALL_1513_X_SOURCE_CHART_GERMS`，且不假设 `nu=u`。
 第一条端到端 candidate slide（含显式闭合的 post-slide 4D core）位于
 [`geometry/t73_candidate_t_band0_splice.json`](geometry/t73_candidate_t_band0_splice.json)，
 使用 `python3 scripts/build_t73_candidate_t_band0_splice.py --check` 重建。
