@@ -3506,7 +3506,8 @@ Topology-source checks completed 2026-09-04:
 - Status: **CHARTED CORE/PUSH CONTINUITY PASS; SINGLE AFFINE S3 CHART OPEN**
 - Evidence: `scripts/build_t73_x_m1_ejection_overlap_transitions.py`,
   `scripts/verify_t73_x_m1_ejection_overlap_transitions.py`,
-  `audit/t73_x_m1_ejection_overlap_transitions_receipt.json`, its test, and
+  `audit/t73_x_m1_ejection_overlap_transitions_receipt.json`,
+  `audit/t73_x_m1_ejection_overlap_transitions_verification.json`, tests, and
   the gzip JSONL cache named in the receipt.
 - Construction: for each parallel level L and both complement ends, the
   support interval `[L-1/4,L+1/4]` carries a framed mapping-cylinder cube. Its
@@ -3526,6 +3527,29 @@ Topology-source checks completed 2026-09-04:
 - Boundary: the atlas has not yet been realized as one affine dotted-S3
   embedding. A common triangulated target manifold and explicit chart
   embeddings/inverses are still required before projecting a complete PD.
+
+### F-597 — The complete x/m1 framed cancellation image is assembled in the verified atlas
+
+- Severity: **x/m1 cancellation / complete framed output**
+- Status: **COMPLETE ATLAS IMAGE PASS; DOTTED-S3 REALIZATION OPEN**
+- Evidence: `geometry/t73_x_m1_complete_framed_cancellation_image.json`,
+  `scripts/build_t73_x_m1_complete_framed_cancellation_image.py`,
+  `scripts/verify_t73_x_m1_complete_framed_cancellation_image.py`, and its
+  test, together with the F-590/F-591/F-594/F-596 caches and receipts.
+- Assembly: the 60,520 replacement source edges are exhaustively replaced by
+  74,156 core image edges and 78,532 push image edges after product-simplex
+  subdivision. The 7634 unaffected Johnson/dual/bottom/central-connector edges
+  remain in their verified charts. Component target core/push counts are
+  m2=14,755/15,371, m3=66,831/70,575, r_xy=98/106, r_yz=8/8, and r_zx=98/106.
+- Totals and continuity: five source cycles with 68,154 core/push edges become
+  five target cycles with 81,790 core and 86,166 push edges. The persisted
+  F-596 full-verifier receipt binds all 3026 core and push overlap matches and
+  disjoint transition supports. Verdict:
+  `PASS_COMPLETE_X_M1_FRAMED_CANCELLATION_IMAGE_IN_ATLAS`.
+- Boundary: this closes the actual x/m1 cancellation as a framed cellwise map
+  in the verified atlas. The surviving y/z passages must next be replaced by
+  the F-584/F-585 dotted-handle cells, and the resulting atlas must be embedded
+  in one affine S3 chart before a complete PD or integer framings are computed.
 
 ### F-600 — The “actual” sphere-system builder assigns, rather than constructs, the embedding in \(\partial W_2\)
 

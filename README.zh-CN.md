@@ -258,6 +258,13 @@ C:\Users\Administrator\.cache\t73_x_m1_ejected_splice_stubs.jsonl.gz
 --middle-cache C:\Users\Administrator\.cache\t73_x_m1_ejected_middle_complements.jsonl.gz
 --check-cache-sha`。charted-cycle continuity 已通过；转换到单一 affine
 dotted-S³ chart 仍开放。
+完整合并后的 x/m1 结果位于
+[`geometry/t73_x_m1_complete_framed_cancellation_image.json`](geometry/t73_x_m1_complete_framed_cancellation_image.json)。
+它绑定持久化的 overlap full-verification，并组装五条闭合 atlas cycles：68154条
+source core edges 经精确细分成为81790条 target core 与86166条 target push
+edges。使用 `python3 scripts/verify_t73_x_m1_complete_framed_cancellation_image.py`
+验收；verdict 为 `PASS_COMPLETE_X_M1_FRAMED_CANCELLATION_IMAGE_IN_ATLAS`。
+下一步是 y/z dotted-handle conversion，随后实现单一 affine-S³ chart。
 三个原先缺坐标的 pre-cancellation dual-cell product ribbons 现已显式保存于
 [`geometry/t73_actual_dual_product_ribbons.json`](geometry/t73_actual_dual_product_ribbons.json)。
 每条平面 dual boundary 都有通向有理法向 push-off 的8个四边形/16个三角形

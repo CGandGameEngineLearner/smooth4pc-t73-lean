@@ -1,0 +1,26 @@
+{
+  "construction_receipt_sha256": "6F1F2BC4BA12267CFF8A0DE44D91FA9475E49CEA743FE2FCA2B911710E50E3E3",
+  "full_verifier_result": {
+    "cache_sha_checked": true,
+    "charted_cycle_continuity": true,
+    "core_boundary_matches": 3026,
+    "disjoint_level_support_checks": 1513,
+    "fast_checks": {
+      "builder": true,
+      "counts": true,
+      "payload": true,
+      "sources": true,
+      "verdict": true
+    },
+    "interfaces": 3026,
+    "mapping_cylinder_tetrahedra": 18156,
+    "push_boundary_matches": 3026,
+    "single_affine_s3_chart_status": "OPEN",
+    "verdict": "PASS_X_M1_FRAMED_OVERLAP_TRANSITIONS_FULL"
+  },
+  "schema": "t73_x_m1_ejection_overlap_transitions_verification/v1",
+  "sha256": "805BDD9680EE950B926AFCDA9FE2B115C6999DC54E83BAA812DFC92BE3A72977",
+  "verdict": "PASS_X_M1_FRAMED_OVERLAP_TRANSITIONS_FULL",
+  "verifier_path": "scripts/verify_t73_x_m1_ejection_overlap_transitions.py",
+  "verifier_sha256": "AB386EE6924F021AB1BB735290C9949C013CDD8B0374982CD954F927216ED897"
+}

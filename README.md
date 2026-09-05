@@ -283,6 +283,14 @@ C:\Users\Administrator\.cache\t73_x_m1_ejected_splice_stubs.jsonl.gz
 --middle-cache C:\Users\Administrator\.cache\t73_x_m1_ejected_middle_complements.jsonl.gz
 --check-cache-sha`. Charted-cycle continuity now passes; conversion to one
 affine dotted-S3 chart remains open.
+The complete merged x/m1 result is
+[`geometry/t73_x_m1_complete_framed_cancellation_image.json`](geometry/t73_x_m1_complete_framed_cancellation_image.json).
+It binds the persisted full overlap verification and assembles five closed
+atlas cycles: 68154 source core edges become 81790 target core and 86166 target
+push edges after exact subdivision. Verify with `python3
+scripts/verify_t73_x_m1_complete_framed_cancellation_image.py`; verdict:
+`PASS_COMPLETE_X_M1_FRAMED_CANCELLATION_IMAGE_IN_ATLAS`. The next operation is
+the y/z dotted-handle conversion followed by a single affine-S3 realization.
 The three missing pre-cancellation dual-cell product ribbons are now explicit
 in [`geometry/t73_actual_dual_product_ribbons.json`](geometry/t73_actual_dual_product_ribbons.json).
 Each planar dual boundary has an eight-quadrilateral/16-triangle annulus to a
