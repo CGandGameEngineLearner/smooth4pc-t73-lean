@@ -2048,6 +2048,22 @@ Topology-source checks completed 2026-09-04:
   Assigning a whole ribbon to a block by centroid or route index would leave
   unrepresented crossings and cannot certify a common frame.
 
+### F-540 — The first exact two-block partition datum clips all selected-source ruled triangles
+
+- Severity: **Partitioned-frame construction progress / not a frame**
+- Status: **EXACT Z=0 INTERFACE DATA PASS; BLOCK MESHES AND GLUING OPEN**
+- Evidence: `scripts/build_t73_selected_source_partition_z0.py` and
+  `geometry/t73_selected_source_partition_z0.json`.
+- Construction: all 2520 source carrier triangles are clipped against `z=0`
+  with `Fraction` arithmetic. The two closed half-space records contain 3580
+  nondegenerate triangle fragments and share 1128 exact interface segments.
+  Rebuilding the artifact byte-for-byte verifies its source binding and all
+  clipping output.
+- Boundary: this is only the exact input for conforming block meshing. It does
+  not contain tetrahedra, does not establish matching interface triangulations,
+  and cannot be called a common 630-ribbon frame until both block meshes and a
+  simplicial-gluing verifier exist.
+
 ### F-600 — The “actual” sphere-system builder assigns, rather than constructs, the embedding in \(\partial W_2\)
 
 - Severity: **Critical**
