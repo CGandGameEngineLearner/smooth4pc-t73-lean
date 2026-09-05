@@ -77,6 +77,14 @@ python3 scripts/build_t73_actual_ar_kirby_construction_request.py --check
 未来 witness 由 `scripts/verify_t73_ar_to_kirby_presentation.py` 验收；它只接受
 显式 cut-and-surgery 几何和精确的 AR/t/x source SHA 绑定。
 
+[`geometry/t73_actual_cancellation_splice_request.json`](geometry/t73_actual_cancellation_splice_request.json)
+是下一层生成输入：列出全部 6 条 t-band 和 1513 条 x-band 的 center-path hash，及
+每条所缺的 boundary/splice 字段：
+
+```text
+python3 scripts/build_t73_actual_cancellation_splice_request.py --check
+```
+
 ### Gmsh frame 与分块 frame 输入
 
 已独立验收的 Gmsh prefix-20 frame 位于

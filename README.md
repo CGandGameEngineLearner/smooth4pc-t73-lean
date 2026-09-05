@@ -85,6 +85,14 @@ The future witness is validated by
 `scripts/verify_t73_ar_to_kirby_presentation.py`; it will only accept explicit
 cut-and-surgery geometry and exact AR/t/x source bindings.
 
+[`geometry/t73_actual_cancellation_splice_request.json`](geometry/t73_actual_cancellation_splice_request.json)
+is the next generated input layer. It enumerates all 6 t-bands and 1513
+x-bands with their source center-path hash and required boundary/splice fields:
+
+```text
+python3 scripts/build_t73_actual_cancellation_splice_request.py --check
+```
+
 ### Gmsh frames and partitioned-frame inputs
 
 The independently verified Gmsh prefix-20 frame is
