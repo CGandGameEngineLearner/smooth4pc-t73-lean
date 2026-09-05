@@ -1,0 +1,93 @@
+{
+  "arc_label_count": 3523260,
+  "builder_sha256": "553A6EEC55F2FE23C5CE0EFACB5C1FD15CB25C4F3B0DEAA6EC2EED884E09B55F",
+  "component_cycles_sha256": "E3797DBAD2E848B8269294DF7CE8AA078275D55C327A4AB1A435962E1D2B87E4",
+  "component_order": [
+    "m_2",
+    "m_3",
+    "r_xy",
+    "r_yz",
+    "r_zx",
+    "dotted_y",
+    "dotted_z"
+  ],
+  "connector_provenance_sha256": "7460C487E5B3E875EA0A6B2D0481388A0174D6532B89D258A6C1862E818B2103",
+  "crossing_count": 1761630,
+  "database_path": "C:\\Users\\Administrator\\.cache\\t73_actual_source_standard_pd.sqlite",
+  "database_sha256": "3A6D9188A0613E61533C95A82C3E476A8B6CDE24E0FBD95D548E9B7B43327A77",
+  "database_size": 816525312,
+  "dotted_crossings": 3570,
+  "dotted_slot_map_sha256": "CB1E2FF6AE9E9584802585A9C1DD208163A4B958CCF522B1F24E9F1AD7F1767A",
+  "framing_status": "OPEN_SOURCE_PRODUCT_PUSH_OFFS_REQUIRED",
+  "pairwise_linking_matrix": [
+    [
+      0,
+      -318,
+      0,
+      0,
+      0,
+      40,
+      269
+    ],
+    [
+      -318,
+      0,
+      0,
+      0,
+      0,
+      189,
+      1271
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      40,
+      189,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      269,
+      1271,
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  ],
+  "schema": "t73_actual_source_standard_pd_sqlite/v1",
+  "sha256": "2E550442161B3B46854E3E4E30BE23CE4156BA5C0D342E9E515C5C54E1C30511",
+  "source_crossings": 1758060,
+  "source_projection_full_sha256": "A2F80175C4D949FEC4FC483B019E618C518EEA82784C4DBC5AF1F27721F7E4F9",
+  "source_projection_receipt_sha256": "15439B98F0D206FA9539CBEBEC9EFF4F3A619A3B4852740C1F047D38BFA3B16C",
+  "verdict": "PASS_ACTUAL_SOURCE_STANDARD_PD_CORE_ONLY"
+}

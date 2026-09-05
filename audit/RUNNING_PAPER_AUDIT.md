@@ -3052,6 +3052,73 @@ Topology-source checks completed 2026-09-04:
   preserving the marked-disk and tubular-neighborhood maps. Crossing-count
   disparity alone is not an isotopy proof.
 
+### F-580 — A complete source-native seven-component core PD is stored and independently verified in SQLite
+
+- Severity: **actual kappa_AR target / core diagram completed, framings open**
+- Status: **ACTUAL CORE PD PASS; SOURCE PRODUCT FRAMINGS OPEN**
+- Evidence: `scripts/build_t73_actual_source_standard_pd_sqlite.py`,
+  `scripts/verify_t73_actual_source_standard_pd_sqlite.py`,
+  `audit/t73_actual_source_standard_pd_sqlite_receipt.json`, its test, and the
+  cached SQLite database named in the receipt.
+- Assembly: each of the 1,758,060 exact native connector crossings is mapped
+  to its actual component edge, raw connector cell, segment, and Fraction
+  parameter. Every one of the 1785 raw y/z passages contributes its two local
+  same-sign dotted Hopf crossings in the F-577 marked slot. Thus no railroad
+  simplification or unproved free reduction is used.
+- Full PD: the SQLite certificate contains 1,761,630 crossings, 3,523,260
+  crossing occurrences, 1,761,630 standard PD rows, seven component summaries,
+  and 3,523,260 arc labels. Exact Fraction parameters are sorted separately
+  within each actual component segment before cyclic incoming/outgoing labels
+  are assigned.
+- Independent verification: SQLite integrity is `ok`; crossing provenance is
+  1,758,060 source connector plus 3570 dotted crossings; every PD label occurs
+  exactly twice; all seven cyclic event counts sum to 3,523,260; and the full
+  database SHA matches. Verdict: `PASS_ACTUAL_SOURCE_STANDARD_PD_SQLITE_FULL`.
+- Linking matrix: the actual source-native diagram gives
+  `lk(m2,m3)=-318`, `lk(m2,dotted_y)=40`,
+  `lk(m2,dotted_z)=269`, `lk(m3,dotted_y)=189`, and
+  `lk(m3,dotted_z)=1271`; all other off-diagonal entries vanish. The
+  source-bound railroad candidate has `lk(m2,m3)=0`, so it is not directly
+  ambient isotopic while all seven S3 components are fixed. This does not
+  disprove a dotted-Kirby/handlebody equivalence: the missing complement map
+  may pass strands through the dotted 1-handles and change ordinary S3
+  pairwise linking. The mismatch is therefore a required-map diagnostic, not
+  a standalone obstruction to kappa_AR.
+- Storage: the 816,525,312-byte database and 1.68-GB source projection remain
+  in the user cache. Git stores builders, exact source bindings, byte hashes,
+  table/count/linking receipts, and fast tests. ijson and SQLite keep peak
+  memory bounded.
+- Boundary: the core PD is complete and actual; the five source product
+  framing push-offs must still be projected and their core/push linking
+  computed in this same source-native diagram. Until those integer diagonal
+  entries pass, kappa_AR and the W2 attachment input remain open.
+
+### F-581 — Every marked-disk track has an explicit supported PL ambient extension
+
+- Severity: **kappa_AR complement boundary / local ambient extension**
+- Status: **LOCAL FOOT-DISK AMBIENT EXTENSIONS PASS; CENTRAL COMPLEMENT OPEN**
+- Evidence: `geometry/t73_dotted_disk_ambient_extensions.json`,
+  `scripts/build_t73_dotted_disk_ambient_extensions.py`,
+  `scripts/verify_t73_dotted_disk_ambient_extensions.py`, and its test.
+- Construction: each of the 3570 rational track segments uses an affine
+  corridor chart and one reusable 36-tetrahedron spacetime disk template. The
+  outer four vertices are fixed, the marked core moves from the segment start
+  to its end, all twelve slice triangles keep positive orientation, and the
+  tetrahedral boundary is a connected Euler-characteristic-two sphere.
+- Exact clearance: if all rational coordinates have denominator at most D, a
+  fixed rational mark not incident to a segment has squared distance at least
+  `1/(8*D^16)`. A uniform rational support scale satisfies both the resulting
+  `12*r` obstacle inequality and the `16*r` radial disk-boundary inequality.
+  Independent replay checks 4,911,880 segment/obstacle incidences exactly.
+- Reflection and size: the Figure-2a foot matrix exchanges the two physical
+  embeddings for every move. There are 1785 moves, 3570 segment templates,
+  128520 normalized tetrahedron instances and 257040 reflection-paired
+  physical tetrahedron instances. Verdict:
+  `PASS_REFLECTION_PAIRED_AMBIENT_DOTTED_DISK_EXTENSIONS`.
+- Boundary: this closes the local extension over the marked y/z foot disks.
+  It does not extend the source connector tangle through the central
+  zero-handle complement and therefore does not yet prove kappa_AR.
+
 ### F-600 — The “actual” sphere-system builder assigns, rather than constructs, the embedding in \(\partial W_2\)
 
 - Severity: **Critical**

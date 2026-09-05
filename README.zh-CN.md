@@ -147,6 +147,14 @@ complement boundary 数据现包含
 及
 [`geometry/t73_foot_to_dotted_disk_tracks.json`](geometry/t73_foot_to_dotted_disk_tracks.json)
 中的1785条显式反射配对路径；verifier 完成2,455,940次精确固定点碰撞检查。
+这些路径已在
+[`geometry/t73_dotted_disk_ambient_extensions.json`](geometry/t73_dotted_disk_ambient_extensions.json)
+中加厚为显式有支撑 PL ambient isotopy。可复用 corridor 模板每段含36个
+spacetime tetrahedra；3570个段实例对应257040个反射配对物理四面体实例。
+使用 `python3 scripts/build_t73_dotted_disk_ambient_extensions.py --write` 重建，
+并以 `python3 scripts/verify_t73_dotted_disk_ambient_extensions.py` 独立验收；
+verdict 为 `PASS_REFLECTION_PAIRED_AMBIENT_DOTTED_DISK_EXTENSIONS`。这只闭合
+局部 foot-disk extension，不闭合 source-to-railroad complement isotopy。
 每条 reduced source edge 也在
 [`geometry/t73_reduced_source_connector_provenance.json`](geometry/t73_reduced_source_connector_provenance.json)
 中绑定回 raw geometry：1773个 Johnson central connectors 与12个 dual-boundary
@@ -158,6 +166,17 @@ native source-connector 的完整精确投影过大，不进入Git，保存在
 7116 segments、4,791,364 个 broad candidates、1,758,060 个 exact crossings。
 使用 `build_t73_actual_source_connector_projection.py --write` 重建，并用
 `build_t73_actual_source_connector_projection_receipt.py` 流式生成/检查收据。
+完整 source-native 七分量 core PD 以 SQLite 保存于
+`C:\Users\Administrator\.cache\t73_actual_source_standard_pd.sqlite`
+（约817 MB），紧凑收据为
+[`audit/t73_actual_source_standard_pd_sqlite_receipt.json`](audit/t73_actual_source_standard_pd_sqlite_receipt.json)。
+它含1,761,630个 crossings 与3,523,260个 arc labels；完整 integrity/incidence
+检查命令为 `python3 scripts/verify_t73_actual_source_standard_pd_sqlite.py --full
+--check-database-sha`。实际 core linking matrix 有 `lk(m_2,m_3)=-318`，dotted
+linking为 `(40,269)` 与 `(189,1271)`。因此小型 zero-linking railroad target
+不是固定七分量S³ link中的直接ambient-isotopic图；它仍可能经所需的
+dotted-handle/handlebody map 与source等价，所以这本身不否定 κ_AR。source
+product-framing push-offs 仍开放。
 
 另一个独立层次中，C-cut 的 44-lane candidate realization 为
 [`geometry/t73_y_foot_lane_candidate.json`](geometry/t73_y_foot_lane_candidate.json)：

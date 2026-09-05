@@ -162,7 +162,16 @@ The complement boundary data now include
 [`geometry/t73_foot_to_dotted_slot_map.json`](geometry/t73_foot_to_dotted_slot_map.json)
 and 1785 explicit reflection-paired paths in
 [`geometry/t73_foot_to_dotted_disk_tracks.json`](geometry/t73_foot_to_dotted_disk_tracks.json).
-Their verifier performs 2,437,382 exact fixed-point collision checks. Every
+Their verifier performs 2,455,940 exact fixed-point collision checks. These
+tracks are thickened to explicit supported PL ambient isotopies in
+[`geometry/t73_dotted_disk_ambient_extensions.json`](geometry/t73_dotted_disk_ambient_extensions.json).
+The reusable corridor template has 36 spacetime tetrahedra per segment; its
+3570 segment instances give 257040 reflection-paired physical tetrahedron
+instances. Rebuild and independently verify with
+`python3 scripts/build_t73_dotted_disk_ambient_extensions.py --write` and
+`python3 scripts/verify_t73_dotted_disk_ambient_extensions.py`; verdict:
+`PASS_REFLECTION_PAIRED_AMBIENT_DOTTED_DISK_EXTENSIONS`. This closes the local
+foot-disk extension, not the source-to-railroad complement isotopy. Every
 reduced source edge is also bound to its raw geometry in
 [`geometry/t73_reduced_source_connector_provenance.json`](geometry/t73_reduced_source_connector_provenance.json):
 1773 Johnson central connectors and 12 dual-boundary connectors partition all
@@ -174,6 +183,18 @@ at `C:\Users\Administrator\.cache\t73_actual_source_connector_projection.full.js
 7116 segments, 4,791,364 broad candidates, and 1,758,060 exact crossings.
 Regenerate with `build_t73_actual_source_connector_projection.py --write` and
 stream/check with `build_t73_actual_source_connector_projection_receipt.py`.
+The complete source-native seven-component core PD is stored as SQLite at
+`C:\Users\Administrator\.cache\t73_actual_source_standard_pd.sqlite`
+(about 817 MB), with compact receipt
+[`audit/t73_actual_source_standard_pd_sqlite_receipt.json`](audit/t73_actual_source_standard_pd_sqlite_receipt.json).
+It has 1,761,630 crossings and 3,523,260 arc labels; a full integrity/incidence
+check is `python3 scripts/verify_t73_actual_source_standard_pd_sqlite.py --full
+--check-database-sha`. The actual core linking matrix has
+`lk(m_2,m_3)=-318`, while dotted linking is `(40,269)` and `(189,1271)`.
+Therefore the small zero-linking railroad target is not directly ambient
+isotopic as a fixed seven-component S3 link. It may still be related by the
+required dotted-handle/handlebody map, so this does not by itself refute
+kappa_AR. Source product-framing push-offs remain open.
 
 Separately, the C-cut 44-lane candidate realization is
 [`geometry/t73_y_foot_lane_candidate.json`](geometry/t73_y_foot_lane_candidate.json):
