@@ -38,7 +38,7 @@ def run(fragment_limit=1):
         if len(volumes)!=2: raise AssertionError('z0 block construction did not leave exactly two exterior volumes')
         gmsh.model.mesh.generate(3)
         counts=[sum(len(x) for x in gmsh.model.mesh.getElements(3,tag)[1]) for tag in volumes]
-        if not all(counts): raise AssertionError('a z0 exterior block has no tetrahedra')
+        if not all(counts): raise AssertionError(f'z0 fragment batch leaves empty volume tags={volumes} tetrahedra={counts}')
         return {'schema':'t73_z0_block_volume_probe/v1','source_exterior_sha256':source['sha256'],'volumes':2,'tetrahedra_by_block':counts,'occ_fragment_ribbon_surface_count':len(surfaces),'status':'PASS_FRAGMENT_BATCH_ONLY'}
     finally: gmsh.finalize()
 
