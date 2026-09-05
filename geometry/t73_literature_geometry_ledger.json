@@ -1,0 +1,71 @@
+{
+  "completion_status": "OPEN",
+  "digitisation_pipeline": [
+    "cite source operation",
+    "encode rational PL cell",
+    "verify local boundary/framing",
+    "compose into kappa_AR",
+    "compare to AR source bindings"
+  ],
+  "schema": "t73_literature_geometry_ledger/v1",
+  "sha256": "88F33C5BEC671207E43FD65A6DADABA95077228644BFAE5AD41451210400067D",
+  "sources": [
+    {
+      "anchors": [
+        "Theorem 4.1",
+        "Figure 5",
+        "Figure 9a",
+        "Figure 9b",
+        "Figure 10a"
+      ],
+      "citation": "Aitchison--Rubinstein, Fibered knots and involutions on homotopy spheres (1984), Section 4",
+      "does_not_supply": [
+        "T73 rational coordinates",
+        "machine-readable foot pairing",
+        "per-band boundary edges",
+        "1513 x-band movie"
+      ],
+      "id": "AR84_section4",
+      "pages": [
+        "13",
+        "14"
+      ],
+      "supports": [
+        "Cappell--Shaneson handle decomposition",
+        "geometric 2/1 cancellation",
+        "branched-cover/Kirby link description",
+        "symmetric straightening"
+      ],
+      "url": "https://math.berkeley.edu/~kirby/papers/Gordon%20and%20Kirby%20%28editors%29%20-%20Four-manifold%20theory%20%28Durham%29%20-%20MR0780574.pdf"
+    },
+    {
+      "anchors": [
+        "eight-element generating set"
+      ],
+      "citation": "Jesse Johnson, Automorphisms of the three-torus preserving a genus-three Heegaard splitting (2011)",
+      "does_not_supply": [
+        "T73 93-factor coordinate movie",
+        "Kirby band data"
+      ],
+      "id": "Johnson2011",
+      "supports": [
+        "Heegaard-preserving generator representatives"
+      ],
+      "url": "https://arxiv.org/abs/0708.2683"
+    },
+    {
+      "anchors": [
+        "Theorems 3.7, 3.10, 4.7"
+      ],
+      "citation": "Manolescu--Walker--Wedrich, Skein lasagna modules and handle decompositions (2023)",
+      "does_not_supply": [
+        "candidate-specific Kirby or foam chain maps"
+      ],
+      "id": "MWW2023",
+      "supports": [
+        "handle attachment/coequalizer formulas"
+      ],
+      "url": "https://arxiv.org/abs/2206.04616"
+    }
+  ]
+}

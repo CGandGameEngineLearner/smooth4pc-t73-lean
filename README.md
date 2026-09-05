@@ -85,6 +85,11 @@ The future witness is validated by
 `scripts/verify_t73_ar_to_kirby_presentation.py`; it will only accept explicit
 cut-and-surgery geometry and exact AR/t/x source bindings.
 
+The citable source index for digitising the required PL cells is
+[`geometry/t73_literature_geometry_ledger.json`](geometry/t73_literature_geometry_ledger.json),
+rebuilt with `python3 scripts/build_t73_literature_geometry_ledger.py --check`.
+It records source pages/figures and what each source does and does not supply.
+
 [`geometry/t73_actual_cancellation_splice_request.json`](geometry/t73_actual_cancellation_splice_request.json)
 is the next generated input layer. It enumerates all 6 t-bands and 1513
 x-bands with their source center-path hash and required boundary/splice fields:

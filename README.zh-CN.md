@@ -77,6 +77,11 @@ python3 scripts/build_t73_actual_ar_kirby_construction_request.py --check
 未来 witness 由 `scripts/verify_t73_ar_to_kirby_presentation.py` 验收；它只接受
 显式 cut-and-surgery 几何和精确的 AR/t/x source SHA 绑定。
 
+数字化所需 PL cells 的可引用文献索引为
+[`geometry/t73_literature_geometry_ledger.json`](geometry/t73_literature_geometry_ledger.json)，
+使用 `python3 scripts/build_t73_literature_geometry_ledger.py --check` 重建。
+它保存原文页码/Figure 以及各来源能和不能提供的数据。
+
 [`geometry/t73_actual_cancellation_splice_request.json`](geometry/t73_actual_cancellation_splice_request.json)
 是下一层生成输入：列出全部 6 条 t-band 和 1513 条 x-band 的 center-path hash，及
 每条所缺的 boundary/splice 字段：
