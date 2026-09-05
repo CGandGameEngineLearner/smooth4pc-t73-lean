@@ -3308,6 +3308,34 @@ Topology-source checks completed 2026-09-04:
   single dotted-S3 chart. Crossing projection and integer framings remain
   forbidden until that cellwise embedding and its inverse are constructed.
 
+### F-589 — The x/m1 collar map has an explicit product extension and a valid outward push domain
+
+- Severity: **x/m1 cancellation / framed complement map**
+- Status: **PRODUCT DOMAIN PASS; PIECEWISE PATH IMAGES OPEN**
+- Evidence: `geometry/t73_x_m1_collar_product_extension.json`,
+  `scripts/build_t73_x_m1_collar_product_extension.py`,
+  `scripts/verify_t73_x_m1_collar_product_extension.py`, and its test.
+- Construction: the 36 tetrahedra of the transverse cubical-shell ejection
+  map are crossed with the rational x interval `[1,3]`. A globally ordered
+  Freudenthal subdivision gives four 4-simplices per tetrahedron, 144 total,
+  with x fixed and the old affine transverse map on every slice.
+- Orientation/domain verification: all 144 source/target determinants are
+  nonzero with positive ratio, minimum `1/2`. Replaying the complete local
+  movie gives 12,104 remaining core segments; convexity of the outer cube and
+  the exact `nu>=1` inequality keep every segment out of the deleted inner
+  cube. All 6052 positive/negative band-lane segments are covered as well.
+- Framing correction: 4768 segments of the original per-band pushed lanes
+  have a vertex with `nu<1`, so they cannot be carried through this collar.
+  The independently verified F-569 uniform positive-nu homotopy is therefore
+  essential, not optional. With that representative, all 12,104 remaining
+  push segments and all 6052 pushed band-lane segments lie in the product
+  shell. Verdict:
+  `PASS_X_M1_COLLAR_PRODUCT_EXTENSION_AND_OUTWARD_FRAMING_DOMAIN`.
+- Boundary: the map and its framed domain are now explicit, but the 60,520
+  full hybrid path segments have not yet been subdivided at product-simplex
+  faces and written with their affine target images. The unified S3 embedding
+  and diagonal framings remain open until that application is complete.
+
 ### F-600 — The “actual” sphere-system builder assigns, rather than constructs, the embedding in \(\partial W_2\)
 
 - Severity: **Critical**

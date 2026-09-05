@@ -210,6 +210,16 @@ with `python3 scripts/build_t73_post_x_framed_cycle_assembly.py --check` and
 `python3 scripts/verify_t73_post_x_framed_cycle_assembly.py`. This closes
 combinatorial cycle incidence, not the cancellation-complement embedding into
 one S3 chart.
+The x/m1 collar now has an explicit x-product extension in
+[`geometry/t73_x_m1_collar_product_extension.json`](geometry/t73_x_m1_collar_product_extension.json):
+36 transverse tetrahedra become 144 orientation-preserving 4-simplices. It
+covers all 12104 remaining local core segments and 6052 band-lane segments.
+The verifier also finds 4768 original local push-lane segments entering the
+deleted inner cube; the previously verified uniform outward framing repairs
+all of them and puts 12104+6052 pushed segments in the collar domain. Run
+`python3 scripts/build_t73_x_m1_collar_product_extension.py --check` and
+`python3 scripts/verify_t73_x_m1_collar_product_extension.py`. Piecewise-affine
+images of the full hybrid paths remain to be emitted.
 The three missing pre-cancellation dual-cell product ribbons are now explicit
 in [`geometry/t73_actual_dual_product_ribbons.json`](geometry/t73_actual_dual_product_ribbons.json).
 Each planar dual boundary has an eight-quadrilateral/16-triangle annulus to a

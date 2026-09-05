@@ -191,6 +191,15 @@ blocks，并给出各68154条边的 core/push cycles；每个抽象顶点均恰�
 --check` 与 `python3 scripts/verify_t73_post_x_framed_cycle_assembly.py`
 重建/验收。这闭合的是组合 cycle incidence，不是到单一 S³ chart 的
 cancellation-complement embedding。
+x/m1 collar 的显式 x-product 延拓现位于
+[`geometry/t73_x_m1_collar_product_extension.json`](geometry/t73_x_m1_collar_product_extension.json)：
+36个 transverse tetrahedra 延拓成144个保向4-simplices。它覆盖全部12104条
+remaining local core segments 与6052条 band-lane segments。verifier 同时发现
+原局部 push 有4768条 lane segments 进入待删除内立方体；已有 uniform outward
+framing 修复全部越界，使12104+6052条 pushed segments 均位于 collar 定义域。
+使用 `python3 scripts/build_t73_x_m1_collar_product_extension.py --check` 与
+`python3 scripts/verify_t73_x_m1_collar_product_extension.py` 验收。完整 hybrid
+paths 的逐片仿射像仍待输出。
 三个原先缺坐标的 pre-cancellation dual-cell product ribbons 现已显式保存于
 [`geometry/t73_actual_dual_product_ribbons.json`](geometry/t73_actual_dual_product_ribbons.json)。
 每条平面 dual boundary 都有通向有理法向 push-off 的8个四边形/16个三角形
