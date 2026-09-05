@@ -311,6 +311,15 @@ component atlas is
 80007 framed-core edges, 84383 push edges and two four-edge dotted polygons.
 Verdict: `PASS_COMPLETE_SEVEN_COMPONENT_FRAMED_DOTTED_ATLAS`. A single affine
 S3 chart and its complete PD remain open.
+The core part of that realization is now one affine chart in
+[`geometry/t73_affine_s3_core_realization.json`](geometry/t73_affine_s3_core_realization.json).
+It retains all 7092 actual Johnson connector segments, inserts all 1785 local
+Hopf arcs, and uses 3558 four-segment exterior corridors, for 23109 core
+segments. The full receipt
+[`audit/t73_affine_s3_core_realization_verification.json`](audit/t73_affine_s3_core_realization_verification.json)
+records 25,318,728 exact waypoint/endpoint-fiber incidence checks and verdict
+`PASS_CANONICAL_AFFINE_S3_CORE_EMBEDDING`. Affine push corridors, hence
+integer framings and the complete framed PD, remain open.
 The three missing pre-cancellation dual-cell product ribbons are now explicit
 in [`geometry/t73_actual_dual_product_ribbons.json`](geometry/t73_actual_dual_product_ribbons.json).
 Each planar dual boundary has an eight-quadrilateral/16-triangle annulus to a

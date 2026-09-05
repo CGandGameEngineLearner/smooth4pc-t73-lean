@@ -258,6 +258,15 @@ C:\Users\Administrator\.cache\t73_x_m1_ejected_splice_stubs.jsonl.gz
 --middle-cache C:\Users\Administrator\.cache\t73_x_m1_ejected_middle_complements.jsonl.gz
 --check-cache-sha`。charted-cycle continuity 已通过；转换到单一 affine
 dotted-S³ chart 仍开放。
+core 部分现已实现于单一 affine chart：
+[`geometry/t73_affine_s3_core_realization.json`](geometry/t73_affine_s3_core_realization.json)。
+它保留全部7092条 actual Johnson connector segments，加入全部1785条 local
+Hopf arcs，并使用3558条各四段的外部 corridors，共23109条 core segments。
+完整收据
+[`audit/t73_affine_s3_core_realization_verification.json`](audit/t73_affine_s3_core_realization_verification.json)
+记录25,318,728次精确 waypoint/endpoint-fiber incidence checks，verdict 为
+`PASS_CANONICAL_AFFINE_S3_CORE_EMBEDDING`。affine push corridors、整数 framing
+与完整 framed PD 仍开放。
 完整合并后的 x/m1 结果位于
 [`geometry/t73_x_m1_complete_framed_cancellation_image.json`](geometry/t73_x_m1_complete_framed_cancellation_image.json)。
 它绑定持久化的 overlap full-verification，并组装五条闭合 atlas cycles：68176条

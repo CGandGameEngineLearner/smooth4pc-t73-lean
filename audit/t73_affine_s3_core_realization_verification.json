@@ -1,0 +1,21 @@
+{
+  "affine_core_sha256": "81CB91A81B354C806C8B7B9739D0D3CB51AAF8DEC22B0AB30DF8EE277ED0CB0A",
+  "full_verifier_result": {
+    "central_connector_segments": 7092,
+    "components": 7,
+    "corridor_segments": 14232,
+    "corridors": 3558,
+    "distinct_corridor_heights": 3558,
+    "endpoint_fibers": 7116,
+    "framed_core_segments": 23109,
+    "framed_push_status": "OPEN_CONSTRUCT_AFFINE_PUSH_CORRIDORS",
+    "local_hopf_segments": 1785,
+    "verdict": "PASS_CANONICAL_AFFINE_S3_CORE_EMBEDDING",
+    "waypoint_endpoint_incidence_checks": 25318728
+  },
+  "schema": "t73_affine_s3_core_realization_verification/v1",
+  "sha256": "475ADE6EE21E96C9CFC41CDF9ABF5AF92D8C210C33921292B3E78C72498133CF",
+  "verdict": "PASS_CANONICAL_AFFINE_S3_CORE_EMBEDDING",
+  "verifier_path": "scripts/verify_t73_affine_s3_core_realization.py",
+  "verifier_sha256": "0B1E8237FA2268B7FF72431D1412C0711F33745FD0F5A0C7B0CB8FF967EE5E60"
+}

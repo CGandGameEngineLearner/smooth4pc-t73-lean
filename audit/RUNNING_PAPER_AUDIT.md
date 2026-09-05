@@ -3603,6 +3603,36 @@ Topology-source checks completed 2026-09-04:
   triangulation has been constructed, so a complete planar PD, linking matrix
   and integer diagonal framings remain open.
 
+### F-599A — The seven-component core has one canonical affine-S3 embedding
+
+- Severity: **actual Kirby input / single-chart core realization**
+- Status: **AFFINE CORE EMBEDDING PASS; AFFINE PUSH CURVES OPEN**
+- Evidence: `geometry/t73_affine_s3_core_realization.json`,
+  `scripts/build_t73_affine_s3_core_realization.py`,
+  `scripts/verify_t73_affine_s3_core_realization.py`,
+  `audit/t73_affine_s3_core_realization_verification.json`, and tests.
+- Preserved geometry: all 7092 m2/m3 Johnson central-connector segments retain
+  their actual rational coordinates and the F-579 near-XY projection binding.
+  All 1785 F-584 Hopf passage arcs are inserted literally. Thus the source
+  connector knotting/crossing data are not replaced by the small railroad
+  candidate.
+- Corridors: the 7116 source/local endpoint projections are exactly distinct.
+  For each of 3558 required connections, a two-segment planar route avoiding
+  every other endpoint projection is lifted to a unique height below -10000,
+  with projection fibers at its ends. Distinct heights separate horizontal
+  routes; unique endpoint projections separate vertical fibers; all base
+  geometry lies above the corridor planes.
+- Full verification: five framed-core components close with segment counts
+  m2=4043, m3=19006, and 20 for each dual component. Together with two dotted
+  rectangles there are seven components and 23,109 framed-core segments. The
+  independent verifier repeats 25,318,728 exact waypoint-versus-endpoint-fiber
+  incidences and binds the complete connector projection receipt. Verdict:
+  `PASS_CANONICAL_AFFINE_S3_CORE_EMBEDDING`.
+- Boundary: only the core curves have been realized in the common affine
+  chart. The 84,383 atlas push edges must be simplified compatibly to affine
+  push corridors and proved disjoint from this core before integer framings or
+  a complete framed PD can be computed.
+
 ### F-600 — The “actual” sphere-system builder assigns, rather than constructs, the embedding in \(\partial W_2\)
 
 - Severity: **Critical**
