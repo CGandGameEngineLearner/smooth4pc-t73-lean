@@ -143,8 +143,9 @@ Rebuild and check them with
 `python3 scripts/build_t73_t_band_collar_surfaces.py --check` and
 `python3 scripts/verify_t73_t_band_collar_surfaces.py`. Each disk is locally
 embedded and has the exact source/target intervals, but the six slides are
-sequential, not simultaneous: the verifier records spatial intersections for
-band pairs `(0,2)`, `(0,5)`, and `(3,4)` at distinct movie times. The verdict
+sequential, not simultaneous: after the current-link-safe rational reroutes,
+the verifier records residual surface intersections for band pairs `(0,2)`,
+`(0,4)`, `(1,4)`, and `(2,4)` at distinct movie times. The verdict
 `PASS_T_BAND_COLLAR_DISKS_SEQUENTIAL_CANDIDATE_FRAMING_ONLY` does not yet
 certify current-link replay or an actual Kirby equivalence.
 The first genuine sequential state transition built from that collar data is
@@ -156,6 +157,16 @@ embeddedness, the framed push-off, both attachment-only contacts, clearance
 from every stationary component, and exact recovery of the refined source
 lift by the inverse move. Its verdict is
 `PASS_T_BAND0_SEQUENTIAL_FRAMED_KIRBY_SLIDE`; only state `0 -> 1` is covered.
+The compact, replayable delta movie for all six slides is
+[`geometry/t73_t_band_sequential_movie.json`](geometry/t73_t_band_sequential_movie.json).
+Use `python3 scripts/build_t73_t_band_sequential_movie.py --check` and
+`python3 scripts/verify_t73_t_band_sequential_movie.py`. It uniquely rebinds
+each source interval in its immediately preceding state, handles wrapped
+interval deck lifts and both seam orientations, propagates inherited seams,
+checks each disk/new framed curve against the current link and actual dual-core
+spatial projections, and verifies every inverse. The result is
+`PASS_SIX_T_BAND_SEQUENTIAL_FRAMED_KIRBY_SLIDES`. The JSON stores replay deltas
+and content hashes instead of duplicating tens of megabytes of normal vectors.
 The first end-to-end candidate slide, including an explicit closed post-slide
 4D core, is
 [`geometry/t73_candidate_t_band0_splice.json`](geometry/t73_candidate_t_band0_splice.json),

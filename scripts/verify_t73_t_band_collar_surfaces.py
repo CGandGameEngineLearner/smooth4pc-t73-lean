@@ -9,6 +9,7 @@ from fractions import Fraction
 from pathlib import Path
 
 from verify_t73_candidate_t_band0_surface import triangle_nondegenerate, triangles_intersect
+from verify_t73_candidate_t_band0_splice import exact_segment_intersection
 
 ROOT = Path(__file__).resolve().parents[1]
 SURFACES = ROOT / "geometry/t73_t_band_collar_surfaces.json"
@@ -48,11 +49,22 @@ def verify_disk(surface, attachment, radius):
         raise AssertionError("t-band collar surface is not the declared disk")
     if [vertices[index] for index in boundary["source_attachment"]] != [point(value) for value in attachment["source_interval"]]:
         raise AssertionError("t-band collar source attachment changed")
-    if [vertices[index] for index in boundary["target_attachment"]] != [point(value) for value in attachment["target_interval"]]:
+    expected_target = [point(value) for value in attachment["target_interval"]]
+    if surface["target_input_order_reversed_for_untwisted_ribbon"]:
+        expected_target.reverse()
+    if [vertices[index] for index in boundary["target_attachment"]] != expected_target:
         raise AssertionError("t-band collar target attachment changed")
     centerline = [point(value) for value in surface["centerline"]]
     if any(center[3] != Fraction(1, 2) or sum(abs(value) for value in center[:3]) != radius for center in centerline):
         raise AssertionError("t-band centerline left the actual octahedral belt sphere")
+    negative_lane = [vertices[index] for index in boundary["negative_u_lane"]]
+    positive_lane = [vertices[index] for index in boundary["positive_u_lane"]]
+    if any(
+        exact_segment_intersection(first, second)
+        for first in zip(negative_lane, negative_lane[1:])
+        for second in zip(positive_lane, positive_lane[1:])
+    ):
+        raise AssertionError("t-band collar has crossing boundary lanes")
     geometric_triangles = [tuple(vertices[index] for index in triangle) for triangle in triangles]
     local_checks = 0
     for first_index, first_triangle in enumerate(triangles):

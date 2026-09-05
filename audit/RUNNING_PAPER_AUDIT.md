@@ -2285,7 +2285,7 @@ Topology-source checks completed 2026-09-04:
 ### F-554 — All six t-band disks are explicit in the actual t-belt collar, but only as a sequential candidate movie
 
 - Severity: **Sequential Kirby-movie construction / candidate framing interior**
-- Status: **SIX INDIVIDUAL COLLAR DISKS PASS; CURRENT-LINK REPLAY OPEN**
+- Status: **SIX INDIVIDUAL COLLAR DISKS PASS; CURRENT-LINK REPLAY RESOLVED IN F-556**
 - Evidence: `scripts/build_t73_t_band_collar_surfaces.py`,
   `scripts/verify_t73_t_band_collar_surfaces.py`,
   `geometry/t73_t_band_collar_surfaces.json`, and its test.
@@ -2297,17 +2297,17 @@ Topology-source checks completed 2026-09-04:
   one and precisely the declared four-part boundary. Nonadjacent triangles of
   each individual disk pass exact rational intersection checks. The six
   `movie_time_order` values form the total order `0,1,2,3,4,5`.
-- Sequentiality evidence: 132 exact inter-band triangle comparisons find
-  spatial intersections for band pairs `(0,2)`, `(0,5)`, and `(3,4)`. These
+- Sequentiality evidence: after the current-link-safe rational reroutes, 236
+  exact inter-band triangle comparisons find spatial intersections for band
+  pairs `(0,2)`, `(0,4)`, `(1,4)`, and `(2,4)`. These
   are retained in the verifier result and are valid only because the disks
   occur at distinct movie times; the construction makes no simultaneous
   disjointness claim.
-- Boundary: normal fields agree with the actual source and h_CS target records,
-  while their interiors remain canonical candidates. A legitimate sequential
-  Kirby proof still requires reconstructing each post-slide current link,
-  re-binding the next attachment in that state, and checking the ambient
-  framed move and its inverse. The fail-closed verdict is
-  `PASS_T_BAND_COLLAR_DISKS_SEQUENTIAL_CANDIDATE_FRAMING_ONLY`.
+- Boundary at this layer: normal fields agree with the actual source and h_CS
+  target records, while their interiors are canonical choices. The collar-only
+  verdict remains `PASS_T_BAND_COLLAR_DISKS_SEQUENTIAL_CANDIDATE_FRAMING_ONLY`;
+  F-556 supplies the missing current-link replay, attachment rebinding, and
+  inverse checks for the six-slide sequence.
 
 ### F-555 — The first t-band now gives a verified sequential framed Kirby state transition
 
@@ -2334,10 +2334,45 @@ Topology-source checks completed 2026-09-04:
   two-edge source subarc exactly recovers the cyclically refined actual m1
   universal-cover lift, with its original closing deck translation. The
   verdict is `PASS_T_BAND0_SEQUENTIAL_FRAMED_KIRBY_SLIDE`.
-- Boundary: this certifies one concrete legitimate framed slide, not the five
-  later t-slides, the 1513 x-slides, the final cancellation, or kappa_AR. Each
-  later attachment must be rebound against its immediately preceding current
-  link state.
+- Boundary at this layer: this certifies one concrete legitimate framed slide.
+  F-556 extends it through the remaining five t-slides. The 1513 x-slides,
+  final cancellation, and kappa_AR remain outside F-555.
+
+### F-556 — All six t-band slides now replay as verified current-link state transitions
+
+- Severity: **Actual sequential t-cancellation geometry / six-slide prefix**
+- Status: **SIX FRAMED SLIDES PASS; t-h_CS CANCELLATION AND x-MOVIE OPEN**
+- Evidence: `scripts/build_t73_t_band_sequential_movie.py`,
+  `scripts/verify_t73_t_band_sequential_movie.py`,
+  `geometry/t73_t_band_sequential_movie.json`, and its test.
+- Current-state binding: each source interval is located uniquely in the
+  immediately preceding moved-component lift. Wrapped input intervals require
+  base deck translations `(0,0,0)`, `(0,0,1)`, `(0,0,0)`, `(269,41,0)`,
+  `(0,0,0)`, and `(1240,189,32)`; these are derived rather than assumed.
+- Routing repair: the scheduled chords for bands 2, 4, and 5 met link
+  components retained from earlier states. Deterministic finite rational
+  searches supplied the shortest current-link-safe belt-sphere routes, using
+  radius fractions `[(0,3/4,1/4)]`, `[(1/4,1/2,1/4)]`, and
+  `[(1/4,-3/4,0),(3/4,0,1/4)]`. Every route edge lies on a common supporting
+  face of the octahedral belt sphere. Endpoints and boundary framings are
+  unchanged.
+- Orientation and seam correction: odd source intervals reverse the target
+  interval order to prevent a collapsed/twisted ribbon. Their h_CS complements
+  traverse the mapping-torus seam as `1 -> 0`; even bands use `0 -> 1`.
+  Earlier seam cells are reindexed and propagated through later cuts.
+- Independent verification: seven complete current-link manifests and all six
+  inverse moves replay from the source files. Exact checks cover 18 source and
+  12 target triangle contacts, 80 incremental framed-curve pairs, 2140 new
+  piece versus stationary/dual pairs, and 726 disk versus other-component
+  pairs. The final vertex counts are m1=35, m2=1891, and m3=8799. The verdict
+  is `PASS_SIX_T_BAND_SEQUENTIAL_FRAMED_KIRBY_SLIDES`.
+- Storage: the 64-KiB artifact is a complete deterministic delta movie with
+  source/target lifts, deck placements, piece ranges, seam data, state
+  manifests, geometry hashes, and inverse certificates. Expanded point and
+  normal arrays are recomputed exactly, avoiding a redundant 73-MiB snapshot.
+- Boundary: this closes the six-slide geometric prefix only. A separately
+  verified framed cancellation of t against h_CS must consume state 6 before
+  the 1513-step x-m1 movie can start; neither is inferred here.
 
 ### F-600 — The “actual” sphere-system builder assigns, rather than constructs, the embedding in \(\partial W_2\)
 

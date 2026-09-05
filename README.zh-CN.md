@@ -126,8 +126,9 @@ source 与 h_CS 边界 framing 是 actual-record binding。
 [`geometry/t73_t_band_collar_surfaces.json`](geometry/t73_t_band_collar_surfaces.json)。
 使用 `python3 scripts/build_t73_t_band_collar_surfaces.py --check` 重建，并用
 `python3 scripts/verify_t73_t_band_collar_surfaces.py` 独立检查。每张盘各自局部
-嵌入，并精确绑定 source/target interval；六次 slide 是顺序 movie，而非同时发生：
-verifier 将 `(0,2)`、`(0,5)`、`(3,4)` 的空间交汇记录在不同时间层。返回值
+嵌入，并精确绑定 source/target interval；六次 slide 是顺序 movie，而非同时发生。
+完成 current-link-safe 有理绕行后，verifier 仍将 `(0,2)`、`(0,4)`、`(1,4)`、
+`(2,4)` 的曲面交汇记录在不同时间层。返回值
 `PASS_T_BAND_COLLAR_DISKS_SEQUENTIAL_CANDIDATE_FRAMING_ONLY` 尚不证明
 current-link replay 或实际 Kirby 等价。
 由该 collar 数据构造的第一条真实顺序状态转换保存于
@@ -137,6 +138,15 @@ current-link replay 或实际 Kirby 等价。
 splice piece，并检查商空间嵌入、framed push-off、仅限两条 attachment 的接触、
 与全部静止分量的分离，以及 inverse move 对细分后源 lift 的精确恢复。返回值为
 `PASS_T_BAND0_SEQUENTIAL_FRAMED_KIRBY_SLIDE`；其范围仅是 state `0 -> 1`。
+全部六次 slide 的紧凑、可重放 delta movie 保存于
+[`geometry/t73_t_band_sequential_movie.json`](geometry/t73_t_band_sequential_movie.json)。
+使用 `python3 scripts/build_t73_t_band_sequential_movie.py --check` 与
+`python3 scripts/verify_t73_t_band_sequential_movie.py`。它在每个紧邻前态中唯一
+重绑 source interval，处理 wrapped interval 的 deck lift、两种 seam 方向和历史
+seam 传播；逐步检查 disk/新 framed curve 对当前 link 与 actual dual-core 空间投影
+的分离，并验证每个 inverse。结果为
+`PASS_SIX_T_BAND_SEQUENTIAL_FRAMED_KIRBY_SLIDES`。JSON 保存可重放 delta 与内容
+SHA，避免重复数十 MB 的相同 normal vectors。
 第一条端到端 candidate slide（含显式闭合的 post-slide 4D core）位于
 [`geometry/t73_candidate_t_band0_splice.json`](geometry/t73_candidate_t_band0_splice.json)，
 使用 `python3 scripts/build_t73_candidate_t_band0_splice.py --check` 重建。

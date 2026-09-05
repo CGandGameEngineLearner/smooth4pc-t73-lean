@@ -7,7 +7,7 @@
     0,
     1
   ],
-  "collar_surfaces_sha256": "DB7DE6DBCD498A86EF3935A78A0318D858D375695E7670B19154EAD53E008770",
+  "collar_surfaces_sha256": "2F70B17DDD0F0B4BA9EDCE60AC625C3A6DF4BC8690F5D04D78538794FFC44628",
   "completion_status": "BAND0_SEQUENTIAL_FRAMED_SLIDE_GEOMETRY_CONSTRUCTED",
   "inverse_move": {
     "expected_closing_deck_translation": [
@@ -708,7 +708,7 @@
     ]
   ],
   "schema": "t73_t_band_sequential_state/v1",
-  "sha256": "BC5E7F23CD8BD5444395AA245F60641D89348C57944593566C34B9B52BA1890D",
+  "sha256": "6D5E11E19E0CBA3FA6D27A9C775BB11A4189FB6F51DFE69CF73980F976882073",
   "state_after": 1,
   "state_before": 0,
   "stationary_components": [
