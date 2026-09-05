@@ -12,6 +12,9 @@ ROOT = Path(__file__).resolve().parents[1]
 FEET = ROOT / "geometry/t73_ar_foot_pairing_model.json"
 BELTS = ROOT / "geometry/t73_belt_spheres.json"
 FIXED = ROOT / "geometry/t73_ar_figure5_fixed_points.json"
+FINAL_YZ = ROOT / "geometry/t73_final_yz_foot_state.json"
+X_DELETION = ROOT / "geometry/t73_x_m1_handle_pair_deletion.json"
+T_DELETION = ROOT / "geometry/t73_t_hcs_handle_pair_deletion.json"
 OUTPUT = ROOT / "geometry/t73_unified_kirby_foot_chart.json"
 
 
@@ -24,6 +27,10 @@ def build() -> dict[str, Any]:
     feet = json.loads(FEET.read_text(encoding="utf-8"))
     belts = json.loads(BELTS.read_text(encoding="utf-8"))
     fixed = json.loads(FIXED.read_text(encoding="utf-8"))
+    final_yz = json.loads(FINAL_YZ.read_text(encoding="utf-8"))
+    x_deletion = json.loads(X_DELETION.read_text(encoding="utf-8"))
+    t_deletion = json.loads(T_DELETION.read_text(encoding="utf-8"))
+    final_by_name = {item["name"]: item for item in final_yz["handles"]}
     models = {item["handle_index"]: item for item in feet["feet"]}
     if set(models) != {0, 1, 2, 3}:
         raise AssertionError("AR foot model does not have four handles")
@@ -46,17 +53,24 @@ def build() -> dict[str, Any]:
             })
         else:
             item.update({
-                "binding_status": "CANDIDATE_FOOT_ONLY",
-                "reason": "no verified T73 lane-to-foot identification is stored",
+                "binding_status": "BOUND_TO_FINAL_T73_PASSAGE_AND_FOOT_GEOMETRY",
+                "belt_reference": f"geometry/t73_final_yz_foot_state.json#/handles/{name}",
+                "passage_count": final_by_name[name]["passage_count"],
+                "passage_state_sha256": canonical_sha(final_by_name[name]),
             })
         handles.append(item)
     result = {
-        "schema": "t73_unified_kirby_foot_chart/v1",
+        "schema": "t73_unified_kirby_foot_chart/v2",
         "foot_model_sha256": feet["sha256"],
         "belt_spheres_sha256": belts["sha256"],
         "figure5_fixed_points_sha256": fixed["sha256"],
+        "final_yz_foot_state_sha256": final_yz["sha256"],
+        "post_x_m1_deletion_sha256": x_deletion["sha256"],
+        "post_t_hcs_deletion_sha256": t_deletion["sha256"],
         "handles": handles,
-        "actual_binding_status": "PARTIAL_T_X_ONLY",
+        "cancelled_handle_pairs": [["t", "h_CS"], ["x", "m_1"]],
+        "final_surviving_one_handles": x_deletion["deletion"]["remaining_one_handles"],
+        "actual_binding_status": "ALL_FOUR_HANDLES_BOUND_FINAL_YZ_STATE",
     }
     result["sha256"] = canonical_sha(result)
     return result

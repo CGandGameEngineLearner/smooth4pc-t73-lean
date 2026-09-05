@@ -1,0 +1,8704 @@
+{
+  "ar_foot_model_sha256": "D480B6A8DDBA4AB387F0D1F7B39032A8B0F2A2FFC4E62219219402DD2AA6C608",
+  "completion_status": "YZ_JOHNSON_BASE_LANES_ACTUALLY_BOUND_HYBRID_Z_REPLACEMENTS_OPEN",
+  "handles": [
+    {
+      "belt_sphere": {
+        "chart": "axis 1=2, boundary of transverse cube",
+        "euler": 2,
+        "triangles": [
+          [
+            0,
+            1,
+            3
+          ],
+          [
+            0,
+            2,
+            3
+          ],
+          [
+            4,
+            5,
+            7
+          ],
+          [
+            4,
+            6,
+            7
+          ],
+          [
+            0,
+            1,
+            5
+          ],
+          [
+            0,
+            4,
+            5
+          ],
+          [
+            2,
+            3,
+            7
+          ],
+          [
+            2,
+            6,
+            7
+          ],
+          [
+            0,
+            2,
+            6
+          ],
+          [
+            0,
+            4,
+            6
+          ],
+          [
+            1,
+            3,
+            7
+          ],
+          [
+            1,
+            5,
+            7
+          ]
+        ],
+        "vertices": [
+          [
+            "-1",
+            "2",
+            "-1",
+            "-1"
+          ],
+          [
+            "-1",
+            "2",
+            "-1",
+            "1"
+          ],
+          [
+            "-1",
+            "2",
+            "1",
+            "-1"
+          ],
+          [
+            "-1",
+            "2",
+            "1",
+            "1"
+          ],
+          [
+            "1",
+            "2",
+            "-1",
+            "-1"
+          ],
+          [
+            "1",
+            "2",
+            "-1",
+            "1"
+          ],
+          [
+            "1",
+            "2",
+            "1",
+            "-1"
+          ],
+          [
+            "1",
+            "2",
+            "1",
+            "1"
+          ]
+        ]
+      },
+      "binding_status": "ACTUAL_JOHNSON_BASE_LANES_BOUND_TO_FIGURE2A_FEET",
+      "foot_handle_index": 2,
+      "foot_pair_sha256": "FA15558B19C4CCFE4DB889D205750B16E03C751CB351D26C661D3F3630CEDCC1",
+      "generator_axis": 1,
+      "lane_scale": "1/200",
+      "name": "y",
+      "passage_count": 230,
+      "passages": [
+        {
+          "arc_id": "c1:letter:6",
+          "belt_point": [
+            "58/231",
+            "-229/462",
+            "1"
+          ],
+          "component": 1,
+          "negative_foot_endpoint": [
+            "29/23100",
+            "-229/92400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "29/23100",
+            "-229/92400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "58/231",
+              "1",
+              "-229/462"
+            ],
+            [
+              "58/231",
+              "3",
+              "-229/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c1:letter:14",
+          "belt_point": [
+            "233/924",
+            "-227/462",
+            "1"
+          ],
+          "component": 1,
+          "negative_foot_endpoint": [
+            "233/184800",
+            "-227/92400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "233/184800",
+            "-227/92400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "233/924",
+              "1",
+              "-227/462"
+            ],
+            [
+              "233/924",
+              "3",
+              "-227/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c1:letter:21",
+          "belt_point": [
+            "39/154",
+            "-75/154",
+            "1"
+          ],
+          "component": 1,
+          "negative_foot_endpoint": [
+            "39/30800",
+            "-3/1232",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "39/30800",
+            "-3/1232",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "39/154",
+              "1",
+              "-75/154"
+            ],
+            [
+              "39/154",
+              "3",
+              "-75/154"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c1:letter:29",
+          "belt_point": [
+            "235/924",
+            "-223/462",
+            "1"
+          ],
+          "component": 1,
+          "negative_foot_endpoint": [
+            "47/36960",
+            "-223/92400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "47/36960",
+            "-223/92400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "235/924",
+              "1",
+              "-223/462"
+            ],
+            [
+              "235/924",
+              "3",
+              "-223/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c1:letter:36",
+          "belt_point": [
+            "59/231",
+            "-221/462",
+            "1"
+          ],
+          "component": 1,
+          "negative_foot_endpoint": [
+            "59/46200",
+            "-221/92400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "59/46200",
+            "-221/92400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "59/231",
+              "1",
+              "-221/462"
+            ],
+            [
+              "59/231",
+              "3",
+              "-221/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c1:letter:44",
+          "belt_point": [
+            "79/308",
+            "-73/154",
+            "1"
+          ],
+          "component": 1,
+          "negative_foot_endpoint": [
+            "79/61600",
+            "-73/30800",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "79/61600",
+            "-73/30800",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "79/308",
+              "1",
+              "-73/154"
+            ],
+            [
+              "79/308",
+              "3",
+              "-73/154"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c1:letter:51",
+          "belt_point": [
+            "17/66",
+            "-31/66",
+            "1"
+          ],
+          "component": 1,
+          "negative_foot_endpoint": [
+            "17/13200",
+            "-31/13200",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "17/13200",
+            "-31/13200",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "17/66",
+              "1",
+              "-31/66"
+            ],
+            [
+              "17/66",
+              "3",
+              "-31/66"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c1:letter:59",
+          "belt_point": [
+            "239/924",
+            "-215/462",
+            "1"
+          ],
+          "component": 1,
+          "negative_foot_endpoint": [
+            "239/184800",
+            "-43/18480",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "239/184800",
+            "-43/18480",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "239/924",
+              "1",
+              "-215/462"
+            ],
+            [
+              "239/924",
+              "3",
+              "-215/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c1:letter:67",
+          "belt_point": [
+            "20/77",
+            "-71/154",
+            "1"
+          ],
+          "component": 1,
+          "negative_foot_endpoint": [
+            "1/770",
+            "-71/30800",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "1/770",
+            "-71/30800",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "20/77",
+              "1",
+              "-71/154"
+            ],
+            [
+              "20/77",
+              "3",
+              "-71/154"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c1:letter:74",
+          "belt_point": [
+            "241/924",
+            "-211/462",
+            "1"
+          ],
+          "component": 1,
+          "negative_foot_endpoint": [
+            "241/184800",
+            "-211/92400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "241/184800",
+            "-211/92400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "241/924",
+              "1",
+              "-211/462"
+            ],
+            [
+              "241/924",
+              "3",
+              "-211/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c1:letter:82",
+          "belt_point": [
+            "11/42",
+            "-19/42",
+            "1"
+          ],
+          "component": 1,
+          "negative_foot_endpoint": [
+            "11/8400",
+            "-19/8400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "11/8400",
+            "-19/8400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "11/42",
+              "1",
+              "-19/42"
+            ],
+            [
+              "11/42",
+              "3",
+              "-19/42"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c1:letter:89",
+          "belt_point": [
+            "81/308",
+            "-69/154",
+            "1"
+          ],
+          "component": 1,
+          "negative_foot_endpoint": [
+            "81/61600",
+            "-69/30800",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "81/61600",
+            "-69/30800",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "81/308",
+              "1",
+              "-69/154"
+            ],
+            [
+              "81/308",
+              "3",
+              "-69/154"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c1:letter:97",
+          "belt_point": [
+            "61/231",
+            "-205/462",
+            "1"
+          ],
+          "component": 1,
+          "negative_foot_endpoint": [
+            "61/46200",
+            "-41/18480",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "61/46200",
+            "-41/18480",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "61/231",
+              "1",
+              "-205/462"
+            ],
+            [
+              "61/231",
+              "3",
+              "-205/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c1:letter:104",
+          "belt_point": [
+            "35/132",
+            "-29/66",
+            "1"
+          ],
+          "component": 1,
+          "negative_foot_endpoint": [
+            "7/5280",
+            "-29/13200",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "7/5280",
+            "-29/13200",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "35/132",
+              "1",
+              "-29/66"
+            ],
+            [
+              "35/132",
+              "3",
+              "-29/66"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c1:letter:112",
+          "belt_point": [
+            "41/154",
+            "-67/154",
+            "1"
+          ],
+          "component": 1,
+          "negative_foot_endpoint": [
+            "41/30800",
+            "-67/30800",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "41/30800",
+            "-67/30800",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "41/154",
+              "1",
+              "-67/154"
+            ],
+            [
+              "41/154",
+              "3",
+              "-67/154"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c1:letter:119",
+          "belt_point": [
+            "247/924",
+            "-199/462",
+            "1"
+          ],
+          "component": 1,
+          "negative_foot_endpoint": [
+            "247/184800",
+            "-199/92400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "247/184800",
+            "-199/92400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "247/924",
+              "1",
+              "-199/462"
+            ],
+            [
+              "247/924",
+              "3",
+              "-199/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c1:letter:127",
+          "belt_point": [
+            "62/231",
+            "-197/462",
+            "1"
+          ],
+          "component": 1,
+          "negative_foot_endpoint": [
+            "31/23100",
+            "-197/92400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "31/23100",
+            "-197/92400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "62/231",
+              "1",
+              "-197/462"
+            ],
+            [
+              "62/231",
+              "3",
+              "-197/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c1:letter:135",
+          "belt_point": [
+            "83/308",
+            "-65/154",
+            "1"
+          ],
+          "component": 1,
+          "negative_foot_endpoint": [
+            "83/61600",
+            "-13/6160",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "83/61600",
+            "-13/6160",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "83/308",
+              "1",
+              "-65/154"
+            ],
+            [
+              "83/308",
+              "3",
+              "-65/154"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c1:letter:142",
+          "belt_point": [
+            "125/462",
+            "-193/462",
+            "1"
+          ],
+          "component": 1,
+          "negative_foot_endpoint": [
+            "5/3696",
+            "-193/92400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "5/3696",
+            "-193/92400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "125/462",
+              "1",
+              "-193/462"
+            ],
+            [
+              "125/462",
+              "3",
+              "-193/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c1:letter:150",
+          "belt_point": [
+            "251/924",
+            "-191/462",
+            "1"
+          ],
+          "component": 1,
+          "negative_foot_endpoint": [
+            "251/184800",
+            "-191/92400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "251/184800",
+            "-191/92400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "251/924",
+              "1",
+              "-191/462"
+            ],
+            [
+              "251/924",
+              "3",
+              "-191/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c1:letter:157",
+          "belt_point": [
+            "3/11",
+            "-9/22",
+            "1"
+          ],
+          "component": 1,
+          "negative_foot_endpoint": [
+            "3/2200",
+            "-9/4400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "3/2200",
+            "-9/4400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "3/11",
+              "1",
+              "-9/22"
+            ],
+            [
+              "3/11",
+              "3",
+              "-9/22"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c1:letter:165",
+          "belt_point": [
+            "23/84",
+            "-17/42",
+            "1"
+          ],
+          "component": 1,
+          "negative_foot_endpoint": [
+            "23/16800",
+            "-17/8400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "23/16800",
+            "-17/8400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "23/84",
+              "1",
+              "-17/42"
+            ],
+            [
+              "23/84",
+              "3",
+              "-17/42"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c1:letter:172",
+          "belt_point": [
+            "127/462",
+            "-185/462",
+            "1"
+          ],
+          "component": 1,
+          "negative_foot_endpoint": [
+            "127/92400",
+            "-37/18480",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "127/92400",
+            "-37/18480",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "127/462",
+              "1",
+              "-185/462"
+            ],
+            [
+              "127/462",
+              "3",
+              "-185/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c1:letter:180",
+          "belt_point": [
+            "85/308",
+            "-61/154",
+            "1"
+          ],
+          "component": 1,
+          "negative_foot_endpoint": [
+            "17/12320",
+            "-61/30800",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "17/12320",
+            "-61/30800",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "85/308",
+              "1",
+              "-61/154"
+            ],
+            [
+              "85/308",
+              "3",
+              "-61/154"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c1:letter:188",
+          "belt_point": [
+            "64/231",
+            "-181/462",
+            "1"
+          ],
+          "component": 1,
+          "negative_foot_endpoint": [
+            "8/5775",
+            "-181/92400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "8/5775",
+            "-181/92400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "64/231",
+              "1",
+              "-181/462"
+            ],
+            [
+              "64/231",
+              "3",
+              "-181/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c1:letter:195",
+          "belt_point": [
+            "257/924",
+            "-179/462",
+            "1"
+          ],
+          "component": 1,
+          "negative_foot_endpoint": [
+            "257/184800",
+            "-179/92400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "257/184800",
+            "-179/92400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "257/924",
+              "1",
+              "-179/462"
+            ],
+            [
+              "257/924",
+              "3",
+              "-179/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c1:letter:203",
+          "belt_point": [
+            "43/154",
+            "-59/154",
+            "1"
+          ],
+          "component": 1,
+          "negative_foot_endpoint": [
+            "43/30800",
+            "-59/30800",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "43/30800",
+            "-59/30800",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "43/154",
+              "1",
+              "-59/154"
+            ],
+            [
+              "43/154",
+              "3",
+              "-59/154"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c1:letter:210",
+          "belt_point": [
+            "37/132",
+            "-25/66",
+            "1"
+          ],
+          "component": 1,
+          "negative_foot_endpoint": [
+            "37/26400",
+            "-1/528",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "37/26400",
+            "-1/528",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "37/132",
+              "1",
+              "-25/66"
+            ],
+            [
+              "37/132",
+              "3",
+              "-25/66"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c1:letter:218",
+          "belt_point": [
+            "65/231",
+            "-173/462",
+            "1"
+          ],
+          "component": 1,
+          "negative_foot_endpoint": [
+            "13/9240",
+            "-173/92400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "13/9240",
+            "-173/92400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "65/231",
+              "1",
+              "-173/462"
+            ],
+            [
+              "65/231",
+              "3",
+              "-173/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c1:letter:225",
+          "belt_point": [
+            "87/308",
+            "-57/154",
+            "1"
+          ],
+          "component": 1,
+          "negative_foot_endpoint": [
+            "87/61600",
+            "-57/30800",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "87/61600",
+            "-57/30800",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "87/308",
+              "1",
+              "-57/154"
+            ],
+            [
+              "87/308",
+              "3",
+              "-57/154"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c1:letter:233",
+          "belt_point": [
+            "131/462",
+            "-169/462",
+            "1"
+          ],
+          "component": 1,
+          "negative_foot_endpoint": [
+            "131/92400",
+            "-169/92400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "131/92400",
+            "-169/92400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "131/462",
+              "1",
+              "-169/462"
+            ],
+            [
+              "131/462",
+              "3",
+              "-169/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c1:letter:240",
+          "belt_point": [
+            "263/924",
+            "-167/462",
+            "1"
+          ],
+          "component": 1,
+          "negative_foot_endpoint": [
+            "263/184800",
+            "-167/92400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "263/184800",
+            "-167/92400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "263/924",
+              "1",
+              "-167/462"
+            ],
+            [
+              "263/924",
+              "3",
+              "-167/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c1:letter:248",
+          "belt_point": [
+            "2/7",
+            "-5/14",
+            "1"
+          ],
+          "component": 1,
+          "negative_foot_endpoint": [
+            "1/700",
+            "-1/560",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "1/700",
+            "-1/560",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "2/7",
+              "1",
+              "-5/14"
+            ],
+            [
+              "2/7",
+              "3",
+              "-5/14"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c1:letter:256",
+          "belt_point": [
+            "265/924",
+            "-163/462",
+            "1"
+          ],
+          "component": 1,
+          "negative_foot_endpoint": [
+            "53/36960",
+            "-163/92400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "53/36960",
+            "-163/92400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "265/924",
+              "1",
+              "-163/462"
+            ],
+            [
+              "265/924",
+              "3",
+              "-163/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c1:letter:263",
+          "belt_point": [
+            "19/66",
+            "-23/66",
+            "1"
+          ],
+          "component": 1,
+          "negative_foot_endpoint": [
+            "19/13200",
+            "-23/13200",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "19/13200",
+            "-23/13200",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "19/66",
+              "1",
+              "-23/66"
+            ],
+            [
+              "19/66",
+              "3",
+              "-23/66"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c1:letter:271",
+          "belt_point": [
+            "89/308",
+            "-53/154",
+            "1"
+          ],
+          "component": 1,
+          "negative_foot_endpoint": [
+            "89/61600",
+            "-53/30800",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "89/61600",
+            "-53/30800",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "89/308",
+              "1",
+              "-53/154"
+            ],
+            [
+              "89/308",
+              "3",
+              "-53/154"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c1:letter:278",
+          "belt_point": [
+            "67/231",
+            "-157/462",
+            "1"
+          ],
+          "component": 1,
+          "negative_foot_endpoint": [
+            "67/46200",
+            "-157/92400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "67/46200",
+            "-157/92400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "67/231",
+              "1",
+              "-157/462"
+            ],
+            [
+              "67/231",
+              "3",
+              "-157/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c1:letter:286",
+          "belt_point": [
+            "269/924",
+            "-155/462",
+            "1"
+          ],
+          "component": 1,
+          "negative_foot_endpoint": [
+            "269/184800",
+            "-31/18480",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "269/184800",
+            "-31/18480",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "269/924",
+              "1",
+              "-155/462"
+            ],
+            [
+              "269/924",
+              "3",
+              "-155/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c1:letter:293",
+          "belt_point": [
+            "45/154",
+            "-51/154",
+            "1"
+          ],
+          "component": 1,
+          "negative_foot_endpoint": [
+            "9/6160",
+            "-51/30800",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "9/6160",
+            "-51/30800",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "45/154",
+              "1",
+              "-51/154"
+            ],
+            [
+              "45/154",
+              "3",
+              "-51/154"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c1:letter:301",
+          "belt_point": [
+            "271/924",
+            "-151/462",
+            "1"
+          ],
+          "component": 1,
+          "negative_foot_endpoint": [
+            "271/184800",
+            "-151/92400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "271/184800",
+            "-151/92400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "271/924",
+              "1",
+              "-151/462"
+            ],
+            [
+              "271/924",
+              "3",
+              "-151/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c1:letter:308",
+          "belt_point": [
+            "68/231",
+            "-149/462",
+            "1"
+          ],
+          "component": 1,
+          "negative_foot_endpoint": [
+            "17/11550",
+            "-149/92400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "17/11550",
+            "-149/92400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "68/231",
+              "1",
+              "-149/462"
+            ],
+            [
+              "68/231",
+              "3",
+              "-149/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:6",
+          "belt_point": [
+            "13/44",
+            "-7/22",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "13/8800",
+            "-7/4400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "13/8800",
+            "-7/4400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "13/44",
+              "1",
+              "-7/22"
+            ],
+            [
+              "13/44",
+              "3",
+              "-7/22"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:14",
+          "belt_point": [
+            "137/462",
+            "-145/462",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "137/92400",
+            "-29/18480",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "137/92400",
+            "-29/18480",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "137/462",
+              "1",
+              "-145/462"
+            ],
+            [
+              "137/462",
+              "3",
+              "-145/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:21",
+          "belt_point": [
+            "25/84",
+            "-13/42",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "1/672",
+            "-13/8400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "1/672",
+            "-13/8400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "25/84",
+              "1",
+              "-13/42"
+            ],
+            [
+              "25/84",
+              "3",
+              "-13/42"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:29",
+          "belt_point": [
+            "23/77",
+            "-47/154",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "23/15400",
+            "-47/30800",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "23/15400",
+            "-47/30800",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "23/77",
+              "1",
+              "-47/154"
+            ],
+            [
+              "23/77",
+              "3",
+              "-47/154"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:36",
+          "belt_point": [
+            "277/924",
+            "-139/462",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "277/184800",
+            "-139/92400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "277/184800",
+            "-139/92400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "277/924",
+              "1",
+              "-139/462"
+            ],
+            [
+              "277/924",
+              "3",
+              "-139/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:44",
+          "belt_point": [
+            "139/462",
+            "-137/462",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "139/92400",
+            "-137/92400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "139/92400",
+            "-137/92400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "139/462",
+              "1",
+              "-137/462"
+            ],
+            [
+              "139/462",
+              "3",
+              "-137/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:51",
+          "belt_point": [
+            "93/308",
+            "-45/154",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "93/61600",
+            "-9/6160",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "93/61600",
+            "-9/6160",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "93/308",
+              "1",
+              "-45/154"
+            ],
+            [
+              "93/308",
+              "3",
+              "-45/154"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:59",
+          "belt_point": [
+            "10/33",
+            "-19/66",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "1/660",
+            "-19/13200",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "1/660",
+            "-19/13200",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "10/33",
+              "1",
+              "-19/66"
+            ],
+            [
+              "10/33",
+              "3",
+              "-19/66"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:67",
+          "belt_point": [
+            "281/924",
+            "-131/462",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "281/184800",
+            "-131/92400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "281/184800",
+            "-131/92400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "281/924",
+              "1",
+              "-131/462"
+            ],
+            [
+              "281/924",
+              "3",
+              "-131/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:74",
+          "belt_point": [
+            "47/154",
+            "-43/154",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "47/30800",
+            "-43/30800",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "47/30800",
+            "-43/30800",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "47/154",
+              "1",
+              "-43/154"
+            ],
+            [
+              "47/154",
+              "3",
+              "-43/154"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:82",
+          "belt_point": [
+            "283/924",
+            "-127/462",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "283/184800",
+            "-127/92400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "283/184800",
+            "-127/92400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "283/924",
+              "1",
+              "-127/462"
+            ],
+            [
+              "283/924",
+              "3",
+              "-127/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:89",
+          "belt_point": [
+            "71/231",
+            "-125/462",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "71/46200",
+            "-5/3696",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "71/46200",
+            "-5/3696",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "71/231",
+              "1",
+              "-125/462"
+            ],
+            [
+              "71/231",
+              "3",
+              "-125/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:97",
+          "belt_point": [
+            "95/308",
+            "-41/154",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "19/12320",
+            "-41/30800",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "19/12320",
+            "-41/30800",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "95/308",
+              "1",
+              "-41/154"
+            ],
+            [
+              "95/308",
+              "3",
+              "-41/154"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:104",
+          "belt_point": [
+            "13/42",
+            "-11/42",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "13/8400",
+            "-11/8400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "13/8400",
+            "-11/8400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "13/42",
+              "1",
+              "-11/42"
+            ],
+            [
+              "13/42",
+              "3",
+              "-11/42"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:112",
+          "belt_point": [
+            "41/132",
+            "-17/66",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "41/26400",
+            "-17/13200",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "41/26400",
+            "-17/13200",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "41/132",
+              "1",
+              "-17/66"
+            ],
+            [
+              "41/132",
+              "3",
+              "-17/66"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:119",
+          "belt_point": [
+            "24/77",
+            "-39/154",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "3/1925",
+            "-39/30800",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "3/1925",
+            "-39/30800",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "24/77",
+              "1",
+              "-39/154"
+            ],
+            [
+              "24/77",
+              "3",
+              "-39/154"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:127",
+          "belt_point": [
+            "289/924",
+            "-115/462",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "289/184800",
+            "-23/18480",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "289/184800",
+            "-23/18480",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "289/924",
+              "1",
+              "-115/462"
+            ],
+            [
+              "289/924",
+              "3",
+              "-115/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:135",
+          "belt_point": [
+            "145/462",
+            "-113/462",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "29/18480",
+            "-113/92400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "29/18480",
+            "-113/92400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "145/462",
+              "1",
+              "-113/462"
+            ],
+            [
+              "145/462",
+              "3",
+              "-113/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:142",
+          "belt_point": [
+            "97/308",
+            "-37/154",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "97/61600",
+            "-37/30800",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "97/61600",
+            "-37/30800",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "97/308",
+              "1",
+              "-37/154"
+            ],
+            [
+              "97/308",
+              "3",
+              "-37/154"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:150",
+          "belt_point": [
+            "73/231",
+            "-109/462",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "73/46200",
+            "-109/92400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "73/46200",
+            "-109/92400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "73/231",
+              "1",
+              "-109/462"
+            ],
+            [
+              "73/231",
+              "3",
+              "-109/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:157",
+          "belt_point": [
+            "293/924",
+            "-107/462",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "293/184800",
+            "-107/92400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "293/184800",
+            "-107/92400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "293/924",
+              "1",
+              "-107/462"
+            ],
+            [
+              "293/924",
+              "3",
+              "-107/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:165",
+          "belt_point": [
+            "7/22",
+            "-5/22",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "7/4400",
+            "-1/880",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "7/4400",
+            "-1/880",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "7/22",
+              "1",
+              "-5/22"
+            ],
+            [
+              "7/22",
+              "3",
+              "-5/22"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:172",
+          "belt_point": [
+            "295/924",
+            "-103/462",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "59/36960",
+            "-103/92400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "59/36960",
+            "-103/92400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "295/924",
+              "1",
+              "-103/462"
+            ],
+            [
+              "295/924",
+              "3",
+              "-103/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:180",
+          "belt_point": [
+            "74/231",
+            "-101/462",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "37/23100",
+            "-101/92400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "37/23100",
+            "-101/92400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "74/231",
+              "1",
+              "-101/462"
+            ],
+            [
+              "74/231",
+              "3",
+              "-101/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:188",
+          "belt_point": [
+            "9/28",
+            "-3/14",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "9/5600",
+            "-3/2800",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "9/5600",
+            "-3/2800",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "9/28",
+              "1",
+              "-3/14"
+            ],
+            [
+              "9/28",
+              "3",
+              "-3/14"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:195",
+          "belt_point": [
+            "149/462",
+            "-97/462",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "149/92400",
+            "-97/92400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "149/92400",
+            "-97/92400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "149/462",
+              "1",
+              "-97/462"
+            ],
+            [
+              "149/462",
+              "3",
+              "-97/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:203",
+          "belt_point": [
+            "299/924",
+            "-95/462",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "299/184800",
+            "-19/18480",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "299/184800",
+            "-19/18480",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "299/924",
+              "1",
+              "-95/462"
+            ],
+            [
+              "299/924",
+              "3",
+              "-95/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:210",
+          "belt_point": [
+            "25/77",
+            "-31/154",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "1/616",
+            "-31/30800",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "1/616",
+            "-31/30800",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "25/77",
+              "1",
+              "-31/154"
+            ],
+            [
+              "25/77",
+              "3",
+              "-31/154"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:218",
+          "belt_point": [
+            "43/132",
+            "-13/66",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "43/26400",
+            "-13/13200",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "43/26400",
+            "-13/13200",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "43/132",
+              "1",
+              "-13/66"
+            ],
+            [
+              "43/132",
+              "3",
+              "-13/66"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:225",
+          "belt_point": [
+            "151/462",
+            "-89/462",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "151/92400",
+            "-89/92400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "151/92400",
+            "-89/92400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "151/462",
+              "1",
+              "-89/462"
+            ],
+            [
+              "151/462",
+              "3",
+              "-89/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:233",
+          "belt_point": [
+            "101/308",
+            "-29/154",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "101/61600",
+            "-29/30800",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "101/61600",
+            "-29/30800",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "101/308",
+              "1",
+              "-29/154"
+            ],
+            [
+              "101/308",
+              "3",
+              "-29/154"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:240",
+          "belt_point": [
+            "76/231",
+            "-85/462",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "19/11550",
+            "-17/18480",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "19/11550",
+            "-17/18480",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "76/231",
+              "1",
+              "-85/462"
+            ],
+            [
+              "76/231",
+              "3",
+              "-85/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:248",
+          "belt_point": [
+            "305/924",
+            "-83/462",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "61/36960",
+            "-83/92400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "61/36960",
+            "-83/92400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "305/924",
+              "1",
+              "-83/462"
+            ],
+            [
+              "305/924",
+              "3",
+              "-83/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:256",
+          "belt_point": [
+            "51/154",
+            "-27/154",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "51/30800",
+            "-27/30800",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "51/30800",
+            "-27/30800",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "51/154",
+              "1",
+              "-27/154"
+            ],
+            [
+              "51/154",
+              "3",
+              "-27/154"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:263",
+          "belt_point": [
+            "307/924",
+            "-79/462",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "307/184800",
+            "-79/92400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "307/184800",
+            "-79/92400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "307/924",
+              "1",
+              "-79/462"
+            ],
+            [
+              "307/924",
+              "3",
+              "-79/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:271",
+          "belt_point": [
+            "1/3",
+            "-1/6",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "1/600",
+            "-1/1200",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "1/600",
+            "-1/1200",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "1/3",
+              "1",
+              "-1/6"
+            ],
+            [
+              "1/3",
+              "3",
+              "-1/6"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:278",
+          "belt_point": [
+            "103/308",
+            "-25/154",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "103/61600",
+            "-1/1232",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "103/61600",
+            "-1/1232",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "103/308",
+              "1",
+              "-25/154"
+            ],
+            [
+              "103/308",
+              "3",
+              "-25/154"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:286",
+          "belt_point": [
+            "155/462",
+            "-73/462",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "31/18480",
+            "-73/92400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "31/18480",
+            "-73/92400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "155/462",
+              "1",
+              "-73/462"
+            ],
+            [
+              "155/462",
+              "3",
+              "-73/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:293",
+          "belt_point": [
+            "311/924",
+            "-71/462",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "311/184800",
+            "-71/92400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "311/184800",
+            "-71/92400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "311/924",
+              "1",
+              "-71/462"
+            ],
+            [
+              "311/924",
+              "3",
+              "-71/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:301",
+          "belt_point": [
+            "26/77",
+            "-23/154",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "13/7700",
+            "-23/30800",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "13/7700",
+            "-23/30800",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "26/77",
+              "1",
+              "-23/154"
+            ],
+            [
+              "26/77",
+              "3",
+              "-23/154"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:308",
+          "belt_point": [
+            "313/924",
+            "-67/462",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "313/184800",
+            "-67/92400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "313/184800",
+            "-67/92400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "313/924",
+              "1",
+              "-67/462"
+            ],
+            [
+              "313/924",
+              "3",
+              "-67/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:316",
+          "belt_point": [
+            "157/462",
+            "-65/462",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "157/92400",
+            "-13/18480",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "157/92400",
+            "-13/18480",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "157/462",
+              "1",
+              "-65/462"
+            ],
+            [
+              "157/462",
+              "3",
+              "-65/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:324",
+          "belt_point": [
+            "15/44",
+            "-3/22",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "3/1760",
+            "-3/4400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "3/1760",
+            "-3/4400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "15/44",
+              "1",
+              "-3/22"
+            ],
+            [
+              "15/44",
+              "3",
+              "-3/22"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:331",
+          "belt_point": [
+            "79/231",
+            "-61/462",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "79/46200",
+            "-61/92400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "79/46200",
+            "-61/92400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "79/231",
+              "1",
+              "-61/462"
+            ],
+            [
+              "79/231",
+              "3",
+              "-61/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:339",
+          "belt_point": [
+            "317/924",
+            "-59/462",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "317/184800",
+            "-59/92400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "317/184800",
+            "-59/92400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "317/924",
+              "1",
+              "-59/462"
+            ],
+            [
+              "317/924",
+              "3",
+              "-59/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:346",
+          "belt_point": [
+            "53/154",
+            "-19/154",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "53/30800",
+            "-19/30800",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "53/30800",
+            "-19/30800",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "53/154",
+              "1",
+              "-19/154"
+            ],
+            [
+              "53/154",
+              "3",
+              "-19/154"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:354",
+          "belt_point": [
+            "29/84",
+            "-5/42",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "29/16800",
+            "-1/1680",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "29/16800",
+            "-1/1680",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "29/84",
+              "1",
+              "-5/42"
+            ],
+            [
+              "29/84",
+              "3",
+              "-5/42"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:361",
+          "belt_point": [
+            "80/231",
+            "-53/462",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "2/1155",
+            "-53/92400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "2/1155",
+            "-53/92400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "80/231",
+              "1",
+              "-53/462"
+            ],
+            [
+              "80/231",
+              "3",
+              "-53/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:369",
+          "belt_point": [
+            "107/308",
+            "-17/154",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "107/61600",
+            "-17/30800",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "107/61600",
+            "-17/30800",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "107/308",
+              "1",
+              "-17/154"
+            ],
+            [
+              "107/308",
+              "3",
+              "-17/154"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:377",
+          "belt_point": [
+            "23/66",
+            "-7/66",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "23/13200",
+            "-7/13200",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "23/13200",
+            "-7/13200",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "23/66",
+              "1",
+              "-7/66"
+            ],
+            [
+              "23/66",
+              "3",
+              "-7/66"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:384",
+          "belt_point": [
+            "323/924",
+            "-47/462",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "323/184800",
+            "-47/92400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "323/184800",
+            "-47/92400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "323/924",
+              "1",
+              "-47/462"
+            ],
+            [
+              "323/924",
+              "3",
+              "-47/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:392",
+          "belt_point": [
+            "27/77",
+            "-15/154",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "27/15400",
+            "-3/6160",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "27/15400",
+            "-3/6160",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "27/77",
+              "1",
+              "-15/154"
+            ],
+            [
+              "27/77",
+              "3",
+              "-15/154"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:399",
+          "belt_point": [
+            "325/924",
+            "-43/462",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "13/7392",
+            "-43/92400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "13/7392",
+            "-43/92400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "325/924",
+              "1",
+              "-43/462"
+            ],
+            [
+              "325/924",
+              "3",
+              "-43/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:407",
+          "belt_point": [
+            "163/462",
+            "-41/462",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "163/92400",
+            "-41/92400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "163/92400",
+            "-41/92400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "163/462",
+              "1",
+              "-41/462"
+            ],
+            [
+              "163/462",
+              "3",
+              "-41/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:414",
+          "belt_point": [
+            "109/308",
+            "-13/154",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "109/61600",
+            "-13/30800",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "109/61600",
+            "-13/30800",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "109/308",
+              "1",
+              "-13/154"
+            ],
+            [
+              "109/308",
+              "3",
+              "-13/154"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:422",
+          "belt_point": [
+            "82/231",
+            "-37/462",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "41/23100",
+            "-37/92400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "41/23100",
+            "-37/92400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "82/231",
+              "1",
+              "-37/462"
+            ],
+            [
+              "82/231",
+              "3",
+              "-37/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:429",
+          "belt_point": [
+            "47/132",
+            "-5/66",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "47/26400",
+            "-1/2640",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "47/26400",
+            "-1/2640",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "47/132",
+              "1",
+              "-5/66"
+            ],
+            [
+              "47/132",
+              "3",
+              "-5/66"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:437",
+          "belt_point": [
+            "5/14",
+            "-1/14",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "1/560",
+            "-1/2800",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "1/560",
+            "-1/2800",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "5/14",
+              "1",
+              "-1/14"
+            ],
+            [
+              "5/14",
+              "3",
+              "-1/14"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:445",
+          "belt_point": [
+            "331/924",
+            "-31/462",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "331/184800",
+            "-31/92400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "331/184800",
+            "-31/92400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "331/924",
+              "1",
+              "-31/462"
+            ],
+            [
+              "331/924",
+              "3",
+              "-31/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:452",
+          "belt_point": [
+            "83/231",
+            "-29/462",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "83/46200",
+            "-29/92400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "83/46200",
+            "-29/92400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "83/231",
+              "1",
+              "-29/462"
+            ],
+            [
+              "83/231",
+              "3",
+              "-29/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:460",
+          "belt_point": [
+            "111/308",
+            "-9/154",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "111/61600",
+            "-9/30800",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "111/61600",
+            "-9/30800",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "111/308",
+              "1",
+              "-9/154"
+            ],
+            [
+              "111/308",
+              "3",
+              "-9/154"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:467",
+          "belt_point": [
+            "167/462",
+            "-25/462",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "167/92400",
+            "-1/3696",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "167/92400",
+            "-1/3696",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "167/462",
+              "1",
+              "-25/462"
+            ],
+            [
+              "167/462",
+              "3",
+              "-25/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:475",
+          "belt_point": [
+            "335/924",
+            "-23/462",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "67/36960",
+            "-23/92400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "67/36960",
+            "-23/92400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "335/924",
+              "1",
+              "-23/462"
+            ],
+            [
+              "335/924",
+              "3",
+              "-23/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:482",
+          "belt_point": [
+            "4/11",
+            "-1/22",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "1/550",
+            "-1/4400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "1/550",
+            "-1/4400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "4/11",
+              "1",
+              "-1/22"
+            ],
+            [
+              "4/11",
+              "3",
+              "-1/22"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:490",
+          "belt_point": [
+            "337/924",
+            "-19/462",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "337/184800",
+            "-19/92400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "337/184800",
+            "-19/92400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "337/924",
+              "1",
+              "-19/462"
+            ],
+            [
+              "337/924",
+              "3",
+              "-19/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:498",
+          "belt_point": [
+            "169/462",
+            "-17/462",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "169/92400",
+            "-17/92400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "169/92400",
+            "-17/92400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "169/462",
+              "1",
+              "-17/462"
+            ],
+            [
+              "169/462",
+              "3",
+              "-17/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:505",
+          "belt_point": [
+            "113/308",
+            "-5/154",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "113/61600",
+            "-1/6160",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "113/61600",
+            "-1/6160",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "113/308",
+              "1",
+              "-5/154"
+            ],
+            [
+              "113/308",
+              "3",
+              "-5/154"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:513",
+          "belt_point": [
+            "85/231",
+            "-13/462",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "17/9240",
+            "-13/92400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "17/9240",
+            "-13/92400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "85/231",
+              "1",
+              "-13/462"
+            ],
+            [
+              "85/231",
+              "3",
+              "-13/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:520",
+          "belt_point": [
+            "31/84",
+            "-1/42",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "31/16800",
+            "-1/8400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "31/16800",
+            "-1/8400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "31/84",
+              "1",
+              "-1/42"
+            ],
+            [
+              "31/84",
+              "3",
+              "-1/42"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:528",
+          "belt_point": [
+            "57/154",
+            "-3/154",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "57/30800",
+            "-3/30800",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "57/30800",
+            "-3/30800",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "57/154",
+              "1",
+              "-3/154"
+            ],
+            [
+              "57/154",
+              "3",
+              "-3/154"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:535",
+          "belt_point": [
+            "49/132",
+            "-1/66",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "49/26400",
+            "-1/13200",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "49/26400",
+            "-1/13200",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "49/132",
+              "1",
+              "-1/66"
+            ],
+            [
+              "49/132",
+              "3",
+              "-1/66"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:543",
+          "belt_point": [
+            "86/231",
+            "-5/462",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "43/23100",
+            "-1/18480",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "43/23100",
+            "-1/18480",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "86/231",
+              "1",
+              "-5/462"
+            ],
+            [
+              "86/231",
+              "3",
+              "-5/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:550",
+          "belt_point": [
+            "115/308",
+            "-1/154",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "23/12320",
+            "-1/30800",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "23/12320",
+            "-1/30800",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "115/308",
+              "1",
+              "-1/154"
+            ],
+            [
+              "115/308",
+              "3",
+              "-1/154"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:558",
+          "belt_point": [
+            "173/462",
+            "-1/462",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "173/92400",
+            "-1/92400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "173/92400",
+            "-1/92400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "173/462",
+              "1",
+              "-1/462"
+            ],
+            [
+              "173/462",
+              "3",
+              "-1/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:566",
+          "belt_point": [
+            "347/924",
+            "1/462",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "347/184800",
+            "1/92400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "347/184800",
+            "1/92400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "347/924",
+              "1",
+              "1/462"
+            ],
+            [
+              "347/924",
+              "3",
+              "1/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:573",
+          "belt_point": [
+            "29/77",
+            "1/154",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "29/15400",
+            "1/30800",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "29/15400",
+            "1/30800",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "29/77",
+              "1",
+              "1/154"
+            ],
+            [
+              "29/77",
+              "3",
+              "1/154"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:581",
+          "belt_point": [
+            "349/924",
+            "5/462",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "349/184800",
+            "1/18480",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "349/184800",
+            "1/18480",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "349/924",
+              "1",
+              "5/462"
+            ],
+            [
+              "349/924",
+              "3",
+              "5/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:588",
+          "belt_point": [
+            "25/66",
+            "1/66",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "1/528",
+            "1/13200",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "1/528",
+            "1/13200",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "25/66",
+              "1",
+              "1/66"
+            ],
+            [
+              "25/66",
+              "3",
+              "1/66"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:596",
+          "belt_point": [
+            "117/308",
+            "3/154",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "117/61600",
+            "3/30800",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "117/61600",
+            "3/30800",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "117/308",
+              "1",
+              "3/154"
+            ],
+            [
+              "117/308",
+              "3",
+              "3/154"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:603",
+          "belt_point": [
+            "8/21",
+            "1/42",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "1/525",
+            "1/8400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "1/525",
+            "1/8400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "8/21",
+              "1",
+              "1/42"
+            ],
+            [
+              "8/21",
+              "3",
+              "1/42"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:611",
+          "belt_point": [
+            "353/924",
+            "13/462",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "353/184800",
+            "13/92400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "353/184800",
+            "13/92400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "353/924",
+              "1",
+              "13/462"
+            ],
+            [
+              "353/924",
+              "3",
+              "13/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:618",
+          "belt_point": [
+            "59/154",
+            "5/154",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "59/30800",
+            "1/6160",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "59/30800",
+            "1/6160",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "59/154",
+              "1",
+              "5/154"
+            ],
+            [
+              "59/154",
+              "3",
+              "5/154"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:626",
+          "belt_point": [
+            "355/924",
+            "17/462",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "71/36960",
+            "17/92400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "71/36960",
+            "17/92400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "355/924",
+              "1",
+              "17/462"
+            ],
+            [
+              "355/924",
+              "3",
+              "17/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:634",
+          "belt_point": [
+            "89/231",
+            "19/462",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "89/46200",
+            "19/92400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "89/46200",
+            "19/92400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "89/231",
+              "1",
+              "19/462"
+            ],
+            [
+              "89/231",
+              "3",
+              "19/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:641",
+          "belt_point": [
+            "17/44",
+            "1/22",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "17/8800",
+            "1/4400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "17/8800",
+            "1/4400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "17/44",
+              "1",
+              "1/22"
+            ],
+            [
+              "17/44",
+              "3",
+              "1/22"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:649",
+          "belt_point": [
+            "179/462",
+            "23/462",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "179/92400",
+            "23/92400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "179/92400",
+            "23/92400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "179/462",
+              "1",
+              "23/462"
+            ],
+            [
+              "179/462",
+              "3",
+              "23/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:656",
+          "belt_point": [
+            "359/924",
+            "25/462",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "359/184800",
+            "1/3696",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "359/184800",
+            "1/3696",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "359/924",
+              "1",
+              "25/462"
+            ],
+            [
+              "359/924",
+              "3",
+              "25/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:664",
+          "belt_point": [
+            "30/77",
+            "9/154",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "3/1540",
+            "9/30800",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "3/1540",
+            "9/30800",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "30/77",
+              "1",
+              "9/154"
+            ],
+            [
+              "30/77",
+              "3",
+              "9/154"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:671",
+          "belt_point": [
+            "361/924",
+            "29/462",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "361/184800",
+            "29/92400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "361/184800",
+            "29/92400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "361/924",
+              "1",
+              "29/462"
+            ],
+            [
+              "361/924",
+              "3",
+              "29/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:679",
+          "belt_point": [
+            "181/462",
+            "31/462",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "181/92400",
+            "31/92400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "181/92400",
+            "31/92400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "181/462",
+              "1",
+              "31/462"
+            ],
+            [
+              "181/462",
+              "3",
+              "31/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:687",
+          "belt_point": [
+            "11/28",
+            "1/14",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "11/5600",
+            "1/2800",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "11/5600",
+            "1/2800",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "11/28",
+              "1",
+              "1/14"
+            ],
+            [
+              "11/28",
+              "3",
+              "1/14"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:694",
+          "belt_point": [
+            "13/33",
+            "5/66",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "13/6600",
+            "1/2640",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "13/6600",
+            "1/2640",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "13/33",
+              "1",
+              "5/66"
+            ],
+            [
+              "13/33",
+              "3",
+              "5/66"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:702",
+          "belt_point": [
+            "365/924",
+            "37/462",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "73/36960",
+            "37/92400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "73/36960",
+            "37/92400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "365/924",
+              "1",
+              "37/462"
+            ],
+            [
+              "365/924",
+              "3",
+              "37/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:709",
+          "belt_point": [
+            "61/154",
+            "13/154",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "61/30800",
+            "13/30800",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "61/30800",
+            "13/30800",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "61/154",
+              "1",
+              "13/154"
+            ],
+            [
+              "61/154",
+              "3",
+              "13/154"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:717",
+          "belt_point": [
+            "367/924",
+            "41/462",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "367/184800",
+            "41/92400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "367/184800",
+            "41/92400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "367/924",
+              "1",
+              "41/462"
+            ],
+            [
+              "367/924",
+              "3",
+              "41/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:724",
+          "belt_point": [
+            "92/231",
+            "43/462",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "23/11550",
+            "43/92400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "23/11550",
+            "43/92400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "92/231",
+              "1",
+              "43/462"
+            ],
+            [
+              "92/231",
+              "3",
+              "43/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:732",
+          "belt_point": [
+            "123/308",
+            "15/154",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "123/61600",
+            "3/6160",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "123/61600",
+            "3/6160",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "123/308",
+              "1",
+              "15/154"
+            ],
+            [
+              "123/308",
+              "3",
+              "15/154"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:739",
+          "belt_point": [
+            "185/462",
+            "47/462",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "37/18480",
+            "47/92400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "37/18480",
+            "47/92400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "185/462",
+              "1",
+              "47/462"
+            ],
+            [
+              "185/462",
+              "3",
+              "47/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:747",
+          "belt_point": [
+            "53/132",
+            "7/66",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "53/26400",
+            "7/13200",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "53/26400",
+            "7/13200",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "53/132",
+              "1",
+              "7/66"
+            ],
+            [
+              "53/132",
+              "3",
+              "7/66"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:755",
+          "belt_point": [
+            "31/77",
+            "17/154",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "31/15400",
+            "17/30800",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "31/15400",
+            "17/30800",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "31/77",
+              "1",
+              "17/154"
+            ],
+            [
+              "31/77",
+              "3",
+              "17/154"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:762",
+          "belt_point": [
+            "373/924",
+            "53/462",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "373/184800",
+            "53/92400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "373/184800",
+            "53/92400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "373/924",
+              "1",
+              "53/462"
+            ],
+            [
+              "373/924",
+              "3",
+              "53/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:770",
+          "belt_point": [
+            "17/42",
+            "5/42",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "17/8400",
+            "1/1680",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "17/8400",
+            "1/1680",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "17/42",
+              "1",
+              "5/42"
+            ],
+            [
+              "17/42",
+              "3",
+              "5/42"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:777",
+          "belt_point": [
+            "125/308",
+            "19/154",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "5/2464",
+            "19/30800",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "5/2464",
+            "19/30800",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "125/308",
+              "1",
+              "19/154"
+            ],
+            [
+              "125/308",
+              "3",
+              "19/154"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:785",
+          "belt_point": [
+            "94/231",
+            "59/462",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "47/23100",
+            "59/92400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "47/23100",
+            "59/92400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "94/231",
+              "1",
+              "59/462"
+            ],
+            [
+              "94/231",
+              "3",
+              "59/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:792",
+          "belt_point": [
+            "377/924",
+            "61/462",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "377/184800",
+            "61/92400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "377/184800",
+            "61/92400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "377/924",
+              "1",
+              "61/462"
+            ],
+            [
+              "377/924",
+              "3",
+              "61/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:800",
+          "belt_point": [
+            "9/22",
+            "3/22",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "9/4400",
+            "3/4400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "9/4400",
+            "3/4400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "9/22",
+              "1",
+              "3/22"
+            ],
+            [
+              "9/22",
+              "3",
+              "3/22"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:808",
+          "belt_point": [
+            "379/924",
+            "65/462",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "379/184800",
+            "13/18480",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "379/184800",
+            "13/18480",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "379/924",
+              "1",
+              "65/462"
+            ],
+            [
+              "379/924",
+              "3",
+              "65/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:815",
+          "belt_point": [
+            "95/231",
+            "67/462",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "19/9240",
+            "67/92400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "19/9240",
+            "67/92400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "95/231",
+              "1",
+              "67/462"
+            ],
+            [
+              "95/231",
+              "3",
+              "67/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:823",
+          "belt_point": [
+            "127/308",
+            "23/154",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "127/61600",
+            "23/30800",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "127/61600",
+            "23/30800",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "127/308",
+              "1",
+              "23/154"
+            ],
+            [
+              "127/308",
+              "3",
+              "23/154"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:830",
+          "belt_point": [
+            "191/462",
+            "71/462",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "191/92400",
+            "71/92400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "191/92400",
+            "71/92400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "191/462",
+              "1",
+              "71/462"
+            ],
+            [
+              "191/462",
+              "3",
+              "71/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:838",
+          "belt_point": [
+            "383/924",
+            "73/462",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "383/184800",
+            "73/92400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "383/184800",
+            "73/92400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "383/924",
+              "1",
+              "73/462"
+            ],
+            [
+              "383/924",
+              "3",
+              "73/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:845",
+          "belt_point": [
+            "32/77",
+            "25/154",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "4/1925",
+            "1/1232",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "4/1925",
+            "1/1232",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "32/77",
+              "1",
+              "25/154"
+            ],
+            [
+              "32/77",
+              "3",
+              "25/154"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:853",
+          "belt_point": [
+            "5/12",
+            "1/6",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "1/480",
+            "1/1200",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "1/480",
+            "1/1200",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "5/12",
+              "1",
+              "1/6"
+            ],
+            [
+              "5/12",
+              "3",
+              "1/6"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:860",
+          "belt_point": [
+            "193/462",
+            "79/462",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "193/92400",
+            "79/92400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "193/92400",
+            "79/92400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "193/462",
+              "1",
+              "79/462"
+            ],
+            [
+              "193/462",
+              "3",
+              "79/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:868",
+          "belt_point": [
+            "129/308",
+            "27/154",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "129/61600",
+            "27/30800",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "129/61600",
+            "27/30800",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "129/308",
+              "1",
+              "27/154"
+            ],
+            [
+              "129/308",
+              "3",
+              "27/154"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:876",
+          "belt_point": [
+            "97/231",
+            "83/462",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "97/46200",
+            "83/92400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "97/46200",
+            "83/92400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "97/231",
+              "1",
+              "83/462"
+            ],
+            [
+              "97/231",
+              "3",
+              "83/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:883",
+          "belt_point": [
+            "389/924",
+            "85/462",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "389/184800",
+            "17/18480",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "389/184800",
+            "17/18480",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "389/924",
+              "1",
+              "85/462"
+            ],
+            [
+              "389/924",
+              "3",
+              "85/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:891",
+          "belt_point": [
+            "65/154",
+            "29/154",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "13/6160",
+            "29/30800",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "13/6160",
+            "29/30800",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "65/154",
+              "1",
+              "29/154"
+            ],
+            [
+              "65/154",
+              "3",
+              "29/154"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:898",
+          "belt_point": [
+            "391/924",
+            "89/462",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "391/184800",
+            "89/92400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "391/184800",
+            "89/92400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "391/924",
+              "1",
+              "89/462"
+            ],
+            [
+              "391/924",
+              "3",
+              "89/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:906",
+          "belt_point": [
+            "14/33",
+            "13/66",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "7/3300",
+            "13/13200",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "7/3300",
+            "13/13200",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "14/33",
+              "1",
+              "13/66"
+            ],
+            [
+              "14/33",
+              "3",
+              "13/66"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:913",
+          "belt_point": [
+            "131/308",
+            "31/154",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "131/61600",
+            "31/30800",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "131/61600",
+            "31/30800",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "131/308",
+              "1",
+              "31/154"
+            ],
+            [
+              "131/308",
+              "3",
+              "31/154"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:921",
+          "belt_point": [
+            "197/462",
+            "95/462",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "197/92400",
+            "19/18480",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "197/92400",
+            "19/18480",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "197/462",
+              "1",
+              "95/462"
+            ],
+            [
+              "197/462",
+              "3",
+              "95/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:928",
+          "belt_point": [
+            "395/924",
+            "97/462",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "79/36960",
+            "97/92400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "79/36960",
+            "97/92400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "395/924",
+              "1",
+              "97/462"
+            ],
+            [
+              "395/924",
+              "3",
+              "97/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:952",
+          "belt_point": [
+            "3/7",
+            "3/14",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "3/1400",
+            "3/2800",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "3/1400",
+            "3/2800",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "3/7",
+              "1",
+              "3/14"
+            ],
+            [
+              "3/7",
+              "3",
+              "3/14"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:960",
+          "belt_point": [
+            "397/924",
+            "101/462",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "397/184800",
+            "101/92400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "397/184800",
+            "101/92400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "397/924",
+              "1",
+              "101/462"
+            ],
+            [
+              "397/924",
+              "3",
+              "101/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:967",
+          "belt_point": [
+            "199/462",
+            "103/462",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "199/92400",
+            "103/92400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "199/92400",
+            "103/92400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "199/462",
+              "1",
+              "103/462"
+            ],
+            [
+              "199/462",
+              "3",
+              "103/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:975",
+          "belt_point": [
+            "19/44",
+            "5/22",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "19/8800",
+            "1/880",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "19/8800",
+            "1/880",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "19/44",
+              "1",
+              "5/22"
+            ],
+            [
+              "19/44",
+              "3",
+              "5/22"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:982",
+          "belt_point": [
+            "100/231",
+            "107/462",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "1/462",
+            "107/92400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "1/462",
+            "107/92400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "100/231",
+              "1",
+              "107/462"
+            ],
+            [
+              "100/231",
+              "3",
+              "107/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:990",
+          "belt_point": [
+            "401/924",
+            "109/462",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "401/184800",
+            "109/92400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "401/184800",
+            "109/92400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "401/924",
+              "1",
+              "109/462"
+            ],
+            [
+              "401/924",
+              "3",
+              "109/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:997",
+          "belt_point": [
+            "67/154",
+            "37/154",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "67/30800",
+            "37/30800",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "67/30800",
+            "37/30800",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "67/154",
+              "1",
+              "37/154"
+            ],
+            [
+              "67/154",
+              "3",
+              "37/154"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:1005",
+          "belt_point": [
+            "403/924",
+            "113/462",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "403/184800",
+            "113/92400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "403/184800",
+            "113/92400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "403/924",
+              "1",
+              "113/462"
+            ],
+            [
+              "403/924",
+              "3",
+              "113/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:1013",
+          "belt_point": [
+            "101/231",
+            "115/462",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "101/46200",
+            "23/18480",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "101/46200",
+            "23/18480",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "101/231",
+              "1",
+              "115/462"
+            ],
+            [
+              "101/231",
+              "3",
+              "115/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:1020",
+          "belt_point": [
+            "135/308",
+            "39/154",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "27/12320",
+            "39/30800",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "27/12320",
+            "39/30800",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "135/308",
+              "1",
+              "39/154"
+            ],
+            [
+              "135/308",
+              "3",
+              "39/154"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:1028",
+          "belt_point": [
+            "29/66",
+            "17/66",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "29/13200",
+            "17/13200",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "29/13200",
+            "17/13200",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "29/66",
+              "1",
+              "17/66"
+            ],
+            [
+              "29/66",
+              "3",
+              "17/66"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:1035",
+          "belt_point": [
+            "37/84",
+            "11/42",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "37/16800",
+            "11/8400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "37/16800",
+            "11/8400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "37/84",
+              "1",
+              "11/42"
+            ],
+            [
+              "37/84",
+              "3",
+              "11/42"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:1043",
+          "belt_point": [
+            "34/77",
+            "41/154",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "17/7700",
+            "41/30800",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "17/7700",
+            "41/30800",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "34/77",
+              "1",
+              "41/154"
+            ],
+            [
+              "34/77",
+              "3",
+              "41/154"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:1050",
+          "belt_point": [
+            "409/924",
+            "125/462",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "409/184800",
+            "5/3696",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "409/184800",
+            "5/3696",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "409/924",
+              "1",
+              "125/462"
+            ],
+            [
+              "409/924",
+              "3",
+              "125/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:1058",
+          "belt_point": [
+            "205/462",
+            "127/462",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "41/18480",
+            "127/92400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "41/18480",
+            "127/92400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "205/462",
+              "1",
+              "127/462"
+            ],
+            [
+              "205/462",
+              "3",
+              "127/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:1065",
+          "belt_point": [
+            "137/308",
+            "43/154",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "137/61600",
+            "43/30800",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "137/61600",
+            "43/30800",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "137/308",
+              "1",
+              "43/154"
+            ],
+            [
+              "137/308",
+              "3",
+              "43/154"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:1073",
+          "belt_point": [
+            "103/231",
+            "131/462",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "103/46200",
+            "131/92400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "103/46200",
+            "131/92400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "103/231",
+              "1",
+              "131/462"
+            ],
+            [
+              "103/231",
+              "3",
+              "131/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:1081",
+          "belt_point": [
+            "59/132",
+            "19/66",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "59/26400",
+            "19/13200",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "59/26400",
+            "19/13200",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "59/132",
+              "1",
+              "19/66"
+            ],
+            [
+              "59/132",
+              "3",
+              "19/66"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:1088",
+          "belt_point": [
+            "69/154",
+            "45/154",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "69/30800",
+            "9/6160",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "69/30800",
+            "9/6160",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "69/154",
+              "1",
+              "45/154"
+            ],
+            [
+              "69/154",
+              "3",
+              "45/154"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:1096",
+          "belt_point": [
+            "415/924",
+            "137/462",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "83/36960",
+            "137/92400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "83/36960",
+            "137/92400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "415/924",
+              "1",
+              "137/462"
+            ],
+            [
+              "415/924",
+              "3",
+              "137/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:1103",
+          "belt_point": [
+            "104/231",
+            "139/462",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "13/5775",
+            "139/92400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "13/5775",
+            "139/92400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "104/231",
+              "1",
+              "139/462"
+            ],
+            [
+              "104/231",
+              "3",
+              "139/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:1111",
+          "belt_point": [
+            "139/308",
+            "47/154",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "139/61600",
+            "47/30800",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "139/61600",
+            "47/30800",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "139/308",
+              "1",
+              "47/154"
+            ],
+            [
+              "139/308",
+              "3",
+              "47/154"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:1118",
+          "belt_point": [
+            "19/42",
+            "13/42",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "19/8400",
+            "13/8400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "19/8400",
+            "13/8400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "19/42",
+              "1",
+              "13/42"
+            ],
+            [
+              "19/42",
+              "3",
+              "13/42"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:1126",
+          "belt_point": [
+            "419/924",
+            "145/462",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "419/184800",
+            "29/18480",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "419/184800",
+            "29/18480",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "419/924",
+              "1",
+              "145/462"
+            ],
+            [
+              "419/924",
+              "3",
+              "145/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:1133",
+          "belt_point": [
+            "5/11",
+            "7/22",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "1/440",
+            "7/4400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "1/440",
+            "7/4400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "5/11",
+              "1",
+              "7/22"
+            ],
+            [
+              "5/11",
+              "3",
+              "7/22"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:1157",
+          "belt_point": [
+            "421/924",
+            "149/462",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "421/184800",
+            "149/92400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "421/184800",
+            "149/92400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "421/924",
+              "1",
+              "149/462"
+            ],
+            [
+              "421/924",
+              "3",
+              "149/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:1165",
+          "belt_point": [
+            "211/462",
+            "151/462",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "211/92400",
+            "151/92400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "211/92400",
+            "151/92400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "211/462",
+              "1",
+              "151/462"
+            ],
+            [
+              "211/462",
+              "3",
+              "151/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:1172",
+          "belt_point": [
+            "141/308",
+            "51/154",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "141/61600",
+            "51/30800",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "141/61600",
+            "51/30800",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "141/308",
+              "1",
+              "51/154"
+            ],
+            [
+              "141/308",
+              "3",
+              "51/154"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:1180",
+          "belt_point": [
+            "106/231",
+            "155/462",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "53/23100",
+            "31/18480",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "53/23100",
+            "31/18480",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "106/231",
+              "1",
+              "155/462"
+            ],
+            [
+              "106/231",
+              "3",
+              "155/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:1187",
+          "belt_point": [
+            "425/924",
+            "157/462",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "17/7392",
+            "157/92400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "17/7392",
+            "157/92400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "425/924",
+              "1",
+              "157/462"
+            ],
+            [
+              "425/924",
+              "3",
+              "157/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:1195",
+          "belt_point": [
+            "71/154",
+            "53/154",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "71/30800",
+            "53/30800",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "71/30800",
+            "53/30800",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "71/154",
+              "1",
+              "53/154"
+            ],
+            [
+              "71/154",
+              "3",
+              "53/154"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:1202",
+          "belt_point": [
+            "61/132",
+            "23/66",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "61/26400",
+            "23/13200",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "61/26400",
+            "23/13200",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "61/132",
+              "1",
+              "23/66"
+            ],
+            [
+              "61/132",
+              "3",
+              "23/66"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:1210",
+          "belt_point": [
+            "107/231",
+            "163/462",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "107/46200",
+            "163/92400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "107/46200",
+            "163/92400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "107/231",
+              "1",
+              "163/462"
+            ],
+            [
+              "107/231",
+              "3",
+              "163/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:1218",
+          "belt_point": [
+            "13/28",
+            "5/14",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "13/5600",
+            "1/560",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "13/5600",
+            "1/560",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "13/28",
+              "1",
+              "5/14"
+            ],
+            [
+              "13/28",
+              "3",
+              "5/14"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:1225",
+          "belt_point": [
+            "215/462",
+            "167/462",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "43/18480",
+            "167/92400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "43/18480",
+            "167/92400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "215/462",
+              "1",
+              "167/462"
+            ],
+            [
+              "215/462",
+              "3",
+              "167/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:1233",
+          "belt_point": [
+            "431/924",
+            "169/462",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "431/184800",
+            "169/92400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "431/184800",
+            "169/92400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "431/924",
+              "1",
+              "169/462"
+            ],
+            [
+              "431/924",
+              "3",
+              "169/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:1240",
+          "belt_point": [
+            "36/77",
+            "57/154",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "9/3850",
+            "57/30800",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "9/3850",
+            "57/30800",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "36/77",
+              "1",
+              "57/154"
+            ],
+            [
+              "36/77",
+              "3",
+              "57/154"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:1248",
+          "belt_point": [
+            "433/924",
+            "173/462",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "433/184800",
+            "173/92400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "433/184800",
+            "173/92400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "433/924",
+              "1",
+              "173/462"
+            ],
+            [
+              "433/924",
+              "3",
+              "173/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:1255",
+          "belt_point": [
+            "31/66",
+            "25/66",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "31/13200",
+            "1/528",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "31/13200",
+            "1/528",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "31/66",
+              "1",
+              "25/66"
+            ],
+            [
+              "31/66",
+              "3",
+              "25/66"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:1263",
+          "belt_point": [
+            "145/308",
+            "59/154",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "29/12320",
+            "59/30800",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "29/12320",
+            "59/30800",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "145/308",
+              "1",
+              "59/154"
+            ],
+            [
+              "145/308",
+              "3",
+              "59/154"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:1270",
+          "belt_point": [
+            "109/231",
+            "179/462",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "109/46200",
+            "179/92400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "109/46200",
+            "179/92400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "109/231",
+              "1",
+              "179/462"
+            ],
+            [
+              "109/231",
+              "3",
+              "179/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:1278",
+          "belt_point": [
+            "437/924",
+            "181/462",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "437/184800",
+            "181/92400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "437/184800",
+            "181/92400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "437/924",
+              "1",
+              "181/462"
+            ],
+            [
+              "437/924",
+              "3",
+              "181/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:1286",
+          "belt_point": [
+            "73/154",
+            "61/154",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "73/30800",
+            "61/30800",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "73/30800",
+            "61/30800",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "73/154",
+              "1",
+              "61/154"
+            ],
+            [
+              "73/154",
+              "3",
+              "61/154"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:1293",
+          "belt_point": [
+            "439/924",
+            "185/462",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "439/184800",
+            "37/18480",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "439/184800",
+            "37/18480",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "439/924",
+              "1",
+              "185/462"
+            ],
+            [
+              "439/924",
+              "3",
+              "185/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:1301",
+          "belt_point": [
+            "10/21",
+            "17/42",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "1/420",
+            "17/8400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "1/420",
+            "17/8400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "10/21",
+              "1",
+              "17/42"
+            ],
+            [
+              "10/21",
+              "3",
+              "17/42"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:1308",
+          "belt_point": [
+            "21/44",
+            "9/22",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "21/8800",
+            "9/4400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "21/8800",
+            "9/4400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "21/44",
+              "1",
+              "9/22"
+            ],
+            [
+              "21/44",
+              "3",
+              "9/22"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:1316",
+          "belt_point": [
+            "221/462",
+            "191/462",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "221/92400",
+            "191/92400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "221/92400",
+            "191/92400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "221/462",
+              "1",
+              "191/462"
+            ],
+            [
+              "221/462",
+              "3",
+              "191/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:1323",
+          "belt_point": [
+            "443/924",
+            "193/462",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "443/184800",
+            "193/92400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "443/184800",
+            "193/92400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "443/924",
+              "1",
+              "193/462"
+            ],
+            [
+              "443/924",
+              "3",
+              "193/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:1331",
+          "belt_point": [
+            "37/77",
+            "65/154",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "37/15400",
+            "13/6160",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "37/15400",
+            "13/6160",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "37/77",
+              "1",
+              "65/154"
+            ],
+            [
+              "37/77",
+              "3",
+              "65/154"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:1339",
+          "belt_point": [
+            "445/924",
+            "197/462",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "89/36960",
+            "197/92400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "89/36960",
+            "197/92400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "445/924",
+              "1",
+              "197/462"
+            ],
+            [
+              "445/924",
+              "3",
+              "197/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:1346",
+          "belt_point": [
+            "223/462",
+            "199/462",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "223/92400",
+            "199/92400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "223/92400",
+            "199/92400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "223/462",
+              "1",
+              "199/462"
+            ],
+            [
+              "223/462",
+              "3",
+              "199/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:1354",
+          "belt_point": [
+            "149/308",
+            "67/154",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "149/61600",
+            "67/30800",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "149/61600",
+            "67/30800",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "149/308",
+              "1",
+              "67/154"
+            ],
+            [
+              "149/308",
+              "3",
+              "67/154"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:1361",
+          "belt_point": [
+            "16/33",
+            "29/66",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "2/825",
+            "29/13200",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "2/825",
+            "29/13200",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "16/33",
+              "1",
+              "29/66"
+            ],
+            [
+              "16/33",
+              "3",
+              "29/66"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:1369",
+          "belt_point": [
+            "449/924",
+            "205/462",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "449/184800",
+            "41/18480",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "449/184800",
+            "41/18480",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "449/924",
+              "1",
+              "205/462"
+            ],
+            [
+              "449/924",
+              "3",
+              "205/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:1376",
+          "belt_point": [
+            "75/154",
+            "69/154",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "3/1232",
+            "69/30800",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "3/1232",
+            "69/30800",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "75/154",
+              "1",
+              "69/154"
+            ],
+            [
+              "75/154",
+              "3",
+              "69/154"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:1384",
+          "belt_point": [
+            "41/84",
+            "19/42",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "41/16800",
+            "19/8400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "41/16800",
+            "19/8400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "41/84",
+              "1",
+              "19/42"
+            ],
+            [
+              "41/84",
+              "3",
+              "19/42"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:1391",
+          "belt_point": [
+            "113/231",
+            "211/462",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "113/46200",
+            "211/92400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "113/46200",
+            "211/92400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "113/231",
+              "1",
+              "211/462"
+            ],
+            [
+              "113/231",
+              "3",
+              "211/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:1399",
+          "belt_point": [
+            "151/308",
+            "71/154",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "151/61600",
+            "71/30800",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "151/61600",
+            "71/30800",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "151/308",
+              "1",
+              "71/154"
+            ],
+            [
+              "151/308",
+              "3",
+              "71/154"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:1407",
+          "belt_point": [
+            "227/462",
+            "215/462",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "227/92400",
+            "43/18480",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "227/92400",
+            "43/18480",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "227/462",
+              "1",
+              "215/462"
+            ],
+            [
+              "227/462",
+              "3",
+              "215/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:1414",
+          "belt_point": [
+            "65/132",
+            "31/66",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "13/5280",
+            "31/13200",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "13/5280",
+            "31/13200",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "65/132",
+              "1",
+              "31/66"
+            ],
+            [
+              "65/132",
+              "3",
+              "31/66"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:1422",
+          "belt_point": [
+            "38/77",
+            "73/154",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "19/7700",
+            "73/30800",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "19/7700",
+            "73/30800",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "38/77",
+              "1",
+              "73/154"
+            ],
+            [
+              "38/77",
+              "3",
+              "73/154"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:1429",
+          "belt_point": [
+            "457/924",
+            "221/462",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "457/184800",
+            "221/92400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "457/184800",
+            "221/92400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "457/924",
+              "1",
+              "221/462"
+            ],
+            [
+              "457/924",
+              "3",
+              "221/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:1437",
+          "belt_point": [
+            "229/462",
+            "223/462",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "229/92400",
+            "223/92400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "229/92400",
+            "223/92400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "229/462",
+              "1",
+              "223/462"
+            ],
+            [
+              "229/462",
+              "3",
+              "223/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:1444",
+          "belt_point": [
+            "153/308",
+            "75/154",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "153/61600",
+            "3/1232",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "153/61600",
+            "3/1232",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "153/308",
+              "1",
+              "75/154"
+            ],
+            [
+              "153/308",
+              "3",
+              "75/154"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:1452",
+          "belt_point": [
+            "115/231",
+            "227/462",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "23/9240",
+            "227/92400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "23/9240",
+            "227/92400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "115/231",
+              "1",
+              "227/462"
+            ],
+            [
+              "115/231",
+              "3",
+              "227/462"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:1459",
+          "belt_point": [
+            "461/924",
+            "229/462",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "461/184800",
+            "229/92400",
+            "-1"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "461/184800",
+            "229/92400",
+            "1"
+          ],
+          "source_axis_endpoints": [
+            [
+              "461/924",
+              "1",
+              "229/462"
+            ],
+            [
+              "461/924",
+              "3",
+              "229/462"
+            ]
+          ]
+        }
+      ],
+      "tangent_basis": [
+        [
+          "1",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "1",
+          "0"
+        ]
+      ]
+    },
+    {
+      "belt_sphere": {
+        "chart": "axis 2=2, boundary of transverse cube",
+        "euler": 2,
+        "triangles": [
+          [
+            0,
+            1,
+            3
+          ],
+          [
+            0,
+            2,
+            3
+          ],
+          [
+            4,
+            5,
+            7
+          ],
+          [
+            4,
+            6,
+            7
+          ],
+          [
+            0,
+            1,
+            5
+          ],
+          [
+            0,
+            4,
+            5
+          ],
+          [
+            2,
+            3,
+            7
+          ],
+          [
+            2,
+            6,
+            7
+          ],
+          [
+            0,
+            2,
+            6
+          ],
+          [
+            0,
+            4,
+            6
+          ],
+          [
+            1,
+            3,
+            7
+          ],
+          [
+            1,
+            5,
+            7
+          ]
+        ],
+        "vertices": [
+          [
+            "-1",
+            "-1",
+            "2",
+            "-1"
+          ],
+          [
+            "-1",
+            "-1",
+            "2",
+            "1"
+          ],
+          [
+            "-1",
+            "1",
+            "2",
+            "-1"
+          ],
+          [
+            "-1",
+            "1",
+            "2",
+            "1"
+          ],
+          [
+            "1",
+            "-1",
+            "2",
+            "-1"
+          ],
+          [
+            "1",
+            "-1",
+            "2",
+            "1"
+          ],
+          [
+            "1",
+            "1",
+            "2",
+            "-1"
+          ],
+          [
+            "1",
+            "1",
+            "2",
+            "1"
+          ]
+        ]
+      },
+      "binding_status": "ACTUAL_JOHNSON_BASE_LANES_BOUND_TO_FIGURE2A_FEET",
+      "foot_handle_index": 3,
+      "foot_pair_sha256": "F4019B4424B00C9585798EF329543D97E9CF434193A1A3C25E0A922BAB5186CC",
+      "generator_axis": 2,
+      "lane_scale": "1/200",
+      "name": "z",
+      "passage_count": 33,
+      "passages": [
+        {
+          "arc_id": "c0:letter:0",
+          "belt_point": [
+            "103/400",
+            "-8/17",
+            "1"
+          ],
+          "component": 0,
+          "negative_foot_endpoint": [
+            "-39691/120000",
+            "-2734853/4080000",
+            "-847/1275"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "40309/120000",
+            "2705147/4080000",
+            "853/1275"
+          ],
+          "source_axis_endpoints": [
+            [
+              "35/136",
+              "-8/17",
+              "1"
+            ],
+            [
+              "219/850",
+              "-8/17",
+              "3"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:930",
+          "belt_point": [
+            "1801/6800",
+            "-15/34",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "-674597/2040000",
+            "-2734403/4080000",
+            "-2711/4080"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "685403/2040000",
+            "2705597/4080000",
+            "2729/4080"
+          ],
+          "source_axis_endpoints": [
+            [
+              "9/34",
+              "-15/34",
+              "1"
+            ],
+            [
+              "53/200",
+              "-15/34",
+              "3"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:931",
+          "belt_point": [
+            "1851/6800",
+            "-7/17",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "-674447/2040000",
+            "-2733953/4080000",
+            "-6779/10200"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "685553/2040000",
+            "2706047/4080000",
+            "6821/10200"
+          ],
+          "source_axis_endpoints": [
+            [
+              "37/136",
+              "-7/17",
+              "1"
+            ],
+            [
+              "463/1700",
+              "-7/17",
+              "3"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:932",
+          "belt_point": [
+            "1901/6800",
+            "-13/34",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "-674297/2040000",
+            "-2733503/4080000",
+            "-13561/20400"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "685703/2040000",
+            "2706497/4080000",
+            "13639/20400"
+          ],
+          "source_axis_endpoints": [
+            [
+              "19/68",
+              "-13/34",
+              "1"
+            ],
+            [
+              "951/3400",
+              "-13/34",
+              "3"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:933",
+          "belt_point": [
+            "1951/6800",
+            "-6/17",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "-674147/2040000",
+            "-2733053/4080000",
+            "-3391/5100"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "685853/2040000",
+            "2706947/4080000",
+            "3409/5100"
+          ],
+          "source_axis_endpoints": [
+            [
+              "39/136",
+              "-6/17",
+              "1"
+            ],
+            [
+              "122/425",
+              "-6/17",
+              "3"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:934",
+          "belt_point": [
+            "2001/6800",
+            "-11/34",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "-673997/2040000",
+            "-2732603/4080000",
+            "-13567/20400"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "686003/2040000",
+            "2707397/4080000",
+            "13633/20400"
+          ],
+          "source_axis_endpoints": [
+            [
+              "5/17",
+              "-11/34",
+              "1"
+            ],
+            [
+              "1001/3400",
+              "-11/34",
+              "3"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:935",
+          "belt_point": [
+            "2051/6800",
+            "-5/17",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "-673847/2040000",
+            "-2732153/4080000",
+            "-1357/2040"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "686153/2040000",
+            "2707847/4080000",
+            "1363/2040"
+          ],
+          "source_axis_endpoints": [
+            [
+              "41/136",
+              "-5/17",
+              "1"
+            ],
+            [
+              "513/1700",
+              "-5/17",
+              "3"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:936",
+          "belt_point": [
+            "2101/6800",
+            "-9/34",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "-673697/2040000",
+            "-2731703/4080000",
+            "-13573/20400"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "686303/2040000",
+            "2708297/4080000",
+            "13627/20400"
+          ],
+          "source_axis_endpoints": [
+            [
+              "21/68",
+              "-9/34",
+              "1"
+            ],
+            [
+              "1051/3400",
+              "-9/34",
+              "3"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:937",
+          "belt_point": [
+            "2151/6800",
+            "-4/17",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "-673547/2040000",
+            "-2731253/4080000",
+            "-1697/2550"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "686453/2040000",
+            "2708747/4080000",
+            "1703/2550"
+          ],
+          "source_axis_endpoints": [
+            [
+              "43/136",
+              "-4/17",
+              "1"
+            ],
+            [
+              "269/850",
+              "-4/17",
+              "3"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:938",
+          "belt_point": [
+            "2201/6800",
+            "-7/34",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "-673397/2040000",
+            "-2730803/4080000",
+            "-13579/20400"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "686603/2040000",
+            "2709197/4080000",
+            "13621/20400"
+          ],
+          "source_axis_endpoints": [
+            [
+              "11/34",
+              "-7/34",
+              "1"
+            ],
+            [
+              "1101/3400",
+              "-7/34",
+              "3"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:939",
+          "belt_point": [
+            "2251/6800",
+            "-3/17",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "-673247/2040000",
+            "-160609/240000",
+            "-6791/10200"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "686753/2040000",
+            "159391/240000",
+            "6809/10200"
+          ],
+          "source_axis_endpoints": [
+            [
+              "45/136",
+              "-3/17",
+              "1"
+            ],
+            [
+              "563/1700",
+              "-3/17",
+              "3"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:940",
+          "belt_point": [
+            "2301/6800",
+            "-5/34",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "-673097/2040000",
+            "-2729903/4080000",
+            "-2717/4080"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "686903/2040000",
+            "2710097/4080000",
+            "2723/4080"
+          ],
+          "source_axis_endpoints": [
+            [
+              "23/68",
+              "-5/34",
+              "1"
+            ],
+            [
+              "1151/3400",
+              "-5/34",
+              "3"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:941",
+          "belt_point": [
+            "2351/6800",
+            "-2/17",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "-672947/2040000",
+            "-2729453/4080000",
+            "-3397/5100"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "687053/2040000",
+            "2710547/4080000",
+            "3403/5100"
+          ],
+          "source_axis_endpoints": [
+            [
+              "47/136",
+              "-2/17",
+              "1"
+            ],
+            [
+              "147/425",
+              "-2/17",
+              "3"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:942",
+          "belt_point": [
+            "2401/6800",
+            "-3/34",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "-672797/2040000",
+            "-2729003/4080000",
+            "-13591/20400"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "687203/2040000",
+            "2710997/4080000",
+            "13609/20400"
+          ],
+          "source_axis_endpoints": [
+            [
+              "6/17",
+              "-3/34",
+              "1"
+            ],
+            [
+              "1201/3400",
+              "-3/34",
+              "3"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:943",
+          "belt_point": [
+            "2451/6800",
+            "-1/17",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "-672647/2040000",
+            "-2728553/4080000",
+            "-6797/10200"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "687353/2040000",
+            "2711447/4080000",
+            "6803/10200"
+          ],
+          "source_axis_endpoints": [
+            [
+              "49/136",
+              "-1/17",
+              "1"
+            ],
+            [
+              "613/1700",
+              "-1/17",
+              "3"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:944",
+          "belt_point": [
+            "2501/6800",
+            "-1/34",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "-672497/2040000",
+            "-2728103/4080000",
+            "-13597/20400"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "687503/2040000",
+            "2711897/4080000",
+            "13603/20400"
+          ],
+          "source_axis_endpoints": [
+            [
+              "25/68",
+              "-1/34",
+              "1"
+            ],
+            [
+              "1251/3400",
+              "-1/34",
+              "3"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:945",
+          "belt_point": [
+            "2551/6800",
+            "0",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "-672347/2040000",
+            "-2727653/4080000",
+            "-2/3"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "687653/2040000",
+            "2712347/4080000",
+            "2/3"
+          ],
+          "source_axis_endpoints": [
+            [
+              "3/8",
+              "0",
+              "1"
+            ],
+            [
+              "319/850",
+              "0",
+              "3"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:1135",
+          "belt_point": [
+            "153/400",
+            "1/34",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "-39541/120000",
+            "-2727203/4080000",
+            "-13603/20400"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "40459/120000",
+            "2712797/4080000",
+            "13597/20400"
+          ],
+          "source_axis_endpoints": [
+            [
+              "13/34",
+              "1/34",
+              "1"
+            ],
+            [
+              "1301/3400",
+              "1/34",
+              "3"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:1136",
+          "belt_point": [
+            "2651/6800",
+            "1/17",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "-672047/2040000",
+            "-2726753/4080000",
+            "-6803/10200"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "687953/2040000",
+            "2713247/4080000",
+            "6797/10200"
+          ],
+          "source_axis_endpoints": [
+            [
+              "53/136",
+              "1/17",
+              "1"
+            ],
+            [
+              "39/100",
+              "1/17",
+              "3"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:1137",
+          "belt_point": [
+            "2701/6800",
+            "3/34",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "-671897/2040000",
+            "-2726303/4080000",
+            "-13609/20400"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "688103/2040000",
+            "2713697/4080000",
+            "13591/20400"
+          ],
+          "source_axis_endpoints": [
+            [
+              "27/68",
+              "3/34",
+              "1"
+            ],
+            [
+              "1351/3400",
+              "3/34",
+              "3"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:1138",
+          "belt_point": [
+            "2751/6800",
+            "2/17",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "-671747/2040000",
+            "-2725853/4080000",
+            "-3403/5100"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "688253/2040000",
+            "2714147/4080000",
+            "3397/5100"
+          ],
+          "source_axis_endpoints": [
+            [
+              "55/136",
+              "2/17",
+              "1"
+            ],
+            [
+              "172/425",
+              "2/17",
+              "3"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:1139",
+          "belt_point": [
+            "2801/6800",
+            "5/34",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "-671597/2040000",
+            "-2725403/4080000",
+            "-2723/4080"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "688403/2040000",
+            "2714597/4080000",
+            "2717/4080"
+          ],
+          "source_axis_endpoints": [
+            [
+              "7/17",
+              "5/34",
+              "1"
+            ],
+            [
+              "1401/3400",
+              "5/34",
+              "3"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:1140",
+          "belt_point": [
+            "2851/6800",
+            "3/17",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "-671447/2040000",
+            "-2724953/4080000",
+            "-6809/10200"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "688553/2040000",
+            "2715047/4080000",
+            "6791/10200"
+          ],
+          "source_axis_endpoints": [
+            [
+              "57/136",
+              "3/17",
+              "1"
+            ],
+            [
+              "713/1700",
+              "3/17",
+              "3"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:1141",
+          "belt_point": [
+            "2901/6800",
+            "7/34",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "-671297/2040000",
+            "-2724503/4080000",
+            "-13621/20400"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "688703/2040000",
+            "2715497/4080000",
+            "13579/20400"
+          ],
+          "source_axis_endpoints": [
+            [
+              "29/68",
+              "7/34",
+              "1"
+            ],
+            [
+              "1451/3400",
+              "7/34",
+              "3"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:1142",
+          "belt_point": [
+            "2951/6800",
+            "4/17",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "-671147/2040000",
+            "-2724053/4080000",
+            "-1703/2550"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "688853/2040000",
+            "2715947/4080000",
+            "1697/2550"
+          ],
+          "source_axis_endpoints": [
+            [
+              "59/136",
+              "4/17",
+              "1"
+            ],
+            [
+              "369/850",
+              "4/17",
+              "3"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:1143",
+          "belt_point": [
+            "3001/6800",
+            "9/34",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "-670997/2040000",
+            "-2723603/4080000",
+            "-13627/20400"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "689003/2040000",
+            "2716397/4080000",
+            "13573/20400"
+          ],
+          "source_axis_endpoints": [
+            [
+              "15/34",
+              "9/34",
+              "1"
+            ],
+            [
+              "1501/3400",
+              "9/34",
+              "3"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:1144",
+          "belt_point": [
+            "3051/6800",
+            "5/17",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "-670847/2040000",
+            "-2723153/4080000",
+            "-1363/2040"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "689153/2040000",
+            "2716847/4080000",
+            "1357/2040"
+          ],
+          "source_axis_endpoints": [
+            [
+              "61/136",
+              "5/17",
+              "1"
+            ],
+            [
+              "763/1700",
+              "5/17",
+              "3"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:1145",
+          "belt_point": [
+            "3101/6800",
+            "11/34",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "-670697/2040000",
+            "-160159/240000",
+            "-13633/20400"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "689303/2040000",
+            "159841/240000",
+            "13567/20400"
+          ],
+          "source_axis_endpoints": [
+            [
+              "31/68",
+              "11/34",
+              "1"
+            ],
+            [
+              "1551/3400",
+              "11/34",
+              "3"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:1146",
+          "belt_point": [
+            "3151/6800",
+            "6/17",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "-670547/2040000",
+            "-2722253/4080000",
+            "-3409/5100"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "689453/2040000",
+            "2717747/4080000",
+            "3391/5100"
+          ],
+          "source_axis_endpoints": [
+            [
+              "63/136",
+              "6/17",
+              "1"
+            ],
+            [
+              "197/425",
+              "6/17",
+              "3"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:1147",
+          "belt_point": [
+            "3201/6800",
+            "13/34",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "-670397/2040000",
+            "-2721803/4080000",
+            "-13639/20400"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "689603/2040000",
+            "2718197/4080000",
+            "13561/20400"
+          ],
+          "source_axis_endpoints": [
+            [
+              "8/17",
+              "13/34",
+              "1"
+            ],
+            [
+              "1601/3400",
+              "13/34",
+              "3"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:1148",
+          "belt_point": [
+            "3251/6800",
+            "7/17",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "-670247/2040000",
+            "-2721353/4080000",
+            "-6821/10200"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "689753/2040000",
+            "2718647/4080000",
+            "6779/10200"
+          ],
+          "source_axis_endpoints": [
+            [
+              "65/136",
+              "7/17",
+              "1"
+            ],
+            [
+              "813/1700",
+              "7/17",
+              "3"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:1149",
+          "belt_point": [
+            "3301/6800",
+            "15/34",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "-670097/2040000",
+            "-2720903/4080000",
+            "-2729/4080"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "689903/2040000",
+            "2719097/4080000",
+            "2711/4080"
+          ],
+          "source_axis_endpoints": [
+            [
+              "33/68",
+              "15/34",
+              "1"
+            ],
+            [
+              "1651/3400",
+              "15/34",
+              "3"
+            ]
+          ]
+        },
+        {
+          "arc_id": "c2:letter:1150",
+          "belt_point": [
+            "3351/6800",
+            "8/17",
+            "1"
+          ],
+          "component": 2,
+          "negative_foot_endpoint": [
+            "-669947/2040000",
+            "-2720453/4080000",
+            "-853/1275"
+          ],
+          "orientation": 1,
+          "positive_foot_endpoint": [
+            "690053/2040000",
+            "2719547/4080000",
+            "847/1275"
+          ],
+          "source_axis_endpoints": [
+            [
+              "67/136",
+              "8/17",
+              "1"
+            ],
+            [
+              "419/850",
+              "8/17",
+              "3"
+            ]
+          ]
+        }
+      ],
+      "tangent_basis": [
+        [
+          "2",
+          "-1",
+          "0"
+        ],
+        [
+          "0",
+          "1",
+          "-1"
+        ]
+      ]
+    }
+  ],
+  "johnson_spine_embedding_sha256": "57BC99BE08ED805EF268049F1EEE961D25F6889A6BDEC142B8715072B7F51AC1",
+  "post_x_m1_deletion_sha256": "6CF7C396F4F75A4FC68AFA5DEB67D21A1C562D007D2B57267630F418F3078C53",
+  "schema": "t73_yz_foot_lane_binding/v1",
+  "sha256": "3238A77A5EF53909EFA76190E13D108C40BEE93A328159D43538FF2904AE7AE3"
+}

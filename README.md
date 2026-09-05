@@ -96,12 +96,17 @@ rebuilt with `python3 scripts/build_t73_literature_geometry_ledger.py --check`.
 It records source pages/figures and what each source does and does not supply.
 
 [`geometry/t73_unified_kirby_foot_chart.json`](geometry/t73_unified_kirby_foot_chart.json)
-combines the four AR Figure 2a foot pairs with T73 belt data. Its t/x bindings
-are verified against `t73_belt_spheres.json`; y/z are explicitly
-`CANDIDATE_FOOT_ONLY`. Rebuild with
-`python3 scripts/build_t73_unified_kirby_foot_chart.py --check`.
+combines all four AR Figure 2a foot pairs with verified T73 passage data. The
+t/x histories bind to their belt spheres and verified cancellations; the final
+y/z state has 234 and 1549 reflection-paired passages. Rebuild it with
+`python3 scripts/build_t73_unified_kirby_foot_chart.py --check` and verify it
+with `python3 scripts/verify_t73_unified_kirby_foot_chart.py`. The final passage
+data are in
+[`geometry/t73_final_yz_foot_state.json`](geometry/t73_final_yz_foot_state.json),
+with foundational Johnson-only bindings in
+[`geometry/t73_yz_foot_lane_binding.json`](geometry/t73_yz_foot_lane_binding.json).
 
-The first candidate lane realization is
+Separately, the C-cut 44-lane candidate realization is
 [`geometry/t73_y_foot_lane_candidate.json`](geometry/t73_y_foot_lane_candidate.json):
 44 actual y-cut passages are bound to distinct rational y-foot targets and
 product-normal framing rectangles. Rebuild/check it with:

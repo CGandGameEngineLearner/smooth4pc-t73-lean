@@ -87,11 +87,16 @@ python3 scripts/build_t73_actual_ar_kirby_construction_request.py --check
 它保存原文页码/Figure 以及各来源能和不能提供的数据。
 
 [`geometry/t73_unified_kirby_foot_chart.json`](geometry/t73_unified_kirby_foot_chart.json)
-将四个 AR Figure 2a foot pair 与 T73 belt 数据组合。t/x 已相对
-`t73_belt_spheres.json` 验证；y/z 明确为 `CANDIDATE_FOOT_ONLY`。使用
-`python3 scripts/build_t73_unified_kirby_foot_chart.py --check` 重建。
+将四个 AR Figure 2a foot pair 与已验证的 T73 passage 数据组合。t/x 历史绑定
+其 belt sphere 与实际 cancellation；最终 y/z state 分别含 234 与 1549 个反射
+配对 passage。使用 `python3 scripts/build_t73_unified_kirby_foot_chart.py --check`
+重建，并用 `python3 scripts/verify_t73_unified_kirby_foot_chart.py` 验收。最终
+passage 数据位于
+[`geometry/t73_final_yz_foot_state.json`](geometry/t73_final_yz_foot_state.json)，
+Johnson-only 基础绑定位于
+[`geometry/t73_yz_foot_lane_binding.json`](geometry/t73_yz_foot_lane_binding.json)。
 
-第一份候选 lane realization 为
+另一个独立层次中，C-cut 的 44-lane candidate realization 为
 [`geometry/t73_y_foot_lane_candidate.json`](geometry/t73_y_foot_lane_candidate.json)：
 44 条实际 y-cut passage 被绑定到互异的有理 y-foot target 与 product-normal framing rectangle。
 重建/检查命令：

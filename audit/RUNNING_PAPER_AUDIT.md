@@ -2742,6 +2742,45 @@ Topology-source checks completed 2026-09-04:
   surgery diagram, export complete PD/crossing/framing data, and prove the
   resulting presentation map is kappa_AR before feeding W2 and C/S.
 
+### F-569 — The two surviving y/z handles now have complete final passage-to-foot bindings
+
+- Severity: **Common Kirby foot chart / actual final handle data**
+- Status: **ALL FOUR HISTORICAL FOOT PAIRS BOUND; FINAL y/z PASSAGES PASS**
+- Evidence: `geometry/t73_yz_foot_lane_binding.json`,
+  `geometry/t73_final_yz_foot_state.json`, the v2 unified foot chart, their
+  builders, three independent verifiers, and tests.
+- Base Johnson binding: axis-1 and axis-2 spine arcs give cubical y/z belt
+  spheres and 230/33 belt passages. Rational tangent bases in the Figure-2a
+  foot disks are fixed by their reflection matrices. All 263 endpoint pairs
+  lie strictly inside the disks, are distinct, and are exchanged by the
+  orientation-reversing involutions. This foundational layer intentionally
+  excludes later hybrid replacements.
+- Final inventory: after deleting m1, its single base z lane is removed. Four
+  dual y passages and four dual z passages are read from the explicit square
+  boundaries. Every one of the 1513 x replacements contributes the level of
+  the actual m1 z lane in the F-564 foliation; its tangential z offset is
+  removed in the foot collar without changing the transverse lane. The final
+  counts are y=234 and z=1549: 262 retained Johnson passages, eight dual
+  passages, and 1513 replacement z passages.
+- Independent verification: all 1783 final passage ids and endpoint pairs are
+  unique, remain inside their foot disks, and satisfy the exact reflection
+  equations. Owner, orientation, foliation level, and tangent adjustment of
+  every replacement are recomputed. Verdict:
+  `PASS_FINAL_YZ_FOOT_AND_PASSAGE_STATE`.
+- Unified chart: `t73_unified_kirby_foot_chart.json` is upgraded to v2 with
+  status `ALL_FOUR_HANDLES_BOUND_FINAL_YZ_STATE`. It retains t/x belt histories,
+  records both verified cancellations, binds the final y/z passage states, and
+  reports y/z as the two surviving dotted handles. Verdict:
+  `PASS_ALL_FOUR_T73_FOOT_BINDINGS_FINAL_YZ_STATE`.
+- Scope firewall: `t73_ar_lane_movie_stage1.json` and the 44-lane y candidate
+  are C-cut artifacts, not the final Kirby passage state. They were regenerated
+  only for the new chart SHA and retain their `PARTIAL/CANDIDATE` statuses.
+- Boundary: the foot and passage data are complete, but a planar surgery
+  embedding still needs to connect these paired endpoints outside the foot
+  balls, choose a generic projection, compute every crossing/over-under order,
+  and derive the five integer framings. That verified diagram will be the
+  concrete target of kappa_AR.
+
 ### F-600 — The “actual” sphere-system builder assigns, rather than constructs, the embedding in \(\partial W_2\)
 
 - Severity: **Critical**
