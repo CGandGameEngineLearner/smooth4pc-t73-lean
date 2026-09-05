@@ -278,6 +278,14 @@ companion cycles，但尚未证明 product framing：3558条独立路由的 push
 没有通向 core corridors 的 ruled ribbons。fail-closed 订正位于
 [`audit/t73_affine_push_corridor_framing_gap.json`](audit/t73_affine_push_corridor_framing_gap.json)。
 投影或计算整数 framing 前必须先构造 corridor product ribbons。
+局部修复现缓存于
+`C:\Users\Administrator\.cache\t73_affine_s3_product_framed_realization.json`
+（112,997,433 bytes），收据为
+[`audit/t73_affine_s3_product_framed_realization_receipt.json`](audit/t73_affine_s3_product_framed_realization_receipt.json)。
+它沿每条 core corridor 线性插值已验证的两端 product normals，生成28464个
+ruled triangles；全部7116个端点匹配及28464次局部横截检查通过。使用
+`python3 scripts/verify_t73_affine_s3_product_framed_realization.py` 验收；
+nonlocal ribbon clearance 仍开放。
 全局线性投影探测记录于
 [`audit/t73_affine_s3_projection_probe.json`](audit/t73_affine_s3_projection_probe.json)。
 xz/yz 会压扁 dotted edges；三个 regular tilts 至少产生258,453,247个 broad

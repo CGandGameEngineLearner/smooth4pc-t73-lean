@@ -3677,6 +3677,30 @@ Topology-source checks completed 2026-09-04:
   fields along the core corridors, matching the verified product normals at
   both ends, and prove all resulting ribbon triangles embedded/disjoint.
 
+### F-599B2 — All affine corridor product ribbons are locally constructed
+
+- Severity: **framing repair / affine corridor ribbons**
+- Status: **LOCAL PRODUCT RIBBONS PASS; NONLOCAL CLEARANCE OPEN**
+- Evidence: `scripts/build_t73_affine_s3_product_framed_realization.py`,
+  `scripts/verify_t73_affine_s3_product_framed_realization.py`,
+  `audit/t73_affine_s3_product_framed_realization_receipt.json`, its test, and
+  the external cache named in the receipt.
+- Repair: each push corridor is no longer routed independently. Its two
+  endpoint offsets are the literal verified product normals of the adjacent
+  Johnson/Hopf blocks; linear interpolation at the five core-corridor vertices
+  gives a nearby push path and eight ruled triangles. There are 3558 ribbons
+  and 28,464 triangles total.
+- Local verification: five push cycles close with 23,109 segments. All 7116
+  endpoint normal values match, 28,464 endpoint-normal/tangent pairs are
+  transverse, no normal vanishes, and all 28,464 ruled triangles are
+  nondegenerate. Verdict: `PASS_AFFINE_S3_CORRIDOR_PRODUCT_RIBBONS_LOCAL`.
+- Storage/boundary: the 112,997,433-byte JSON exceeds GitHub's single-file
+  limit and is kept in the user cache; Git stores its byte/payload/source
+  receipt and rebuild code. A generic all-pairs exact triangle clearance was
+  attempted with several safe broad-phase filters but remained computationally
+  unsuitable. The cache remains `OPEN_EXACT_NONLOCAL_CLEARANCE`; F-599B1 is
+  not resolved until a structured vertical/horizontal ribbon proof passes.
+
 ### F-599C — Monolithic linear projections of the affine framed link are computationally unsuitable
 
 - Severity: **complete PD / projection selection**

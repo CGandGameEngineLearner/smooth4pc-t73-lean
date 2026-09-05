@@ -333,6 +333,15 @@ routed push corridors have no ruled ribbons to the core corridors. The
 fail-closed correction is
 [`audit/t73_affine_push_corridor_framing_gap.json`](audit/t73_affine_push_corridor_framing_gap.json).
 Corridor product ribbons must be built before projection or integer framing.
+A local repair is now cached at
+`C:\Users\Administrator\.cache\t73_affine_s3_product_framed_realization.json`
+(112,997,433 bytes), with receipt
+[`audit/t73_affine_s3_product_framed_realization_receipt.json`](audit/t73_affine_s3_product_framed_realization_receipt.json).
+It linearly interpolates the verified endpoint product normals along every
+core corridor, giving 28464 ruled triangles; all 7116 endpoint matches and
+28464 local transversality checks pass. Run
+`python3 scripts/verify_t73_affine_s3_product_framed_realization.py`. Exact
+nonlocal ribbon clearance remains open.
 Global linear projection probes are recorded in
 [`audit/t73_affine_s3_projection_probe.json`](audit/t73_affine_s3_projection_probe.json).
 xz/yz collapse dotted edges; three regular tilts produce at least 258,453,247

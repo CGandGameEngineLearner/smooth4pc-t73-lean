@@ -1,0 +1,16 @@
+{
+  "affine_s3_core_realization_sha256": "81CB91A81B354C806C8B7B9739D0D3CB51AAF8DEC22B0AB30DF8EE277ED0CB0A",
+  "builder_sha256": "8A7A498E27AE939DCAB101BA0CFD30C4CF571C9386A3D9536E311353F6569EF0",
+  "cache_path": "C:\\Users\\Administrator\\.cache\\t73_affine_s3_product_framed_realization.json",
+  "cache_sha256": "20E20F281F3483016AD79DE6CE40E2C27733D0AC604AEB624BA2270F7F30C964",
+  "cache_size": 112997433,
+  "core_segment_count": 23109,
+  "corridor_count": 3558,
+  "corridor_ribbon_triangle_count": 28464,
+  "global_ribbon_embedding_status": "OPEN_EXACT_NONLOCAL_CLEARANCE",
+  "payload_sha256": "B3A979E8B8145419F5457CE03F800B705DFF62DB6431BAFC8DC84C87843041CE",
+  "push_segment_count": 23109,
+  "schema": "t73_affine_s3_product_framed_realization_receipt/v1",
+  "sha256": "1EFA463481DCEBBD6973408F9C7E2BECB673857543393C76459B4EE0A152F6CF",
+  "verdict": "PASS_AFFINE_PRODUCT_RIBBON_LOCAL_CONSTRUCTION_ONLY"
+}
