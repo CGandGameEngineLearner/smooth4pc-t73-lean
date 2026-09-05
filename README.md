@@ -131,6 +131,10 @@ Its scope is `CANDIDATE_CLOSED_SPLICE_ONLY` pending intersection and Kirby-move 
 `python3 scripts/verify_t73_candidate_t_band0_splice.py` currently returns
 `OPEN_PERIODIC_T3_LIFT_REQUIRED`: the saved source core uses wrapped torus
 coordinates and must be lifted before affine PL intersection tests are valid.
+The verified continuous lifts are saved in
+[`geometry/t73_ar_core_universal_lifts.json`](geometry/t73_ar_core_universal_lifts.json),
+rebuilt with `python3 scripts/build_t73_ar_core_universal_lifts.py --check`.
+Their closing deck translations are exactly the columns of `A-I`.
 
 The 1513-step x-cancellation candidate movie is
 [`geometry/t73_candidate_x_band_movie.json`](geometry/t73_candidate_x_band_movie.json),

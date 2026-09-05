@@ -118,6 +118,10 @@ locator 已验证；基于 width 的区间选择仍为 candidate。
 `python3 scripts/verify_t73_candidate_t_band0_splice.py` 当前返回
 `OPEN_PERIODIC_T3_LIFT_REQUIRED`：保存的源 core 使用 torus wrap 坐标，必须先 lift
 到 universal cover，才能进行有效的 affine PL 相交检查。
+已验证的连续 lift 保存于
+[`geometry/t73_ar_core_universal_lifts.json`](geometry/t73_ar_core_universal_lifts.json)，
+使用 `python3 scripts/build_t73_ar_core_universal_lifts.py --check` 重建。
+其 closing deck translation 精确等于 `A-I` 的三列。
 
 1513 步 x-cancellation candidate movie 位于
 [`geometry/t73_candidate_x_band_movie.json`](geometry/t73_candidate_x_band_movie.json)，

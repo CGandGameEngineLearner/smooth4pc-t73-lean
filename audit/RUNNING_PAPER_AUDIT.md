@@ -2176,6 +2176,20 @@ Topology-source checks completed 2026-09-04:
   not call the curve self-intersecting. A continuous universal-cover lift with
   recorded deck translations is required before exact PL intersection tests.
 
+### F-550 — The three wrapped AR cores now have verified continuous universal-cover lifts
+
+- Severity: **Coordinate-semantics remediation / actual source data**
+- Status: **VERIFIED CONTINUOUS LIFTS**
+- Evidence: `scripts/build_t73_ar_core_universal_lifts.py` and
+  `geometry/t73_ar_core_universal_lifts.json`.
+- Verification: exact nearest-deck continuation lifts all wrapped T3 core
+  vertices without half-period ambiguity. The closing deck translations for
+  m1,m2,m3 are `(-1,0,1)`, `(269,40,0)`, `(1240,189,31)`, exactly the columns
+  of `A-I`. All step coordinates and offsets are retained.
+- Consequence: affine PL intersection checks for sequential band splices must
+  use these lifts and their deck translations, never the wrapped coordinate
+  list as an ordinary Q4 polyline.
+
 ### F-600 — The “actual” sphere-system builder assigns, rather than constructs, the embedding in \(\partial W_2\)
 
 - Severity: **Critical**
