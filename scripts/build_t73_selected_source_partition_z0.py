@@ -59,9 +59,15 @@ def triangles(polygon):
     return [[polygon[0], polygon[index], polygon[index + 1]] for index in range(1, len(polygon) - 1)]
 
 
+def split_segment(first, second):
+    cut = intersection(first, second) if first[2] * second[2] < 0 else None
+    pieces = ((first, cut), (cut, second)) if cut is not None else ((first, second),)
+    return [("z_nonpositive" if (left[2] + right[2]) / 2 <= 0 else "z_nonnegative", left, right) for left, right in pieces]
+
+
 def build():
     source = json.loads(SOURCE.read_text(encoding="utf-8"))
-    lower, upper, interface = [], [], []
+    lower, upper, interface, paths = [], [], [], []
     for route_index, route in enumerate(source["exterior_intervals"]):
         for triangle_index, raw in enumerate(route["ruled_ribbon_triangles"]):
             original = [point(vertex) for vertex in raw]
@@ -75,7 +81,12 @@ def build():
                 interface.append({**key, "segment": [encode(vertex) for vertex in cut]})
             elif len(cut) not in (0, 1, 3):
                 raise AssertionError("unexpected z=0 interface cardinality")
-    result = {"schema": "t73_selected_source_partition_z0/v1", "source_exterior_sha256": source["sha256"], "plane": ["0", "0", "1", "0"], "blocks": {"z_nonpositive": lower, "z_nonnegative": upper}, "interface_segments": interface, "original_triangle_count": 2520}
+        for kind, vertices in (("core", route["vertices"]), ("push", route["positive_push_off_vertices"])):
+            raw_vertices = [point(vertex) for vertex in vertices]
+            for segment_index, (first, second) in enumerate(zip(raw_vertices, raw_vertices[1:])):
+                for side, left, right in split_segment(first, second):
+                    paths.append({"route_index": route_index, "kind": kind, "segment_index": segment_index, "side": side, "segment": [encode(left), encode(right)]})
+    result = {"schema": "t73_selected_source_partition_z0/v1", "source_exterior_sha256": source["sha256"], "plane": ["0", "0", "1", "0"], "blocks": {"z_nonpositive": lower, "z_nonnegative": upper}, "interface_segments": interface, "path_fragments": paths, "original_triangle_count": 2520}
     result["sha256"] = canonical_sha(result)
     return result
 
