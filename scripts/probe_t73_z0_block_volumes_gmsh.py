@@ -27,13 +27,20 @@ def run(fragment_limit=1, deduplicate=False):
         o.remove([(3,h) for h in holes],recursive=True); o.synchronize()
         # OCC fragmentation, unlike mesh.embed(), registers intersections of
         # a ribbon fragment with the hole boundary as CAD topology.
-        surfaces=[]
+        surfaces_by_route={}
         for item in partition['blocks']['z_nonpositive'][:fragment_limit]:
             for fragment in item['triangles']:
                 points=[o.addPoint(*[float(Fraction(value)) for value in vertex]) for vertex in fragment]
-                surfaces.append(o.addPlaneSurface([o.addCurveLoop([o.addLine(points[i],points[(i+1)%3]) for i in range(3)])]))
+                surfaces_by_route.setdefault(item['route_index'],[]).append(o.addPlaneSurface([o.addCurveLoop([o.addLine(points[i],points[(i+1)%3]) for i in range(3)])]))
         if deduplicate:
             o.removeAllDuplicates()
+        surfaces=[]
+        for route_surfaces in surfaces_by_route.values():
+            if len(route_surfaces)>1:
+                fused,_=o.fuse([(2,route_surfaces[0])],[(2,surface) for surface in route_surfaces[1:]],removeObject=True,removeTool=True)
+                surfaces.extend(tag for dimension,tag in fused if dimension==2)
+            else:
+                surfaces.extend(route_surfaces)
         o.fragment(lo,[(2,surface) for surface in surfaces],removeObject=True,removeTool=True)
         o.synchronize()
         volumes=[tag for _,tag in gmsh.model.getEntities(3)]
