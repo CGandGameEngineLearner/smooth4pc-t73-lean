@@ -8,7 +8,7 @@
     "compare to AR source bindings"
   ],
   "schema": "t73_literature_geometry_ledger/v1",
-  "sha256": "88F33C5BEC671207E43FD65A6DADABA95077228644BFAE5AD41451210400067D",
+  "sha256": "47F6CC90C415183E566F7ACA1BA25103F8CC89AB6CE15C4DCD635BD45EE9196E",
   "sources": [
     {
       "anchors": [
@@ -35,6 +35,32 @@
         "geometric 2/1 cancellation",
         "branched-cover/Kirby link description",
         "symmetric straightening"
+      ],
+      "url": "https://math.berkeley.edu/~kirby/papers/Gordon%20and%20Kirby%20%28editors%29%20-%20Four-manifold%20theory%20%28Durham%29%20-%20MR0780574.pdf"
+    },
+    {
+      "anchors": [
+        "Lemma 3.2",
+        "Figure 7",
+        "Figure 8"
+      ],
+      "citation": "Aitchison--Rubinstein (1984), Lemma 3.2 and its proof",
+      "does_not_supply": [
+        "T73 conjugating matrix and all chart-to-Kirby foot identifications"
+      ],
+      "extractable_formulae": [
+        "A_s = [[0,0,1],[m-ms,lambda,0],[n-ns,p,nu]]",
+        "A_1t = [[0,0,1],[0,lambda-lambda*t,0],[-1,p-pt,nu-vt]]",
+        "A_11r = [[r,0,1-r],[0,1,0],[r-1,0,r]]"
+      ],
+      "id": "AR84_minimal_straightening",
+      "pages": [
+        "11",
+        "12"
+      ],
+      "supports": [
+        "explicit parameterised linear matrix isotopies for canonical-form Cappell--Shaneson matrices",
+        "fixed-point minimal straightening"
       ],
       "url": "https://math.berkeley.edu/~kirby/papers/Gordon%20and%20Kirby%20%28editors%29%20-%20Four-manifold%20theory%20%28Durham%29%20-%20MR0780574.pdf"
     },
