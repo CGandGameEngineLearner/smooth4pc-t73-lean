@@ -2254,8 +2254,14 @@ Topology-source checks completed 2026-09-04:
   `PASS_CANDIDATE_FRAMED_BAND_DISK_AND_PUSH_LOCAL_EMBEDDEDNESS_ONLY`. Two
   nonadjacent push-surface pairs and 28 disk-versus-push pairs also pass the
   exact low-rank intersection algorithm.
-- Boundary: current-link surface clearance and actual Kirby-slide equivalence
-  remain open.
+- Other-core clearance: the disk and push disk are compared against actual
+  m2/m3 and candidate-lifted r_xy/r_yz/r_zx. All 128184 quotient
+  triangle/segment pairs are rejected by exact disjoint AABBs, yielding
+  `PASS_CANDIDATE_BAND_SURFACE_OTHER_CORE_CLEARANCE_ONLY`. The remaining
+  current-link issue is relative contact with the intended source m1 and target
+  h_CS intervals only.
+- Boundary: source/target relative-contact exactness and actual Kirby-slide
+  equivalence remain open.
 
 ### F-600 — The “actual” sphere-system builder assigns, rather than constructs, the embedding in \(\partial W_2\)
 
