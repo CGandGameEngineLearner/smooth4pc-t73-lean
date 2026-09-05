@@ -291,6 +291,14 @@ push edges after exact subdivision. Verify with `python3
 scripts/verify_t73_x_m1_complete_framed_cancellation_image.py`; verdict:
 `PASS_COMPLETE_X_M1_FRAMED_CANCELLATION_IMAGE_IN_ATLAS`. The next operation is
 the y/z dotted-handle conversion followed by a single affine-S3 realization.
+The exhaustive y/z substitution table is
+[`geometry/t73_yz_dotted_passage_replacement_map.json`](geometry/t73_yz_dotted_passage_replacement_map.json).
+It locates the two-segment base-18--20 z subpath inside every one of the 1513
+x-replacement middles and binds all 272 other Johnson/bottom/dual passages.
+Thus 3568 source core/push segments are replaced by 1785 framed Hopf segments,
+giving projected post-conversion counts core=80007 and push=84383. Verify with
+`python3 scripts/verify_t73_yz_dotted_passage_replacement_map.py`. The 1785
+framed passage mapping cylinders are the next gate.
 The three missing pre-cancellation dual-cell product ribbons are now explicit
 in [`geometry/t73_actual_dual_product_ribbons.json`](geometry/t73_actual_dual_product_ribbons.json).
 Each planar dual boundary has an eight-quadrilateral/16-triangle annulus to a

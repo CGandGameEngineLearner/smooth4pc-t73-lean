@@ -265,6 +265,13 @@ source core edges 经精确细分成为81790条 target core 与86166条 target p
 edges。使用 `python3 scripts/verify_t73_x_m1_complete_framed_cancellation_image.py`
 验收；verdict 为 `PASS_COMPLETE_X_M1_FRAMED_CANCELLATION_IMAGE_IN_ATLAS`。
 下一步是 y/z dotted-handle conversion，随后实现单一 affine-S³ chart。
+穷尽的 y/z 替换表位于
+[`geometry/t73_yz_dotted_passage_replacement_map.json`](geometry/t73_yz_dotted_passage_replacement_map.json)。
+它在1513条 x-replacement middles 中逐一定位两段 base-18--20 z subpath，并绑定
+其余272条 Johnson/bottom/dual passages。因此3568条 source core/push segments
+将替换为1785条 framed Hopf segments，转换后计数为 core=80007、push=84383。
+使用 `python3 scripts/verify_t73_yz_dotted_passage_replacement_map.py` 验收；
+下一门是1785个 framed passage mapping cylinders。
 三个原先缺坐标的 pre-cancellation dual-cell product ribbons 现已显式保存于
 [`geometry/t73_actual_dual_product_ribbons.json`](geometry/t73_actual_dual_product_ribbons.json)。
 每条平面 dual boundary 都有通向有理法向 push-off 的8个四边形/16个三角形

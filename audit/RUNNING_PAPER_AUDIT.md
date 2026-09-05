@@ -3551,6 +3551,30 @@ Topology-source checks completed 2026-09-04:
   the F-584/F-585 dotted-handle cells, and the resulting atlas must be embedded
   in one affine S3 chart before a complete PD or integer framings are computed.
 
+### F-598 — Every surviving y/z source passage is bound to its dotted-S3 replacement
+
+- Severity: **dotted-handle conversion / exhaustive passage substitution**
+- Status: **ALL REPLACEMENT BINDINGS PASS; MAPPING CYLINDERS OPEN**
+- Evidence: `geometry/t73_yz_dotted_passage_replacement_map.json`,
+  `scripts/build_t73_yz_dotted_passage_replacement_map.py`,
+  `scripts/verify_t73_yz_dotted_passage_replacement_map.py`, and its test.
+- X replacements: for every band, exact quotient comparison locates the three
+  consecutive middle-cache vertices corresponding to m1 base indices
+  18,19,20, reversed when required. Those two segments are the actual z
+  passage inside each of the 1513 ejected parallel complements.
+- Other passages: 262 surviving Johnson handle arcs contribute two source
+  segments each, two bottom cut arcs contribute one each, and eight surviving
+  dual passages contribute two each. Every passage id also binds to one F-584
+  framed Hopf cell and one F-585 foot-collar record.
+- Counts: all 1785 passages are used exactly once. The conversion removes 3568
+  source core and 3568 push segments and inserts 1785 of each, changing the
+  F-597 totals to core=80,007 and push=84,383. Verdict:
+  `PASS_ALL_YZ_PASSAGES_BOUND_TO_DOTTED_S3_REPLACEMENTS`.
+- Boundary: the source/target incidence and exact x-middle locations are now
+  complete, but the 1785 framed mapping cylinders implementing these
+  substitutions have not yet been constructed. No post-conversion continuous
+  atlas or affine S3 diagram is claimed yet.
+
 ### F-600 — The “actual” sphere-system builder assigns, rather than constructs, the embedding in \(\partial W_2\)
 
 - Severity: **Critical**
