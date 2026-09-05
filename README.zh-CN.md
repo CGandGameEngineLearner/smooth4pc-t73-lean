@@ -247,6 +247,17 @@ C:\Users\Administrator\.cache\t73_post_x_framed_replacement_cells.jsonl.gz
 images 已分块生成；但3026对 local/global endpoints 位于不同 target charts，
 core 与 push 都还缺 extended transition。fail-closed 缺口记录于
 [`audit/t73_x_m1_ejection_overlap_transition_gap.json`](audit/t73_x_m1_ejection_overlap_transition_gap.json)。
+该缺口现已在 graph of charts 中由
+`C:\Users\Administrator\.cache\t73_x_m1_ejection_overlap_transitions.jsonl.gz`
+解决（约1.86 MB），收据为
+[`audit/t73_x_m1_ejection_overlap_transitions_receipt.json`](audit/t73_x_m1_ejection_overlap_transitions_receipt.json)。
+3026个互不相交的 framed mapping-cylinder germs 共含18156个 tetrahedra，且
+逐点匹配全部3026对 core/push boundaries。完整验收：`python
+scripts/verify_t73_x_m1_ejection_overlap_transitions.py --full --stub-cache
+C:\Users\Administrator\.cache\t73_x_m1_ejected_splice_stubs.jsonl.gz
+--middle-cache C:\Users\Administrator\.cache\t73_x_m1_ejected_middle_complements.jsonl.gz
+--check-cache-sha`。charted-cycle continuity 已通过；转换到单一 affine
+dotted-S³ chart 仍开放。
 三个原先缺坐标的 pre-cancellation dual-cell product ribbons 现已显式保存于
 [`geometry/t73_actual_dual_product_ribbons.json`](geometry/t73_actual_dual_product_ribbons.json)。
 每条平面 dual boundary 都有通向有理法向 push-off 的8个四边形/16个三角形

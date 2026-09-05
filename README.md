@@ -272,6 +272,17 @@ segment images now exist blockwise. Their 3026 local/global endpoint pairs use
 different target charts and still lack an extended transition for both core
 and push. This fail-closed gap is
 [`audit/t73_x_m1_ejection_overlap_transition_gap.json`](audit/t73_x_m1_ejection_overlap_transition_gap.json).
+It is now resolved in the graph of charts by
+`C:\Users\Administrator\.cache\t73_x_m1_ejection_overlap_transitions.jsonl.gz`
+(about 1.86 MB), with receipt
+[`audit/t73_x_m1_ejection_overlap_transitions_receipt.json`](audit/t73_x_m1_ejection_overlap_transitions_receipt.json).
+The 3026 disjoint framed mapping-cylinder germs contain 18156 tetrahedra and
+match all 3026 core and push boundary pairs. Full check: `python
+scripts/verify_t73_x_m1_ejection_overlap_transitions.py --full --stub-cache
+C:\Users\Administrator\.cache\t73_x_m1_ejected_splice_stubs.jsonl.gz
+--middle-cache C:\Users\Administrator\.cache\t73_x_m1_ejected_middle_complements.jsonl.gz
+--check-cache-sha`. Charted-cycle continuity now passes; conversion to one
+affine dotted-S3 chart remains open.
 The three missing pre-cancellation dual-cell product ribbons are now explicit
 in [`geometry/t73_actual_dual_product_ribbons.json`](geometry/t73_actual_dual_product_ribbons.json).
 Each planar dual boundary has an eight-quadrilateral/16-triangle annulus to a

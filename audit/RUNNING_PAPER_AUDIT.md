@@ -3482,7 +3482,7 @@ Topology-source checks completed 2026-09-04:
 ### F-595 — 3026 local/global ejection overlap transitions are still missing
 
 - Severity: **Critical x/m1 cancellation gluing correction**
-- Status: **BLOCK IMAGES COMPLETE; CORE/PUSH CHART GLUING OPEN**
+- Status: **GAP CONFIRMED HERE; RESOLVED IN GRAPH OF CHARTS BY F-596**
 - Evidence: `audit/t73_x_m1_ejection_overlap_transition_gap.json`,
   `scripts/audit_t73_x_m1_ejection_overlap_transition_gap.py`, and its test.
 - Finding: every one of the 1513 parallel complements has two interfaces.
@@ -3497,7 +3497,35 @@ Topology-source checks completed 2026-09-04:
   homotopy until the underlying target chart overlap is constructed.
 - Repair: construct disjoint framed mapping-cylinder germs at both ends of
   every parallel complement, verify their boundary maps against both F-591 and
-  F-594, then rerun cycle continuity before any unified S3 projection.
+  F-594, then rerun cycle continuity before any unified S3 projection. F-596
+  performs exactly this repair; the single affine S3 realization remains open.
+
+### F-596 — All 3026 local/global framed overlap transitions are explicit and verified
+
+- Severity: **x/m1 cancellation / framed chart gluing**
+- Status: **CHARTED CORE/PUSH CONTINUITY PASS; SINGLE AFFINE S3 CHART OPEN**
+- Evidence: `scripts/build_t73_x_m1_ejection_overlap_transitions.py`,
+  `scripts/verify_t73_x_m1_ejection_overlap_transitions.py`,
+  `audit/t73_x_m1_ejection_overlap_transitions_receipt.json`, its test, and
+  the gzip JSONL cache named in the receipt.
+- Construction: for each parallel level L and both complement ends, the
+  support interval `[L-1/4,L+1/4]` carries a framed mapping-cylinder cube. Its
+  global boundary is the F-594 annulus-ejection core/product-push strip; its
+  local boundary is recomputed through the F-589 144-simplex cubical map with
+  the uniform outward push. A six-tetrahedron cube triangulation gives 18,156
+  transition tetrahedra over all 3026 interfaces.
+- Disjointness/incidence: adjacent levels differ by 20, so all 1513 support
+  intervals are pairwise disjoint. The independent verifier streams F-591,
+  F-594 and the transition cache together and checks all 3026 core center
+  boundary maps and all 3026 push center boundary maps exactly. Cache SHA and
+  component/band/side ordering pass. Verdict:
+  `PASS_X_M1_FRAMED_OVERLAP_TRANSITIONS_FULL`.
+- Consequence: the F-590 lane, F-591 local-stub, F-594 middle, and F-596
+  transition cells now form continuous framed replacement cycles in their
+  verified atlas. This resolves F-595 at the graph-of-charts level.
+- Boundary: the atlas has not yet been realized as one affine dotted-S3
+  embedding. A common triangulated target manifold and explicit chart
+  embeddings/inverses are still required before projecting a complete PD.
 
 ### F-600 — The “actual” sphere-system builder assigns, rather than constructs, the embedding in \(\partial W_2\)
 

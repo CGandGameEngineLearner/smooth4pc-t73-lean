@@ -1,0 +1,29 @@
+{
+  "ambient_ejection_receipt_sha256": "4F25838F6FFCEF75571AEBCB86EE89B8695647FF5424543A836EC075C52625ED",
+  "ambient_ejection_sha256": "A05A7B319BB75C2429EA2FF8758DF7BC3D1EFED16BCFBB02CF51996DA6578E8F",
+  "builder_sha256": "4A708C65271772FFD432262E6C575590B2CF139401BDCA06F579FAE446ABF50F",
+  "cache_path": "C:\\Users\\Administrator\\.cache\\t73_x_m1_ejection_overlap_transitions.jsonl.gz",
+  "cache_sha256": "32648E772365AF89A90C78642925F9000B1085B97E255BCA5DE24CE99A720ABB",
+  "cache_size": 1855444,
+  "component_interface_counts": {
+    "m_2": 538,
+    "m_3": 2480,
+    "r_xy": 4,
+    "r_zx": 4
+  },
+  "core_transition_count": 3026,
+  "foliation_sha256": "5AC6BEF2C6C61B2FC19020539B05FB86A091E5602A7CA85B81B4C5006BE1C8F7",
+  "interface_count": 3026,
+  "local_boundary_piece_count": 6052,
+  "mapping_cylinder_tetrahedra_per_interface": 6,
+  "middle_receipt_sha256": "14798C0A495B2FC5A6ADC304CF15E3813EE3FA13B4EE5046A851FE32EE32E517",
+  "product_extension_sha256": "EFB6CBB2B2B32F4A37FB8D257DBA69C9D0F0ED32C9624A92185B6343A5D30775",
+  "push_transition_count": 3026,
+  "record_stream_sha256": "24A3F36A6385F76602661600D90E85A33EA79A8D4260E670F95B24C7C784A62F",
+  "schema": "t73_x_m1_ejection_overlap_transitions_receipt/v1",
+  "scope_boundary": "transition cells and disjoint level supports constructed; boundary-center equality against F-591/F-594 caches requires independent full verification",
+  "sha256": "6F1F2BC4BA12267CFF8A0DE44D91FA9475E49CEA743FE2FCA2B911710E50E3E3",
+  "stub_receipt_sha256": "8EF2FB21E4082741A43A758093F0EA95A354AB2D9C94EA8DB505999CAF4C37C4",
+  "total_mapping_cylinder_tetrahedra": 18156,
+  "verdict": "PASS_X_M1_FRAMED_OVERLAP_TRANSITION_CELLS_CONSTRUCTED"
+}
