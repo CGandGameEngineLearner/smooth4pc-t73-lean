@@ -152,6 +152,10 @@ disjoint, giving `PASS_CANDIDATE_BAND_SURFACE_OTHER_CORE_CLEARANCE_ONLY`.
 `verify_t73_candidate_t_band0_relative_boundary.py` then checks the actual
 source interval, parallel h_CS target interval, both movie lanes and their
 boundary normals, reporting `PASS_CANDIDATE_BAND0_RELATIVE_BOUNDARY_ONLY`.
+`verify_t73_candidate_t_band0_relative_contacts.py` solves exact
+segment-triangle intersection intervals and proves every m1/h_CS contact lies
+on those two attachment edges, reporting
+`PASS_CANDIDATE_BAND0_RELATIVE_CONTACTS_ONLY`.
 `python3 scripts/verify_t73_candidate_t_band0_splice.py` currently returns
 `OPEN_PERIODIC_T3_LIFT_REQUIRED`: the saved source core uses wrapped torus
 coordinates and must be lifted before affine PL intersection tests are valid.

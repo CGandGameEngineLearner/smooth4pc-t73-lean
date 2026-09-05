@@ -77,18 +77,54 @@ def point_in_triangle(value, triangle) -> bool:
 
 
 def segment_meets_triangle(segment, triangle) -> bool:
+    return segment_triangle_parameter_interval(segment, triangle) is not None
+
+
+def segment_triangle_parameter_interval(segment, triangle):
+    """Return the exact segment-parameter interval lying in a triangle."""
     start, end = segment
     origin, first, second = triangle
-    columns = [
-        tuple(end[i] - start[i] for i in range(4)),
-        tuple(origin[i] - first[i] for i in range(4)),
-        tuple(origin[i] - second[i] for i in range(4)),
-    ]
-    solution = solve_columns(columns, tuple(origin[i] - start[i] for i in range(4)))
-    if solution is None:
-        return False
-    parameter, first_weight, second_weight = solution
-    return 0 <= parameter <= 1 and first_weight >= 0 and second_weight >= 0 and first_weight + second_weight <= 1
+    direction = tuple(end[i] - start[i] for i in range(4))
+    delta = tuple(start[i] - origin[i] for i in range(4))
+    u = tuple(first[i] - origin[i] for i in range(4))
+    v = tuple(second[i] - origin[i] for i in range(4))
+    axes = next(
+        ((i, j) for i in range(4) for j in range(i + 1, 4) if u[i] * v[j] - u[j] * v[i]),
+        None,
+    )
+    if axes is None:
+        raise AssertionError("segment tested against a degenerate triangle")
+    i, j = axes
+    determinant = u[i] * v[j] - u[j] * v[i]
+    a0 = (delta[i] * v[j] - delta[j] * v[i]) / determinant
+    a1 = (direction[i] * v[j] - direction[j] * v[i]) / determinant
+    b0 = (u[i] * delta[j] - u[j] * delta[i]) / determinant
+    b1 = (u[i] * direction[j] - u[j] * direction[i]) / determinant
+    fixed_parameter = None
+    for axis in range(4):
+        constant = delta[axis] - a0 * u[axis] - b0 * v[axis]
+        coefficient = direction[axis] - a1 * u[axis] - b1 * v[axis]
+        if coefficient:
+            value = -constant / coefficient
+            if fixed_parameter is not None and value != fixed_parameter:
+                return None
+            fixed_parameter = value
+        elif constant:
+            return None
+    expressions = [(a0, a1), (b0, b1), (1 - a0 - b0, -a1 - b1)]
+    if fixed_parameter is not None:
+        if 0 <= fixed_parameter <= 1 and all(c0 + c1 * fixed_parameter >= 0 for c0, c1 in expressions):
+            return fixed_parameter, fixed_parameter
+        return None
+    low, high = Fraction(0), Fraction(1)
+    for constant, coefficient in expressions:
+        if coefficient > 0:
+            low = max(low, -constant / coefficient)
+        elif coefficient < 0:
+            high = min(high, -constant / coefficient)
+        elif constant < 0:
+            return None
+    return (low, high) if low <= high else None
 
 
 def triangles_intersect(first, second):

@@ -2269,8 +2269,13 @@ Topology-source checks completed 2026-09-04:
   equal the candidate movie lanes, and the endpoint normals equal the actual
   source/target framing records. It reports
   `PASS_CANDIDATE_BAND0_RELATIVE_BOUNDARY_ONLY`.
-- Remaining boundary: absence of extra contacts with m1/h_CS and the actual
-  Kirby-slide interpretation remain open.
+- Relative-contact closure: exact segment-triangle parameter intervals find six
+  m1 contacts and three parallel-h_CS contacts. Every interval endpoint lies
+  on the declared source or target attachment edge; no extra curve contact is
+  present. The verifier reports
+  `PASS_CANDIDATE_BAND0_RELATIVE_CONTACTS_ONLY`.
+- Remaining boundary: the actual Kirby-slide/reconnection interpretation and
+  the remaining five t-bands are open.
 
 ### F-600 — The “actual” sphere-system builder assigns, rather than constructs, the embedding in \(\partial W_2\)
 

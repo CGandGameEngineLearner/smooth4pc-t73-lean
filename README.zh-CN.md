@@ -136,6 +136,9 @@ push-off surface 和所有 disk-vs-push triangle pairs，返回
 `verify_t73_candidate_t_band0_relative_boundary.py` 随后检查 actual source
 interval、parallel h_CS target interval、两条 movie lane 与其边界 normal，返回
 `PASS_CANDIDATE_BAND0_RELATIVE_BOUNDARY_ONLY`。
+`verify_t73_candidate_t_band0_relative_contacts.py` 求解精确 segment-triangle
+交集参数区间，并证明所有 m1/h_CS 接触都位于这两条 attachment edge，返回
+`PASS_CANDIDATE_BAND0_RELATIVE_CONTACTS_ONLY`。
 `python3 scripts/verify_t73_candidate_t_band0_splice.py` 当前返回
 `OPEN_PERIODIC_T3_LIFT_REQUIRED`：保存的源 core 使用 torus wrap 坐标，必须先 lift
 到 universal cover，才能进行有效的 affine PL 相交检查。
