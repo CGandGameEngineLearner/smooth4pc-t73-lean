@@ -26,6 +26,8 @@ SPECS = (
     ("gmsh_source_prefix20_receipt", "audit/t73_selected_source_gmsh_prefix20.json", "VERIFIED_RESOURCE_RECEIPT_ONLY"),
     ("gmsh_source_prefix10_frame", "geometry/examples/t73_selected_source_gmsh_prefix10_frame.json", "VERIFIED_PREFIX_ONLY"),
     ("gmsh_source_prefix10_verification", "audit/t73_selected_source_gmsh_prefix10_frame_verification.json", "VERIFIED_PREFIX_RECEIPT_ONLY"),
+    ("gmsh_source_prefix20_frame", "geometry/examples/t73_selected_source_gmsh_prefix20_frame.json", "VERIFIED_PREFIX_ONLY"),
+    ("gmsh_source_prefix20_verification", "audit/t73_selected_source_gmsh_prefix20_frame_verification.json", "VERIFIED_PREFIX_RECEIPT_ONLY"),
 )
 
 
@@ -96,6 +98,20 @@ def verify_live_artifacts() -> dict[str, dict[str, Any]]:
         "t73_gmsh_frame_receipt_for_v2",
     )
     gmsh_frame_receipt.check_files(data["gmsh_source_prefix10_verification"])
+    gmsh_prefix20_expected = gmsh_frame_receipt.expected_counts(
+        prefix=20,
+        vertices=4134,
+        tetrahedra=23725,
+        arcs=20,
+        ribbons=20,
+        boundary_components=5,
+        exact_exterior_volume="63968",
+    )
+    gmsh_frame_receipt.check_files(
+        data["gmsh_source_prefix20_verification"],
+        ROOT / "geometry/examples/t73_selected_source_gmsh_prefix20_frame.json",
+        gmsh_prefix20_expected,
+    )
 
     gmsh_verifier = load_module(
         "scripts/verify_t73_selected_source_gmsh_probe.py",
@@ -170,7 +186,7 @@ def build() -> dict[str, Any]:
             "id": "complete_630_ribbon_tetrahedral_frame",
             "required_path": "geometry/t73_selected_source_tetrahedral_frame.json",
             "status": "OPEN",
-            "reason": "ten-ribbon prefix passes; monolithic 20-ribbon TetGen exceeds safe memory",
+            "reason": "twenty-ribbon Gmsh frame passes; the complete 630-ribbon frame is absent",
         },
         {
             "id": "actual_ar_relative_binding",
@@ -217,9 +233,25 @@ def build() -> dict[str, Any]:
             "gmsh_probe_ribbons": data["gmsh_source_prefix20_receipt"][
                 "route_prefix"
             ],
-            "gmsh_frame_ribbons": data["gmsh_source_prefix10_frame"][
+            "gmsh_frame_prefix": 20,
+            "gmsh_frame_vertices": data["gmsh_source_prefix20_frame"][
+                "verification"
+            ]["vertices"],
+            "gmsh_frame_tetrahedra": data["gmsh_source_prefix20_frame"][
+                "verification"
+            ]["tetrahedra"],
+            "gmsh_frame_arcs": data["gmsh_source_prefix20_frame"]["verification"][
+                "arcs"
+            ],
+            "gmsh_frame_ribbons": data["gmsh_source_prefix20_frame"][
                 "verification"
             ]["ribbons"],
+            "gmsh_frame_boundary_components": data["gmsh_source_prefix20_frame"][
+                "verification"
+            ]["boundary_components"],
+            "gmsh_frame_exact_volume": data["gmsh_source_prefix20_frame"][
+                "verification"
+            ]["exact_exterior_volume"],
         },
         "policy": {
             "fixture_or_prefix_is_not_t73_completion": True,

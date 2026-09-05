@@ -30,7 +30,7 @@ class CompleteGeometryBundleV2Test(unittest.TestCase):
     def test_manifest_is_exact_live_rebuild(self):
         self.builder.validate(self.manifest)
         self.assertEqual(self.manifest["bundle_status"], "OPEN")
-        self.assertEqual(len(self.manifest["artifacts"]), 10)
+        self.assertEqual(len(self.manifest["artifacts"]), 12)
         self.assertEqual(len(self.manifest["t73_completion_gates"]), 4)
 
     def test_schema_and_closed_counts(self):
@@ -50,7 +50,13 @@ class CompleteGeometryBundleV2Test(unittest.TestCase):
                 "tetgen_prefix_ribbons": 10,
                 "pd_fixture_core_components": 7,
                 "gmsh_probe_ribbons": 20,
-                "gmsh_frame_ribbons": 10,
+                "gmsh_frame_prefix": 20,
+                "gmsh_frame_vertices": 4134,
+                "gmsh_frame_tetrahedra": 23725,
+                "gmsh_frame_arcs": 20,
+                "gmsh_frame_ribbons": 20,
+                "gmsh_frame_boundary_components": 5,
+                "gmsh_frame_exact_volume": "63968",
             },
         )
 

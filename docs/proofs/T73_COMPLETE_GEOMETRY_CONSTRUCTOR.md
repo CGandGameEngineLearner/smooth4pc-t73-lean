@@ -15,8 +15,9 @@
 
 扩展清单 `geometry/t73_complete_geometry_bundle_manifest.v2.json` 还纳入
 defect-coend 类型图、AR 源坐标 atlas、七分量 PD 真例与开源软件收据，以及
-TetGen 十-ribbon 前缀、Gmsh 二十-ribbon资源收据和 Gmsh 十-ribbon完整
-frame 前缀。它把 `VERIFIED_TYPING_ONLY`、
+TetGen 十-ribbon 前缀、Gmsh 二十-ribbon 资源收据、Gmsh 十-ribbon历史
+frame 基线和经独立验收的 Gmsh 二十-ribbon 完整 frame 前缀。它把
+`VERIFIED_TYPING_ONLY`、
 `VERIFIED_PREFIX_ONLY`、`VERIFIED_FIXTURE_ONLY` 与真正的 T73 完成状态分开。
 
 ## 2. 可复现命令
@@ -110,7 +111,8 @@ v2 清单严格列出四个仍缺的 T73 witness：
    chain equivalence；
 2. 实际完整 Kirby 输入，即统一 cut/surgery dotted-circle presentation、
    两次 band splicing、dotted meridians 与五个 push-offs；
-3. 全部 630 ribbons 的共同四面体 frame；
+3. 从已验收的 Gmsh 二十-ribbon frame（4134 顶点、23725 四面体）扩展到
+   全部 630 ribbons 的共同四面体 frame；
 4. actual AR coefficient exterior 到所保存 canonical source 的相对绑定。
 
 前缀、真例和类型图均不能关闭这些门。因此 v2 的 bundle status 仍为

@@ -89,11 +89,29 @@
       "payload_sha256": "DE5AD06CA4804F6439BC4E320C512E157FC7B17A2C5EB8AC2806CD2D942B24DF",
       "schema": "t73_gmsh_frame_verification_receipt/v1",
       "t73_completion_status": "OPEN"
+    },
+    {
+      "content_sha256": "5947E0BF48B40ACC1EB924E16E8F534F2D6D250436B97866AD7F84D2705EDB35",
+      "evidence_status": "VERIFIED_PREFIX_ONLY",
+      "id": "gmsh_source_prefix20_frame",
+      "path": "geometry/examples/t73_selected_source_gmsh_prefix20_frame.json",
+      "payload_sha256": "F1130CFC689808B8EEBB06048D3DDEA337EA34F2AF065BD7A7BDD1C75CBA854B",
+      "schema": "t73_selected_source_tetrahedral_frame/v1",
+      "t73_completion_status": "OPEN"
+    },
+    {
+      "content_sha256": "94D3EA5088F3CF8BA228AB92BA056035D2DA48492D79ECF12E78B1E816ECE54C",
+      "evidence_status": "VERIFIED_PREFIX_RECEIPT_ONLY",
+      "id": "gmsh_source_prefix20_verification",
+      "path": "audit/t73_selected_source_gmsh_prefix20_frame_verification.json",
+      "payload_sha256": "0DDBF9F733DC6A628C9DE0CAEFDF66BBBD101971AB0E7BDF03C3AB31C6F81AAF",
+      "schema": "t73_gmsh_frame_verification_receipt/v1",
+      "t73_completion_status": "OPEN"
     }
   ],
   "bundle_status": "OPEN",
   "bundle_version": 2,
-  "manifest_payload_sha256": "C692806B2D6753D8BAD186345B853C6487C0D963203E177C07BAD23BFBAAB0D6",
+  "manifest_payload_sha256": "8D920AABACA7F0EF2AD18BC617A356936ECA754E8B2519D540C7A91481B84C44",
   "policy": {
     "all_completion_gates_must_pass_before_bundle_completion": true,
     "fixture_or_prefix_is_not_t73_completion": true,
@@ -115,7 +133,7 @@
     },
     {
       "id": "complete_630_ribbon_tetrahedral_frame",
-      "reason": "ten-ribbon prefix passes; monolithic 20-ribbon TetGen exceeds safe memory",
+      "reason": "twenty-ribbon Gmsh frame passes; the complete 630-ribbon frame is absent",
       "required_path": "geometry/t73_selected_source_tetrahedral_frame.json",
       "status": "OPEN"
     },
@@ -129,7 +147,13 @@
   "verified_counts": {
     "coend_oriented_band_obligations": 4,
     "coend_wrong_side_intervals": 8,
-    "gmsh_frame_ribbons": 10,
+    "gmsh_frame_arcs": 20,
+    "gmsh_frame_boundary_components": 5,
+    "gmsh_frame_exact_volume": "63968",
+    "gmsh_frame_prefix": 20,
+    "gmsh_frame_ribbons": 20,
+    "gmsh_frame_tetrahedra": 23725,
+    "gmsh_frame_vertices": 4134,
     "gmsh_probe_ribbons": 20,
     "pd_fixture_core_components": 7,
     "source_endpoints": 1260,

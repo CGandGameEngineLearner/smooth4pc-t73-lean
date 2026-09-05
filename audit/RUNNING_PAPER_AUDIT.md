@@ -1959,13 +1959,14 @@ Topology-source checks completed 2026-09-04:
   and actual-AR-to-canonical-source binding. Schema and mutation tests reject
   promotion of any fixture or prefix to T73 completion.
 
-### F-536 — Gmsh HXT scales to a 20-ribbon conformal probe after boundary connectors are embedded
+### F-536 — Gmsh HXT scales to an independently verified 20-ribbon frame
 
-- Severity: **Alternative triangulation progress / receipt only**
-- Status: **PREFIX-20 RESOURCE PROBE PASS; COMPLETE FRAME OPEN**
+- Severity: **Alternative triangulation progress / verified prefix frame**
+- Status: **PREFIX-20 COMPLETE FRAME PASS; COMPLETE 630-RIBBON FRAME OPEN**
 - Evidence: `scripts/probe_t73_selected_source_gmsh.py`,
-  `audit/t73_selected_source_gmsh_prefix20.json`, its fail-closed receipt
-  verifier/tests, the complete prefix-10 frame and verification receipt, and
+  `audit/t73_selected_source_gmsh_prefix20.json`, its fail-closed resource
+  verifier/tests, the complete prefix-10 and prefix-20 frames and their
+  verification receipts, and
   `docs/proofs/T73_SELECTED_SOURCE_GMSH_PROBE.md`.
 - First failure and repair: embedding the ribbon surface only in the volume
   left each core--push endpoint connector crossing an unrefined hole-boundary
@@ -1976,21 +1977,24 @@ Topology-source checks completed 2026-09-04:
   prefix-20 run has 80 ribbon surfaces, 40 boundary connectors, 4134 nodes and
   23725 tetrahedra. This is substantially better than TetGen's 14.6 GB
   failure at the same prefix.
-- Stronger prefix artifact: the ten-ribbon mesh is also exported with 2664
-  rationally restored nodes, 14599 tetrahedra, all boundary/curve/surface
-  memberships and exact source binding. A Gmsh-free verifier recovers five
-  \(S^2\) boundaries, ten subdivided core/push paths and ribbon disks,
-  consistent nonzero rational tetrahedron orientations and total volume
-  63968; it returns `PASS_PREFIX_ONLY`.
-- Scope firewall: the prefix-20 object remains a counts-only receipt whose
-  verifier returns `PASS_RECEIPT_ONLY`; the prefix-10 frame is a genuine but
-  incomplete frame. Both explicitly leave the 630-ribbon frame open. A
-  prefix-50 run was interrupted before a result and is recorded as neither
-  pass nor fail.
-- Next construction: run the now-implemented export/restoration path at
-  increasing prefixes and ultimately all 630 ribbons, retaining the same
-  independent exact checks. A prefix-20 complete export was interrupted before
-  writing and is not treated as a result.
+- Stronger prefix artifacts: the ten- and twenty-ribbon meshes are exported
+  with 2664/4134 rationally restored nodes, 14599/23725 tetrahedra, all
+  boundary/curve/surface memberships and exact source binding. The independent
+  Gmsh-free verifier recovers five \(S^2\) boundaries, every subdivided
+  core/push path and ribbon disk, consistent nonzero rational tetrahedron
+  orientations and total volume 63968. Both return `PASS_PREFIX_ONLY`.
+- Prefix-20 receipt: the first saved receipt was written only after a full
+  independent verifier run. It binds frame byte SHA, payload SHA, source SHA,
+  verifier path, scope and the exact 4134/23725/20/20/5/63968 counts. Routine
+  checks do not rerun the expensive vertex-link calculation and reject
+  `PASS_COMPLETE` promotion.
+- Scope firewall: the earlier counts-only prefix-20 resource receipt remains
+  `PASS_RECEIPT_ONLY`; the new prefix-20 frame is genuine but incomplete.
+  Both explicitly leave the 630-ribbon frame open. A prefix-50 run was
+  interrupted before a result and is recorded as neither pass nor fail.
+- Next construction: run the implemented export/restoration path at larger
+  prefixes and ultimately all 630 ribbons, retaining the same independent
+  exact checks.
 
 ### F-600 — The “actual” sphere-system builder assigns, rather than constructs, the embedding in \(\partial W_2\)
 

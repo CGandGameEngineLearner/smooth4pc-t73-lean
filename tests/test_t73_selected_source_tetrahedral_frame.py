@@ -10,6 +10,7 @@ import unittest
 ROOT = Path(__file__).resolve().parents[1]
 PREFIX10 = ROOT / "geometry" / "examples" / "t73_selected_source_tetrahedral_prefix10.json"
 GMSH_PREFIX10 = ROOT / "geometry" / "examples" / "t73_selected_source_gmsh_prefix10_frame.json"
+GMSH_PREFIX20 = ROOT / "geometry" / "examples" / "t73_selected_source_gmsh_prefix20_frame.json"
 SCHEMA = ROOT / "data" / "T73_SELECTED_SOURCE_TETRAHEDRAL_FRAME.schema.json"
 
 
@@ -72,6 +73,27 @@ class SelectedSourceTetrahedralFrameTest(unittest.TestCase):
 
         jsonschema.validate(
             json.loads(GMSH_PREFIX10.read_text(encoding="utf-8")),
+            json.loads(SCHEMA.read_text(encoding="utf-8")),
+        )
+
+    def test_saved_gmsh_prefix20_is_a_complete_frame_prefix(self) -> None:
+        verifier = load(
+            "verify_t73_selected_source_tetrahedral_frame.py",
+            "source_gmsh_prefix20_verifier",
+        )
+        result = verifier.inspect(GMSH_PREFIX20)
+        self.assertEqual(result["verdict"], "PASS_PREFIX_ONLY")
+        self.assertEqual(result["arcs"], 20)
+        self.assertEqual(result["ribbons"], 20)
+        self.assertEqual(result["boundary_components"], 5)
+        self.assertEqual(result["vertices"], 4134)
+        self.assertEqual(result["tetrahedra"], 23725)
+        self.assertEqual(result["exact_exterior_volume"], "63968")
+
+        import jsonschema
+
+        jsonschema.validate(
+            json.loads(GMSH_PREFIX20.read_text(encoding="utf-8")),
             json.loads(SCHEMA.read_text(encoding="utf-8")),
         )
 

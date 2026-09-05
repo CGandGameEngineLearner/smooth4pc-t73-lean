@@ -19,8 +19,8 @@
     "bundle_status": {"const": "OPEN"},
     "artifacts": {
       "type": "array",
-      "minItems": 10,
-      "maxItems": 10,
+      "minItems": 12,
+      "maxItems": 12,
       "items": {"$ref": "#/$defs/artifact"}
     },
     "t73_completion_gates": {
@@ -41,7 +41,13 @@
         "tetgen_prefix_ribbons",
         "pd_fixture_core_components",
         "gmsh_probe_ribbons",
-        "gmsh_frame_ribbons"
+        "gmsh_frame_prefix",
+        "gmsh_frame_vertices",
+        "gmsh_frame_tetrahedra",
+        "gmsh_frame_arcs",
+        "gmsh_frame_ribbons",
+        "gmsh_frame_boundary_components",
+        "gmsh_frame_exact_volume"
       ],
       "properties": {
         "source_endpoints": {"const": 1260},
@@ -52,7 +58,13 @@
         "tetgen_prefix_ribbons": {"const": 10},
         "pd_fixture_core_components": {"const": 7},
         "gmsh_probe_ribbons": {"const": 20},
-        "gmsh_frame_ribbons": {"const": 10}
+        "gmsh_frame_prefix": {"const": 20},
+        "gmsh_frame_vertices": {"const": 4134},
+        "gmsh_frame_tetrahedra": {"const": 23725},
+        "gmsh_frame_arcs": {"const": 20},
+        "gmsh_frame_ribbons": {"const": 20},
+        "gmsh_frame_boundary_components": {"const": 5},
+        "gmsh_frame_exact_volume": {"const": "63968"}
       }
     },
     "policy": {
