@@ -149,6 +149,9 @@ the push-off surface and all disk-versus-push triangle pairs.
 `verify_t73_candidate_t_band0_surface_clearance.py` checks the disk and push
 disk against all five other cores; all 128184 quotient AABB pairs are exactly
 disjoint, giving `PASS_CANDIDATE_BAND_SURFACE_OTHER_CORE_CLEARANCE_ONLY`.
+`verify_t73_candidate_t_band0_relative_boundary.py` then checks the actual
+source interval, parallel h_CS target interval, both movie lanes and their
+boundary normals, reporting `PASS_CANDIDATE_BAND0_RELATIVE_BOUNDARY_ONLY`.
 `python3 scripts/verify_t73_candidate_t_band0_splice.py` currently returns
 `OPEN_PERIODIC_T3_LIFT_REQUIRED`: the saved source core uses wrapped torus
 coordinates and must be lifted before affine PL intersection tests are valid.

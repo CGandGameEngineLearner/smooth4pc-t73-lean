@@ -2262,11 +2262,15 @@ Topology-source checks completed 2026-09-04:
 - Other-core clearance: the disk and push disk are compared against actual
   m2/m3 and candidate-lifted r_xy/r_yz/r_zx. All 128184 quotient
   triangle/segment pairs are rejected by exact disjoint AABBs, yielding
-  `PASS_CANDIDATE_BAND_SURFACE_OTHER_CORE_CLEARANCE_ONLY`. The remaining
-  current-link issue is relative contact with the intended source m1 and target
-  h_CS intervals only.
-- Boundary: source/target relative-contact exactness and actual Kirby-slide
-  equivalence remain open.
+  `PASS_CANDIDATE_BAND_SURFACE_OTHER_CORE_CLEARANCE_ONLY`.
+- Relative-boundary binding: the independent verifier checks that the disk's
+  source edge is exactly the lifted actual m1 attachment interval, its target
+  edge is exactly the parallel h_CS interval, both remaining boundary chains
+  equal the candidate movie lanes, and the endpoint normals equal the actual
+  source/target framing records. It reports
+  `PASS_CANDIDATE_BAND0_RELATIVE_BOUNDARY_ONLY`.
+- Remaining boundary: absence of extra contacts with m1/h_CS and the actual
+  Kirby-slide interpretation remain open.
 
 ### F-600 — The “actual” sphere-system builder assigns, rather than constructs, the embedding in \(\partial W_2\)
 
