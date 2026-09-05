@@ -2032,6 +2032,22 @@ Topology-source checks completed 2026-09-04:
   partition the exterior and prove exact matching triangulations on every cut
   interface before independently verifying their simplicial gluing.
 
+### F-539 — A balanced exterior partition must exactly clip ruled ribbons at its interfaces
+
+- Severity: **Partitioned-frame design constraint**
+- Status: **EXACT INTERFACE CLIPPING REQUIRED BEFORE BLOCK MESHING**
+- Evidence: evaluating all 2520 saved rational ruled-ribbon triangles against
+  axis-aligned cuts gives a best `z` cut that crosses only three triangles, but
+  leaves essentially all triangles on one side. In contrast, the central
+  `z=0` cut leaves 588 below and 736 above while crossing 1196 triangles.
+  Thus a low-crossing single plane cannot balance the 630-ribbon workload.
+- Consequence: a valid partitioned constructor must clip every crossed ruled
+  triangle in exact rational arithmetic, triangulate the resulting interface
+  polygons canonically, bind both adjacent block meshes to those same interface
+  simplices, and verify the gluing recovers every original carrier triangle.
+  Assigning a whole ribbon to a block by centroid or route index would leave
+  unrepresented crossings and cannot certify a common frame.
+
 ### F-600 — The “actual” sphere-system builder assigns, rather than constructs, the embedding in \(\partial W_2\)
 
 - Severity: **Critical**
