@@ -199,6 +199,15 @@ three-tetrahedron attaching 3-ball, the resulting PL 4-ball/S3 boundary, the
 actual barycentric belt crossing and AR framing, and the six-component
 post-cancel manifest. Verdict:
 `PASS_T_HCS_HANDLE_PAIR_DELETION_AND_POST_LINK_STATE`.
+The first x-slide attachment layer is
+[`geometry/t73_x_band0_attachment_surface.json`](geometry/t73_x_band0_attachment_surface.json).
+Rebuild and check it with `build_t73_x_band0_attachment_surface.py --check`
+and `verify_t73_x_band0_attachment_surface.py`. It binds `c1:letter:0` to the
+post-cancel m2 vertex range `[20,22]` in deck `[269,40,0]`, binds the target to
+the twentieth framed m1 parallel, and verifies a six-vertex PL disk. Verdict:
+`PASS_X_BAND0_ACTUAL_ATTACHMENTS_CANDIDATE_FRAMING_INTERIOR`; current-link
+clearance and actual boundary framing are still required before this is a
+Kirby slide.
 The first end-to-end candidate slide, including an explicit closed post-slide
 4D core, is
 [`geometry/t73_candidate_t_band0_splice.json`](geometry/t73_candidate_t_band0_splice.json),

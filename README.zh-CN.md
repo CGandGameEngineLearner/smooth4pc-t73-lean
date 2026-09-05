@@ -176,6 +176,14 @@ handle-pair 的下一层数据如下。
 attaching 3-ball、所得 PL 4-ball/S3 边界、实际 belt 重心交点、AR framing，及
 六分量 post-cancel manifest。verdict 为
 `PASS_T_HCS_HANDLE_PAIR_DELETION_AND_POST_LINK_STATE`。
+第一条 x-slide attachment 层保存于
+[`geometry/t73_x_band0_attachment_surface.json`](geometry/t73_x_band0_attachment_surface.json)。
+使用 `build_t73_x_band0_attachment_surface.py --check` 与
+`verify_t73_x_band0_attachment_surface.py` 重建/验收。它将 `c1:letter:0`
+绑定到 post-cancel m2 的 vertex range `[20,22]`、deck `[269,40,0]`，将 target
+绑定到第 20 条 framed m1 parallel，并验证六顶点 PL 盘。verdict 为
+`PASS_X_BAND0_ACTUAL_ATTACHMENTS_CANDIDATE_FRAMING_INTERIOR`；在升级为 Kirby
+slide 前仍需 current-link clearance 与 actual boundary framing。
 第一条端到端 candidate slide（含显式闭合的 post-slide 4D core）位于
 [`geometry/t73_candidate_t_band0_splice.json`](geometry/t73_candidate_t_band0_splice.json)，
 使用 `python3 scripts/build_t73_candidate_t_band0_splice.py --check` 重建。

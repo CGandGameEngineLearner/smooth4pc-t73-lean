@@ -2464,6 +2464,35 @@ Topology-source checks completed 2026-09-04:
   band to this post-cancel six-component framed state and replay all 1513
   x-slides sequentially before deleting x/m1.
 
+### F-560 — x-band 0 is bound to the actual post-cancel m2 arc and a framed m1 parallel
+
+- Severity: **Second cancellation reconstruction / first x-band layer**
+- Status: **ACTUAL ATTACHMENTS PASS; FRAMING INTERIOR AND CURRENT-LINK CLEARANCE OPEN**
+- Evidence: `scripts/build_t73_x_band0_attachment_surface.py`,
+  `scripts/verify_t73_x_band0_attachment_surface.py`,
+  `geometry/t73_x_band0_attachment_surface.json`, and its test.
+- Source binding: the Johnson embedding identifies `c1:letter:0` with the
+  actual x-handle arc `(1,2,3) x (1511/6040,-377/755,u=1)`. In the F-559
+  post-cancel m2 state it occurs uniquely at vertices 20--22 after deck
+  translation `(269,40,0)`. The collar ejection is the identity in this chart.
+  The source interval is the exact width-sized subarc around its x=2 belt
+  crossing.
+- Target binding: the stored target y-coordinate is exactly 20 times the m1
+  framing width, with z=0 and positive belt normal. Thus the target interval
+  is an actual local framed-parallel interval of the x-cancelling m1 arc, not a
+  bare point label.
+- Surface: the three scheduled positive-belt-face center points produce a
+  six-vertex, four-triangle rational disk whose x-cross-sections are the actual
+  source and target intervals. Exact checks prove Euler characteristic one,
+  nondegenerate triangles, disjoint opposite boundary lanes, and no nonlocal
+  self-intersection. The verdict is
+  `PASS_X_BAND0_ACTUAL_ATTACHMENTS_CANDIDATE_FRAMING_INTERIOR`.
+- Boundary: the current push normal remains a candidate. The next verifier
+  must derive source and target normals from the post-cancel framed link,
+  extend them without crossing zero, and prove disk/push clearance against all
+  six current components before constructing x-state 0 to 1. Only then may the
+  same indexed procedure expand to the remaining 1512 bands.
+
 ### F-600 — The “actual” sphere-system builder assigns, rather than constructs, the embedding in \(\partial W_2\)
 
 - Severity: **Critical**
