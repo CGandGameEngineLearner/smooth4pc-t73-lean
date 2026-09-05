@@ -219,6 +219,13 @@ C:\Users\Administrator\.cache\t73_post_x_framed_replacement_cells.jsonl.gz
 --check-cache-sha`。中间48416条 core 与48416条 push m1-complement segments
 仍为 unmapped：离开局部 germ 不能推出 collar 在那里恒等；下一步必须沿完整
 m1 构造 tubular trivialization。
+完整曲线 tubular layer 的第一步位于
+[`geometry/t73_m1_parallel_annulus_tubular_frame.json`](geometry/t73_m1_parallel_annulus_tubular_frame.json)。
+一个共同有理 outward vector 在全部34条 m1 segments 上与 tangent/parallel
+frame 横截；68个 annulus triangles 生成204个非退化 tubular tetrahedra，且
+274次精确 quotient 检查证明 source/push annuli 分离。使用 `python3
+scripts/verify_t73_m1_parallel_annulus_tubular_frame.py` 验收。这仍是 local PL
+frame；成为全局 embedded tube 前还需完成 nonincident tetrahedra clearance。
 三个原先缺坐标的 pre-cancellation dual-cell product ribbons 现已显式保存于
 [`geometry/t73_actual_dual_product_ribbons.json`](geometry/t73_actual_dual_product_ribbons.json)。
 每条平面 dual boundary 都有通向有理法向 push-off 的8个四边形/16个三角形

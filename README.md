@@ -239,6 +239,15 @@ C:\Users\Administrator\.cache\t73_post_x_framed_replacement_cells.jsonl.gz
 --check-cache-sha`. The middle 48416 core and 48416 push m1-complement
 segments remain unmapped: leaving the local germ does not prove the collar is
 the identity there. They require a full tubular trivialization along m1.
+The first full-curve tubular layer is
+[`geometry/t73_m1_parallel_annulus_tubular_frame.json`](geometry/t73_m1_parallel_annulus_tubular_frame.json).
+A common rational outward vector is transverse to the tangent/parallel frame
+on all 34 m1 segments; 68 annulus triangles give 204 nondegenerate tubular
+tetrahedra, and 274 exact quotient checks separate the source and pushed
+annuli. Verify with `python3
+scripts/verify_t73_m1_parallel_annulus_tubular_frame.py`. This is a local PL
+frame; exact nonincident tetrahedron clearance remains open before it becomes
+a globally embedded tube.
 The three missing pre-cancellation dual-cell product ribbons are now explicit
 in [`geometry/t73_actual_dual_product_ribbons.json`](geometry/t73_actual_dual_product_ribbons.json).
 Each planar dual boundary has an eight-quadrilateral/16-triangle annulus to a
