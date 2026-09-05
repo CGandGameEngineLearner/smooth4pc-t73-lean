@@ -1,0 +1,75 @@
+{
+  "ar_canonical_matrix": [
+    [
+      0,
+      0,
+      1
+    ],
+    [
+      189,
+      41,
+      0
+    ],
+    [
+      1240,
+      269,
+      32
+    ]
+  ],
+  "completion_status": "VERIFIED_LITERATURE_MATRIX_EXTRACTION_ONLY",
+  "interpretation": "Figure 9 relates the solid torus T_G to the surgery description of S3; sliding T_G off the link produces the knot description",
+  "left_elementary_matrix": [
+    [
+      1,
+      0,
+      0
+    ],
+    [
+      1,
+      1,
+      0
+    ],
+    [
+      1,
+      1,
+      1
+    ]
+  ],
+  "literature_source": "AR84 internal page 14, Figure 9a/9b discussion",
+  "right_elementary_matrix": [
+    [
+      1,
+      0,
+      0
+    ],
+    [
+      -1,
+      1,
+      0
+    ],
+    [
+      0,
+      -1,
+      1
+    ]
+  ],
+  "schema": "t73_ar_figure9_factorization/v1",
+  "sha256": "3D7C54878C61DE1F73A5E09183C34E5FAB7C22C58A37F3C82BBF69A226012FE3",
+  "t73_surgery_description_matrix": [
+    [
+      0,
+      -1,
+      1
+    ],
+    [
+      148,
+      40,
+      1
+    ],
+    [
+      1119,
+      277,
+      33
+    ]
+  ]
+}
