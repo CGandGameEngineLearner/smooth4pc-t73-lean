@@ -11,6 +11,7 @@ def verify():
  if data['completion_status']!='CANDIDATE_UNVERIFIED':raise AssertionError('candidate promoted')
  if len(data['lanes'])!=44 or set(p['wicket'] for p in data['lanes'])!=set(source):raise AssertionError('wicket coverage')
  targets=set();levels=set()
+ sources=set()
  for lane in data['lanes']:
   original=source[lane['wicket']]
   if any(lane[k]!=original[k] for k in ('owner','orientation','source_id')):raise AssertionError('source binding')
@@ -18,6 +19,9 @@ def verify():
   target=tuple(lane['foot_boundary_target']);level=Fraction(lane['height_layer'])
   if target in targets or level in levels:raise AssertionError('nonunique candidate routing')
   targets.add(target);levels.add(level)
+  source_point=tuple(lane['vertices'][0][:3])
+  if source_point in sources:raise AssertionError('candidate vertical source lanes meet')
+  sources.add(source_point)
   if Fraction(lane['framing_rectangle'][2][3])!=level:raise AssertionError('framing changed height layer')
- return {'verdict':'PASS_CANDIDATE_INVARIANTS_ONLY','lanes':44}
+ return {'verdict':'PASS_CANDIDATE_PL_DISJOINTNESS_ONLY','lanes':44,'proof':'distinct source points separate u-vertical segments; distinct positive height layers separate all horizontal lane and framing-rectangle segments'}
 if __name__=='__main__':print(json.dumps(verify(),sort_keys=True))

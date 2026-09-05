@@ -106,7 +106,7 @@ python3 scripts/build_t73_y_foot_lane_candidate.py --check
 python3 scripts/verify_t73_y_foot_lane_candidate.py
 ```
 
-Its verifier reports `PASS_CANDIDATE_INVARIANTS_ONLY`; this is not an actual
+Its verifier reports `PASS_CANDIDATE_PL_DISJOINTNESS_ONLY`; this is not an actual
 AR relative Kirby movie.
 
 [`geometry/t73_actual_cancellation_splice_request.json`](geometry/t73_actual_cancellation_splice_request.json)

@@ -97,7 +97,7 @@ python3 scripts/build_t73_y_foot_lane_candidate.py --check
 python3 scripts/verify_t73_y_foot_lane_candidate.py
 ```
 
-其 verifier 只报告 `PASS_CANDIDATE_INVARIANTS_ONLY`，不是实际 AR relative Kirby movie。
+其 verifier 只报告 `PASS_CANDIDATE_PL_DISJOINTNESS_ONLY`，不是实际 AR relative Kirby movie。
 
 [`geometry/t73_actual_cancellation_splice_request.json`](geometry/t73_actual_cancellation_splice_request.json)
 是下一层生成输入：列出全部 6 条 t-band 和 1513 条 x-band 的 center-path hash，及
