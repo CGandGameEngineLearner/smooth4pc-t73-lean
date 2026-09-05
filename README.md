@@ -214,6 +214,15 @@ with `python3 scripts/build_t73_post_x_framed_replacement_cells.py`; use
 --check-cache-sha` for the full streamed verification. These cells remain in
 their rigorously glued global/local charts; the unified S3 push-off projection
 and five integer diagonal framings are the next gate.
+The local dotted-handle replacement itself is now geometric in
+[`geometry/t73_actual_dotted_s3_passage_cells.json`](geometry/t73_actual_dotted_s3_passage_cells.json).
+Two disjoint oriented dotted rectangles contain all 1785 ordered framed Hopf
+passages and 3570 ribbon triangles. Its 3570 exact local crossings reproduce
+the source-native SQLite linking values `(40,269)` for m2 and `(189,1271)` for
+m3, with zero dual-component dotted linking. Rebuild/check with
+`python3 scripts/build_t73_actual_dotted_s3_passage_cells.py --check` and
+`python3 scripts/verify_t73_actual_dotted_s3_passage_cells.py`. Exterior
+connector endpoint collars are not yet glued into these two local charts.
 
 Separately, the C-cut 44-lane candidate realization is
 [`geometry/t73_y_foot_lane_candidate.json`](geometry/t73_y_foot_lane_candidate.json):

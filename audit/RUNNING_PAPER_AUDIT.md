@@ -3169,6 +3169,34 @@ Topology-source checks completed 2026-09-04:
   project each resulting push cycle before the five integer diagonal framings
   can be claimed.
 
+### F-584 — All 1785 local handle passages have geometric dotted-S3 Hopf cells
+
+- Severity: **actual source-native diagram / local dotted-handle replacement**
+- Status: **LOCAL DOTTED-S3 CELLS PASS; EXTERIOR CONNECTOR COLLARS OPEN**
+- Evidence: `geometry/t73_actual_dotted_s3_passage_cells.json`,
+  `scripts/build_t73_actual_dotted_s3_passage_cells.py`,
+  `scripts/verify_t73_actual_dotted_s3_passage_cells.py`, and its test.
+- Construction: the y and z handle charts are disjoint affine boxes, each
+  containing one oriented rectangular dotted circle. Every F-577 target slot
+  supplies a distinct horizontal rational passage with linearly changing
+  height: the core is below at the left dotted edge and above at the right.
+  Reversing its source orientation reverses both crossing signs. A smaller
+  than one-quarter slot gap gives a parallel product push and a two-triangle
+  ribbon without meeting a neighboring lane or the dotted component.
+- Verification: all 1785 passage owners, orientations, component-cycle
+  positions, foot endpoint roles and slot ranks replay from the source data.
+  The two exact transverse crossings per passage have the prescribed sign;
+  all 3570 ribbon triangles are nondegenerate and the two handle boxes are
+  disjoint. The resulting local linking is m2/dotted-y=40,
+  m2/dotted-z=269, m3/dotted-y=189, m3/dotted-z=1271 and zero for all three
+  dual components, exactly matching the source-native SQLite PD receipt.
+  Verdict: `PASS_ACTUAL_DISJOINT_FRAMED_DOTTED_S3_PASSAGE_CELLS`.
+- Boundary: this geometrizes the local crossings previously inserted only as
+  combinatorial PD events. The actual central connector endpoints and their
+  pushed copies still require disjoint exterior collars into these charts;
+  without those collars, the five closed S3 push cycles and diagonal framings
+  remain open.
+
 ### F-600 — The “actual” sphere-system builder assigns, rather than constructs, the embedding in \(\partial W_2\)
 
 - Severity: **Critical**

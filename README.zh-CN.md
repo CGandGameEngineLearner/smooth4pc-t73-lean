@@ -195,6 +195,15 @@ WSL cache
 --check-cache-sha` 流式完整验收。这些 cells 仍位于已验证 gluing 的多个
 global/local charts；统一 S³ push-off projection 与五个整数对角 framing 是
 下一道门。
+局部 dotted-handle replacement 现已在
+[`geometry/t73_actual_dotted_s3_passage_cells.json`](geometry/t73_actual_dotted_s3_passage_cells.json)
+中坐标化。两个互不相交的有向 dotted rectangles 容纳全部1785条有序 framed
+Hopf passages 与3570个 ribbon triangles；3570个精确局部 crossings 复现
+source-native SQLite 的 m2 linking `(40,269)`、m3 linking `(189,1271)`，三条
+dual components 的 dotted linking 为0。使用
+`python3 scripts/build_t73_actual_dotted_s3_passage_cells.py --check` 和
+`python3 scripts/verify_t73_actual_dotted_s3_passage_cells.py` 重建/验收。
+外部 connector endpoint collars 尚未粘入这两个局部 charts。
 
 另一个独立层次中，C-cut 的 44-lane candidate realization 为
 [`geometry/t73_y_foot_lane_candidate.json`](geometry/t73_y_foot_lane_candidate.json)：
