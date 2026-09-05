@@ -2648,6 +2648,38 @@ Topology-source checks completed 2026-09-04:
   into component-level hybrid piece words, propagate inherited seams, verify
   every chart gluing and inverse, and then construct the x/m1 pair deletion.
 
+### F-566 — All 1513 x-slides now have verified component-level hybrid replacement states
+
+- Severity: **Actual sequential x-cancellation movie / complete atlas replay**
+- Status: **ALL 1513 HYBRID SPLICES PASS; x-m1 DELETION NEXT**
+- Evidence: `scripts/build_t73_x_band_hybrid_movie.py`,
+  `scripts/verify_t73_x_band_hybrid_movie.py`,
+  `geometry/t73_x_band_hybrid_movie.json`, and its test.
+- Representation: each slide replaces one globally bound source interval by a
+  chart-typed 1-complex consisting of the negative x-belt lane, the correctly
+  oriented complement of its level in the F-564 m1 annulus, and the positive
+  lane. Source and target interval coordinates are deterministically replayed
+  but stored by canonical SHA to avoid repeating huge rational denominators.
+- Global state: each component begins with a hash-bound actual base curve.
+  Replacement cells are Merkle leaves keyed by band index. Every transition
+  stores and independently recomputes its component state before/after; the
+  inverse deletes precisely that leaf and restores the preceding state.
+- Verification: all F-563 local states, F-564 target foliation, F-565 source
+  germs, and the fully expanded band-0 hybrid witness are replayed first. The
+  verifier then checks 1513 unique source ranges, 6052 core/normal chart
+  gluings, 1513 inverse states, target-oriented deck closures, and zero net
+  x-intersection at every move. Replacement counts are m2=269, m3=1240,
+  r_xy=2, and r_zx=2. Verdict:
+  `PASS_ALL_1513_X_HYBRID_PIECE_WORD_STATES`.
+- Coordinate firewall: source mapping-torus, source dual-fiber, x-belt local,
+  and reflected m1-bottom cells remain separately typed. Their explicit germs
+  glue the cell complex; `nu=u` is nowhere assumed.
+- Boundary: the sequential slide movie is now complete. The next required
+  witness must consume its final component states, exteriorize any framing
+  that still meets the x-handle cancelling neighborhood, build the standard
+  x/m1 4-ball pair with actual cubical-belt binding, delete it, and emit the
+  five-component post-cancel Kirby state.
+
 ### F-600 — The “actual” sphere-system builder assigns, rather than constructs, the embedding in \(\partial W_2\)
 
 - Severity: **Critical**

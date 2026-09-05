@@ -251,6 +251,13 @@ Rebuild/check with `build_t73_x_source_chart_germs.py --check` and
 `verify_t73_x_source_chart_germs.py`. It locates 1509 Johnson top arcs and four
 oriented dual-disk boundary arcs uniquely in their actual components, returning
 `PASS_ALL_1513_X_SOURCE_CHART_GERMS` without assuming `nu=u`.
+The complete component-level atlas movie is
+[`geometry/t73_x_band_hybrid_movie.json`](geometry/t73_x_band_hybrid_movie.json).
+Rebuild/check it with `build_t73_x_band_hybrid_movie.py --check` and
+`verify_t73_x_band_hybrid_movie.py`. It verifies 1513 replacement cells, 6052
+chart gluings, 1513 inverses, and all component Merkle states, returning
+`PASS_ALL_1513_X_HYBRID_PIECE_WORD_STATES`. Chart-typed cell replacements are
+used deliberately; no false global coordinate identification is introduced.
 The first end-to-end candidate slide, including an explicit closed post-slide
 4D core, is
 [`geometry/t73_candidate_t_band0_splice.json`](geometry/t73_candidate_t_band0_splice.json),
