@@ -103,8 +103,20 @@ def verify() -> dict:
     ]
     if half_vectors != expected_half_vectors or any(not any(value) for value in half_vectors):
         raise AssertionError("x-band orientation rotation changed or collapsed")
-    if any(value[3] != 1 or not (-1 <= value[1] <= 1 and -1 <= value[2] <= 1) for value in [point(item) for item in data["centerline"]]):
-        raise AssertionError("x-band centerline left the positive cubical belt face")
+    centerline = [point(item) for item in data["centerline"]]
+    scheduled = [point(item) for item in data["scheduled_centerline"]]
+    if centerline[0] != scheduled[0] or centerline[-1] != scheduled[-1]:
+        raise AssertionError("x-band collar adjustment changed an attachment center")
+    if centerline[1] != tuple(
+        scheduled[1][axis] + (width if axis == 3 else 0) for axis in range(4)
+    ):
+        raise AssertionError("x-band middle center lacks its outward collar offset")
+    if any(
+        value[3] < 1
+        or not (-1 <= value[1] <= 1 and -1 <= value[2] <= 1)
+        for value in vertices
+    ):
+        raise AssertionError("x-band surface enters the transverse D3 interior")
 
     actual_source_normal = current_normals[start + 1]
     source_normal = point(data["source_normal_mod_x_tangent"])

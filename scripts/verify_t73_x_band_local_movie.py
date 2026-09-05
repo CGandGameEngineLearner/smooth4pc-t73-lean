@@ -118,6 +118,10 @@ def expand_band(band):
         (Fraction(2), *point(value))
         for value in band["band_core_on_positive_belt_face"]
     ]
+    centerline[1] = (
+        *centerline[1][:3],
+        centerline[1][3] + (band["index"] + 1) * width,
+    )
     half_vectors = [
         (orientation * width, Fraction(0), Fraction(0), Fraction(0)),
         (Fraction(0), Fraction(0), Fraction(0), -orientation * width),
@@ -200,7 +204,9 @@ def bounds(segment):
     return low, high
 
 
-def verify_clearance(triangles, push_triangles, segments, segment_bounds, source_id):
+def verify_clearance(
+    current_band, triangles, push_triangles, segments, segment_bounds, source_id
+):
     segment_ids = list(segments)
     lows = np.array([segment_bounds[segment_id][0] for segment_id in segment_ids])
     highs = np.array([segment_bounds[segment_id][1] for segment_id in segment_ids])
@@ -235,7 +241,7 @@ def verify_clearance(triangles, push_triangles, segments, segment_bounds, source
                 exact_checks += 1
                 if segment_meets_triangle(segments[segment_id], triangle):
                     raise AssertionError(
-                        f"{kind} meets current segment {segment_id}"
+                        f"x-band {current_band} {kind} meets current segment {segment_id}"
                     )
     return broad_pairs, exact_checks
 
@@ -291,6 +297,7 @@ def verify() -> dict:
             "target_parallel_coefficient": 20 * (index + 1),
             "source_normal_rule": source_rule,
             "framing_strategy": framing_strategy,
+            "outward_movie_height_multiplier": index + 1,
             "selected_constant_push": encode(selected_push) if selected_push else None,
             "half_vectors_sha256": canonical_sha([encode(value) for value in half_vectors]),
             "vertices_sha256": canonical_sha([encode(value) for value in vertices]),
@@ -335,6 +342,7 @@ def verify() -> dict:
             triangles, list(zip(target_arc, target_arc[1:])), target_edge, False
         )
         current_broad, current_exact = verify_clearance(
+            index,
             triangles,
             push_triangles,
             segments,

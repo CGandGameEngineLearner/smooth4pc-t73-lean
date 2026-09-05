@@ -2558,7 +2558,7 @@ Topology-source checks completed 2026-09-04:
 ### F-563 — All 1513 x-bands pass a full sequential positive-belt segment-state replay
 
 - Severity: **Actual local x-cancellation movie / complete local sequence**
-- Status: **1513 LOCAL FRAMED STATES PASS; 1512 GLOBAL HYBRID SPLICES OPEN**
+- Status: **1513 LOCAL FRAMED STATES PASS; GLOBAL SPLICES RESOLVED IN F-566**
 - Evidence: `scripts/build_t73_x_band_local_movie.py`,
   `scripts/verify_t73_x_band_local_movie.py`,
   `geometry/t73_x_band_local_movie.json`,
@@ -2587,10 +2587,9 @@ Topology-source checks completed 2026-09-04:
   bytes, canonical payload SHA, verifier bytes, source SHAs, verdict, and all
   fixed counts. Fast daily checks do not replace the full run; receipt creation
   requires `--write --full`.
-- Boundary: local passage cancellation is complete, but only band 0 has a
-  verified component-level hybrid splice and inverse. The remaining 1512
-  deltas still require complete distinct m1 parallels, chart gluings, inherited
-  seams, global clearance, and inverse recovery. No x/m1 deletion is inferred.
+- Boundary at this layer: F-564--F-566 supply the target foliation, source
+  germs, and all component-level hybrid splices. No x/m1 deletion is inferred
+  by the local receipt alone.
 
 ### F-564 — One embedded quotient framing annulus contains all 1513 distinct m1 target parallels
 
@@ -2679,6 +2678,32 @@ Topology-source checks completed 2026-09-04:
   that still meets the x-handle cancelling neighborhood, build the standard
   x/m1 4-ball pair with actual cubical-belt binding, delete it, and emit the
   five-component post-cancel Kirby state.
+
+### F-567 — The x-band orientation rotation is moved into the outward collar at distinct movie heights
+
+- Severity: **Coordinate-semantics correction / actual x-handle boundary**
+- Status: **RESOLVED; ALL DOWNSTREAM CERTIFICATES REGENERATED**
+- Evidence: the updated band-0 surface, local movie, receipt, source germs,
+  m1 foliation, hybrid movie, and all corresponding verifiers.
+- Rejected model: rotating the cross-section as
+  `+e_x -> -e_nu -> -e_x` while keeping its center at `nu=1` placed one middle
+  vertex at `nu=1-width`, inside the transverse D3 rather than in the boundary
+  collar. It also caused band 125 to meet the retained positive lane of band
+  124 after a uniform outward shift.
+- Corrected construction: band i moves its middle center to
+  `nu=1+(i+1)*width` before applying the same nonzero half-vector rotation.
+  Both middle vertices have `nu>=1`, and distinct movie heights separate
+  retained detours. Source/target centers and every attaching interval remain
+  fixed.
+- Reverification: the full 1513-state current-segment verifier was rerun twice
+  after the correction. It again returns
+  `PASS_ALL_1513_X_LOCAL_FRAMED_BAND_STATES` with the same 91,554,656 NumPy
+  pairs, 23,265,900 exact checks, and 4539 contacts on each attachment side.
+  The receipt was regenerated with new movie and verifier byte SHAs. All 1513
+  source germs, the target foliation, and all 6052 hybrid chart gluings were
+  then regenerated and independently replayed.
+- Boundary: this resolves the transverse-D3 error; it does not by itself
+  perform the final x/m1 handle-pair deletion.
 
 ### F-600 — The “actual” sphere-system builder assigns, rather than constructs, the embedding in \(\partial W_2\)
 

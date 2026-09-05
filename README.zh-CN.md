@@ -211,8 +211,11 @@ m1-parallel stub 的 1514 个状态，返回
 `PASS_ALL_1513_X_LOCAL_FRAMED_BAND_STATES`。首次完整运行绑定于
 [`audit/t73_x_band_local_movie_verification.json`](audit/t73_x_band_local_movie_verification.json)。
 日常测试运行 `python3 scripts/build_t73_x_band_local_movie_receipt.py --check`；
-重建收据必须显式使用 `--write --full`。当前只有第一个 global hybrid splice
-已验证，其余 1512 个 global splice 仍开放。
+重建收据必须显式使用 `--write --full`。该收据只覆盖 local state 层；下述
+component-level hybrid movie 覆盖全部 global splice。
+每个 orientation-rotation 中点使用 outward movie height
+`nu=1+(band_index+1)*width`，因此两个 cross-section 顶点始终位于 transverse
+D3 边界上或外侧。该修正后已重新完整运行 1513-state verifier 并重签收据。
 但全部 target parallel 现已全局化：单张 quotient annulus
 [`geometry/t73_x_m1_parallel_foliation.json`](geometry/t73_x_m1_parallel_foliation.json)
 包含 `20,40,...,30260` 全部层。使用

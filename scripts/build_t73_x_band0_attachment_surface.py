@@ -77,11 +77,13 @@ def build() -> dict:
         (Fraction(2) - width, target_y, target_z, target_normal),
         (Fraction(2) + width, target_y, target_z, target_normal),
     ]
-    centerline = [
+    scheduled_centerline = [
         (Fraction(2), *point(value)) for value in band["band_core_on_positive_belt_face"]
     ]
-    if centerline[0] != source_center or centerline[-1][1:] != point(band["parallel_m1_target"]):
+    if scheduled_centerline[0] != source_center or scheduled_centerline[-1][1:] != point(band["parallel_m1_target"]):
         raise AssertionError("x-band 0 centerline lost an attachment center")
+    centerline = list(scheduled_centerline)
+    centerline[1] = (*centerline[1][:3], centerline[1][3] + width)
 
     if len(centerline) != 3:
         raise AssertionError("x-band 0 orientation rotation expects three center vertices")
@@ -144,6 +146,10 @@ def build() -> dict:
         "orientation_rotation_rule": "+e_x to -e_nu to -e_x",
         "target_parallel_coefficient": int(target_y / width),
         "centerline": [encode(value) for value in centerline],
+        "scheduled_centerline": [encode(value) for value in scheduled_centerline],
+        "middle_center_outward_collar_offset": encode(
+            (Fraction(0), Fraction(0), Fraction(0), width)
+        ),
         "vertices": [encode(value) for value in vertices],
         "triangles": triangles,
         "boundary": {

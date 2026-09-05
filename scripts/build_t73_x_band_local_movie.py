@@ -113,6 +113,10 @@ def expanded_band(band, source_arc):
         (Fraction(2), *point(value))
         for value in band["band_core_on_positive_belt_face"]
     ]
+    centerline[1] = (
+        *centerline[1][:3],
+        centerline[1][3] + (band["index"] + 1) * width,
+    )
     source_half = (orientation * width, Fraction(0), Fraction(0), Fraction(0))
     middle_half = (Fraction(0), Fraction(0), Fraction(0), -orientation * width)
     target_half = negate(source_half)
@@ -159,6 +163,7 @@ def expanded_band(band, source_arc):
         "target_parallel_coefficient": int(target_coefficient),
         "source_normal_rule": source_normal_rule,
         "framing_strategy": framing_strategy,
+        "outward_movie_height_multiplier": band["index"] + 1,
         "selected_constant_push": encode(selected_push) if selected_push else None,
         "half_vectors_sha256": canonical_sha([encode(value) for value in half_vectors]),
         "vertices_sha256": canonical_sha([encode(value) for value in vertices]),
