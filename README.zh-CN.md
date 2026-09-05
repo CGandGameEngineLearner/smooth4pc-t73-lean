@@ -217,8 +217,7 @@ C:\Users\Administrator\.cache\t73_post_x_framed_replacement_cells.jsonl.gz
 `python scripts/verify_t73_x_m1_ejected_splice_stubs.py --full --input-cache
 C:\Users\Administrator\.cache\t73_post_x_framed_replacement_cells.jsonl.gz
 --check-cache-sha`。中间48416条 core 与48416条 push m1-complement segments
-仍为 unmapped：离开局部 germ 不能推出 collar 在那里恒等；下一步必须沿完整
-m1 构造 tubular trivialization。
+位于这些局部 germs 之外；下述 F-592/F-593 构造运输它们所需的完整 tubular map。
 完整曲线 tubular layer 的第一步位于
 [`geometry/t73_m1_parallel_annulus_tubular_frame.json`](geometry/t73_m1_parallel_annulus_tubular_frame.json)。
 一个共同有理 outward vector 在全部34条 m1 segments 上与 tangent/parallel
@@ -236,8 +235,16 @@ verdict 为 `PASS_M1_PARALLEL_ANNULUS_NONINCIDENT_TETRAHEDRON_CLEARANCE`；现�
 408个保向 tetrahedra。完整收据
 [`audit/t73_m1_parallel_annulus_ambient_ejection_receipt.json`](audit/t73_m1_parallel_annulus_ambient_ejection_receipt.json)
 记录2100次非相邻精确凸包检查，verdict 为
-`PASS_M1_PARALLEL_ANNULUS_AMBIENT_EJECTION_SUPPORT_CLEARANCE`。下一步将该
-homeomorphism 应用于 middle paths。
+`PASS_M1_PARALLEL_ANNULUS_AMBIENT_EJECTION_SUPPORT_CLEARANCE`。其实际应用保存于
+`C:\Users\Administrator\.cache\t73_x_m1_ejected_middle_complements.jsonl.gz`
+（约53.2 MB），收据为
+[`audit/t73_x_m1_ejected_middle_complements_receipt.json`](audit/t73_x_m1_ejected_middle_complements_receipt.json)。
+全部48416条 middle core 与48416条 product-push segments 通过99858个顶点像
+检查及 cache SHA 验证。完整命令：`python
+scripts/verify_t73_x_m1_ejected_middle_complements.py --full --input-cache
+C:\Users\Administrator\.cache\t73_post_x_framed_replacement_cells.jsonl.gz
+--check-cache-sha`。结合 F-590/F-591，全部60520条 replacement core segment
+images 已齐；连续 framing representative gluing 仍开放。
 三个原先缺坐标的 pre-cancellation dual-cell product ribbons 现已显式保存于
 [`geometry/t73_actual_dual_product_ribbons.json`](geometry/t73_actual_dual_product_ribbons.json)。
 每条平面 dual boundary 都有通向有理法向 push-off 的8个四边形/16个三角形

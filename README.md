@@ -237,8 +237,8 @@ Its 12104 core+push source stubs give 25712 affine image segments. Full check:
 `python scripts/verify_t73_x_m1_ejected_splice_stubs.py --full --input-cache
 C:\Users\Administrator\.cache\t73_post_x_framed_replacement_cells.jsonl.gz
 --check-cache-sha`. The middle 48416 core and 48416 push m1-complement
-segments remain unmapped: leaving the local germ does not prove the collar is
-the identity there. They require a full tubular trivialization along m1.
+segments are outside these local germs; F-592/F-593 below construct the full
+tubular map needed to transport them.
 The first full-curve tubular layer is
 [`geometry/t73_m1_parallel_annulus_tubular_frame.json`](geometry/t73_m1_parallel_annulus_tubular_frame.json).
 A common rational outward vector is transverse to the tangent/parallel frame
@@ -258,8 +258,18 @@ Its PL interval map sends levels `(-1,0,2)` to `(-1,1,2)`, fixes both support
 boundaries, and has 408 orientation-preserving tetrahedra. The full receipt
 [`audit/t73_m1_parallel_annulus_ambient_ejection_receipt.json`](audit/t73_m1_parallel_annulus_ambient_ejection_receipt.json)
 records 2100 exact nonincident convex-hull checks and verdict
-`PASS_M1_PARALLEL_ANNULUS_AMBIENT_EJECTION_SUPPORT_CLEARANCE`. Applying this
-homeomorphism to the middle paths is next.
+`PASS_M1_PARALLEL_ANNULUS_AMBIENT_EJECTION_SUPPORT_CLEARANCE`. Its application
+is stored at
+`C:\Users\Administrator\.cache\t73_x_m1_ejected_middle_complements.jsonl.gz`
+(about 53.2 MB), with receipt
+[`audit/t73_x_m1_ejected_middle_complements_receipt.json`](audit/t73_x_m1_ejected_middle_complements_receipt.json).
+All 48416 middle core and 48416 product-push segments pass 99858 vertex-image
+checks and cache SHA verification. Full command: `python
+scripts/verify_t73_x_m1_ejected_middle_complements.py --full --input-cache
+C:\Users\Administrator\.cache\t73_post_x_framed_replacement_cells.jsonl.gz
+--check-cache-sha`. Together with F-590/F-591, all 60520 replacement core
+segment images now exist; continuous framing-representative gluing remains
+open.
 The three missing pre-cancellation dual-cell product ribbons are now explicit
 in [`geometry/t73_actual_dual_product_ribbons.json`](geometry/t73_actual_dual_product_ribbons.json).
 Each planar dual boundary has an eight-quadrilateral/16-triangle annulus to a

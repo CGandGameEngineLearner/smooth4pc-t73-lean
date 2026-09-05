@@ -1,0 +1,23 @@
+{
+  "ambient_ejection_receipt_sha256": "4F25838F6FFCEF75571AEBCB86EE89B8695647FF5424543A836EC075C52625ED",
+  "ambient_ejection_sha256": "A05A7B319BB75C2429EA2FF8758DF7BC3D1EFED16BCFBB02CF51996DA6578E8F",
+  "band_count": 1513,
+  "builder_sha256": "BDCA495F9B4E4901B7885591140EFFB1B618A0459D529E2725F34887E981FB10",
+  "cache_path": "C:\\Users\\Administrator\\.cache\\t73_x_m1_ejected_middle_complements.jsonl.gz",
+  "cache_sha256": "1FB9EE804170CE42712D89D587C9B8A0FDEFD1713055900D59BA3321C0B604AD",
+  "cache_size": 53246266,
+  "component_counts": {
+    "m_2": 269,
+    "m_3": 1240,
+    "r_xy": 2,
+    "r_zx": 2
+  },
+  "middle_core_segment_count": 48416,
+  "middle_push_segment_count": 48416,
+  "post_x_receipt_sha256": "25DA696216B176D816E0CE5FBDF5781C038791A6E001A1F65FA95C7DF5CE9B8D",
+  "record_stream_sha256": "7CEEE5F9579607A068831601B8CAC9D96F04B7525EB0918A6F26CA195C2AD302",
+  "schema": "t73_x_m1_ejected_middle_complements_receipt/v1",
+  "scope_boundary": "middle images complete; normal homotopy compatibility with local uniform-push stubs remains to be glued",
+  "sha256": "14798C0A495B2FC5A6ADC304CF15E3813EE3FA13B4EE5046A851FE32EE32E517",
+  "verdict": "PASS_X_M1_ALL_MIDDLE_COMPLEMENT_AMBIENT_EJECTION_IMAGES"
+}

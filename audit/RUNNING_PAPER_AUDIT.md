@@ -3393,8 +3393,9 @@ Topology-source checks completed 2026-09-04:
   48,416 core and 48,416 corresponding push segments. Leaving the two local
   target germs does not prove that the collar is the identity on these paths;
   the previous “fixed remainder” wording is withdrawn. A tubular framing and
-  cancellation map along the complete 35-vertex m1 curve must be constructed
-  before they can be merged with F-590/F-591.
+  cancellation map along the complete 35-vertex m1 curve must be constructed.
+  F-592/F-593 construct that map and F-594 subsequently writes all middle
+  images; this paragraph records why the local germ alone was insufficient.
 
 ### F-592 — The full m1 parallel annulus has a rational local tubular frame
 
@@ -3423,9 +3424,9 @@ Topology-source checks completed 2026-09-04:
   no nonincident tetrahedra intersect. The seam cells retain the source
   period-four deck gluing and the constant outward displacement. Verdict:
   `PASS_M1_PARALLEL_ANNULUS_NONINCIDENT_TETRAHEDRON_CLEARANCE`.
-- Boundary: the embedded tubular neighborhood is now available. Its affine
-  ejection map still has to be applied to the 48,416 middle complement core
-  segments and their pushes before the full cancellation image is complete.
+- Boundary: F-593 supplies the affine ejection and F-594 applies it to all
+  48,416 middle core/push segments. Framing-representative gluing at the local
+  splice boundaries remains open.
 
 ### F-593 — A compactly supported ambient ejection of the full m1 annulus is verified
 
@@ -3448,10 +3449,35 @@ Topology-source checks completed 2026-09-04:
   well as the forward deck. Verdict:
   `PASS_M1_PARALLEL_ANNULUS_AMBIENT_EJECTION_SUPPORT_CLEARANCE`.
 - Consequence/boundary: this is an actual compactly supported PL ambient
-  homeomorphism on the tubular neighborhood, not merely a normal field. The
-  48,416 middle complement core segments and their framed copies still need
-  their literal target coordinates written and independently replayed through
-  these cells before the complete x/m1 cancellation image is closed.
+  homeomorphism on the tubular neighborhood, not merely a normal field. F-594
+  writes and verifies the literal middle-path target coordinates. The normal
+  homotopy between local uniform-push stubs and the middle product-push
+  representative remains the last framed splice boundary.
+
+### F-594 — All 48,416 middle m1-complement core/push segments have ambient images
+
+- Severity: **x/m1 cancellation / complete core-path image**
+- Status: **ALL MIDDLE CORE/PUSH IMAGES PASS; NORMAL SPLICE HOMOTOPY OPEN**
+- Evidence: `scripts/build_t73_x_m1_ejected_middle_complements.py`,
+  `scripts/verify_t73_x_m1_ejected_middle_complements.py`,
+  `audit/t73_x_m1_ejected_middle_complements_receipt.json`, its test, and the
+  cache named by the receipt.
+- Application: each 34-segment oriented m1 complement loses the two endpoint
+  segments already handled by F-591. Its 33 middle vertices lie on the
+  verified parallel annulus at the recorded level. F-593 sends both the core
+  and its literal foliation-normal push by the same exact outward displacement.
+- Verification: all 1513 band/component/level/deck records replay against the
+  F-583 cache. The verifier checks 48,416 core segments, 48,416 push segments,
+  99,858 exact source/target vertex equations, and the deterministic
+  53,246,266-byte cache SHA. Verdict:
+  `PASS_X_M1_EJECTED_MIDDLE_COMPLEMENTS_FULL`.
+- Consequence: F-590 gives 6052 band-lane core images, F-591 gives 6052 local
+  splice-stub core images, and F-594 gives 48,416 middle images, exhausting all
+  60,520 post-x replacement core segments. Their geometric images now exist.
+- Boundary: F-590/F-591 use the uniform positive-nu framing representative,
+  while F-594 transports the original m1-foliation product normal. An explicit
+  nonzero normal homotopy at the two interfaces per complement must be inserted
+  before the 60,520 pushed pieces form continuous framed cycles.
 
 ### F-600 — The “actual” sphere-system builder assigns, rather than constructs, the embedding in \(\partial W_2\)
 
