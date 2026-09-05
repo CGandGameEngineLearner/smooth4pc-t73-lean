@@ -1996,6 +1996,26 @@ Topology-source checks completed 2026-09-04:
   prefixes and ultimately all 630 ribbons, retaining the same independent
   exact checks.
 
+### F-537 — Regina independently recognises the saved P0 dual-block handlebodies, but not the actual W2 boundary
+
+- Severity: **Independent topology-tool validation / scope boundary**
+- Status: **P0 DUAL-BLOCK SUBSTRATE VERIFIED; C/S AND ACTUAL W2 OPEN**
+- Evidence: `scripts/verify_t73_handlebody_bridge_regina.py`,
+  `audit/t73_handlebody_bridge_regina.json`,
+  `tests/test_t73_dual_block_handlebodies.py`, and
+  `docs/proofs/T73_TOPOLOGY_TOOLCHAIN.md`.
+- Reproduction: Regina 7.4.1 in the isolated WSL venv
+  `~/.venvs/t73-topology` builds the four stored Johnson/AR face-gluing
+  complexes directly and returns `recogniseHandlebody=3` for each of
+  `H_J_0,H_J_1,H_AR_0,H_AR_1`. A deliberately reversed first gluing is
+  rejected. This independently corroborates the exact dual-block
+  genus-three-handlebody substrate used in P0a.
+- Boundary: these are the common Heegaard-pair blocks, not a triangulation of
+  the actual post-two-handle boundary. Regina recognition provides neither the
+  missing relative AR-to-selected-source map nor C's coend/currying chain map,
+  nor S's embedded actual sphere system and MWW hemisphere-map factorization.
+  The corresponding fail-closed gates therefore remain `OPEN`.
+
 ### F-600 — The “actual” sphere-system builder assigns, rather than constructs, the embedding in \(\partial W_2\)
 
 - Severity: **Critical**

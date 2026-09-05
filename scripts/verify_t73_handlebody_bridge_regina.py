@@ -62,33 +62,24 @@ def find_regina_python() -> list[str] | None:
         return [sys.executable]
     except ImportError:
         pass
-    local = Path.home() / ".venvs" / "regina" / "bin" / "python"
-    if local.is_file():
-        return [str(local)]
-    wsl = [
-        "wsl",
-        "-e",
-        "bash",
-        "-lc",
-        "$HOME/.venvs/regina/bin/python",
-    ]
-    try:
-        probe = subprocess.run(
-            [
-                "wsl",
-                "-e",
-                "bash",
-                "-lc",
-                "$HOME/.venvs/regina/bin/python -c 'import regina'",
-            ],
-            check=False,
-            capture_output=True,
-            text=True,
-        )
-        if probe.returncode == 0:
-            return wsl
-    except OSError:
-        return None
+    for name in ("t73-topology", "regina"):
+        local = Path.home() / ".venvs" / name / "bin" / "python"
+        if local.is_file():
+            return [str(local)]
+    for name in ("t73-topology", "regina"):
+        executable = f"$HOME/.venvs/{name}/bin/python"
+        wsl = ["wsl", "-e", "bash", "-lc", executable]
+        try:
+            probe = subprocess.run(
+                ["wsl", "-e", "bash", "-lc", f"{executable} -c 'import regina'"],
+                check=False,
+                capture_output=True,
+                text=True,
+            )
+            if probe.returncode == 0:
+                return wsl
+        except OSError:
+            return None
     return None
 
 
@@ -111,7 +102,7 @@ def run_regina(gluings: dict[str, Any], python_cmd: list[str]) -> dict[str, Any]
                 "-e",
                 "bash",
                 "-lc",
-                f"$HOME/.venvs/regina/bin/python {wsl_runner} < {wsl_data}",
+                f"{python_cmd[-1]} {wsl_runner} < {wsl_data}",
             ]
             completed = subprocess.run(
                 command, check=False, capture_output=True, text=True

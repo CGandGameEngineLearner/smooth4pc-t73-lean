@@ -1521,13 +1521,15 @@ and checked simplicial gluing.
 An alternative Gmsh/HXT probe embeds every endpoint connector in its
 insertion-ball boundary surface before embedding the ruled ribbons in the
 volume.  It meshes prefixes of one, ten and twenty ribbons; the last has 4134
-nodes and 23725 tetrahedra, without the TetGen memory explosion.  The saved
-prefix-20 object is deliberately only a hash-bound resource receipt.  A
-separate prefix-10 export contains 2664 rationally restored nodes and 14599
-tetrahedra; the Gmsh-free verifier recovers its five spherical boundaries,
-ten subdivided core/push paths, ten ribbon disks, consistent tetrahedron orientations
-and exact volume 63968.  Export and verification for all 630 ribbons remain
-open.
+nodes and 23725 tetrahedra, without the TetGen memory explosion.  The original
+prefix-20 resource receipt remains deliberately limited to CAD-incidence
+counts, but a separate prefix-20 export now restores all rational nodes,
+tetrahedra and physical subcomplex data.  The Gmsh-free verifier recovers its
+five spherical boundaries, twenty subdivided core/push paths, twenty ribbon
+disks, consistent tetrahedron orientations and exact volume 63968, returning
+\texttt{PASS\_PREFIX\_ONLY}.  The historical prefix-10 export remains an
+independent baseline.  Neither prefix closes the 630-ribbon frame gate, and
+the relative isotopy to the actual AR exterior remains open.
 
 This complete source table also rules out describing the next step as an
 ambient isotopy to a single $P_{86}\to P_{88}$ diagram.  An ambient isotopy

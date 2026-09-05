@@ -3,11 +3,7 @@
   "P0A_BY_REGINA": "PROVED",
   "REGINA_HANDLEBODY": "PASS",
   "engine": [
-    "wsl",
-    "-e",
-    "bash",
-    "-lc",
-    "$HOME/.venvs/regina/bin/python"
+    "/home/lifesize/.venvs/t73-topology/bin/python"
   ],
   "genera": {
     "H_AR_0": {
