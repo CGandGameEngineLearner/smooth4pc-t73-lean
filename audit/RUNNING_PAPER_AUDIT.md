@@ -3554,7 +3554,7 @@ Topology-source checks completed 2026-09-04:
 ### F-598 — Every surviving y/z source passage is bound to its dotted-S3 replacement
 
 - Severity: **dotted-handle conversion / exhaustive passage substitution**
-- Status: **ALL REPLACEMENT BINDINGS PASS; MAPPING CYLINDERS OPEN**
+- Status: **ALL REPLACEMENT BINDINGS PASS; CYLINDERS COMPLETED BY F-599**
 - Evidence: `geometry/t73_yz_dotted_passage_replacement_map.json`,
   `scripts/build_t73_yz_dotted_passage_replacement_map.py`,
   `scripts/verify_t73_yz_dotted_passage_replacement_map.py`, and its test.
@@ -3572,8 +3572,34 @@ Topology-source checks completed 2026-09-04:
   `PASS_ALL_YZ_PASSAGES_BOUND_TO_DOTTED_S3_REPLACEMENTS`.
 - Boundary: the source/target incidence and exact x-middle locations are now
   complete, but the 1785 framed mapping cylinders implementing these
-  substitutions have not yet been constructed. No post-conversion continuous
-  atlas or affine S3 diagram is claimed yet.
+  substitutions are supplied by F-599. This finding alone did not construct
+  them; the affine S3 diagram remains open.
+
+### F-599 — The complete seven-component framed dotted atlas is constructed
+
+- Severity: **actual Kirby input / completed charted dotted conversion**
+- Status: **SEVEN-COMPONENT FRAMED ATLAS PASS; SINGLE AFFINE S3 OPEN**
+- Evidence: `geometry/t73_complete_framed_dotted_atlas.json`,
+  `scripts/build_t73_yz_framed_passage_mapping_cylinders.py`,
+  `scripts/verify_t73_yz_framed_passage_mapping_cylinders.py`, their
+  construction/full-verification receipts and tests, plus the atlas builder,
+  verifier and test.
+- Passage cells: source arcs with one or two segments are matched to a common
+  subdivision of the one-segment F-584 Hopf arc. Framing interval times
+  transition interval gives six tetrahedra per source segment, 21,408 total.
+  All four source types and 10,706 framing vertices replay exactly. Slot
+  support intervals use one-quarter of the handle-specific gap; 1783 adjacent
+  interval comparisons prove all 1785 supports disjoint. Verdict:
+  `PASS_ALL_YZ_FRAMED_PASSAGE_MAPPING_CYLINDERS_FULL`.
+- Complete atlas: removing 3568 old passage edges from F-597 and inserting
+  1785 Hopf edges gives component core/push counts m2=14,445/15,061,
+  m3=65,370/69,114, r_xy=94/102, r_yz=4/4, and r_zx=94/102. Totals are
+  80,007 core and 84,383 push edges. Two four-edge dotted polygons give seven
+  closed components. Verdict: `PASS_COMPLETE_SEVEN_COMPONENT_FRAMED_DOTTED_ATLAS`.
+- Boundary: continuity, framing intervals and all local/global chart maps now
+  pass in the atlas. No embedding of the common atlas into a single affine S3
+  triangulation has been constructed, so a complete planar PD, linking matrix
+  and integer diagonal framings remain open.
 
 ### F-600 — The “actual” sphere-system builder assigns, rather than constructs, the embedding in \(\partial W_2\)
 

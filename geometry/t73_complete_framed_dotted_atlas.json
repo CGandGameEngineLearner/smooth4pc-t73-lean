@@ -1,0 +1,113 @@
+{
+  "actual_dotted_s3_passage_cells_sha256": "EC45F05D67BFC35AD0D97FD36BD40AA11E733108F6B06E3FC23011763DB6ECE0",
+  "atlas_continuity_status": "PASS",
+  "complete_pd_status": "OPEN_SINGLE_CHART_PROJECTION_REQUIRED",
+  "completion_status": "COMPLETE_SEVEN_COMPONENT_FRAMED_DOTTED_ATLAS_CONSTRUCTED",
+  "component_count": 7,
+  "component_order": [
+    "dotted_y",
+    "dotted_z",
+    "m_2",
+    "m_3",
+    "r_xy",
+    "r_yz",
+    "r_zx"
+  ],
+  "dotted_components": [
+    {
+      "component": "dotted_y",
+      "kind": "dotted_one_handle",
+      "passage_count": 235,
+      "polygon_segments": 4
+    },
+    {
+      "component": "dotted_z",
+      "kind": "dotted_one_handle",
+      "passage_count": 1550,
+      "polygon_segments": 4
+    }
+  ],
+  "dotted_polygon_segment_count": 8,
+  "framed_components": [
+    {
+      "atlas_core_segments": 14445,
+      "atlas_push_segments": 15061,
+      "closed_core": true,
+      "closed_push": true,
+      "component": "m_2",
+      "inserted_hopf_core_segments": 311,
+      "inserted_hopf_push_segments": 311,
+      "kind": "framed_two_handle",
+      "pre_dotted_core_segments": 14755,
+      "pre_dotted_push_segments": 15371,
+      "removed_passage_core_segments": 621,
+      "removed_passage_push_segments": 621
+    },
+    {
+      "atlas_core_segments": 65370,
+      "atlas_push_segments": 69114,
+      "closed_core": true,
+      "closed_push": true,
+      "component": "m_3",
+      "inserted_hopf_core_segments": 1462,
+      "inserted_hopf_push_segments": 1462,
+      "kind": "framed_two_handle",
+      "pre_dotted_core_segments": 66831,
+      "pre_dotted_push_segments": 70575,
+      "removed_passage_core_segments": 2923,
+      "removed_passage_push_segments": 2923
+    },
+    {
+      "atlas_core_segments": 94,
+      "atlas_push_segments": 102,
+      "closed_core": true,
+      "closed_push": true,
+      "component": "r_xy",
+      "inserted_hopf_core_segments": 4,
+      "inserted_hopf_push_segments": 4,
+      "kind": "framed_two_handle",
+      "pre_dotted_core_segments": 98,
+      "pre_dotted_push_segments": 106,
+      "removed_passage_core_segments": 8,
+      "removed_passage_push_segments": 8
+    },
+    {
+      "atlas_core_segments": 4,
+      "atlas_push_segments": 4,
+      "closed_core": true,
+      "closed_push": true,
+      "component": "r_yz",
+      "inserted_hopf_core_segments": 4,
+      "inserted_hopf_push_segments": 4,
+      "kind": "framed_two_handle",
+      "pre_dotted_core_segments": 8,
+      "pre_dotted_push_segments": 8,
+      "removed_passage_core_segments": 8,
+      "removed_passage_push_segments": 8
+    },
+    {
+      "atlas_core_segments": 94,
+      "atlas_push_segments": 102,
+      "closed_core": true,
+      "closed_push": true,
+      "component": "r_zx",
+      "inserted_hopf_core_segments": 4,
+      "inserted_hopf_push_segments": 4,
+      "kind": "framed_two_handle",
+      "pre_dotted_core_segments": 98,
+      "pre_dotted_push_segments": 106,
+      "removed_passage_core_segments": 8,
+      "removed_passage_push_segments": 8
+    }
+  ],
+  "framed_core_segment_count": 80007,
+  "framed_push_segment_count": 84383,
+  "passage_mapping_cylinder_count": 1785,
+  "passage_mapping_cylinder_tetrahedra": 21408,
+  "schema": "t73_complete_framed_dotted_atlas/v1",
+  "sha256": "50B2A24FED8984084725D5F8089E07274DA690C339C2266ECFEE52C7F244EE13",
+  "single_affine_s3_chart_status": "OPEN",
+  "x_m1_complete_framed_cancellation_image_sha256": "F8AA1FE9864E6CDD6594BF1B42D6D64868908471E1CBBE8321B5826956F1DC86",
+  "yz_dotted_passage_replacement_map_sha256": "2DF6D33A8C38E4296ADE81A0C80FF8FC54A63EDF2F4A7F9B131F7B1F21695E6D",
+  "yz_mapping_cylinders_verification_sha256": "85C66D9614CC0928EF68F00652278B58021EE90E0659A240ECFF4881E38290F4"
+}

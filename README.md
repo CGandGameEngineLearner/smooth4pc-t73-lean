@@ -299,6 +299,18 @@ Thus 3568 source core/push segments are replaced by 1785 framed Hopf segments,
 giving projected post-conversion counts core=80007 and push=84383. Verify with
 `python3 scripts/verify_t73_yz_dotted_passage_replacement_map.py`. The 1785
 framed passage mapping cylinders are the next gate.
+They are stored at
+`C:\Users\Administrator\.cache\t73_yz_framed_passage_mapping_cylinders.jsonl.gz`
+(about 1.87 MB), with construction and full-verification receipts in
+[`audit/t73_yz_framed_passage_mapping_cylinders_receipt.json`](audit/t73_yz_framed_passage_mapping_cylinders_receipt.json)
+and
+[`audit/t73_yz_framed_passage_mapping_cylinders_verification.json`](audit/t73_yz_framed_passage_mapping_cylinders_verification.json).
+All 21408 tetrahedra and 1785 disjoint supports pass. The resulting seven-
+component atlas is
+[`geometry/t73_complete_framed_dotted_atlas.json`](geometry/t73_complete_framed_dotted_atlas.json):
+80007 framed-core edges, 84383 push edges and two four-edge dotted polygons.
+Verdict: `PASS_COMPLETE_SEVEN_COMPONENT_FRAMED_DOTTED_ATLAS`. A single affine
+S3 chart and its complete PD remain open.
 The three missing pre-cancellation dual-cell product ribbons are now explicit
 in [`geometry/t73_actual_dual_product_ribbons.json`](geometry/t73_actual_dual_product_ribbons.json).
 Each planar dual boundary has an eight-quadrilateral/16-triangle annulus to a

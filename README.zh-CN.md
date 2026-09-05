@@ -272,6 +272,17 @@ edges。使用 `python3 scripts/verify_t73_x_m1_complete_framed_cancellation_ima
 将替换为1785条 framed Hopf segments，转换后计数为 core=80007、push=84383。
 使用 `python3 scripts/verify_t73_yz_dotted_passage_replacement_map.py` 验收；
 下一门是1785个 framed passage mapping cylinders。
+这些 cylinders 保存在
+`C:\Users\Administrator\.cache\t73_yz_framed_passage_mapping_cylinders.jsonl.gz`
+（约1.87 MB），构造与全量验证收据分别为
+[`audit/t73_yz_framed_passage_mapping_cylinders_receipt.json`](audit/t73_yz_framed_passage_mapping_cylinders_receipt.json)
+和
+[`audit/t73_yz_framed_passage_mapping_cylinders_verification.json`](audit/t73_yz_framed_passage_mapping_cylinders_verification.json)。
+全部21408个 tetrahedra 与1785个互不相交 supports 通过。得到的七分量 atlas 为
+[`geometry/t73_complete_framed_dotted_atlas.json`](geometry/t73_complete_framed_dotted_atlas.json)：
+80007条 framed-core edges、84383条 push edges，以及两条各4边的 dotted polygons。
+verdict 为 `PASS_COMPLETE_SEVEN_COMPONENT_FRAMED_DOTTED_ATLAS`；单一 affine-S³
+chart 及其完整 PD 仍开放。
 三个原先缺坐标的 pre-cancellation dual-cell product ribbons 现已显式保存于
 [`geometry/t73_actual_dual_product_ribbons.json`](geometry/t73_actual_dual_product_ribbons.json)。
 每条平面 dual boundary 都有通向有理法向 push-off 的8个四边形/16个三角形

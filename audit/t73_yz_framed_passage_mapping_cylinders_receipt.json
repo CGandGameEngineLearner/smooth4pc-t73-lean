@@ -1,0 +1,25 @@
+{
+  "builder_sha256": "7D6B029359BAA07AF8C2F5ADA2865D690CAA7599B3971ED7A19CE3443107ABD2",
+  "cache_path": "C:\\Users\\Administrator\\.cache\\t73_yz_framed_passage_mapping_cylinders.jsonl.gz",
+  "cache_sha256": "7E658F39AA09DD88F8A4FF1F2431B14EF18C4257B252989B17E6D4B91C0418F6",
+  "cache_size": 1871714,
+  "common_subdivision_segment_count": 3568,
+  "dotted_cells_sha256": "EC45F05D67BFC35AD0D97FD36BD40AA11E733108F6B06E3FC23011763DB6ECE0",
+  "mapping_cylinder_tetrahedron_count": 21408,
+  "middle_receipt_sha256": "14798C0A495B2FC5A6ADC304CF15E3813EE3FA13B4EE5046A851FE32EE32E517",
+  "passage_count": 1785,
+  "record_stream_sha256": "FD1AC0E6D278ACDDB6F4D4CE40AFF41ACD94626E2FD4F75D7EAC378FBC37DD15",
+  "replacement_map_sha256": "2DF6D33A8C38E4296ADE81A0C80FF8FC54A63EDF2F4A7F9B131F7B1F21695E6D",
+  "schema": "t73_yz_framed_passage_mapping_cylinders_receipt/v1",
+  "scope_boundary": "charted framed passage conversion complete; single affine-S3 realization remains open",
+  "sha256": "D71CF91AA9AF34663DA7845DEA8DD3DBFEDF76BBF3973E7AE44E49433352B87B",
+  "source_kind_counts": {
+    "actual_bottom_cut_arc": 2,
+    "actual_dual_two_segment_passage": 8,
+    "actual_johnson_handle_arc": 262,
+    "ejected_x_replacement_m1_z_subpath": 1513
+  },
+  "source_segment_count": 3568,
+  "target_original_segment_count": 1785,
+  "verdict": "PASS_ALL_YZ_FRAMED_PASSAGE_MAPPING_CYLINDERS_CONSTRUCTED"
+}

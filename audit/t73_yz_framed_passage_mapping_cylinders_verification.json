@@ -1,0 +1,26 @@
+{
+  "construction_receipt_sha256": "D71CF91AA9AF34663DA7845DEA8DD3DBFEDF76BBF3973E7AE44E49433352B87B",
+  "full_verifier_result": {
+    "cache_sha_checked": true,
+    "continuous_dotted_conversion_in_atlas": true,
+    "disjoint_support_checks": 1783,
+    "fast_checks": {
+      "builder": true,
+      "counts": true,
+      "payload": true,
+      "sources": true,
+      "verdict": true
+    },
+    "framing_vertex_checks": 10706,
+    "mapping_cylinder_tetrahedra": 21408,
+    "passages": 1785,
+    "single_affine_s3_chart_status": "OPEN",
+    "source_segments": 3568,
+    "verdict": "PASS_ALL_YZ_FRAMED_PASSAGE_MAPPING_CYLINDERS_FULL"
+  },
+  "schema": "t73_yz_framed_passage_mapping_cylinders_verification/v1",
+  "sha256": "85C66D9614CC0928EF68F00652278B58021EE90E0659A240ECFF4881E38290F4",
+  "verdict": "PASS_ALL_YZ_FRAMED_PASSAGE_MAPPING_CYLINDERS_FULL",
+  "verifier_path": "scripts/verify_t73_yz_framed_passage_mapping_cylinders.py",
+  "verifier_sha256": "478F457C459FC33D703A1966967F680D0C2D9749CBAAD447CAA7F4A4B41BAEA4"
+}
