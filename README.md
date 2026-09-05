@@ -119,6 +119,10 @@ The 1513-step x-cancellation candidate movie is
 [`geometry/t73_candidate_x_band_movie.json`](geometry/t73_candidate_x_band_movie.json),
 rebuilt with `python3 scripts/build_t73_candidate_x_band_movie.py --check`.
 It uses the same candidate-only status and has not replayed actual link states.
+Both t/x candidate movies are independently checked with
+`python3 scripts/verify_t73_candidate_band_movies.py`. The current verdict
+`PASS_CANDIDATE_MOVIE_RECORDS_ONLY` verifies all 1519 bands and 3035 rectangle
+segments, not an actual Kirby slide movie.
 
 [`geometry/t73_actual_cancellation_splice_request.json`](geometry/t73_actual_cancellation_splice_request.json)
 is the next generated input layer. It enumerates all 6 t-bands and 1513

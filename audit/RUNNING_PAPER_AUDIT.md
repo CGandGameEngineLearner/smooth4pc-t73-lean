@@ -2106,6 +2106,21 @@ Topology-source checks completed 2026-09-04:
   relative equivalence to the actual AR presentation. It cannot close P0, C,
   S, P3 or E13 and is retained only for downstream software experiments.
 
+### F-545 — Candidate t/x band movies now have an independent exact record verifier
+
+- Severity: **Candidate PL-movie validation / scope firewall**
+- Status: **1519 BAND RECORDS PASS; ACTUAL KIRBY REPLAY OPEN**
+- Evidence: `scripts/verify_t73_candidate_band_movies.py`,
+  `tests/test_t73_candidate_band_movies.py`, and the saved t/x candidate movies.
+- Verification: the independent verifier recomputes all 3035 rational
+  rectangle and push-off segments, checks complete t/x coverage, source
+  cancellation component/time order, continuous band centerlines, attachment
+  and splice bindings, and the 1519-step candidate state chains. A state-chain
+  mutation is rejected.
+- Boundary: the current link states are identifiers, not complete post-slide
+  polylines. The verdict is `PASS_CANDIDATE_MOVIE_RECORDS_ONLY`; it does not
+  establish an actual Kirby move or kappa_AR.
+
 ### F-600 — The “actual” sphere-system builder assigns, rather than constructs, the embedding in \(\partial W_2\)
 
 - Severity: **Critical**

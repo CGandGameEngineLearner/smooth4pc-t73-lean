@@ -108,6 +108,10 @@ python3 scripts/verify_t73_y_foot_lane_candidate.py
 [`geometry/t73_candidate_x_band_movie.json`](geometry/t73_candidate_x_band_movie.json)，
 使用 `python3 scripts/build_t73_candidate_x_band_movie.py --check` 重建。
 它同样只具有 candidate 状态，尚未重放实际 link state。
+t/x 两条 candidate movie 使用
+`python3 scripts/verify_t73_candidate_band_movies.py` 独立检查。当前 verdict
+`PASS_CANDIDATE_MOVIE_RECORDS_ONLY` 覆盖全部 1519 条 band 与 3035 个 rectangle
+segment，但不表示实际 Kirby slide movie。
 
 [`geometry/t73_actual_cancellation_splice_request.json`](geometry/t73_actual_cancellation_splice_request.json)
 是下一层生成输入：列出全部 6 条 t-band 和 1513 条 x-band 的 center-path hash，及
