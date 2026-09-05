@@ -2407,6 +2407,30 @@ Topology-source checks completed 2026-09-04:
   finite collar cell complex and cellwise map deleting t and h_CS and carrying
   the three exteriorized framed components into the post-cancel boundary.
 
+### F-558 — A finite orientation-preserving collar ejection map now precedes the t-h_CS deletion
+
+- Severity: **PL cancellation-map construction / collar part**
+- Status: **COLLAR EJECTION PASS; 4D HANDLE-PAIR DELETION OPEN**
+- Evidence: `scripts/build_t73_t_hcs_collar_ejection_map.py`,
+  `scripts/verify_t73_t_hcs_collar_ejection_map.py`,
+  `geometry/t73_t_hcs_collar_ejection_map.json`, and its test.
+- Construction: each of the eight belt-octahedron faces is thickened from
+  radius r to 2r and its triangular prism is divided into three tetrahedra.
+  The simplicial vertex map sends the inner six vertices from r to 3r/2 and
+  fixes all six outer vertices at 2r; it is the identity outside 2r.
+- Independent verification: the 12-vertex, 24-tetrahedron source has exactly
+  the two declared octahedral boundary spheres (16 boundary triangles). Every
+  source/image tetrahedron is nondegenerate, every affine determinant ratio is
+  positive, and the minimum ratio is 1/2. The map is therefore a finite PL
+  homeomorphism from the complement of the open r-octahedron to the complement
+  of the open 3r/2-octahedron, fixed on the outer boundary. F-557 proves the
+  exteriorized state-6 framed link lies in its domain.
+- Verdict and boundary: `PASS_T_HCS_COLLAR_EJECTION_CELL_MAP` has explicit
+  scope `COLLAR_EJECTION_ONLY_HANDLE_PAIR_DELETION_OPEN`. The next witness must
+  triangulate the standard 4D cancelling t/h_CS handle pair, identify its
+  attaching/belt cells with the actual AR cells, delete that PL 4-ball, and
+  emit the carried post-cancel framed-link state consumed by the x movie.
+
 ### F-600 — The “actual” sphere-system builder assigns, rather than constructs, the embedding in \(\partial W_2\)
 
 - Severity: **Critical**

@@ -178,6 +178,13 @@ records 63 canonical outward normal replacements. Rebuild/check with
 `PASS_STATE6_FRAMING_EXTERIORIZATION` and
 `READY_FOR_EXPLICIT_T_HCS_CANCELLATION_MAP`; the cellwise cancellation map is
 still required.
+The finite pre-cancellation collar map is
+[`geometry/t73_t_hcs_collar_ejection_map.json`](geometry/t73_t_hcs_collar_ejection_map.json).
+Rebuild/check it with `build_t73_t_hcs_collar_ejection_map.py --check` and
+`verify_t73_t_hcs_collar_ejection_map.py`. Its 24 orientation-preserving
+tetrahedra push the inner octahedron from `r` to `3r/2` while fixing `2r`, and
+the verifier returns `PASS_T_HCS_COLLAR_EJECTION_CELL_MAP`. This is the collar
+ejection only; the 4-dimensional handle-pair deletion remains open.
 The first end-to-end candidate slide, including an explicit closed post-slide
 4D core, is
 [`geometry/t73_candidate_t_band0_splice.json`](geometry/t73_candidate_t_band0_splice.json),

@@ -157,6 +157,13 @@ SHA，避免重复数十 MB 的相同 normal vectors。
 `build_t73_t_hcs_cancellation_readiness.py --check` 重建/验收。精确 verdict 为
 `PASS_STATE6_FRAMING_EXTERIORIZATION` 和
 `READY_FOR_EXPLICIT_T_HCS_CANCELLATION_MAP`；仍须构造 cellwise cancellation map。
+取消前的有限 collar map 保存于
+[`geometry/t73_t_hcs_collar_ejection_map.json`](geometry/t73_t_hcs_collar_ejection_map.json)。
+使用 `build_t73_t_hcs_collar_ejection_map.py --check` 与
+`verify_t73_t_hcs_collar_ejection_map.py` 重建/验收。其 24 个保向四面体把内层
+八面体从 `r` 推到 `3r/2`，同时固定 `2r` 外层；verdict 为
+`PASS_T_HCS_COLLAR_EJECTION_CELL_MAP`。这只闭合 collar ejection，4 维
+handle-pair deletion 仍为 OPEN。
 第一条端到端 candidate slide（含显式闭合的 post-slide 4D core）位于
 [`geometry/t73_candidate_t_band0_splice.json`](geometry/t73_candidate_t_band0_splice.json)，
 使用 `python3 scripts/build_t73_candidate_t_band0_splice.py --check` 重建。
