@@ -6,23 +6,23 @@ from pathlib import Path
 import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
-SCRIPT = ROOT / "scripts/verify_t73_x_band0_attachment_surface.py"
+SCRIPT = ROOT / "scripts/verify_t73_x_band0_chart_transitions.py"
 
 
-class XBandZeroAttachmentSurfaceTest(unittest.TestCase):
-    def test_actual_attachments_and_candidate_disk(self):
+class XBandZeroChartTransitionTest(unittest.TestCase):
+    def test_source_target_germs_and_framing_transport(self):
         sys.path.insert(0, str(ROOT / "scripts"))
-        spec = importlib.util.spec_from_file_location("verify_x_band0", SCRIPT)
+        spec = importlib.util.spec_from_file_location("verify_x_band0_charts", SCRIPT)
         assert spec and spec.loader
         module = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(module)
         result = module.verify()
         self.assertEqual(
             result["verdict"],
-            "PASS_X_BAND0_ACTUAL_ATTACHMENTS_AND_BOUNDARY_FRAMING",
+            "PASS_X_BAND0_ACTUAL_CHART_GERMS_AND_FRAMING_TRANSPORT",
         )
-        self.assertEqual(result["post_cancel_source_deck"], [269, 40, 0])
-        self.assertEqual(result["target_parallel_coefficient"], 20)
+        self.assertEqual(result["source_global_range"], [20, 22])
+        self.assertEqual(result["target_global_range"], [2, 4])
 
 
 if __name__ == "__main__":

@@ -204,10 +204,18 @@ The first x-slide attachment layer is
 Rebuild and check it with `build_t73_x_band0_attachment_surface.py --check`
 and `verify_t73_x_band0_attachment_surface.py`. It binds `c1:letter:0` to the
 post-cancel m2 vertex range `[20,22]` in deck `[269,40,0]`, binds the target to
-the twentieth framed m1 parallel, and verifies a six-vertex PL disk. Verdict:
-`PASS_X_BAND0_ACTUAL_ATTACHMENTS_CANDIDATE_FRAMING_INTERIOR`; current-link
-clearance and actual boundary framing are still required before this is a
-Kirby slide.
+the twentieth framed m1 parallel, and verifies a six-vertex PL disk. Its
+derived boundary-framing verdict is
+`PASS_X_BAND0_ACTUAL_ATTACHMENTS_AND_BOUNDARY_FRAMING`.
+The complete local obstacle state is
+[`geometry/t73_x_positive_belt_state0.json`](geometry/t73_x_positive_belt_state0.json):
+one cancelling m1 arc, 1509 Johnson arcs, and four dual passages. Run
+`build_t73_x_positive_belt_state0.py --check` and
+`verify_t73_x_band0_current_link_clearance.py`; 24,232 exact tests give
+`PASS_X_BAND0_CURRENT_LINK_AND_PUSH_CLEARANCE`.
+The two actual affine chart germs and framing transport are saved in
+[`geometry/t73_x_band0_chart_transitions.json`](geometry/t73_x_band0_chart_transitions.json)
+and verified by `verify_t73_x_band0_chart_transitions.py`.
 The first end-to-end candidate slide, including an explicit closed post-slide
 4D core, is
 [`geometry/t73_candidate_t_band0_splice.json`](geometry/t73_candidate_t_band0_splice.json),

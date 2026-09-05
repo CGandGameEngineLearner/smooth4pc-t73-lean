@@ -181,9 +181,17 @@ attaching 3-ball、所得 PL 4-ball/S3 边界、实际 belt 重心交点、AR fr
 使用 `build_t73_x_band0_attachment_surface.py --check` 与
 `verify_t73_x_band0_attachment_surface.py` 重建/验收。它将 `c1:letter:0`
 绑定到 post-cancel m2 的 vertex range `[20,22]`、deck `[269,40,0]`，将 target
-绑定到第 20 条 framed m1 parallel，并验证六顶点 PL 盘。verdict 为
-`PASS_X_BAND0_ACTUAL_ATTACHMENTS_CANDIDATE_FRAMING_INTERIOR`；在升级为 Kirby
-slide 前仍需 current-link clearance 与 actual boundary framing。
+绑定到第 20 条 framed m1 parallel，并验证六顶点 PL 盘；边界 framing verdict 为
+`PASS_X_BAND0_ACTUAL_ATTACHMENTS_AND_BOUNDARY_FRAMING`。
+完整局部 obstacle state 位于
+[`geometry/t73_x_positive_belt_state0.json`](geometry/t73_x_positive_belt_state0.json)：
+包含一条 cancelling m1 arc、1509 条 Johnson arc 与 4 条 dual passage。运行
+`build_t73_x_positive_belt_state0.py --check` 和
+`verify_t73_x_band0_current_link_clearance.py`；24,232 次精确检查返回
+`PASS_X_BAND0_CURRENT_LINK_AND_PUSH_CLEARANCE`。
+两侧实际 affine chart germ 与 framing transport 保存于
+[`geometry/t73_x_band0_chart_transitions.json`](geometry/t73_x_band0_chart_transitions.json)，
+由 `verify_t73_x_band0_chart_transitions.py` 验收。
 第一条端到端 candidate slide（含显式闭合的 post-slide 4D core）位于
 [`geometry/t73_candidate_t_band0_splice.json`](geometry/t73_candidate_t_band0_splice.json)，
 使用 `python3 scripts/build_t73_candidate_t_band0_splice.py --check` 重建。

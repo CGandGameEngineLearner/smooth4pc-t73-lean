@@ -63,7 +63,7 @@ def build() -> dict:
         item for item in spine["handle_arcs"] if item["arc_id"] == band["source_id"]
     )
     local_arc = [point([*value, "1"]) for value in source_arc_record["lift_polyline"]]
-    current_points = final_states()["m_2"][0]
+    current_points, current_normals, _ = final_states()["m_2"]
     current_index, deck = find_current_arc(current_points, local_arc)
 
     width = Fraction(band["band_width"])
@@ -94,10 +94,28 @@ def build() -> dict:
     for index in range(len(cross_sections) - 1):
         left = 2 * index
         triangles.extend([[left, left + 2, left + 3], [left, left + 3, left + 1]])
-    push_normal = (Fraction(0), width, Fraction(0), Fraction(0))
+    actual_source_normal = current_normals[current_index + 1]
+    source_normal_mod_x_tangent = (
+        Fraction(0),
+        actual_source_normal[1],
+        actual_source_normal[2],
+        actual_source_normal[3],
+    )
+    target_parallel_normal = (Fraction(0), width, Fraction(0), Fraction(0))
+    denominator = len(cross_sections) - 1
+    section_normals = [
+        tuple(
+            source_normal_mod_x_tangent[axis]
+            + Fraction(index, denominator)
+            * (target_parallel_normal[axis] - source_normal_mod_x_tangent[axis])
+            for axis in range(4)
+        )
+        for index in range(len(cross_sections))
+    ]
+    normal_field = [normal for normal in section_normals for _ in range(2)]
     pushed = [
-        tuple(value[axis] + push_normal[axis] for axis in range(4))
-        for value in vertices
+        tuple(value[axis] + normal[axis] for axis in range(4))
+        for value, normal in zip(vertices, normal_field)
     ]
     result = {
         "schema": "t73_x_band0_attachment_surface/v1",
@@ -127,9 +145,13 @@ def build() -> dict:
                 2 * index + 1 for index in reversed(range(len(cross_sections)))
             ],
         },
-        "push_normal_candidate": encode(push_normal),
+        "actual_source_normal_current_state": encode(actual_source_normal),
+        "source_normal_mod_x_tangent": encode(source_normal_mod_x_tangent),
+        "target_parallel_normal": encode(target_parallel_normal),
+        "normal_field": [encode(value) for value in normal_field],
+        "normal_extension_rule": "linear nonzero homotopy (0,w,(1-t)w,0)",
         "push_off_vertices": [encode(value) for value in pushed],
-        "completion_status": "X_BAND0_ACTUAL_ATTACHMENTS_CANDIDATE_FRAMING_INTERIOR",
+        "completion_status": "X_BAND0_ACTUAL_ATTACHMENTS_BOUNDARY_FRAMING_DERIVED",
     }
     result["sha256"] = canonical_sha(result)
     return result

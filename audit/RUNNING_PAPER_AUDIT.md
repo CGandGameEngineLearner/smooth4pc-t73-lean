@@ -2467,7 +2467,7 @@ Topology-source checks completed 2026-09-04:
 ### F-560 — x-band 0 is bound to the actual post-cancel m2 arc and a framed m1 parallel
 
 - Severity: **Second cancellation reconstruction / first x-band layer**
-- Status: **ACTUAL ATTACHMENTS PASS; FRAMING INTERIOR AND CURRENT-LINK CLEARANCE OPEN**
+- Status: **ACTUAL ATTACHMENTS, BOUNDARY FRAMING, AND LOCAL CLEARANCE PASS**
 - Evidence: `scripts/build_t73_x_band0_attachment_surface.py`,
   `scripts/verify_t73_x_band0_attachment_surface.py`,
   `geometry/t73_x_band0_attachment_surface.json`, and its test.
@@ -2487,11 +2487,42 @@ Topology-source checks completed 2026-09-04:
   nondegenerate triangles, disjoint opposite boundary lanes, and no nonlocal
   self-intersection. The verdict is
   `PASS_X_BAND0_ACTUAL_ATTACHMENTS_CANDIDATE_FRAMING_INTERIOR`.
-- Boundary: the current push normal remains a candidate. The next verifier
-  must derive source and target normals from the post-cancel framed link,
-  extend them without crossing zero, and prove disk/push clearance against all
-  six current components before constructing x-state 0 to 1. Only then may the
-  same indexed procedure expand to the remaining 1512 bands.
+- Boundary at this layer: F-561 derives the actual boundary normals, verifies
+  the chart germs and all positive-belt current-link clearance. A hybrid global
+  splice and inverse are still required for x-state 0 to 1.
+
+### F-561 — x-band 0 has actual chart germs, framing transport, and full positive-belt clearance
+
+- Severity: **Second cancellation reconstruction / first framed local move**
+- Status: **LOCAL FRAMED BAND DISK PASS; GLOBAL HYBRID SPLICE OPEN**
+- Evidence: `geometry/t73_x_positive_belt_state0.json`,
+  `geometry/t73_x_band0_chart_transitions.json`, the updated band-0 surface,
+  their three builders/verifiers, and tests.
+- Actual local state: all x-axis Johnson handle arcs are matched by source id,
+  belt point, and orientation. Together with the four dual passages and the
+  cancelling m1 arc this gives exactly 1514 unique positive-face current-link
+  arcs. This is passage-collar data, not a replacement for the global link.
+- Chart germs: the m2 top source is translated by `(-1076,-160,0)` into the
+  x-handle chart. The m1 bottom target uses the foot reflection
+  `x_local=-x_global` and `z_local=z_global-4`. These map the exact post-cancel
+  ranges m2 `[20,22]` and m1 `[2,4]` to the local `(1,2,3)` x-arcs. No
+  identification `nu=u` is made.
+- Framing derivation: the actual source normal `(w,w,w,0)`, modulo its x
+  tangent, becomes `(0,w,w,0)`. The reflected target gives the same normal
+  quotient. The chosen m1 parallel representative `(0,w,0,0)` is joined by
+  the nonzero homotopy `(0,w,(1-t)w,0)`. Sixteen exact disk/push triangle
+  comparisons pass. Verdicts are
+  `PASS_X_BAND0_ACTUAL_ATTACHMENTS_AND_BOUNDARY_FRAMING` and
+  `PASS_X_BAND0_ACTUAL_CHART_GERMS_AND_FRAMING_TRANSPORT`.
+- Clearance: the disk contacts `c1:letter:0` only on its source edge and the
+  twentieth m1 parallel only on its target edge. Against all 1514 actual local
+  passage arcs, 24,232 exact segment-triangle checks find no other disk or
+  push contact. Verdict: `PASS_X_BAND0_CURRENT_LINK_AND_PUSH_CLEARANCE`.
+- Boundary: these facts instantiate a legitimate local framed band. The next
+  artifact must cut the global state-6 m2 lift, carry both band lanes through
+  the two chart germs, traverse a globally constructed framed parallel of m1,
+  close the hybrid quotient curve, and verify its inverse. Only that artifact
+  may call itself x-state 0 to 1.
 
 ### F-600 — The “actual” sphere-system builder assigns, rather than constructs, the embedding in \(\partial W_2\)
 
