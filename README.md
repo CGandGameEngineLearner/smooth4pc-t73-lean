@@ -123,6 +123,12 @@ Canonical rational intervals around these locators are saved in
 [`geometry/t73_t_band_attachment_intervals.json`](geometry/t73_t_band_attachment_intervals.json),
 rebuilt with `python3 scripts/build_t73_t_band_attachment_intervals.py --check`.
 The locator is verified; the width-based interval choice remains candidate.
+Boundary-compatible normal homotopies for all six t-bands are saved in
+[`geometry/t73_t_band_framing_extensions.json`](geometry/t73_t_band_framing_extensions.json).
+Rebuild and independently check them with
+`build_t73_t_band_framing_extensions.py --check` and
+`verify_t73_t_band_framing_extensions.py`. The interior interpolation remains
+candidate; the source and h_CS boundary framings are actual-record bindings.
 The first end-to-end candidate slide, including an explicit closed post-slide
 4D core, is
 [`geometry/t73_candidate_t_band0_splice.json`](geometry/t73_candidate_t_band0_splice.json),

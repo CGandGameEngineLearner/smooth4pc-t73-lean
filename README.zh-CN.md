@@ -111,6 +111,11 @@ python3 scripts/verify_t73_y_foot_lane_candidate.py
 [`geometry/t73_t_band_attachment_intervals.json`](geometry/t73_t_band_attachment_intervals.json)，
 使用 `python3 scripts/build_t73_t_band_attachment_intervals.py --check` 重建。
 locator 已验证；基于 width 的区间选择仍为 candidate。
+全部 6 条 t-band 的 boundary-compatible normal homotopy 保存于
+[`geometry/t73_t_band_framing_extensions.json`](geometry/t73_t_band_framing_extensions.json)。
+使用 `build_t73_t_band_framing_extensions.py --check` 重建，并用
+`verify_t73_t_band_framing_extensions.py` 独立检查。内部插值仍为 candidate；
+source 与 h_CS 边界 framing 是 actual-record binding。
 第一条端到端 candidate slide（含显式闭合的 post-slide 4D core）位于
 [`geometry/t73_candidate_t_band0_splice.json`](geometry/t73_candidate_t_band0_splice.json)，
 使用 `python3 scripts/build_t73_candidate_t_band0_splice.py --check` 重建。

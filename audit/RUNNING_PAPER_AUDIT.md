@@ -2216,6 +2216,22 @@ Topology-source checks completed 2026-09-04:
 - Boundary: the dual fiber level is not yet an actual AR chart transition;
   framed push-off embeddedness and actual Kirby-slide equivalence remain open.
 
+### F-552 — Six t-band framing extensions match the actual source and h_CS boundary normals
+
+- Severity: **Framed-slide construction progress / candidate interior**
+- Status: **BOUNDARY FRAMINGS VERIFIED; INTERIOR EXTENSION CANDIDATE**
+- Evidence: `scripts/build_t73_t_band_framing_extensions.py`,
+  `scripts/verify_t73_t_band_framing_extensions.py`,
+  `geometry/t73_t_band_framing_extensions.json`, and its test.
+- Verification: every source normal is recomputed as the moved component's
+  actual product direction times its saved width; every target normal equals
+  the actual h_CS framing offset. All six linear normal homotopies are nonzero,
+  and every rational push-off vertex is independently checked as center plus
+  normal.
+- Boundary: linear interpolation by centerline vertex index is a canonical
+  interior choice. Its global disjointness and actual Kirby-framing transport
+  remain open.
+
 ### F-600 — The “actual” sphere-system builder assigns, rather than constructs, the embedding in \(\partial W_2\)
 
 - Severity: **Critical**
