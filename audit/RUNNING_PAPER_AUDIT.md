@@ -2236,6 +2236,21 @@ Topology-source checks completed 2026-09-04:
   interior choice. Its global disjointness and actual Kirby-framing transport
   remain open.
 
+### F-553 — Band 0 now has a complete triangulated candidate band disk
+
+- Severity: **Kirby-slide surface construction / candidate combinatorics**
+- Status: **FRAMED DISK COMBINATORICS PASS; AMBIENT EMBEDDEDNESS OPEN**
+- Evidence: `scripts/build_t73_candidate_t_band0_surface.py`,
+  `scripts/verify_t73_candidate_t_band0_surface.py`,
+  `geometry/t73_candidate_t_band0_surface.json`, and its test.
+- Verification: four rational cross-sections connect the actual source
+  attachment interval, both candidate band lanes and the parallel h_CS target
+  interval. Six nondegenerate triangles form an 8-vertex disk with Euler
+  characteristic one and exactly the declared source/left/target/right
+  boundary. The independent verifier reconstructs every framed push-off vertex.
+- Boundary: triangle-level self-intersection, push-off surface disjointness,
+  current-link clearance and actual Kirby-slide equivalence remain open.
+
 ### F-600 — The “actual” sphere-system builder assigns, rather than constructs, the embedding in \(\partial W_2\)
 
 - Severity: **Critical**
