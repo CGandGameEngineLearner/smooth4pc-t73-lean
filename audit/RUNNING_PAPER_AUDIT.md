@@ -3331,15 +3331,16 @@ Topology-source checks completed 2026-09-04:
   push segments and all 6052 pushed band-lane segments lie in the product
   shell. Verdict:
   `PASS_X_M1_COLLAR_PRODUCT_EXTENSION_AND_OUTWARD_FRAMING_DOMAIN`.
-- Boundary: F-590 now applies the map to all 6052 core and 6052 outward-push
-  band-lane segments. The 54,468 fixed-region source-stub and m1-complement
-  segments still need to be merged with those images. The unified S3 embedding
-  and diagonal framings remain open until the complete paths are emitted.
+- Boundary: F-590 applies the map to all 6052 core and 6052 outward-push
+  band-lane segments, and F-591 treats four more local-germ stubs per band.
+  The middle m1 complements are outside the proven local product chart, but
+  are not thereby fixed. The unified S3 embedding and diagonal framings remain
+  open pending a full m1 tubular trivialization.
 
 ### F-590 — Every nontrivial x/m1 band-lane image is computed simplex by simplex
 
 - Severity: **x/m1 cancellation / explicit framed path image**
-- Status: **ALL BAND-LANE IMAGES PASS; FIXED PATH PIECES NOT YET MERGED**
+- Status: **ALL BAND-LANE IMAGES PASS; GLOBAL M1 MIDDLES UNMAPPED**
 - Evidence: `scripts/build_t73_x_m1_ejected_band_lanes.py`,
   `scripts/verify_t73_x_m1_ejected_band_lanes.py`,
   `audit/t73_x_m1_ejected_band_lanes_receipt.json`, its test, and the gzip
@@ -3362,14 +3363,15 @@ Topology-source checks completed 2026-09-04:
   under Windows Python; no geometric or arithmetic rule changed.
 - Boundary: F-591 shows that the two source stubs and two endpoint segments of
   each oriented m1 complement also meet the collar support and computes their
-  images. Only the 32 middle complement segments per replacement, 48,416 core
-  and 48,416 push segments, are fixed. They still need to be merged with the
-  F-590/F-591 image caches.
+  images. The 32 middle complement segments per replacement, 48,416 core and
+  48,416 push segments, lie outside these endpoint germs; no identity rule has
+  been proved there. They require a full m1 tubular trivialization before
+  merging with the F-590/F-591 image caches.
 
-### F-591 — Every source/target splice-end stub has an exact collar image
+### F-591 — Every local source/target splice-end stub has an exact collar image
 
 - Severity: **x/m1 cancellation / complete nontrivial path image**
-- Status: **ALL SPLICE-END IMAGES PASS; FIXED MIDDLES NOT YET MERGED**
+- Status: **ALL LOCAL SPLICE-END IMAGES PASS; M1 MIDDLES UNMAPPED**
 - Evidence: `scripts/build_t73_x_m1_ejected_splice_stubs.py`,
   `scripts/verify_t73_x_m1_ejected_splice_stubs.py`,
   `audit/t73_x_m1_ejected_splice_stubs_receipt.json`, its test, and the cache
@@ -3384,13 +3386,15 @@ Topology-source checks completed 2026-09-04:
   give 12,104 source segments. Exact product-simplex clipping produces 25,712
   affine target segments. The independent verifier checks every parameter
   cover, barycentric containment, source interpolation, target image and
-  continuity; the deterministic 6,262,460-byte cache SHA passes. Verdict:
+  continuity; the deterministic 6,266,468-byte cache SHA passes. Verdict:
   `PASS_X_M1_EJECTED_SPLICE_STUBS_FULL`.
-- Fixed remainder: after removing the first and last segment from each
-  34-segment m1 complement, 32 segments per replacement are outside the
-  collar support. Thus exactly 48,416 core and 48,416 corresponding push
-  segments remain fixed. Merging those with F-590 and F-591 is the final data
-  assembly before testing the complete cancellation image as embedded cycles.
+- Unmapped remainder: after removing the first and last segment from each
+  34-segment m1 complement, 32 segments per replacement remain, exactly
+  48,416 core and 48,416 corresponding push segments. Leaving the two local
+  target germs does not prove that the collar is the identity on these paths;
+  the previous “fixed remainder” wording is withdrawn. A tubular framing and
+  cancellation map along the complete 35-vertex m1 curve must be constructed
+  before they can be merged with F-590/F-591.
 
 ### F-600 — The “actual” sphere-system builder assigns, rather than constructs, the embedding in \(\partial W_2\)
 

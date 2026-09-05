@@ -236,8 +236,9 @@ mapped in `C:\Users\Administrator\.cache\t73_x_m1_ejected_splice_stubs.jsonl.gz`
 Its 12104 core+push source stubs give 25712 affine image segments. Full check:
 `python scripts/verify_t73_x_m1_ejected_splice_stubs.py --full --input-cache
 C:\Users\Administrator\.cache\t73_post_x_framed_replacement_cells.jsonl.gz
---check-cache-sha`. Only the middle 48416 core and 48416 push m1-complement
-segments are fixed; they must now be merged with both image caches.
+--check-cache-sha`. The middle 48416 core and 48416 push m1-complement
+segments remain unmapped: leaving the local germ does not prove the collar is
+the identity there. They require a full tubular trivialization along m1.
 The three missing pre-cancellation dual-cell product ribbons are now explicit
 in [`geometry/t73_actual_dual_product_ribbons.json`](geometry/t73_actual_dual_product_ribbons.json).
 Each planar dual boundary has an eight-quadrilateral/16-triangle annulus to a

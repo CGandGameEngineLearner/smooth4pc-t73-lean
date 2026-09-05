@@ -216,8 +216,9 @@ C:\Users\Administrator\.cache\t73_post_x_framed_replacement_cells.jsonl.gz
 其12104条 core+push source stubs 生成25712条 affine image segments；完整验收：
 `python scripts/verify_t73_x_m1_ejected_splice_stubs.py --full --input-cache
 C:\Users\Administrator\.cache\t73_post_x_framed_replacement_cells.jsonl.gz
---check-cache-sha`。仅中间48416条 core 与48416条 push m1-complement segments
-为 fixed，下一步将它们与两份 image cache 合并。
+--check-cache-sha`。中间48416条 core 与48416条 push m1-complement segments
+仍为 unmapped：离开局部 germ 不能推出 collar 在那里恒等；下一步必须沿完整
+m1 构造 tubular trivialization。
 三个原先缺坐标的 pre-cancellation dual-cell product ribbons 现已显式保存于
 [`geometry/t73_actual_dual_product_ribbons.json`](geometry/t73_actual_dual_product_ribbons.json)。
 每条平面 dual boundary 都有通向有理法向 push-off 的8个四边形/16个三角形

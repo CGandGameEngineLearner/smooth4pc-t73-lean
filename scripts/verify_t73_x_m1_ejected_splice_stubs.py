@@ -44,7 +44,7 @@ def check_receipt():
         "payload": receipt["sha256"] == canonical_sha({key: value for key, value in receipt.items() if key != "sha256"}),
         "builder": receipt["builder_sha256"] == file_sha(BUILDER),
         "sources": receipt["product_extension_sha256"] == product["sha256"] and receipt["post_x_receipt_sha256"] == post_x["sha256"] and receipt["source_germs_sha256"] == germs["sha256"],
-        "counts": receipt["band_count"] == 1513 and receipt["source_core_and_push_stub_segment_count"] == 12104 and receipt["piecewise_affine_stub_image_segment_count"] == 25712 and receipt["fixed_middle_core_segment_count"] == 48416 and receipt["fixed_middle_push_segment_count"] == 48416,
+        "counts": receipt["band_count"] == 1513 and receipt["source_core_and_push_stub_segment_count"] == 12104 and receipt["piecewise_affine_stub_image_segment_count"] == 25712 and receipt["unmapped_middle_core_segment_count"] == 48416 and receipt["unmapped_middle_push_segment_count"] == 48416,
         "verdict": receipt["verdict"] == "PASS_X_M1_EXACT_PIECEWISE_AFFINE_SPLICE_STUB_IMAGES",
     }
     if not all(checks.values()):
@@ -96,14 +96,14 @@ def verify_full(input_cache=None, check_cache_sha=False):
                 pushed = tuple(tuple(value[axis] + uniform[axis] for axis in range(4)) for value in segment)
                 image_segments += verify_pieces(*pushed, stored["outward_push_segment_image"], simplex_charts, targets)
                 source_segments += 2
-            if record["fixed_target_complement_middle_vertex_range"] != [1, len(values) - 2] or record["fixed_target_complement_middle_segment_count"] != len(values) - 3:
-                raise AssertionError("fixed complement middle range changed")
+            if record["unmapped_target_complement_middle_vertex_range"] != [1, len(values) - 2] or record["unmapped_target_complement_middle_segment_count"] != len(values) - 3:
+                raise AssertionError("unmapped complement middle range changed")
             fixed_middle += len(values) - 3
         if next(source_file, None) is not None or next(image_file, None) is not None:
             raise AssertionError("splice/source cache lengths differ")
     if (source_segments, image_segments, fixed_middle) != (12104, 25712, 48416):
         raise AssertionError("splice-stub full totals changed")
-    return {"verdict": "PASS_X_M1_EJECTED_SPLICE_STUBS_FULL", "fast_checks": checks, "source_segments": source_segments, "image_segments": image_segments, "fixed_middle_core_segments": fixed_middle, "cache_sha_checked": check_cache_sha, "merge_status": "OPEN_MERGE_COMPLETE_REPLACEMENT_PATHS"}
+    return {"verdict": "PASS_X_M1_EJECTED_SPLICE_STUBS_FULL", "fast_checks": checks, "source_segments": source_segments, "image_segments": image_segments, "unmapped_middle_core_segments": fixed_middle, "cache_sha_checked": check_cache_sha, "merge_status": "OPEN_BUILD_FULL_M1_TUBULAR_TRIVIALIZATION"}
 
 
 def main():

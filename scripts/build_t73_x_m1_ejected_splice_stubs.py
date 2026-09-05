@@ -52,7 +52,7 @@ def build(cache_path, input_cache_override=None):
     source_vertices = [point(value) for value in product["source_vertices"]]; targets = [point(value) for value in product["target_vertex_images"]]
     charts = [simplex_chart(source_vertices, simplex) for simplex in product["four_simplices"]]; uniform = point(product["exteriorized_uniform_push_vector"])
     input_cache = input_cache_override or Path(post_x["cache_path"]); cache_path.parent.mkdir(parents=True, exist_ok=True)
-    digest = hashlib.sha256(); counts = Counter(); source_segments = image_segments = fixed_middle_segments = 0
+    digest = hashlib.sha256(); counts = Counter(); source_segments = image_segments = unmapped_middle_segments = 0
     header = {"record": "header", "schema": "t73_x_m1_ejected_splice_stubs/v1", "product_extension_sha256": product["sha256"], "post_x_receipt_sha256": post_x["sha256"], "source_germs_sha256": germs_data["sha256"]}
     with gzip.open(input_cache, "rt", encoding="utf-8") as source_file, cache_path.open("wb") as raw_output:
         next(source_file)
@@ -75,16 +75,16 @@ def build(cache_path, input_cache_override=None):
                     "target_complement_last": mapped_pair(target_after, uniform, charts, targets),
                     "source_stub_after": mapped_pair(source_after, uniform, charts, targets),
                 }
-                record = {"record": "ejected_splice_stubs", "band_index": index, "component": cell["component"], "stubs": stubs, "fixed_target_complement_middle_vertex_range": [1, len(values) - 2], "fixed_target_complement_middle_segment_count": len(values) - 3}
+                record = {"record": "ejected_splice_stubs", "band_index": index, "component": cell["component"], "stubs": stubs, "unmapped_target_complement_middle_vertex_range": [1, len(values) - 2], "unmapped_target_complement_middle_segment_count": len(values) - 3}
                 for value in stubs.values():
                     source_segments += 2; image_segments += len(value["core_segment_image"]) + len(value["outward_push_segment_image"])
-                fixed_middle_segments += len(values) - 3; counts[cell["component"]] += 1
+                unmapped_middle_segments += len(values) - 3; counts[cell["component"]] += 1
                 raw = (canonical(record) + "\n").encode(); output.write(raw); digest.update(raw)
     receipt = {
         "schema": "t73_x_m1_ejected_splice_stubs_receipt/v1", "cache_path": str(cache_path), "cache_size": cache_path.stat().st_size, "cache_sha256": file_sha(cache_path), "record_stream_sha256": digest.hexdigest().upper(), "builder_sha256": file_sha(Path(__file__)),
         "product_extension_sha256": product["sha256"], "post_x_receipt_sha256": post_x["sha256"], "source_germs_sha256": germs_data["sha256"], "band_count": sum(counts.values()), "component_counts": dict(sorted(counts.items())),
-        "source_core_and_push_stub_segment_count": source_segments, "piecewise_affine_stub_image_segment_count": image_segments, "fixed_middle_core_segment_count": fixed_middle_segments, "fixed_middle_push_segment_count": fixed_middle_segments,
-        "verdict": "PASS_X_M1_EXACT_PIECEWISE_AFFINE_SPLICE_STUB_IMAGES", "scope_boundary": "all nontrivial replacement segments now imaged; fixed m1-complement middles remain to be merged with F-590 lanes",
+        "source_core_and_push_stub_segment_count": source_segments, "piecewise_affine_stub_image_segment_count": image_segments, "unmapped_middle_core_segment_count": unmapped_middle_segments, "unmapped_middle_push_segment_count": unmapped_middle_segments,
+        "verdict": "PASS_X_M1_EXACT_PIECEWISE_AFFINE_SPLICE_STUB_IMAGES", "scope_boundary": "local germ stubs imaged; m1-complement middles require a full tubular trivialization and remain unmapped",
     }
     receipt["sha256"] = canonical_sha(receipt); RECEIPT.write_text(json.dumps(receipt, indent=2, sort_keys=True) + "\n", encoding="utf-8"); return receipt
 
@@ -92,7 +92,7 @@ def build(cache_path, input_cache_override=None):
 def main():
     parser = argparse.ArgumentParser(); parser.add_argument("--output", type=Path); parser.add_argument("--input-cache", type=Path); args = parser.parse_args()
     receipt = build(args.output or Path(os.environ.get("T73_X_M1_EJECTED_STUBS_CACHE", DEFAULT_CACHE)), args.input_cache)
-    print(json.dumps({"verdict": receipt["verdict"], "source_segments": receipt["source_core_and_push_stub_segment_count"], "image_segments": receipt["piecewise_affine_stub_image_segment_count"], "fixed_middle_core_segments": receipt["fixed_middle_core_segment_count"], "bytes": receipt["cache_size"]}, sort_keys=True))
+    print(json.dumps({"verdict": receipt["verdict"], "source_segments": receipt["source_core_and_push_stub_segment_count"], "image_segments": receipt["piecewise_affine_stub_image_segment_count"], "unmapped_middle_core_segments": receipt["unmapped_middle_core_segment_count"], "bytes": receipt["cache_size"]}, sort_keys=True))
 
 
 if __name__ == "__main__":

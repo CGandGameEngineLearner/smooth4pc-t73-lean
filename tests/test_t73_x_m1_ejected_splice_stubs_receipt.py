@@ -18,7 +18,7 @@ class XM1EjectedSpliceStubsReceiptTest(unittest.TestCase):
         receipt, checks = module.check_receipt()
         self.assertTrue(all(checks.values()))
         self.assertEqual(receipt["piecewise_affine_stub_image_segment_count"], 25712)
-        self.assertEqual(receipt["fixed_middle_core_segment_count"], 48416)
+        self.assertEqual(receipt["unmapped_middle_core_segment_count"], 48416)
 
 
 if __name__ == "__main__":
