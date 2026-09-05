@@ -1,0 +1,137 @@
+{
+  "feet": [
+    {
+      "boundary_identification": "reflection in plane through origin perpendicular to positive_center",
+      "handle_index": 0,
+      "negative_center": [
+        "-1",
+        "0",
+        "0"
+      ],
+      "positive_center": [
+        "1",
+        "0",
+        "0"
+      ],
+      "radius": "1/20",
+      "reflection_matrix": [
+        [
+          "-1",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "1"
+        ]
+      ]
+    },
+    {
+      "boundary_identification": "reflection in plane through origin perpendicular to positive_center",
+      "handle_index": 1,
+      "negative_center": [
+        "0",
+        "-1",
+        "0"
+      ],
+      "positive_center": [
+        "0",
+        "1",
+        "0"
+      ],
+      "radius": "1/20",
+      "reflection_matrix": [
+        [
+          "1",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "-1",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "1"
+        ]
+      ]
+    },
+    {
+      "boundary_identification": "reflection in plane through origin perpendicular to positive_center",
+      "handle_index": 2,
+      "negative_center": [
+        "0",
+        "0",
+        "-1"
+      ],
+      "positive_center": [
+        "0",
+        "0",
+        "1"
+      ],
+      "radius": "1/20",
+      "reflection_matrix": [
+        [
+          "1",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "-1"
+        ]
+      ]
+    },
+    {
+      "boundary_identification": "reflection in plane through origin perpendicular to positive_center",
+      "handle_index": 3,
+      "negative_center": [
+        "-1/3",
+        "-2/3",
+        "-2/3"
+      ],
+      "positive_center": [
+        "1/3",
+        "2/3",
+        "2/3"
+      ],
+      "radius": "1/20",
+      "reflection_matrix": [
+        [
+          "7/9",
+          "-4/9",
+          "-4/9"
+        ],
+        [
+          "-4/9",
+          "1/9",
+          "-8/9"
+        ],
+        [
+          "-4/9",
+          "-8/9",
+          "1/9"
+        ]
+      ]
+    }
+  ],
+  "literature_source": "AR84 Figure 2a, internal page 5",
+  "schema": "t73_ar_foot_pairing_model/v1",
+  "sha256": "D480B6A8DDBA4AB387F0D1F7B39032A8B0F2A2FFC4E62219219402DD2AA6C608",
+  "status": "VERIFIED_GENERIC_FOOT_MODEL_ONLY",
+  "t73_lane_binding": "OPEN"
+}
