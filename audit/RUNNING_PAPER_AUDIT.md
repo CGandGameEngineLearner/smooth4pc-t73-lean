@@ -2555,6 +2555,43 @@ Topology-source checks completed 2026-09-04:
   hybrid state, select its distinct m1 parallel, and repeat the exact local and
   hybrid checks through band 1512 before x/m1 deletion.
 
+### F-563 — All 1513 x-bands pass a full sequential positive-belt segment-state replay
+
+- Severity: **Actual local x-cancellation movie / complete local sequence**
+- Status: **1513 LOCAL FRAMED STATES PASS; 1512 GLOBAL HYBRID SPLICES OPEN**
+- Evidence: `scripts/build_t73_x_band_local_movie.py`,
+  `scripts/verify_t73_x_band_local_movie.py`,
+  `geometry/t73_x_band_local_movie.json`,
+  `audit/t73_x_band_local_movie_verification.json`, its receipt builder, and
+  tests.
+- State model: state 0 has 3028 local segments from 1514 actual passage arcs.
+  Every slide removes its two source segments and adds two retained source
+  stubs, four oriented band-boundary segments, and two m1-parallel stubs. Thus
+  all historical detours remain obstacles. The final state has 12106 segments
+  and only `m_1:C_i` as an active x-passage source.
+- Orientation/framing: every removed-source orientation equals its replacement
+  orientation, and target coefficients are the distinct integers
+  `20,40,...,30260`. Johnson sources use the top-fiber product normal modulo x
+  tangent; the four dual sources use the actual normals of their explicit
+  z=0 or y=0 disks. Band 0 retains its verified boundary interpolation. Each
+  later band selects the first exact-disjoint constant push in
+  `{0} x {-1,0,1}^3 * width/16`, with nonzero homotopies to both boundary
+  framings.
+- Full verification: all 1514 segment-state hashes and 1513 removed/added
+  deltas are independently replayed. NumPy screens 91,554,656 AABB pairs;
+  23,265,900 candidates receive exact rational segment-triangle tests. Source
+  and target contacts total 4539 each. Every disk/push pair, opposite lane,
+  current source, historical detour, and remaining passage passes. Verdict:
+  `PASS_ALL_1513_X_LOCAL_FRAMED_BAND_STATES`.
+- Receipt discipline: the full verifier was run twice. The receipt binds movie
+  bytes, canonical payload SHA, verifier bytes, source SHAs, verdict, and all
+  fixed counts. Fast daily checks do not replace the full run; receipt creation
+  requires `--write --full`.
+- Boundary: local passage cancellation is complete, but only band 0 has a
+  verified component-level hybrid splice and inverse. The remaining 1512
+  deltas still require complete distinct m1 parallels, chart gluings, inherited
+  seams, global clearance, and inverse recovery. No x/m1 deletion is inferred.
+
 ### F-600 — The “actual” sphere-system builder assigns, rather than constructs, the embedding in \(\partial W_2\)
 
 - Severity: **Critical**

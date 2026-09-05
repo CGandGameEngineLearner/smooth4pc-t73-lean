@@ -1,0 +1,28 @@
+{
+  "actual_ar_link_sha256": "E5CD3C2A2AD0650D061CFB730F54F32C1F2860D2FD0813067550D545D02D2853",
+  "full_verifier_result": {
+    "bands": 1513,
+    "exact_segment_triangle_checks": 23265900,
+    "final_segments": 12106,
+    "global_hybrid_splices_verified": 1,
+    "initial_segments": 3028,
+    "numpy_broad_phase_pairs": 91554656,
+    "remaining_x_passage_sources": [
+      "m_1:C_i"
+    ],
+    "source_triangle_contacts": 4539,
+    "states": 1514,
+    "target_triangle_contacts": 4539,
+    "verdict": "PASS_ALL_1513_X_LOCAL_FRAMED_BAND_STATES"
+  },
+  "movie_bytes_sha256": "B61761BB7C378B19236CB4FE34863236C5AE72AD87A0EDEF316FFD0D5A0A050B",
+  "movie_path": "geometry/t73_x_band_local_movie.json",
+  "movie_payload_sha256": "3185E56EB9D7572DE760B00DE1DC6EC1927BDE5B9AE32A7C0EB706FAC3742C42",
+  "positive_belt_state0_sha256": "774FBDE8B91CEE81C4593A22BD6BA448B38599985DDA18B37962E546E5E02DFB",
+  "schema": "t73_x_band_local_movie_verification_receipt/v1",
+  "verdict": "PASS_ALL_1513_X_LOCAL_FRAMED_BAND_STATES",
+  "verification_mode": "FULL_INDEPENDENT_CURRENT_SEGMENT_STATE_REPLAY",
+  "verifier_bytes_sha256": "88D3AE128554441D124FE137E30F27F3C17590C96A8A64014E8F021144B677FB",
+  "verifier_path": "scripts/verify_t73_x_band_local_movie.py",
+  "x_cancellation_sha256": "B72838D6671FAFBD3D8368E511759D9DE13007C81E4C731EAA661B084B951C1B"
+}

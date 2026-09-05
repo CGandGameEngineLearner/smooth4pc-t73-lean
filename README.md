@@ -226,6 +226,18 @@ The resulting global/local state transition is
 Rebuild/check it with `build_t73_x_band0_hybrid_state.py --check` and
 `verify_t73_x_band0_hybrid_state.py`; the verdict is
 `PASS_X_BAND0_HYBRID_FRAMED_STATE_0_TO_1`.
+All 1513 positive-belt local state deltas are saved compactly in
+[`geometry/t73_x_band_local_movie.json`](geometry/t73_x_band_local_movie.json).
+Rebuild them with `python3 scripts/build_t73_x_band_local_movie.py --check`.
+The full current-segment replay is
+`python3 scripts/verify_t73_x_band_local_movie.py`; set `T73_PROGRESS=1` for
+progress output. It verifies 1514 states, including every retained source
+stub, band lane, and m1-parallel stub, and returns
+`PASS_ALL_1513_X_LOCAL_FRAMED_BAND_STATES`. The first full run is hash-bound in
+[`audit/t73_x_band_local_movie_verification.json`](audit/t73_x_band_local_movie_verification.json).
+Daily tests use `python3 scripts/build_t73_x_band_local_movie_receipt.py --check`;
+receipt regeneration requires explicit `--write --full`. Only the first global
+hybrid splice is verified, so the remaining 1512 global splices are open.
 The first end-to-end candidate slide, including an explicit closed post-slide
 4D core, is
 [`geometry/t73_candidate_t_band0_splice.json`](geometry/t73_candidate_t_band0_splice.json),

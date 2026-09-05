@@ -202,6 +202,17 @@ attaching 3-ball、所得 PL 4-ball/S3 边界、实际 belt 重心交点、AR fr
 使用 `build_t73_x_band0_hybrid_state.py --check` 与
 `verify_t73_x_band0_hybrid_state.py` 重建/验收；verdict 为
 `PASS_X_BAND0_HYBRID_FRAMED_STATE_0_TO_1`。
+全部 1513 个 positive-belt 局部状态 delta 紧凑保存于
+[`geometry/t73_x_band_local_movie.json`](geometry/t73_x_band_local_movie.json)，
+使用 `python3 scripts/build_t73_x_band_local_movie.py --check` 重建。完整
+current-segment replay 命令为 `python3 scripts/verify_t73_x_band_local_movie.py`；
+设置 `T73_PROGRESS=1` 可显示进度。它验证含全部 source stub、band lane 与
+m1-parallel stub 的 1514 个状态，返回
+`PASS_ALL_1513_X_LOCAL_FRAMED_BAND_STATES`。首次完整运行绑定于
+[`audit/t73_x_band_local_movie_verification.json`](audit/t73_x_band_local_movie_verification.json)。
+日常测试运行 `python3 scripts/build_t73_x_band_local_movie_receipt.py --check`；
+重建收据必须显式使用 `--write --full`。当前只有第一个 global hybrid splice
+已验证，其余 1512 个 global splice 仍开放。
 第一条端到端 candidate slide（含显式闭合的 post-slide 4D core）位于
 [`geometry/t73_candidate_t_band0_splice.json`](geometry/t73_candidate_t_band0_splice.json)，
 使用 `python3 scripts/build_t73_candidate_t_band0_splice.py --check` 重建。
