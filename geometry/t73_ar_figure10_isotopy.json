@@ -1,0 +1,28 @@
+{
+  "affine_rules": {
+    "L_B": "psi_t(exp(pi*i*(x,y,z)))=exp(pi*i*(x,y,z+t*(1/2-epsilon)))",
+    "L_D": "psi_t(exp(pi*i*(x_prime,y_prime,z_prime)))=exp(pi*i*(x_prime,y_prime,z_prime-t*(1/2-epsilon)))"
+  },
+  "completion_status": "VERIFIED_LITERATURE_RULE_ONLY",
+  "fixed_point": "q=exp(pi*i*(0,0,0))",
+  "invariants": [
+    "q fixed at every stage",
+    "C3 and conjugate C3 remain on their designated tori",
+    "g-symmetry preserved"
+  ],
+  "literature_source": "AR84 internal page 15, Figure 10a--10g discussion",
+  "parameter_domain": {
+    "epsilon": "small_positive_rational",
+    "t": [
+      "0",
+      "1"
+    ]
+  },
+  "schema": "t73_ar_figure10_isotopy/v1",
+  "sha256": "35BE3EF89F009D0489740C30E18FFCC4DC71F21ADCFD0C42E5339445A00E8957",
+  "word_output": {
+    "C1": "alpha_2",
+    "C2": "alpha_3 alpha_2",
+    "C3": "alpha_1 alpha_3^v"
+  }
+}
