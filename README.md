@@ -142,6 +142,14 @@ z-foot regular-neighborhood tubes. Rebuild/check with
 `build_t73_final_free_reduction_bigons.py --check` and
 `verify_t73_final_free_reduction_bigons.py`; verdict:
 `PASS_THREE_FINAL_FREE_REDUCTION_BIGON_TUBES`.
+The surviving framed 1-skeleton map is
+[`geometry/t73_hybrid_to_railroad_graph_map.json`](geometry/t73_hybrid_to_railroad_graph_map.json).
+It maps 1780 source vertices and 1780 connector edges bijectively onto all
+railroad event/segment cells, including 1510 surviving hybrid replacements and
+the residual r_zx split circle. Verify with
+`verify_t73_hybrid_to_railroad_graph_map.py`. Verdict:
+`PASS_HYBRID_TO_RAILROAD_FRAMED_GRAPH_ISOMORPHISM_ONLY`; ambient tracks remain
+open.
 
 Separately, the C-cut 44-lane candidate realization is
 [`geometry/t73_y_foot_lane_candidate.json`](geometry/t73_y_foot_lane_candidate.json):

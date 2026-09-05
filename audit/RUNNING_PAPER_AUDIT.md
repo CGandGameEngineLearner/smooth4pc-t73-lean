@@ -2932,6 +2932,32 @@ Topology-source checks completed 2026-09-04:
   their central/hybrid connector cells, with normal fields and an explicit
   inverse; the target PD alone cannot supply that source isotopy.
 
+### F-575 — The reduced hybrid and railroad framed 1-skeleta are explicitly isomorphic
+
+- Severity: **hybrid-to-railroad comparison / graph layer**
+- Status: **FRAMED GRAPH ISOMORPHISM PASS; AMBIENT TRACKS OPEN**
+- Evidence: `scripts/build_t73_hybrid_to_railroad_graph_map.py`,
+  `scripts/verify_t73_hybrid_to_railroad_graph_map.py`,
+  `geometry/t73_hybrid_to_railroad_graph_map.json`, and its test.
+- Vertex map: 1779 surviving passage events and one residual r_zx split-circle
+  basepoint map to the exact railroad event vertices. Of the x replacements,
+  1510 survive and bind directly to their F-566 transition hashes; the other
+  three occur in the F-574 bigon collapses. Every base/dual event binds to its
+  complete F-569 passage record.
+- Edge map: each ordinary cyclic source connector maps to one railroad segment;
+  each nonempty component closure maps to its three-segment exterior chain.
+  The zero-word r_zx residual edge maps around the four-segment split diamond.
+  For every component, target segments form a disjoint exhaustive partition.
+- Framing: each component map carries the independently verified railroad push
+  vector. Exact totals are V=1780, E=1780, five cyclic components, and 3560
+  source cells. Verdict:
+  `PASS_HYBRID_TO_RAILROAD_FRAMED_GRAPH_ISOMORPHISM_ONLY`.
+- Boundary: graph incidence and target framing do not prove ambient isotopy of
+  the embedded source tangle. The next artifact must give PL tracks for every
+  source vertex/edge, prove all intermediate time slices embedded and mutually
+  disjoint relative to the foot/dotted neighborhoods, and construct the
+  inverse ambient extension. Until then kappa_AR remains open.
+
 ### F-600 — The “actual” sphere-system builder assigns, rather than constructs, the embedding in \(\partial W_2\)
 
 - Severity: **Critical**

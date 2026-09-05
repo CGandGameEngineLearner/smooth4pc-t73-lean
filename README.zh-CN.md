@@ -130,6 +130,12 @@ passage 与 r_zx 的两层嵌套 pair。使用
 `build_t73_final_free_reduction_bigons.py --check` 与
 `verify_t73_final_free_reduction_bigons.py` 重建/验收；verdict 为
 `PASS_THREE_FINAL_FREE_REDUCTION_BIGON_TUBES`。
+surviving framed 1-skeleton map 位于
+[`geometry/t73_hybrid_to_railroad_graph_map.json`](geometry/t73_hybrid_to_railroad_graph_map.json)。
+它将1780个 source vertices 与1780条 connector edges 双射到全部 railroad
+event/segment cells，含1510个 surviving hybrid replacements 与 residual r_zx
+split circle。使用 `verify_t73_hybrid_to_railroad_graph_map.py` 验收；verdict 为
+`PASS_HYBRID_TO_RAILROAD_FRAMED_GRAPH_ISOMORPHISM_ONLY`，ambient tracks 仍开放。
 
 另一个独立层次中，C-cut 的 44-lane candidate realization 为
 [`geometry/t73_y_foot_lane_candidate.json`](geometry/t73_y_foot_lane_candidate.json)：
