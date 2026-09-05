@@ -115,6 +115,9 @@ locator 已验证；基于 width 的区间选择仍为 candidate。
 [`geometry/t73_candidate_t_band0_splice.json`](geometry/t73_candidate_t_band0_splice.json)，
 使用 `python3 scripts/build_t73_candidate_t_band0_splice.py --check` 重建。
 其范围为 `CANDIDATE_CLOSED_SPLICE_ONLY`，仍待相交与 Kirby-move 检查。
+`python3 scripts/verify_t73_candidate_t_band0_splice.py` 当前返回
+`OPEN_PERIODIC_T3_LIFT_REQUIRED`：保存的源 core 使用 torus wrap 坐标，必须先 lift
+到 universal cover，才能进行有效的 affine PL 相交检查。
 
 1513 步 x-cancellation candidate movie 位于
 [`geometry/t73_candidate_x_band_movie.json`](geometry/t73_candidate_x_band_movie.json)，

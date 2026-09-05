@@ -128,6 +128,9 @@ The first end-to-end candidate slide, including an explicit closed post-slide
 [`geometry/t73_candidate_t_band0_splice.json`](geometry/t73_candidate_t_band0_splice.json),
 rebuilt with `python3 scripts/build_t73_candidate_t_band0_splice.py --check`.
 Its scope is `CANDIDATE_CLOSED_SPLICE_ONLY` pending intersection and Kirby-move checks.
+`python3 scripts/verify_t73_candidate_t_band0_splice.py` currently returns
+`OPEN_PERIODIC_T3_LIFT_REQUIRED`: the saved source core uses wrapped torus
+coordinates and must be lifted before affine PL intersection tests are valid.
 
 The 1513-step x-cancellation candidate movie is
 [`geometry/t73_candidate_x_band_movie.json`](geometry/t73_candidate_x_band_movie.json),

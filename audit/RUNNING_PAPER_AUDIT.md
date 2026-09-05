@@ -2163,6 +2163,19 @@ Topology-source checks completed 2026-09-04:
 - Boundary: self-disjointness, disjointness from the other link components,
   framed push-off transport and actual Kirby-slide equivalence remain open.
 
+### F-549 — The first t-band splice requires a quotient-aware T3 lift before embeddedness testing
+
+- Severity: **Coordinate-semantics correction / fail-closed gate**
+- Status: **OPEN PERIODIC LIFT; NO SELF-INTERSECTION VERDICT**
+- Evidence: `scripts/verify_t73_candidate_t_band0_splice.py`.
+- Finding: interpreting the saved wrapped `core_polyline_T3xI` as an affine Q4
+  polyline produces a first segment collision at indices 16 and 18. The source
+  builder separately stores `C_i_universal_cover_lift`, confirming that the
+  wrapped points encode a T3 quotient rather than a single affine chart.
+- Consequence: the verifier returns `OPEN_PERIODIC_T3_LIFT_REQUIRED`; it does
+  not call the curve self-intersecting. A continuous universal-cover lift with
+  recorded deck translations is required before exact PL intersection tests.
+
 ### F-600 — The “actual” sphere-system builder assigns, rather than constructs, the embedding in \(\partial W_2\)
 
 - Severity: **Critical**
