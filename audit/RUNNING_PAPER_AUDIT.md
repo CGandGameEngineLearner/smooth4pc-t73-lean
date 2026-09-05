@@ -2282,6 +2282,33 @@ Topology-source checks completed 2026-09-04:
 - Remaining boundary: the actual Kirby-slide/reconnection interpretation and
   the remaining five t-bands are open.
 
+### F-554 — All six t-band disks are explicit in the actual t-belt collar, but only as a sequential candidate movie
+
+- Severity: **Sequential Kirby-movie construction / candidate framing interior**
+- Status: **SIX INDIVIDUAL COLLAR DISKS PASS; CURRENT-LINK REPLAY OPEN**
+- Evidence: `scripts/build_t73_t_band_collar_surfaces.py`,
+  `scripts/verify_t73_t_band_collar_surfaces.py`,
+  `geometry/t73_t_band_collar_surfaces.json`, and its test.
+- Actual-coordinate binding: every centerline is the stored AR cancellation
+  centerline at `u=1/2`, and every one of its spatial vertices lies exactly on
+  the octahedral t-belt sphere. The first and last cross-sections are exactly
+  the independently bound source and parallel-h_CS target intervals.
+- Exact PL verification: all six triangle complexes have Euler characteristic
+  one and precisely the declared four-part boundary. Nonadjacent triangles of
+  each individual disk pass exact rational intersection checks. The six
+  `movie_time_order` values form the total order `0,1,2,3,4,5`.
+- Sequentiality evidence: 132 exact inter-band triangle comparisons find
+  spatial intersections for band pairs `(0,2)`, `(0,5)`, and `(3,4)`. These
+  are retained in the verifier result and are valid only because the disks
+  occur at distinct movie times; the construction makes no simultaneous
+  disjointness claim.
+- Boundary: normal fields agree with the actual source and h_CS target records,
+  while their interiors remain canonical candidates. A legitimate sequential
+  Kirby proof still requires reconstructing each post-slide current link,
+  re-binding the next attachment in that state, and checking the ambient
+  framed move and its inverse. The fail-closed verdict is
+  `PASS_T_BAND_COLLAR_DISKS_SEQUENTIAL_CANDIDATE_FRAMING_ONLY`.
+
 ### F-600 — The “actual” sphere-system builder assigns, rather than constructs, the embedding in \(\partial W_2\)
 
 - Severity: **Critical**

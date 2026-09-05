@@ -136,6 +136,17 @@ Rebuild and independently check them with
 `build_t73_t_band_framing_extensions.py --check` and
 `verify_t73_t_band_framing_extensions.py`. The interior interpolation remains
 candidate; the source and h_CS boundary framings are actual-record bindings.
+The corresponding six rational PL disks in the actual octahedral t-belt
+collar are saved in
+[`geometry/t73_t_band_collar_surfaces.json`](geometry/t73_t_band_collar_surfaces.json).
+Rebuild and check them with
+`python3 scripts/build_t73_t_band_collar_surfaces.py --check` and
+`python3 scripts/verify_t73_t_band_collar_surfaces.py`. Each disk is locally
+embedded and has the exact source/target intervals, but the six slides are
+sequential, not simultaneous: the verifier records spatial intersections for
+band pairs `(0,2)`, `(0,5)`, and `(3,4)` at distinct movie times. The verdict
+`PASS_T_BAND_COLLAR_DISKS_SEQUENTIAL_CANDIDATE_FRAMING_ONLY` does not yet
+certify current-link replay or an actual Kirby equivalence.
 The first end-to-end candidate slide, including an explicit closed post-slide
 4D core, is
 [`geometry/t73_candidate_t_band0_splice.json`](geometry/t73_candidate_t_band0_splice.json),

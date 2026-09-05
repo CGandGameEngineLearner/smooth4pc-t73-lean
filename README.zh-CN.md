@@ -122,6 +122,14 @@ h_CS framed parallel，顺序系数为 `[-25,-15,-5,5,15,25]`，返回
 使用 `build_t73_t_band_framing_extensions.py --check` 重建，并用
 `verify_t73_t_band_framing_extensions.py` 独立检查。内部插值仍为 candidate；
 source 与 h_CS 边界 framing 是 actual-record binding。
+位于实际八面体 t-belt collar 内的六张有理 PL 盘保存于
+[`geometry/t73_t_band_collar_surfaces.json`](geometry/t73_t_band_collar_surfaces.json)。
+使用 `python3 scripts/build_t73_t_band_collar_surfaces.py --check` 重建，并用
+`python3 scripts/verify_t73_t_band_collar_surfaces.py` 独立检查。每张盘各自局部
+嵌入，并精确绑定 source/target interval；六次 slide 是顺序 movie，而非同时发生：
+verifier 将 `(0,2)`、`(0,5)`、`(3,4)` 的空间交汇记录在不同时间层。返回值
+`PASS_T_BAND_COLLAR_DISKS_SEQUENTIAL_CANDIDATE_FRAMING_ONLY` 尚不证明
+current-link replay 或实际 Kirby 等价。
 第一条端到端 candidate slide（含显式闭合的 post-slide 4D core）位于
 [`geometry/t73_candidate_t_band0_splice.json`](geometry/t73_candidate_t_band0_splice.json)，
 使用 `python3 scripts/build_t73_candidate_t_band0_splice.py --check` 重建。
