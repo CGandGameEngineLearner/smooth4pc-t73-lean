@@ -2,6 +2,7 @@
 """Normalize legacy band centerlines into a declared candidate 4D chart."""
 from __future__ import annotations
 import argparse,hashlib,json
+from fractions import Fraction
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 T=ROOT/'geometry/t73_cancel_t_hcs.json';X=ROOT/'geometry/t73_cancel_x_m1.json';OUT=ROOT/'geometry/t73_candidate_band_chart_normalization.json'
@@ -10,7 +11,7 @@ def lift_t(p): return p if len(p)==4 else [*p,'1/2']
 def lift_x(p):
     if len(p)==4:return p
     if len(p)!=3:raise AssertionError('unexpected x-band coordinate arity')
-    return ['2',p[0],p[1],f'1/2+({p[2]})']
+    return ['2',p[0],p[1],str(Fraction(1,2)+Fraction(p[2]))]
 def build():
  t=json.loads(T.read_text());x=json.loads(X.read_text())
  rows=[]
