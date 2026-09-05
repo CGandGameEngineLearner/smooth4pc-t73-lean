@@ -106,6 +106,9 @@ followed by `scripts/export_t73_full_handle_diagram.py`. Its status is
 The candidate coordinate lifts for all 6 t-bands and 1513 x-bands are saved in
 [`geometry/t73_candidate_band_chart_normalization.json`](geometry/t73_candidate_band_chart_normalization.json)
 and rebuilt with `python3 scripts/build_t73_candidate_band_chart_normalization.py --check`.
+Their 3035 rational PL rectangle segments, boundaries and push-offs are saved in
+[`geometry/t73_candidate_band_rectangles.json`](geometry/t73_candidate_band_rectangles.json)
+and rebuilt with `python3 scripts/build_t73_candidate_band_rectangles.py --check`.
 
 ### Gmsh frames and partitioned-frame inputs
 

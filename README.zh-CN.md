@@ -98,6 +98,9 @@ python3 scripts/build_t73_actual_cancellation_splice_request.py --check
 全部 6 条 t-band 与 1513 条 x-band 的候选统一坐标 lift 保存于
 [`geometry/t73_candidate_band_chart_normalization.json`](geometry/t73_candidate_band_chart_normalization.json)，
 使用 `python3 scripts/build_t73_candidate_band_chart_normalization.py --check` 重建。
+其 3035 个有理 PL rectangle 分段、边界和 push-off 保存于
+[`geometry/t73_candidate_band_rectangles.json`](geometry/t73_candidate_band_rectangles.json)，
+使用 `python3 scripts/build_t73_candidate_band_rectangles.py --check` 重建。
 
 ### Gmsh frame 与分块 frame 输入
 
