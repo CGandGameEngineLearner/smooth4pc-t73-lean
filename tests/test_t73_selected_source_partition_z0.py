@@ -40,7 +40,7 @@ class Z0PartitionTest(unittest.TestCase):
             self.assertEqual(len(item["segment"]), 2)
             self.assertTrue(all(Fraction(vertex[2]) == 0 for vertex in item["segment"]))
         paths = {(item["route_index"], item["kind"], item["segment_index"]) for item in data["path_fragments"]}
-        self.assertEqual(len(paths), 630 * 2 * 2)
+        self.assertEqual(len(paths), 630 * 6)
         for item in data["path_fragments"]:
             values = [Fraction(vertex[2]) for vertex in item["segment"]]
             self.assertTrue(all(value <= 0 for value in values) if item["side"] == "z_nonpositive" else all(value >= 0 for value in values))

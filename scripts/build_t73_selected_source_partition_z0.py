@@ -86,6 +86,10 @@ def build():
             for segment_index, (first, second) in enumerate(zip(raw_vertices, raw_vertices[1:])):
                 for side, left, right in split_segment(first, second):
                     paths.append({"route_index": route_index, "kind": kind, "segment_index": segment_index, "side": side, "segment": [encode(left), encode(right)]})
+        for kind in ("initial_transverse_edge", "terminal_transverse_edge"):
+            first, second = (point(vertex) for vertex in route["ruled_ribbon_boundary"][kind])
+            for side, left, right in split_segment(first, second):
+                paths.append({"route_index": route_index, "kind": kind, "segment_index": 0, "side": side, "segment": [encode(left), encode(right)]})
     result = {"schema": "t73_selected_source_partition_z0/v1", "source_exterior_sha256": source["sha256"], "plane": ["0", "0", "1", "0"], "blocks": {"z_nonpositive": lower, "z_nonnegative": upper}, "interface_segments": interface, "path_fragments": paths, "original_triangle_count": 2520}
     result["sha256"] = canonical_sha(result)
     return result
