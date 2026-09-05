@@ -3360,11 +3360,37 @@ Topology-source checks completed 2026-09-04:
   simplex clipping, and direct Windows reads through `wsl.localhost` were not
   stable. A byte-identical SHA-checked copy of the F-583 input cache was used
   under Windows Python; no geometric or arithmetic rule changed.
-- Boundary: source stubs and oriented m1 complements account for the other
-  54,468 core pieces and are fixed by the collar outside its support. They must
-  be copied and joined with these nontrivial images, with the corresponding
-  source/gluing chart maps checked, before a complete 60,520-segment
-  cancellation image can be claimed.
+- Boundary: F-591 shows that the two source stubs and two endpoint segments of
+  each oriented m1 complement also meet the collar support and computes their
+  images. Only the 32 middle complement segments per replacement, 48,416 core
+  and 48,416 push segments, are fixed. They still need to be merged with the
+  F-590/F-591 image caches.
+
+### F-591 — Every source/target splice-end stub has an exact collar image
+
+- Severity: **x/m1 cancellation / complete nontrivial path image**
+- Status: **ALL SPLICE-END IMAGES PASS; FIXED MIDDLES NOT YET MERGED**
+- Evidence: `scripts/build_t73_x_m1_ejected_splice_stubs.py`,
+  `scripts/verify_t73_x_m1_ejected_splice_stubs.py`,
+  `audit/t73_x_m1_ejected_splice_stubs_receipt.json`, its test, and the cache
+  named in that receipt.
+- Chart recovery: each source stub is pulled back by its actual source germ,
+  subtracting the recorded period-four deck vector; three-dimensional dual
+  germs receive their explicit collar coordinate. The first target-complement
+  segment uses the reflected target germ, and the last first removes the
+  oriented closing deck before using the same germ. Their four endpoint
+  equalities with the negative/positive band lanes pass for all 1513 bands.
+- Exact images: four core stubs and their four F-589 outward pushes per band
+  give 12,104 source segments. Exact product-simplex clipping produces 25,712
+  affine target segments. The independent verifier checks every parameter
+  cover, barycentric containment, source interpolation, target image and
+  continuity; the deterministic 6,262,460-byte cache SHA passes. Verdict:
+  `PASS_X_M1_EJECTED_SPLICE_STUBS_FULL`.
+- Fixed remainder: after removing the first and last segment from each
+  34-segment m1 complement, 32 segments per replacement are outside the
+  collar support. Thus exactly 48,416 core and 48,416 corresponding push
+  segments remain fixed. Merging those with F-590 and F-591 is the final data
+  assembly before testing the complete cancellation image as embedded cycles.
 
 ### F-600 — The “actual” sphere-system builder assigns, rather than constructs, the embedding in \(\partial W_2\)
 
