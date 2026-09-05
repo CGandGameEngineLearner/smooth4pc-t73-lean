@@ -268,8 +268,10 @@ checks and cache SHA verification. Full command: `python
 scripts/verify_t73_x_m1_ejected_middle_complements.py --full --input-cache
 C:\Users\Administrator\.cache\t73_post_x_framed_replacement_cells.jsonl.gz
 --check-cache-sha`. Together with F-590/F-591, all 60520 replacement core
-segment images now exist; continuous framing-representative gluing remains
-open.
+segment images now exist blockwise. Their 3026 local/global endpoint pairs use
+different target charts and still lack an extended transition for both core
+and push. This fail-closed gap is
+[`audit/t73_x_m1_ejection_overlap_transition_gap.json`](audit/t73_x_m1_ejection_overlap_transition_gap.json).
 The three missing pre-cancellation dual-cell product ribbons are now explicit
 in [`geometry/t73_actual_dual_product_ribbons.json`](geometry/t73_actual_dual_product_ribbons.json).
 Each planar dual boundary has an eight-quadrilateral/16-triangle annulus to a

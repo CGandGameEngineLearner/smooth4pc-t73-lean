@@ -3457,7 +3457,7 @@ Topology-source checks completed 2026-09-04:
 ### F-594 — All 48,416 middle m1-complement core/push segments have ambient images
 
 - Severity: **x/m1 cancellation / complete core-path image**
-- Status: **ALL MIDDLE CORE/PUSH IMAGES PASS; NORMAL SPLICE HOMOTOPY OPEN**
+- Status: **ALL MIDDLE CORE/PUSH BLOCK IMAGES PASS; OVERLAP CHARTS OPEN**
 - Evidence: `scripts/build_t73_x_m1_ejected_middle_complements.py`,
   `scripts/verify_t73_x_m1_ejected_middle_complements.py`,
   `audit/t73_x_m1_ejected_middle_complements_receipt.json`, its test, and the
@@ -3473,11 +3473,31 @@ Topology-source checks completed 2026-09-04:
   `PASS_X_M1_EJECTED_MIDDLE_COMPLEMENTS_FULL`.
 - Consequence: F-590 gives 6052 band-lane core images, F-591 gives 6052 local
   splice-stub core images, and F-594 gives 48,416 middle images, exhausting all
-  60,520 post-x replacement core segments. Their geometric images now exist.
-- Boundary: F-590/F-591 use the uniform positive-nu framing representative,
-  while F-594 transports the original m1-foliation product normal. An explicit
-  nonzero normal homotopy at the two interfaces per complement must be inserted
-  before the 60,520 pushed pieces form continuous framed cycles.
+  60,520 post-x replacement core segments. Their blockwise images now exist.
+- Boundary: F-595 shows that the local F-591 targets and global F-594 targets
+  are in different charts and have no extended overlap transition. Thus even
+  core continuity is not yet proved, before the additional framing-normal
+  compatibility question. No complete cancellation image is claimed.
+
+### F-595 — 3026 local/global ejection overlap transitions are still missing
+
+- Severity: **Critical x/m1 cancellation gluing correction**
+- Status: **BLOCK IMAGES COMPLETE; CORE/PUSH CHART GLUING OPEN**
+- Evidence: `audit/t73_x_m1_ejection_overlap_transition_gap.json`,
+  `scripts/audit_t73_x_m1_ejection_overlap_transition_gap.py`, and its test.
+- Finding: every one of the 1513 parallel complements has two interfaces.
+  F-591 records the local cubical-product target germ, while F-594 records the
+  global mapping-torus annulus target. Neither receipt contains an affine or
+  simplicial extension of the target chart transition away from the original
+  source boundary. Consequently there are 3026 unglued core interfaces and
+  3026 unglued push interfaces.
+- Correction: “all 60,520 core images exist” means blockwise coverage only;
+  it does not yet mean the images concatenate to continuous curves in one
+  target manifold. Likewise, the framing issue is not merely a normal-vector
+  homotopy until the underlying target chart overlap is constructed.
+- Repair: construct disjoint framed mapping-cylinder germs at both ends of
+  every parallel complement, verify their boundary maps against both F-591 and
+  F-594, then rerun cycle continuity before any unified S3 projection.
 
 ### F-600 — The “actual” sphere-system builder assigns, rather than constructs, the embedding in \(\partial W_2\)
 

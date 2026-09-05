@@ -244,7 +244,9 @@ verdict 为 `PASS_M1_PARALLEL_ANNULUS_NONINCIDENT_TETRAHEDRON_CLEARANCE`；现�
 scripts/verify_t73_x_m1_ejected_middle_complements.py --full --input-cache
 C:\Users\Administrator\.cache\t73_post_x_framed_replacement_cells.jsonl.gz
 --check-cache-sha`。结合 F-590/F-591，全部60520条 replacement core segment
-images 已齐；连续 framing representative gluing 仍开放。
+images 已分块生成；但3026对 local/global endpoints 位于不同 target charts，
+core 与 push 都还缺 extended transition。fail-closed 缺口记录于
+[`audit/t73_x_m1_ejection_overlap_transition_gap.json`](audit/t73_x_m1_ejection_overlap_transition_gap.json)。
 三个原先缺坐标的 pre-cancellation dual-cell product ribbons 现已显式保存于
 [`geometry/t73_actual_dual_product_ribbons.json`](geometry/t73_actual_dual_product_ribbons.json)。
 每条平面 dual boundary 都有通向有理法向 push-off 的8个四边形/16个三角形

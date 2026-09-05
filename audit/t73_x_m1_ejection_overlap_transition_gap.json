@@ -1,0 +1,18 @@
+{
+  "band_count": 1513,
+  "complete_core_image_gluing": false,
+  "complete_push_image_gluing": false,
+  "completion_status": "X_M1_LOCAL_GLOBAL_EJECTION_OVERLAP_TRANSITIONS_OPEN",
+  "core_overlap_transition_count": 3026,
+  "ejected_band_lanes_receipt_sha256": "059A9E2DEE7A749BB26EF7079AA8BB31C19DCD4F7D7F073292FB6D0A2F0B675B",
+  "ejected_middle_complements_receipt_sha256": "14798C0A495B2FC5A6ADC304CF15E3813EE3FA13B4EE5046A851FE32EE32E517",
+  "ejected_splice_stubs_receipt_sha256": "8EF2FB21E4082741A43A758093F0EA95A354AB2D9C94EA8DB505999CAF4C37C4",
+  "extended_chart_transition_present": false,
+  "interfaces_per_band": 2,
+  "local_side_chart": "x_m1_cubical_product_target",
+  "middle_side_chart": "mapping_torus_global_annulus_target",
+  "push_overlap_transition_count": 3026,
+  "required_repair": "construct disjoint framed mapping-cylinder germs at both ends of every parallel complement and verify compatibility with both ambient maps",
+  "schema": "t73_x_m1_ejection_overlap_transition_gap/v1",
+  "sha256": "12137446BA59008C1F3F72AC6F86B4ACEBA1B62BDDDFE8C650CDB3721F1B98DB"
+}
