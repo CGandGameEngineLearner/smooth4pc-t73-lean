@@ -96,6 +96,19 @@ are verified against `t73_belt_spheres.json`; y/z are explicitly
 `CANDIDATE_FOOT_ONLY`. Rebuild with
 `python3 scripts/build_t73_unified_kirby_foot_chart.py --check`.
 
+The first candidate lane realization is
+[`geometry/t73_y_foot_lane_candidate.json`](geometry/t73_y_foot_lane_candidate.json):
+44 actual y-cut passages are bound to distinct rational y-foot targets and
+product-normal framing rectangles. Rebuild/check it with:
+
+```text
+python3 scripts/build_t73_y_foot_lane_candidate.py --check
+python3 scripts/verify_t73_y_foot_lane_candidate.py
+```
+
+Its verifier reports `PASS_CANDIDATE_INVARIANTS_ONLY`; this is not an actual
+AR relative Kirby movie.
+
 [`geometry/t73_actual_cancellation_splice_request.json`](geometry/t73_actual_cancellation_splice_request.json)
 is the next generated input layer. It enumerates all 6 t-bands and 1513
 x-bands with their source center-path hash and required boundary/splice fields:

@@ -87,6 +87,18 @@ python3 scripts/build_t73_actual_ar_kirby_construction_request.py --check
 `t73_belt_spheres.json` 验证；y/z 明确为 `CANDIDATE_FOOT_ONLY`。使用
 `python3 scripts/build_t73_unified_kirby_foot_chart.py --check` 重建。
 
+第一份候选 lane realization 为
+[`geometry/t73_y_foot_lane_candidate.json`](geometry/t73_y_foot_lane_candidate.json)：
+44 条实际 y-cut passage 被绑定到互异的有理 y-foot target 与 product-normal framing rectangle。
+重建/检查命令：
+
+```text
+python3 scripts/build_t73_y_foot_lane_candidate.py --check
+python3 scripts/verify_t73_y_foot_lane_candidate.py
+```
+
+其 verifier 只报告 `PASS_CANDIDATE_INVARIANTS_ONLY`，不是实际 AR relative Kirby movie。
+
 [`geometry/t73_actual_cancellation_splice_request.json`](geometry/t73_actual_cancellation_splice_request.json)
 是下一层生成输入：列出全部 6 条 t-band 和 1513 条 x-band 的 center-path hash，及
 每条所缺的 boundary/splice 字段：
