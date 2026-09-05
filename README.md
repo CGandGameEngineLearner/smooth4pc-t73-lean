@@ -320,6 +320,15 @@ segments. The full receipt
 records 25,318,728 exact waypoint/endpoint-fiber incidence checks and verdict
 `PASS_CANONICAL_AFFINE_S3_CORE_EMBEDDING`. Affine push corridors, hence
 integer framings and the complete framed PD, remain open.
+The five affine push cycles are now included in
+[`geometry/t73_affine_s3_framed_realization.json`](geometry/t73_affine_s3_framed_realization.json).
+It has 23109 core and 23109 push segments plus the two dotted components. Its
+full receipt
+[`audit/t73_affine_s3_framed_realization_verification.json`](audit/t73_affine_s3_framed_realization_verification.json)
+records 50,637,456 push-waypoint/fiber checks and 4,567,172 exact nonincident
+endpoint-fiber/base-segment checks. Verdict:
+`PASS_CANONICAL_AFFINE_S3_FRAMED_LINK_EMBEDDING`. A regular generic projection
+and complete framed PD are now the remaining inputs for integer framings.
 The three missing pre-cancellation dual-cell product ribbons are now explicit
 in [`geometry/t73_actual_dual_product_ribbons.json`](geometry/t73_actual_dual_product_ribbons.json).
 Each planar dual boundary has an eight-quadrilateral/16-triangle annulus to a

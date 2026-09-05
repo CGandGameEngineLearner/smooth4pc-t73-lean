@@ -3633,6 +3633,33 @@ Topology-source checks completed 2026-09-04:
   push corridors and proved disjoint from this core before integer framings or
   a complete framed PD can be computed.
 
+### F-599B — The core and all five product pushes share one affine-S3 embedding
+
+- Severity: **actual Kirby input / single-chart framed realization**
+- Status: **AFFINE FRAMED LINK EMBEDDING PASS; COMPLETE PD OPEN**
+- Evidence: `geometry/t73_affine_s3_framed_realization.json`,
+  `scripts/build_t73_affine_s3_framed_realization.py`,
+  `scripts/verify_t73_affine_s3_framed_realization.py`,
+  `audit/t73_affine_s3_framed_realization_verification.json`, and tests.
+- Push geometry: all 7092 actual central product-push segments and 1785 F-584
+  Hopf push segments retain their coordinates. Another 3558 four-segment
+  corridors use unique heights `-20000-j`, disjoint from the core-corridor
+  range and base geometry. The 14,232 core and push endpoint fibers have
+  distinct near-XY projections.
+- Full verification: each of five push cycles closes with the same combinatorics
+  as its core, giving 23,109 segments on each side and twelve total affine
+  components including the two dotted circles. The verifier repeats 50,637,456
+  exact push-waypoint/endpoint-fiber incidences. Shapely screens 4,581,404
+  endpoint-fiber/base-segment candidates and 4,567,172 nonincident cases are
+  checked exactly; none meets. The source AR pairwise-disjoint ribbon receipt
+  and F-599A core receipt remain bound. Verdict:
+  `PASS_CANONICAL_AFFINE_S3_FRAMED_LINK_EMBEDDING`.
+- Boundary: this completes the actual affine framed link embedding. Its
+  corridor fibers collapse in the F-579 projection, so that projection cannot
+  be reused. A new regular generic projection must be selected and all
+  core/core, core/push and dotted crossings exported before integer self-linkings and
+  the complete framed PD are available.
+
 ### F-600 — The “actual” sphere-system builder assigns, rather than constructs, the embedding in \(\partial W_2\)
 
 - Severity: **Critical**

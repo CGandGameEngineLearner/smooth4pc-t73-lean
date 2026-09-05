@@ -1,0 +1,19 @@
+{
+  "affine_framed_realization_sha256": "3DCDD28B573EAE501ADBE3C2E85FC782DE9005D57E804FD40764FC8356DE3DB7",
+  "full_verifier_result": {
+    "components": 12,
+    "core_segments": 23109,
+    "endpoint_fiber_broad_candidates": 4581404,
+    "endpoint_fiber_exact_nonincident_checks": 4567172,
+    "integer_framing_status": "OPEN_PROJECT_COMPLETE_FRAMED_PD",
+    "push_corridors": 3558,
+    "push_segments": 23109,
+    "push_waypoint_endpoint_incidence_checks": 50637456,
+    "verdict": "PASS_CANONICAL_AFFINE_S3_FRAMED_LINK_EMBEDDING"
+  },
+  "schema": "t73_affine_s3_framed_realization_verification/v1",
+  "sha256": "25503EEB219126EEF8437144E98939ACBE29A551E3768AABAFD610E61DFEB59C",
+  "verdict": "PASS_CANONICAL_AFFINE_S3_FRAMED_LINK_EMBEDDING",
+  "verifier_path": "scripts/verify_t73_affine_s3_framed_realization.py",
+  "verifier_sha256": "4E963320F6170B2BAA510E33D538F52D41241F03A25396DC8181C91E35F40C82"
+}

@@ -267,6 +267,14 @@ Hopf arcs，并使用3558条各四段的外部 corridors，共23109条 core segm
 记录25,318,728次精确 waypoint/endpoint-fiber incidence checks，verdict 为
 `PASS_CANONICAL_AFFINE_S3_CORE_EMBEDDING`。affine push corridors、整数 framing
 与完整 framed PD 仍开放。
+五条 affine push cycles 现已加入
+[`geometry/t73_affine_s3_framed_realization.json`](geometry/t73_affine_s3_framed_realization.json)。
+其中 core 与 push 各23109段，另含两条 dotted components。完整收据
+[`audit/t73_affine_s3_framed_realization_verification.json`](audit/t73_affine_s3_framed_realization_verification.json)
+记录50,637,456次 push-waypoint/fiber 检查及4,567,172次非相邻
+endpoint-fiber/base-segment 精确检查。verdict 为
+`PASS_CANONICAL_AFFINE_S3_FRAMED_LINK_EMBEDDING`。现在整数 framing 前只剩
+regular generic projection 与完整 framed PD。
 完整合并后的 x/m1 结果位于
 [`geometry/t73_x_m1_complete_framed_cancellation_image.json`](geometry/t73_x_m1_complete_framed_cancellation_image.json)。
 它绑定持久化的 overlap full-verification，并组装五条闭合 atlas cycles：68176条
