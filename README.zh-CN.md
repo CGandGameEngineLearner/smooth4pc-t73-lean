@@ -101,6 +101,9 @@ python3 scripts/build_t73_actual_cancellation_splice_request.py --check
 其 3035 个有理 PL rectangle 分段、边界和 push-off 保存于
 [`geometry/t73_candidate_band_rectangles.json`](geometry/t73_candidate_band_rectangles.json)，
 使用 `python3 scripts/build_t73_candidate_band_rectangles.py --check` 重建。
+有序的 1519 条 band strip 与端点 splice descriptor 保存于
+[`geometry/t73_candidate_band_splice_descriptors.json`](geometry/t73_candidate_band_splice_descriptors.json)，
+使用 `python3 scripts/build_t73_candidate_band_splice_descriptors.py --check` 重建。
 
 ### Gmsh frame 与分块 frame 输入
 

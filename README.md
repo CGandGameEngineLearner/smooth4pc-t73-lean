@@ -109,6 +109,9 @@ and rebuilt with `python3 scripts/build_t73_candidate_band_chart_normalization.p
 Their 3035 rational PL rectangle segments, boundaries and push-offs are saved in
 [`geometry/t73_candidate_band_rectangles.json`](geometry/t73_candidate_band_rectangles.json)
 and rebuilt with `python3 scripts/build_t73_candidate_band_rectangles.py --check`.
+The ordered 1519-band strip and endpoint-splice descriptors are saved in
+[`geometry/t73_candidate_band_splice_descriptors.json`](geometry/t73_candidate_band_splice_descriptors.json)
+and rebuilt with `python3 scripts/build_t73_candidate_band_splice_descriptors.py --check`.
 
 ### Gmsh frames and partitioned-frame inputs
 
