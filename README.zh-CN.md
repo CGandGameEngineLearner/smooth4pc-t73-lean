@@ -184,6 +184,17 @@ annulus；平移后的 spanning disk 证明 source self-linking 为0。使用
 `python3 scripts/build_t73_actual_dual_product_ribbons.py --write` 重建，以
 `python3 scripts/verify_t73_actual_dual_product_ribbons.py` 验收。经 x-slide
 送入 post-cancellation source-native PD 的 ribbon transport 仍开放。
+全部1513个 post-x framed replacement cells 已从哈希展开为完整坐标，保存在
+WSL cache
+`/home/lifesize/.cache/t73_post_x_framed_replacement_cells.jsonl.gz`
+（约34.6 MB）；仓库内的紧凑收据为
+[`audit/t73_post_x_framed_replacement_cells_receipt.json`](audit/t73_post_x_framed_replacement_cells_receipt.json)。
+数据覆盖6052个 band triangles，以及71111个精确 normal/push vertices。
+使用 `python3 scripts/build_t73_post_x_framed_replacement_cells.py` 重建；以
+`python3 scripts/verify_t73_post_x_framed_replacement_cells.py --full
+--check-cache-sha` 流式完整验收。这些 cells 仍位于已验证 gluing 的多个
+global/local charts；统一 S³ push-off projection 与五个整数对角 framing 是
+下一道门。
 
 另一个独立层次中，C-cut 的 44-lane candidate realization 为
 [`geometry/t73_y_foot_lane_candidate.json`](geometry/t73_y_foot_lane_candidate.json)：

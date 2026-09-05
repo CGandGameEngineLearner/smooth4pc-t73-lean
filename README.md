@@ -203,6 +203,17 @@ self-linking zero. Rebuild with
 `python3 scripts/build_t73_actual_dual_product_ribbons.py --write` and verify
 with `python3 scripts/verify_t73_actual_dual_product_ribbons.py`. The x-slide
 transport into the post-cancellation source-native PD is still open.
+All 1513 post-x framed replacement cells are expanded, rather than retained
+only as hashes, in the WSL cache
+`/home/lifesize/.cache/t73_post_x_framed_replacement_cells.jsonl.gz` (about
+34.6 MB). The committed receipt is
+[`audit/t73_post_x_framed_replacement_cells_receipt.json`](audit/t73_post_x_framed_replacement_cells_receipt.json).
+It covers 6052 band triangles and 71111 exact normal/push vertices. Rebuild
+with `python3 scripts/build_t73_post_x_framed_replacement_cells.py`; use
+`python3 scripts/verify_t73_post_x_framed_replacement_cells.py --full
+--check-cache-sha` for the full streamed verification. These cells remain in
+their rigorously glued global/local charts; the unified S3 push-off projection
+and five integer diagonal framings are the next gate.
 
 Separately, the C-cut 44-lane candidate realization is
 [`geometry/t73_y_foot_lane_candidate.json`](geometry/t73_y_foot_lane_candidate.json):

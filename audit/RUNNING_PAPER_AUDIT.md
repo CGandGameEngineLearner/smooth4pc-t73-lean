@@ -3141,6 +3141,34 @@ Topology-source checks completed 2026-09-04:
   into three post-slide ribbon cycles and then matched to the source-native
   PD before the corresponding diagonal entries are closed.
 
+### F-583 — All 1513 post-x framed replacement cells are saved with full coordinates
+
+- Severity: **actual framing input / post-x ribbon expansion**
+- Status: **FULL MULTI-CHART FRAMED CELLS PASS; UNIFIED S3 PROJECTION OPEN**
+- Evidence: `scripts/build_t73_post_x_framed_replacement_cells.py`,
+  `scripts/verify_t73_post_x_framed_replacement_cells.py`,
+  `audit/t73_post_x_framed_replacement_cells_receipt.json`, its test, and the
+  gzip JSONL cache named in the receipt.
+- Data: all 1513 x slides are expanded to their source interval, six-vertex
+  four-triangle band surface, negative/positive three-vertex band lanes, and
+  oriented 35-vertex m1-parallel complement. Every listed core vertex has its
+  nonzero rational normal and literal `vertex+normal` push vertex. Component
+  counts are m2=269, m3=1240, r_xy=2, and r_zx=2.
+- Verification: the full streaming verifier checks the cache byte SHA and
+  decompressed record-stream SHA, all source bindings and per-cell provenance,
+  6052 exact nondegenerate band triangles, 71111 nonzero normal vertices, and
+  71111 exact push vertices. It also matches every path/normal list against
+  the previously full-replayed local and hybrid movie hashes. Verdict:
+  `PASS_POST_X_EXPLICIT_FRAMED_REPLACEMENT_CELLS_FULL`.
+- Storage: the deterministic 34,576,551-byte gzip cache is
+  `/home/lifesize/.cache/t73_post_x_framed_replacement_cells.jsonl.gz`; Git
+  stores the builder, verifier, compact receipt, tests, and source hashes.
+- Boundary: these cells are actual and explicit in their mapping-torus,
+  source-germ, and positive-belt charts, whose four gluings were already
+  verified. A unified dotted-S3 chart must still expand those gluing maps and
+  project each resulting push cycle before the five integer diagonal framings
+  can be claimed.
+
 ### F-600 — The “actual” sphere-system builder assigns, rather than constructs, the embedding in \(\partial W_2\)
 
 - Severity: **Critical**
