@@ -1,0 +1,66 @@
+{
+  "ar_canonical_matrix": [
+    [
+      0,
+      0,
+      1
+    ],
+    [
+      189,
+      41,
+      0
+    ],
+    [
+      1240,
+      269,
+      32
+    ]
+  ],
+  "completion_status": "VERIFIED_MATRIX_CONJUGACY_ONLY",
+  "conjugating_matrix_P": [
+    [
+      32,
+      0,
+      -1
+    ],
+    [
+      0,
+      -1,
+      0
+    ],
+    [
+      -1,
+      0,
+      0
+    ]
+  ],
+  "literature_source": "AR84 Lemma 3.2, internal pages 11-12",
+  "matrix_A": [
+    [
+      0,
+      269,
+      1240
+    ],
+    [
+      0,
+      41,
+      189
+    ],
+    [
+      1,
+      0,
+      32
+    ]
+  ],
+  "parameters": {
+    "a": 73,
+    "lambda": 41,
+    "m": 189,
+    "n": 1240,
+    "p": 269,
+    "v": 32
+  },
+  "schema": "t73_ar_canonical_straightening/v1",
+  "sha256": "11937A3118B20DBA8B9549C00F2632286958EE1EC3B18517F305DEF813F7849F",
+  "verification": "A P = P C and det(P)=1"
+}
