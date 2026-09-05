@@ -83,11 +83,18 @@ def build() -> dict:
     if centerline[0] != source_center or centerline[-1][1:] != point(band["parallel_m1_target"]):
         raise AssertionError("x-band 0 centerline lost an attachment center")
 
+    if len(centerline) != 3:
+        raise AssertionError("x-band 0 orientation rotation expects three center vertices")
+    half_vectors = [
+        (width, Fraction(0), Fraction(0), Fraction(0)),
+        (Fraction(0), Fraction(0), Fraction(0), -width),
+        (-width, Fraction(0), Fraction(0), Fraction(0)),
+    ]
     cross_sections = []
-    for center in centerline:
+    for center, half_vector in zip(centerline, half_vectors):
         cross_sections.append([
-            (center[0] - width, *center[1:]),
-            (center[0] + width, *center[1:]),
+            tuple(center[axis] - half_vector[axis] for axis in range(4)),
+            tuple(center[axis] + half_vector[axis] for axis in range(4)),
         ])
     vertices = [value for pair in cross_sections for value in pair]
     triangles = []
@@ -133,6 +140,8 @@ def build() -> dict:
             encode(translate(value, deck)) for value in source_interval
         ],
         "target_parallel_m1_interval_local": [encode(value) for value in target_interval],
+        "oriented_half_vectors": [encode(value) for value in half_vectors],
+        "orientation_rotation_rule": "+e_x to -e_nu to -e_x",
         "target_parallel_coefficient": int(target_y / width),
         "centerline": [encode(value) for value in centerline],
         "vertices": [encode(value) for value in vertices],

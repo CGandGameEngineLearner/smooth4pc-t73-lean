@@ -216,6 +216,16 @@ one cancelling m1 arc, 1509 Johnson arcs, and four dual passages. Run
 The two actual affine chart germs and framing transport are saved in
 [`geometry/t73_x_band0_chart_transitions.json`](geometry/t73_x_band0_chart_transitions.json)
 and verified by `verify_t73_x_band0_chart_transitions.py`.
+The complete twentieth m1 parallel is
+[`geometry/t73_x_band0_m1_parallel.json`](geometry/t73_x_band0_m1_parallel.json),
+verified by `verify_t73_x_band0_m1_parallel.py`. The oriented band uses the
+noncollapsing half-vector rotation `+e_x -> -e_nu -> -e_x`, so its inserted m1
+passage has sign `-1` and cancels the source sign `+1`.
+The resulting global/local state transition is
+[`geometry/t73_x_band_hybrid_state_0000_0001.json`](geometry/t73_x_band_hybrid_state_0000_0001.json).
+Rebuild/check it with `build_t73_x_band0_hybrid_state.py --check` and
+`verify_t73_x_band0_hybrid_state.py`; the verdict is
+`PASS_X_BAND0_HYBRID_FRAMED_STATE_0_TO_1`.
 The first end-to-end candidate slide, including an explicit closed post-slide
 4D core, is
 [`geometry/t73_candidate_t_band0_splice.json`](geometry/t73_candidate_t_band0_splice.json),

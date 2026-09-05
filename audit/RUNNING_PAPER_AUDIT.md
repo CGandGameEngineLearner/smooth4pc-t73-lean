@@ -2514,15 +2514,46 @@ Topology-source checks completed 2026-09-04:
   comparisons pass. Verdicts are
   `PASS_X_BAND0_ACTUAL_ATTACHMENTS_AND_BOUNDARY_FRAMING` and
   `PASS_X_BAND0_ACTUAL_CHART_GERMS_AND_FRAMING_TRANSPORT`.
+- Orientation correction: the source passage has sign +1 and the cancelling
+  m1 passage has sign -1, so the target cross-section must be reversed. A
+  direct linear reversal would collapse the ribbon. The verified surface uses
+  the nonzero half-vector sequence `+e_x, -e_nu, -e_x`; this implements the
+  required reversal inside the x-handle collar without a singular rectangle.
 - Clearance: the disk contacts `c1:letter:0` only on its source edge and the
   twentieth m1 parallel only on its target edge. Against all 1514 actual local
   passage arcs, 24,232 exact segment-triangle checks find no other disk or
   push contact. Verdict: `PASS_X_BAND0_CURRENT_LINK_AND_PUSH_CLEARANCE`.
-- Boundary: these facts instantiate a legitimate local framed band. The next
-  artifact must cut the global state-6 m2 lift, carry both band lanes through
-  the two chart germs, traverse a globally constructed framed parallel of m1,
-  close the hybrid quotient curve, and verify its inverse. Only that artifact
-  may call itself x-state 0 to 1.
+- Boundary at this layer: F-562 supplies the complete m1 parallel and hybrid
+  global splice, closing x-state 0 to 1.
+
+### F-562 — x-band 0 now gives a verified hybrid framed state transition
+
+- Severity: **Actual sequential x-cancellation reconstruction / first move**
+- Status: **x-STATE 0 TO 1 PASS; 1512 x-SLIDES REMAIN**
+- Evidence: `geometry/t73_x_band0_m1_parallel.json`,
+  `geometry/t73_x_band_hybrid_state_0000_0001.json`, their builders,
+  independent verifiers, and tests.
+- Complete target parallel: the twentieth parallel is constructed along all
+  35 vertices of the exteriorized state-6 m1. On the bottom x-arc its offset
+  is homotoped to the local y representative while staying nonzero. Exact
+  quotient checks include 495 comparisons with m1/m2/m3 and 816 dual-core
+  projection comparisons. Verdict:
+  `PASS_X_BAND0_COMPLETE_FRAMED_M1_PARALLEL`.
+- Hybrid splice: the current m2 source interval is cut in the global top chart;
+  the retained complement is joined to the negative local band lane, the
+  oriented global m1-parallel complement in the reflected bottom chart, and
+  the positive local band lane. Four explicit chart gluings identify every
+  core and normal endpoint. The output is stored as chart-typed pieces rather
+  than falsely equating x-handle `nu` with mapping-torus `u`.
+- Orientation/inverse: the removed source intersection +1 and inserted m1
+  intersection -1 sum to zero. Cutting the band-sum pieces and restoring the
+  two-edge source subarc recovers the refined state-0 m2 content hash. All four
+  prerequisite independent verdicts are replayed. Final verdict:
+  `PASS_X_BAND0_HYBRID_FRAMED_STATE_0_TO_1`.
+- Boundary: this certifies only the first x slide. The reusable constructor
+  must now update the positive-belt obstacle set, rebind `c1:letter:1` in the
+  hybrid state, select its distinct m1 parallel, and repeat the exact local and
+  hybrid checks through band 1512 before x/m1 deletion.
 
 ### F-600 — The “actual” sphere-system builder assigns, rather than constructs, the embedding in \(\partial W_2\)
 

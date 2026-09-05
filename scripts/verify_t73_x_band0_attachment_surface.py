@@ -89,8 +89,20 @@ def verify() -> dict:
     if len(vertices) - len(counts) + len(triangles) != 1:
         raise AssertionError("x-band 0 surface is not a disk")
     boundary = data["boundary"]
-    if [vertices[index] for index in boundary["source_attachment"]] != source_interval or [vertices[index] for index in boundary["target_attachment"]] != target_interval:
+    if [vertices[index] for index in boundary["source_attachment"]] != source_interval:
         raise AssertionError("x-band 0 disk lost an attachment edge")
+    if [vertices[index] for index in boundary["target_attachment"]] != list(
+        reversed(target_interval)
+    ):
+        raise AssertionError("x-band target does not have the required reversed orientation")
+    half_vectors = [point(value) for value in data["oriented_half_vectors"]]
+    expected_half_vectors = [
+        (width, Fraction(0), Fraction(0), Fraction(0)),
+        (Fraction(0), Fraction(0), Fraction(0), -width),
+        (-width, Fraction(0), Fraction(0), Fraction(0)),
+    ]
+    if half_vectors != expected_half_vectors or any(not any(value) for value in half_vectors):
+        raise AssertionError("x-band orientation rotation changed or collapsed")
     if any(value[3] != 1 or not (-1 <= value[1] <= 1 and -1 <= value[2] <= 1) for value in [point(item) for item in data["centerline"]]):
         raise AssertionError("x-band centerline left the positive cubical belt face")
 

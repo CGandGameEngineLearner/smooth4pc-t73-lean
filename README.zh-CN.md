@@ -192,6 +192,16 @@ attaching 3-ball、所得 PL 4-ball/S3 边界、实际 belt 重心交点、AR fr
 两侧实际 affine chart germ 与 framing transport 保存于
 [`geometry/t73_x_band0_chart_transitions.json`](geometry/t73_x_band0_chart_transitions.json)，
 由 `verify_t73_x_band0_chart_transitions.py` 验收。
+完整第 20 条 m1 parallel 位于
+[`geometry/t73_x_band0_m1_parallel.json`](geometry/t73_x_band0_m1_parallel.json)，
+由 `verify_t73_x_band0_m1_parallel.py` 验收。有向 band 使用不塌缩的 half-vector
+旋转 `+e_x -> -e_nu -> -e_x`，使插入的 m1 passage 交数为 `-1`，与 source
+的 `+1` 抵消。
+所得 global/local 状态转换保存于
+[`geometry/t73_x_band_hybrid_state_0000_0001.json`](geometry/t73_x_band_hybrid_state_0000_0001.json)。
+使用 `build_t73_x_band0_hybrid_state.py --check` 与
+`verify_t73_x_band0_hybrid_state.py` 重建/验收；verdict 为
+`PASS_X_BAND0_HYBRID_FRAMED_STATE_0_TO_1`。
 第一条端到端 candidate slide（含显式闭合的 post-slide 4D core）位于
 [`geometry/t73_candidate_t_band0_splice.json`](geometry/t73_candidate_t_band0_splice.json)，
 使用 `python3 scripts/build_t73_candidate_t_band0_splice.py --check` 重建。
