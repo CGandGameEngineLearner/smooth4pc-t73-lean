@@ -10,7 +10,7 @@ ROOT=Path(__file__).resolve().parents[1]
 SOURCE=ROOT/'geometry/t73_selected_source_exterior.json'
 PARTITION=ROOT/'geometry/t73_selected_source_partition_z0.json'
 
-def run(fragment_limit=1):
+def run(fragment_limit=1, deduplicate=False):
     import gmsh
     source=json.loads(SOURCE.read_text(encoding='utf-8'))
     partition=json.loads(PARTITION.read_text(encoding='utf-8'))
@@ -32,6 +32,8 @@ def run(fragment_limit=1):
             for fragment in item['triangles']:
                 points=[o.addPoint(*[float(Fraction(value)) for value in vertex]) for vertex in fragment]
                 surfaces.append(o.addPlaneSurface([o.addCurveLoop([o.addLine(points[i],points[(i+1)%3]) for i in range(3)])]))
+        if deduplicate:
+            o.removeAllDuplicates()
         o.fragment(lo,[(2,surface) for surface in surfaces],removeObject=True,removeTool=True)
         o.synchronize()
         volumes=[tag for _,tag in gmsh.model.getEntities(3)]
@@ -43,5 +45,5 @@ def run(fragment_limit=1):
     finally: gmsh.finalize()
 
 if __name__=='__main__':
-    p=argparse.ArgumentParser(); p.add_argument('--fragments',type=int,default=1); a=p.parse_args()
-    print(json.dumps(run(a.fragments),sort_keys=True))
+    p=argparse.ArgumentParser(); p.add_argument('--fragments',type=int,default=1); p.add_argument('--deduplicate',action='store_true'); a=p.parse_args()
+    print(json.dumps(run(a.fragments,a.deduplicate),sort_keys=True))
