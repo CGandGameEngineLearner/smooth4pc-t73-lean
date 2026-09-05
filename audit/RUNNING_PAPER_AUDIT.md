@@ -2854,6 +2854,57 @@ Topology-source checks completed 2026-09-04:
   diagram, order every crossing occurrence along all seven components, emit
   standard PD rows, and construct/measure five framing push-offs.
 
+### F-572 — The diagonal-only railroad ledger cannot itself be a planar link diagram
+
+- Severity: **PD completeness correction / parity gate**
+- Status: **FAIL-CLOSED GAP RECORDED; COMPLETE RAILROAD POLYGON BUILT IN F-573**
+- Evidence: `scripts/build_t73_actual_railroad_standard_pd.py`,
+  `scripts/verify_t73_actual_railroad_standard_pd_gap.py`,
+  `audit/t73_actual_railroad_standard_pd_gap.json`, and its test.
+- Finding: the 1878 diagonal connector crossings have mixed signed sums -3
+  for m2/m3 and +1 for m3/r_xy. Mixed intersections of two closed planar
+  curves must be even modulo two, so adding dotted Hopf pairs cannot turn this
+  incomplete connector ledger into standard PD rows. The builder emits no PD.
+- Required cells: same-rail segments and outside closure arcs. Their crossings
+  must be included before linking numbers or PD incidence are computed.
+  Verdict: `PASS_FAIL_CLOSED_ACTUAL_RAILROAD_PD_GAP`.
+
+### F-573 — A complete railroad polygon gives a 4727-row source-bound target PD with five zero framings
+
+- Severity: **kappa_AR target diagram / complete target, source isotopy open**
+- Status: **TARGET PD AND FRAMINGS PASS; HYBRID-TO-RAILROAD ISOTOPY OPEN**
+- Evidence: `geometry/t73_actual_railroad_core_coordinates.json`,
+  `geometry/t73_railroad_product_framings.json`,
+  `geometry/t73_source_bound_standard_pd_candidate.json`, their builders,
+  three independent verifiers, and tests.
+- Core coordinates: every reduced word letter is placed on its y/z rail with
+  a component x-offset and quadratic rational height perturbation; two exterior
+  vertices close each nonempty component. r_zx is a disjoint rational diamond.
+  The three free-reduction pairs map back to original passage ids. Exact generic
+  projection gives 1168 crossings, no self degeneracy, and a zero 5-by-5
+  pairwise linking matrix. Scope remains a source-bound coordinate candidate
+  because the source isotopy is absent.
+- Dotted insertion: each of 1779 surviving letters receives a local
+  two-crossing same-sign Hopf clasp with its dotted component. A Reidemeister-I
+  kink retains the split r_zx unknot. Together with the 1168 core crossings
+  this gives 4727 crossings and 9454 arc labels; every label occurs twice and
+  all seven halfedge cycles close.
+- Linking: exact signed sums give m2 linking `(40,269)` with dotted y/z and m3
+  `(189,1271)`; all other core-core and core-dotted entries vanish. These are
+  derived from actual reduced words.
+- Target framings: constant generic pushes give a ten-curve diagram with 5144
+  exact crossings. All five core/push linking numbers are zero, hence integer
+  surgery framings `{m2:0,m3:0,r_xy:0,r_yz:0,r_zx:0}`. Verdict:
+  `PASS_RAILROAD_TARGET_FIVE_ZERO_PRODUCT_FRAMINGS`.
+- PD verdict: `PASS_SOURCE_BOUND_STANDARD_PD_COMBINATORICS_ONLY`, with target
+  framing PASS and source-isotopy OPEN. Spherogram was tried with recursion
+  limit 50000 but reached about 9 GB at 4727 crossings; this is recorded as a
+  resource limitation, not a mathematical result.
+- Boundary: construct an explicit framed PL isotopy/collapse from the F-566
+  hybrid component cells to these railroad polygons, including the m3 and
+  r_zx free-reduction bigons and every central connector. Only then can this
+  target be promoted to actual kappa_AR and fed into W2.
+
 ### F-600 — The “actual” sphere-system builder assigns, rather than constructs, the embedding in \(\partial W_2\)
 
 - Severity: **Critical**

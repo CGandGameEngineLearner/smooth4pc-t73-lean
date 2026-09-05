@@ -111,8 +111,18 @@ push/projection manifest 位于
 [`geometry/t73_final_railroad_word_binding.json`](geometry/t73_final_railroad_word_binding.json)。
 旧 m3 compact word 因不与 Johnson passage 顺序共轭而被拒绝；从实际 words
 重建得到 1878 个 mixed crossings，connector counts 为 `84,378,4,4,0`。
-使用 `python3 scripts/verify_t73_final_railroad_word_binding.py` 验收。标准 PD rows、
-dotted-circle crossings 与整数 framings 仍开放。
+使用 `python3 scripts/verify_t73_final_railroad_word_binding.py` 验收。
+订正后的 target 构造继续保存于
+[`geometry/t73_actual_railroad_core_coordinates.json`](geometry/t73_actual_railroad_core_coordinates.json)
+（1168 个 exact generic core crossings）、
+[`geometry/t73_railroad_product_framings.json`](geometry/t73_railroad_product_framings.json)
+（5 条 linking=0 的 target push-off），以及
+[`geometry/t73_source_bound_standard_pd_candidate.json`](geometry/t73_source_bound_standard_pd_candidate.json)。
+后者含 4727 行标准 PD、9454 个 arc labels 和1779个逐 passage 绑定的 dotted
+Hopf clasp。verdict 为 `PASS_SOURCE_BOUND_STANDARD_PD_COMBINATORICS_ONLY`：
+target framing 已通过，但 framed hybrid→railroad isotopy 仍开放。被拒绝的
+diagonal-only closure 保留于
+[`audit/t73_actual_railroad_standard_pd_gap.json`](audit/t73_actual_railroad_standard_pd_gap.json)。
 
 另一个独立层次中，C-cut 的 44-lane candidate realization 为
 [`geometry/t73_y_foot_lane_candidate.json`](geometry/t73_y_foot_lane_candidate.json)：

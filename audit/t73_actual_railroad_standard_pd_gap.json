@@ -1,0 +1,76 @@
+{
+  "actual_railroad_mixed_crossing_count": 1878,
+  "actual_railroad_word_binding_sha256": "57E7BA12A4662A12698C54FA90BC055B6099FD36C4C8F2743FDD4ED9E442DFC4",
+  "blackboard_writhe": {
+    "dotted_y": 0,
+    "dotted_z": 0,
+    "m_2": 0,
+    "m_3": 0,
+    "r_xy": 0,
+    "r_yz": 0,
+    "r_zx": 1
+  },
+  "candidate_dotted_crossing_count": 3558,
+  "candidate_split_unknot_self_crossings": 1,
+  "candidate_total_crossing_occurrences": 5437,
+  "completion_status": "OPEN_RAILROAD_CLOSURE_CROSSINGS_MISSING",
+  "component_order": [
+    "m_2",
+    "m_3",
+    "r_xy",
+    "r_yz",
+    "r_zx",
+    "dotted_y",
+    "dotted_z"
+  ],
+  "coordinate_realization_status": "OPEN_ACTUAL_CUT_HANDLEBODY_CONNECTOR_TRANSPORT_REQUIRED",
+  "final_component_passage_cycles_sha256": "1ACDEA5F1A43BAE6D5628523CF7AB83C024CBDECCFD57057F06E26B7D45DC2AE",
+  "final_yz_foot_state_sha256": "EC6E316A3126FAB5A6062431C8B7DFDDA15AC6246C1842557B7E1142D46ABD41",
+  "framing_status": "OPEN_PUSH_OFFS_NOT_YET_ATTACHED",
+  "mixed_crossing_sign_sums": {
+    "dotted_y/m_2": 80,
+    "dotted_y/m_3": 378,
+    "dotted_y/r_xy": 0,
+    "dotted_y/r_yz": 0,
+    "dotted_z/m_2": 538,
+    "dotted_z/m_3": 2542,
+    "dotted_z/r_xy": 0,
+    "dotted_z/r_yz": 0,
+    "m_2/m_3": -3,
+    "m_2/r_xy": 0,
+    "m_2/r_yz": -2,
+    "m_3/r_xy": 1,
+    "m_3/r_yz": 0,
+    "r_xy/r_yz": -2
+  },
+  "next_required_witness": "transport the actual Johnson central connectors and hybrid replacement connectors into the y/z foot-ball complement; their closure crossings must make every mixed sign sum even before standard PD rows are emitted",
+  "odd_mixed_pairs_blocking_planar_pd": {
+    "m_2/m_3": -3,
+    "m_3/r_xy": 1
+  },
+  "schema": "t73_actual_railroad_standard_pd_gap/v1",
+  "sha256": "D08028B0368F02EC6F790AD9CF6F60A93CBF2ACB8C051F3746285AB26E5441A4",
+  "standard_pd_code": null,
+  "word_exponent_sums": {
+    "m_2": {
+      "y": 40,
+      "z": 269
+    },
+    "m_3": {
+      "y": 189,
+      "z": 1271
+    },
+    "r_xy": {
+      "y": 0,
+      "z": 0
+    },
+    "r_yz": {
+      "y": 0,
+      "z": 0
+    },
+    "r_zx": {
+      "y": 0,
+      "z": 0
+    }
+  }
+}

@@ -122,8 +122,19 @@ The actual passage words are compared with the historical railroad ledger in
 The old m3 compact word is rejected as nonconjugate to the Johnson passage
 order. Regenerating railroad crossings from the actual words gives 1878 mixed
 crossings and connector counts `84,378,4,4,0`. Verify with
-`python3 scripts/verify_t73_final_railroad_word_binding.py`. Standard PD rows,
-dotted-circle crossings, and integer framings remain open.
+`python3 scripts/verify_t73_final_railroad_word_binding.py`.
+The corrected target continues with
+[`geometry/t73_actual_railroad_core_coordinates.json`](geometry/t73_actual_railroad_core_coordinates.json)
+(1168 exact generic core crossings),
+[`geometry/t73_railroad_product_framings.json`](geometry/t73_railroad_product_framings.json)
+(five zero-linking target push-offs), and
+[`geometry/t73_source_bound_standard_pd_candidate.json`](geometry/t73_source_bound_standard_pd_candidate.json).
+The latter has 4727 standard PD rows, 9454 arc labels, and 1779 passage-bound
+dotted Hopf clasps. Its verdict is
+`PASS_SOURCE_BOUND_STANDARD_PD_COMBINATORICS_ONLY`: target framings pass, but
+the framed hybrid-to-railroad isotopy remains open. The rejected diagonal-only
+closure is retained in
+[`audit/t73_actual_railroad_standard_pd_gap.json`](audit/t73_actual_railroad_standard_pd_gap.json).
 
 Separately, the C-cut 44-lane candidate realization is
 [`geometry/t73_y_foot_lane_candidate.json`](geometry/t73_y_foot_lane_candidate.json):
