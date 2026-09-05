@@ -2,6 +2,7 @@
 """Probe the two exact z=0 exterior blocks before embedding ribbons."""
 from __future__ import annotations
 import json
+import argparse
 from fractions import Fraction
 from pathlib import Path
 
@@ -9,7 +10,7 @@ ROOT=Path(__file__).resolve().parents[1]
 SOURCE=ROOT/'geometry/t73_selected_source_exterior.json'
 PARTITION=ROOT/'geometry/t73_selected_source_partition_z0.json'
 
-def run():
+def run(fragment_limit=1):
     import gmsh
     source=json.loads(SOURCE.read_text(encoding='utf-8'))
     partition=json.loads(PARTITION.read_text(encoding='utf-8'))
@@ -26,17 +27,21 @@ def run():
         o.remove([(3,h) for h in holes],recursive=True); o.synchronize()
         # OCC fragmentation, unlike mesh.embed(), registers intersections of
         # a ribbon fragment with the hole boundary as CAD topology.
-        fragment=partition['blocks']['z_nonpositive'][0]['triangles'][0]
-        points=[o.addPoint(*[float(Fraction(value)) for value in vertex]) for vertex in fragment]
-        surface=o.addPlaneSurface([o.addCurveLoop([o.addLine(points[i],points[(i+1)%3]) for i in range(3)])])
-        o.fragment(lo,[(2,surface)],removeObject=True,removeTool=True)
+        surfaces=[]
+        for item in partition['blocks']['z_nonpositive'][:fragment_limit]:
+            for fragment in item['triangles']:
+                points=[o.addPoint(*[float(Fraction(value)) for value in vertex]) for vertex in fragment]
+                surfaces.append(o.addPlaneSurface([o.addCurveLoop([o.addLine(points[i],points[(i+1)%3]) for i in range(3)])]))
+        o.fragment(lo,[(2,surface) for surface in surfaces],removeObject=True,removeTool=True)
         o.synchronize()
         volumes=[tag for _,tag in gmsh.model.getEntities(3)]
         if len(volumes)!=2: raise AssertionError('z0 block construction did not leave exactly two exterior volumes')
         gmsh.model.mesh.generate(3)
         counts=[sum(len(x) for x in gmsh.model.mesh.getElements(3,tag)[1]) for tag in volumes]
         if not all(counts): raise AssertionError('a z0 exterior block has no tetrahedra')
-        return {'schema':'t73_z0_block_volume_probe/v1','source_exterior_sha256':source['sha256'],'volumes':2,'tetrahedra_by_block':counts,'occ_fragment_ribbon_surface':True,'status':'PASS_ONE_FRAGMENT_ONLY'}
+        return {'schema':'t73_z0_block_volume_probe/v1','source_exterior_sha256':source['sha256'],'volumes':2,'tetrahedra_by_block':counts,'occ_fragment_ribbon_surface_count':len(surfaces),'status':'PASS_FRAGMENT_BATCH_ONLY'}
     finally: gmsh.finalize()
 
-if __name__=='__main__': print(json.dumps(run(),sort_keys=True))
+if __name__=='__main__':
+    p=argparse.ArgumentParser(); p.add_argument('--fragments',type=int,default=1); a=p.parse_args()
+    print(json.dumps(run(a.fragments),sort_keys=True))
