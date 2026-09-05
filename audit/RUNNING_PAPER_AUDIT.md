@@ -2016,6 +2016,22 @@ Topology-source checks completed 2026-09-04:
   nor S's embedded actual sphere system and MWW hemisphere-map factorization.
   The corresponding fail-closed gates therefore remain `OPEN`.
 
+### F-538 — The monolithic Gmsh 630-ribbon frame attempt is killed by the WSL OOM limiter
+
+- Severity: **Resource boundary / no geometric verdict**
+- Status: **MONOLITHIC COMPLETE FRAME NOT PRODUCED; PARTITIONED GLUING REQUIRED**
+- Evidence: the 5 September 2026 command ran
+  `probe_t73_selected_source_gmsh.py --limit 630 --algorithm 10` with output
+  paths in `/home/lifesize/.cache` after the same isolated Gmsh 4.15.2
+  environment reproduced the prefix-20 4134-node/23725-tetrahedron probe.
+  The WSL kernel log records the OOM kill of its Python process at anonymous
+  RSS 15008708 KiB. None of the requested prefix-630 `.msh`, entity-map or
+  probe JSON files exists afterwards.
+- Consequence: this supplies neither a positive mesh nor a negative
+  triangulability theorem. The 630-ribbon gate remains open. Future work must
+  partition the exterior and prove exact matching triangulations on every cut
+  interface before independently verifying their simplicial gluing.
+
 ### F-600 — The “actual” sphere-system builder assigns, rather than constructs, the embedding in \(\partial W_2\)
 
 - Severity: **Critical**

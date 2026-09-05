@@ -71,6 +71,15 @@ arguments, while its no-argument defaults preserve the prefix-10 baseline.
 A prefix-50 attempt was interrupted by the surrounding execution boundary
 before it returned a result. It is not recorded as either success or failure.
 
+On 5 September 2026, the complete 630-ribbon HXT attempt was run with Gmsh
+4.15.2 after the prefix-20 regression reproduced 4134 nodes and 23725
+tetrahedra. The WSL kernel OOM killer terminated the Python/Gmsh process at
+15008708 KiB anonymous RSS before it wrote the requested `.msh`, entity map or
+probe receipt. This is a resource failure, not a mesh certificate or a negative
+topological result. The complete-frame route must therefore use partitioned
+meshes with independently verified interface triangulations and checked
+simplicial gluing; it must not relabel this failed monolithic run as a frame.
+
 ## Remaining work
 
 The export and restoration path is therefore implemented. To turn it into
