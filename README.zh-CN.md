@@ -104,6 +104,11 @@ python3 scripts/verify_t73_y_foot_lane_candidate.py
 使用 `python3 scripts/build_t73_candidate_t_band_movie.py --check` 重建。
 它保存矩形段、attachment、splice descriptor和有序 candidate link state，但不声称实际 Kirby cancellation。
 
+1513 步 x-cancellation candidate movie 位于
+[`geometry/t73_candidate_x_band_movie.json`](geometry/t73_candidate_x_band_movie.json)，
+使用 `python3 scripts/build_t73_candidate_x_band_movie.py --check` 重建。
+它同样只具有 candidate 状态，尚未重放实际 link state。
+
 [`geometry/t73_actual_cancellation_splice_request.json`](geometry/t73_actual_cancellation_splice_request.json)
 是下一层生成输入：列出全部 6 条 t-band 和 1513 条 x-band 的 center-path hash，及
 每条所缺的 boundary/splice 字段：

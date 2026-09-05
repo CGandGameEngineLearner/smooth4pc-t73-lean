@@ -115,6 +115,11 @@ rebuilt with `python3 scripts/build_t73_candidate_t_band_movie.py --check`.
 It records rectangle segments, attachments, splice descriptors and ordered
 candidate link states without claiming an actual Kirby cancellation.
 
+The 1513-step x-cancellation candidate movie is
+[`geometry/t73_candidate_x_band_movie.json`](geometry/t73_candidate_x_band_movie.json),
+rebuilt with `python3 scripts/build_t73_candidate_x_band_movie.py --check`.
+It uses the same candidate-only status and has not replayed actual link states.
+
 [`geometry/t73_actual_cancellation_splice_request.json`](geometry/t73_actual_cancellation_splice_request.json)
 is the next generated input layer. It enumerates all 6 t-bands and 1513
 x-bands with their source center-path hash and required boundary/splice fields:
