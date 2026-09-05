@@ -275,6 +275,11 @@ Hopf arcs，并使用3558条各四段的外部 corridors，共23109条 core segm
 endpoint-fiber/base-segment 精确检查。verdict 为
 `PASS_CANONICAL_AFFINE_S3_FRAMED_LINK_EMBEDDING`。现在整数 framing 前只剩
 regular generic projection 与完整 framed PD。
+全局线性投影探测记录于
+[`audit/t73_affine_s3_projection_probe.json`](audit/t73_affine_s3_projection_probe.json)。
+xz/yz 会压扁 dotted edges；三个 regular tilts 至少产生258,453,247个 broad
+candidates。下一路线改为从已验证的 central、Hopf 与 corridor chart projections
+分块组装 diagram。
 完整合并后的 x/m1 结果位于
 [`geometry/t73_x_m1_complete_framed_cancellation_image.json`](geometry/t73_x_m1_complete_framed_cancellation_image.json)。
 它绑定持久化的 overlap full-verification，并组装五条闭合 atlas cycles：68176条

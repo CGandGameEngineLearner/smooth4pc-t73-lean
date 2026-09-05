@@ -329,6 +329,11 @@ records 50,637,456 push-waypoint/fiber checks and 4,567,172 exact nonincident
 endpoint-fiber/base-segment checks. Verdict:
 `PASS_CANONICAL_AFFINE_S3_FRAMED_LINK_EMBEDDING`. A regular generic projection
 and complete framed PD are now the remaining inputs for integer framings.
+Global linear projection probes are recorded in
+[`audit/t73_affine_s3_projection_probe.json`](audit/t73_affine_s3_projection_probe.json).
+xz/yz collapse dotted edges; three regular tilts produce at least 258,453,247
+broad candidates. The selected next route is piecewise diagram assembly from
+the already verified central, Hopf and corridor chart projections.
 The three missing pre-cancellation dual-cell product ribbons are now explicit
 in [`geometry/t73_actual_dual_product_ribbons.json`](geometry/t73_actual_dual_product_ribbons.json).
 Each planar dual boundary has an eight-quadrilateral/16-triangle annulus to a

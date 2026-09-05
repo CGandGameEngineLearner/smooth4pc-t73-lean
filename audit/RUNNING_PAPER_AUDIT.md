@@ -3660,6 +3660,23 @@ Topology-source checks completed 2026-09-04:
   core/core, core/push and dotted crossings exported before integer self-linkings and
   the complete framed PD are available.
 
+### F-599C — Monolithic linear projections of the affine framed link are computationally unsuitable
+
+- Severity: **complete PD / projection selection**
+- Status: **FIVE CANDIDATES AUDITED; PIECEWISE DIAGRAM ROUTE SELECTED**
+- Evidence: `scripts/probe_t73_affine_s3_regular_projection.py`,
+  `audit/t73_affine_s3_projection_probe.json`, and its test.
+- Results: xz and yz projections collapse a dotted-circle edge. A tiny
+  height tilt is regular on all 46,226 segments but gives 258,453,247 Shapely
+  AABB candidates. Unit tilt gives 529,702,317, and the tested small-integer
+  pair gives 624,179,706. These counts are broad-phase workload, not crossing
+  counts, and no candidate is mislabeled as a completed PD.
+- Decision: the affine embedding remains valid, but brute-force monolithic
+  projection is rejected as an implementation route. The next builder must
+  assemble a regular diagram piecewise from the already verified 1,758,060
+  central crossings, 3570 local Hopf crossings and analytically controlled
+  corridor charts, then independently check the combined crossing order.
+
 ### F-600 — The “actual” sphere-system builder assigns, rather than constructs, the embedding in \(\partial W_2\)
 
 - Severity: **Critical**

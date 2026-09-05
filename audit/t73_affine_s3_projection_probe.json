@@ -1,0 +1,17 @@
+{
+  "affine_framed_realization_sha256": "3DCDD28B573EAE501ADBE3C2E85FC782DE9005D57E804FD40764FC8356DE3DB7",
+  "candidates": [
+    {"broad_candidates": 258453247, "denominator": 1000033, "mode": "tilt", "result": "REGULAR"},
+    {"broad_candidates": 529702317, "denominator": 1, "mode": "tilt", "result": "REGULAR"},
+    {"broad_candidates": 624179706, "mode": "integer", "result": "REGULAR"},
+    {"collapsed_segment": ["dotted_y", 1], "mode": "xz", "result": "COLLAPSED"},
+    {"collapsed_segment": ["dotted_y", 0], "mode": "yz", "result": "COLLAPSED"}
+  ],
+  "next_method": "PIECEWISE_DIAGRAM_ASSEMBLY_FROM_VERIFIED_CHART_PROJECTIONS",
+  "probe_script_sha256": "5CA02DB6E0B6E0DD75BF410EDBB2DADEA7DCEA7C83D328CD35CE64BE01353F67",
+  "schema": "t73_affine_s3_projection_probe/v1",
+  "segment_count": 46226,
+  "selected_linear_projection": null,
+  "selection_status": "NO_COMPUTATIONALLY_ACCEPTABLE_GLOBAL_LINEAR_PROJECTION",
+  "sha256": "DD9A221C4429815E0A493C254A050C68F3830B14CD1FEAEB8D22279BA4F0BE79"
+}
