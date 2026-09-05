@@ -142,6 +142,15 @@ graph map 已在
 5373 个 tetrahedra 与10746个 boundary triangles，closing fiber 恒等且五个
 relative twist均为0。使用 `verify_t73_hybrid_to_railroad_tubular_map.py` 验收；
 当前只剩 handlebody complement extension 开放。
+complement boundary 数据现包含
+[`geometry/t73_foot_to_dotted_slot_map.json`](geometry/t73_foot_to_dotted_slot_map.json)
+及
+[`geometry/t73_foot_to_dotted_disk_tracks.json`](geometry/t73_foot_to_dotted_disk_tracks.json)
+中的1779条显式反射配对路径；verifier 完成2,437,382次精确固定点碰撞检查。
+每条 reduced source edge 也在
+[`geometry/t73_reduced_source_connector_provenance.json`](geometry/t73_reduced_source_connector_provenance.json)
+中绑定回 raw geometry：1773个 Johnson central connectors 与12个 dual-boundary
+connectors 恰好分区全部1780条 reduced edges。
 
 另一个独立层次中，C-cut 的 44-lane candidate realization 为
 [`geometry/t73_y_foot_lane_candidate.json`](geometry/t73_y_foot_lane_candidate.json)：

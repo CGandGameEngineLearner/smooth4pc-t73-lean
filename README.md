@@ -156,6 +156,15 @@ Its five solid-torus templates contain 5373 tetrahedra and 10746 boundary
 triangles, with identity closing fiber maps and zero relative twists. Verify
 with `verify_t73_hybrid_to_railroad_tubular_map.py`; only the handlebody
 complement extension remains open.
+The complement boundary data now include
+[`geometry/t73_foot_to_dotted_slot_map.json`](geometry/t73_foot_to_dotted_slot_map.json)
+and 1779 explicit reflection-paired paths in
+[`geometry/t73_foot_to_dotted_disk_tracks.json`](geometry/t73_foot_to_dotted_disk_tracks.json).
+Their verifier performs 2,437,382 exact fixed-point collision checks. Every
+reduced source edge is also bound to its raw geometry in
+[`geometry/t73_reduced_source_connector_provenance.json`](geometry/t73_reduced_source_connector_provenance.json):
+1773 Johnson central connectors and 12 dual-boundary connectors partition all
+1780 reduced edges.
 
 Separately, the C-cut 44-lane candidate realization is
 [`geometry/t73_y_foot_lane_candidate.json`](geometry/t73_y_foot_lane_candidate.json):

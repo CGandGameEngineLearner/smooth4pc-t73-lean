@@ -16,6 +16,7 @@ CORE = ROOT / "geometry/t73_actual_railroad_core_coordinates.json"
 RAILROAD = ROOT / "geometry/t73_final_railroad_word_binding.json"
 FOOT_STATE = ROOT / "geometry/t73_final_yz_foot_state.json"
 FRAMINGS = ROOT / "geometry/t73_railroad_product_framings.json"
+SLOT_MAP = ROOT / "geometry/t73_foot_to_dotted_slot_map.json"
 OUTPUT = ROOT / "geometry/t73_source_bound_standard_pd_candidate.json"
 
 COMPONENT_ORDER = ["m_2", "m_3", "r_xy", "r_yz", "r_zx", "dotted_y", "dotted_z"]
@@ -37,6 +38,12 @@ def build() -> dict:
     railroad = json.loads(RAILROAD.read_text(encoding="utf-8"))
     foot_state = json.loads(FOOT_STATE.read_text(encoding="utf-8"))
     framings = json.loads(FRAMINGS.read_text(encoding="utf-8"))
+    slot_map = json.loads(SLOT_MAP.read_text(encoding="utf-8"))
+    slot_by_passage = {
+        entry["passage_id"]: entry
+        for handle in slot_map["handles"]
+        for entry in handle["entries"]
+    }
     words = {
         record["name"]: record["reduced_word"] for record in core["components"]
     }
@@ -51,7 +58,6 @@ def build() -> dict:
         )
         value["kind"] = "exact_railroad_core_crossing"
         crossings.append(value)
-    dotted_segments = {"dotted_y": 0, "dotted_z": 0}
     dotted_insertions = []
     for component in core["components"]:
         name = component["name"]
@@ -61,8 +67,7 @@ def build() -> dict:
             handle = "y" if abs(letter) == 2 else "z"
             dotted = f"dotted_{handle}"
             sign = 1 if letter > 0 else -1
-            dotted_start = dotted_segments[dotted]
-            dotted_segments[dotted] += 2
+            dotted_start = slot_by_passage[passage_id]["dotted_segment_pair"][0]
             insertion_index = len(dotted_insertions)
             first = {
                 "projection_point": [str(-2 if handle == "y" else -3), str(Fraction(2 * insertion_index + 1, 100000))],
@@ -99,6 +104,9 @@ def build() -> dict:
                 "letter": letter,
                 "source_passage_id": passage_id,
                 "dotted_component": dotted,
+                "dotted_segment_pair": slot_by_passage[passage_id][
+                    "dotted_segment_pair"
+                ],
             })
     crossings.append({
         "projection_point": ["4", "2"],
@@ -138,6 +146,7 @@ def build() -> dict:
         "actual_railroad_word_binding_sha256": railroad["sha256"],
         "final_yz_foot_state_sha256": foot_state["sha256"],
         "railroad_product_framings_sha256": framings["sha256"],
+        "foot_to_dotted_slot_map_sha256": slot_map["sha256"],
         "component_order": COMPONENT_ORDER,
         "crossing_count": len(crossings),
         "crossings": crossings,

@@ -2985,6 +2985,45 @@ Topology-source checks completed 2026-09-04:
   10746 boundary triangles and the two dotted-handle meridian/longitude data,
   together with its inverse.
 
+### F-577 — All surviving foot marks have explicit reflection-paired tracks to their dotted slots
+
+- Severity: **kappa_AR complement boundary / marked disks**
+- Status: **1779 MARKED CONFIGURATION TRACKS PASS**
+- Evidence: `geometry/t73_foot_to_dotted_slot_map.json`,
+  `geometry/t73_foot_to_dotted_disk_tracks.json`, their builders, independent
+  verifiers, and tests.
+- Ordering: `lane_0+lane_1/1009` is injective on both surviving marked
+  configurations. It gives 235 y slots and 1544 z slots; their 3558 dotted
+  segment ids form disjoint exhaustive partitions.
+- Tracks: points move sequentially inside a normalized convex disk. Each path
+  has two rational segments through the first canonical waypoint avoiding all
+  fixed marks. Replay checks 1779 moves and 2,437,382 exact incidences.
+- Reflection: identical normalized paths in the two physical feet are exchanged
+  by the Figure-2a reflection; reversing move order and paths is the inverse.
+  Verdict: `PASS_EXPLICIT_REFLECTION_PAIRED_MARKED_DISK_TRACKS`.
+- Boundary: marked disks now match, while connector tangles still need ambient
+  tracks in the 0-handle complement.
+
+### F-578 — Every reduced connector edge is partitioned into actual source connector cells
+
+- Severity: **kappa_AR complement source / connector provenance**
+- Status: **1780 REDUCED EDGES BOUND TO 1785 ACTUAL RAW CELLS**
+- Evidence: `scripts/build_t73_reduced_source_connector_provenance.py`,
+  `scripts/verify_t73_reduced_source_connector_provenance.py`,
+  `geometry/t73_reduced_source_connector_provenance.json`, and its test.
+- Johnson cells: all 311 m2 and 1462 m3 raw connector cells bind by hash to
+  the 1773 `central_connector` records in the Johnson spine embedding. Dual
+  components contribute 12 actual square-boundary connector cells.
+- Bigon composition: one m3 reduced edge is an ordered composite of three raw
+  cells; the residual r_zx circle is the composite of four. All other reduced
+  edges use one cell. No raw connector id is duplicated or omitted.
+- Target incidence: each reduced edge retains its F-575 endpoints and exhaustive
+  railroad segment range. Verdict:
+  `PASS_ALL_REDUCED_EDGES_ACTUAL_CONNECTOR_PROVENANCE`.
+- Boundary: provenance is not yet an ambient track. The next step must use the
+  stored Johnson/dual coordinates to build disjoint edge tracks to the railroad
+  connectors and extend over the remaining 0-handle complement.
+
 ### F-600 — The “actual” sphere-system builder assigns, rather than constructs, the embedding in \(\partial W_2\)
 
 - Severity: **Critical**
