@@ -2077,6 +2077,21 @@ Topology-source checks completed 2026-09-04:
 - Boundary: no lower or upper tetrahedra have yet been generated, so this is
   neither a mesh gluing proof nor a tetrahedral-frame certificate.
 
+### F-542 — The actual AR-to-Kirby generator now saves an explicit missing-data contract
+
+- Severity: **Construction-program remediation / not a witness**
+- Status: **OPEN CONTRACT SAVED; GEOMETRIC INPUT ABSENT**
+- Evidence: `scripts/build_t73_actual_ar_kirby_construction_request.py`,
+  `geometry/t73_actual_ar_kirby_construction_request.json`,
+  `data/T73_AR_TO_KIRBY_PRESENTATION.schema.json`, and
+  `scripts/verify_t73_ar_to_kirby_presentation.py`.
+- Construction: the request is rebuilt from the hash-bound AR coordinate atlas.
+  It enumerates the three missing chart transitions, all six t-bands and 1513
+  x-bands requiring boundary edges/splices, the four handle feet, and the
+  seven final Kirby components with their framing/dotted-circle requirements.
+- Boundary: it deliberately remains `OPEN`; no band center, word, hash or
+  declared status can substitute for the requested cut-and-surgery PL data.
+
 ### F-600 — The “actual” sphere-system builder assigns, rather than constructs, the embedding in \(\partial W_2\)
 
 - Severity: **Critical**

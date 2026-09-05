@@ -67,6 +67,24 @@ python3 scripts/build_t73_complete_geometry_bundle_v2.py --check
 This saves all currently reconstructible endpoint/arc geometry.  Its manifest
 deliberately remains `OPEN` at the actual coend/currying map.
 
+### Actual AR-to-Kirby construction data
+
+[`geometry/t73_actual_ar_kirby_construction_request.json`](geometry/t73_actual_ar_kirby_construction_request.json)
+is generated from the actual AR coordinate atlas by
+[`scripts/build_t73_actual_ar_kirby_construction_request.py`](scripts/build_t73_actual_ar_kirby_construction_request.py).
+It is a hash-bound `OPEN` request, not a Kirby witness: it records the three
+missing chart transitions, the 6 t-bands and 1513 x-bands that require two
+boundary edges/splice data, and the seven required final components. Rebuild it
+with:
+
+```text
+python3 scripts/build_t73_actual_ar_kirby_construction_request.py --check
+```
+
+The future witness is validated by
+`scripts/verify_t73_ar_to_kirby_presentation.py`; it will only accept explicit
+cut-and-surgery geometry and exact AR/t/x source bindings.
+
 ### Gmsh frames and partitioned-frame inputs
 
 The independently verified Gmsh prefix-20 frame is

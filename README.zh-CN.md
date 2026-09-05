@@ -61,6 +61,22 @@ python3 scripts/build_t73_complete_geometry_bundle_v2.py --check
 它保存当前可重构的全部端点与弧几何；实际 coend/currying map 未构造，所以
 顶层 manifest 按设计保持 `OPEN`。
 
+### 实际 AR→Kirby 构造数据
+
+[`geometry/t73_actual_ar_kirby_construction_request.json`](geometry/t73_actual_ar_kirby_construction_request.json)
+由实际 AR coordinate atlas 经
+[`scripts/build_t73_actual_ar_kirby_construction_request.py`](scripts/build_t73_actual_ar_kirby_construction_request.py)
+生成。它是带 SHA 绑定、状态为 `OPEN` 的构造请求，不是 Kirby witness：保存三条
+缺失 chart transition、6 条 t-band 与 1513 条 x-band 所需的两条边/splice 数据，及
+七个最终 component。重建命令为：
+
+```text
+python3 scripts/build_t73_actual_ar_kirby_construction_request.py --check
+```
+
+未来 witness 由 `scripts/verify_t73_ar_to_kirby_presentation.py` 验收；它只接受
+显式 cut-and-surgery 几何和精确的 AR/t/x source SHA 绑定。
+
 ### Gmsh frame 与分块 frame 输入
 
 已独立验收的 Gmsh prefix-20 frame 位于

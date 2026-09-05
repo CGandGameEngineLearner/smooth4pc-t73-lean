@@ -1,0 +1,57 @@
+{
+  "atlas_sha256": "755D78F7F0B4422360BE2AFA3850ADB5EFF8B1B5C7A9A163DDF82E7B36D0A3D6",
+  "completion_status": "OPEN",
+  "required_band_geometry": {
+    "per_band": [
+      "two_oriented_boundary_edges",
+      "attachment_parameters_on_source_and_target_cores",
+      "embedded_parallel_replacement_arc",
+      "framing_normal_trivialization",
+      "spliced_cyclic_successor"
+    ],
+    "t_band_count": 6,
+    "x_band_count": 1513
+  },
+  "required_chart_transitions": [
+    {
+      "id": "fiber_dual_H2_to_mapping_torus",
+      "required_choice": "the u level/side and compatible seam collar for each dual-cell core and ribbon",
+      "status": "OPEN"
+    },
+    {
+      "id": "x_belt_local_to_mapping_torus_or_cut_handlebody",
+      "required_choice": "a collar map u=u0+epsilon*nu (including seam-side choice and epsilon), not nu=u",
+      "status": "OPEN"
+    },
+    {
+      "id": "cut_handlebody_to_dotted_S3_presentation",
+      "required_choice": "four pre-cancellation 1-handle foot pairs, orientation-reversing disk identifications, lane endpoint maps, and ribbon normal trivializations",
+      "status": "OPEN"
+    }
+  ],
+  "required_final_data": [
+    "five_closed_rational_core_polylines",
+    "five_closed_rational_framing_push_offs",
+    "two_dotted_circle_closed_polylines",
+    "one_generic_oriented_projection",
+    "cut_and_surgery_quotient_pairings"
+  ],
+  "required_post_cancellation_components": [
+    "m_2",
+    "m_3",
+    "r_xy",
+    "r_yz",
+    "r_zx",
+    "dotted_y",
+    "dotted_z"
+  ],
+  "schema": "t73_actual_ar_kirby_construction_request/v1",
+  "sha256": "C814767E285BC06F4A1122C91A43E576AE99D7F48ADD9D715B3E8746AE2C5638",
+  "source_bindings": {
+    "actual_ar_link_sha256": "E5CD3C2A2AD0650D061CFB730F54F32C1F2860D2FD0813067550D545D02D2853",
+    "belt_spheres_sha256": "E582534A0FF674EC2DC19377AEB6A15907BE2D7BCE7BA5C53BAC3AAF3DE9AF1C",
+    "p0a_handlebody_pair_sha256": "C1877B7696E7A44B5DEBE06BDCAC6CA712A83E49A07973107B7F1C4A728D4435",
+    "t_cancellation_sha256": "6BFFC5189F69C3C2A3AA186683FFFDDC63A60573982634BCEC242DA1B67051D6",
+    "x_cancellation_sha256": "B72838D6671FAFBD3D8368E511759D9DE13007C81E4C731EAA661B084B951C1B"
+  }
+}
