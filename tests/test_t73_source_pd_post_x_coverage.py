@@ -15,7 +15,7 @@ class SourcePDPostXCoverageTest(unittest.TestCase):
         module = importlib.util.module_from_spec(spec); spec.loader.exec_module(module)
         result = module.verify()
         self.assertEqual(result["verdict"], "PASS_SOURCE_PD_POST_X_COVERAGE_GAP_AUDIT")
-        self.assertEqual(result["omitted_core_segments"], 57494)
+        self.assertEqual(result["omitted_core_segments"], 60520)
         self.assertEqual(result["repair_status"], "OPEN_PROJECT_FULL_REPLACEMENT_PATHS")
 
 

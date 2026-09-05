@@ -29,13 +29,13 @@ def verify():
             or data["source_connector_projection_receipt_sha256"] != projection["sha256"]
             or data["source_standard_pd_receipt_sha256"] != pd["sha256"]):
         raise AssertionError("coverage-gap sources changed")
-    segments_per_cell = 2 + 34 + 2
+    segments_per_cell = 1 + 2 + 34 + 2 + 1
     expected = {component: count * segments_per_cell for component, count in post_x["component_counts"].items()}
-    if expected != {"m_2": 10222, "m_3": 47120, "r_xy": 76, "r_zx": 76}:
+    if expected != {"m_2": 10760, "m_3": 49600, "r_xy": 80, "r_zx": 80}:
         raise AssertionError("post-x replacement segment inventory changed")
     if (data["omitted_replacement_core_segments_by_component"] != expected
-            or data["omitted_replacement_core_segment_count"] != 57494
-            or data["omitted_replacement_push_segment_count"] != 57494):
+            or data["omitted_replacement_core_segment_count"] != 60520
+            or data["omitted_replacement_push_segment_count"] != 60520):
         raise AssertionError("coverage-gap counts changed")
     forbidden = {"x_band_hybrid_movie_sha256", "post_x_framed_replacement_cells_receipt_sha256"}
     if forbidden & set(projection) or forbidden & set(pd):
@@ -45,8 +45,8 @@ def verify():
     return {
         "verdict": "PASS_SOURCE_PD_POST_X_COVERAGE_GAP_AUDIT",
         "post_x_cells": 1513,
-        "omitted_core_segments": 57494,
-        "omitted_push_segments": 57494,
+        "omitted_core_segments": 60520,
+        "omitted_push_segments": 60520,
         "current_pd_crossings": pd["crossing_count"],
         "repair_status": "OPEN_PROJECT_FULL_REPLACEMENT_PATHS",
     }

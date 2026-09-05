@@ -23,7 +23,7 @@ def build():
     post_x = json.loads(POST_X.read_text(encoding="utf-8"))
     projection = json.loads(PROJECTION.read_text(encoding="utf-8"))
     pd = json.loads(PD.read_text(encoding="utf-8"))
-    segments_per_cell = (3 - 1) + (35 - 1) + (3 - 1)
+    segments_per_cell = 1 + (3 - 1) + (35 - 1) + (3 - 1) + 1
     missing = {component: count * segments_per_cell for component, count in post_x["component_counts"].items()}
     result = {
         "schema": "t73_source_pd_post_x_coverage_gap/v1",
@@ -42,7 +42,7 @@ def build():
         "prior_complete_source_native_pd_claim": "REFUTED_BY_EXPLICIT_POST_X_PATH_COVERAGE",
         "current_pd_scope": "JOHNSON_CENTRAL_CONNECTORS_PLUS_ABSTRACT_LOCAL_HOPF_EVENTS_ONLY",
         "completion_status": "SOURCE_PD_POST_X_REPLACEMENT_COVERAGE_GAP_CONFIRMED",
-        "required_repair": "project the 57494 replacement core segments and their pushes in one dotted-S3 chart, including splice crossings, then rebuild PD and framings",
+        "required_repair": "project the 60520 replacement core segments and their pushes in one dotted-S3 chart, including splice crossings, then rebuild PD and framings",
     }
     result["sha256"] = canonical_sha(result)
     return result

@@ -96,11 +96,19 @@ def iter_cells(data):
         if local["band_index"] != index or transition["band_index"] != index:
             raise AssertionError("x-band source streams lost alignment")
         germ = germs[index]
-        vertices, triangles, normals, push_vertices, _, _, _, _, strategy, selected = expand_band(band)
+        vertices, triangles, normals, push_vertices, _, source_normal, _, _, strategy, selected = expand_band(band)
         orientation = band["replacement_orientation"]
         width = Fraction(band["band_width"])
         source_interval_local = [vertices[0], vertices[1]]
         source_interval = source_interval_global(source_interval_local, germ)
+        source_arc = [point(value) for value in germ["global_oriented_arc"]]
+        source_stub_normal = source_normal
+        if germ["chart"] == "fiber_dual_global":
+            source_arc = [value[:3] for value in source_arc]
+            source_stub_normal = source_normal[:3]
+        source_stub_before = [source_arc[0], source_interval[0]]
+        source_stub_after = [source_interval[1], source_arc[-1]]
+        source_stub_normals = [source_stub_normal, source_stub_normal]
         target_center = tuple((left + right) / 2 for left, right in zip(vertices[4], vertices[5]))
         before_local = (Fraction(2) - orientation * width, *target_center[1:])
         after_local = (Fraction(2) + orientation * width, *target_center[1:])
@@ -134,6 +142,11 @@ def iter_cells(data):
             "selected_constant_push": encode(selected) if selected else None,
             "source_chart": germ["chart"],
             "source_interval_global": encode_points(source_interval),
+            "source_stub_before": {
+                "vertices": encode_points(source_stub_before),
+                "normal_field": encode_points(source_stub_normals),
+                "push_vertices": encode_points(pushed(source_stub_before, source_stub_normals)),
+            },
             "band_surface": {
                 "vertices": encode_points(vertices),
                 "triangles": triangles,
@@ -157,11 +170,17 @@ def iter_cells(data):
                 "normal_field": encode_points(positive_normals),
                 "push_vertices": encode_points(pushed(positive, positive_normals)),
             },
+            "source_stub_after": {
+                "vertices": encode_points(source_stub_after),
+                "normal_field": encode_points(source_stub_normals),
+                "push_vertices": encode_points(pushed(source_stub_after, source_stub_normals)),
+            },
             "chart_gluing_order": [
-                "retained_component_complement",
+                "source_stub_before",
                 "negative_band_lane",
                 "oriented_m1_parallel_complement",
                 "positive_band_lane",
+                "source_stub_after",
             ],
             "hybrid_replacement_cell_sha256": transition["replacement_cell_sha256"],
         }
@@ -197,8 +216,9 @@ def write_cache(cache_path: Path):
         "framed_replacement_cell_count": sum(counts.values()),
         "component_counts": dict(sorted(counts.items())),
         "band_surface_triangles": 1513 * 4,
-        "explicit_core_path_vertices": 1513 * (3 + 35 + 3),
-        "explicit_push_path_vertices": 1513 * (3 + 35 + 3),
+        "replacement_core_segments_per_cell": 40,
+        "explicit_core_path_vertices": 1513 * (2 + 3 + 35 + 3 + 2),
+        "explicit_push_path_vertices": 1513 * (2 + 3 + 35 + 3 + 2),
         "verdict": "PASS_POST_X_EXPLICIT_FRAMED_REPLACEMENT_CELL_CACHE",
         "scope_boundary": "cells are explicit in their glued source/local charts; source-native S3 push-off projection and integer diagonal framings remain open",
     }

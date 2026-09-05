@@ -47,7 +47,7 @@ def check_receipt():
         and receipt["arc_label_count"] == 3523260,
         "verdict": receipt["verdict"] == "PASS_ACTUAL_SOURCE_STANDARD_PD_CORE_ONLY",
         "post_x_coverage": coverage["source_standard_pd_receipt_sha256"] == receipt["sha256"]
-        and coverage["omitted_replacement_core_segment_count"] == 57494
+        and coverage["omitted_replacement_core_segment_count"] == 60520
         and coverage["prior_complete_source_native_pd_claim"] == "REFUTED_BY_EXPLICIT_POST_X_PATH_COVERAGE",
     }
     if not all(checks.values()):
@@ -139,7 +139,7 @@ def verify_full(check_database_sha=False):
         "database_sha_checked": check_database_sha,
         "framing_status": receipt["framing_status"],
         "coverage_status": "PARTIAL_CONNECTOR_PLUS_LOCAL_HOPF_SKELETON",
-        "omitted_post_x_core_segments": 57494,
+        "omitted_post_x_core_segments": 60520,
     }
 
 
@@ -158,7 +158,7 @@ def main():
             "crossings": receipt["crossing_count"],
             "framing_status": receipt["framing_status"],
             "coverage_status": "PARTIAL_CONNECTOR_PLUS_LOCAL_HOPF_SKELETON",
-            "omitted_post_x_core_segments": 57494,
+            "omitted_post_x_core_segments": 60520,
         }
     print(json.dumps(result, sort_keys=True))
 

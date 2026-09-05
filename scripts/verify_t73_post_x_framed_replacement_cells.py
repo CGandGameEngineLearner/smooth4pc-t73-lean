@@ -56,8 +56,9 @@ def check_receipt():
         "counts": receipt["framed_replacement_cell_count"] == 1513
         and receipt["component_counts"] == {"m_2": 269, "m_3": 1240, "r_xy": 2, "r_zx": 2}
         and receipt["band_surface_triangles"] == 6052
-        and receipt["explicit_core_path_vertices"] == 62033
-        and receipt["explicit_push_path_vertices"] == 62033,
+        and receipt["replacement_core_segments_per_cell"] == 40
+        and receipt["explicit_core_path_vertices"] == 68085
+        and receipt["explicit_push_path_vertices"] == 68085,
         "verdict": receipt["verdict"] == "PASS_POST_X_EXPLICIT_FRAMED_REPLACEMENT_CELL_CACHE",
     }
     if not all(checks.values()):
@@ -82,6 +83,8 @@ def verify_full(check_cache_sha=False):
     if check_cache_sha and file_sha(cache) != receipt["cache_sha256"]:
         raise AssertionError("post-x cache byte SHA changed")
     local = json.loads(SOURCES["x_band_local_movie_sha256"].read_text(encoding="utf-8"))
+    germs_data = json.loads(SOURCES["x_source_chart_germs_sha256"].read_text(encoding="utf-8"))
+    germs = {item["band_index"]: item for item in germs_data["germs"]}
     cancellation = json.loads(SOURCES["x_cancellation_sha256"].read_text(encoding="utf-8"))
     hybrid = json.loads(SOURCES["x_band_hybrid_movie_sha256"].read_text(encoding="utf-8"))
     digest = hashlib.sha256()
@@ -114,6 +117,27 @@ def verify_full(check_cache_sha=False):
                 raise AssertionError("post-x band surface hashes changed")
             if canonical_sha(cell["source_interval_global"]) != transition["source_interval_global_sha256"]:
                 raise AssertionError("post-x source interval changed")
+            source_interval = cell["source_interval_global"]
+            source_arc = germs[expected_index]["global_oriented_arc"]
+            width = Fraction(band["band_width"])
+            if band["source_kind"] == "johnson_handle_lane":
+                source_normal = (Fraction(0), width, width, Fraction(0))
+            elif band["component"] == "r_xy":
+                source_normal = (Fraction(0), Fraction(0), width, Fraction(0))
+            elif band["component"] == "r_zx":
+                source_normal = (Fraction(0), width, Fraction(0), Fraction(0))
+            else:
+                raise AssertionError("unknown source-stub framing rule")
+            if germs[expected_index]["chart"] == "fiber_dual_global":
+                source_arc = [value[:3] for value in source_arc]
+                source_normal = source_normal[:3]
+            for key, expected_vertices in (
+                ("source_stub_before", [source_arc[0], source_interval[0]]),
+                ("source_stub_after", [source_interval[1], source_arc[-1]]),
+            ):
+                piece = cell[key]
+                if piece["vertices"] != expected_vertices or [point(value) for value in piece["normal_field"]] != [source_normal, source_normal]:
+                    raise AssertionError(f"post-x source stub changed at band {expected_index}/{key}")
             for key, prefix in (("negative_band_lane", "negative_lane"), ("positive_band_lane", "positive_lane")):
                 piece = cell[key]
                 if (canonical_sha(piece["vertices"]) != transition[f"{prefix}_sha256"]
@@ -130,7 +154,9 @@ def verify_full(check_cache_sha=False):
                 triangles_checked += 1
                 if not nondegenerate_triangle(vertices, triangle):
                     raise AssertionError("post-x band has a degenerate triangle")
-            for piece_name in ("band_surface", "negative_band_lane", "oriented_m1_parallel_complement", "positive_band_lane"):
+            if cell["chart_gluing_order"] != ["source_stub_before", "negative_band_lane", "oriented_m1_parallel_complement", "positive_band_lane", "source_stub_after"]:
+                raise AssertionError("post-x path gluing order changed")
+            for piece_name in ("band_surface", "source_stub_before", "negative_band_lane", "oriented_m1_parallel_complement", "positive_band_lane", "source_stub_after"):
                 piece = cell[piece_name]
                 values = [point(value) for value in piece["vertices"]]
                 normals = [point(value) for value in piece["normal_field"]]
@@ -139,15 +165,15 @@ def verify_full(check_cache_sha=False):
                     raise AssertionError("post-x framed path lengths disagree")
                 for value, normal, push in zip(values, normals, pushes):
                     normal_vertices_checked += 1
-                    if normal == (0, 0, 0, 0):
+                    if not any(normal):
                         raise AssertionError("post-x normal field vanished")
-                    if push != tuple(value[index] + normal[index] for index in range(4)):
+                    if push != tuple(value[index] + normal[index] for index in range(len(value))):
                         raise AssertionError("post-x push vertex is not value+normal")
                     push_vertices_checked += 1
             counts[cell["component"]] += 1
     if digest.hexdigest().upper() != receipt["record_stream_sha256"] or dict(sorted(counts.items())) != receipt["component_counts"]:
         raise AssertionError("post-x record stream/counts changed")
-    if triangles_checked != 6052 or push_vertices_checked != 71111 or normal_vertices_checked != 71111:
+    if triangles_checked != 6052 or push_vertices_checked != 77163 or normal_vertices_checked != 77163:
         raise AssertionError("post-x full verification totals changed")
     return {
         "verdict": "PASS_POST_X_EXPLICIT_FRAMED_REPLACEMENT_CELLS_FULL",

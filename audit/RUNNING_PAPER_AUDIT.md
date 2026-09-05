@@ -3088,7 +3088,7 @@ Topology-source checks completed 2026-09-04:
   in the user cache. Git stores builders, exact source bindings, byte hashes,
   table/count/linking receipts, and fast tests. ijson and SQLite keep peak
   memory bounded.
-- Boundary: F-587 proves that this projection omitted all 57,494 post-x
+- Boundary: F-587 proves that this projection omitted all 60,520 post-x
   replacement-path segments, so the former “core PD is complete and actual”
   conclusion is withdrawn. The connector/local-Hopf incidence remains
   verified, but the complete PD, integer diagonal entries, kappa_AR and W2
@@ -3150,18 +3150,19 @@ Topology-source checks completed 2026-09-04:
   `scripts/verify_t73_post_x_framed_replacement_cells.py`,
   `audit/t73_post_x_framed_replacement_cells_receipt.json`, its test, and the
   gzip JSONL cache named in the receipt.
-- Data: all 1513 x slides are expanded to their source interval, six-vertex
+- Data: all 1513 x slides are expanded to their two retained source stubs,
+  source interval, six-vertex
   four-triangle band surface, negative/positive three-vertex band lanes, and
   oriented 35-vertex m1-parallel complement. Every listed core vertex has its
   nonzero rational normal and literal `vertex+normal` push vertex. Component
   counts are m2=269, m3=1240, r_xy=2, and r_zx=2.
 - Verification: the full streaming verifier checks the cache byte SHA and
   decompressed record-stream SHA, all source bindings and per-cell provenance,
-  6052 exact nondegenerate band triangles, 71111 nonzero normal vertices, and
-  71111 exact push vertices. It also matches every path/normal list against
+  6052 exact nondegenerate band triangles, 77163 nonzero normal vertices, and
+  77163 exact push vertices. It also matches every path/normal list against
   the previously full-replayed local and hybrid movie hashes. Verdict:
   `PASS_POST_X_EXPLICIT_FRAMED_REPLACEMENT_CELLS_FULL`.
-- Storage: the deterministic 34,576,551-byte gzip cache is
+- Storage: the deterministic 36,250,150-byte gzip cache is
   `/home/lifesize/.cache/t73_post_x_framed_replacement_cells.jsonl.gz`; Git
   stores the builder, verifier, compact receipt, tests, and source hashes.
 - Boundary: these cells are actual and explicit in their mapping-torus,
@@ -3257,18 +3258,19 @@ Topology-source checks completed 2026-09-04:
   The verifier transparently maps the Windows receipt path through `/mnt/c`
   when it is run from WSL.
 
-### F-587 — The current source PD omits 57,494 post-x replacement segments
+### F-587 — The current source PD omits 60,520 post-x replacement segments
 
 - Severity: **Critical correction / actual PD coverage**
 - Status: **COMPLETE-PD CLAIM REFUTED; EXACT REPAIR INVENTORY SAVED**
 - Evidence: `audit/t73_source_pd_post_x_coverage_gap.json`,
   `scripts/audit_t73_source_pd_post_x_coverage.py`,
   `scripts/verify_t73_source_pd_post_x_coverage.py`, and its test.
-- Coverage comparison: every explicit F-583 replacement path consists of a
-  two-segment negative band lane, a 34-segment oriented m1-parallel
-  complement, and a two-segment positive band lane: 38 core segments per
-  slide. The 1513 slides therefore contribute 57,494 core segments, split as
-  m2=10,222, m3=47,120, r_xy=76, and r_zx=76, plus 57,494 pushed segments.
+- Coverage comparison: every explicit F-583 replacement path consists of two
+  retained one-segment source stubs, a two-segment negative band lane, a
+  34-segment oriented m1-parallel complement, and a two-segment positive band
+  lane: 40 core segments per slide. The 1513 slides therefore contribute
+  60,520 core segments, split as m2=10,760, m3=49,600, r_xy=80, and r_zx=80,
+  plus 60,520 pushed segments.
 - Refutation: the F-579 projection binds only the Johnson spine, AR dual link,
   and connector provenance. The F-580 PD binds that projection, passage cycles
   and local dotted slots. Neither receipt binds F-583 or the x-band hybrid
@@ -3278,7 +3280,7 @@ Topology-source checks completed 2026-09-04:
   Johnson-central-connector plus local-Hopf skeleton. F-586 remains a valid
   connector/product-push crossing ledger. Their overbroad “complete actual
   source PD” interpretation is withdrawn, not their scoped computations.
-- Repair gate: project all 57,494 replacement core segments and all 57,494
+- Repair gate: project all 60,520 replacement core segments and all 60,520
   pushes in a single dotted-S3 chart, include their crossings with the 7116
   connector segments and local Hopf pieces, then rebuild the complete PD and
   diagonal framings. Verdict: `PASS_SOURCE_PD_POST_X_COVERAGE_GAP_AUDIT`.

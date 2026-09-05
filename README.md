@@ -195,7 +195,7 @@ Therefore the small zero-linking railroad target is not directly ambient
 isotopic as a fixed seven-component S3 link. It may still be related by the
 required dotted-handle/handlebody map, so this does not by itself refute
 kappa_AR. It is no longer called a complete source-native PD: the explicit
-post-x cache proves that 57,494 replacement core segments and their 57,494
+post-x cache proves that 60,520 replacement core segments and their 60,520
 push segments were omitted. The machine-readable gap is
 [`audit/t73_source_pd_post_x_coverage_gap.json`](audit/t73_source_pd_post_x_coverage_gap.json),
 verified by `python3 scripts/verify_t73_source_pd_post_x_coverage.py`. The
@@ -212,9 +212,10 @@ transport into the post-cancellation source-native PD is still open.
 All 1513 post-x framed replacement cells are expanded, rather than retained
 only as hashes, in the WSL cache
 `/home/lifesize/.cache/t73_post_x_framed_replacement_cells.jsonl.gz` (about
-34.6 MB). The committed receipt is
+36.3 MB). The committed receipt is
 [`audit/t73_post_x_framed_replacement_cells_receipt.json`](audit/t73_post_x_framed_replacement_cells_receipt.json).
-It covers 6052 band triangles and 71111 exact normal/push vertices. Rebuild
+It covers 6052 band triangles and 77163 exact normal/push vertices, including
+the two retained source stubs of every replacement. Rebuild
 with `python3 scripts/build_t73_post_x_framed_replacement_cells.py`; use
 `python3 scripts/verify_t73_post_x_framed_replacement_cells.py --full
 --check-cache-sha` for the full streamed verification. These cells remain in

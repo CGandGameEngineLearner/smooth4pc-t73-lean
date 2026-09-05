@@ -177,7 +177,7 @@ linking为 `(40,269)` 与 `(189,1271)`。因此小型 zero-linking railroad targ
 不是固定七分量S³ link中的直接ambient-isotopic图；它仍可能经所需的
 dotted-handle/handlebody map 与source等价，所以这本身不否定 κ_AR。source
 但它不再称为完整 source-native PD：显式 post-x cache 证明其投影遗漏了
-57,494条 replacement core segments 及对应57,494条 push segments。机器可读
+60,520条 replacement core segments 及对应60,520条 push segments。机器可读
 缺口为
 [`audit/t73_source_pd_post_x_coverage_gap.json`](audit/t73_source_pd_post_x_coverage_gap.json)，
 使用 `python3 scripts/verify_t73_source_pd_post_x_coverage.py` 验收。现有 SQLite
@@ -193,9 +193,10 @@ annulus；平移后的 spanning disk 证明 source self-linking 为0。使用
 全部1513个 post-x framed replacement cells 已从哈希展开为完整坐标，保存在
 WSL cache
 `/home/lifesize/.cache/t73_post_x_framed_replacement_cells.jsonl.gz`
-（约34.6 MB）；仓库内的紧凑收据为
+（约36.3 MB）；仓库内的紧凑收据为
 [`audit/t73_post_x_framed_replacement_cells_receipt.json`](audit/t73_post_x_framed_replacement_cells_receipt.json)。
-数据覆盖6052个 band triangles，以及71111个精确 normal/push vertices。
+数据覆盖6052个 band triangles，以及77163个精确 normal/push vertices，包含
+每个 replacement 的两条 retained source stubs。
 使用 `python3 scripts/build_t73_post_x_framed_replacement_cells.py` 重建；以
 `python3 scripts/verify_t73_post_x_framed_replacement_cells.py --full
 --check-cache-sha` 流式完整验收。这些 cells 仍位于已验证 gluing 的多个

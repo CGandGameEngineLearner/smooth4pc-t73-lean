@@ -16,7 +16,8 @@ class PostXFramedReplacementCellReceiptTest(unittest.TestCase):
         receipt, checks = module.check_receipt()
         self.assertTrue(all(checks.values()))
         self.assertEqual(receipt["framed_replacement_cell_count"], 1513)
-        self.assertEqual(receipt["explicit_push_path_vertices"], 62033)
+        self.assertEqual(receipt["explicit_push_path_vertices"], 68085)
+        self.assertEqual(receipt["replacement_core_segments_per_cell"], 40)
 
 
 if __name__ == "__main__":
