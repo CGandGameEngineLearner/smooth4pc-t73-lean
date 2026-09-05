@@ -117,6 +117,13 @@ Its compact push/projection manifest is
 Use `build_t73_actual_kirby_framed_input.py --materialize PATH` to expand it
 outside the repository. `export_t73_full_handle_diagram.py` now uses a Shapely
 STRtree streaming broad phase, but no actual PD/framing export has passed yet.
+The actual passage words are compared with the historical railroad ledger in
+[`geometry/t73_final_railroad_word_binding.json`](geometry/t73_final_railroad_word_binding.json).
+The old m3 compact word is rejected as nonconjugate to the Johnson passage
+order. Regenerating railroad crossings from the actual words gives 1878 mixed
+crossings and connector counts `84,378,4,4,0`. Verify with
+`python3 scripts/verify_t73_final_railroad_word_binding.py`. Standard PD rows,
+dotted-circle crossings, and integer framings remain open.
 
 Separately, the C-cut 44-lane candidate realization is
 [`geometry/t73_y_foot_lane_candidate.json`](geometry/t73_y_foot_lane_candidate.json):

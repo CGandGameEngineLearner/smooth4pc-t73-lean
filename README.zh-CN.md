@@ -107,6 +107,12 @@ push/projection manifest 位于
 使用 `build_t73_actual_kirby_framed_input.py --materialize PATH` 在仓库外展开。
 `export_t73_full_handle_diagram.py` 已使用 Shapely STRtree 流式 broad phase，但
 实际 PD/framing export 尚未通过。
+实际 passage words 与历史 railroad ledger 的比较保存于
+[`geometry/t73_final_railroad_word_binding.json`](geometry/t73_final_railroad_word_binding.json)。
+旧 m3 compact word 因不与 Johnson passage 顺序共轭而被拒绝；从实际 words
+重建得到 1878 个 mixed crossings，connector counts 为 `84,378,4,4,0`。
+使用 `python3 scripts/verify_t73_final_railroad_word_binding.py` 验收。标准 PD rows、
+dotted-circle crossings 与整数 framings 仍开放。
 
 另一个独立层次中，C-cut 的 44-lane candidate realization 为
 [`geometry/t73_y_foot_lane_candidate.json`](geometry/t73_y_foot_lane_candidate.json)：

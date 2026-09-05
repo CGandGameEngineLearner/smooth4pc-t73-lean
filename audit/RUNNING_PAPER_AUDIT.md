@@ -2819,9 +2819,40 @@ Topology-source checks completed 2026-09-04:
   candidate still receives the original Fraction crossing equations. The old
   seven-crossing truth fixture rebuilds byte-for-byte unchanged.
 - Boundary: use the verified 1958-crossing railroad normal form as the next
-  coordinate target, add an explicit split r_zx unknot and the two dotted
-  circles, and prove a cellwise isotopy from the F-569 foot/cycle state. Only a
-  successful complete exporter may upgrade this routing to actual kappa_AR.
+  coordinate template only after correcting its m3 word; F-571 performs that
+  correction. Add an explicit split r_zx unknot and the two dotted circles,
+  and prove a cellwise isotopy from the F-569 foot/cycle state. Only a successful
+  complete exporter may upgrade this routing to actual kappa_AR.
+
+### F-571 — The historical 1958-crossing railroad ledger has the wrong m3 noncommutative word order
+
+- Severity: **kappa_AR target correction / word-level fail-closed gate**
+- Status: **OLD m3 LEDGER REJECTED; ACTUAL 1878-CROSSING LEDGER REGENERATED**
+- Evidence: `scripts/build_t73_final_railroad_word_binding.py`,
+  `scripts/verify_t73_final_railroad_word_binding.py`,
+  `geometry/t73_final_railroad_word_binding.json`, and its test.
+- Comparison: after explicit free reduction and cyclic-basepoint normalization,
+  the final m2, r_xy, r_yz, and r_zx words agree with their old compact
+  counterparts. The m3 words have the same length 1460 and the same counts
+  y=189, z=1271, but are neither conjugate nor inverse-conjugate. Therefore
+  matching abelian data or length cannot bind the old m3 railroad curve to the
+  actual Johnson order.
+- Explicit reductions: the raw geometric lengths are m2=311, m3=1462, and
+  four for each dual. One m3 inverse pair and both r_zx pairs are recorded by
+  stack cancellation ledgers. The resulting actual words are retained with
+  their cyclic basepoints; r_zx has empty reduced word but its source-bound
+  closed split-unknot candidate is not discarded.
+- Regenerated ledger: applying the same railroad connector algorithm to the
+  actual words in order m2,m3,r_xy,r_yz,r_zx gives connector counts
+  `84,378,4,4,0`. The original component-height denominator 10 is generic for
+  this order. Independent replay gives 1878 exact mixed crossings, versus 1958
+  in the rejected historical ledger. Verdict:
+  `PASS_ACTUAL_1878_RAILROAD_LEDGER_OLD_M3_REJECTED`.
+- Boundary: this is a word/crossing ledger, not yet standard PD. The next
+  builder must add two signed crossings per surviving y/z letter with the
+  corresponding dotted circle, retain r_zx through an explicit split-unknot
+  diagram, order every crossing occurrence along all seven components, emit
+  standard PD rows, and construct/measure five framing push-offs.
 
 ### F-600 — The “actual” sphere-system builder assigns, rather than constructs, the embedding in \(\partial W_2\)
 
