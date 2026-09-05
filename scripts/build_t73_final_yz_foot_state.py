@@ -17,6 +17,7 @@ FOLIATION = ROOT / "geometry/t73_x_m1_parallel_foliation.json"
 HYBRID = ROOT / "geometry/t73_x_band_hybrid_movie.json"
 LOCAL_MOVIE = ROOT / "geometry/t73_x_band_local_movie.json"
 X_DELETION = ROOT / "geometry/t73_x_m1_handle_pair_deletion.json"
+CUT_TANGLE = ROOT / "geometry/t73_actual_cut_tangle.json"
 OUTPUT = ROOT / "geometry/t73_final_yz_foot_state.json"
 PERIOD = Fraction(4)
 
@@ -96,17 +97,28 @@ def build() -> dict:
     hybrid = json.loads(HYBRID.read_text(encoding="utf-8"))
     local_movie = json.loads(LOCAL_MOVIE.read_text(encoding="utf-8"))
     x_deletion = json.loads(X_DELETION.read_text(encoding="utf-8"))
+    cut_tangle = json.loads(CUT_TANGLE.read_text(encoding="utf-8"))
     foot_by_index = {item["handle_index"]: item for item in feet["feet"]}
     base_by_name = {item["name"]: item for item in base["handles"]}
     y_basis = tuple(point(value) for value in base_by_name["y"]["tangent_basis"])
     z_basis = tuple(point(value) for value in base_by_name["z"]["tangent_basis"])
 
     y_passages = [
-        {**item, "passage_id": item["arc_id"], "source_kind": "johnson_base_arc"}
+        {
+            **item,
+            "passage_id": item["arc_id"],
+            "source_kind": "johnson_base_arc",
+            "component": f"m_{item['component'] + 1}",
+        }
         for item in base_by_name["y"]["passages"]
     ]
     z_passages = [
-        {**item, "passage_id": item["arc_id"], "source_kind": "johnson_base_arc"}
+        {
+            **item,
+            "passage_id": item["arc_id"],
+            "source_kind": "johnson_base_arc",
+            "component": f"m_{item['component'] + 1}",
+        }
         for item in base_by_name["z"]["passages"]
         if item["arc_id"] != "c0:letter:0"
     ]
@@ -116,6 +128,37 @@ def build() -> dict:
     z_passages.extend(
         dual_axis_passages(ar_link, 2, "z", foot_by_index[3], z_basis)
     )
+    m2_bottom = next(
+        item for item in cut_tangle["passages"] if item["source_id"] == "m_2:C_i"
+    )
+    y_negative, y_positive = foot_endpoints(
+        foot_by_index[2], y_basis, (Fraction(0), Fraction(0))
+    )
+    y_passages.append({
+        "passage_id": "m_2:C_i",
+        "source_kind": "bottom_coordinate_arc",
+        "component": "m_2",
+        "orientation": m2_bottom["orientation"],
+        "belt_point": m2_bottom["belt_face_point"],
+        "global_vertex_range": [2, 4],
+        "global_deck": [269, 40, 0],
+        "negative_foot_endpoint": encode(y_negative),
+        "positive_foot_endpoint": encode(y_positive),
+    })
+    z_negative, z_positive = foot_endpoints(
+        foot_by_index[3], z_basis, (Fraction(0), Fraction(0))
+    )
+    z_passages.append({
+        "passage_id": "m_3:C_i",
+        "source_kind": "bottom_coordinate_arc",
+        "component": "m_3",
+        "orientation": -1,
+        "belt_point": ["0", "0", "1"],
+        "global_vertex_range": [2, 4],
+        "global_deck": [1240, 189, 31],
+        "negative_foot_endpoint": encode(z_negative),
+        "positive_foot_endpoint": encode(z_positive),
+    })
 
     m1_base = [point(value) for value in foliation["base_vertices"]]
     m1_normals = [point(value) for value in foliation["unit_normal_field"]]
@@ -145,7 +188,7 @@ def build() -> dict:
         })
     y_passages.sort(key=lambda item: item["passage_id"])
     z_passages.sort(key=lambda item: item["passage_id"])
-    if (len(y_passages), len(z_passages)) != (234, 1549):
+    if (len(y_passages), len(z_passages)) != (235, 1550):
         raise AssertionError("final y/z passage inventory changed")
     result = {
         "schema": "t73_final_yz_foot_state/v1",
@@ -156,6 +199,7 @@ def build() -> dict:
         "x_hybrid_movie_sha256": hybrid["sha256"],
         "x_local_movie_sha256": local_movie["sha256"],
         "post_x_m1_deletion_sha256": x_deletion["sha256"],
+        "actual_cut_tangle_sha256": cut_tangle["sha256"],
         "handles": [
             {
                 "name": "y",

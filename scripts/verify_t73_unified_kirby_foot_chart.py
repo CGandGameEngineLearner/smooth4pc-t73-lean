@@ -49,7 +49,7 @@ def verify() -> dict:
     handles = {item["name"]: item for item in data["handles"]}
     if set(handles) != {"t", "x", "y", "z"}:
         raise AssertionError("unified foot chart lost a handle")
-    if [handles[name]["passage_count"] for name in ("t", "x", "y", "z")] != [7, 1514, 234, 1549]:
+    if [handles[name]["passage_count"] for name in ("t", "x", "y", "z")] != [7, 1514, 235, 1550]:
         raise AssertionError("unified foot passage counts changed")
     for name, handle in handles.items():
         matrix = [[Fraction(value) for value in row] for row in handle["foot_pair"]["reflection_matrix"]]
@@ -63,10 +63,10 @@ def verify() -> dict:
         raise AssertionError("unified chart has the wrong surviving handles")
     return {
         "verdict": "PASS_ALL_FOUR_T73_FOOT_BINDINGS_FINAL_YZ_STATE",
-        "four_handle_passage_counts": [7, 1514, 234, 1549],
+        "four_handle_passage_counts": [7, 1514, 235, 1550],
         "cancelled_pairs": 2,
         "surviving_dotted_handles": ["y", "z"],
-        "final_reflection_paired_passages": 1783,
+        "final_reflection_paired_passages": 1785,
     }
 
 

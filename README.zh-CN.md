@@ -39,7 +39,7 @@ Lean 开发将**抽象商论证**形式化：若给定将 MWW 商与四柄运输
 | C / S 系数与三柄比较 | **开放** |
 | Lean 中 `ExternalGeometry` 实例 | **开放** |
 
-精确拓扑 verifier 使用 NumPy、SciPy 与 SymPy。WSL 中先运行
+精确拓扑 verifier 使用 NumPy、SciPy、SymPy 与 Shapely。WSL 中先运行
 `python3 -m venv /home/lifesize/.cache/t73-topology-venv`，再运行
 `/home/lifesize/.cache/t73-topology-venv/bin/pip install -r requirements-topology.txt`。
 
@@ -88,13 +88,25 @@ python3 scripts/build_t73_actual_ar_kirby_construction_request.py --check
 
 [`geometry/t73_unified_kirby_foot_chart.json`](geometry/t73_unified_kirby_foot_chart.json)
 将四个 AR Figure 2a foot pair 与已验证的 T73 passage 数据组合。t/x 历史绑定
-其 belt sphere 与实际 cancellation；最终 y/z state 分别含 234 与 1549 个反射
+其 belt sphere 与实际 cancellation；最终 y/z state 分别含 235 与 1550 个反射
 配对 passage。使用 `python3 scripts/build_t73_unified_kirby_foot_chart.py --check`
 重建，并用 `python3 scripts/verify_t73_unified_kirby_foot_chart.py` 验收。最终
 passage 数据位于
 [`geometry/t73_final_yz_foot_state.json`](geometry/t73_final_yz_foot_state.json)，
 Johnson-only 基础绑定位于
 [`geometry/t73_yz_foot_lane_binding.json`](geometry/t73_yz_foot_lane_binding.json)。
+五条 cyclic order 保存于
+[`geometry/t73_final_component_passage_cycles.json`](geometry/t73_final_component_passage_cycles.json)：
+长度为 `311,1462,4,4,4`；在显式自由约化 isotopy 前保留两条 bottom coordinate
+passage。
+第一份 common-R3 routing 以 fail-closed 状态保存于
+[`geometry/t73_actual_kirby_core_embedding.json`](geometry/t73_actual_kirby_core_embedding.json)，
+状态为 `SOURCE_BOUND_KIRBY_CORE_CANDIDATE_STRUCTURAL_CHECK_ONLY`。紧凑
+push/projection manifest 位于
+[`geometry/t73_actual_kirby_framed_input.json`](geometry/t73_actual_kirby_framed_input.json)。
+使用 `build_t73_actual_kirby_framed_input.py --materialize PATH` 在仓库外展开。
+`export_t73_full_handle_diagram.py` 已使用 Shapely STRtree 流式 broad phase，但
+实际 PD/framing export 尚未通过。
 
 另一个独立层次中，C-cut 的 44-lane candidate realization 为
 [`geometry/t73_y_foot_lane_candidate.json`](geometry/t73_y_foot_lane_candidate.json)：

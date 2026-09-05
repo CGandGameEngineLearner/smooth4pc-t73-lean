@@ -44,7 +44,7 @@ in Lean.
 | Johnson P0 / E13 / topological P3 | Proved at paper level after detector retyping |
 | C / S coefficient and hemisphere comparison | **Open** at the actual coend/currying and statewise shadow |
 
-The exact topology verifiers use NumPy, SciPy, and SymPy. In WSL, create the
+The exact topology verifiers use NumPy, SciPy, SymPy, and Shapely. In WSL, create the
 persistent environment with
 `python3 -m venv /home/lifesize/.cache/t73-topology-venv` followed by
 `/home/lifesize/.cache/t73-topology-venv/bin/pip install -r requirements-topology.txt`.
@@ -98,13 +98,25 @@ It records source pages/figures and what each source does and does not supply.
 [`geometry/t73_unified_kirby_foot_chart.json`](geometry/t73_unified_kirby_foot_chart.json)
 combines all four AR Figure 2a foot pairs with verified T73 passage data. The
 t/x histories bind to their belt spheres and verified cancellations; the final
-y/z state has 234 and 1549 reflection-paired passages. Rebuild it with
+y/z state has 235 and 1550 reflection-paired passages. Rebuild it with
 `python3 scripts/build_t73_unified_kirby_foot_chart.py --check` and verify it
 with `python3 scripts/verify_t73_unified_kirby_foot_chart.py`. The final passage
 data are in
 [`geometry/t73_final_yz_foot_state.json`](geometry/t73_final_yz_foot_state.json),
 with foundational Johnson-only bindings in
 [`geometry/t73_yz_foot_lane_binding.json`](geometry/t73_yz_foot_lane_binding.json).
+The five cyclic orders are in
+[`geometry/t73_final_component_passage_cycles.json`](geometry/t73_final_component_passage_cycles.json):
+`311,1462,4,4,4`, retaining the two bottom coordinate passages before any
+explicit free-reduction isotopy.
+The first common-R3 routing is saved, fail-closed, in
+[`geometry/t73_actual_kirby_core_embedding.json`](geometry/t73_actual_kirby_core_embedding.json)
+with status `SOURCE_BOUND_KIRBY_CORE_CANDIDATE_STRUCTURAL_CHECK_ONLY`.
+Its compact push/projection manifest is
+[`geometry/t73_actual_kirby_framed_input.json`](geometry/t73_actual_kirby_framed_input.json).
+Use `build_t73_actual_kirby_framed_input.py --materialize PATH` to expand it
+outside the repository. `export_t73_full_handle_diagram.py` now uses a Shapely
+STRtree streaming broad phase, but no actual PD/framing export has passed yet.
 
 Separately, the C-cut 44-lane candidate realization is
 [`geometry/t73_y_foot_lane_candidate.json`](geometry/t73_y_foot_lane_candidate.json):

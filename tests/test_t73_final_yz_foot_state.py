@@ -18,9 +18,9 @@ class FinalYZFootStateTest(unittest.TestCase):
         spec.loader.exec_module(module)
         result = module.verify()
         self.assertEqual(result["verdict"], "PASS_FINAL_YZ_FOOT_AND_PASSAGE_STATE")
-        self.assertEqual(result["y_passages"], 234)
-        self.assertEqual(result["z_passages"], 1549)
-        self.assertEqual(result["unique_passage_ids"], 1783)
+        self.assertEqual(result["y_passages"], 235)
+        self.assertEqual(result["z_passages"], 1550)
+        self.assertEqual(result["unique_passage_ids"], 1785)
 
 
 if __name__ == "__main__":

@@ -15,6 +15,7 @@ from collections import Counter
 from fractions import Fraction
 import hashlib
 import json
+import math
 from pathlib import Path
 from typing import Any, Iterable
 
@@ -162,6 +163,36 @@ def adjacent_segments(first: int, second: int, count: int) -> bool:
     return first == second or (first - second) % count in (1, count - 1)
 
 
+def projected_segment_boxes(points, basis):
+    try:
+        from shapely.geometry import box
+    except ImportError as exc:
+        raise DiagramError(
+            "Shapely is required for broad-phase export of the complete diagram"
+        ) from exc
+    boxes = []
+    for start, end in zip(points, points[1:]):
+        first = projection(start, basis)
+        second = projection(end, basis)
+        low_x = math.nextafter(float(min(first[0], second[0])), -math.inf)
+        high_x = math.nextafter(float(max(first[0], second[0])), math.inf)
+        low_y = math.nextafter(float(min(first[1], second[1])), -math.inf)
+        high_y = math.nextafter(float(max(first[1], second[1])), math.inf)
+        boxes.append(box(low_x, low_y, high_x, high_y))
+    return boxes
+
+
+def projected_aabb_candidates(first_boxes, second_boxes, same_curve):
+    from shapely.strtree import STRtree
+
+    tree = STRtree(second_boxes)
+    for first_index, first_box in enumerate(first_boxes):
+        for second_index in sorted(int(value) for value in tree.query(first_box)):
+            if same_curve and second_index <= first_index:
+                continue
+            yield first_index, second_index
+
+
 def curve_crossings(
     curves: list[dict[str, Any]],
     basis: list[tuple[Fraction, ...]],
@@ -174,6 +205,10 @@ def curve_crossings(
 
     crossings: list[dict[str, Any]] = []
     seen_points: dict[tuple[Fraction, Fraction], str] = {}
+    boxes_by_name = {
+        curve["name"]: projected_segment_boxes(curve["points"], basis)
+        for curve in curves
+    }
     for curve in curves:
         points = curve["points"]
         for segment, (start, end) in enumerate(zip(points, points[1:])):
@@ -188,18 +223,21 @@ def curve_crossings(
             if first_index == second_index and not include_self:
                 continue
             second_points = second["points"]
-            for first_segment in range(len(first_points) - 1):
-                start_second_segment = first_segment + 1 if first_index == second_index else 0
-                for second_segment in range(start_second_segment, len(second_points) - 1):
-                    if first_index == second_index and adjacent_segments(
-                        first_segment, second_segment, len(first_points) - 1
-                    ):
-                        continue
-                    label = (
+            candidate_pairs = projected_aabb_candidates(
+                boxes_by_name[first["name"]],
+                boxes_by_name[second["name"]],
+                first_index == second_index,
+            )
+            for first_segment, second_segment in candidate_pairs:
+                if first_index == second_index and adjacent_segments(
+                    first_segment, second_segment, len(first_points) - 1
+                ):
+                    continue
+                label = (
                         f"{first['name']}:{first_segment}/"
                         f"{second['name']}:{second_segment}"
                     )
-                    hit = projected_intersection(
+                hit = projected_intersection(
                         first_points[first_segment],
                         first_points[first_segment + 1],
                         second_points[second_segment],
@@ -207,53 +245,53 @@ def curve_crossings(
                         basis,
                         label,
                     )
-                    if hit is None:
-                        continue
-                    first_parameter, second_parameter, point = hit
-                    first_direction = sub(
+                if hit is None:
+                    continue
+                first_parameter, second_parameter, point = hit
+                first_direction = sub(
                         first_points[first_segment + 1], first_points[first_segment]
                     )
-                    second_direction = sub(
+                second_direction = sub(
                         second_points[second_segment + 1], second_points[second_segment]
                     )
-                    first_point = add_scaled(
+                first_point = add_scaled(
                         first_points[first_segment], first_direction, first_parameter
                     )
-                    second_point = add_scaled(
+                second_point = add_scaled(
                         second_points[second_segment], second_direction, second_parameter
                     )
-                    first_height = dot(height, first_point)
-                    second_height = dot(height, second_point)
-                    if first_height == second_height:
-                        raise DiagramError(f"{label}: the polygonal curves meet in Q^3")
-                    if require_unique_projection_points and point in seen_points:
-                        raise DiagramError(
+                first_height = dot(height, first_point)
+                second_height = dot(height, second_point)
+                if first_height == second_height:
+                    raise DiagramError(f"{label}: the polygonal curves meet in Q^3")
+                if require_unique_projection_points and point in seen_points:
+                    raise DiagramError(
                             f"{label}: triple/repeated projected crossing at {enc_point(point)}; "
                             f"first used by {seen_points[point]}"
                         )
-                    seen_points[point] = label
-                    first_tangent = sub(
+                seen_points[point] = label
+                first_tangent = sub(
                         projection(first_points[first_segment + 1], basis),
                         projection(first_points[first_segment], basis),
                     )
-                    second_tangent = sub(
+                second_tangent = sub(
                         projection(second_points[second_segment + 1], basis),
                         projection(second_points[second_segment], basis),
                     )
-                    if first_height > second_height:
-                        over_curve, under_curve = first, second
-                        over_segment, under_segment = first_segment, second_segment
-                        over_parameter, under_parameter = first_parameter, second_parameter
-                        over_tangent, under_tangent = first_tangent, second_tangent
-                    else:
-                        over_curve, under_curve = second, first
-                        over_segment, under_segment = second_segment, first_segment
-                        over_parameter, under_parameter = second_parameter, first_parameter
-                        over_tangent, under_tangent = second_tangent, first_tangent
-                    determinant = det2(over_tangent, under_tangent)  # type: ignore[arg-type]
-                    if determinant == 0:
-                        raise DiagramError(f"{label}: nontransverse projected crossing")
-                    crossings.append(
+                if first_height > second_height:
+                    over_curve, under_curve = first, second
+                    over_segment, under_segment = first_segment, second_segment
+                    over_parameter, under_parameter = first_parameter, second_parameter
+                    over_tangent, under_tangent = first_tangent, second_tangent
+                else:
+                    over_curve, under_curve = second, first
+                    over_segment, under_segment = second_segment, first_segment
+                    over_parameter, under_parameter = second_parameter, first_parameter
+                    over_tangent, under_tangent = second_tangent, first_tangent
+                determinant = det2(over_tangent, under_tangent)  # type: ignore[arg-type]
+                if determinant == 0:
+                    raise DiagramError(f"{label}: nontransverse projected crossing")
+                crossings.append(
                         {
                             "id": f"X{len(crossings)}",
                             "projection_point": enc_point(point),
@@ -267,7 +305,7 @@ def curve_crossings(
                             "under_height": enc(min(first_height, second_height)),
                             "sign": 1 if determinant > 0 else -1,
                         }
-                    )
+                )
     crossings.sort(
         key=lambda crossing: (
             q(crossing["projection_point"][0]),

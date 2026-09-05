@@ -1,5 +1,6 @@
 {
   "actual_ar_link_sha256": "E5CD3C2A2AD0650D061CFB730F54F32C1F2860D2FD0813067550D545D02D2853",
+  "actual_cut_tangle_sha256": "99D86692B5087AC32C87E7CC56EF0AC79C2A07DA63497066E412CDD440E32CF6",
   "ar_foot_model_sha256": "D480B6A8DDBA4AB387F0D1F7B39032A8B0F2A2FFC4E62219219402DD2AA6C608",
   "base_yz_binding_sha256": "3238A77A5EF53909EFA76190E13D108C40BEE93A328159D43538FF2904AE7AE3",
   "completion_status": "FINAL_YZ_PASSAGES_AND_FOOT_REFLECTIONS_CONSTRUCTED",
@@ -123,7 +124,7 @@
       },
       "foot_handle_index": 2,
       "name": "y",
-      "passage_count": 234,
+      "passage_count": 235,
       "passages": [
         {
           "arc_id": "c1:letter:104",
@@ -132,7 +133,7 @@
             "-29/66",
             "1"
           ],
-          "component": 1,
+          "component": "m_2",
           "negative_foot_endpoint": [
             "7/5280",
             "-29/13200",
@@ -166,7 +167,7 @@
             "-67/154",
             "1"
           ],
-          "component": 1,
+          "component": "m_2",
           "negative_foot_endpoint": [
             "41/30800",
             "-67/30800",
@@ -200,7 +201,7 @@
             "-199/462",
             "1"
           ],
-          "component": 1,
+          "component": "m_2",
           "negative_foot_endpoint": [
             "247/184800",
             "-199/92400",
@@ -234,7 +235,7 @@
             "-197/462",
             "1"
           ],
-          "component": 1,
+          "component": "m_2",
           "negative_foot_endpoint": [
             "31/23100",
             "-197/92400",
@@ -268,7 +269,7 @@
             "-65/154",
             "1"
           ],
-          "component": 1,
+          "component": "m_2",
           "negative_foot_endpoint": [
             "83/61600",
             "-13/6160",
@@ -302,7 +303,7 @@
             "-227/462",
             "1"
           ],
-          "component": 1,
+          "component": "m_2",
           "negative_foot_endpoint": [
             "233/184800",
             "-227/92400",
@@ -336,7 +337,7 @@
             "-193/462",
             "1"
           ],
-          "component": 1,
+          "component": "m_2",
           "negative_foot_endpoint": [
             "5/3696",
             "-193/92400",
@@ -370,7 +371,7 @@
             "-191/462",
             "1"
           ],
-          "component": 1,
+          "component": "m_2",
           "negative_foot_endpoint": [
             "251/184800",
             "-191/92400",
@@ -404,7 +405,7 @@
             "-9/22",
             "1"
           ],
-          "component": 1,
+          "component": "m_2",
           "negative_foot_endpoint": [
             "3/2200",
             "-9/4400",
@@ -438,7 +439,7 @@
             "-17/42",
             "1"
           ],
-          "component": 1,
+          "component": "m_2",
           "negative_foot_endpoint": [
             "23/16800",
             "-17/8400",
@@ -472,7 +473,7 @@
             "-185/462",
             "1"
           ],
-          "component": 1,
+          "component": "m_2",
           "negative_foot_endpoint": [
             "127/92400",
             "-37/18480",
@@ -506,7 +507,7 @@
             "-61/154",
             "1"
           ],
-          "component": 1,
+          "component": "m_2",
           "negative_foot_endpoint": [
             "17/12320",
             "-61/30800",
@@ -540,7 +541,7 @@
             "-181/462",
             "1"
           ],
-          "component": 1,
+          "component": "m_2",
           "negative_foot_endpoint": [
             "8/5775",
             "-181/92400",
@@ -574,7 +575,7 @@
             "-179/462",
             "1"
           ],
-          "component": 1,
+          "component": "m_2",
           "negative_foot_endpoint": [
             "257/184800",
             "-179/92400",
@@ -608,7 +609,7 @@
             "-59/154",
             "1"
           ],
-          "component": 1,
+          "component": "m_2",
           "negative_foot_endpoint": [
             "43/30800",
             "-59/30800",
@@ -642,7 +643,7 @@
             "-75/154",
             "1"
           ],
-          "component": 1,
+          "component": "m_2",
           "negative_foot_endpoint": [
             "39/30800",
             "-3/1232",
@@ -676,7 +677,7 @@
             "-25/66",
             "1"
           ],
-          "component": 1,
+          "component": "m_2",
           "negative_foot_endpoint": [
             "37/26400",
             "-1/528",
@@ -710,7 +711,7 @@
             "-173/462",
             "1"
           ],
-          "component": 1,
+          "component": "m_2",
           "negative_foot_endpoint": [
             "13/9240",
             "-173/92400",
@@ -744,7 +745,7 @@
             "-57/154",
             "1"
           ],
-          "component": 1,
+          "component": "m_2",
           "negative_foot_endpoint": [
             "87/61600",
             "-57/30800",
@@ -778,7 +779,7 @@
             "-169/462",
             "1"
           ],
-          "component": 1,
+          "component": "m_2",
           "negative_foot_endpoint": [
             "131/92400",
             "-169/92400",
@@ -812,7 +813,7 @@
             "-167/462",
             "1"
           ],
-          "component": 1,
+          "component": "m_2",
           "negative_foot_endpoint": [
             "263/184800",
             "-167/92400",
@@ -846,7 +847,7 @@
             "-5/14",
             "1"
           ],
-          "component": 1,
+          "component": "m_2",
           "negative_foot_endpoint": [
             "1/700",
             "-1/560",
@@ -880,7 +881,7 @@
             "-163/462",
             "1"
           ],
-          "component": 1,
+          "component": "m_2",
           "negative_foot_endpoint": [
             "53/36960",
             "-163/92400",
@@ -914,7 +915,7 @@
             "-23/66",
             "1"
           ],
-          "component": 1,
+          "component": "m_2",
           "negative_foot_endpoint": [
             "19/13200",
             "-23/13200",
@@ -948,7 +949,7 @@
             "-53/154",
             "1"
           ],
-          "component": 1,
+          "component": "m_2",
           "negative_foot_endpoint": [
             "89/61600",
             "-53/30800",
@@ -982,7 +983,7 @@
             "-157/462",
             "1"
           ],
-          "component": 1,
+          "component": "m_2",
           "negative_foot_endpoint": [
             "67/46200",
             "-157/92400",
@@ -1016,7 +1017,7 @@
             "-155/462",
             "1"
           ],
-          "component": 1,
+          "component": "m_2",
           "negative_foot_endpoint": [
             "269/184800",
             "-31/18480",
@@ -1050,7 +1051,7 @@
             "-223/462",
             "1"
           ],
-          "component": 1,
+          "component": "m_2",
           "negative_foot_endpoint": [
             "47/36960",
             "-223/92400",
@@ -1084,7 +1085,7 @@
             "-51/154",
             "1"
           ],
-          "component": 1,
+          "component": "m_2",
           "negative_foot_endpoint": [
             "9/6160",
             "-51/30800",
@@ -1118,7 +1119,7 @@
             "-151/462",
             "1"
           ],
-          "component": 1,
+          "component": "m_2",
           "negative_foot_endpoint": [
             "271/184800",
             "-151/92400",
@@ -1152,7 +1153,7 @@
             "-149/462",
             "1"
           ],
-          "component": 1,
+          "component": "m_2",
           "negative_foot_endpoint": [
             "17/11550",
             "-149/92400",
@@ -1186,7 +1187,7 @@
             "-221/462",
             "1"
           ],
-          "component": 1,
+          "component": "m_2",
           "negative_foot_endpoint": [
             "59/46200",
             "-221/92400",
@@ -1220,7 +1221,7 @@
             "-73/154",
             "1"
           ],
-          "component": 1,
+          "component": "m_2",
           "negative_foot_endpoint": [
             "79/61600",
             "-73/30800",
@@ -1254,7 +1255,7 @@
             "-31/66",
             "1"
           ],
-          "component": 1,
+          "component": "m_2",
           "negative_foot_endpoint": [
             "17/13200",
             "-31/13200",
@@ -1288,7 +1289,7 @@
             "-215/462",
             "1"
           ],
-          "component": 1,
+          "component": "m_2",
           "negative_foot_endpoint": [
             "239/184800",
             "-43/18480",
@@ -1322,7 +1323,7 @@
             "-229/462",
             "1"
           ],
-          "component": 1,
+          "component": "m_2",
           "negative_foot_endpoint": [
             "29/23100",
             "-229/92400",
@@ -1356,7 +1357,7 @@
             "-71/154",
             "1"
           ],
-          "component": 1,
+          "component": "m_2",
           "negative_foot_endpoint": [
             "1/770",
             "-71/30800",
@@ -1390,7 +1391,7 @@
             "-211/462",
             "1"
           ],
-          "component": 1,
+          "component": "m_2",
           "negative_foot_endpoint": [
             "241/184800",
             "-211/92400",
@@ -1424,7 +1425,7 @@
             "-19/42",
             "1"
           ],
-          "component": 1,
+          "component": "m_2",
           "negative_foot_endpoint": [
             "11/8400",
             "-19/8400",
@@ -1458,7 +1459,7 @@
             "-69/154",
             "1"
           ],
-          "component": 1,
+          "component": "m_2",
           "negative_foot_endpoint": [
             "81/61600",
             "-69/30800",
@@ -1492,7 +1493,7 @@
             "-205/462",
             "1"
           ],
-          "component": 1,
+          "component": "m_2",
           "negative_foot_endpoint": [
             "61/46200",
             "-41/18480",
@@ -1526,7 +1527,7 @@
             "113/462",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "403/184800",
             "113/92400",
@@ -1560,7 +1561,7 @@
             "115/462",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "101/46200",
             "23/18480",
@@ -1594,7 +1595,7 @@
             "39/154",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "27/12320",
             "39/30800",
@@ -1628,7 +1629,7 @@
             "17/66",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "29/13200",
             "17/13200",
@@ -1662,7 +1663,7 @@
             "11/42",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "37/16800",
             "11/8400",
@@ -1696,7 +1697,7 @@
             "-11/42",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "13/8400",
             "-11/8400",
@@ -1730,7 +1731,7 @@
             "41/154",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "17/7700",
             "41/30800",
@@ -1764,7 +1765,7 @@
             "125/462",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "409/184800",
             "5/3696",
@@ -1798,7 +1799,7 @@
             "127/462",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "41/18480",
             "127/92400",
@@ -1832,7 +1833,7 @@
             "43/154",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "137/61600",
             "43/30800",
@@ -1866,7 +1867,7 @@
             "131/462",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "103/46200",
             "131/92400",
@@ -1900,7 +1901,7 @@
             "19/66",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "59/26400",
             "19/13200",
@@ -1934,7 +1935,7 @@
             "45/154",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "69/30800",
             "9/6160",
@@ -1968,7 +1969,7 @@
             "137/462",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "83/36960",
             "137/92400",
@@ -2002,7 +2003,7 @@
             "139/462",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "13/5775",
             "139/92400",
@@ -2036,7 +2037,7 @@
             "47/154",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "139/61600",
             "47/30800",
@@ -2070,7 +2071,7 @@
             "13/42",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "19/8400",
             "13/8400",
@@ -2104,7 +2105,7 @@
             "-17/66",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "41/26400",
             "-17/13200",
@@ -2138,7 +2139,7 @@
             "145/462",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "419/184800",
             "29/18480",
@@ -2172,7 +2173,7 @@
             "7/22",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "1/440",
             "7/4400",
@@ -2206,7 +2207,7 @@
             "149/462",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "421/184800",
             "149/92400",
@@ -2240,7 +2241,7 @@
             "151/462",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "211/92400",
             "151/92400",
@@ -2274,7 +2275,7 @@
             "51/154",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "141/61600",
             "51/30800",
@@ -2308,7 +2309,7 @@
             "155/462",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "53/23100",
             "31/18480",
@@ -2342,7 +2343,7 @@
             "157/462",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "17/7392",
             "157/92400",
@@ -2376,7 +2377,7 @@
             "-39/154",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "3/1925",
             "-39/30800",
@@ -2410,7 +2411,7 @@
             "53/154",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "71/30800",
             "53/30800",
@@ -2444,7 +2445,7 @@
             "23/66",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "61/26400",
             "23/13200",
@@ -2478,7 +2479,7 @@
             "163/462",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "107/46200",
             "163/92400",
@@ -2512,7 +2513,7 @@
             "5/14",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "13/5600",
             "1/560",
@@ -2546,7 +2547,7 @@
             "167/462",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "43/18480",
             "167/92400",
@@ -2580,7 +2581,7 @@
             "169/462",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "431/184800",
             "169/92400",
@@ -2614,7 +2615,7 @@
             "57/154",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "9/3850",
             "57/30800",
@@ -2648,7 +2649,7 @@
             "173/462",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "433/184800",
             "173/92400",
@@ -2682,7 +2683,7 @@
             "25/66",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "31/13200",
             "1/528",
@@ -2716,7 +2717,7 @@
             "59/154",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "29/12320",
             "59/30800",
@@ -2750,7 +2751,7 @@
             "-115/462",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "289/184800",
             "-23/18480",
@@ -2784,7 +2785,7 @@
             "179/462",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "109/46200",
             "179/92400",
@@ -2818,7 +2819,7 @@
             "181/462",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "437/184800",
             "181/92400",
@@ -2852,7 +2853,7 @@
             "61/154",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "73/30800",
             "61/30800",
@@ -2886,7 +2887,7 @@
             "185/462",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "439/184800",
             "37/18480",
@@ -2920,7 +2921,7 @@
             "17/42",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "1/420",
             "17/8400",
@@ -2954,7 +2955,7 @@
             "9/22",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "21/8800",
             "9/4400",
@@ -2988,7 +2989,7 @@
             "191/462",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "221/92400",
             "191/92400",
@@ -3022,7 +3023,7 @@
             "193/462",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "443/184800",
             "193/92400",
@@ -3056,7 +3057,7 @@
             "65/154",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "37/15400",
             "13/6160",
@@ -3090,7 +3091,7 @@
             "197/462",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "89/36960",
             "197/92400",
@@ -3124,7 +3125,7 @@
             "199/462",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "223/92400",
             "199/92400",
@@ -3158,7 +3159,7 @@
             "-113/462",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "29/18480",
             "-113/92400",
@@ -3192,7 +3193,7 @@
             "67/154",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "149/61600",
             "67/30800",
@@ -3226,7 +3227,7 @@
             "29/66",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "2/825",
             "29/13200",
@@ -3260,7 +3261,7 @@
             "205/462",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "449/184800",
             "41/18480",
@@ -3294,7 +3295,7 @@
             "69/154",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "3/1232",
             "69/30800",
@@ -3328,7 +3329,7 @@
             "19/42",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "41/16800",
             "19/8400",
@@ -3362,7 +3363,7 @@
             "211/462",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "113/46200",
             "211/92400",
@@ -3396,7 +3397,7 @@
             "71/154",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "151/61600",
             "71/30800",
@@ -3430,7 +3431,7 @@
             "-145/462",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "137/92400",
             "-29/18480",
@@ -3464,7 +3465,7 @@
             "215/462",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "227/92400",
             "43/18480",
@@ -3498,7 +3499,7 @@
             "31/66",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "13/5280",
             "31/13200",
@@ -3532,7 +3533,7 @@
             "-37/154",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "97/61600",
             "-37/30800",
@@ -3566,7 +3567,7 @@
             "73/154",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "19/7700",
             "73/30800",
@@ -3600,7 +3601,7 @@
             "221/462",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "457/184800",
             "221/92400",
@@ -3634,7 +3635,7 @@
             "223/462",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "229/92400",
             "223/92400",
@@ -3668,7 +3669,7 @@
             "75/154",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "153/61600",
             "3/1232",
@@ -3702,7 +3703,7 @@
             "227/462",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "23/9240",
             "227/92400",
@@ -3736,7 +3737,7 @@
             "229/462",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "461/184800",
             "229/92400",
@@ -3770,7 +3771,7 @@
             "-109/462",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "73/46200",
             "-109/92400",
@@ -3804,7 +3805,7 @@
             "-107/462",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "293/184800",
             "-107/92400",
@@ -3838,7 +3839,7 @@
             "-5/22",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "7/4400",
             "-1/880",
@@ -3872,7 +3873,7 @@
             "-103/462",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "59/36960",
             "-103/92400",
@@ -3906,7 +3907,7 @@
             "-101/462",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "37/23100",
             "-101/92400",
@@ -3940,7 +3941,7 @@
             "-3/14",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "9/5600",
             "-3/2800",
@@ -3974,7 +3975,7 @@
             "-97/462",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "149/92400",
             "-97/92400",
@@ -4008,7 +4009,7 @@
             "-95/462",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "299/184800",
             "-19/18480",
@@ -4042,7 +4043,7 @@
             "-13/42",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "1/672",
             "-13/8400",
@@ -4076,7 +4077,7 @@
             "-31/154",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "1/616",
             "-31/30800",
@@ -4110,7 +4111,7 @@
             "-13/66",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "43/26400",
             "-13/13200",
@@ -4144,7 +4145,7 @@
             "-89/462",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "151/92400",
             "-89/92400",
@@ -4178,7 +4179,7 @@
             "-29/154",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "101/61600",
             "-29/30800",
@@ -4212,7 +4213,7 @@
             "-85/462",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "19/11550",
             "-17/18480",
@@ -4246,7 +4247,7 @@
             "-83/462",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "61/36960",
             "-83/92400",
@@ -4280,7 +4281,7 @@
             "-27/154",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "51/30800",
             "-27/30800",
@@ -4314,7 +4315,7 @@
             "-79/462",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "307/184800",
             "-79/92400",
@@ -4348,7 +4349,7 @@
             "-1/6",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "1/600",
             "-1/1200",
@@ -4382,7 +4383,7 @@
             "-25/154",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "103/61600",
             "-1/1232",
@@ -4416,7 +4417,7 @@
             "-73/462",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "31/18480",
             "-73/92400",
@@ -4450,7 +4451,7 @@
             "-47/154",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "23/15400",
             "-47/30800",
@@ -4484,7 +4485,7 @@
             "-71/462",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "311/184800",
             "-71/92400",
@@ -4518,7 +4519,7 @@
             "-23/154",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "13/7700",
             "-23/30800",
@@ -4552,7 +4553,7 @@
             "-67/462",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "313/184800",
             "-67/92400",
@@ -4586,7 +4587,7 @@
             "-65/462",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "157/92400",
             "-13/18480",
@@ -4620,7 +4621,7 @@
             "-3/22",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "3/1760",
             "-3/4400",
@@ -4654,7 +4655,7 @@
             "-61/462",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "79/46200",
             "-61/92400",
@@ -4688,7 +4689,7 @@
             "-59/462",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "317/184800",
             "-59/92400",
@@ -4722,7 +4723,7 @@
             "-19/154",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "53/30800",
             "-19/30800",
@@ -4756,7 +4757,7 @@
             "-5/42",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "29/16800",
             "-1/1680",
@@ -4790,7 +4791,7 @@
             "-139/462",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "277/184800",
             "-139/92400",
@@ -4824,7 +4825,7 @@
             "-53/462",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "2/1155",
             "-53/92400",
@@ -4858,7 +4859,7 @@
             "-17/154",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "107/61600",
             "-17/30800",
@@ -4892,7 +4893,7 @@
             "-7/66",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "23/13200",
             "-7/13200",
@@ -4926,7 +4927,7 @@
             "-47/462",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "323/184800",
             "-47/92400",
@@ -4960,7 +4961,7 @@
             "-15/154",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "27/15400",
             "-3/6160",
@@ -4994,7 +4995,7 @@
             "-43/462",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "13/7392",
             "-43/92400",
@@ -5028,7 +5029,7 @@
             "-41/462",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "163/92400",
             "-41/92400",
@@ -5062,7 +5063,7 @@
             "-13/154",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "109/61600",
             "-13/30800",
@@ -5096,7 +5097,7 @@
             "-37/462",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "41/23100",
             "-37/92400",
@@ -5130,7 +5131,7 @@
             "-5/66",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "47/26400",
             "-1/2640",
@@ -5164,7 +5165,7 @@
             "-1/14",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "1/560",
             "-1/2800",
@@ -5198,7 +5199,7 @@
             "-137/462",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "139/92400",
             "-137/92400",
@@ -5232,7 +5233,7 @@
             "-31/462",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "331/184800",
             "-31/92400",
@@ -5266,7 +5267,7 @@
             "-29/462",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "83/46200",
             "-29/92400",
@@ -5300,7 +5301,7 @@
             "-9/154",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "111/61600",
             "-9/30800",
@@ -5334,7 +5335,7 @@
             "-25/462",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "167/92400",
             "-1/3696",
@@ -5368,7 +5369,7 @@
             "-23/462",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "67/36960",
             "-23/92400",
@@ -5402,7 +5403,7 @@
             "-1/22",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "1/550",
             "-1/4400",
@@ -5436,7 +5437,7 @@
             "-19/462",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "337/184800",
             "-19/92400",
@@ -5470,7 +5471,7 @@
             "-17/462",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "169/92400",
             "-17/92400",
@@ -5504,7 +5505,7 @@
             "-5/154",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "113/61600",
             "-1/6160",
@@ -5538,7 +5539,7 @@
             "-45/154",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "93/61600",
             "-9/6160",
@@ -5572,7 +5573,7 @@
             "-13/462",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "17/9240",
             "-13/92400",
@@ -5606,7 +5607,7 @@
             "-1/42",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "31/16800",
             "-1/8400",
@@ -5640,7 +5641,7 @@
             "-3/154",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "57/30800",
             "-3/30800",
@@ -5674,7 +5675,7 @@
             "-1/66",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "49/26400",
             "-1/13200",
@@ -5708,7 +5709,7 @@
             "-5/462",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "43/23100",
             "-1/18480",
@@ -5742,7 +5743,7 @@
             "-1/154",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "23/12320",
             "-1/30800",
@@ -5776,7 +5777,7 @@
             "-1/462",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "173/92400",
             "-1/92400",
@@ -5810,7 +5811,7 @@
             "1/462",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "347/184800",
             "1/92400",
@@ -5844,7 +5845,7 @@
             "1/154",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "29/15400",
             "1/30800",
@@ -5878,7 +5879,7 @@
             "5/462",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "349/184800",
             "1/18480",
@@ -5912,7 +5913,7 @@
             "1/66",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "1/528",
             "1/13200",
@@ -5946,7 +5947,7 @@
             "-19/66",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "1/660",
             "-19/13200",
@@ -5980,7 +5981,7 @@
             "3/154",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "117/61600",
             "3/30800",
@@ -6014,7 +6015,7 @@
             "-7/22",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "13/8800",
             "-7/4400",
@@ -6048,7 +6049,7 @@
             "1/42",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "1/525",
             "1/8400",
@@ -6082,7 +6083,7 @@
             "13/462",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "353/184800",
             "13/92400",
@@ -6116,7 +6117,7 @@
             "5/154",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "59/30800",
             "1/6160",
@@ -6150,7 +6151,7 @@
             "17/462",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "71/36960",
             "17/92400",
@@ -6184,7 +6185,7 @@
             "19/462",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "89/46200",
             "19/92400",
@@ -6218,7 +6219,7 @@
             "1/22",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "17/8800",
             "1/4400",
@@ -6252,7 +6253,7 @@
             "23/462",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "179/92400",
             "23/92400",
@@ -6286,7 +6287,7 @@
             "25/462",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "359/184800",
             "1/3696",
@@ -6320,7 +6321,7 @@
             "9/154",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "3/1540",
             "9/30800",
@@ -6354,7 +6355,7 @@
             "-131/462",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "281/184800",
             "-131/92400",
@@ -6388,7 +6389,7 @@
             "29/462",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "361/184800",
             "29/92400",
@@ -6422,7 +6423,7 @@
             "31/462",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "181/92400",
             "31/92400",
@@ -6456,7 +6457,7 @@
             "1/14",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "11/5600",
             "1/2800",
@@ -6490,7 +6491,7 @@
             "5/66",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "13/6600",
             "1/2640",
@@ -6524,7 +6525,7 @@
             "37/462",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "73/36960",
             "37/92400",
@@ -6558,7 +6559,7 @@
             "13/154",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "61/30800",
             "13/30800",
@@ -6592,7 +6593,7 @@
             "41/462",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "367/184800",
             "41/92400",
@@ -6626,7 +6627,7 @@
             "43/462",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "23/11550",
             "43/92400",
@@ -6660,7 +6661,7 @@
             "15/154",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "123/61600",
             "3/6160",
@@ -6694,7 +6695,7 @@
             "47/462",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "37/18480",
             "47/92400",
@@ -6728,7 +6729,7 @@
             "-43/154",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "47/30800",
             "-43/30800",
@@ -6762,7 +6763,7 @@
             "7/66",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "53/26400",
             "7/13200",
@@ -6796,7 +6797,7 @@
             "17/154",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "31/15400",
             "17/30800",
@@ -6830,7 +6831,7 @@
             "53/462",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "373/184800",
             "53/92400",
@@ -6864,7 +6865,7 @@
             "5/42",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "17/8400",
             "1/1680",
@@ -6898,7 +6899,7 @@
             "19/154",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "5/2464",
             "19/30800",
@@ -6932,7 +6933,7 @@
             "59/462",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "47/23100",
             "59/92400",
@@ -6966,7 +6967,7 @@
             "61/462",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "377/184800",
             "61/92400",
@@ -7000,7 +7001,7 @@
             "3/22",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "9/4400",
             "3/4400",
@@ -7034,7 +7035,7 @@
             "65/462",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "379/184800",
             "13/18480",
@@ -7068,7 +7069,7 @@
             "67/462",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "19/9240",
             "67/92400",
@@ -7102,7 +7103,7 @@
             "-127/462",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "283/184800",
             "-127/92400",
@@ -7136,7 +7137,7 @@
             "23/154",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "127/61600",
             "23/30800",
@@ -7170,7 +7171,7 @@
             "71/462",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "191/92400",
             "71/92400",
@@ -7204,7 +7205,7 @@
             "73/462",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "383/184800",
             "73/92400",
@@ -7238,7 +7239,7 @@
             "25/154",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "4/1925",
             "1/1232",
@@ -7272,7 +7273,7 @@
             "1/6",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "1/480",
             "1/1200",
@@ -7306,7 +7307,7 @@
             "79/462",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "193/92400",
             "79/92400",
@@ -7340,7 +7341,7 @@
             "27/154",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "129/61600",
             "27/30800",
@@ -7374,7 +7375,7 @@
             "83/462",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "97/46200",
             "83/92400",
@@ -7408,7 +7409,7 @@
             "85/462",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "389/184800",
             "17/18480",
@@ -7442,7 +7443,7 @@
             "-125/462",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "71/46200",
             "-5/3696",
@@ -7476,7 +7477,7 @@
             "29/154",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "13/6160",
             "29/30800",
@@ -7510,7 +7511,7 @@
             "89/462",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "391/184800",
             "89/92400",
@@ -7544,7 +7545,7 @@
             "13/66",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "7/3300",
             "13/13200",
@@ -7578,7 +7579,7 @@
             "31/154",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "131/61600",
             "31/30800",
@@ -7612,7 +7613,7 @@
             "95/462",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "197/92400",
             "19/18480",
@@ -7646,7 +7647,7 @@
             "97/462",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "79/36960",
             "97/92400",
@@ -7680,7 +7681,7 @@
             "3/14",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "3/1400",
             "3/2800",
@@ -7714,7 +7715,7 @@
             "101/462",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "397/184800",
             "101/92400",
@@ -7748,7 +7749,7 @@
             "103/462",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "199/92400",
             "103/92400",
@@ -7782,7 +7783,7 @@
             "-41/154",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "19/12320",
             "-41/30800",
@@ -7816,7 +7817,7 @@
             "5/22",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "19/8800",
             "1/880",
@@ -7850,7 +7851,7 @@
             "107/462",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "1/462",
             "107/92400",
@@ -7884,7 +7885,7 @@
             "109/462",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "401/184800",
             "109/92400",
@@ -7918,7 +7919,7 @@
             "37/154",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "67/30800",
             "37/30800",
@@ -7944,6 +7945,36 @@
             ]
           ],
           "source_kind": "johnson_base_arc"
+        },
+        {
+          "belt_point": [
+            "0",
+            "0",
+            "1"
+          ],
+          "component": "m_2",
+          "global_deck": [
+            269,
+            40,
+            0
+          ],
+          "global_vertex_range": [
+            2,
+            4
+          ],
+          "negative_foot_endpoint": [
+            "0",
+            "0",
+            "-1"
+          ],
+          "orientation": -1,
+          "passage_id": "m_2:C_i",
+          "positive_foot_endpoint": [
+            "0",
+            "0",
+            "1"
+          ],
+          "source_kind": "bottom_coordinate_arc"
         },
         {
           "belt_point": [
@@ -8162,7 +8193,7 @@
       },
       "foot_handle_index": 3,
       "name": "z",
-      "passage_count": 1549,
+      "passage_count": 1550,
       "passages": [
         {
           "arc_id": "c2:letter:1135",
@@ -8171,7 +8202,7 @@
             "1/34",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "-39541/120000",
             "-2727203/4080000",
@@ -8205,7 +8236,7 @@
             "1/17",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "-672047/2040000",
             "-2726753/4080000",
@@ -8239,7 +8270,7 @@
             "3/34",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "-671897/2040000",
             "-2726303/4080000",
@@ -8273,7 +8304,7 @@
             "2/17",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "-671747/2040000",
             "-2725853/4080000",
@@ -8307,7 +8338,7 @@
             "5/34",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "-671597/2040000",
             "-2725403/4080000",
@@ -8341,7 +8372,7 @@
             "3/17",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "-671447/2040000",
             "-2724953/4080000",
@@ -8375,7 +8406,7 @@
             "7/34",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "-671297/2040000",
             "-2724503/4080000",
@@ -8409,7 +8440,7 @@
             "4/17",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "-671147/2040000",
             "-2724053/4080000",
@@ -8443,7 +8474,7 @@
             "9/34",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "-670997/2040000",
             "-2723603/4080000",
@@ -8477,7 +8508,7 @@
             "5/17",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "-670847/2040000",
             "-2723153/4080000",
@@ -8511,7 +8542,7 @@
             "11/34",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "-670697/2040000",
             "-160159/240000",
@@ -8545,7 +8576,7 @@
             "6/17",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "-670547/2040000",
             "-2722253/4080000",
@@ -8579,7 +8610,7 @@
             "13/34",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "-670397/2040000",
             "-2721803/4080000",
@@ -8613,7 +8644,7 @@
             "7/17",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "-670247/2040000",
             "-2721353/4080000",
@@ -8647,7 +8678,7 @@
             "15/34",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "-670097/2040000",
             "-2720903/4080000",
@@ -8681,7 +8712,7 @@
             "8/17",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "-669947/2040000",
             "-2720453/4080000",
@@ -8715,7 +8746,7 @@
             "-15/34",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "-674597/2040000",
             "-2734403/4080000",
@@ -8749,7 +8780,7 @@
             "-7/17",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "-674447/2040000",
             "-2733953/4080000",
@@ -8783,7 +8814,7 @@
             "-13/34",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "-674297/2040000",
             "-2733503/4080000",
@@ -8817,7 +8848,7 @@
             "-6/17",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "-674147/2040000",
             "-2733053/4080000",
@@ -8851,7 +8882,7 @@
             "-11/34",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "-673997/2040000",
             "-2732603/4080000",
@@ -8885,7 +8916,7 @@
             "-5/17",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "-673847/2040000",
             "-2732153/4080000",
@@ -8919,7 +8950,7 @@
             "-9/34",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "-673697/2040000",
             "-2731703/4080000",
@@ -8953,7 +8984,7 @@
             "-4/17",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "-673547/2040000",
             "-2731253/4080000",
@@ -8987,7 +9018,7 @@
             "-7/34",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "-673397/2040000",
             "-2730803/4080000",
@@ -9021,7 +9052,7 @@
             "-3/17",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "-673247/2040000",
             "-160609/240000",
@@ -9055,7 +9086,7 @@
             "-5/34",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "-673097/2040000",
             "-2729903/4080000",
@@ -9089,7 +9120,7 @@
             "-2/17",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "-672947/2040000",
             "-2729453/4080000",
@@ -9123,7 +9154,7 @@
             "-3/34",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "-672797/2040000",
             "-2729003/4080000",
@@ -9157,7 +9188,7 @@
             "-1/17",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "-672647/2040000",
             "-2728553/4080000",
@@ -9191,7 +9222,7 @@
             "-1/34",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "-672497/2040000",
             "-2728103/4080000",
@@ -9225,7 +9256,7 @@
             "0",
             "1"
           ],
-          "component": 2,
+          "component": "m_3",
           "negative_foot_endpoint": [
             "-672347/2040000",
             "-2727653/4080000",
@@ -9251,6 +9282,36 @@
             ]
           ],
           "source_kind": "johnson_base_arc"
+        },
+        {
+          "belt_point": [
+            "0",
+            "0",
+            "1"
+          ],
+          "component": "m_3",
+          "global_deck": [
+            1240,
+            189,
+            31
+          ],
+          "global_vertex_range": [
+            2,
+            4
+          ],
+          "negative_foot_endpoint": [
+            "-1/3",
+            "-2/3",
+            "-2/3"
+          ],
+          "orientation": -1,
+          "passage_id": "m_3:C_i",
+          "positive_foot_endpoint": [
+            "1/3",
+            "2/3",
+            "2/3"
+          ],
+          "source_kind": "bottom_coordinate_arc"
         },
         {
           "belt_point": [
@@ -50205,7 +50266,7 @@
   "m1_parallel_foliation_sha256": "5AC6BEF2C6C61B2FC19020539B05FB86A091E5602A7CA85B81B4C5006BE1C8F7",
   "post_x_m1_deletion_sha256": "6CF7C396F4F75A4FC68AFA5DEB67D21A1C562D007D2B57267630F418F3078C53",
   "schema": "t73_final_yz_foot_state/v1",
-  "sha256": "3654F38B70FEC7B4CE508EF6D64AC62821456F155B57F3E0A03AFE3FD7C17CC1",
+  "sha256": "EC6E316A3126FAB5A6062431C8B7DFDDA15AC6246C1842557B7E1142D46ABD41",
   "x_hybrid_movie_sha256": "2AEC079E63E49BEB9CDDCF9D8C37FB3DEBCC6A8DA0358C04A29B716F11672D21",
   "x_local_movie_sha256": "CE2F3DF167D06FA73E00CE54C24D19429051C8591229F7C25F08AADF2919469E"
 }

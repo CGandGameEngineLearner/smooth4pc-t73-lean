@@ -2760,9 +2760,9 @@ Topology-source checks completed 2026-09-04:
   boundaries. Every one of the 1513 x replacements contributes the level of
   the actual m1 z lane in the F-564 foliation; its tangential z offset is
   removed in the foot collar without changing the transverse lane. The final
-  counts are y=234 and z=1549: 262 retained Johnson passages, eight dual
-  passages, and 1513 replacement z passages.
-- Independent verification: all 1783 final passage ids and endpoint pairs are
+  counts are y=235 and z=1550: 262 retained Johnson passages, the two bottom
+  coordinate passages, eight dual passages, and 1513 replacement z passages.
+- Independent verification: all 1785 final passage ids and endpoint pairs are
   unique, remain inside their foot disks, and satisfy the exact reflection
   equations. Owner, orientation, foliation level, and tangent adjustment of
   every replacement are recomputed. Verdict:
@@ -2780,6 +2780,48 @@ Topology-source checks completed 2026-09-04:
   balls, choose a generic projection, compute every crossing/over-under order,
   and derive the five integer framings. That verified diagram will be the
   concrete target of kappa_AR.
+
+### F-570 — Final component words are recovered, while the first common R3 routing remains a projection candidate
+
+- Severity: **kappa_AR target construction / cyclic words and planar routing**
+- Status: **FIVE PASSAGE CYCLES PASS; GENERIC PD AND FRAMINGS OPEN**
+- Evidence: `geometry/t73_final_component_passage_cycles.json`,
+  `geometry/t73_actual_kirby_core_embedding.json`, the compact framed-input
+  manifest, their builders/verifiers, and the Shapely-enabled exact exporter.
+- Cycle correction: the first final inventory omitted the bottom m2 y passage
+  and bottom m3 z passage. They are now bound to actual global ranges `[2,4]`
+  with deck translations `(269,40,0)` and `(1240,189,31)`, both oriented
+  `3->2->1`. The m2 record is additionally bound to
+  `t73_actual_cut_tangle.json`. Correct final counts are y=235, z=1550, total
+  1785.
+- Word/order verification: cyclic component lengths are m2=311, m3=1462,
+  and four on each dual component. Explicit free reduction leaves m2 at 311,
+  reduces m3 to 1460, gives r_xy=`z y Z Y`, r_yz=`y z Y Z`, and reduces
+  r_zx=`z z Z Z` to the empty word. The r_xy/r_yz orientations are taken from
+  their declared commutator words rather than the opposite stored square
+  traversal. All 1785 passages occur exactly once. Verdict:
+  `PASS_FIVE_FINAL_COMPONENT_PASSAGE_CYCLES`.
+- Source-bound routing candidate: a rational R3 construction places two dotted
+  square unknots, 1785 unique disk lanes, and one external connector per
+  passage. Its current route has 24990 framed-component segments and passes
+  exact endpoint, reflection, port-uniqueness, and 7324 near-foot checks. The
+  artifact is deliberately marked
+  `SOURCE_BOUND_KIRBY_CORE_CANDIDATE_STRUCTURAL_CHECK_ONLY`.
+- Fail-closed projection result: earlier arbitrary far-route versions either
+  produced an exact 3D self-intersection or more than 100000 projected
+  crossings within the first few hundred segments. The current full exporter
+  has therefore not emitted an actual PD or integer framings. The compact
+  framing manifest materializes expanded input only in cache. Its generic
+  push direction and projection remain candidates until the full exact
+  exporter passes.
+- Tooling: `export_t73_full_handle_diagram.py` now uses Shapely STRtree boxes
+  as a streaming broad phase, with outward-rounded float boxes; every accepted
+  candidate still receives the original Fraction crossing equations. The old
+  seven-crossing truth fixture rebuilds byte-for-byte unchanged.
+- Boundary: use the verified 1958-crossing railroad normal form as the next
+  coordinate target, add an explicit split r_zx unknot and the two dotted
+  circles, and prove a cellwise isotopy from the F-569 foot/cycle state. Only a
+  successful complete exporter may upgrade this routing to actual kappa_AR.
 
 ### F-600 — The “actual” sphere-system builder assigns, rather than constructs, the embedding in \(\partial W_2\)
 
