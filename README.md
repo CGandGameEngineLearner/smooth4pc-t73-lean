@@ -195,6 +195,14 @@ Therefore the small zero-linking railroad target is not directly ambient
 isotopic as a fixed seven-component S3 link. It may still be related by the
 required dotted-handle/handlebody map, so this does not by itself refute
 kappa_AR. Source product-framing push-offs remain open.
+The three missing pre-cancellation dual-cell product ribbons are now explicit
+in [`geometry/t73_actual_dual_product_ribbons.json`](geometry/t73_actual_dual_product_ribbons.json).
+Each planar dual boundary has an eight-quadrilateral/16-triangle annulus to a
+rational normal push-off; the translated spanning disk proves source
+self-linking zero. Rebuild with
+`python3 scripts/build_t73_actual_dual_product_ribbons.py --write` and verify
+with `python3 scripts/verify_t73_actual_dual_product_ribbons.py`. The x-slide
+transport into the post-cancellation source-native PD is still open.
 
 Separately, the C-cut 44-lane candidate realization is
 [`geometry/t73_y_foot_lane_candidate.json`](geometry/t73_y_foot_lane_candidate.json):

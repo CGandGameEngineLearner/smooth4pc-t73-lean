@@ -177,6 +177,13 @@ linking为 `(40,269)` 与 `(189,1271)`。因此小型 zero-linking railroad targ
 不是固定七分量S³ link中的直接ambient-isotopic图；它仍可能经所需的
 dotted-handle/handlebody map 与source等价，所以这本身不否定 κ_AR。source
 product-framing push-offs 仍开放。
+三个原先缺坐标的 pre-cancellation dual-cell product ribbons 现已显式保存于
+[`geometry/t73_actual_dual_product_ribbons.json`](geometry/t73_actual_dual_product_ribbons.json)。
+每条平面 dual boundary 都有通向有理法向 push-off 的8个四边形/16个三角形
+annulus；平移后的 spanning disk 证明 source self-linking 为0。使用
+`python3 scripts/build_t73_actual_dual_product_ribbons.py --write` 重建，以
+`python3 scripts/verify_t73_actual_dual_product_ribbons.py` 验收。经 x-slide
+送入 post-cancellation source-native PD 的 ribbon transport 仍开放。
 
 另一个独立层次中，C-cut 的 44-lane candidate realization 为
 [`geometry/t73_y_foot_lane_candidate.json`](geometry/t73_y_foot_lane_candidate.json)：

@@ -3119,6 +3119,28 @@ Topology-source checks completed 2026-09-04:
   It does not extend the source connector tangle through the central
   zero-handle complement and therefore does not yet prove kappa_AR.
 
+### F-582 — The three source AR dual-cell product ribbons are now explicit
+
+- Severity: **actual framing input / pre-cancellation dual components**
+- Status: **SOURCE RIBBONS PASS; POST-X-SLIDE TRANSPORT OPEN**
+- Evidence: `geometry/t73_actual_dual_product_ribbons.json`,
+  `scripts/build_t73_actual_dual_product_ribbons.py`,
+  `scripts/verify_t73_actual_dual_product_ribbons.py`, and its test.
+- Construction: each of `r_xy`, `r_yz`, and `r_zx` is the actual eight-edge
+  boundary of its cubical dual disk in `t73_actual_ar_link.json`. Translation
+  by a distinct positive rational plane normal gives a closed push-off; eight
+  quadrilaterals, split consistently into sixteen nondegenerate triangles,
+  give the product annulus.
+- Verification: each ribbon is a connected triangulated annulus with two
+  eight-edge boundary cycles and Euler characteristic zero. The pushed dual
+  disk lies in a parallel plane disjoint from the core plane, so the source
+  core/push linking and relative twist are both zero. Verdict:
+  `PASS_ACTUAL_PRE_CANCELLATION_DUAL_PRODUCT_RIBBONS`.
+- Boundary: these are source AR ribbons, not yet the diagram framings after
+  the 1513 x slides. The explicit local band normal fields must be composed
+  into three post-slide ribbon cycles and then matched to the source-native
+  PD before the corresponding diagonal entries are closed.
+
 ### F-600 — The “actual” sphere-system builder assigns, rather than constructs, the embedding in \(\partial W_2\)
 
 - Severity: **Critical**
