@@ -90,6 +90,12 @@ The citable source index for digitising the required PL cells is
 rebuilt with `python3 scripts/build_t73_literature_geometry_ledger.py --check`.
 It records source pages/figures and what each source does and does not supply.
 
+[`geometry/t73_unified_kirby_foot_chart.json`](geometry/t73_unified_kirby_foot_chart.json)
+combines the four AR Figure 2a foot pairs with T73 belt data. Its t/x bindings
+are verified against `t73_belt_spheres.json`; y/z are explicitly
+`CANDIDATE_FOOT_ONLY`. Rebuild with
+`python3 scripts/build_t73_unified_kirby_foot_chart.py --check`.
+
 [`geometry/t73_actual_cancellation_splice_request.json`](geometry/t73_actual_cancellation_splice_request.json)
 is the next generated input layer. It enumerates all 6 t-bands and 1513
 x-bands with their source center-path hash and required boundary/splice fields:

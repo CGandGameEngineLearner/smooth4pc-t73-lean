@@ -1,0 +1,162 @@
+{
+  "actual_binding_status": "PARTIAL_T_X_ONLY",
+  "belt_spheres_sha256": "E582534A0FF674EC2DC19377AEB6A15907BE2D7BCE7BA5C53BAC3AAF3DE9AF1C",
+  "figure5_fixed_points_sha256": "87CE588D2E3241F80BB12E9F55A4C4851CF88A7146DE6E29B59DEE0818D086AD",
+  "foot_model_sha256": "D480B6A8DDBA4AB387F0D1F7B39032A8B0F2A2FFC4E62219219402DD2AA6C608",
+  "handles": [
+    {
+      "attaching_component": "h_CS",
+      "belt_reference": "geometry/t73_belt_spheres.json#/t_handle",
+      "binding_status": "BOUND_TO_T73_BELT_GEOMETRY",
+      "foot_pair": {
+        "boundary_identification": "reflection in plane through origin perpendicular to positive_center",
+        "handle_index": 0,
+        "negative_center": [
+          "-1",
+          "0",
+          "0"
+        ],
+        "positive_center": [
+          "1",
+          "0",
+          "0"
+        ],
+        "radius": "1/20",
+        "reflection_matrix": [
+          [
+            "-1",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "1",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "1"
+          ]
+        ]
+      },
+      "name": "t",
+      "passage_count": 7
+    },
+    {
+      "attaching_component": "m_1",
+      "belt_reference": "geometry/t73_belt_spheres.json#/x_handle",
+      "binding_status": "BOUND_TO_T73_BELT_GEOMETRY",
+      "foot_pair": {
+        "boundary_identification": "reflection in plane through origin perpendicular to positive_center",
+        "handle_index": 1,
+        "negative_center": [
+          "0",
+          "-1",
+          "0"
+        ],
+        "positive_center": [
+          "0",
+          "1",
+          "0"
+        ],
+        "radius": "1/20",
+        "reflection_matrix": [
+          [
+            "1",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "-1",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "1"
+          ]
+        ]
+      },
+      "name": "x",
+      "passage_count": 1514
+    },
+    {
+      "binding_status": "CANDIDATE_FOOT_ONLY",
+      "foot_pair": {
+        "boundary_identification": "reflection in plane through origin perpendicular to positive_center",
+        "handle_index": 2,
+        "negative_center": [
+          "0",
+          "0",
+          "-1"
+        ],
+        "positive_center": [
+          "0",
+          "0",
+          "1"
+        ],
+        "radius": "1/20",
+        "reflection_matrix": [
+          [
+            "1",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "1",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "-1"
+          ]
+        ]
+      },
+      "name": "y",
+      "reason": "no verified T73 lane-to-foot identification is stored"
+    },
+    {
+      "binding_status": "CANDIDATE_FOOT_ONLY",
+      "foot_pair": {
+        "boundary_identification": "reflection in plane through origin perpendicular to positive_center",
+        "handle_index": 3,
+        "negative_center": [
+          "-1/3",
+          "-2/3",
+          "-2/3"
+        ],
+        "positive_center": [
+          "1/3",
+          "2/3",
+          "2/3"
+        ],
+        "radius": "1/20",
+        "reflection_matrix": [
+          [
+            "7/9",
+            "-4/9",
+            "-4/9"
+          ],
+          [
+            "-4/9",
+            "1/9",
+            "-8/9"
+          ],
+          [
+            "-4/9",
+            "-8/9",
+            "1/9"
+          ]
+        ]
+      },
+      "name": "z",
+      "reason": "no verified T73 lane-to-foot identification is stored"
+    }
+  ],
+  "schema": "t73_unified_kirby_foot_chart/v1",
+  "sha256": "EAD7BA989CC6D943E226A7351B5465DF17EFDDB61BDAA23B2856E4A37BC8DA8B"
+}

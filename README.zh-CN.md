@@ -82,6 +82,11 @@ python3 scripts/build_t73_actual_ar_kirby_construction_request.py --check
 使用 `python3 scripts/build_t73_literature_geometry_ledger.py --check` 重建。
 它保存原文页码/Figure 以及各来源能和不能提供的数据。
 
+[`geometry/t73_unified_kirby_foot_chart.json`](geometry/t73_unified_kirby_foot_chart.json)
+将四个 AR Figure 2a foot pair 与 T73 belt 数据组合。t/x 已相对
+`t73_belt_spheres.json` 验证；y/z 明确为 `CANDIDATE_FOOT_ONLY`。使用
+`python3 scripts/build_t73_unified_kirby_foot_chart.py --check` 重建。
+
 [`geometry/t73_actual_cancellation_splice_request.json`](geometry/t73_actual_cancellation_splice_request.json)
 是下一层生成输入：列出全部 6 条 t-band 和 1513 条 x-band 的 center-path hash，及
 每条所缺的 boundary/splice 字段：
