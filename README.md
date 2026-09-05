@@ -183,18 +183,24 @@ at `C:\Users\Administrator\.cache\t73_actual_source_connector_projection.full.js
 7116 segments, 4,791,364 broad candidates, and 1,758,060 exact crossings.
 Regenerate with `build_t73_actual_source_connector_projection.py --write` and
 stream/check with `build_t73_actual_source_connector_projection_receipt.py`.
-The complete source-native seven-component core PD is stored as SQLite at
+The current source-native seven-component connector/local-Hopf PD skeleton is stored as SQLite at
 `C:\Users\Administrator\.cache\t73_actual_source_standard_pd.sqlite`
 (about 817 MB), with compact receipt
 [`audit/t73_actual_source_standard_pd_sqlite_receipt.json`](audit/t73_actual_source_standard_pd_sqlite_receipt.json).
-It has 1,761,630 crossings and 3,523,260 arc labels; a full integrity/incidence
+It has 1,761,630 crossings and 3,523,260 arc labels; those rows pass full integrity/incidence
 check is `python3 scripts/verify_t73_actual_source_standard_pd_sqlite.py --full
 --check-database-sha`. The actual core linking matrix has
 `lk(m_2,m_3)=-318`, while dotted linking is `(40,269)` and `(189,1271)`.
 Therefore the small zero-linking railroad target is not directly ambient
 isotopic as a fixed seven-component S3 link. It may still be related by the
 required dotted-handle/handlebody map, so this does not by itself refute
-kappa_AR. Source product-framing push-offs remain open.
+kappa_AR. It is no longer called a complete source-native PD: the explicit
+post-x cache proves that 57,494 replacement core segments and their 57,494
+push segments were omitted. The machine-readable gap is
+[`audit/t73_source_pd_post_x_coverage_gap.json`](audit/t73_source_pd_post_x_coverage_gap.json),
+verified by `python3 scripts/verify_t73_source_pd_post_x_coverage.py`. The
+SQLite remains a valid connector/local-Hopf skeleton; full replacement-path
+projection and source product framings remain open.
 The three missing pre-cancellation dual-cell product ribbons are now explicit
 in [`geometry/t73_actual_dual_product_ribbons.json`](geometry/t73_actual_dual_product_ribbons.json).
 Each planar dual boundary has an eight-quadrilateral/16-triangle annulus to a

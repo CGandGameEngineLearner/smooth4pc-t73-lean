@@ -16,6 +16,7 @@ PROVENANCE = ROOT / "geometry/t73_reduced_source_connector_provenance.json"
 CYCLES = ROOT / "geometry/t73_final_component_passage_cycles.json"
 SLOTS = ROOT / "geometry/t73_foot_to_dotted_slot_map.json"
 BUILDER = ROOT / "scripts/build_t73_actual_source_standard_pd_sqlite.py"
+COVERAGE_GAP = ROOT / "audit/t73_source_pd_post_x_coverage_gap.json"
 COMPONENT_ORDER = ["m_2", "m_3", "r_xy", "r_yz", "r_zx", "dotted_y", "dotted_z"]
 
 
@@ -33,6 +34,7 @@ def check_receipt():
     provenance = json.loads(PROVENANCE.read_text(encoding="utf-8"))
     cycles = json.loads(CYCLES.read_text(encoding="utf-8"))
     slots = json.loads(SLOTS.read_text(encoding="utf-8"))
+    coverage = json.loads(COVERAGE_GAP.read_text(encoding="utf-8"))
     checks = {
         "projection": receipt["source_projection_receipt_sha256"] == projection["sha256"],
         "provenance": receipt["connector_provenance_sha256"] == provenance["sha256"],
@@ -44,6 +46,9 @@ def check_receipt():
         and receipt["crossing_count"] == 1761630
         and receipt["arc_label_count"] == 3523260,
         "verdict": receipt["verdict"] == "PASS_ACTUAL_SOURCE_STANDARD_PD_CORE_ONLY",
+        "post_x_coverage": coverage["source_standard_pd_receipt_sha256"] == receipt["sha256"]
+        and coverage["omitted_replacement_core_segment_count"] == 57494
+        and coverage["prior_complete_source_native_pd_claim"] == "REFUTED_BY_EXPLICIT_POST_X_PATH_COVERAGE",
     }
     if not all(checks.values()):
         raise AssertionError(f"actual source PD receipt failed: {checks}")
@@ -133,6 +138,8 @@ def verify_full(check_database_sha=False):
         "pairwise_linking_matrix": linking,
         "database_sha_checked": check_database_sha,
         "framing_status": receipt["framing_status"],
+        "coverage_status": "PARTIAL_CONNECTOR_PLUS_LOCAL_HOPF_SKELETON",
+        "omitted_post_x_core_segments": 57494,
     }
 
 
@@ -150,6 +157,8 @@ def main():
             "checks": checks,
             "crossings": receipt["crossing_count"],
             "framing_status": receipt["framing_status"],
+            "coverage_status": "PARTIAL_CONNECTOR_PLUS_LOCAL_HOPF_SKELETON",
+            "omitted_post_x_core_segments": 57494,
         }
     print(json.dumps(result, sort_keys=True))
 

@@ -166,17 +166,23 @@ native source-connector 的完整精确投影过大，不进入Git，保存在
 7116 segments、4,791,364 个 broad candidates、1,758,060 个 exact crossings。
 使用 `build_t73_actual_source_connector_projection.py --write` 重建，并用
 `build_t73_actual_source_connector_projection_receipt.py` 流式生成/检查收据。
-完整 source-native 七分量 core PD 以 SQLite 保存于
+当前 source-native 七分量 connector/local-Hopf PD 骨架以 SQLite 保存于
 `C:\Users\Administrator\.cache\t73_actual_source_standard_pd.sqlite`
 （约817 MB），紧凑收据为
 [`audit/t73_actual_source_standard_pd_sqlite_receipt.json`](audit/t73_actual_source_standard_pd_sqlite_receipt.json)。
-它含1,761,630个 crossings 与3,523,260个 arc labels；完整 integrity/incidence
+它含1,761,630个 crossings 与3,523,260个 arc labels；这些 rows 的完整 integrity/incidence
 检查命令为 `python3 scripts/verify_t73_actual_source_standard_pd_sqlite.py --full
 --check-database-sha`。实际 core linking matrix 有 `lk(m_2,m_3)=-318`，dotted
 linking为 `(40,269)` 与 `(189,1271)`。因此小型 zero-linking railroad target
 不是固定七分量S³ link中的直接ambient-isotopic图；它仍可能经所需的
 dotted-handle/handlebody map 与source等价，所以这本身不否定 κ_AR。source
-product-framing push-offs 仍开放。
+但它不再称为完整 source-native PD：显式 post-x cache 证明其投影遗漏了
+57,494条 replacement core segments 及对应57,494条 push segments。机器可读
+缺口为
+[`audit/t73_source_pd_post_x_coverage_gap.json`](audit/t73_source_pd_post_x_coverage_gap.json)，
+使用 `python3 scripts/verify_t73_source_pd_post_x_coverage.py` 验收。现有 SQLite
+仍是有效的 connector/local-Hopf 骨架；完整 replacement-path projection 与
+source product framings 仍开放。
 三个原先缺坐标的 pre-cancellation dual-cell product ribbons 现已显式保存于
 [`geometry/t73_actual_dual_product_ribbons.json`](geometry/t73_actual_dual_product_ribbons.json)。
 每条平面 dual boundary 都有通向有理法向 push-off 的8个四边形/16个三角形

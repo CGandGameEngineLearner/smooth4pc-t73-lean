@@ -3052,15 +3052,15 @@ Topology-source checks completed 2026-09-04:
   preserving the marked-disk and tubular-neighborhood maps. Crossing-count
   disparity alone is not an isotopy proof.
 
-### F-580 — A complete source-native seven-component core PD is stored and independently verified in SQLite
+### F-580 — The source-native connector/local-Hopf PD skeleton is stored and independently verified in SQLite
 
-- Severity: **actual kappa_AR target / core diagram completed, framings open**
-- Status: **ACTUAL CORE PD PASS; SOURCE PRODUCT FRAMINGS OPEN**
+- Severity: **actual kappa_AR target / partial diagram skeleton**
+- Status: **CONNECTOR/LOCAL-HOPF PD PASS; COMPLETE-PD CLAIM REFUTED BY F-587**
 - Evidence: `scripts/build_t73_actual_source_standard_pd_sqlite.py`,
   `scripts/verify_t73_actual_source_standard_pd_sqlite.py`,
   `audit/t73_actual_source_standard_pd_sqlite_receipt.json`, its test, and the
   cached SQLite database named in the receipt.
-- Assembly: each of the 1,758,060 exact native connector crossings is mapped
+- Assembly within its current scope: each of the 1,758,060 exact native connector crossings is mapped
   to its actual component edge, raw connector cell, segment, and Fraction
   parameter. Every one of the 1785 raw y/z passages contributes its two local
   same-sign dotted Hopf crossings in the F-577 marked slot. Thus no railroad
@@ -3088,10 +3088,11 @@ Topology-source checks completed 2026-09-04:
   in the user cache. Git stores builders, exact source bindings, byte hashes,
   table/count/linking receipts, and fast tests. ijson and SQLite keep peak
   memory bounded.
-- Boundary: the core PD is complete and actual; the five source product
-  framing push-offs must still be projected and their core/push linking
-  computed in this same source-native diagram. Until those integer diagonal
-  entries pass, kappa_AR and the W2 attachment input remain open.
+- Boundary: F-587 proves that this projection omitted all 57,494 post-x
+  replacement-path segments, so the former “core PD is complete and actual”
+  conclusion is withdrawn. The connector/local-Hopf incidence remains
+  verified, but the complete PD, integer diagonal entries, kappa_AR and W2
+  attachment input remain open.
 
 ### F-581 — Every marked-disk track has an explicit supported PL ambient extension
 
@@ -3255,6 +3256,32 @@ Topology-source checks completed 2026-09-04:
   identical Python/Shapely 2.1.2 computation completed under Windows Python.
   The verifier transparently maps the Windows receipt path through `/mnt/c`
   when it is run from WSL.
+
+### F-587 — The current source PD omits 57,494 post-x replacement segments
+
+- Severity: **Critical correction / actual PD coverage**
+- Status: **COMPLETE-PD CLAIM REFUTED; EXACT REPAIR INVENTORY SAVED**
+- Evidence: `audit/t73_source_pd_post_x_coverage_gap.json`,
+  `scripts/audit_t73_source_pd_post_x_coverage.py`,
+  `scripts/verify_t73_source_pd_post_x_coverage.py`, and its test.
+- Coverage comparison: every explicit F-583 replacement path consists of a
+  two-segment negative band lane, a 34-segment oriented m1-parallel
+  complement, and a two-segment positive band lane: 38 core segments per
+  slide. The 1513 slides therefore contribute 57,494 core segments, split as
+  m2=10,222, m3=47,120, r_xy=76, and r_zx=76, plus 57,494 pushed segments.
+- Refutation: the F-579 projection binds only the Johnson spine, AR dual link,
+  and connector provenance. The F-580 PD binds that projection, passage cycles
+  and local dotted slots. Neither receipt binds F-583 or the x-band hybrid
+  movie. Therefore its 7116 projected segments and abstract 3570 Hopf events
+  cannot be a complete projection of the explicit post-x framed curves.
+- Preserved result: F-580 remains a valid independently checked PD for the
+  Johnson-central-connector plus local-Hopf skeleton. F-586 remains a valid
+  connector/product-push crossing ledger. Their overbroad “complete actual
+  source PD” interpretation is withdrawn, not their scoped computations.
+- Repair gate: project all 57,494 replacement core segments and all 57,494
+  pushes in a single dotted-S3 chart, include their crossings with the 7116
+  connector segments and local Hopf pieces, then rebuild the complete PD and
+  diagonal framings. Verdict: `PASS_SOURCE_PD_POST_X_COVERAGE_GAP_AUDIT`.
 
 ### F-600 — The “actual” sphere-system builder assigns, rather than constructs, the embedding in \(\partial W_2\)
 

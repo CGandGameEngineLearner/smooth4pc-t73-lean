@@ -18,6 +18,7 @@ class ActualSourceStandardPDReceiptTest(unittest.TestCase):
         self.assertTrue(all(checks.values()))
         self.assertEqual(receipt["crossing_count"], 1761630)
         self.assertEqual(receipt["framing_status"], "OPEN_SOURCE_PRODUCT_PUSH_OFFS_REQUIRED")
+        self.assertTrue(checks["post_x_coverage"])
 
 
 if __name__ == "__main__":

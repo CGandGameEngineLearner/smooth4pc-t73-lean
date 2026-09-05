@@ -1,0 +1,25 @@
+{
+  "completion_status": "SOURCE_PD_POST_X_REPLACEMENT_COVERAGE_GAP_CONFIRMED",
+  "current_pd_scope": "JOHNSON_CENTRAL_CONNECTORS_PLUS_ABSTRACT_LOCAL_HOPF_EVENTS_ONLY",
+  "omitted_replacement_core_segment_count": 57494,
+  "omitted_replacement_core_segments_by_component": {
+    "m_2": 10222,
+    "m_3": 47120,
+    "r_xy": 76,
+    "r_zx": 76
+  },
+  "omitted_replacement_push_segment_count": 57494,
+  "post_x_framed_replacement_cells_receipt_sha256": "AAD6E2D7DB3F3379BE20FDD4EAE961562CE2086E6399283A60A6EFEA1B2F88A6",
+  "post_x_replacement_cell_count": 1513,
+  "prior_complete_source_native_pd_claim": "REFUTED_BY_EXPLICIT_POST_X_PATH_COVERAGE",
+  "projected_connector_segments": 7116,
+  "projected_local_hopf_events": 3570,
+  "replacement_core_segments_per_cell": 38,
+  "required_repair": "project the 57494 replacement core segments and their pushes in one dotted-S3 chart, including splice crossings, then rebuild PD and framings",
+  "schema": "t73_source_pd_post_x_coverage_gap/v1",
+  "sha256": "7DA92391FDB26D7D92D7867E6B75A855073E97803A759C86CA5E85C822F61D86",
+  "source_connector_projection_receipt_sha256": "15439B98F0D206FA9539CBEBEC9EFF4F3A619A3B4852740C1F047D38BFA3B16C",
+  "source_pd_binds_post_x_cells": false,
+  "source_projection_binds_post_x_cells": false,
+  "source_standard_pd_receipt_sha256": "2E550442161B3B46854E3E4E30BE23CE4156BA5C0D342E9E515C5C54E1C30511"
+}
