@@ -85,6 +85,14 @@ python3 scripts/build_t73_actual_ar_kirby_construction_request.py --check
 python3 scripts/build_t73_actual_cancellation_splice_request.py --check
 ```
 
+仅供软件探索的、明确非实际的候选输入为
+[`geometry/t73_candidate_kirby_presentation.json`](geometry/t73_candidate_kirby_presentation.json)，
+其 PD/framing 导出为
+[`geometry/t73_candidate_kirby_export.json`](geometry/t73_candidate_kirby_export.json)。
+使用 `python3 scripts/build_t73_candidate_kirby_presentation.py --write`，再运行
+`scripts/export_t73_full_handle_diagram.py` 重建。其状态是
+`CANDIDATE_UNVERIFIED`；绝不能用于闭合 P0、C、S 或 P3/E13。
+
 ### Gmsh frame 与分块 frame 输入
 
 已独立验收的 Gmsh prefix-20 frame 位于

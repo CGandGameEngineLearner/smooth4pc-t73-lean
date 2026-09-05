@@ -1,0 +1,468 @@
+{
+  "ambient": {
+    "ambient_orientation": "standard_xyz",
+    "chart": "oriented_affine_Q3",
+    "genericity_certificate": {
+      "claimed": "PASS",
+      "method": "exact_fraction_recomputation"
+    },
+    "height_direction": [
+      "0",
+      "0",
+      "1"
+    ],
+    "projection_basis": [
+      [
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "1",
+        "0"
+      ]
+    ],
+    "projection_direction": [
+      "0",
+      "0",
+      "1"
+    ]
+  },
+  "candidate_status": "CANDIDATE_UNVERIFIED",
+  "components": [
+    {
+      "closed_core_polyline": [
+        [
+          "-2",
+          "-1",
+          "0"
+        ],
+        [
+          "2",
+          "1",
+          "2"
+        ],
+        [
+          "-2",
+          "1",
+          "0"
+        ],
+        [
+          "2",
+          "-1",
+          "-2"
+        ],
+        [
+          "-2",
+          "-1",
+          "0"
+        ]
+      ],
+      "closed_push_off_polyline": [
+        [
+          "-13/7",
+          "-10/11",
+          "1/13"
+        ],
+        [
+          "15/7",
+          "12/11",
+          "27/13"
+        ],
+        [
+          "-13/7",
+          "12/11",
+          "1/13"
+        ],
+        [
+          "15/7",
+          "-10/11",
+          "-25/13"
+        ],
+        [
+          "-13/7",
+          "-10/11",
+          "1/13"
+        ]
+      ],
+      "component_kind": "two_handle",
+      "cyclic_segment_successor": [
+        1,
+        2,
+        3,
+        0
+      ],
+      "name": "m_2",
+      "push_off_cyclic_segment_successor": [
+        1,
+        2,
+        3,
+        0
+      ]
+    },
+    {
+      "closed_core_polyline": [
+        [
+          "8",
+          "-1",
+          "0"
+        ],
+        [
+          "12",
+          "1",
+          "2"
+        ],
+        [
+          "8",
+          "1",
+          "0"
+        ],
+        [
+          "12",
+          "-1",
+          "-2"
+        ],
+        [
+          "8",
+          "-1",
+          "0"
+        ]
+      ],
+      "closed_push_off_polyline": [
+        [
+          "57/7",
+          "-10/11",
+          "1/13"
+        ],
+        [
+          "85/7",
+          "12/11",
+          "27/13"
+        ],
+        [
+          "57/7",
+          "12/11",
+          "1/13"
+        ],
+        [
+          "85/7",
+          "-10/11",
+          "-25/13"
+        ],
+        [
+          "57/7",
+          "-10/11",
+          "1/13"
+        ]
+      ],
+      "component_kind": "two_handle",
+      "cyclic_segment_successor": [
+        1,
+        2,
+        3,
+        0
+      ],
+      "name": "m_3",
+      "push_off_cyclic_segment_successor": [
+        1,
+        2,
+        3,
+        0
+      ]
+    },
+    {
+      "closed_core_polyline": [
+        [
+          "18",
+          "-1",
+          "0"
+        ],
+        [
+          "22",
+          "1",
+          "2"
+        ],
+        [
+          "18",
+          "1",
+          "0"
+        ],
+        [
+          "22",
+          "-1",
+          "-2"
+        ],
+        [
+          "18",
+          "-1",
+          "0"
+        ]
+      ],
+      "closed_push_off_polyline": [
+        [
+          "127/7",
+          "-10/11",
+          "1/13"
+        ],
+        [
+          "155/7",
+          "12/11",
+          "27/13"
+        ],
+        [
+          "127/7",
+          "12/11",
+          "1/13"
+        ],
+        [
+          "155/7",
+          "-10/11",
+          "-25/13"
+        ],
+        [
+          "127/7",
+          "-10/11",
+          "1/13"
+        ]
+      ],
+      "component_kind": "two_handle",
+      "cyclic_segment_successor": [
+        1,
+        2,
+        3,
+        0
+      ],
+      "name": "r_xy",
+      "push_off_cyclic_segment_successor": [
+        1,
+        2,
+        3,
+        0
+      ]
+    },
+    {
+      "closed_core_polyline": [
+        [
+          "28",
+          "-1",
+          "0"
+        ],
+        [
+          "32",
+          "1",
+          "2"
+        ],
+        [
+          "28",
+          "1",
+          "0"
+        ],
+        [
+          "32",
+          "-1",
+          "-2"
+        ],
+        [
+          "28",
+          "-1",
+          "0"
+        ]
+      ],
+      "closed_push_off_polyline": [
+        [
+          "197/7",
+          "-10/11",
+          "1/13"
+        ],
+        [
+          "225/7",
+          "12/11",
+          "27/13"
+        ],
+        [
+          "197/7",
+          "12/11",
+          "1/13"
+        ],
+        [
+          "225/7",
+          "-10/11",
+          "-25/13"
+        ],
+        [
+          "197/7",
+          "-10/11",
+          "1/13"
+        ]
+      ],
+      "component_kind": "two_handle",
+      "cyclic_segment_successor": [
+        1,
+        2,
+        3,
+        0
+      ],
+      "name": "r_yz",
+      "push_off_cyclic_segment_successor": [
+        1,
+        2,
+        3,
+        0
+      ]
+    },
+    {
+      "closed_core_polyline": [
+        [
+          "38",
+          "-1",
+          "0"
+        ],
+        [
+          "42",
+          "1",
+          "2"
+        ],
+        [
+          "38",
+          "1",
+          "0"
+        ],
+        [
+          "42",
+          "-1",
+          "-2"
+        ],
+        [
+          "38",
+          "-1",
+          "0"
+        ]
+      ],
+      "closed_push_off_polyline": [
+        [
+          "267/7",
+          "-10/11",
+          "1/13"
+        ],
+        [
+          "295/7",
+          "12/11",
+          "27/13"
+        ],
+        [
+          "267/7",
+          "12/11",
+          "1/13"
+        ],
+        [
+          "295/7",
+          "-10/11",
+          "-25/13"
+        ],
+        [
+          "267/7",
+          "-10/11",
+          "1/13"
+        ]
+      ],
+      "component_kind": "two_handle",
+      "cyclic_segment_successor": [
+        1,
+        2,
+        3,
+        0
+      ],
+      "name": "r_zx",
+      "push_off_cyclic_segment_successor": [
+        1,
+        2,
+        3,
+        0
+      ]
+    },
+    {
+      "closed_core_polyline": [
+        [
+          "48",
+          "-1",
+          "0"
+        ],
+        [
+          "52",
+          "1",
+          "2"
+        ],
+        [
+          "48",
+          "1",
+          "0"
+        ],
+        [
+          "52",
+          "-1",
+          "-2"
+        ],
+        [
+          "48",
+          "-1",
+          "0"
+        ]
+      ],
+      "component_kind": "dotted_one_handle",
+      "cyclic_segment_successor": [
+        1,
+        2,
+        3,
+        0
+      ],
+      "name": "dotted_y"
+    },
+    {
+      "closed_core_polyline": [
+        [
+          "58",
+          "-1",
+          "0"
+        ],
+        [
+          "62",
+          "1",
+          "2"
+        ],
+        [
+          "58",
+          "1",
+          "0"
+        ],
+        [
+          "62",
+          "-1",
+          "-2"
+        ],
+        [
+          "58",
+          "-1",
+          "0"
+        ]
+      ],
+      "component_kind": "dotted_one_handle",
+      "cyclic_segment_successor": [
+        1,
+        2,
+        3,
+        0
+      ],
+      "name": "dotted_z"
+    }
+  ],
+  "provenance": {
+    "actual_ar_link_sha256": "E5CD3C2A2AD0650D061CFB730F54F32C1F2860D2FD0813067550D545D02D2853",
+    "choice_rule": "separated rational Reidemeister-I component model; no claimed relative AR equivalence",
+    "t_cancellation_sha256": "6BFFC5189F69C3C2A3AA186683FFFDDC63A60573982634BCEC242DA1B67051D6",
+    "x_cancellation_sha256": "B72838D6671FAFBD3D8368E511759D9DE13007C81E4C731EAA661B084B951C1B"
+  },
+  "purpose": "algorithmic candidate Kirby presentation; not an AR cut-and-surgery witness",
+  "schema": "t73_full_handle_diagram_input/v1",
+  "sha256": "FA28937A8EC03A68F3A1890C55422D1A444C96CA464E09EBFB7C4C7D11ABE440"
+}

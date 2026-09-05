@@ -93,6 +93,14 @@ x-bands with their source center-path hash and required boundary/splice fields:
 python3 scripts/build_t73_actual_cancellation_splice_request.py --check
 ```
 
+For software exploration only, the explicitly non-actual candidate input is
+[`geometry/t73_candidate_kirby_presentation.json`](geometry/t73_candidate_kirby_presentation.json),
+with its PD/framing export at
+[`geometry/t73_candidate_kirby_export.json`](geometry/t73_candidate_kirby_export.json).
+Regenerate with `python3 scripts/build_t73_candidate_kirby_presentation.py --write`
+followed by `scripts/export_t73_full_handle_diagram.py`. Its status is
+`CANDIDATE_UNVERIFIED`; it must never be used to close P0, C, S or P3/E13.
+
 ### Gmsh frames and partitioned-frame inputs
 
 The independently verified Gmsh prefix-20 frame is

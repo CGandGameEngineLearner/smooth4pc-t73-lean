@@ -2092,6 +2092,20 @@ Topology-source checks completed 2026-09-04:
 - Boundary: it deliberately remains `OPEN`; no band center, word, hash or
   declared status can substitute for the requested cut-and-surgery PL data.
 
+### F-543 — A complete rational Kirby candidate is available for software exploration but has no AR equivalence witness
+
+- Severity: **Exploratory construction / scope firewall**
+- Status: **CANDIDATE_UNVERIFIED; NOT ACTUAL KIRBY DATA**
+- Evidence: `scripts/build_t73_candidate_kirby_presentation.py`,
+  `geometry/t73_candidate_kirby_presentation.json`, and
+  `geometry/t73_candidate_kirby_export.json`.
+- Construction: a separated rational seven-component model has complete closed
+  cores, five push-offs, dotted circles and a standard-PD/framing export. It
+  records the actual AR/t/x source hashes as provenance only.
+- Boundary: it does not supply kappa_AR, any band boundary/splice, or a
+  relative equivalence to the actual AR presentation. It cannot close P0, C,
+  S, P3 or E13 and is retained only for downstream software experiments.
+
 ### F-600 — The “actual” sphere-system builder assigns, rather than constructs, the embedding in \(\partial W_2\)
 
 - Severity: **Critical**
