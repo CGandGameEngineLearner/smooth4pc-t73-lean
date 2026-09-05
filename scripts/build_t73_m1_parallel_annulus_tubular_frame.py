@@ -61,7 +61,7 @@ def build():
     foliation = json.loads(FOLIATION.read_text(encoding="utf-8")); product = json.loads(PRODUCT.read_text(encoding="utf-8"))
     base = [point(value) for value in foliation["base_vertices"]]; normals = [point(value) for value in foliation["unit_normal_field"]]; outer = [point(value) for value in foliation["outer_vertices"]]
     outward, certificates = choose_outward(base, normals)
-    epsilon = Fraction(foliation["unit_normal_field"][2][1]) / 1000
+    epsilon = Fraction(foliation["unit_normal_field"][2][1]) / 10**12
     displacement = tuple(epsilon * value for value in outward)
     source_vertices = base + outer
     pushed_vertices = [tuple(value[axis] + displacement[axis] for axis in range(4)) for value in source_vertices]

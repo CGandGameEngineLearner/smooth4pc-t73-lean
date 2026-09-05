@@ -3399,10 +3399,12 @@ Topology-source checks completed 2026-09-04:
 ### F-592 — The full m1 parallel annulus has a rational local tubular frame
 
 - Severity: **x/m1 cancellation / global complement trivialization**
-- Status: **LOCAL TUBULAR FRAME PASS; NONLOCAL 3-CELL CLEARANCE OPEN**
+- Status: **EMBEDDED TUBULAR NEIGHBORHOOD PASS**
 - Evidence: `geometry/t73_m1_parallel_annulus_tubular_frame.json`,
   `scripts/build_t73_m1_parallel_annulus_tubular_frame.py`,
-  `scripts/verify_t73_m1_parallel_annulus_tubular_frame.py`, and its test.
+  `scripts/verify_t73_m1_parallel_annulus_tubular_frame.py`,
+  `scripts/verify_t73_m1_parallel_annulus_tubular_clearance.py`,
+  `audit/t73_m1_parallel_annulus_tubular_clearance_receipt.json`, and tests.
 - Frame: exhaustive lexicographic search selects the integer vector
   `(-3,-3,-2,-3)`. For every one of the 34 longitudinal m1 segments, one
   recorded 3-by-3 coordinate minor of tangent, linearly varying parallel
@@ -3415,11 +3417,15 @@ Topology-source checks completed 2026-09-04:
   perform 274 source/pushed-triangle separation checks, and the tetrahedra
   have only one/two face incidences. Verdict:
   `PASS_M1_PARALLEL_ANNULUS_LOCAL_TUBULAR_FRAME`.
-- Boundary: disjoint source and push annuli plus local rank do not alone prove
-  that interiors of all nonincident tubular tetrahedra are disjoint in the
-  quotient. That exact 3-simplex/3-simplex clearance check is the next gate;
-  only after it passes may the 48,416 middle complement paths be transported
-  through this tube.
+- Global clearance: 2686 deck-overlap candidates are enumerated. After
+  removing 1444 combinatorial adjacencies and 669 declared seam-gluing cases,
+  573 exact AABB survivors are decided by rational convex-hull feasibility;
+  no nonincident tetrahedra intersect. The seam cells retain the source
+  period-four deck gluing and the constant outward displacement. Verdict:
+  `PASS_M1_PARALLEL_ANNULUS_NONINCIDENT_TETRAHEDRON_CLEARANCE`.
+- Boundary: the embedded tubular neighborhood is now available. Its affine
+  ejection map still has to be applied to the 48,416 middle complement core
+  segments and their pushes before the full cancellation image is complete.
 
 ### F-600 — The “actual” sphere-system builder assigns, rather than constructs, the embedding in \(\partial W_2\)
 

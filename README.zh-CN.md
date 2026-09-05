@@ -224,8 +224,12 @@ m1 构造 tubular trivialization。
 一个共同有理 outward vector 在全部34条 m1 segments 上与 tangent/parallel
 frame 横截；68个 annulus triangles 生成204个非退化 tubular tetrahedra，且
 274次精确 quotient 检查证明 source/push annuli 分离。使用 `python3
-scripts/verify_t73_m1_parallel_annulus_tubular_frame.py` 验收。这仍是 local PL
-frame；成为全局 embedded tube 前还需完成 nonincident tetrahedra clearance。
+scripts/verify_t73_m1_parallel_annulus_tubular_frame.py` 验收。完整
+nonincident tetrahedra clearance 现已通过并记录于
+[`audit/t73_m1_parallel_annulus_tubular_clearance_receipt.json`](audit/t73_m1_parallel_annulus_tubular_clearance_receipt.json)：
+573次精确有理凸包可行性检查未发现 quotient 中的非相邻 tetrahedron 相交。
+verdict 为 `PASS_M1_PARALLEL_ANNULUS_NONINCIDENT_TETRAHEDRON_CLEARANCE`；现在可用
+此 tube 运输48416条 middle complement segments。
 三个原先缺坐标的 pre-cancellation dual-cell product ribbons 现已显式保存于
 [`geometry/t73_actual_dual_product_ribbons.json`](geometry/t73_actual_dual_product_ribbons.json)。
 每条平面 dual boundary 都有通向有理法向 push-off 的8个四边形/16个三角形

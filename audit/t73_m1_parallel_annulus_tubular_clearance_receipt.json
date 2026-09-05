@@ -1,0 +1,19 @@
+{
+  "completion_status": "M1_PARALLEL_ANNULUS_EMBEDDED_TUBULAR_NEIGHBORHOOD_VERIFIED",
+  "full_verifier_result": {
+    "adjacency_skips": 1444,
+    "deck_candidates": 2686,
+    "embedded_tubular_neighborhood": true,
+    "exact_box_candidates": 573,
+    "exact_convex_feasibility_checks": 573,
+    "seam_skips": 669,
+    "tetrahedra": 204,
+    "verdict": "PASS_M1_PARALLEL_ANNULUS_NONINCIDENT_TETRAHEDRON_CLEARANCE"
+  },
+  "schema": "t73_m1_parallel_annulus_tubular_clearance_receipt/v1",
+  "sha256": "2F09C13F03C10F24F46A2D4966577BA0769665A920C1DEA52A547DBD27E93640",
+  "tubular_frame_sha256": "4234D2492387DA6CEC894E52809E2C4756AA3A2885E5472BFBDD2C24A4C762A6",
+  "verdict": "PASS_M1_PARALLEL_ANNULUS_NONINCIDENT_TETRAHEDRON_CLEARANCE",
+  "verifier_path": "scripts/verify_t73_m1_parallel_annulus_tubular_clearance.py",
+  "verifier_sha256": "60BE01C3C5D6E35F2A7B60F157FA5BD8E5D16D90F7A2102DC96B2C944E00AC4E"
+}

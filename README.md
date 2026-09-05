@@ -245,9 +245,13 @@ A common rational outward vector is transverse to the tangent/parallel frame
 on all 34 m1 segments; 68 annulus triangles give 204 nondegenerate tubular
 tetrahedra, and 274 exact quotient checks separate the source and pushed
 annuli. Verify with `python3
-scripts/verify_t73_m1_parallel_annulus_tubular_frame.py`. This is a local PL
-frame; exact nonincident tetrahedron clearance remains open before it becomes
-a globally embedded tube.
+scripts/verify_t73_m1_parallel_annulus_tubular_frame.py`. Exact nonincident
+tetrahedron clearance now passes and is recorded in
+[`audit/t73_m1_parallel_annulus_tubular_clearance_receipt.json`](audit/t73_m1_parallel_annulus_tubular_clearance_receipt.json):
+573 exact rational convex-hull feasibility checks find no nonincident
+tetrahedron intersection in the quotient. Verdict:
+`PASS_M1_PARALLEL_ANNULUS_NONINCIDENT_TETRAHEDRON_CLEARANCE`. The tube can now
+be used to transport the 48416 middle complement segments.
 The three missing pre-cancellation dual-cell product ribbons are now explicit
 in [`geometry/t73_actual_dual_product_ribbons.json`](geometry/t73_actual_dual_product_ribbons.json).
 Each planar dual boundary has an eight-quadrilateral/16-triangle annulus to a
