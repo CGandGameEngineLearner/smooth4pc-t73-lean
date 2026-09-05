@@ -61,6 +61,42 @@ python3 scripts/build_t73_complete_geometry_bundle_v2.py --check
 它保存当前可重构的全部端点与弧几何；实际 coend/currying map 未构造，所以
 顶层 manifest 按设计保持 `OPEN`。
 
+### Gmsh frame 与分块 frame 输入
+
+已独立验收的 Gmsh prefix-20 frame 位于
+[`geometry/examples/t73_selected_source_gmsh_prefix20_frame.json`](geometry/examples/t73_selected_source_gmsh_prefix20_frame.json)，
+收据位于
+[`audit/t73_selected_source_gmsh_prefix20_frame_verification.json`](audit/t73_selected_source_gmsh_prefix20_frame_verification.json)。
+它有 4134 个顶点、23725 个四面体、20 条 arcs/ribbons、5 个边界分量及精确外部体积
+63968；其唯一有效状态是 `PASS_PREFIX_ONLY`，不是完整 T73 几何。
+
+分块路线已保存三个精确输入：
+
+- [`geometry/t73_selected_source_partition_z0.json`](geometry/t73_selected_source_partition_z0.json)：在 `z=0` 裁切的全部 ruled-ribbon、core、push-off 与 connector fragments；
+- [`geometry/t73_z0_interface_triangulation.json`](geometry/t73_z0_interface_triangulation.json)：带四个 insertion-hole loops 的共同 36 顶点/42 三角形接口；
+- [`scripts/probe_t73_z0_block_volumes_gmsh.py`](scripts/probe_t73_z0_block_volumes_gmsh.py)：fail-closed 的 Gmsh OCC probe。其 `PASS_FRAGMENT_BATCH_ONLY` 只覆盖指定的 lower-side fragment batch，绝不表示完整 frame。
+
+WSL 拓扑运行请使用独立环境（Gmsh wheel 还需要下列系统运行时库）：
+
+```text
+python3 -m venv ~/.venvs/t73-topology
+~/.venvs/t73-topology/bin/python -m pip install 'regina>=7.4' 'gmsh==4.15.2'
+sudo apt-get install libglu1-mesa libxft2
+~/.venvs/t73-topology/bin/python scripts/probe_t73_z0_block_volumes_gmsh.py --fragments 10
+```
+
+下列日常精确检查不会重新运行完整 mesh：
+
+```text
+python3 scripts/build_t73_selected_source_partition_z0.py --check
+python3 scripts/build_t73_z0_interface_triangulation.py --check
+python3 scripts/build_t73_gmsh_frame_verification_receipt.py --check-files
+python3 scripts/build_t73_gmsh_frame_verification_receipt.py --check-files --frame geometry/examples/t73_selected_source_gmsh_prefix20_frame.json --output audit/t73_selected_source_gmsh_prefix20_frame_verification.json --expected-prefix 20 --expected-vertices 4134 --expected-tetrahedra 23725 --expected-arcs 20 --expected-ribbons 20 --expected-boundary-components 5 --expected-exact-volume 63968
+```
+
+单体 630-ribbon HXT 尝试已被 OOM killer 终止且未写出 mesh。上述分块输入和 probe
+仅作为构造数据保留；共同 630-ribbon tetrahedral frame gate 仍为 `OPEN`。
+
 **勘误（2026 年 9 月 2 日）。** 较早草稿混用两套 endpoint 索引表，报告了
 \(-59072\)。统一到 braid 词所用 collar 表后，精确值为 \(+2624\)（仍非零）。
 

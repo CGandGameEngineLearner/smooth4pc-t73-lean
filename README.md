@@ -67,6 +67,45 @@ python3 scripts/build_t73_complete_geometry_bundle_v2.py --check
 This saves all currently reconstructible endpoint/arc geometry.  Its manifest
 deliberately remains `OPEN` at the actual coend/currying map.
 
+### Gmsh frames and partitioned-frame inputs
+
+The independently verified Gmsh prefix-20 frame is
+[`geometry/examples/t73_selected_source_gmsh_prefix20_frame.json`](geometry/examples/t73_selected_source_gmsh_prefix20_frame.json).
+Its verification receipt is
+[`audit/t73_selected_source_gmsh_prefix20_frame_verification.json`](audit/t73_selected_source_gmsh_prefix20_frame_verification.json).
+It contains 4134 vertices, 23725 tetrahedra, 20 arcs/ribbons, five boundary
+components and exact exterior volume 63968; its only valid status is
+`PASS_PREFIX_ONLY`, not complete T73 geometry.
+
+The partitioned route retains three exact, committed inputs:
+
+- [`geometry/t73_selected_source_partition_z0.json`](geometry/t73_selected_source_partition_z0.json): all ruled-ribbon, core, push-off and connector fragments cut at `z=0`;
+- [`geometry/t73_z0_interface_triangulation.json`](geometry/t73_z0_interface_triangulation.json): the common 36-vertex/42-triangle interface with four insertion-hole loops;
+- [`scripts/probe_t73_z0_block_volumes_gmsh.py`](scripts/probe_t73_z0_block_volumes_gmsh.py): a fail-closed Gmsh OCC probe. Its `PASS_FRAGMENT_BATCH_ONLY` result covers only the requested lower-side fragment batch, never the complete frame.
+
+For WSL topology runs, use an isolated environment (the Gmsh wheel also needs
+the listed system runtime libraries):
+
+```text
+python3 -m venv ~/.venvs/t73-topology
+~/.venvs/t73-topology/bin/python -m pip install 'regina>=7.4' 'gmsh==4.15.2'
+sudo apt-get install libglu1-mesa libxft2
+~/.venvs/t73-topology/bin/python scripts/probe_t73_z0_block_volumes_gmsh.py --fragments 10
+```
+
+Routine exact checks, which do not rerun a full mesh, are:
+
+```text
+python3 scripts/build_t73_selected_source_partition_z0.py --check
+python3 scripts/build_t73_z0_interface_triangulation.py --check
+python3 scripts/build_t73_gmsh_frame_verification_receipt.py --check-files
+python3 scripts/build_t73_gmsh_frame_verification_receipt.py --check-files --frame geometry/examples/t73_selected_source_gmsh_prefix20_frame.json --output audit/t73_selected_source_gmsh_prefix20_frame_verification.json --expected-prefix 20 --expected-vertices 4134 --expected-tetrahedra 23725 --expected-arcs 20 --expected-ribbons 20 --expected-boundary-components 5 --expected-exact-volume 63968
+```
+
+The monolithic 630-ribbon HXT attempt was OOM-killed without writing a mesh.
+The partition inputs and probes are therefore preserved as construction data;
+the common 630-ribbon tetrahedral frame gate remains `OPEN`.
+
 **Erratum (2 September 2026).** An earlier draft mixed two endpoint index
 tables and reported \(-59072\). With both objects in the collar table used by
 the braid word, the exact value is \(+2624\) (still nonzero).
