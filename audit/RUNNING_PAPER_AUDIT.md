@@ -3285,6 +3285,29 @@ Topology-source checks completed 2026-09-04:
   connector segments and local Hopf pieces, then rebuild the complete PD and
   diagonal framings. Verdict: `PASS_SOURCE_PD_POST_X_COVERAGE_GAP_AUDIT`.
 
+### F-588 — Five complete core/push cycles are assembled in the verified graph of charts
+
+- Severity: **actual framing input / global cycle incidence**
+- Status: **COMPLETE CHARTED CYCLES PASS; UNIFIED S3 EMBEDDING OPEN**
+- Evidence: `geometry/t73_post_x_framed_cycle_assembly.json`,
+  `scripts/build_t73_post_x_framed_cycle_assembly.py`,
+  `scripts/verify_t73_post_x_framed_cycle_assembly.py`, and its test.
+- Inventory: the five cycles exhaust 1513 forty-segment post-x replacement
+  paths, 1773 four-segment Johnson central connectors, 262 two-segment
+  surviving Johnson handle arcs, two one-segment bottom cut arcs, and eight
+  two-segment surviving dual passages. No passage, band index, or connector id
+  is duplicated or omitted.
+- Counts: component core/push segment counts are m2=12,087, m3=55,891,
+  r_xy=84, r_yz=8, and r_zx=84, totalling 68,154 on each of core and push.
+  The 3558 abstract gluing vertices all have indegree and outdegree one, so
+  both framed copies are five closed combinatorial cycles rather than open
+  connector collections. Verdict:
+  `PASS_FIVE_COMPLETE_FRAMED_CYCLES_IN_GRAPH_OF_CHARTS`.
+- Boundary: closure in a graph of already verified local/global charts does
+  not supply the missing x/m1 cancellation-complement homeomorphism into a
+  single dotted-S3 chart. Crossing projection and integer framings remain
+  forbidden until that cellwise embedding and its inverse are constructed.
+
 ### F-600 — The “actual” sphere-system builder assigns, rather than constructs, the embedding in \(\partial W_2\)
 
 - Severity: **Critical**

@@ -183,6 +183,14 @@ dotted-handle/handlebody map 与source等价，所以这本身不否定 κ_AR。
 使用 `python3 scripts/verify_t73_source_pd_post_x_coverage.py` 验收。现有 SQLite
 仍是有效的 connector/local-Hopf 骨架；完整 replacement-path projection 与
 source product framings 仍开放。
+订正后的片段现已在
+[`geometry/t73_post_x_framed_cycle_assembly.json`](geometry/t73_post_x_framed_cycle_assembly.json)
+中组装为 verified graph-of-charts 上的五条闭合 framed cycles。它穷尽3558个
+blocks，并给出各68154条边的 core/push cycles；每个抽象顶点均恰有一条入边
+和一条出边。使用 `python3 scripts/build_t73_post_x_framed_cycle_assembly.py
+--check` 与 `python3 scripts/verify_t73_post_x_framed_cycle_assembly.py`
+重建/验收。这闭合的是组合 cycle incidence，不是到单一 S³ chart 的
+cancellation-complement embedding。
 三个原先缺坐标的 pre-cancellation dual-cell product ribbons 现已显式保存于
 [`geometry/t73_actual_dual_product_ribbons.json`](geometry/t73_actual_dual_product_ribbons.json)。
 每条平面 dual boundary 都有通向有理法向 push-off 的8个四边形/16个三角形

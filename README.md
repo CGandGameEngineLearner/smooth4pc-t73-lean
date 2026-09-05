@@ -201,6 +201,15 @@ push segments were omitted. The machine-readable gap is
 verified by `python3 scripts/verify_t73_source_pd_post_x_coverage.py`. The
 SQLite remains a valid connector/local-Hopf skeleton; full replacement-path
 projection and source product framings remain open.
+The corrected pieces are now assembled into five closed framed cycles in the
+graph of verified charts at
+[`geometry/t73_post_x_framed_cycle_assembly.json`](geometry/t73_post_x_framed_cycle_assembly.json).
+It exhausts 3558 blocks and gives matching 68154-edge core and push cycles;
+every abstract vertex has one incoming and one outgoing block. Rebuild/check
+with `python3 scripts/build_t73_post_x_framed_cycle_assembly.py --check` and
+`python3 scripts/verify_t73_post_x_framed_cycle_assembly.py`. This closes
+combinatorial cycle incidence, not the cancellation-complement embedding into
+one S3 chart.
 The three missing pre-cancellation dual-cell product ribbons are now explicit
 in [`geometry/t73_actual_dual_product_ribbons.json`](geometry/t73_actual_dual_product_ribbons.json).
 Each planar dual boundary has an eight-quadrilateral/16-triangle annulus to a
