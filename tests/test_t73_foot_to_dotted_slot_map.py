@@ -21,7 +21,7 @@ class FootToDottedSlotMapTest(unittest.TestCase):
             result["verdict"],
             "PASS_FOOT_MARKED_ORDER_AND_DOTTED_SLOT_ASSIGNMENT_ONLY",
         )
-        self.assertEqual(result["surviving_marked_points"], 1779)
+        self.assertEqual(result["surviving_marked_points"], 1785)
         self.assertEqual(result["explicit_disk_tracks"], "OPEN")
 
 

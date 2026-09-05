@@ -10,7 +10,6 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 CYCLES = ROOT / "geometry/t73_final_component_passage_cycles.json"
-BIGONS = ROOT / "geometry/t73_final_free_reduction_bigons.json"
 RAILROAD = ROOT / "geometry/t73_actual_railroad_core_coordinates.json"
 HYBRID = ROOT / "geometry/t73_x_band_hybrid_movie.json"
 FOOT_STATE = ROOT / "geometry/t73_final_yz_foot_state.json"
@@ -25,7 +24,6 @@ def canonical_sha(value) -> str:
 
 def build() -> dict:
     cycles = json.loads(CYCLES.read_text(encoding="utf-8"))
-    bigons = json.loads(BIGONS.read_text(encoding="utf-8"))
     railroad = json.loads(RAILROAD.read_text(encoding="utf-8"))
     hybrid = json.loads(HYBRID.read_text(encoding="utf-8"))
     foot_state = json.loads(FOOT_STATE.read_text(encoding="utf-8"))
@@ -119,12 +117,11 @@ def build() -> dict:
             "target_total_vertex_count": len(target["vertices"]),
             "framing_push_vector": framing_by_name[component]["push_vector"],
         })
-    if len(vertex_maps) != 1780 or len(edge_maps) != 1780:
+    if len(vertex_maps) != 1785 or len(edge_maps) != 1785:
         raise AssertionError("hybrid-to-railroad graph map has the wrong cell counts")
     result = {
         "schema": "t73_hybrid_to_railroad_graph_map/v1",
         "final_component_passage_cycles_sha256": cycles["sha256"],
-        "free_reduction_bigons_sha256": bigons["sha256"],
         "railroad_core_coordinates_sha256": railroad["sha256"],
         "x_hybrid_movie_sha256": hybrid["sha256"],
         "final_yz_foot_state_sha256": foot_state["sha256"],

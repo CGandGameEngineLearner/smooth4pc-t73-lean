@@ -114,43 +114,50 @@ push/projection manifest 位于
 使用 `python3 scripts/verify_t73_final_railroad_word_binding.py` 验收。
 订正后的 target 构造继续保存于
 [`geometry/t73_actual_railroad_core_coordinates.json`](geometry/t73_actual_railroad_core_coordinates.json)
-（1168 个 exact generic core crossings）、
+（1178 个 exact generic raw-passage core crossings）、
 [`geometry/t73_railroad_product_framings.json`](geometry/t73_railroad_product_framings.json)
 （5 条 linking=0 的 target push-off），以及
 [`geometry/t73_source_bound_standard_pd_candidate.json`](geometry/t73_source_bound_standard_pd_candidate.json)。
-后者含 4727 行标准 PD、9454 个 arc labels 和1779个逐 passage 绑定的 dotted
+后者含 4748 行标准 PD、9496 个 arc labels 和1785个逐 passage 绑定的 dotted
 Hopf clasp。verdict 为 `PASS_SOURCE_BOUND_STANDARD_PD_COMBINATORICS_ONLY`：
 target framing 已通过，但 framed hybrid→railroad isotopy 仍开放。被拒绝的
 diagonal-only closure 保留于
 [`audit/t73_actual_railroad_standard_pd_gap.json`](audit/t73_actual_railroad_standard_pd_gap.json)。
-三个显式自由约化 isotopy 保存于
+三个可选自由约化 endpoint-tube candidates 保存于
 [`geometry/t73_final_free_reduction_bigons.json`](geometry/t73_final_free_reduction_bigons.json)。
-它们在互不碰撞的 z-foot regular-neighborhood tube 中消去 m3 的一对 inverse
-passage 与 r_zx 的两层嵌套 pair。使用
+它们在互不碰撞的 z-foot endpoint tube 中识别 m3 的一对 inverse passage 与
+r_zx 的两层嵌套 pair，但尚无 central-connector spanning surfaces。使用
 `build_t73_final_free_reduction_bigons.py --check` 与
 `verify_t73_final_free_reduction_bigons.py` 重建/验收；verdict 为
-`PASS_THREE_FINAL_FREE_REDUCTION_BIGON_TUBES`。
+`PASS_FREE_REDUCTION_ENDPOINT_TUBES_ONLY`；raw-passage kappa 路径不依赖它们。
 surviving framed 1-skeleton map 位于
 [`geometry/t73_hybrid_to_railroad_graph_map.json`](geometry/t73_hybrid_to_railroad_graph_map.json)。
-它将1780个 source vertices 与1780条 connector edges 双射到全部 railroad
-event/segment cells，含1510个 surviving hybrid replacements 与 residual r_zx
-split circle。使用 `verify_t73_hybrid_to_railroad_graph_map.py` 验收；verdict 为
+它将1785个 source vertices 与1785条 connector edges 双射到全部 raw-passage
+railroad event/segment cells，包含全部1513个 hybrid replacements。使用
+`verify_t73_hybrid_to_railroad_graph_map.py` 验收；verdict 为
 `PASS_HYBRID_TO_RAILROAD_FRAMED_GRAPH_ISOMORPHISM_ONLY`，ambient tracks 仍开放。
 graph map 已在
 [`geometry/t73_hybrid_to_railroad_tubular_map.json`](geometry/t73_hybrid_to_railroad_tubular_map.json)
 中扩张到五个 framed regular neighborhoods。五个 solid-torus templates 共含
-5373 个 tetrahedra 与10746个 boundary triangles，closing fiber 恒等且五个
+5385 个 tetrahedra 与10770个 boundary triangles，closing fiber 恒等且五个
 relative twist均为0。使用 `verify_t73_hybrid_to_railroad_tubular_map.py` 验收；
 当前只剩 handlebody complement extension 开放。
 complement boundary 数据现包含
 [`geometry/t73_foot_to_dotted_slot_map.json`](geometry/t73_foot_to_dotted_slot_map.json)
 及
 [`geometry/t73_foot_to_dotted_disk_tracks.json`](geometry/t73_foot_to_dotted_disk_tracks.json)
-中的1779条显式反射配对路径；verifier 完成2,437,382次精确固定点碰撞检查。
+中的1785条显式反射配对路径；verifier 完成2,455,940次精确固定点碰撞检查。
 每条 reduced source edge 也在
 [`geometry/t73_reduced_source_connector_provenance.json`](geometry/t73_reduced_source_connector_provenance.json)
 中绑定回 raw geometry：1773个 Johnson central connectors 与12个 dual-boundary
-connectors 恰好分区全部1780条 reduced edges。
+connectors 一一分区全部1785条 raw target edges。
+native source-connector 的完整精确投影过大，不进入Git，保存在
+`C:\Users\Administrator\.cache\t73_actual_source_connector_projection.full.json`
+（约1.68 GB）。紧凑收据为
+[`audit/t73_actual_source_connector_projection_receipt.json`](audit/t73_actual_source_connector_projection_receipt.json)：
+7116 segments、4,791,364 个 broad candidates、1,758,060 个 exact crossings。
+使用 `build_t73_actual_source_connector_projection.py --write` 重建，并用
+`build_t73_actual_source_connector_projection_receipt.py` 流式生成/检查收据。
 
 另一个独立层次中，C-cut 的 44-lane candidate realization 为
 [`geometry/t73_y_foot_lane_candidate.json`](geometry/t73_y_foot_lane_candidate.json)：

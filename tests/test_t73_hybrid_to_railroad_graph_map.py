@@ -21,8 +21,8 @@ class HybridToRailroadGraphMapTest(unittest.TestCase):
             result["verdict"],
             "PASS_HYBRID_TO_RAILROAD_FRAMED_GRAPH_ISOMORPHISM_ONLY",
         )
-        self.assertEqual(result["vertices"], 1780)
-        self.assertEqual(result["edges"], 1780)
+        self.assertEqual(result["vertices"], 1785)
+        self.assertEqual(result["edges"], 1785)
         self.assertEqual(result["ambient_isotopy_status"], "OPEN")
 
 

@@ -78,12 +78,12 @@ def verify() -> dict:
         if used_segments != set(range(2 * len(entries))):
             raise AssertionError("dotted segments are not an exhaustive partition")
         total += len(entries)
-    if total != 1779 or data["disk_track_status"] != "OPEN_EXPLICIT_MARKED_CONFIGURATION_ISOTOPY":
+    if total != 1785 or data["disk_track_status"] != "OPEN_EXPLICIT_MARKED_CONFIGURATION_ISOTOPY":
         raise AssertionError("dotted slot map overstates its track completion")
     return {
         "verdict": "PASS_FOOT_MARKED_ORDER_AND_DOTTED_SLOT_ASSIGNMENT_ONLY",
         "y_slots": 235,
-        "z_slots": 1544,
+        "z_slots": 1550,
         "surviving_marked_points": total,
         "dotted_segments": 2 * total,
         "explicit_disk_tracks": "OPEN",

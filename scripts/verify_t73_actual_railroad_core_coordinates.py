@@ -67,7 +67,7 @@ def verify() -> dict:
     data = json.loads(DATA.read_text(encoding="utf-8"))
     railroad = json.loads(RAILROAD.read_text(encoding="utf-8"))
     cycles = json.loads(CYCLES.read_text(encoding="utf-8"))
-    if data["completion_status"] != "SOURCE_BOUND_RAILROAD_CORE_COORDINATES_CANDIDATE":
+    if data["completion_status"] != "SOURCE_BOUND_RAW_PASSAGE_RAILROAD_CORE_COORDINATES_CANDIDATE":
         raise AssertionError("railroad coordinate scope changed")
     if data["actual_railroad_word_binding_sha256"] != railroad["sha256"] or data["final_component_passage_cycles_sha256"] != cycles["sha256"]:
         raise AssertionError("railroad coordinates have stale sources")
@@ -77,14 +77,16 @@ def verify() -> dict:
     for component_index, record in enumerate(data["components"]):
         name = record["name"]
         raw = railroad["components"][name]["raw_word"]
-        reduced, survivors, cancelled = reduce_survivors(raw)
-        if record["reduced_word"] != reduced or record["survivor_original_indices"] != survivors or record["cancelled_original_index_pairs"] != cancelled:
-            raise AssertionError("railroad survivor/cancellation map changed")
-        expected_ids = [cycles_by_name[name]["passage_ids"][index] for index in survivors]
+        target_word = raw
+        survivors = list(range(len(raw)))
+        cancelled = []
+        if record["target_word"] != target_word or record["survivor_original_indices"] != survivors or record["cancelled_original_index_pairs"] != cancelled:
+            raise AssertionError("raw-passage railroad target changed")
+        expected_ids = list(cycles_by_name[name]["passage_ids"])
         if record["survivor_passage_ids"] != expected_ids:
             raise AssertionError("railroad event-to-passage binding changed")
         points = [point(value) for value in record["vertices"]]
-        if points != expected_polyline(reduced, component_index):
+        if points != expected_polyline(target_word, component_index):
             raise AssertionError("railroad rational coordinates changed")
         curves.append({"name": name, "points": points})
         cancellation_pairs += len(cancelled)
@@ -93,17 +95,17 @@ def verify() -> dict:
     crossings = curve_crossings(
         curves, basis, height, include_self=True, require_unique_projection_points=True
     )
-    if crossings != data["crossings"] or len(crossings) != 1168:
+    if crossings != data["crossings"] or len(crossings) != 1178:
         raise AssertionError("railroad exact coordinate crossings changed")
     pairwise = pairwise_linking_matrix(data["component_order"], crossings)
     if pairwise != [[0] * 5 for _ in range(5)] or data["pairwise_linking_matrix"] != pairwise:
         raise AssertionError("railroad pairwise linking matrix changed")
     return {
-        "verdict": "PASS_SOURCE_BOUND_RAILROAD_CORE_COORDINATES_CANDIDATE",
+        "verdict": "PASS_SOURCE_BOUND_RAW_PASSAGE_RAILROAD_CORE_COORDINATES_CANDIDATE",
         "components": 5,
         "crossings": len(crossings),
         "pairwise_linking_matrix": pairwise,
-        "explicit_free_reduction_pairs": cancellation_pairs,
+        "explicit_free_reduction_pairs_used": cancellation_pairs,
         "surviving_passage_events": sum(
             len(record["survivor_passage_ids"]) for record in data["components"]
         ),

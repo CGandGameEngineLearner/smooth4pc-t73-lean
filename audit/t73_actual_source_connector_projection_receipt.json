@@ -1,0 +1,80 @@
+{
+  "actual_ar_link_sha256": "E5CD3C2A2AD0650D061CFB730F54F32C1F2860D2FD0813067550D545D02D2853",
+  "broad_phase_candidates": 4791364,
+  "crossing_count": 1758060,
+  "crossings_canonical_sha256": "C0C6532B113FA562B585B18EFAF439726361EBE3693584ABF99DA1EC1F77FFA9",
+  "first_crossing": {
+    "id": "X0",
+    "over_curve_id": "c2:between:1081",
+    "over_height": "352522686843124602927756418906135809/592131133516310713461226985614267676",
+    "over_owner": "m_3",
+    "over_parameter": "1625968530099265676982715/1776382742236491276755892",
+    "over_segment": 1,
+    "over_source_edge": "m_3:connector_after:c2:letter:1081",
+    "projection_point": [
+      "-6216088461638587558028975/21316592906837895321070704",
+      "-4728424500145171657632595/21316592906837895321070704"
+    ],
+    "sign": 1,
+    "under_curve_id": "c1:start",
+    "under_height": "2372527492142167177539679519578690841/7105573602195728561534723827371212112",
+    "under_owner": "m_2",
+    "under_parameter": "654673007076249441096136/1332287056677368457566919",
+    "under_segment": 1,
+    "under_source_edge": "m_2:connector_after:m_2:C_i"
+  },
+  "full_builder_path": "scripts/build_t73_actual_source_connector_projection.py",
+  "full_builder_sha256": "F395A042A1AFEAB52821250F7ED1418A01A32178DA4F0FA15CF9E696B1946071",
+  "full_cache_path": "C:\\Users\\Administrator\\.cache\\t73_actual_source_connector_projection.full.json",
+  "full_file_sha256": "A2F80175C4D949FEC4FC483B019E618C518EEA82784C4DBC5AF1F27721F7E4F9",
+  "full_file_size": 1681677917,
+  "johnson_spine_embedding_sha256": "57BC99BE08ED805EF268049F1EEE961D25F6889A6BDEC142B8715072B7F51AC1",
+  "last_crossing": {
+    "id": "X1758059",
+    "over_curve_id": "c2:end",
+    "over_height": "53297720227299092765249872486696132722851/79969045559822334950693289322022120295828",
+    "over_owner": "m_3",
+    "over_parameter": "39939401789205729211379595511/39984282873854065805087127546",
+    "over_segment": 1,
+    "over_source_edge": "m_3:connector_after:x_replacement:1508:m1_z",
+    "projection_point": [
+      "-129569926300636938401949776909/319874262990832526440697020368",
+      "-790489563088794516116632631/1904013470183526943099387026"
+    ],
+    "sign": 1,
+    "under_curve_id": "c2:between:1458",
+    "under_height": "106535403633607267885217131551904488994483/159938091119644669901386578644044240591656",
+    "under_owner": "m_3",
+    "under_parameter": "61853281332645635784443635/3808026940367053886198774052",
+    "under_segment": 2,
+    "under_source_edge": "m_3:connector_after:x_replacement:1507:m1_z"
+  },
+  "near_xy_projection_denominator": 1000003,
+  "owner_pair_crossing_counts": {
+    "m_2/m_2": 50652,
+    "m_2/m_3": 494966,
+    "m_3/m_3": 1212442
+  },
+  "owner_pair_signed_sums": {
+    "m_2/m_2": -214,
+    "m_2/m_3": -636,
+    "m_3/m_3": -808
+  },
+  "projection_basis": [
+    [
+      "1",
+      "0",
+      "1/1000003"
+    ],
+    [
+      "0",
+      "1",
+      "1/1000006000009"
+    ]
+  ],
+  "reduced_source_connector_provenance_sha256": "7460C487E5B3E875EA0A6B2D0481388A0174D6532B89D258A6C1862E818B2103",
+  "schema": "t73_actual_source_connector_projection_receipt/v1",
+  "segment_count": 7116,
+  "sha256": "15439B98F0D206FA9539CBEBEC9EFF4F3A619A3B4852740C1F047D38BFA3B16C",
+  "verdict": "PASS_ACTUAL_SOURCE_CONNECTOR_PROJECTION_FULL_CACHE"
+}

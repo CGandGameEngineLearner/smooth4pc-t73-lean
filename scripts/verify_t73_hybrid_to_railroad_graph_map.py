@@ -7,14 +7,12 @@ import hashlib
 import json
 from pathlib import Path
 
-from verify_t73_final_free_reduction_bigons import verify as verify_bigons
 from verify_t73_actual_railroad_core_coordinates import verify as verify_railroad
 from verify_t73_railroad_product_framings import verify as verify_framings
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "geometry/t73_hybrid_to_railroad_graph_map.json"
 CYCLES = ROOT / "geometry/t73_final_component_passage_cycles.json"
-BIGONS = ROOT / "geometry/t73_final_free_reduction_bigons.json"
 RAILROAD = ROOT / "geometry/t73_actual_railroad_core_coordinates.json"
 HYBRID = ROOT / "geometry/t73_x_band_hybrid_movie.json"
 FOOT_STATE = ROOT / "geometry/t73_final_yz_foot_state.json"
@@ -28,13 +26,11 @@ def canonical_sha(value) -> str:
 
 def verify() -> dict:
     prerequisites = {
-        "bigons": verify_bigons()["verdict"],
         "railroad": verify_railroad()["verdict"],
         "framings": verify_framings()["verdict"],
     }
     data = json.loads(DATA.read_text(encoding="utf-8"))
     cycles = json.loads(CYCLES.read_text(encoding="utf-8"))
-    bigons = json.loads(BIGONS.read_text(encoding="utf-8"))
     railroad = json.loads(RAILROAD.read_text(encoding="utf-8"))
     hybrid = json.loads(HYBRID.read_text(encoding="utf-8"))
     foot_state = json.loads(FOOT_STATE.read_text(encoding="utf-8"))
@@ -43,7 +39,6 @@ def verify() -> dict:
         raise AssertionError("hybrid-to-railroad graph-map scope changed")
     expected_hashes = {
         "final_component_passage_cycles_sha256": cycles["sha256"],
-        "free_reduction_bigons_sha256": bigons["sha256"],
         "railroad_core_coordinates_sha256": railroad["sha256"],
         "x_hybrid_movie_sha256": hybrid["sha256"],
         "final_yz_foot_state_sha256": foot_state["sha256"],
@@ -114,7 +109,7 @@ def verify() -> dict:
             raise AssertionError("graph-map target framing vector changed")
         vertex_count += len(component_vertices)
         edge_count += len(component_edges)
-    if vertex_count != 1780 or edge_count != 1780 or replacement_checks != 1510:
+    if vertex_count != 1785 or edge_count != 1785 or replacement_checks != 1513:
         raise AssertionError("hybrid-to-railroad graph-map totals changed")
     if data["ambient_extension_status"] != "OPEN_CELLWISE_TRACKS_AND_DISJOINTNESS_REQUIRED":
         raise AssertionError("graph map overstates ambient isotopy completion")

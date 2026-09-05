@@ -83,16 +83,16 @@ def build() -> dict:
     curves = []
     for component_index, name in enumerate(order):
         raw_word = railroad["components"][name]["raw_word"]
-        reduced, survivor_indices, cancellations = reduce_with_survivors(raw_word)
-        if reduced != railroad["components"][name]["reduced_word"]:
-            raise AssertionError(f"{name}: railroad survivor reduction changed")
+        reduced = raw_word
+        survivor_indices = list(range(len(raw_word)))
+        cancellations = []
         passage_ids = cycles_by_name[name]["passage_ids"]
         survivor_passage_ids = [passage_ids[index] for index in survivor_indices]
-        vertices = railroad_polyline(reduced, component_index)
+        vertices = railroad_polyline(raw_word, component_index)
         components.append({
             "name": name,
             "raw_passage_count": len(raw_word),
-            "reduced_word": reduced,
+            "target_word": raw_word,
             "survivor_original_indices": survivor_indices,
             "survivor_passage_ids": survivor_passage_ids,
             "cancelled_original_index_pairs": cancellations,
@@ -112,8 +112,6 @@ def build() -> dict:
         include_self=True,
         require_unique_projection_points=True,
     )
-    if len(crossings) != 1168:
-        raise AssertionError("generic actual-word railroad crossing count changed")
     pairwise = pairwise_linking_matrix(order, crossings)
     result = {
         "schema": "t73_actual_railroad_core_coordinates/v1",
@@ -133,7 +131,7 @@ def build() -> dict:
             "actual reduced letters on y/z rails with component x-offset, "
             "quadratic rational height perturbation, and two-vertex outer closure"
         ),
-        "completion_status": "SOURCE_BOUND_RAILROAD_CORE_COORDINATES_CANDIDATE",
+        "completion_status": "SOURCE_BOUND_RAW_PASSAGE_RAILROAD_CORE_COORDINATES_CANDIDATE",
     }
     result["sha256"] = canonical_sha(result)
     return result

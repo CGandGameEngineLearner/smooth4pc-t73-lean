@@ -17,9 +17,9 @@ class ReducedSourceConnectorProvenanceTest(unittest.TestCase):
         result = module.verify()
         self.assertEqual(
             result["verdict"],
-            "PASS_ALL_REDUCED_EDGES_ACTUAL_CONNECTOR_PROVENANCE",
+            "PASS_ALL_RAW_TARGET_EDGES_ACTUAL_CONNECTOR_PROVENANCE",
         )
-        self.assertEqual(result["reduced_edges"], 1780)
+        self.assertEqual(result["reduced_edges"], 1785)
         self.assertEqual(result["raw_connector_cells"], 1785)
 
 

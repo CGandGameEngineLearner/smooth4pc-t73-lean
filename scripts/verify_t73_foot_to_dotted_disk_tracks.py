@@ -90,7 +90,7 @@ def verify() -> dict:
             moves += 1
         if current != targets:
             raise AssertionError("marked-disk track replay missed a target")
-    if moves != 1779 or data["move_count"] != moves:
+    if moves != 1785 or data["move_count"] != moves:
         raise AssertionError("marked-disk move count changed")
     return {
         "verdict": "PASS_EXPLICIT_REFLECTION_PAIRED_MARKED_DISK_TRACKS",

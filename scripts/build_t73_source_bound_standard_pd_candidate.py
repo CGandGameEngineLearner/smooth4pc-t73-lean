@@ -45,7 +45,7 @@ def build() -> dict:
         for entry in handle["entries"]
     }
     words = {
-        record["name"]: record["reduced_word"] for record in core["components"]
+        record["name"]: record["target_word"] for record in core["components"]
     }
     crossings = []
     for crossing in core["crossings"]:
@@ -62,7 +62,7 @@ def build() -> dict:
     for component in core["components"]:
         name = component["name"]
         for letter_index, (letter, passage_id) in enumerate(
-            zip(component["reduced_word"], component["survivor_passage_ids"])
+            zip(component["target_word"], component["survivor_passage_ids"])
         ):
             handle = "y" if abs(letter) == 2 else "z"
             dotted = f"dotted_{handle}"
@@ -108,26 +108,13 @@ def build() -> dict:
                     "dotted_segment_pair"
                 ],
             })
-    crossings.append({
-        "projection_point": ["4", "2"],
-        "over_owner": "r_zx",
-        "under_owner": "r_zx",
-        "over_segment": 0,
-        "under_segment": 1,
-        "over_parameter": "1/3",
-        "under_parameter": "2/3",
-        "over_height": "1",
-        "under_height": "0",
-        "sign": 1,
-        "kind": "split_unknot_reidemeister_I",
-    })
     for index, crossing in enumerate(crossings):
         crossing["id"] = f"X{index}"
     pd, cycles, crossingless = pd_and_cycles(COMPONENT_ORDER, crossings)
     if crossingless:
         raise AssertionError(f"PD insertion lost components: {crossingless}")
     pairwise = pairwise_linking_matrix(COMPONENT_ORDER, crossings)
-    if len(crossings) != 4727:
+    if len(crossings) != 4748:
         raise AssertionError("source-bound standard PD crossing count changed")
     exponent_sums = {
         name: {

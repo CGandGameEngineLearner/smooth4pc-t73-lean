@@ -28,14 +28,13 @@ def verify() -> dict:
     if data["railroad_core_coordinates_sha256"] != core["sha256"] or data["actual_railroad_word_binding_sha256"] != railroad["sha256"] or data["final_yz_foot_state_sha256"] != foot_state["sha256"] or data["railroad_product_framings_sha256"] != framings["sha256"] or data["foot_to_dotted_slot_map_sha256"] != slot_map["sha256"]:
         raise AssertionError("standard PD candidate has stale sources")
     crossings = data["crossings"]
-    if len(crossings) != 4727 or len(data["standard_pd_code"]) != 4727:
+    if len(crossings) != 4748 or len(data["standard_pd_code"]) != 4748:
         raise AssertionError("standard PD crossing/row count changed")
     kinds = Counter(crossing["kind"] for crossing in crossings)
     if kinds != {
-        "exact_railroad_core_crossing": 1168,
-        "local_dotted_hopf_clasp_first": 1779,
-        "local_dotted_hopf_clasp_second": 1779,
-        "split_unknot_reidemeister_I": 1,
+        "exact_railroad_core_crossing": 1178,
+        "local_dotted_hopf_clasp_first": 1785,
+        "local_dotted_hopf_clasp_second": 1785,
     }:
         raise AssertionError("standard PD crossing provenance changed")
     arc_incidence = Counter(
@@ -72,7 +71,7 @@ def verify() -> dict:
         passage_id = crossing.get("source_passage_id")
         if passage_id is not None:
             by_passage.setdefault(passage_id, []).append(crossing)
-    if len(by_passage) != 1779:
+    if len(by_passage) != 1785:
         raise AssertionError("dotted clasp insertions lost a surviving passage")
     for insertion in data["dotted_insertions"]:
         pair = by_passage[insertion["source_passage_id"]]
@@ -132,14 +131,14 @@ def verify() -> dict:
     return {
         "verdict": "PASS_SOURCE_BOUND_STANDARD_PD_COMBINATORICS_ONLY",
         "components": 7,
-        "crossings": 4727,
-        "pd_rows": 4727,
+        "crossings": 4748,
+        "pd_rows": 4748,
         "arc_labels": len(arc_incidence),
-        "dotted_hopf_clasps": 1779,
+        "dotted_hopf_clasps": 1785,
         "pairwise_linking_matrix": matrix,
         "framing_status": "PASS_TARGET_ONLY",
         "hybrid_to_railroad_isotopy": "OPEN",
-        "spherogram_status": "OPEN_RESOURCE_LIMIT_AT_4727_CROSSINGS",
+        "spherogram_status": "OPEN_RESOURCE_LIMIT_AT_4748_CROSSINGS",
     }
 
 

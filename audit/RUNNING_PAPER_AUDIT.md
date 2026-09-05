@@ -2872,7 +2872,7 @@ Topology-source checks completed 2026-09-04:
   must be included before linking numbers or PD incidence are computed.
   Verdict: `PASS_FAIL_CLOSED_ACTUAL_RAILROAD_PD_GAP`.
 
-### F-573 — A complete railroad polygon gives a 4727-row source-bound target PD with five zero framings
+### F-573 — A complete raw-passage railroad polygon gives a 4748-row source-bound target PD with five zero framings
 
 - Severity: **kappa_AR target diagram / complete target, source isotopy open**
 - Status: **TARGET PD AND FRAMINGS PASS; HYBRID-TO-RAILROAD ISOTOPY OPEN**
@@ -2880,38 +2880,38 @@ Topology-source checks completed 2026-09-04:
   `geometry/t73_railroad_product_framings.json`,
   `geometry/t73_source_bound_standard_pd_candidate.json`, their builders,
   three independent verifiers, and tests.
-- Core coordinates: every reduced word letter is placed on its y/z rail with
+- Core coordinates: every one of the 1785 raw passage letters is placed on its y/z rail with
   a component x-offset and quadratic rational height perturbation; two exterior
   vertices close each nonempty component. r_zx is a disjoint rational diamond.
-  The three free-reduction pairs map back to original passage ids. Exact generic
-  projection gives 1168 crossings, no self degeneracy, and a zero 5-by-5
+  No free-reduction isotopy is assumed. Exact generic projection gives 1178
+  crossings, no self degeneracy, and a zero 5-by-5
   pairwise linking matrix. Scope remains a source-bound coordinate candidate
   because the source isotopy is absent.
-- Dotted insertion: each of 1779 surviving letters receives a local
-  two-crossing same-sign Hopf clasp with its dotted component. A Reidemeister-I
-  kink retains the split r_zx unknot. Together with the 1168 core crossings
-  this gives 4727 crossings and 9454 arc labels; every label occurs twice and
+- Dotted insertion: each of 1785 raw letters receives a local two-crossing
+  same-sign Hopf clasp with its dotted component. r_zx remains a four-passage
+  component rather than being reduced away. Together with the 1178 core
+  crossings this gives 4748 crossings and 9496 arc labels; every label occurs twice and
   all seven halfedge cycles close.
 - Linking: exact signed sums give m2 linking `(40,269)` with dotted y/z and m3
   `(189,1271)`; all other core-core and core-dotted entries vanish. These are
   derived from actual reduced words.
-- Target framings: constant generic pushes give a ten-curve diagram with 5144
+- Target framings: constant generic pushes give a ten-curve diagram with 5184
   exact crossings. All five core/push linking numbers are zero, hence integer
   surgery framings `{m2:0,m3:0,r_xy:0,r_yz:0,r_zx:0}`. Verdict:
   `PASS_RAILROAD_TARGET_FIVE_ZERO_PRODUCT_FRAMINGS`.
 - PD verdict: `PASS_SOURCE_BOUND_STANDARD_PD_COMBINATORICS_ONLY`, with target
   framing PASS and source-isotopy OPEN. Spherogram was tried with recursion
-  limit 50000 but reached about 9 GB at 4727 crossings; this is recorded as a
+  limit 50000 but reached about 9 GB at the earlier 4727-crossing version; this is recorded as a
   resource limitation, not a mathematical result.
 - Boundary: construct an explicit framed PL isotopy/collapse from the F-566
-  hybrid component cells to these railroad polygons, including the m3 and
-  r_zx free-reduction bigons and every central connector. Only then can this
+  hybrid component cells to these raw-passage railroad polygons and every
+  central connector. Only then can this
   target be promoted to actual kappa_AR and fed into W2.
 
-### F-574 — The m3 and r_zx free reductions are realized by three explicit local bigon tubes
+### F-574 — The proposed m3 and r_zx reductions currently have endpoint tubes only
 
 - Severity: **hybrid-to-railroad isotopy / verified reduction prefix**
-- Status: **THREE BIGON MOVES PASS; CENTRAL CONNECTOR TRANSPORT OPEN**
+- Status: **CANDIDATE ENDPOINT TUBES PASS; CONNECTOR SPANNING SURFACES OPEN**
 - Evidence: `scripts/build_t73_final_free_reduction_bigons.py`,
   `scripts/verify_t73_final_free_reduction_bigons.py`,
   `geometry/t73_final_free_reduction_bigons.json`, and its test.
@@ -2919,7 +2919,7 @@ Topology-source checks completed 2026-09-04:
   `x_replacement:269:m1_z` of orientation +1. On r_zx, the inner pair
   `x_replacement:1511:m1_z` / `r_zx:z:edge:4` is removed first, followed by
   the outer pair `r_zx:z:edge:0` / `x_replacement:1512:m1_z`.
-- Geometry: each move uses a two-triangle standard bigon whose four boundary
+- Candidate geometry: each record uses a two-triangle standard bigon whose four boundary
   edges are the two inverse handle passages and the two foot-side connectors.
   A tube radius squared equal to one sixteenth of the exact minimum distance
   squared from its four selected endpoints to every other z-foot endpoint is
@@ -2927,13 +2927,11 @@ Topology-source checks completed 2026-09-04:
   without another marked endpoint.
 - Replay: cyclic adjacency, opposite orientations, before/after passage lists,
   content hashes, and inverse insertion are recomputed at every move. The
-  output states equal the 1460 m3 and empty r_zx survivor lists used by the
-  railroad coordinates. Verdict:
-  `PASS_THREE_FINAL_FREE_REDUCTION_BIGON_TUBES`.
-- Boundary: the local word reductions are now actual. The remaining
-  hybrid-to-railroad map must transport all 1779 surviving passage germs and
-  their central/hybrid connector cells, with normal fields and an explicit
-  inverse; the target PD alone cannot supply that source isotopy.
+  candidate output lengths are 1460 for m3 and zero for r_zx. Verdict:
+  `PASS_FREE_REDUCTION_ENDPOINT_TUBES_ONLY`.
+- Boundary: endpoint separation does not prove that the full central connector
+  boundary spans the bigon. These reductions are not used in the authoritative
+  raw-passage kappa path, which retains all 1785 events.
 
 ### F-575 — The reduced hybrid and railroad framed 1-skeleta are explicitly isomorphic
 
@@ -2942,17 +2940,16 @@ Topology-source checks completed 2026-09-04:
 - Evidence: `scripts/build_t73_hybrid_to_railroad_graph_map.py`,
   `scripts/verify_t73_hybrid_to_railroad_graph_map.py`,
   `geometry/t73_hybrid_to_railroad_graph_map.json`, and its test.
-- Vertex map: 1779 surviving passage events and one residual r_zx split-circle
-  basepoint map to the exact railroad event vertices. Of the x replacements,
-  1510 survive and bind directly to their F-566 transition hashes; the other
-  three occur in the F-574 bigon collapses. Every base/dual event binds to its
+- Vertex map: all 1785 raw passage events map to exact railroad event vertices.
+  All 1513 x replacements bind directly to their F-566 transition hashes.
+  Every base/dual event binds to its
   complete F-569 passage record.
 - Edge map: each ordinary cyclic source connector maps to one railroad segment;
   each nonempty component closure maps to its three-segment exterior chain.
   The zero-word r_zx residual edge maps around the four-segment split diamond.
   For every component, target segments form a disjoint exhaustive partition.
 - Framing: each component map carries the independently verified railroad push
-  vector. Exact totals are V=1780, E=1780, five cyclic components, and 3560
+  vector. Exact totals are V=1785, E=1785, five cyclic components, and 3570
   source cells. Verdict:
   `PASS_HYBRID_TO_RAILROAD_FRAMED_GRAPH_ISOMORPHISM_ONLY`.
 - Boundary: graph incidence and target framing do not prove ambient isotopy of
@@ -2973,7 +2970,7 @@ Topology-source checks completed 2026-09-04:
   glued cyclically; source graph edges are subdivided according to their F-575
   target segment ranges. The source and target use the identical finite
   template, so the vertex/tetrahedron map is explicit identity on template ids.
-- Verification: the five templates have 5373 tetrahedra and 10746 boundary
+- Verification: the five templates have 5385 tetrahedra and 10770 boundary
   triangles. Tetrahedral face incidence gives a 3-manifold with boundary;
   each component and boundary has Euler characteristic zero, and every
   boundary edge occurs twice. Source subdivisions form a disjoint exhaustive
@@ -2985,22 +2982,22 @@ Topology-source checks completed 2026-09-04:
 - Boundary: a framed link-neighborhood homeomorphism does not automatically
   extend over the complement. The remaining kappa_AR gate is a cellwise
   homeomorphism of the genus-two handlebody/0-handle complement, matching all
-  10746 boundary triangles and the two dotted-handle meridian/longitude data,
+  10770 boundary triangles and the two dotted-handle meridian/longitude data,
   together with its inverse.
 
 ### F-577 — All surviving foot marks have explicit reflection-paired tracks to their dotted slots
 
 - Severity: **kappa_AR complement boundary / marked disks**
-- Status: **1779 MARKED CONFIGURATION TRACKS PASS**
+- Status: **1785 MARKED CONFIGURATION TRACKS PASS**
 - Evidence: `geometry/t73_foot_to_dotted_slot_map.json`,
   `geometry/t73_foot_to_dotted_disk_tracks.json`, their builders, independent
   verifiers, and tests.
 - Ordering: `lane_0+lane_1/1009` is injective on both surviving marked
-  configurations. It gives 235 y slots and 1544 z slots; their 3558 dotted
+  configurations. It gives 235 y slots and 1550 z slots; their 3570 dotted
   segment ids form disjoint exhaustive partitions.
 - Tracks: points move sequentially inside a normalized convex disk. Each path
   has two rational segments through the first canonical waypoint avoiding all
-  fixed marks. Replay checks 1779 moves and 2,437,382 exact incidences.
+  fixed marks. Replay checks 1785 moves and 2,455,940 exact incidences.
 - Reflection: identical normalized paths in the two physical feet are exchanged
   by the Figure-2a reflection; reversing move order and paths is the inverse.
   Verdict: `PASS_EXPLICIT_REFLECTION_PAIRED_MARKED_DISK_TRACKS`.
@@ -3010,22 +3007,50 @@ Topology-source checks completed 2026-09-04:
 ### F-578 — Every reduced connector edge is partitioned into actual source connector cells
 
 - Severity: **kappa_AR complement source / connector provenance**
-- Status: **1780 REDUCED EDGES BOUND TO 1785 ACTUAL RAW CELLS**
+- Status: **1785 RAW TARGET EDGES BOUND ONE-TO-ONE TO ACTUAL CELLS**
 - Evidence: `scripts/build_t73_reduced_source_connector_provenance.py`,
   `scripts/verify_t73_reduced_source_connector_provenance.py`,
   `geometry/t73_reduced_source_connector_provenance.json`, and its test.
 - Johnson cells: all 311 m2 and 1462 m3 raw connector cells bind by hash to
   the 1773 `central_connector` records in the Johnson spine embedding. Dual
   components contribute 12 actual square-boundary connector cells.
-- Bigon composition: one m3 reduced edge is an ordered composite of three raw
-  cells; the residual r_zx circle is the composite of four. All other reduced
-  edges use one cell. No raw connector id is duplicated or omitted.
+- Raw target: no free reduction is used, so every target edge retains exactly
+  one raw source connector cell. No raw connector id is duplicated or omitted.
 - Target incidence: each reduced edge retains its F-575 endpoints and exhaustive
   railroad segment range. Verdict:
-  `PASS_ALL_REDUCED_EDGES_ACTUAL_CONNECTOR_PROVENANCE`.
+  `PASS_ALL_RAW_TARGET_EDGES_ACTUAL_CONNECTOR_PROVENANCE`.
 - Boundary: provenance is not yet an ambient track. The next step must use the
   stored Johnson/dual coordinates to build disjoint edge tracks to the railroad
   connectors and extend over the remaining 0-handle complement.
+
+### F-579 — The complete actual source-connector projection is verified in a hash-bound external cache
+
+- Severity: **kappa_AR complement source / exact crossing data**
+- Status: **FULL 1,758,060-CROSSING SOURCE PROJECTION PASS; SIMPLIFICATION TRACKS OPEN**
+- Evidence: `scripts/build_t73_actual_source_connector_projection.py`,
+  `scripts/build_t73_actual_source_connector_projection_receipt.py`,
+  `audit/t73_actual_source_connector_projection_receipt.json`, and the full
+  cache file named in that receipt.
+- Geometry: all 1773 actual Johnson central connectors and the three closed
+  dual curves give 7116 source segments. The projection
+  `(x+z/1000003, y+z/1000003^2)` is a near-XY perturbation of the plane used by
+  the Johnson bend construction; it removes vertical-segment collapse without
+  destroying the stored level structure. Cyclic first/last adjacency of each
+  dual curve is excluded correctly.
+- Full exact run: Shapely screens 4,791,364 AABB candidates and every survivor
+  is evaluated by Fraction equations. The result has 1,758,060 crossings and
+  no equal-height actual intersection, projected vertex crossing, or repeated
+  crossing point. The 1.68-GB JSON remains in the user cache rather than Git.
+- Receipt: ijson streams the crossing array to compute its canonical SHA,
+  owner-pair counts/signed sums, first/last records, and total count; a second
+  streaming pass hashes the full file. The 3.3-KB committed receipt also binds
+  builder bytes and all source SHAs. Fast verdict:
+  `PASS_SOURCE_CONNECTOR_PROJECTION_RECEIPT`.
+- Boundary: the source crossing ledger is complete but far from a minimal
+  diagram. An actual ambient simplification/edge-track sequence must connect
+  these source connector cells to the 1178-crossing raw railroad target while
+  preserving the marked-disk and tubular-neighborhood maps. Crossing-count
+  disparity alone is not an isotopy proof.
 
 ### F-600 — The “actual” sphere-system builder assigns, rather than constructs, the embedding in \(\partial W_2\)
 

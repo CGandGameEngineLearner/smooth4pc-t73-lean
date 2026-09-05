@@ -39,10 +39,7 @@ def build() -> dict:
         name = component["name"]
         points = [point(value) for value in component["vertices"]]
         epsilon = Fraction(component_index + 1, 10**9)
-        if name == "r_zx":
-            push_vector = (epsilon, 2 * epsilon, 3 * epsilon)
-        else:
-            push_vector = (-epsilon, -epsilon, -epsilon)
+        push_vector = (-epsilon, -epsilon, -epsilon)
         pushed = [
             tuple(value[axis] + push_vector[axis] for axis in range(3))
             for value in points
@@ -56,8 +53,8 @@ def build() -> dict:
             "push_vector": encode(push_vector),
             "push_vertices": [encode(value) for value in pushed],
             "transport_rule": (
-                "constant generic vector on the zero-twist railroad product collar; "
-                "r_zx uses the positive asymmetric vector to avoid a collinear diamond projection"
+                "constant negative-diagonal generic vector on the zero-twist "
+                "raw-passage railroad product collar"
             ),
         })
     basis = [(Fraction(1), Fraction(0), Fraction(0)), (Fraction(0), Fraction(1), Fraction(0))]

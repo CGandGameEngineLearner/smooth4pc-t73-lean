@@ -16,10 +16,11 @@ class FinalFreeReductionBigonsTest(unittest.TestCase):
         spec.loader.exec_module(module)
         result = module.verify()
         self.assertEqual(
-            result["verdict"], "PASS_THREE_FINAL_FREE_REDUCTION_BIGON_TUBES"
+            result["verdict"], "PASS_FREE_REDUCTION_ENDPOINT_TUBES_ONLY"
         )
         self.assertEqual(result["moves"], 3)
         self.assertTrue(result["all_inverse_moves"])
+        self.assertEqual(result["connector_spanning_surfaces"], "OPEN")
 
 
 if __name__ == "__main__":

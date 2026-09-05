@@ -19,8 +19,8 @@ class FootToDottedDiskTracksTest(unittest.TestCase):
             result["verdict"],
             "PASS_EXPLICIT_REFLECTION_PAIRED_MARKED_DISK_TRACKS",
         )
-        self.assertEqual(result["moves"], 1779)
-        self.assertEqual(result["reflection_checks"], 1779)
+        self.assertEqual(result["moves"], 1785)
+        self.assertEqual(result["reflection_checks"], 1785)
 
 
 if __name__ == "__main__":

@@ -11,7 +11,6 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "geometry/t73_reduced_source_connector_provenance.json"
 CYCLES = ROOT / "geometry/t73_final_component_passage_cycles.json"
-BIGONS = ROOT / "geometry/t73_final_free_reduction_bigons.json"
 GRAPH = ROOT / "geometry/t73_hybrid_to_railroad_graph_map.json"
 SPINE = ROOT / "geometry/t73_johnson_spine_embedding.json"
 AR_LINK = ROOT / "geometry/t73_actual_ar_link.json"
@@ -25,15 +24,13 @@ def canonical_sha(value) -> str:
 def verify() -> dict:
     data = json.loads(DATA.read_text(encoding="utf-8"))
     cycles = json.loads(CYCLES.read_text(encoding="utf-8"))
-    bigons = json.loads(BIGONS.read_text(encoding="utf-8"))
     graph = json.loads(GRAPH.read_text(encoding="utf-8"))
     spine = json.loads(SPINE.read_text(encoding="utf-8"))
     ar_link = json.loads(AR_LINK.read_text(encoding="utf-8"))
-    if data["completion_status"] != "ALL_REDUCED_EDGES_BOUND_TO_ACTUAL_SOURCE_CONNECTOR_CELLS":
+    if data["completion_status"] != "ALL_RAW_TARGET_EDGES_BOUND_TO_ACTUAL_SOURCE_CONNECTOR_CELLS":
         raise AssertionError("source connector provenance scope changed")
     expected_hashes = {
         "final_component_passage_cycles_sha256": cycles["sha256"],
-        "free_reduction_bigons_sha256": bigons["sha256"],
         "hybrid_to_railroad_graph_map_sha256": graph["sha256"],
         "johnson_spine_embedding_sha256": spine["sha256"],
         "actual_ar_link_sha256": ar_link["sha256"],
@@ -80,16 +77,15 @@ def verify() -> dict:
     used_central_ids = {value for value in raw_ids if value in central}
     if used_central_ids != expected_central_ids or len(used_central_ids) != 1773:
         raise AssertionError("Johnson central connector coverage changed")
-    if composite_lengths["m_3"] != {1: 1459, 3: 1} or composite_lengths["r_zx"] != {4: 1}:
-        raise AssertionError("bigon-composed connector lengths changed")
+    if any(lengths != {1: sum(lengths.values())} for lengths in composite_lengths.values()):
+        raise AssertionError("raw-target connector edges are not one-to-one")
     return {
-        "verdict": "PASS_ALL_REDUCED_EDGES_ACTUAL_CONNECTOR_PROVENANCE",
+        "verdict": "PASS_ALL_RAW_TARGET_EDGES_ACTUAL_CONNECTOR_PROVENANCE",
         "reduced_edges": data["reduced_edge_count"],
         "raw_connector_cells": len(raw_ids),
         "johnson_central_connectors": len(used_central_ids),
         "dual_boundary_connectors": len(raw_ids) - len(used_central_ids),
-        "m3_three_cell_composites": composite_lengths["m_3"][3],
-        "rzx_four_cell_composites": composite_lengths["r_zx"][4],
+        "multi_cell_composites": 0,
     }
 
 

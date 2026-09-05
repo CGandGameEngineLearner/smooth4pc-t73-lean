@@ -92,7 +92,7 @@ def build() -> dict:
                 "negative and positive foot endpoints of one passage share one target slot"
             ),
         })
-    if [item["surviving_passage_count"] for item in handles] != [235, 1544]:
+    if [item["surviving_passage_count"] for item in handles] != [235, 1550]:
         raise AssertionError("surviving y/z dotted slot counts changed")
     result = {
         "schema": "t73_foot_to_dotted_slot_map/v1",

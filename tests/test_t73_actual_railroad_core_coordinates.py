@@ -19,10 +19,10 @@ class ActualRailroadCoreCoordinatesTest(unittest.TestCase):
         result = module.verify()
         self.assertEqual(
             result["verdict"],
-            "PASS_SOURCE_BOUND_RAILROAD_CORE_COORDINATES_CANDIDATE",
+            "PASS_SOURCE_BOUND_RAW_PASSAGE_RAILROAD_CORE_COORDINATES_CANDIDATE",
         )
-        self.assertEqual(result["crossings"], 1168)
-        self.assertEqual(result["surviving_passage_events"], 1779)
+        self.assertEqual(result["crossings"], 1178)
+        self.assertEqual(result["surviving_passage_events"], 1785)
         self.assertEqual(result["actual_isotopy_to_hybrid_state"], "OPEN")
 
 

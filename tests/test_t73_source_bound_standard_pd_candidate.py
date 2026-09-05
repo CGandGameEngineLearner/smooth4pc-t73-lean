@@ -19,7 +19,7 @@ class SourceBoundStandardPDCandidateTest(unittest.TestCase):
             result["verdict"], "PASS_SOURCE_BOUND_STANDARD_PD_COMBINATORICS_ONLY"
         )
         self.assertEqual(result["components"], 7)
-        self.assertEqual(result["crossings"], 4727)
+        self.assertEqual(result["crossings"], 4748)
         self.assertEqual(result["framing_status"], "PASS_TARGET_ONLY")
 
 

@@ -125,46 +125,55 @@ crossings and connector counts `84,378,4,4,0`. Verify with
 `python3 scripts/verify_t73_final_railroad_word_binding.py`.
 The corrected target continues with
 [`geometry/t73_actual_railroad_core_coordinates.json`](geometry/t73_actual_railroad_core_coordinates.json)
-(1168 exact generic core crossings),
+(1178 exact generic raw-passage core crossings),
 [`geometry/t73_railroad_product_framings.json`](geometry/t73_railroad_product_framings.json)
 (five zero-linking target push-offs), and
 [`geometry/t73_source_bound_standard_pd_candidate.json`](geometry/t73_source_bound_standard_pd_candidate.json).
-The latter has 4727 standard PD rows, 9454 arc labels, and 1779 passage-bound
+The latter has 4748 standard PD rows, 9496 arc labels, and 1785 passage-bound
 dotted Hopf clasps. Its verdict is
 `PASS_SOURCE_BOUND_STANDARD_PD_COMBINATORICS_ONLY`: target framings pass, but
 the framed hybrid-to-railroad isotopy remains open. The rejected diagonal-only
 closure is retained in
 [`audit/t73_actual_railroad_standard_pd_gap.json`](audit/t73_actual_railroad_standard_pd_gap.json).
-The three explicit free-reduction isotopies are saved in
+Three optional free-reduction endpoint-tube candidates are saved in
 [`geometry/t73_final_free_reduction_bigons.json`](geometry/t73_final_free_reduction_bigons.json).
-They cancel one inverse pair on m3 and two nested pairs on r_zx in disjoint
-z-foot regular-neighborhood tubes. Rebuild/check with
+They identify one inverse pair on m3 and two nested pairs on r_zx using
+disjoint z-foot endpoint tubes, but do not contain the central-connector
+spanning surfaces. Rebuild/check with
 `build_t73_final_free_reduction_bigons.py --check` and
 `verify_t73_final_free_reduction_bigons.py`; verdict:
-`PASS_THREE_FINAL_FREE_REDUCTION_BIGON_TUBES`.
+`PASS_FREE_REDUCTION_ENDPOINT_TUBES_ONLY`. They are not used by the raw-passage
+kappa path.
 The surviving framed 1-skeleton map is
 [`geometry/t73_hybrid_to_railroad_graph_map.json`](geometry/t73_hybrid_to_railroad_graph_map.json).
-It maps 1780 source vertices and 1780 connector edges bijectively onto all
-railroad event/segment cells, including 1510 surviving hybrid replacements and
-the residual r_zx split circle. Verify with
+It maps 1785 source vertices and 1785 connector edges bijectively onto all
+raw-passage railroad event/segment cells, including all 1513 hybrid
+replacements. Verify with
 `verify_t73_hybrid_to_railroad_graph_map.py`. Verdict:
 `PASS_HYBRID_TO_RAILROAD_FRAMED_GRAPH_ISOMORPHISM_ONLY`; ambient tracks remain
 open.
 The graph map extends over all five framed regular neighborhoods in
 [`geometry/t73_hybrid_to_railroad_tubular_map.json`](geometry/t73_hybrid_to_railroad_tubular_map.json).
-Its five solid-torus templates contain 5373 tetrahedra and 10746 boundary
+Its five solid-torus templates contain 5385 tetrahedra and 10770 boundary
 triangles, with identity closing fiber maps and zero relative twists. Verify
 with `verify_t73_hybrid_to_railroad_tubular_map.py`; only the handlebody
 complement extension remains open.
 The complement boundary data now include
 [`geometry/t73_foot_to_dotted_slot_map.json`](geometry/t73_foot_to_dotted_slot_map.json)
-and 1779 explicit reflection-paired paths in
+and 1785 explicit reflection-paired paths in
 [`geometry/t73_foot_to_dotted_disk_tracks.json`](geometry/t73_foot_to_dotted_disk_tracks.json).
 Their verifier performs 2,437,382 exact fixed-point collision checks. Every
 reduced source edge is also bound to its raw geometry in
 [`geometry/t73_reduced_source_connector_provenance.json`](geometry/t73_reduced_source_connector_provenance.json):
 1773 Johnson central connectors and 12 dual-boundary connectors partition all
-1780 reduced edges.
+1785 raw target edges one-to-one.
+The exact native source-connector projection is too large for Git and is kept
+at `C:\Users\Administrator\.cache\t73_actual_source_connector_projection.full.json`
+(about 1.68 GB). Its compact receipt is
+[`audit/t73_actual_source_connector_projection_receipt.json`](audit/t73_actual_source_connector_projection_receipt.json):
+7116 segments, 4,791,364 broad candidates, and 1,758,060 exact crossings.
+Regenerate with `build_t73_actual_source_connector_projection.py --write` and
+stream/check with `build_t73_actual_source_connector_projection_receipt.py`.
 
 Separately, the C-cut 44-lane candidate realization is
 [`geometry/t73_y_foot_lane_candidate.json`](geometry/t73_y_foot_lane_candidate.json):

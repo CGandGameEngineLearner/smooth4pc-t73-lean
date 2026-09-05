@@ -34,7 +34,7 @@ def verify() -> dict:
     cycles = json.loads(CYCLES.read_text(encoding="utf-8"))
     foot_state = json.loads(FOOT_STATE.read_text(encoding="utf-8"))
     railroad = json.loads(RAILROAD.read_text(encoding="utf-8"))
-    if data["completion_status"] != "THREE_FINAL_FREE_REDUCTION_BIGONS_CONSTRUCTED":
+    if data["completion_status"] != "CANDIDATE_FREE_REDUCTION_ENDPOINT_TUBES_CONNECTOR_SURFACES_OPEN":
         raise AssertionError("free-reduction bigon scope changed")
     if data["final_component_passage_cycles_sha256"] != cycles["sha256"] or data["final_yz_foot_state_sha256"] != foot_state["sha256"] or data["railroad_core_coordinates_sha256"] != railroad["sha256"]:
         raise AssertionError("free-reduction bigons have stale sources")
@@ -103,16 +103,16 @@ def verify() -> dict:
         ) != 4:
             raise AssertionError("standard reduction bigon is not a disk")
         state_by_component[component] = output
-    survivors = {item["name"]: item["survivor_passage_ids"] for item in railroad["components"]}
-    if state_by_component["m_3"] != survivors["m_3"] or state_by_component["r_zx"] != survivors["r_zx"]:
-        raise AssertionError("bigon sequence does not reach railroad survivors")
+    if len(state_by_component["m_3"]) != 1460 or state_by_component["r_zx"]:
+        raise AssertionError("candidate bigon word reductions changed")
     return {
-        "verdict": "PASS_THREE_FINAL_FREE_REDUCTION_BIGON_TUBES",
+        "verdict": "PASS_FREE_REDUCTION_ENDPOINT_TUBES_ONLY",
         "moves": len(data["moves"]),
         "m3_removed_passages": 2,
         "rzx_removed_passages": 4,
         "minimum_tube_radius_squared": str(minimum_radius_squared),
         "all_inverse_moves": True,
+        "connector_spanning_surfaces": "OPEN",
     }
 
 

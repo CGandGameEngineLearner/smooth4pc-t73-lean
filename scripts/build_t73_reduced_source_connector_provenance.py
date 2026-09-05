@@ -10,7 +10,6 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 CYCLES = ROOT / "geometry/t73_final_component_passage_cycles.json"
-BIGONS = ROOT / "geometry/t73_final_free_reduction_bigons.json"
 GRAPH_MAP = ROOT / "geometry/t73_hybrid_to_railroad_graph_map.json"
 SPINE = ROOT / "geometry/t73_johnson_spine_embedding.json"
 AR_LINK = ROOT / "geometry/t73_actual_ar_link.json"
@@ -64,7 +63,6 @@ def collapse_adjacent_pair(nodes, first_id, second_id):
 
 def build() -> dict:
     cycles = json.loads(CYCLES.read_text(encoding="utf-8"))
-    bigons = json.loads(BIGONS.read_text(encoding="utf-8"))
     graph = json.loads(GRAPH_MAP.read_text(encoding="utf-8"))
     spine = json.loads(SPINE.read_text(encoding="utf-8"))
     ar_link = json.loads(AR_LINK.read_text(encoding="utf-8"))
@@ -104,14 +102,6 @@ def build() -> dict:
             ]
         nodes = initial_cycle(component, passage_ids, raw_connectors)
         residual = None
-        for move in bigons["moves"]:
-            if move["component"] != component:
-                continue
-            nodes, current_residual = collapse_adjacent_pair(
-                nodes, move["first_passage_id"], move["second_passage_id"]
-            )
-            if current_residual is not None:
-                residual = current_residual
         reduced_edges = []
         if nodes:
             edge_by_source = {
@@ -155,14 +145,13 @@ def build() -> dict:
     result = {
         "schema": "t73_reduced_source_connector_provenance/v1",
         "final_component_passage_cycles_sha256": cycles["sha256"],
-        "free_reduction_bigons_sha256": bigons["sha256"],
         "hybrid_to_railroad_graph_map_sha256": graph["sha256"],
         "johnson_spine_embedding_sha256": spine["sha256"],
         "actual_ar_link_sha256": ar_link["sha256"],
         "components": component_records,
         "reduced_edge_count": sum(item["reduced_edge_count"] for item in component_records),
         "raw_connector_cell_count": len(all_raw_ids),
-        "completion_status": "ALL_REDUCED_EDGES_BOUND_TO_ACTUAL_SOURCE_CONNECTOR_CELLS",
+        "completion_status": "ALL_RAW_TARGET_EDGES_BOUND_TO_ACTUAL_SOURCE_CONNECTOR_CELLS",
     }
     result["sha256"] = canonical_sha(result)
     return result
@@ -178,7 +167,7 @@ def main() -> None:
         OUTPUT.write_text(json.dumps(result, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     if args.check and json.loads(OUTPUT.read_text(encoding="utf-8")) != result:
         raise AssertionError("reduced source connector provenance is stale")
-    print("T73_REDUCED_CONNECTORS=ALL_REDUCED_EDGES_BOUND_TO_ACTUAL_SOURCE_CONNECTOR_CELLS")
+    print("T73_REDUCED_CONNECTORS=ALL_RAW_TARGET_EDGES_BOUND_TO_ACTUAL_SOURCE_CONNECTOR_CELLS")
 
 
 if __name__ == "__main__":

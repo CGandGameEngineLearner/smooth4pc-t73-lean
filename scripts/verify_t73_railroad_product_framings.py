@@ -33,11 +33,7 @@ def verify() -> dict:
         name = component["name"]
         points = [point(value) for value in component["vertices"]]
         epsilon = Fraction(component_index + 1, 10**9)
-        expected_vector = (
-            (epsilon, 2 * epsilon, 3 * epsilon)
-            if name == "r_zx"
-            else (-epsilon, -epsilon, -epsilon)
-        )
+        expected_vector = (-epsilon, -epsilon, -epsilon)
         if point(records[name]["push_vector"]) != expected_vector:
             raise AssertionError("railroad push vector changed")
         pushed = [
@@ -55,7 +51,7 @@ def verify() -> dict:
     crossings = curve_crossings(
         curves, basis, height, include_self=True, require_unique_projection_points=True
     )
-    if crossings != data["framed_crossings"] or len(crossings) != 5144:
+    if crossings != data["framed_crossings"] or len(crossings) != 5184:
         raise AssertionError("railroad framed crossing list changed")
     names = [curve["name"] for curve in curves]
     linking = pairwise_linking_matrix(names, crossings)

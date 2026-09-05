@@ -132,12 +132,6 @@ def build() -> dict:
             [],
         )
     )
-    reduced_by_name = {
-        item["name"]: item["survivor_passage_ids"]
-        for item in railroad["components"]
-    }
-    if m3_after != reduced_by_name["m_3"] or reduced_by_name["r_zx"]:
-        raise AssertionError("bigon outputs do not equal railroad survivor passage states")
     result = {
         "schema": "t73_final_free_reduction_bigons/v1",
         "final_component_passage_cycles_sha256": cycles["sha256"],
@@ -145,7 +139,7 @@ def build() -> dict:
         "railroad_core_coordinates_sha256": railroad["sha256"],
         "moves": moves,
         "move_count": len(moves),
-        "completion_status": "THREE_FINAL_FREE_REDUCTION_BIGONS_CONSTRUCTED",
+        "completion_status": "CANDIDATE_FREE_REDUCTION_ENDPOINT_TUBES_CONNECTOR_SURFACES_OPEN",
     }
     result["sha256"] = canonical_sha(result)
     return result
@@ -161,7 +155,7 @@ def main() -> None:
         OUTPUT.write_text(json.dumps(result, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     if args.check and json.loads(OUTPUT.read_text(encoding="utf-8")) != result:
         raise AssertionError("final free-reduction bigons are stale")
-    print("T73_FINAL_BIGONS=THREE_FINAL_FREE_REDUCTION_BIGONS_CONSTRUCTED")
+    print("T73_FINAL_BIGONS=CANDIDATE_FREE_REDUCTION_ENDPOINT_TUBES_CONNECTOR_SURFACES_OPEN")
 
 
 if __name__ == "__main__":
