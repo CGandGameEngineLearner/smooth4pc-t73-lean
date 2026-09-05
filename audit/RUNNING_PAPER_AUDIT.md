@@ -2206,8 +2206,11 @@ Topology-source checks completed 2026-09-04:
   target interval. The remaining 31-segment quotient path passes all seven
   exact deck-translate intersection candidates and reports
   `PASS_CANDIDATE_QUOTIENT_EMBEDDEDNESS_ONLY`.
-- Boundary: other-component clearance, framed push-off embeddedness and actual
-  Kirby-slide equivalence remain open.
+- Partial external clearance: 453 exact deck-translate intersection candidates
+  prove that the candidate post-slide core misses the actual m2 and m3
+  universal-cover cores, reporting `PASS_CANDIDATE_M2_M3_CLEARANCE_ONLY`.
+- Boundary: the three dual-cell components have no common lift yet; framed
+  push-off embeddedness and actual Kirby-slide equivalence remain open.
 
 ### F-600 — The “actual” sphere-system builder assigns, rather than constructs, the embedding in \(\partial W_2\)
 

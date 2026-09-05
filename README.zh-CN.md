@@ -130,6 +130,9 @@ locator 已验证；基于 width 的区间选择仍为 candidate。
 `python3 scripts/verify_t73_candidate_t_band0_quotient_splice.py`；它将唯一
 `u=0~1` mapping-torus seam 作为 gluing cell，并对其余 PL segments 返回
 `PASS_CANDIDATE_QUOTIENT_EMBEDDEDNESS_ONLY`。
+`python3 scripts/verify_t73_candidate_t_band0_core_clearance.py` 还会对 actual
+m2/m3 lift 的相关 deck translates 做精确检查，并返回
+`PASS_CANDIDATE_M2_M3_CLEARANCE_ONLY`；dual-cell components 尚未纳入。
 
 1513 步 x-cancellation candidate movie 位于
 [`geometry/t73_candidate_x_band_movie.json`](geometry/t73_candidate_x_band_movie.json)，

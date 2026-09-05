@@ -143,6 +143,9 @@ The independent quotient verifier is
 `python3 scripts/verify_t73_candidate_t_band0_quotient_splice.py`; it treats
 the unique `u=0~1` mapping-torus seam as a gluing cell and reports
 `PASS_CANDIDATE_QUOTIENT_EMBEDDEDNESS_ONLY` for the remaining PL segments.
+`python3 scripts/verify_t73_candidate_t_band0_core_clearance.py` additionally
+checks all relevant deck translates against the actual m2/m3 lifts and reports
+`PASS_CANDIDATE_M2_M3_CLEARANCE_ONLY`; dual-cell components remain unchecked.
 
 The 1513-step x-cancellation candidate movie is
 [`geometry/t73_candidate_x_band_movie.json`](geometry/t73_candidate_x_band_movie.json),
