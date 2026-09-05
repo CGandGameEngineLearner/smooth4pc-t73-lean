@@ -2121,6 +2121,20 @@ Topology-source checks completed 2026-09-04:
   polylines. The verdict is `PASS_CANDIDATE_MOVIE_RECORDS_ONLY`; it does not
   establish an actual Kirby move or kappa_AR.
 
+### F-546 — All six t-band attachment endpoints are located in the actual AR records
+
+- Severity: **Actual cancellation-data recovery / endpoints only**
+- Status: **SIX SOURCE/TARGET LOCATORS VERIFIED; BAND SPLICES OPEN**
+- Evidence: `scripts/build_t73_t_band_attachment_locators.py` and
+  `geometry/t73_t_band_attachment_locators.json`.
+- Verification: the six source endpoints uniquely equal actual AR core
+  vertices at `m_1:1,17`, `m_2:1,1871`, and `m_3:1,8777`. Each target's first
+  three rational coordinates equals its stored `parallel_h_CS_target`; the
+  fourth mapping-torus parameter is saved explicitly.
+- Boundary: these endpoint locators do not yet specify source/target intervals,
+  full current link states, or the six actual band splices. Their scope is
+  `VERIFIED_ENDPOINTS_ONLY`.
+
 ### F-600 — The “actual” sphere-system builder assigns, rather than constructs, the embedding in \(\partial W_2\)
 
 - Severity: **Critical**

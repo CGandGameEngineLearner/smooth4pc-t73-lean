@@ -114,6 +114,11 @@ The six-step t-cancellation candidate movie is
 rebuilt with `python3 scripts/build_t73_candidate_t_band_movie.py --check`.
 It records rectangle segments, attachments, splice descriptors and ordered
 candidate link states without claiming an actual Kirby cancellation.
+The six source/target attachment endpoints that are genuinely recoverable
+from the AR records are saved separately in
+[`geometry/t73_t_band_attachment_locators.json`](geometry/t73_t_band_attachment_locators.json),
+rebuilt with `python3 scripts/build_t73_t_band_attachment_locators.py --check`.
+Its scope is `VERIFIED_ENDPOINTS_ONLY`.
 
 The 1513-step x-cancellation candidate movie is
 [`geometry/t73_candidate_x_band_movie.json`](geometry/t73_candidate_x_band_movie.json),

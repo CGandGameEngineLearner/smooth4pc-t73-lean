@@ -103,6 +103,10 @@ python3 scripts/verify_t73_y_foot_lane_candidate.py
 [`geometry/t73_candidate_t_band_movie.json`](geometry/t73_candidate_t_band_movie.json)，
 使用 `python3 scripts/build_t73_candidate_t_band_movie.py --check` 重建。
 它保存矩形段、attachment、splice descriptor和有序 candidate link state，但不声称实际 Kirby cancellation。
+从 AR records 中真正可恢复的 6 组 source/target attachment endpoint 单独保存在
+[`geometry/t73_t_band_attachment_locators.json`](geometry/t73_t_band_attachment_locators.json)，
+使用 `python3 scripts/build_t73_t_band_attachment_locators.py --check` 重建。
+其范围为 `VERIFIED_ENDPOINTS_ONLY`。
 
 1513 步 x-cancellation candidate movie 位于
 [`geometry/t73_candidate_x_band_movie.json`](geometry/t73_candidate_x_band_movie.json)，
