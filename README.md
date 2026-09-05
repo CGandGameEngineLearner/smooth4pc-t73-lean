@@ -147,6 +147,15 @@ sequential, not simultaneous: the verifier records spatial intersections for
 band pairs `(0,2)`, `(0,5)`, and `(3,4)` at distinct movie times. The verdict
 `PASS_T_BAND_COLLAR_DISKS_SEQUENTIAL_CANDIDATE_FRAMING_ONLY` does not yet
 certify current-link replay or an actual Kirby equivalence.
+The first genuine sequential state transition built from that collar data is
+[`geometry/t73_t_band_sequential_state_01.json`](geometry/t73_t_band_sequential_state_01.json).
+Reproduce it with `python3 scripts/build_t73_t_band0_sequential_state.py --check`
+and verify it with `python3 scripts/verify_t73_t_band0_sequential_state.py`.
+The latter independently rebuilds every splice piece, checks quotient
+embeddedness, the framed push-off, both attachment-only contacts, clearance
+from every stationary component, and exact recovery of the refined source
+lift by the inverse move. Its verdict is
+`PASS_T_BAND0_SEQUENTIAL_FRAMED_KIRBY_SLIDE`; only state `0 -> 1` is covered.
 The first end-to-end candidate slide, including an explicit closed post-slide
 4D core, is
 [`geometry/t73_candidate_t_band0_splice.json`](geometry/t73_candidate_t_band0_splice.json),

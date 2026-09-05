@@ -130,6 +130,13 @@ source 与 h_CS 边界 framing 是 actual-record binding。
 verifier 将 `(0,2)`、`(0,5)`、`(3,4)` 的空间交汇记录在不同时间层。返回值
 `PASS_T_BAND_COLLAR_DISKS_SEQUENTIAL_CANDIDATE_FRAMING_ONLY` 尚不证明
 current-link replay 或实际 Kirby 等价。
+由该 collar 数据构造的第一条真实顺序状态转换保存于
+[`geometry/t73_t_band_sequential_state_01.json`](geometry/t73_t_band_sequential_state_01.json)。
+使用 `python3 scripts/build_t73_t_band0_sequential_state.py --check` 重建，并用
+`python3 scripts/verify_t73_t_band0_sequential_state.py` 验证。后者独立重算每个
+splice piece，并检查商空间嵌入、framed push-off、仅限两条 attachment 的接触、
+与全部静止分量的分离，以及 inverse move 对细分后源 lift 的精确恢复。返回值为
+`PASS_T_BAND0_SEQUENTIAL_FRAMED_KIRBY_SLIDE`；其范围仅是 state `0 -> 1`。
 第一条端到端 candidate slide（含显式闭合的 post-slide 4D core）位于
 [`geometry/t73_candidate_t_band0_splice.json`](geometry/t73_candidate_t_band0_splice.json)，
 使用 `python3 scripts/build_t73_candidate_t_band0_splice.py --check` 重建。

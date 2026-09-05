@@ -2309,6 +2309,36 @@ Topology-source checks completed 2026-09-04:
   framed move and its inverse. The fail-closed verdict is
   `PASS_T_BAND_COLLAR_DISKS_SEQUENTIAL_CANDIDATE_FRAMING_ONLY`.
 
+### F-555 — The first t-band now gives a verified sequential framed Kirby state transition
+
+- Severity: **Actual sequential Kirby reconstruction / first move only**
+- Status: **STATE 0 TO STATE 1 PASS; FIVE t-SLIDES REMAIN**
+- Evidence: `scripts/build_t73_t_band0_sequential_state.py`,
+  `scripts/verify_t73_t_band0_sequential_state.py`,
+  `geometry/t73_t_band_sequential_state_01.json`, and its test.
+- Construction: the actual lifted m1 core is cut at its independently bound
+  source interval. The retained complement is joined to the two verified
+  collar-disk boundary lanes and the complement of the specified framed
+  parallel of h_CS. The resulting 27-segment lift closes by the original m1
+  deck translation, and its pointwise normal field closes by the same deck
+  translation.
+- Independent verification: every output piece and normal is recomputed from
+  the source lift and collar disk. Exact quotient tests prove core and push-off
+  embeddedness and mutual separation. The disk contacts m1 and the chosen
+  h_CS parallel only on the declared attachments; the disk, its push-off, and
+  every newly introduced curve piece avoid actual m2, m3, and h_CS. Clearance
+  from r_xy/r_yz/r_zx is certified by exact spatial-projection separation, so
+  it is independent of an arbitrary dual-core fiber coordinate. There are 244
+  exact stationary-clearance comparisons.
+- Inverse move: cutting away the band-sum pieces and restoring the removed
+  two-edge source subarc exactly recovers the cyclically refined actual m1
+  universal-cover lift, with its original closing deck translation. The
+  verdict is `PASS_T_BAND0_SEQUENTIAL_FRAMED_KIRBY_SLIDE`.
+- Boundary: this certifies one concrete legitimate framed slide, not the five
+  later t-slides, the 1513 x-slides, the final cancellation, or kappa_AR. Each
+  later attachment must be rebound against its immediately preceding current
+  link state.
+
 ### F-600 — The “actual” sphere-system builder assigns, rather than constructs, the embedding in \(\partial W_2\)
 
 - Severity: **Critical**
