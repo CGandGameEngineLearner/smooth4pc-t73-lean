@@ -2650,7 +2650,7 @@ Topology-source checks completed 2026-09-04:
 ### F-566 — All 1513 x-slides now have verified component-level hybrid replacement states
 
 - Severity: **Actual sequential x-cancellation movie / complete atlas replay**
-- Status: **ALL 1513 HYBRID SPLICES PASS; x-m1 DELETION NEXT**
+- Status: **ALL 1513 HYBRID SPLICES PASS; x-m1 DELETION COMPLETED IN F-568**
 - Evidence: `scripts/build_t73_x_band_hybrid_movie.py`,
   `scripts/verify_t73_x_band_hybrid_movie.py`,
   `geometry/t73_x_band_hybrid_movie.json`, and its test.
@@ -2673,11 +2673,8 @@ Topology-source checks completed 2026-09-04:
 - Coordinate firewall: source mapping-torus, source dual-fiber, x-belt local,
   and reflected m1-bottom cells remain separately typed. Their explicit germs
   glue the cell complex; `nu=u` is nowhere assumed.
-- Boundary: the sequential slide movie is now complete. The next required
-  witness must consume its final component states, exteriorize any framing
-  that still meets the x-handle cancelling neighborhood, build the standard
-  x/m1 4-ball pair with actual cubical-belt binding, delete it, and emit the
-  five-component post-cancel Kirby state.
+- Boundary at this layer: F-568 consumes these final states and supplies the
+  framed collar map, standard x/m1 pair deletion, and five-component output.
 
 ### F-567 — The x-band orientation rotation is moved into the outward collar at distinct movie heights
 
@@ -2704,6 +2701,46 @@ Topology-source checks completed 2026-09-04:
   then regenerated and independently replayed.
 - Boundary: this resolves the transverse-D3 error; it does not by itself
   perform the final x/m1 handle-pair deletion.
+
+### F-568 — The x-m1 pair is deleted by a verified cubical collar and standard PL 4-ball model
+
+- Severity: **Actual second handle cancellation / completed local model**
+- Status: **x-m1 DELETION PASS; FIVE-COMPONENT KIRBY STATE EMITTED**
+- Evidence: `geometry/t73_x_m1_collar_ejection_map.json`,
+  `geometry/t73_x_m1_framing_exteriorization.json`,
+  `geometry/t73_x_m1_handle_pair_deletion.json`, their builders, independent
+  verifiers, and tests.
+- Core collar: the twelve-triangle cubical belt sphere is thickened facewise;
+  each triangular prism contributes three tetrahedra. The map has 16 vertices,
+  36 orientation-preserving tetrahedra, 24 boundary triangles, and minimum
+  affine determinant ratio 1/2. It sends transverse cube radius 1 to 3/2 and
+  fixes radius 2. All 12104 non-m1 final local segments have `nu>=1` and lie
+  in its domain. Verdict: `PASS_X_M1_CORE_COLLAR_EJECTION_MAP`.
+- Framed neighborhood: the largest retained core height is
+  `1+1514*width`. A uniform `1515*width*e_nu` push has minimum height exactly
+  one width above every core. The six actual local normal types have a nonzero
+  y or z coordinate, so their linear homotopies to this outward representative
+  avoid zero; no remaining core segment is pure-nu tangent. Verdict:
+  `PASS_X_FINAL_LINK_UNIFORM_OUTWARD_FRAMING`.
+- Standard pair and actual binding: the pair is the union of
+  `Delta1 x Delta3` and `Delta2 x Delta2` along a three-tetrahedron attaching
+  3-ball. Its 11-vertex, ten-four-simplex union has Betti vector
+  `[1,0,0,0,0]` and boundary `[1,0,0,1]`. The positive-nu cubical belt square
+  is subdivided into four triangles about its center and mapped to a matching
+  standard-face refinement. The map reverses face orientation, agreeing with
+  the foot reflection. The five-point actual m1 attaching arc has exactly one
+  x=2 vertex at that center and constant transverse coordinates. Its local
+  framing is nonzero, tangent to the face, and has relative twist zero.
+- Output: deleting x and m1 leaves 1-handles y,z and components
+  m2,m3,r_xy,r_yz,r_zx. Four components carry their final F-566 hybrid state
+  hashes and r_yz remains unchanged; all are carried by the verified collar
+  map with outward framing. Final verdict:
+  `PASS_X_M1_HANDLE_PAIR_DELETION_AND_FIVE_COMPONENT_STATE`.
+- Boundary: the two handle cancellations and all 1519 slides are now explicit.
+  The next required layer is the common two-dotted/five-framed Kirby
+  presentation: materialize the five chart-typed component complexes in one
+  surgery diagram, export complete PD/crossing/framing data, and prove the
+  resulting presentation map is kappa_AR before feeding W2 and C/S.
 
 ### F-600 — The “actual” sphere-system builder assigns, rather than constructs, the embedding in \(\partial W_2\)
 

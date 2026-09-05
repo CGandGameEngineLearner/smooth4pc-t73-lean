@@ -1,0 +1,372 @@
+{
+  "actual_cell_binding": {
+    "actual_belt_intersection": [
+      "2",
+      "0",
+      "0",
+      "1"
+    ],
+    "actual_local_framing_vector": [
+      "0",
+      "1/966168032564887818144771979446684556481785375614268766815882016226779224957803800996698674701322551650243862539154864795189493164673124967869559763558446901654667457299819294243318309865917665372209217641147898873873782588689020438607246956835519209217938948980759190321896032028032863559519758190926897812326626256905306476813819604519704997856003678116249600",
+      "1/966168032564887818144771979446684556481785375614268766815882016226779224957803800996698674701322551650243862539154864795189493164673124967869559763558446901654667457299819294243318309865917665372209217641147898873873782588689020438607246956835519209217938948980759190321896032028032863559519758190926897812326626256905306476813819604519704997856003678116249600",
+      "0"
+    ],
+    "actual_m1_crossing_arc": [
+      [
+        "1/392208",
+        "0",
+        "0",
+        "1"
+      ],
+      [
+        "1",
+        "0",
+        "0",
+        "1"
+      ],
+      [
+        "2",
+        "0",
+        "0",
+        "1"
+      ],
+      [
+        "3",
+        "0",
+        "0",
+        "1"
+      ],
+      [
+        "1568831/392208",
+        "0",
+        "0",
+        "1"
+      ]
+    ],
+    "actual_refinement_vertices": [
+      [
+        "2",
+        "-1",
+        "-1",
+        "1"
+      ],
+      [
+        "2",
+        "-1",
+        "1",
+        "1"
+      ],
+      [
+        "2",
+        "1",
+        "1",
+        "1"
+      ],
+      [
+        "2",
+        "1",
+        "-1",
+        "1"
+      ],
+      [
+        "2",
+        "0",
+        "0",
+        "1"
+      ]
+    ],
+    "positive_nu_square_vertex_indices": [
+      1,
+      3,
+      7,
+      5
+    ],
+    "refinement_triangles": [
+      [
+        4,
+        0,
+        1
+      ],
+      [
+        4,
+        1,
+        2
+      ],
+      [
+        4,
+        2,
+        3
+      ],
+      [
+        4,
+        3,
+        0
+      ]
+    ],
+    "relative_twist": 0,
+    "standard_crossing_arc": [
+      [
+        "0",
+        "1/3",
+        "1/3"
+      ],
+      [
+        "1/2",
+        "1/3",
+        "1/3"
+      ],
+      [
+        "1",
+        "1/3",
+        "1/3"
+      ]
+    ],
+    "standard_face_refinement_vertices": [
+      [
+        "0",
+        "0"
+      ],
+      [
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "1"
+      ],
+      [
+        "0",
+        "1/2"
+      ],
+      [
+        "1/3",
+        "1/3"
+      ]
+    ]
+  },
+  "belt_spheres_sha256": "E582534A0FF674EC2DC19377AEB6A15907BE2D7BCE7BA5C53BAC3AAF3DE9AF1C",
+  "completion_status": "X_M1_STANDARD_PAIR_AND_ACTUAL_CUBICAL_BINDING_CONSTRUCTED",
+  "deletion": {
+    "consumer": "unified five-component Kirby presentation and kappa_AR",
+    "deleted_handles": [
+      "x",
+      "m_1"
+    ],
+    "post_cancel_component_count": 5,
+    "remaining_components": {
+      "m_2": {
+        "hybrid_state_sha256": "AF60D85281FD24FF455C4CE8F6CF34B3FD1D54CF981B07A6CB9384791A43D21B",
+        "image_under_collar_map": "components/m_2",
+        "replacement_count": 269,
+        "uniform_outward_framing_ref": "geometry/t73_x_m1_framing_exteriorization.json"
+      },
+      "m_3": {
+        "hybrid_state_sha256": "29E997C1C8429A3F1C78B46687D6E3E267A6409FD54A2B1D426B4D5907CD20A6",
+        "image_under_collar_map": "components/m_3",
+        "replacement_count": 1240,
+        "uniform_outward_framing_ref": "geometry/t73_x_m1_framing_exteriorization.json"
+      },
+      "r_xy": {
+        "hybrid_state_sha256": "3E225BCAF7DC23C6E65E01D71AFAF1FCAA62ABFEBE1DE5989FB62D22784C11F0",
+        "image_under_collar_map": "components/r_xy",
+        "replacement_count": 2,
+        "uniform_outward_framing_ref": "geometry/t73_x_m1_framing_exteriorization.json"
+      },
+      "r_yz": {
+        "image_under_collar_map": "components/r_yz",
+        "replacement_count": 0,
+        "source_ref": "geometry/t73_actual_ar_link.json#/components/r_yz",
+        "uniform_outward_framing_ref": "geometry/t73_x_m1_framing_exteriorization.json"
+      },
+      "r_zx": {
+        "hybrid_state_sha256": "C3B1FCB6032496D11D0DA836006DE8027BAF3F4BA025D33914863E17C4798C45",
+        "image_under_collar_map": "components/r_zx",
+        "replacement_count": 2,
+        "uniform_outward_framing_ref": "geometry/t73_x_m1_framing_exteriorization.json"
+      }
+    },
+    "remaining_one_handles": [
+      "y",
+      "z"
+    ]
+  },
+  "schema": "t73_x_m1_handle_pair_deletion/v1",
+  "sha256": "6CF7C396F4F75A4FC68AFA5DEB67D21A1C562D007D2B57267630F418F3078C53",
+  "standard_pair": {
+    "glued_attaching_patch_tetrahedra": [
+      [
+        1,
+        5,
+        6,
+        7
+      ],
+      [
+        1,
+        2,
+        6,
+        7
+      ],
+      [
+        1,
+        2,
+        3,
+        7
+      ]
+    ],
+    "glued_vertex_count": 11,
+    "h1_four_simplices": [
+      [
+        0,
+        4,
+        5,
+        6,
+        7
+      ],
+      [
+        0,
+        1,
+        5,
+        6,
+        7
+      ],
+      [
+        0,
+        1,
+        2,
+        6,
+        7
+      ],
+      [
+        0,
+        1,
+        2,
+        3,
+        7
+      ]
+    ],
+    "h1_model": "Delta1 x Delta3",
+    "h2_four_simplices": [
+      [
+        1,
+        5,
+        8,
+        9,
+        10
+      ],
+      [
+        1,
+        5,
+        6,
+        9,
+        10
+      ],
+      [
+        1,
+        5,
+        6,
+        7,
+        10
+      ],
+      [
+        1,
+        2,
+        6,
+        9,
+        10
+      ],
+      [
+        1,
+        2,
+        6,
+        7,
+        10
+      ],
+      [
+        1,
+        2,
+        3,
+        7,
+        10
+      ]
+    ],
+    "h2_model": "Delta2 x Delta2",
+    "union_four_simplices": [
+      [
+        0,
+        4,
+        5,
+        6,
+        7
+      ],
+      [
+        0,
+        1,
+        5,
+        6,
+        7
+      ],
+      [
+        0,
+        1,
+        2,
+        6,
+        7
+      ],
+      [
+        0,
+        1,
+        2,
+        3,
+        7
+      ],
+      [
+        1,
+        5,
+        8,
+        9,
+        10
+      ],
+      [
+        1,
+        5,
+        6,
+        9,
+        10
+      ],
+      [
+        1,
+        5,
+        6,
+        7,
+        10
+      ],
+      [
+        1,
+        2,
+        6,
+        9,
+        10
+      ],
+      [
+        1,
+        2,
+        6,
+        7,
+        10
+      ],
+      [
+        1,
+        2,
+        3,
+        7,
+        10
+      ]
+    ]
+  },
+  "x_band0_chart_transitions_sha256": "CE242B698569F14CA5A7C1E50BDD7D1ED945F6412ACD98B0C50C85AB3F2251EF",
+  "x_cancellation_sha256": "B72838D6671FAFBD3D8368E511759D9DE13007C81E4C731EAA661B084B951C1B",
+  "x_collar_ejection_map_sha256": "BC10180E1006DFCD2C5E4E74D6DFC5960C7C94EEA4C51AF13541B670D4E32FB7",
+  "x_framing_exteriorization_sha256": "F832FFF35C7BFCC1D672D7A85659096E2743DB22CBAE2A9F25203DDB75C1D88B",
+  "x_hybrid_movie_sha256": "2AEC079E63E49BEB9CDDCF9D8C37FB3DEBCC6A8DA0358C04A29B716F11672D21"
+}

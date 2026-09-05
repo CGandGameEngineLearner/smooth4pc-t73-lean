@@ -263,6 +263,17 @@ Rebuild/check it with `build_t73_x_band_hybrid_movie.py --check` and
 chart gluings, 1513 inverses, and all component Merkle states, returning
 `PASS_ALL_1513_X_HYBRID_PIECE_WORD_STATES`. Chart-typed cell replacements are
 used deliberately; no false global coordinate identification is introduced.
+The second cancelling pair is now explicit. The core collar map
+[`geometry/t73_x_m1_collar_ejection_map.json`](geometry/t73_x_m1_collar_ejection_map.json)
+and framing exteriorization
+[`geometry/t73_x_m1_framing_exteriorization.json`](geometry/t73_x_m1_framing_exteriorization.json)
+return `PASS_X_M1_CORE_COLLAR_EJECTION_MAP` and
+`PASS_X_FINAL_LINK_UNIFORM_OUTWARD_FRAMING`. The standard 4-ball deletion and
+five-component output are
+[`geometry/t73_x_m1_handle_pair_deletion.json`](geometry/t73_x_m1_handle_pair_deletion.json).
+Run its builder, then run `verify_t73_x_m1_handle_pair_deletion.py` with the
+topology environment; verdict:
+`PASS_X_M1_HANDLE_PAIR_DELETION_AND_FIVE_COMPONENT_STATE`.
 The first end-to-end candidate slide, including an explicit closed post-slide
 4D core, is
 [`geometry/t73_candidate_t_band0_splice.json`](geometry/t73_candidate_t_band0_splice.json),

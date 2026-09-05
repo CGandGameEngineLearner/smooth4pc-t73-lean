@@ -236,6 +236,16 @@ Johnson top arc 与 4 条有向 dual-disk boundary arc，返回
 cell、6052 个 chart gluing、1513 个 inverse 与全部 component Merkle state，
 返回 `PASS_ALL_1513_X_HYBRID_PIECE_WORD_STATES`。这里刻意使用 chart-typed
 cell replacement，不引入虚假的全局坐标等同。
+第二个 cancelling pair 现已显式化。core collar map
+[`geometry/t73_x_m1_collar_ejection_map.json`](geometry/t73_x_m1_collar_ejection_map.json)
+与 framing exteriorization
+[`geometry/t73_x_m1_framing_exteriorization.json`](geometry/t73_x_m1_framing_exteriorization.json)
+分别返回 `PASS_X_M1_CORE_COLLAR_EJECTION_MAP` 与
+`PASS_X_FINAL_LINK_UNIFORM_OUTWARD_FRAMING`。标准 4-ball deletion 和五分量输出位于
+[`geometry/t73_x_m1_handle_pair_deletion.json`](geometry/t73_x_m1_handle_pair_deletion.json)。
+先运行其 builder，再用 topology 环境运行
+`verify_t73_x_m1_handle_pair_deletion.py`；verdict 为
+`PASS_X_M1_HANDLE_PAIR_DELETION_AND_FIVE_COMPONENT_STATE`。
 第一条端到端 candidate slide（含显式闭合的 post-slide 4D core）位于
 [`geometry/t73_candidate_t_band0_splice.json`](geometry/t73_candidate_t_band0_splice.json)，
 使用 `python3 scripts/build_t73_candidate_t_band0_splice.py --check` 重建。
