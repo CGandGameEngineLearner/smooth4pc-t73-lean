@@ -2248,8 +2248,12 @@ Topology-source checks completed 2026-09-04:
   interval. Six nondegenerate triangles form an 8-vertex disk with Euler
   characteristic one and exactly the declared source/left/target/right
   boundary. The independent verifier reconstructs every framed push-off vertex.
-- Boundary: triangle-level self-intersection, push-off surface disjointness,
-  current-link clearance and actual Kirby-slide equivalence remain open.
+- Local embeddedness: NumPy AABB screening followed by exact rational
+  barycentric, segment-triangle and vertex-containment equations checks the two
+  nonadjacent triangle pairs whose boxes overlap. Both are disjoint, giving
+  `PASS_CANDIDATE_FRAMED_BAND_DISK_LOCAL_EMBEDDEDNESS_ONLY`.
+- Boundary: push-off surface disjointness, current-link clearance and actual
+  Kirby-slide equivalence remain open.
 
 ### F-600 — The “actual” sphere-system builder assigns, rather than constructs, the embedding in \(\partial W_2\)
 
