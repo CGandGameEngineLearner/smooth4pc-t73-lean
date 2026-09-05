@@ -1,0 +1,74 @@
+{
+  "completion_status": "VERIFIED_LITERATURE_EXTRACTION_ONLY",
+  "fixed_points": [
+    {
+      "id": "q",
+      "torus_half_coordinates": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "alpha_3",
+      "torus_half_coordinates": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "id": "alpha_2",
+      "torus_half_coordinates": [
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "id": "alpha_6",
+      "torus_half_coordinates": [
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "alpha_1",
+      "torus_half_coordinates": [
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "alpha_5",
+      "torus_half_coordinates": [
+        1,
+        0,
+        1
+      ]
+    },
+    {
+      "id": "alpha_4",
+      "torus_half_coordinates": [
+        1,
+        1,
+        0
+      ]
+    },
+    {
+      "id": "alpha_7",
+      "torus_half_coordinates": [
+        1,
+        1,
+        1
+      ]
+    }
+  ],
+  "heegaard_condition": "g(H_B)=H_D and g preserves S_H",
+  "involution": "g(exp(pi*i*(theta,phi,psi)))=exp(pi*i*(theta,phi,psi))=exp(pi*i*a(theta,phi,psi))",
+  "literature_source": "AR84 internal page 9, Figure 5 discussion",
+  "schema": "t73_ar_figure5_fixed_points/v1",
+  "sha256": "87CE588D2E3241F80BB12E9F55A4C4851CF88A7146DE6E29B59DEE0818D086AD"
+}
