@@ -135,6 +135,13 @@ dotted Hopf clasps. Its verdict is
 the framed hybrid-to-railroad isotopy remains open. The rejected diagonal-only
 closure is retained in
 [`audit/t73_actual_railroad_standard_pd_gap.json`](audit/t73_actual_railroad_standard_pd_gap.json).
+The three explicit free-reduction isotopies are saved in
+[`geometry/t73_final_free_reduction_bigons.json`](geometry/t73_final_free_reduction_bigons.json).
+They cancel one inverse pair on m3 and two nested pairs on r_zx in disjoint
+z-foot regular-neighborhood tubes. Rebuild/check with
+`build_t73_final_free_reduction_bigons.py --check` and
+`verify_t73_final_free_reduction_bigons.py`; verdict:
+`PASS_THREE_FINAL_FREE_REDUCTION_BIGON_TUBES`.
 
 Separately, the C-cut 44-lane candidate realization is
 [`geometry/t73_y_foot_lane_candidate.json`](geometry/t73_y_foot_lane_candidate.json):

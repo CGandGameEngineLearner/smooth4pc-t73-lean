@@ -2905,6 +2905,33 @@ Topology-source checks completed 2026-09-04:
   r_zx free-reduction bigons and every central connector. Only then can this
   target be promoted to actual kappa_AR and fed into W2.
 
+### F-574 — The m3 and r_zx free reductions are realized by three explicit local bigon tubes
+
+- Severity: **hybrid-to-railroad isotopy / verified reduction prefix**
+- Status: **THREE BIGON MOVES PASS; CENTRAL CONNECTOR TRANSPORT OPEN**
+- Evidence: `scripts/build_t73_final_free_reduction_bigons.py`,
+  `scripts/verify_t73_final_free_reduction_bigons.py`,
+  `geometry/t73_final_free_reduction_bigons.json`, and its test.
+- Moves: the first m3 pair is `m_3:C_i` of orientation -1 followed by
+  `x_replacement:269:m1_z` of orientation +1. On r_zx, the inner pair
+  `x_replacement:1511:m1_z` / `r_zx:z:edge:4` is removed first, followed by
+  the outer pair `r_zx:z:edge:0` / `x_replacement:1512:m1_z`.
+- Geometry: each move uses a two-triangle standard bigon whose four boundary
+  edges are the two inverse handle passages and the two foot-side connectors.
+  A tube radius squared equal to one sixteenth of the exact minimum distance
+  squared from its four selected endpoints to every other z-foot endpoint is
+  positive and saved. Thus the local regular-neighborhood move can be chosen
+  without another marked endpoint.
+- Replay: cyclic adjacency, opposite orientations, before/after passage lists,
+  content hashes, and inverse insertion are recomputed at every move. The
+  output states equal the 1460 m3 and empty r_zx survivor lists used by the
+  railroad coordinates. Verdict:
+  `PASS_THREE_FINAL_FREE_REDUCTION_BIGON_TUBES`.
+- Boundary: the local word reductions are now actual. The remaining
+  hybrid-to-railroad map must transport all 1779 surviving passage germs and
+  their central/hybrid connector cells, with normal fields and an explicit
+  inverse; the target PD alone cannot supply that source isotopy.
+
 ### F-600 — The “actual” sphere-system builder assigns, rather than constructs, the embedding in \(\partial W_2\)
 
 - Severity: **Critical**

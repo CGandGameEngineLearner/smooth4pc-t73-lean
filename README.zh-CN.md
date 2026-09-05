@@ -123,6 +123,13 @@ Hopf clasp。verdict 为 `PASS_SOURCE_BOUND_STANDARD_PD_COMBINATORICS_ONLY`：
 target framing 已通过，但 framed hybrid→railroad isotopy 仍开放。被拒绝的
 diagonal-only closure 保留于
 [`audit/t73_actual_railroad_standard_pd_gap.json`](audit/t73_actual_railroad_standard_pd_gap.json)。
+三个显式自由约化 isotopy 保存于
+[`geometry/t73_final_free_reduction_bigons.json`](geometry/t73_final_free_reduction_bigons.json)。
+它们在互不碰撞的 z-foot regular-neighborhood tube 中消去 m3 的一对 inverse
+passage 与 r_zx 的两层嵌套 pair。使用
+`build_t73_final_free_reduction_bigons.py --check` 与
+`verify_t73_final_free_reduction_bigons.py` 重建/验收；verdict 为
+`PASS_THREE_FINAL_FREE_REDUCTION_BIGON_TUBES`。
 
 另一个独立层次中，C-cut 的 44-lane candidate realization 为
 [`geometry/t73_y_foot_lane_candidate.json`](geometry/t73_y_foot_lane_candidate.json)：
