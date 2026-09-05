@@ -103,6 +103,9 @@ Its SnapPy/Spherogram/Regina receipt is
 Regenerate with `python3 scripts/build_t73_candidate_kirby_presentation.py --write`
 followed by `scripts/export_t73_full_handle_diagram.py`. Its status is
 `CANDIDATE_UNVERIFIED`; it must never be used to close P0, C, S or P3/E13.
+The candidate coordinate lifts for all 6 t-bands and 1513 x-bands are saved in
+[`geometry/t73_candidate_band_chart_normalization.json`](geometry/t73_candidate_band_chart_normalization.json)
+and rebuilt with `python3 scripts/build_t73_candidate_band_chart_normalization.py --check`.
 
 ### Gmsh frames and partitioned-frame inputs
 

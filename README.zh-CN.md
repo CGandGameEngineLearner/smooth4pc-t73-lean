@@ -95,6 +95,9 @@ python3 scripts/build_t73_actual_cancellation_splice_request.py --check
 使用 `python3 scripts/build_t73_candidate_kirby_presentation.py --write`，再运行
 `scripts/export_t73_full_handle_diagram.py` 重建。其状态是
 `CANDIDATE_UNVERIFIED`；绝不能用于闭合 P0、C、S 或 P3/E13。
+全部 6 条 t-band 与 1513 条 x-band 的候选统一坐标 lift 保存于
+[`geometry/t73_candidate_band_chart_normalization.json`](geometry/t73_candidate_band_chart_normalization.json)，
+使用 `python3 scripts/build_t73_candidate_band_chart_normalization.py --check` 重建。
 
 ### Gmsh frame 与分块 frame 输入
 
