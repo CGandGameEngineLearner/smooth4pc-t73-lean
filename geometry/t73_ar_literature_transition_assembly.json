@@ -1,0 +1,32 @@
+{
+  "artifact_sha256s": {
+    "canonical": "11937A3118B20DBA8B9549C00F2632286958EE1EC3B18517F305DEF813F7849F",
+    "feet": "D480B6A8DDBA4AB387F0D1F7B39032A8B0F2A2FFC4E62219219402DD2AA6C608",
+    "figure10": "35BE3EF89F009D0489740C30E18FFCC4DC71F21ADCFD0C42E5339445A00E8957",
+    "figure9": "3D7C54878C61DE1F73A5E09183C34E5FAB7C22C58A37F3C82BBF69A226012FE3",
+    "fixed": "87CE588D2E3241F80BB12E9F55A4C4851CF88A7146DE6E29B59DEE0818D086AD"
+  },
+  "canonical_parameters": {
+    "a": 73,
+    "lambda": 41,
+    "m": 189,
+    "n": 1240,
+    "p": 269,
+    "v": 32
+  },
+  "cells": [
+    "AR84 Figure 2a antipodal foot/reflection model",
+    "AR84 Figure 5 involution/fixed-point model",
+    "AR84 Figure 9 surgery factorization",
+    "AR84 Figure 10 affine isotopy"
+  ],
+  "completion_status": "VERIFIED_LITERATURE_CELLS_ONLY",
+  "fixed_point_q": [
+    0,
+    0,
+    0
+  ],
+  "next_required_binding": "map all four foot pairs and every band boundary to the actual AR/cancellation lanes",
+  "schema": "t73_ar_literature_transition_assembly/v1",
+  "sha256": "F40771A9A8C3F57DF16F8EA875EA14B64DEAEB53814B76FF29BBCE1C1B77E08C"
+}
