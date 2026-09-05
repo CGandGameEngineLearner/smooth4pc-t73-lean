@@ -127,6 +127,9 @@ The locator is verified; the width-based interval choice remains candidate.
 proves that all six source intervals lie on actual lambda/mu core edges and
 all target intervals lie on their parallel h_CS lines, reporting
 `PASS_T_INTERVAL_ACTUAL_EDGE_BINDING_CANDIDATE_WIDTH`.
+`verify_t73_t_band_parallel_hcs_targets.py` proves the six target lines are
+actual framed h_CS parallels with ordered coefficients
+`[-25,-15,-5,5,15,25]`, reporting `PASS_ACTUAL_HCS_PARALLEL_TARGET_BINDING`.
 Boundary-compatible normal homotopies for all six t-bands are saved in
 [`geometry/t73_t_band_framing_extensions.json`](geometry/t73_t_band_framing_extensions.json).
 Rebuild and independently check them with

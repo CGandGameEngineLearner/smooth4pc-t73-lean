@@ -114,6 +114,9 @@ locator 已验证；基于 width 的区间选择仍为 candidate。
 `python3 scripts/verify_t73_t_band_attachment_intervals.py` 独立证明六个 source
 interval 都位于实际 lambda/mu core edge，所有 target interval 都位于其 parallel
 h_CS line，并返回 `PASS_T_INTERVAL_ACTUAL_EDGE_BINDING_CANDIDATE_WIDTH`。
+`verify_t73_t_band_parallel_hcs_targets.py` 证明六条 target line 是 actual
+h_CS framed parallel，顺序系数为 `[-25,-15,-5,5,15,25]`，返回
+`PASS_ACTUAL_HCS_PARALLEL_TARGET_BINDING`。
 全部 6 条 t-band 的 boundary-compatible normal homotopy 保存于
 [`geometry/t73_t_band_framing_extensions.json`](geometry/t73_t_band_framing_extensions.json)。
 使用 `build_t73_t_band_framing_extensions.py --check` 重建，并用

@@ -2153,6 +2153,11 @@ Topology-source checks completed 2026-09-04:
   each target is an exact vertical subinterval of its parallel h_CS line and
   contains `u=1/2`. The verdict is
   `PASS_T_INTERVAL_ACTUAL_EDGE_BINDING_CANDIDATE_WIDTH`.
+- Actual h_CS binding: subtracting the section point and dividing by the actual
+  h_CS framing offset gives the ordered lane coefficients
+  `-25,-15,-5,5,15,25`. All target intervals remain on their resulting
+  vertical parallel copies. The independent verdict is
+  `PASS_ACTUAL_HCS_PARALLEL_TARGET_BINDING`.
 
 ### F-548 — The first t-band slide now has an explicit closed candidate core
 
