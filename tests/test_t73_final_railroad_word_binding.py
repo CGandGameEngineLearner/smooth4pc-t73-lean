@@ -22,7 +22,8 @@ class FinalRailroadWordBindingTest(unittest.TestCase):
             "PASS_ACTUAL_1878_RAILROAD_LEDGER_OLD_M3_REJECTED",
         )
         self.assertEqual(result["actual_crossings"], 1878)
-        self.assertFalse(result["old_word_matches"]["m_3"])
+        self.assertFalse(result["old_word_direct_matches"]["m_3"])
+        self.assertTrue(result["old_word_inverse_matches"]["r_xy"])
         self.assertEqual(result["standard_pd_status"], "OPEN")
 
 

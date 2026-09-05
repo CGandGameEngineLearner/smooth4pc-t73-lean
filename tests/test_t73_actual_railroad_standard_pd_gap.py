@@ -19,7 +19,7 @@ class ActualRailroadStandardPDGapTest(unittest.TestCase):
             result["verdict"], "PASS_FAIL_CLOSED_ACTUAL_RAILROAD_PD_GAP"
         )
         self.assertEqual(
-            result["odd_mixed_pairs"], {"m_2/m_3": -3, "m_3/r_xy": 1}
+            result["odd_mixed_pairs"], {"m_2/m_3": -3, "m_3/r_yz": 1}
         )
         self.assertFalse(result["standard_pd_emitted"])
 

@@ -100,7 +100,11 @@ def build() -> dict:
             for value in expected_letters[component]
         ]
         expected_canonical, _ = canonical_cyclic_word(expected_values)
-        matches_old = canonical_word == expected_canonical
+        expected_inverse, _ = canonical_cyclic_word(
+            [-value for value in reversed(expected_values)]
+        )
+        direct_match = canonical_word == expected_canonical
+        inverse_match = canonical_word == expected_inverse
         actual_words[component] = reduced
         records[component] = {
             "raw_word": raw_word,
@@ -112,7 +116,11 @@ def build() -> dict:
             "canonical_word": canonical_word,
             "canonical_letters": canonical_letters,
             "actual_word_sha256": canonical_sha(canonical_word),
-            "old_compact_word_matches_up_to_conjugacy": matches_old,
+            "old_compact_word_matches_up_to_conjugacy": direct_match,
+            "old_compact_word_matches_after_orientation_reversal": inverse_match,
+            "old_compact_unoriented_attaching_circle_matches": (
+                direct_match or inverse_match
+            ),
             "old_railroad_word_sha256": railroad["component_word_hashes"][component],
         }
     component_order = ["m_2", "m_3", "r_xy", "r_yz", "r_zx"]

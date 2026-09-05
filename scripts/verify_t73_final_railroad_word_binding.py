@@ -71,7 +71,8 @@ def verify() -> dict:
         "r_zx": [],
     }
     actual_words = {}
-    old_matches = {}
+    direct_matches = {}
+    inverse_matches = {}
     for component, raw in raw_words.items():
         reduced = reduce_word(raw)
         record = data["components"][component]
@@ -82,20 +83,30 @@ def verify() -> dict:
             {"y": 2, "z": 3, "Y": -2, "Z": -3}[value]
             for value in old_expected[component]
         ]
-        matches = canonical_cycle(reduced) == canonical_cycle(expected_values)
-        if record["old_compact_word_matches_up_to_conjugacy"] != matches:
+        direct = canonical_cycle(reduced) == canonical_cycle(expected_values)
+        inverse = canonical_cycle(reduced) == canonical_cycle(
+            [-value for value in reversed(expected_values)]
+        )
+        if record["old_compact_word_matches_up_to_conjugacy"] != direct or record[
+            "old_compact_word_matches_after_orientation_reversal"
+        ] != inverse or record["old_compact_unoriented_attaching_circle_matches"] != (
+            direct or inverse
+        ):
             raise AssertionError("old railroad comparison flag changed")
-        old_matches[component] = matches
+        direct_matches[component] = direct
+        inverse_matches[component] = inverse
         if record["canonical_letters"] != [letters[value] for value in canonical_cycle(reduced)]:
             raise AssertionError("canonical actual word changed")
-    if old_matches != {
+    if direct_matches != {
         "m_2": True,
         "m_3": False,
-        "r_xy": True,
-        "r_yz": True,
+        "r_xy": False,
+        "r_yz": False,
         "r_zx": True,
     }:
-        raise AssertionError("old railroad mismatch is no longer isolated to m3")
+        raise AssertionError("old railroad direct-orientation comparison changed")
+    if not inverse_matches["r_xy"] or not inverse_matches["r_yz"]:
+        raise AssertionError("dual words no longer match after orientation reversal")
 
     order = data["actual_component_order"]
     denominator = data["actual_component_height_denominator"]
@@ -126,7 +137,8 @@ def verify() -> dict:
         "verdict": "PASS_ACTUAL_1878_RAILROAD_LEDGER_OLD_M3_REJECTED",
         "actual_crossings": len(crossings),
         "old_crossings": len(old["crossings"]),
-        "old_word_matches": old_matches,
+        "old_word_direct_matches": direct_matches,
+        "old_word_inverse_matches": inverse_matches,
         "component_connector_counts": {
             component: len(connectors[component]) for component in order
         },

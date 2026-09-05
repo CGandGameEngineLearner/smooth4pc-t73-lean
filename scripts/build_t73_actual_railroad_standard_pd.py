@@ -195,7 +195,7 @@ def build() -> dict:
         for pair, value in sorted(mixed_sums.items())
         if value % 2
     }
-    if odd_pairs != {"m_2/m_3": -3, "m_3/r_xy": 1}:
+    if odd_pairs != {"m_2/m_3": -3, "m_3/r_yz": 1}:
         raise AssertionError(f"unexpected railroad closure parity gap: {odd_pairs}")
     result = {
         "schema": "t73_actual_railroad_standard_pd_gap/v1",

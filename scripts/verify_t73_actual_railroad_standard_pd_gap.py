@@ -30,7 +30,7 @@ def verify() -> dict:
         for pair, value in sorted(signed_sums.items())
         if value % 2
     }
-    if odd != {"m_2/m_3": -3, "m_3/r_xy": 1}:
+    if odd != {"m_2/m_3": -3, "m_3/r_yz": 1}:
         raise AssertionError("railroad odd-pair obstruction changed")
     reduced_letter_count = sum(
         record["reduced_length"] for record in railroad["components"].values()

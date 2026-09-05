@@ -53,9 +53,11 @@ def expected_polyline(word, component_index):
             + Fraction(index * index, 1000003 * length * length),
         ))
     closure_x = Fraction(2) + Fraction(component_index, 10)
+    upper_y = Fraction(11, 10) + Fraction(component_index, 100)
+    lower_y = Fraction(-1, 10) - Fraction(component_index, 100)
     points.extend([
-        (closure_x, Fraction(11, 10), Fraction(2) + Fraction(component_index, 11)),
-        (closure_x, Fraction(-1, 10), Fraction(-1) + Fraction(component_index, 11)),
+        (closure_x, upper_y, Fraction(2) + Fraction(component_index, 11)),
+        (closure_x, lower_y, Fraction(-1) + Fraction(component_index, 11)),
         points[0],
     ])
     return points

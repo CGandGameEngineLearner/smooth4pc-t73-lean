@@ -1,6 +1,6 @@
 {
   "actual_railroad_mixed_crossing_count": 1878,
-  "actual_railroad_word_binding_sha256": "57E7BA12A4662A12698C54FA90BC055B6099FD36C4C8F2743FDD4ED9E442DFC4",
+  "actual_railroad_word_binding_sha256": "A5C29414D26CEBFED9DBDA913F9F68EA4B86BD3BB3A04278FB7B98265D15E6DA",
   "blackboard_writhe": {
     "dotted_y": 0,
     "dotted_z": 0,
@@ -24,7 +24,7 @@
     "dotted_z"
   ],
   "coordinate_realization_status": "OPEN_ACTUAL_CUT_HANDLEBODY_CONNECTOR_TRANSPORT_REQUIRED",
-  "final_component_passage_cycles_sha256": "1ACDEA5F1A43BAE6D5628523CF7AB83C024CBDECCFD57057F06E26B7D45DC2AE",
+  "final_component_passage_cycles_sha256": "E3797DBAD2E848B8269294DF7CE8AA078275D55C327A4AB1A435962E1D2B87E4",
   "final_yz_foot_state_sha256": "EC6E316A3126FAB5A6062431C8B7DFDDA15AC6246C1842557B7E1142D46ABD41",
   "framing_status": "OPEN_PUSH_OFFS_NOT_YET_ATTACHED",
   "mixed_crossing_sign_sums": {
@@ -38,18 +38,18 @@
     "dotted_z/r_yz": 0,
     "m_2/m_3": -3,
     "m_2/r_xy": 0,
-    "m_2/r_yz": -2,
-    "m_3/r_xy": 1,
-    "m_3/r_yz": 0,
-    "r_xy/r_yz": -2
+    "m_2/r_yz": 0,
+    "m_3/r_xy": -2,
+    "m_3/r_yz": 1,
+    "r_xy/r_yz": 2
   },
   "next_required_witness": "transport the actual Johnson central connectors and hybrid replacement connectors into the y/z foot-ball complement; their closure crossings must make every mixed sign sum even before standard PD rows are emitted",
   "odd_mixed_pairs_blocking_planar_pd": {
     "m_2/m_3": -3,
-    "m_3/r_xy": 1
+    "m_3/r_yz": 1
   },
   "schema": "t73_actual_railroad_standard_pd_gap/v1",
-  "sha256": "D08028B0368F02EC6F790AD9CF6F60A93CBF2ACB8C051F3746285AB26E5441A4",
+  "sha256": "91E086958AD9DE77474CFA53F2E121AA5B9DD3CE686ADD7BDA15CAEB72B7FAFC",
   "standard_pd_code": null,
   "word_exponent_sums": {
     "m_2": {

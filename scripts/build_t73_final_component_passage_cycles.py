@@ -58,16 +58,16 @@ def build() -> dict:
         })
     dual_orders = {
         "r_xy": [
-            "x_replacement:1509:m1_z",
             "r_xy:y:edge:0",
-            "x_replacement:1510:m1_z",
+            "x_replacement:1509:m1_z",
             "r_xy:y:edge:4",
+            "x_replacement:1510:m1_z",
         ],
         "r_yz": [
-            "r_yz:y:edge:2",
             "r_yz:z:edge:0",
-            "r_yz:y:edge:6",
+            "r_yz:y:edge:2",
             "r_yz:z:edge:4",
+            "r_yz:y:edge:6",
         ],
         "r_zx": [
             "r_zx:z:edge:0",

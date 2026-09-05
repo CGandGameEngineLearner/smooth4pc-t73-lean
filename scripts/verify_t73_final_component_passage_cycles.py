@@ -88,21 +88,10 @@ def verify() -> dict:
             else arc_id
             for arc_id in spine["components"][component_index]["handle_arc_ids"]
         ]
-    expected["r_xy"] = [
-        replacement_by_source["r_xy:vertex:3"],
-        "r_xy:y:edge:0",
-        replacement_by_source["r_xy:vertex:7"],
-        "r_xy:y:edge:4",
-    ]
-    expected["r_yz"] = [
-        "r_yz:y:edge:2",
-        "r_yz:z:edge:0",
-        "r_yz:y:edge:6",
-        "r_yz:z:edge:4",
-    ]
-    expected["r_zx"] = dual_cycle(
-        "r_zx", ar_link["components"]["r_zx"]["polyline"], replacement_by_source
-    )
+    for name in ("r_xy", "r_yz", "r_zx"):
+        expected[name] = dual_cycle(
+            name, ar_link["components"][name]["polyline"], replacement_by_source
+        )
     for name, passage_ids in expected.items():
         if cycles[name]["passage_ids"] != passage_ids:
             raise AssertionError(f"{name}: cyclic passage order changed")

@@ -28375,12 +28375,12 @@
             {
               "kind": "actual_dual_square_boundary_connector",
               "raw_cell_id": "r_xy:dual_boundary_connector:0",
-              "source_sha256": "F2F4B1EB7130559A639FF58DE7AA201AC82222004D17537CA08154BE3841EE77"
+              "source_sha256": "929138D756A23CCAF96883CEBF1112F5A393C6F9131DD99865DCE6C496F58D78"
             }
           ],
-          "source_edge": "r_xy:connector_after:x_replacement:1509:m1_z",
-          "source_from": "x_replacement:1509:m1_z",
-          "source_to": "r_xy:y:edge:0",
+          "source_edge": "r_xy:connector_after:r_xy:y:edge:0",
+          "source_from": "r_xy:y:edge:0",
+          "source_to": "x_replacement:1509:m1_z",
           "target_segment_range": [
             0,
             0
@@ -28391,12 +28391,12 @@
             {
               "kind": "actual_dual_square_boundary_connector",
               "raw_cell_id": "r_xy:dual_boundary_connector:1",
-              "source_sha256": "C38FD876455230F216A59766C598D17DD0F803B8C1E3AA7979D1369FF58E2C38"
+              "source_sha256": "FF45B21B78CEF2EDDCF3A4D609D4533F6DC8297690A67383CC9948E8E85FAD8D"
             }
           ],
-          "source_edge": "r_xy:connector_after:r_xy:y:edge:0",
-          "source_from": "r_xy:y:edge:0",
-          "source_to": "x_replacement:1510:m1_z",
+          "source_edge": "r_xy:connector_after:x_replacement:1509:m1_z",
+          "source_from": "x_replacement:1509:m1_z",
+          "source_to": "r_xy:y:edge:4",
           "target_segment_range": [
             1,
             1
@@ -28407,12 +28407,12 @@
             {
               "kind": "actual_dual_square_boundary_connector",
               "raw_cell_id": "r_xy:dual_boundary_connector:2",
-              "source_sha256": "2C0E41119B5D50AEA949F598389FDB29E342ED9E601AFDC4892B504CDD6448D4"
+              "source_sha256": "899ED591743CAE7121BCA9B6B159E540F74D85AE9ADE0C90E6DEE969296B6874"
             }
           ],
-          "source_edge": "r_xy:connector_after:x_replacement:1510:m1_z",
-          "source_from": "x_replacement:1510:m1_z",
-          "source_to": "r_xy:y:edge:4",
+          "source_edge": "r_xy:connector_after:r_xy:y:edge:4",
+          "source_from": "r_xy:y:edge:4",
+          "source_to": "x_replacement:1510:m1_z",
           "target_segment_range": [
             2,
             2
@@ -28423,12 +28423,12 @@
             {
               "kind": "actual_dual_square_boundary_connector",
               "raw_cell_id": "r_xy:dual_boundary_connector:3",
-              "source_sha256": "B07E8086B5A9D820A5FF319589A50325B9FCEACDCA77A85DB1C8A2FD5C4CB9CE"
+              "source_sha256": "0B097A7D3965839EF5CBEADADD5CDFA8EE735C6FABC49A3F2266981DE93E07E3"
             }
           ],
-          "source_edge": "r_xy:connector_after:r_xy:y:edge:4",
-          "source_from": "r_xy:y:edge:4",
-          "source_to": "x_replacement:1509:m1_z",
+          "source_edge": "r_xy:connector_after:x_replacement:1510:m1_z",
+          "source_from": "x_replacement:1510:m1_z",
+          "source_to": "r_xy:y:edge:0",
           "target_segment_range": [
             3,
             5
@@ -28447,12 +28447,12 @@
             {
               "kind": "actual_dual_square_boundary_connector",
               "raw_cell_id": "r_yz:dual_boundary_connector:0",
-              "source_sha256": "13BBC12B457EAF84A6D714BA62FED7C96CF6ED2C71AD303DFB220B252FD6E48B"
+              "source_sha256": "310F384E5C895AE3C7E0841ADC0F333425DAD6962B24C5F3D28B82BB2F23220F"
             }
           ],
-          "source_edge": "r_yz:connector_after:r_yz:y:edge:2",
-          "source_from": "r_yz:y:edge:2",
-          "source_to": "r_yz:z:edge:0",
+          "source_edge": "r_yz:connector_after:r_yz:z:edge:0",
+          "source_from": "r_yz:z:edge:0",
+          "source_to": "r_yz:y:edge:2",
           "target_segment_range": [
             0,
             0
@@ -28463,12 +28463,12 @@
             {
               "kind": "actual_dual_square_boundary_connector",
               "raw_cell_id": "r_yz:dual_boundary_connector:1",
-              "source_sha256": "C467AAA89894E6F9E2F2985450D585FCC74918F252A84F05C378E0914DCF2242"
+              "source_sha256": "EA34158392AB5EC7DF350B20165C1E9249478AF2A09E6D7B0DE0163058356D79"
             }
           ],
-          "source_edge": "r_yz:connector_after:r_yz:z:edge:0",
-          "source_from": "r_yz:z:edge:0",
-          "source_to": "r_yz:y:edge:6",
+          "source_edge": "r_yz:connector_after:r_yz:y:edge:2",
+          "source_from": "r_yz:y:edge:2",
+          "source_to": "r_yz:z:edge:4",
           "target_segment_range": [
             1,
             1
@@ -28479,12 +28479,12 @@
             {
               "kind": "actual_dual_square_boundary_connector",
               "raw_cell_id": "r_yz:dual_boundary_connector:2",
-              "source_sha256": "9B7CFB714B7E59D34386D1818B291B3215C4ADCDE37FF2A9D44B87E7F8725286"
+              "source_sha256": "078C79303D3334B92135F6D594579622E73300F0DB295E9ECE32E6E24B838B8B"
             }
           ],
-          "source_edge": "r_yz:connector_after:r_yz:y:edge:6",
-          "source_from": "r_yz:y:edge:6",
-          "source_to": "r_yz:z:edge:4",
+          "source_edge": "r_yz:connector_after:r_yz:z:edge:4",
+          "source_from": "r_yz:z:edge:4",
+          "source_to": "r_yz:y:edge:6",
           "target_segment_range": [
             2,
             2
@@ -28495,12 +28495,12 @@
             {
               "kind": "actual_dual_square_boundary_connector",
               "raw_cell_id": "r_yz:dual_boundary_connector:3",
-              "source_sha256": "355C098EE60C61323FA92E37222F3E1AE72D67967DC2591231C5FA3C59F78C8E"
+              "source_sha256": "58F6BA4F1E9EEFC7BE2482178E96E9F40C9E54278D367AA4FA259DA20A1C6F74"
             }
           ],
-          "source_edge": "r_yz:connector_after:r_yz:z:edge:4",
-          "source_from": "r_yz:z:edge:4",
-          "source_to": "r_yz:y:edge:2",
+          "source_edge": "r_yz:connector_after:r_yz:y:edge:6",
+          "source_from": "r_yz:y:edge:6",
+          "source_to": "r_yz:z:edge:0",
           "target_segment_range": [
             3,
             5
@@ -28548,12 +28548,12 @@
       ]
     }
   ],
-  "final_component_passage_cycles_sha256": "1ACDEA5F1A43BAE6D5628523CF7AB83C024CBDECCFD57057F06E26B7D45DC2AE",
-  "free_reduction_bigons_sha256": "4E76F6B33BB08835E570CD444976197A1F6E9DC88B3B47066E49768FAE590D1D",
-  "hybrid_to_railroad_graph_map_sha256": "9C69D317063F9D7BFFA49D687CE251A9D686A48A29564C5FE7E6A3177C0813D0",
+  "final_component_passage_cycles_sha256": "E3797DBAD2E848B8269294DF7CE8AA078275D55C327A4AB1A435962E1D2B87E4",
+  "free_reduction_bigons_sha256": "64DA0F5B1D140BA2E6345D4D70CF089A009ABF4EA5C2460BFD0070072DCBCC55",
+  "hybrid_to_railroad_graph_map_sha256": "BBCF5F3C3B7EB0E6FF7C0B1F4F8528AF487EE57F76A2C68F8861F600D85E59A0",
   "johnson_spine_embedding_sha256": "57BC99BE08ED805EF268049F1EEE961D25F6889A6BDEC142B8715072B7F51AC1",
   "raw_connector_cell_count": 1785,
   "reduced_edge_count": 1780,
   "schema": "t73_reduced_source_connector_provenance/v1",
-  "sha256": "3F20F9A3964938D5BFFB2BB133799239FA7218DEAC012572A7C249A533A4CECC"
+  "sha256": "5B3D2083AD6F49172208A56ABB825EFA22E75C32BEC393A533B466CBB1B1AA71"
 }

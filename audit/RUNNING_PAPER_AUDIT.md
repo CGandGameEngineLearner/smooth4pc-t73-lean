@@ -2832,8 +2832,11 @@ Topology-source checks completed 2026-09-04:
   `scripts/verify_t73_final_railroad_word_binding.py`,
   `geometry/t73_final_railroad_word_binding.json`, and its test.
 - Comparison: after explicit free reduction and cyclic-basepoint normalization,
-  the final m2, r_xy, r_yz, and r_zx words agree with their old compact
-  counterparts. The m3 words have the same length 1460 and the same counts
+  m2 and r_zx agree directly with the old compact words; r_xy and r_yz agree
+  after reversing the orientation of the whole attaching circle, which is
+  immaterial for an unoriented 2-handle attaching knot. Their passage order is
+  the actual stored square traversal, not a nongeometric reordering. The m3
+  words have the same length 1460 and the same counts
   y=189, z=1271, but are neither conjugate nor inverse-conjugate. Therefore
   matching abelian data or length cannot bind the old m3 railroad curve to the
   actual Johnson order.
@@ -2862,7 +2865,7 @@ Topology-source checks completed 2026-09-04:
   `scripts/verify_t73_actual_railroad_standard_pd_gap.py`,
   `audit/t73_actual_railroad_standard_pd_gap.json`, and its test.
 - Finding: the 1878 diagonal connector crossings have mixed signed sums -3
-  for m2/m3 and +1 for m3/r_xy. Mixed intersections of two closed planar
+  for m2/m3 and +1 for m3/r_yz. Mixed intersections of two closed planar
   curves must be even modulo two, so adding dotted Hopf pairs cannot turn this
   incomplete connector ledger into standard PD rows. The builder emits no PD.
 - Required cells: same-rail segments and outside closure arcs. Their crossings

@@ -53285,12 +53285,34 @@
     {
       "component": "r_xy",
       "passage_ids": [
-        "x_replacement:1509:m1_z",
         "r_xy:y:edge:0",
-        "x_replacement:1510:m1_z",
-        "r_xy:y:edge:4"
+        "x_replacement:1509:m1_z",
+        "r_xy:y:edge:4",
+        "x_replacement:1510:m1_z"
       ],
       "passages": [
+        {
+          "belt_point": [
+            "1",
+            "0",
+            "1"
+          ],
+          "component": "r_xy",
+          "handle": "y",
+          "negative_foot_endpoint": [
+            "1/200",
+            "0",
+            "-1"
+          ],
+          "orientation": 1,
+          "passage_id": "r_xy:y:edge:0",
+          "positive_foot_endpoint": [
+            "1/200",
+            "0",
+            "1"
+          ],
+          "source_kind": "dual_disk_boundary"
+        },
         {
           "base_m1_z_global_vertex_range": [
             18,
@@ -53321,21 +53343,21 @@
         },
         {
           "belt_point": [
-            "1",
+            "-1",
             "0",
             "1"
           ],
           "component": "r_xy",
           "handle": "y",
           "negative_foot_endpoint": [
-            "1/200",
+            "-1/200",
             "0",
             "-1"
           ],
-          "orientation": 1,
-          "passage_id": "r_xy:y:edge:0",
+          "orientation": -1,
+          "passage_id": "r_xy:y:edge:4",
           "positive_foot_endpoint": [
-            "1/200",
+            "-1/200",
             "0",
             "1"
           ],
@@ -53368,28 +53390,6 @@
           ],
           "source_kind": "x_slide_m1_parallel_z_lane",
           "tangent_z_offset_removed": "1511/48308401628244390907238598972334227824089268780713438340794100811338961247890190049834933735066127582512193126957743239759474658233656248393477988177922345082733372864990964712165915493295883268610460882057394943693689129434451021930362347841775960460896947449037959516094801601401643177975987909546344890616331312845265323840690980225985249892800183905812480"
-        },
-        {
-          "belt_point": [
-            "-1",
-            "0",
-            "1"
-          ],
-          "component": "r_xy",
-          "handle": "y",
-          "negative_foot_endpoint": [
-            "-1/200",
-            "0",
-            "-1"
-          ],
-          "orientation": -1,
-          "passage_id": "r_xy:y:edge:4",
-          "positive_foot_endpoint": [
-            "-1/200",
-            "0",
-            "1"
-          ],
-          "source_kind": "dual_disk_boundary"
         }
       ],
       "source_kind": "dual_square_boundary_with_x_replacements",
@@ -53398,34 +53398,12 @@
     {
       "component": "r_yz",
       "passage_ids": [
-        "r_yz:y:edge:2",
         "r_yz:z:edge:0",
-        "r_yz:y:edge:6",
-        "r_yz:z:edge:4"
+        "r_yz:y:edge:2",
+        "r_yz:z:edge:4",
+        "r_yz:y:edge:6"
       ],
       "passages": [
-        {
-          "belt_point": [
-            "0",
-            "-1",
-            "1"
-          ],
-          "component": "r_yz",
-          "handle": "y",
-          "negative_foot_endpoint": [
-            "0",
-            "-1/200",
-            "-1"
-          ],
-          "orientation": 1,
-          "passage_id": "r_yz:y:edge:2",
-          "positive_foot_endpoint": [
-            "0",
-            "-1/200",
-            "1"
-          ],
-          "source_kind": "dual_disk_boundary"
-        },
         {
           "belt_point": [
             "0",
@@ -53451,21 +53429,21 @@
         {
           "belt_point": [
             "0",
-            "1",
+            "-1",
             "1"
           ],
           "component": "r_yz",
           "handle": "y",
           "negative_foot_endpoint": [
             "0",
-            "1/200",
+            "-1/200",
             "-1"
           ],
-          "orientation": -1,
-          "passage_id": "r_yz:y:edge:6",
+          "orientation": 1,
+          "passage_id": "r_yz:y:edge:2",
           "positive_foot_endpoint": [
             "0",
-            "1/200",
+            "-1/200",
             "1"
           ],
           "source_kind": "dual_disk_boundary"
@@ -53489,6 +53467,28 @@
             "1/3",
             "397/600",
             "403/600"
+          ],
+          "source_kind": "dual_disk_boundary"
+        },
+        {
+          "belt_point": [
+            "0",
+            "1",
+            "1"
+          ],
+          "component": "r_yz",
+          "handle": "y",
+          "negative_foot_endpoint": [
+            "0",
+            "1/200",
+            "-1"
+          ],
+          "orientation": -1,
+          "passage_id": "r_yz:y:edge:6",
+          "positive_foot_endpoint": [
+            "0",
+            "1/200",
+            "1"
           ],
           "source_kind": "dual_disk_boundary"
         }
@@ -53615,6 +53615,6 @@
   "passage_count": 1785,
   "post_x_m1_deletion_sha256": "6CF7C396F4F75A4FC68AFA5DEB67D21A1C562D007D2B57267630F418F3078C53",
   "schema": "t73_final_component_passage_cycles/v1",
-  "sha256": "1ACDEA5F1A43BAE6D5628523CF7AB83C024CBDECCFD57057F06E26B7D45DC2AE",
+  "sha256": "E3797DBAD2E848B8269294DF7CE8AA078275D55C327A4AB1A435962E1D2B87E4",
   "x_local_movie_sha256": "CE2F3DF167D06FA73E00CE54C24D19429051C8591229F7C25F08AADF2919469E"
 }

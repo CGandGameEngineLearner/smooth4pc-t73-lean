@@ -21339,9 +21339,9 @@
       "component": "r_xy",
       "kind": "surviving_connector_to_railroad_chain",
       "source_cycle_edge_index": 0,
-      "source_edge": "r_xy:connector_after:x_replacement:1509:m1_z",
-      "source_from": "x_replacement:1509:m1_z",
-      "source_to": "r_xy:y:edge:0",
+      "source_edge": "r_xy:connector_after:r_xy:y:edge:0",
+      "source_from": "r_xy:y:edge:0",
+      "source_to": "x_replacement:1509:m1_z",
       "target_segment_range": [
         0,
         0
@@ -21351,9 +21351,9 @@
       "component": "r_xy",
       "kind": "surviving_connector_to_railroad_chain",
       "source_cycle_edge_index": 1,
-      "source_edge": "r_xy:connector_after:r_xy:y:edge:0",
-      "source_from": "r_xy:y:edge:0",
-      "source_to": "x_replacement:1510:m1_z",
+      "source_edge": "r_xy:connector_after:x_replacement:1509:m1_z",
+      "source_from": "x_replacement:1509:m1_z",
+      "source_to": "r_xy:y:edge:4",
       "target_segment_range": [
         1,
         1
@@ -21363,9 +21363,9 @@
       "component": "r_xy",
       "kind": "surviving_connector_to_railroad_chain",
       "source_cycle_edge_index": 2,
-      "source_edge": "r_xy:connector_after:x_replacement:1510:m1_z",
-      "source_from": "x_replacement:1510:m1_z",
-      "source_to": "r_xy:y:edge:4",
+      "source_edge": "r_xy:connector_after:r_xy:y:edge:4",
+      "source_from": "r_xy:y:edge:4",
+      "source_to": "x_replacement:1510:m1_z",
       "target_segment_range": [
         2,
         2
@@ -21375,9 +21375,9 @@
       "component": "r_xy",
       "kind": "surviving_connector_to_railroad_chain",
       "source_cycle_edge_index": 3,
-      "source_edge": "r_xy:connector_after:r_xy:y:edge:4",
-      "source_from": "r_xy:y:edge:4",
-      "source_to": "x_replacement:1509:m1_z",
+      "source_edge": "r_xy:connector_after:x_replacement:1510:m1_z",
+      "source_from": "x_replacement:1510:m1_z",
+      "source_to": "r_xy:y:edge:0",
       "target_segment_range": [
         3,
         5
@@ -21387,9 +21387,9 @@
       "component": "r_yz",
       "kind": "surviving_connector_to_railroad_chain",
       "source_cycle_edge_index": 0,
-      "source_edge": "r_yz:connector_after:r_yz:y:edge:2",
-      "source_from": "r_yz:y:edge:2",
-      "source_to": "r_yz:z:edge:0",
+      "source_edge": "r_yz:connector_after:r_yz:z:edge:0",
+      "source_from": "r_yz:z:edge:0",
+      "source_to": "r_yz:y:edge:2",
       "target_segment_range": [
         0,
         0
@@ -21399,9 +21399,9 @@
       "component": "r_yz",
       "kind": "surviving_connector_to_railroad_chain",
       "source_cycle_edge_index": 1,
-      "source_edge": "r_yz:connector_after:r_yz:z:edge:0",
-      "source_from": "r_yz:z:edge:0",
-      "source_to": "r_yz:y:edge:6",
+      "source_edge": "r_yz:connector_after:r_yz:y:edge:2",
+      "source_from": "r_yz:y:edge:2",
+      "source_to": "r_yz:z:edge:4",
       "target_segment_range": [
         1,
         1
@@ -21411,9 +21411,9 @@
       "component": "r_yz",
       "kind": "surviving_connector_to_railroad_chain",
       "source_cycle_edge_index": 2,
-      "source_edge": "r_yz:connector_after:r_yz:y:edge:6",
-      "source_from": "r_yz:y:edge:6",
-      "source_to": "r_yz:z:edge:4",
+      "source_edge": "r_yz:connector_after:r_yz:z:edge:4",
+      "source_from": "r_yz:z:edge:4",
+      "source_to": "r_yz:y:edge:6",
       "target_segment_range": [
         2,
         2
@@ -21423,9 +21423,9 @@
       "component": "r_yz",
       "kind": "surviving_connector_to_railroad_chain",
       "source_cycle_edge_index": 3,
-      "source_edge": "r_yz:connector_after:r_yz:z:edge:4",
-      "source_from": "r_yz:z:edge:4",
-      "source_to": "r_yz:y:edge:2",
+      "source_edge": "r_yz:connector_after:r_yz:y:edge:6",
+      "source_from": "r_yz:y:edge:6",
+      "source_to": "r_yz:z:edge:0",
       "target_segment_range": [
         3,
         5
@@ -21443,13 +21443,13 @@
       ]
     }
   ],
-  "final_component_passage_cycles_sha256": "1ACDEA5F1A43BAE6D5628523CF7AB83C024CBDECCFD57057F06E26B7D45DC2AE",
+  "final_component_passage_cycles_sha256": "E3797DBAD2E848B8269294DF7CE8AA078275D55C327A4AB1A435962E1D2B87E4",
   "final_yz_foot_state_sha256": "EC6E316A3126FAB5A6062431C8B7DFDDA15AC6246C1842557B7E1142D46ABD41",
-  "free_reduction_bigons_sha256": "4E76F6B33BB08835E570CD444976197A1F6E9DC88B3B47066E49768FAE590D1D",
-  "railroad_core_coordinates_sha256": "077221922A6D6F80B96CB6446347B7A2A720A39318B4505B7309C56642BDF5E1",
-  "railroad_product_framings_sha256": "F08FE085703D218C56CF23DC44ECB215D7F91F721C619BF6A510345E3ECC6B3D",
+  "free_reduction_bigons_sha256": "64DA0F5B1D140BA2E6345D4D70CF089A009ABF4EA5C2460BFD0070072DCBCC55",
+  "railroad_core_coordinates_sha256": "5DB9347E8940DAF277BDC65E24802CA20CD0F3250EF8372DE057D856B8C465F2",
+  "railroad_product_framings_sha256": "64D43148A3DFE178941505FBC410F2B3BB7583F10A08F025F1EC5243F3EDD934",
   "schema": "t73_hybrid_to_railroad_graph_map/v1",
-  "sha256": "9C69D317063F9D7BFFA49D687CE251A9D686A48A29564C5FE7E6A3177C0813D0",
+  "sha256": "BBCF5F3C3B7EB0E6FF7C0B1F4F8528AF487EE57F76A2C68F8861F600D85E59A0",
   "source_cell_count": 3560,
   "target_subdivision_rule": "each surviving event maps to one railroad event vertex; ordinary connectors map to one segment and each closure maps to its three-segment outer chain",
   "vertex_maps": [
@@ -47758,13 +47758,12 @@
     {
       "component": "r_xy",
       "source_cell": {
-        "band_index": 1509,
-        "hybrid_transition_sha256": "CC1A55BE564D2B4B55E61A68628A856F5BF387304ACB1BA2DF8C02F9E204B479",
-        "kind": "hybrid_x_replacement_z_passage"
+        "kind": "final_bound_base_or_dual_passage",
+        "passage_sha256": "8C958AF2F72ED779132470054DC61C95D6C6A7E8BC36734A7144C75220BC4C82"
       },
-      "source_vertex": "x_replacement:1509:m1_z",
+      "source_vertex": "r_xy:y:edge:0",
       "target_vertex": [
-        "501/500",
+        "1/500",
         "0",
         "2/11"
       ],
@@ -47773,16 +47772,31 @@
     {
       "component": "r_xy",
       "source_cell": {
-        "kind": "final_bound_base_or_dual_passage",
-        "passage_sha256": "8C958AF2F72ED779132470054DC61C95D6C6A7E8BC36734A7144C75220BC4C82"
+        "band_index": 1509,
+        "hybrid_transition_sha256": "CC1A55BE564D2B4B55E61A68628A856F5BF387304ACB1BA2DF8C02F9E204B479",
+        "kind": "hybrid_x_replacement_z_passage"
       },
-      "source_vertex": "r_xy:y:edge:0",
+      "source_vertex": "x_replacement:1509:m1_z",
       "target_vertex": [
-        "1/500",
+        "501/500",
         "1/4",
         "76000239/176000528"
       ],
       "target_vertex_index": 1
+    },
+    {
+      "component": "r_xy",
+      "source_cell": {
+        "kind": "final_bound_base_or_dual_passage",
+        "passage_sha256": "5A173E746BFF85768D0B1F56C98FA9BCF59618555C2A0449905EEDC1022BB478"
+      },
+      "source_vertex": "r_xy:y:edge:4",
+      "target_vertex": [
+        "1/500",
+        "1/2",
+        "30000101/44000132"
+      ],
+      "target_vertex_index": 2
     },
     {
       "component": "r_xy",
@@ -47794,38 +47808,10 @@
       "source_vertex": "x_replacement:1510:m1_z",
       "target_vertex": [
         "501/500",
-        "1/2",
-        "30000101/44000132"
-      ],
-      "target_vertex_index": 2
-    },
-    {
-      "component": "r_xy",
-      "source_cell": {
-        "kind": "final_bound_base_or_dual_passage",
-        "passage_sha256": "5A173E746BFF85768D0B1F56C98FA9BCF59618555C2A0449905EEDC1022BB478"
-      },
-      "source_vertex": "r_xy:y:edge:4",
-      "target_vertex": [
-        "1/500",
         "3/4",
         "164000591/176000528"
       ],
       "target_vertex_index": 3
-    },
-    {
-      "component": "r_yz",
-      "source_cell": {
-        "kind": "final_bound_base_or_dual_passage",
-        "passage_sha256": "11D2BAC7420D3FA5D82A5F81DC29469936A107A01008A51CDBE45832425A8B9B"
-      },
-      "source_vertex": "r_yz:y:edge:2",
-      "target_vertex": [
-        "3/1000",
-        "0",
-        "3/11"
-      ],
-      "target_vertex_index": 0
     },
     {
       "component": "r_yz",
@@ -47836,24 +47822,24 @@
       "source_vertex": "r_yz:z:edge:0",
       "target_vertex": [
         "1003/1000",
-        "1/4",
-        "92000287/176000528"
+        "0",
+        "3/11"
       ],
-      "target_vertex_index": 1
+      "target_vertex_index": 0
     },
     {
       "component": "r_yz",
       "source_cell": {
         "kind": "final_bound_base_or_dual_passage",
-        "passage_sha256": "E78CF5EECB5C7F9FA115C646FE35BA2C72F1E6A64DF502C12A7230CA948D5A72"
+        "passage_sha256": "11D2BAC7420D3FA5D82A5F81DC29469936A107A01008A51CDBE45832425A8B9B"
       },
-      "source_vertex": "r_yz:y:edge:6",
+      "source_vertex": "r_yz:y:edge:2",
       "target_vertex": [
         "3/1000",
-        "1/2",
-        "34000113/44000132"
+        "1/4",
+        "92000287/176000528"
       ],
-      "target_vertex_index": 2
+      "target_vertex_index": 1
     },
     {
       "component": "r_yz",
@@ -47864,6 +47850,20 @@
       "source_vertex": "r_yz:z:edge:4",
       "target_vertex": [
         "1003/1000",
+        "1/2",
+        "34000113/44000132"
+      ],
+      "target_vertex_index": 2
+    },
+    {
+      "component": "r_yz",
+      "source_cell": {
+        "kind": "final_bound_base_or_dual_passage",
+        "passage_sha256": "E78CF5EECB5C7F9FA115C646FE35BA2C72F1E6A64DF502C12A7230CA948D5A72"
+      },
+      "source_vertex": "r_yz:y:edge:6",
+      "target_vertex": [
+        "3/1000",
         "3/4",
         "180000639/176000528"
       ],
