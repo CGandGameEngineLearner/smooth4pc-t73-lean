@@ -9,11 +9,11 @@
       "replacement_source_segments": 10760,
       "replacement_target_core_segments": 13428,
       "replacement_target_push_segments": 14044,
-      "source_core_segments": 12087,
-      "source_push_segments": 12087,
-      "target_core_segments": 14755,
-      "target_push_segments": 15371,
-      "unchanged_segments": 1327
+      "source_core_segments": 12098,
+      "source_push_segments": 12098,
+      "target_core_segments": 14766,
+      "target_push_segments": 15382,
+      "unchanged_segments": 1338
     },
     {
       "closed_core_cycle_in_atlas": true,
@@ -22,11 +22,11 @@
       "replacement_source_segments": 49600,
       "replacement_target_core_segments": 60540,
       "replacement_target_push_segments": 64284,
-      "source_core_segments": 55891,
-      "source_push_segments": 55891,
-      "target_core_segments": 66831,
-      "target_push_segments": 70575,
-      "unchanged_segments": 6291
+      "source_core_segments": 55902,
+      "source_push_segments": 55902,
+      "target_core_segments": 66842,
+      "target_push_segments": 70586,
+      "unchanged_segments": 6302
     },
     {
       "closed_core_cycle_in_atlas": true,
@@ -76,15 +76,15 @@
   "overlap_transition_count": 3026,
   "overlap_transitions_receipt_sha256": "6F1F2BC4BA12267CFF8A0DE44D91FA9475E49CEA743FE2FCA2B911710E50E3E3",
   "overlap_transitions_verification_sha256": "805BDD9680EE950B926AFCDA9FE2B115C6999DC54E83BAA812DFC92BE3A72977",
-  "post_x_framed_cycle_assembly_sha256": "63E24D8F1C7BE1B75503DA2B2F30C70FE8BDF6DDA85E473AAE4595C49B85FC9D",
+  "post_x_framed_cycle_assembly_sha256": "2AFFC7FF0FA1686A2F90BD57A095BEF65535D275B6D8D82BADE9D773EE2F613F",
   "replacement_source_segment_count": 60520,
   "replacement_target_core_segment_count": 74156,
   "replacement_target_push_segment_count": 78532,
   "schema": "t73_x_m1_complete_framed_cancellation_image/v1",
-  "sha256": "F8AA1FE9864E6CDD6594BF1B42D6D64868908471E1CBBE8321B5826956F1DC86",
+  "sha256": "3DC1B845ACE8E5DA1B0CAD271B64CC54917B7314CFDC0A3FBE3C0264FF89C0A8",
   "single_affine_s3_chart_status": "OPEN",
-  "source_core_segment_count": 68154,
-  "source_push_segment_count": 68154,
-  "target_core_segment_count": 81790,
-  "target_push_segment_count": 86166
+  "source_core_segment_count": 68176,
+  "source_push_segment_count": 68176,
+  "target_core_segment_count": 81812,
+  "target_push_segment_count": 86188
 }

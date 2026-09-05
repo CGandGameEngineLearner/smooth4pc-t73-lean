@@ -204,7 +204,7 @@ projection and source product framings remain open.
 The corrected pieces are now assembled into five closed framed cycles in the
 graph of verified charts at
 [`geometry/t73_post_x_framed_cycle_assembly.json`](geometry/t73_post_x_framed_cycle_assembly.json).
-It exhausts 3558 blocks and gives matching 68154-edge core and push cycles;
+It exhausts 3558 blocks and gives matching 68176-edge core and push cycles;
 every abstract vertex has one incoming and one outgoing block. Rebuild/check
 with `python3 scripts/build_t73_post_x_framed_cycle_assembly.py --check` and
 `python3 scripts/verify_t73_post_x_framed_cycle_assembly.py`. This closes
@@ -286,7 +286,7 @@ affine dotted-S3 chart remains open.
 The complete merged x/m1 result is
 [`geometry/t73_x_m1_complete_framed_cancellation_image.json`](geometry/t73_x_m1_complete_framed_cancellation_image.json).
 It binds the persisted full overlap verification and assembles five closed
-atlas cycles: 68154 source core edges become 81790 target core and 86166 target
+atlas cycles: 68176 source core edges become 81812 target core and 86188 target
 push edges after exact subdivision. Verify with `python3
 scripts/verify_t73_x_m1_complete_framed_cancellation_image.py`; verdict:
 `PASS_COMPLETE_X_M1_FRAMED_CANCELLATION_IMAGE_IN_ATLAS`. The next operation is
@@ -295,7 +295,7 @@ The exhaustive y/z substitution table is
 [`geometry/t73_yz_dotted_passage_replacement_map.json`](geometry/t73_yz_dotted_passage_replacement_map.json).
 It locates the two-segment base-18--20 z subpath inside every one of the 1513
 x-replacement middles and binds all 272 other Johnson/bottom/dual passages.
-Thus 3568 source core/push segments are replaced by 1785 framed Hopf segments,
+Thus 3590 source core/push segments are replaced by 1785 framed Hopf segments,
 giving projected post-conversion counts core=80007 and push=84383. Verify with
 `python3 scripts/verify_t73_yz_dotted_passage_replacement_map.py`. The 1785
 framed passage mapping cylinders are the next gate.
@@ -305,7 +305,7 @@ They are stored at
 [`audit/t73_yz_framed_passage_mapping_cylinders_receipt.json`](audit/t73_yz_framed_passage_mapping_cylinders_receipt.json)
 and
 [`audit/t73_yz_framed_passage_mapping_cylinders_verification.json`](audit/t73_yz_framed_passage_mapping_cylinders_verification.json).
-All 21408 tetrahedra and 1785 disjoint supports pass. The resulting seven-
+All 21540 tetrahedra and 1785 disjoint supports pass. The resulting seven-
 component atlas is
 [`geometry/t73_complete_framed_dotted_atlas.json`](geometry/t73_complete_framed_dotted_atlas.json):
 80007 framed-core edges, 84383 push edges and two four-edge dotted polygons.

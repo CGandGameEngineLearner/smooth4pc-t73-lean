@@ -3,8 +3,8 @@
   "actual_cut_tangle_sha256": "99D86692B5087AC32C87E7CC56EF0AC79C2A07DA63497066E412CDD440E32CF6",
   "actual_dotted_s3_passage_cells_sha256": "EC45F05D67BFC35AD0D97FD36BD40AA11E733108F6B06E3FC23011763DB6ECE0",
   "central_connector_block_count": 1773,
-  "charted_core_segment_count": 68154,
-  "charted_push_segment_count": 68154,
+  "charted_core_segment_count": 68176,
+  "charted_push_segment_count": 68176,
   "completion_status": "FIVE_COMPLETE_FRAMED_CYCLES_ASSEMBLED_IN_GRAPH_OF_CHARTS",
   "component_count": 5,
   "components": [
@@ -12,13 +12,13 @@
       "block_count": 622,
       "blocks": [
         {
-          "core_segment_count": 1,
+          "core_segment_count": 12,
           "dotted_s3_passage_ref": "m_2:C_i",
           "from_vertex": "m_2:v:0",
-          "kind": "actual_bottom_cut_arc",
+          "kind": "actual_mapping_torus_bottom_closure",
           "passage_id": "m_2:C_i",
           "positive_negative_foot_collar_ref": "m_2:C_i",
-          "push_segment_count": 1,
+          "push_segment_count": 12,
           "source_pointer": "geometry/t73_actual_cut_tangle.json#/passages/m_2:C_i",
           "to_vertex": "m_2:passage-exit:0"
         },
@@ -10580,21 +10580,21 @@
       ],
       "closed": true,
       "component": "m_2",
-      "core_segment_count": 12087,
+      "core_segment_count": 12098,
       "cyclic_vertex_count": 622,
-      "push_segment_count": 12087
+      "push_segment_count": 12098
     },
     {
       "block_count": 2924,
       "blocks": [
         {
-          "core_segment_count": 1,
+          "core_segment_count": 12,
           "dotted_s3_passage_ref": "m_3:C_i",
           "from_vertex": "m_3:v:0",
-          "kind": "actual_bottom_cut_arc",
+          "kind": "actual_mapping_torus_bottom_closure",
           "passage_id": "m_3:C_i",
           "positive_negative_foot_collar_ref": "m_3:C_i",
-          "push_segment_count": 1,
+          "push_segment_count": 12,
           "source_pointer": "geometry/t73_actual_cut_tangle.json#/passages/m_3:C_i",
           "to_vertex": "m_3:passage-exit:0"
         },
@@ -59892,9 +59892,9 @@
       ],
       "closed": true,
       "component": "m_3",
-      "core_segment_count": 55891,
+      "core_segment_count": 55902,
       "cyclic_vertex_count": 2924,
-      "push_segment_count": 55891
+      "push_segment_count": 55902
     },
     {
       "block_count": 4,
@@ -60158,7 +60158,7 @@
   "post_x_framed_replacement_cells_receipt_sha256": "25DA696216B176D816E0CE5FBDF5781C038791A6E001A1F65FA95C7DF5CE9B8D",
   "reduced_source_connector_provenance_sha256": "7460C487E5B3E875EA0A6B2D0481388A0174D6532B89D258A6C1862E818B2103",
   "schema": "t73_post_x_framed_cycle_assembly/v1",
-  "sha256": "63E24D8F1C7BE1B75503DA2B2F30C70FE8BDF6DDA85E473AAE4595C49B85FC9D",
+  "sha256": "2AFFC7FF0FA1686A2F90BD57A095BEF65535D275B6D8D82BADE9D773EE2F613F",
   "unified_s3_embedding_status": "OPEN_CANCELLATION_COMPLEMENT_MAP",
   "x_replacement_block_count": 1513
 }

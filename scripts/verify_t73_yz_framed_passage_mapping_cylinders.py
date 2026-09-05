@@ -21,10 +21,14 @@ def resolve(v):
  return Path("/mnt")/v[0].lower()/v[3:].replace("\\","/")
 def subdivide(v,n):
  a,b=v
- return [a,b] if n==1 else [a,tuple((a[i]+b[i])/2 for i in range(3)),b]
+ return [tuple(a[i]+Fraction(k,n)*(b[i]-a[i]) for i in range(3)) for k in range(n+1)]
+def bottom_closure(ar,spine,name):
+ core=[point(v) for v in ar["components"][name]["core_polyline_T3xI"]];idx={"m_2":1,"m_3":2}[name];spoke=spine["components"][idx]["spoke"];plus=point(spoke["stage_plus"])+(Fraction(1),);minus=point(spoke["stage_minus"])+(Fraction(1),);i=core.index(plus);j=core.index(minus);path=core[j:]+core[1:i+1]
+ if len(path)-1!=12:raise AssertionError("bottom closure count changed")
+ return path
 def check_receipt():
  r=json.loads(RECEIPT.read_text());mp=json.loads(MAP.read_text());mr=json.loads(MIDDLE.read_text());d=json.loads(DOTTED.read_text())
- checks={"payload":r["sha256"]==sha({k:v for k,v in r.items() if k!="sha256"}),"builder":r["builder_sha256"]==file_sha(BUILDER),"sources":r["replacement_map_sha256"]==mp["sha256"] and r["middle_receipt_sha256"]==mr["sha256"] and r["dotted_cells_sha256"]==d["sha256"],"counts":r["passage_count"]==1785 and r["source_segment_count"]==3568 and r["target_original_segment_count"]==1785 and r["mapping_cylinder_tetrahedron_count"]==21408,"verdict":r["verdict"]=="PASS_ALL_YZ_FRAMED_PASSAGE_MAPPING_CYLINDERS_CONSTRUCTED"}
+ checks={"payload":r["sha256"]==sha({k:v for k,v in r.items() if k!="sha256"}),"builder":r["builder_sha256"]==file_sha(BUILDER),"sources":r["replacement_map_sha256"]==mp["sha256"] and r["middle_receipt_sha256"]==mr["sha256"] and r["dotted_cells_sha256"]==d["sha256"],"counts":r["passage_count"]==1785 and r["source_segment_count"]==3590 and r["target_original_segment_count"]==1785 and r["mapping_cylinder_tetrahedron_count"]==21540,"verdict":r["verdict"]=="PASS_ALL_YZ_FRAMED_PASSAGE_MAPPING_CYLINDERS_CONSTRUCTED"}
  if not all(checks.values()):raise AssertionError(f"yz cylinder receipt failed: {checks}")
  return r,checks
 def verify_full(middle_cache=None,check_cache_sha=False):
@@ -47,9 +51,8 @@ def verify_full(middle_cache=None,check_cache_sha=False):
    m=middles[source["band_index"]];lo,hi=source["source_middle_vertex_range"];core=[point(v) for v in m["target_core_vertices"]][lo:hi+1];push=[point(v) for v in m["target_push_vertices"]][lo:hi+1]
   elif kind=="actual_johnson_handle_arc":
    core=[point(v) for v in arcs[source["source_arc_id"]]["torus_polyline"]];push=[add(v,(width,width,width)) for v in core]
-  elif kind=="actual_bottom_cut_arc":
-   if pid in cuts:core=[point(v) for v in cuts[pid]["cut_arc_in_ball"]];normal=point(cuts[pid]["product_normal"])
-   else:core=[point(v) for v in (["-1/3","-2/3","-2/3"],["1/3","2/3","2/3"])];normal=(width,width,Fraction(0))
+  elif kind=="actual_mapping_torus_bottom_closure":
+   core=bottom_closure(ar,sp,source["owner"]);normal=(width,width,width,Fraction(0))
    push=[add(v,normal) for v in core]
   else:
    edge=source["source_segment_range"][0];core=[point(v) for v in ar["components"][source["owner"]]["polyline"]][edge:edge+3];normal=point(dual_by[source["owner"]]["product_normal"]);push=[add(v,normal) for v in core]
@@ -62,7 +65,7 @@ def verify_full(middle_cache=None,check_cache_sha=False):
  for h in supports:
   q=sorted(supports[h])
   if any(b[0]<=a[1] for a,b in zip(q,q[1:])):raise AssertionError("yz cylinder supports overlap")
- if segments!=3568 or tets!=21408 or dict(kinds)!=receipt["source_kind_counts"]:raise AssertionError("yz cylinder full totals changed")
+ if segments!=3590 or tets!=21540 or dict(kinds)!=receipt["source_kind_counts"]:raise AssertionError("yz cylinder full totals changed")
  return {"verdict":"PASS_ALL_YZ_FRAMED_PASSAGE_MAPPING_CYLINDERS_FULL","fast_checks":checks,"passages":1785,"source_segments":segments,"mapping_cylinder_tetrahedra":tets,"framing_vertex_checks":push_checks,"disjoint_support_checks":1783,"cache_sha_checked":check_cache_sha,"continuous_dotted_conversion_in_atlas":True,"single_affine_s3_chart_status":"OPEN"}
 def main():
  p=argparse.ArgumentParser();p.add_argument("--full",action="store_true");p.add_argument("--middle-cache",type=Path);p.add_argument("--check-cache-sha",action="store_true");a=p.parse_args();r=verify_full(a.middle_cache,a.check_cache_sha) if a.full else {"verdict":"PASS_YZ_PASSAGE_CYLINDER_RECEIPT","checks":check_receipt()[1],"passages":1785};print(json.dumps(r,sort_keys=True))

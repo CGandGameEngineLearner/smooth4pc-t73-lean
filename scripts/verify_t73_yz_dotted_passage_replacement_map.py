@@ -36,8 +36,8 @@ def verify():
     if len(hits)!=1:raise AssertionError("x replacement z-subpath lost")
     indices+=hits
    if r["source_base_vertex_order"]!=order or r["source_middle_vertex_range"]!=[indices[0],indices[-1]] or indices!=list(range(indices[0],indices[0]+3)):raise AssertionError("x replacement range changed")
- expected_kinds={"ejected_x_replacement_m1_z_subpath":1513,"actual_johnson_handle_arc":262,"actual_bottom_cut_arc":2,"actual_dual_two_segment_passage":8}
- if dict(kinds)!=expected_kinds or (len(d["replacements"]),xcount,source,target_count)!=(1785,1513,3568,1785):raise AssertionError("replacement inventory changed")
+ expected_kinds={"ejected_x_replacement_m1_z_subpath":1513,"actual_johnson_handle_arc":262,"actual_mapping_torus_bottom_closure":2,"actual_dual_two_segment_passage":8}
+ if dict(kinds)!=expected_kinds or (len(d["replacements"]),xcount,source,target_count)!=(1785,1513,3590,1785):raise AssertionError("replacement inventory changed")
  if (d["post_conversion_core_segment_count"],d["post_conversion_push_segment_count"])!=(80007,84383):raise AssertionError("post-conversion totals changed")
- return {"verdict":"PASS_ALL_YZ_PASSAGES_BOUND_TO_DOTTED_S3_REPLACEMENTS","replacements":1785,"x_replacements":1513,"source_core_segments":3568,"target_core_segments":1785,"post_conversion_core_segments":80007,"post_conversion_push_segments":84383,"mapping_cylinder_status":d["mapping_cylinder_status"]}
+ return {"verdict":"PASS_ALL_YZ_PASSAGES_BOUND_TO_DOTTED_S3_REPLACEMENTS","replacements":1785,"x_replacements":1513,"source_core_segments":3590,"target_core_segments":1785,"post_conversion_core_segments":80007,"post_conversion_push_segments":84383,"mapping_cylinder_status":d["mapping_cylinder_status"]}
 if __name__=="__main__":print(json.dumps(verify(),sort_keys=True))

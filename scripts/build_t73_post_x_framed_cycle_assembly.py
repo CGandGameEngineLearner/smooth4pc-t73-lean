@@ -76,11 +76,11 @@ def build():
                 }
             elif passage["source_kind"] == "bottom_coordinate_arc":
                 passage_block = {
-                    "kind": "actual_bottom_cut_arc",
+                    "kind": "actual_mapping_torus_bottom_closure",
                     "passage_id": passage_id,
                     "source_pointer": f"geometry/t73_actual_cut_tangle.json#/passages/{passage_id}",
-                    "core_segment_count": 1,
-                    "push_segment_count": 1,
+                    "core_segment_count": 12,
+                    "push_segment_count": 12,
                 }
             elif passage["source_kind"] == "dual_disk_boundary":
                 edge = int(passage_id.rsplit(":", 1)[1])

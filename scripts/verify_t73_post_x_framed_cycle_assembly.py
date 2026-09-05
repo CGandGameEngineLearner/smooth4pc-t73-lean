@@ -53,7 +53,7 @@ def verify():
         group["component"]: {cell["raw_cell_id"] for edge in group["reduced_edges"] for cell in edge["raw_connector_cells"]}
         for group in provenance["components"] if group["component"] in ("m_2", "m_3")
     }
-    expected_segments = {"m_2": 12087, "m_3": 55891, "r_xy": 84, "r_yz": 8, "r_zx": 84}
+    expected_segments = {"m_2": 12098, "m_3": 55902, "r_xy": 84, "r_yz": 8, "r_zx": 84}
     kinds = Counter(); all_bands = set(); used_connectors = {"m_2": set(), "m_3": set()}
     total_segments = total_blocks = degree_checks = 0
     for assembly in data["components"]:
@@ -79,7 +79,7 @@ def verify():
                 all_bands.add(block["band_index"])
             elif block["kind"] == "actual_johnson_handle_arc" and block["core_segment_count"] != 2:
                 raise AssertionError("Johnson handle arc subdivision changed")
-            elif block["kind"] == "actual_bottom_cut_arc" and block["core_segment_count"] != 1:
+            elif block["kind"] == "actual_mapping_torus_bottom_closure" and block["core_segment_count"] != 12:
                 raise AssertionError("bottom cut arc subdivision changed")
             elif block["kind"] == "actual_dual_two_segment_passage" and block["core_segment_count"] != 2:
                 raise AssertionError("dual passage subdivision changed")
@@ -100,7 +100,7 @@ def verify():
     expected_kinds = {
         "post_x_framed_replacement_path": 1513,
         "actual_johnson_handle_arc": 262,
-        "actual_bottom_cut_arc": 2,
+        "actual_mapping_torus_bottom_closure": 2,
         "actual_dual_two_segment_passage": 8,
         "actual_johnson_central_connector": 1773,
     }
@@ -108,7 +108,7 @@ def verify():
         raise AssertionError("framed-cycle block inventory changed")
     if any(used_connectors[name] != connector_ids[name] for name in used_connectors):
         raise AssertionError("central connectors are not exhaustive")
-    if total_segments != 68154 or data["charted_core_segment_count"] != 68154 or data["charted_push_segment_count"] != 68154:
+    if total_segments != 68176 or data["charted_core_segment_count"] != 68176 or data["charted_push_segment_count"] != 68176:
         raise AssertionError("framed-cycle total segment count changed")
     if data["completion_status"] != "FIVE_COMPLETE_FRAMED_CYCLES_ASSEMBLED_IN_GRAPH_OF_CHARTS" or data["unified_s3_embedding_status"] != "OPEN_CANCELLATION_COMPLEMENT_MAP":
         raise AssertionError("framed-cycle scope changed")

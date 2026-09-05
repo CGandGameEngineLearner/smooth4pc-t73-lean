@@ -186,7 +186,7 @@ source product framings 仍开放。
 订正后的片段现已在
 [`geometry/t73_post_x_framed_cycle_assembly.json`](geometry/t73_post_x_framed_cycle_assembly.json)
 中组装为 verified graph-of-charts 上的五条闭合 framed cycles。它穷尽3558个
-blocks，并给出各68154条边的 core/push cycles；每个抽象顶点均恰有一条入边
+blocks，并给出各68176条边的 core/push cycles；每个抽象顶点均恰有一条入边
 和一条出边。使用 `python3 scripts/build_t73_post_x_framed_cycle_assembly.py
 --check` 与 `python3 scripts/verify_t73_post_x_framed_cycle_assembly.py`
 重建/验收。这闭合的是组合 cycle incidence，不是到单一 S³ chart 的
@@ -260,15 +260,15 @@ C:\Users\Administrator\.cache\t73_x_m1_ejected_splice_stubs.jsonl.gz
 dotted-S³ chart 仍开放。
 完整合并后的 x/m1 结果位于
 [`geometry/t73_x_m1_complete_framed_cancellation_image.json`](geometry/t73_x_m1_complete_framed_cancellation_image.json)。
-它绑定持久化的 overlap full-verification，并组装五条闭合 atlas cycles：68154条
-source core edges 经精确细分成为81790条 target core 与86166条 target push
+它绑定持久化的 overlap full-verification，并组装五条闭合 atlas cycles：68176条
+source core edges 经精确细分成为81812条 target core 与86188条 target push
 edges。使用 `python3 scripts/verify_t73_x_m1_complete_framed_cancellation_image.py`
 验收；verdict 为 `PASS_COMPLETE_X_M1_FRAMED_CANCELLATION_IMAGE_IN_ATLAS`。
 下一步是 y/z dotted-handle conversion，随后实现单一 affine-S³ chart。
 穷尽的 y/z 替换表位于
 [`geometry/t73_yz_dotted_passage_replacement_map.json`](geometry/t73_yz_dotted_passage_replacement_map.json)。
 它在1513条 x-replacement middles 中逐一定位两段 base-18--20 z subpath，并绑定
-其余272条 Johnson/bottom/dual passages。因此3568条 source core/push segments
+其余272条 Johnson/bottom/dual passages。因此3590条 source core/push segments
 将替换为1785条 framed Hopf segments，转换后计数为 core=80007、push=84383。
 使用 `python3 scripts/verify_t73_yz_dotted_passage_replacement_map.py` 验收；
 下一门是1785个 framed passage mapping cylinders。
@@ -278,7 +278,7 @@ edges。使用 `python3 scripts/verify_t73_x_m1_complete_framed_cancellation_ima
 [`audit/t73_yz_framed_passage_mapping_cylinders_receipt.json`](audit/t73_yz_framed_passage_mapping_cylinders_receipt.json)
 和
 [`audit/t73_yz_framed_passage_mapping_cylinders_verification.json`](audit/t73_yz_framed_passage_mapping_cylinders_verification.json)。
-全部21408个 tetrahedra 与1785个互不相交 supports 通过。得到的七分量 atlas 为
+全部21540个 tetrahedra 与1785个互不相交 supports 通过。得到的七分量 atlas 为
 [`geometry/t73_complete_framed_dotted_atlas.json`](geometry/t73_complete_framed_dotted_atlas.json)：
 80007条 framed-core edges、84383条 push edges，以及两条各4边的 dotted polygons。
 verdict 为 `PASS_COMPLETE_SEVEN_COMPONENT_FRAMED_DOTTED_ATLAS`；单一 affine-S³

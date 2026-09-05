@@ -39,8 +39,12 @@ def load_middle(p):
  return out
 def subdivide_target(vertices,count):
  a,b=vertices
- if count==1:return [a,b]
- return [a,tuple((a[i]+b[i])/2 for i in range(3)),b]
+ return [tuple(a[i]+Fraction(k,count)*(b[i]-a[i]) for i in range(3)) for k in range(count+1)]
+def bottom_closure(ar,spine,name):
+ core=[point(v) for v in ar["components"][name]["core_polyline_T3xI"]];idx={"m_2":1,"m_3":2}[name];spoke=spine["components"][idx]["spoke"]
+ plus=point(spoke["stage_plus"])+(Fraction(1),);minus=point(spoke["stage_minus"])+(Fraction(1),);i=core.index(plus);j=core.index(minus);path=core[j:]+core[1:i+1]
+ if len(path)-1!=12:raise AssertionError("mapping-torus bottom closure count changed")
+ return path
 def build(cache,middle_cache=None):
  mp=json.loads(MAP.read_text());mr=json.loads(MIDDLE.read_text());dotted=json.loads(DOTTED.read_text());sp=json.loads(SPINE.read_text());ar=json.loads(AR.read_text());cut=json.loads(CUT.read_text());dual=json.loads(DUAL.read_text());middle=load_middle(middle_cache or resolve(mr["cache_path"])); targets={x["passage_id"]:x for c in dotted["charts"] for x in c["passages"]};arcs={x["arc_id"]:x for x in sp["handle_arcs"]};cuts={x["source_id"]:x for x in cut["passages"]};dual_by={x["name"]:x for x in dual["components"]};width=Fraction(ar["framing"]["spine_ribbon_transport"]["width"])
  header={"record":"header","schema":"t73_yz_framed_passage_mapping_cylinders/v1","replacement_map_sha256":mp["sha256"],"middle_receipt_sha256":mr["sha256"],"dotted_cells_sha256":dotted["sha256"],"johnson_spine_sha256":sp["sha256"],"actual_ar_link_sha256":ar["sha256"],"actual_cut_tangle_sha256":cut["sha256"],"dual_ribbons_sha256":dual["sha256"],"mapping_cylinder_tetrahedra":cube_tets()};cache.parent.mkdir(parents=True,exist_ok=True);digest=hashlib.sha256();counts=Counter();source_segments=target_segments=tets=0;supports={"y":[],"z":[]}
@@ -52,10 +56,8 @@ def build(cache,middle_cache=None):
     m=middle[r["band_index"]];lo,hi=r["source_middle_vertex_range"];core=[point(v) for v in m["target_core_vertices"]][lo:hi+1];push=[point(v) for v in m["target_push_vertices"]][lo:hi+1];chart="x_m1_ejected_atlas"
    elif kind=="actual_johnson_handle_arc":
     core=[point(v) for v in arcs[r["source_arc_id"]]["torus_polyline"]];normal=(width,width,width);push=[add(v,normal) for v in core];chart="johnson_fiber_handle"
-   elif kind=="actual_bottom_cut_arc":
-    if pid in cuts:core=[point(v) for v in cuts[pid]["cut_arc_in_ball"]];normal=point(cuts[pid]["product_normal"])
-    else:
-     core=[point(r0) for r0 in (["-1/3","-2/3","-2/3"],["1/3","2/3","2/3"])];normal=(width,width,Fraction(0))
+   elif kind=="actual_mapping_torus_bottom_closure":
+    core=bottom_closure(ar,sp,r["owner"]);normal=(width,width,width,Fraction(0))
     push=[add(v,normal) for v in core];chart="bottom_cut_ball"
    else:
     edge=r["source_segment_range"][0];core=[point(v) for v in ar["components"][r["owner"]]["polyline"]][edge:edge+3];normal=point(dual_by[r["owner"]]["product_normal"]);push=[add(v,normal) for v in core];chart="fiber_dual_cell"

@@ -64,7 +64,7 @@ def build(middle_cache=None):
             elif source_kind == "johnson_base_arc":
                 record.update({"source_kind": "actual_johnson_handle_arc", "source_arc_id": passage["arc_id"], "source_core_segment_count": 2, "source_push_segment_count": 2})
             elif source_kind == "bottom_coordinate_arc":
-                record.update({"source_kind": "actual_bottom_cut_arc", "source_core_segment_count": 1, "source_push_segment_count": 1})
+                record.update({"source_kind": "actual_mapping_torus_bottom_closure", "source_core_segment_count": 12, "source_push_segment_count": 12})
             elif source_kind == "dual_disk_boundary":
                 edge = int(passage_id.rsplit(":", 1)[1]); record.update({"source_kind": "actual_dual_two_segment_passage", "source_segment_range": [edge, edge + 1], "source_core_segment_count": 2, "source_push_segment_count": 2})
             else: raise AssertionError(f"unknown passage kind {source_kind}")

@@ -3294,11 +3294,12 @@ Topology-source checks completed 2026-09-04:
   `scripts/verify_t73_post_x_framed_cycle_assembly.py`, and its test.
 - Inventory: the five cycles exhaust 1513 forty-segment post-x replacement
   paths, 1773 four-segment Johnson central connectors, 262 two-segment
-  surviving Johnson handle arcs, two one-segment bottom cut arcs, and eight
+  surviving Johnson handle arcs, two twelve-segment mapping-torus bottom
+  closures, and eight
   two-segment surviving dual passages. No passage, band index, or connector id
   is duplicated or omitted.
-- Counts: component core/push segment counts are m2=12,087, m3=55,891,
-  r_xy=84, r_yz=8, and r_zx=84, totalling 68,154 on each of core and push.
+- Counts: component core/push segment counts are m2=12,098, m3=55,902,
+  r_xy=84, r_yz=8, and r_zx=84, totalling 68,176 on each of core and push.
   The 3558 abstract gluing vertices all have indegree and outdegree one, so
   both framed copies are five closed combinatorial cycles rather than open
   connector collections. Verdict:
@@ -3540,9 +3541,9 @@ Topology-source checks completed 2026-09-04:
   74,156 core image edges and 78,532 push image edges after product-simplex
   subdivision. The 7634 unaffected Johnson/dual/bottom/central-connector edges
   remain in their verified charts. Component target core/push counts are
-  m2=14,755/15,371, m3=66,831/70,575, r_xy=98/106, r_yz=8/8, and r_zx=98/106.
-- Totals and continuity: five source cycles with 68,154 core/push edges become
-  five target cycles with 81,790 core and 86,166 push edges. The persisted
+  m2=14,766/15,382, m3=66,842/70,586, r_xy=98/106, r_yz=8/8, and r_zx=98/106.
+- Totals and continuity: five source cycles with 68,176 core/push edges become
+  five target cycles with 81,812 core and 86,188 push edges. The persisted
   F-596 full-verifier receipt binds all 3026 core and push overlap matches and
   disjoint transition supports. Verdict:
   `PASS_COMPLETE_X_M1_FRAMED_CANCELLATION_IMAGE_IN_ATLAS`.
@@ -3563,11 +3564,12 @@ Topology-source checks completed 2026-09-04:
   18,19,20, reversed when required. Those two segments are the actual z
   passage inside each of the 1513 ejected parallel complements.
 - Other passages: 262 surviving Johnson handle arcs contribute two source
-  segments each, two bottom cut arcs contribute one each, and eight surviving
+  segments each, two full mapping-torus bottom closures contribute twelve each,
+  and eight surviving
   dual passages contribute two each. Every passage id also binds to one F-584
   framed Hopf cell and one F-585 foot-collar record.
-- Counts: all 1785 passages are used exactly once. The conversion removes 3568
-  source core and 3568 push segments and inserts 1785 of each, changing the
+- Counts: all 1785 passages are used exactly once. The conversion removes 3590
+  source core and 3590 push segments and inserts 1785 of each, changing the
   F-597 totals to core=80,007 and push=84,383. Verdict:
   `PASS_ALL_YZ_PASSAGES_BOUND_TO_DOTTED_S3_REPLACEMENTS`.
 - Boundary: the source/target incidence and exact x-middle locations are now
@@ -3586,12 +3588,12 @@ Topology-source checks completed 2026-09-04:
   verifier and test.
 - Passage cells: source arcs with one or two segments are matched to a common
   subdivision of the one-segment F-584 Hopf arc. Framing interval times
-  transition interval gives six tetrahedra per source segment, 21,408 total.
-  All four source types and 10,706 framing vertices replay exactly. Slot
+  transition interval gives six tetrahedra per source segment, 21,540 total.
+  All four source types and 10,750 framing vertices replay exactly. Slot
   support intervals use one-quarter of the handle-specific gap; 1783 adjacent
   interval comparisons prove all 1785 supports disjoint. Verdict:
   `PASS_ALL_YZ_FRAMED_PASSAGE_MAPPING_CYLINDERS_FULL`.
-- Complete atlas: removing 3568 old passage edges from F-597 and inserting
+- Complete atlas: removing 3590 old passage edges from F-597 and inserting
   1785 Hopf edges gives component core/push counts m2=14,445/15,061,
   m3=65,370/69,114, r_xy=94/102, r_yz=4/4, and r_zx=94/102. Totals are
   80,007 core and 84,383 push edges. Two four-edge dotted polygons give seven

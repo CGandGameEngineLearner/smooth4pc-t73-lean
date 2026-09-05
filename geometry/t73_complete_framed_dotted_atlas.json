@@ -38,10 +38,10 @@
       "inserted_hopf_core_segments": 311,
       "inserted_hopf_push_segments": 311,
       "kind": "framed_two_handle",
-      "pre_dotted_core_segments": 14755,
-      "pre_dotted_push_segments": 15371,
-      "removed_passage_core_segments": 621,
-      "removed_passage_push_segments": 621
+      "pre_dotted_core_segments": 14766,
+      "pre_dotted_push_segments": 15382,
+      "removed_passage_core_segments": 632,
+      "removed_passage_push_segments": 632
     },
     {
       "atlas_core_segments": 65370,
@@ -52,10 +52,10 @@
       "inserted_hopf_core_segments": 1462,
       "inserted_hopf_push_segments": 1462,
       "kind": "framed_two_handle",
-      "pre_dotted_core_segments": 66831,
-      "pre_dotted_push_segments": 70575,
-      "removed_passage_core_segments": 2923,
-      "removed_passage_push_segments": 2923
+      "pre_dotted_core_segments": 66842,
+      "pre_dotted_push_segments": 70586,
+      "removed_passage_core_segments": 2934,
+      "removed_passage_push_segments": 2934
     },
     {
       "atlas_core_segments": 94,
@@ -103,11 +103,11 @@
   "framed_core_segment_count": 80007,
   "framed_push_segment_count": 84383,
   "passage_mapping_cylinder_count": 1785,
-  "passage_mapping_cylinder_tetrahedra": 21408,
+  "passage_mapping_cylinder_tetrahedra": 21540,
   "schema": "t73_complete_framed_dotted_atlas/v1",
-  "sha256": "50B2A24FED8984084725D5F8089E07274DA690C339C2266ECFEE52C7F244EE13",
+  "sha256": "45374D20F4D135E06C81714AAC93663E05A8309C9BA6CF8E8B48CBB5A152FF03",
   "single_affine_s3_chart_status": "OPEN",
-  "x_m1_complete_framed_cancellation_image_sha256": "F8AA1FE9864E6CDD6594BF1B42D6D64868908471E1CBBE8321B5826956F1DC86",
-  "yz_dotted_passage_replacement_map_sha256": "2DF6D33A8C38E4296ADE81A0C80FF8FC54A63EDF2F4A7F9B131F7B1F21695E6D",
-  "yz_mapping_cylinders_verification_sha256": "85C66D9614CC0928EF68F00652278B58021EE90E0659A240ECFF4881E38290F4"
+  "x_m1_complete_framed_cancellation_image_sha256": "3DC1B845ACE8E5DA1B0CAD271B64CC54917B7314CFDC0A3FBE3C0264FF89C0A8",
+  "yz_dotted_passage_replacement_map_sha256": "60A2CB0E1E7B044447A7567346C32D17BFA71B9441CC64F9AFCC04950A85E2BD",
+  "yz_mapping_cylinders_verification_sha256": "63512AF173FF49D443D9429E5241BAD063EDB6856BAA815CED1B37FDF2EB784D"
 }

@@ -15,7 +15,7 @@ class PostXFramedCycleAssemblyTest(unittest.TestCase):
         module = importlib.util.module_from_spec(spec); spec.loader.exec_module(module)
         result = module.verify()
         self.assertEqual(result["verdict"], "PASS_FIVE_COMPLETE_FRAMED_CYCLES_IN_GRAPH_OF_CHARTS")
-        self.assertEqual(result["core_segments"], 68154)
+        self.assertEqual(result["core_segments"], 68176)
         self.assertEqual(result["unified_s3_embedding_status"], "OPEN_CANCELLATION_COMPLEMENT_MAP")
 
 
