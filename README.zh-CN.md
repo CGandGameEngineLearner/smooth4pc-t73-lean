@@ -89,6 +89,9 @@ python3 scripts/build_t73_actual_cancellation_splice_request.py --check
 [`geometry/t73_candidate_kirby_presentation.json`](geometry/t73_candidate_kirby_presentation.json)，
 其 PD/framing 导出为
 [`geometry/t73_candidate_kirby_export.json`](geometry/t73_candidate_kirby_export.json)。
+其 SnapPy/Spherogram/Regina 收据为
+[`geometry/t73_candidate_kirby_open_source_receipt.json`](geometry/t73_candidate_kirby_open_source_receipt.json)
+（7 components、7 crossings、7 cusps、36 tetrahedra）。
 使用 `python3 scripts/build_t73_candidate_kirby_presentation.py --write`，再运行
 `scripts/export_t73_full_handle_diagram.py` 重建。其状态是
 `CANDIDATE_UNVERIFIED`；绝不能用于闭合 P0、C、S 或 P3/E13。

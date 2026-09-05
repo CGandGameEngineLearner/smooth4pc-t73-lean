@@ -97,6 +97,9 @@ For software exploration only, the explicitly non-actual candidate input is
 [`geometry/t73_candidate_kirby_presentation.json`](geometry/t73_candidate_kirby_presentation.json),
 with its PD/framing export at
 [`geometry/t73_candidate_kirby_export.json`](geometry/t73_candidate_kirby_export.json).
+Its SnapPy/Spherogram/Regina receipt is
+[`geometry/t73_candidate_kirby_open_source_receipt.json`](geometry/t73_candidate_kirby_open_source_receipt.json)
+(7 components, 7 crossings, 7 cusps and 36 tetrahedra).
 Regenerate with `python3 scripts/build_t73_candidate_kirby_presentation.py --write`
 followed by `scripts/export_t73_full_handle_diagram.py`. Its status is
 `CANDIDATE_UNVERIFIED`; it must never be used to close P0, C, S or P3/E13.
