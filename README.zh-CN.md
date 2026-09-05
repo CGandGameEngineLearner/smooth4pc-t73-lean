@@ -203,7 +203,14 @@ source-native SQLite 的 m2 linking `(40,269)`、m3 linking `(189,1271)`，三�
 dual components 的 dotted linking 为0。使用
 `python3 scripts/build_t73_actual_dotted_s3_passage_cells.py --check` 和
 `python3 scripts/verify_t73_actual_dotted_s3_passage_cells.py` 重建/验收。
-外部 connector endpoint collars 尚未粘入这两个局部 charts。
+四个将物理 feet 粘到局部 charts 的 framed marked-strip mapping cylinders
+保存在
+[`geometry/t73_dotted_s3_foot_collars.json`](geometry/t73_dotted_s3_foot_collars.json)。
+它们含24个 tetrahedra，并逐一匹配全部3570个 core endpoints 与3570个 push
+endpoints，包括 Figure-2a reflections。使用
+`python3 scripts/build_t73_dotted_s3_foot_collars.py --check` 与
+`python3 scripts/verify_t73_dotted_s3_foot_collars.py` 重建/验收。剩余 gluing
+缺口是中央 connector complement，不再是 marked foot strips。
 
 另一个独立层次中，C-cut 的 44-lane candidate realization 为
 [`geometry/t73_y_foot_lane_candidate.json`](geometry/t73_y_foot_lane_candidate.json)：

@@ -3192,10 +3192,35 @@ Topology-source checks completed 2026-09-04:
   dual components, exactly matching the source-native SQLite PD receipt.
   Verdict: `PASS_ACTUAL_DISJOINT_FRAMED_DOTTED_S3_PASSAGE_CELLS`.
 - Boundary: this geometrizes the local crossings previously inserted only as
-  combinatorial PD events. The actual central connector endpoints and their
-  pushed copies still require disjoint exterior collars into these charts;
-  without those collars, the five closed S3 push cycles and diagonal framings
-  remain open.
+  combinatorial PD events. F-585 supplies the framed marked-strip collars into
+  these charts. The extension across the actual central connector complement
+  is still needed before the five closed S3 push cycles and diagonal framings
+  can be claimed.
+
+### F-585 — Four reflection-paired framed foot-strip collars reach the dotted-S3 charts
+
+- Severity: **actual source-native diagram / marked boundary gluing**
+- Status: **ALL MARKED CORE/PUSH ENDPOINTS PASS; CENTRAL COMPLEMENT OPEN**
+- Evidence: `geometry/t73_dotted_s3_foot_collars.json`,
+  `scripts/build_t73_dotted_s3_foot_collars.py`,
+  `scripts/verify_t73_dotted_s3_foot_collars.py`, and its test.
+- Construction: for each y/z positive/negative physical foot, one rational
+  rectangular strip contains every target slot and its product push. The
+  source embedding uses the actual foot center, radius and tangent basis. The
+  target embedding has fixed dotted-chart x, slot coordinate y, and a small
+  transverse u-coordinate in z. Two strip triangles times the collar interval
+  use a globally ordered six-tetrahedron prism triangulation.
+- Verification: both source and target strip triangulations are nondegenerate;
+  the four source strips and all pushed marks are exchanged in pairs by the
+  exact Figure-2a reflection matrices. All 1785 passages give 3570 source/core
+  endpoints and 3570 source/push endpoints, and their target images equal the
+  literal endpoints in F-584. The four collars contain 24 tetrahedra and each
+  abstract template has connected sphere boundary. Verdict:
+  `PASS_REFLECTION_PAIRED_FRAMED_MARKED_STRIP_COLLARS_TO_DOTTED_S3`.
+- Boundary: this is a boundary mapping cylinder, not an asserted affine
+  ambient embedding through the zero-handle. The unmarked part of the central
+  connector complement must still be extended and checked for disjointness;
+  only then do the component cores and pushes close in one S3 chart.
 
 ### F-600 — The “actual” sphere-system builder assigns, rather than constructs, the embedding in \(\partial W_2\)
 

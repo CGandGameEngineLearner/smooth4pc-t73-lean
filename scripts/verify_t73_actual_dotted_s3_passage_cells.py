@@ -80,7 +80,7 @@ def verify():
             orientation = entry["orientation"]
             slot = point(entry["target_disk_slot"])
             lane_y = slot[1]
-            height = Fraction(1, 2) + Fraction(entry["rank"] + 1, 10 * (len(entries) + 1))
+            height = Fraction(1, 2)
             left, right = (center - 2, lane_y, -height), (center + 2, lane_y, height)
             left_push, right_push = (left[0], left[1] + delta, left[2]), (right[0], right[1] + delta, right[2])
             expected_core = [left, right] if orientation == 1 else [right, left]

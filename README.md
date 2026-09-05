@@ -222,7 +222,14 @@ the source-native SQLite linking values `(40,269)` for m2 and `(189,1271)` for
 m3, with zero dual-component dotted linking. Rebuild/check with
 `python3 scripts/build_t73_actual_dotted_s3_passage_cells.py --check` and
 `python3 scripts/verify_t73_actual_dotted_s3_passage_cells.py`. Exterior
-connector endpoint collars are not yet glued into these two local charts.
+The four framed marked-strip mapping cylinders that glue the physical feet to
+these local charts are stored in
+[`geometry/t73_dotted_s3_foot_collars.json`](geometry/t73_dotted_s3_foot_collars.json).
+They contain 24 tetrahedra and match all 3570 core endpoints and all 3570 push
+endpoints, including the Figure-2a reflections. Rebuild/verify with
+`python3 scripts/build_t73_dotted_s3_foot_collars.py --check` and
+`python3 scripts/verify_t73_dotted_s3_foot_collars.py`. The remaining gluing
+problem is the central connector complement, not the marked foot strips.
 
 Separately, the C-cut 44-lane candidate realization is
 [`geometry/t73_y_foot_lane_candidate.json`](geometry/t73_y_foot_lane_candidate.json):

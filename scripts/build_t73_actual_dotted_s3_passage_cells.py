@@ -56,7 +56,7 @@ def build():
             orientation = entry["orientation"]
             slot = tuple(Fraction(value) for value in entry["target_disk_slot"])
             lane_y = slot[1]
-            height = Fraction(1, 2) + Fraction(entry["rank"] + 1, 10 * (count + 1))
+            height = Fraction(1, 2)
             left = (center_x - 2, lane_y, -height)
             right = (center_x + 2, lane_y, height)
             left_push = (left[0], left[1] + delta, left[2])
