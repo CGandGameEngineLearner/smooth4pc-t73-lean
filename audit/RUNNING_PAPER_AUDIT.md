@@ -2149,6 +2149,20 @@ Topology-source checks completed 2026-09-04:
   small interval is a canonical rational candidate. No current-link splice or
   actual Kirby slide is inferred from the interval alone.
 
+### F-548 — The first t-band slide now has an explicit closed candidate core
+
+- Severity: **Sequential-splice construction progress / candidate only**
+- Status: **BAND 0 CLOSED POLYLINE PASS; EMBEDDED KIRBY SLIDE OPEN**
+- Evidence: `scripts/build_t73_candidate_t_band0_splice.py` and
+  `geometry/t73_candidate_t_band0_splice.json`.
+- Construction: the actual m1 core is cut at the verified band-0 source
+  interval, joined along both candidate band-boundary lanes to the parallel
+  h_CS target interval, traverses the mapping-torus complement through the
+  seam, and returns to the retained m1 arc. Exact arithmetic verifies a closed
+  nondegenerate 4D polyline.
+- Boundary: self-disjointness, disjointness from the other link components,
+  framed push-off transport and actual Kirby-slide equivalence remain open.
+
 ### F-600 — The “actual” sphere-system builder assigns, rather than constructs, the embedding in \(\partial W_2\)
 
 - Severity: **Critical**

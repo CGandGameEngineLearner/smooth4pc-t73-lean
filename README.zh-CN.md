@@ -111,6 +111,10 @@ python3 scripts/verify_t73_y_foot_lane_candidate.py
 [`geometry/t73_t_band_attachment_intervals.json`](geometry/t73_t_band_attachment_intervals.json)，
 使用 `python3 scripts/build_t73_t_band_attachment_intervals.py --check` 重建。
 locator 已验证；基于 width 的区间选择仍为 candidate。
+第一条端到端 candidate slide（含显式闭合的 post-slide 4D core）位于
+[`geometry/t73_candidate_t_band0_splice.json`](geometry/t73_candidate_t_band0_splice.json)，
+使用 `python3 scripts/build_t73_candidate_t_band0_splice.py --check` 重建。
+其范围为 `CANDIDATE_CLOSED_SPLICE_ONLY`，仍待相交与 Kirby-move 检查。
 
 1513 步 x-cancellation candidate movie 位于
 [`geometry/t73_candidate_x_band_movie.json`](geometry/t73_candidate_x_band_movie.json)，

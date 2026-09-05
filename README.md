@@ -123,6 +123,11 @@ Canonical rational intervals around these locators are saved in
 [`geometry/t73_t_band_attachment_intervals.json`](geometry/t73_t_band_attachment_intervals.json),
 rebuilt with `python3 scripts/build_t73_t_band_attachment_intervals.py --check`.
 The locator is verified; the width-based interval choice remains candidate.
+The first end-to-end candidate slide, including an explicit closed post-slide
+4D core, is
+[`geometry/t73_candidate_t_band0_splice.json`](geometry/t73_candidate_t_band0_splice.json),
+rebuilt with `python3 scripts/build_t73_candidate_t_band0_splice.py --check`.
+Its scope is `CANDIDATE_CLOSED_SPLICE_ONLY` pending intersection and Kirby-move checks.
 
 The 1513-step x-cancellation candidate movie is
 [`geometry/t73_candidate_x_band_movie.json`](geometry/t73_candidate_x_band_movie.json),
