@@ -126,6 +126,10 @@ locator 已验证；基于 width 的区间选择仍为 candidate。
 [`geometry/t73_candidate_t_band0_quotient_splice.json`](geometry/t73_candidate_t_band0_quotient_splice.json)，
 使用 `python3 scripts/build_t73_candidate_t_band0_quotient_splice.py --check` 重建。
 其 universal-cover 首尾差为已验证的 m1 deck translation。
+独立 quotient verifier 为
+`python3 scripts/verify_t73_candidate_t_band0_quotient_splice.py`；它将唯一
+`u=0~1` mapping-torus seam 作为 gluing cell，并对其余 PL segments 返回
+`PASS_CANDIDATE_QUOTIENT_EMBEDDEDNESS_ONLY`。
 
 1513 步 x-cancellation candidate movie 位于
 [`geometry/t73_candidate_x_band_movie.json`](geometry/t73_candidate_x_band_movie.json)，

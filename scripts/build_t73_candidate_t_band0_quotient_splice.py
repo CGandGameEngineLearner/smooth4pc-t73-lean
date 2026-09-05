@@ -65,6 +65,13 @@ def build() -> dict[str, Any]:
     expected_end = translate(lifted_path[0], deck)
     if lifted_path[-1] != expected_end:
         raise AssertionError("quotient splice endpoint does not differ by the source deck translation")
+    seam_segments = [
+        index
+        for index, (start, end) in enumerate(zip(lifted_path, lifted_path[1:]))
+        if start[:3] == end[:3] and start[3] == 0 and end[3] == 1
+    ]
+    if len(seam_segments) != 1:
+        raise AssertionError("candidate splice does not contain one mapping-torus seam cell")
     result = {
         "schema": "t73_candidate_t_band0_quotient_splice/v1",
         "universal_lifts_sha256": lifts["sha256"],
@@ -73,6 +80,7 @@ def build() -> dict[str, Any]:
         "component": component,
         "band_index": 0,
         "lifted_polyline": [encode(point) for point in lifted_path],
+        "mapping_torus_seam_segment_indices": seam_segments,
         "closing_deck_translation": list(deck),
         "completion_status": "CANDIDATE_QUOTIENT_CLOSED_SPLICE",
     }

@@ -2201,7 +2201,12 @@ Topology-source checks completed 2026-09-04:
   complement are placed in the corresponding deck translate. The final point
   equals the initial point translated by `4*(-1,0,1)`, so the path closes in
   T3 with exactly the m1 column of A-I.
-- Boundary: quotient self-disjointness, other-component clearance and actual
+- Independent check: the unique direct `u=0` to `u=1` transition is typed as a
+  mapping-torus seam gluing cell, not an affine segment through the removed
+  target interval. The remaining 31-segment quotient path passes all seven
+  exact deck-translate intersection candidates and reports
+  `PASS_CANDIDATE_QUOTIENT_EMBEDDEDNESS_ONLY`.
+- Boundary: other-component clearance, framed push-off embeddedness and actual
   Kirby-slide equivalence remain open.
 
 ### F-600 — The “actual” sphere-system builder assigns, rather than constructs, the embedding in \(\partial W_2\)

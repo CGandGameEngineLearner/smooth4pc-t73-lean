@@ -139,6 +139,10 @@ The quotient-aware reconstruction of the first t-band splice is
 [`geometry/t73_candidate_t_band0_quotient_splice.json`](geometry/t73_candidate_t_band0_quotient_splice.json),
 rebuilt with `python3 scripts/build_t73_candidate_t_band0_quotient_splice.py --check`.
 Its universal-cover endpoints differ by the verified m1 deck translation.
+The independent quotient verifier is
+`python3 scripts/verify_t73_candidate_t_band0_quotient_splice.py`; it treats
+the unique `u=0~1` mapping-torus seam as a gluing cell and reports
+`PASS_CANDIDATE_QUOTIENT_EMBEDDEDNESS_ONLY` for the remaining PL segments.
 
 The 1513-step x-cancellation candidate movie is
 [`geometry/t73_candidate_x_band_movie.json`](geometry/t73_candidate_x_band_movie.json),
