@@ -123,6 +123,10 @@ Canonical rational intervals around these locators are saved in
 [`geometry/t73_t_band_attachment_intervals.json`](geometry/t73_t_band_attachment_intervals.json),
 rebuilt with `python3 scripts/build_t73_t_band_attachment_intervals.py --check`.
 The locator is verified; the width-based interval choice remains candidate.
+`python3 scripts/verify_t73_t_band_attachment_intervals.py` independently
+proves that all six source intervals lie on actual lambda/mu core edges and
+all target intervals lie on their parallel h_CS lines, reporting
+`PASS_T_INTERVAL_ACTUAL_EDGE_BINDING_CANDIDATE_WIDTH`.
 Boundary-compatible normal homotopies for all six t-bands are saved in
 [`geometry/t73_t_band_framing_extensions.json`](geometry/t73_t_band_framing_extensions.json).
 Rebuild and independently check them with

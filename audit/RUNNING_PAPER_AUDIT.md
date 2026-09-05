@@ -2148,6 +2148,11 @@ Topology-source checks completed 2026-09-04:
 - Boundary: the endpoint locations are actual-record bindings; choosing this
   small interval is a canonical rational candidate. No current-link splice or
   actual Kirby slide is inferred from the interval alone.
+- Independent verification: all six source intervals are exact subintervals
+  of the actual lambda/mu core edges and contain their located core vertex;
+  each target is an exact vertical subinterval of its parallel h_CS line and
+  contains `u=1/2`. The verdict is
+  `PASS_T_INTERVAL_ACTUAL_EDGE_BINDING_CANDIDATE_WIDTH`.
 
 ### F-548 — The first t-band slide now has an explicit closed candidate core
 
