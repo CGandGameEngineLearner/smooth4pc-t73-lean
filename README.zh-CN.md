@@ -122,6 +122,10 @@ locator 已验证；基于 width 的区间选择仍为 candidate。
 [`geometry/t73_ar_core_universal_lifts.json`](geometry/t73_ar_core_universal_lifts.json)，
 使用 `python3 scripts/build_t73_ar_core_universal_lifts.py --check` 重建。
 其 closing deck translation 精确等于 `A-I` 的三列。
+第一条 t-band splice 的 quotient-aware 重建位于
+[`geometry/t73_candidate_t_band0_quotient_splice.json`](geometry/t73_candidate_t_band0_quotient_splice.json)，
+使用 `python3 scripts/build_t73_candidate_t_band0_quotient_splice.py --check` 重建。
+其 universal-cover 首尾差为已验证的 m1 deck translation。
 
 1513 步 x-cancellation candidate movie 位于
 [`geometry/t73_candidate_x_band_movie.json`](geometry/t73_candidate_x_band_movie.json)，

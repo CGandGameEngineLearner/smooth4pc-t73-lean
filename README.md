@@ -135,6 +135,10 @@ The verified continuous lifts are saved in
 [`geometry/t73_ar_core_universal_lifts.json`](geometry/t73_ar_core_universal_lifts.json),
 rebuilt with `python3 scripts/build_t73_ar_core_universal_lifts.py --check`.
 Their closing deck translations are exactly the columns of `A-I`.
+The quotient-aware reconstruction of the first t-band splice is
+[`geometry/t73_candidate_t_band0_quotient_splice.json`](geometry/t73_candidate_t_band0_quotient_splice.json),
+rebuilt with `python3 scripts/build_t73_candidate_t_band0_quotient_splice.py --check`.
+Its universal-cover endpoints differ by the verified m1 deck translation.
 
 The 1513-step x-cancellation candidate movie is
 [`geometry/t73_candidate_x_band_movie.json`](geometry/t73_candidate_x_band_movie.json),

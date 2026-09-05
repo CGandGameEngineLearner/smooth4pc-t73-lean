@@ -2190,6 +2190,20 @@ Topology-source checks completed 2026-09-04:
   use these lifts and their deck translations, never the wrapped coordinate
   list as an ordinary Q4 polyline.
 
+### F-551 — Band 0 now has a quotient-aware universal-cover candidate splice
+
+- Severity: **Sequential-splice coordinate repair / candidate only**
+- Status: **QUOTIENT CLOSURE VERIFIED; EMBEDDED KIRBY SLIDE OPEN**
+- Evidence: `scripts/build_t73_candidate_t_band0_quotient_splice.py` and
+  `geometry/t73_candidate_t_band0_quotient_splice.json`.
+- Construction: the retained actual m1 arc is followed in its verified
+  universal-cover lift; the candidate band boundary and parallel h_CS
+  complement are placed in the corresponding deck translate. The final point
+  equals the initial point translated by `4*(-1,0,1)`, so the path closes in
+  T3 with exactly the m1 column of A-I.
+- Boundary: quotient self-disjointness, other-component clearance and actual
+  Kirby-slide equivalence remain open.
+
 ### F-600 — The “actual” sphere-system builder assigns, rather than constructs, the embedding in \(\partial W_2\)
 
 - Severity: **Critical**
