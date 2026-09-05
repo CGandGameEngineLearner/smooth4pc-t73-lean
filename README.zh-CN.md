@@ -213,6 +213,13 @@ m1-parallel stub 的 1514 个状态，返回
 日常测试运行 `python3 scripts/build_t73_x_band_local_movie_receipt.py --check`；
 重建收据必须显式使用 `--write --full`。当前只有第一个 global hybrid splice
 已验证，其余 1512 个 global splice 仍开放。
+但全部 target parallel 现已全局化：单张 quotient annulus
+[`geometry/t73_x_m1_parallel_foliation.json`](geometry/t73_x_m1_parallel_foliation.json)
+包含 `20,40,...,30260` 全部层。使用
+`build_t73_x_m1_parallel_foliation.py --check` 与
+`verify_t73_x_m1_parallel_foliation.py` 重建/验收。后者返回
+`PASS_ALL_1513_M1_PARALLELS_IN_EMBEDDED_QUOTIENT_ANNULUS`；4 个 mapping-torus
+seam triangles 被正确视为 gluing cells，而非 affine triangle。
 第一条端到端 candidate slide（含显式闭合的 post-slide 4D core）位于
 [`geometry/t73_candidate_t_band0_splice.json`](geometry/t73_candidate_t_band0_splice.json)，
 使用 `python3 scripts/build_t73_candidate_t_band0_splice.py --check` 重建。

@@ -238,6 +238,13 @@ stub, band lane, and m1-parallel stub, and returns
 Daily tests use `python3 scripts/build_t73_x_band_local_movie_receipt.py --check`;
 receipt regeneration requires explicit `--write --full`. Only the first global
 hybrid splice is verified, so the remaining 1512 global splices are open.
+All target parallels are nevertheless now global: the single quotient annulus
+[`geometry/t73_x_m1_parallel_foliation.json`](geometry/t73_x_m1_parallel_foliation.json)
+contains levels `20,40,...,30260`. Rebuild/check it with
+`build_t73_x_m1_parallel_foliation.py --check` and
+`verify_t73_x_m1_parallel_foliation.py`. The latter returns
+`PASS_ALL_1513_M1_PARALLELS_IN_EMBEDDED_QUOTIENT_ANNULUS`; four mapping-torus
+seam triangles are treated as gluing cells, not affine triangles.
 The first end-to-end candidate slide, including an explicit closed post-slide
 4D core, is
 [`geometry/t73_candidate_t_band0_splice.json`](geometry/t73_candidate_t_band0_splice.json),

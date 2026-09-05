@@ -2592,6 +2592,33 @@ Topology-source checks completed 2026-09-04:
   deltas still require complete distinct m1 parallels, chart gluings, inherited
   seams, global clearance, and inverse recovery. No x/m1 deletion is inferred.
 
+### F-564 — One embedded quotient framing annulus contains all 1513 distinct m1 target parallels
+
+- Severity: **Global target geometry for the x movie / complete foliation**
+- Status: **ALL GLOBAL TARGET PARALLELS PASS; COMPONENT SPLICES OPEN**
+- Evidence: `scripts/build_t73_x_m1_parallel_foliation.py`,
+  `scripts/verify_t73_x_m1_parallel_foliation.py`,
+  `geometry/t73_x_m1_parallel_foliation.json`, and its test.
+- Construction: the exteriorized 35-vertex m1 normal field is changed on the
+  reflected bottom x-arc to the verified local y representative. The ruled
+  quotient annulus from level 0 to level 30260 contains exactly the 1513
+  required level curves `20,40,...,30260`. The field never meets zero.
+- Seam semantics: the two inherited mapping-torus seam segments generate four
+  annulus triangles. They are typed as gluing cells and excluded from affine
+  intersection predicates. All apparent zero-deck intersections in the naive
+  strip involved one of these seam cells; no nonseam collision remains.
+- Independent verification: 68 triangles are reconstructed. Exact checks
+  include 65 quotient annulus self candidates, 1039 triangle/segment candidates
+  against m2 and m3, and 1536 dual-core spatial-projection candidates. The
+  verifier also checks the unique ordered level set and the maximum-level
+  vertex formula. Verdict:
+  `PASS_ALL_1513_M1_PARALLELS_IN_EMBEDDED_QUOTIENT_ANNULUS`.
+- Consequence: pairwise checking about 1.14 million target-curve pairs is no
+  longer necessary; injectivity of the annulus makes distinct levels disjoint.
+- Boundary: the source-side component state still has to accumulate 1512 more
+  chart-typed splices and inverses. This annulus closes global target existence
+  and clearance, not the source-side hybrid state replay or x/m1 deletion.
+
 ### F-600 — The “actual” sphere-system builder assigns, rather than constructs, the embedding in \(\partial W_2\)
 
 - Severity: **Critical**
