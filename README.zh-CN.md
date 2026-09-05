@@ -107,6 +107,10 @@ python3 scripts/verify_t73_y_foot_lane_candidate.py
 [`geometry/t73_t_band_attachment_locators.json`](geometry/t73_t_band_attachment_locators.json)，
 使用 `python3 scripts/build_t73_t_band_attachment_locators.py --check` 重建。
 其范围为 `VERIFIED_ENDPOINTS_ONLY`。
+围绕这些 locator 的规范有理区间保存于
+[`geometry/t73_t_band_attachment_intervals.json`](geometry/t73_t_band_attachment_intervals.json)，
+使用 `python3 scripts/build_t73_t_band_attachment_intervals.py --check` 重建。
+locator 已验证；基于 width 的区间选择仍为 candidate。
 
 1513 步 x-cancellation candidate movie 位于
 [`geometry/t73_candidate_x_band_movie.json`](geometry/t73_candidate_x_band_movie.json)，

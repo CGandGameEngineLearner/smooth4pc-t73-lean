@@ -2135,6 +2135,20 @@ Topology-source checks completed 2026-09-04:
   full current link states, or the six actual band splices. Their scope is
   `VERIFIED_ENDPOINTS_ONLY`.
 
+### F-547 — Six canonical rational t-band attachment intervals are now explicit
+
+- Severity: **Actual endpoint refinement / candidate interval choice**
+- Status: **INTERVALS EXPLICIT; ACTUAL BAND SLIDE STILL OPEN**
+- Evidence: `scripts/build_t73_t_band_attachment_intervals.py` and
+  `geometry/t73_t_band_attachment_intervals.json`.
+- Construction: each source interval lies on the two actual AR core edges
+  adjacent to its verified source vertex, using the saved positive band width
+  as an exact rational interpolation parameter. Each target interval is the
+  symmetric `u=1/2+-width` interval on its stored parallel h_CS target.
+- Boundary: the endpoint locations are actual-record bindings; choosing this
+  small interval is a canonical rational candidate. No current-link splice or
+  actual Kirby slide is inferred from the interval alone.
+
 ### F-600 — The “actual” sphere-system builder assigns, rather than constructs, the embedding in \(\partial W_2\)
 
 - Severity: **Critical**

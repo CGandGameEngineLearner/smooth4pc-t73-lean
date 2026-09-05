@@ -119,6 +119,10 @@ from the AR records are saved separately in
 [`geometry/t73_t_band_attachment_locators.json`](geometry/t73_t_band_attachment_locators.json),
 rebuilt with `python3 scripts/build_t73_t_band_attachment_locators.py --check`.
 Its scope is `VERIFIED_ENDPOINTS_ONLY`.
+Canonical rational intervals around these locators are saved in
+[`geometry/t73_t_band_attachment_intervals.json`](geometry/t73_t_band_attachment_intervals.json),
+rebuilt with `python3 scripts/build_t73_t_band_attachment_intervals.py --check`.
+The locator is verified; the width-based interval choice remains candidate.
 
 The 1513-step x-cancellation candidate movie is
 [`geometry/t73_candidate_x_band_movie.json`](geometry/t73_candidate_x_band_movie.json),
