@@ -2958,6 +2958,33 @@ Topology-source checks completed 2026-09-04:
   disjoint relative to the foot/dotted neighborhoods, and construct the
   inverse ambient extension. Until then kappa_AR remains open.
 
+### F-576 — The framed graph map extends over five explicit solid-torus neighborhoods
+
+- Severity: **hybrid-to-railroad comparison / framed regular neighborhoods**
+- Status: **FIVE TUBULAR HOMEOMORPHISMS PASS; COMPLEMENT EXTENSION OPEN**
+- Evidence: `scripts/build_t73_hybrid_to_railroad_tubular_map.py`,
+  `scripts/verify_t73_hybrid_to_railroad_tubular_map.py`,
+  `geometry/t73_hybrid_to_railroad_tubular_map.json`, and its test.
+- Construction: every railroad segment is thickened by the three-tetrahedron
+  staircase triangulation of `Delta2 x I`. Consecutive triangular fibers are
+  glued cyclically; source graph edges are subdivided according to their F-575
+  target segment ranges. The source and target use the identical finite
+  template, so the vertex/tetrahedron map is explicit identity on template ids.
+- Verification: the five templates have 5373 tetrahedra and 10746 boundary
+  triangles. Tetrahedral face incidence gives a 3-manifold with boundary;
+  each component and boundary has Euler characteristic zero, and every
+  boundary edge occurs twice. Source subdivisions form a disjoint exhaustive
+  partition of target tube segments.
+- Framing: every closing fiber map is `[0,1,2]`, preserving the chosen meridian
+  triangle and longitude vertex class. All five relative twists are zero.
+  Verdict:
+  `PASS_HYBRID_TO_RAILROAD_FRAMED_TUBULAR_HOMEOMORPHISMS_ONLY`.
+- Boundary: a framed link-neighborhood homeomorphism does not automatically
+  extend over the complement. The remaining kappa_AR gate is a cellwise
+  homeomorphism of the genus-two handlebody/0-handle complement, matching all
+  10746 boundary triangles and the two dotted-handle meridian/longitude data,
+  together with its inverse.
+
 ### F-600 — The “actual” sphere-system builder assigns, rather than constructs, the embedding in \(\partial W_2\)
 
 - Severity: **Critical**

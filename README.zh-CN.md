@@ -136,6 +136,12 @@ surviving framed 1-skeleton map 位于
 event/segment cells，含1510个 surviving hybrid replacements 与 residual r_zx
 split circle。使用 `verify_t73_hybrid_to_railroad_graph_map.py` 验收；verdict 为
 `PASS_HYBRID_TO_RAILROAD_FRAMED_GRAPH_ISOMORPHISM_ONLY`，ambient tracks 仍开放。
+graph map 已在
+[`geometry/t73_hybrid_to_railroad_tubular_map.json`](geometry/t73_hybrid_to_railroad_tubular_map.json)
+中扩张到五个 framed regular neighborhoods。五个 solid-torus templates 共含
+5373 个 tetrahedra 与10746个 boundary triangles，closing fiber 恒等且五个
+relative twist均为0。使用 `verify_t73_hybrid_to_railroad_tubular_map.py` 验收；
+当前只剩 handlebody complement extension 开放。
 
 另一个独立层次中，C-cut 的 44-lane candidate realization 为
 [`geometry/t73_y_foot_lane_candidate.json`](geometry/t73_y_foot_lane_candidate.json)：

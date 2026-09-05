@@ -150,6 +150,12 @@ the residual r_zx split circle. Verify with
 `verify_t73_hybrid_to_railroad_graph_map.py`. Verdict:
 `PASS_HYBRID_TO_RAILROAD_FRAMED_GRAPH_ISOMORPHISM_ONLY`; ambient tracks remain
 open.
+The graph map extends over all five framed regular neighborhoods in
+[`geometry/t73_hybrid_to_railroad_tubular_map.json`](geometry/t73_hybrid_to_railroad_tubular_map.json).
+Its five solid-torus templates contain 5373 tetrahedra and 10746 boundary
+triangles, with identity closing fiber maps and zero relative twists. Verify
+with `verify_t73_hybrid_to_railroad_tubular_map.py`; only the handlebody
+complement extension remains open.
 
 Separately, the C-cut 44-lane candidate realization is
 [`geometry/t73_y_foot_lane_candidate.json`](geometry/t73_y_foot_lane_candidate.json):
