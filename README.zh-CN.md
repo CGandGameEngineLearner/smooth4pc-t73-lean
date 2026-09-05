@@ -147,6 +147,16 @@ seam 传播；逐步检查 disk/新 framed curve 对当前 link 与 actual dual-
 的分离，并验证每个 inverse。结果为
 `PASS_SIX_T_BAND_SEQUENTIAL_FRAMED_KIRBY_SLIDES`。JSON 保存可重放 delta 与内容
 SHA，避免重复数十 MB 的相同 normal vectors。
+下一道取消门槛保存于
+[`audit/t73_t_hcs_cancellation_readiness.json`](audit/t73_t_hcs_cancellation_readiness.json)。
+原始 state-6 push-off 有 4 段进入 open t-ball；
+[`geometry/t73_t_hcs_framing_exteriorization.json`](geometry/t73_t_hcs_framing_exteriorization.json)
+保存 63 个规范 outward normal 替换。使用
+`build_t73_t_hcs_framing_exteriorization.py --check`、
+`verify_t73_t_hcs_framing_exteriorization.py` 与
+`build_t73_t_hcs_cancellation_readiness.py --check` 重建/验收。精确 verdict 为
+`PASS_STATE6_FRAMING_EXTERIORIZATION` 和
+`READY_FOR_EXPLICIT_T_HCS_CANCELLATION_MAP`；仍须构造 cellwise cancellation map。
 第一条端到端 candidate slide（含显式闭合的 post-slide 4D core）位于
 [`geometry/t73_candidate_t_band0_splice.json`](geometry/t73_candidate_t_band0_splice.json)，
 使用 `python3 scripts/build_t73_candidate_t_band0_splice.py --check` 重建。

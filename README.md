@@ -167,6 +167,17 @@ checks each disk/new framed curve against the current link and actual dual-core
 spatial projections, and verifies every inverse. The result is
 `PASS_SIX_T_BAND_SEQUENTIAL_FRAMED_KIRBY_SLIDES`. The JSON stores replay deltas
 and content hashes instead of duplicating tens of megabytes of normal vectors.
+The next cancellation gate is saved in
+[`audit/t73_t_hcs_cancellation_readiness.json`](audit/t73_t_hcs_cancellation_readiness.json).
+The original state-6 push-offs had four segments entering the open t-ball.
+[`geometry/t73_t_hcs_framing_exteriorization.json`](geometry/t73_t_hcs_framing_exteriorization.json)
+records 63 canonical outward normal replacements. Rebuild/check with
+`build_t73_t_hcs_framing_exteriorization.py --check`,
+`verify_t73_t_hcs_framing_exteriorization.py`, and
+`build_t73_t_hcs_cancellation_readiness.py --check`. The exact verdicts are
+`PASS_STATE6_FRAMING_EXTERIORIZATION` and
+`READY_FOR_EXPLICIT_T_HCS_CANCELLATION_MAP`; the cellwise cancellation map is
+still required.
 The first end-to-end candidate slide, including an explicit closed post-slide
 4D core, is
 [`geometry/t73_candidate_t_band0_splice.json`](geometry/t73_candidate_t_band0_splice.json),

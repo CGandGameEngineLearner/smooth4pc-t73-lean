@@ -2374,6 +2374,39 @@ Topology-source checks completed 2026-09-04:
   verified framed cancellation of t against h_CS must consume state 6 before
   the 1513-step x-m1 movie can start; neither is inferred here.
 
+### F-557 — State-6 cores clear the t-ball and the framing has an explicit outward exteriorization
+
+- Severity: **Framed t-h_CS cancellation readiness / final local gate**
+- Status: **FRAMING EXTERIORIZATION PASS; CELLWISE CANCELLATION MAP OPEN**
+- Evidence: `audit/t73_t_hcs_cancellation_readiness.json`,
+  `geometry/t73_t_hcs_framing_exteriorization.json`, their two builders,
+  `scripts/verify_t73_t_hcs_framing_exteriorization.py`, and both tests.
+- Fail-closed diagnosis: exact piecewise-linear L1 minimization at every
+  coordinate-zero breakpoint proves that all nonseam state-6 core segments
+  remain outside or on the t-belt octahedron. The original framing push-offs,
+  however, had four segments entering the open t-ball: m1 segments 27 and 33,
+  and m3 segments 8789 and 8797. Therefore the legacy `status=PASS`,
+  `geometric_intersection=1`, and `t_passages_after=0` fields were not accepted
+  as a cancellation proof.
+- Construction: at each belt-sphere vertex, a deterministic finite search in
+  `{-1,0,1}^3 * width/16` chooses the squared-nearest normal with positive dot
+  product against every adjacent octahedral supporting face and excludes
+  vectors parallel to incident core edges. Deck-equivalent first/last normals
+  are constrained together. This replaces 63 normal vertices without changing
+  any core curve.
+- Independent verification: every replacement is recomputed; the linear old
+  to new normal homotopy avoids the zero section. All exteriorized push-off
+  segments have exact minimum L1 clearance `width/16` above the belt radius.
+  134 exact changed-push versus all core/push quotient checks pass. The verdict
+  is `PASS_STATE6_FRAMING_EXTERIORIZATION`.
+- Readiness result: the saved report retains the four original obstructions
+  and separately verifies zero exteriorized obstructions, returning
+  `READY_FOR_EXPLICIT_T_HCS_CANCELLATION_MAP`.
+- Boundary: a conventional cancellation theorem now applies once its local
+  identification is instantiated, but the repository still needs the actual
+  finite collar cell complex and cellwise map deleting t and h_CS and carrying
+  the three exteriorized framed components into the post-cancel boundary.
+
 ### F-600 — The “actual” sphere-system builder assigns, rather than constructs, the embedding in \(\partial W_2\)
 
 - Severity: **Critical**
