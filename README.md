@@ -140,7 +140,8 @@ rebuilt with `build_t73_candidate_t_band0_surface.py --check` and independently
 checked by `verify_t73_candidate_t_band0_surface.py`. It is an 8-vertex,
 6-triangle framed disk with the four declared boundary parts. Exact
 barycentric and edge-triangle checks give
-`PASS_CANDIDATE_FRAMED_BAND_DISK_LOCAL_EMBEDDEDNESS_ONLY`.
+`PASS_CANDIDATE_FRAMED_BAND_DISK_AND_PUSH_LOCAL_EMBEDDEDNESS_ONLY`, including
+the push-off surface and all disk-versus-push triangle pairs.
 `python3 scripts/verify_t73_candidate_t_band0_splice.py` currently returns
 `OPEN_PERIODIC_T3_LIFT_REQUIRED`: the saved source core uses wrapped torus
 coordinates and must be lifted before affine PL intersection tests are valid.

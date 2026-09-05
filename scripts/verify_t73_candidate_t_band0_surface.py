@@ -169,13 +169,45 @@ def verify() -> dict:
             raise AssertionError("candidate band disk has a zero normal")
         if tuple(vertex[i] + normal[i] for i in range(4)) != pushed:
             raise AssertionError("candidate band push-off is not vertex plus normal")
+    push_numeric = np.array([[float(value) for value in vertex] for vertex in push_vertices])
+    exact_push_checks = 0
+    for first_index, first_ids in enumerate(triangles):
+        for second_index in range(first_index + 1, len(triangles)):
+            second_ids = triangles[second_index]
+            if set(first_ids) & set(second_ids):
+                continue
+            first_box = push_numeric[first_ids]
+            second_box = push_numeric[second_ids]
+            if np.any(first_box.max(axis=0) < second_box.min(axis=0)) or np.any(second_box.max(axis=0) < first_box.min(axis=0)):
+                continue
+            exact_push_checks += 1
+            if triangles_intersect(
+                tuple(push_vertices[index] for index in first_ids),
+                tuple(push_vertices[index] for index in second_ids),
+            ):
+                raise AssertionError(f"candidate push-off triangles {first_index},{second_index} intersect")
+    exact_surface_push_checks = 0
+    for surface_index, surface_ids in enumerate(triangles):
+        surface_box = numeric[surface_ids]
+        for push_index, push_ids in enumerate(triangles):
+            push_box = push_numeric[push_ids]
+            if np.any(surface_box.max(axis=0) < push_box.min(axis=0)) or np.any(push_box.max(axis=0) < surface_box.min(axis=0)):
+                continue
+            exact_surface_push_checks += 1
+            if triangles_intersect(
+                tuple(vertices[index] for index in surface_ids),
+                tuple(push_vertices[index] for index in push_ids),
+            ):
+                raise AssertionError(f"candidate band surface meets push-off at triangles {surface_index},{push_index}")
     return {
-        "verdict": "PASS_CANDIDATE_FRAMED_BAND_DISK_LOCAL_EMBEDDEDNESS_ONLY",
+        "verdict": "PASS_CANDIDATE_FRAMED_BAND_DISK_AND_PUSH_LOCAL_EMBEDDEDNESS_ONLY",
         "vertices": len(vertices),
         "triangles": len(triangles),
         "boundary_edges": len(boundary_edges),
         "euler_characteristic": euler,
         "exact_triangle_checks": exact_triangle_checks,
+        "exact_push_checks": exact_push_checks,
+        "exact_surface_push_checks": exact_surface_push_checks,
     }
 
 

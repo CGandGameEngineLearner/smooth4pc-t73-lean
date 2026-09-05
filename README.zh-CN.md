@@ -124,8 +124,9 @@ source 与 h_CS 边界 framing 是 actual-record binding。
 [`geometry/t73_candidate_t_band0_surface.json`](geometry/t73_candidate_t_band0_surface.json)，
 使用 `build_t73_candidate_t_band0_surface.py --check` 重建并由
 `verify_t73_candidate_t_band0_surface.py` 独立检查。它是具有四部分指定边界的
-8 顶点、6 三角形 framed disk。精确 barycentric 与 edge-triangle 检查返回
-`PASS_CANDIDATE_FRAMED_BAND_DISK_LOCAL_EMBEDDEDNESS_ONLY`。
+8 顶点、6 三角形 framed disk。精确 barycentric 与 edge-triangle 检查同时覆盖
+push-off surface 和所有 disk-vs-push triangle pairs，返回
+`PASS_CANDIDATE_FRAMED_BAND_DISK_AND_PUSH_LOCAL_EMBEDDEDNESS_ONLY`。
 `python3 scripts/verify_t73_candidate_t_band0_splice.py` 当前返回
 `OPEN_PERIODIC_T3_LIFT_REQUIRED`：保存的源 core 使用 torus wrap 坐标，必须先 lift
 到 universal cover，才能进行有效的 affine PL 相交检查。

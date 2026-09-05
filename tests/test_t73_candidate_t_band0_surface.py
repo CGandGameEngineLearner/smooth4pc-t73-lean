@@ -15,7 +15,7 @@ class CandidateTBand0SurfaceTest(unittest.TestCase):
         module = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(module)
         result = module.verify()
-        self.assertEqual(result["verdict"], "PASS_CANDIDATE_FRAMED_BAND_DISK_LOCAL_EMBEDDEDNESS_ONLY")
+        self.assertEqual(result["verdict"], "PASS_CANDIDATE_FRAMED_BAND_DISK_AND_PUSH_LOCAL_EMBEDDEDNESS_ONLY")
         self.assertEqual(result["euler_characteristic"], 1)
 
 

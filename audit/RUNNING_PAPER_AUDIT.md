@@ -2251,9 +2251,11 @@ Topology-source checks completed 2026-09-04:
 - Local embeddedness: NumPy AABB screening followed by exact rational
   barycentric, segment-triangle and vertex-containment equations checks the two
   nonadjacent triangle pairs whose boxes overlap. Both are disjoint, giving
-  `PASS_CANDIDATE_FRAMED_BAND_DISK_LOCAL_EMBEDDEDNESS_ONLY`.
-- Boundary: push-off surface disjointness, current-link clearance and actual
-  Kirby-slide equivalence remain open.
+  `PASS_CANDIDATE_FRAMED_BAND_DISK_AND_PUSH_LOCAL_EMBEDDEDNESS_ONLY`. Two
+  nonadjacent push-surface pairs and 28 disk-versus-push pairs also pass the
+  exact low-rank intersection algorithm.
+- Boundary: current-link surface clearance and actual Kirby-slide equivalence
+  remain open.
 
 ### F-600 — The “actual” sphere-system builder assigns, rather than constructs, the embedding in \(\partial W_2\)
 
