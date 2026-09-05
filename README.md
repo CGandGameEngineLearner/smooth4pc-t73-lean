@@ -43,6 +43,11 @@ in Lean.
 | Abstract conditional implication | Checked in Lean |
 | Johnson P0 / E13 / topological P3 | Proved at paper level after detector retyping |
 | C / S coefficient and hemisphere comparison | **Open** at the actual coend/currying and statewise shadow |
+
+The exact topology verifiers use NumPy, SciPy, and SymPy. In WSL, create the
+persistent environment with
+`python3 -m venv /home/lifesize/.cache/t73-topology-venv` followed by
+`/home/lifesize/.cache/t73-topology-venv/bin/pip install -r requirements-topology.txt`.
 | Lean inhabitant of `ExternalGeometry` | **Open** |
 
 The exact Lean boundary is
@@ -184,7 +189,16 @@ Rebuild/check it with `build_t73_t_hcs_collar_ejection_map.py --check` and
 `verify_t73_t_hcs_collar_ejection_map.py`. Its 24 orientation-preserving
 tetrahedra push the inner octahedron from `r` to `3r/2` while fixing `2r`, and
 the verifier returns `PASS_T_HCS_COLLAR_EJECTION_CELL_MAP`. This is the collar
-ejection only; the 4-dimensional handle-pair deletion remains open.
+ejection layer.
+The completed standard-pair deletion and carried post-link manifest are in
+[`geometry/t73_t_hcs_handle_pair_deletion.json`](geometry/t73_t_hcs_handle_pair_deletion.json).
+Run `build_t73_t_hcs_handle_pair_deletion.py --check`, then run
+`verify_t73_t_hcs_handle_pair_deletion.py` with the topology venv. It verifies
+the staircase triangulations of `Delta1 x Delta3` and `Delta2 x Delta2`, their
+three-tetrahedron attaching 3-ball, the resulting PL 4-ball/S3 boundary, the
+actual barycentric belt crossing and AR framing, and the six-component
+post-cancel manifest. Verdict:
+`PASS_T_HCS_HANDLE_PAIR_DELETION_AND_POST_LINK_STATE`.
 The first end-to-end candidate slide, including an explicit closed post-slide
 4D core, is
 [`geometry/t73_candidate_t_band0_splice.json`](geometry/t73_candidate_t_band0_splice.json),

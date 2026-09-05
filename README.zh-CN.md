@@ -39,6 +39,10 @@ Lean 开发将**抽象商论证**形式化：若给定将 MWW 商与四柄运输
 | C / S 系数与三柄比较 | **开放** |
 | Lean 中 `ExternalGeometry` 实例 | **开放** |
 
+精确拓扑 verifier 使用 NumPy、SciPy 与 SymPy。WSL 中先运行
+`python3 -m venv /home/lifesize/.cache/t73-topology-venv`，再运行
+`/home/lifesize/.cache/t73-topology-venv/bin/pip install -r requirements-topology.txt`。
+
 Lean 边界见
 [`Smooth4PC/T73External.lean`](Smooth4PC/T73External.lean)。前提审计：
 
@@ -163,7 +167,15 @@ SHA，避免重复数十 MB 的相同 normal vectors。
 `verify_t73_t_hcs_collar_ejection_map.py` 重建/验收。其 24 个保向四面体把内层
 八面体从 `r` 推到 `3r/2`，同时固定 `2r` 外层；verdict 为
 `PASS_T_HCS_COLLAR_EJECTION_CELL_MAP`。这只闭合 collar ejection，4 维
-handle-pair deletion 仍为 OPEN。
+handle-pair 的下一层数据如下。
+完成的标准 pair deletion 与 carried post-link manifest 位于
+[`geometry/t73_t_hcs_handle_pair_deletion.json`](geometry/t73_t_hcs_handle_pair_deletion.json)。
+先运行 `build_t73_t_hcs_handle_pair_deletion.py --check`，再用 topology venv
+运行 `verify_t73_t_hcs_handle_pair_deletion.py`。它验证
+`Delta1 x Delta3`、`Delta2 x Delta2` 的 staircase triangulation、三四面体
+attaching 3-ball、所得 PL 4-ball/S3 边界、实际 belt 重心交点、AR framing，及
+六分量 post-cancel manifest。verdict 为
+`PASS_T_HCS_HANDLE_PAIR_DELETION_AND_POST_LINK_STATE`。
 第一条端到端 candidate slide（含显式闭合的 post-slide 4D core）位于
 [`geometry/t73_candidate_t_band0_splice.json`](geometry/t73_candidate_t_band0_splice.json)，
 使用 `python3 scripts/build_t73_candidate_t_band0_splice.py --check` 重建。

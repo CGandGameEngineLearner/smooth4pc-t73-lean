@@ -2377,7 +2377,7 @@ Topology-source checks completed 2026-09-04:
 ### F-557 — State-6 cores clear the t-ball and the framing has an explicit outward exteriorization
 
 - Severity: **Framed t-h_CS cancellation readiness / final local gate**
-- Status: **FRAMING EXTERIORIZATION PASS; CELLWISE CANCELLATION MAP OPEN**
+- Status: **FRAMING EXTERIORIZATION PASS; CANCELLATION COMPLETED IN F-559**
 - Evidence: `audit/t73_t_hcs_cancellation_readiness.json`,
   `geometry/t73_t_hcs_framing_exteriorization.json`, their two builders,
   `scripts/verify_t73_t_hcs_framing_exteriorization.py`, and both tests.
@@ -2402,15 +2402,13 @@ Topology-source checks completed 2026-09-04:
 - Readiness result: the saved report retains the four original obstructions
   and separately verifies zero exteriorized obstructions, returning
   `READY_FOR_EXPLICIT_T_HCS_CANCELLATION_MAP`.
-- Boundary: a conventional cancellation theorem now applies once its local
-  identification is instantiated, but the repository still needs the actual
-  finite collar cell complex and cellwise map deleting t and h_CS and carrying
-  the three exteriorized framed components into the post-cancel boundary.
+- Boundary at this layer: F-558 supplies the finite collar map and F-559 the
+  standard handle-pair deletion, actual cell binding, and carried post-link.
 
 ### F-558 — A finite orientation-preserving collar ejection map now precedes the t-h_CS deletion
 
 - Severity: **PL cancellation-map construction / collar part**
-- Status: **COLLAR EJECTION PASS; 4D HANDLE-PAIR DELETION OPEN**
+- Status: **COLLAR EJECTION PASS; HANDLE-PAIR DELETION COMPLETED IN F-559**
 - Evidence: `scripts/build_t73_t_hcs_collar_ejection_map.py`,
   `scripts/verify_t73_t_hcs_collar_ejection_map.py`,
   `geometry/t73_t_hcs_collar_ejection_map.json`, and its test.
@@ -2425,11 +2423,46 @@ Topology-source checks completed 2026-09-04:
   homeomorphism from the complement of the open r-octahedron to the complement
   of the open 3r/2-octahedron, fixed on the outer boundary. F-557 proves the
   exteriorized state-6 framed link lies in its domain.
-- Verdict and boundary: `PASS_T_HCS_COLLAR_EJECTION_CELL_MAP` has explicit
-  scope `COLLAR_EJECTION_ONLY_HANDLE_PAIR_DELETION_OPEN`. The next witness must
-  triangulate the standard 4D cancelling t/h_CS handle pair, identify its
-  attaching/belt cells with the actual AR cells, delete that PL 4-ball, and
-  emit the carried post-cancel framed-link state consumed by the x movie.
+- Verdict and boundary at this layer:
+  `PASS_T_HCS_COLLAR_EJECTION_CELL_MAP` retains its narrow scope. F-559 supplies
+  the standard 4D pair, actual attaching/belt binding, deletion, and carried
+  post-cancel state.
+
+### F-559 — The t-h_CS cancelling pair is a bound finite PL 4-ball with a carried post-link state
+
+- Severity: **Actual first handle cancellation / completed local model**
+- Status: **t-h_CS HANDLE PAIR DELETION PASS; x-MOVIE NEXT**
+- Evidence: `scripts/build_t73_t_hcs_handle_pair_deletion.py`,
+  `scripts/verify_t73_t_hcs_handle_pair_deletion.py`,
+  `geometry/t73_t_hcs_handle_pair_deletion.json`, its test, and
+  `requirements-topology.txt`.
+- Standard finite model: the 1-handle is the four-simplex staircase
+  triangulation of `Delta1 x Delta3` (four 4-simplices), and the 2-handle is
+  `Delta2 x Delta2` (six 4-simplices). They are glued along the induced
+  `Delta1 x Delta2` attaching patch of three tetrahedra. The verifier
+  independently regenerates every monotone-path simplex rather than trusting
+  the saved lists.
+- PL-ball verification: the two product complexes are PL 4-balls and their
+  common boundary patch is a PL 3-ball by their explicit product structures.
+  Their 11-vertex, 10-simplex union has rational Betti vector
+  `[1,0,0,0,0]`; its simplicial boundary has `[1,0,0,1]`. Boundary incidence
+  and the exact common subcomplex are also checked with SymPy exact ranks.
+- Actual binding: the h_CS vertical attaching arc has spatial coordinate equal
+  to the exact barycenter of the positive belt face `[0,2,4]` and crosses its
+  `u=1/2` slice once. Its framing offset is read directly from
+  `t73_actual_ar_link.json`, is nonzero and tangent to that face, and has
+  `epsilon=relative_twist=0`; the legacy cancellation boolean is not used to
+  derive this framing fact.
+- Deletion/output: the verified collar map carries the exteriorized state-6
+  framed link away from the pair. The finite PL 4-ball containing handles t
+  and h_CS is deleted. The saved post-cancel manifest contains m1/m2/m3 with
+  their exact state-6 core and exteriorized framing hashes, plus unchanged
+  r_xy/r_yz/r_zx; the remaining 1-handles are x,y,z. The verdict is
+  `PASS_T_HCS_HANDLE_PAIR_DELETION_AND_POST_LINK_STATE`.
+- Boundary: the next step is not allowed to read the legacy
+  `t73_cancel_x_m1.json` as a completed cancellation. It must bind its first
+  band to this post-cancel six-component framed state and replay all 1513
+  x-slides sequentially before deleting x/m1.
 
 ### F-600 — The “actual” sphere-system builder assigns, rather than constructs, the embedding in \(\partial W_2\)
 
