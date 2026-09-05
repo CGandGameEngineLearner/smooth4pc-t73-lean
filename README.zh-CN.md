@@ -134,7 +134,8 @@ source 与 h_CS 边界 framing 是 actual-record binding。
 独立 quotient verifier 为
 `python3 scripts/verify_t73_candidate_t_band0_quotient_splice.py`；它将唯一
 `u=0~1` mapping-torus seam 作为 gluing cell，并对其余 PL segments 返回
-`PASS_CANDIDATE_QUOTIENT_EMBEDDEDNESS_ONLY`。
+`PASS_CANDIDATE_QUOTIENT_FRAMED_EMBEDDEDNESS_ONLY`，同时检查其余 PL segments
+及 boundary-compatible push-off。
 `python3 scripts/verify_t73_candidate_t_band0_core_clearance.py` 还会对 actual
 m2/m3 lift 与下述 candidate dual-cell lift 的相关 deck translates 做精确检查。
 三条 candidate dual-core lift 保存于

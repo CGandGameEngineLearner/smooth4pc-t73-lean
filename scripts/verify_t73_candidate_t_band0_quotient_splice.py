@@ -56,6 +56,16 @@ def verify() -> dict:
     expected_end = tuple(points[0][axis] + PERIOD * deck[axis] for axis in range(3)) + (points[0][3],)
     if points[-1] != expected_end:
         raise AssertionError("lifted splice is not closed by its deck translation")
+    normals = [tuple(Fraction(value) for value in normal) for normal in data["normal_field"]]
+    push_points = [tuple(Fraction(value) for value in point) for point in data["push_off_lifted_polyline"]]
+    if len(normals) != len(points) or len(push_points) != len(points):
+        raise AssertionError("quotient splice framing arrays have incompatible lengths")
+    for point, normal, pushed in zip(points, normals, push_points):
+        if tuple(point[i] + normal[i] for i in range(4)) != pushed:
+            raise AssertionError("quotient splice push-off is not core plus normal")
+    expected_push_end = tuple(push_points[0][axis] + PERIOD * deck[axis] for axis in range(3)) + (push_points[0][3],)
+    if push_points[-1] != expected_push_end:
+        raise AssertionError("quotient push-off has the wrong closing deck translation")
     segments = list(zip(points, points[1:]))
     seam_segments = set(data["mapping_torus_seam_segment_indices"])
     if len(seam_segments) != 1:
@@ -86,10 +96,30 @@ def verify() -> dict:
                         "deck_translation": list(translation),
                         "exact_checks_before_failure": exact_checks,
                     }
+    push_segments = list(zip(push_points, push_points[1:]))
+    core_push_checks = 0
+    for core_index, core_segment in enumerate(segments):
+        if core_index in seam_segments:
+            continue
+        for push_index, push_segment in enumerate(push_segments):
+            if push_index in seam_segments:
+                continue
+            for translation in candidate_deck_translations(core_segment, push_segment):
+                core_push_checks += 1
+                translated = translate_segment(push_segment, tuple(translation))
+                if exact_segment_intersection(core_segment, translated):
+                    return {
+                        "verdict": "FAIL_CANDIDATE_QUOTIENT_FRAMING_INTERSECTION",
+                        "core_segment": core_index,
+                        "push_segment": push_index,
+                        "deck_translation": list(translation),
+                        "exact_checks_before_failure": core_push_checks,
+                    }
     return {
-        "verdict": "PASS_CANDIDATE_QUOTIENT_EMBEDDEDNESS_ONLY",
+        "verdict": "PASS_CANDIDATE_QUOTIENT_FRAMED_EMBEDDEDNESS_ONLY",
         "segments": len(segments),
         "exact_deck_checks": exact_checks,
+        "exact_core_push_checks": core_push_checks,
     }
 
 

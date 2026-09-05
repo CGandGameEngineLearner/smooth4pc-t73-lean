@@ -2205,7 +2205,10 @@ Topology-source checks completed 2026-09-04:
   mapping-torus seam gluing cell, not an affine segment through the removed
   target interval. The remaining 31-segment quotient path passes all seven
   exact deck-translate intersection candidates and reports
-  `PASS_CANDIDATE_QUOTIENT_EMBEDDEDNESS_ONLY`.
+  `PASS_CANDIDATE_QUOTIENT_FRAMED_EMBEDDEDNESS_ONLY`. The same verifier
+  independently reconstructs every push-off vertex, checks the identical
+  closing deck translation, and rejects any core/push intersection; twelve
+  exact core-versus-push deck candidates pass.
 - Partial external clearance: 453 exact deck-translate intersection candidates
   prove that the candidate post-slide core misses the actual m2 and m3
   universal-cover cores, reporting `PASS_CANDIDATE_M2_M3_CLEARANCE_ONLY`.

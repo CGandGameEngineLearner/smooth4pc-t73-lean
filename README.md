@@ -148,7 +148,8 @@ Its universal-cover endpoints differ by the verified m1 deck translation.
 The independent quotient verifier is
 `python3 scripts/verify_t73_candidate_t_band0_quotient_splice.py`; it treats
 the unique `u=0~1` mapping-torus seam as a gluing cell and reports
-`PASS_CANDIDATE_QUOTIENT_EMBEDDEDNESS_ONLY` for the remaining PL segments.
+`PASS_CANDIDATE_QUOTIENT_FRAMED_EMBEDDEDNESS_ONLY` after checking both the
+remaining PL segments and their boundary-compatible push-off.
 `python3 scripts/verify_t73_candidate_t_band0_core_clearance.py` additionally
 checks all relevant deck translates against the actual m2/m3 lifts and the
 candidate dual-cell lifts described below.

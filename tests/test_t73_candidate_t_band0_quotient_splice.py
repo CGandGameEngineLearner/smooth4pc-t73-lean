@@ -22,7 +22,7 @@ def load():
 class CandidateTBand0QuotientSpliceTest(unittest.TestCase):
     def test_saved_splice_is_quotient_embedded(self):
         result = load().verify()
-        self.assertEqual(result["verdict"], "PASS_CANDIDATE_QUOTIENT_EMBEDDEDNESS_ONLY")
+        self.assertEqual(result["verdict"], "PASS_CANDIDATE_QUOTIENT_FRAMED_EMBEDDEDNESS_ONLY")
         self.assertGreater(result["exact_deck_checks"], 0)
 
     def test_seam_is_explicit_in_saved_data(self):

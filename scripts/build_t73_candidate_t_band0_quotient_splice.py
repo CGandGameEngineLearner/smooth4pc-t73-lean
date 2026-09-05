@@ -16,6 +16,7 @@ ROOT = Path(__file__).resolve().parents[1]
 LIFTS = ROOT / "geometry/t73_ar_core_universal_lifts.json"
 INTERVALS = ROOT / "geometry/t73_t_band_attachment_intervals.json"
 MOVIE = ROOT / "geometry/t73_candidate_t_band_movie.json"
+FRAMING = ROOT / "geometry/t73_t_band_framing_extensions.json"
 OUTPUT = ROOT / "geometry/t73_candidate_t_band0_quotient_splice.json"
 PERIOD = Fraction(4)
 
@@ -46,6 +47,7 @@ def build() -> dict[str, Any]:
     lifts = json.loads(LIFTS.read_text(encoding="utf-8"))
     intervals = json.loads(INTERVALS.read_text(encoding="utf-8"))
     movie = json.loads(MOVIE.read_text(encoding="utf-8"))
+    framing = json.loads(FRAMING.read_text(encoding="utf-8"))
     attachment = intervals["intervals"][0]
     component = attachment["component"]
     lift = lifts["components"][component]
@@ -57,14 +59,35 @@ def build() -> dict[str, Any]:
     after = interpolate(points[index], points[index + 1], width)
     source_complement = [after, *points[index + 1 :], *[translate(point, deck) for point in points[1:index]], translate(before, deck)]
     left, right = boundary_lanes(movie["bands"][0]["rectangle_segments"], deck)
+    extension = framing["extensions"][0]
+    extension_normals = [as_point(normal) for normal in extension["normal_field"]]
+    if len(extension_normals) != len(left):
+        raise AssertionError("band boundary and framing extension lengths disagree")
+    source_normal = as_point(extension["source_normal"])
+    target_normal = as_point(extension["target_h_CS_normal"])
     raw_target = [as_point(point) for point in attachment["target_interval"]]
     target = [translate(point, deck) for point in raw_target]
     target_xyz = target[0][:3]
     target_complement = [target[0], (*target_xyz, Fraction(0)), (*target_xyz, Fraction(1)), target[1]]
     lifted_path = [*source_complement, left[0], *left[1:], target[0], *target_complement[1:], right[-1], *reversed(right[:-1]), translate(after, deck)]
+    normal_field = (
+        [source_normal] * len(source_complement)
+        + extension_normals
+        + [target_normal] * 4
+        + list(reversed(extension_normals))
+        + [source_normal]
+    )
+    if len(normal_field) != len(lifted_path):
+        raise AssertionError("quotient splice framing field has the wrong length")
+    push_off_path = [
+        tuple(point[i] + normal[i] for i in range(4))
+        for point, normal in zip(lifted_path, normal_field)
+    ]
     expected_end = translate(lifted_path[0], deck)
     if lifted_path[-1] != expected_end:
         raise AssertionError("quotient splice endpoint does not differ by the source deck translation")
+    if push_off_path[-1] != translate(push_off_path[0], deck):
+        raise AssertionError("quotient push-off endpoint has the wrong deck translation")
     seam_segments = [
         index
         for index, (start, end) in enumerate(zip(lifted_path, lifted_path[1:]))
@@ -77,9 +100,12 @@ def build() -> dict[str, Any]:
         "universal_lifts_sha256": lifts["sha256"],
         "attachment_intervals_sha256": intervals["sha256"],
         "candidate_t_movie_sha256": movie["sha256"],
+        "framing_extensions_sha256": framing["sha256"],
         "component": component,
         "band_index": 0,
         "lifted_polyline": [encode(point) for point in lifted_path],
+        "normal_field": [encode(normal) for normal in normal_field],
+        "push_off_lifted_polyline": [encode(point) for point in push_off_path],
         "mapping_torus_seam_segment_indices": seam_segments,
         "closing_deck_translation": list(deck),
         "completion_status": "CANDIDATE_QUOTIENT_CLOSED_SPLICE",
