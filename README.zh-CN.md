@@ -880,6 +880,21 @@ python3 scripts/verify_t73_x_m1_outer_collar_v7_normal_field_3017.py
 python3 -m unittest tests.test_t73_x_m1_outer_collar_v7_normal_field_3017
 ```
 
+该 normal field 的全局 one-skeleton clearance 位于
+[`audit/t73_x_m1_outer_collar_v7_normal_field_static_clearance_3017.json`](audit/t73_x_m1_outer_collar_v7_normal_field_static_clearance_3017.json)。
+同时存在的 reverse mixture 含 12,260 个静态 vertical core/push triangles。
+四个精确矩阵——moving-core/final-core、moving-core/final-push、
+moving-push/final-core、moving-push/final-push——各有 333 个候选。两套实现
+重放全部 1,332 次精确 R4 triangle checks，交点为 0；source-static 候选也为
+0。因此 interface-3017 framed moving one-skeleton 已全局 clear。ribbon
+states 及其 world-volume 仍为 OPEN。
+
+```bash
+python3 scripts/build_t73_x_m1_outer_collar_v7_normal_field_static_clearance_3017.py --write --check
+python3 scripts/verify_t73_x_m1_outer_collar_v7_normal_field_static_clearance_3017.py
+python3 -m unittest tests.test_t73_x_m1_outer_collar_v7_normal_field_static_clearance_3017
+```
+
 第一个跨系统门禁找到并修复了真实碰撞，没有提前升级该 assembly。流式 Rust
 1.98.1 checker 位于
 [`rust/t73_exact_cross_clearance`](rust/t73_exact_cross_clearance)，使用

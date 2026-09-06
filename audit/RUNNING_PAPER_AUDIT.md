@@ -5699,6 +5699,31 @@ Topology-source checks completed 2026-09-04:
   static core/push union. The ruled ribbon states and their 3-dimensional R4
   world-volume are not yet constructed, so the artifact remains a candidate.
 
+### F-599BZ — The interface-3017 moving framed one-skeleton is globally clear
+
+- Severity: **Framed dynamic repair / global one-skeleton gate**
+- Status: **INTERFACE-3017 FRAMED ONE-SKELETON PASS; RIBBON OPEN**
+- Evidence:
+  `audit/t73_x_m1_outer_collar_v7_normal_field_static_clearance_3017.json`, its
+  builder, independent verifier and regression test, bound to F-599BY and the
+  complete reverse stationary one-skeleton.
+- Inventory: at interface 3017's reverse slot, the static union contains all
+  source core/push segments below 3017 and all six final core/push segment
+  types above 3017, triangulated as 12,260 vertical R4 triangles. Every one of
+  the 210 moving core and 210 moving push triangles is queried by the same
+  twelve outward-rounded functionals used in F-599BU.
+- Exact result: the only nonempty matrices are moving-core/final-core,
+  moving-core/final-push, moving-push/final-core and moving-push/final-push,
+  each with exactly 333 candidates. The independent verifier reconstructs and
+  solves all 1,332 R4 triangle pairs. Source-static candidates and all
+  intersections are zero. Verdict:
+  `PASS_X_M1_OUTER_COLLAR_V7_NORMAL_FIELD_STATIC_CLEARANCE_3017_INDEPENDENT`.
+- Consequence/boundary: F-599BY plus this result closes the complete moving
+  core/push one-skeleton for interface 3017 against itself and its scheduled
+  static mixture. It does not construct the five ruled ribbon rectangles at
+  each state or their 3-dimensional R4 world-volume, and it does not yet test
+  retained/replacement geometry outside the collar-only static inventory.
+
 ### F-599C — Monolithic linear projections of the affine framed link are computationally unsuitable
 
 - Severity: **complete PD / projection selection**

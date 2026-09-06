@@ -802,6 +802,22 @@ python3 scripts/build_t73_x_m1_outer_collar_v7_normal_field_3017.py --write --ch
 python3 scripts/verify_t73_x_m1_outer_collar_v7_normal_field_3017.py
 python3 -m unittest tests.test_t73_x_m1_outer_collar_v7_normal_field_3017
 ```
+
+Global one-skeleton clearance for that normal field is
+[`audit/t73_x_m1_outer_collar_v7_normal_field_static_clearance_3017.json`](audit/t73_x_m1_outer_collar_v7_normal_field_static_clearance_3017.json).
+The contemporaneous reverse mixture contains 12,260 static vertical core/push
+triangles. Four exact matrices—moving-core/final-core,
+moving-core/final-push, moving-push/final-core and moving-push/final-push—have
+333 candidates each. Both implementations replay all 1,332 exact R4 triangle
+checks and find zero intersections; source-static candidates are zero. Thus the
+interface-3017 framed moving one-skeleton is globally clear. Ribbon states and
+their world-volume remain open.
+
+```bash
+python3 scripts/build_t73_x_m1_outer_collar_v7_normal_field_static_clearance_3017.py --write --check
+python3 scripts/verify_t73_x_m1_outer_collar_v7_normal_field_static_clearance_3017.py
+python3 -m unittest tests.test_t73_x_m1_outer_collar_v7_normal_field_static_clearance_3017
+```
 The graph map extends over all five framed regular neighborhoods in
 [`geometry/t73_hybrid_to_railroad_tubular_map.json`](geometry/t73_hybrid_to_railroad_tubular_map.json).
 Its five solid-torus templates contain 5385 tetrahedra and 10770 boundary
