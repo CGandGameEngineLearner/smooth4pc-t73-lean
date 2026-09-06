@@ -819,6 +819,13 @@ ribbons 仍为 OPEN。
 必须应用变化法向 push end-lift 的区间降维与 dual 直接 GMP survivors，才能声明
 mutual clearance PASS。
 
+应用这些降维后，v3 在 ribbon 阶段之前即被否证。精确 artifact
+[`audit/t73_x_m1_outer_collar_v3_core_push_clearance.json`](audit/t73_x_m1_outer_collar_v3_core_push_clearance.json)
+表明 interface 3022 的 core `last_exterior_ray` 与 push `height_bridge` 在高度
+13022 相交，两个精确线段参数都严格位于内部。core 与 push 各自的 PASS 仍然
+有效，但二者并集不嵌入。V4 必须偏移 end-exterior waypoint 的高度，使该
+r_zx y-normal 拐角成为三维局部星。
+
 全局线性投影探测记录于
 [`audit/t73_affine_s3_projection_probe.json`](audit/t73_affine_s3_projection_probe.json)。
 xz/yz 会压扁 dotted edges；三个 regular tilts 至少产生258,453,247个 broad

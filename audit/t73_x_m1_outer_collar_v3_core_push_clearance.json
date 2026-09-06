@@ -1,0 +1,189 @@
+{
+  "classification": "CANDIDATE_REFUTED",
+  "collision": {
+    "core_interface": 3022,
+    "core_segment": [
+      [
+        "56045",
+        "56046823446",
+        "13022"
+      ],
+      [
+        "0",
+        "-26039",
+        "13022"
+      ]
+    ],
+    "exact_checks_before_collision": 1,
+    "pair": "core:last_exterior_ray/push:height_bridge",
+    "push_interface": 3022,
+    "push_segment": [
+      [
+        "56044",
+        "28022411689501501/500000",
+        "13022"
+      ],
+      [
+        "56045",
+        "56046823446003/1000",
+        "13022"
+      ]
+    ],
+    "reduced_candidates_before_collision": 1,
+    "reduction_invariant": "equal exact core/push routing height",
+    "witness": {
+      "core_parameter": "100/1868230184329597",
+      "point": [
+        "9341150921647485/166672333333",
+        "9341454839647011709018/166672333333",
+        "13022"
+      ],
+      "push_parameter": "166672332833/166672333333"
+    }
+  },
+  "completed_type_pair_results_before_collision": [
+    {
+      "broad_aabb_candidates": 3018,
+      "exact_reduction_invariant": "outward-rounded 3D AABB then GMP",
+      "exact_segment_checks": 0,
+      "intersections": 0,
+      "pair": "core:retained_source_germ/push:retained_source_germ",
+      "reduced_candidates": 0,
+      "status": "PASS"
+    },
+    {
+      "broad_aabb_candidates": 9068,
+      "exact_reduction_invariant": "outward-rounded 3D AABB then GMP",
+      "exact_segment_checks": 3032,
+      "intersections": 0,
+      "pair": "core:retained_source_germ/push:start_skew_lift",
+      "reduced_candidates": 3032,
+      "status": "PASS"
+    },
+    {
+      "broad_aabb_candidates": 9068,
+      "exact_reduction_invariant": "outward-rounded 3D AABB then GMP",
+      "exact_segment_checks": 3032,
+      "intersections": 0,
+      "pair": "core:start_skew_lift/push:retained_source_germ",
+      "reduced_candidates": 3032,
+      "status": "PASS"
+    },
+    {
+      "broad_aabb_candidates": 4566266,
+      "exact_reduction_invariant": "equal exact core/push routing functional",
+      "exact_segment_checks": 0,
+      "intersections": 0,
+      "pair": "core:start_skew_lift/push:start_skew_lift",
+      "reduced_candidates": 0,
+      "status": "PASS"
+    },
+    {
+      "broad_aabb_candidates": 3440544,
+      "exact_reduction_invariant": "equal exact core/push routing functional",
+      "exact_segment_checks": 0,
+      "intersections": 0,
+      "pair": "core:start_skew_lift/push:first_exterior_ray",
+      "reduced_candidates": 0,
+      "status": "PASS"
+    },
+    {
+      "broad_aabb_candidates": 12095,
+      "exact_reduction_invariant": "equal exact core/push routing functional",
+      "exact_segment_checks": 0,
+      "intersections": 0,
+      "pair": "core:start_skew_lift/push:last_exterior_ray",
+      "reduced_candidates": 0,
+      "status": "PASS"
+    },
+    {
+      "broad_aabb_candidates": 3440548,
+      "exact_reduction_invariant": "equal exact core/push routing functional",
+      "exact_segment_checks": 0,
+      "intersections": 0,
+      "pair": "core:first_exterior_ray/push:start_skew_lift",
+      "reduced_candidates": 0,
+      "status": "PASS"
+    },
+    {
+      "broad_aabb_candidates": 3022,
+      "exact_reduction_invariant": "equal exact core/push routing functional",
+      "exact_segment_checks": 0,
+      "intersections": 0,
+      "pair": "core:first_exterior_ray/push:first_exterior_ray",
+      "reduced_candidates": 0,
+      "status": "PASS"
+    },
+    {
+      "broad_aabb_candidates": 3018,
+      "exact_reduction_invariant": "equal exact core/push routing height",
+      "exact_segment_checks": 4,
+      "intersections": 0,
+      "pair": "core:first_exterior_ray/push:height_bridge",
+      "reduced_candidates": 4,
+      "status": "PASS"
+    },
+    {
+      "broad_aabb_candidates": 3022,
+      "exact_reduction_invariant": "equal exact core/push routing functional",
+      "exact_segment_checks": 0,
+      "intersections": 0,
+      "pair": "core:first_exterior_ray/push:last_exterior_ray",
+      "reduced_candidates": 0,
+      "status": "PASS"
+    },
+    {
+      "broad_aabb_candidates": 3022,
+      "exact_reduction_invariant": "equal exact core/push routing height",
+      "exact_segment_checks": 4,
+      "intersections": 0,
+      "pair": "core:height_bridge/push:first_exterior_ray",
+      "reduced_candidates": 4,
+      "status": "PASS"
+    },
+    {
+      "broad_aabb_candidates": 3022,
+      "exact_reduction_invariant": "equal exact core/push routing height",
+      "exact_segment_checks": 4,
+      "intersections": 0,
+      "pair": "core:height_bridge/push:height_bridge",
+      "reduced_candidates": 4,
+      "status": "PASS"
+    },
+    {
+      "broad_aabb_candidates": 3022,
+      "exact_reduction_invariant": "equal exact core/push routing height",
+      "exact_segment_checks": 4,
+      "intersections": 0,
+      "pair": "core:height_bridge/push:last_exterior_ray",
+      "reduced_candidates": 4,
+      "status": "PASS"
+    },
+    {
+      "broad_aabb_candidates": 12097,
+      "exact_reduction_invariant": "equal exact core/push routing functional",
+      "exact_segment_checks": 0,
+      "intersections": 0,
+      "pair": "core:last_exterior_ray/push:start_skew_lift",
+      "reduced_candidates": 0,
+      "status": "PASS"
+    },
+    {
+      "broad_aabb_candidates": 3022,
+      "exact_reduction_invariant": "equal exact core/push routing functional",
+      "exact_segment_checks": 0,
+      "intersections": 0,
+      "pair": "core:last_exterior_ray/push:first_exterior_ray",
+      "reduced_candidates": 0,
+      "status": "PASS"
+    }
+  ],
+  "core_segment_count": 18156,
+  "global_core_push_clearance": false,
+  "outer_collars_v3_receipt_sha256": "A002628084D4099B3D53CD79B7531E66CA5BDCEB4DE09D4AA8FD6462AC366A3B",
+  "push_segment_count": 18156,
+  "schema": "t73_x_m1_outer_collar_v3_core_push_clearance/v1",
+  "sha256": "C7F220006FF0182977235BF8309CE609EDE8AEB3A459C6CF75A9863362B167B4",
+  "v3_core_push_candidate_matrix_sha256": "3730CB63C159FF43C0D6856CBEF0E1F9B1BAAD3997E45F86698AB47438E1CFF0",
+  "verdict": "REFUTED_X_M1_OUTER_COLLAR_V3_CORE_PUSH_CLEARANCE"
+}

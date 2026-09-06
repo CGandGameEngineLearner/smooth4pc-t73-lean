@@ -374,6 +374,15 @@ semantic type pairs and records constant-F/height availability separately on
 the core and push sides. It remains matrix-only: the changing-normal push
 end-lift interval reductions and direct dual GMP survivors must be applied
 before mutual clearance can pass.
+
+Applying those reductions refutes v3 before the ribbon stage. The exact
+artifact
+[`audit/t73_x_m1_outer_collar_v3_core_push_clearance.json`](audit/t73_x_m1_outer_collar_v3_core_push_clearance.json)
+shows core `last_exterior_ray` and push `height_bridge` of interface 3022
+intersect at height 13022, with both exact segment parameters strictly
+interior. The separate core and push PASS results remain valid, but their
+mutual union is not embedded. V4 must offset the end-exterior waypoint height
+so this r_zx y-normal corner becomes a three-dimensional local star.
 The graph map extends over all five framed regular neighborhoods in
 [`geometry/t73_hybrid_to_railroad_tubular_map.json`](geometry/t73_hybrid_to_railroad_tubular_map.json).
 Its five solid-torus templates contain 5385 tetrahedra and 10770 boundary

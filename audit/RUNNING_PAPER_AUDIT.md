@@ -4896,6 +4896,29 @@ Topology-source checks completed 2026-09-04:
   all 22 entries using directed F/height hashes, Johnson end-lift F intervals
   and direct GMP checks for the eight dual end lifts and germ families.
 
+### F-599AR — V3 core and push paths are separately embedded but intersect each other
+
+- Severity: **Critical v3 refutation / local corner geometry**
+- Status: **MUTUAL CLEARANCE REFUTED; HEIGHT-STAGGERED V4 REQUIRED**
+- Evidence: `audit/t73_x_m1_outer_collar_v3_core_push_clearance.json`, its
+  exact verifier/builder and regression test, consuming F-599AQ in directed
+  semantic order.
+- Collision: the first exact survivor is core interface 3022 type
+  `last_exterior_ray` against push interface 3022 type `height_bridge`.
+  Both lie at z=13022. The artifact stores both rational segments and their
+  common point, with core parameter `100/1868230184329597` and push parameter
+  `166672332833/166672333333`; both are strictly interior.
+- Interpretation: interface 3022 belongs to an r_zx dual neighbor whose source
+  normal points in y. V3 puts both the height bridge and last exterior ray in
+  one constant-z plane, so translating the bridge in y makes it cross the
+  approaching core ray. This is a genuine local framed-corner fold, not a
+  broad-phase false positive.
+- Scope: F-599AN core/core and F-599AP push/push remain valid independent
+  statements. Their union, the v3 ribbons and any v3 ambient extension are
+  refuted. V4 must retain the source germ and F-separated route but stagger
+  the end-exterior height by an exact half-layer, then rerun all core, push,
+  mutual and ribbon checks from the new coordinates.
+
 ### F-599C — Monolithic linear projections of the affine framed link are computationally unsuitable
 
 - Severity: **complete PD / projection selection**
