@@ -616,6 +616,26 @@ python3 scripts/build_t73_x_m1_outer_collar_v7_sequential_static_ribbon_clearanc
 python3 scripts/verify_t73_x_m1_outer_collar_v7_sequential_static_ribbon_clearance.py
 python3 -m unittest tests.test_t73_x_m1_outer_collar_v7_sequential_static_ribbon_clearance
 ```
+
+The moving framed ribbons themselves are now represented by the complete
+45,461,427-byte world-volume cache
+`/home/lifesize/.cache/t73_x_m1_outer_collar_v7_sequential_framed_isotopy_volume.jsonl.gz`.
+Construction metadata and independent replay are
+[`audit/t73_x_m1_outer_collar_v7_sequential_framed_isotopy_volume_receipt.json`](audit/t73_x_m1_outer_collar_v7_sequential_framed_isotopy_volume_receipt.json)
+and
+[`audit/t73_x_m1_outer_collar_v7_sequential_framed_isotopy_volume_verification.json`](audit/t73_x_m1_outer_collar_v7_sequential_framed_isotopy_volume_verification.json).
+Each corresponding pair of ribbon triangles forms a triangular prism, split
+canonically into three R4 tetrahedra. Independent replay reconstructs 121,020
+prisms and 363,060 nondegenerate tetrahedra, verifies the full prism boundary,
+15,130 phase-boundary matches and the pairwise time separation of moving
+volume interiors. Clearance against the contemporaneous static framed union
+and a fixed-boundary ambient extension remain open.
+
+```bash
+python3 scripts/build_t73_x_m1_outer_collar_v7_sequential_framed_isotopy_volume.py
+python3 scripts/build_t73_x_m1_outer_collar_v7_sequential_framed_isotopy_volume_verification.py --write --check-files
+python3 -m unittest tests.test_t73_x_m1_outer_collar_v7_sequential_framed_isotopy_volume
+```
 The graph map extends over all five framed regular neighborhoods in
 [`geometry/t73_hybrid_to_railroad_tubular_map.json`](geometry/t73_hybrid_to_railroad_tubular_map.json).
 Its five solid-torus templates contain 5385 tetrahedra and 10770 boundary

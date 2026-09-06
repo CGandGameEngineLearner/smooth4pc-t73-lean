@@ -5406,6 +5406,35 @@ Topology-source checks completed 2026-09-04:
   contemporaneous mixture plus the retained source and replacement framed
   union. Fixed-boundary tetrahedral ambient support remains absent.
 
+### F-599BN — The complete sequential framed isotopy has a simplicial R4 world-volume
+
+- Severity: **Dynamic framed-map construction / missing dimensional datum repaired**
+- Status: **COMPLETE LOCAL RIBBON VOLUME PASS; MOVING/STATIC AND AMBIENT OPEN**
+- Evidence:
+  `audit/t73_x_m1_outer_collar_v7_sequential_framed_isotopy_volume_receipt.json`,
+  its independent verification, builder, verifier, regression test and named
+  persistent cache, bound to F-599BJ and F-599BM.
+- Construction: each initial/final corresponding ribbon triangle gives
+  `triangle x I`. The canonical three-tetrahedron staircase has cells
+  `0125`, `0145`, `0345`. Its independent boundary calculation has exactly
+  the two endpoint triangles and the six side triangles, while each internal
+  face has multiplicity two. Source ribbons are stationary before their slot,
+  phase one moves all ten local triangles, phase two keeps eight prefix
+  triangles stationary and moves two terminal triangles, and final ribbons
+  are stationary after the slot.
+- Data/replay: the 45,461,427-byte cache contains 3,026 records, 121,020
+  triangular prisms and 363,060 R4 tetrahedra: 90,750 source-stationary,
+  90,780 phase-one moving, 72,624 phase-two stationary-prefix, 18,156
+  phase-two moving-terminal and 90,750 final-stationary cells. The independent
+  verifier reconstructs every vertex/cell, checks all 363,060 rank-three
+  minors, 15,130 phase-boundary matches, cache/stream hashes and exact slot
+  coverage. Distinct moving-volume interiors are separated by time. Verdict:
+  `PASS_X_M1_OUTER_COLLAR_V7_SEQUENTIAL_FRAMED_ISOTOPY_VOLUME_FULL_LOCAL_CANDIDATE`.
+- Boundary: a nondegenerate local world-volume is not yet a global embedded
+  trace. Every active volume must miss the contemporaneous ordered source/final
+  mixture and the retained/replacement framed union. A tetrahedral regular
+  neighborhood and fixed-boundary ambient extension are also still absent.
+
 ### F-599C — Monolithic linear projections of the affine framed link are computationally unsuitable
 
 - Severity: **complete PD / projection selection**

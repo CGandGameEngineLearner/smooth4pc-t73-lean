@@ -705,6 +705,24 @@ python3 scripts/verify_t73_x_m1_outer_collar_v7_sequential_static_ribbon_clearan
 python3 -m unittest tests.test_t73_x_m1_outer_collar_v7_sequential_static_ribbon_clearance
 ```
 
+移动 framed ribbons 本身现已由完整的 45,461,427-byte world-volume cache
+`/home/lifesize/.cache/t73_x_m1_outer_collar_v7_sequential_framed_isotopy_volume.jsonl.gz`
+表示。构造元数据与独立重放分别位于
+[`audit/t73_x_m1_outer_collar_v7_sequential_framed_isotopy_volume_receipt.json`](audit/t73_x_m1_outer_collar_v7_sequential_framed_isotopy_volume_receipt.json)
+和
+[`audit/t73_x_m1_outer_collar_v7_sequential_framed_isotopy_volume_verification.json`](audit/t73_x_m1_outer_collar_v7_sequential_framed_isotopy_volume_verification.json)。
+每对对应 ribbon triangles 构成一个 triangular prism，再规范分割成三个 R4
+四面体。独立重放重建 121,020 个 prisms 和 363,060 个非退化四面体，并验证
+完整 prism 边界、15,130 个阶段边界匹配以及 moving-volume interiors 的两两
+时间分离。与同时刻静态 framed union 的 clearance 和 fixed-boundary ambient
+extension 仍为 OPEN。
+
+```bash
+python3 scripts/build_t73_x_m1_outer_collar_v7_sequential_framed_isotopy_volume.py
+python3 scripts/build_t73_x_m1_outer_collar_v7_sequential_framed_isotopy_volume_verification.py --write --check-files
+python3 -m unittest tests.test_t73_x_m1_outer_collar_v7_sequential_framed_isotopy_volume
+```
+
 第一个跨系统门禁找到并修复了真实碰撞，没有提前升级该 assembly。流式 Rust
 1.98.1 checker 位于
 [`rust/t73_exact_cross_clearance`](rust/t73_exact_cross_clearance)，使用
