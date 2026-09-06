@@ -3662,7 +3662,7 @@ Topology-source checks completed 2026-09-04:
 ### F-599B1 — The affine push corridors are disjoint companions but not yet product push-offs
 
 - Severity: **Critical framing correction**
-- Status: **DISJOINT CYCLES PASS; PRODUCT FRAMING NOT CERTIFIED**
+- Status: **GAP CONFIRMED HERE; RESOLVED BY F-599B2 GLOBAL CLEARANCE**
 - Evidence: `audit/t73_affine_push_corridor_framing_gap.json` and its test.
 - Finding: F-599B sends each push corridor to an independent height
   `-20000-j`, while its core corridor lies at `-10000-j`. No ribbon vertices,
@@ -3676,11 +3676,12 @@ Topology-source checks completed 2026-09-04:
 - Repair: replace or supplement all 3558 push corridors by ruled parallel
   fields along the core corridors, matching the verified product normals at
   both ends, and prove all resulting ribbon triangles embedded/disjoint.
+  F-599B2 now completes this repair.
 
 ### F-599B2 — All affine corridor product ribbons are locally constructed
 
 - Severity: **framing repair / affine corridor ribbons**
-- Status: **LOCAL PRODUCT RIBBONS PASS; NONLOCAL CLEARANCE OPEN**
+- Status: **GLOBAL PRODUCT RIBBON EMBEDDING PASS**
 - Evidence: `scripts/build_t73_affine_s3_product_framed_realization.py`,
   `scripts/verify_t73_affine_s3_product_framed_realization.py`,
   `audit/t73_affine_s3_product_framed_realization_receipt.json`, its test, and
@@ -3694,12 +3695,23 @@ Topology-source checks completed 2026-09-04:
   endpoint normal values match, 28,464 endpoint-normal/tangent pairs are
   transverse, no normal vanishes, and all 28,464 ruled triangles are
   nondegenerate. Verdict: `PASS_AFFINE_S3_CORRIDOR_PRODUCT_RIBBONS_LOCAL`.
+- Global repair/clearance: an initial linear-width realization exposed one
+  exact horizontal/vertical ribbon intersection at triangles 5092/23318.
+  Keeping all endpoint normals fixed and multiplying only the three interior
+  corridor normals by `1/1000` removes that intersection while preserving all
+  local transversality. The structured verifier uses outward-rounded Shapely
+  projection buffers, vectorized z/HEIGHT rejection and conservative float
+  SAT before exact Fraction predicates. Triangle clearance reduces 59,549,839
+  broad pairs to 1779 exact checks; segment clearance reduces 130,106,076
+  broad pairs to 3560 exact checks. All pass. Verdict:
+  `PASS_AFFINE_S3_PRODUCT_CORRIDOR_RIBBON_GLOBAL_CLEARANCE`.
 - Storage/boundary: the 112,997,433-byte JSON exceeds GitHub's single-file
   limit and is kept in the user cache; Git stores its byte/payload/source
-  receipt and rebuild code. A generic all-pairs exact triangle clearance was
-  attempted with several safe broad-phase filters but remained computationally
-  unsuitable. The cache remains `OPEN_EXACT_NONLOCAL_CLEARANCE`; F-599B1 is
-  not resolved until a structured vertical/horizontal ribbon proof passes.
+  receipt and rebuild code. The global clearance receipt is
+  `audit/t73_affine_s3_product_ribbon_global_clearance.json`; its two full
+  phases can be rerun by the receipt builder. F-599B1 is resolved: the five
+  companion cycles are now certified product push-offs. A new projection of
+  these repaired coordinates is required for integer self-linkings.
 
 ### F-599C — Monolithic linear projections of the affine framed link are computationally unsuitable
 

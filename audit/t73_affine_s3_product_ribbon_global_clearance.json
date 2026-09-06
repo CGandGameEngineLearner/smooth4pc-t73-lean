@@ -1,0 +1,12 @@
+{
+  "construction_receipt_sha256": "C6C1F8D4DC84B2C665DBEE48F9A40B05914F0D849A87457C0822692322B57FFF",
+  "embedded_corridor_product_ribbons": true,
+  "product_framed_payload_sha256": "C398FCCFBA0E83E1EF004E77D3E9C0B58E834FE0164BA7D347DF4BCFAE938DB8",
+  "schema": "t73_affine_s3_product_ribbon_global_clearance/v1",
+  "segment_result": {"embedded_corridor_product_ribbons": false, "exact_segment_triangle_checks": 3560, "exact_triangle_triangle_checks": 0, "framed_segments": 46218, "ribbon_triangles": 28464, "segment_broad_candidates": 130106076, "segment_float_plane_rejects": 810769, "segment_height_rejects": 129143571, "segment_incidence_skips": 142320, "segment_projection_rejects": 5856, "triangle_broad_candidates": 0, "triangle_float_separation_rejects": 0, "triangle_height_rejects": 0, "triangle_incidence_skips": 0, "triangle_projection_rejects": 0, "verdict": "PASS_AFFINE_S3_PRODUCT_RIBBON_SEGMENT_CLEARANCE_ONLY"},
+  "sha256": "CC812810865914085DD92B3BA4C7B8B65EAD3C3B6F7C1BBCEDB75189BDA83910",
+  "triangle_result": {"embedded_corridor_product_ribbons": false, "exact_triangle_triangle_checks": 1779, "ribbon_triangles": 28464, "triangle_broad_candidates": 59549839, "triangle_float_separation_rejects": 408093, "triangle_height_rejects": 59092236, "triangle_incidence_skips": 46254, "triangle_projection_rejects": 1477, "verdict": "PASS_AFFINE_S3_PRODUCT_RIBBON_TRIANGLE_CLEARANCE_ONLY"},
+  "verdict": "PASS_AFFINE_S3_PRODUCT_CORRIDOR_RIBBON_GLOBAL_CLEARANCE",
+  "verifier_path": "scripts/verify_t73_affine_s3_product_ribbon_clearance.py",
+  "verifier_sha256": "5B6429DD2A12561EC02314C9D0860B74DA33DA4F08A3B6552DD51859F7A5E3B7"
+}

@@ -285,7 +285,13 @@ companion cycles，但尚未证明 product framing：3558条独立路由的 push
 它沿每条 core corridor 线性插值已验证的两端 product normals，生成28464个
 ruled triangles；全部7116个端点匹配及28464次局部横截检查通过。使用
 `python3 scripts/verify_t73_affine_s3_product_framed_realization.py` 验收；
-nonlocal ribbon clearance 仍开放。
+nonlocal clearance 现已在
+[`audit/t73_affine_s3_product_ribbon_global_clearance.json`](audit/t73_affine_s3_product_ribbon_global_clearance.json)
+中通过。保持全部 endpoint product normals 不变，仅把三个 corridor 内部 normals
+缩小为 `1/1000` 后，1779个 exact triangle/triangle 与3560个 exact
+segment/triangle survivors 全部无交。verdict 为
+`PASS_AFFINE_S3_PRODUCT_CORRIDOR_RIBBON_GLOBAL_CLEARANCE`；五条 affine
+companions 现已认证为 product push-offs。
 全局线性投影探测记录于
 [`audit/t73_affine_s3_projection_probe.json`](audit/t73_affine_s3_projection_probe.json)。
 xz/yz 会压扁 dotted edges；三个 regular tilts 至少产生258,453,247个 broad

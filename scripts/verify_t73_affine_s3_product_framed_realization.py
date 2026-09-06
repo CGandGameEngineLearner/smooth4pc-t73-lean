@@ -31,7 +31,7 @@ def verify():
    if role["kind"]!="affine_corridor":i+=1;continue
    idx=role["corridor_index"]
    if any(c["segment_roles"][i+j].get("corridor_index")!=idx for j in range(4)):raise AssertionError("core corridor subdivision changed")
-   path=cvx[i:i+5];pushed=pvx[i:i+5];r=ribbons[idx];n0=point(r["endpoint_normal_start"]);n1=point(r["endpoint_normal_end"]);normals=[add(scale(1-Fraction(j,4),n0),scale(Fraction(j,4),n1)) for j in range(5)]
+   path=cvx[i:i+5];pushed=pvx[i:i+5];r=ribbons[idx];n0=point(r["endpoint_normal_start"]);n1=point(r["endpoint_normal_end"]);raw=[add(scale(1-Fraction(j,4),n0),scale(Fraction(j,4),n1)) for j in range(5)];normals=[raw[0]]+[scale(Fraction(1,1000),v) for v in raw[1:4]]+[raw[4]]
    if [point(v) for v in r["normal_field"]]!=normals or [point(v) for v in r["push_vertices"]]!=pushed:raise AssertionError("corridor product field changed")
    if sub(pushed[0],path[0])!=n0 or sub(pushed[-1],path[-1])!=n1:raise AssertionError("corridor product endpoints changed")
    endpoint_checks+=2
@@ -46,6 +46,6 @@ def verify():
     if cross(sub(b,a),sub(e,a))==(0,0,0):raise AssertionError("corridor ribbon triangle degenerated")
    i+=4
  if (d["core_segment_count"],d["push_segment_count"],d["corridor_ribbon_triangle_count"],triangle_checks,normal_checks,endpoint_checks)!=(23109,23109,28464,28464,28464,7116):raise AssertionError("product framed totals changed")
- if d["completion_status"]!="AFFINE_S3_PRODUCT_PUSH_CYCLES_AND_CORRIDOR_RIBBONS_CONSTRUCTED" or d["global_ribbon_embedding_status"]!="OPEN_EXACT_NONLOCAL_CLEARANCE":raise AssertionError("product framed scope changed")
+ if d["completion_status"]!="AFFINE_S3_PRODUCT_PUSH_CYCLES_AND_CORRIDOR_RIBBONS_CONSTRUCTED" or d["global_ribbon_embedding_status"]!="OPEN_EXACT_NONLOCAL_CLEARANCE" or d["corridor_interior_normal_shrink"]!="1/1000":raise AssertionError("product framed scope changed")
  return {"verdict":"PASS_AFFINE_S3_CORRIDOR_PRODUCT_RIBBONS_LOCAL","core_segments":23109,"push_segments":23109,"corridors":3558,"ribbon_triangles":triangle_checks,"normal_transversality_checks":normal_checks,"endpoint_product_normal_matches":endpoint_checks,"global_ribbon_embedding_status":d["global_ribbon_embedding_status"]}
 if __name__=="__main__":print(json.dumps(verify(),sort_keys=True))

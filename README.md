@@ -341,7 +341,13 @@ It linearly interpolates the verified endpoint product normals along every
 core corridor, giving 28464 ruled triangles; all 7116 endpoint matches and
 28464 local transversality checks pass. Run
 `python3 scripts/verify_t73_affine_s3_product_framed_realization.py`. Exact
-nonlocal ribbon clearance remains open.
+nonlocal clearance now passes in
+[`audit/t73_affine_s3_product_ribbon_global_clearance.json`](audit/t73_affine_s3_product_ribbon_global_clearance.json).
+After shrinking only the three interior corridor normals by `1/1000` while
+fixing all endpoint product normals, 1779 exact triangle/triangle and 3560
+exact segment/triangle survivors are disjoint. Verdict:
+`PASS_AFFINE_S3_PRODUCT_CORRIDOR_RIBBON_GLOBAL_CLEARANCE`. The five affine
+companions are now certified product push-offs.
 Global linear projection probes are recorded in
 [`audit/t73_affine_s3_projection_probe.json`](audit/t73_affine_s3_projection_probe.json).
 xz/yz collapse dotted edges; three regular tilts produce at least 258,453,247

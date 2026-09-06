@@ -32,7 +32,7 @@ def build():
    if role["kind"]=="affine_corridor":
     index=role["corridor_index"];path=vertices[i:i+5]
     if any(roles[i+j]["kind"]!="affine_corridor" or roles[i+j]["corridor_index"]!=index for j in range(4)):raise AssertionError("core corridor block changed")
-    n0=sub(endpoint_push[path[0]],path[0]);n1=sub(endpoint_push[path[-1]],path[-1]);normals=[add(scale(1-Fraction(j,4),n0),scale(Fraction(j,4),n1)) for j in range(5)];pushed=[add(v,n) for v,n in zip(path,normals)]
+    n0=sub(endpoint_push[path[0]],path[0]);n1=sub(endpoint_push[path[-1]],path[-1]);raw_normals=[add(scale(1-Fraction(j,4),n0),scale(Fraction(j,4),n1)) for j in range(5)];normals=[raw_normals[0]]+[scale(Fraction(1,1000),v) for v in raw_normals[1:4]]+[raw_normals[4]];pushed=[add(v,n) for v,n in zip(path,normals)]
     triangles=[]
     for j in range(4):
      triangles.extend(((j,j+1,5+j+1),(j,5+j+1,5+j)))
@@ -53,7 +53,7 @@ def build():
    push.append(pb);i+=1
   if len(push)!=len(vertices) or push[0]!=push[-1]:raise AssertionError("product push component did not close")
   push_components.append({"component":component["component"],"vertices":[enc(v) for v in push],"segment_count":len(push)-1,"closed":True})
- r={"schema":"t73_affine_s3_product_framed_realization/v1","affine_s3_core_realization_sha256":core["sha256"],"affine_s3_core_verification_sha256":cv["sha256"],"johnson_spine_embedding_sha256":sp["sha256"],"actual_dotted_s3_passage_cells_sha256":dotted["sha256"],"actual_ar_link_sha256":ar["sha256"],"core_components":core["framed_core_components"],"dotted_components":core["dotted_components"],"push_components":push_components,"corridor_product_ribbons":ribbons,"core_segment_count":core["framed_core_segment_count"],"push_segment_count":sum(x["segment_count"] for x in push_components),"corridor_count":len(ribbons),"corridor_ribbon_triangle_count":triangle_count,"component_count":12,"completion_status":"AFFINE_S3_PRODUCT_PUSH_CYCLES_AND_CORRIDOR_RIBBONS_CONSTRUCTED","global_ribbon_embedding_status":"OPEN_EXACT_NONLOCAL_CLEARANCE","integer_framing_status":"OPEN"};r["sha256"]=sha(r);return r
+ r={"schema":"t73_affine_s3_product_framed_realization/v1","affine_s3_core_realization_sha256":core["sha256"],"affine_s3_core_verification_sha256":cv["sha256"],"johnson_spine_embedding_sha256":sp["sha256"],"actual_dotted_s3_passage_cells_sha256":dotted["sha256"],"actual_ar_link_sha256":ar["sha256"],"core_components":core["framed_core_components"],"dotted_components":core["dotted_components"],"push_components":push_components,"corridor_product_ribbons":ribbons,"corridor_interior_normal_shrink":"1/1000","core_segment_count":core["framed_core_segment_count"],"push_segment_count":sum(x["segment_count"] for x in push_components),"corridor_count":len(ribbons),"corridor_ribbon_triangle_count":triangle_count,"component_count":12,"completion_status":"AFFINE_S3_PRODUCT_PUSH_CYCLES_AND_CORRIDOR_RIBBONS_CONSTRUCTED","global_ribbon_embedding_status":"OPEN_EXACT_NONLOCAL_CLEARANCE","integer_framing_status":"OPEN"};r["sha256"]=sha(r);return r
 def main():
  p=argparse.ArgumentParser();p.add_argument("--output",type=Path);p.add_argument("--write",action="store_true");p.add_argument("--check",action="store_true");a=p.parse_args();r=build();output=a.output or DEFAULT_OUTPUT
  if a.write:
