@@ -152,6 +152,18 @@ replacements. Verify with
 `verify_t73_hybrid_to_railroad_graph_map.py`. Verdict:
 `PASS_HYBRID_TO_RAILROAD_FRAMED_GRAPH_ISOMORPHISM_ONLY`; ambient tracks remain
 open.
+
+The stub framing is now source-relative as well. The receipt
+[`audit/t73_x_m1_stub_source_normal_homotopy.json`](audit/t73_x_m1_stub_source_normal_homotopy.json)
+joins the source collar normal `(0,0,0,U)` to the lifted R3 displacement
+`(delta,delta,2*delta,0)` by
+`N(t)=(t*delta,t*delta,2*t*delta,(1-t)*U)`. Both `U` and `delta` are positive,
+so the vector is nonzero at both endpoints and has positive first/fourth
+coordinates throughout the open interval. An independent verifier checks
+1,001 rational parameters and the positive-cone argument applies to every
+real parameter. The homotopy applies uniformly to all 6,052 paths and 10,582
+segments with relative twist zero. Verdict:
+`PASS_X_M1_STUB_SOURCE_NORMAL_HOMOTOPY`.
 The graph map extends over all five framed regular neighborhoods in
 [`geometry/t73_hybrid_to_railroad_tubular_map.json`](geometry/t73_hybrid_to_railroad_tubular_map.json).
 Its five solid-torus templates contain 5385 tetrahedra and 10770 boundary

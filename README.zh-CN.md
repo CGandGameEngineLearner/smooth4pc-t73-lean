@@ -621,6 +621,15 @@ ribbon triangles。同一个已验证 band displacement 对每条 stub segment �
 `PASS_X_M1_STUB_R3_PUSH_PATHS_FULL_LOCAL`。source-normal homotopies、全局 stub-push
 clearance 与 transition-side push ports 仍为 OPEN。
 
+stub framing 现也完成 source-relative 绑定。收据
+[`audit/t73_x_m1_stub_source_normal_homotopy.json`](audit/t73_x_m1_stub_source_normal_homotopy.json)
+用 `N(t)=(t*delta,t*delta,2*t*delta,(1-t)*U)` 将 source collar normal
+`(0,0,0,U)` 连接到 lifted R3 displacement `(delta,delta,2*delta,0)`。`U` 与
+`delta` 均为正，所以两端非零，并在开区间内同时具有正的第一、第四坐标。
+独立 verifier 检查 1,001 个有理参数，正锥论证覆盖所有实参数。该同伦统一作用于
+6,052 条 paths、10,582 个 segments，relative twist 为 0。verdict 为
+`PASS_X_M1_STUB_SOURCE_NORMAL_HOMOTOPY`。
+
 全局线性投影探测记录于
 [`audit/t73_affine_s3_projection_probe.json`](audit/t73_affine_s3_projection_probe.json)。
 xz/yz 会压扁 dotted edges；三个 regular tilts 至少产生258,453,247个 broad

@@ -4431,6 +4431,30 @@ Topology-source checks completed 2026-09-04:
   Global stub core/push/ribbon clearance and the two transition-side push
   ports per band remain open.
 
+### F-599AA — The stub R3 displacement is homotopic to the saved source normal with zero twist
+
+- Severity: **Major positive framing transport / source-relative stubs**
+- Status: **SOURCE NORMAL HOMOTOPY PASS; GLOBAL STUB PUSH CLEARANCE OPEN**
+- Evidence: `audit/t73_x_m1_stub_source_normal_homotopy.json`, builder,
+  independent verifier and test, bound to the source collar product, ejected
+  source stubs, F-599V embeddedness transfer and F-599Z R3 push paths.
+- Endpoint normals: the source ejection uses the uniform positive fourth-axis
+  vector `(0,0,0,U)`. The target lane/stub construction uses
+  `(delta,delta,2delta)` in R3; lift it to `(delta,delta,2delta,0)` in Q4.
+  Both scalars are the exact positive values in their current source receipts.
+- Homotopy: `N(t)=(t delta,t delta,2t delta,(1-t)U)`. At t=0 its fourth
+  coordinate is positive; at t=1 its first three coordinates are positive; for
+  every `0<t<1` both groups contain positive coordinates. Hence N never
+  vanishes and cannot wind through the zero section. Five saved checkpoints
+  and 1001 independently recomputed rational parameters pass; the positive
+  cone proof covers the full real interval.
+- Scope: the same product trivialization applies to all 6052 paths and 10,582
+  segments. Relative twist is zero. Verdict:
+  `PASS_X_M1_STUB_SOURCE_NORMAL_HOMOTOPY`.
+- Boundary: source-relative framing class is now fixed, and all band-side push
+  ports match. Exact global clearance of the stub push paths/ribbons and their
+  two transition-side push ports per band remain open.
+
 ### F-599C — Monolithic linear projections of the affine framed link are computationally unsuitable
 
 - Severity: **complete PD / projection selection**
