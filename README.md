@@ -354,6 +354,18 @@ The 14,254,960 broad pairs reduce to 24,208 equal-invariant/direct candidates:
 segment equations. All are disjoint. Verdict:
 `PASS_X_M1_OUTER_COLLAR_V3_CORE_CLEARANCE`. Push and ribbon matrices remain
 open and are not inferred from this core result.
+
+The independent push matrix and clearance are now saved in
+[`audit/t73_x_m1_outer_collar_v3_push_candidate_matrix.json`](audit/t73_x_m1_outer_collar_v3_push_candidate_matrix.json)
+and
+[`audit/t73_x_m1_outer_collar_v3_push_clearance.json`](audit/t73_x_m1_outer_collar_v3_push_clearance.json).
+The push matrix has the same 14,254,960 broad pairs. Types 1/2/4 retain exact
+constant-F/height reductions. The changing-normal end lifts split into 3,018
+Johnson intervals, which have strict disjoint F-ranges, and eight dual
+intervals checked directly with GMP. The verifier performs 75,618 exact
+segment equations, preserves 15,134 waypoint incidences and finds no
+intersection. Verdict: `PASS_X_M1_OUTER_COLLAR_V3_PUSH_CLEARANCE`. The
+core/push cross matrix and ribbons remain open.
 The graph map extends over all five framed regular neighborhoods in
 [`geometry/t73_hybrid_to_railroad_tubular_map.json`](geometry/t73_hybrid_to_railroad_tubular_map.json).
 Its five solid-torus templates contain 5385 tetrahedra and 10770 boundary

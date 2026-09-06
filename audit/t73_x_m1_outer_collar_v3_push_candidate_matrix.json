@@ -1,0 +1,54 @@
+{
+  "clearance_status": "OPEN_APPLY_EXACT_HASH_AND_END_LIFT_COPLANARITY_REDUCTIONS",
+  "constant_functional_segment_types": [
+    "start_skew_lift",
+    "first_exterior_ray",
+    "last_exterior_ray"
+  ],
+  "constant_height_segment_types": [
+    "first_exterior_ray",
+    "height_bridge",
+    "last_exterior_ray"
+  ],
+  "expanded_3d_aabb_candidate_count": 14254960,
+  "expanded_3d_aabb_candidate_matrix": {
+    "end_skew_lift_with_normal_change/end_skew_lift_with_normal_change": 232,
+    "first_exterior_ray/end_skew_lift_with_normal_change": 4567750,
+    "first_exterior_ray/height_bridge": 3026,
+    "first_exterior_ray/last_exterior_ray": 3026,
+    "height_bridge/last_exterior_ray": 3026,
+    "last_exterior_ray/end_skew_lift_with_normal_change": 3934557,
+    "retained_source_germ/retained_source_germ": 4,
+    "retained_source_germ/start_skew_lift": 9074,
+    "start_skew_lift/first_exterior_ray": 3440548,
+    "start_skew_lift/last_exterior_ray": 12097,
+    "start_skew_lift/start_skew_lift": 2281620
+  },
+  "outer_collars_v3_receipt_sha256": "A002628084D4099B3D53CD79B7531E66CA5BDCEB4DE09D4AA8FD6462AC366A3B",
+  "push_functional_endpoint_group_counts": {
+    "germ_source_normal": 3026,
+    "target_high_source_normal": 3026,
+    "target_target_normal": 3026
+  },
+  "push_functional_endpoint_union_count": 9078,
+  "push_functional_endpoint_union_distinct_count": 9078,
+  "routing_functional": [
+    "-1000033",
+    "1",
+    "2"
+  ],
+  "schema": "t73_x_m1_outer_collar_v3_push_candidate_matrix/v1",
+  "segment_count": 18156,
+  "segment_count_per_type": 3026,
+  "segment_type_names": [
+    "retained_source_germ",
+    "start_skew_lift",
+    "first_exterior_ray",
+    "height_bridge",
+    "last_exterior_ray",
+    "end_skew_lift_with_normal_change"
+  ],
+  "sha256": "FBB5A1F51D2F8A28B899C87E2056FE3079EF4B25C90ECCDCA40C2D9B421890E3",
+  "v3_core_clearance_sha256": "A7150DE25357DD867F888FFC6FA54EC6636378E20AF94B84F58250A783028E83",
+  "verdict": "PASS_X_M1_OUTER_COLLAR_V3_PUSH_CANDIDATE_MATRIX_ONLY"
+}

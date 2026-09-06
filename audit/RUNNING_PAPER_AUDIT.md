@@ -4838,6 +4838,45 @@ Topology-source checks completed 2026-09-04:
   ruled ribbons, isotopy traces or ambient supports; their own complete
   candidate matrices and exact survivors remain required.
 
+### F-599AO — The complete v3 push matrix and changing-normal intervals are explicit
+
+- Severity: **Verification decomposition / push companion geometry**
+- Status: **MATRIX COMPLETE; CLOSED BY F-599AP**
+- Evidence: `audit/t73_x_m1_outer_collar_v3_push_candidate_matrix.json`, its
+  builder and regression test, bound to F-599AL and F-599AN.
+- Matrix: all 18,156 push segments and 14,254,960 outward-rounded AABB pairs
+  split into the same eleven nonempty semantic type pairs as the core. Types
+  start skew lift, first exterior ray and last exterior ray have constant
+  exact F; first ray, bridge and last ray have constant exact push height.
+- Endpoint data: the germ/source-normal, target-high/source-normal and
+  target/target-normal groups each contain 3,026 exact F values. Their union
+  has 9,078 elements and all are distinct. The end skew lift is correctly
+  marked nonconstant-F rather than inheriting the core classification.
+- Boundary: verdict `PASS_X_M1_OUTER_COLLAR_V3_PUSH_CANDIDATE_MATRIX_ONLY`
+  certifies inventory, not clearance. F-599AP supplies the exact interval and
+  GMP argument.
+
+### F-599AP — All v3 outer-collar push segments are globally disjoint
+
+- Severity: **Positive push clearance / exact changing-normal treatment**
+- Status: **PUSH PASS; CORE/PUSH CROSS AND RIBBONS OPEN**
+- Evidence: `audit/t73_x_m1_outer_collar_v3_push_clearance.json`, its builder
+  and regression test, consuming every F-599AO matrix entry.
+- Constant families: exact F and height hashes discharge types 1/2/4 with the
+  same declared waypoint incidences as the core proof.
+- End lifts: 3,018 Johnson end-lift F intervals have a common exact width and
+  strictly positive pairwise gaps. Type-2 constants miss every interval;
+  type-4 constants meet only their same-interface endpoint. The eight dual
+  end lifts have width 0.002 or 0.003 and are checked directly against the
+  affected ray/end-lift families with GMP.
+- Totals: all eleven semantic type pairs and 14,254,960 broad candidates are
+  covered. There are 75,618 exact segment equations, 15,134 permitted
+  incidences and zero intersections. Verdict:
+  `PASS_X_M1_OUTER_COLLAR_V3_PUSH_CLEARANCE`.
+- Boundary: separate core and push embeddings do not prove core/push mutual
+  clearance or ribbon embeddedness. Both remain mandatory before v3 can be
+  upgraded from `CANDIDATE_UNVERIFIED`.
+
 ### F-599C — Monolithic linear projections of the affine framed link are computationally unsuitable
 
 - Severity: **complete PD / projection selection**

@@ -801,6 +801,17 @@ germs 与 3,026 个同高度 first/last-ray pairs 进入直接 GMP。该 artifac
 全部无交。verdict 为 `PASS_X_M1_OUTER_COLLAR_V3_CORE_CLEARANCE`。push 与
 ribbon 矩阵仍为 OPEN，不能从 core 结果自动推出。
 
+独立 push 矩阵与 clearance 现保存于
+[`audit/t73_x_m1_outer_collar_v3_push_candidate_matrix.json`](audit/t73_x_m1_outer_collar_v3_push_candidate_matrix.json)
+和
+[`audit/t73_x_m1_outer_collar_v3_push_clearance.json`](audit/t73_x_m1_outer_collar_v3_push_clearance.json)。
+push 矩阵同样有 14,254,960 个 broad pairs。类型 1/2/4 保持 exact
+constant-F/height 降维；变化法向 end lifts 分成 3,018 个具有严格互斥 F 区间的
+Johnson intervals，以及 8 个直接用 GMP 检查的 dual intervals。verifier 执行
+75,618 个精确线段方程，保留 15,134 个 waypoint incidences，未发现交点。
+verdict 为 `PASS_X_M1_OUTER_COLLAR_V3_PUSH_CLEARANCE`。core/push 交叉矩阵与
+ribbons 仍为 OPEN。
+
 全局线性投影探测记录于
 [`audit/t73_affine_s3_projection_probe.json`](audit/t73_affine_s3_projection_probe.json)。
 xz/yz 会压扁 dotted edges；三个 regular tilts 至少产生258,453,247个 broad
