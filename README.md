@@ -276,6 +276,22 @@ forbidden: the next construction must replace each old terminal neighbor
 segment by a relative framed ambient-collar extension and verify its global
 clearance. Rebuild the audit with
 `python3 scripts/audit_t73_x_m1_complete_framed_outer_interface_gap.py --write`.
+The first canonical repair is stored as a deliberately fail-closed candidate
+in `C:\Users\Administrator\.cache\t73_x_m1_framed_outer_interface_collars.jsonl.gz`.
+Each old terminal segment is replaced by the straight segment from its saved
+source-inner point to the R3 target port. Phase one moves the old endpoint
+with its source normal fixed; phase two fixes the final core and linearly
+homotopes the endpoint normal to the target normal. The local receipt and full
+replay are
+[`audit/t73_x_m1_framed_outer_interface_collars_receipt.json`](audit/t73_x_m1_framed_outer_interface_collars_receipt.json)
+and
+[`audit/t73_x_m1_framed_outer_interface_collars_verification.json`](audit/t73_x_m1_framed_outer_interface_collars_verification.json).
+All 3,026 core and push paths also pass pairwise GMP clearance: 2,235,099
+core/core, 2,231,193 push/push and 4,469,079 core/push exact checks, with only
+four declared dual-passage inner incidences. See
+[`audit/t73_x_m1_outer_collar_core_push_clearance_verification.json`](audit/t73_x_m1_outer_collar_core_push_clearance_verification.json).
+The collars remain `CANDIDATE_UNVERIFIED` until their 6,052 ribbon triangles,
+isotopy traces and tetrahedral ambient supports pass global clearance.
 The graph map extends over all five framed regular neighborhoods in
 [`geometry/t73_hybrid_to_railroad_tubular_map.json`](geometry/t73_hybrid_to_railroad_tubular_map.json).
 Its five solid-torus templates contain 5385 tetrahedra and 10770 boundary

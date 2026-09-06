@@ -730,6 +730,20 @@ verdict 为 `PASS_X_M1_COMPLETE_GLOBAL_R3_FRAMED_REPLACEMENT_CYCLES_FULL`。
 segment 替换成 relative framed ambient-collar extension，并验证全局 clearance。
 重建命令为
 `python3 scripts/audit_t73_x_m1_complete_framed_outer_interface_gap.py --write`。
+第一版规范修复以严格 fail-closed 的候选形式保存于
+`C:\Users\Administrator\.cache\t73_x_m1_framed_outer_interface_collars.jsonl.gz`。
+每条旧 terminal segment 被替换为从已保存 source-inner 到 R3 target port 的
+直线：phase 1 固定 source normal 移动旧端点，phase 2 固定最终 core 并将端点
+normal 线性同伦到 target normal。局部构造与完整重放收据为
+[`audit/t73_x_m1_framed_outer_interface_collars_receipt.json`](audit/t73_x_m1_framed_outer_interface_collars_receipt.json)
+和
+[`audit/t73_x_m1_framed_outer_interface_collars_verification.json`](audit/t73_x_m1_framed_outer_interface_collars_verification.json)。
+全部 3,026 条 core/push paths 也通过 GMP 成对 clearance：2,235,099 个
+core/core、2,231,193 个 push/push、4,469,079 个 core/push 精确检查，仅保留
+4 个规定 dual-passage inner incidences。见
+[`audit/t73_x_m1_outer_collar_core_push_clearance_verification.json`](audit/t73_x_m1_outer_collar_core_push_clearance_verification.json)。
+在 6,052 个 ribbon triangles、isotopy traces 与 tetrahedral ambient supports
+通过全局 clearance 前，collars 仍标为 `CANDIDATE_UNVERIFIED`。
 
 全局线性投影探测记录于
 [`audit/t73_affine_s3_projection_probe.json`](audit/t73_affine_s3_projection_probe.json)。

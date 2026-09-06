@@ -4671,6 +4671,37 @@ Topology-source checks completed 2026-09-04:
   core/push/ribbon cells globally clear before updating the seven-component
   atlas or computing a PD/linking matrix.
 
+### F-599AI — Straight two-phase outer collar candidates pass local and core/push clearance
+
+- Severity: **Constructive integration progress / candidate ambient collars**
+- Status: **LOCAL AND CORE/PUSH PASS; RIBBON/TRACE/SUPPORT OPEN**
+- Evidence: `audit/t73_x_m1_framed_outer_interface_collars_receipt.json`,
+  `audit/t73_x_m1_framed_outer_interface_collars_verification.json`,
+  `audit/t73_x_m1_outer_collar_core_push_clearance.json`, its saved full-run
+  verification receipt, builders/verifiers/tests and named persistent cache.
+- Two-phase construction: for each F-599AH interface, phase one fixes the
+  source-inner point and moves the old source port linearly to the R3 target
+  while retaining the old Johnson/dual normal. Its core trace and translated
+  push trace are explicit rational triangles. Phase two fixes the final core
+  and linearly homotopes only the terminal normal to the target stub normal.
+- Local exact proof: affine vector-zero equations prove no phase-one core
+  segment collapses, the constant source normal stays transverse throughout
+  phase one, and the endpoint-normal homotopy stays transverse throughout
+  phase two. There are 3,026 collars, 3,026 core trace triangles, 3,026 push
+  trace triangles and 6,052 final ribbon triangles; relative twist sum is zero.
+- Global one-skeleton: 3D Rtree supplies complete outward-rounded candidates,
+  then GMP solves every surviving segment equation. Core/core performs
+  2,235,099 exact checks plus four declared shared dual-passage inner
+  incidences; push/push performs 2,231,193 plus the same four incidences;
+  core/push performs 4,469,079 exact checks. Extra intersections are zero.
+  Verdict: `PASS_X_M1_OUTER_COLLAR_CORE_PUSH_CLEARANCE`.
+- Classification/boundary: the globally embedded core and push paths may be
+  treated as actual one-dimensional data, but the complete collars remain
+  `CANDIDATE_UNVERIFIED`. Before upgrading them, all 6,052 final ribbon
+  triangles and both isotopy-trace families must be globally cleared against
+  themselves and the retained/replacement link, and a tetrahedral ambient
+  isotopy support with fixed outer boundary must be constructed.
+
 ### F-599C — Monolithic linear projections of the affine framed link are computationally unsuitable
 
 - Severity: **complete PD / projection selection**

@@ -1,0 +1,37 @@
+{
+  "classification": "ACTUAL_CORE_PUSH_PATHS",
+  "collar_count": 3026,
+  "failing_pairs": [],
+  "global_core_push_clearance": true,
+  "outer_collars_local_verification_sha256": "1871BB30E1D23D7B4A2E696902B7836C6C765913DD0A87BA6218AB5956364F79",
+  "outer_collars_receipt_sha256": "79A07671AAD6AE60F91DEFD72FF308529704A3046FA2A3A100E9AD311986E887",
+  "pair_results": {
+    "core/core": {
+      "broad_candidates": 2235103,
+      "exact_bounds_rejects": 0,
+      "exact_segment_checks": 2235099,
+      "intersections": 0,
+      "permitted_incidences": 4,
+      "status": "PASS"
+    },
+    "core/push": {
+      "broad_candidates": 4473230,
+      "exact_bounds_rejects": 4151,
+      "exact_segment_checks": 4469079,
+      "intersections": 0,
+      "permitted_incidences": 0,
+      "status": "PASS"
+    },
+    "push/push": {
+      "broad_candidates": 2235105,
+      "exact_bounds_rejects": 3908,
+      "exact_segment_checks": 2231193,
+      "intersections": 0,
+      "permitted_incidences": 4,
+      "status": "PASS"
+    }
+  },
+  "schema": "t73_x_m1_outer_collar_core_push_clearance/v1",
+  "sha256": "A8DEDE25A341EF9858685A62A4AF43CAA3C1088ECC02B5A28D23A59DBE69A227",
+  "verdict": "PASS_X_M1_OUTER_COLLAR_CORE_PUSH_CLEARANCE"
+}

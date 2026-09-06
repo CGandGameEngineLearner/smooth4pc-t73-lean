@@ -1,0 +1,49 @@
+{
+  "clearance_artifact_content_sha256": "C1EA83266ACB043EB4A3BAEA95B424A6B817831716DA7AB3D74DAC6B72833F5C",
+  "clearance_artifact_payload_sha256": "A8DEDE25A341EF9858685A62A4AF43CAA3C1088ECC02B5A28D23A59DBE69A227",
+  "full_result": {
+    "classification": "ACTUAL_CORE_PUSH_PATHS",
+    "collar_count": 3026,
+    "failing_pairs": [],
+    "global_core_push_clearance": true,
+    "outer_collars_local_verification_sha256": "1871BB30E1D23D7B4A2E696902B7836C6C765913DD0A87BA6218AB5956364F79",
+    "outer_collars_receipt_sha256": "79A07671AAD6AE60F91DEFD72FF308529704A3046FA2A3A100E9AD311986E887",
+    "pair_results": {
+      "core/core": {
+        "broad_candidates": 2235103,
+        "exact_bounds_rejects": 0,
+        "exact_segment_checks": 2235099,
+        "intersections": 0,
+        "permitted_incidences": 4,
+        "status": "PASS"
+      },
+      "core/push": {
+        "broad_candidates": 4473230,
+        "exact_bounds_rejects": 4151,
+        "exact_segment_checks": 4469079,
+        "intersections": 0,
+        "permitted_incidences": 0,
+        "status": "PASS"
+      },
+      "push/push": {
+        "broad_candidates": 2235105,
+        "exact_bounds_rejects": 3908,
+        "exact_segment_checks": 2231193,
+        "intersections": 0,
+        "permitted_incidences": 4,
+        "status": "PASS"
+      }
+    },
+    "schema": "t73_x_m1_outer_collar_core_push_clearance/v1",
+    "sha256": "A8DEDE25A341EF9858685A62A4AF43CAA3C1088ECC02B5A28D23A59DBE69A227",
+    "verdict": "PASS_X_M1_OUTER_COLLAR_CORE_PUSH_CLEARANCE"
+  },
+  "full_verifier_path": "scripts/build_t73_x_m1_outer_collar_core_push_clearance.py",
+  "full_verifier_sha256": "E9268143EA8CEAAF4BFD650CB8AB8C44E8D1EDB0486FB0F701488CEBC841E9C4",
+  "outer_collar_cache_sha256": "358963C0B80E2336348D08F33B21A8FB565E03467883C965B4F5E7DB4EB5D7D6",
+  "outer_collar_receipt_sha256": "79A07671AAD6AE60F91DEFD72FF308529704A3046FA2A3A100E9AD311986E887",
+  "schema": "t73_x_m1_outer_collar_core_push_clearance_verification/v1",
+  "sha256": "AFBF37A566A25BF6103CBB3DF17C4148A6E9910E8BA59C7334332F6C12D215B5",
+  "status": "PASS_SAVED_FULL_GMP_RUN",
+  "verdict": "PASS_X_M1_OUTER_COLLAR_CORE_PUSH_CLEARANCE"
+}
