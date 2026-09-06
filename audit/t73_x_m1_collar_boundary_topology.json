@@ -1,0 +1,60 @@
+{
+  "betti_numbers_over_Q": [
+    1,
+    1,
+    1,
+    1
+  ],
+  "boundary_carrier_dimension_counts": {
+    "1": 8,
+    "2": 15130,
+    "3": 30292,
+    "4": 6050
+  },
+  "boundary_connected": true,
+  "boundary_operator_ranks_over_Q": [
+    0,
+    31,
+    144,
+    143
+  ],
+  "boundary_simplex_counts": [
+    32,
+    176,
+    288,
+    144
+  ],
+  "closed_boundary_triangle_degree": 2,
+  "completion_status": "X_M1_COLLAR_BOUNDARY_TOPOLOGY_AND_CELL_MEMBERSHIP_VERIFIED",
+  "ejected_band_lanes_receipt_sha256": "059A9E2DEE7A749BB26EF7079AA8BB31C19DCD4F7D7F073292FB6D0A2F0B675B",
+  "ejected_splice_stubs_receipt_sha256": "8EF2FB21E4082741A43A758093F0EA95A354AB2D9C94EA8DB505999CAF4C37C4",
+  "euler_characteristic": 0,
+  "exposed_boundary_tetrahedra_per_four_simplex_distribution": {
+    "0": 24,
+    "1": 96,
+    "2": 24
+  },
+  "four_simplex_count": 144,
+  "lane_stub_core_boundary_point_occurrences": 27228,
+  "lane_stub_core_interior_point_occurrences": 24252,
+  "product_support_boundary_as_ambient_boundary_status": "REFUTED_BY_INTERIOR_LANE_CORE_CARRIERS",
+  "required_next_map": "construct the actual post-deletion ambient 3-boundary map from the handle-pair deletion; the product-support boundary is not it",
+  "schema": "t73_x_m1_collar_boundary_topology/v1",
+  "sha256": "424BB4C5EE27CA2B569784CA1661ED1064708CB95B5AF5FF20DEFC9E837FBF58",
+  "stream_boundary_point_occurrences": {
+    "lanes": {
+      "boundary": 6064,
+      "interior": 24252,
+      "total": 30316
+    },
+    "stubs": {
+      "boundary": 21164,
+      "interior": 0,
+      "total": 21164
+    }
+  },
+  "topology_scope": "the finite complex has the rational homology of S2 x S1; this does not by itself assert a homeomorphism classification",
+  "whole_boundary_single_r3_chart_status": "NOT_APPLICABLE_TO_PRODUCT_SUPPORT_BOUNDARY",
+  "x_m1_collar_product_extension_sha256": "EFB6CBB2B2B32F4A37FB8D257DBA69C9D0F0ED32C9624A92185B6343A5D30775",
+  "x_m1_handle_pair_deletion_sha256": "6CF7C396F4F75A4FC68AFA5DEB67D21A1C562D007D2B57267630F418F3078C53"
+}

@@ -398,6 +398,16 @@ relative twist 总和 0 及完整缓存 SHA 已在
 verdict 为
 `PASS_POST_X_CONNECTOR_STUB_FRAMING_TRANSITION_GLOBAL_CLEARANCE`。
 
+collar-product support 本身不能冒充缺失的 ambient R3 boundary。精确审计
+[`audit/t73_x_m1_collar_boundary_topology.json`](audit/t73_x_m1_collar_boundary_topology.json)
+得到一个连通闭 support boundary，其 simplex 数为 `(32,176,288,144)`、边界算子
+秩为 `(0,31,144,143)`、有理 Betti 数为 `(1,1,1,1)`。重心 carrier 检查表明
+27,228 个 lane/stub core 点实例位于该 support boundary，但 24,252 个 band-lane
+点严格位于其四维内部；独立 target-shell 统计得到同样划分。verdict 为
+`PASS_X_M1_COLLAR_SUPPORT_BOUNDARY_TOPOLOGY_AUDIT`。因此下一项必须是完整
+x/m1 handle-pair deletion 给出的真实 ambient 3-boundary map，而不是 support
+boundary 的投影或 Schlegel 图。
+
 全局线性投影探测记录于
 [`audit/t73_affine_s3_projection_probe.json`](audit/t73_affine_s3_projection_probe.json)。
 xz/yz 会压扁 dotted edges；三个 regular tilts 至少产生258,453,247个 broad

@@ -3940,6 +3940,34 @@ Topology-source checks completed 2026-09-04:
   common R3 collar realization before these corrections can join the F-599I
   middle ribbons into complete post-x R3 cycles.
 
+### F-599K — The collar-product support boundary is not the missing ambient 3-boundary
+
+- Severity: **Critical chart-scope correction**
+- Status: **SUPPORT-BOUNDARY SUBSTITUTE REFUTED; ACTUAL DELETION BOUNDARY MAP OPEN**
+- Evidence: `audit/t73_x_m1_collar_boundary_topology.json`,
+  `scripts/audit_t73_x_m1_collar_boundary_topology.py`, its independent
+  verifier and test, bound to the collar product, handle-pair deletion and all
+  lane/stub streams.
+- Support topology: the 144 collar-product 4-simplices expose a connected
+  closed 3-complex with simplex counts `(32,176,288,144)`. Every triangle has
+  degree two. Exact rational boundary-matrix ranks are `(0,31,144,143)`, so
+  Betti numbers are `(1,1,1,1)` and Euler characteristic is zero. This is the
+  rational homology of S2xS1, without asserting a homeomorphism classification.
+- Carrier audit: exact source-simplex barycentric coordinates classify every
+  target core endpoint occurrence. Of 51,480 lane/stub occurrences, 27,228
+  lie on a support-boundary carrier while 24,252 band-lane occurrences have an
+  interior 4-simplex carrier. A separate verifier that tests the target outer
+  cubical shell directly recovers lane `6064/30316` and stub `21164/21164`,
+  hence the same 27,228/24,252 split.
+- Consequence: the support boundary is not the ambient post-cancellation
+  boundary carrying the complete attaching link. Projecting or making a
+  Schlegel diagram of it would silently lose 24,252 actual core occurrences.
+  Verdict: `PASS_X_M1_COLLAR_SUPPORT_BOUNDARY_TOPOLOGY_AUDIT`.
+- Required next construction: derive the ambient three-boundary restriction
+  of the full x/m1 handle-pair deletion, including the image of the interior
+  lane carriers. Only that map may be composed with F-599I and F-599J to form
+  complete source-relative R3 replacement paths.
+
 ### F-599C — Monolithic linear projections of the affine framed link are computationally unsuitable
 
 - Severity: **complete PD / projection selection**

@@ -459,6 +459,20 @@ corrected framed segments. It reduces about 17 million broad candidates in
 each phase to 4,527 exact rational intersection tests; all are disjoint.
 Verdict: `PASS_POST_X_CONNECTOR_STUB_FRAMING_TRANSITION_GLOBAL_CLEARANCE`.
 
+The collar-product support itself cannot be reused as the missing ambient R3
+boundary. The exact audit
+[`audit/t73_x_m1_collar_boundary_topology.json`](audit/t73_x_m1_collar_boundary_topology.json)
+finds a connected closed support boundary with simplex counts
+`(32,176,288,144)`, boundary-map ranks `(0,31,144,143)`, and rational Betti
+numbers `(1,1,1,1)`. Barycentric carrier tests place 27,228 lane/stub core
+point occurrences on this support boundary but 24,252 band-lane occurrences
+strictly in its four-dimensional interior. A separate direct target-shell
+calculation reproduces the same split. Verdict:
+`PASS_X_M1_COLLAR_SUPPORT_BOUNDARY_TOPOLOGY_AUDIT`. The required next object
+is therefore the actual ambient 3-boundary map supplied by the complete
+x/m1 handle-pair deletion, not a projection or Schlegel diagram of the support
+boundary.
+
 Global linear projection probes are recorded in
 [`audit/t73_affine_s3_projection_probe.json`](audit/t73_affine_s3_projection_probe.json).
 xz/yz collapse dotted edges; three regular tilts produce at least 258,453,247
