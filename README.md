@@ -626,6 +626,19 @@ expected endpoint incidences and no extras. Three-prime screening of all
 `PASS_X_M1_REPAIRED_STUB_CROSS_CLEARANCE`. The old v1 cache and obstruction
 remain preserved for replay.
 
+The repaired transitions are now incorporated into a new complete assembly;
+the colliding v1 assembly is not overwritten. The v2 cache
+`C:\Users\Administrator\.cache\t73_x_m1_complete_global_r3_replacement_cores_v2.jsonl.gz`
+and receipt
+[`audit/t73_x_m1_complete_global_r3_replacement_cores_v2_receipt.json`](audit/t73_x_m1_complete_global_r3_replacement_cores_v2_receipt.json)
+contain 1,513 nine-piece paths, 92,284 core segments, and 12,104 exact joins.
+Independent replay reconstructs every vertex/range and checks the
+8,242,321-byte cache SHA. Verdict:
+`PASS_X_M1_COMPLETE_GLOBAL_R3_REPLACEMENT_CORES_V2_FULL`. Remaining core
+clearance is limited to repaired non-shell transition segments versus band
+strips and translated middles, plus binding the inherited F-563 stub
+embeddedness proof. Push paths remain open.
+
 Global linear projection probes are recorded in
 [`audit/t73_affine_s3_projection_probe.json`](audit/t73_affine_s3_projection_probe.json).
 xz/yz collapse dotted edges; three regular tilts produce at least 258,453,247

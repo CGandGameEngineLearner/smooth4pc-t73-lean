@@ -1,0 +1,36 @@
+{
+  "builder_sha256": "2794A6F06CB872D924A2B4F7B2AD1817BF6ED755F1E4B086EF6B03818A96FB10",
+  "cache_path": "C:\\Users\\Administrator\\.cache\\t73_x_m1_complete_global_r3_replacement_cores_v2.jsonl.gz",
+  "cache_sha256": "4B7865E30A46E8855285D0E09F93D310D4E7F19DA30B116361F7FE9C59676D16",
+  "cache_size": 8242321,
+  "complete_push_paths_status": "OPEN",
+  "completion_status": "ALL_POST_X_REPLACEMENT_CORES_REASSEMBLED_WITH_V2_TRANSITIONS",
+  "component_counts": {
+    "m_2": 269,
+    "m_3": 1240,
+    "r_xy": 2,
+    "r_zx": 2
+  },
+  "core_segment_count": 92284,
+  "cross_piece_boundary_match_count": 12104,
+  "global_band_port_strips_receipt_sha256": "409C8F2DC1854825FECA536418EE53DAE2477638CB08249E75AD9DBDE65A8DB8",
+  "middle_paths_r3_receipt_sha256": "5240D2A882137E5DD6FA5994084A7F6FBC66AA0E5C2498DEDDCDFAFB629CC137",
+  "old_exact_collision_repaired": true,
+  "piece_count_per_record": 9,
+  "prior_v1_receipt_sha256": "D21FF5AE982A1AB24C115A29A58C0B07B289D720BAFFBC4AFBFC97062C5471A0",
+  "record_count": 1513,
+  "record_stream_sha256": "C668256C457E67A3573F2DED819215CA1AF919612F51C8A07196A1D3EB7BED95",
+  "remaining_core_clearance": [
+    "repaired transitions versus band-strip non-shell segments",
+    "repaired transitions versus translated middle cores",
+    "stub inherited embeddedness transfer"
+  ],
+  "repaired_middle_transition_cores_receipt_sha256": "3DC0016984447027BA550864C84517EDE7CBD17237794385949B87FF70460451",
+  "repaired_stub_cross_clearance_sha256": "0AE25C822DC47DD82D5A8886E24D216E7680A92261423865408625D1108E9568",
+  "schema": "t73_x_m1_complete_global_r3_replacement_cores_receipt/v2",
+  "sha256": "DA336648613333A29B63D2B81D7DFCDAB9214468FCCEB00EE5470AB8AA01D2CB",
+  "splice_stub_cores_r3_receipt_sha256": "A97422397ECE3B90995ABF1499189E86E27898A0BBD098069914D9BBEA6AEE62",
+  "stub_band_cross_clearance": "PASS_EXACT",
+  "stub_transition_cross_clearance": "PASS_EXACT_RUST",
+  "verdict": "PASS_X_M1_COMPLETE_GLOBAL_R3_REPLACEMENT_CORE_V2_ASSEMBLY"
+}

@@ -4244,6 +4244,30 @@ Topology-source checks completed 2026-09-04:
   the inherited F-563 stub embeddedness transfer. Push transitions remain
   open independently.
 
+### F-599U — The complete replacement-core assembly is rebuilt with verified v2 transitions
+
+- Severity: **Major positive reconstruction / repaired complete core assembly**
+- Status: **V2 COORDINATES AND INCIDENCE PASS; THREE CLEARANCE OBLIGATIONS OPEN**
+- Evidence: v2 cache and
+  `audit/t73_x_m1_complete_global_r3_replacement_cores_v2_receipt.json`, its
+  builder, independent verifier and test, bound to F-599T clearance and all
+  F-599S source subsystems. The v1 cache and receipt remain unchanged.
+- Assembly: every one of 1513 paths retains the same nine semantic pieces as
+  F-599S, but its first/last middle transitions are the six-segment repaired
+  F-599T paths. Thus the v2 total is 92,284 core segments, exactly 3026 more
+  than v1. All 12,104 cross-piece endpoints still match.
+- Independent replay: a separate verifier reloads the four current source
+  caches, reapplies the middle translation, reconstructs all nine piece ranges
+  and every rational vertex, and requires the per-record collision-repair
+  marker. Decompressed stream SHA and full 8,242,321-byte cache SHA pass.
+  Verdict: `PASS_X_M1_COMPLETE_GLOBAL_R3_REPLACEMENT_CORES_V2_FULL`.
+- Boundary: v2 is the current complete coordinate/continuity candidate, while
+  v1 remains a refuted historical realization. Before v2 becomes an embedded
+  complete core, three checks remain: repaired transition non-shell segments
+  versus band strips; repaired transitions versus translated middles; and an
+  explicit binding of the F-563 inductive source-stub embeddedness through the
+  F-599N shell PL homeomorphism. Complete push paths remain open separately.
+
 ### F-599C — Monolithic linear projections of the affine framed link are computationally unsuitable
 
 - Severity: **complete PD / projection selection**

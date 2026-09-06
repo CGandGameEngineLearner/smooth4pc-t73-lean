@@ -541,6 +541,17 @@ germ，缓存为
 为 0。verdict 为 `PASS_X_M1_REPAIRED_STUB_CROSS_CLEARANCE`。旧 v1 cache 与
 obstruction 保留，可继续重放。
 
+repaired transitions 现已进入新的完整 assembly；有碰撞的 v1 assembly 未被覆盖。
+v2 缓存
+`C:\Users\Administrator\.cache\t73_x_m1_complete_global_r3_replacement_cores_v2.jsonl.gz`
+及收据
+[`audit/t73_x_m1_complete_global_r3_replacement_cores_v2_receipt.json`](audit/t73_x_m1_complete_global_r3_replacement_cores_v2_receipt.json)
+包含 1,513 条九-piece paths、92,284 个 core segments 与 12,104 个精确接缝。
+独立重放重建每个 vertex/range 并检查 8,242,321-byte cache SHA。verdict 为
+`PASS_X_M1_COMPLETE_GLOBAL_R3_REPLACEMENT_CORES_V2_FULL`。剩余 core clearance
+被限制为 repaired non-shell transition segments 对 band strips 与平移 middle 的
+检查，以及绑定 F-563 已有的 stub embeddedness 归纳证明。push paths 仍为 OPEN。
+
 全局线性投影探测记录于
 [`audit/t73_affine_s3_projection_probe.json`](audit/t73_affine_s3_projection_probe.json)。
 xz/yz 会压扁 dotted edges；三个 regular tilts 至少产生258,453,247个 broad
