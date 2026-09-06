@@ -4374,6 +4374,38 @@ Topology-source checks completed 2026-09-04:
   framing only requires push paths/ribbons along the two attaching lanes, so
   the repair must construct those one-dimensional companions directly.
 
+### F-599Y — All attaching-lane push paths and framing ribbons are globally embedded
+
+- Severity: **Major positive framing construction / band lanes**
+- Status: **LANE PUSH/RIBBON CLEARANCE PASS; ENDPOINT PUSH GLUE OPEN**
+- Evidence: the cache and
+  `audit/t73_x_band_global_r3_lane_push_paths_receipt.json`, global clearance
+  receipt, builders, verifier and test, bound to F-599W core embedding and the
+  F-599X full-disk obstruction.
+- Scope correction: Kirby framing needs companions to the negative and
+  positive attaching lanes, not a translated copy of the entire routed band
+  disk. The builder extracts exactly those 3026 six-vertex core paths and
+  translates each by `band_width/1000*(1,1,2)`. It stores 15,130 core and
+  15,130 push segments and 30,260 two-triangle ruled ribbon cells. The refuted
+  full push-disk triangles are not used.
+- Within-band verification: all 151,300 pairs between either core lane and
+  either push lane are screened by exact 3D bounds; 19,673 receive exact
+  segment intersection equations and none meets. Of 136,170 within-lane
+  ribbon triangle pairs, 51,442 are incidences, 57,483 fail exact bounds, and
+  all 27,245 remaining exact triangle tests are disjoint. For 605,200
+  ribbon/segment pairs, 133,144 are incidences, 385,023 fail exact bounds, and
+  all 87,033 exact checks are clear.
+- Cross-band verification: push/push is a common translation of the F-599Q
+  embedded core atlas. The translation changes the routing functional and z
+  by strictly less than the certified functional and height margins, proving
+  every cross-band core/push and ribbon separation. Cache SHA and all source
+  receipts are bound. Verdict:
+  `PASS_X_BAND_GLOBAL_R3_LANE_PUSH_AND_RIBBON_CLEARANCE`.
+- Boundary: band-lane framing geometry is now complete and globally embedded.
+  Its four push endpoints per band do not yet equal the saved stub/transition
+  push ports. Source-relative nonvanishing normal homotopies must join those
+  6052 endpoints before complete replacement push paths can be assembled.
+
 ### F-599C — Monolithic linear projections of the affine framed link are computationally unsuitable
 
 - Severity: **complete PD / projection selection**

@@ -691,6 +691,21 @@ constant translation is refuted as a global parallel **disk**. The repair now
 constructs only the two attaching-lane push paths and ruled framing ribbons
 actually required by the Kirby diagram.
 
+That lane-only repair succeeds. The cache
+`C:\Users\Administrator\.cache\t73_x_band_global_r3_lane_push_paths.jsonl.gz`
+and construction receipt
+[`audit/t73_x_band_global_r3_lane_push_paths_receipt.json`](audit/t73_x_band_global_r3_lane_push_paths_receipt.json)
+contain 3,026 negative/positive attaching-lane companions, 15,130 core and push
+segments, and 30,260 ruled framing triangles. The full clearance receipt
+[`audit/t73_x_band_global_r3_lane_push_clearance.json`](audit/t73_x_band_global_r3_lane_push_clearance.json)
+checks 151,300 core/push segment pairs (19,673 exact), 136,170 ribbon triangle
+pairs (27,245 exact), and 605,200 ribbon/segment pairs (87,033 exact), with no
+extra intersections. Cross-band push/push clearance follows from common
+translation; exact functional and height margins prove cross-band core/push
+clearance. Verdict:
+`PASS_X_BAND_GLOBAL_R3_LANE_PUSH_AND_RIBBON_CLEARANCE`. Only endpoint push
+gluing to stub/transition/middle companions remains for this band layer.
+
 Global linear projection probes are recorded in
 [`audit/t73_affine_s3_projection_probe.json`](audit/t73_affine_s3_projection_probe.json).
 xz/yz collapse dotted edges; three regular tilts produce at least 258,453,247

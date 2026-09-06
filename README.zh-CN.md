@@ -596,6 +596,20 @@ clearance 以及把这些 push ports 粘到 stub/transition pushes 仍为 OPEN�
 **disk**。修复方向改为仅构造 Kirby diagram 实际需要的两条 attaching-lane
 push paths 与 ruled framing ribbons。
 
+该 lane-only 修复已经成功。缓存
+`C:\Users\Administrator\.cache\t73_x_band_global_r3_lane_push_paths.jsonl.gz`
+与构造收据
+[`audit/t73_x_band_global_r3_lane_push_paths_receipt.json`](audit/t73_x_band_global_r3_lane_push_paths_receipt.json)
+包含 3,026 条 negative/positive attaching-lane companions、15,130 个 core 与
+push segments、30,260 个 ruled framing triangles。完整 clearance 收据
+[`audit/t73_x_band_global_r3_lane_push_clearance.json`](audit/t73_x_band_global_r3_lane_push_clearance.json)
+检查 151,300 个 core/push segment pairs（19,673 个精确判定）、136,170 个
+ribbon triangle pairs（27,245 个精确判定）及 605,200 个 ribbon/segment pairs
+（87,033 个精确判定），额外交点均为 0。跨 band push/push 由共同平移保持，
+精确 functional 与 height 余量证明跨 band core/push clearance。verdict 为
+`PASS_X_BAND_GLOBAL_R3_LANE_PUSH_AND_RIBBON_CLEARANCE`。该 band 层只剩把 push
+endpoints 粘到 stub/transition/middle companions。
+
 全局线性投影探测记录于
 [`audit/t73_affine_s3_projection_probe.json`](audit/t73_affine_s3_projection_probe.json)。
 xz/yz 会压扁 dotted edges；三个 regular tilts 至少产生258,453,247个 broad
