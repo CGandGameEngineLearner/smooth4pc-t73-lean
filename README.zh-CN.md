@@ -308,6 +308,29 @@ diagonal `(1,1,1,1,1,1,3)`，预测 boundary H1=`Z/3`；这与三条3-handles �
 得到 S³ 所需的 post-2-handle boundary 矛盾。因此这些精确数值只属于当前
 affine model，不能作为 T73 surgery framings；见
 [`audit/t73_affine_kirby_matrix_homology_obstruction.json`](audit/t73_affine_kirby_matrix_homology_obstruction.json)。
+精确修正目标及其局部 PL 实现分别保存在
+[`geometry/t73_kirby_homology_admissible_correction.json`](geometry/t73_kirby_homology_admissible_correction.json)
+和
+[`geometry/t73_dual_zero_framing_twist_ribbons.json`](geometry/t73_dual_zero_framing_twist_ribbons.json)。
+由于 dotted-incidence 子块 determinant=`-1`，在保留全部 core 与非对角
+linking 的条件下，三条 dual framing 被唯一强制为零。构造器加入有理正方形
+法向 twist `+1,+1,+3`；144 个精确 self-linking crossings 全部重放为零，40 个
+新 ribbon triangles 对 32,028 个保留 ribbon triangles 和 46,260 条 framed
+segments 的增量全局检查通过。汇总数据
+[`geometry/t73_homology_admissible_affine_framed_model.json`](geometry/t73_homology_admissible_affine_framed_model.json)
+的 rank=`4`、nullity=`3`、signature=`0`、Smith diagonal 为
+`(1,1,1,1,0,0,0)`。verdict 为
+`PASS_HOMOLOGY_ADMISSIBLE_AFFINE_FRAMED_MODEL_ONLY`；相对 T73 的
+meridian/longitude 等价仍为 OPEN。重建与验收命令：
+
+```bash
+python3 scripts/build_t73_kirby_homology_admissible_correction.py --write
+python3 scripts/build_t73_dual_zero_framing_twist_ribbons.py --write
+python3 scripts/build_t73_dual_zero_framing_twist_global_clearance_receipt.py
+python3 scripts/build_t73_homology_admissible_affine_framed_model.py --write
+python3 scripts/verify_t73_homology_admissible_affine_framed_model.py
+```
+
 全局线性投影探测记录于
 [`audit/t73_affine_s3_projection_probe.json`](audit/t73_affine_s3_projection_probe.json)。
 xz/yz 会压扁 dotted edges；三个 regular tilts 至少产生258,453,247个 broad

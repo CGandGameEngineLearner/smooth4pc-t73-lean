@@ -3771,6 +3771,42 @@ Topology-source checks completed 2026-09-04:
   with the required rank-three surgery-matrix nullspace checked before any
   new W2 construction or complete-PD claim.
 
+### F-599F — The unique diagonal homology repair has explicit globally clear PL twist ribbons
+
+- Severity: **Major repair / candidate actual Kirby input**
+- Status: **HOMOLOGY GATE PASS; RELATIVE T73 EQUIVALENCE OPEN**
+- Evidence: `geometry/t73_kirby_homology_admissible_correction.json`,
+  `geometry/t73_dual_zero_framing_twist_ribbons.json`,
+  `audit/t73_dual_zero_framing_twist_global_clearance.json`,
+  `geometry/t73_homology_admissible_affine_framed_model.json`, their readable
+  SymPy/NumPy/Shapely builders, independent verifiers, and four focused tests.
+- Algebraic derivation: the dotted-to-`m_2,m_3` incidence block
+  `[[40,189],[269,1271]]` has determinant -1, so the first four-component
+  surgery block is unimodular. Its coupling to the three dual relators has
+  zero Schur contribution. If every core and off-diagonal linking is fixed,
+  nullity three therefore uniquely requires the dual block to vanish. The
+  necessary framing corrections are `r_xy:+1`, `r_yz:+1`, `r_zx:+3`.
+- PL realization: on the first actual dotted passage of each dual component,
+  the builder subdivides the straight core and runs its rational normal around
+  a square once, once, and three times. Endpoint core/push germs are unchanged;
+  axial monotonicity proves each ruled patch embedded. The 40 rational ribbon
+  triangles remain in their reserved passage slots. Independent replay of all
+  144 projection crossings gives exact self-linkings zero for all three duals.
+- Global clearance: the incremental verifier compares the new patches with
+  32,028 retained corridor/passage ribbon triangles and 46,260 corrected
+  core/push/dotted segments. There are 99 triangle and 225 segment AABB
+  candidates, of which 89 and 200 are permitted boundary incidences; no
+  nonincident exact intersection survives. Verdict:
+  `PASS_DUAL_ZERO_FRAMING_TWIST_GLOBAL_CLEARANCE`.
+- Aggregate result: the corrected affine matrix has rank 4, nullity 3,
+  signature 0 and Smith diagonal `(1,1,1,1,0,0,0)`, hence boundary H1=`Z^3`.
+  Verdict: `PASS_HOMOLOGY_ADMISSIBLE_AFFINE_FRAMED_MODEL_ONLY`.
+- Boundary: this repairs the fatal F-599E homology defect geometrically but
+  does not prove that the chosen twists are the transport of the source AR
+  meridian/longitude framing. A relative complement homeomorphism or an
+  equivalent source-to-affine framed movie is still required before this can
+  be promoted from a homology-admissible affine candidate to actual T73 input.
+
 ### F-599C — Monolithic linear projections of the affine framed link are computationally unsuitable
 
 - Severity: **complete PD / projection selection**

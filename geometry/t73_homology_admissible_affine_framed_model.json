@@ -1,0 +1,143 @@
+{
+  "actual_dotted_passage_cells_sha256": "EC45F05D67BFC35AD0D97FD36BD40AA11E733108F6B06E3FC23011763DB6ECE0",
+  "actual_t73_relative_equivalence_status": "OPEN",
+  "boundary_h1": "Z^3",
+  "completion_status": "AFFINE_FRAMED_MODEL_PASSES_POST_2_HANDLE_HOMOLOGY_GATE_ONLY",
+  "component_order": [
+    "dotted_y",
+    "dotted_z",
+    "m_2",
+    "m_3",
+    "r_xy",
+    "r_yz",
+    "r_zx"
+  ],
+  "dotted_surgery_matrix": [
+    [
+      0,
+      0,
+      40,
+      189,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      269,
+      1271,
+      0,
+      0,
+      0
+    ],
+    [
+      40,
+      269,
+      -156621,
+      -730336,
+      -40,
+      -1,
+      -269
+    ],
+    [
+      189,
+      1271,
+      -730336,
+      -3338112,
+      -189,
+      1,
+      -1271
+    ],
+    [
+      0,
+      0,
+      -40,
+      -189,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      -1,
+      1,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      -269,
+      -1271,
+      0,
+      0,
+      0
+    ]
+  ],
+  "dual_twist_global_clearance_sha256": "326AFEF68DD2A759A98D1B1C085C0FADE1B7D10AC52189FBCAAB3D9058C8C6D0",
+  "dual_twist_ribbons_sha256": "FA210712854B8A4223FE5B74E0CA0617652C876A6B56E614488DFD4EA6DCF630",
+  "geometric_checks": {
+    "dual_twist_exact_self_linkings": "PASS",
+    "dual_twist_global_clearance": "PASS",
+    "dual_twist_local_ribbons": "PASS",
+    "unchanged_dotted_incidences": "PASS",
+    "unchanged_pairwise_core_linkings": "PASS_FULL_REPLAY"
+  },
+  "homology_correction_sha256": "C941494F0B52F9F922D5A4CDF5CB66A7F56F334098BEB8373D846CA5C433E599",
+  "integer_framings": {
+    "m_2": -156621,
+    "m_3": -3338112,
+    "r_xy": 0,
+    "r_yz": 0,
+    "r_zx": 0
+  },
+  "integer_kernel_basis": [
+    [
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0
+    ],
+    [
+      -1540,
+      229,
+      0,
+      0,
+      0,
+      1,
+      0
+    ],
+    [
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      1
+    ]
+  ],
+  "matrix_nullity": 3,
+  "matrix_rank": 4,
+  "matrix_signature": 0,
+  "model_status": "HOMOLOGY_ADMISSIBLE_AFFINE_FRAMED_CANDIDATE",
+  "pairwise_core_linking_full_verification_sha256": "90BACD086E788D680752D0251CE447F51844AE78B8E916EF767A0FC1415AD4B1",
+  "schema": "t73_homology_admissible_affine_framed_model/v1",
+  "scope_boundary": "This is an explicit globally disjoint affine framed-link model with the required boundary H1. It is not actual T73 input until a source-relative complement homeomorphism transports the meridian/longitude and framing data.",
+  "sha256": "62B469EBB8C25E60594F0699E38E82773C5626094D630B929A806D5FD87FE131",
+  "smith_diagonal": [
+    1,
+    1,
+    1,
+    1,
+    0,
+    0,
+    0
+  ]
+}

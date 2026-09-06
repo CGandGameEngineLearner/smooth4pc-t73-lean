@@ -365,6 +365,30 @@ This contradicts the required post-2-handle boundary that three 3-handles can
 turn into S3. Therefore these exact values describe the constructed affine
 model but are not valid T73 surgery framings; see
 [`audit/t73_affine_kirby_matrix_homology_obstruction.json`](audit/t73_affine_kirby_matrix_homology_obstruction.json).
+The exact repair target and its realized local PL correction are recorded in
+[`geometry/t73_kirby_homology_admissible_correction.json`](geometry/t73_kirby_homology_admissible_correction.json)
+and
+[`geometry/t73_dual_zero_framing_twist_ribbons.json`](geometry/t73_dual_zero_framing_twist_ribbons.json).
+Because the dotted-incidence block has determinant `-1`, retaining every core
+and off-diagonal linking uniquely forces the three dual framings to zero. The
+scripts insert rational square-normal twists `+1,+1,+3`; all 144 exact
+self-linking crossings replay to zero, and 40 new ribbon triangles pass an
+incremental global check against 32,028 retained ribbon triangles and 46,260
+framed segments. The aggregate
+[`geometry/t73_homology_admissible_affine_framed_model.json`](geometry/t73_homology_admissible_affine_framed_model.json)
+has rank `4`, nullity `3`, signature `0`, and Smith diagonal
+`(1,1,1,1,0,0,0)`. Verdict:
+`PASS_HOMOLOGY_ADMISSIBLE_AFFINE_FRAMED_MODEL_ONLY`; the relative T73
+meridian/longitude equivalence remains open. Rebuild and verify with:
+
+```bash
+python3 scripts/build_t73_kirby_homology_admissible_correction.py --write
+python3 scripts/build_t73_dual_zero_framing_twist_ribbons.py --write
+python3 scripts/build_t73_dual_zero_framing_twist_global_clearance_receipt.py
+python3 scripts/build_t73_homology_admissible_affine_framed_model.py --write
+python3 scripts/verify_t73_homology_admissible_affine_framed_model.py
+```
+
 Global linear projection probes are recorded in
 [`audit/t73_affine_s3_projection_probe.json`](audit/t73_affine_s3_projection_probe.json).
 xz/yz collapse dotted edges; three regular tilts produce at least 258,453,247

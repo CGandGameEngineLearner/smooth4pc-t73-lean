@@ -1,0 +1,21 @@
+{
+  "full_result": {
+    "embedded_and_disjoint_from_retained_model": true,
+    "exact_segment_triangle_checks": 0,
+    "exact_triangle_triangle_checks": 0,
+    "framed_segments": 46260,
+    "retained_ribbon_triangles": 32028,
+    "segment_broad_pairs": 225,
+    "segment_incidence_pairs": 200,
+    "triangle_broad_pairs": 99,
+    "triangle_incidence_pairs": 89,
+    "twist_ribbon_triangles": 40,
+    "verdict": "PASS_DUAL_ZERO_FRAMING_TWIST_GLOBAL_CLEARANCE"
+  },
+  "schema": "t73_dual_zero_framing_twist_global_clearance/v1",
+  "sha256": "326AFEF68DD2A759A98D1B1C085C0FADE1B7D10AC52189FBCAAB3D9058C8C6D0",
+  "twist_ribbon_payload_sha256": "FA210712854B8A4223FE5B74E0CA0617652C876A6B56E614488DFD4EA6DCF630",
+  "verdict": "PASS_DUAL_ZERO_FRAMING_TWIST_GLOBAL_CLEARANCE",
+  "verifier_path": "scripts/verify_t73_dual_zero_framing_twist_global_clearance.py",
+  "verifier_sha256": "43A1CDADAFFF047B82AB6AE1B4D62CC03A996EA04E75E01BF3FFD43A16726AEE"
+}
