@@ -5280,6 +5280,31 @@ Topology-source checks completed 2026-09-04:
   regular-neighborhood ambient extension fixed on its outer boundary. Until
   then the relative map remains `CANDIDATE_UNVERIFIED`.
 
+### F-599BI — The complete V7 world sheets now share one global time coordinate
+
+- Severity: **Dynamic relative-map construction / comprehensive local input**
+- Status: **COMPLETE LOCAL WORLD SHEETS PASS; R4 GLOBAL/AMBIENT OPEN**
+- Evidence: `audit/t73_x_m1_outer_collar_v7_isotopy_trace_v2_receipt.json`,
+  `audit/t73_x_m1_outer_collar_v7_isotopy_trace_v2_verification.json`, the v2
+  builder, independent verifier, regression test and the named persistent
+  cache, all bound to F-599BH's independently verified v1 stream.
+- Global time: phase one is rescaled to `[0,1/2]`; phase two is rescaled to
+  `[1/2,1]`. Unlike v1, phase two explicitly includes the stationary core
+  route and stationary push prefix in addition to the moving terminal push
+  rectangle, so every core and push world sheet is represented over all time.
+- Data/replay: the 15,154,391-byte cache contains 3,026 records, 60,520
+  complete core trace triangles and 60,520 complete push trace triangles.
+  The independent verifier reconstructs every vertex and simplex from the v1
+  records, proves all 6,052 core/push phase-boundary matches exactly, checks
+  all 121,040 triangles have rank two in R4, and replays both compressed-byte
+  and decompressed-stream hashes. Verdict:
+  `PASS_X_M1_OUTER_COLLAR_V7_COMPREHENSIVE_ISOTOPY_TRACE_V2_LOCAL`.
+- Boundary: this closes the representation defect, not the dynamic geometry
+  theorem. Pairwise self/cross intersections among the complete world sheets
+  and their intersections with stationary retained/replacement cylinders are
+  not yet enumerated. A fixed-boundary tetrahedral ambient extension is also
+  absent. The relative map therefore remains `CANDIDATE_UNVERIFIED`.
+
 ### F-599C — Monolithic linear projections of the affine framed link are computationally unsuitable
 
 - Severity: **complete PD / projection selection**

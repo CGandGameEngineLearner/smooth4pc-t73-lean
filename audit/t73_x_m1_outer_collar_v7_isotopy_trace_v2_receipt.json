@@ -1,0 +1,36 @@
+{
+  "ambient_support_status": "OPEN_BUILD_TETRAHEDRAL_EXTENSION",
+  "builder_sha256": "5B949347C7DF513C52E18D46E93D5B7E18D8A3156A2E1B1AFAEA78F3ADDEDA15",
+  "cache_path": "/home/lifesize/.cache/t73_x_m1_outer_collar_v7_isotopy_trace_v2.jsonl.gz",
+  "cache_sha256": "6C4A9FC739BCDB7A354F80FE7F996FF6F418EA4B5E4042309B031DA7BE4C88E1",
+  "cache_size": 15154391,
+  "classification": "CANDIDATE_UNVERIFIED",
+  "complete_core_trace_triangle_count": 60520,
+  "complete_push_trace_triangle_count": 60520,
+  "completion_status": "COMPLETE_CORE_AND_PUSH_WORLD_SHEETS_IN_ONE_GLOBAL_TIME",
+  "global_phase_intervals": {
+    "phase_one": [
+      "0",
+      "1/2"
+    ],
+    "phase_two": [
+      "1/2",
+      "1"
+    ]
+  },
+  "local_phase_trace_receipt_sha256": "3F3CDB06173CA091C5557AC0D0DB5742534E284EF1CF162DAB6287F01093C3B0",
+  "local_phase_trace_verification_sha256": "8516BB6EB0BCC3A99105C0D115A285B4EF1FC2A12A7C6A08564AE8EE0556BA01",
+  "phase_boundary_core_push_match_count": 6052,
+  "phase_one_core_trace_triangle_count": 30260,
+  "phase_one_push_trace_triangle_count": 30260,
+  "phase_two_stationary_core_trace_triangle_count": 30260,
+  "phase_two_stationary_push_prefix_triangle_count": 24208,
+  "phase_two_terminal_push_trace_triangle_count": 6052,
+  "r4_triangle_rank_check_count": 121040,
+  "record_stream_sha256": "5889FC061BF43DEE675D64697C255539AC1E5B1FB3862C1EF4D830CE064E2279",
+  "schema": "t73_x_m1_outer_collar_v7_isotopy_trace_v2_receipt/v1",
+  "sha256": "9340193C02277BBD10F4C09F04F7E37CA3A60A67473D3D69B1C5DC9C2C19A899",
+  "spacetime_global_embeddedness_status": "OPEN",
+  "trace_count": 3026,
+  "verdict": "PASS_X_M1_OUTER_COLLAR_V7_COMPREHENSIVE_ISOTOPY_TRACE_V2_LOCAL"
+}

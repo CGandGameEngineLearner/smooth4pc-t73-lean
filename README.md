@@ -517,6 +517,27 @@ edge noncollapse equations and every R4 triangle rank. See
 [`audit/t73_x_m1_outer_collar_v7_isotopy_trace_verification.json`](audit/t73_x_m1_outer_collar_v7_isotopy_trace_verification.json).
 It remains a local candidate until spacetime global embeddedness and a
 fixed-boundary tetrahedral ambient extension pass.
+
+The comprehensive global-time form is the 15,154,391-byte persistent cache
+`/home/lifesize/.cache/t73_x_m1_outer_collar_v7_isotopy_trace_v2.jsonl.gz`,
+with construction metadata in
+[`audit/t73_x_m1_outer_collar_v7_isotopy_trace_v2_receipt.json`](audit/t73_x_m1_outer_collar_v7_isotopy_trace_v2_receipt.json)
+and independent replay in
+[`audit/t73_x_m1_outer_collar_v7_isotopy_trace_v2_verification.json`](audit/t73_x_m1_outer_collar_v7_isotopy_trace_v2_verification.json).
+Phase one occupies `[0,1/2]`; phase two occupies `[1/2,1]` and now includes
+the stationary core and stationary push-prefix sheets omitted from v1. The
+3,026 records contain 60,520 complete core and 60,520 complete push triangles.
+All 6,052 core/push phase-boundary matches and 121,040 exact R4 rank checks
+pass. This is the complete local input for the next global R4 intersection
+gate, not yet a proof of spacetime embeddedness or ambient extension.
+
+Rebuild and independently verify it in WSL with:
+
+```bash
+python3 scripts/build_t73_x_m1_outer_collar_v7_isotopy_trace_v2.py
+python3 scripts/build_t73_x_m1_outer_collar_v7_isotopy_trace_v2_verification.py --write --check-files
+python3 -m unittest tests.test_t73_x_m1_outer_collar_v7_isotopy_trace_v2
+```
 The graph map extends over all five framed regular neighborhoods in
 [`geometry/t73_hybrid_to_railroad_tubular_map.json`](geometry/t73_hybrid_to_railroad_tubular_map.json).
 Its five solid-torus templates contain 5385 tetrahedra and 10770 boundary

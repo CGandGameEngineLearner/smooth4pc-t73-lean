@@ -613,6 +613,26 @@ edge noncollapse 方程及每个 R4 triangle rank。见
 spacetime 全局嵌入和 fixed-boundary tetrahedral ambient extension 通过前，它仍是
 局部候选。
 
+统一全局时间版本保存在 15,154,391-byte 持久 cache
+`/home/lifesize/.cache/t73_x_m1_outer_collar_v7_isotopy_trace_v2.jsonl.gz`，
+构造元数据位于
+[`audit/t73_x_m1_outer_collar_v7_isotopy_trace_v2_receipt.json`](audit/t73_x_m1_outer_collar_v7_isotopy_trace_v2_receipt.json)，
+独立重放收据位于
+[`audit/t73_x_m1_outer_collar_v7_isotopy_trace_v2_verification.json`](audit/t73_x_m1_outer_collar_v7_isotopy_trace_v2_verification.json)。
+phase 1 使用 `[0,1/2]`，phase 2 使用 `[1/2,1]`，并补全 v1 未记录的静止 core
+与静止 push-prefix world sheets。3,026 条记录共含 60,520 个完整 core 和
+60,520 个完整 push triangles；6,052 个 core/push 阶段边界匹配及 121,040
+次精确 R4 rank 检查全部通过。它是下一步全局 R4 相交门禁的完整局部输入，尚不
+证明 spacetime 全局嵌入或 ambient extension。
+
+在 WSL 中重建并独立验收：
+
+```bash
+python3 scripts/build_t73_x_m1_outer_collar_v7_isotopy_trace_v2.py
+python3 scripts/build_t73_x_m1_outer_collar_v7_isotopy_trace_v2_verification.py --write --check-files
+python3 -m unittest tests.test_t73_x_m1_outer_collar_v7_isotopy_trace_v2
+```
+
 第一个跨系统门禁找到并修复了真实碰撞，没有提前升级该 assembly。流式 Rust
 1.98.1 checker 位于
 [`rust/t73_exact_cross_clearance`](rust/t73_exact_cross_clearance)，使用
