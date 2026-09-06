@@ -1,0 +1,36 @@
+{
+  "capped": {
+    "closed": true,
+    "connected": true,
+    "homology": "0",
+    "is_sphere": true,
+    "iso_sig": "-cOcvvvLPvLLvLLzLwvMLLALPzwPwvQPvMLzzzMLAPwvAQvPMPAvzLMPLLMAMAwLAPLMPQwwPvLAwQPPQPwMPQLAvPPvPMPMQLQAvQLLMPQAzMQwQLQQjahakapasawaraBazaDaHaJaMaNaKaFaPaOaSaRaUaWaTaLaVa0a2aMa0a4a5a6a+a-acb-aab5aabgbibebhblbnbiblbjbpbsbrbmbnbobcbqbzbxbBbybEbCbDbIbIbFbJbGbvbLbGbHbMbNbQbPbMbObObUbTbUbubVbRbWbSbYb0bXbZb4b6b4b9b7b9b+b8b-b-b+b8bXbac1b-bccbcccSbdcecbcWbfcgcjclcjchcncqcpckclcmcoctctctcmcecucvcgcucvcwczcycxcxcDcCcDcscEcAcFcBcvcHcGcHcBcIcJcGcFcKcLcJcMcNcLcMcNcNcaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaoaaaaaaaaaaaaaaaaaaaaaaaaaaaoaaaoaaaaaaaaaaaaaaaaaoaaoaaaaaaaaaaoaaaaoaaaoaaaoaaoaaoaao",
+    "orientable": true,
+    "reference_s3_iso_sig": "bkaagj",
+    "simplified_iso_sig": "bkaagj",
+    "simplified_tetrahedra": 1,
+    "tetrahedra": 168,
+    "valid": true
+  },
+  "combinatorial_verifier_path": "scripts/verify_t73_x_m1_support_generator_sphere_cut.py",
+  "combinatorial_verifier_sha256": "8DBB59D35AC460D12DBD4758186915F25B75D0010029D452766D42CBDE8FA3BF",
+  "cut": {
+    "boundary_components": 2,
+    "closed": false,
+    "connected": true,
+    "has_two_sphere_boundary_components": true,
+    "homology_h1": "0",
+    "iso_sig": "-cqcfffLfLjvLkuvkzLIzwLIvPKPLAjzAPwLAPvPwAPLMzLLwzzMLQPvMzPPvLAMAMvPMPzPPzPzAMzPLAwMMAvMMMLPjkLPjsAiziIahalakamasaqaxavatayaBaAawaxaEaHaGaLaFaKaLaMaNaOaJaRaQaRaSaTaUaQaYaXaYa0aVa4a3a4a6a2a3a8a+a9a6a7adbfbebdbkbkblbhbmbpbibobqbsbsbtbubxbwbybAbDbBbEbxbDbEbFbzbIbLbJbMbLbMbNbIbQbKbRbQbSbTbObVbPbXbYbXbZb0b2bXbYbZb4b6b5b2b7b8b+bac-bbccc+bececgcgcdchcicickckclcjcmcncocpcocpcaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "orientable": true,
+    "relative_homology_h1": "Z",
+    "tetrahedra": 144,
+    "valid": true
+  },
+  "cut_recognized_type": "S2 x I",
+  "recognition_argument": "the connected cut has exactly two S2 boundary components, and coning both boundary spheres produces Regina-recognized S3; removing the two cap balls from S3 gives S2 x I",
+  "regina_version": "7.4",
+  "schema": "t73_x_m1_support_generator_sphere_cut_regina_verification/v1",
+  "sha256": "5558BB732ED52C876CDA596679050B7E00BF62EB00F36AB9BC3757C7CF7C529E",
+  "support_generator_sphere_cut_sha256": "69A9900C4A85B0323DD5DF3A0B6A616FA73C8F26A03937A865574C5B116C16C0",
+  "verdict": "PASS_X_M1_SUPPORT_CUT_IS_S2_X_I_REGINA"
+}

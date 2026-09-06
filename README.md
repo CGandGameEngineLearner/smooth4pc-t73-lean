@@ -485,6 +485,38 @@ last 3-ball back recognizes S3. Verdict:
 problem is the actual-collar-refinement map into this standard boundary, not
 the topology of the standard cancellation target.
 
+Regina 7.4.1 is installed in the isolated WSL environment
+`/home/lifesize/.cache/t73-regina-venv`. Its independent combinatorial
+recognition receipt is
+[`audit/t73_x_m1_regina_boundary_recognition.json`](audit/t73_x_m1_regina_boundary_recognition.json):
+the 144-tetrahedron support boundary has the single prime isoSig
+`cMcabbjaj`, identical to Regina's built-in `S2 x S1`, while the standard
+boundary simplifies to the one-tetrahedron S3 isoSig `bkaagj`.
+
+The product structure also gives an explicit nonseparating cubical sphere and
+cut-open chart. In
+[`geometry/t73_x_m1_support_generator_sphere_cut.json`](geometry/t73_x_m1_support_generator_sphere_cut.json),
+the eight-vertex A layer has 18 edges and 12 triangles. Duplicating A on the
+opposite side yields a 40-vertex, 144-tetrahedron complex with two spherical
+boundary components. Coning both spheres produces a Regina-recognized S3, so
+the cut is `S2 x I`. Its exact rational R3 realization is
+[`geometry/t73_x_m1_support_cut_r3_shell.json`](geometry/t73_x_m1_support_cut_r3_shell.json):
+the layers `A-B-D-C-A_copy` are concentric cubical spheres of radii 1 through
+5. All 144 tetrahedra have nonzero exact determinants, and their total
+absolute volume is exactly `992`, the volume between the radius-1 and radius-5
+cubes.
+
+Rebuild the Regina receipts in WSL with:
+
+```bash
+/home/lifesize/.cache/t73-regina-venv/bin/python \
+  scripts/build_t73_x_m1_regina_boundary_recognition.py
+python3 scripts/build_t73_x_m1_support_generator_sphere_cut.py --write
+/home/lifesize/.cache/t73-regina-venv/bin/python \
+  scripts/build_t73_x_m1_support_generator_sphere_cut_regina_verification.py
+python3 scripts/build_t73_x_m1_support_cut_r3_shell.py --write
+```
+
 Global linear projection probes are recorded in
 [`audit/t73_affine_s3_projection_probe.json`](audit/t73_affine_s3_projection_probe.json).
 xz/yz collapse dotted edges; three regular tilts produce at least 258,453,247

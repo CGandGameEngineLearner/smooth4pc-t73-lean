@@ -3992,6 +3992,43 @@ Topology-source checks completed 2026-09-04:
   sharply an actual-to-standard PL refinement map carrying all lane interior
   points and framing cells, not a topology-recognition problem.
 
+### F-599M — Regina identifies the support S2xS1 and its explicit generator cut has an exact R3 shell
+
+- Severity: **Major positive construction / actual support cut chart**
+- Status: **SUPPORT CUT AND R3 SHELL PASS; INTERIOR LANE EJECTION TO SHELL OPEN**
+- Evidence: the isolated WSL Regina 7.4.1 environment; recognition receipt
+  `audit/t73_x_m1_regina_boundary_recognition.json`; explicit sphere/cut data
+  `geometry/t73_x_m1_support_generator_sphere_cut.json`; its combinatorial and
+  Regina verifiers; `geometry/t73_x_m1_support_cut_r3_shell.json`; builders,
+  verifiers and tests.
+- Independent recognition: converting shared simplicial faces to Regina
+  gluings gives a valid closed orientable 144-tet support triangulation with
+  H1=Z. Prime decomposition has one two-tetrahedron summand of isoSig
+  `cMcabbjaj`, exactly Regina's built-in S2xS1. The 26-tet standard boundary
+  has `isSphere=true` and simplifies to `bkaagj`, exactly Regina's built-in
+  one-tetrahedron S3.
+- Generator sphere: product vertices split into cubical S2 layers
+  `A=(x1,inner)`, `B=(x1,outer)`, `C=(x3,inner)`, `D=(x3,outer)`. A has 8
+  vertices, 18 edges and 12 triangles. Boundary tetrahedra split as 36 each
+  of AB, AC, BD and CD. Keeping A on the AB side and replacing it by an
+  eight-vertex copy on the AC side cuts the nonseparating sphere explicitly.
+- Cut recognition: the resulting 40-vertex/144-tet connected complex has two
+  boundary components, each `(V,E,F)=(8,18,12)` and Euler characteristic two.
+  Coning both with fresh vertices gives a valid closed 168-tet complex that
+  Regina recognizes as S3 and simplifies to `bkaagj`. Hence removing the two
+  cap balls proves the cut is S2xI. Verdict:
+  `PASS_X_M1_SUPPORT_CUT_IS_S2_X_I_REGINA`.
+- Exact R3 chart: layers `A-B-D-C-A_copy` map to homothetic cubical spheres of
+  radii 1,2,3,4,5. All 144 exact tetrahedron determinants are nonzero. The sum
+  of absolute tetrahedral volumes is 992, equal to the radius-5 cube volume
+  minus the radius-1 cube volume, while combinatorial face incidence is the
+  verified S2xI cut. Verdict: `PASS_X_M1_SUPPORT_CUT_EXACT_R3_SHELL`.
+- Boundary: this provides a genuine common R3 chart for the cut support
+  boundary and two explicit foot spheres. F-599K shows that 24,252 lane core
+  occurrences lie in the four-dimensional support interior; their actual
+  handle-deletion/ejection tracks must still be carried to this shell before
+  the complete replacement link can be asserted in R3.
+
 ### F-599C — Monolithic linear projections of the affine framed link are computationally unsuitable
 
 - Severity: **complete PD / projection selection**

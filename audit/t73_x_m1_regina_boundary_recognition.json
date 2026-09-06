@@ -1,0 +1,55 @@
+{
+  "completion_status": "REGINA_RECOGNIZES_SUPPORT_S2XS1_AND_STANDARD_S3",
+  "regina_reference_s2xs1": {
+    "iso_sig": "cMcabbjaj",
+    "tetrahedra": 2
+  },
+  "regina_reference_s3": {
+    "iso_sig": "bkaagj",
+    "tetrahedra": 1
+  },
+  "regina_version": "7.4",
+  "schema": "t73_x_m1_regina_boundary_recognition/v1",
+  "sha256": "4E3A575800F8805F0A94096E434048A0A112721DB4771AF0B4FD601AA455DABB",
+  "standard_boundary": {
+    "closed": true,
+    "connected": true,
+    "homology": "0",
+    "is_sphere": true,
+    "iso_sig": "AvLALvALMzzvAPQQPQcdefekimklorsvquyxtyvwwzxwzzovabacailaaaabdhavrfboaccmd",
+    "orientable": true,
+    "simplified_homology": "0",
+    "simplified_is_sphere": true,
+    "simplified_iso_sig": "bkaagj",
+    "simplified_tetrahedra": 1,
+    "tetrahedra": 26,
+    "valid": true
+  },
+  "standard_simplification_matches_reference_s3": true,
+  "support_boundary": {
+    "closed": true,
+    "connected": true,
+    "homology": "Z",
+    "is_sphere": false,
+    "iso_sig": "-cqcvvvLPvLLvLLzLwvMLLALPzwPwvQPvMLzzzMLAPwvAQvPMPAvzLMPLLMAMAwLAPLMPQAzLwPzPMMQMAzMQAPQvMwQPAPQQwQQjahakapasawaraBazaDaHaJaMaNaKaFaPaOaSaRaUaWaTaLaVa0a2aMa0a4a5a6a+a-acb-aab5aabgbibebhblbnbiblbjbpbsbrbmbnbobcbqbzbxbBbybEbCbDbIbIbFbJbGbvbLbGbHbMbNbQbPbMbObObUbTbUbAbVbRbBbAbSbYb0bXbZb4b4b7b5b7b8b6b9b9b8b6bXb+b1b9bac-bacZbbc0bZb-b3bdc4b3bechchcfcjcickclclclcicgcmchcgcncjcmckcjcocpcpcocpcocaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "orientable": true,
+    "simplified_homology": "Z",
+    "simplified_is_sphere": false,
+    "simplified_iso_sig": "dLQbcbchhcv",
+    "simplified_tetrahedra": 3,
+    "tetrahedra": 144,
+    "valid": true
+  },
+  "support_prime_isomorphic_to_reference_s2xs1": true,
+  "support_prime_summands": [
+    {
+      "homology": "Z",
+      "iso_sig": "cMcabbjaj",
+      "orientable": true,
+      "tetrahedra": 2
+    }
+  ],
+  "verdict": "PASS_X_M1_REGINA_BOUNDARY_RECOGNITION",
+  "x_m1_collar_product_extension_sha256": "EFB6CBB2B2B32F4A37FB8D257DBA69C9D0F0ED32C9624A92185B6343A5D30775",
+  "x_m1_handle_pair_deletion_sha256": "6CF7C396F4F75A4FC68AFA5DEB67D21A1C562D007D2B57267630F418F3078C53"
+}

@@ -417,6 +417,34 @@ boundary 的投影或 Schlegel 图。
 `PASS_STANDARD_X_M1_HANDLE_PAIR_BOUNDARY_S3_SHELLING`。所以剩余问题是把
 actual collar refinement 映入这个标准边界，而不是标准取消目标的拓扑未知。
 
+Regina 7.4.1 安装在隔离的 WSL 环境
+`/home/lifesize/.cache/t73-regina-venv`。独立组合识别收据
+[`audit/t73_x_m1_regina_boundary_recognition.json`](audit/t73_x_m1_regina_boundary_recognition.json)
+给出：144-tetrahedron support boundary 的唯一 prime isoSig 为 `cMcabbjaj`，
+与 Regina 内置 `S2 x S1` 完全一致；标准边界简化为单 tetrahedron 的 S³
+isoSig `bkaagj`。
+
+product 结构还给出了显式非分离 cubical sphere 和 cut-open chart。在
+[`geometry/t73_x_m1_support_generator_sphere_cut.json`](geometry/t73_x_m1_support_generator_sphere_cut.json)
+中，8-vertex A 层含 18 edges、12 triangles；在另一侧复制 A 后得到
+40-vertex、144-tetrahedron 复形及两个球面边界。分别锥封两个球面后，Regina
+将结果识别为 S³，故 cut complex 为 `S2 x I`。其精确有理 R3 realization 位于
+[`geometry/t73_x_m1_support_cut_r3_shell.json`](geometry/t73_x_m1_support_cut_r3_shell.json)：
+`A-B-D-C-A_copy` 五层映成半径 1–5 的同心立方球面。144 个 tetrahedra 的
+精确 determinant 全部非零，总绝对体积严格为 `992`，即半径 5 与半径 1
+立方体的体积差。
+
+WSL 重建 Regina 收据：
+
+```bash
+/home/lifesize/.cache/t73-regina-venv/bin/python \
+  scripts/build_t73_x_m1_regina_boundary_recognition.py
+python3 scripts/build_t73_x_m1_support_generator_sphere_cut.py --write
+/home/lifesize/.cache/t73-regina-venv/bin/python \
+  scripts/build_t73_x_m1_support_generator_sphere_cut_regina_verification.py
+python3 scripts/build_t73_x_m1_support_cut_r3_shell.py --write
+```
+
 全局线性投影探测记录于
 [`audit/t73_affine_s3_projection_probe.json`](audit/t73_affine_s3_projection_probe.json)。
 xz/yz 会压扁 dotted edges；三个 regular tilts 至少产生258,453,247个 broad
