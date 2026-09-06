@@ -4607,6 +4607,46 @@ Topology-source checks completed 2026-09-04:
   aggregate must still explicitly bind stub/band, stub/middle and band/middle
   cross-ribbon clearance before claiming the complete 1,513-cycle framing.
 
+### F-599AG — All 1,513 x-m1 replacement cycles have complete global framings
+
+- Severity: **Major positive construction / complete framed replacement input**
+- Status: **RESOLVED; EXPLICIT CACHE AND INDEPENDENT FULL REPLAY PASS**
+- Evidence: `audit/t73_x_m1_stub_band_ribbon_exact_candidates.json`,
+  `audit/t73_x_m1_stub_band_ribbon_clearance_verification.json`,
+  `audit/t73_x_m1_complete_global_r3_framed_replacement_cycles_receipt.json`,
+  `audit/t73_x_m1_complete_global_r3_framed_replacement_cycles_verification.json`,
+  their builders/verifiers/tests, and the caches named by the receipts.
+- Last cross-pair: the complete 21,164-by-30,260 stub/band triangle broad
+  phase produces 56,206,304 outward-rounded 3D AABB candidates. Exact integer
+  functional intervals, exact 3D bounds and the four declared port pairings
+  reduce this to 2,656,225 nonincident common-displacement rectangles. GMP
+  quotient/lift equations find zero intersections. The 19,673 permitted
+  triangle incidences split into 18,156 shared-vertex and 1,517 adjacent-
+  rectangle subdivision incidences. Verdict:
+  `PASS_STUB_BAND_RIBBON_EXACT_CLEARANCE`.
+- Complete assembly: each replacement path is written in the exact nine-piece
+  order `source_stub_before`, negative lane, first target complement,
+  first transition, translated middle, last transition, last target
+  complement, positive lane, `source_stub_after`. Both core and push vertices
+  are copied from the verified subsystem caches and oriented by literal match
+  to the F-599W v3 core.
+- Data: the 28,542,451-byte cache contains 1,513 records, 92,284 core segments,
+  92,284 push segments and 184,568 explicit ruled-ribbon triangles. All 12,104
+  cross-piece core/push endpoint equations pass and relative twist sum is zero.
+  Its full verifier reconstructs every source piece rather than trusting cache
+  labels, replays the decompressed stream SHA and cache SHA, and recomputes
+  subsystem x extrema.
+- Global evidence matrix: four subsystem self-pairs and all six cross-pairs
+  are enumerated. Stub/band binds the new GMP receipt; stub/middle and
+  band/middle are excluded by exact core-and-push x intervals; every pair
+  involving transition binds F-599AF. All ten entries pass. Verdict:
+  `PASS_X_M1_COMPLETE_GLOBAL_R3_FRAMED_REPLACEMENT_CYCLES_FULL`.
+- Boundary: this closes the complete 1,513-path x/m1 replacement framing in
+  its canonical R3 chart. It does not yet produce the final seven-component
+  Kirby diagram: the framed replacement cycles must next be integrated with
+  unchanged Johnson/dual components and then projected piecewise with complete
+  crossing order and integer framings.
+
 ### F-599C — Monolithic linear projections of the affine framed link are computationally unsuitable
 
 - Severity: **complete PD / projection selection**

@@ -1,0 +1,19 @@
+{
+  "candidate_builder_path": "scripts/build_t73_x_m1_stub_band_ribbon_exact_candidates.py",
+  "candidate_builder_sha256": "E40384E98392FCB6D375A1095413AD848F21375A1BD24C53EDF6CCFF503DBCB4",
+  "candidate_receipt_sha256": "9CEA550E0FF355FBBEB5F40F1CC0C09BC4214FF7311CCCB3E219F2143EA19586",
+  "candidate_stream_sha256": "89B5F3450F6B7161C132E3C1E9D21E31B3B59FB4458A8EA8149F031273CE3A8D",
+  "full_result": {
+    "adjacent_rectangle_triangle_incidences": 1517,
+    "exact_rectangle_checks": 2656225,
+    "intersections": 0,
+    "shared_vertex_triangle_incidences": 18156,
+    "verdict": "PASS_STUB_BAND_RIBBON_EXACT_CLEARANCE"
+  },
+  "gmp_verifier_path": "scripts/verify_t73_x_m1_stub_band_ribbon_clearance_gmp.py",
+  "gmp_verifier_sha256": "976F125399D9AAB7A551380F097F0FBFC5EE7E0982C8992C8B331784317BBED7",
+  "schema": "t73_x_m1_stub_band_ribbon_clearance_verification/v1",
+  "sha256": "CC6D0085F84E9F5628024747290DE7B3DDDD35449370B6D9AA483AF3B974C168",
+  "status": "PASS_FULL_GMP_EXACT_VERIFICATION",
+  "verdict": "PASS_STUB_BAND_RIBBON_EXACT_CLEARANCE"
+}

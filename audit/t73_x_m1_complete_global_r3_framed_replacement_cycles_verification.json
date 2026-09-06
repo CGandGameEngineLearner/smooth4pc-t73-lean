@@ -1,0 +1,22 @@
+{
+  "builder_path": "scripts/build_t73_x_m1_complete_global_r3_framed_replacement_cycles.py",
+  "builder_sha256": "6355BCAD265BC234A6DDBB60FB55AAF1BF00682E29BB67BDA6370CA8ED051178",
+  "cache_sha256": "F4332F657E79CCBAA498B12D825AEE0D6F0E4F9C5D640DB924B051B95956E159",
+  "construction_receipt_sha256": "51564946B26333C25FFC7624127E5270523A1AF0C06473B2A20A2799A553E057",
+  "full_result": {
+    "cache_sha_checked": true,
+    "core_push_segments_each": 92284,
+    "globally_embedded_complete_framing": true,
+    "piece_boundary_core_push_matches": 12104,
+    "records_reconstructed": 1513,
+    "ribbon_triangles_reconstructed": 184568,
+    "source_piece_point_occurrences_checked": 211802,
+    "subsystem_pair_clearance_count": 10,
+    "verdict": "PASS_X_M1_COMPLETE_GLOBAL_R3_FRAMED_REPLACEMENT_CYCLES_FULL"
+  },
+  "schema": "t73_x_m1_complete_global_r3_framed_replacement_cycles_verification/v1",
+  "sha256": "A16014225D80D58B9423B22CFD52ECA0AB128358AA0F6B246E014AE1FF92997E",
+  "verdict": "PASS_X_M1_COMPLETE_GLOBAL_R3_FRAMED_REPLACEMENT_CYCLES_FULL",
+  "verifier_path": "scripts/verify_t73_x_m1_complete_global_r3_framed_replacement_cycles.py",
+  "verifier_sha256": "A4F9FBBD5DC4BC35DBB36170A900F1800A3C603B896DD900B42E5C6DC6DC0AEC"
+}

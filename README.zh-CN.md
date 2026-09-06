@@ -698,6 +698,31 @@ python3 scripts/build_t73_x_m1_transition_ribbon_global_clearance.py --write
 
 verdict 为 `PASS_X_M1_TRANSITION_RIBBON_GLOBAL_CLEARANCE`。
 
+剩余 stub/band 交叉 clearance 与完整 framed assembly 也已闭合。GMP 收据
+[`audit/t73_x_m1_stub_band_ribbon_clearance_verification.json`](audit/t73_x_m1_stub_band_ribbon_clearance_verification.json)
+在保留 19,673 个规定端口 incidence 后，精确检查 2,656,225 个非 incidence
+公共位移矩形，交点为 0。stub/middle 与 band/middle ribbons 的 core/push 精确
+x 区间互不相交。cache
+`C:\Users\Administrator\.cache\t73_x_m1_complete_global_r3_framed_replacement_cycles.jsonl.gz`
+随后组装全部 1,513 条九段 cycles，包含 92,284 个 core segments、92,284 个
+push segments、184,568 个显式 ribbon triangles 和 12,104 个精确 core/push
+piece joins。构造与独立重放收据为
+[`audit/t73_x_m1_complete_global_r3_framed_replacement_cycles_receipt.json`](audit/t73_x_m1_complete_global_r3_framed_replacement_cycles_receipt.json)
+和
+[`audit/t73_x_m1_complete_global_r3_framed_replacement_cycles_verification.json`](audit/t73_x_m1_complete_global_r3_framed_replacement_cycles_verification.json)。
+重建命令：
+
+```bash
+python3 scripts/build_t73_x_m1_stub_band_ribbon_exact_candidates.py
+python3 scripts/build_t73_x_m1_stub_band_ribbon_clearance_verification.py --write
+python3 scripts/build_t73_x_m1_complete_global_r3_framed_replacement_cycles.py
+python3 scripts/build_t73_x_m1_complete_global_r3_framed_replacement_cycles_verification.py --write
+```
+
+verdict 为 `PASS_X_M1_COMPLETE_GLOBAL_R3_FRAMED_REPLACEMENT_CYCLES_FULL`。
+这闭合了 replacement framing，但尚未与不变的 Johnson/dual 分量合成为最终
+七分量 Kirby input。
+
 全局线性投影探测记录于
 [`audit/t73_affine_s3_projection_probe.json`](audit/t73_affine_s3_projection_probe.json)。
 xz/yz 会压扁 dotted edges；三个 regular tilts 至少产生258,453,247个 broad

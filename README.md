@@ -241,6 +241,32 @@ python3 scripts/build_t73_x_m1_transition_ribbon_global_clearance.py --write
 ```
 
 Verdict: `PASS_X_M1_TRANSITION_RIBBON_GLOBAL_CLEARANCE`.
+
+The remaining stub/band cross-clearance and the complete framed assembly are
+now closed too. The GMP receipt
+[`audit/t73_x_m1_stub_band_ribbon_clearance_verification.json`](audit/t73_x_m1_stub_band_ribbon_clearance_verification.json)
+checks 2,656,225 nonincident common-displacement rectangles after preserving
+19,673 prescribed port incidences; intersections are zero. Stub/middle and
+band/middle ribbons have disjoint exact core-and-push x intervals. The cache
+`C:\Users\Administrator\.cache\t73_x_m1_complete_global_r3_framed_replacement_cycles.jsonl.gz`
+then assembles all 1,513 nine-piece cycles with 92,284 core segments, 92,284
+push segments, 184,568 explicit ribbon triangles and 12,104 exact core/push
+piece joins. Its construction and independent replay receipts are
+[`audit/t73_x_m1_complete_global_r3_framed_replacement_cycles_receipt.json`](audit/t73_x_m1_complete_global_r3_framed_replacement_cycles_receipt.json)
+and
+[`audit/t73_x_m1_complete_global_r3_framed_replacement_cycles_verification.json`](audit/t73_x_m1_complete_global_r3_framed_replacement_cycles_verification.json).
+Rebuild with:
+
+```bash
+python3 scripts/build_t73_x_m1_stub_band_ribbon_exact_candidates.py
+python3 scripts/build_t73_x_m1_stub_band_ribbon_clearance_verification.py --write
+python3 scripts/build_t73_x_m1_complete_global_r3_framed_replacement_cycles.py
+python3 scripts/build_t73_x_m1_complete_global_r3_framed_replacement_cycles_verification.py --write
+```
+
+Verdict: `PASS_X_M1_COMPLETE_GLOBAL_R3_FRAMED_REPLACEMENT_CYCLES_FULL`.
+This completes the replacement framing, not yet its integration with the
+unchanged Johnson/dual components into the final seven-component Kirby input.
 The graph map extends over all five framed regular neighborhoods in
 [`geometry/t73_hybrid_to_railroad_tubular_map.json`](geometry/t73_hybrid_to_railroad_tubular_map.json).
 Its five solid-torus templates contain 5385 tetrahedra and 10770 boundary
