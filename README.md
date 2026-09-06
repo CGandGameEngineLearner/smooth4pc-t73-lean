@@ -639,6 +639,20 @@ clearance is limited to repaired non-shell transition segments versus band
 strips and translated middles, plus binding the inherited F-563 stub
 embeddedness proof. Push paths remain open.
 
+Two of those three v2 core-clearance obligations are now closed. The inductive
+transfer receipt
+[`audit/t73_x_m1_stub_r3_embeddedness_transfer.json`](audit/t73_x_m1_stub_r3_embeddedness_transfer.json)
+binds the 1,514 distinct initial belt positions and F-563's 23,265,900 exact
+current-state segment/triangle checks to the AC-side PL homeomorphism, proving
+that 6,052 source stub segments remain an embedded disjoint union after their
+subdivision into 10,582 R3 pieces. Separately,
+[`audit/t73_x_m1_repaired_transition_middle_clearance.json`](audit/t73_x_m1_repaired_transition_middle_clearance.json)
+verifies that all 48,416 translated middle segments lie in `z=0`, whereas each
+of the 3,026 repaired transitions has only its declared middle endpoint there
+and every other vertex in `z>0`. Thus exactly 3,026 endpoint contacts and no
+extras occur. The sole remaining v2 core cross-check is repaired transition
+non-shell segments versus band strips.
+
 Global linear projection probes are recorded in
 [`audit/t73_affine_s3_projection_probe.json`](audit/t73_affine_s3_projection_probe.json).
 xz/yz collapse dotted edges; three regular tilts produce at least 258,453,247

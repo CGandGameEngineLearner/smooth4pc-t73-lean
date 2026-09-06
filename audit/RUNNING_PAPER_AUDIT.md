@@ -4268,6 +4268,37 @@ Topology-source checks completed 2026-09-04:
   explicit binding of the F-563 inductive source-stub embeddedness through the
   F-599N shell PL homeomorphism. Complete push paths remain open separately.
 
+### F-599V — Stub transfer and transition/middle separation close two v2 core obligations
+
+- Severity: **Major positive verification / v2 core cross-system clearance**
+- Status: **TWO OF THREE OBLIGATIONS PASS; TRANSITION/BAND REMAINS**
+- Evidence: `audit/t73_x_m1_stub_r3_embeddedness_transfer.json` and
+  `audit/t73_x_m1_repaired_transition_middle_clearance.json`, their builders,
+  independent verifiers and tests, bound to F-563, F-599I, F-599N, F-599T and
+  F-599U.
+- Stub induction: state 0 has 1514 straight x-passage arcs and 1514 distinct
+  belt `(y,z,nu)` positions. F-563's full receipt replays 1513 band steps,
+  23,265,900 exact current-segment/band-disk tests, and exactly 4539 source plus
+  4539 target contacts. Since each step's four new stub segments are boundary
+  edges of an embedded disk disjoint from all previous current segments, the
+  final 6052 source stub segments are an embedded disjoint union by induction.
+- Stub transfer: all source stubs lie on the AC side. F-599N's exact
+  nondegenerate barycentric shell map is a PL homeomorphism there and merely
+  subdivides those 6052 segments into 10,582 R3 pieces with 4530 continuity
+  equalities. Hence pairwise embeddedness transfers, rather than requiring an
+  ill-conditioned floating-point all-pairs test. Verdict:
+  `PASS_X_M1_STUB_R3_EMBEDDEDNESS_TRANSFER`.
+- Middle separation: all 49,929 vertices and 48,416 segments of the translated
+  middle paths lie in z=0. Each of the 3026 repaired transition paths has
+  exactly its declared middle endpoint at z=0; its other six vertices have
+  strictly positive z. Middle paths are pairwise disjoint by F-599I, and the
+  3026 endpoints are distinct. Thus open transition segments miss every
+  middle core, with exactly the intended endpoint incidences. Verdict:
+  `PASS_X_M1_REPAIRED_TRANSITION_MIDDLE_CLEARANCE`.
+- Boundary: of F-599U's three residual core checks, only repaired transition
+  non-shell segments versus F-599Q band strips remains. Complete push paths
+  remain a separate later layer.
+
 ### F-599C — Monolithic linear projections of the affine framed link are computationally unsuitable
 
 - Severity: **complete PD / projection selection**

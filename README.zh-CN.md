@@ -552,6 +552,17 @@ v2 缓存
 被限制为 repaired non-shell transition segments 对 band strips 与平移 middle 的
 检查，以及绑定 F-563 已有的 stub embeddedness 归纳证明。push paths 仍为 OPEN。
 
+上述三项 v2 core-clearance obligations 现已闭合两项。归纳传输收据
+[`audit/t73_x_m1_stub_r3_embeddedness_transfer.json`](audit/t73_x_m1_stub_r3_embeddedness_transfer.json)
+把 1,514 个不同初始 belt positions、F‑563 的 23,265,900 个精确 current-state
+segment/triangle checks 与 AC-side PL homeomorphism 绑定，证明 6,052 个 source
+stub segments 细分为 10,582 条 R3 pieces 后仍为嵌入不交并。另一方面，
+[`audit/t73_x_m1_repaired_transition_middle_clearance.json`](audit/t73_x_m1_repaired_transition_middle_clearance.json)
+验证全部 48,416 个 translated middle segments 位于 `z=0`，而 3,026 条 repaired
+transitions 各自只有声明的 middle endpoint 位于该平面，其余顶点全在 `z>0`；
+因此恰有 3,026 个端点接触、额外 0。v2 core 唯一剩余跨系统检查是 repaired
+transition non-shell segments 对 band strips。
+
 全局线性投影探测记录于
 [`audit/t73_affine_s3_projection_probe.json`](audit/t73_affine_s3_projection_probe.json)。
 xz/yz 会压扁 dotted edges；三个 regular tilts 至少产生258,453,247个 broad
