@@ -737,6 +737,24 @@ python3 scripts/verify_t73_x_m1_outer_collar_v7_sequential_midpoint_obstruction.
 python3 -m unittest tests.test_t73_x_m1_outer_collar_v7_sequential_midpoint_obstruction
 ```
 
+修复后的调度候选保留相同局部 movie，但反转 interface 顺序。其
+22,399,172-byte cache 位于
+`/home/lifesize/.cache/t73_x_m1_outer_collar_v7_reverse_sequential_isotopy_trace.jsonl.gz`，
+构造元数据与独立重放位于
+[`audit/t73_x_m1_outer_collar_v7_reverse_sequential_isotopy_trace_receipt.json`](audit/t73_x_m1_outer_collar_v7_reverse_sequential_isotopy_trace_receipt.json)
+和
+[`audit/t73_x_m1_outer_collar_v7_reverse_sequential_isotopy_trace_verification.json`](audit/t73_x_m1_outer_collar_v7_reverse_sequential_isotopy_trace_verification.json)。
+schedule position `p` 移动 interface `3025-p`。独立重放重建全部 3,026 条
+记录、90,770 个 core 和 121,020 个 push world-sheet triangles、211,790
+次精确 R4 rank 检查、15,130 个边界匹配以及 `[0,1]` 的精确覆盖。
+逆序静态和全时域动态 clearance 仍为 OPEN。
+
+```bash
+python3 scripts/build_t73_x_m1_outer_collar_v7_reverse_sequential_isotopy_trace.py
+python3 scripts/build_t73_x_m1_outer_collar_v7_reverse_sequential_isotopy_trace_verification.py --write --check-files
+python3 -m unittest tests.test_t73_x_m1_outer_collar_v7_reverse_sequential_isotopy_trace
+```
+
 第一个跨系统门禁找到并修复了真实碰撞，没有提前升级该 assembly。流式 Rust
 1.98.1 checker 位于
 [`rust/t73_exact_cross_clearance`](rust/t73_exact_cross_clearance)，使用

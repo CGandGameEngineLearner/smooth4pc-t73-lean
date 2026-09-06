@@ -651,6 +651,24 @@ python3 scripts/build_t73_x_m1_outer_collar_v7_sequential_midpoint_obstruction.p
 python3 scripts/verify_t73_x_m1_outer_collar_v7_sequential_midpoint_obstruction.py
 python3 -m unittest tests.test_t73_x_m1_outer_collar_v7_sequential_midpoint_obstruction
 ```
+
+The repaired scheduling candidate reverses interface order while preserving
+the same local movie. Its 22,399,172-byte cache is
+`/home/lifesize/.cache/t73_x_m1_outer_collar_v7_reverse_sequential_isotopy_trace.jsonl.gz`,
+with metadata and independent replay in
+[`audit/t73_x_m1_outer_collar_v7_reverse_sequential_isotopy_trace_receipt.json`](audit/t73_x_m1_outer_collar_v7_reverse_sequential_isotopy_trace_receipt.json)
+and
+[`audit/t73_x_m1_outer_collar_v7_reverse_sequential_isotopy_trace_verification.json`](audit/t73_x_m1_outer_collar_v7_reverse_sequential_isotopy_trace_verification.json).
+Schedule position `p` moves interface `3025-p`. Independent replay reconstructs
+all 3,026 records, 90,770 core and 121,020 push world-sheet triangles, 211,790
+exact R4 rank checks, 15,130 boundary matches and exact coverage of `[0,1]`.
+Reverse static and full-time dynamic clearance remain open.
+
+```bash
+python3 scripts/build_t73_x_m1_outer_collar_v7_reverse_sequential_isotopy_trace.py
+python3 scripts/build_t73_x_m1_outer_collar_v7_reverse_sequential_isotopy_trace_verification.py --write --check-files
+python3 -m unittest tests.test_t73_x_m1_outer_collar_v7_reverse_sequential_isotopy_trace
+```
 The graph map extends over all five framed regular neighborhoods in
 [`geometry/t73_hybrid_to_railroad_tubular_map.json`](geometry/t73_hybrid_to_railroad_tubular_map.json).
 Its five solid-torus templates contain 5385 tetrahedra and 10770 boundary

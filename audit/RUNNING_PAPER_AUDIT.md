@@ -5461,6 +5461,32 @@ Topology-source checks completed 2026-09-04:
   and checked against the contemporaneous static union before any ambient
   extension is attempted.
 
+### F-599BP — The complete reverse-interface time schedule is explicit
+
+- Severity: **Dynamic candidate repair / schedule reconstruction**
+- Status: **REVERSE LOCAL TRACE PASS; REVERSE STATIC/DYNAMIC/AMBIENT OPEN**
+- Evidence:
+  `audit/t73_x_m1_outer_collar_v7_reverse_sequential_isotopy_trace_receipt.json`,
+  its independent verification, builder, verifier, regression test and named
+  persistent cache, bound to F-599BO's exact forward-order obstruction.
+- Schedule: position `p` moves interface `3025-p` in
+  `[p/3026,(p+1)/3026]`, with the same two equal local phases. Source core/push
+  sheets remain stationary before their slot and final sheets afterward.
+  Thus moving-sheet interiors for distinct collars remain time-disjoint while
+  the known `2 before 0` constraint is satisfied.
+- Data/replay: the 22,399,172-byte cache contains 3,026 records, 90,770
+  complete core and 121,020 complete push triangles. The independent verifier
+  reads the original F-599BH records by interface rather than trusting cache
+  order, reconstructs every reverse-assigned time coordinate, checks 211,790
+  exact R4 triangle ranks, 15,130 boundary matches, cache/stream hashes and
+  exact slot coverage from interface 3025 to 0. Verdict:
+  `PASS_X_M1_OUTER_COLLAR_V7_REVERSE_SEQUENTIAL_ISOTOPY_TRACE_FULL_LOCAL_CANDIDATE`.
+- Boundary: reverse-order midpoint core probing passed 15,948,372 exact segment
+  checks, but that exploratory result is not promoted to a full-time theorem.
+  All static source/final mixtures must be regenerated for the reverse order,
+  followed by complete moving core/push/ribbon clearance and a new framed
+  world-volume. The classification remains `CANDIDATE_UNVERIFIED`.
+
 ### F-599C — Monolithic linear projections of the affine framed link are computationally unsuitable
 
 - Severity: **complete PD / projection selection**
