@@ -786,6 +786,22 @@ python3 scripts/build_t73_x_m1_outer_collar_v7_constant_normal_obstruction_3017.
 python3 scripts/verify_t73_x_m1_outer_collar_v7_constant_normal_obstruction_3017.py
 python3 -m unittest tests.test_t73_x_m1_outer_collar_v7_constant_normal_obstruction_3017
 ```
+
+The repaired state-dependent normal field is
+[`geometry/t73_x_m1_outer_collar_v7_normal_field_3017.json`](geometry/t73_x_m1_outer_collar_v7_normal_field_3017.json).
+A finite exact layered search over the source normal and the 26 nonzero vectors
+in `{-1,0,1}^3/500` finds a 22-state path using the same verified core
+triangulations. Independent replay checks 110 framing transversality equations,
+550 state core/push pairs, 132 push-state self pairs, 210 nondegenerate push
+trace triangles, 504 push-trace self pairs and all 2,100 core/push trace pairs.
+Internal forbidden intersections are zero. Static one-skeleton and ribbon-volume
+clearance remain open.
+
+```bash
+python3 scripts/build_t73_x_m1_outer_collar_v7_normal_field_3017.py --write --check
+python3 scripts/verify_t73_x_m1_outer_collar_v7_normal_field_3017.py
+python3 -m unittest tests.test_t73_x_m1_outer_collar_v7_normal_field_3017
+```
 The graph map extends over all five framed regular neighborhoods in
 [`geometry/t73_hybrid_to_railroad_tubular_map.json`](geometry/t73_hybrid_to_railroad_tubular_map.json).
 Its five solid-torus templates contain 5385 tetrahedra and 10770 boundary

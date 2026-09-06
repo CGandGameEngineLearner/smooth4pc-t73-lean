@@ -865,6 +865,21 @@ python3 scripts/verify_t73_x_m1_outer_collar_v7_constant_normal_obstruction_3017
 python3 -m unittest tests.test_t73_x_m1_outer_collar_v7_constant_normal_obstruction_3017
 ```
 
+修复后的逐 state normal field 位于
+[`geometry/t73_x_m1_outer_collar_v7_normal_field_3017.json`](geometry/t73_x_m1_outer_collar_v7_normal_field_3017.json)。
+对 source normal 与 `{-1,0,1}^3/500` 中 26 个非零向量进行有限精确分层
+搜索，得到使用同一已验证 core triangulations 的 22-state normal path。
+独立重放检查 110 个 framing transversality 方程、550 个 state core/push
+pairs、132 个 push-state self pairs、210 个非退化 push trace triangles、
+504 个 push-trace self pairs 和全部 2,100 个 core/push trace pairs。
+内部禁止交点为 0。静态 one-skeleton 与 ribbon-volume clearance 仍为 OPEN。
+
+```bash
+python3 scripts/build_t73_x_m1_outer_collar_v7_normal_field_3017.py --write --check
+python3 scripts/verify_t73_x_m1_outer_collar_v7_normal_field_3017.py
+python3 -m unittest tests.test_t73_x_m1_outer_collar_v7_normal_field_3017
+```
+
 第一个跨系统门禁找到并修复了真实碰撞，没有提前升级该 assembly。流式 Rust
 1.98.1 checker 位于
 [`rust/t73_exact_cross_clearance`](rust/t73_exact_cross_clearance)，使用

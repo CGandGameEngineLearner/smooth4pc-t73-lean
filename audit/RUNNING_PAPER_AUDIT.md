@@ -5672,6 +5672,33 @@ Topology-source checks completed 2026-09-04:
   open. None of these exploratory repairs is promoted until a complete framed
   one-skeleton and ribbon world-volume pass.
 
+### F-599BY — A state-dependent exact normal field frames the interface-3017 trace internally
+
+- Severity: **Framed dynamic repair / positive internal one-skeleton**
+- Status: **INTERFACE-3017 INTERNAL CORE/PUSH PASS; STATIC/RIBBON OPEN**
+- Evidence: `geometry/t73_x_m1_outer_collar_v7_normal_field_3017.json`, its
+  deterministic builder, independent verifier and regression test, bound to
+  F-599BW/BX.
+- Search/construction: the finite normal alphabet is the exact source normal
+  plus the 26 nonzero vectors in `{-1,0,1}^3/500`. A layered exact reachability
+  calculation with the already-verified core cells remains nonempty across all
+  21 transitions, including the former failures 6, 13 and 20, and returns to
+  the source normal at the final state. The saved path uses source normal at
+  states 0--5 and 18--21, `(0,1/500,0)` at state 6, several negative-octant
+  normals through the hub, and `(1/500,-1/500,1/500)` at state 17.
+- Exact replay: the push states are derived, not assigned, by translating every
+  core vertex by its state normal. The independent verifier reconstructs all
+  22 states and 21 push transitions, checks 110 framing transversality
+  equations, 550 state core/push segment pairs, 132 push-state self pairs, all
+  210 push triangle ranks, 504 nonadjacent push-trace pairs and all 2,100
+  core/push trace triangle pairs. Forbidden internal intersections are zero.
+  Verdict:
+  `PASS_X_M1_OUTER_COLLAR_V7_NORMAL_FIELD_3017_INTERNAL_INDEPENDENT`.
+- Boundary: this closes the internal framed one-skeleton only. The moving core
+  and push traces must still be checked against the complete contemporaneous
+  static core/push union. The ruled ribbon states and their 3-dimensional R4
+  world-volume are not yet constructed, so the artifact remains a candidate.
+
 ### F-599C — Monolithic linear projections of the affine framed link are computationally unsuitable
 
 - Severity: **complete PD / projection selection**
