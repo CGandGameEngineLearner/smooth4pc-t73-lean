@@ -4818,6 +4818,26 @@ Topology-source checks completed 2026-09-04:
   every declared hash, solve all survivors, then repeat the decomposition for
   push and ribbon geometry before any v3 upgrade.
 
+### F-599AN — All v3 outer-collar core segments are globally disjoint
+
+- Severity: **Positive core clearance / exact semantic reduction**
+- Status: **CORE PASS; PUSH AND RIBBON OPEN**
+- Evidence: `audit/t73_x_m1_outer_collar_v3_core_clearance.json`, its builder
+  and regression test, bound to F-599AM's complete matrix and F-599AL's cache.
+- Coverage: all eleven nonempty semantic type pairs and all 14,254,960 broad
+  AABB candidates are consumed. Six heavy type pairs use exact constant-F
+  buckets, three use exact constant-height buckets, and two bounded germ pairs
+  use outward-rounded 3D AABB enumeration followed by GMP.
+- Reduction: only 24,208 equal-invariant/direct candidates remain. Exactly
+  15,134 are declared same-collar waypoint or shared dual-germ incidences.
+  The other 9,074 receive full GMP segment equations; intersections are zero.
+  The first-ray/last-ray same-height family accounts for 3,026 of those exact
+  checks and is not dismissed merely because both segments share a height.
+- Verdict: `PASS_X_M1_OUTER_COLLAR_V3_CORE_CLEARANCE` upgrades the v3 core
+  paths to globally embedded data. It does not upgrade companion push paths,
+  ruled ribbons, isotopy traces or ambient supports; their own complete
+  candidate matrices and exact survivors remain required.
+
 ### F-599C — Monolithic linear projections of the affine framed link are computationally unsuitable
 
 - Severity: **complete PD / projection selection**

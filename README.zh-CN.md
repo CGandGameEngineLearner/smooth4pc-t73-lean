@@ -794,6 +794,13 @@ germs 与 3,026 个同高度 first/last-ray pairs 进入直接 GMP。该 artifac
 工作量证明，不是 clearance PASS。重建命令：
 `python3 scripts/build_t73_x_m1_outer_collar_v3_core_candidate_matrix.py --write`。
 
+对应的精确 core verifier 现已闭合于
+[`audit/t73_x_m1_outer_collar_v3_core_clearance.json`](audit/t73_x_m1_outer_collar_v3_core_clearance.json)。
+14,254,960 个 broad pairs 降为 24,208 个同不变量/direct candidates：其中
+15,134 个是规定的相邻 waypoint incidences，只有 9,074 个需要 GMP 线段方程；
+全部无交。verdict 为 `PASS_X_M1_OUTER_COLLAR_V3_CORE_CLEARANCE`。push 与
+ribbon 矩阵仍为 OPEN，不能从 core 结果自动推出。
+
 全局线性投影探测记录于
 [`audit/t73_affine_s3_projection_probe.json`](audit/t73_affine_s3_projection_probe.json)。
 xz/yz 会压扁 dotted edges；三个 regular tilts 至少产生258,453,247个 broad

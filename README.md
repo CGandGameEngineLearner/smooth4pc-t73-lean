@@ -346,6 +346,14 @@ height hashes for exterior pieces, and direct GMP only for source germs and
 the 3,026 same-height first/last-ray pairs. This artifact is a workload proof,
 not a clearance PASS. Rebuild with
 `python3 scripts/build_t73_x_m1_outer_collar_v3_core_candidate_matrix.py --write`.
+
+The corresponding exact core verifier is now complete in
+[`audit/t73_x_m1_outer_collar_v3_core_clearance.json`](audit/t73_x_m1_outer_collar_v3_core_clearance.json).
+The 14,254,960 broad pairs reduce to 24,208 equal-invariant/direct candidates:
+15,134 are prescribed adjacent-waypoint incidences and only 9,074 require GMP
+segment equations. All are disjoint. Verdict:
+`PASS_X_M1_OUTER_COLLAR_V3_CORE_CLEARANCE`. Push and ribbon matrices remain
+open and are not inferred from this core result.
 The graph map extends over all five framed regular neighborhoods in
 [`geometry/t73_hybrid_to_railroad_tubular_map.json`](geometry/t73_hybrid_to_railroad_tubular_map.json).
 Its five solid-torus templates contain 5385 tetrahedra and 10770 boundary
