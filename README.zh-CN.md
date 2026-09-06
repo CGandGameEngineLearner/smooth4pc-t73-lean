@@ -636,17 +636,27 @@ stub core/push paths 也通过第一层全局 clearance。10,582 个 segments �
 对全部 16 个方向配对使用 coplanarity scalar `(u cross v) dot point` 或平行线
 向量 `point cross direction` 作精确有理哈希，仅 1,582 个候选存活，全部精确
 线段方程无交。push/push clearance 由嵌入 stub cores 的共同平移直接保持。
-verdict 为 `PASS_X_M1_STUB_CORE_PUSH_CLEARANCE`。stub ribbon/segment 与
-ribbon/ribbon clearance 仍为 OPEN。
+verdict 为 `PASS_X_M1_STUB_CORE_PUSH_CLEARANCE`。
 
 全部 stub ribbons 也通过完整的 **band-local** 检查。收据
 [`audit/t73_x_m1_stub_ribbon_local_clearance.json`](audit/t73_x_m1_stub_ribbon_local_clearance.json)
 检查 137,474 个 ribbon-triangle pairs：24,172 个为允许 incidence，其余
 113,302 个全部由精确三维 bounds 排除，没有相交 survivor。另检查 296,112 个
 ribbon/segment pairs：69,508 个 incidence 与 226,604 个精确 bounds 排除后同样
-无 survivor。verdict 为 `PASS_X_M1_STUB_RIBBON_LOCAL_CLEARANCE`。跨 band
-ribbon clearance 仍为 OPEN，下一步使用 displacement quotient
-`(x-y,2*x-z)`，它会消去共同 push 方向 `(1,1,2)`。
+无 survivor。verdict 为 `PASS_X_M1_STUB_RIBBON_LOCAL_CLEARANCE`。
+
+跨 band clearance 现已由
+[`audit/t73_x_m1_stub_ribbon_cross_band_clearance.json`](audit/t73_x_m1_stub_ribbon_cross_band_clearance.json)
+闭合，首次完整重放收据保存于
+[`audit/t73_x_m1_stub_ribbon_cross_band_verification.json`](audit/t73_x_m1_stub_ribbon_cross_band_verification.json)。
+verifier 用 `(p,r)=(x-y,2*x-z)` 商掉共同 sweep 方向 `(1,1,2)`。精确直线哈希
+留下 791 个平行跨-band pairs；带严格误差余量的 Shapely/NumPy broad phase
+覆盖 4,802,618 个非平行 pairs，其中 4,576,817 个数值上接近的 lift 全部再做
+`Fraction` 精确检查。最小精确 clearance 为 `100000*delta`，故 10,582 个
+ruled rectangles 全局互不相交。首次或上游改变后执行完整重放：
+`python scripts/build_t73_x_m1_stub_ribbon_cross_band_verification_receipt.py --write`；
+日常只检查 artifact/cache/builder/verifier 字节绑定时改用 `--check-files`。verdict 为
+`PASS_X_M1_STUB_RIBBON_CROSS_BAND_CLEARANCE`。
 
 全局线性投影探测记录于
 [`audit/t73_affine_s3_projection_probe.json`](audit/t73_affine_s3_projection_probe.json)。

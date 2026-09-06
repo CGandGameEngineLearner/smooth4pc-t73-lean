@@ -4499,6 +4499,43 @@ Topology-source checks completed 2026-09-04:
   quotient `(x-y,2x-z)`, checks projected rectangle overlap by exact direction
   hashes, and restores the bounded sweep parameter for survivors.
 
+### F-599AD — All x-m1 stub framing ribbons are globally disjoint
+
+- Severity: **Positive framing clearance / complete stub ribbon system**
+- Status: **RESOLVED; FULL FIRST REPLAY RECEIPT SAVED**
+- Evidence: `audit/t73_x_m1_stub_ribbon_cross_band_clearance.json`,
+  `audit/t73_x_m1_stub_ribbon_cross_band_verification.json`, their builder,
+  full verifier, daily receipt checker, and regression test. They bind the
+  F-599Z cache, F-599AA source-normal homotopy, F-599AB core/push clearance,
+  and F-599AC within-band clearance.
+- Quotient proof: every rectangle is a core segment swept by
+  `delta*(1,1,2)`. The exact map `(p,r)=(x-y,2x-z)` annihilates that vector,
+  so an intersection requires the two projected core segments to meet and
+  their lift difference to have absolute value at most `delta`. The 10,582
+  core segments have four spatial and three quotient direction classes.
+- Parallel case: exact slope/intercept hashes produce 8,471 quotient lines
+  and only 791 same-line cross-band candidates. Exact overlap-interval and
+  affine-lift minimization finds no intersection.
+- Nonparallel case: coordinates are proved bounded by 8. Binary64 quotient
+  error is conservatively bounded by `2^-46`; Shapely STRtree boxes expanded
+  by `2^-30` therefore cannot omit an exact projected intersection. They
+  return 4,802,618 cross-band nonparallel candidates. The infinite-line lift
+  calculation has stated error below `2^-40`; all 4,576,817 pairs within
+  `2^-10` receive exact `Fraction` parameter, finite-segment, and lift checks.
+  There are 229,968 actual projected finite-segment intersections and zero
+  ribbon intersections.
+- Margin: both parallel and nonparallel exact minima equal `100000*delta`.
+  Thus the global framing clearance is strict, not a floating-point verdict.
+  Verdict: `PASS_X_M1_STUB_RIBBON_CROSS_BAND_CLEARANCE`.
+- Reproduction: `python scripts/build_t73_x_m1_stub_ribbon_cross_band_verification_receipt.py --write`
+  performs the approximately two-minute full replay. Routine CI uses
+  `--check-files` to bind the artifact bytes/payload, source cache, geometry
+  builder and verifier paths/bytes, counts, margin, and saved full result.
+- Consequence/boundary: all 6,052 stub push paths and their 10,582 framing
+  rectangles now form a global embedded source-normal-compatible system.
+  This closes the stub-ribbon subproblem only; transition-side push ports and
+  the later unified Kirby movie / C / S witnesses remain open.
+
 ### F-599C — Monolithic linear projections of the affine framed link are computationally unsuitable
 
 - Severity: **complete PD / projection selection**

@@ -1,0 +1,23 @@
+{
+  "artifact_content_sha256": "AC48D9879E8EA128CA8B0234583DD2166709C9B3DCCB9A088B1F670D34028E97",
+  "artifact_path": "audit/t73_x_m1_stub_ribbon_cross_band_clearance.json",
+  "artifact_payload_sha256": "365F0833CA10C3C14CDABE2359F4D453EEB0FA05134E36916B88FDB1359AD202",
+  "geometry_builder_path": "scripts/build_t73_x_m1_stub_ribbon_cross_band_clearance.py",
+  "geometry_builder_sha256": "0BC94DD89CF82BF8B251A15E23446FC4F40B9AAA06DB2383CCC2F194DD9FAEBD",
+  "result": {
+    "minimum_clearance_in_ribbon_widths": "100000",
+    "nonparallel_exact_candidates": 4576817,
+    "parallel_exact_candidates": 791,
+    "ribbons": 10582,
+    "segments": 10582,
+    "sha256": "365F0833CA10C3C14CDABE2359F4D453EEB0FA05134E36916B88FDB1359AD202",
+    "verdict": "PASS_X_M1_STUB_RIBBON_CROSS_BAND_CLEARANCE"
+  },
+  "schema": "t73_x_m1_stub_ribbon_cross_band_verification/v1",
+  "sha256": "04E7696032426C31B73CA52F7C3D905AEA00A91AB7FE92FC3C5714FD3A62A216",
+  "status": "PASS_FULL_EXACT_AND_ERROR_BOUNDED_VERIFICATION",
+  "stub_cache_sha256": "D7B3A90DEC372857869500C4D8BB6485D187A650BE3D33A8F2D526F6F7B1DD84",
+  "stub_paths_receipt_sha256": "DEC508ECF0C68AFC388131F166F9E05AB225AED3D0149A7BD4B38C8B79EC3682",
+  "verifier_path": "scripts/verify_t73_x_m1_stub_ribbon_cross_band_clearance.py",
+  "verifier_sha256": "CD0205B0B447E768075B8DAF089AEB91F20324D63001C8173490286BD139F905"
+}
