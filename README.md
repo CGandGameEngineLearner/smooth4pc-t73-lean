@@ -164,6 +164,17 @@ coordinates throughout the open interval. An independent verifier checks
 real parameter. The homotopy applies uniformly to all 6,052 paths and 10,582
 segments with relative twist zero. Verdict:
 `PASS_X_M1_STUB_SOURCE_NORMAL_HOMOTOPY`.
+
+Stub core/push paths also pass their first global clearance layer. Their
+10,582 segments have only four exact spatial direction classes. The receipt
+[`audit/t73_x_m1_stub_core_push_clearance.json`](audit/t73_x_m1_stub_core_push_clearance.json)
+checks all 16 direction pairs using either the coplanarity scalar
+`(u cross v) dot point` or the parallel-line vector `point cross direction` as
+an exact rational hash. Only 1,582 candidate pairs survive, and all exact
+segment equations are disjoint. Push/push clearance follows from the common
+translation of the embedded stub cores. Verdict:
+`PASS_X_M1_STUB_CORE_PUSH_CLEARANCE`. Stub ribbon/segment and ribbon/ribbon
+clearance remains open.
 The graph map extends over all five framed regular neighborhoods in
 [`geometry/t73_hybrid_to_railroad_tubular_map.json`](geometry/t73_hybrid_to_railroad_tubular_map.json).
 Its five solid-torus templates contain 5385 tetrahedra and 10770 boundary

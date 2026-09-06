@@ -4455,6 +4455,29 @@ Topology-source checks completed 2026-09-04:
   ports match. Exact global clearance of the stub push paths/ribbons and their
   two transition-side push ports per band remain open.
 
+### F-599AB — Stub core and push paths are globally disjoint by exact direction hashes
+
+- Severity: **Major positive framing clearance / stub paths**
+- Status: **CORE/PUSH AND PUSH/PUSH PASS; RIBBON CLEARANCE OPEN**
+- Evidence: `audit/t73_x_m1_stub_core_push_clearance.json`, its builder,
+  verifier and test, bound to F-599AA source-normal transport and F-599Z push
+  paths.
+- Finite directions: the 10,582 R3 stub segments have only four normalized
+  exact directions: `(1,-1,1)` twice-sized class 3778, `(1,1,1)` class 3778,
+  `(1,1,-1)` class 3024 and `(1,-1,-1)` class 2. Push segments have the same
+  classes because they are a common translation.
+- Hash screening: for nonparallel direction pair `(u,v)`, two infinite lines
+  can meet only if `(u cross v) dot point` agrees. For parallel pairs, the
+  invariant is `point cross direction`. Exact Fraction hashes cover all 16
+  ordered direction pairs and reduce the full product to 1582 candidates.
+  Every candidate receives exact 3D segment parameters; intersections are
+  zero. Push/push is the common translate of the F-599V embedded core union.
+  Verdict: `PASS_X_M1_STUB_CORE_PUSH_CLEARANCE`.
+- Boundary: this proves the companion paths disjoint from all stub cores and
+  one another. The 21,164 ruled ribbon triangles must still be checked against
+  all stub core/push segments and each other before global stub framing
+  clearance is complete.
+
 ### F-599C — Monolithic linear projections of the affine framed link are computationally unsuitable
 
 - Severity: **complete PD / projection selection**

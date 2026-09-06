@@ -1,0 +1,312 @@
+{
+  "completion_status": "ALL_STUB_CORE_AND_PUSH_PATHS_GLOBALLY_DISJOINT",
+  "core_push_intersection_count": 0,
+  "core_segment_count": 10582,
+  "direction_class_count": 4,
+  "direction_class_segment_counts": {
+    "1/-1/-1": 2,
+    "1/-1/1": 3778,
+    "1/1/-1": 3024,
+    "1/1/1": 3778
+  },
+  "direction_pair_count": 16,
+  "direction_pair_results": [
+    {
+      "core_direction": [
+        "1",
+        "-1",
+        "-1"
+      ],
+      "core_segment_count": 2,
+      "exact_hash_candidates": 0,
+      "exact_segment_checks": 0,
+      "hash_invariant": "parallel-line vector point cross direction",
+      "intersections": 0,
+      "push_direction": [
+        "1",
+        "-1",
+        "-1"
+      ],
+      "push_segment_count": 2
+    },
+    {
+      "core_direction": [
+        "1",
+        "-1",
+        "-1"
+      ],
+      "core_segment_count": 2,
+      "exact_hash_candidates": 0,
+      "exact_segment_checks": 0,
+      "hash_invariant": "coplanarity scalar (u cross v) dot point",
+      "intersections": 0,
+      "push_direction": [
+        "1",
+        "-1",
+        "1"
+      ],
+      "push_segment_count": 3778
+    },
+    {
+      "core_direction": [
+        "1",
+        "-1",
+        "-1"
+      ],
+      "core_segment_count": 2,
+      "exact_hash_candidates": 0,
+      "exact_segment_checks": 0,
+      "hash_invariant": "coplanarity scalar (u cross v) dot point",
+      "intersections": 0,
+      "push_direction": [
+        "1",
+        "1",
+        "-1"
+      ],
+      "push_segment_count": 3024
+    },
+    {
+      "core_direction": [
+        "1",
+        "-1",
+        "-1"
+      ],
+      "core_segment_count": 2,
+      "exact_hash_candidates": 0,
+      "exact_segment_checks": 0,
+      "hash_invariant": "coplanarity scalar (u cross v) dot point",
+      "intersections": 0,
+      "push_direction": [
+        "1",
+        "1",
+        "1"
+      ],
+      "push_segment_count": 3778
+    },
+    {
+      "core_direction": [
+        "1",
+        "-1",
+        "1"
+      ],
+      "core_segment_count": 3778,
+      "exact_hash_candidates": 0,
+      "exact_segment_checks": 0,
+      "hash_invariant": "coplanarity scalar (u cross v) dot point",
+      "intersections": 0,
+      "push_direction": [
+        "1",
+        "-1",
+        "-1"
+      ],
+      "push_segment_count": 2
+    },
+    {
+      "core_direction": [
+        "1",
+        "-1",
+        "1"
+      ],
+      "core_segment_count": 3778,
+      "exact_hash_candidates": 0,
+      "exact_segment_checks": 0,
+      "hash_invariant": "parallel-line vector point cross direction",
+      "intersections": 0,
+      "push_direction": [
+        "1",
+        "-1",
+        "1"
+      ],
+      "push_segment_count": 3778
+    },
+    {
+      "core_direction": [
+        "1",
+        "-1",
+        "1"
+      ],
+      "core_segment_count": 3778,
+      "exact_hash_candidates": 0,
+      "exact_segment_checks": 0,
+      "hash_invariant": "coplanarity scalar (u cross v) dot point",
+      "intersections": 0,
+      "push_direction": [
+        "1",
+        "1",
+        "-1"
+      ],
+      "push_segment_count": 3024
+    },
+    {
+      "core_direction": [
+        "1",
+        "-1",
+        "1"
+      ],
+      "core_segment_count": 3778,
+      "exact_hash_candidates": 0,
+      "exact_segment_checks": 0,
+      "hash_invariant": "coplanarity scalar (u cross v) dot point",
+      "intersections": 0,
+      "push_direction": [
+        "1",
+        "1",
+        "1"
+      ],
+      "push_segment_count": 3778
+    },
+    {
+      "core_direction": [
+        "1",
+        "1",
+        "-1"
+      ],
+      "core_segment_count": 3024,
+      "exact_hash_candidates": 0,
+      "exact_segment_checks": 0,
+      "hash_invariant": "coplanarity scalar (u cross v) dot point",
+      "intersections": 0,
+      "push_direction": [
+        "1",
+        "-1",
+        "-1"
+      ],
+      "push_segment_count": 2
+    },
+    {
+      "core_direction": [
+        "1",
+        "1",
+        "-1"
+      ],
+      "core_segment_count": 3024,
+      "exact_hash_candidates": 0,
+      "exact_segment_checks": 0,
+      "hash_invariant": "coplanarity scalar (u cross v) dot point",
+      "intersections": 0,
+      "push_direction": [
+        "1",
+        "-1",
+        "1"
+      ],
+      "push_segment_count": 3778
+    },
+    {
+      "core_direction": [
+        "1",
+        "1",
+        "-1"
+      ],
+      "core_segment_count": 3024,
+      "exact_hash_candidates": 0,
+      "exact_segment_checks": 0,
+      "hash_invariant": "parallel-line vector point cross direction",
+      "intersections": 0,
+      "push_direction": [
+        "1",
+        "1",
+        "-1"
+      ],
+      "push_segment_count": 3024
+    },
+    {
+      "core_direction": [
+        "1",
+        "1",
+        "-1"
+      ],
+      "core_segment_count": 3024,
+      "exact_hash_candidates": 791,
+      "exact_segment_checks": 791,
+      "hash_invariant": "coplanarity scalar (u cross v) dot point",
+      "intersections": 0,
+      "push_direction": [
+        "1",
+        "1",
+        "1"
+      ],
+      "push_segment_count": 3778
+    },
+    {
+      "core_direction": [
+        "1",
+        "1",
+        "1"
+      ],
+      "core_segment_count": 3778,
+      "exact_hash_candidates": 0,
+      "exact_segment_checks": 0,
+      "hash_invariant": "coplanarity scalar (u cross v) dot point",
+      "intersections": 0,
+      "push_direction": [
+        "1",
+        "-1",
+        "-1"
+      ],
+      "push_segment_count": 2
+    },
+    {
+      "core_direction": [
+        "1",
+        "1",
+        "1"
+      ],
+      "core_segment_count": 3778,
+      "exact_hash_candidates": 0,
+      "exact_segment_checks": 0,
+      "hash_invariant": "coplanarity scalar (u cross v) dot point",
+      "intersections": 0,
+      "push_direction": [
+        "1",
+        "-1",
+        "1"
+      ],
+      "push_segment_count": 3778
+    },
+    {
+      "core_direction": [
+        "1",
+        "1",
+        "1"
+      ],
+      "core_segment_count": 3778,
+      "exact_hash_candidates": 791,
+      "exact_segment_checks": 791,
+      "hash_invariant": "coplanarity scalar (u cross v) dot point",
+      "intersections": 0,
+      "push_direction": [
+        "1",
+        "1",
+        "-1"
+      ],
+      "push_segment_count": 3024
+    },
+    {
+      "core_direction": [
+        "1",
+        "1",
+        "1"
+      ],
+      "core_segment_count": 3778,
+      "exact_hash_candidates": 0,
+      "exact_segment_checks": 0,
+      "hash_invariant": "parallel-line vector point cross direction",
+      "intersections": 0,
+      "push_direction": [
+        "1",
+        "1",
+        "1"
+      ],
+      "push_segment_count": 3778
+    }
+  ],
+  "exact_hash_candidate_count": 1582,
+  "exact_segment_check_count": 1582,
+  "push_push_clearance": "PASS_BY_COMMON_TRANSLATION_OF_EMBEDDED_STUB_CORES",
+  "push_segment_count": 10582,
+  "schema": "t73_x_m1_stub_core_push_clearance/v1",
+  "sha256": "4FB8DF1808A24CDAEE65D271FFC45A826245D67037BD2D8171EA888C11ED3F86",
+  "stub_r3_push_paths_receipt_sha256": "DEC508ECF0C68AFC388131F166F9E05AB225AED3D0149A7BD4B38C8B79EC3682",
+  "stub_source_normal_homotopy_sha256": "D29990B866967D57FA0CF309701BF1F359F99F7E8F956381AF9D0ACE180EE567",
+  "verdict": "PASS_X_M1_STUB_CORE_PUSH_CLEARANCE"
+}

@@ -630,6 +630,15 @@ stub framing 现也完成 source-relative 绑定。收据
 6,052 条 paths、10,582 个 segments，relative twist 为 0。verdict 为
 `PASS_X_M1_STUB_SOURCE_NORMAL_HOMOTOPY`。
 
+stub core/push paths 也通过第一层全局 clearance。10,582 个 segments 只有四个
+精确空间方向类。收据
+[`audit/t73_x_m1_stub_core_push_clearance.json`](audit/t73_x_m1_stub_core_push_clearance.json)
+对全部 16 个方向配对使用 coplanarity scalar `(u cross v) dot point` 或平行线
+向量 `point cross direction` 作精确有理哈希，仅 1,582 个候选存活，全部精确
+线段方程无交。push/push clearance 由嵌入 stub cores 的共同平移直接保持。
+verdict 为 `PASS_X_M1_STUB_CORE_PUSH_CLEARANCE`。stub ribbon/segment 与
+ribbon/ribbon clearance 仍为 OPEN。
+
 全局线性投影探测记录于
 [`audit/t73_affine_s3_projection_probe.json`](audit/t73_affine_s3_projection_probe.json)。
 xz/yz 会压扁 dotted edges；三个 regular tilts 至少产生258,453,247个 broad
