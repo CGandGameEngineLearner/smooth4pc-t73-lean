@@ -109,11 +109,11 @@ def check_pair(pair, groups, broad):
     }
 
 
-def build():
-    collars = json.loads(COLLARS.read_text())
-    matrices = json.loads(MATRICES.read_text())
-    if matrices["outer_collars_v4_receipt_sha256"] != collars["sha256"]:
-        raise AssertionError("v4 matrices are stale")
+def build(collars_path=COLLARS, matrices_path=MATRICES, version="v4"):
+    collars = json.loads(collars_path.read_text())
+    matrices = json.loads(matrices_path.read_text())
+    if matrices[f"outer_collars_{version}_receipt_sha256"] != collars["sha256"]:
+        raise AssertionError(f"{version} matrices are stale")
     groups = load(collars)
     counts = matrices["core_matrix"]
     pairs = FUNCTIONAL_PAIRS | INTERFACE_PAIRS | DIRECT_PAIRS
@@ -124,9 +124,9 @@ def build():
     if {result["pair"] for result in results} != set(counts):
         raise AssertionError("v4 core proof does not consume the complete matrix")
     result = {
-        "schema": "t73_x_m1_outer_collar_v4_core_clearance/v1",
-        "outer_collars_v4_receipt_sha256": collars["sha256"],
-        "v4_one_skeleton_matrices_sha256": matrices["sha256"],
+        "schema": f"t73_x_m1_outer_collar_{version}_core_clearance/v1",
+        f"outer_collars_{version}_receipt_sha256": collars["sha256"],
+        f"{version}_one_skeleton_matrices_sha256": matrices["sha256"],
         "core_segment_count": sum(len(group) for group in groups.values()),
         "type_pair_results": results,
         "covered_type_pair_count": len(results),
@@ -142,7 +142,7 @@ def build():
         ),
         "intersection_count": 0,
         "global_core_clearance": True,
-        "verdict": "PASS_X_M1_OUTER_COLLAR_V4_CORE_CLEARANCE",
+        "verdict": f"PASS_X_M1_OUTER_COLLAR_{version.upper()}_CORE_CLEARANCE",
     }
     result["sha256"] = canonical_sha(result)
     return result

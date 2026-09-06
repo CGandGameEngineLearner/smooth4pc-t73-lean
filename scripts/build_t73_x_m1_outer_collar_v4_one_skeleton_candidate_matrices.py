@@ -116,9 +116,9 @@ def encode_matrix(counts, directed):
     }
 
 
-def build():
-    collars = json.loads(COLLARS.read_text())
-    local = json.loads(LOCAL_VERIFY.read_text())
+def build(collars_path=COLLARS, local_verify_path=LOCAL_VERIFY, version="v4"):
+    collars = json.loads(collars_path.read_text())
+    local = json.loads(local_verify_path.read_text())
     if local["construction_receipt_sha256"] != collars["sha256"]:
         raise AssertionError("v4 local verification is stale")
     core = []
@@ -142,9 +142,9 @@ def build():
     push_matrix = matrix(push, push, True)
     mutual_matrix = matrix(core, push, False)
     result = {
-        "schema": "t73_x_m1_outer_collar_v4_one_skeleton_candidate_matrices/v1",
-        "outer_collars_v4_receipt_sha256": collars["sha256"],
-        "outer_collars_v4_local_verification_sha256": local["sha256"],
+        "schema": f"t73_x_m1_outer_collar_{version}_one_skeleton_candidate_matrices/v1",
+        f"outer_collars_{version}_receipt_sha256": collars["sha256"],
+        f"outer_collars_{version}_local_verification_sha256": local["sha256"],
         "core_segment_count": len(core),
         "push_segment_count": len(push),
         "segment_type_names": list(TYPE_NAMES),
@@ -170,8 +170,8 @@ def build():
             TYPE_NAMES[index] for index in constant_types(push, lambda value: value[2])
         ],
         "end_exterior_height_offset": collars["end_exterior_height_offset"],
-        "clearance_status": "OPEN_APPLY_V4_EXACT_HASH_INTERVAL_AND_GMP_REDUCTIONS",
-        "verdict": "PASS_X_M1_OUTER_COLLAR_V4_ONE_SKELETON_CANDIDATE_MATRICES_ONLY",
+        "clearance_status": f"OPEN_APPLY_{version.upper()}_EXACT_HASH_INTERVAL_AND_GMP_REDUCTIONS",
+        "verdict": f"PASS_X_M1_OUTER_COLLAR_{version.upper()}_ONE_SKELETON_CANDIDATE_MATRICES_ONLY",
     }
     result["sha256"] = canonical_sha(result)
     return result

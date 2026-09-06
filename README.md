@@ -432,6 +432,15 @@ Johnson collars remain unchanged. Its 9,504,077-byte cache has the same
 planes and four coplanar opposite-side dual germs. See
 [`audit/t73_x_m1_framed_outer_interface_collars_v5_verification.json`](audit/t73_x_m1_framed_outer_interface_collars_v5_verification.json).
 V5 remains `CANDIDATE_UNVERIFIED` until fresh global matrices pass.
+
+Those V5 matrices and one-skeleton clearances now pass. Core, push and
+directed mutual broad counts are 14,249,042, 14,249,042 and 28,516,174;
+their exact GMP counts are 6,048, 75,610 and 90,784, all with zero
+intersections. The ribbon artifact
+[`audit/t73_x_m1_outer_collar_v5_ribbon_candidate_matrix.json`](audit/t73_x_m1_outer_collar_v5_ribbon_candidate_matrix.json)
+contains 18,156 rectangles/36,312 triangles, all 15,134 valid local stars and
+14,233,908 nonincident candidates in eight semantic type pairs. V5 remains
+candidate-only until those eight rectangle families pass exact clearance.
 The graph map extends over all five framed regular neighborhoods in
 [`geometry/t73_hybrid_to_railroad_tubular_map.json`](geometry/t73_hybrid_to_railroad_tubular_map.json).
 Its five solid-torus templates contain 5385 tetrahedra and 10770 boundary

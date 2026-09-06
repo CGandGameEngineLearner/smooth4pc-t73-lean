@@ -537,6 +537,14 @@ dual germs 共面反向。见
 [`audit/t73_x_m1_framed_outer_interface_collars_v5_verification.json`](audit/t73_x_m1_framed_outer_interface_collars_v5_verification.json)。
 新的全局矩阵通过前，V5 仍为 `CANDIDATE_UNVERIFIED`。
 
+V5 三张矩阵与 one-skeleton clearance 现已通过。core、push、有向 mutual 的
+broad counts 分别为 14,249,042、14,249,042、28,516,174；对应 GMP 精确检查
+为 6,048、75,610、90,784，交点均为 0。ribbon artifact
+[`audit/t73_x_m1_outer_collar_v5_ribbon_candidate_matrix.json`](audit/t73_x_m1_outer_collar_v5_ribbon_candidate_matrix.json)
+包含 18,156 个 rectangles/36,312 个 triangles、全部 15,134 个合法局部星，
+以及 8 个语义类型对中的 14,233,908 个非 incidence candidates。八类矩形通过
+精确 clearance 前，V5 仍只算 candidate。
+
 第一个跨系统门禁找到并修复了真实碰撞，没有提前升级该 assembly。流式 Rust
 1.98.1 checker 位于
 [`rust/t73_exact_cross_clearance`](rust/t73_exact_cross_clearance)，使用

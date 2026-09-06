@@ -5049,6 +5049,42 @@ Topology-source checks completed 2026-09-04:
   nonincident ribbon matrices and exact clearance must be regenerated from
   V5 before constructing isotopy traces or ambient support.
 
+### F-599AY — V5 one-skeleton is globally embedded after changing only eight lifts
+
+- Severity: **Positive V5 one-skeleton clearance / minimal repair retained**
+- Status: **CORE, PUSH AND MUTUAL PASS; RIBBON NONINCIDENT OPEN**
+- Evidence: `audit/t73_x_m1_outer_collar_v5_one_skeleton_candidate_matrices.json`,
+  the V5 core, push and core/push clearance artifacts, their shared versioned
+  engines, wrappers and regression test.
+- Fresh matrices: core/core and push/push have 14,249,042 broad candidates;
+  directed core/push has 28,516,174. They retain eleven, eleven and 22
+  normalized semantic type pairs. No V4 count is substituted.
+- Exact results: V5 core requires 6,048 GMP segment equations, push requires
+  75,610, and directed mutual requires 90,784. All intersections are zero.
+  Verdicts are `PASS_X_M1_OUTER_COLLAR_V5_CORE_CLEARANCE`,
+  `PASS_X_M1_OUTER_COLLAR_V5_PUSH_CLEARANCE`, and
+  `PASS_X_M1_OUTER_COLLAR_V5_CORE_PUSH_CLEARANCE`.
+- Boundary: this upgrades the V5 one-skeleton only. Ribbon and ambient support
+  remain open.
+
+### F-599AZ — Every V5 local ribbon star passes and the nonincident matrix is complete
+
+- Severity: **Ribbon verification decomposition / local PL link pass**
+- Status: **LOCAL STARS PASS; EIGHT NONINCIDENT TYPE PAIRS OPEN**
+- Evidence: `audit/t73_x_m1_outer_collar_v5_ribbon_candidate_matrix.json`, its
+  versioned builder and regression test, bound to F-599AY mutual clearance.
+- Local stars: all 15,130 same-interface successive rectangle stars have
+  transverse planes. The four shared dual source-germ stars are coplanar on
+  opposite sides. Thus V4's same-side fold is absent.
+- Matrix: 18,156 ruled rectangles (36,312 triangles) give 14,249,042 expanded
+  AABB pairs. Removing 15,134 declared local adjacencies leaves 14,233,908
+  nonincident candidates in exactly eight unordered semantic type pairs.
+- Boundary: verdict
+  `PASS_X_M1_OUTER_COLLAR_V5_RIBBON_CANDIDATE_MATRIX_AND_LOCAL_STARS_ONLY`
+  is matrix/local-star evidence, not global ribbon clearance. Each of the
+  eight families must receive exact ruled-rectangle separation before V5 can
+  be upgraded or used for an ambient isotopy support.
+
 ### F-599C — Monolithic linear projections of the affine framed link are computationally unsuitable
 
 - Severity: **complete PD / projection selection**

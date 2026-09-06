@@ -91,6 +91,7 @@ def build(output_path):
         "v4_ribbon_obstruction_sha256": obstruction["sha256"],
         "dual_lift_direction": [str(value) for value in DUAL_LIFT],
         "dual_lift_denominator": DUAL_LIFT_DENOMINATOR,
+        "end_exterior_height_offset": str(END_OFFSET),
         "routing_functional": [str(-SLOPE), "1", str(FUNCTIONAL_Z)],
         "construction_classification": "CANDIDATE_UNVERIFIED_UNTIL_ALL_GLOBAL_AND_AMBIENT_CHECKS",
     }
@@ -186,6 +187,7 @@ def build(output_path):
         "v4_ribbon_obstruction_sha256": obstruction["sha256"],
         "dual_lift_direction": [str(value) for value in DUAL_LIFT],
         "dual_lift_denominator": DUAL_LIFT_DENOMINATOR,
+        "end_exterior_height_offset": str(END_OFFSET),
         "changed_dual_collar_count": changed,
         "unchanged_johnson_collar_count": unchanged,
         "collar_count": records,

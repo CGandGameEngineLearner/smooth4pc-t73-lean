@@ -129,11 +129,15 @@ def same_side_certificate(first, second, edge):
     }
 
 
-def build():
-    collars = json.loads(COLLARS.read_text())
-    one_skeleton = json.loads(ONE_SKELETON.read_text())
+def build(
+    collars_path=COLLARS,
+    one_skeleton_path=ONE_SKELETON,
+    version="v4",
+):
+    collars = json.loads(collars_path.read_text())
+    one_skeleton = json.loads(one_skeleton_path.read_text())
     if (
-        one_skeleton["outer_collars_v4_receipt_sha256"] != collars["sha256"]
+        one_skeleton[f"outer_collars_{version}_receipt_sha256"] != collars["sha256"]
         or not one_skeleton["global_core_push_clearance"]
     ):
         raise AssertionError("v4 mutual one-skeleton clearance is stale or failed")
@@ -157,9 +161,9 @@ def build():
             star_counts[f"same_interface/{relation}"] += 1
             if relation == "COPLANAR_SAME_SIDE_OVERLAP":
                 result = {
-                    "schema": "t73_x_m1_outer_collar_v4_ribbon_candidate_matrix/v1",
-                    "outer_collars_v4_receipt_sha256": collars["sha256"],
-                    "v4_core_push_clearance_sha256": one_skeleton["sha256"],
+                    "schema": f"t73_x_m1_outer_collar_{version}_ribbon_candidate_matrix/v1",
+                    f"outer_collars_{version}_receipt_sha256": collars["sha256"],
+                    f"{version}_core_push_clearance_sha256": one_skeleton["sha256"],
                     "collision": {
                         "kind": relation,
                         "interface": interface,
@@ -169,7 +173,7 @@ def build():
                     },
                     "global_ribbon_clearance": False,
                     "classification": "CANDIDATE_REFUTED",
-                    "verdict": "REFUTED_X_M1_OUTER_COLLAR_V4_RIBBON_LOCAL_STAR",
+                    "verdict": f"REFUTED_X_M1_OUTER_COLLAR_{version.upper()}_RIBBON_LOCAL_STAR",
                 }
                 result["sha256"] = canonical_sha(result)
                 return result
@@ -223,9 +227,9 @@ def build():
                 continue
             matrix[tuple(sorted((first["type"], second["type"])))] += 1
     result = {
-        "schema": "t73_x_m1_outer_collar_v4_ribbon_candidate_matrix/v1",
-        "outer_collars_v4_receipt_sha256": collars["sha256"],
-        "v4_core_push_clearance_sha256": one_skeleton["sha256"],
+        "schema": f"t73_x_m1_outer_collar_{version}_ribbon_candidate_matrix/v1",
+        f"outer_collars_{version}_receipt_sha256": collars["sha256"],
+        f"{version}_core_push_clearance_sha256": one_skeleton["sha256"],
         "collar_count": collars["collar_count"],
         "rectangle_count": len(rectangles),
         "ribbon_triangle_count": 2 * len(rectangles),
@@ -240,7 +244,7 @@ def build():
         "nonincident_candidate_count": sum(matrix.values()),
         "nonempty_nonincident_type_pair_count": len(matrix),
         "clearance_status": "OPEN_APPLY_EXACT_RULED_RECTANGLE_SEPARATION",
-        "verdict": "PASS_X_M1_OUTER_COLLAR_V4_RIBBON_CANDIDATE_MATRIX_AND_LOCAL_STARS_ONLY",
+        "verdict": f"PASS_X_M1_OUTER_COLLAR_{version.upper()}_RIBBON_CANDIDATE_MATRIX_AND_LOCAL_STARS_ONLY",
     }
     result["sha256"] = canonical_sha(result)
     return result
