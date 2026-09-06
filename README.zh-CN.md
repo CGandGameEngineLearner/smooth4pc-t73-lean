@@ -658,6 +658,26 @@ ruled rectangles 全局互不相交。首次或上游改变后执行完整重放
 日常只检查 artifact/cache/builder/verifier 字节绑定时改用 `--check-files`。verdict 为
 `PASS_X_M1_STUB_RIBBON_CROSS_BAND_CLEARANCE`。
 
+每个 band 的两个 transition-side framing ports 现也已显式构造。cache
+`C:\Users\Administrator\.cache\t73_x_m1_negative_transition_push_paths_v3.jsonl.gz`
+包含 3,026 条负高度 transition push paths、各 18,156 个 core/push segments
+和 36,312 个 ruled triangles。每条 path 除最后一个切换段外保持已验证 stub
+法向；该段通过精确线性 normal homotopy 接到平移后的 m1-annulus product push。
+全部 6,052 个 stub/middle core 与 push ports 精确相等，homotopy 对所有实参数
+保持横截，relative twist 总和为 0。构造与完整重放收据分别为
+[`audit/t73_x_m1_negative_transition_push_paths_v3_receipt.json`](audit/t73_x_m1_negative_transition_push_paths_v3_receipt.json)
+和
+[`audit/t73_x_m1_negative_transition_push_paths_v3_verification.json`](audit/t73_x_m1_negative_transition_push_paths_v3_verification.json)。
+重建与验证命令：
+
+```bash
+python3 scripts/build_t73_x_m1_negative_transition_push_paths_v3.py
+python3 scripts/build_t73_x_m1_negative_transition_push_paths_v3_verification.py --write
+```
+
+verdict 为 `PASS_X_M1_NEGATIVE_TRANSITION_PUSH_PATHS_V3_FULL_LOCAL`。新 transition
+ribbons 的全局 clearance 仍为 OPEN，不能由已经闭合的 core embedding 自动推出。
+
 全局线性投影探测记录于
 [`audit/t73_affine_s3_projection_probe.json`](audit/t73_affine_s3_projection_probe.json)。
 xz/yz 会压扁 dotted edges；三个 regular tilts 至少产生258,453,247个 broad

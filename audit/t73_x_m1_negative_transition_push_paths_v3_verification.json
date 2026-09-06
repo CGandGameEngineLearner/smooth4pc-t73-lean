@@ -1,0 +1,22 @@
+{
+  "builder_path": "scripts/build_t73_x_m1_negative_transition_push_paths_v3.py",
+  "builder_sha256": "C20A19494763C7DED694E88E119DD903C69A26C44EEE1375DC7C5D29DCD0259F",
+  "cache_sha256": "1AC6EAA1367B7915654C046D0068A81A0570E826F9B457226BC4D970578066DD",
+  "construction_receipt_sha256": "8B54E36C1421F623331186E33742F7D480423BC15A790F194BB5CAEE3797123D",
+  "full_result": {
+    "cache_sha_checked": true,
+    "core_push_segments_each": 18156,
+    "endpoint_push_port_matches": 6052,
+    "global_clearance": "OPEN",
+    "linear_normal_homotopies": 3026,
+    "relative_twist_sum": 0,
+    "ribbon_triangles": 36312,
+    "transitions": 3026,
+    "verdict": "PASS_X_M1_NEGATIVE_TRANSITION_PUSH_PATHS_V3_FULL_LOCAL"
+  },
+  "schema": "t73_x_m1_negative_transition_push_paths_v3_verification/v1",
+  "sha256": "8287CA4EF305B64E90FF195467970BEDAE950621653F77E09712E272C124FE4C",
+  "verdict": "PASS_X_M1_NEGATIVE_TRANSITION_PUSH_PATHS_V3_FULL_LOCAL",
+  "verifier_path": "scripts/verify_t73_x_m1_negative_transition_push_paths_v3.py",
+  "verifier_sha256": "A2BE8D8CDEBB06B59630FCBC4AF479FEF8624C8E127CF8F894184188DAE03AA8"
+}

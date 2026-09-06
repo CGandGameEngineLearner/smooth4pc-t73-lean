@@ -197,6 +197,29 @@ globally disjoint. Run the expensive full replay once with
 for routine byte/payload/cache/builder/verifier binding checks use the same command
 with `--check-files`. Verdict:
 `PASS_X_M1_STUB_RIBBON_CROSS_BAND_CLEARANCE`.
+
+The two transition-side framing ports per band are now explicit as well. The
+cache `C:\Users\Administrator\.cache\t73_x_m1_negative_transition_push_paths_v3.jsonl.gz`
+contains 3,026 negative-height transition push paths, 18,156 core/push
+segments each, and 36,312 ruled triangles. Each path keeps the verified stub
+normal except on one terminal segment, where an exact linear normal homotopy
+lands on the translated m1-annulus product push. All 6,052 stub/middle core
+and push ports match exactly, the homotopies stay transverse for every real
+parameter, and total relative twist is zero. The construction and full replay
+receipts are
+[`audit/t73_x_m1_negative_transition_push_paths_v3_receipt.json`](audit/t73_x_m1_negative_transition_push_paths_v3_receipt.json)
+and
+[`audit/t73_x_m1_negative_transition_push_paths_v3_verification.json`](audit/t73_x_m1_negative_transition_push_paths_v3_verification.json).
+Rebuild and verify with:
+
+```bash
+python3 scripts/build_t73_x_m1_negative_transition_push_paths_v3.py
+python3 scripts/build_t73_x_m1_negative_transition_push_paths_v3_verification.py --write
+```
+
+Verdict: `PASS_X_M1_NEGATIVE_TRANSITION_PUSH_PATHS_V3_FULL_LOCAL`. Global
+clearance of the new transition ribbons remains open and is not inferred from
+the already-complete core embedding.
 The graph map extends over all five framed regular neighborhoods in
 [`geometry/t73_hybrid_to_railroad_tubular_map.json`](geometry/t73_hybrid_to_railroad_tubular_map.json).
 Its five solid-torus templates contain 5385 tetrahedra and 10770 boundary

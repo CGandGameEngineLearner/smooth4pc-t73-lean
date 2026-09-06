@@ -4533,8 +4533,36 @@ Topology-source checks completed 2026-09-04:
   builder and verifier paths/bytes, counts, margin, and saved full result.
 - Consequence/boundary: all 6,052 stub push paths and their 10,582 framing
   rectangles now form a global embedded source-normal-compatible system.
-  This closes the stub-ribbon subproblem only; transition-side push ports and
-  the later unified Kirby movie / C / S witnesses remain open.
+  F-599AE supplies the transition-side push ports; their global ribbon
+  clearance and the later unified Kirby movie / C / S witnesses remain open.
+
+### F-599AE — Every negative v3 transition has an exact stub-to-middle push path
+
+- Severity: **Positive framing construction / transition port gluing**
+- Status: **ALL LOCAL PUSH PATHS AND PORTS PASS; GLOBAL CLEARANCE OPEN**
+- Evidence: `audit/t73_x_m1_negative_transition_push_paths_v3_receipt.json`,
+  `audit/t73_x_m1_negative_transition_push_paths_v3_verification.json`, the
+  9,362,076-byte cache named by the construction receipt, independent full
+  verifier, daily binding checker, and regression test.
+- Construction: each of the 3,026 F-599W negative-height transition cores has
+  seven vertices. On the shell side its push normal is the F-599AA/AD vector
+  `delta*(1,1,2)`. On the middle side it is the literal difference between
+  the F-594 translated m1-annulus push and core. The normal stays constant on
+  five segments and interpolates linearly on exactly one terminal segment.
+- Exact local proof: for every segment the verifier forms the two endpoint
+  vectors `tangent cross normal`. It solves the vector affine-zero equation,
+  rather than merely sampling, and proves that no parameter in `[0,1]` loses
+  transversality. Both triangles of every ruled quadrilateral are nondegenerate.
+  Totals are 18,156 core segments, 18,156 push segments, 36,312 triangles and
+  3,026 exact normal homotopies, with relative twist sum zero.
+- Ports: the 3,026 shell core/push endpoints equal the appropriate
+  `target_complement_first/last` stub endpoints; the other 3,026 core/push
+  endpoints equal the translated middle-annulus endpoints. Thus all 6,052
+  previously open transition-side push-port equations are closed exactly.
+  Verdict: `PASS_X_M1_NEGATIVE_TRANSITION_PUSH_PATHS_V3_FULL_LOCAL`.
+- Boundary: this is a verified local framed extension and does not claim the
+  36,312 transition ribbon triangles are globally clear of one another or of
+  stub, band and middle ribbons. That exact global clearance is next.
 
 ### F-599C — Monolithic linear projections of the affine framed link are computationally unsuitable
 
