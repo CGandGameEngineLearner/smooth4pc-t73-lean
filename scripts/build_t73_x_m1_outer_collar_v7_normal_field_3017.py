@@ -8,7 +8,7 @@ import gzip
 import hashlib
 import json
 from fractions import Fraction
-from itertools import pairwise
+from itertools import pairwise, product
 from pathlib import Path
 
 from build_t73_x_m1_outer_collar_core_push_clearance import segment_intersects
@@ -71,17 +71,29 @@ def load_local_record(receipt):
 
 
 def normal_path(source_normal):
-    scale = Fraction(1, 500)
-    negative = -scale
-    return [
-        *([source_normal] * 6),
-        (Fraction(0), scale, Fraction(0)),
-        *([(negative, negative, negative)] * 7),
-        *([(negative, negative, scale)] * 2),
-        (negative, negative, Fraction(0)),
-        (scale, negative, scale),
-        *([source_normal] * 4),
+    candidates = [source_normal] + [
+        tuple(Fraction(value, 500) for value in direction)
+        for direction in product((-1, 0, 1), repeat=3)
+        if direction != (0, 0, 0)
     ]
+    indices = (0, 0, 0, 0, 0, 0, 16, 1, 1, 1, 1, 1, 1, 3, 3, 2, 12, 0, 0, 0, 0, 0)
+    return [candidates[index] for index in indices], indices
+
+
+def complementary_cells(mode):
+    cells = []
+    for edge in range(5):
+        if mode == "CANONICAL_FORWARD":
+            cells.extend(
+                ([6 + edge, 6 + edge + 1, edge + 1], [6 + edge, edge + 1, edge])
+            )
+        elif mode == "TIME_REVERSE_OF_CANONICAL_BACKWARD":
+            cells.extend(
+                ([edge, edge + 1, 6 + edge + 1], [edge, 6 + edge + 1, 6 + edge])
+            )
+        else:
+            raise AssertionError("unknown core transition mode")
+    return cells
 
 
 def build():
@@ -110,7 +122,7 @@ def build():
         point(value) for value in record["phase_one_push_final_constant_normal_route"]
     ]
     source_normal = subtract(initial_push[0], initial_core[0])
-    normals = normal_path(source_normal)
+    normals, normal_indices = normal_path(source_normal)
     core_states = [[point(vertex) for vertex in state] for state in core["states"]]
     if len(normals) != 22 or len(core_states) != 22:
         raise AssertionError("normal path length changed")
@@ -155,12 +167,13 @@ def build():
             )
             for vertex in core_vertices
         ]
-        cells = core_transition["trace_triangles"]
+        core_cells = core_transition["trace_triangles"]
+        push_cells = complementary_cells(core_transition["triangulation_mode"])
         core_triangles = [
-            tuple(core_vertices[vertex] for vertex in cell) for cell in cells
+            tuple(core_vertices[vertex] for vertex in cell) for cell in core_cells
         ]
         push_triangles = [
-            tuple(push_vertices[vertex] for vertex in cell) for cell in cells
+            tuple(push_vertices[vertex] for vertex in cell) for cell in push_cells
         ]
         for triangle in push_triangles:
             push_rank_checks += 1
@@ -175,11 +188,14 @@ def build():
                             raise AssertionError(
                                 "normal-field push trace self-intersects"
                             )
-        for first in core_triangles:
-            for second in push_triangles:
+        for core_index, first in enumerate(core_triangles):
+            for push_index, second in enumerate(push_triangles):
                 core_push_checks += 1
                 if triangles_intersect(first, second):
-                    raise AssertionError("normal-field core and push traces intersect")
+                    raise AssertionError(
+                        "normal-field core and push traces intersect: "
+                        f"transition={index} core={core_index} push={push_index}"
+                    )
         transitions.append(
             {
                 "transition_index": index,
@@ -190,7 +206,7 @@ def build():
                     [str(coordinate) for coordinate in vertex]
                     for vertex in push_vertices
                 ],
-                "trace_triangles": cells,
+                "trace_triangles": push_cells,
             }
         )
     expected = (110, 550, 132, 210, 504, 2100)
@@ -211,12 +227,14 @@ def build():
         "interface_index": INTERFACE,
         "candidate_normal_scale": "1/500",
         "candidate_direction_alphabet": [-1, 0, 1],
+        "normal_path_candidate_indices": list(normal_indices),
         "source_normal": [str(value) for value in source_normal],
         "state_count": len(core_states),
         "normal_path": [[str(value) for value in normal] for normal in normals],
         "push_states": [encode_state(state) for state in push_states],
         "transition_count": len(transitions),
         "push_transitions": transitions,
+        "push_diagonal_policy": "COMPLEMENT_CORE_DIAGONAL_ON_EACH_EDGE",
         "framing_transversality_check_count": transversality_checks,
         "state_core_push_segment_check_count": state_core_push_checks,
         "push_state_self_segment_check_count": state_push_self_checks,

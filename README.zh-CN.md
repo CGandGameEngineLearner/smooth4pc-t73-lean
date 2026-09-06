@@ -883,9 +883,9 @@ python3 -m unittest tests.test_t73_x_m1_outer_collar_v7_normal_field_3017
 该 normal field 的全局 one-skeleton clearance 位于
 [`audit/t73_x_m1_outer_collar_v7_normal_field_static_clearance_3017.json`](audit/t73_x_m1_outer_collar_v7_normal_field_static_clearance_3017.json)。
 同时存在的 reverse mixture 含 12,260 个静态 vertical core/push triangles。
-四个精确矩阵——moving-core/final-core、moving-core/final-push、
-moving-push/final-core、moving-push/final-push——各有 333 个候选。两套实现
-重放全部 1,332 次精确 R4 triangle checks，交点为 0；source-static 候选也为
+moving-core/final-core 与 moving-core/final-push 各有333个候选；
+moving-push/final-core 与 moving-push/final-push 各有447个候选。两套实现
+重放全部 1,560 次精确 R4 triangle checks，交点为 0；source-static 候选也为
 0。因此 interface-3017 framed moving one-skeleton 已全局 clear。ribbon
 states 及其 world-volume 仍为 OPEN。
 
@@ -893,6 +893,21 @@ states 及其 world-volume 仍为 OPEN。
 python3 scripts/build_t73_x_m1_outer_collar_v7_normal_field_static_clearance_3017.py --write --check
 python3 scripts/verify_t73_x_m1_outer_collar_v7_normal_field_static_clearance_3017.py
 python3 -m unittest tests.test_t73_x_m1_outer_collar_v7_normal_field_static_clearance_3017
+```
+
+对应的局部 ribbon volume 位于
+[`geometry/t73_x_m1_outer_collar_v7_ribbon_volume_3017.json`](geometry/t73_x_m1_outer_collar_v7_ribbon_volume_3017.json)。
+core/push 两侧互补对角线决定 canonical 或显式 time-reversed triangular-prism
+templates。22 个 ribbon states 含 220 个 rank-two triangles、88 个合法局部
+stars 和 528 个非邻接精确检查。21 个 transition volumes 含 630 个 rank-three
+R4 tetrahedra、924 个 boundary triangles、84 个 endpoint-boundary triangles
+和 798 对 internal faces。独立重放验证全部计数和 cells。R4 tetrahedron
+self-clearance 及对 static ribbon volumes 的 clearance 仍为 OPEN。
+
+```bash
+python3 scripts/build_t73_x_m1_outer_collar_v7_ribbon_volume_3017.py --write --check
+python3 scripts/verify_t73_x_m1_outer_collar_v7_ribbon_volume_3017.py
+python3 -m unittest tests.test_t73_x_m1_outer_collar_v7_ribbon_volume_3017
 ```
 
 第一个跨系统门禁找到并修复了真实碰撞，没有提前升级该 assembly。流式 Rust

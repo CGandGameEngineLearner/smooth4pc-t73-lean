@@ -806,9 +806,9 @@ python3 -m unittest tests.test_t73_x_m1_outer_collar_v7_normal_field_3017
 Global one-skeleton clearance for that normal field is
 [`audit/t73_x_m1_outer_collar_v7_normal_field_static_clearance_3017.json`](audit/t73_x_m1_outer_collar_v7_normal_field_static_clearance_3017.json).
 The contemporaneous reverse mixture contains 12,260 static vertical core/push
-triangles. Four exact matrices—moving-core/final-core,
-moving-core/final-push, moving-push/final-core and moving-push/final-push—have
-333 candidates each. Both implementations replay all 1,332 exact R4 triangle
+triangles. The moving-core/final-core and moving-core/final-push matrices have
+333 candidates each; moving-push/final-core and moving-push/final-push have
+447 each. Both implementations replay all 1,560 exact R4 triangle
 checks and find zero intersections; source-static candidates are zero. Thus the
 interface-3017 framed moving one-skeleton is globally clear. Ribbon states and
 their world-volume remain open.
@@ -817,6 +817,22 @@ their world-volume remain open.
 python3 scripts/build_t73_x_m1_outer_collar_v7_normal_field_static_clearance_3017.py --write --check
 python3 scripts/verify_t73_x_m1_outer_collar_v7_normal_field_static_clearance_3017.py
 python3 -m unittest tests.test_t73_x_m1_outer_collar_v7_normal_field_static_clearance_3017
+```
+
+The corresponding local ribbon volume is
+[`geometry/t73_x_m1_outer_collar_v7_ribbon_volume_3017.json`](geometry/t73_x_m1_outer_collar_v7_ribbon_volume_3017.json).
+Complementary core/push side diagonals determine canonical or explicitly
+time-reversed triangular-prism templates. Twenty-two ribbon states contain 220
+rank-two triangles, 88 valid local stars and 528 nonincident exact checks.
+Twenty-one transition volumes contain 630 rank-three R4 tetrahedra, 924
+boundary triangles, 84 endpoint-boundary triangles and 798 paired internal
+faces. Independent replay verifies all counts and cells. R4 tetrahedron
+self-clearance and clearance against static ribbon volumes remain open.
+
+```bash
+python3 scripts/build_t73_x_m1_outer_collar_v7_ribbon_volume_3017.py --write --check
+python3 scripts/verify_t73_x_m1_outer_collar_v7_ribbon_volume_3017.py
+python3 -m unittest tests.test_t73_x_m1_outer_collar_v7_ribbon_volume_3017
 ```
 The graph map extends over all five framed regular neighborhoods in
 [`geometry/t73_hybrid_to_railroad_tubular_map.json`](geometry/t73_hybrid_to_railroad_tubular_map.json).

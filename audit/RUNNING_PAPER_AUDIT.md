@@ -5684,8 +5684,10 @@ Topology-source checks completed 2026-09-04:
   calculation with the already-verified core cells remains nonempty across all
   21 transitions, including the former failures 6, 13 and 20, and returns to
   the source normal at the final state. The saved path uses source normal at
-  states 0--5 and 18--21, `(0,1/500,0)` at state 6, several negative-octant
-  normals through the hub, and `(1/500,-1/500,1/500)` at state 17.
+  states 0--5 and 17--21, `(0,1/500,0)` at state 6, several negative-octant
+  normals through the hub, and `(0,-1/500,1/500)` at state 16. Push trace
+  diagonals are the per-edge complements of core diagonals, as required by
+  the boundary of the ribbon prism; copying core diagonals was superseded.
 - Exact replay: the push states are derived, not assigned, by translating every
   core vertex by its state normal. The independent verifier reconstructs all
   22 states and 21 push transitions, checks 110 framing transversality
@@ -5712,10 +5714,10 @@ Topology-source checks completed 2026-09-04:
   types above 3017, triangulated as 12,260 vertical R4 triangles. Every one of
   the 210 moving core and 210 moving push triangles is queried by the same
   twelve outward-rounded functionals used in F-599BU.
-- Exact result: the only nonempty matrices are moving-core/final-core,
-  moving-core/final-push, moving-push/final-core and moving-push/final-push,
-  each with exactly 333 candidates. The independent verifier reconstructs and
-  solves all 1,332 R4 triangle pairs. Source-static candidates and all
+- Exact result: moving-core/final-core and moving-core/final-push each have
+  333 candidates; moving-push/final-core and moving-push/final-push each have
+  447. The independent verifier reconstructs and solves all 1,560 R4 triangle
+  pairs. Source-static candidates and all
   intersections are zero. Verdict:
   `PASS_X_M1_OUTER_COLLAR_V7_NORMAL_FIELD_STATIC_CLEARANCE_3017_INDEPENDENT`.
 - Consequence/boundary: F-599BY plus this result closes the complete moving
@@ -5723,6 +5725,33 @@ Topology-source checks completed 2026-09-04:
   static mixture. It does not construct the five ruled ribbon rectangles at
   each state or their 3-dimensional R4 world-volume, and it does not yet test
   retained/replacement geometry outside the collar-only static inventory.
+
+### F-599CA — Interface 3017 has a complete local simplicial ribbon volume
+
+- Severity: **Framed dynamic construction / local 3-volume**
+- Status: **LOCAL RIBBON VOLUME PASS; R4 SELF/STATIC VOLUME CLEARANCE OPEN**
+- Evidence: `geometry/t73_x_m1_outer_collar_v7_ribbon_volume_3017.json`, its
+  builder, independent verifier and regression test, bound to the corrected
+  ribbon-compatible F-599BY normal field and F-599BZ static clearance.
+- Boundary-compatible triangulation: a canonical triangular prism induces
+  opposite side diagonals on core and push. Accordingly every push edge uses
+  the complement of its core diagonal. For the five core transitions already
+  represented as time reversals, the reverse prism template is itself the time
+  reversal of the canonical backward prism. This makes the saved core and push
+  traces literal boundary subcomplexes rather than merely equal endpoints.
+- State checks: 22 ribbon states have 220 rank-two triangles, 88 valid adjacent
+  rectangle stars and 528 exact nonincident triangle checks, with no state
+  self-intersection.
+- Volume replay: 21 transitions give 210 triangular prisms and 630 rank-three
+  R4 tetrahedra. Each transition has exactly 44 boundary triangles and 38
+  paired internal faces. Totals are 924 boundary triangles, including 84 on
+  the two endpoint framing traces, and 798 internal face pairs. The independent
+  verifier reconstructs every state, template, tetrahedron and face incidence.
+  Verdict: `PASS_X_M1_OUTER_COLLAR_V7_RIBBON_VOLUME_3017_LOCAL_INDEPENDENT`.
+- Boundary: rank, incidence and embedded state slices do not prove the union of
+  3-simplices embedded in R4. Nonincident tetrahedron self-clearance and
+  intersections with the contemporaneous static ribbon x time volumes remain
+  OPEN. No ambient extension is claimed.
 
 ### F-599C — Monolithic linear projections of the affine framed link are computationally unsuitable
 

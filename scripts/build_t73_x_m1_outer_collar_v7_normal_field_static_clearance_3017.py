@@ -156,11 +156,14 @@ def build():
     expected_matrix = {
         "moving_core/final_core": 333,
         "moving_core/final_push": 333,
-        "moving_push/final_core": 333,
-        "moving_push/final_push": 333,
+        "moving_push/final_core": 447,
+        "moving_push/final_push": 447,
     }
     if dict(sorted(matrix.items())) != expected_matrix or intersections:
-        raise AssertionError("normal-field static one-skeleton clearance changed")
+        raise AssertionError(
+            "normal-field static one-skeleton clearance changed: "
+            f"matrix={dict(sorted(matrix.items()))} intersections={intersections[:3]}"
+        )
     result = {
         "schema": "t73_x_m1_outer_collar_v7_normal_field_static_clearance/v1",
         "explicit_core_detour_sha256": core["sha256"],

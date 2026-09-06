@@ -83,8 +83,8 @@ def verify_full():
     expected = {
         "moving_core/final_core": 333,
         "moving_core/final_push": 333,
-        "moving_push/final_core": 333,
-        "moving_push/final_push": 333,
+        "moving_push/final_core": 447,
+        "moving_push/final_push": 447,
     }
     if (
         dict(sorted(matrix.items())) != expected

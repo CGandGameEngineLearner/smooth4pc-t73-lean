@@ -7,7 +7,7 @@ import gzip
 import json
 import sys
 from fractions import Fraction
-from itertools import pairwise
+from itertools import pairwise, product
 from pathlib import Path
 
 SCRIPTS = Path(__file__).resolve().parent
@@ -62,17 +62,29 @@ def load_local_record(receipt):
 
 
 def expected_normals(source):
-    scale = Fraction(1, 500)
-    negative = -scale
-    return [
-        *([source] * 6),
-        (Fraction(0), scale, Fraction(0)),
-        *([(negative, negative, negative)] * 7),
-        *([(negative, negative, scale)] * 2),
-        (negative, negative, Fraction(0)),
-        (scale, negative, scale),
-        *([source] * 4),
+    candidates = [source] + [
+        tuple(Fraction(value, 500) for value in direction)
+        for direction in product((-1, 0, 1), repeat=3)
+        if direction != (0, 0, 0)
     ]
+    indices = (0, 0, 0, 0, 0, 0, 16, 1, 1, 1, 1, 1, 1, 3, 3, 2, 12, 0, 0, 0, 0, 0)
+    return [candidates[index] for index in indices], indices
+
+
+def complementary_cells(mode):
+    cells = []
+    for edge in range(5):
+        if mode == "CANONICAL_FORWARD":
+            cells.extend(
+                ([6 + edge, 6 + edge + 1, edge + 1], [6 + edge, edge + 1, edge])
+            )
+        elif mode == "TIME_REVERSE_OF_CANONICAL_BACKWARD":
+            cells.extend(
+                ([edge, edge + 1, 6 + edge + 1], [edge, 6 + edge + 1, 6 + edge])
+            )
+        else:
+            raise AssertionError("unknown core transition mode")
+    return cells
 
 
 def verify_full():
@@ -94,7 +106,9 @@ def verify_full():
         point(value) for value in record["phase_one_push_initial_subdivision"]
     ]
     source_normal = subtract(initial_push[0], initial_core[0])
-    normals = expected_normals(source_normal)
+    normals, normal_indices = expected_normals(source_normal)
+    if data["normal_path_candidate_indices"] != list(normal_indices):
+        raise AssertionError("saved normal candidate indices changed")
     if data["normal_path"] != [[str(value) for value in normal] for normal in normals]:
         raise AssertionError("saved normal path changed")
     core_states = [[point(vertex) for vertex in state] for state in core["states"]]
@@ -141,16 +155,17 @@ def verify_full():
             )
             for vertex in core_vertices
         ]
-        cells = core_transition["trace_triangles"]
-        if push_transition["trace_triangles"] != cells or push_transition[
+        core_cells = core_transition["trace_triangles"]
+        push_cells = complementary_cells(core_transition["triangulation_mode"])
+        if push_transition["trace_triangles"] != push_cells or push_transition[
             "push_spacetime_vertices"
         ] != [[str(coordinate) for coordinate in vertex] for vertex in push_vertices]:
             raise AssertionError("saved push transition changed")
         core_triangles = [
-            tuple(core_vertices[vertex] for vertex in cell) for cell in cells
+            tuple(core_vertices[vertex] for vertex in cell) for cell in core_cells
         ]
         push_triangles = [
-            tuple(push_vertices[vertex] for vertex in cell) for cell in cells
+            tuple(push_vertices[vertex] for vertex in cell) for cell in push_cells
         ]
         for triangle in push_triangles:
             push_rank += 1
