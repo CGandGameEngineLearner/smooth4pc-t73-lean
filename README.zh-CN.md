@@ -582,6 +582,14 @@ exact bounds 后仅 48 个 triangle-pair checks，全部无交。verdict 为
 剩 4,809,221 个 broad survivors。当前仅是 matrix evidence，下一步做 exact
 skew/triangle clearance。
 
+该精确跨系统 clearance 现已在
+[`audit/t73_x_m1_outer_collar_v7_replacement_ribbon_clearance.json`](audit/t73_x_m1_outer_collar_v7_replacement_ribbon_clearance.json)
+中通过。4,809,221 个 AABB/F survivors 中，exact bounds 排除 1,342 个，精确
+core-tangent skew axes 排除其余 4,807,879 个；无需进入 triangle solver，交点为
+0。保存的完整运行收据为
+[`audit/t73_x_m1_outer_collar_v7_replacement_ribbon_clearance_verification.json`](audit/t73_x_m1_outer_collar_v7_replacement_ribbon_clearance_verification.json)。
+retained Johnson/dual 跨系统 clearance 与 ambient support 仍为 OPEN。
+
 第一个跨系统门禁找到并修复了真实碰撞，没有提前升级该 assembly。流式 Rust
 1.98.1 checker 位于
 [`rust/t73_exact_cross_clearance`](rust/t73_exact_cross_clearance)，使用

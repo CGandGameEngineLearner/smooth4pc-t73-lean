@@ -1,0 +1,35 @@
+{
+  "candidate_matrix_sha256": "A06A9409CCB854B14CBF1575FC6CB9F8A230564D06DD72E1959D266046E81A00",
+  "clearance_artifact_content_sha256": "039CD2E0D89F4360D2FE82E24567ED0604152E0BA542036A1C9C04BAF586564D",
+  "clearance_artifact_payload_sha256": "18C8ADDABA928D5A3BECAE8B24BC03A642C67295E55B2F941959FF600AC4202F",
+  "full_result": {
+    "aabb_and_float_outward_f_candidates": 4809221,
+    "candidate_matrix_sha256": "A06A9409CCB854B14CBF1575FC6CB9F8A230564D06DD72E1959D266046E81A00",
+    "candidate_type_counts": {
+      "collar:end_skew_lift/replacement:band": 1135126,
+      "collar:end_skew_lift/replacement:stub": 1239163,
+      "collar:end_skew_lift/replacement:transition": 3026,
+      "collar:start_skew_lift/replacement:band": 913852,
+      "collar:start_skew_lift/replacement:stub": 1518054
+    },
+    "collar_rectangle_count_checked": 6052,
+    "exact_bounds_rejects": 1342,
+    "exact_functional_interval_rejects": 0,
+    "exact_skew_axis_rejects": 4807879,
+    "exact_triangle_pair_checks": 0,
+    "global_replacement_cross_clearance": true,
+    "intended_target_adjacencies": 3026,
+    "intersection_count": 0,
+    "outer_collars_v7_receipt_sha256": "A980996F434705BA700FEE1B9D42701D33C1D74A47ACAF7EBB1309C031D7288E",
+    "replacement_rectangle_count": 92284,
+    "schema": "t73_x_m1_outer_collar_v7_replacement_ribbon_clearance/v1",
+    "sha256": "18C8ADDABA928D5A3BECAE8B24BC03A642C67295E55B2F941959FF600AC4202F",
+    "verdict": "PASS_X_M1_OUTER_COLLAR_V7_REPLACEMENT_RIBBON_CLEARANCE"
+  },
+  "full_verifier_path": "scripts/build_t73_x_m1_outer_collar_v7_replacement_ribbon_clearance.py",
+  "full_verifier_sha256": "1A25735164C9939A21D90A74060A8EFF434F35273C88DF9B2AF4FA3EB9E29531",
+  "schema": "t73_x_m1_outer_collar_v7_replacement_ribbon_clearance_verification/v1",
+  "sha256": "FA8381D927AE10D2C471CF8EF844EE9F4F9F3879C4235357212E6D3DAF7E1513",
+  "status": "PASS_SAVED_FULL_EXACT_RUN",
+  "verdict": "PASS_X_M1_OUTER_COLLAR_V7_REPLACEMENT_RIBBON_CLEARANCE"
+}

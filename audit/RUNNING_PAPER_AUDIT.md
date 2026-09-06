@@ -5202,6 +5202,28 @@ Topology-source checks completed 2026-09-04:
   clearance. Exact bounds, skew axes and triangle predicates must consume all
   five families. Retained Johnson/dual cross-clearance is a separate matrix.
 
+### F-599BF — V7 collar ribbons are globally clear of complete replacement framing
+
+- Severity: **Positive integration clearance / target-side framed union**
+- Status: **FULL EXACT CROSS-CLEARANCE PASS**
+- Evidence:
+  `audit/t73_x_m1_outer_collar_v7_replacement_ribbon_clearance.json`, its
+  saved full-run verification receipt, exact verifier/builder and regression
+  test, consuming F-599BE.
+- Full reduction: the 19,221,145 nonincident AABB pairs reduce to 4,809,221
+  after intersection with outward-rounded exact-F intervals. Every survivor
+  receives exact rational F and 3D-bound checks; exact bounds reject 1,342.
+- Skew proof: for each remaining pair, the cross product of the collar and
+  replacement core tangents is used as an exact separating axis on all four
+  ribbon vertices. It strictly separates all 4,807,879 survivors. Therefore
+  no pair reaches the general triangle solver and intersections are zero.
+- Target boundary: the 3,026 declared framing-edge adjacencies and their
+  transverse local stars remain bound from F-599BE. Verdict:
+  `PASS_X_M1_OUTER_COLLAR_V7_REPLACEMENT_RIBBON_CLEARANCE`.
+- Boundary: this closes the replacement side only. Retained Johnson/dual
+  ribbons require their own cross matrix and exact clearance. V7 isotopy trace
+  and tetrahedral fixed-boundary ambient support also remain open.
+
 ### F-599C — Monolithic linear projections of the affine framed link are computationally unsuitable
 
 - Severity: **complete PD / projection selection**

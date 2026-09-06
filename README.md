@@ -484,6 +484,14 @@ adjacencies. Every target local star has transverse planes. The 19,221,145
 nonincident pairs occupy only five collar-type/replacement-system classes;
 intersecting with outward-rounded exact-F intervals leaves 4,809,221 broad
 survivors. This is matrix-only evidence; exact skew/triangle clearance is next.
+
+That exact cross-clearance now passes in
+[`audit/t73_x_m1_outer_collar_v7_replacement_ribbon_clearance.json`](audit/t73_x_m1_outer_collar_v7_replacement_ribbon_clearance.json).
+Among 4,809,221 AABB/F survivors, exact bounds reject 1,342 and exact
+core-tangent skew axes reject all remaining 4,807,879; no triangle solve is
+needed and intersections are zero. The saved full-run receipt is
+[`audit/t73_x_m1_outer_collar_v7_replacement_ribbon_clearance_verification.json`](audit/t73_x_m1_outer_collar_v7_replacement_ribbon_clearance_verification.json).
+Retained Johnson/dual cross-clearance and ambient support remain open.
 The graph map extends over all five framed regular neighborhoods in
 [`geometry/t73_hybrid_to_railroad_tubular_map.json`](geometry/t73_hybrid_to_railroad_tubular_map.json).
 Its five solid-torus templates contain 5385 tetrahedra and 10770 boundary
