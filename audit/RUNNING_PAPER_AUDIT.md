@@ -3529,10 +3529,10 @@ Topology-source checks completed 2026-09-04:
   embedding. A common triangulated target manifold and explicit chart
   embeddings/inverses are still required before projecting a complete PD.
 
-### F-597 — The complete x/m1 framed cancellation image is assembled in the verified atlas
+### F-597 — The x/m1 cancellation image is assembled, with literal push interfaces repaired in F-599J
 
 - Severity: **x/m1 cancellation / complete framed output**
-- Status: **COMPLETE ATLAS IMAGE PASS; DOTTED-S3 REALIZATION OPEN**
+- Status: **CORE ATLAS IMAGE PASS; PUSH COUNTS PASS; LITERAL PUSH INTERFACES REQUIRE F-599J**
 - Evidence: `geometry/t73_x_m1_complete_framed_cancellation_image.json`,
   `scripts/build_t73_x_m1_complete_framed_cancellation_image.py`,
   `scripts/verify_t73_x_m1_complete_framed_cancellation_image.py`, and its
@@ -3542,10 +3542,13 @@ Topology-source checks completed 2026-09-04:
   subdivision. The 7634 unaffected Johnson/dual/bottom/central-connector edges
   remain in their verified charts. Component target core/push counts are
   m2=14,766/15,382, m3=66,842/70,586, r_xy=98/106, r_yz=8/8, and r_zx=98/106.
-- Totals and continuity: five source cycles with 68,176 core/push edges become
+- Totals and chart-level continuity: five source cycles with 68,176 core/push edges become
   five target cycles with 81,812 core and 86,188 push edges. The persisted
   F-596 full-verifier receipt binds all 3026 core and push overlap matches and
-  disjoint transition supports. Verdict:
+  disjoint transition supports. This count-level result did not compare the
+  outer replacement-stub push normal with the adjacent unchanged connector or
+  dual push normal; F-599J later found all 3026 literal interfaces unequal and
+  supplies their missing normal homotopies. Verdict:
   `PASS_COMPLETE_X_M1_FRAMED_CANCELLATION_IMAGE_IN_ATLAS`.
 - Boundary: this closes the actual x/m1 cancellation as a framed cellwise map
   in the verified atlas. The surviving y/z passages must next be replaced by
@@ -3897,6 +3900,35 @@ Topology-source checks completed 2026-09-04:
   two overlap transition tracks. Those pieces must be mapped into compatible
   collar charts and joined before the 1513 complete replacement blocks can
   replace the F-599G affine corridors.
+
+### F-599J — All 3026 connector-to-stub framing discontinuities have explicit local collars
+
+- Severity: **Critical correction and repair / framed-cycle continuity**
+- Status: **LOCAL FRAMING CONTINUITY PASS; GLOBAL COLLAR CLEARANCE OPEN**
+- Evidence: `audit/t73_post_x_connector_stub_framing_gap.json`, its
+  independent full-cache verifier/test, the transition cache and construction
+  receipt, `audit/t73_post_x_connector_stub_framing_transitions_verification.json`,
+  their readable builders, independent verifier and test.
+- Gap: every one of the 3026 replacement outer core endpoints agrees modulo
+  `4 Z^3` with the adjacent actual Johnson connector or dual passage, but none
+  of the pushed endpoints agreed literally. The mismatch classes are 538 m2
+  and 2480 m3 connector ports, four r_xy dual ports and four r_zx dual ports.
+  Connector replacement normals are `(0,w,w)` versus `(w,w,w)`; r_xy has
+  `(0,0,w)` versus `(0,0,1/1000)`; r_zx has `(0,w,0)` versus
+  `(0,3/1000,0)`. This corrects F-597's earlier count-only interpretation of
+  closed push cycles. Verdict: `PASS_POST_X_CONNECTOR_STUB_FRAMING_GAP`.
+- Repair: the last/first adjacent actual core segment is subdivided at a
+  `1/1000000` collar parameter. Its far normal remains the actual connector
+  or dual normal and its port normal becomes the saved replacement-stub
+  normal. Every interpolation stays nonzero and has relative twist zero.
+  The cache contains 3026 such paths and 12,104 ruled ribbon triangles.
+- Full local verification: all 6052 endpoint normal equalities, 12,104 exact
+  tangent/normal cross products, triangle templates, stream SHA and full
+  cache SHA pass. Verdict:
+  `PASS_POST_X_CONNECTOR_STUB_FRAMING_TRANSITIONS_FULL_LOCAL`.
+- Boundary: the collars have not yet been checked against all nonincident
+  source core/push/ribbon cells. Until that incremental global clearance runs,
+  this proves local framed continuity but not an embedded complete push cycle.
 
 ### F-599C — Monolithic linear projections of the affine framed link are computationally unsuitable
 

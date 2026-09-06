@@ -438,6 +438,21 @@ python3 scripts/build_t73_x_m1_middle_paths_r3.py \
 python3 scripts/build_t73_x_m1_middle_paths_r3_verification.py
 ```
 
+A literal endpoint audit then found and repaired a separate framing interface.
+All 3,026 replacement core ports equal their adjacent Johnson-connector or
+dual-passage endpoint modulo the mapping-torus deck, but none of their push
+ports initially matched: the four mismatch classes have counts
+`2480,538,4,4`. See
+[`audit/t73_post_x_connector_stub_framing_gap.json`](audit/t73_post_x_connector_stub_framing_gap.json).
+The cache
+`C:\Users\Administrator\.cache\t73_post_x_connector_stub_framing_transitions.jsonl.gz`
+now contains 3,026 explicit (1/10^6)-collar normal homotopies and 12,104
+ruled ribbon triangles. All 6,052 endpoint-normal matches, 12,104 transverse
+normal tests, zero total relative twist and the full cache SHA replay in
+[`audit/t73_post_x_connector_stub_framing_transitions_verification.json`](audit/t73_post_x_connector_stub_framing_transitions_verification.json).
+Verdict: `PASS_POST_X_CONNECTOR_STUB_FRAMING_TRANSITIONS_FULL_LOCAL`; global
+transition-ribbon clearance is still open.
+
 Global linear projection probes are recorded in
 [`audit/t73_affine_s3_projection_probe.json`](audit/t73_affine_s3_projection_probe.json).
 xz/yz collapse dotted edges; three regular tilts produce at least 258,453,247

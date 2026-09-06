@@ -1,0 +1,30 @@
+{
+  "actual_ar_link_sha256": "E5CD3C2A2AD0650D061CFB730F54F32C1F2860D2FD0813067550D545D02D2853",
+  "actual_dual_product_ribbons_sha256": "04DBB65D4C0F1236E9F2783B9CF7BE66D8D560284535D699779CA13BE0C1CD53",
+  "builder_sha256": "CDCD069389B40A9617525439EAE9F6CCCA6485D47B3DBD5A44BD325A21F20F19",
+  "cache_path": "/mnt/c/Users/Administrator/.cache/t73_post_x_connector_stub_framing_transitions.jsonl.gz",
+  "cache_sha256": "BB378F39F16342E4B4A50D147329954B193C4CB03EA652177DB96773A2A5B7AA",
+  "cache_size": 1989675,
+  "collar_fraction": "1/1000000",
+  "completion_status": "ALL_CONNECTOR_STUB_FRAMING_TRANSITIONS_CONSTRUCTED",
+  "endpoint_normal_match_count": 6052,
+  "framing_gap_sha256": "1CF99E6A35FA32BB0BBDE3CF9C464F067204AB54EB3C931D622CFCD3A4FDB7A3",
+  "global_transition_clearance_status": "OPEN",
+  "johnson_spine_embedding_sha256": "57BC99BE08ED805EF268049F1EEE961D25F6889A6BDEC142B8715072B7F51AC1",
+  "normal_transversality_check_count": 12104,
+  "post_x_framed_cycle_assembly_sha256": "2AFFC7FF0FA1686A2F90BD57A095BEF65535D275B6D8D82BADE9D773EE2F613F",
+  "record_stream_sha256": "8375D8B5CA30A8BB304DF47A7550C22CCD08BEEF0B7CFEA8140D96CC722E917C",
+  "relative_twist_sum": 0,
+  "replacement_cells_receipt_sha256": "25DA696216B176D816E0CE5FBDF5781C038791A6E001A1F65FA95C7DF5CE9B8D",
+  "ribbon_triangle_count": 12104,
+  "schema": "t73_post_x_connector_stub_framing_transitions_receipt/v1",
+  "sha256": "DB0DC747CBE44D09F7BC963AFCA8D1262096F89A33BE06107776BD1C551657F0",
+  "transition_count": 3026,
+  "transition_type_counts": {
+    "m_2/actual_johnson_central_connector": 538,
+    "m_3/actual_johnson_central_connector": 2480,
+    "r_xy/actual_dual_two_segment_passage": 4,
+    "r_zx/actual_dual_two_segment_passage": 4
+  },
+  "verdict": "PASS_POST_X_CONNECTOR_STUB_FRAMING_TRANSITIONS_LOCAL"
+}

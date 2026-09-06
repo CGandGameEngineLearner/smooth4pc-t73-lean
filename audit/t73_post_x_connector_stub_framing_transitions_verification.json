@@ -1,0 +1,19 @@
+{
+  "cache_sha256": "BB378F39F16342E4B4A50D147329954B193C4CB03EA652177DB96773A2A5B7AA",
+  "construction_receipt_sha256": "DB0DC747CBE44D09F7BC963AFCA8D1262096F89A33BE06107776BD1C551657F0",
+  "full_result": {
+    "cache_sha_checked": true,
+    "endpoint_normal_matches": 6052,
+    "global_clearance": "OPEN",
+    "normal_transversality_checks": 12104,
+    "relative_twist_sum": 0,
+    "ribbon_triangles": 12104,
+    "transitions": 3026,
+    "verdict": "PASS_POST_X_CONNECTOR_STUB_FRAMING_TRANSITIONS_FULL_LOCAL"
+  },
+  "schema": "t73_post_x_connector_stub_framing_transitions_verification/v1",
+  "sha256": "EEE5DE037B2A8F162710E4784C813A9A2D068EB7381F946EEE6F6BFF4F7307A7",
+  "verdict": "PASS_POST_X_CONNECTOR_STUB_FRAMING_TRANSITIONS_FULL_LOCAL",
+  "verifier_path": "scripts/verify_t73_post_x_connector_stub_framing_transitions.py",
+  "verifier_sha256": "4ACDA6BBF86E72776E04302986CD8B7921064C6C4653830B0500012109AD5C52"
+}

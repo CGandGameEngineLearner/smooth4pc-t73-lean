@@ -378,6 +378,21 @@ python3 scripts/build_t73_x_m1_middle_paths_r3.py \
 python3 scripts/build_t73_x_m1_middle_paths_r3_verification.py
 ```
 
+逐字端点审计随后发现并修复了另一项 framing 接口。全部 3,026 个 replacement
+core ports 都与相邻 Johnson connector 或 dual passage 端点模 mapping-torus deck
+相等，但原先没有一个 push port 相等；四类 mismatch 的数量为
+`2480,538,4,4`，见
+[`audit/t73_post_x_connector_stub_framing_gap.json`](audit/t73_post_x_connector_stub_framing_gap.json)。
+缓存
+`C:\Users\Administrator\.cache\t73_post_x_connector_stub_framing_transitions.jsonl.gz`
+现含 3,026 个显式 (1/10^6)-collar normal homotopies 与 12,104 个 ruled
+ribbon triangles。6,052 个 endpoint-normal matches、12,104 个法向横截检查、
+relative twist 总和 0 及完整缓存 SHA 已在
+[`audit/t73_post_x_connector_stub_framing_transitions_verification.json`](audit/t73_post_x_connector_stub_framing_transitions_verification.json)
+中重放。verdict 为
+`PASS_POST_X_CONNECTOR_STUB_FRAMING_TRANSITIONS_FULL_LOCAL`；transition ribbons
+的全局 clearance 仍为 OPEN。
+
 全局线性投影探测记录于
 [`audit/t73_affine_s3_projection_probe.json`](audit/t73_affine_s3_projection_probe.json)。
 xz/yz 会压扁 dotted edges；三个 regular tilts 至少产生258,453,247个 broad
