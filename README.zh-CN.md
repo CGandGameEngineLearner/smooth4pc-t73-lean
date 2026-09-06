@@ -834,6 +834,12 @@ triangles。独立重放检查全部 3,026 个改变的顶点、18,156 个 norma
 transversality 方程，并直接确认 interface 3022 的 v3 原碰撞已消失。见
 [`audit/t73_x_m1_framed_outer_interface_collars_v4_verification.json`](audit/t73_x_m1_framed_outer_interface_collars_v4_verification.json)。
 在重新构造全局矩阵并完成 clearance 前，V4 仍为 `CANDIDATE_UNVERIFIED`。
+新的 one-skeleton 矩阵现已保存于
+[`audit/t73_x_m1_outer_collar_v4_one_skeleton_candidate_matrices.json`](audit/t73_x_m1_outer_collar_v4_one_skeleton_candidate_matrices.json)：
+core/core 与 push/push 各 14,254,960 个、定向 core/push 28,528,020 个 AABB
+candidates，非空语义类型对分别为 11、11、22。半层错位后只有 first exterior
+rays 仍为 constant-height；constant-F 类型被单独记录。该 artifact 仍是
+matrix-only，不声明 V4 全局 clearance。
 
 全局线性投影探测记录于
 [`audit/t73_affine_s3_projection_probe.json`](audit/t73_affine_s3_projection_probe.json)。

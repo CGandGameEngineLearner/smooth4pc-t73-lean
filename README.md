@@ -394,6 +394,13 @@ normal transversality equations, and directly confirms the interface-3022 v3
 collision is gone. See
 [`audit/t73_x_m1_framed_outer_interface_collars_v4_verification.json`](audit/t73_x_m1_framed_outer_interface_collars_v4_verification.json).
 V4 remains `CANDIDATE_UNVERIFIED` pending fresh global matrices and clearance.
+Those fresh one-skeleton matrices are now saved in
+[`audit/t73_x_m1_outer_collar_v4_one_skeleton_candidate_matrices.json`](audit/t73_x_m1_outer_collar_v4_one_skeleton_candidate_matrices.json):
+14,254,960 core/core, 14,254,960 push/push and 28,528,020 directed core/push
+AABB candidates, with respectively 11, 11 and 22 nonempty semantic type
+pairs. Only first exterior rays remain constant-height after staggering;
+constant-F types are recorded separately. The artifact is matrix-only and
+does not claim V4 global clearance.
 The graph map extends over all five framed regular neighborhoods in
 [`geometry/t73_hybrid_to_railroad_tubular_map.json`](geometry/t73_hybrid_to_railroad_tubular_map.json).
 Its five solid-torus templates contain 5385 tetrahedra and 10770 boundary

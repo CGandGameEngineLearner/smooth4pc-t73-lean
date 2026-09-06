@@ -4943,6 +4943,26 @@ Topology-source checks completed 2026-09-04:
   exact clearance must all be regenerated from V4 before building its
   isotopy trace or tetrahedral ambient support.
 
+### F-599AT — All three V4 one-skeleton candidate matrices are regenerated
+
+- Severity: **Verification decomposition / no inherited v3 clearance**
+- Status: **CORE, PUSH AND DIRECTED MUTUAL MATRICES COMPLETE; CLEARANCE OPEN**
+- Evidence:
+  `audit/t73_x_m1_outer_collar_v4_one_skeleton_candidate_matrices.json`, its
+  builder and regression test, bound to the F-599AS cache/full replay.
+- Counts: core/core and push/push each have 14,254,960 outward-rounded 3D AABB
+  candidates in eleven canonical unordered semantic type pairs. Directed
+  core/push has 28,528,020 candidates in 22 nonempty ordered type pairs.
+- Changed invariants: core types start lift, first ray, staggered last ray and
+  end lift retain constant F; push retains the first three of those. Because
+  end-exterior is at H+1/2, only first exterior ray remains constant-height;
+  no v3 bridge/last-ray height proof is reused.
+- Fail-closed boundary: verdict
+  `PASS_X_M1_OUTER_COLLAR_V4_ONE_SKELETON_CANDIDATE_MATRICES_ONLY` certifies
+  exact inventory and type normalization only. Each matrix still requires new
+  F hashes, staggered-plane equations and GMP survivors before any V4 global
+  embedding claim.
+
 ### F-599C — Monolithic linear projections of the affine framed link are computationally unsuitable
 
 - Severity: **complete PD / projection selection**
