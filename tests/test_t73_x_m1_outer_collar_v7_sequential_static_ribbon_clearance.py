@@ -1,0 +1,29 @@
+import importlib.util
+import unittest
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+SCRIPT = (
+    ROOT
+    / "scripts/verify_t73_x_m1_outer_collar_v7_sequential_static_ribbon_clearance.py"
+)
+
+
+class OuterCollarV7SequentialStaticRibbonClearanceTest(unittest.TestCase):
+    def test_saved_ordered_mixed_ribbon_clearance(self):
+        spec = importlib.util.spec_from_file_location("verifier", SCRIPT)
+        assert spec and spec.loader
+        module = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(module)
+        result = module.verify_full()
+        self.assertEqual(result["outward_float_aabb_candidates"], 3022)
+        self.assertEqual(result["permitted_coplanar_opposite_stars"], 4)
+        self.assertEqual(result["nonincident_rectangle_candidates"], 3018)
+        self.assertEqual(result["exact_triangle_pair_checks"], 12072)
+        self.assertEqual(result["nonpermitted_intersections"], 0)
+        self.assertTrue(result["ordered_mixed_static_ribbon_clearance"])
+        self.assertEqual(result["moving_static_status"], "OPEN")
+
+
+if __name__ == "__main__":
+    unittest.main()

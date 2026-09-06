@@ -5381,6 +5381,31 @@ Topology-source checks completed 2026-09-04:
   one-skeleton. This does not yet check the ruled framing rectangles or any
   active moving sheet against its contemporaneous static union.
 
+### F-599BM — Every ordered final/source static framed-ribbon mixture is embedded
+
+- Severity: **Sequential global clearance / complete stationary framed union**
+- Status: **ORDERED MIXED STATIC RIBBON PASS; ACTIVE MOVING/AMBIENT OPEN**
+- Evidence:
+  `audit/t73_x_m1_outer_collar_v7_sequential_static_ribbon_clearance.json`,
+  its GMP builder, independent lifted-R4 barycentric verifier and regression
+  test, bound to F-599BL and the V7 cache.
+- Matrix: all 18,156 final rectangles are queried against all 3,026 source
+  rectangles subject to `final_interface < source_interface`. Outward-rounded
+  AABBs leave 3,022 candidates. Four share exactly one framing edge and have
+  independently recomputed local relation `COPLANAR_OPPOSITE_SIDES`; they are
+  the four dual-passage germ joins already present in F-599BK/BL. The remaining
+  3,018 rectangles are nonincident.
+- Exact result: the builder's full coplanar-aware GMP test and the independent
+  verifier's four-dimensional barycentric/edge-triangle implementation each
+  perform all 12,072 triangle-pair checks. Forbidden intersections are zero.
+  Verdict:
+  `PASS_X_M1_OUTER_COLLAR_V7_SEQUENTIAL_STATIC_RIBBON_CLEARANCE_INDEPENDENT`.
+- Consequence/boundary: every stationary source/final framed mixture that
+  occurs before, between or after sequential slots is embedded. The remaining
+  dynamic gate is each active core/push/ribbon moving sheet against its
+  contemporaneous mixture plus the retained source and replacement framed
+  union. Fixed-boundary tetrahedral ambient support remains absent.
+
 ### F-599C — Monolithic linear projections of the affine framed link are computationally unsuitable
 
 - Severity: **complete PD / projection selection**

@@ -600,6 +600,22 @@ python3 scripts/build_t73_x_m1_outer_collar_v7_sequential_static_one_skeleton_cl
 python3 scripts/verify_t73_x_m1_outer_collar_v7_sequential_static_one_skeleton_clearance.py
 python3 -m unittest tests.test_t73_x_m1_outer_collar_v7_sequential_static_one_skeleton_clearance
 ```
+
+Ordered mixed framed ribbons pass in
+[`audit/t73_x_m1_outer_collar_v7_sequential_static_ribbon_clearance.json`](audit/t73_x_m1_outer_collar_v7_sequential_static_ribbon_clearance.json).
+The same 3,022 rectangle candidates split into four permitted
+`COPLANAR_OPPOSITE_SIDES` dual-germ stars and 3,018 nonincident pairs. A GMP
+triangle implementation and an independent lifted-4D barycentric verifier
+both perform 12,072 exact triangle-pair tests and find zero forbidden
+intersections. Thus every stationary source/final framed mixture occurring in
+the sequential schedule is embedded. Active-moving-sheet clearance remains
+open.
+
+```bash
+python3 scripts/build_t73_x_m1_outer_collar_v7_sequential_static_ribbon_clearance.py --write --check
+python3 scripts/verify_t73_x_m1_outer_collar_v7_sequential_static_ribbon_clearance.py
+python3 -m unittest tests.test_t73_x_m1_outer_collar_v7_sequential_static_ribbon_clearance
+```
 The graph map extends over all five framed regular neighborhoods in
 [`geometry/t73_hybrid_to_railroad_tubular_map.json`](geometry/t73_hybrid_to_railroad_tubular_map.json).
 Its five solid-torus templates contain 5385 tetrahedra and 10770 boundary

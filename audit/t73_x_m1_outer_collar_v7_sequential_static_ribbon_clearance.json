@@ -1,0 +1,100 @@
+{
+  "candidate_count_by_final_rectangle_type": {
+    "retained_source_germ": 4,
+    "start_skew_lift": 3018
+  },
+  "classification": "PARTIAL_GLOBAL_SEQUENTIAL_CLEARANCE",
+  "exact_triangle_pair_check_count": 12072,
+  "final_ribbon_rectangle_count": 18156,
+  "moving_static_status": "OPEN",
+  "nonincident_rectangle_candidate_count": 3018,
+  "nonpermitted_intersection_count": 0,
+  "nonpermitted_intersections": [],
+  "ordered_mixed_static_one_skeleton_clearance_sha256": "260746F4287A851D622A55EF7379317E5E6FDD2F73C7809A201487A449517CB8",
+  "ordered_mixed_static_ribbon_clearance": true,
+  "outer_collars_v7_receipt_sha256": "A980996F434705BA700FEE1B9D42701D33C1D74A47ACAF7EBB1309C031D7288E",
+  "outward_float_aabb_candidate_count": 3022,
+  "permitted_local_star_count": 4,
+  "permitted_local_star_relation_counts": {
+    "COPLANAR_OPPOSITE_SIDES": 4
+  },
+  "permitted_local_stars": [
+    {
+      "final_interface": 3018,
+      "neighbor_id": "r_xy:y:edge:0",
+      "relation": "COPLANAR_OPPOSITE_SIDES",
+      "shared_edge": [
+        [
+          "1",
+          "2",
+          "0"
+        ],
+        [
+          "1",
+          "2",
+          "1/1000"
+        ]
+      ],
+      "source_interface": 3021
+    },
+    {
+      "final_interface": 3019,
+      "neighbor_id": "r_xy:y:edge:4",
+      "relation": "COPLANAR_OPPOSITE_SIDES",
+      "shared_edge": [
+        [
+          "3",
+          "2",
+          "0"
+        ],
+        [
+          "3",
+          "2",
+          "1/1000"
+        ]
+      ],
+      "source_interface": 3020
+    },
+    {
+      "final_interface": 3022,
+      "neighbor_id": "r_zx:z:edge:0",
+      "relation": "COPLANAR_OPPOSITE_SIDES",
+      "shared_edge": [
+        [
+          "1",
+          "0",
+          "2"
+        ],
+        [
+          "1",
+          "3/1000",
+          "2"
+        ]
+      ],
+      "source_interface": 3025
+    },
+    {
+      "final_interface": 3023,
+      "neighbor_id": "r_zx:z:edge:4",
+      "relation": "COPLANAR_OPPOSITE_SIDES",
+      "shared_edge": [
+        [
+          "3",
+          "0",
+          "2"
+        ],
+        [
+          "3",
+          "3/1000",
+          "2"
+        ]
+      ],
+      "source_interface": 3024
+    }
+  ],
+  "schedule_order_rule": "final_interface < source_interface",
+  "schema": "t73_x_m1_outer_collar_v7_sequential_static_ribbon_clearance/v1",
+  "sha256": "56BBF617BCAD0182D2415F4493F9DA2CFD9EA3936D80CFEFCF4D6C4260F57BD2",
+  "source_ribbon_rectangle_count": 3026,
+  "verdict": "PASS_X_M1_OUTER_COLLAR_V7_SEQUENTIAL_STATIC_RIBBON_CLEARANCE"
+}
