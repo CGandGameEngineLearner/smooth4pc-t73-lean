@@ -1,0 +1,21 @@
+{
+  "component_receipt_sha256": {
+    "m_2": "90EEA53B6FACDBE5638DD88B7DE6706A960C50F378DE37811ED2800024BB3F1A",
+    "m_3": "4D9396F4F206C5525F81BF48134CD995F1DC0B5BB7774AF53644148CD11DBA26",
+    "r_xy": "DD7CB154C2D155BA7D7170D836BA5A281E80C84C4B87195059B8E60DD6C8D8D7",
+    "r_yz": "EFBAEEB84B3FC565628FE42ECDB8D250F6B7672641A8422407C6171013DCEBF2",
+    "r_zx": "786B2F348AAFC3F3D7C24B694DD801AB25C45E84538F9EB0537FF80E56B1DDAE"
+  },
+  "full_results": {
+    "m_2": {"crossings": 1113302, "database_sha_checked": true, "exact_crossings_recomputed": 1113302, "integer_self_linking": -156621, "signed_sum": -313242},
+    "m_3": {"crossings": 24663036, "database_sha_checked": true, "exact_crossings_recomputed": 24663036, "integer_self_linking": -3338112, "signed_sum": -6676224},
+    "r_xy": {"crossings": 42, "database_sha_checked": true, "exact_crossings_recomputed": 42, "integer_self_linking": -1, "signed_sum": -2},
+    "r_yz": {"crossings": 42, "database_sha_checked": true, "exact_crossings_recomputed": 42, "integer_self_linking": -1, "signed_sum": -2},
+    "r_zx": {"crossings": 50, "database_sha_checked": true, "exact_crossings_recomputed": 50, "integer_self_linking": -3, "signed_sum": -6}
+  },
+  "schema": "t73_product_self_linking_full_verification/v1",
+  "sha256": "5509C9F4798E9DAD54427009E72543696B644E26ED1DF118948662E9067B2F13",
+  "verdict": "PASS_ALL_FIVE_PRODUCT_SELF_LINKINGS_FULL",
+  "verifier_path": "scripts/verify_t73_product_self_linking_component.py",
+  "verifier_sha256": "AC95A9D10CDE20B43FD031D798C4DF2D929226EE7D5D56B659E6EC4CF83711C2"
+}

@@ -348,6 +348,16 @@ fixing all endpoint product normals, 1779 exact triangle/triangle and 3560
 exact segment/triangle survivors are disjoint. Verdict:
 `PASS_AFFINE_S3_PRODUCT_CORRIDOR_RIBBON_GLOBAL_CLEARANCE`. The five affine
 companions are now certified product push-offs.
+Their exact integer surgery framings are saved in
+[`geometry/t73_verified_integer_surgery_framings.json`](geometry/t73_verified_integer_surgery_framings.json):
+`m_2=-156621`, `m_3=-3338112`, `r_xy=-1`, `r_yz=-1`, `r_zx=-3`.
+The five component databases are under `C:\Users\Administrator\.cache\` as
+`t73_product_self_linking_*.sqlite`; m3 is about 4.30 GB. All 25,776,472
+crossings and database SHAs were independently replayed in
+[`audit/t73_product_self_linking_full_verification.json`](audit/t73_product_self_linking_full_verification.json).
+Run `python3 scripts/verify_t73_verified_integer_surgery_framings.py`; verdict:
+`PASS_FIVE_AFFINE_PRODUCT_INTEGER_SURGERY_FRAMINGS`. Pairwise core linking and
+the complete framed PD remain open.
 Global linear projection probes are recorded in
 [`audit/t73_affine_s3_projection_probe.json`](audit/t73_affine_s3_projection_probe.json).
 xz/yz collapse dotted edges; three regular tilts produce at least 258,453,247

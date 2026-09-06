@@ -3713,6 +3713,33 @@ Topology-source checks completed 2026-09-04:
   companion cycles are now certified product push-offs. A new projection of
   these repaired coordinates is required for integer self-linkings.
 
+### F-599B3 — All five affine product integer surgery framings are fully verified
+
+- Severity: **actual Kirby input / integer diagonal framings**
+- Status: **FIVE INTEGER FRAMINGS PASS; PAIRWISE CORE MATRIX OPEN**
+- Evidence: `geometry/t73_verified_integer_surgery_framings.json`,
+  `scripts/build_t73_product_self_linking_component.py`,
+  `scripts/verify_t73_product_self_linking_component.py`,
+  `audit/t73_product_self_linking_full_verification.json`, five component
+  SQLite receipts/databases, aggregate builder/verifier and tests.
+- Projection: linking invariance permits a separate regular diagram for each
+  core/product-push pair. The selected rational covectors are
+  `(x+y+z/1000033, z+x/1000033^2)` with the exact transverse height covector.
+  SQLite uniqueness rejects repeated projection points, and every mixed
+  crossing stores core/push segment ids, point hash, over role and sign.
+- Full replay: m2 has 1,113,302 crossings with signed sum -313,242; m3 has
+  24,663,036 with signed sum -6,676,224. The three dual counts/sums are
+  42/-2, 42/-2 and 50/-6. All 25,776,472 stored crossings are independently
+  re-solved from the segment pairs; all point hashes, height orders, signs,
+  SQLite integrity checks and database byte SHAs pass.
+- Result: division by two gives
+  `{m_2:-156621,m_3:-3338112,r_xy:-1,r_yz:-1,r_zx:-3}`. Verdict:
+  `PASS_FIVE_AFFINE_PRODUCT_INTEGER_SURGERY_FRAMINGS`.
+- Boundary: this closes the five diagonal surgery coefficients. The ten
+  pairwise core linkings and a single complete framed PD have not yet been
+  computed; W2 construction must not begin until at least the full symmetric
+  linking matrix and actual attachment presentation are assembled.
+
 ### F-599C — Monolithic linear projections of the affine framed link are computationally unsuitable
 
 - Severity: **complete PD / projection selection**
