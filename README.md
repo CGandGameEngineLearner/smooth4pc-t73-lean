@@ -862,6 +862,22 @@ subvolumes. These are repair inputs, not yet a committed v2 volume.
 ```bash
 python3 -m unittest tests.test_t73_exact_simplex
 ```
+
+The repaired v2 volume is
+[`geometry/t73_x_m1_outer_collar_v7_ribbon_volume_v2_3017.json`](geometry/t73_x_m1_outer_collar_v7_ribbon_volume_v2_3017.json).
+Transitions 7, 8, 11 and 12 are each split through the exact perturbed
+midpoint, giving 26 states and 25 globally timed transitions. Independent
+replay verifies 750 rank-three tetrahedra, all 6,700 nonincident tetrahedron
+pairs, 2,500 core/push trace pairs, 774 moving-core/static and 982
+moving-push/static pairs. Self-intersections and static one-skeleton
+intersections are zero. The remaining gate is clearance against static ribbon
+world-volumes.
+
+```bash
+python3 scripts/build_t73_x_m1_outer_collar_v7_ribbon_volume_v2_3017.py --write --check
+python3 scripts/verify_t73_x_m1_outer_collar_v7_ribbon_volume_v2_3017.py
+python3 -m unittest tests.test_t73_x_m1_outer_collar_v7_ribbon_volume_v2_3017
+```
 The graph map extends over all five framed regular neighborhoods in
 [`geometry/t73_hybrid_to_railroad_tubular_map.json`](geometry/t73_hybrid_to_railroad_tubular_map.json).
 Its five solid-torus templates contain 5385 tetrahedra and 10770 boundary

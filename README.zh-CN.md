@@ -936,6 +936,21 @@ disjoint pair。repair 搜索确定原 transitions 7、8、11、12 需要细分�
 python3 -m unittest tests.test_t73_exact_simplex
 ```
 
+修复后的 v2 volume 位于
+[`geometry/t73_x_m1_outer_collar_v7_ribbon_volume_v2_3017.json`](geometry/t73_x_m1_outer_collar_v7_ribbon_volume_v2_3017.json)。
+transitions 7、8、11、12 各自通过精确扰动中点拆成两段，得到 26 个 states 和
+25 个全局赋时 transitions。独立重放验证 750 个 rank-three tetrahedra、全部
+6,700 个非邻接 tetrahedron pairs、2,500 个 core/push trace pairs、774 个
+moving-core/static 和 982 个 moving-push/static pairs。自交和静态
+one-skeleton 交点均为 0。剩余门禁是对 static ribbon world-volumes 的
+clearance。
+
+```bash
+python3 scripts/build_t73_x_m1_outer_collar_v7_ribbon_volume_v2_3017.py --write --check
+python3 scripts/verify_t73_x_m1_outer_collar_v7_ribbon_volume_v2_3017.py
+python3 -m unittest tests.test_t73_x_m1_outer_collar_v7_ribbon_volume_v2_3017
+```
+
 第一个跨系统门禁找到并修复了真实碰撞，没有提前升级该 assembly。流式 Rust
 1.98.1 checker 位于
 [`rust/t73_exact_cross_clearance`](rust/t73_exact_cross_clearance)，使用

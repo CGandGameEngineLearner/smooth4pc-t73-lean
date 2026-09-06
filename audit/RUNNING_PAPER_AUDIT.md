@@ -5802,6 +5802,32 @@ Topology-source checks completed 2026-09-04:
   nonincident tetrahedron checks, and recheck moving core/push against the
   static one-skeleton before any PASS is issued.
 
+### F-599CD — Four midpoint refinements give a self-clear interface-3017 ribbon volume v2
+
+- Severity: **Exact 3-volume repair / positive self-clearance**
+- Status: **V2 SELF AND STATIC ONE-SKELETON PASS; STATIC RIBBON VOLUME OPEN**
+- Evidence: `geometry/t73_x_m1_outer_collar_v7_ribbon_volume_v2_3017.json`,
+  its builder, independent verifier and regression test, bound to F-599CC and
+  the corrected ribbon-compatible F-599BY/BZ artifacts.
+- Repair: original transitions 7, 8, 11 and 12 are each replaced by two
+  subtransitions. The changed vertex at the linear midpoint is perturbed by
+  `(-1/1000000,-1/1000000,-1/1000000)`; its push vertex uses the midpoint of
+  the two exact state normals. The resulting 26 states and 25 transitions are
+  assigned consecutive global intervals `[k/25,(k+1)/25]`.
+- Exact replay: all 750 tetrahedra have rank three. The independent verifier
+  reconstructs all four repair states and checks every one of the 6,700
+  nonincident tetrahedron pairs with F-599CC's exact barycentric predicate;
+  intersections are zero. It also checks 2,500 core/push trace pairs, 774
+  moving-core/static and 982 moving-push/static pairs, with zero one-skeleton
+  intersections. Face totals are 1,100 boundary triangles, 100 endpoint
+  boundary triangles and 950 internal face pairs. Verdict:
+  `PASS_X_M1_OUTER_COLLAR_V7_RIBBON_VOLUME_V2_3017_SELF_CLEAR_INDEPENDENT`.
+- Boundary: the v2 3-volume is internally embedded and its moving boundary
+  one-skeleton misses the scheduled static one-skeleton. Tetrahedron
+  intersections with the full static source/final ribbon x time volumes have
+  not yet been enumerated. The artifact remains a rational candidate until
+  that cross-volume gate passes.
+
 ### F-599C — Monolithic linear projections of the affine framed link are computationally unsuitable
 
 - Severity: **complete PD / projection selection**
