@@ -1,0 +1,36 @@
+{
+  "aabb_and_functional_interval_candidate_count": 825896,
+  "aabb_and_functional_interval_candidate_matrix": {
+    "collar:start_skew_lift/retained:central_connector": 825896
+  },
+  "actual_ar_link_sha256": "E5CD3C2A2AD0650D061CFB730F54F32C1F2860D2FD0813067550D545D02D2853",
+  "clearance_status": "OPEN_APPLY_EXACT_BOUNDS_SKEW_AND_TRIANGLE_CHECKS",
+  "collar_rectangle_count": 18156,
+  "expanded_3d_aabb_pair_count": 1654104,
+  "johnson_spine_sha256": "57BC99BE08ED805EF268049F1EEE961D25F6889A6BDEC142B8715072B7F51AC1",
+  "nonincident_candidate_count": 1651086,
+  "nonincident_candidate_matrix": {
+    "collar:start_skew_lift/retained:central_connector": 1651086
+  },
+  "original_nonreplacement_segment_count": 7656,
+  "outer_collars_v7_receipt_sha256": "A980996F434705BA700FEE1B9D42701D33C1D74A47ACAF7EBB1309C031D7288E",
+  "outer_interface_gap_sha256": "7F70FCF1F301190AF1BD9F12C7EA2EBBD7BCE56CEEBDC3C267D364E002C10FB4",
+  "passage_mapping_cylinders_verification_sha256": "63512AF173FF49D443D9429E5241BAD063EDB6856BAA815CED1B37FDF2EB784D",
+  "post_x_framed_cycle_assembly_sha256": "2AFFC7FF0FA1686A2F90BD57A095BEF65535D275B6D8D82BADE9D773EE2F613F",
+  "removed_terminal_segment_count": 3026,
+  "retained_kind_counts": {
+    "bottom_closure": 24,
+    "central_connector": 4074,
+    "dual_passage": 8,
+    "johnson_handle_arc": 524
+  },
+  "retained_rectangle_count": 4630,
+  "schema": "t73_x_m1_outer_collar_v7_retained_ribbon_candidate_matrix/v1",
+  "sha256": "C9D9FE70E81553F8CA1F2D2B0E7A3BF6328CD7EB850A910D1851CAB5D0AEACE4",
+  "source_framing_edge_adjacency_count": 3018,
+  "source_framing_edge_star_relation_counts": {
+    "TRANSVERSE_PLANES": 3018
+  },
+  "v7_replacement_cross_clearance_sha256": "18C8ADDABA928D5A3BECAE8B24BC03A642C67295E55B2F941959FF600AC4202F",
+  "verdict": "PASS_X_M1_OUTER_COLLAR_V7_RETAINED_RIBBON_CANDIDATE_MATRIX_ONLY"
+}

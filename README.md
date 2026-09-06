@@ -492,6 +492,19 @@ core-tangent skew axes reject all remaining 4,807,879; no triangle solve is
 needed and intersections are zero. The saved full-run receipt is
 [`audit/t73_x_m1_outer_collar_v7_replacement_ribbon_clearance_verification.json`](audit/t73_x_m1_outer_collar_v7_replacement_ribbon_clearance_verification.json).
 Retained Johnson/dual cross-clearance and ambient support remain open.
+
+The retained-side inventory and clearance are now closed by
+[`audit/t73_x_m1_outer_collar_v7_retained_ribbon_candidate_matrix.json`](audit/t73_x_m1_outer_collar_v7_retained_ribbon_candidate_matrix.json)
+and
+[`audit/t73_x_m1_outer_collar_v7_retained_ribbon_clearance.json`](audit/t73_x_m1_outer_collar_v7_retained_ribbon_clearance.json).
+From 7,656 original non-x segments, removing exactly 3,026 collar-replaced
+terminal segments leaves 4,630 rectangles: 4,074 connectors, 524 Johnson
+handle arcs, 24 bottom-closure and eight dual segments. All 3,018 retained
+source-edge stars are transverse; four fully replaced dual passages connect
+through V7's already-verified internal germ stars. The 1,651,086 nonincident
+AABB candidates reduce to 825,896 AABB/F survivors, all separated by exact
+skew axes. Intersections are zero. Only the relative isotopy trace and
+tetrahedral ambient support now prevent upgrading the collars to an actual map.
 The graph map extends over all five framed regular neighborhoods in
 [`geometry/t73_hybrid_to_railroad_tubular_map.json`](geometry/t73_hybrid_to_railroad_tubular_map.json).
 Its five solid-torus templates contain 5385 tetrahedra and 10770 boundary

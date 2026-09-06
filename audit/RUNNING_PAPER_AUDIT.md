@@ -5224,6 +5224,35 @@ Topology-source checks completed 2026-09-04:
   ribbons require their own cross matrix and exact clearance. V7 isotopy trace
   and tetrahedral fixed-boundary ambient support also remain open.
 
+### F-599BG — V7 collar ribbons are globally clear of the complete retained source framing
+
+- Severity: **Positive integration clearance / source-side framed union**
+- Status: **RETAINED INVENTORY AND FULL EXACT CROSS-CLEARANCE PASS**
+- Evidence: `audit/t73_x_m1_outer_collar_v7_retained_ribbon_candidate_matrix.json`,
+  `audit/t73_x_m1_outer_collar_v7_retained_ribbon_clearance.json`, its saved
+  full-run receipt, builders and regression test.
+- Exact retained inventory: the source graph-of-charts has 7,656 non-x
+  segments. Removing the 3,018 connector terminal segments and eight dual
+  terminal segments listed by F-599AH leaves 4,630 framed rectangles:
+  4,074 central connector, 524 Johnson handle-arc, 24 mapping-torus bottom
+  closure and eight dual-passage rectangles.
+- Source boundary: 3,018 collar germ edges meet retained connector ribbons;
+  every local star has transverse planes. Four dual two-segment passages are
+  removed on both sides by paired collars, so their eight interfaces meet at
+  the four internal coplanar-opposite germ stars already checked in F-599BD;
+  they are not double-counted as retained edges.
+- Cross matrix: 1,654,104 expanded AABB pairs contain 3,018 source
+  adjacencies. All 1,651,086 nonincident pairs belong to start-lift/central-
+  connector. Outward exact-F intervals reduce them to 825,896 candidates.
+  Exact skew axes strictly separate all 825,896, with zero triangle solves and
+  zero intersections. Verdict:
+  `PASS_X_M1_OUTER_COLLAR_V7_RETAINED_RIBBON_CLEARANCE`.
+- Consequence/boundary: V7 is now a globally embedded static framed collar
+  system against itself, replacement framing and all retained source framing.
+  The remaining obstruction to an actual relative map is dynamic: construct
+  the two-phase isotopy trace and a fixed-boundary tetrahedral ambient support,
+  then verify it against the complete static framed union.
+
 ### F-599C — Monolithic linear projections of the affine framed link are computationally unsuitable
 
 - Severity: **complete PD / projection selection**

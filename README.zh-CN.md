@@ -590,6 +590,18 @@ core-tangent skew axes 排除其余 4,807,879 个；无需进入 triangle solver
 [`audit/t73_x_m1_outer_collar_v7_replacement_ribbon_clearance_verification.json`](audit/t73_x_m1_outer_collar_v7_replacement_ribbon_clearance_verification.json)。
 retained Johnson/dual 跨系统 clearance 与 ambient support 仍为 OPEN。
 
+retained-side 库存与 clearance 现由
+[`audit/t73_x_m1_outer_collar_v7_retained_ribbon_candidate_matrix.json`](audit/t73_x_m1_outer_collar_v7_retained_ribbon_candidate_matrix.json)
+和
+[`audit/t73_x_m1_outer_collar_v7_retained_ribbon_clearance.json`](audit/t73_x_m1_outer_collar_v7_retained_ribbon_clearance.json)
+闭合。原 7,656 个非-x segments 中精确删除 3,026 个被 collar 替换的 terminal
+segments，留下 4,630 个 rectangles：4,074 connector、524 Johnson handle
+arcs、24 bottom-closure、8 dual。3,018 个 retained source-edge stars 全部横截；
+4 个被完全替换的 dual passages 通过 V7 内部已验证 germ stars 连接。1,651,086
+个非 incidence AABB candidates 降为 825,896 个 AABB/F survivors，全部由精确
+skew axes 分离，交点为 0。现在只有 relative isotopy trace 与 tetrahedral
+ambient support 阻止 collars 升级为 actual map。
+
 第一个跨系统门禁找到并修复了真实碰撞，没有提前升级该 assembly。流式 Rust
 1.98.1 checker 位于
 [`rust/t73_exact_cross_clearance`](rust/t73_exact_cross_clearance)，使用
