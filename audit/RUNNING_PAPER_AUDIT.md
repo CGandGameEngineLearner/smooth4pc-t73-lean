@@ -4478,6 +4478,27 @@ Topology-source checks completed 2026-09-04:
   all stub core/push segments and each other before global stub framing
   clearance is complete.
 
+### F-599AC — Every stub ribbon is embedded relative to its own band record
+
+- Severity: **Positive framing clearance / stub ribbon local systems**
+- Status: **ALL WITHIN-BAND RIBBONS PASS; CROSS-BAND RIBBONS OPEN**
+- Evidence: `audit/t73_x_m1_stub_ribbon_local_clearance.json`, its builder and
+  test, bound to F-599AB core/push clearance and F-599Z ribbon cells.
+- Ribbon/ribbon: the four stub paths in each of 1513 band records give 137,474
+  triangle pairs. Exactly 24,172 share permitted boundary vertices; all other
+  113,302 pairs have disjoint exact 3D rational bounding boxes. Thus no
+  nonincident pair reaches the triangle-intersection solver and every local
+  ribbon union is embedded.
+- Ribbon/segment: against all core and push segments of the same band record,
+  296,112 pairs split into 69,508 permitted incidences and 226,604 exact-box
+  rejections. Again there is no nonincident survivor. Verdict:
+  `PASS_X_M1_STUB_RIBBON_LOCAL_CLEARANCE`.
+- Boundary: ribbons belonging to different band records still require global
+  clearance. Since every ribbon is the sweep by the common direction
+  `(1,1,2)`, the next verifier projects core segments to the displacement
+  quotient `(x-y,2x-z)`, checks projected rectangle overlap by exact direction
+  hashes, and restores the bounded sweep parameter for survivors.
+
 ### F-599C — Monolithic linear projections of the affine framed link are computationally unsuitable
 
 - Severity: **complete PD / projection selection**

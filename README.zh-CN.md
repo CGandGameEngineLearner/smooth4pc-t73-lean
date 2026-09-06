@@ -639,6 +639,15 @@ stub core/push paths 也通过第一层全局 clearance。10,582 个 segments �
 verdict 为 `PASS_X_M1_STUB_CORE_PUSH_CLEARANCE`。stub ribbon/segment 与
 ribbon/ribbon clearance 仍为 OPEN。
 
+全部 stub ribbons 也通过完整的 **band-local** 检查。收据
+[`audit/t73_x_m1_stub_ribbon_local_clearance.json`](audit/t73_x_m1_stub_ribbon_local_clearance.json)
+检查 137,474 个 ribbon-triangle pairs：24,172 个为允许 incidence，其余
+113,302 个全部由精确三维 bounds 排除，没有相交 survivor。另检查 296,112 个
+ribbon/segment pairs：69,508 个 incidence 与 226,604 个精确 bounds 排除后同样
+无 survivor。verdict 为 `PASS_X_M1_STUB_RIBBON_LOCAL_CLEARANCE`。跨 band
+ribbon clearance 仍为 OPEN，下一步使用 displacement quotient
+`(x-y,2*x-z)`，它会消去共同 push 方向 `(1,1,2)`。
+
 全局线性投影探测记录于
 [`audit/t73_affine_s3_projection_probe.json`](audit/t73_affine_s3_projection_probe.json)。
 xz/yz 会压扁 dotted edges；三个 regular tilts 至少产生258,453,247个 broad

@@ -1,0 +1,19 @@
+{
+  "band_record_count": 1513,
+  "cross_band_ribbon_clearance_status": "OPEN_PROJECT_TO_DISPLACEMENT_QUOTIENT",
+  "ribbon_triangle_count": 21164,
+  "schema": "t73_x_m1_stub_ribbon_local_clearance/v1",
+  "sha256": "E82757C6C2010B8253520A0CBC92D068846BAF5DD670CD640CD803D5D8B04E48",
+  "stub_core_push_clearance_sha256": "4FB8DF1808A24CDAEE65D271FFC45A826245D67037BD2D8171EA888C11ED3F86",
+  "stub_r3_push_paths_receipt_sha256": "DEC508ECF0C68AFC388131F166F9E05AB225AED3D0149A7BD4B38C8B79EC3682",
+  "verdict": "PASS_X_M1_STUB_RIBBON_LOCAL_CLEARANCE",
+  "within_band_ribbon_exact_bounds_rejects": 113302,
+  "within_band_ribbon_exact_triangle_checks": 0,
+  "within_band_ribbon_incidence_skips": 24172,
+  "within_band_ribbon_segment_exact_bounds_rejects": 226604,
+  "within_band_ribbon_segment_exact_checks": 0,
+  "within_band_ribbon_segment_incidence_skips": 69508,
+  "within_band_ribbon_segment_pairs": 296112,
+  "within_band_ribbon_triangle_pairs": 137474,
+  "within_band_stub_ribbon_embedding": true
+}

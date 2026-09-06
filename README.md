@@ -175,6 +175,16 @@ segment equations are disjoint. Push/push clearance follows from the common
 translation of the embedded stub cores. Verdict:
 `PASS_X_M1_STUB_CORE_PUSH_CLEARANCE`. Stub ribbon/segment and ribbon/ribbon
 clearance remains open.
+
+All stub ribbons also pass their complete **within-band** checks. The receipt
+[`audit/t73_x_m1_stub_ribbon_local_clearance.json`](audit/t73_x_m1_stub_ribbon_local_clearance.json)
+examines 137,474 ribbon-triangle pairs: 24,172 are permitted incidences and all
+remaining 113,302 fail exact 3D bounds, leaving no intersection survivor. It
+also checks 296,112 ribbon/segment pairs: 69,508 incidences and 226,604 exact
+bounds rejections again leave no survivor. Verdict:
+`PASS_X_M1_STUB_RIBBON_LOCAL_CLEARANCE`. Cross-band ribbon clearance remains
+open and will use the displacement quotient `(x-y,2*x-z)`, which collapses the
+common push direction `(1,1,2)`.
 The graph map extends over all five framed regular neighborhoods in
 [`geometry/t73_hybrid_to_railroad_tubular_map.json`](geometry/t73_hybrid_to_railroad_tubular_map.json).
 Its five solid-torus templates contain 5385 tetrahedra and 10770 boundary
