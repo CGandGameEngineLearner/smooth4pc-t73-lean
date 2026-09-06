@@ -555,6 +555,14 @@ lift，但把 4 条 `after` dual collars 送到负 exterior x，4 条 `before` �
 [`audit/t73_x_m1_framed_outer_interface_collars_v6_verification.json`](audit/t73_x_m1_framed_outer_interface_collars_v6_verification.json)。
 重新生成全局矩阵前，V6 仍只算 candidate。
 
+V6 新矩阵含 core/core 14,249,056、push/push 14,249,056、有向 mutual
+28,516,206 个候选；完整 one-skeleton 再次以 6,048、75,610、90,784 个精确
+方程通过。但精确 ribbon clearance 否证 V6：interface 3020 的 start-lift
+triangle 0 与 interface 3019 的 first-ray triangle 0 在已保存有理点相交，edge
+参数为 `1/28014908919000000`。因此统一 before/after 半空间规则错误。四对
+shared-dual 的穷尽精确检查给出最小 V7 分配：保持全部 V5 符号，仅把 interfaces
+3022、3023 送到负 exterior x。
+
 第一个跨系统门禁找到并修复了真实碰撞，没有提前升级该 assembly。流式 Rust
 1.98.1 checker 位于
 [`rust/t73_exact_cross_clearance`](rust/t73_exact_cross_clearance)，使用

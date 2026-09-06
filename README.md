@@ -453,6 +453,16 @@ equations, all 15,134 local stars, and reruns the former V5 triangle pair with
 the full exact predicate; it is now disjoint. See
 [`audit/t73_x_m1_framed_outer_interface_collars_v6_verification.json`](audit/t73_x_m1_framed_outer_interface_collars_v6_verification.json).
 V6 remains candidate-only pending fresh global matrices.
+
+Fresh V6 matrices contain 14,249,056 core/core, 14,249,056 push/push and
+28,516,206 directed mutual candidates. The complete one-skeleton again passes
+with 6,048, 75,610 and 90,784 exact equations. However exact ribbon clearance
+refutes V6: interface 3020 start-lift triangle 0 meets interface 3019
+first-ray triangle 0 at the saved rational point with edge parameter
+`1/28014908919000000`. Therefore a uniform before/after half-space rule is
+wrong. Exhaustive exact checks on the four shared-dual pairs show the minimal
+V7 assignment: keep all V5 signs except send only interfaces 3022 and 3023 to
+negative exterior x.
 The graph map extends over all five framed regular neighborhoods in
 [`geometry/t73_hybrid_to_railroad_tubular_map.json`](geometry/t73_hybrid_to_railroad_tubular_map.json).
 Its five solid-torus templates contain 5385 tetrahedra and 10770 boundary

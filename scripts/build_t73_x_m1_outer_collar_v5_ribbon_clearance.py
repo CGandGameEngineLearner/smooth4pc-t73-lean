@@ -202,11 +202,11 @@ def check_pair(pair, groups, broad):
     }
 
 
-def build():
-    collars = json.loads(COLLARS.read_text())
-    matrix = json.loads(MATRIX.read_text())
-    if matrix["outer_collars_v5_receipt_sha256"] != collars["sha256"]:
-        raise AssertionError("v5 ribbon matrix is stale")
+def build(collars_path=COLLARS, matrix_path=MATRIX, version="v5"):
+    collars = json.loads(collars_path.read_text())
+    matrix = json.loads(matrix_path.read_text())
+    if matrix[f"outer_collars_{version}_receipt_sha256"] != collars["sha256"]:
+        raise AssertionError(f"{version} ribbon matrix is stale")
     groups = load(collars)
     name_to_type = {name: index for index, name in enumerate(TYPE_NAMES)}
     results = []
@@ -216,14 +216,14 @@ def build():
         results.append(result)
         if result["status"] != "PASS":
             output = {
-                "schema": "t73_x_m1_outer_collar_v5_ribbon_clearance/v1",
-                "outer_collars_v5_receipt_sha256": collars["sha256"],
-                "v5_ribbon_candidate_matrix_sha256": matrix["sha256"],
+                "schema": f"t73_x_m1_outer_collar_{version}_ribbon_clearance/v1",
+                f"outer_collars_{version}_receipt_sha256": collars["sha256"],
+                f"{version}_ribbon_candidate_matrix_sha256": matrix["sha256"],
                 "completed_type_pair_results_before_collision": results[:-1],
                 "collision": result,
                 "global_ribbon_clearance": False,
                 "classification": "CANDIDATE_REFUTED",
-                "verdict": "REFUTED_X_M1_OUTER_COLLAR_V5_RIBBON_CLEARANCE",
+                "verdict": f"REFUTED_X_M1_OUTER_COLLAR_{version.upper()}_RIBBON_CLEARANCE",
             }
             output["sha256"] = canonical_sha(output)
             return output
@@ -232,9 +232,9 @@ def build():
     ):
         raise AssertionError("v5 ribbon proof does not consume the complete matrix")
     output = {
-        "schema": "t73_x_m1_outer_collar_v5_ribbon_clearance/v1",
-        "outer_collars_v5_receipt_sha256": collars["sha256"],
-        "v5_ribbon_candidate_matrix_sha256": matrix["sha256"],
+        "schema": f"t73_x_m1_outer_collar_{version}_ribbon_clearance/v1",
+        f"outer_collars_{version}_receipt_sha256": collars["sha256"],
+        f"{version}_ribbon_candidate_matrix_sha256": matrix["sha256"],
         "rectangle_count": matrix["rectangle_count"],
         "ribbon_triangle_count": matrix["ribbon_triangle_count"],
         "local_star_count": matrix["local_star_count"],
@@ -259,7 +259,7 @@ def build():
         "intersection_count": 0,
         "global_ribbon_clearance": True,
         "classification": "GLOBALLY_EMBEDDED_RIBBON_SYSTEM",
-        "verdict": "PASS_X_M1_OUTER_COLLAR_V5_RIBBON_CLEARANCE",
+        "verdict": f"PASS_X_M1_OUTER_COLLAR_{version.upper()}_RIBBON_CLEARANCE",
     }
     output["sha256"] = canonical_sha(output)
     return output

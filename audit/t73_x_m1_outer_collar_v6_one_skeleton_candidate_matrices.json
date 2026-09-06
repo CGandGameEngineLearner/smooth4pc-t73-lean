@@ -1,0 +1,92 @@
+{
+  "clearance_status": "OPEN_APPLY_V6_EXACT_HASH_INTERVAL_AND_GMP_REDUCTIONS",
+  "core_candidate_count": 14249056,
+  "core_constant_functional_types": [
+    "start_skew_lift",
+    "first_exterior_ray",
+    "staggered_last_exterior_ray",
+    "end_skew_lift"
+  ],
+  "core_constant_height_types": [
+    "first_exterior_ray"
+  ],
+  "core_matrix": {
+    "end_skew_lift/end_skew_lift": 228,
+    "first_exterior_ray/end_skew_lift": 4567756,
+    "first_exterior_ray/staggered_height_bridge": 3026,
+    "first_exterior_ray/staggered_last_exterior_ray": 3026,
+    "retained_source_germ/retained_source_germ": 4,
+    "retained_source_germ/start_skew_lift": 6048,
+    "staggered_height_bridge/staggered_last_exterior_ray": 3026,
+    "staggered_last_exterior_ray/end_skew_lift": 3934551,
+    "start_skew_lift/first_exterior_ray": 3440544,
+    "start_skew_lift/staggered_last_exterior_ray": 12245,
+    "start_skew_lift/start_skew_lift": 2278602
+  },
+  "core_nonempty_type_pair_count": 11,
+  "core_segment_count": 18156,
+  "directed_core_push_candidate_count": 28516206,
+  "directed_core_push_matrix": {
+    "core:end_skew_lift/push:end_skew_lift": 3482,
+    "core:end_skew_lift/push:first_exterior_ray": 4567755,
+    "core:end_skew_lift/push:staggered_last_exterior_ray": 3934545,
+    "core:first_exterior_ray/push:end_skew_lift": 4567756,
+    "core:first_exterior_ray/push:first_exterior_ray": 3022,
+    "core:first_exterior_ray/push:staggered_height_bridge": 3020,
+    "core:first_exterior_ray/push:staggered_last_exterior_ray": 3022,
+    "core:first_exterior_ray/push:start_skew_lift": 3440544,
+    "core:retained_source_germ/push:retained_source_germ": 3018,
+    "core:retained_source_germ/push:start_skew_lift": 6036,
+    "core:staggered_height_bridge/push:first_exterior_ray": 3026,
+    "core:staggered_height_bridge/push:staggered_height_bridge": 3026,
+    "core:staggered_height_bridge/push:staggered_last_exterior_ray": 3024,
+    "core:staggered_last_exterior_ray/push:end_skew_lift": 3934551,
+    "core:staggered_last_exterior_ray/push:first_exterior_ray": 3026,
+    "core:staggered_last_exterior_ray/push:staggered_height_bridge": 3026,
+    "core:staggered_last_exterior_ray/push:staggered_last_exterior_ray": 3026,
+    "core:staggered_last_exterior_ray/push:start_skew_lift": 12245,
+    "core:start_skew_lift/push:first_exterior_ray": 3440535,
+    "core:start_skew_lift/push:retained_source_germ": 6048,
+    "core:start_skew_lift/push:staggered_last_exterior_ray": 12243,
+    "core:start_skew_lift/push:start_skew_lift": 4560230
+  },
+  "directed_core_push_nonempty_type_pair_count": 22,
+  "end_exterior_height_offset": "1/2",
+  "outer_collars_v6_local_verification_sha256": "2D17FE64F2D405C02C5D27AD3457D7B4E71DE7DAF928CFE3639CADBBF482D9B2",
+  "outer_collars_v6_receipt_sha256": "CDDB4404A3A30F972241AE81DFB1AE0BF3B596B8F1EF7C345FA65FBDB5E2A55C",
+  "push_candidate_count": 14249056,
+  "push_constant_functional_types": [
+    "start_skew_lift",
+    "first_exterior_ray",
+    "staggered_last_exterior_ray"
+  ],
+  "push_constant_height_types": [
+    "first_exterior_ray"
+  ],
+  "push_matrix": {
+    "end_skew_lift/end_skew_lift": 228,
+    "first_exterior_ray/end_skew_lift": 4567756,
+    "first_exterior_ray/staggered_height_bridge": 3026,
+    "first_exterior_ray/staggered_last_exterior_ray": 3026,
+    "retained_source_germ/retained_source_germ": 4,
+    "retained_source_germ/start_skew_lift": 6048,
+    "staggered_height_bridge/staggered_last_exterior_ray": 3026,
+    "staggered_last_exterior_ray/end_skew_lift": 3934551,
+    "start_skew_lift/first_exterior_ray": 3440544,
+    "start_skew_lift/staggered_last_exterior_ray": 12245,
+    "start_skew_lift/start_skew_lift": 2278602
+  },
+  "push_nonempty_type_pair_count": 11,
+  "push_segment_count": 18156,
+  "schema": "t73_x_m1_outer_collar_v6_one_skeleton_candidate_matrices/v1",
+  "segment_type_names": [
+    "retained_source_germ",
+    "start_skew_lift",
+    "first_exterior_ray",
+    "staggered_height_bridge",
+    "staggered_last_exterior_ray",
+    "end_skew_lift"
+  ],
+  "sha256": "E7BEA586579FD21977FEF969C790A47A0558AA804FE79264A57BC2B3128D6552",
+  "verdict": "PASS_X_M1_OUTER_COLLAR_V6_ONE_SKELETON_CANDIDATE_MATRICES_ONLY"
+}

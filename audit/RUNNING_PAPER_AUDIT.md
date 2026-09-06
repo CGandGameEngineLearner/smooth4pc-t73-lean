@@ -5123,6 +5123,31 @@ Topology-source checks completed 2026-09-04:
 - Boundary: V6 remains `CANDIDATE_UNVERIFIED`; targeted repair and local stars
   do not replace fresh global core, push, mutual and ribbon matrices.
 
+### F-599BC — V6 one-skeleton passes fresh matrices but its ribbon system is refuted
+
+- Severity: **Critical V6 ribbon refutation / sign rule corrected**
+- Status: **ONE-SKELETON PASS; NONINCIDENT RIBBON COLLISION**
+- Evidence: the V6 one-skeleton matrices/aggregate clearance, V6 ribbon
+  matrix, `audit/t73_x_m1_outer_collar_v6_ribbon_clearance.json`, versioned
+  exact engines and regression test.
+- One-skeleton: fresh core/push counts are 14,249,056 each and directed mutual
+  is 28,516,206. Exact equation totals are 6,048, 75,610 and 90,784; all have
+  zero intersections. No V5 matrix is reused.
+- Ribbon matrix: 18,156 rectangles retain 15,134 valid local stars and have
+  14,233,922 nonincident AABB candidates in eight type pairs.
+- Collision: exact F intervals and triangle predicates find interface 3020
+  start-lift triangle 0 intersecting interface 3019 first-ray triangle 0.
+  The stored witness has edge parameter `1/28014908919000000` and exact
+  barycentric coordinates. Verdict:
+  `REFUTED_X_M1_OUTER_COLLAR_V6_RIBBON_CLEARANCE`.
+- Sign search: for each of four shared-dual pairs, all four exterior sign
+  assignments were checked against every local star and all cross-collar
+  triangle pairs. The lower r_xy collar must be positive; the lower r_zx
+  collar must be negative; the upper member may use either sign.
+- V7 rule: relative to V5, change only interfaces 3022 and 3023 to negative
+  exterior x. This is the lexicographically minimal two-record repair and
+  replaces the false uniform before/after rule.
+
 ### F-599C — Monolithic linear projections of the affine framed link are computationally unsuitable
 
 - Severity: **complete PD / projection selection**

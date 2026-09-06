@@ -80,6 +80,7 @@ def build(output_path):
         "dual_lift": [str(value) for value in POSITIVE_LIFT],
         "before_exterior_x_half_space": "positive",
         "after_exterior_x_half_space": "negative",
+        "end_exterior_height_offset": str(END_OFFSET),
         "routing_functional": [str(-SLOPE), "1", str(FUNCTIONAL_Z)],
         "construction_classification": "CANDIDATE_UNVERIFIED_UNTIL_ALL_GLOBAL_AND_AMBIENT_CHECKS",
     }
@@ -181,6 +182,7 @@ def build(output_path):
         "dual_lift": [str(value) for value in POSITIVE_LIFT],
         "before_exterior_x_half_space": "positive",
         "after_exterior_x_half_space": "negative",
+        "end_exterior_height_offset": str(END_OFFSET),
         "changed_after_dual_collar_count": changed,
         "unchanged_collar_count": unchanged,
         "collar_count": records,

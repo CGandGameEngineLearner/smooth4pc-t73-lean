@@ -1,0 +1,30 @@
+{
+  "clearance_status": "OPEN_APPLY_EXACT_RULED_RECTANGLE_SEPARATION",
+  "collar_count": 3026,
+  "declared_local_adjacency_pair_count": 15134,
+  "expanded_3d_aabb_rectangle_pair_count": 14249056,
+  "local_star_count": 15134,
+  "local_star_relation_counts": {
+    "same_interface/TRANSVERSE_PLANES": 15130,
+    "shared_dual_germ/COPLANAR_OPPOSITE_SIDES": 4
+  },
+  "nonempty_nonincident_type_pair_count": 8,
+  "nonincident_candidate_count": 14233922,
+  "nonincident_candidate_matrix": {
+    "end_skew_lift/end_skew_lift": 228,
+    "first_exterior_ray/end_skew_lift": 4567756,
+    "first_exterior_ray/staggered_last_exterior_ray": 3026,
+    "retained_source_germ/start_skew_lift": 3022,
+    "staggered_last_exterior_ray/end_skew_lift": 3931525,
+    "start_skew_lift/first_exterior_ray": 3437518,
+    "start_skew_lift/staggered_last_exterior_ray": 12245,
+    "start_skew_lift/start_skew_lift": 2278602
+  },
+  "outer_collars_v6_receipt_sha256": "CDDB4404A3A30F972241AE81DFB1AE0BF3B596B8F1EF7C345FA65FBDB5E2A55C",
+  "rectangle_count": 18156,
+  "ribbon_triangle_count": 36312,
+  "schema": "t73_x_m1_outer_collar_v6_ribbon_candidate_matrix/v1",
+  "sha256": "D8BE681ACABDED558B17C4C884FA2AD9C52D10232F7881F35F2C855EAAC27319",
+  "v6_core_push_clearance_sha256": "8F0D45ECEEF4011C1E5D179BF4D519B9E096DEF1E122E0B65E8A81CF378E8BFD",
+  "verdict": "PASS_X_M1_OUTER_COLLAR_V6_RIBBON_CANDIDATE_MATRIX_AND_LOCAL_STARS_ONLY"
+}

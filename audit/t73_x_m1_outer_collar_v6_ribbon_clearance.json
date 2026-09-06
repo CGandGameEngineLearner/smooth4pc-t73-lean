@@ -1,0 +1,94 @@
+{
+  "classification": "CANDIDATE_REFUTED",
+  "collision": {
+    "exact_triangle_checks_before_collision": 1,
+    "first": [
+      3020,
+      1,
+      0
+    ],
+    "functional_interval_overlaps_before_collision": 3024,
+    "pair": "start_skew_lift/first_exterior_ray",
+    "second": [
+      3019,
+      2,
+      0
+    ],
+    "status": "REFUTED",
+    "witness": {
+      "edge_index": 0,
+      "edge_parameter": "1/28014908919000000",
+      "point": [
+        "1512718999999/499900000000",
+        "4033226499867/499900000000",
+        "13019"
+      ],
+      "source": "second_edge",
+      "triangle_alpha": "13005979999/13020000000",
+      "triangle_beta": "1/1000"
+    }
+  },
+  "completed_type_pair_results_before_collision": [
+    {
+      "broad_aabb_nonincident_candidates": 228,
+      "declared_local_adjacencies": 0,
+      "exact_bounds_rejects": 0,
+      "exact_skew_axis_rejects": 0,
+      "exact_triangle_pair_checks": 0,
+      "global_exact_functional_interval_overlaps": 0,
+      "intersections": 0,
+      "pair": "end_skew_lift/end_skew_lift",
+      "status": "PASS"
+    },
+    {
+      "broad_aabb_nonincident_candidates": 4567756,
+      "declared_local_adjacencies": 0,
+      "exact_bounds_rejects": 0,
+      "exact_skew_axis_rejects": 0,
+      "exact_triangle_pair_checks": 0,
+      "global_exact_functional_interval_overlaps": 0,
+      "intersections": 0,
+      "pair": "first_exterior_ray/end_skew_lift",
+      "status": "PASS"
+    },
+    {
+      "broad_aabb_nonincident_candidates": 3026,
+      "declared_local_adjacencies": 0,
+      "exact_bounds_rejects": 0,
+      "exact_skew_axis_rejects": 0,
+      "exact_triangle_pair_checks": 0,
+      "global_exact_functional_interval_overlaps": 0,
+      "intersections": 0,
+      "pair": "first_exterior_ray/staggered_last_exterior_ray",
+      "status": "PASS"
+    },
+    {
+      "broad_aabb_nonincident_candidates": 3022,
+      "declared_local_adjacencies": 3026,
+      "exact_bounds_rejects": 4,
+      "exact_skew_axis_rejects": 0,
+      "exact_triangle_pair_checks": 16,
+      "global_exact_functional_interval_overlaps": 3034,
+      "intersections": 0,
+      "pair": "retained_source_germ/start_skew_lift",
+      "status": "PASS"
+    },
+    {
+      "broad_aabb_nonincident_candidates": 3931525,
+      "declared_local_adjacencies": 3026,
+      "exact_bounds_rejects": 0,
+      "exact_skew_axis_rejects": 0,
+      "exact_triangle_pair_checks": 0,
+      "global_exact_functional_interval_overlaps": 3026,
+      "intersections": 0,
+      "pair": "staggered_last_exterior_ray/end_skew_lift",
+      "status": "PASS"
+    }
+  ],
+  "global_ribbon_clearance": false,
+  "outer_collars_v6_receipt_sha256": "CDDB4404A3A30F972241AE81DFB1AE0BF3B596B8F1EF7C345FA65FBDB5E2A55C",
+  "schema": "t73_x_m1_outer_collar_v6_ribbon_clearance/v1",
+  "sha256": "B44E272E49F9477A1B1D9CD0906C2AD3A71E8E556456F4161BB38652B055FD99",
+  "v6_ribbon_candidate_matrix_sha256": "D8BE681ACABDED558B17C4C884FA2AD9C52D10232F7881F35F2C855EAAC27319",
+  "verdict": "REFUTED_X_M1_OUTER_COLLAR_V6_RIBBON_CLEARANCE"
+}
