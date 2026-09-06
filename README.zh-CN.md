@@ -445,6 +445,25 @@ python3 scripts/build_t73_x_m1_support_generator_sphere_cut.py --write
 python3 scripts/build_t73_x_m1_support_cut_r3_shell.py --write
 ```
 
+全部 splice-stub **core** pieces 现已映入该 shell。缓存
+`C:\Users\Administrator\.cache\t73_x_m1_splice_stub_cores_r3.jsonl.gz`
+及收据
+[`audit/t73_x_m1_splice_stub_cores_r3_receipt.json`](audit/t73_x_m1_splice_stub_cores_r3_receipt.json)、
+[`audit/t73_x_m1_splice_stub_cores_r3_verification.json`](audit/t73_x_m1_splice_stub_cores_r3_verification.json)
+包含 1,513 条记录与 10,582 个精确分片仿射 segments。每个开 piece 都有唯一
+`AC` boundary-side carrier，故无需选择即可映到 cut shell 的 `C-A_copy` 部分。
+独立全量重放重新求解全部源重心坐标，复现 21,164 个 endpoint occurrences、
+4,530 个 continuity matches，并检查流与缓存 SHA。verdict 为
+`PASS_X_M1_ALL_SPLICE_STUB_CORES_R3_FULL`。该结论严格限于 core：把保存的 push
+normal 延拓进 R3 shell collar 仍为 OPEN，15,151 个 interior band-lane pieces
+也仍待处理。
+
+```bash
+python3 scripts/build_t73_x_m1_splice_stub_cores_r3.py \
+  --output C:/Users/Administrator/.cache/t73_x_m1_splice_stub_cores_r3.jsonl.gz
+python3 scripts/build_t73_x_m1_splice_stub_cores_r3_verification.py
+```
+
 全局线性投影探测记录于
 [`audit/t73_affine_s3_projection_probe.json`](audit/t73_affine_s3_projection_probe.json)。
 xz/yz 会压扁 dotted edges；三个 regular tilts 至少产生258,453,247个 broad

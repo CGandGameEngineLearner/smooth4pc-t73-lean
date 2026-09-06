@@ -517,6 +517,26 @@ python3 scripts/build_t73_x_m1_support_generator_sphere_cut.py --write
 python3 scripts/build_t73_x_m1_support_cut_r3_shell.py --write
 ```
 
+All splice-stub **core** pieces are now carried into this shell. The cache
+`C:\Users\Administrator\.cache\t73_x_m1_splice_stub_cores_r3.jsonl.gz`
+and receipts
+[`audit/t73_x_m1_splice_stub_cores_r3_receipt.json`](audit/t73_x_m1_splice_stub_cores_r3_receipt.json),
+[`audit/t73_x_m1_splice_stub_cores_r3_verification.json`](audit/t73_x_m1_splice_stub_cores_r3_verification.json)
+contain 1,513 records and 10,582 exact piecewise-affine segments. Every open
+piece has a unique carrier on the `AC` boundary side and therefore maps to the
+`C-A_copy` part of the cut shell without a side choice. The independent full
+replay resolves all source barycentric coordinates, reproduces 21,164 endpoint
+occurrences and 4,530 continuity matches, and checks both stream and cache
+SHAs. Verdict: `PASS_X_M1_ALL_SPLICE_STUB_CORES_R3_FULL`. This statement is
+deliberately core-only: extending the saved push normals into the R3 shell
+collar remains open, as do 15,151 interior band-lane pieces.
+
+```bash
+python3 scripts/build_t73_x_m1_splice_stub_cores_r3.py \
+  --output C:/Users/Administrator/.cache/t73_x_m1_splice_stub_cores_r3.jsonl.gz
+python3 scripts/build_t73_x_m1_splice_stub_cores_r3_verification.py
+```
+
 Global linear projection probes are recorded in
 [`audit/t73_affine_s3_projection_probe.json`](audit/t73_affine_s3_projection_probe.json).
 xz/yz collapse dotted edges; three regular tilts produce at least 258,453,247

@@ -4029,6 +4029,34 @@ Topology-source checks completed 2026-09-04:
   handle-deletion/ejection tracks must still be carried to this shell before
   the complete replacement link can be asserted in R3.
 
+### F-599N — Every splice-stub core piece maps source-relatively into the cut R3 shell
+
+- Severity: **Major positive construction / complete stub-core chart**
+- Status: **ALL STUB CORES R3 PASS; PUSH COLLARS AND INTERIOR LANES OPEN**
+- Evidence: the cache named by
+  `audit/t73_x_m1_splice_stub_cores_r3_receipt.json`, its full verification
+  receipt, builder, independent verifier and test, bound to the collar product,
+  F-599M cut/R3 shell, source stub stream and F-599H complete assembly.
+- Carrier result: inspecting the relative interior of each source segment via
+  exact midpoint barycentric support gives 10,582/10,582 splice-stub core
+  pieces on the AC boundary side. None lies on the generator sphere and none
+  has an AB/AC ambiguity. Under the F-599M cut, every A vertex therefore uses
+  its copied index 32--39, placing the paths in the `C-A_copy` shell region.
+- R3 map: source-simplex barycentric weights are applied to the exact integer
+  vertices of the cubical R3 shell. The 1513 records contain all 10,582 mapped
+  segments and 21,164 endpoint occurrences. Consecutive pieces within each of
+  the four stub types give 4530 exact coordinate equalities.
+- Independent full replay: a separate verifier rebuilds every inverse source
+  simplex matrix, carrier tetrahedron, cut-side substitution and rational R3
+  endpoint; all records compare exactly. Decompressed record-stream SHA and
+  full 3,427,396-byte cache SHA pass. Verdict:
+  `PASS_X_M1_ALL_SPLICE_STUB_CORES_R3_FULL`.
+- Boundary: the output is intentionally core-only. The push endpoints are
+  saved in the source stream, but their normal collar has not been transported
+  through the R3 shell map. Of 15,158 band-lane core pieces, only seven lie on
+  the support boundary and 15,151 have interior carriers; those require the
+  full handle-deletion map rather than this boundary restriction.
+
 ### F-599C — Monolithic linear projections of the affine framed link are computationally unsuitable
 
 - Severity: **complete PD / projection selection**

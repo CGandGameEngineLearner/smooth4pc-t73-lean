@@ -1,0 +1,35 @@
+{
+  "builder_sha256": "25D19B550565033A59B65C3848E5D100DEB962E76FE48D7744DF219DA8A94D96",
+  "cache_path": "C:\\Users\\Administrator\\.cache\\t73_x_m1_splice_stub_cores_r3.jsonl.gz",
+  "cache_sha256": "DE626E73736B5BDE2907B64F1E3866996510550431962885C6C3429879A85F4D",
+  "cache_size": 3427396,
+  "collar_product_sha256": "EFB6CBB2B2B32F4A37FB8D257DBA69C9D0F0ED32C9624A92185B6343A5D30775",
+  "complete_replacement_verification_sha256": "A2E430C86C09F09504042346F457734277C20DF19B598B241BBB89991AFE089E",
+  "completion_status": "ALL_SPLICE_STUB_CORES_MAPPED_TO_SUPPORT_CUT_R3_SHELL",
+  "component_counts": {
+    "m_2": 269,
+    "m_3": 1240,
+    "r_xy": 2,
+    "r_zx": 2
+  },
+  "cut_side": "AC_to_C_A_copy",
+  "ejected_splice_stubs_receipt_sha256": "8EF2FB21E4082741A43A758093F0EA95A354AB2D9C94EA8DB505999CAF4C37C4",
+  "interior_band_lane_status": "OPEN_15151_PIECES",
+  "mapped_core_endpoint_occurrences": 21164,
+  "mapped_core_piece_count": 10582,
+  "mapped_push_status": "OPEN_EXTEND_R3_SHELL_COLLAR_NORMAL",
+  "r3_piece_continuity_checks": 4530,
+  "record_count": 1513,
+  "record_stream_sha256": "AC4DFDDC1E04E74DFD09CB256112A7BD136185CBD7CD56D3A34EC8CBB050099B",
+  "schema": "t73_x_m1_splice_stub_cores_r3_receipt/v1",
+  "sha256": "A97422397ECE3B90995ABF1499189E86E27898A0BBD098069914D9BBEA6AEE62",
+  "stub_piece_counts": {
+    "source_stub_after": 3776,
+    "source_stub_before": 2267,
+    "target_complement_first": 3024,
+    "target_complement_last": 1515
+  },
+  "support_cut_r3_shell_sha256": "DFA2DE0850FC6C8F2B4BD8CA3222F06CC30791A47A6181E727DC079CD4ECDD21",
+  "support_cut_sha256": "69A9900C4A85B0323DD5DF3A0B6A616FA73C8F26A03937A865574C5B116C16C0",
+  "verdict": "PASS_X_M1_ALL_SPLICE_STUB_CORES_R3"
+}

@@ -1,0 +1,20 @@
+{
+  "cache_sha256": "DE626E73736B5BDE2907B64F1E3866996510550431962885C6C3429879A85F4D",
+  "construction_receipt_sha256": "A97422397ECE3B90995ABF1499189E86E27898A0BBD098069914D9BBEA6AEE62",
+  "full_result": {
+    "cache_sha_checked": true,
+    "continuity_checks": 4530,
+    "core_pieces_reconstructed": 10582,
+    "cut_side": "AC_to_C_A_copy",
+    "endpoint_occurrences_reconstructed": 21164,
+    "interior_band_lanes": "OPEN_15151_PIECES",
+    "mapped_push": "OPEN",
+    "records_reconstructed": 1513,
+    "verdict": "PASS_X_M1_ALL_SPLICE_STUB_CORES_R3_FULL"
+  },
+  "schema": "t73_x_m1_splice_stub_cores_r3_verification/v1",
+  "sha256": "D90D5EEFBB8AB09C8C0A546BE94F33CCFB4A12041D66A5BB9B1A1DAE169B50D7",
+  "verdict": "PASS_X_M1_ALL_SPLICE_STUB_CORES_R3_FULL",
+  "verifier_path": "scripts/verify_t73_x_m1_splice_stub_cores_r3.py",
+  "verifier_sha256": "0D1931FFE6167CF955EE963D890D745FE232F349236AAF9E7DEDA01CCEB12D61"
+}
