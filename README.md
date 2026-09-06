@@ -753,6 +753,24 @@ python3 scripts/build_t73_x_m1_outer_collar_v7_reverse_dynamic_core_obstruction.
 python3 scripts/verify_t73_x_m1_outer_collar_v7_reverse_dynamic_core_obstruction.py
 python3 -m unittest tests.test_t73_x_m1_outer_collar_v7_reverse_dynamic_core_obstruction
 ```
+
+The first repaired spatial movie is the deterministic rational artifact
+[`geometry/t73_x_m1_outer_collar_v7_explicit_core_detour_3017.json`](geometry/t73_x_m1_outer_collar_v7_explicit_core_detour_3017.json).
+It fixes only germ vertex 0 and correctly treats vertices 1--5, including the
+moving source/target port, as a 15-dimensional configuration. The movie uses
+double zippers through the exterior hub
+`(-100000*k,100000000000,100000*k)`, `k=1,...,5`. Its 22 states and 21
+transitions contain 16 canonical and five explicitly time-reversed
+triangulations, for 210 R4 trace triangles. Independent replay performs 132
+state self-segment, 504 transition self-triangle, 42 boundary, 210 rank and 332
+static-core exact checks, with zero forbidden intersections. This proves only
+the interface-3017 core candidate; push and ribbon construction remain open.
+
+```bash
+python3 scripts/build_t73_x_m1_outer_collar_v7_explicit_core_detour_3017.py --write --check
+python3 scripts/verify_t73_x_m1_outer_collar_v7_explicit_core_detour_3017.py
+python3 -m unittest tests.test_t73_x_m1_outer_collar_v7_explicit_core_detour_3017
+```
 The graph map extends over all five framed regular neighborhoods in
 [`geometry/t73_hybrid_to_railroad_tubular_map.json`](geometry/t73_hybrid_to_railroad_tubular_map.json).
 Its five solid-torus templates contain 5385 tetrahedra and 10770 boundary

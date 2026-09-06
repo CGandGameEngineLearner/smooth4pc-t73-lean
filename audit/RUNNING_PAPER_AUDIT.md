@@ -5613,6 +5613,37 @@ Topology-source checks completed 2026-09-04:
   altering only schedule order. The new movie must have a fresh complete R4
   core/push/ribbon-volume clearance before ambient extension.
 
+### F-599BW — Interface 3017 has an exact deterministic core detour
+
+- Severity: **Dynamic spatial repair / first positive non-linear movie**
+- Status: **INTERFACE-3017 CORE PASS; PUSH/RIBBON AND ALL-INTERFACE EXPANSION OPEN**
+- Evidence: `geometry/t73_x_m1_outer_collar_v7_explicit_core_detour_3017.json`,
+  its deterministic builder, independent verifier and regression test, bound
+  to F-599BU/BV and the reverse static-core clearance.
+- Correct configuration: only the retained germ vertex 0 is fixed. The final
+  port differs from the source port by
+  `(4529/1510,1809/1208,2643/755)`, so vertices 1--5 are moving and the
+  configuration dimension is 15. An earlier 12-dimensional OMPL exploration
+  incorrectly fixed vertex 5 and was deleted before commit.
+- Construction: at the three-quarter state, both source and goal sides enter
+  the exterior layer via vertex order `1,2,3,4,5` and zipper vector
+  `(0,10000,0)`. The common hub has moving vertices
+  `(-100000*k,100000000000,100000*k)`, `k=1,...,5`. The goal-to-hub safe
+  triangulation is used in reverse by retaining its triangles and applying
+  `t -> 1-t`; it is not replaced by the other diagonal of a noncoplanar quad.
+- Exact replay: 22 rational states and 21 transitions give 16 canonical plus
+  five time-reversed triangulations and 210 R4 triangles. The independent
+  verifier reconstructs the precise changed-vertex sequence, all cells and
+  both time boundaries, then performs 132 state self-segment checks, 504
+  nonadjacent transition triangle checks, 210 rank checks and 332 checks
+  against the complete contemporaneous static core union. Forbidden
+  intersections are zero. Verdict:
+  `PASS_X_M1_OUTER_COLLAR_V7_EXPLICIT_CORE_DETOUR_3017_INDEPENDENT`.
+- Boundary: the artifact proves a rational core movie for one interface only.
+  Its push trace, framing ribbon world-volume, retained/replacement cross
+  clearance and all-interface generalization remain open. It is therefore
+  `RATIONAL_CORE_CANDIDATE_UNVERIFIED_FOR_FRAMING`, not an actual relative map.
+
 ### F-599C — Monolithic linear projections of the affine framed link are computationally unsuitable
 
 - Severity: **complete PD / projection selection**

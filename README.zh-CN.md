@@ -834,6 +834,23 @@ python3 scripts/verify_t73_x_m1_outer_collar_v7_reverse_dynamic_core_obstruction
 python3 -m unittest tests.test_t73_x_m1_outer_collar_v7_reverse_dynamic_core_obstruction
 ```
 
+第一条修复后的空间 movie 是确定性有理 artifact
+[`geometry/t73_x_m1_outer_collar_v7_explicit_core_detour_3017.json`](geometry/t73_x_m1_outer_collar_v7_explicit_core_detour_3017.json)。
+它只固定 germ 顶点 0，并正确把顶点 1–5（包括移动的 source/target port）视为
+15 维 configuration。movie 使用 double zippers，通过 exterior hub
+`(-100000*k,100000000000,100000*k)`，`k=1,...,5`。22 个 states、21 个
+transitions 包含 16 个 canonical 和 5 个显式 time-reversed triangulations，
+共 210 个 R4 trace triangles。独立重放执行 132 个 state self-segment、504
+个 transition self-triangle、42 个 boundary、210 个 rank 和 332 个
+static-core exact checks，禁止交点为 0。这只证明 interface-3017 core 候选；
+push 和 ribbon 构造仍为 OPEN。
+
+```bash
+python3 scripts/build_t73_x_m1_outer_collar_v7_explicit_core_detour_3017.py --write --check
+python3 scripts/verify_t73_x_m1_outer_collar_v7_explicit_core_detour_3017.py
+python3 -m unittest tests.test_t73_x_m1_outer_collar_v7_explicit_core_detour_3017
+```
+
 第一个跨系统门禁找到并修复了真实碰撞，没有提前升级该 assembly。流式 Rust
 1.98.1 checker 位于
 [`rust/t73_exact_cross_clearance`](rust/t73_exact_cross_clearance)，使用
