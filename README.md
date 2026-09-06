@@ -366,6 +366,14 @@ intervals checked directly with GMP. The verifier performs 75,618 exact
 segment equations, preserves 15,134 waypoint incidences and finds no
 intersection. Verdict: `PASS_X_M1_OUTER_COLLAR_V3_PUSH_CLEARANCE`. The
 core/push cross matrix and ribbons remain open.
+
+The directed core/push matrix is now explicit in
+[`audit/t73_x_m1_outer_collar_v3_core_push_candidate_matrix.json`](audit/t73_x_m1_outer_collar_v3_core_push_candidate_matrix.json).
+It covers 28,527,996 outward-rounded AABB candidates in 22 nonempty directed
+semantic type pairs and records constant-F/height availability separately on
+the core and push sides. It remains matrix-only: the changing-normal push
+end-lift interval reductions and direct dual GMP survivors must be applied
+before mutual clearance can pass.
 The graph map extends over all five framed regular neighborhoods in
 [`geometry/t73_hybrid_to_railroad_tubular_map.json`](geometry/t73_hybrid_to_railroad_tubular_map.json).
 Its five solid-torus templates contain 5385 tetrahedra and 10770 boundary

@@ -1,0 +1,71 @@
+{
+  "clearance_status": "OPEN_APPLY_DIRECTED_EXACT_HASH_INTERVAL_AND_GMP_REDUCTIONS",
+  "core_constant_functional_types": [
+    "start_skew_lift",
+    "first_exterior_ray",
+    "last_exterior_ray",
+    "end_skew_lift"
+  ],
+  "core_constant_height_types": [
+    "first_exterior_ray",
+    "height_bridge",
+    "last_exterior_ray"
+  ],
+  "core_segment_count": 18156,
+  "directed_nonempty_type_pair_count": 22,
+  "expanded_3d_aabb_candidate_count": 28527996,
+  "expanded_3d_aabb_candidate_matrix": {
+    "core:end_skew_lift/push:end_skew_lift": 3490,
+    "core:end_skew_lift/push:first_exterior_ray": 4567748,
+    "core:end_skew_lift/push:last_exterior_ray": 3934553,
+    "core:first_exterior_ray/push:end_skew_lift": 4567750,
+    "core:first_exterior_ray/push:first_exterior_ray": 3022,
+    "core:first_exterior_ray/push:height_bridge": 3018,
+    "core:first_exterior_ray/push:last_exterior_ray": 3022,
+    "core:first_exterior_ray/push:start_skew_lift": 3440548,
+    "core:height_bridge/push:first_exterior_ray": 3022,
+    "core:height_bridge/push:height_bridge": 3022,
+    "core:height_bridge/push:last_exterior_ray": 3022,
+    "core:last_exterior_ray/push:end_skew_lift": 3934557,
+    "core:last_exterior_ray/push:first_exterior_ray": 3022,
+    "core:last_exterior_ray/push:height_bridge": 3022,
+    "core:last_exterior_ray/push:last_exterior_ray": 3022,
+    "core:last_exterior_ray/push:start_skew_lift": 12097,
+    "core:retained_source_germ/push:retained_source_germ": 3018,
+    "core:retained_source_germ/push:start_skew_lift": 9068,
+    "core:start_skew_lift/push:first_exterior_ray": 3440544,
+    "core:start_skew_lift/push:last_exterior_ray": 12095,
+    "core:start_skew_lift/push:retained_source_germ": 9068,
+    "core:start_skew_lift/push:start_skew_lift": 4566266
+  },
+  "outer_collars_v3_receipt_sha256": "A002628084D4099B3D53CD79B7531E66CA5BDCEB4DE09D4AA8FD6462AC366A3B",
+  "push_constant_functional_types": [
+    "start_skew_lift",
+    "first_exterior_ray",
+    "last_exterior_ray"
+  ],
+  "push_constant_height_types": [
+    "first_exterior_ray",
+    "height_bridge",
+    "last_exterior_ray"
+  ],
+  "push_segment_count": 18156,
+  "routing_functional": [
+    "-1000033",
+    "1",
+    "2"
+  ],
+  "schema": "t73_x_m1_outer_collar_v3_core_push_candidate_matrix/v1",
+  "segment_type_names": [
+    "retained_source_germ",
+    "start_skew_lift",
+    "first_exterior_ray",
+    "height_bridge",
+    "last_exterior_ray",
+    "end_skew_lift"
+  ],
+  "sha256": "3730CB63C159FF43C0D6856CBEF0E1F9B1BAAD3997E45F86698AB47438E1CFF0",
+  "v3_core_clearance_sha256": "A7150DE25357DD867F888FFC6FA54EC6636378E20AF94B84F58250A783028E83",
+  "v3_push_clearance_sha256": "D0BCC6F653001C834DF32A8D7727CA02ECEA23DBA6DE7DB112375622CE15B49E",
+  "verdict": "PASS_X_M1_OUTER_COLLAR_V3_CORE_PUSH_CANDIDATE_MATRIX_ONLY"
+}

@@ -812,6 +812,13 @@ Johnson intervals，以及 8 个直接用 GMP 检查的 dual intervals。verifie
 verdict 为 `PASS_X_M1_OUTER_COLLAR_V3_PUSH_CLEARANCE`。core/push 交叉矩阵与
 ribbons 仍为 OPEN。
 
+有向 core/push 矩阵现已显式保存于
+[`audit/t73_x_m1_outer_collar_v3_core_push_candidate_matrix.json`](audit/t73_x_m1_outer_collar_v3_core_push_candidate_matrix.json)。
+它覆盖 22 个非空有向语义类型对中的 28,527,996 个向外舍入 AABB candidates，
+并分别记录 core 与 push 侧可用的 constant-F/height 类型。当前仍是 matrix-only：
+必须应用变化法向 push end-lift 的区间降维与 dual 直接 GMP survivors，才能声明
+mutual clearance PASS。
+
 全局线性投影探测记录于
 [`audit/t73_affine_s3_projection_probe.json`](audit/t73_affine_s3_projection_probe.json)。
 xz/yz 会压扁 dotted edges；三个 regular tilts 至少产生258,453,247个 broad

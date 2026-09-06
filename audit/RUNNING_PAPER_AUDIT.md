@@ -4877,6 +4877,25 @@ Topology-source checks completed 2026-09-04:
   clearance or ribbon embeddedness. Both remain mandatory before v3 can be
   upgraded from `CANDIDATE_UNVERIFIED`.
 
+### F-599AQ — The directed v3 core/push candidate matrix is complete
+
+- Severity: **Verification decomposition / mutual one-skeleton clearance**
+- Status: **22 DIRECTED TYPE PAIRS ENUMERATED; MUTUAL CLEARANCE OPEN**
+- Evidence: `audit/t73_x_m1_outer_collar_v3_core_push_candidate_matrix.json`,
+  its builder and regression test, bound to F-599AN and F-599AP.
+- Matrix: all 18,156 core against all 18,156 push segments give 28,527,996
+  outward-rounded 3D AABB candidates in 22 nonempty directed semantic type
+  pairs. Direction matters: for example core end-lift/push first-ray and core
+  first-ray/push end-lift are stored separately and have different counts.
+- Invariants: the artifact independently records core constant-F types
+  1/2/4/5, push constant-F types 1/2/4, and constant-height types 2/3/4 on
+  both sides. It does not label push type 5 as constant-F.
+- Boundary: verdict
+  `PASS_X_M1_OUTER_COLLAR_V3_CORE_PUSH_CANDIDATE_MATRIX_ONLY` proves complete
+  candidate inventory, not mutual disjointness. The next verifier must consume
+  all 22 entries using directed F/height hashes, Johnson end-lift F intervals
+  and direct GMP checks for the eight dual end lifts and germ families.
+
 ### F-599C — Monolithic linear projections of the affine framed link are computationally unsuitable
 
 - Severity: **complete PD / projection selection**
