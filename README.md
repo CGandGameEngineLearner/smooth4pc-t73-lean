@@ -562,6 +562,23 @@ gap of two, proving all canonical band cells disjoint. Verdict:
 explicitly the four attachment-port maps per band to the shell stubs and
 middle-transition charts.
 
+The four **shell attachment ports** of every band are now globally glued. The
+cache `C:\Users\Administrator\.cache\t73_x_band_global_r3_port_strips.jsonl.gz`
+is bound by
+[`audit/t73_x_band_global_r3_port_strips_receipt.json`](audit/t73_x_band_global_r3_port_strips_receipt.json)
+and
+[`audit/t73_x_band_global_r3_port_strip_clearance.json`](audit/t73_x_band_global_r3_port_strip_clearance.json).
+For each band, its two source and two target shell ports are fixed pointwise;
+the disk is subdivided along a five-segment centerline. The 3,026 center
+endpoints have distinct values of `y-1000003*x`. Vertical columns and routing
+rays are separated by this exact functional, horizontal pieces use distinct
+integer heights, and exterior pieces lie beyond `x=10000`. Strip half-widths
+are strictly below half every separation. Within each band, 68,085 total
+triangle pairs reduce to 13,622 exact nonincident tests, all disjoint. Verdict:
+`PASS_X_BAND_GLOBAL_R3_PORT_STRIP_CLEARANCE`. This closes the band-to-shell
+core port glue; push framings and the separate middle transition glue remain
+open.
+
 Global linear projection probes are recorded in
 [`audit/t73_affine_s3_projection_probe.json`](audit/t73_affine_s3_projection_probe.json).
 xz/yz collapse dotted edges; three regular tilts produce at least 258,453,247

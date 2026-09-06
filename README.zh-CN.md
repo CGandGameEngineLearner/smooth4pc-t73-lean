@@ -486,6 +486,20 @@ triangles 及 18,156 个非退化 surface-product tetrahedra。相邻 x supports
 每个 band 的四个 attachment ports 到 shell stubs 与 middle-transition charts 的
 显式映射。
 
+每个 band 的四个 **shell attachment ports** 现已全局粘合。缓存
+`C:\Users\Administrator\.cache\t73_x_band_global_r3_port_strips.jsonl.gz`
+由
+[`audit/t73_x_band_global_r3_port_strips_receipt.json`](audit/t73_x_band_global_r3_port_strips_receipt.json)
+及
+[`audit/t73_x_band_global_r3_port_strip_clearance.json`](audit/t73_x_band_global_r3_port_strip_clearance.json)
+绑定。每个 band 的两个 source 与两个 target shell ports 逐点固定，disk 沿五段
+centerline 细分。3,026 个中心端点的 `y-1000003*x` 值两两不同；vertical
+columns 与 routing rays 由该精确泛函分离，horizontal pieces 使用不同整数高度，
+exterior pieces 位于 `x>10000`，strip 半宽严格小于所有分离量的一半。band 内
+68,085 对 triangles 最终执行 13,622 个精确非关联相交判定，全部无交。verdict
+为 `PASS_X_BAND_GLOBAL_R3_PORT_STRIP_CLEARANCE`。这闭合了 band-to-shell core
+port glue；push framing 与独立的 middle transition glue 仍为 OPEN。
+
 全局线性投影探测记录于
 [`audit/t73_affine_s3_projection_probe.json`](audit/t73_affine_s3_projection_probe.json)。
 xz/yz 会压扁 dotted edges；三个 regular tilts 至少产生258,453,247个 broad

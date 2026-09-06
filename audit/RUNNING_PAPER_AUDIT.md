@@ -4110,6 +4110,42 @@ Topology-source checks completed 2026-09-04:
   and F-599I middle/transition charts, with global clearance, before it becomes
   an actual complete post-x attaching link.
 
+### F-599Q — All x-band disks are globally glued to their four fixed shell ports
+
+- Severity: **Major positive construction / global band-to-shell core glue**
+- Status: **PORT-FIXED CORE STRIPS AND GLOBAL CLEARANCE PASS; PUSH OPEN**
+- Evidence: the cache named by
+  `audit/t73_x_band_global_r3_port_strips_receipt.json`, its independent full
+  construction verifier/test, global clearance receipt, verifier and test,
+  bound to F-599N and F-599P.
+- Fixed ports: for each band, source attachment vertices 0/1 are the exact R3
+  endpoints of `source_stub_before`/`source_stub_after`; target vertices 4/5
+  are the exact endpoints of `target_complement_first`/`last`. All 6052
+  equalities pass. Their 3026 attachment-edge centers are distinct and the
+  functional `L=y-1000003*x` is injective on them.
+- Routing: band i uses height `100+i`. From each endpoint column it follows
+  its constant-L ray to an exterior interval beginning at `x=10000+2i`, joins
+  across that interval, follows the target constant-L ray, and descends. A
+  six-cross-section subdivision gives ten strip triangles per actual band.
+  Every endpoint width is the literal fixed attachment edge; four interior
+  widths use the source band-width scale. All 15,130 tangent/width cross
+  products are nonzero.
+- Cross-band clearance: vertical/vertical and ray/vertical pairs have disjoint
+  exact L intervals because twice the maximum strip half-width is below the
+  minimum endpoint functional separation. Horizontal/horizontal pairs have
+  disjoint z intervals because routing heights differ by one and twice the
+  maximum z half-width is smaller. Exterior/vertical pairs have disjoint x
+  intervals (`x>10000` versus shell endpoint columns in `|x|<=5`).
+- Within-band clearance: of 68,085 triangle pairs, 25,721 are permitted
+  incidences, 28,742 fail exact 3D bounds, and all 13,622 remaining exact
+  triangle tests are disjoint. Verdict:
+  `PASS_X_BAND_GLOBAL_R3_PORT_STRIP_CLEARANCE`.
+- Boundary: this closes the actual band-disk core map and its four shell port
+  glues. The strip is the band disk between the negative and positive core
+  lanes, not the attaching-link framing push-off. Transporting the saved
+  source push/ribbon data and joining the separate F-599I middle transitions
+  remain open.
+
 ### F-599C — Monolithic linear projections of the affine framed link are computationally unsuitable
 
 - Severity: **complete PD / projection selection**

@@ -1,0 +1,24 @@
+{
+  "construction_receipt_sha256": "409C8F2DC1854825FECA536418EE53DAE2477638CB08249E75AD9DBDE65A8DB8",
+  "full_result": {
+    "bands": 1513,
+    "cross_band_horizontal_separation": "PASS_EXACT_INTEGER_HEIGHT_INTERVALS",
+    "cross_band_vertical_separation": "PASS_EXACT_ROUTING_FUNCTIONAL_INTERVALS",
+    "exterior_vertical_separation": "PASS_EXACT_X_INTERVALS",
+    "globally_embedded_port_fixed_band_strips": true,
+    "horizontal_vertical_ray_separation": "PASS_EXACT_ROUTING_FUNCTIONAL_INTERVALS",
+    "push_framing": "OPEN",
+    "strip_triangles": 15130,
+    "verdict": "PASS_X_BAND_GLOBAL_R3_PORT_STRIP_CLEARANCE",
+    "within_band_exact_bounds_rejects": 28742,
+    "within_band_exact_triangle_checks": 13622,
+    "within_band_incidence_skips": 25721,
+    "within_band_triangle_pairs": 68085
+  },
+  "schema": "t73_x_band_global_r3_port_strip_clearance/v1",
+  "sha256": "B1B3A7047CEA09322A42DFF429BA4C11F8605769697A0303E56E664D8BEF3A7E",
+  "strip_cache_sha256": "BC9B379DAAE18EB2B40AB43E562AD72E131C94682C11FE939607585DCBF26790",
+  "verdict": "PASS_X_BAND_GLOBAL_R3_PORT_STRIP_CLEARANCE",
+  "verifier_path": "scripts/verify_t73_x_band_global_r3_port_strip_clearance.py",
+  "verifier_sha256": "785F5948C32E9638600E23503AF630F4643240738ADBD004EB208C4AD52A9364"
+}
