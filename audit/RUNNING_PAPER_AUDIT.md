@@ -5853,6 +5853,37 @@ Topology-source checks completed 2026-09-04:
   must still be converted to static R4 volumes and checked before this local
   movie can be integrated into the global relative map.
 
+### F-599CF — The interface-3017 normal field does not fix the retained germ framing edge
+
+- Severity: **Critical relative-boundary obstruction / external integration**
+- Status: **LITERAL RETAINED FRAMING BOUNDARY REFUTED; INTERNAL RESULTS RETAINED**
+- Evidence:
+  `audit/t73_x_m1_outer_collar_v7_retained_germ_boundary_obstruction_3017.json`,
+  its builder, independent verifier and regression test, bound to F-599BY and
+  the complete retained ribbon inventory.
+- Correct incidence chain: retained rectangle 4071 (`central_connector`) shares
+  the inner framing edge of interface 3017's static type-0 collar germ
+  rectangle. The moving core/push path begins at the opposite, target edge of
+  that germ bridge. Hence the relative movie must fix the type-0 target framing
+  edge; checking the outer retained edge directly would skip the bridge.
+- Exact mismatch: all 22 core states fix core vertex 0. The state-dependent
+  uniform normal, however, moves push vertex 0. Only states 0--5 and 17--21
+  reproduce the fixed target framing edge; states 6--16 do not. The independent
+  verifier reconstructs both bridge edges and the 11/11 state partition.
+  Verdict:
+  `REFUTED_X_M1_OUTER_COLLAR_V7_RETAINED_GERM_BOUNDARY_3017_INDEPENDENT`.
+- Scope: F-599BY/BZ/CD/CE remain correct for their explicitly stated internal
+  or scheduled-collar scopes. They do not establish a relative framed map to
+  the retained union. The current normal field and v2 volume cannot be used for
+  external integration without repair.
+- Repair search: fixing vertex-0 normal to the source value permits a 27-normal
+  DP path through transitions 0--19, but direct transition-20 return fails.
+  Ten work normals reach final core. Neither 1,200 vertex-order contractions,
+  a 27-node normal graph, nor a 226-valid-node nine-scale graph connects them
+  to source normal. This is evidence of a relative framing-twist issue, not a
+  proof of impossibility. The next construction must add a compensating twist
+  or alter the core detour while preserving the fixed germ edge.
+
 ### F-599C — Monolithic linear projections of the affine framed link are computationally unsuitable
 
 - Severity: **complete PD / projection selection**

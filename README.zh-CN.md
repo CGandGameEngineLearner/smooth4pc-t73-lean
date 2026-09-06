@@ -965,6 +965,21 @@ python3 scripts/verify_t73_x_m1_outer_collar_v7_ribbon_volume_v2_static_clearanc
 python3 -m unittest tests.test_t73_x_m1_outer_collar_v7_ribbon_volume_v2_static_clearance_3017
 ```
 
+外部集成目前在 retained germ boundary 被
+[`audit/t73_x_m1_outer_collar_v7_retained_germ_boundary_obstruction_3017.json`](audit/t73_x_m1_outer_collar_v7_retained_germ_boundary_obstruction_3017.json)
+反证。retained rectangle 4071 通过静态 collar type-0 germ bridge 接入，因此
+moving movie 必须固定该 bridge 的 target framing edge。22 个 states 的 core
+germ vertex 始终固定，但 push germ vertex 0 在 states 6–16 移动；恰有 11 个
+states 匹配、11 个不匹配。内部 normal field 与 scheduled collar clearance
+继续有效，但外部 relative framing 需要 fixed-germ normal path 和补偿 framing
+twist 的修复。
+
+```bash
+python3 scripts/build_t73_x_m1_outer_collar_v7_retained_germ_boundary_obstruction_3017.py --write --check
+python3 scripts/verify_t73_x_m1_outer_collar_v7_retained_germ_boundary_obstruction_3017.py
+python3 -m unittest tests.test_t73_x_m1_outer_collar_v7_retained_germ_boundary_obstruction_3017
+```
+
 第一个跨系统门禁找到并修复了真实碰撞，没有提前升级该 assembly。流式 Rust
 1.98.1 checker 位于
 [`rust/t73_exact_cross_clearance`](rust/t73_exact_cross_clearance)，使用

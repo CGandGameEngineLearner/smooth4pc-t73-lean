@@ -893,6 +893,22 @@ python3 scripts/build_t73_x_m1_outer_collar_v7_ribbon_volume_v2_static_clearance
 python3 scripts/verify_t73_x_m1_outer_collar_v7_ribbon_volume_v2_static_clearance_3017.py
 python3 -m unittest tests.test_t73_x_m1_outer_collar_v7_ribbon_volume_v2_static_clearance_3017
 ```
+
+External integration is currently refuted at the retained germ boundary by
+[`audit/t73_x_m1_outer_collar_v7_retained_germ_boundary_obstruction_3017.json`](audit/t73_x_m1_outer_collar_v7_retained_germ_boundary_obstruction_3017.json).
+Retained rectangle 4071 attaches through the static collar type-0 germ bridge;
+the moving movie must therefore fix that bridge's target framing edge. The core
+germ vertex is fixed in all 22 states, but push germ vertex 0 moves in states
+6--16. Exactly 11 states match and 11 fail the required edge. Internal normal
+field and scheduled collar clearances remain valid, but external relative
+framing requires a fixed-germ normal path and a compensating framing-twist
+repair.
+
+```bash
+python3 scripts/build_t73_x_m1_outer_collar_v7_retained_germ_boundary_obstruction_3017.py --write --check
+python3 scripts/verify_t73_x_m1_outer_collar_v7_retained_germ_boundary_obstruction_3017.py
+python3 -m unittest tests.test_t73_x_m1_outer_collar_v7_retained_germ_boundary_obstruction_3017
+```
 The graph map extends over all five framed regular neighborhoods in
 [`geometry/t73_hybrid_to_railroad_tubular_map.json`](geometry/t73_hybrid_to_railroad_tubular_map.json).
 Its five solid-torus templates contain 5385 tetrahedra and 10770 boundary
