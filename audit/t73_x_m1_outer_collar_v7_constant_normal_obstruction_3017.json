@@ -1,0 +1,226 @@
+{
+  "canonical_collision": {
+    "core_triangle": 0,
+    "push_diagonal_mask": 0,
+    "push_triangle": 2
+  },
+  "changed_core_vertices": [
+    2
+  ],
+  "constant_normal_statewise_clearance": true,
+  "exact_triangle_checks_until_first_collision": 96,
+  "explicit_core_detour_sha256": "366599BA937648D80788C024C7BD85A44B0FF0FB42FAA2DB6EE876BB6E325EE0",
+  "first_collision_by_mask": [
+    {
+      "core_triangle": 0,
+      "push_diagonal_mask": 0,
+      "push_triangle": 2
+    },
+    {
+      "core_triangle": 0,
+      "push_diagonal_mask": 1,
+      "push_triangle": 2
+    },
+    {
+      "core_triangle": 0,
+      "push_diagonal_mask": 2,
+      "push_triangle": 2
+    },
+    {
+      "core_triangle": 0,
+      "push_diagonal_mask": 3,
+      "push_triangle": 2
+    },
+    {
+      "core_triangle": 0,
+      "push_diagonal_mask": 4,
+      "push_triangle": 2
+    },
+    {
+      "core_triangle": 0,
+      "push_diagonal_mask": 5,
+      "push_triangle": 2
+    },
+    {
+      "core_triangle": 0,
+      "push_diagonal_mask": 6,
+      "push_triangle": 2
+    },
+    {
+      "core_triangle": 0,
+      "push_diagonal_mask": 7,
+      "push_triangle": 2
+    },
+    {
+      "core_triangle": 0,
+      "push_diagonal_mask": 8,
+      "push_triangle": 2
+    },
+    {
+      "core_triangle": 0,
+      "push_diagonal_mask": 9,
+      "push_triangle": 2
+    },
+    {
+      "core_triangle": 0,
+      "push_diagonal_mask": 10,
+      "push_triangle": 2
+    },
+    {
+      "core_triangle": 0,
+      "push_diagonal_mask": 11,
+      "push_triangle": 2
+    },
+    {
+      "core_triangle": 0,
+      "push_diagonal_mask": 12,
+      "push_triangle": 2
+    },
+    {
+      "core_triangle": 0,
+      "push_diagonal_mask": 13,
+      "push_triangle": 2
+    },
+    {
+      "core_triangle": 0,
+      "push_diagonal_mask": 14,
+      "push_triangle": 2
+    },
+    {
+      "core_triangle": 0,
+      "push_diagonal_mask": 15,
+      "push_triangle": 2
+    },
+    {
+      "core_triangle": 0,
+      "push_diagonal_mask": 16,
+      "push_triangle": 2
+    },
+    {
+      "core_triangle": 0,
+      "push_diagonal_mask": 17,
+      "push_triangle": 2
+    },
+    {
+      "core_triangle": 0,
+      "push_diagonal_mask": 18,
+      "push_triangle": 2
+    },
+    {
+      "core_triangle": 0,
+      "push_diagonal_mask": 19,
+      "push_triangle": 2
+    },
+    {
+      "core_triangle": 0,
+      "push_diagonal_mask": 20,
+      "push_triangle": 2
+    },
+    {
+      "core_triangle": 0,
+      "push_diagonal_mask": 21,
+      "push_triangle": 2
+    },
+    {
+      "core_triangle": 0,
+      "push_diagonal_mask": 22,
+      "push_triangle": 2
+    },
+    {
+      "core_triangle": 0,
+      "push_diagonal_mask": 23,
+      "push_triangle": 2
+    },
+    {
+      "core_triangle": 0,
+      "push_diagonal_mask": 24,
+      "push_triangle": 2
+    },
+    {
+      "core_triangle": 0,
+      "push_diagonal_mask": 25,
+      "push_triangle": 2
+    },
+    {
+      "core_triangle": 0,
+      "push_diagonal_mask": 26,
+      "push_triangle": 2
+    },
+    {
+      "core_triangle": 0,
+      "push_diagonal_mask": 27,
+      "push_triangle": 2
+    },
+    {
+      "core_triangle": 0,
+      "push_diagonal_mask": 28,
+      "push_triangle": 2
+    },
+    {
+      "core_triangle": 0,
+      "push_diagonal_mask": 29,
+      "push_triangle": 2
+    },
+    {
+      "core_triangle": 0,
+      "push_diagonal_mask": 30,
+      "push_triangle": 2
+    },
+    {
+      "core_triangle": 0,
+      "push_diagonal_mask": 31,
+      "push_triangle": 2
+    }
+  ],
+  "interface_index": 3017,
+  "invalid_push_diagonal_masks": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31
+  ],
+  "local_trace_receipt_sha256": "3F3CDB06173CA091C5557AC0D0DB5742534E284EF1CF162DAB6287F01093C3B0",
+  "push_diagonal_mask_count": 32,
+  "push_state_self_segment_check_count": 132,
+  "required_repair": "INTERLEAVE_CORE_PUSH_AND_INSERT_LOCAL_PUSH_WAYPOINTS",
+  "schema": "t73_x_m1_outer_collar_v7_constant_normal_obstruction/v1",
+  "sha256": "4AB2580E3730854D4258205B0E612D2E1070B37C59DC773B0CFD07136E91F8C0",
+  "source_normal": [
+    "1/966168032564887818144771979446684556481785375614268766815882016226779224957803800996698674701322551650243862539154864795189493164673124967869559763558446901654667457299819294243318309865917665372209217641147898873873782588689020438607246956835519209217938948980759190321896032028032863559519758190926897812326626256905306476813819604519704997856003678116249600",
+    "1/966168032564887818144771979446684556481785375614268766815882016226779224957803800996698674701322551650243862539154864795189493164673124967869559763558446901654667457299819294243318309865917665372209217641147898873873782588689020438607246956835519209217938948980759190321896032028032863559519758190926897812326626256905306476813819604519704997856003678116249600",
+    "1/966168032564887818144771979446684556481785375614268766815882016226779224957803800996698674701322551650243862539154864795189493164673124967869559763558446901654667457299819294243318309865917665372209217641147898873873782588689020438607246956835519209217938948980759190321896032028032863559519758190926897812326626256905306476813819604519704997856003678116249600"
+  ],
+  "state_core_push_segment_check_count": 550,
+  "state_count": 22,
+  "synchronous_constant_normal_trace_status": "REFUTED_ALL_32_DIAGONAL_MASKS",
+  "transition_index": 6,
+  "verdict": "REFUTED_X_M1_OUTER_COLLAR_V7_CONSTANT_NORMAL_FRAMING_3017"
+}

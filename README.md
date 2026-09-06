@@ -771,6 +771,21 @@ python3 scripts/build_t73_x_m1_outer_collar_v7_explicit_core_detour_3017.py --wr
 python3 scripts/verify_t73_x_m1_outer_collar_v7_explicit_core_detour_3017.py
 python3 -m unittest tests.test_t73_x_m1_outer_collar_v7_explicit_core_detour_3017
 ```
+
+The naive constant-normal framing of that core movie is exactly refuted by
+[`audit/t73_x_m1_outer_collar_v7_constant_normal_obstruction_3017.json`](audit/t73_x_m1_outer_collar_v7_constant_normal_obstruction_3017.json).
+All 22 static states pass 550 core/push and 132 push-self segment checks, but
+at transition 6 every one of the 32 independent choices of push diagonals
+intersects the core trace. For canonical mask 0 the first collision is core
+triangle 0 against push triangle 2. Therefore statewise framing does not imply
+an embedded framed trace; core and push moves must be interleaved with local
+push waypoints.
+
+```bash
+python3 scripts/build_t73_x_m1_outer_collar_v7_constant_normal_obstruction_3017.py --write --check
+python3 scripts/verify_t73_x_m1_outer_collar_v7_constant_normal_obstruction_3017.py
+python3 -m unittest tests.test_t73_x_m1_outer_collar_v7_constant_normal_obstruction_3017
+```
 The graph map extends over all five framed regular neighborhoods in
 [`geometry/t73_hybrid_to_railroad_tubular_map.json`](geometry/t73_hybrid_to_railroad_tubular_map.json).
 Its five solid-torus templates contain 5385 tetrahedra and 10770 boundary

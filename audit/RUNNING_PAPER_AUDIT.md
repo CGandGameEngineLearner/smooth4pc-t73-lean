@@ -5644,6 +5644,34 @@ Topology-source checks completed 2026-09-04:
   clearance and all-interface generalization remain open. It is therefore
   `RATIONAL_CORE_CANDIDATE_UNVERIFIED_FOR_FRAMING`, not an actual relative map.
 
+### F-599BX — Constant statewise framing does not frame the interface-3017 trace
+
+- Severity: **Exact framed-trace obstruction / naive extension refuted**
+- Status: **ALL CONSTANT-NORMAL PUSH TRIANGULATIONS REFUTED AT TRANSITION 6**
+- Evidence:
+  `audit/t73_x_m1_outer_collar_v7_constant_normal_obstruction_3017.json`, its
+  builder, independent verifier and regression test, bound to F-599BW and the
+  original local trace source normal.
+- Positive static fact: translating every core state by the exact source
+  normal gives 22 embedded push paths. Both implementations replay 550
+  core/push state segment checks and 132 nonadjacent push-self checks with no
+  intersection. Thus the obstruction is genuinely dynamic, not a bad endpoint
+  or bad intermediate framed state.
+- Dynamic counterexample: transition 6 moves core vertex 2 toward the exterior
+  hub. With synchronous constant-normal push motion, canonical core triangle 0
+  meets push triangle 2. The verifier enumerates all `2^5=32` independent
+  diagonal masks for the five push trace quads; every mask has an exact
+  core/push triangle intersection. Verdict:
+  `REFUTED_X_M1_OUTER_COLLAR_V7_CONSTANT_NORMAL_FRAMING_3017_INDEPENDENT`.
+- Repair evidence/boundary: asynchronous ordering resolves most transitions.
+  Only transitions 6, 13 and 20 reject both simple core-first and push-first
+  orders. For transition 6, moving push vertex 2 through
+  `(100000,-100000000000,-100000)` gives two internally clear canonical legs.
+  Transition 13 has 29 old-side and 43 new-side safe single-vertex waypoints,
+  but its middle coupled move is not yet closed; transition 20 also remains
+  open. None of these exploratory repairs is promoted until a complete framed
+  one-skeleton and ribbon world-volume pass.
+
 ### F-599C — Monolithic linear projections of the affine framed link are computationally unsuitable
 
 - Severity: **complete PD / projection selection**

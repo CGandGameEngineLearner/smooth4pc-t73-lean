@@ -851,6 +851,20 @@ python3 scripts/verify_t73_x_m1_outer_collar_v7_explicit_core_detour_3017.py
 python3 -m unittest tests.test_t73_x_m1_outer_collar_v7_explicit_core_detour_3017
 ```
 
+该 core movie 的朴素 constant-normal framing 已被精确 artifact
+[`audit/t73_x_m1_outer_collar_v7_constant_normal_obstruction_3017.json`](audit/t73_x_m1_outer_collar_v7_constant_normal_obstruction_3017.json)
+反证。全部 22 个静态 states 通过 550 个 core/push 和 132 个 push-self
+segment checks，但 transition 6 的 32 种 push 对角线选择全部与 core trace
+相交。canonical mask 0 的首个碰撞是 core triangle 0 对 push triangle 2。
+因此逐 state framing 不推出 framed trace 嵌入；必须交错 core/push moves 并加入
+局部 push waypoints。
+
+```bash
+python3 scripts/build_t73_x_m1_outer_collar_v7_constant_normal_obstruction_3017.py --write --check
+python3 scripts/verify_t73_x_m1_outer_collar_v7_constant_normal_obstruction_3017.py
+python3 -m unittest tests.test_t73_x_m1_outer_collar_v7_constant_normal_obstruction_3017
+```
+
 第一个跨系统门禁找到并修复了真实碰撞，没有提前升级该 assembly。流式 Rust
 1.98.1 checker 位于
 [`rust/t73_exact_cross_clearance`](rust/t73_exact_cross_clearance)，使用
