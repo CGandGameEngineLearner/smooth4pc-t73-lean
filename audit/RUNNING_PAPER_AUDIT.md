@@ -4647,6 +4647,30 @@ Topology-source checks completed 2026-09-04:
   unchanged Johnson/dual components and then projected piecewise with complete
   crossing order and integer framings.
 
+### F-599AH — The complete framed replacement cache cannot be directly concatenated to old Johnson/dual coordinates
+
+- Severity: **Critical integration boundary / fail-closed endpoint audit**
+- Status: **ALL 3,026 MISMATCHES EXPLICIT; RELATIVE COLLAR EXTENSIONS OPEN**
+- Evidence: `audit/t73_x_m1_complete_framed_outer_interface_gap.json`, its
+  builder and regression test, bound to F-597 graph-of-charts assembly,
+  Johnson spine, actual AR/dual ribbons and F-599AG complete framed cache.
+- Inventory: every one of the 1,513 replacements has a before and after
+  interface. Each saved record contains the adjacent old block kind/id, its
+  source-inner core/push endpoint, its old source port, the new R3 target
+  core/push port and both displacement vectors. Neighbor counts are explicit.
+- Result: literal equality holds for zero of 3,026 core ports and zero of
+  3,026 push ports. There are 3,026 distinct core displacement vectors and
+  3,026 distinct push displacement vectors. Verdict:
+  `CONFIRMED_COMPLETE_R3_FRAMED_OUTER_INTERFACE_GAP`.
+- Consequence: F-599AG is a complete embedded replacement framing but not yet
+  a closed five-component link with the unchanged source blocks. Concatenating
+  endpoints or applying one global translation would be false. The next
+  admissible step is to replace each old Johnson/dual terminal segment by an
+  explicit relative framed collar path from its saved source-inner endpoint to
+  the R3 target port, construct an ambient PL extension, and prove all new
+  core/push/ribbon cells globally clear before updating the seven-component
+  atlas or computing a PD/linking matrix.
+
 ### F-599C — Monolithic linear projections of the affine framed link are computationally unsuitable
 
 - Severity: **complete PD / projection selection**

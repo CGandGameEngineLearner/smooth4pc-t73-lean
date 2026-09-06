@@ -267,6 +267,15 @@ python3 scripts/build_t73_x_m1_complete_global_r3_framed_replacement_cycles_veri
 Verdict: `PASS_X_M1_COMPLETE_GLOBAL_R3_FRAMED_REPLACEMENT_CYCLES_FULL`.
 This completes the replacement framing, not yet its integration with the
 unchanged Johnson/dual components into the final seven-component Kirby input.
+The exact integration boundary is saved in
+[`audit/t73_x_m1_complete_framed_outer_interface_gap.json`](audit/t73_x_m1_complete_framed_outer_interface_gap.json).
+It records all 3,026 adjacent Johnson/dual source-inner, source-port and target
+R3 core/push endpoint tuples. None of the 3,026 core or push ports is already
+equal, and all core displacements are distinct. Thus direct concatenation is
+forbidden: the next construction must replace each old terminal neighbor
+segment by a relative framed ambient-collar extension and verify its global
+clearance. Rebuild the audit with
+`python3 scripts/audit_t73_x_m1_complete_framed_outer_interface_gap.py --write`.
 The graph map extends over all five framed regular neighborhoods in
 [`geometry/t73_hybrid_to_railroad_tubular_map.json`](geometry/t73_hybrid_to_railroad_tubular_map.json).
 Its five solid-torus templates contain 5385 tetrahedra and 10770 boundary

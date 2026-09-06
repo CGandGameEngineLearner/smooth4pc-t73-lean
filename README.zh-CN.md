@@ -722,6 +722,14 @@ python3 scripts/build_t73_x_m1_complete_global_r3_framed_replacement_cycles_veri
 verdict 为 `PASS_X_M1_COMPLETE_GLOBAL_R3_FRAMED_REPLACEMENT_CYCLES_FULL`。
 这闭合了 replacement framing，但尚未与不变的 Johnson/dual 分量合成为最终
 七分量 Kirby input。
+精确 integration 边界保存于
+[`audit/t73_x_m1_complete_framed_outer_interface_gap.json`](audit/t73_x_m1_complete_framed_outer_interface_gap.json)。
+其中记录全部 3,026 个相邻 Johnson/dual source-inner、source-port 与 target R3
+的 core/push 端点 tuple。3,026 个 core ports 与 push ports 均没有现成相等，
+且 core 位移全部不同，所以禁止直接拼接。下一构造必须把每条旧邻接 terminal
+segment 替换成 relative framed ambient-collar extension，并验证全局 clearance。
+重建命令为
+`python3 scripts/audit_t73_x_m1_complete_framed_outer_interface_gap.py --write`。
 
 全局线性投影探测记录于
 [`audit/t73_affine_s3_projection_probe.json`](audit/t73_affine_s3_projection_probe.json)。
