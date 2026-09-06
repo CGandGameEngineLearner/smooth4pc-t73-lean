@@ -1,0 +1,30 @@
+{
+  "ambient_coordinate_dimension": 4,
+  "builder_sha256": "1F8CB314D0D3C35DA597BD4D2534CE1D9D5DCF532F7BE95324D2943AB66A3C19",
+  "cache_path": "/mnt/c/Users/Administrator/.cache/t73_x_m1_complete_explicit_replacement_images.jsonl.gz",
+  "cache_sha256": "93BC7E2623ABFC152FDF07FEFF7246E72739843EBAA7D3B5769B9612B95FA7CA",
+  "cache_size": 68417260,
+  "common_three_manifold_chart_status": "OPEN",
+  "component_counts": {
+    "m_2": 269,
+    "m_3": 1240,
+    "r_xy": 2,
+    "r_zx": 2
+  },
+  "exact_piece_boundary_matches": 24208,
+  "explicit_core_segment_count": 77182,
+  "explicit_push_segment_count": 81558,
+  "record_stream_sha256": "23C61DF7BB83C2342545455514F9555C33DF5BA94D0F673AF333B0BE1FE0D919",
+  "replacement_block_count": 1513,
+  "schema": "t73_x_m1_complete_explicit_replacement_images_receipt/v1",
+  "sha256": "4B17B45EB6FE7FF43361048FAFC55B3D9DDFE60B2FD0DEF16FA0939C79298556",
+  "source_receipt_sha256s": {
+    "lanes": "059A9E2DEE7A749BB26EF7079AA8BB31C19DCD4F7D7F073292FB6D0A2F0B675B",
+    "middles": "14798C0A495B2FC5A6ADC304CF15E3813EE3FA13B4EE5046A851FE32EE32E517",
+    "stubs": "8EF2FB21E4082741A43A758093F0EA95A354AB2D9C94EA8DB505999CAF4C37C4",
+    "transitions": "6F1F2BC4BA12267CFF8A0DE44D91FA9475E49CEA743FE2FCA2B911710E50E3E3"
+  },
+  "transition_center_track_count": 6052,
+  "transition_verification_sha256": "805BDD9680EE950B926AFCDA9FE2B115C6999DC54E83BAA812DFC92BE3A72977",
+  "verdict": "PASS_COMPLETE_EXPLICIT_POST_X_REPLACEMENT_IMAGE_STREAM_4D_ATLAS"
+}

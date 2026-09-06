@@ -338,6 +338,24 @@ python3 scripts/audit_t73_affine_core_atlas_coverage.py --check
 python3 scripts/verify_t73_affine_core_atlas_coverage_gap.py
 ```
 
+覆盖修复的第一阶段现已在 Git 外物化到
+`C:\Users\Administrator\.cache\t73_x_m1_complete_explicit_replacement_images.jsonl.gz`
+（68,417,260 字节），构造收据和首次完整独立重放收据分别为
+[`audit/t73_x_m1_complete_explicit_replacement_images_receipt.json`](audit/t73_x_m1_complete_explicit_replacement_images_receipt.json)
+与
+[`audit/t73_x_m1_complete_explicit_replacement_images_verification.json`](audit/t73_x_m1_complete_explicit_replacement_images_verification.json)。
+全部 1,513 个 replacement blocks 已从 lane、splice-stub、middle-complement
+及 overlap-transition 流逐项重建，得到 77,182 条 core 与 81,558 条 push
+segments，其中包含 6,052 条显式 transition center tracks；24,208 个 piece
+boundary matches 和完整缓存 SHA 已独立重放。这闭合的是分散 4D atlas 的组装，
+尚未闭合公共三维流形坐标图。WSL 重建命令：
+
+```bash
+python3 scripts/build_t73_x_m1_complete_explicit_replacement_images.py \
+  --output /mnt/c/Users/Administrator/.cache/t73_x_m1_complete_explicit_replacement_images.jsonl.gz
+python3 scripts/build_t73_x_m1_complete_explicit_replacement_images_verification.py
+```
+
 全局线性投影探测记录于
 [`audit/t73_affine_s3_projection_probe.json`](audit/t73_affine_s3_projection_probe.json)。
 xz/yz 会压扁 dotted edges；三个 regular tilts 至少产生258,453,247个 broad

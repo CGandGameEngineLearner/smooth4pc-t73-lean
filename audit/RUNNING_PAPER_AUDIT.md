@@ -3835,6 +3835,38 @@ Topology-source checks completed 2026-09-04:
   dotted-S3 realization; retain every splice/collar crossing; only then build
   and verify the complete core/push PD and integer framings.
 
+### F-599H — All 1513 post-x replacement images are explicitly joined in the 4D boundary atlas
+
+- Severity: **Major positive construction / complete replacement-cell input**
+- Status: **FULL 4D STREAM PASS; COMMON 3-MANIFOLD CHART OPEN**
+- Evidence: `scripts/build_t73_x_m1_complete_explicit_replacement_images.py`,
+  `scripts/verify_t73_x_m1_complete_explicit_replacement_images.py`, the full
+  verification builder, test, construction receipt
+  `audit/t73_x_m1_complete_explicit_replacement_images_receipt.json`, full
+  replay receipt, and the 68,417,260-byte cache named there.
+- Assembly: every band record is rebuilt in the fixed order
+  `source_stub_before`, negative lane, first complement stub, first transition
+  center track, middle complement, last transition center track, last
+  complement stub, positive lane, `source_stub_after`. The two transition
+  records per band identify their local-cubical and global-annulus centers,
+  supplying the previously nonliteral joints for both core and push paths.
+- Totals: all 1513 blocks (`m2=269,m3=1240,r_xy=2,r_zx=2`) give 77,182
+  explicit core and 81,558 explicit push segments. The 3026 interfaces give
+  6052 core/push center tracks. There are 24,208 exact consecutive-piece
+  boundary matches.
+- Independent replay: a separate verifier reconstructs every record from all
+  four source gzip streams, compares every rational Q4 vertex, range and
+  transition reference, checks the decompressed record-stream SHA, full cache
+  SHA and source receipts, and reproduces every total. Verdict:
+  `PASS_COMPLETE_EXPLICIT_POST_X_REPLACEMENT_IMAGES_FULL`.
+- Boundary: this resolves the fragmented-cache part of F-599G. Coordinates
+  still lie in the verified four-dimensional boundary atlas and its mapping
+  cylinders. The next construction must give an explicit PL chart of the
+  cancelled three-manifold boundary (with inverse/overlap checks), then map
+  this stream, the unchanged connectors and dotted passages into that chart.
+  An arbitrary R4-to-R3 projection is not a substitute for that relative
+  boundary homeomorphism.
+
 ### F-599C — Monolithic linear projections of the affine framed link are computationally unsuitable
 
 - Severity: **complete PD / projection selection**

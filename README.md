@@ -397,6 +397,25 @@ python3 scripts/audit_t73_affine_core_atlas_coverage.py --check
 python3 scripts/verify_t73_affine_core_atlas_coverage_gap.py
 ```
 
+The first coverage-repair stage is now materialized outside Git at
+`C:\Users\Administrator\.cache\t73_x_m1_complete_explicit_replacement_images.jsonl.gz`
+(68,417,260 bytes), with construction and full independent replay receipts in
+[`audit/t73_x_m1_complete_explicit_replacement_images_receipt.json`](audit/t73_x_m1_complete_explicit_replacement_images_receipt.json)
+and
+[`audit/t73_x_m1_complete_explicit_replacement_images_verification.json`](audit/t73_x_m1_complete_explicit_replacement_images_verification.json).
+All 1,513 replacement blocks are reconstructed from the lane, splice-stub,
+middle-complement and overlap-transition streams. The result has 77,182 core
+and 81,558 push segments, including 6,052 explicit transition center tracks;
+24,208 piece-boundary matches and the full cache SHA were independently
+replayed. This closes fragmented 4D-atlas assembly, not the common 3-manifold
+chart. Rebuild in WSL with:
+
+```bash
+python3 scripts/build_t73_x_m1_complete_explicit_replacement_images.py \
+  --output /mnt/c/Users/Administrator/.cache/t73_x_m1_complete_explicit_replacement_images.jsonl.gz
+python3 scripts/build_t73_x_m1_complete_explicit_replacement_images_verification.py
+```
+
 Global linear projection probes are recorded in
 [`audit/t73_affine_s3_projection_probe.json`](audit/t73_affine_s3_projection_probe.json).
 xz/yz collapse dotted edges; three regular tilts produce at least 258,453,247

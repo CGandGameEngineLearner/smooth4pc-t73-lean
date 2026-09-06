@@ -1,0 +1,50 @@
+import hashlib
+import importlib.util
+import json
+import unittest
+from pathlib import Path
+
+
+ROOT = Path(__file__).resolve().parents[1]
+VERIFIER = ROOT / "scripts/verify_t73_x_m1_complete_explicit_replacement_images.py"
+RECEIPT = ROOT / "audit/t73_x_m1_complete_explicit_replacement_images_receipt.json"
+FULL = ROOT / "audit/t73_x_m1_complete_explicit_replacement_images_verification.json"
+
+
+def canonical_sha256(value):
+    encoded = json.dumps(value, sort_keys=True, separators=(",", ":")).encode()
+    return hashlib.sha256(encoded).hexdigest().upper()
+
+
+class CompleteExplicitReplacementImagesTest(unittest.TestCase):
+    def test_receipts_and_fast_verifier(self):
+        receipt = json.loads(RECEIPT.read_text())
+        full = json.loads(FULL.read_text())
+        self.assertEqual(
+            receipt["sha256"],
+            canonical_sha256({key: value for key, value in receipt.items() if key != "sha256"}),
+        )
+        self.assertEqual(
+            full["sha256"],
+            canonical_sha256({key: value for key, value in full.items() if key != "sha256"}),
+        )
+        self.assertEqual(full["construction_receipt_sha256"], receipt["sha256"])
+        self.assertEqual(
+            full["verifier_sha256"],
+            hashlib.sha256(VERIFIER.read_bytes()).hexdigest().upper(),
+        )
+        self.assertEqual(full["full_result"]["records_reconstructed"], 1513)
+        self.assertEqual(full["full_result"]["core_segments_reconstructed"], 77182)
+        self.assertEqual(full["full_result"]["push_segments_reconstructed"], 81558)
+        self.assertTrue(full["full_result"]["cache_sha_checked"])
+
+        spec = importlib.util.spec_from_file_location("verifier", VERIFIER)
+        assert spec and spec.loader
+        verifier = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(verifier)
+        _, _, checks = verifier.check_receipt()
+        self.assertTrue(all(checks.values()))
+
+
+if __name__ == "__main__":
+    unittest.main()

@@ -1,0 +1,20 @@
+{
+  "cache_sha256": "93BC7E2623ABFC152FDF07FEFF7246E72739843EBAA7D3B5769B9612B95FA7CA",
+  "construction_receipt_sha256": "4B17B45EB6FE7FF43361048FAFC55B3D9DDFE60B2FD0DEF16FA0939C79298556",
+  "full_result": {
+    "cache_sha_checked": true,
+    "common_three_manifold_chart": "OPEN",
+    "core_segments_reconstructed": 77182,
+    "piece_boundary_matches_replayed": 24208,
+    "push_segments_reconstructed": 81558,
+    "record_stream_sha_checked": true,
+    "records_reconstructed": 1513,
+    "transition_center_tracks_replayed": 6052,
+    "verdict": "PASS_COMPLETE_EXPLICIT_POST_X_REPLACEMENT_IMAGES_FULL"
+  },
+  "schema": "t73_x_m1_complete_explicit_replacement_images_verification/v1",
+  "sha256": "A2E430C86C09F09504042346F457734277C20DF19B598B241BBB89991AFE089E",
+  "verdict": "PASS_COMPLETE_EXPLICIT_POST_X_REPLACEMENT_IMAGES_FULL",
+  "verifier_path": "scripts/verify_t73_x_m1_complete_explicit_replacement_images.py",
+  "verifier_sha256": "80E8BB06B58053E39AFF1CF683AB0137F3F514B188D5ED2416D3050F3239A50B"
+}
