@@ -4057,6 +4057,29 @@ Topology-source checks completed 2026-09-04:
   the support boundary and 15,151 have interior carriers; those require the
   full handle-deletion map rather than this boundary restriction.
 
+### F-599O — The complete boundary-carried band lane maps into the cut R3 shell
+
+- Severity: **Positive boundary prefix / band-lane chart**
+- Status: **ALL BOUNDARY LANE PIECES R3 PASS; 15,151 INTERIOR PIECES OPEN**
+- Evidence: `geometry/t73_x_m1_boundary_band_lane_core_r3.json`, its readable
+  SymPy builder, independent verifier and test, bound to the full lane stream,
+  collar product and F-599M shell.
+- Exhaustive classification: exact open-segment midpoint carriers scan all
+  15,158 core image pieces. Exactly seven lie on the AC support-boundary side;
+  all are band 0, owner m2, `positive_band_lane`. They comprise all pieces of
+  its two source segments. The other 15,151 pieces have support-interior
+  carriers and remain excluded.
+- R3 result: the seven source-simplex barycentric maps use the copied A side
+  and give one eight-vertex/seven-segment lane in `C-A_copy`. All six adjacent
+  R3 endpoints agree. A separate verifier identifies the seven pieces by the
+  exact target outer-shell equation, then independently solves their source
+  linear systems and reproduces every R3 coordinate. Verdict:
+  `PASS_X_M1_BOUNDARY_BAND_LANE_CORE_R3_FULL`.
+- Boundary: together with F-599N this exhausts core pieces carried by the
+  product-support boundary. It does not shrink the actual remaining task:
+  15,151 lane pieces require the handle-deletion extension, and all mapped
+  core paths still need compatible push/ribbon images.
+
 ### F-599C — Monolithic linear projections of the affine framed link are computationally unsuitable
 
 - Severity: **complete PD / projection selection**

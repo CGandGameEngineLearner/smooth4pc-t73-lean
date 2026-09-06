@@ -537,6 +537,17 @@ python3 scripts/build_t73_x_m1_splice_stub_cores_r3.py \
 python3 scripts/build_t73_x_m1_splice_stub_cores_r3_verification.py
 ```
 
+The remaining support-boundary lane restriction is also complete. Exact data
+in
+[`geometry/t73_x_m1_boundary_band_lane_core_r3.json`](geometry/t73_x_m1_boundary_band_lane_core_r3.json)
+scan all 15,158 band-lane core pieces. Exactly seven have an open-segment
+carrier on the `AC` side, and they form the entire band-0
+`positive_band_lane` (two source segments) with six exact R3 continuity
+matches. An independent verifier locates the same seven pieces using the
+target outer-shell equation before recomputing their source barycentric R3
+images. Verdict: `PASS_X_M1_BOUNDARY_BAND_LANE_CORE_R3_FULL`. The other
+15,151 pieces remain interior and are not inferred from this boundary prefix.
+
 Global linear projection probes are recorded in
 [`audit/t73_affine_s3_projection_probe.json`](audit/t73_affine_s3_projection_probe.json).
 xz/yz collapse dotted edges; three regular tilts produce at least 258,453,247

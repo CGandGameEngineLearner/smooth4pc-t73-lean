@@ -464,6 +464,15 @@ python3 scripts/build_t73_x_m1_splice_stub_cores_r3.py \
 python3 scripts/build_t73_x_m1_splice_stub_cores_r3_verification.py
 ```
 
+剩余 support-boundary lane restriction 也已完整处理。精确数据
+[`geometry/t73_x_m1_boundary_band_lane_core_r3.json`](geometry/t73_x_m1_boundary_band_lane_core_r3.json)
+扫描全部 15,158 个 band-lane core pieces；严格只有 7 个开线段 carrier 位于
+`AC` side，它们连续组成 band 0 的完整 `positive_band_lane`（两个源 segments），
+并有 6 个精确 R3 continuity matches。独立 verifier 先用 target outer-shell
+方程重新定位同一批 7 个 pieces，再重算其源重心 R3 像。verdict 为
+`PASS_X_M1_BOUNDARY_BAND_LANE_CORE_R3_FULL`。其余 15,151 个 pieces 仍为
+interior，不从该 boundary prefix 推断。
+
 全局线性投影探测记录于
 [`audit/t73_affine_s3_projection_probe.json`](audit/t73_affine_s3_projection_probe.json)。
 xz/yz 会压扁 dotted edges；三个 regular tilts 至少产生258,453,247个 broad
