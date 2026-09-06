@@ -548,6 +548,20 @@ target outer-shell equation before recomputing their source barycentric R3
 images. Verdict: `PASS_X_M1_BOUNDARY_BAND_LANE_CORE_R3_FULL`. The other
 15,151 pieces remain interior and are not inferred from this boundary prefix.
 
+All interior lane data now also have a source-bound *cellwise* R3 model,
+without pretending that the global ports are already glued. The atlas
+[`geometry/t73_x_band_canonical_r3_cell_atlas.json`](geometry/t73_x_band_canonical_r3_cell_atlas.json)
+maps each of the 1,513 actual six-vertex/four-triangle band disks to a separate
+2-by-1 rational rectangle. It retains the exact source boundary orders
+`negative=0-2-4`, `positive=5-3-1`, both attachment intervals, component,
+orientation, source-cell SHA and zero relative twist. The independent verifier
+checks 6,052 core triangles, 12,104 lane-ribbon triangles and 18,156
+nondegenerate surface-product tetrahedra. Consecutive x supports have an exact
+gap of two, proving all canonical band cells disjoint. Verdict:
+`PASS_ALL_X_BAND_CANONICAL_R3_CELL_ATLAS_FULL`. The remaining global task is
+explicitly the four attachment-port maps per band to the shell stubs and
+middle-transition charts.
+
 Global linear projection probes are recorded in
 [`audit/t73_affine_s3_projection_probe.json`](audit/t73_affine_s3_projection_probe.json).
 xz/yz collapse dotted edges; three regular tilts produce at least 258,453,247

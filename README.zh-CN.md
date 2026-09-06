@@ -473,6 +473,19 @@ python3 scripts/build_t73_x_m1_splice_stub_cores_r3_verification.py
 `PASS_X_M1_BOUNDARY_BAND_LANE_CORE_R3_FULL`。其余 15,151 个 pieces 仍为
 interior，不从该 boundary prefix 推断。
 
+全部 interior lane 数据现在也有 source-bound 的逐 cell R3 模型，但不冒充已完成
+global port gluing。atlas
+[`geometry/t73_x_band_canonical_r3_cell_atlas.json`](geometry/t73_x_band_canonical_r3_cell_atlas.json)
+把 1,513 个实际 6-vertex/4-triangle band disks 分别映为互不相交的 2×1 有理矩形，
+并保留精确 source boundary order `negative=0-2-4`、`positive=5-3-1`、两个
+attachment intervals、component、orientation、source-cell SHA 与 relative
+twist 0。独立 verifier 检查 6,052 个 core triangles、12,104 个 lane-ribbon
+triangles 及 18,156 个非退化 surface-product tetrahedra。相邻 x supports 的
+精确间隔均为 2，故全部规范 band cells 两两不交。verdict 为
+`PASS_ALL_X_BAND_CANONICAL_R3_CELL_ATLAS_FULL`。剩余全局任务被明确限制为：
+每个 band 的四个 attachment ports 到 shell stubs 与 middle-transition charts 的
+显式映射。
+
 全局线性投影探测记录于
 [`audit/t73_affine_s3_projection_probe.json`](audit/t73_affine_s3_projection_probe.json)。
 xz/yz 会压扁 dotted edges；三个 regular tilts 至少产生258,453,247个 broad

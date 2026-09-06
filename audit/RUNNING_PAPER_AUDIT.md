@@ -4080,6 +4080,36 @@ Topology-source checks completed 2026-09-04:
   15,151 lane pieces require the handle-deletion extension, and all mapped
   core paths still need compatible push/ribbon images.
 
+### F-599P — All 1513 actual x-band disks have disjoint canonical framed R3 cells
+
+- Severity: **Major positive construction / complete band-cell atlas**
+- Status: **ALL BAND CELLS R3 PASS; FOUR PORT GLUES PER BAND OPEN**
+- Evidence: `geometry/t73_x_band_canonical_r3_cell_atlas.json`, its builder,
+  independent verifier and test, bound to every source record in the complete
+  F-583 replacement cache and the hybrid movie.
+- Actual source template: every one of 1513 records has six surface vertices
+  and the same four triangles. The negative lane is exactly source vertex path
+  `0-2-4`, the positive lane is `5-3-1`, and the remaining boundary edges
+  `0-1` and `4-5` are the two attachment intervals. All source relative twists
+  are zero. The verifier checks these identities directly against the full
+  gzip stream and binds each canonical record to its actual band-surface SHA.
+- Canonical realization: band i is the rectangle `[4i,4i+2] x [0,1]` in
+  z=0 with the same six-vertex subdivision; its push copy lies at z=1/10.
+  Thus negative and positive lanes have four core and four push segments per
+  band. The saved lane ribbons use eight triangles per band. Each of the four
+  band triangles times the push interval uses three tetrahedra.
+- Verification totals: 6052 core and 6052 push triangles, 12,104 lane ribbon
+  triangles and 18,156 product tetrahedra are all exactly nondegenerate.
+  Consecutive band support intervals have gap two; 1512 comparisons prove all
+  cell supports disjoint. Verdict:
+  `PASS_ALL_X_BAND_CANONICAL_R3_CELL_ATLAS_FULL`.
+- Boundary: this is a cellwise PL isomorphism of every actual band disk and
+  its zero-twist normal bundle, so F-599O's 15,151 interior pieces no longer
+  lack R3 coordinates locally. The atlas is deliberately disconnected: four
+  attachment-port maps per band must still join it to the F-599N shell stubs
+  and F-599I middle/transition charts, with global clearance, before it becomes
+  an actual complete post-x attaching link.
+
 ### F-599C — Monolithic linear projections of the affine framed link are computationally unsuitable
 
 - Severity: **complete PD / projection selection**
