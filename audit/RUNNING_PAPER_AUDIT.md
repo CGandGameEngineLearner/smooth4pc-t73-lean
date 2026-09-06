@@ -3605,8 +3605,8 @@ Topology-source checks completed 2026-09-04:
 
 ### F-599A — The seven-component core has one canonical affine-S3 embedding
 
-- Severity: **actual Kirby input / single-chart core realization**
-- Status: **AFFINE CORE EMBEDDING PASS; AFFINE PUSH CURVES OPEN**
+- Severity: **candidate Kirby input / single-chart core realization**
+- Status: **AFFINE CORE EMBEDDING PASS; RELATIVE T73 EQUIVALENCE REFUTED BY F-599E**
 - Evidence: `geometry/t73_affine_s3_core_realization.json`,
   `scripts/build_t73_affine_s3_core_realization.py`,
   `scripts/verify_t73_affine_s3_core_realization.py`,
@@ -3628,10 +3628,10 @@ Topology-source checks completed 2026-09-04:
   independent verifier repeats 25,318,728 exact waypoint-versus-endpoint-fiber
   incidences and binds the complete connector projection receipt. Verdict:
   `PASS_CANONICAL_AFFINE_S3_CORE_EMBEDDING`.
-- Boundary: only the core curves have been realized in the common affine
-  chart. The 84,383 atlas push edges must be simplified compatibly to affine
-  push corridors and proved disjoint from this core before integer framings or
-  a complete framed PD can be computed.
+- Boundary: the affine core is an exact embedded model, but F-599E proves that
+  its arbitrary corridor closure, together with the repaired ribbons, does not
+  preserve the actual T73 surgery presentation. It must not be used as actual
+  Kirby input without a relative complement homeomorphism correction.
 
 ### F-599B — The core and five disjoint companion cycles share one affine-S3 embedding
 
@@ -3713,10 +3713,10 @@ Topology-source checks completed 2026-09-04:
   companion cycles are now certified product push-offs. A new projection of
   these repaired coordinates is required for integer self-linkings.
 
-### F-599B3 — All five affine product integer surgery framings are fully verified
+### F-599B3 — All five affine-model product self-linkings are fully verified
 
 - Severity: **actual Kirby input / integer diagonal framings**
-- Status: **FIVE INTEGER FRAMINGS PASS; PAIRWISE CORE MATRIX OPEN**
+- Status: **EXACT MODEL VALUES PASS; T73 SURGERY INTERPRETATION REFUTED BY F-599E**
 - Evidence: `geometry/t73_verified_integer_surgery_framings.json`,
   `scripts/build_t73_product_self_linking_component.py`,
   `scripts/verify_t73_product_self_linking_component.py`,
@@ -3732,13 +3732,44 @@ Topology-source checks completed 2026-09-04:
   42/-2, 42/-2 and 50/-6. All 25,776,472 stored crossings are independently
   re-solved from the segment pairs; all point hashes, height orders, signs,
   SQLite integrity checks and database byte SHAs pass.
-- Result: division by two gives
+- Scoped result: division by two gives
   `{m_2:-156621,m_3:-3338112,r_xy:-1,r_yz:-1,r_zx:-3}`. Verdict:
-  `PASS_FIVE_AFFINE_PRODUCT_INTEGER_SURGERY_FRAMINGS`.
-- Boundary: this closes the five diagonal surgery coefficients. The ten
-  pairwise core linkings and a single complete framed PD have not yet been
-  computed; W2 construction must not begin until at least the full symmetric
-  linking matrix and actual attachment presentation are assembled.
+  `PASS_FIVE_AFFINE_MODEL_PRODUCT_SELF_LINKINGS_ONLY`.
+- Boundary/correction: ten pairwise core linkings were subsequently completed,
+  and F-599E proves the combined dotted-surgery matrix has determinant -3 and
+  torsion boundary homology. Thus these are not actual T73 surgery
+  coefficients. They remain exact invariants of the constructed affine model;
+  W2 construction from them is forbidden.
+
+### F-599E — The complete affine-model Kirby matrix fails the T73 boundary-homology gate
+
+- Severity: **Critical refutation / actual Kirby input**
+- Status: **AFFINE MODEL REFUTED AS T73; SCOPED LINKING DATA PRESERVED**
+- Evidence: ten `audit/t73_pairwise_core_linking_*_receipt.json` files and
+  SQLite databases, `audit/t73_pairwise_core_linking_full_verification.json`,
+  their builders/verifiers/tests, and
+  `audit/t73_affine_kirby_matrix_homology_obstruction.json` with its
+  independent verifier and test.
+- Pairwise full results: m2/m3=-730336; m2 with r_xy/r_yz/r_zx is
+  -40/-1/-269; m3 with them is -189/1/-1271; all three dual/dual entries are
+  zero. All 5,371,724 stored pairwise crossings, projection-point hashes,
+  over roles, signs, SQLite integrity and database byte SHAs were independently
+  re-solved and checked.
+- Matrix: adjoining the five F-599B3 diagonal model self-linkings and the
+  F-584 dotted incidences gives a symmetric 7-by-7 dotted-surgery matrix of
+  rank seven, determinant -3, exact signature -3, and Smith diagonal
+  `(1,1,1,1,1,1,3)`. Its presented boundary first homology is `Z/3`.
+- Obstruction: the actual post-2-handle boundary must admit the three stated
+  3-handle attachments and then become S3. Three S2 surgeries cannot erase a
+  pre-existing Z/3 summand in H1. Hence this affine corridor/framing model is
+  not the actual T73 Kirby input, despite all of its scoped embeddings and
+  linking computations being exact. Verdict:
+  `PASS_AFFINE_KIRBY_MATRIX_HOMOLOGY_OBSTRUCTION`.
+- Repair direction: the arbitrary affine corridor realization is the failed
+  step. Return to the verified charted atlas and construct a relative
+  complement homeomorphism that preserves the actual meridian/longitude data,
+  with the required rank-three surgery-matrix nullspace checked before any
+  new W2 construction or complete-PD claim.
 
 ### F-599C — Monolithic linear projections of the affine framed link are computationally unsuitable
 

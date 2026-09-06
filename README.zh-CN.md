@@ -292,7 +292,7 @@ nonlocal clearance 现已在
 segment/triangle survivors 全部无交。verdict 为
 `PASS_AFFINE_S3_PRODUCT_CORRIDOR_RIBBON_GLOBAL_CLEARANCE`；五条 affine
 companions 现已认证为 product push-offs。
-其精确整数 surgery framings 保存于
+其精确 affine-model self-linkings 保存于
 [`geometry/t73_verified_integer_surgery_framings.json`](geometry/t73_verified_integer_surgery_framings.json)：
 `m_2=-156621`、`m_3=-3338112`、`r_xy=-1`、`r_yz=-1`、`r_zx=-3`。
 五个 component databases 位于 `C:\Users\Administrator\.cache\`，文件名为
@@ -300,8 +300,14 @@ companions 现已认证为 product push-offs。
 及数据库 SHA 已在
 [`audit/t73_product_self_linking_full_verification.json`](audit/t73_product_self_linking_full_verification.json)
 中独立重放。使用 `python3 scripts/verify_t73_verified_integer_surgery_framings.py`
-验收；verdict 为 `PASS_FIVE_AFFINE_PRODUCT_INTEGER_SURGERY_FRAMINGS`。
-pairwise core linking 与完整 framed PD 仍开放。
+验收；verdict 为 `PASS_FIVE_AFFINE_MODEL_PRODUCT_SELF_LINKINGS_ONLY`。十个 model
+pairwise core linkings 也已在
+[`audit/t73_pairwise_core_linking_full_verification.json`](audit/t73_pairwise_core_linking_full_verification.json)
+中全量重放。合成的七分量 dotted-surgery matrix 有 determinant=`-3`、Smith
+diagonal `(1,1,1,1,1,1,3)`，预测 boundary H1=`Z/3`；这与三条3-handles 最终
+得到 S³ 所需的 post-2-handle boundary 矛盾。因此这些精确数值只属于当前
+affine model，不能作为 T73 surgery framings；见
+[`audit/t73_affine_kirby_matrix_homology_obstruction.json`](audit/t73_affine_kirby_matrix_homology_obstruction.json)。
 全局线性投影探测记录于
 [`audit/t73_affine_s3_projection_probe.json`](audit/t73_affine_s3_projection_probe.json)。
 xz/yz 会压扁 dotted edges；三个 regular tilts 至少产生258,453,247个 broad

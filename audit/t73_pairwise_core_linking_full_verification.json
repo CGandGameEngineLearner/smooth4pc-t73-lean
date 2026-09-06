@@ -1,0 +1,32 @@
+{
+  "full_results": {
+    "m_2/m_3": {"crossings": 5265164, "database_sha_checked": true, "exact_crossings_recomputed": 5265164, "integer_linking": -730336, "signed_sum": -1460672},
+    "m_2/r_xy": {"crossings": 5274, "database_sha_checked": true, "exact_crossings_recomputed": 5274, "integer_linking": -40, "signed_sum": -80},
+    "m_2/r_yz": {"crossings": 4070, "database_sha_checked": true, "exact_crossings_recomputed": 4070, "integer_linking": -1, "signed_sum": -2},
+    "m_2/r_zx": {"crossings": 9414, "database_sha_checked": true, "exact_crossings_recomputed": 9414, "integer_linking": -269, "signed_sum": -538},
+    "m_3/r_xy": {"crossings": 24478, "database_sha_checked": true, "exact_crossings_recomputed": 24478, "integer_linking": -189, "signed_sum": -378},
+    "m_3/r_yz": {"crossings": 19058, "database_sha_checked": true, "exact_crossings_recomputed": 19058, "integer_linking": 1, "signed_sum": 2},
+    "m_3/r_zx": {"crossings": 44110, "database_sha_checked": true, "exact_crossings_recomputed": 44110, "integer_linking": -1271, "signed_sum": -2542},
+    "r_xy/r_yz": {"crossings": 36, "database_sha_checked": true, "exact_crossings_recomputed": 36, "integer_linking": 0, "signed_sum": 0},
+    "r_xy/r_zx": {"crossings": 60, "database_sha_checked": true, "exact_crossings_recomputed": 60, "integer_linking": 0, "signed_sum": 0},
+    "r_yz/r_zx": {"crossings": 60, "database_sha_checked": true, "exact_crossings_recomputed": 60, "integer_linking": 0, "signed_sum": 0}
+  },
+  "pair_receipt_sha256": {
+    "m_2/m_3": "32725037F69CC6644E5EBFCFCDCFDD3273060370D37CCAC7819719008E07ED28",
+    "m_2/r_xy": "68DB8AAC4A7A9AB66371F7FF038939684584993211C76B41744E76C24C96CA8C",
+    "m_2/r_yz": "E7A032669E7EA7C63F120630151F0ADA27C7F6FED870B69695BD8F9F17A91BDE",
+    "m_2/r_zx": "59D546EE5EDAC47ADCEC5E53F6C735E50D47572A0B593914DCD61EEC9C3BA037",
+    "m_3/r_xy": "B98513EF90833235394EED4D50B05C8AC73C8751C9FB45D4268BE4CCCD1F4515",
+    "m_3/r_yz": "55617F87D9985FC715CEFEC4ECD5FE219277E027C294E8D1353DB94B0D73CF1D",
+    "m_3/r_zx": "EA1F48C59C78302414A4F3CA911A1C9D240840DAF5778C7AD023F32B1E1321E5",
+    "r_xy/r_yz": "E35587546F02C7B45EBBBFEBAB9170680E337169CB2B441030B339E6DC0FE188",
+    "r_xy/r_zx": "53E20A55462E48B639958D83197BEE68C311CE7C40646AAC349B58ED89B9EF9B",
+    "r_yz/r_zx": "641764F9C2D065E90D643CA266327A622BB2CC81CA4801AEA41FBA8797E33E1E"
+  },
+  "schema": "t73_pairwise_core_linking_full_verification/v1",
+  "sha256": "90BACD086E788D680752D0251CE447F51844AE78B8E916EF767A0FC1415AD4B1",
+  "total_crossings": 5371724,
+  "verdict": "PASS_ALL_TEN_PAIRWISE_CORE_LINKINGS_FULL",
+  "verifier_path": "scripts/verify_t73_pairwise_core_linking.py",
+  "verifier_sha256": "C0B607217762730812651F9639E9F16A8743712B21AAA1791EA5114F5A656F61"
+}

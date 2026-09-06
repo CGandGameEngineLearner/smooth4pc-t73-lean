@@ -1,0 +1,37 @@
+{
+  "affine_core_sha256": "81CB91A81B354C806C8B7B9739D0D3CB51AAF8DEC22B0AB30DF8EE277ED0CB0A",
+  "affine_core_verification_sha256": "475ADE6EE21E96C9CFC41CDF9ABF5AF92D8C210C33921292B3E78C72498133CF",
+  "broad_candidate_count": 54294,
+  "builder_sha256": "9F0D50AA94520ECE17C43AFC66EC79396BA67BD65C34223FEADF58C4D1DC14F6",
+  "crossing_count": 44110,
+  "database_path": "C:\\Users\\Administrator\\.cache\\t73_pairwise_core_linking_m3_rzx.sqlite",
+  "database_sha256": "C4A0C201730803441BA3167ACDA049506D9DE76C6C7D01B6A385452398A7C334",
+  "database_size": 7516160,
+  "first_component": "m_3",
+  "first_over_crossing_count": 11265,
+  "first_segment_count": 19006,
+  "height_covector": [
+    "1",
+    "-1000099003267035936/1000099003267035937",
+    "-1/1000066001089"
+  ],
+  "integer_linking": -1271,
+  "projection_basis": [
+    [
+      "1",
+      "1",
+      "1/1000033"
+    ],
+    [
+      "1/1000066001089",
+      "0",
+      "1"
+    ]
+  ],
+  "schema": "t73_pairwise_core_linking/v1",
+  "second_component": "r_zx",
+  "second_segment_count": 20,
+  "sha256": "EA1F48C59C78302414A4F3CA911A1C9D240840DAF5778C7AD023F32B1E1321E5",
+  "signed_sum": -2542,
+  "verdict": "PASS_EXACT_PAIRWISE_CORE_LINKING"
+}

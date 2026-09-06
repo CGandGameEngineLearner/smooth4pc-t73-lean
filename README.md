@@ -348,7 +348,7 @@ fixing all endpoint product normals, 1779 exact triangle/triangle and 3560
 exact segment/triangle survivors are disjoint. Verdict:
 `PASS_AFFINE_S3_PRODUCT_CORRIDOR_RIBBON_GLOBAL_CLEARANCE`. The five affine
 companions are now certified product push-offs.
-Their exact integer surgery framings are saved in
+Their exact affine-model self-linkings are saved in
 [`geometry/t73_verified_integer_surgery_framings.json`](geometry/t73_verified_integer_surgery_framings.json):
 `m_2=-156621`, `m_3=-3338112`, `r_xy=-1`, `r_yz=-1`, `r_zx=-3`.
 The five component databases are under `C:\Users\Administrator\.cache\` as
@@ -356,8 +356,15 @@ The five component databases are under `C:\Users\Administrator\.cache\` as
 crossings and database SHAs were independently replayed in
 [`audit/t73_product_self_linking_full_verification.json`](audit/t73_product_self_linking_full_verification.json).
 Run `python3 scripts/verify_t73_verified_integer_surgery_framings.py`; verdict:
-`PASS_FIVE_AFFINE_PRODUCT_INTEGER_SURGERY_FRAMINGS`. Pairwise core linking and
-the complete framed PD remain open.
+`PASS_FIVE_AFFINE_MODEL_PRODUCT_SELF_LINKINGS_ONLY`. The ten model pairwise
+core linkings are also fully replayed in
+[`audit/t73_pairwise_core_linking_full_verification.json`](audit/t73_pairwise_core_linking_full_verification.json).
+Together they form a seven-component dotted-surgery matrix with determinant
+`-3` and Smith diagonal `(1,1,1,1,1,1,3)`, predicting boundary H1=`Z/3`.
+This contradicts the required post-2-handle boundary that three 3-handles can
+turn into S3. Therefore these exact values describe the constructed affine
+model but are not valid T73 surgery framings; see
+[`audit/t73_affine_kirby_matrix_homology_obstruction.json`](audit/t73_affine_kirby_matrix_homology_obstruction.json).
 Global linear projection probes are recorded in
 [`audit/t73_affine_s3_projection_probe.json`](audit/t73_affine_s3_projection_probe.json).
 xz/yz collapse dotted edges; three regular tilts produce at least 258,453,247

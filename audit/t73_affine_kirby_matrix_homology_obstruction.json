@@ -1,0 +1,99 @@
+{
+  "actual_t73_framed_input_status": "REFUTED_FOR_THIS_AFFINE_CORRIDOR_REALIZATION",
+  "completion_status": "AFFINE_MODEL_FAILS_T73_POST_2_HANDLE_HOMOLOGY_GATE",
+  "component_order": [
+    "dotted_y",
+    "dotted_z",
+    "m_2",
+    "m_3",
+    "r_xy",
+    "r_yz",
+    "r_zx"
+  ],
+  "determinant": -3,
+  "dotted_passage_cells_sha256": "EC45F05D67BFC35AD0D97FD36BD40AA11E733108F6B06E3FC23011763DB6ECE0",
+  "dotted_surgery_matrix": [
+    [
+      0,
+      0,
+      40,
+      189,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      269,
+      1271,
+      0,
+      0,
+      0
+    ],
+    [
+      40,
+      269,
+      -156621,
+      -730336,
+      -40,
+      -1,
+      -269
+    ],
+    [
+      189,
+      1271,
+      -730336,
+      -3338112,
+      -189,
+      1,
+      -1271
+    ],
+    [
+      0,
+      0,
+      -40,
+      -189,
+      -1,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      -1,
+      1,
+      0,
+      -1,
+      0
+    ],
+    [
+      0,
+      0,
+      -269,
+      -1271,
+      0,
+      0,
+      -3
+    ]
+  ],
+  "pairwise_core_linking_full_verification_sha256": "90BACD086E788D680752D0251CE447F51844AE78B8E916EF767A0FC1415AD4B1",
+  "predicted_boundary_h1": "Z/3",
+  "product_self_linking_full_verification_sha256": "5509C9F4798E9DAD54427009E72543696B644E26ED1DF118948662E9067B2F13",
+  "rank": 7,
+  "required_post_2_handle_boundary_h1": "Z^3 (three 3-handles must remove the three free S1xS2 summands before S3)",
+  "schema": "t73_affine_kirby_matrix_homology_obstruction/v1",
+  "scoped_linking_computations_status": "EXACT_FOR_THE_CONSTRUCTED_MODEL",
+  "sha256": "1B35DB79EA4268CD228DDAE0F7D52062E01B49B657E5E543CB28EBDCAEB3B1CB",
+  "signature": -3,
+  "smith_diagonal": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    3
+  ],
+  "three_handles_cannot_remove_torsion": true
+}

@@ -13,6 +13,6 @@ def verify():
   r=json.loads(p.read_text());q=f["full_results"][c]
   if f["component_receipt_sha256"][c]!=r["sha256"] or q["crossings"]!=r["crossing_count"] or q["exact_crossings_recomputed"]!=r["crossing_count"] or not q["database_sha_checked"] or 2*expected[c]!=q["signed_sum"]:raise AssertionError("integer framing receipt mismatch")
   checks+=1
- if d["completion_status"]!="FIVE_AFFINE_PRODUCT_INTEGER_SURGERY_FRAMINGS_VERIFIED" or d["pairwise_core_linking_status"]!="OPEN":raise AssertionError("integer framing scope changed")
- return {"verdict":"PASS_FIVE_AFFINE_PRODUCT_INTEGER_SURGERY_FRAMINGS","framings":expected,"component_full_receipts":checks,"pairwise_core_linking_status":"OPEN","complete_framed_pd_status":"OPEN"}
+ if d["completion_status"]!="FIVE_AFFINE_MODEL_PRODUCT_SELF_LINKINGS_VERIFIED_NOT_T73_INPUT" or d["t73_actual_input_status"]!="REFUTED_BY_DOTTED_SURGERY_HOMOLOGY":raise AssertionError("integer framing scope changed")
+ return {"verdict":"PASS_FIVE_AFFINE_MODEL_PRODUCT_SELF_LINKINGS_ONLY","framings":expected,"component_full_receipts":checks,"t73_actual_input":False,"pairwise_core_linking_status":"FULL_MODEL_VALUES_VERIFIED","complete_framed_pd_status":"OPEN"}
 if __name__=="__main__":print(json.dumps(verify(),sort_keys=True))
