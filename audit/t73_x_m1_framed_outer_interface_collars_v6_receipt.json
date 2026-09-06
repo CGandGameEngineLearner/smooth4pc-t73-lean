@@ -1,0 +1,31 @@
+{
+  "after_exterior_x_half_space": "negative",
+  "ambient_support_status": "OPEN_BUILD_TETRAHEDRAL_ISOTOPY_EXTENSION",
+  "before_exterior_x_half_space": "positive",
+  "builder_sha256": "5FDD4491D0DB8FE333DE8319A9223DC92EADDE03C939846DF22C0DD8EE6D6897",
+  "cache_path": "C:\\Users\\Administrator\\.cache\\t73_x_m1_framed_outer_interface_collars_v6.jsonl.gz",
+  "cache_sha256": "03C0AF0E4AADE7701005363EC425408374183C17EA3B36A0CFBCF38205433CCF",
+  "cache_size": 9661382,
+  "changed_after_dual_collar_count": 4,
+  "classification": "CANDIDATE_UNVERIFIED",
+  "collar_count": 3026,
+  "completion_status": "FOUR_AFTER_DUAL_COLLARS_USE_NEGATIVE_EXTERIOR_X_HALF_SPACE",
+  "dual_lift": [
+    "1/499900",
+    "233/499900",
+    "1"
+  ],
+  "final_core_segment_count": 18156,
+  "final_push_segment_count": 18156,
+  "final_ribbon_triangle_count": 36312,
+  "global_clearance_status": "OPEN",
+  "normal_transversality_check_count": 18156,
+  "record_stream_sha256": "A86E25254313CE1C638E59C8FEDE39410212836A64E43B954E76D1D4312EC125",
+  "refuted_v5_receipt_sha256": "AF9631042E2C70C7974578337EC14E9EE68A9DE9DF163E229991B3028D18F883",
+  "relative_twist_sum": 0,
+  "schema": "t73_x_m1_framed_outer_interface_collars_v6_receipt/v1",
+  "sha256": "A75847784584BFFDDFBD4C4E2900C6C3E159BEDC1466B3B15A583A129DFC05FF",
+  "unchanged_collar_count": 3022,
+  "v5_ribbon_obstruction_sha256": "3CB48B667E94F596F26D4977C71CAC4D4C8FF1E5B701ECB8D104C026F2A4314D",
+  "verdict": "PASS_X_M1_FRAMED_OUTER_INTERFACE_COLLARS_V6_LOCAL_CANDIDATE"
+}

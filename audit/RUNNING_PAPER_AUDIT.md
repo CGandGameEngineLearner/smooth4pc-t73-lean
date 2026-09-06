@@ -5085,6 +5085,44 @@ Topology-source checks completed 2026-09-04:
   eight families must receive exact ruled-rectangle separation before V5 can
   be upgraded or used for an ambient isotopy support.
 
+### F-599BA — V5 passes local stars but has a nonincident dual/dual ribbon intersection
+
+- Severity: **Critical V5 global ribbon refutation**
+- Status: **EXACT NONINCIDENT COLLISION; V5 REFUTED**
+- Evidence: `audit/t73_x_m1_outer_collar_v5_ribbon_clearance.json`, its exact
+  verifier/builder and regression test, consuming the eight F-599AZ families.
+- Reduction: exact F intervals reduce 14,233,908 nonincident AABB candidates
+  to thousands dominated by already-declared local adjacencies. Exact bounds,
+  skew axes and triangle predicates are then applied to survivors.
+- Collision: interface 3024 type start skew lift triangle 0 intersects
+  interface 3023 type first exterior ray triangle 0. The artifact stores the
+  rational point, edge parameter `2/28015882679000001` and exact barycentric
+  alpha/beta. These interfaces are distinct and this pair is not a local-star
+  incidence. Verdict: `REFUTED_X_M1_OUTER_COLLAR_V5_RIBBON_CLEARANCE`.
+- Consequence: a common dual lift direction repairs local folds but lets the
+  higher member of a paired dual collar cross the lower member's exterior
+  ribbon. The pair must use opposite exterior half-spaces.
+
+### F-599BB — V6 separates paired dual collars by exterior x half-space
+
+- Severity: **Constructive minimal repair / next global candidate**
+- Status: **LOCAL FULL REPLAY PASS; GLOBAL V6 OPEN**
+- Evidence: `audit/t73_x_m1_framed_outer_interface_collars_v6_receipt.json`,
+  `audit/t73_x_m1_framed_outer_interface_collars_v6_verification.json`, their
+  builder, independent verifier, test and named persistent cache.
+- Transform: retain V5's F-preserving dual lift. Keep all `before` dual
+  exterior x coordinates positive; reflect the two exterior x coordinates of
+  each `after` dual collar to the negative half-space and recompute y from F.
+  Exactly four records change; the other 3,022 remain literal V5 geometry.
+- Replay: the 9,661,382-byte cache retains 18,156 core segments, 18,156 push
+  segments and 36,312 ribbon triangles. All 18,156 normal equations pass; all
+  15,130 same-interface stars are transverse and four shared dual germs are
+  coplanar-opposite. The exact F-599BA triangle pair is reconstructed and now
+  disjoint. Verdict:
+  `PASS_X_M1_FRAMED_OUTER_INTERFACE_COLLARS_V6_FULL_LOCAL_CANDIDATE`.
+- Boundary: V6 remains `CANDIDATE_UNVERIFIED`; targeted repair and local stars
+  do not replace fresh global core, push, mutual and ribbon matrices.
+
 ### F-599C — Monolithic linear projections of the affine framed link are computationally unsuitable
 
 - Severity: **complete PD / projection selection**

@@ -441,6 +441,18 @@ intersections. The ribbon artifact
 contains 18,156 rectangles/36,312 triangles, all 15,134 valid local stars and
 14,233,908 nonincident candidates in eight semantic type pairs. V5 remains
 candidate-only until those eight rectangle families pass exact clearance.
+
+That exact check refutes V5: interface 3024 start-lift triangle 0 meets
+interface 3023 first-ray triangle 0 at the rational point recorded in
+[`audit/t73_x_m1_outer_collar_v5_ribbon_clearance.json`](audit/t73_x_m1_outer_collar_v5_ribbon_clearance.json),
+with nonzero edge parameter `2/28015882679000001`. V6 keeps the common dual
+lift but sends the four `after` dual collars to negative exterior x while the
+four `before` collars remain positive. The 9,661,382-byte V6 cache changes
+only those four records. Independent replay verifies all 18,156 normal
+equations, all 15,134 local stars, and reruns the former V5 triangle pair with
+the full exact predicate; it is now disjoint. See
+[`audit/t73_x_m1_framed_outer_interface_collars_v6_verification.json`](audit/t73_x_m1_framed_outer_interface_collars_v6_verification.json).
+V6 remains candidate-only pending fresh global matrices.
 The graph map extends over all five framed regular neighborhoods in
 [`geometry/t73_hybrid_to_railroad_tubular_map.json`](geometry/t73_hybrid_to_railroad_tubular_map.json).
 Its five solid-torus templates contain 5385 tetrahedra and 10770 boundary

@@ -545,6 +545,16 @@ broad counts 分别为 14,249,042、14,249,042、28,516,174；对应 GMP 精确�
 以及 8 个语义类型对中的 14,233,908 个非 incidence candidates。八类矩形通过
 精确 clearance 前，V5 仍只算 candidate。
 
+该精确检查否证 V5：interface 3024 的 start-lift triangle 0 与 interface 3023
+的 first-ray triangle 0 在
+[`audit/t73_x_m1_outer_collar_v5_ribbon_clearance.json`](audit/t73_x_m1_outer_collar_v5_ribbon_clearance.json)
+记录的有理点相交，edge 参数为非零的 `2/28015882679000001`。V6 保持共同 dual
+lift，但把 4 条 `after` dual collars 送到负 exterior x，4 条 `before` 保持正侧。
+9,661,382-byte V6 cache 只改变这 4 条记录。独立重放验证全部 18,156 个 normal
+方程、15,134 个局部星，并用完整精确谓词重算 V5 原三角形对，现已无交。见
+[`audit/t73_x_m1_framed_outer_interface_collars_v6_verification.json`](audit/t73_x_m1_framed_outer_interface_collars_v6_verification.json)。
+重新生成全局矩阵前，V6 仍只算 candidate。
+
 第一个跨系统门禁找到并修复了真实碰撞，没有提前升级该 assembly。流式 Rust
 1.98.1 checker 位于
 [`rust/t73_exact_cross_clearance`](rust/t73_exact_cross_clearance)，使用

@@ -1,0 +1,29 @@
+{
+  "builder_path": "scripts/build_t73_x_m1_framed_outer_interface_collars_v6.py",
+  "builder_sha256": "5FDD4491D0DB8FE333DE8319A9223DC92EADDE03C939846DF22C0DD8EE6D6897",
+  "cache_sha256": "03C0AF0E4AADE7701005363EC425408374183C17EA3B36A0CFBCF38205433CCF",
+  "construction_receipt_sha256": "A75847784584BFFDDFBD4C4E2900C6C3E159BEDC1466B3B15A583A129DFC05FF",
+  "full_result": {
+    "ambient_support": "OPEN",
+    "cache_sha_checked": true,
+    "changed_after_dual_collars": 4,
+    "classification": "CANDIDATE_UNVERIFIED",
+    "collars_reconstructed": 3026,
+    "former_v5_collision_exact_rechecks": 1,
+    "global_clearance": "OPEN",
+    "local_ribbon_star_checks": 15134,
+    "local_ribbon_star_relation_counts": {
+      "same_interface/TRANSVERSE_PLANES": 15130,
+      "shared_dual_germ/COPLANAR_OPPOSITE_SIDES": 4
+    },
+    "normal_transversality_checks": 18156,
+    "relative_twist_sum": 0,
+    "unchanged_collars": 3022,
+    "verdict": "PASS_X_M1_FRAMED_OUTER_INTERFACE_COLLARS_V6_FULL_LOCAL_CANDIDATE"
+  },
+  "schema": "t73_x_m1_framed_outer_interface_collars_v6_verification/v1",
+  "sha256": "828AD6C1A4081D746FAAB7E5EAFAB1C4BC3EE9AAE91C77A8FDB2E2B534991505",
+  "verdict": "PASS_X_M1_FRAMED_OUTER_INTERFACE_COLLARS_V6_FULL_LOCAL_CANDIDATE",
+  "verifier_path": "scripts/verify_t73_x_m1_framed_outer_interface_collars_v6.py",
+  "verifier_sha256": "2444E604819414C0DB21B12DAE5211D872540693C92FF9AF90ED18909F90A662"
+}
