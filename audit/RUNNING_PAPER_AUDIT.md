@@ -4146,6 +4146,36 @@ Topology-source checks completed 2026-09-04:
   source push/ribbon data and joining the separate F-599I middle transitions
   remain open.
 
+### F-599R — All shell-to-middle core transitions have globally disjoint R3 routes
+
+- Severity: **Major positive construction / middle core glue**
+- Status: **TRANSITION FAMILY CORE PASS; CROSS-SYSTEM CLEARANCE AND PUSH OPEN**
+- Evidence: the cache and receipt
+  `audit/t73_x_m1_global_r3_middle_transition_cores_receipt.json`, its builder,
+  independent full verifier and test, bound to F-599N shell stubs, F-599I
+  middle paths and all 3026 verified overlap-transition source records.
+- Placement/endpoints: the canonical middle annulus is translated by
+  `(20000,2000,0)`. Each band has a `first` path from the end of
+  `target_complement_first` to its translated middle start and a `last` path
+  from translated middle end to `target_complement_last`. All 6052 endpoint
+  equalities and every source overlap-transition SHA/support interval pass.
+- Analytic routing: `L=y-1000033*x+z` has 6052 distinct exact values on the
+  endpoints. Parallel lifts in direction `(0,-1,1)` preserve L. Transition j
+  uses plane `z=3000+j`; its two planar rays preserve `L-z` and meet across an
+  exterior interval beginning at `x=30000+2j`. Thus lift columns are separated
+  by L, planar routes by height, rays from other columns by L, and exterior
+  connectors from columns by x.
+- Full replay: 3026 paths contain 15,130 rational segments. A separate
+  verifier rebuilds every translated endpoint and five-segment route, checks
+  12,104 functional identities, functional injectivity, source provenance,
+  decompressed stream SHA and full 1,246,741-byte cache SHA. Verdict:
+  `PASS_X_M1_GLOBAL_R3_MIDDLE_TRANSITION_CORES_FULL`.
+- Boundary: this proves the transition family is internally disjoint and
+  endpoint-correct. Exact cross-system clearance against F-599Q band strips,
+  F-599N stub cores and translated F-599I middle cores remains required before
+  claiming complete replacement-core embedding. Push/ribbon transition maps
+  are independently still open.
+
 ### F-599C — Monolithic linear projections of the affine framed link are computationally unsuitable
 
 - Severity: **complete PD / projection selection**

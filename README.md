@@ -579,6 +579,21 @@ triangle pairs reduce to 13,622 exact nonincident tests, all disjoint. Verdict:
 core port glue; push framings and the separate middle transition glue remain
 open.
 
+All **core** transitions from the shell stubs to the middle annulus chart are
+now routed as well. The middle chart is translated by `(20000,2000,0)`, and
+the 3,026 transition paths are stored in
+`C:\Users\Administrator\.cache\t73_x_m1_global_r3_middle_transition_cores.jsonl.gz`
+with receipt
+[`audit/t73_x_m1_global_r3_middle_transition_cores_receipt.json`](audit/t73_x_m1_global_r3_middle_transition_cores_receipt.json).
+The exact functional `y-1000033*x+z` is injective on all 6,052 shell/middle
+endpoints. Lifts use direction `(0,-1,1)`, which preserves that functional;
+each transition then uses its own plane `z=3000+j` and exterior x interval.
+Independent replay verifies 15,130 segments, 6,052 endpoint matches, 12,104
+functional-line identities and the full cache SHA. Verdict:
+`PASS_X_M1_GLOBAL_R3_MIDDLE_TRANSITION_CORES_FULL`. Cross-clearance against the
+band strips, stub paths and translated middle curves, plus all push
+transitions, remains open.
+
 Global linear projection probes are recorded in
 [`audit/t73_affine_s3_projection_probe.json`](audit/t73_affine_s3_projection_probe.json).
 xz/yz collapse dotted edges; three regular tilts produce at least 258,453,247

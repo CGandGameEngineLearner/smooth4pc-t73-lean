@@ -500,6 +500,19 @@ exterior pieces 位于 `x>10000`，strip 半宽严格小于所有分离量的一
 为 `PASS_X_BAND_GLOBAL_R3_PORT_STRIP_CLEARANCE`。这闭合了 band-to-shell core
 port glue；push framing 与独立的 middle transition glue 仍为 OPEN。
 
+从 shell stubs 到 middle annulus chart 的全部 **core** transitions 也已路由。
+middle chart 平移 `(20000,2000,0)`，3,026 条 transition paths 保存于
+`C:\Users\Administrator\.cache\t73_x_m1_global_r3_middle_transition_cores.jsonl.gz`，
+收据为
+[`audit/t73_x_m1_global_r3_middle_transition_cores_receipt.json`](audit/t73_x_m1_global_r3_middle_transition_cores_receipt.json)。
+精确泛函 `y-1000033*x+z` 在全部 6,052 个 shell/middle endpoints 上单射；提升
+方向 `(0,-1,1)` 保持该泛函，每条 transition 再使用独立平面 `z=3000+j` 与
+exterior x interval。独立重放验证 15,130 个 segments、6,052 个 endpoint
+matches、12,104 个 functional-line identities 及完整缓存 SHA。verdict 为
+`PASS_X_M1_GLOBAL_R3_MIDDLE_TRANSITION_CORES_FULL`。它与 band strips、stub
+paths、平移后 middle curves 的跨系统 clearance，以及全部 push transitions，
+仍为 OPEN。
+
 全局线性投影探测记录于
 [`audit/t73_affine_s3_projection_probe.json`](audit/t73_affine_s3_projection_probe.json)。
 xz/yz 会压扁 dotted edges；三个 regular tilts 至少产生258,453,247个 broad
