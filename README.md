@@ -416,6 +416,28 @@ python3 scripts/build_t73_x_m1_complete_explicit_replacement_images.py \
 python3 scripts/build_t73_x_m1_complete_explicit_replacement_images_verification.py
 ```
 
+The 48,416-segment middle-complement portion is now mapped source-relatively
+into an explicit rational R3 solid torus. The chart
+[`geometry/t73_x_m1_canonical_r3_annulus_chart.json`](geometry/t73_x_m1_canonical_r3_annulus_chart.json)
+has 204 quotient vertices, 408 nondegenerate tetrahedra, and a connected
+408-triangle torus boundary. The mapped stream is cached at
+`C:\Users\Administrator\.cache\t73_x_m1_middle_paths_r3.jsonl.gz`; its
+construction/full-replay receipts are
+[`audit/t73_x_m1_middle_paths_r3_receipt.json`](audit/t73_x_m1_middle_paths_r3_receipt.json)
+and
+[`audit/t73_x_m1_middle_paths_r3_verification.json`](audit/t73_x_m1_middle_paths_r3_verification.json).
+All 99,858 source Q4 core/push points recover unique quotient angular indices;
+1,511 paths run forward and two backward. The 96,832 rational framing-ribbon
+triangles lie in 1,513 pairwise-disjoint radial strips. The remaining R3 work
+is exactly the splice stubs, band lanes, and overlap tracks. Rebuild with:
+
+```bash
+python3 scripts/build_t73_x_m1_canonical_r3_annulus_chart.py --write
+python3 scripts/build_t73_x_m1_middle_paths_r3.py \
+  --output /mnt/c/Users/Administrator/.cache/t73_x_m1_middle_paths_r3.jsonl.gz
+python3 scripts/build_t73_x_m1_middle_paths_r3_verification.py
+```
+
 Global linear projection probes are recorded in
 [`audit/t73_affine_s3_projection_probe.json`](audit/t73_affine_s3_projection_probe.json).
 xz/yz collapse dotted edges; three regular tilts produce at least 258,453,247

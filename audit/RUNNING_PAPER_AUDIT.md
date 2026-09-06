@@ -3867,6 +3867,37 @@ Topology-source checks completed 2026-09-04:
   An arbitrary R4-to-R3 projection is not a substitute for that relative
   boundary homeomorphism.
 
+### F-599I — Every m1-parallel middle and its framing ribbon has an exact intrinsic R3 image
+
+- Severity: **Major positive construction / source-relative common chart**
+- Status: **ALL MIDDLES R3 PASS; STUB/LANE/TRANSITION R3 MAPS OPEN**
+- Evidence: `geometry/t73_x_m1_canonical_r3_annulus_chart.json`, the middle
+  R3 gzip cache named by `audit/t73_x_m1_middle_paths_r3_receipt.json`, its
+  full independent verification receipt, builders, verifiers and two tests.
+- Canonical chart: identifying source annulus indices 0 and 34 gives a
+  34-by-2 quotient annulus. Its homothetic convex rational realization times
+  three interval layers has 204 vertices and 408 tetrahedra. All exact
+  tetrahedron determinants are nonzero; face multiplicities are one/two; the
+  connected 408-triangle boundary is a closed surface with Euler
+  characteristic zero. Verdict: `PASS_X_M1_CANONICAL_R3_SOLID_TORUS_CHART`.
+- Intrinsic recovery: each middle source point is compared modulo the exact
+  mapping-torus deck `4 Z^3` with `base_i + k normal_i`. Core level is the
+  recorded `k`; push level is exactly `k+1`. All 99,858 Q4 points have one
+  quotient angular index. The core and push sequences agree: 1511 paths step
+  +1 mod 34 and two step -1 mod 34.
+- R3 cells: all 1513 blocks map to homothetic radial levels in the canonical
+  annulus, giving 48,416 core and 48,416 push segments and 96,832 ruled ribbon
+  triangles. Intervals `[k,k+1]` are separated by at least 19 levels, so 1512
+  successive-strip comparisons prove all middle framing ribbons pairwise
+  disjoint. Full reconstruction and cache SHA pass. Verdict:
+  `PASS_X_M1_ALL_MIDDLE_PATHS_CANONICAL_R3_FULL`.
+- Boundary: this is a genuine source-relative R3 map for the middle 48,416
+  segments, not a generic projection. The remaining part of each F-599H path
+  is exactly its source/target splice stubs, positive/negative band lanes and
+  two overlap transition tracks. Those pieces must be mapped into compatible
+  collar charts and joined before the 1513 complete replacement blocks can
+  replace the F-599G affine corridors.
+
 ### F-599C — Monolithic linear projections of the affine framed link are computationally unsuitable
 
 - Severity: **complete PD / projection selection**

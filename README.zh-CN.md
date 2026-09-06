@@ -356,6 +356,28 @@ python3 scripts/build_t73_x_m1_complete_explicit_replacement_images.py \
 python3 scripts/build_t73_x_m1_complete_explicit_replacement_images_verification.py
 ```
 
+其中 48,416-segment 的 middle-complement 部分现已相对源数据映入显式有理 R3
+solid torus。坐标图
+[`geometry/t73_x_m1_canonical_r3_annulus_chart.json`](geometry/t73_x_m1_canonical_r3_annulus_chart.json)
+含 204 个 quotient vertices、408 个非退化 tetrahedra，以及连通的 408-triangle
+torus boundary。映射流缓存于
+`C:\Users\Administrator\.cache\t73_x_m1_middle_paths_r3.jsonl.gz`；构造和全量
+重放收据分别为
+[`audit/t73_x_m1_middle_paths_r3_receipt.json`](audit/t73_x_m1_middle_paths_r3_receipt.json)
+与
+[`audit/t73_x_m1_middle_paths_r3_verification.json`](audit/t73_x_m1_middle_paths_r3_verification.json)。
+全部 99,858 个源 Q4 core/push 点均恢复出唯一 quotient 角索引；1,511 条路径
+正向、2 条反向。96,832 个有理 framing-ribbon triangles 位于 1,513 个两两不交
+的径向条带中。尚待映入 R3 的部分被精确缩小为 splice stubs、band lanes 与
+overlap tracks。重建命令：
+
+```bash
+python3 scripts/build_t73_x_m1_canonical_r3_annulus_chart.py --write
+python3 scripts/build_t73_x_m1_middle_paths_r3.py \
+  --output /mnt/c/Users/Administrator/.cache/t73_x_m1_middle_paths_r3.jsonl.gz
+python3 scripts/build_t73_x_m1_middle_paths_r3_verification.py
+```
+
 全局线性投影探测记录于
 [`audit/t73_affine_s3_projection_probe.json`](audit/t73_affine_s3_projection_probe.json)。
 xz/yz 会压扁 dotted edges；三个 regular tilts 至少产生258,453,247个 broad

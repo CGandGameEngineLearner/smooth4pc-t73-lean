@@ -1,0 +1,38 @@
+{
+  "builder_sha256": "2EC814BD7C8C4AD67AAFEE89EE9B8378C0E17B85ADD4949C3BC59F50E2E3118F",
+  "cache_path": "/mnt/c/Users/Administrator/.cache/t73_x_m1_middle_paths_r3.jsonl.gz",
+  "cache_sha256": "7813EE7F77A3F457EE61DD1EDC206242B61FC9132F91BDB4061CA140FA501718",
+  "cache_size": 913369,
+  "canonical_r3_annulus_chart_sha256": "742D764D5AE8FFD8CAE583A7452D37F01C8B5FBFE162B97711262AF084845EF5",
+  "complete_explicit_replacement_receipt_sha256": "4B17B45EB6FE7FF43361048FAFC55B3D9DDFE60B2FD0DEF16FA0939C79298556",
+  "complete_explicit_replacement_verification_sha256": "A2E430C86C09F09504042346F457734277C20DF19B598B241BBB89991AFE089E",
+  "completion_status": "ALL_POST_X_MIDDLE_PATHS_MAPPED_TO_CANONICAL_R3",
+  "component_counts": {
+    "m_2": 269,
+    "m_3": 1240,
+    "r_xy": 2,
+    "r_zx": 2
+  },
+  "core_segment_count": 48416,
+  "deck_shifted_point_count": 99810,
+  "middle_complements_receipt_sha256": "14798C0A495B2FC5A6ADC304CF15E3813EE3FA13B4EE5046A851FE32EE32E517",
+  "orientation_step_counts": {
+    "1": 1511,
+    "33": 2
+  },
+  "pairwise_disjoint_middle_ribbons": true,
+  "push_segment_count": 48416,
+  "radial_strip_clearance_checks": 1512,
+  "record_count": 1513,
+  "record_stream_sha256": "2583CD65217B77DB89E489C58192F90CE39E21B5D616372D758E9D73434317DF",
+  "remaining_piece_types": [
+    "source/target splice stubs",
+    "positive/negative band lanes",
+    "overlap transition tracks"
+  ],
+  "ribbon_triangle_count": 96832,
+  "schema": "t73_x_m1_middle_paths_r3_receipt/v1",
+  "sha256": "5240D2A882137E5DD6FA5994084A7F6FBC66AA0E5C2498DEDDCDFAFB629CC137",
+  "source_q4_point_matches": 99858,
+  "verdict": "PASS_X_M1_ALL_MIDDLE_PATHS_CANONICAL_R3"
+}

@@ -1,0 +1,28 @@
+{
+  "cache_sha256": "7813EE7F77A3F457EE61DD1EDC206242B61FC9132F91BDB4061CA140FA501718",
+  "construction_receipt_sha256": "5240D2A882137E5DD6FA5994084A7F6FBC66AA0E5C2498DEDDCDFAFB629CC137",
+  "full_result": {
+    "cache_sha_checked": true,
+    "core_segments_reconstructed": 48416,
+    "orientation_step_counts": {
+      "1": 1511,
+      "33": 2
+    },
+    "pairwise_disjoint_middle_ribbons": true,
+    "push_segments_reconstructed": 48416,
+    "radial_strip_clearance_checks": 1512,
+    "records_reconstructed": 1513,
+    "remaining_piece_types": [
+      "source/target splice stubs",
+      "positive/negative band lanes",
+      "overlap transition tracks"
+    ],
+    "source_q4_points_reconstructed": 99858,
+    "verdict": "PASS_X_M1_ALL_MIDDLE_PATHS_CANONICAL_R3_FULL"
+  },
+  "schema": "t73_x_m1_middle_paths_r3_verification/v1",
+  "sha256": "BD41650EA7A3ADCE43D018C284002C5EEE033E447A26464B36B39A2B8B308A72",
+  "verdict": "PASS_X_M1_ALL_MIDDLE_PATHS_CANONICAL_R3_FULL",
+  "verifier_path": "scripts/verify_t73_x_m1_middle_paths_r3.py",
+  "verifier_sha256": "AE34F833D8B9AA78090006428054A36448DA0DDD2AEDFE9176FC160E44D2E48B"
+}
