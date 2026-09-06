@@ -35,12 +35,12 @@ def canonical_sha(value):
     )
 
 
-def build():
-    collars = json.loads(COLLARS.read_text())
-    matrices = json.loads(MATRICES.read_text())
-    core = build_core(COLLARS, MATRICES, "v6")
-    push = build_push(COLLARS, MATRICES, "v6")
-    mutual = build_mutual(COLLARS, MATRICES, "v6")
+def build(collars_path=COLLARS, matrices_path=MATRICES, version="v6"):
+    collars = json.loads(collars_path.read_text())
+    matrices = json.loads(matrices_path.read_text())
+    core = build_core(collars_path, matrices_path, version)
+    push = build_push(collars_path, matrices_path, version)
+    mutual = build_mutual(collars_path, matrices_path, version)
     if (
         not core["global_core_clearance"]
         or not push["global_push_clearance"]
@@ -48,9 +48,9 @@ def build():
     ):
         raise AssertionError("a V6 one-skeleton layer failed")
     result = {
-        "schema": "t73_x_m1_outer_collar_v6_one_skeleton_clearance/v1",
-        "outer_collars_v6_receipt_sha256": collars["sha256"],
-        "v6_candidate_matrices_sha256": matrices["sha256"],
+        "schema": f"t73_x_m1_outer_collar_{version}_one_skeleton_clearance/v1",
+        f"outer_collars_{version}_receipt_sha256": collars["sha256"],
+        f"{version}_candidate_matrices_sha256": matrices["sha256"],
         "core_clearance": core,
         "push_clearance": push,
         "directed_core_push_clearance": mutual,
@@ -62,8 +62,8 @@ def build():
         + mutual["intersection_count"],
         "globally_embedded_one_skeleton": True,
         "global_core_push_clearance": True,
-        "ribbon_clearance_status": "OPEN_REBUILD_V6_RIBBON_MATRIX",
-        "verdict": "PASS_X_M1_OUTER_COLLAR_V6_ONE_SKELETON_CLEARANCE",
+        "ribbon_clearance_status": f"OPEN_REBUILD_{version.upper()}_RIBBON_MATRIX",
+        "verdict": f"PASS_X_M1_OUTER_COLLAR_{version.upper()}_ONE_SKELETON_CLEARANCE",
     }
     result["sha256"] = canonical_sha(result)
     return result

@@ -1,0 +1,33 @@
+{
+  "builder_path": "scripts/build_t73_x_m1_framed_outer_interface_collars_v7.py",
+  "builder_sha256": "FF12046C29A09B65D54FB50658D9D721740B327DD9D40768B0236CAE1AC3A896",
+  "cache_sha256": "773BAE6F57F16E72A18AAF64F7BBDAC12B5E7410DDB667338DB3643E751AF4B2",
+  "construction_receipt_sha256": "A980996F434705BA700FEE1B9D42701D33C1D74A47ACAF7EBB1309C031D7288E",
+  "full_result": {
+    "ambient_support": "OPEN",
+    "cache_sha_checked": true,
+    "changed_collars": 2,
+    "classification": "CANDIDATE_UNVERIFIED",
+    "collars_reconstructed": 3026,
+    "global_clearance": "OPEN",
+    "historical_collision_exact_rechecks": 2,
+    "local_ribbon_star_checks": 15134,
+    "local_ribbon_star_relation_counts": {
+      "same_interface/TRANSVERSE_PLANES": 15130,
+      "shared_dual_germ/COPLANAR_OPPOSITE_SIDES": 4
+    },
+    "negative_exterior_interfaces": [
+      3022,
+      3023
+    ],
+    "normal_transversality_checks": 18156,
+    "relative_twist_sum": 0,
+    "unchanged_collars": 3024,
+    "verdict": "PASS_X_M1_FRAMED_OUTER_INTERFACE_COLLARS_V7_FULL_LOCAL_CANDIDATE"
+  },
+  "schema": "t73_x_m1_framed_outer_interface_collars_v7_verification/v1",
+  "sha256": "4B77DD17C296666A54AE973A5835BBF93CDB35F429BBE19BA7D063FC5902D1F3",
+  "verdict": "PASS_X_M1_FRAMED_OUTER_INTERFACE_COLLARS_V7_FULL_LOCAL_CANDIDATE",
+  "verifier_path": "scripts/verify_t73_x_m1_framed_outer_interface_collars_v7.py",
+  "verifier_sha256": "5A379E70E74BB39BC4CDCD3F0E052F895B8B8DCAE402981BF0C3E1C3C973FEB9"
+}

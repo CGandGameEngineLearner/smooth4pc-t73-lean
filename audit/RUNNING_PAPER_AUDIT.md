@@ -5148,6 +5148,36 @@ Topology-source checks completed 2026-09-04:
   exterior x. This is the lexicographically minimal two-record repair and
   replaces the false uniform before/after rule.
 
+### F-599BD — Minimal two-record V7 has complete internal framed clearance
+
+- Severity: **Major positive collar construction / internal ribbon embedding**
+- Status: **LOCAL, ONE-SKELETON AND RIBBON SELF-CLEARANCE PASS**
+- Evidence: V7 construction/full-local receipts, V7 one-skeleton matrices and
+  aggregate clearance, V7 ribbon matrix and
+  `audit/t73_x_m1_outer_collar_v7_ribbon_clearance.json`, versioned exact
+  engines and regression test.
+- Minimal transform: relative to V5, only interfaces 3022 and 3023 reflect
+  their two exterior x coordinates to the negative half-space. The other
+  3,024 collar core/push lists remain literal V5 data. Both F-599BA/BC
+  historical triangle pairs are reconstructed and disjoint.
+- Local data: the 9,665,877-byte cache has 3,026 collars, 18,156 core and push
+  segments and 36,312 ribbon triangles. All 18,156 transversality equations
+  and 15,134 local stars pass.
+- One-skeleton: fresh broad counts are 14,249,037 core, 14,249,037 push and
+  28,516,170 directed mutual. Exact GMP totals are 6,048, 75,610 and 90,784;
+  intersections are zero. Verdict:
+  `PASS_X_M1_OUTER_COLLAR_V7_ONE_SKELETON_CLEARANCE`.
+- Ribbons: 14,233,903 nonincident rectangle candidates occur in eight type
+  families. Exact F intervals leave 9,098 global overlaps; 9,078 are declared
+  local adjacencies, eight fail exact bounds, and the remaining 48 exact
+  triangle-pair equations are disjoint. Verdict:
+  `PASS_X_M1_OUTER_COLLAR_V7_RIBBON_CLEARANCE`.
+- Boundary: V7 is internally a globally embedded framed collar system, but it
+  remains `CANDIDATE_UNVERIFIED` as an integration map. Its ribbons and
+  one-skeleton must be cleared against both F-599AG replacement framing and
+  retained Johnson/dual framing. The two-phase isotopy trace and fixed-boundary
+  tetrahedral ambient support also remain open.
+
 ### F-599C — Monolithic linear projections of the affine framed link are computationally unsuitable
 
 - Severity: **complete PD / projection selection**

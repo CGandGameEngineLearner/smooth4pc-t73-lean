@@ -463,6 +463,18 @@ first-ray triangle 0 at the saved rational point with edge parameter
 wrong. Exhaustive exact checks on the four shared-dual pairs show the minimal
 V7 assignment: keep all V5 signs except send only interfaces 3022 and 3023 to
 negative exterior x.
+
+V7 now implements exactly that two-record change. Its 9,665,877-byte cache
+keeps 3,024 V5 collars literally unchanged. Independent replay checks both
+historical triangle pairs and every local star. Fresh one-skeleton matrices
+contain 14,249,037 core/core, 14,249,037 push/push and 28,516,170 mutual
+candidates; all three exact clearances pass with 6,048, 75,610 and 90,784 GMP
+equations. The ribbon matrix has 14,233,903 nonincident candidates in eight
+families. Exact F intervals reduce these to 9,098 overlaps; exact bounds leave
+48 triangle-pair checks, all disjoint. Verdict:
+`PASS_X_M1_OUTER_COLLAR_V7_RIBBON_CLEARANCE`. This proves the V7 collar ribbon
+system internally embedded; cross-clearance against retained/replacement
+ribbons and ambient support remain open.
 The graph map extends over all five framed regular neighborhoods in
 [`geometry/t73_hybrid_to_railroad_tubular_map.json`](geometry/t73_hybrid_to_railroad_tubular_map.json).
 Its five solid-torus templates contain 5385 tetrahedra and 10770 boundary

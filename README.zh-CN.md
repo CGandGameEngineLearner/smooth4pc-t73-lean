@@ -563,6 +563,16 @@ triangle 0 与 interface 3019 的 first-ray triangle 0 在已保存有理点相�
 shared-dual 的穷尽精确检查给出最小 V7 分配：保持全部 V5 符号，仅把 interfaces
 3022、3023 送到负 exterior x。
 
+V7 现精确实现该两记录修改。9,665,877-byte cache 中 3,024 条 V5 collars 保持
+字面不变；独立重放检查两个历史 triangle pairs 与全部局部星。新 one-skeleton
+矩阵含 core/core 14,249,037、push/push 14,249,037、mutual 28,516,170 个候选；
+三层分别以 6,048、75,610、90,784 个 GMP 方程通过。ribbon 矩阵含八类
+14,233,903 个非 incidence candidates。精确 F 区间将其降至 9,098 个 overlaps，
+exact bounds 后仅 48 个 triangle-pair checks，全部无交。verdict 为
+`PASS_X_M1_OUTER_COLLAR_V7_RIBBON_CLEARANCE`。这证明 V7 collar ribbon 系统内部
+嵌入；与 retained/replacement ribbons 的交叉 clearance 及 ambient support
+仍为 OPEN。
+
 第一个跨系统门禁找到并修复了真实碰撞，没有提前升级该 assembly。流式 Rust
 1.98.1 checker 位于
 [`rust/t73_exact_cross_clearance`](rust/t73_exact_cross_clearance)，使用
