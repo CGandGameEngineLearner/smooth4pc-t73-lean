@@ -321,7 +321,12 @@ segments 的增量全局检查通过。汇总数据
 的 rank=`4`、nullity=`3`、signature=`0`、Smith diagonal 为
 `(1,1,1,1,0,0,0)`。verdict 为
 `PASS_HOMOLOGY_ADMISSIBLE_AFFINE_FRAMED_MODEL_ONLY`；相对 T73 的
-meridian/longitude 等价仍为 OPEN。重建与验收命令：
+meridian/longitude 等价仍为 OPEN。此外，覆盖门禁
+[`audit/t73_affine_core_atlas_coverage_gap.json`](audit/t73_affine_core_atlas_coverage_gap.json)
+证明这仍是 skeleton model：它含 7,092 条保留 connector、1,785 条
+dotted-passage 与 14,232 条替代 corridor，却没有完整 atlas 所要求的 60,520 条
+显式 post-x replacement core segments 及 60,520 条 pushes；完整 atlas 总量为
+80,007/84,383。因此这里的同调 PASS 不是完整 T73 PD PASS。重建与验收命令：
 
 ```bash
 python3 scripts/build_t73_kirby_homology_admissible_correction.py --write
@@ -329,6 +334,8 @@ python3 scripts/build_t73_dual_zero_framing_twist_ribbons.py --write
 python3 scripts/build_t73_dual_zero_framing_twist_global_clearance_receipt.py
 python3 scripts/build_t73_homology_admissible_affine_framed_model.py --write
 python3 scripts/verify_t73_homology_admissible_affine_framed_model.py
+python3 scripts/audit_t73_affine_core_atlas_coverage.py --check
+python3 scripts/verify_t73_affine_core_atlas_coverage_gap.py
 ```
 
 全局线性投影探测记录于

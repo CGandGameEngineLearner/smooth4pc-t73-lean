@@ -379,7 +379,13 @@ framed segments. The aggregate
 has rank `4`, nullity `3`, signature `0`, and Smith diagonal
 `(1,1,1,1,0,0,0)`. Verdict:
 `PASS_HOMOLOGY_ADMISSIBLE_AFFINE_FRAMED_MODEL_ONLY`; the relative T73
-meridian/longitude equivalence remains open. Rebuild and verify with:
+meridian/longitude equivalence remains open. In addition, the coverage gate
+[`audit/t73_affine_core_atlas_coverage_gap.json`](audit/t73_affine_core_atlas_coverage_gap.json)
+shows that this is a skeleton model: it contains 7,092 retained connector,
+1,785 dotted-passage and 14,232 substitute corridor segments, but none of the
+60,520 explicit post-x replacement core segments (and 60,520 pushes) required
+by the 80,007/84,383-segment complete atlas. Therefore its homology PASS is not
+a complete-T73 PD PASS. Rebuild and verify with:
 
 ```bash
 python3 scripts/build_t73_kirby_homology_admissible_correction.py --write
@@ -387,6 +393,8 @@ python3 scripts/build_t73_dual_zero_framing_twist_ribbons.py --write
 python3 scripts/build_t73_dual_zero_framing_twist_global_clearance_receipt.py
 python3 scripts/build_t73_homology_admissible_affine_framed_model.py --write
 python3 scripts/verify_t73_homology_admissible_affine_framed_model.py
+python3 scripts/audit_t73_affine_core_atlas_coverage.py --check
+python3 scripts/verify_t73_affine_core_atlas_coverage_gap.py
 ```
 
 Global linear projection probes are recorded in

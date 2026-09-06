@@ -1,0 +1,34 @@
+{
+  "affine_core_realization_sha256": "81CB91A81B354C806C8B7B9739D0D3CB51AAF8DEC22B0AB30DF8EE277ED0CB0A",
+  "affine_core_segments": 23109,
+  "affine_model_scope": "Johnson central-connector plus dotted-passage skeleton with new arbitrary closure corridors",
+  "affine_post_x_replacement_roles": 0,
+  "affine_segment_role_counts": {
+    "actual_central_connector": 7092,
+    "affine_corridor": 14232,
+    "dotted_passage": 1785
+  },
+  "complete_atlas_core_segments": 80007,
+  "complete_atlas_push_segments": 84383,
+  "complete_framed_dotted_atlas_sha256": "45374D20F4D135E06C81714AAC93663E05A8309C9BA6CF8E8B48CBB5A152FF03",
+  "completion_status": "AFFINE_CORE_ATLAS_COVERAGE_GAP_CONFIRMED",
+  "coverage_fraction_is_not_defined": "affine corridors are substitute edges, not images of omitted atlas cells, so raw segment-count division would be misleading",
+  "homology_admissible_affine_model_sha256": "62B469EBB8C25E60594F0699E38E82773C5626094D630B929A806D5FD87FE131",
+  "homology_model_actual_t73_status": "REFUTED_BY_ATLAS_COVERAGE_GAP",
+  "post_x_framed_cycle_assembly_sha256": "2AFFC7FF0FA1686A2F90BD57A095BEF65535D275B6D8D82BADE9D773EE2F613F",
+  "post_x_replacement_block_count": 1513,
+  "post_x_replacement_cells_receipt_sha256": "25DA696216B176D816E0CE5FBDF5781C038791A6E001A1F65FA95C7DF5CE9B8D",
+  "post_x_replacement_core_segments": 60520,
+  "post_x_replacement_core_segments_by_component": {
+    "m_2": 10760,
+    "m_3": 49600,
+    "r_xy": 80,
+    "r_yz": 0,
+    "r_zx": 80
+  },
+  "post_x_replacement_push_segments": 60520,
+  "prior_source_pd_coverage_gap_sha256": "A2858244659E531501311B2DE794CB8B4EBF796AC161659E371BD3EEE0F685D5",
+  "required_repair": "stream all 1513 explicit post-x framed replacement cells into one common dotted-S3 realization, retain their splice/collar crossings, and rebuild the complete core/push PD",
+  "schema": "t73_affine_core_atlas_coverage_gap/v1",
+  "sha256": "8BDF066A1CE784CE50C8AFCAD81762FBA8F25B83A3B7E6FDC9D39F6FA7255922"
+}

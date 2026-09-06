@@ -3807,6 +3807,34 @@ Topology-source checks completed 2026-09-04:
   equivalent source-to-affine framed movie is still required before this can
   be promoted from a homology-admissible affine candidate to actual T73 input.
 
+### F-599G — The affine model omits every explicit post-x replacement path
+
+- Severity: **Critical coverage correction / actual Kirby input**
+- Status: **AFFINE SKELETON COVERAGE GAP CONFIRMED**
+- Evidence: `audit/t73_affine_core_atlas_coverage_gap.json`,
+  `scripts/audit_t73_affine_core_atlas_coverage.py`, its independent verifier
+  and focused test, bound to the F-587 gap, complete atlas, post-x cycle
+  assembly, replacement-cell receipt and F-599F homology candidate.
+- Exact inventory: the complete atlas records 80,007 core and 84,383 push
+  segments. The affine model has 23,109 core segments, exhaustively typed as
+  7092 actual central-connector, 1785 dotted-passage and 14,232 newly chosen
+  affine-corridor segments. It has zero
+  `post_x_framed_replacement_path` roles.
+- Omission: the verified post-x assembly has 1513 explicit replacement blocks
+  of 40 core and 40 push segments each: 60,520 of each, distributed as core
+  counts m2=10,760, m3=49,600, r_xy=80, r_zx=80. The affine corridors are
+  substitutes, not images of these cells; comparing raw totals cannot turn
+  them into coverage.
+- Consequence: F-599F remains an exact globally embedded and
+  homology-admissible *skeleton model*, but neither it nor the earlier
+  source-connector PD supplies the complete T73 attaching link. In particular,
+  its linking numbers cannot be used as the actual target merely by correcting
+  their matrix or framings. Verdict: `PASS_AFFINE_CORE_ATLAS_COVERAGE_GAP`.
+- Required repair: stream the 1513 cached framed replacement cells through
+  their verified overlap and dotted-passage mapping cylinders into one common
+  dotted-S3 realization; retain every splice/collar crossing; only then build
+  and verify the complete core/push PD and integer framings.
+
 ### F-599C — Monolithic linear projections of the affine framed link are computationally unsuitable
 
 - Severity: **complete PD / projection selection**
