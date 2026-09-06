@@ -834,6 +834,20 @@ python3 scripts/build_t73_x_m1_outer_collar_v7_ribbon_volume_3017.py --write --c
 python3 scripts/verify_t73_x_m1_outer_collar_v7_ribbon_volume_3017.py
 python3 -m unittest tests.test_t73_x_m1_outer_collar_v7_ribbon_volume_3017
 ```
+
+Exact self-clearance refutes that prism filling in
+[`audit/t73_x_m1_outer_collar_v7_ribbon_volume_obstruction_3017.json`](audit/t73_x_m1_outer_collar_v7_ribbon_volume_obstruction_3017.json).
+At transition 7, tetrahedra 15 and 22 have no common vertex but contain the
+same saved R4 point with nonnegative barycentric coordinates in both. The
+independent verifier recomputes both convex combinations. The normal field,
+ribbon states and framed one-skeleton remain valid; only the 3-dimensional
+prism filling is `CANDIDATE_REFUTED` and must be retriangulated or refined.
+
+```bash
+python3 scripts/build_t73_x_m1_outer_collar_v7_ribbon_volume_obstruction_3017.py --write --check
+python3 scripts/verify_t73_x_m1_outer_collar_v7_ribbon_volume_obstruction_3017.py
+python3 -m unittest tests.test_t73_x_m1_outer_collar_v7_ribbon_volume_obstruction_3017
+```
 The graph map extends over all five framed regular neighborhoods in
 [`geometry/t73_hybrid_to_railroad_tubular_map.json`](geometry/t73_hybrid_to_railroad_tubular_map.json).
 Its five solid-torus templates contain 5385 tetrahedra and 10770 boundary

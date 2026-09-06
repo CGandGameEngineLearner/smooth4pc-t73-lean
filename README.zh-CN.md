@@ -910,6 +910,19 @@ python3 scripts/verify_t73_x_m1_outer_collar_v7_ribbon_volume_3017.py
 python3 -m unittest tests.test_t73_x_m1_outer_collar_v7_ribbon_volume_3017
 ```
 
+精确 self-clearance 已在
+[`audit/t73_x_m1_outer_collar_v7_ribbon_volume_obstruction_3017.json`](audit/t73_x_m1_outer_collar_v7_ribbon_volume_obstruction_3017.json)
+中反证该 prism filling。transition 7 的 tetrahedra 15/22 没有公共顶点，
+却各自以非负重心坐标包含同一个显式保存的 R4 点。独立 verifier 重新计算两组
+凸组合。normal field、ribbon states 和 framed one-skeleton 继续有效；只有
+三维 prism filling 被降级为 `CANDIDATE_REFUTED`，必须重新剖分或细分。
+
+```bash
+python3 scripts/build_t73_x_m1_outer_collar_v7_ribbon_volume_obstruction_3017.py --write --check
+python3 scripts/verify_t73_x_m1_outer_collar_v7_ribbon_volume_obstruction_3017.py
+python3 -m unittest tests.test_t73_x_m1_outer_collar_v7_ribbon_volume_obstruction_3017
+```
+
 第一个跨系统门禁找到并修复了真实碰撞，没有提前升级该 assembly。流式 Rust
 1.98.1 checker 位于
 [`rust/t73_exact_cross_clearance`](rust/t73_exact_cross_clearance)，使用

@@ -5753,6 +5753,32 @@ Topology-source checks completed 2026-09-04:
   intersections with the contemporaneous static ribbon x time volumes remain
   OPEN. No ambient extension is claimed.
 
+### F-599CB — The first interface-3017 ribbon prism filling self-intersects
+
+- Severity: **Exact 3-volume obstruction / local filling refutation**
+- Status: **RIBBON VOLUME REFUTED; NORMAL FIELD AND FRAMED ONE-SKELETON RETAINED**
+- Evidence:
+  `audit/t73_x_m1_outer_collar_v7_ribbon_volume_obstruction_3017.json`, its
+  builder, independent verifier and regression test, bound to F-599CA.
+- Candidate inventory: within each transition the 30 tetrahedra have 435
+  unordered pairs: 38 share a triangle, 63 share an edge, 66 share a vertex
+  and 268 are nonincident. Across 21 transitions there are 5,628 nonincident
+  pairs. Their affine-difference ranks are 4 for 4,939 pairs and 3 for 689.
+- First exact obstruction: at transition 7, tetrahedra 15 and 22 are
+  nonincident. An exact RREF with active barycentric constraints 1 and 4 gives
+  two four-entry barycentric vectors, each nonnegative and summing to one,
+  whose convex combinations are the same saved R4 point. The independent
+  verifier reconstructs both tetrahedra and recomputes both convex
+  combinations. Verdict:
+  `REFUTED_X_M1_OUTER_COLLAR_V7_RIBBON_VOLUME_3017_INDEPENDENT`.
+- Scope: F-599BY's ribbon-compatible normal field, all 22 embedded ribbon
+  states and F-599BZ's globally clear framed one-skeleton remain valid. The
+  failure is specifically the chosen 3-dimensional prism filling between
+  states. Local tetrahedron rank and face incidence never implied embeddedness.
+- Required repair: retriangulate or refine transition 7's adjacent ribbon
+  prisms, then rerun the exact nonincident tetrahedron predicate from the first
+  pair. Static ribbon-volume clearance follows only after self-clearance.
+
 ### F-599C — Monolithic linear projections of the affine framed link are computationally unsuitable
 
 - Severity: **complete PD / projection selection**
