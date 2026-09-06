@@ -5435,6 +5435,32 @@ Topology-source checks completed 2026-09-04:
   mixture and the retained/replacement framed union. A tetrahedral regular
   neighborhood and fixed-boundary ambient extension are also still absent.
 
+### F-599BO — Sequential timing does not repair the linear spatial movie
+
+- Severity: **Exact dynamic obstruction / candidate refutation**
+- Status: **LINEAR FRAMED VOLUME REFUTED; TIME SCHEDULE RETAINED**
+- Evidence:
+  `audit/t73_x_m1_outer_collar_v7_sequential_midpoint_obstruction.json`, its
+  builder, independent verifier and regression test, bound to F-599BN.
+- Exact counterexample: interface 2 is active in slot `[2/3026,3/3026]`.
+  At its phase-one midpoint, global time `9/12104`, moving segment 0 meets the
+  already-final segment 0 of interface 0. Three of the four pairs in the two
+  ribbon triangulations intersect: `(0,0)`, `(0,1)` and `(1,1)`. Every pair
+  stores an exact rational point plus edge/barycentric parameters. The
+  independent verifier reconstructs both midpoint ribbons, uses a distinct
+  lifted-R4 barycentric intersection implementation, and proves every saved
+  witness lies in both triangles. Verdict:
+  `REFUTED_X_M1_OUTER_COLLAR_V7_SEQUENTIAL_LINEAR_FRAMED_ISOTOPY_INDEPENDENT`.
+- Scope: F-599BJ's disjoint rational time slots and F-599BK--BM's static
+  source/final mixture clearances remain valid. F-599BN remains a correctly
+  replayed local simplicial world-volume, but that volume is now globally
+  `CANDIDATE_REFUTED`; local rank-three cells never implied global clearance.
+- Required repair: retain the sequential schedule but replace the phase-one
+  straight vertex interpolation by an obstacle-avoiding framed local movie.
+  The repaired movie must be regenerated as a complete ribbon world-volume
+  and checked against the contemporaneous static union before any ambient
+  extension is attempted.
+
 ### F-599C — Monolithic linear projections of the affine framed link are computationally unsuitable
 
 - Severity: **complete PD / projection selection**

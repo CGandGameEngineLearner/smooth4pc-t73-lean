@@ -723,6 +723,20 @@ python3 scripts/build_t73_x_m1_outer_collar_v7_sequential_framed_isotopy_volume_
 python3 -m unittest tests.test_t73_x_m1_outer_collar_v7_sequential_framed_isotopy_volume
 ```
 
+该线性空间插值现已被精确 artifact
+[`audit/t73_x_m1_outer_collar_v7_sequential_midpoint_obstruction.json`](audit/t73_x_m1_outer_collar_v7_sequential_midpoint_obstruction.json)
+反证。在全局时间 `9/12104`，active interface 2 的 segment 0 与已经 final
+的 interface 0、segment 0 在三个 triangle combinations 中相交。每个交点
+均保存显式有理坐标和重心参数，并由独立 verifier 复现为同时属于两个三角形。
+sequential 时间调度继续保留，但 phase-one 线性空间 movie 及其 framed
+world-volume 已是 `CANDIDATE_REFUTED`，必须换成避障局部 framed movie。
+
+```bash
+python3 scripts/build_t73_x_m1_outer_collar_v7_sequential_midpoint_obstruction.py --write --check
+python3 scripts/verify_t73_x_m1_outer_collar_v7_sequential_midpoint_obstruction.py
+python3 -m unittest tests.test_t73_x_m1_outer_collar_v7_sequential_midpoint_obstruction
+```
+
 第一个跨系统门禁找到并修复了真实碰撞，没有提前升级该 assembly。流式 Rust
 1.98.1 checker 位于
 [`rust/t73_exact_cross_clearance`](rust/t73_exact_cross_clearance)，使用

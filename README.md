@@ -636,6 +636,21 @@ python3 scripts/build_t73_x_m1_outer_collar_v7_sequential_framed_isotopy_volume.
 python3 scripts/build_t73_x_m1_outer_collar_v7_sequential_framed_isotopy_volume_verification.py --write --check-files
 python3 -m unittest tests.test_t73_x_m1_outer_collar_v7_sequential_framed_isotopy_volume
 ```
+
+That linear spatial interpolation is now refuted by the exact artifact
+[`audit/t73_x_m1_outer_collar_v7_sequential_midpoint_obstruction.json`](audit/t73_x_m1_outer_collar_v7_sequential_midpoint_obstruction.json).
+At global time `9/12104`, active interface 2, segment 0 meets the already-final
+interface 0, segment 0 in three triangle combinations. Each has an explicit
+rational point and barycentric parameters, independently replayed as belonging
+to both triangles. The sequential time schedule is retained, but the phase-one
+linear spatial movie and its framed world-volume are `CANDIDATE_REFUTED` until
+replaced by an obstacle-avoiding local framed movie.
+
+```bash
+python3 scripts/build_t73_x_m1_outer_collar_v7_sequential_midpoint_obstruction.py --write --check
+python3 scripts/verify_t73_x_m1_outer_collar_v7_sequential_midpoint_obstruction.py
+python3 -m unittest tests.test_t73_x_m1_outer_collar_v7_sequential_midpoint_obstruction
+```
 The graph map extends over all five framed regular neighborhoods in
 [`geometry/t73_hybrid_to_railroad_tubular_map.json`](geometry/t73_hybrid_to_railroad_tubular_map.json).
 Its five solid-torus templates contain 5385 tetrahedra and 10770 boundary
