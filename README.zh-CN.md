@@ -610,6 +610,17 @@ ribbon triangle pairs（27,245 个精确判定）及 605,200 个 ribbon/segment 
 `PASS_X_BAND_GLOBAL_R3_LANE_PUSH_AND_RIBBON_CLEARANCE`。该 band 层只剩把 push
 endpoints 粘到 stub/transition/middle companions。
 
+全部已映射 splice stubs 现有与 band 侧兼容的 R3 push paths。缓存
+`C:\Users\Administrator\.cache\t73_x_m1_stub_r3_push_paths.jsonl.gz`
+及收据
+[`audit/t73_x_m1_stub_r3_push_paths_receipt.json`](audit/t73_x_m1_stub_r3_push_paths_receipt.json)
+包含 6,052 条 push paths、10,582 个 core 与 push segments、21,164 个 ruled
+ribbon triangles。同一个已验证 band displacement 对每条 stub segment 横截，
+全部 6,052 个共享 stub/band push ports 精确相等。独立重放检查所有坐标/ribbon
+及 7,129,377-byte cache SHA。verdict 为
+`PASS_X_M1_STUB_R3_PUSH_PATHS_FULL_LOCAL`。source-normal homotopies、全局 stub-push
+clearance 与 transition-side push ports 仍为 OPEN。
+
 全局线性投影探测记录于
 [`audit/t73_affine_s3_projection_probe.json`](audit/t73_affine_s3_projection_probe.json)。
 xz/yz 会压扁 dotted edges；三个 regular tilts 至少产生258,453,247个 broad

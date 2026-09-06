@@ -706,6 +706,18 @@ clearance. Verdict:
 `PASS_X_BAND_GLOBAL_R3_LANE_PUSH_AND_RIBBON_CLEARANCE`. Only endpoint push
 gluing to stub/transition/middle companions remains for this band layer.
 
+All mapped splice stubs now have compatible R3 push paths at the band side.
+The cache `C:\Users\Administrator\.cache\t73_x_m1_stub_r3_push_paths.jsonl.gz`
+and receipt
+[`audit/t73_x_m1_stub_r3_push_paths_receipt.json`](audit/t73_x_m1_stub_r3_push_paths_receipt.json)
+contain 6,052 push paths, 10,582 core and push segments, and 21,164 ruled
+ribbon triangles. The same verified band displacement is transverse to every
+stub segment, and all 6,052 shared stub/band push ports agree exactly.
+Independent replay checks every coordinate/ribbon and the 7,129,377-byte cache
+SHA. Verdict: `PASS_X_M1_STUB_R3_PUSH_PATHS_FULL_LOCAL`. Source-normal
+homotopies, global stub-push clearance, and transition-side push ports remain
+open.
+
 Global linear projection probes are recorded in
 [`audit/t73_affine_s3_projection_probe.json`](audit/t73_affine_s3_projection_probe.json).
 xz/yz collapse dotted edges; three regular tilts produce at least 258,453,247

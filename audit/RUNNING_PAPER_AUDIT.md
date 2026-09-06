@@ -4406,6 +4406,31 @@ Topology-source checks completed 2026-09-04:
   push ports. Source-relative nonvanishing normal homotopies must join those
   6052 endpoints before complete replacement push paths can be assembled.
 
+### F-599Z — Every mapped splice stub has an R3 push path matching the band ports
+
+- Severity: **Major positive framing construction / stub companions**
+- Status: **LOCAL STUB PUSH/RIBBONS AND BAND PORTS PASS; GLOBAL CLEARANCE OPEN**
+- Evidence: cache and `audit/t73_x_m1_stub_r3_push_paths_receipt.json`, its
+  builder, independent verifier and test, bound to F-599N/V/Y and the original
+  ejected source-stub receipt.
+- Construction: translate every one of the 6052 mapped R3 stub paths by the
+  same `band_width/1000*(1,1,2)` displacement used by the now-verified band
+  lane companions. The direction has nonzero cross product with all 10,582
+  stub segment tangents. Each segment supplies a two-triangle ruled ribbon.
+- Counts: 6052 paths contain 10,582 core and 10,582 push segments and 21,164
+  ribbon triangles. At the four band attachment ports per record, the stub
+  push and F-599Y band-lane push coordinates are literally equal; all 6052
+  comparisons pass.
+- Independent replay: all core paths are reconstructed from the F-599N
+  barycentric pieces, every push is recomputed as core plus displacement, all
+  ribbon indices and tangent cross products are checked, and decompressed
+  stream plus full 7,129,377-byte cache SHAs pass. Verdict:
+  `PASS_X_M1_STUB_R3_PUSH_PATHS_FULL_LOCAL`.
+- Boundary: the constant displacement is a geometric R3 construction, but
+  its homotopy from each saved source normal field has not yet been written.
+  Global stub core/push/ribbon clearance and the two transition-side push
+  ports per band remain open.
+
 ### F-599C — Monolithic linear projections of the affine framed link are computationally unsuitable
 
 - Severity: **complete PD / projection selection**
