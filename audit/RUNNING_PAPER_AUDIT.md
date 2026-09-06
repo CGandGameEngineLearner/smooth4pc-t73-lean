@@ -5581,6 +5581,38 @@ Topology-source checks completed 2026-09-04:
   using semantic reductions or a certified parallel exact predicate. Push and
   ribbon-volume matrices follow only after the core gate closes.
 
+### F-599BV — Neither ordering of interfaces 0 and 2 repairs the linear movie
+
+- Severity: **Exact dynamic obstruction / schedule-only repair refuted**
+- Status: **REVERSE LINEAR TRACE REFUTED; SPATIAL MOVIE REPAIR REQUIRED**
+- Evidence:
+  `audit/t73_x_m1_outer_collar_v7_reverse_dynamic_core_obstruction.json`, its
+  builder, independent verifier and regression test, bound to F-599BU and the
+  earlier F-599BO final-collision witness.
+- Reverse exact counterexample: moving interface 2, local phase-one trace
+  triangle 0 meets source-vertical half 1 of interface 0 at exact local time
+  `250000/30205031068581` (approximately `8.28e-9`). The intersection is a
+  nondegenerate line segment. Its two exact rational endpoints arise on static
+  triangle edges 0 and 2 at the same time; the independent verifier proves
+  both endpoints and their midpoint belong to both R4 triangles. The two
+  underlying static source segments are independently disjoint, so this is a
+  positive-time dynamic collision, not an allowed initial incidence. Verdict:
+  `REFUTED_X_M1_OUTER_COLLAR_V7_REVERSE_DYNAMIC_CORE_CLEARANCE_INDEPENDENT`.
+- Two-order consequence: if interface 0 precedes 2, F-599BO gives the
+  interface-2/final-0 collision. If interface 2 precedes 0, the present
+  interface-2/source-0 collision occurs. Every total sequential order chooses
+  one of these cases. Hence no reordering of the unchanged linear local movies
+  can repair this pair.
+- Scope: F-599BQ/BR static clearances remain valid. F-599BP reverse trace and
+  F-599BT reverse volume remain correctly reconstructed local complexes but
+  are now globally `CANDIDATE_REFUTED`. The quarter, midpoint and three-quarter
+  core slice passes are insufficient because the collision occurs extremely
+  close to time zero.
+- Required repair: change the phase-one spatial movie for interface 2 relative
+  to interface 0 (and then regenerate all interfaces consistently), rather than
+  altering only schedule order. The new movie must have a fresh complete R4
+  core/push/ribbon-volume clearance before ambient extension.
+
 ### F-599C — Monolithic linear projections of the affine framed link are computationally unsuitable
 
 - Severity: **complete PD / projection selection**

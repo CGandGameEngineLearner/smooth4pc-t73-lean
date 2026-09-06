@@ -736,6 +736,23 @@ python3 -m unittest tests.test_t73_x_m1_outer_collar_v7_reverse_dynamic_core_can
 # Full conservative matrix reconstruction
 python3 scripts/build_t73_x_m1_outer_collar_v7_reverse_dynamic_core_candidate_matrix.py --rebuild-check
 ```
+
+The reverse linear movie is refuted by
+[`audit/t73_x_m1_outer_collar_v7_reverse_dynamic_core_obstruction.json`](audit/t73_x_m1_outer_collar_v7_reverse_dynamic_core_obstruction.json).
+Active interface 2 meets the still-source interface 0 at local phase-one time
+`250000/30205031068581`, only about `8.28e-9` after motion starts. The
+intersection is a nondegenerate segment whose two rational endpoints and
+midpoint are independently checked in both R4 triangles; the two static source
+segments themselves are disjoint. Forward order `0 before 2` is already
+refuted by the final-0 collision, while reverse order `2 before 0` is refuted
+by this source-0 collision. Therefore reordering alone cannot repair the local
+linear movie; its phase-one spatial path must change.
+
+```bash
+python3 scripts/build_t73_x_m1_outer_collar_v7_reverse_dynamic_core_obstruction.py --write --check
+python3 scripts/verify_t73_x_m1_outer_collar_v7_reverse_dynamic_core_obstruction.py
+python3 -m unittest tests.test_t73_x_m1_outer_collar_v7_reverse_dynamic_core_obstruction
+```
 The graph map extends over all five framed regular neighborhoods in
 [`geometry/t73_hybrid_to_railroad_tubular_map.json`](geometry/t73_hybrid_to_railroad_tubular_map.json).
 Its five solid-torus templates contain 5385 tetrahedra and 10770 boundary

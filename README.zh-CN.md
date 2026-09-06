@@ -818,6 +818,22 @@ python3 -m unittest tests.test_t73_x_m1_outer_collar_v7_reverse_dynamic_core_can
 python3 scripts/build_t73_x_m1_outer_collar_v7_reverse_dynamic_core_candidate_matrix.py --rebuild-check
 ```
 
+reverse 线性 movie 已被
+[`audit/t73_x_m1_outer_collar_v7_reverse_dynamic_core_obstruction.json`](audit/t73_x_m1_outer_collar_v7_reverse_dynamic_core_obstruction.json)
+反证。active interface 2 在局部 phase-one 时间
+`250000/30205031068581` 与仍为 source 的 interface 0 相交，只发生在运动开始后
+约 `8.28e-9`。交集是非退化线段；两个有理端点和中点均被独立验证为同时位于两
+个 R4 triangles，而两个静态 source segments 本身严格不交。forward 顺序
+`0 before 2` 已被 final-0 碰撞反证，reverse 顺序 `2 before 0` 又被本次
+source-0 碰撞反证。因此仅重排调度无法修复局部线性 movie；必须改变 phase-one
+空间路径。
+
+```bash
+python3 scripts/build_t73_x_m1_outer_collar_v7_reverse_dynamic_core_obstruction.py --write --check
+python3 scripts/verify_t73_x_m1_outer_collar_v7_reverse_dynamic_core_obstruction.py
+python3 -m unittest tests.test_t73_x_m1_outer_collar_v7_reverse_dynamic_core_obstruction
+```
+
 第一个跨系统门禁找到并修复了真实碰撞，没有提前升级该 assembly。流式 Rust
 1.98.1 checker 位于
 [`rust/t73_exact_cross_clearance`](rust/t73_exact_cross_clearance)，使用

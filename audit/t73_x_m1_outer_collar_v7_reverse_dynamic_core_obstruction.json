@@ -1,0 +1,67 @@
+{
+  "active_interface": 2,
+  "active_local_triangle": 0,
+  "active_semantic_type": "source_to_start_skew",
+  "contacts": [
+    {
+      "edge_index": 0,
+      "parameter_interval": [
+        "250000/30205031068581",
+        "250000/30205031068581"
+      ],
+      "point": [
+        "1",
+        "1511/6040",
+        "2704649041110598483/8100264411847778256",
+        "250000/30205031068581"
+      ],
+      "witness_parameter": "250000/30205031068581"
+    },
+    {
+      "edge_index": 2,
+      "parameter_interval": [
+        "30205030818581/30205031068581",
+        "30205030818581/30205031068581"
+      ],
+      "point": [
+        "1",
+        "1511/6040",
+        "593/1776",
+        "250000/30205031068581"
+      ],
+      "witness_parameter": "30205030818581/30205031068581"
+    }
+  ],
+  "forward_order_0_before_2_status": "REFUTED_BY_FINAL_COLLISION",
+  "forward_schedule_obstruction_sha256": "B235A0F2C795EA0F1602CFB2114EF00A6107A6F1FB11A2730699C0BC2C95C47E",
+  "intersection_dimension": 1,
+  "intersection_segment_endpoints": [
+    [
+      "1",
+      "1511/6040",
+      "2704649041110598483/8100264411847778256",
+      "250000/30205031068581"
+    ],
+    [
+      "1",
+      "1511/6040",
+      "593/1776",
+      "250000/30205031068581"
+    ]
+  ],
+  "local_phase_one_time": "250000/30205031068581",
+  "obstacle_interface": 0,
+  "obstacle_kind": "LATER_SOURCE_COLLAR",
+  "obstacle_vertical_half": 1,
+  "required_repair": "CHANGE_PHASE_ONE_SPATIAL_MOVIE_FOR_INTERFACE_2_RELATIVE_TO_INTERFACE_0",
+  "reverse_dynamic_core_candidate_matrix_sha256": "C58D8A904E2F02B997FE14475530868E08725C0F8B5569EBDF82949B6347EEA8",
+  "reverse_framed_volume_receipt_sha256": "15CAEA831B5FB21BBA32733A5DFD7C68F8A95563BA134ABD82B1CE47AD93DD91",
+  "reverse_framed_volume_status": "CANDIDATE_REFUTED",
+  "reverse_linear_trace_status": "CANDIDATE_REFUTED",
+  "reverse_order_2_before_0_status": "REFUTED_BY_SOURCE_COLLISION",
+  "schema": "t73_x_m1_outer_collar_v7_reverse_dynamic_core_obstruction/v1",
+  "sequential_reordering_only_status": "REFUTED_FOR_INTERFACE_PAIR_0_2",
+  "sha256": "53119C8FD5B26F801EC860AE093F048156F50A32C0D290E008B0A512AE9789E3",
+  "static_source_segments_intersect": false,
+  "verdict": "REFUTED_X_M1_OUTER_COLLAR_V7_REVERSE_DYNAMIC_CORE_CLEARANCE"
+}
