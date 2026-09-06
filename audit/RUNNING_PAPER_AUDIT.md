@@ -5487,6 +5487,26 @@ Topology-source checks completed 2026-09-04:
   followed by complete moving core/push/ribbon clearance and a new framed
   world-volume. The classification remains `CANDIDATE_UNVERIFIED`.
 
+### F-599BQ — Every reverse-ordered final/source static core mixture is clear
+
+- Severity: **Reverse sequential global clearance / first static gate**
+- Status: **REVERSE MIXED STATIC CORE PASS; PUSH/RIBBON/DYNAMIC OPEN**
+- Evidence: `audit/t73_x_m1_outer_collar_v7_reverse_static_core_clearance.json`,
+  its GMP builder, independent Fraction verifier and regression test, bound to
+  F-599BP and the complete V7 final-core clearance.
+- Result: among all 18,156 final and 3,026 source core segments subject to
+  `final_interface > source_interface`, outward-rounded AABBs leave eight
+  candidates: four retained-germ/source and four start-skew/source. Both exact
+  implementations separate the four start-skew pairs. The retained-germ hits
+  are `(3020,3019)`, `(3021,3018)`, `(3024,3023)`, `(3025,3022)`; each has one
+  shared endpoint, the same dual owner, collinear outgoing directions and
+  negative direction dot product. They are permitted opposite germs.
+  Forbidden intersections are zero. Verdict:
+  `PASS_X_M1_OUTER_COLLAR_V7_REVERSE_STATIC_CORE_CLEARANCE_INDEPENDENT`.
+- Boundary: reverse push/push, both directed core/push matrices and framed
+  ribbons must be checked independently before the reverse stationary mixture
+  is complete. Full-time moving clearance remains open.
+
 ### F-599C — Monolithic linear projections of the affine framed link are computationally unsuitable
 
 - Severity: **complete PD / projection selection**

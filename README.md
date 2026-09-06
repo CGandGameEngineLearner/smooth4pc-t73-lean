@@ -669,6 +669,19 @@ python3 scripts/build_t73_x_m1_outer_collar_v7_reverse_sequential_isotopy_trace.
 python3 scripts/build_t73_x_m1_outer_collar_v7_reverse_sequential_isotopy_trace_verification.py --write --check-files
 python3 -m unittest tests.test_t73_x_m1_outer_collar_v7_reverse_sequential_isotopy_trace
 ```
+
+The reverse ordered mixed core gate is
+[`audit/t73_x_m1_outer_collar_v7_reverse_static_core_clearance.json`](audit/t73_x_m1_outer_collar_v7_reverse_static_core_clearance.json).
+With `final_interface > source_interface`, only eight outward-rounded AABB
+candidates remain. Independent exact segment implementations separate four;
+the other four are precisely collinear-opposite dual germs. Forbidden core
+intersections are zero; reverse push and ribbon gates remain open.
+
+```bash
+python3 scripts/build_t73_x_m1_outer_collar_v7_reverse_static_core_clearance.py --write --check
+python3 scripts/verify_t73_x_m1_outer_collar_v7_reverse_static_core_clearance.py
+python3 -m unittest tests.test_t73_x_m1_outer_collar_v7_reverse_static_core_clearance
+```
 The graph map extends over all five framed regular neighborhoods in
 [`geometry/t73_hybrid_to_railroad_tubular_map.json`](geometry/t73_hybrid_to_railroad_tubular_map.json).
 Its five solid-torus templates contain 5385 tetrahedra and 10770 boundary

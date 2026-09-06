@@ -755,6 +755,18 @@ python3 scripts/build_t73_x_m1_outer_collar_v7_reverse_sequential_isotopy_trace_
 python3 -m unittest tests.test_t73_x_m1_outer_collar_v7_reverse_sequential_isotopy_trace
 ```
 
+逆序 ordered mixed core 门禁位于
+[`audit/t73_x_m1_outer_collar_v7_reverse_static_core_clearance.json`](audit/t73_x_m1_outer_collar_v7_reverse_static_core_clearance.json)。
+在 `final_interface > source_interface` 条件下，只剩 8 个向外舍入 AABB
+候选。两套独立精确线段实现分离其中 4 个；其余 4 个正是共线反向 dual germs。
+禁止 core 交点为 0；逆序 push 和 ribbon 门禁仍为 OPEN。
+
+```bash
+python3 scripts/build_t73_x_m1_outer_collar_v7_reverse_static_core_clearance.py --write --check
+python3 scripts/verify_t73_x_m1_outer_collar_v7_reverse_static_core_clearance.py
+python3 -m unittest tests.test_t73_x_m1_outer_collar_v7_reverse_static_core_clearance
+```
+
 第一个跨系统门禁找到并修复了真实碰撞，没有提前升级该 assembly。流式 Rust
 1.98.1 checker 位于
 [`rust/t73_exact_cross_clearance`](rust/t73_exact_cross_clearance)，使用
