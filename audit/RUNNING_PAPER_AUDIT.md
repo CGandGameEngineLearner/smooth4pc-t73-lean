@@ -5828,6 +5828,31 @@ Topology-source checks completed 2026-09-04:
   not yet been enumerated. The artifact remains a rational candidate until
   that cross-volume gate passes.
 
+### F-599CE — Interface 3017's v2 volume misses every scheduled static collar ribbon
+
+- Severity: **Exact cross-volume clearance / scheduled collar union**
+- Status: **SCHEDULED STATIC COLLAR VOLUME PASS; EXTERNAL UNION OPEN**
+- Evidence:
+  `audit/t73_x_m1_outer_collar_v7_ribbon_volume_v2_static_clearance_3017.json`,
+  its builder, independent verifier and regression test, bound to F-599CD and
+  the complete reverse static ribbon clearance.
+- Inventory/normalization: all source ribbons below interface 3017 and all six
+  final ribbon types above it give 18,390 static R4 tetrahedra. Each v2 global
+  interval `[k/25,(k+1)/25]` is affinely normalized to `[0,1]`; this preserves
+  intersection while permitting one static index for all 25 slots.
+- Exact result: among 750 moving tetrahedra, the only nonempty functional-box
+  families are final/start-skew 392, final/first-exterior 654,
+  final/staggered-last-exterior 2,398 and final/end-skew 1,604. The independent
+  verifier reconstructs all 18,390 static tetrahedra and solves all 5,048
+  candidate pairs with the exact simplex predicate. Source candidates and all
+  intersections are zero. Verdict:
+  `PASS_X_M1_OUTER_COLLAR_V7_RIBBON_VOLUME_V2_STATIC_CLEARANCE_3017_INDEPENDENT`.
+- Consequence/boundary: F-599CD/CE close interface 3017's complete framed
+  3-volume against itself and every scheduled source/final collar. The retained
+  source framing and replacement framing outside this collar-only inventory
+  must still be converted to static R4 volumes and checked before this local
+  movie can be integrated into the global relative map.
+
 ### F-599C — Monolithic linear projections of the affine framed link are computationally unsuitable
 
 - Severity: **complete PD / projection selection**

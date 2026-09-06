@@ -951,6 +951,20 @@ python3 scripts/verify_t73_x_m1_outer_collar_v7_ribbon_volume_v2_3017.py
 python3 -m unittest tests.test_t73_x_m1_outer_collar_v7_ribbon_volume_v2_3017
 ```
 
+scheduled static collar ribbon-volume clearance 位于
+[`audit/t73_x_m1_outer_collar_v7_ribbon_volume_v2_static_clearance_3017.json`](audit/t73_x_m1_outer_collar_v7_ribbon_volume_v2_static_clearance_3017.json)。
+把每个全局 `1/25` 时间槽归一化到 `[0,1]` 后，750 个 moving tetrahedra
+对 18,390 个 source/final static tetrahedra 检查。四个非空 final semantic
+families 分别含 392、654、2,398、1,604 个候选，共 5,048 次精确 simplex
+tests，交点为 0；source 候选为 0。collar inventory 外的 retained-source 与
+replacement ribbon volumes 仍为 OPEN。
+
+```bash
+python3 scripts/build_t73_x_m1_outer_collar_v7_ribbon_volume_v2_static_clearance_3017.py --write --check
+python3 scripts/verify_t73_x_m1_outer_collar_v7_ribbon_volume_v2_static_clearance_3017.py
+python3 -m unittest tests.test_t73_x_m1_outer_collar_v7_ribbon_volume_v2_static_clearance_3017
+```
+
 第一个跨系统门禁找到并修复了真实碰撞，没有提前升级该 assembly。流式 Rust
 1.98.1 checker 位于
 [`rust/t73_exact_cross_clearance`](rust/t73_exact_cross_clearance)，使用

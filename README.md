@@ -878,6 +878,21 @@ python3 scripts/build_t73_x_m1_outer_collar_v7_ribbon_volume_v2_3017.py --write 
 python3 scripts/verify_t73_x_m1_outer_collar_v7_ribbon_volume_v2_3017.py
 python3 -m unittest tests.test_t73_x_m1_outer_collar_v7_ribbon_volume_v2_3017
 ```
+
+Scheduled static collar ribbon-volume clearance is
+[`audit/t73_x_m1_outer_collar_v7_ribbon_volume_v2_static_clearance_3017.json`](audit/t73_x_m1_outer_collar_v7_ribbon_volume_v2_static_clearance_3017.json).
+After normalizing each global `1/25` slot to `[0,1]`, 750 moving tetrahedra
+are checked against 18,390 source/final static tetrahedra. The four nonempty
+final semantic families contain 392, 654, 2,398 and 1,604 candidates, for
+5,048 exact simplex tests and zero intersections. Source candidates are zero.
+Retained-source and replacement ribbon volumes outside the collar inventory
+remain open.
+
+```bash
+python3 scripts/build_t73_x_m1_outer_collar_v7_ribbon_volume_v2_static_clearance_3017.py --write --check
+python3 scripts/verify_t73_x_m1_outer_collar_v7_ribbon_volume_v2_static_clearance_3017.py
+python3 -m unittest tests.test_t73_x_m1_outer_collar_v7_ribbon_volume_v2_static_clearance_3017
+```
 The graph map extends over all five framed regular neighborhoods in
 [`geometry/t73_hybrid_to_railroad_tubular_map.json`](geometry/t73_hybrid_to_railroad_tubular_map.json).
 Its five solid-torus templates contain 5385 tetrahedra and 10770 boundary
