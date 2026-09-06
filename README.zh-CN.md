@@ -573,6 +573,15 @@ exact bounds 后仅 48 个 triangle-pair checks，全部无交。verdict 为
 嵌入；与 retained/replacement ribbons 的交叉 clearance 及 ambient support
 仍为 OPEN。
 
+第一张跨系统矩阵现为
+[`audit/t73_x_m1_outer_collar_v7_replacement_ribbon_candidate_matrix.json`](audit/t73_x_m1_outer_collar_v7_replacement_ribbon_candidate_matrix.json)。
+它比较 18,156 个 collar rectangles 与全部 92,284 个 replacement rectangles：
+得到 19,224,171 个扩张 AABB pairs，其中含 3,026 个精确 target framing-edge
+邻接；全部 target 局部星均为异面横截。19,221,145 个非 incidence pairs 只在
+五个 collar-type/replacement-system 类中，和向外舍入 exact-F intervals 相交后
+剩 4,809,221 个 broad survivors。当前仅是 matrix evidence，下一步做 exact
+skew/triangle clearance。
+
 第一个跨系统门禁找到并修复了真实碰撞，没有提前升级该 assembly。流式 Rust
 1.98.1 checker 位于
 [`rust/t73_exact_cross_clearance`](rust/t73_exact_cross_clearance)，使用

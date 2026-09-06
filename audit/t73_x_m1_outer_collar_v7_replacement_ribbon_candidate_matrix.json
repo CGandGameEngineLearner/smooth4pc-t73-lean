@@ -1,0 +1,34 @@
+{
+  "aabb_and_functional_interval_candidate_count": 4809221,
+  "aabb_and_functional_interval_candidate_matrix": {
+    "collar:end_skew_lift/replacement:band": 1135126,
+    "collar:end_skew_lift/replacement:stub": 1239163,
+    "collar:end_skew_lift/replacement:transition": 3026,
+    "collar:start_skew_lift/replacement:band": 913852,
+    "collar:start_skew_lift/replacement:stub": 1518054
+  },
+  "clearance_status": "OPEN_APPLY_EXACT_FUNCTIONAL_INTERVAL_BOUNDS_AND_TRIANGLE_CHECKS",
+  "collar_rectangle_count": 18156,
+  "complete_replacement_framing_receipt_sha256": "51564946B26333C25FFC7624127E5270523A1AF0C06473B2A20A2799A553E057",
+  "complete_replacement_framing_verification_sha256": "A16014225D80D58B9423B22CFD52ECA0AB128358AA0F6B246E014AE1FF92997E",
+  "expanded_3d_aabb_pair_count": 19224171,
+  "intended_target_framing_edge_adjacency_count": 3026,
+  "nonempty_type_pair_count": 5,
+  "nonincident_candidate_count": 19221145,
+  "nonincident_candidate_matrix": {
+    "collar:end_skew_lift/replacement:band": 10917952,
+    "collar:end_skew_lift/replacement:stub": 1244305,
+    "collar:end_skew_lift/replacement:transition": 10591,
+    "collar:start_skew_lift/replacement:band": 5528734,
+    "collar:start_skew_lift/replacement:stub": 1519563
+  },
+  "outer_collars_v7_receipt_sha256": "A980996F434705BA700FEE1B9D42701D33C1D74A47ACAF7EBB1309C031D7288E",
+  "outer_collars_v7_ribbon_clearance_sha256": "4429702EDAADD4F1448F917F452BC43F1981344D833CB1C9EE5D689D55D60F9E",
+  "replacement_rectangle_count": 92284,
+  "schema": "t73_x_m1_outer_collar_v7_replacement_ribbon_candidate_matrix/v1",
+  "sha256": "A06A9409CCB854B14CBF1575FC6CB9F8A230564D06DD72E1959D266046E81A00",
+  "target_framing_edge_star_relation_counts": {
+    "TRANSVERSE_PLANES": 3026
+  },
+  "verdict": "PASS_X_M1_OUTER_COLLAR_V7_REPLACEMENT_RIBBON_CANDIDATE_MATRIX_ONLY"
+}

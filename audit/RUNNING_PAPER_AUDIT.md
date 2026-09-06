@@ -5178,6 +5178,30 @@ Topology-source checks completed 2026-09-04:
   retained Johnson/dual framing. The two-phase isotopy trace and fixed-boundary
   tetrahedral ambient support also remain open.
 
+### F-599BE — V7-to-replacement ribbon cross candidates and all target stars are explicit
+
+- Severity: **Integration clearance decomposition / target boundary pass**
+- Status: **CROSS MATRIX COMPLETE; EXACT NONINCIDENT CLEARANCE OPEN**
+- Evidence:
+  `audit/t73_x_m1_outer_collar_v7_replacement_ribbon_candidate_matrix.json`,
+  its builder and regression test, bound to F-599AG and F-599BD.
+- Inventory: all 18,156 V7 collar rectangles are compared with all 92,284
+  complete replacement rectangles. Outward-rounded exact 3D bounds produce
+  19,224,171 pairs. Exactly 3,026 are the declared before/after target framing
+  edges, and all 3,026 corresponding local stars have transverse planes.
+- Nonincident matrix: removing target adjacencies leaves 19,221,145 pairs in
+  five nonempty classes only: start/end lifts against stub/band, plus end lift
+  against transition. No collar rectangle reaches the translated middle
+  subsystem in 3D AABB.
+- First reduction: F extrema are calculated exactly for every rectangle and
+  only then rounded outward. Intersecting their intervals with the AABB stream
+  leaves 4,809,221 conservative survivors.
+- Boundary: verdict
+  `PASS_X_M1_OUTER_COLLAR_V7_REPLACEMENT_RIBBON_CANDIDATE_MATRIX_ONLY`
+  certifies complete cross inventory and target local stars, not nonincident
+  clearance. Exact bounds, skew axes and triangle predicates must consume all
+  five families. Retained Johnson/dual cross-clearance is a separate matrix.
+
 ### F-599C — Monolithic linear projections of the affine framed link are computationally unsuitable
 
 - Severity: **complete PD / projection selection**

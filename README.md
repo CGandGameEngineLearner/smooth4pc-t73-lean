@@ -475,6 +475,15 @@ families. Exact F intervals reduce these to 9,098 overlaps; exact bounds leave
 `PASS_X_M1_OUTER_COLLAR_V7_RIBBON_CLEARANCE`. This proves the V7 collar ribbon
 system internally embedded; cross-clearance against retained/replacement
 ribbons and ambient support remain open.
+
+The first cross-system matrix is now
+[`audit/t73_x_m1_outer_collar_v7_replacement_ribbon_candidate_matrix.json`](audit/t73_x_m1_outer_collar_v7_replacement_ribbon_candidate_matrix.json).
+It compares 18,156 collar rectangles with all 92,284 replacement rectangles:
+19,224,171 expanded AABB pairs, including 3,026 exact target framing-edge
+adjacencies. Every target local star has transverse planes. The 19,221,145
+nonincident pairs occupy only five collar-type/replacement-system classes;
+intersecting with outward-rounded exact-F intervals leaves 4,809,221 broad
+survivors. This is matrix-only evidence; exact skew/triangle clearance is next.
 The graph map extends over all five framed regular neighborhoods in
 [`geometry/t73_hybrid_to_railroad_tubular_map.json`](geometry/t73_hybrid_to_railroad_tubular_map.json).
 Its five solid-torus templates contain 5385 tetrahedra and 10770 boundary
