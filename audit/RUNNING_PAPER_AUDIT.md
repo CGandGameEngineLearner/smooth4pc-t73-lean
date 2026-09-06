@@ -4364,6 +4364,15 @@ Topology-source checks completed 2026-09-04:
   globally embedded framing system. Nonincident push-disk/ribbon clearance
   must be checked, and each lane push endpoint must be joined to source-stub
   and target-transition/middle push data without adding relative twist.
+- Global refutation: that first check fails on its third exact pair: band 0
+  core triangle 0 intersects push triangle 2. Thus transversality to each
+  individual face does not make a constant translate disjoint from a folded
+  nonconvex disk. The exact obstruction is
+  `audit/t73_x_band_global_r3_push_disk_obstruction.json`, verdict
+  `PASS_X_BAND_GLOBAL_PUSH_DISK_COLLISION_OBSTRUCTION`. All local cells above
+  are preserved, but the global push-disk interpretation is REFUTED. Kirby
+  framing only requires push paths/ribbons along the two attaching lanes, so
+  the repair must construct those one-dimensional companions directly.
 
 ### F-599C — Monolithic linear projections of the affine framed link are computationally unsuitable
 

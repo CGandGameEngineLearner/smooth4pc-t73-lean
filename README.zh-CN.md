@@ -589,6 +589,12 @@ triangles、45,390 个非退化 surface-product tetrahedra；所有 source relat
 twist 均为 0。独立全量重放检查全部单元及 9,616,648-byte cache SHA。verdict
 为 `PASS_X_BAND_GLOBAL_R3_PUSH_DISKS_FULL_LOCAL_PRODUCT`。全局 push-disk
 clearance 以及把这些 push ports 粘到 stub/transition pushes 仍为 OPEN。
+首次全局 disk 检查 fail-closed：band 0 core triangle 0 与平移后的 push triangle 2
+相交，精确记录位于
+[`audit/t73_x_band_global_r3_push_disk_obstruction.json`](audit/t73_x_band_global_r3_push_disk_obstruction.json)。
+因此保存的 product tetrahedra 仍是有效局部单元，但常量平移已被否定为全局平行
+**disk**。修复方向改为仅构造 Kirby diagram 实际需要的两条 attaching-lane
+push paths 与 ruled framing ribbons。
 
 全局线性投影探测记录于
 [`audit/t73_affine_s3_projection_probe.json`](audit/t73_affine_s3_projection_probe.json)。

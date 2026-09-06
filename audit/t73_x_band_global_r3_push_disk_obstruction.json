@@ -1,0 +1,17 @@
+{
+  "exact_triangle_pairs_before_first_collision": 3,
+  "first_exact_collision": {
+    "band_index": 0,
+    "core_triangle_index": 0,
+    "push_triangle_index": 2
+  },
+  "global_band_push_disks_receipt_sha256": "733E0A541BA39A75F949D021B56CE50050FDA40BDFCD10F986A8257AEB1B7BF2",
+  "global_push_disk_status": "REFUTED",
+  "preserved_scope": "all stored vertices, lane ribbons and product tetrahedra remain valid local cells; the union of translated push disks is not disjoint from the core disk union",
+  "push_cache_sha256": "3A939725C78F4D9EB74D14E65552474713D96A60A9A2B8CF9404F7A2BE00A546",
+  "repair_direction": "construct only the required attaching-lane push paths and ruled framing ribbons; do not require a parallel copy of the entire nonconvex routed band disk",
+  "schema": "t73_x_band_global_r3_push_disk_obstruction/v1",
+  "sha256": "26877B12691E3C88D6A1A799F20ADF887A6AA7E9EE9E9B3066F3E5DE1400594B",
+  "tested_construction": "constant translation by band_width/1000 times (1,1,2)",
+  "verdict": "PASS_X_BAND_GLOBAL_PUSH_DISK_COLLISION_OBSTRUCTION"
+}

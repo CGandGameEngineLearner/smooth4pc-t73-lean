@@ -683,6 +683,13 @@ surface-product tetrahedra; every source relative twist is zero. Independent
 full replay checks all cells and the 9,616,648-byte cache SHA. Verdict:
 `PASS_X_BAND_GLOBAL_R3_PUSH_DISKS_FULL_LOCAL_PRODUCT`. Global push-disk
 clearance and gluing these push ports to stub/transition pushes remain open.
+The first global disk check fails closed: band 0 core triangle 0 intersects
+translated push triangle 2. The exact record is
+[`audit/t73_x_band_global_r3_push_disk_obstruction.json`](audit/t73_x_band_global_r3_push_disk_obstruction.json).
+Therefore the stored product tetrahedra remain valid local cells, but the
+constant translation is refuted as a global parallel **disk**. The repair now
+constructs only the two attaching-lane push paths and ruled framing ribbons
+actually required by the Kirby diagram.
 
 Global linear projection probes are recorded in
 [`audit/t73_affine_s3_projection_probe.json`](audit/t73_affine_s3_projection_probe.json).
