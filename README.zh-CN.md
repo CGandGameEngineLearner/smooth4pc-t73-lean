@@ -513,6 +513,18 @@ matches、12,104 个 functional-line identities 及完整缓存 SHA。verdict �
 paths、平移后 middle curves 的跨系统 clearance，以及全部 push transitions，
 仍为 OPEN。
 
+四个 core 子系统现已在同一 R3 坐标系中组装为完整 replacement paths。缓存
+`C:\Users\Administrator\.cache\t73_x_m1_complete_global_r3_replacement_cores.jsonl.gz`
+由
+[`audit/t73_x_m1_complete_global_r3_replacement_cores_receipt.json`](audit/t73_x_m1_complete_global_r3_replacement_cores_receipt.json)
+绑定。每条 1,513 records 严格串接九类保存 pieces：outer stub、negative band
+lane、target stub、first transition、平移后的 middle、last transition、target
+stub、positive band lane 和 outer stub。独立全量重放重建全部 89,258 个有理
+segments 与 12,104 个跨 piece endpoint 等式，并检查 6,807,692-byte 缓存 SHA。
+verdict 为 `PASS_X_M1_COMPLETE_GLOBAL_R3_REPLACEMENT_CORES_FULL`。这是完整坐标
+与连续性结果；统一 all-segment embedding-clearance 门禁及完整 push paths 仍为
+OPEN。
+
 全局线性投影探测记录于
 [`audit/t73_affine_s3_projection_probe.json`](audit/t73_affine_s3_projection_probe.json)。
 xz/yz 会压扁 dotted edges；三个 regular tilts 至少产生258,453,247个 broad

@@ -4176,6 +4176,34 @@ Topology-source checks completed 2026-09-04:
   claiming complete replacement-core embedding. Push/ribbon transition maps
   are independently still open.
 
+### F-599S — Every post-x replacement core is one continuous global R3 path
+
+- Severity: **Major positive construction / complete replacement-core assembly**
+- Status: **ALL CORE COORDINATES AND INCIDENCE PASS; GLOBAL EMBEDDING CHECK OPEN**
+- Evidence: the cache and receipt
+  `audit/t73_x_m1_complete_global_r3_replacement_cores_receipt.json`, builder,
+  independent full verifier and test, binding F-599N, F-599Q, F-599R and
+  translated F-599I middle paths.
+- Assembly order: each of 1513 records is the exact concatenation
+  `source_stub_before`, negative band lane, `target_complement_first`, first
+  middle transition, translated m1-parallel middle, last middle transition,
+  `target_complement_last`, positive band lane, `source_stub_after`. No source
+  block is replaced by a hash or count.
+- Totals/continuity: the paths contain 89,258 rational core segments. All
+  eight joins in every record agree exactly, giving 12,104 cross-piece
+  equalities. Each path remains open only at its two outer ports, which are
+  the actual neighboring connector/dual endpoints from F-599N.
+- Independent replay: a separate verifier reopens all four source caches,
+  reapplies the middle translation, reconstructs each of the nine paths and
+  its segment ranges, and compares every vertex. Decompressed record-stream
+  SHA and full 6,807,692-byte cache SHA pass. Verdict:
+  `PASS_X_M1_COMPLETE_GLOBAL_R3_REPLACEMENT_CORES_FULL`.
+- Boundary: this is the first complete coordinate and incidence realization
+  of all post-x replacement cores in one R3 chart. It is not yet an embedding
+  claim: all 89,258 segments must pass one nonincident global intersection
+  verifier, then be joined to the unchanged connector/dual core pieces. Push
+  paths and framing ribbons are separately still open.
+
 ### F-599C — Monolithic linear projections of the affine framed link are computationally unsuitable
 
 - Severity: **complete PD / projection selection**

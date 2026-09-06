@@ -594,6 +594,20 @@ functional-line identities and the full cache SHA. Verdict:
 band strips, stub paths and translated middle curves, plus all push
 transitions, remains open.
 
+The four core subsystems are now assembled into complete replacement paths in
+one R3 coordinate system. The cache
+`C:\Users\Administrator\.cache\t73_x_m1_complete_global_r3_replacement_cores.jsonl.gz`
+is bound by
+[`audit/t73_x_m1_complete_global_r3_replacement_cores_receipt.json`](audit/t73_x_m1_complete_global_r3_replacement_cores_receipt.json).
+Each of 1,513 records concatenates exactly nine saved pieces: outer stub,
+negative band lane, target stub, first transition, translated middle, last
+transition, target stub, positive band lane, and outer stub. Independent full
+replay reconstructs all 89,258 rational segments and 12,104 cross-piece
+endpoint equalities and checks the 6,807,692-byte cache SHA. Verdict:
+`PASS_X_M1_COMPLETE_GLOBAL_R3_REPLACEMENT_CORES_FULL`. This is a complete
+coordinate/continuity result; the single all-segment embedding-clearance gate
+and complete push paths remain open.
+
 Global linear projection probes are recorded in
 [`audit/t73_affine_s3_projection_probe.json`](audit/t73_affine_s3_projection_probe.json).
 xz/yz collapse dotted edges; three regular tilts produce at least 258,453,247
