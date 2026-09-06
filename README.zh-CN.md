@@ -762,6 +762,13 @@ python3 scripts/build_t73_x_m1_framed_outer_interface_collars_v2.py
 python3 scripts/build_t73_x_m1_framed_outer_interface_collars_v2_verification.py --write
 ```
 
+v2 one-skeleton 通过：保存的 GMP 重放执行 2,777,976 个 core/core、2,770,948
+个 push/push 和 5,191,079 个 core/push 精确检查，没有额外交点。但 v2 在
+ribbon 层同样被否证：rectangle 6051（interface 3025，`r_zx:z:edge:0`）与
+rectangle 5411（interface 2705，Johnson connector `c2:between:1280`）相交。
+同一 obstruction artifact 保存精确 edge 参数、重心坐标及有理交点。因此 v3
+必须采用分离 waypoint route；v1、v2 都不能标为 actual。
+
 全局线性投影探测记录于
 [`audit/t73_affine_s3_projection_probe.json`](audit/t73_affine_s3_projection_probe.json)。
 xz/yz 会压扁 dotted edges；三个 regular tilts 至少产生258,453,247个 broad

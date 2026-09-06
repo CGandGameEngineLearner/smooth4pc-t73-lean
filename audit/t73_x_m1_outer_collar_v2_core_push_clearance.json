@@ -1,0 +1,39 @@
+{
+  "classification": "ACTUAL_CORE_PUSH_PATHS",
+  "collar_count": 3026,
+  "core_segment_count": 6052,
+  "failing_pairs": [],
+  "global_core_push_clearance": true,
+  "outer_collars_v2_local_verification_sha256": "44D56671557D018D329E63BBE7316D60A8FFCFCA4901C71067351EFFB7CC1E4F",
+  "outer_collars_v2_receipt_sha256": "236F73C55E45A7F0A7190634F719E285F3DD97895A3669F27905348C66C8909F",
+  "pair_results": {
+    "core/core": {
+      "broad_candidates": 2781006,
+      "exact_bounds_rejects": 0,
+      "exact_segment_checks": 2777976,
+      "intersections": 0,
+      "permitted_incidences": 3030,
+      "status": "PASS"
+    },
+    "core/push": {
+      "broad_candidates": 5568030,
+      "exact_bounds_rejects": 376951,
+      "exact_segment_checks": 5191079,
+      "intersections": 0,
+      "permitted_incidences": 0,
+      "status": "PASS"
+    },
+    "push/push": {
+      "broad_candidates": 2781010,
+      "exact_bounds_rejects": 7032,
+      "exact_segment_checks": 2770948,
+      "intersections": 0,
+      "permitted_incidences": 3030,
+      "status": "PASS"
+    }
+  },
+  "push_segment_count": 6052,
+  "schema": "t73_x_m1_outer_collar_v2_core_push_clearance/v1",
+  "sha256": "19C8F97E2A9D7E8831E1B2DFFC58F0DC02A3769B4123619E679E6FE6BCB93926",
+  "verdict": "PASS_X_M1_OUTER_COLLAR_V2_CORE_PUSH_CLEARANCE"
+}

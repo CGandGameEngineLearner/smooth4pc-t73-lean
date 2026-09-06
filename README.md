@@ -311,6 +311,14 @@ core/push/ribbon, isotopy-trace and ambient-support checks. Rebuild with:
 python3 scripts/build_t73_x_m1_framed_outer_interface_collars_v2.py
 python3 scripts/build_t73_x_m1_framed_outer_interface_collars_v2_verification.py --write
 ```
+
+The v2 one-skeleton passes: its saved GMP run performs 2,777,976 core/core,
+2,770,948 push/push and 5,191,079 core/push exact checks with no extra
+intersection. However v2 is also refuted at the ribbon level. Rectangle 6051
+(interface 3025, `r_zx:z:edge:0`) meets rectangle 5411 (interface 2705,
+Johnson connector `c2:between:1280`). The same obstruction artifact stores an
+exact edge parameter, barycentric coordinates and rational intersection point.
+Thus v3 requires a separated waypoint route; neither v1 nor v2 is actual.
 The graph map extends over all five framed regular neighborhoods in
 [`geometry/t73_hybrid_to_railroad_tubular_map.json`](geometry/t73_hybrid_to_railroad_tubular_map.json).
 Its five solid-torus templates contain 5385 tetrahedra and 10770 boundary

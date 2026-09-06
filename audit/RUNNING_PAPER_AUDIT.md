@@ -4736,6 +4736,34 @@ Topology-source checks completed 2026-09-04:
   framing and retained Johnson/dual ribbons; then its traces require a
   tetrahedral ambient support before it can close the five framed components.
 
+### F-599AK — V2 has an embedded one-skeleton but a nonlocal ribbon intersection
+
+- Severity: **Critical v2 refutation / routing requirement sharpened**
+- Status: **CORE/PUSH PASS; RIBBON REFUTED; SEPARATED-WAYPOINT V3 REQUIRED**
+- Evidence: `audit/t73_x_m1_outer_collar_v2_core_push_clearance.json`, its
+  saved full-run verification receipt,
+  `audit/t73_x_m1_outer_collar_v2_ribbon_self_clearance.json`, builders and
+  regression test.
+- Positive one-skeleton: all 6,052 core and 6,052 push segments are globally
+  checked. Core/core has 2,777,976 exact tests and 3,030 declared incidences;
+  push/push has 2,770,948 tests and the same incidences; core/push has
+  5,191,079 tests. There are no extra intersections. Verdict:
+  `PASS_X_M1_OUTER_COLLAR_V2_CORE_PUSH_CLEARANCE`.
+- Ribbon refutation: exact rectangle-level skew axes reject all earlier
+  candidates without a general triangle solve. The first surviving true
+  intersection is rectangle 6051 triangle 1 against rectangle 5411 triangle
+  0. These belong to interface 3025 (`r_zx:z:edge:0`) and interface 2705
+  (Johnson connector `c2:between:1280`), not a declared adjacency.
+- Exact witness: the obstruction stores the rational intersection point, a
+  strictly interior edge parameter and nonnegative barycentric alpha/beta
+  satisfying alpha+beta<=1. Thus this is not a binary64 near miss or an
+  endpoint incidence. Verdict:
+  `REFUTED_X_M1_OUTER_COLLAR_V2_RIBBON_SELF_CLEARANCE`.
+- Consequence: retaining source germs repairs F-599AJ's local dual fold but
+  does not globally separate long moving framing sheets. V3 must retain those
+  germs and route moving segments through explicitly separated rational
+  waypoints; all v3 core/push/ribbon and trace checks must be rerun from zero.
+
 ### F-599C — Monolithic linear projections of the affine framed link are computationally unsuitable
 
 - Severity: **complete PD / projection selection**
