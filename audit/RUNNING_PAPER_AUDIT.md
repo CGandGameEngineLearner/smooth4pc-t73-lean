@@ -3968,6 +3968,30 @@ Topology-source checks completed 2026-09-04:
   lane carriers. Only that map may be composed with F-599I and F-599J to form
   complete source-relative R3 replacement paths.
 
+### F-599L — The standard x/m1 handle-pair boundary has an explicit S3 shelling
+
+- Severity: **Major positive construction / cancellation target topology**
+- Status: **STANDARD BOUNDARY S3 PASS; ACTUAL REFINEMENT MAP OPEN**
+- Evidence: `geometry/t73_x_m1_standard_pair_boundary_s3.json`, its builder,
+  independent verifier and test, bound to the existing standard handle-pair
+  deletion complex.
+- Boundary: the ten standard-pair 4-simplices expose 26 tetrahedra. Their
+  triangular faces all have degree two. The already checked chain ranks give
+  homology-sphere Betti numbers, but the new result does not stop there.
+- Recognition: deleting boundary tetrahedron `(0,1,2,3)` leaves 25
+  tetrahedra in an explicit shelling order. Starting with one tetrahedron,
+  each of the next 24 meets the previous union in exactly one, two or three
+  triangular faces forming a disk. The verifier performs 240 additional
+  vertex/edge tests proving every intersection is pure two-dimensional.
+  After the last attachment the ball boundary is exactly the four faces of
+  the removed tetrahedron. Gluing that tetrahedral 3-ball back gives S3.
+  Verdict: `PASS_STANDARD_X_M1_HANDLE_PAIR_BOUNDARY_S3_SHELLING`.
+- Consequence/boundary: F-599K showed that the collar-product support boundary
+  is not the actual ambient boundary, while this finding proves the standard
+  handle-pair target boundary itself is S3. The remaining construction is now
+  sharply an actual-to-standard PL refinement map carrying all lane interior
+  points and framing cells, not a topology-recognition problem.
+
 ### F-599C — Monolithic linear projections of the affine framed link are computationally unsuitable
 
 - Severity: **complete PD / projection selection**

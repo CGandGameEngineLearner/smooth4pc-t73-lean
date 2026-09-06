@@ -1,0 +1,744 @@
+{
+  "ball_shelling_order": [
+    1,
+    3,
+    4,
+    2,
+    7,
+    8,
+    9,
+    22,
+    6,
+    5,
+    11,
+    14,
+    12,
+    21,
+    20,
+    19,
+    23,
+    24,
+    16,
+    18,
+    25,
+    17,
+    15,
+    13,
+    10
+  ],
+  "ball_shelling_steps": [
+    {
+      "shared_boundary_triangles": [],
+      "shared_triangle_count": 0,
+      "tetrahedron": [
+        0,
+        1,
+        2,
+        6
+      ],
+      "tetrahedron_index": 1
+    },
+    {
+      "shared_boundary_triangles": [
+        [
+          0,
+          1,
+          6
+        ]
+      ],
+      "shared_triangle_count": 1,
+      "tetrahedron": [
+        0,
+        1,
+        5,
+        6
+      ],
+      "tetrahedron_index": 3
+    },
+    {
+      "shared_boundary_triangles": [
+        [
+          0,
+          1,
+          5
+        ]
+      ],
+      "shared_triangle_count": 1,
+      "tetrahedron": [
+        0,
+        1,
+        5,
+        7
+      ],
+      "tetrahedron_index": 4
+    },
+    {
+      "shared_boundary_triangles": [
+        [
+          0,
+          1,
+          7
+        ]
+      ],
+      "shared_triangle_count": 1,
+      "tetrahedron": [
+        0,
+        1,
+        3,
+        7
+      ],
+      "tetrahedron_index": 2
+    },
+    {
+      "shared_boundary_triangles": [
+        [
+          0,
+          5,
+          6
+        ]
+      ],
+      "shared_triangle_count": 1,
+      "tetrahedron": [
+        0,
+        4,
+        5,
+        6
+      ],
+      "tetrahedron_index": 7
+    },
+    {
+      "shared_boundary_triangles": [
+        [
+          0,
+          4,
+          5
+        ],
+        [
+          0,
+          5,
+          7
+        ]
+      ],
+      "shared_triangle_count": 2,
+      "tetrahedron": [
+        0,
+        4,
+        5,
+        7
+      ],
+      "tetrahedron_index": 8
+    },
+    {
+      "shared_boundary_triangles": [
+        [
+          0,
+          4,
+          6
+        ],
+        [
+          0,
+          4,
+          7
+        ]
+      ],
+      "shared_triangle_count": 2,
+      "tetrahedron": [
+        0,
+        4,
+        6,
+        7
+      ],
+      "tetrahedron_index": 9
+    },
+    {
+      "shared_boundary_triangles": [
+        [
+          4,
+          5,
+          6
+        ],
+        [
+          4,
+          5,
+          7
+        ],
+        [
+          4,
+          6,
+          7
+        ]
+      ],
+      "shared_triangle_count": 3,
+      "tetrahedron": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "tetrahedron_index": 22
+    },
+    {
+      "shared_boundary_triangles": [
+        [
+          0,
+          2,
+          6
+        ],
+        [
+          0,
+          6,
+          7
+        ]
+      ],
+      "shared_triangle_count": 2,
+      "tetrahedron": [
+        0,
+        2,
+        6,
+        7
+      ],
+      "tetrahedron_index": 6
+    },
+    {
+      "shared_boundary_triangles": [
+        [
+          0,
+          2,
+          7
+        ],
+        [
+          0,
+          3,
+          7
+        ]
+      ],
+      "shared_triangle_count": 2,
+      "tetrahedron": [
+        0,
+        2,
+        3,
+        7
+      ],
+      "tetrahedron_index": 5
+    },
+    {
+      "shared_boundary_triangles": [
+        [
+          1,
+          2,
+          6
+        ]
+      ],
+      "shared_triangle_count": 1,
+      "tetrahedron": [
+        1,
+        2,
+        6,
+        9
+      ],
+      "tetrahedron_index": 11
+    },
+    {
+      "shared_boundary_triangles": [
+        [
+          1,
+          5,
+          6
+        ],
+        [
+          1,
+          6,
+          9
+        ]
+      ],
+      "shared_triangle_count": 2,
+      "tetrahedron": [
+        1,
+        5,
+        6,
+        9
+      ],
+      "tetrahedron_index": 14
+    },
+    {
+      "shared_boundary_triangles": [
+        [
+          1,
+          2,
+          9
+        ]
+      ],
+      "shared_triangle_count": 1,
+      "tetrahedron": [
+        1,
+        2,
+        9,
+        10
+      ],
+      "tetrahedron_index": 12
+    },
+    {
+      "shared_boundary_triangles": [
+        [
+          2,
+          6,
+          9
+        ],
+        [
+          2,
+          9,
+          10
+        ]
+      ],
+      "shared_triangle_count": 2,
+      "tetrahedron": [
+        2,
+        6,
+        9,
+        10
+      ],
+      "tetrahedron_index": 21
+    },
+    {
+      "shared_boundary_triangles": [
+        [
+          2,
+          6,
+          7
+        ],
+        [
+          2,
+          6,
+          10
+        ]
+      ],
+      "shared_triangle_count": 2,
+      "tetrahedron": [
+        2,
+        6,
+        7,
+        10
+      ],
+      "tetrahedron_index": 20
+    },
+    {
+      "shared_boundary_triangles": [
+        [
+          2,
+          3,
+          7
+        ],
+        [
+          2,
+          7,
+          10
+        ]
+      ],
+      "shared_triangle_count": 2,
+      "tetrahedron": [
+        2,
+        3,
+        7,
+        10
+      ],
+      "tetrahedron_index": 19
+    },
+    {
+      "shared_boundary_triangles": [
+        [
+          5,
+          6,
+          7
+        ],
+        [
+          6,
+          7,
+          10
+        ]
+      ],
+      "shared_triangle_count": 2,
+      "tetrahedron": [
+        5,
+        6,
+        7,
+        10
+      ],
+      "tetrahedron_index": 23
+    },
+    {
+      "shared_boundary_triangles": [
+        [
+          5,
+          6,
+          9
+        ],
+        [
+          5,
+          6,
+          10
+        ],
+        [
+          6,
+          9,
+          10
+        ]
+      ],
+      "shared_triangle_count": 3,
+      "tetrahedron": [
+        5,
+        6,
+        9,
+        10
+      ],
+      "tetrahedron_index": 24
+    },
+    {
+      "shared_boundary_triangles": [
+        [
+          1,
+          5,
+          9
+        ]
+      ],
+      "shared_triangle_count": 1,
+      "tetrahedron": [
+        1,
+        5,
+        8,
+        9
+      ],
+      "tetrahedron_index": 16
+    },
+    {
+      "shared_boundary_triangles": [
+        [
+          1,
+          8,
+          9
+        ],
+        [
+          1,
+          9,
+          10
+        ]
+      ],
+      "shared_triangle_count": 2,
+      "tetrahedron": [
+        1,
+        8,
+        9,
+        10
+      ],
+      "tetrahedron_index": 18
+    },
+    {
+      "shared_boundary_triangles": [
+        [
+          5,
+          8,
+          9
+        ],
+        [
+          5,
+          9,
+          10
+        ],
+        [
+          8,
+          9,
+          10
+        ]
+      ],
+      "shared_triangle_count": 3,
+      "tetrahedron": [
+        5,
+        8,
+        9,
+        10
+      ],
+      "tetrahedron_index": 25
+    },
+    {
+      "shared_boundary_triangles": [
+        [
+          1,
+          5,
+          8
+        ],
+        [
+          1,
+          8,
+          10
+        ],
+        [
+          5,
+          8,
+          10
+        ]
+      ],
+      "shared_triangle_count": 3,
+      "tetrahedron": [
+        1,
+        5,
+        8,
+        10
+      ],
+      "tetrahedron_index": 17
+    },
+    {
+      "shared_boundary_triangles": [
+        [
+          1,
+          5,
+          7
+        ],
+        [
+          1,
+          5,
+          10
+        ],
+        [
+          5,
+          7,
+          10
+        ]
+      ],
+      "shared_triangle_count": 3,
+      "tetrahedron": [
+        1,
+        5,
+        7,
+        10
+      ],
+      "tetrahedron_index": 15
+    },
+    {
+      "shared_boundary_triangles": [
+        [
+          1,
+          3,
+          7
+        ],
+        [
+          1,
+          7,
+          10
+        ],
+        [
+          3,
+          7,
+          10
+        ]
+      ],
+      "shared_triangle_count": 3,
+      "tetrahedron": [
+        1,
+        3,
+        7,
+        10
+      ],
+      "tetrahedron_index": 13
+    },
+    {
+      "shared_boundary_triangles": [
+        [
+          1,
+          2,
+          10
+        ],
+        [
+          1,
+          3,
+          10
+        ],
+        [
+          2,
+          3,
+          10
+        ]
+      ],
+      "shared_triangle_count": 3,
+      "tetrahedron": [
+        1,
+        2,
+        3,
+        10
+      ],
+      "tetrahedron_index": 10
+    }
+  ],
+  "ball_tetrahedron_count": 25,
+  "boundary_tetrahedra": [
+    [
+      0,
+      1,
+      2,
+      3
+    ],
+    [
+      0,
+      1,
+      2,
+      6
+    ],
+    [
+      0,
+      1,
+      3,
+      7
+    ],
+    [
+      0,
+      1,
+      5,
+      6
+    ],
+    [
+      0,
+      1,
+      5,
+      7
+    ],
+    [
+      0,
+      2,
+      3,
+      7
+    ],
+    [
+      0,
+      2,
+      6,
+      7
+    ],
+    [
+      0,
+      4,
+      5,
+      6
+    ],
+    [
+      0,
+      4,
+      5,
+      7
+    ],
+    [
+      0,
+      4,
+      6,
+      7
+    ],
+    [
+      1,
+      2,
+      3,
+      10
+    ],
+    [
+      1,
+      2,
+      6,
+      9
+    ],
+    [
+      1,
+      2,
+      9,
+      10
+    ],
+    [
+      1,
+      3,
+      7,
+      10
+    ],
+    [
+      1,
+      5,
+      6,
+      9
+    ],
+    [
+      1,
+      5,
+      7,
+      10
+    ],
+    [
+      1,
+      5,
+      8,
+      9
+    ],
+    [
+      1,
+      5,
+      8,
+      10
+    ],
+    [
+      1,
+      8,
+      9,
+      10
+    ],
+    [
+      2,
+      3,
+      7,
+      10
+    ],
+    [
+      2,
+      6,
+      7,
+      10
+    ],
+    [
+      2,
+      6,
+      9,
+      10
+    ],
+    [
+      4,
+      5,
+      6,
+      7
+    ],
+    [
+      5,
+      6,
+      7,
+      10
+    ],
+    [
+      5,
+      6,
+      9,
+      10
+    ],
+    [
+      5,
+      8,
+      9,
+      10
+    ]
+  ],
+  "boundary_tetrahedron_count": 26,
+  "completion_status": "STANDARD_X_M1_HANDLE_PAIR_BOUNDARY_S3_SHELLED",
+  "recognition_argument": "the 25-tetrahedron complement shells from one tetrahedron by disk attachments and has boundary equal to the removed tetrahedron boundary; gluing the removed 3-ball gives S3",
+  "recognized_boundary_type": "S3",
+  "removed_tetrahedron": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "removed_tetrahedron_index": 0,
+  "schema": "t73_x_m1_standard_pair_boundary_s3/v1",
+  "sha256": "113E747FD665CA41FEFB75C47532F42F1A5D00F6D367294FDFD92570D42E03CE",
+  "standard_pair_four_simplex_count": 10,
+  "x_m1_handle_pair_deletion_sha256": "6CF7C396F4F75A4FC68AFA5DEB67D21A1C562D007D2B57267630F418F3078C53"
+}

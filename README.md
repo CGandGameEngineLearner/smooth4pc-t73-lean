@@ -473,6 +473,18 @@ is therefore the actual ambient 3-boundary map supplied by the complete
 x/m1 handle-pair deletion, not a projection or Schlegel diagram of the support
 boundary.
 
+The standard x/m1 handle pair itself now has a finite S3 recognition witness
+in
+[`geometry/t73_x_m1_standard_pair_boundary_s3.json`](geometry/t73_x_m1_standard_pair_boundary_s3.json).
+Its ten 4-simplices expose 26 boundary tetrahedra. Removing tetrahedron
+`(0,1,2,3)` leaves a 25-tetrahedron complex with an explicit shelling: 24
+successive disk attachments pass 240 pure-intersection checks, and the final
+boundary is exactly the four faces of the removed tetrahedron. Gluing that
+last 3-ball back recognizes S3. Verdict:
+`PASS_STANDARD_X_M1_HANDLE_PAIR_BOUNDARY_S3_SHELLING`. Thus the remaining
+problem is the actual-collar-refinement map into this standard boundary, not
+the topology of the standard cancellation target.
+
 Global linear projection probes are recorded in
 [`audit/t73_affine_s3_projection_probe.json`](audit/t73_affine_s3_projection_probe.json).
 xz/yz collapse dotted edges; three regular tilts produce at least 258,453,247

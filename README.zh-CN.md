@@ -408,6 +408,15 @@ collar-product support 本身不能冒充缺失的 ambient R3 boundary。精确�
 x/m1 handle-pair deletion 给出的真实 ambient 3-boundary map，而不是 support
 boundary 的投影或 Schlegel 图。
 
+标准 x/m1 handle pair 本身现已有有限 S³ 识别证书：
+[`geometry/t73_x_m1_standard_pair_boundary_s3.json`](geometry/t73_x_m1_standard_pair_boundary_s3.json)。
+其 10 个 4-simplices 给出 26 个 boundary tetrahedra；删除 `(0,1,2,3)` 后，
+余下 25 个 tetrahedra 有显式 shelling。24 次二维圆盘附着及 240 个纯交检查
+通过，最终边界严格等于被删 tetrahedron 的四个面；补回最后一个 3-ball 即识别
+为 S³。verdict 为
+`PASS_STANDARD_X_M1_HANDLE_PAIR_BOUNDARY_S3_SHELLING`。所以剩余问题是把
+actual collar refinement 映入这个标准边界，而不是标准取消目标的拓扑未知。
+
 全局线性投影探测记录于
 [`audit/t73_affine_s3_projection_probe.json`](audit/t73_affine_s3_projection_probe.json)。
 xz/yz 会压扁 dotted edges；三个 regular tilts 至少产生258,453,247个 broad
