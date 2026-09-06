@@ -401,6 +401,15 @@ AABB candidates, with respectively 11, 11 and 22 nonempty semantic type
 pairs. Only first exterior rays remain constant-height after staggering;
 constant-F types are recorded separately. The artifact is matrix-only and
 does not claim V4 global clearance.
+
+The v4 core matrix is now fully consumed in
+[`audit/t73_x_m1_outer_collar_v4_core_clearance.json`](audit/t73_x_m1_outer_collar_v4_core_clearance.json).
+Constant-F classes use exact hashes; the three staggered corner pairs use
+same-interface buckets instead of the invalid v3 height argument. The
+14,254,960 broad pairs reduce to 24,208 candidates, including 15,134 declared
+incidences and 9,074 GMP equations. Intersections are zero. Verdict:
+`PASS_X_M1_OUTER_COLLAR_V4_CORE_CLEARANCE`. V4 push, mutual and ribbon
+clearance remain open.
 The graph map extends over all five framed regular neighborhoods in
 [`geometry/t73_hybrid_to_railroad_tubular_map.json`](geometry/t73_hybrid_to_railroad_tubular_map.json).
 Its five solid-torus templates contain 5385 tetrahedra and 10770 boundary

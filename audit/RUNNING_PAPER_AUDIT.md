@@ -4963,6 +4963,23 @@ Topology-source checks completed 2026-09-04:
   F hashes, staggered-plane equations and GMP survivors before any V4 global
   embedding claim.
 
+### F-599AU — All V4 outer-collar core segments are globally disjoint
+
+- Severity: **Positive V4 core clearance / no inherited height argument**
+- Status: **CORE PASS; PUSH, MUTUAL AND RIBBON OPEN**
+- Evidence: `audit/t73_x_m1_outer_collar_v4_core_clearance.json`, its builder
+  and regression test, consuming all eleven F-599AT core matrix entries.
+- Exact reduction: six constant-F pairs use equality buckets. The three pairs
+  involving the staggered bridge/last-ray corner use exact same-interface
+  buckets; first-ray/last-ray receives 3,026 GMP equations rather than the v3
+  constant-height claim. Germ pairs use outward-rounded AABB plus GMP.
+- Totals: 14,254,960 broad candidates reduce to 24,208; 15,134 are declared
+  incidences and 9,074 receive exact segment equations. Intersections are
+  zero. Verdict: `PASS_X_M1_OUTER_COLLAR_V4_CORE_CLEARANCE`.
+- Boundary: V4 core is globally embedded, but no V4 push, directed mutual or
+  ribbon result follows. Those matrices remain open and must use the
+  staggered coordinates.
+
 ### F-599C — Monolithic linear projections of the affine framed link are computationally unsuitable
 
 - Severity: **complete PD / projection selection**

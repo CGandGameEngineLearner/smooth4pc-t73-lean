@@ -841,6 +841,14 @@ candidates，非空语义类型对分别为 11、11、22。半层错位后只有
 rays 仍为 constant-height；constant-F 类型被单独记录。该 artifact 仍是
 matrix-only，不声明 V4 全局 clearance。
 
+v4 core 矩阵现已在
+[`audit/t73_x_m1_outer_collar_v4_core_clearance.json`](audit/t73_x_m1_outer_collar_v4_core_clearance.json)
+中完整消费。constant-F 类使用精确哈希；三个 staggered corner pairs 改用
+same-interface 桶，不再使用无效的 v3 height 论证。14,254,960 个 broad pairs
+降为 24,208 个候选，其中 15,134 个为规定 incidence、9,074 个进入 GMP 方程；
+交点为 0。verdict 为 `PASS_X_M1_OUTER_COLLAR_V4_CORE_CLEARANCE`。V4 push、
+mutual 与 ribbon clearance 仍为 OPEN。
+
 全局线性投影探测记录于
 [`audit/t73_affine_s3_projection_probe.json`](audit/t73_affine_s3_projection_probe.json)。
 xz/yz 会压扁 dotted edges；三个 regular tilts 至少产生258,453,247个 broad
