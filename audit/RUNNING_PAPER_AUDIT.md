@@ -5360,6 +5360,27 @@ Topology-source checks completed 2026-09-04:
   checked, followed by each active moving sheet against its contemporaneous
   static mixture and the retained/replacement framed union.
 
+### F-599BL — Every ordered final/source static one-skeleton mixture is embedded
+
+- Severity: **Sequential global clearance / complete mixed one-skeleton**
+- Status: **ORDERED MIXED STATIC ONE-SKELETON PASS; RIBBON/MOVING OPEN**
+- Evidence:
+  `audit/t73_x_m1_outer_collar_v7_sequential_static_one_skeleton_clearance.json`,
+  its GMP builder, independent Fraction verifier and regression test, bound to
+  F-599BK and the complete V7 cache.
+- Remaining directed matrices: final-push/source-push has 3,022 AABB
+  candidates, 3,018 exact separations and the four permitted opposite push
+  germs corresponding to F-599BK. Final-core/source-push and
+  final-push/source-core each have 3,018 AABB candidates and zero exact hits.
+  The independent implementation therefore replays 9,058 exact segment
+  equations, with 9,054 separations, four permitted endpoint incidences and
+  zero forbidden intersections. Verdict:
+  `PASS_X_M1_OUTER_COLLAR_V7_SEQUENTIAL_STATIC_ONE_SKELETON_CLEARANCE_INDEPENDENT`.
+- Consequence/boundary: together with F-599BK, every source/final core/push
+  mixture occurring at a sequential slot boundary has an embedded
+  one-skeleton. This does not yet check the ruled framing rectangles or any
+  active moving sheet against its contemporaneous static union.
+
 ### F-599C — Monolithic linear projections of the affine framed link are computationally unsuitable
 
 - Severity: **complete PD / projection selection**

@@ -585,6 +585,21 @@ python3 scripts/build_t73_x_m1_outer_collar_v7_sequential_static_core_clearance.
 python3 scripts/verify_t73_x_m1_outer_collar_v7_sequential_static_core_clearance.py
 python3 -m unittest tests.test_t73_x_m1_outer_collar_v7_sequential_static_core_clearance
 ```
+
+The remaining ordered mixed one-skeleton matrices are closed by
+[`audit/t73_x_m1_outer_collar_v7_sequential_static_one_skeleton_clearance.json`](audit/t73_x_m1_outer_collar_v7_sequential_static_one_skeleton_clearance.json).
+Push/push contributes 3,022 candidates, with 3,018 exact separations and four
+permitted opposite push germs. Final-core/source-push and
+final-push/source-core contribute 3,018 candidates each and have no exact
+intersections. The independent verifier therefore replays 9,058 exact segment
+checks, 9,054 separations, four permitted incidences and zero forbidden
+intersections. Ribbon and active-moving-sheet clearance remain open.
+
+```bash
+python3 scripts/build_t73_x_m1_outer_collar_v7_sequential_static_one_skeleton_clearance.py --write --check
+python3 scripts/verify_t73_x_m1_outer_collar_v7_sequential_static_one_skeleton_clearance.py
+python3 -m unittest tests.test_t73_x_m1_outer_collar_v7_sequential_static_one_skeleton_clearance
+```
 The graph map extends over all five framed regular neighborhoods in
 [`geometry/t73_hybrid_to_railroad_tubular_map.json`](geometry/t73_hybrid_to_railroad_tubular_map.json).
 Its five solid-torus templates contain 5385 tetrahedra and 10770 boundary

@@ -676,6 +676,20 @@ python3 scripts/verify_t73_x_m1_outer_collar_v7_sequential_static_core_clearance
 python3 -m unittest tests.test_t73_x_m1_outer_collar_v7_sequential_static_core_clearance
 ```
 
+其余 ordered mixed one-skeleton 矩阵由
+[`audit/t73_x_m1_outer_collar_v7_sequential_static_one_skeleton_clearance.json`](audit/t73_x_m1_outer_collar_v7_sequential_static_one_skeleton_clearance.json)
+闭合。push/push 有 3,022 个候选，其中 3,018 个精确分离、4 个为允许的反向
+push germs；final-core/source-push 与 final-push/source-core 各有
+3,018 个候选，精确交点均为 0。独立 verifier 因而重放 9,058 次精确线段检查、
+9,054 个分离、4 个允许 incidence，禁止交点为 0。ribbon 和
+active-moving-sheet clearance 仍为 OPEN。
+
+```bash
+python3 scripts/build_t73_x_m1_outer_collar_v7_sequential_static_one_skeleton_clearance.py --write --check
+python3 scripts/verify_t73_x_m1_outer_collar_v7_sequential_static_one_skeleton_clearance.py
+python3 -m unittest tests.test_t73_x_m1_outer_collar_v7_sequential_static_one_skeleton_clearance
+```
+
 第一个跨系统门禁找到并修复了真实碰撞，没有提前升级该 assembly。流式 Rust
 1.98.1 checker 位于
 [`rust/t73_exact_cross_clearance`](rust/t73_exact_cross_clearance)，使用
