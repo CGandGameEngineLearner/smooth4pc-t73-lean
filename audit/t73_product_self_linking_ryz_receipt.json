@@ -1,0 +1,36 @@
+{
+  "broad_candidate_count": 78,
+  "builder_sha256": "455B0C08AE635909069B7B6662290FA84E1C60D19794FE0C84371F8B03379201",
+  "component": "r_yz",
+  "core_over_crossing_count": 25,
+  "core_segment_count": 20,
+  "crossing_count": 42,
+  "database_path": "C:\\Users\\Administrator\\.cache\\t73_product_self_linking_ryz.sqlite",
+  "database_sha256": "C18D96BDF4B3B586958549D40E093009790455D305BBB30659DAB937ACA221F3",
+  "database_size": 20480,
+  "height_covector": [
+    "1",
+    "-1000099003267035936/1000099003267035937",
+    "-1/1000066001089"
+  ],
+  "integer_self_linking": -1,
+  "product_framed_receipt_sha256": "C6C1F8D4DC84B2C665DBEE48F9A40B05914F0D849A87457C0822692322B57FFF",
+  "product_ribbon_clearance_sha256": "CC812810865914085DD92B3BA4C7B8B65EAD3C3B6F7C1BBCEDB75189BDA83910",
+  "projection_basis": [
+    [
+      "1",
+      "1",
+      "1/1000033"
+    ],
+    [
+      "1/1000066001089",
+      "0",
+      "1"
+    ]
+  ],
+  "push_segment_count": 20,
+  "schema": "t73_product_self_linking_component/v1",
+  "sha256": "EFBAEEB84B3FC565628FE42ECDB8D250F6B7672641A8422407C6171013DCEBF2",
+  "signed_sum": -2,
+  "verdict": "PASS_EXACT_PRODUCT_SELF_LINKING_COMPONENT"
+}
