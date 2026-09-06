@@ -5007,6 +5007,48 @@ Topology-source checks completed 2026-09-04:
   retained/replacement framed link. Ribbon matrices and exact checks remain
   mandatory before upgrading V4 or building ambient isotopy support.
 
+### F-599AW — V4 has an embedded one-skeleton but a coplanar source-corner ribbon fold
+
+- Severity: **Critical V4 ribbon refutation / local star geometry**
+- Status: **V4 RIBBON REFUTED BEFORE GLOBAL MATRIX**
+- Evidence: `audit/t73_x_m1_outer_collar_v4_ribbon_candidate_matrix.json`, its
+  exact builder and regression test.
+- Collision: interface 3018 has a local star between
+  `retained_source_germ` and `start_skew_lift`. Their two edge-containing
+  triangles are coplanar on the same side of the shared framing edge. The
+  saved exact normals are `(1/10^9,0,0)` and `(6509/250,0,0)`; their cross is
+  zero and dot is the positive rational `6509/250000000000`.
+- Scope: F-599AV's V4 core, push and mutual one-skeleton results remain true.
+  The ribbon union and ambient extension are false. No nonincident ribbon
+  matrix is issued because the local PL link condition already fails.
+- Repair requirement: the fold occurs only in dual source corners. A new lift
+  must preserve F while leaving the source-germ plane transversely; changing
+  all 3,026 Johnson routes is unnecessary and would enlarge verification risk.
+
+### F-599AX — V5 changes only eight dual lifts and all local ribbon stars pass
+
+- Severity: **Constructive local ribbon repair / minimal coordinate change**
+- Status: **LOCAL FULL REPLAY AND ALL STARS PASS; GLOBAL V5 OPEN**
+- Evidence: `audit/t73_x_m1_framed_outer_interface_collars_v5_receipt.json`,
+  `audit/t73_x_m1_framed_outer_interface_collars_v5_verification.json`, their
+  builder, independent verifier, regression test and named persistent cache.
+- Direction search: in the exact F-preserving family
+  `(1/q,1000033/q-2,1)`, the first tested denominator satisfying all eight
+  dual transversality and local-star constraints is q=499900, giving
+  `(1/499900,233/499900,1)`. F evaluates to zero on this direction.
+- Minimal transform: exactly eight dual collars recompute start/end lifts and
+  adjacent exterior vertices. All 3,018 Johnson collar core and push vertex
+  lists remain literally equal to V4.
+- Replay: the 9,504,077-byte cache contains 3,026 collars, 18,156 core
+  segments, 18,156 push segments and 36,312 ribbon triangles. All 18,156
+  normal transversality equations pass. The verifier checks 15,134 local
+  ribbon stars: all 15,130 same-interface stars are transverse-plane and the
+  four shared dual-germ stars are coplanar-opposite-side; no fold remains.
+  Verdict: `PASS_X_M1_FRAMED_OUTER_INTERFACE_COLLARS_V5_FULL_LOCAL_CANDIDATE`.
+- Boundary: V5 remains `CANDIDATE_UNVERIFIED`. All core, push, mutual and
+  nonincident ribbon matrices and exact clearance must be regenerated from
+  V5 before constructing isotopy traces or ambient support.
+
 ### F-599C — Monolithic linear projections of the affine framed link are computationally unsuitable
 
 - Severity: **complete PD / projection selection**

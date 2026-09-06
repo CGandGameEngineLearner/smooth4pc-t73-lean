@@ -419,6 +419,19 @@ Push uses 75,618 exact equations; directed core/push uses 93,818 across all 22
 type pairs. Both have zero intersections. The former v3 collision pair is
 included in the staggered same-interface GMP family. Thus the complete V4
 one-skeleton is embedded; ribbon and ambient-support clearance remain open.
+
+The first V4 ribbon gate refutes V4 locally. In
+[`audit/t73_x_m1_outer_collar_v4_ribbon_candidate_matrix.json`](audit/t73_x_m1_outer_collar_v4_ribbon_candidate_matrix.json),
+interface 3018 has a coplanar same-side fold between its retained source germ
+and start skew lift. The exact local-star normals have zero cross product and
+positive dot product (`6509/250000000000`). V5 repairs only the eight dual
+collars using the F-preserving lift `(1/499900,233/499900,1)`; all 3,018
+Johnson collars remain unchanged. Its 9,504,077-byte cache has the same
+18,156 core/push segments and 36,312 triangles. Independent replay checks all
+18,156 transversality equations and all 15,134 local stars: 15,130 transverse
+planes and four coplanar opposite-side dual germs. See
+[`audit/t73_x_m1_framed_outer_interface_collars_v5_verification.json`](audit/t73_x_m1_framed_outer_interface_collars_v5_verification.json).
+V5 remains `CANDIDATE_UNVERIFIED` until fresh global matrices pass.
 The graph map extends over all five framed regular neighborhoods in
 [`geometry/t73_hybrid_to_railroad_tubular_map.json`](geometry/t73_hybrid_to_railroad_tubular_map.json).
 Its five solid-torus templates contain 5385 tetrahedra and 10770 boundary

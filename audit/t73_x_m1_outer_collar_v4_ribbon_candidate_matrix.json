@@ -1,0 +1,42 @@
+{
+  "classification": "CANDIDATE_REFUTED",
+  "collision": {
+    "certificate": {
+      "first_star_normal": [
+        "1/1000000000",
+        "0",
+        "0"
+      ],
+      "normal_cross_is_zero": true,
+      "normal_dot": "6509/250000000000",
+      "normal_dot_is_positive": true,
+      "second_star_normal": [
+        "6509/250",
+        "0",
+        "0"
+      ],
+      "shared_edge": [
+        [
+          "1",
+          "2000001/1000000",
+          "0"
+        ],
+        [
+          "1",
+          "2000001/1000000",
+          "1/1000"
+        ]
+      ]
+    },
+    "first_type": "retained_source_germ",
+    "interface": 3018,
+    "kind": "COPLANAR_SAME_SIDE_OVERLAP",
+    "second_type": "start_skew_lift"
+  },
+  "global_ribbon_clearance": false,
+  "outer_collars_v4_receipt_sha256": "53E03F1E43275970D5601184D9A40ADD2D4BE4352CFA0D259FA59C24ED2C9117",
+  "schema": "t73_x_m1_outer_collar_v4_ribbon_candidate_matrix/v1",
+  "sha256": "8B88806CF6F3989C0E764ABFC6776D8B998EF17B8C7E38DAA7982AF6114325CE",
+  "v4_core_push_clearance_sha256": "DFEC8ADB6340F83DD413B76F27CAD312EDEC33BEC9C188B1B5C764C47BA5A3A7",
+  "verdict": "REFUTED_X_M1_OUTER_COLLAR_V4_RIBBON_LOCAL_STAR"
+}

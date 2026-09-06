@@ -525,6 +525,18 @@ verdict 为 `PASS_X_M1_COMPLETE_GLOBAL_R3_REPLACEMENT_CORES_FULL`。这是完整
 与连续性结果；统一 all-segment embedding-clearance 门禁及完整 push paths 仍为
 OPEN。
 
+V4 的第一道 ribbon gate 在局部即否证 V4。在
+[`audit/t73_x_m1_outer_collar_v4_ribbon_candidate_matrix.json`](audit/t73_x_m1_outer_collar_v4_ribbon_candidate_matrix.json)
+中，interface 3018 的 retained source germ 与 start skew lift 形成共面同侧折叠；
+精确局部星 normals 的叉积为零、点积为正
+`6509/250000000000`。V5 只修复 8 条 dual collars，使用保持 F 的 lift
+`(1/499900,233/499900,1)`；3,018 条 Johnson collars 全部不变。9,504,077-byte
+cache 保持 18,156 个 core/push segments 与 36,312 个 triangles。独立重放检查
+18,156 个 transversality 方程和全部 15,134 个局部星：15,130 个异面横截，4 个
+dual germs 共面反向。见
+[`audit/t73_x_m1_framed_outer_interface_collars_v5_verification.json`](audit/t73_x_m1_framed_outer_interface_collars_v5_verification.json)。
+新的全局矩阵通过前，V5 仍为 `CANDIDATE_UNVERIFIED`。
+
 第一个跨系统门禁找到并修复了真实碰撞，没有提前升级该 assembly。流式 Rust
 1.98.1 checker 位于
 [`rust/t73_exact_cross_clearance`](rust/t73_exact_cross_clearance)，使用

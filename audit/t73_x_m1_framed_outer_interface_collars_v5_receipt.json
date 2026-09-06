@@ -1,0 +1,30 @@
+{
+  "ambient_support_status": "OPEN_BUILD_TETRAHEDRAL_ISOTOPY_EXTENSION",
+  "builder_sha256": "FC70346FBACB4282F246653846BF21B631F36ED98CB1CEE269CDA3810B824FDC",
+  "cache_path": "C:\\Users\\Administrator\\.cache\\t73_x_m1_framed_outer_interface_collars_v5.jsonl.gz",
+  "cache_sha256": "A61CA86294F49EB06F7E174C0884532D00C377D155A18ED947B96EE4945DA621",
+  "cache_size": 9504077,
+  "changed_dual_collar_count": 8,
+  "classification": "CANDIDATE_UNVERIFIED",
+  "collar_count": 3026,
+  "completion_status": "ALL_EIGHT_DUAL_COLLARS_USE_TRANSVERSE_F_PRESERVING_LIFTS",
+  "dual_lift_denominator": 499900,
+  "dual_lift_direction": [
+    "1/499900",
+    "233/499900",
+    "1"
+  ],
+  "final_core_segment_count": 18156,
+  "final_push_segment_count": 18156,
+  "final_ribbon_triangle_count": 36312,
+  "global_clearance_status": "OPEN",
+  "normal_transversality_check_count": 18156,
+  "record_stream_sha256": "6862B7CE348BBAA0A7BDAB4B0F812BF9770214BF7B5FEC61227726BFA267E1A6",
+  "refuted_v4_receipt_sha256": "53E03F1E43275970D5601184D9A40ADD2D4BE4352CFA0D259FA59C24ED2C9117",
+  "relative_twist_sum": 0,
+  "schema": "t73_x_m1_framed_outer_interface_collars_v5_receipt/v1",
+  "sha256": "DB6727D221474A0A9AB471FC4469EE7A22AC364A9CCE0C7F4A80036D054CD04C",
+  "unchanged_johnson_collar_count": 3018,
+  "v4_ribbon_obstruction_sha256": "8B88806CF6F3989C0E764ABFC6776D8B998EF17B8C7E38DAA7982AF6114325CE",
+  "verdict": "PASS_X_M1_FRAMED_OUTER_INTERFACE_COLLARS_V5_LOCAL_CANDIDATE"
+}
