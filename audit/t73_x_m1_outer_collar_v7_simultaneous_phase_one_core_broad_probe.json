@@ -1,0 +1,22 @@
+{
+  "algorithm": "24_functional_outward_float_family_blocks_v3",
+  "core_push_incidence_pair_count": 0,
+  "cross_record_same_surface_incidence_pair_count": 0,
+  "duplicate_geometric_triangle_pair_count": 0,
+  "family_pair": [
+    "phase_one_core",
+    "phase_one_core"
+  ],
+  "first_triangle_count": 30260,
+  "intrinsic_same_surface_incidence_pair_count": 51442,
+  "nonincident_outward_float_candidate_count": 140683374,
+  "outward_float_functional_box_pair_count": 140734816,
+  "schema": "t73_x_m1_outer_collar_v7_isotopy_trace_v2_candidate_block/v1",
+  "second_triangle_count": 30260,
+  "sha256": "4D7F5F04CD9BD05A4094048353A5FE67D0BDCE4213056667F74C8014F10DB64D",
+  "shared_vertex_count_histogram": {
+    "1": 24208,
+    "2": 27234
+  },
+  "trace_receipt_sha256": "9340193C02277BBD10F4C09F04F7E37CA3A60A67473D3D69B1C5DC9C2C19A899"
+}

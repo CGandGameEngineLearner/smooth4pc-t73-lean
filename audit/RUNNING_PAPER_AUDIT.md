@@ -5305,6 +5305,37 @@ Topology-source checks completed 2026-09-04:
   not yet enumerated. A fixed-boundary tetrahedral ambient extension is also
   absent. The relative map therefore remains `CANDIDATE_UNVERIFIED`.
 
+### F-599BJ — Sequential rational time slots remove all moving/moving interiors
+
+- Severity: **Dynamic relative-map repair / global-workload reduction**
+- Status: **COMPLETE LOCAL SEQUENTIAL TRACE PASS; MOVING/STATIC AND AMBIENT OPEN**
+- Negative evidence: the committed simultaneous phase-one core/core probe uses
+  24 outward-rounded linear-function bounds, including
+  `F=y-1000033*x+2*z`, its planar form, time-coupled forms and height/time
+  forms. Among 30,260 triangles it still leaves 140,734,816 conservative
+  pairs: 51,442 intrinsic mesh incidences and 140,683,374 nonincident pairs.
+  There are no duplicate triangles or cross-record shared vertices. This
+  rejects generic broad-phase enumeration as the exact-clearance algorithm;
+  it is not a geometric counterexample.
+- Repair: `audit/t73_x_m1_outer_collar_v7_sequential_isotopy_trace_receipt.json`,
+  its independent verification, builder, verifier, test and persistent cache
+  schedule interface `i` in `[i/3026,(i+1)/3026]`. Phase one ends at the slot
+  midpoint and phase two ends at its right endpoint. Source sheets remain
+  stationary before their slot and final sheets remain stationary afterward.
+- Data/replay: 3,026 records contain 90,770 complete core and 121,020 complete
+  push world-sheet triangles. The independent verifier reconstructs every
+  simplex from F-599BH, checks 15,130 boundary matches, all 211,790 exact R4
+  triangle ranks, consecutive slot endpoints and exact coverage of `[0,1]`.
+  Hence interiors of moving sheets belonging to distinct collars are disjoint
+  by time. Verdict:
+  `PASS_X_M1_OUTER_COLLAR_V7_SEQUENTIAL_ISOTOPY_TRACE_FULL_LOCAL_CANDIDATE`.
+- Boundary: the sequential schedule changes the global candidate and requires
+  a fresh check that each active moving sheet misses the retained source,
+  replacement framing, already-final collars and not-yet-moved source collars.
+  Stationary source/final mixtures also require clearance. No fixed-boundary
+  tetrahedral ambient extension is yet constructed, so the relative map stays
+  `CANDIDATE_UNVERIFIED`.
+
 ### F-599C — Monolithic linear projections of the affine framed link are computationally unsuitable
 
 - Severity: **complete PD / projection selection**

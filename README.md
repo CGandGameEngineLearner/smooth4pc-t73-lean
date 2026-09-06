@@ -538,6 +538,36 @@ python3 scripts/build_t73_x_m1_outer_collar_v7_isotopy_trace_v2.py
 python3 scripts/build_t73_x_m1_outer_collar_v7_isotopy_trace_v2_verification.py --write --check-files
 python3 -m unittest tests.test_t73_x_m1_outer_collar_v7_isotopy_trace_v2
 ```
+
+A simultaneous global-clearance probe is retained at
+[`audit/t73_x_m1_outer_collar_v7_simultaneous_phase_one_core_broad_probe.json`](audit/t73_x_m1_outer_collar_v7_simultaneous_phase_one_core_broad_probe.json).
+Even 24 conservative linear-function bounds, including
+`F=y-1000033*x+2*z` and time-coupled variants, leave 140,683,374
+nonincident candidates among phase-one core triangles alone. This refutes that
+broad-phase strategy as a practical exact-clearance route; it does not refute
+the isotopy candidate.
+
+The replacement construction schedules collar `i` in the disjoint rational
+slot `[i/3026,(i+1)/3026]`, with its two local phases split at the midpoint.
+The complete 22,303,951-byte cache is
+`/home/lifesize/.cache/t73_x_m1_outer_collar_v7_sequential_isotopy_trace.jsonl.gz`.
+Its metadata and independent replay are
+[`audit/t73_x_m1_outer_collar_v7_sequential_isotopy_trace_receipt.json`](audit/t73_x_m1_outer_collar_v7_sequential_isotopy_trace_receipt.json)
+and
+[`audit/t73_x_m1_outer_collar_v7_sequential_isotopy_trace_verification.json`](audit/t73_x_m1_outer_collar_v7_sequential_isotopy_trace_verification.json).
+The 3,026 records contain 90,770 complete core and 121,020 complete push
+world-sheet triangles. Independent replay checks 15,130 boundary matches,
+211,790 exact R4 ranks and exact coverage of `[0,1]`; distinct moving-sheet
+interiors are disjoint by their time slots. Moving-versus-static clearance and
+the fixed-boundary ambient extension remain open.
+
+Rebuild and verify the sequential trace in WSL with:
+
+```bash
+python3 scripts/build_t73_x_m1_outer_collar_v7_sequential_isotopy_trace.py
+python3 scripts/build_t73_x_m1_outer_collar_v7_sequential_isotopy_trace_verification.py --write --check-files
+python3 -m unittest tests.test_t73_x_m1_outer_collar_v7_sequential_isotopy_trace
+```
 The graph map extends over all five framed regular neighborhoods in
 [`geometry/t73_hybrid_to_railroad_tubular_map.json`](geometry/t73_hybrid_to_railroad_tubular_map.json).
 Its five solid-torus templates contain 5385 tetrahedra and 10770 boundary

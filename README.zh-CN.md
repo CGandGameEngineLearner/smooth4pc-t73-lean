@@ -633,6 +633,34 @@ python3 scripts/build_t73_x_m1_outer_collar_v7_isotopy_trace_v2_verification.py 
 python3 -m unittest tests.test_t73_x_m1_outer_collar_v7_isotopy_trace_v2
 ```
 
+同时移动方案的全局 clearance 探测保存在
+[`audit/t73_x_m1_outer_collar_v7_simultaneous_phase_one_core_broad_probe.json`](audit/t73_x_m1_outer_collar_v7_simultaneous_phase_one_core_broad_probe.json)。
+即使使用包含 `F=y-1000033*x+2*z` 及其时间耦合版本的 24 个保守线性
+泛函边界，仅 phase-one core triangles 仍留下 140,683,374 个非邻接候选。
+这否定的是该 broad-phase 作为实用 exact-clearance 路线，并不否定 isotopy
+候选本身。
+
+替代构造把 collar `i` 排入互不重叠的有理时间槽
+`[i/3026,(i+1)/3026]`，并在中点分割两个局部阶段。完整的
+22,303,951-byte cache 位于
+`/home/lifesize/.cache/t73_x_m1_outer_collar_v7_sequential_isotopy_trace.jsonl.gz`。
+构造元数据与独立重放分别位于
+[`audit/t73_x_m1_outer_collar_v7_sequential_isotopy_trace_receipt.json`](audit/t73_x_m1_outer_collar_v7_sequential_isotopy_trace_receipt.json)
+和
+[`audit/t73_x_m1_outer_collar_v7_sequential_isotopy_trace_verification.json`](audit/t73_x_m1_outer_collar_v7_sequential_isotopy_trace_verification.json)。
+3,026 条记录含 90,770 个完整 core 和 121,020 个完整 push world-sheet
+triangles。独立重放检查 15,130 个边界匹配、211,790 个精确 R4 ranks 以及
+`[0,1]` 的无缝覆盖；不同 moving-sheet interiors 由时间槽直接分离。
+moving-versus-static clearance 和 fixed-boundary ambient extension 仍为 OPEN。
+
+在 WSL 中重建并验证 sequential trace：
+
+```bash
+python3 scripts/build_t73_x_m1_outer_collar_v7_sequential_isotopy_trace.py
+python3 scripts/build_t73_x_m1_outer_collar_v7_sequential_isotopy_trace_verification.py --write --check-files
+python3 -m unittest tests.test_t73_x_m1_outer_collar_v7_sequential_isotopy_trace
+```
+
 第一个跨系统门禁找到并修复了真实碰撞，没有提前升级该 assembly。流式 Rust
 1.98.1 checker 位于
 [`rust/t73_exact_cross_clearance`](rust/t73_exact_cross_clearance)，使用

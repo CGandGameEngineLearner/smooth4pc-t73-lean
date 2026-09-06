@@ -1,0 +1,24 @@
+{
+  "builder_path": "scripts/build_t73_x_m1_outer_collar_v7_sequential_isotopy_trace.py",
+  "builder_sha256": "452B463F1B1EB72F91DA6758F579F163A1C1C506AB723E1621376198ADC3561B",
+  "cache_sha256": "3741792D942A1DBE4184F5DA942440DD03B43AA1FE36DD11F696CB9BB7936532",
+  "construction_receipt_sha256": "3175AF68CB7E011761F2F934BD683F40FFD84C1432FE79BF52FA837734E74382",
+  "full_result": {
+    "ambient_support": "OPEN",
+    "boundary_matches": 15130,
+    "cache_sha_checked": true,
+    "classification": "CANDIDATE_UNVERIFIED",
+    "complete_core_world_sheet_triangles": 90770,
+    "complete_push_world_sheet_triangles": 121020,
+    "moving_sheet_interiors_pairwise_time_disjoint": true,
+    "moving_static_clearance": "OPEN",
+    "r4_triangle_rank_checks": 211790,
+    "traces_reconstructed": 3026,
+    "verdict": "PASS_X_M1_OUTER_COLLAR_V7_SEQUENTIAL_ISOTOPY_TRACE_FULL_LOCAL_CANDIDATE"
+  },
+  "schema": "t73_x_m1_outer_collar_v7_sequential_isotopy_trace_verification/v1",
+  "sha256": "50EE25C25554DF9B50ED91449615C3D4F1F5A107D67A3CAE9773DA922230822C",
+  "verdict": "PASS_X_M1_OUTER_COLLAR_V7_SEQUENTIAL_ISOTOPY_TRACE_FULL_LOCAL_CANDIDATE",
+  "verifier_path": "scripts/verify_t73_x_m1_outer_collar_v7_sequential_isotopy_trace.py",
+  "verifier_sha256": "C1E047584A88B6ABA8EF5D36C72E34A98C95630ADE9E325EC3110C3D53AF576F"
+}
