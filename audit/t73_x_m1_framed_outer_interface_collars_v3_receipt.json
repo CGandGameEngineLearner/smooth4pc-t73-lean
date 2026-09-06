@@ -1,0 +1,36 @@
+{
+  "ambient_support_status": "OPEN_BUILD_TETRAHEDRAL_ISOTOPY_EXTENSION",
+  "builder_sha256": "2115FAE0184CAC812380BB9B187F005477A1F33F52946D4EFDE383436318D4B0",
+  "cache_path": "C:\\Users\\Administrator\\.cache\\t73_x_m1_framed_outer_interface_collars_v3.jsonl.gz",
+  "cache_sha256": "7CC8673C88F8231B4F7696DEE1751A4F0BDA54F36FAB77D23EBA6BE1F89BEAFC",
+  "cache_size": 8594009,
+  "classification": "CANDIDATE_UNVERIFIED",
+  "collar_count": 3026,
+  "completion_status": "ALL_OUTER_INTERFACE_COLLAR_V3_SEPARATED_WAYPOINT_CANDIDATES_CONSTRUCTED",
+  "final_core_segment_count": 18156,
+  "final_push_segment_count": 18156,
+  "final_ribbon_triangle_count": 36312,
+  "global_clearance_status": "OPEN",
+  "lift_direction": [
+    "0",
+    "-2",
+    "1"
+  ],
+  "minimum_routing_functional_separation": "1/500000",
+  "normal_transversality_check_count": 18156,
+  "outer_interface_gap_sha256": "7F70FCF1F301190AF1BD9F12C7EA2EBBD7BCE56CEEBDC3C267D364E002C10FB4",
+  "record_stream_sha256": "602DA4FF8D47AFF4683DB5475F257EBACB785F39690C7F3FE50AF8A5E01BE251",
+  "refuted_v2_receipt_sha256": "236F73C55E45A7F0A7190634F719E285F3DD97895A3669F27905348C66C8909F",
+  "relative_twist_sum": 0,
+  "routing_endpoint_count": 6052,
+  "routing_functional": [
+    "-1000033",
+    "1",
+    "2"
+  ],
+  "schema": "t73_x_m1_framed_outer_interface_collars_v3_receipt/v1",
+  "sha256": "A002628084D4099B3D53CD79B7531E66CA5BDCEB4DE09D4AA8FD6462AC366A3B",
+  "source_germ_fraction": "1/1000000",
+  "v2_ribbon_obstruction_sha256": "F4D9A3A7A6F225E4367C5431C0D1B6A661D1C87D199BE7F0D475027358E86883",
+  "verdict": "PASS_X_M1_FRAMED_OUTER_INTERFACE_COLLARS_V3_LOCAL_CANDIDATE"
+}

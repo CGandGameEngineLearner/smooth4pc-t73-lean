@@ -769,6 +769,22 @@ rectangle 5411（interface 2705，Johnson connector `c2:between:1280`）相交�
 同一 obstruction artifact 保存精确 edge 参数、重心坐标及有理交点。因此 v3
 必须采用分离 waypoint route；v1、v2 都不能标为 actual。
 
+该 v3 候选现已构造于
+`C:\Users\Administrator\.cache\t73_x_m1_framed_outer_interface_collars_v3.jsonl.gz`。
+它保留每个 source germ，使用精确泛函 `F=y-1000033*x+2*z` 与 lift direction
+`(0,-2,1)`，并给 interface `i` 分配唯一高度 `10000+i` 和 exterior x 坐标
+`50000+2*i`。全部 6,052 个 germ/target functional values 互异，精确最小间隔
+为 `1/500000`。cache 包含 3,026 条 collars、core/push 各 18,156 个 segments
+和 36,312 个 ribbon triangles。独立局部重放保存于
+[`audit/t73_x_m1_framed_outer_interface_collars_v3_verification.json`](audit/t73_x_m1_framed_outer_interface_collars_v3_verification.json)。
+全局 core/push/ribbon 与 ambient support 检查完成前仍为
+`CANDIDATE_UNVERIFIED`。重建命令：
+
+```bash
+python3 scripts/build_t73_x_m1_framed_outer_interface_collars_v3.py
+python3 scripts/build_t73_x_m1_framed_outer_interface_collars_v3_verification.py --write
+```
+
 全局线性投影探测记录于
 [`audit/t73_affine_s3_projection_probe.json`](audit/t73_affine_s3_projection_probe.json)。
 xz/yz 会压扁 dotted edges；三个 regular tilts 至少产生258,453,247个 broad

@@ -4764,6 +4764,34 @@ Topology-source checks completed 2026-09-04:
   germs and route moving segments through explicitly separated rational
   waypoints; all v3 core/push/ribbon and trace checks must be rerun from zero.
 
+### F-599AL — A functional/height-separated outer collar family v3 is locally complete
+
+- Severity: **Constructive repair / globally structured candidate routes**
+- Status: **V3 LOCAL FULL REPLAY PASS; ALL GLOBAL AND AMBIENT CHECKS OPEN**
+- Evidence: `audit/t73_x_m1_framed_outer_interface_collars_v3_receipt.json`,
+  `audit/t73_x_m1_framed_outer_interface_collars_v3_verification.json`, their
+  builder, independent verifier, regression test and named persistent cache.
+- Routing rule: retain the v2 `10^-6` source germ. Use
+  `F=y-1000033*x+2*z` and lift direction `(0,-2,1)`, so the lift preserves F.
+  Interface i is lifted to height `10000+i`; its two exterior vertices have
+  x-coordinates `50000+2*i` and `50001+2*i`, with y chosen to preserve the
+  endpoint planar functional on each exterior ray.
+- Separation inventory: the 6,052 exact germ/target F-values are injective;
+  their minimum separation is exactly `1/500000`. Unique heights and exterior
+  x-slots are stored per record rather than inferred from hashes.
+- Data and local replay: the 8,594,009-byte cache contains 3,026 collars,
+  18,156 core segments, 18,156 push segments and 36,312 explicit ribbon
+  triangles. The verifier independently rebuilds every waypoint, normal and
+  triangle, performs 18,156 all-parameter transversality checks and 12,104
+  functional route equations, verifies zero relative twist and replays both
+  cache and decompressed-stream SHAs. Verdict:
+  `PASS_X_M1_FRAMED_OUTER_INTERFACE_COLLARS_V3_FULL_LOCAL_CANDIDATE`.
+- Boundary: v3 remains `CANDIDATE_UNVERIFIED`. Its analytic routing invariants
+  are inputs to, not substitutes for, complete global core/core, push/push,
+  core/push and ribbon clearance against itself and the retained/replacement
+  link. Its move trace and fixed-boundary tetrahedral ambient extension also
+  remain to be built and checked.
+
 ### F-599C — Monolithic linear projections of the affine framed link are computationally unsuitable
 
 - Severity: **complete PD / projection selection**

@@ -319,6 +319,23 @@ intersection. However v2 is also refuted at the ribbon level. Rectangle 6051
 Johnson connector `c2:between:1280`). The same obstruction artifact stores an
 exact edge parameter, barycentric coordinates and rational intersection point.
 Thus v3 requires a separated waypoint route; neither v1 nor v2 is actual.
+
+That v3 candidate is now constructed in
+`C:\Users\Administrator\.cache\t73_x_m1_framed_outer_interface_collars_v3.jsonl.gz`.
+It retains every source germ, uses the exact functional
+`F=y-1000033*x+2*z` and lift direction `(0,-2,1)`, and assigns each interface
+the unique height `10000+i` and exterior x-coordinate `50000+2*i`. All 6,052
+germ/target functional values are distinct, with exact minimum separation
+`1/500000`. The cache contains 3,026 collars, 18,156 core/push segments each
+and 36,312 ribbon triangles. Independent local replay is saved in
+[`audit/t73_x_m1_framed_outer_interface_collars_v3_verification.json`](audit/t73_x_m1_framed_outer_interface_collars_v3_verification.json).
+It remains `CANDIDATE_UNVERIFIED` until global core/push/ribbon and ambient
+support checks pass. Rebuild with:
+
+```bash
+python3 scripts/build_t73_x_m1_framed_outer_interface_collars_v3.py
+python3 scripts/build_t73_x_m1_framed_outer_interface_collars_v3_verification.py --write
+```
 The graph map extends over all five framed regular neighborhoods in
 [`geometry/t73_hybrid_to_railroad_tubular_map.json`](geometry/t73_hybrid_to_railroad_tubular_map.json).
 Its five solid-torus templates contain 5385 tetrahedra and 10770 boundary
