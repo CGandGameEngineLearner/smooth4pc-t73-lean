@@ -718,6 +718,24 @@ python3 scripts/build_t73_x_m1_outer_collar_v7_reverse_sequential_framed_isotopy
 python3 scripts/build_t73_x_m1_outer_collar_v7_reverse_sequential_framed_isotopy_volume_verification.py --write --check-files
 python3 -m unittest tests.test_t73_x_m1_outer_collar_v7_reverse_sequential_framed_isotopy_volume
 ```
+
+The complete conservative core workload for full-time reverse dynamic
+clearance is
+[`audit/t73_x_m1_outer_collar_v7_reverse_dynamic_core_candidate_matrix.json`](audit/t73_x_m1_outer_collar_v7_reverse_dynamic_core_candidate_matrix.json).
+It includes all 30,260 active phase-one core triangles, 6,052 source-vertical
+triangles and all 36,312 final-vertical triangles, including the retained germ
+omitted by an earlier exploratory count. Twelve outward-rounded linear
+function bounds leave 18,403,145 source and 26,507,429 final candidates:
+44,910,574 total across 14 semantic type pairs. This is
+`CANDIDATE_MATRIX_ONLY`; exact R4 clearance remains open.
+
+```bash
+# Fast saved-matrix binding check
+python3 scripts/build_t73_x_m1_outer_collar_v7_reverse_dynamic_core_candidate_matrix.py
+python3 -m unittest tests.test_t73_x_m1_outer_collar_v7_reverse_dynamic_core_candidate_matrix
+# Full conservative matrix reconstruction
+python3 scripts/build_t73_x_m1_outer_collar_v7_reverse_dynamic_core_candidate_matrix.py --rebuild-check
+```
 The graph map extends over all five framed regular neighborhoods in
 [`geometry/t73_hybrid_to_railroad_tubular_map.json`](geometry/t73_hybrid_to_railroad_tubular_map.json).
 Its five solid-torus templates contain 5385 tetrahedra and 10770 boundary

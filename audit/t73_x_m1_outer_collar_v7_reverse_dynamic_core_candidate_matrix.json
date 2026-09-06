@@ -1,0 +1,114 @@
+{
+  "active_phase_one_core_triangle_count": 30260,
+  "classification": "CANDIDATE_MATRIX_ONLY",
+  "exact_clearance_status": "OPEN_APPLY_SEMANTIC_EXACT_R4_TRIANGLE_REDUCTIONS",
+  "final_candidate_count": 26507429,
+  "final_vertical_core_triangle_count": 36312,
+  "inventory_complete": true,
+  "linear_functionals": [
+    [
+      1,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      1,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      1,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      1
+    ],
+    [
+      -1000033,
+      1,
+      2,
+      0
+    ],
+    [
+      -1000033,
+      1,
+      0,
+      0
+    ],
+    [
+      -1000033,
+      1,
+      2,
+      1000000
+    ],
+    [
+      -1000033,
+      1,
+      2,
+      -1000000
+    ],
+    [
+      0,
+      0,
+      1,
+      10000
+    ],
+    [
+      0,
+      0,
+      1,
+      -10000
+    ],
+    [
+      1,
+      0,
+      0,
+      50000
+    ],
+    [
+      1,
+      0,
+      0,
+      -50000
+    ]
+  ],
+  "local_trace_receipt_sha256": "3F3CDB06173CA091C5557AC0D0DB5742534E284EF1CF162DAB6287F01093C3B0",
+  "nonempty_semantic_type_pair_count": 14,
+  "outer_collars_v7_receipt_sha256": "A980996F434705BA700FEE1B9D42701D33C1D74A47ACAF7EBB1309C031D7288E",
+  "outward_rounding": "one binary64 nextafter step in both directions",
+  "reverse_framed_volume_receipt_sha256": "15CAEA831B5FB21BBA32733A5DFD7C68F8A95563BA134ABD82B1CE47AD93DD91",
+  "reverse_framed_volume_verification_sha256": "093E0ACB41BE1FD021347E5FF7E6BFA20DD101CD30AA863121A9B73289BB3559",
+  "reverse_static_core_clearance_sha256": "72A4102EB1B80C49FAABEB48157F30B975394301753F632601D1D0BA78D92379",
+  "reverse_trace_receipt_sha256": "278146015313AF3FFC88C85D3D93A9EAB6836EE063253633653A643EA2487811",
+  "reverse_trace_verification_sha256": "B9B1ABB6532FD8438029C83CF3517BAE0A624F5035222CE1A3C6BD7A9FFE7660",
+  "schedule_order": "REVERSE_INTERFACE_INDEX",
+  "schema": "t73_x_m1_outer_collar_v7_reverse_dynamic_core_candidate_matrix/v1",
+  "semantic_candidate_matrix": {
+    "active:source_to_end_skew/final:end_skew_lift": 2513176,
+    "active:source_to_end_skew/final:retained_source_germ": 690840,
+    "active:source_to_end_skew/final:start_skew_lift": 3422433,
+    "active:source_to_end_skew/source:source_core": 6439823,
+    "active:source_to_first_exterior/source:source_core": 1517450,
+    "active:source_to_height_bridge/final:end_skew_lift": 1368020,
+    "active:source_to_height_bridge/final:retained_source_germ": 4552516,
+    "active:source_to_height_bridge/final:start_skew_lift": 4575304,
+    "active:source_to_height_bridge/source:source_core": 6054,
+    "active:source_to_last_exterior/final:end_skew_lift": 2526844,
+    "active:source_to_last_exterior/final:retained_source_germ": 2289020,
+    "active:source_to_last_exterior/final:start_skew_lift": 4569276,
+    "active:source_to_last_exterior/source:source_core": 8922368,
+    "active:source_to_start_skew/source:source_core": 1517450
+  },
+  "sha256": "C58D8A904E2F02B997FE14475530868E08725C0F8B5569EBDF82949B6347EEA8",
+  "source_candidate_count": 18403145,
+  "source_vertical_core_triangle_count": 6052,
+  "total_candidate_count": 44910574,
+  "verdict": "PASS_X_M1_OUTER_COLLAR_V7_REVERSE_DYNAMIC_CORE_CANDIDATE_MATRIX_ONLY"
+}

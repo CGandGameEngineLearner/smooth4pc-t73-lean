@@ -802,6 +802,22 @@ python3 scripts/build_t73_x_m1_outer_collar_v7_reverse_sequential_framed_isotopy
 python3 -m unittest tests.test_t73_x_m1_outer_collar_v7_reverse_sequential_framed_isotopy_volume
 ```
 
+全时域 reverse dynamic core clearance 的完整保守工作量保存在
+[`audit/t73_x_m1_outer_collar_v7_reverse_dynamic_core_candidate_matrix.json`](audit/t73_x_m1_outer_collar_v7_reverse_dynamic_core_candidate_matrix.json)。
+它包含全部 30,260 个 active phase-one core triangles、6,052 个
+source-vertical triangles 和全部 36,312 个 final-vertical triangles，包括早期
+探索计数漏掉的 retained germ。12 个向外舍入线性泛函边界留下 18,403,145
+个 source 和 26,507,429 个 final 候选，共 44,910,574 个、14 个 semantic
+type pairs。它只是 `CANDIDATE_MATRIX_ONLY`；精确 R4 clearance 仍为 OPEN。
+
+```bash
+# 快速核对已保存矩阵绑定
+python3 scripts/build_t73_x_m1_outer_collar_v7_reverse_dynamic_core_candidate_matrix.py
+python3 -m unittest tests.test_t73_x_m1_outer_collar_v7_reverse_dynamic_core_candidate_matrix
+# 完整重建保守矩阵
+python3 scripts/build_t73_x_m1_outer_collar_v7_reverse_dynamic_core_candidate_matrix.py --rebuild-check
+```
+
 第一个跨系统门禁找到并修复了真实碰撞，没有提前升级该 assembly。流式 Rust
 1.98.1 checker 位于
 [`rust/t73_exact_cross_clearance`](rust/t73_exact_cross_clearance)，使用

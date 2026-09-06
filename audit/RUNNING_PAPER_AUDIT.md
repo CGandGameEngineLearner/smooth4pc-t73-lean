@@ -5556,6 +5556,31 @@ Topology-source checks completed 2026-09-04:
   disjoint from its contemporaneous stationary mixture, retained source and
   replacement framing. The reverse candidate remains `CANDIDATE_UNVERIFIED`.
 
+### F-599BU — The complete reverse dynamic core matrix has fourteen semantic families
+
+- Severity: **Dynamic global verification decomposition / complete workload**
+- Status: **MATRIX COMPLETE; EXACT R4 CLEARANCE OPEN**
+- Evidence:
+  `audit/t73_x_m1_outer_collar_v7_reverse_dynamic_core_candidate_matrix.json`,
+  its versioned builder and regression test, bound to F-599BP/BQ/BT.
+- Corrected inventory: every one of the 30,260 active phase-one core trace
+  triangles is compared against 6,052 source-vertical triangles and 36,312
+  final-vertical triangles under reverse schedule order. The final inventory
+  includes all six V7 segment types; an earlier exploratory count used only
+  the five-edge moving route and omitted retained final germs, so its
+  37,378,184 count is superseded and not committed as evidence.
+- Conservative matrix: twelve outward-nextafter functional coordinates include
+  `x,y,z,t`, `F=y-1000033*x+2*z`, the planar functional, time-coupled
+  `F+/-1000000t`, height/time and exterior-x/time forms. Any real R4
+  intersection must survive every interval. The complete result has
+  18,403,145 source candidates and 26,507,429 final candidates, 44,910,574
+  total across fourteen nonempty semantic type pairs. Verdict:
+  `PASS_X_M1_OUTER_COLLAR_V7_REVERSE_DYNAMIC_CORE_CANDIDATE_MATRIX_ONLY`.
+- Boundary: the matrix proves exhaustive conservative enumeration, not
+  disjointness. Exact R4 triangle equations must cover all fourteen families,
+  using semantic reductions or a certified parallel exact predicate. Push and
+  ribbon-volume matrices follow only after the core gate closes.
+
 ### F-599C — Monolithic linear projections of the affine framed link are computationally unsuitable
 
 - Severity: **complete PD / projection selection**
