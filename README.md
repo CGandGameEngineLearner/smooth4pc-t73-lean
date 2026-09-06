@@ -568,6 +568,23 @@ python3 scripts/build_t73_x_m1_outer_collar_v7_sequential_isotopy_trace.py
 python3 scripts/build_t73_x_m1_outer_collar_v7_sequential_isotopy_trace_verification.py --write --check-files
 python3 -m unittest tests.test_t73_x_m1_outer_collar_v7_sequential_isotopy_trace
 ```
+
+The first global sequential gate is
+[`audit/t73_x_m1_outer_collar_v7_sequential_static_core_clearance.json`](audit/t73_x_m1_outer_collar_v7_sequential_static_core_clearance.json).
+At a slot boundary, only pairs with `final_interface < source_interface` occur.
+Among 18,156 final and 3,026 source core segments, outward-rounded 3D AABB
+enumeration leaves 3,022 ordered candidates. Independent exact rational
+segment equations separate 3,018; the remaining four meet only at their
+single shared dual-germ endpoint, with collinear opposite outgoing directions.
+Thus the ordered mixed static core has zero forbidden intersections. Push,
+ribbon and active-moving-sheet clearance remain open. Rebuild and independently
+check with:
+
+```bash
+python3 scripts/build_t73_x_m1_outer_collar_v7_sequential_static_core_clearance.py --write --check
+python3 scripts/verify_t73_x_m1_outer_collar_v7_sequential_static_core_clearance.py
+python3 -m unittest tests.test_t73_x_m1_outer_collar_v7_sequential_static_core_clearance
+```
 The graph map extends over all five framed regular neighborhoods in
 [`geometry/t73_hybrid_to_railroad_tubular_map.json`](geometry/t73_hybrid_to_railroad_tubular_map.json).
 Its five solid-torus templates contain 5385 tetrahedra and 10770 boundary

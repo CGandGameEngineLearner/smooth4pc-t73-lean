@@ -1,0 +1,71 @@
+{
+  "candidate_count_by_final_segment_type": {
+    "retained_source_germ": 4,
+    "start_skew_lift": 3018
+  },
+  "classification": "PARTIAL_GLOBAL_SEQUENTIAL_CLEARANCE",
+  "exact_segment_check_count": 3022,
+  "exact_separated_pair_count": 3018,
+  "final_core_segment_count": 18156,
+  "moving_static_status": "OPEN",
+  "nonpermitted_intersection_count": 0,
+  "ordered_mixed_static_core_clearance": true,
+  "outer_collars_v7_receipt_sha256": "A980996F434705BA700FEE1B9D42701D33C1D74A47ACAF7EBB1309C031D7288E",
+  "outward_float_aabb_candidate_count": 3022,
+  "permitted_opposite_germ_incidence_count": 4,
+  "permitted_opposite_germ_incidences": [
+    {
+      "final_interface": 3018,
+      "neighbor_id": "r_xy:y:edge:0",
+      "relation": "COLLINEAR_OPPOSITE_GERMS",
+      "shared_endpoint": [
+        "1",
+        "2",
+        "0"
+      ],
+      "source_interface": 3021
+    },
+    {
+      "final_interface": 3019,
+      "neighbor_id": "r_xy:y:edge:4",
+      "relation": "COLLINEAR_OPPOSITE_GERMS",
+      "shared_endpoint": [
+        "3",
+        "2",
+        "0"
+      ],
+      "source_interface": 3020
+    },
+    {
+      "final_interface": 3022,
+      "neighbor_id": "r_zx:z:edge:0",
+      "relation": "COLLINEAR_OPPOSITE_GERMS",
+      "shared_endpoint": [
+        "1",
+        "0",
+        "2"
+      ],
+      "source_interface": 3025
+    },
+    {
+      "final_interface": 3023,
+      "neighbor_id": "r_zx:z:edge:4",
+      "relation": "COLLINEAR_OPPOSITE_GERMS",
+      "shared_endpoint": [
+        "3",
+        "0",
+        "2"
+      ],
+      "source_interface": 3024
+    }
+  ],
+  "push_and_ribbon_status": "OPEN",
+  "schedule_order_rule": "final_interface < source_interface",
+  "schema": "t73_x_m1_outer_collar_v7_sequential_static_core_clearance/v1",
+  "sequential_trace_receipt_sha256": "3175AF68CB7E011761F2F934BD683F40FFD84C1432FE79BF52FA837734E74382",
+  "sequential_trace_verification_sha256": "50EE25C25554DF9B50ED91449615C3D4F1F5A107D67A3CAE9773DA922230822C",
+  "sha256": "9F3F6D37939AFB9B22B81C1E19C572E0F8834A1B4B200087B2122E7C77072F97",
+  "source_core_segment_count": 3026,
+  "v7_final_core_clearance_sha256": "EC14390AC8D2E3FF21709A0E9FEEB2A12D72F125D31518E8CE3640641D1695E1",
+  "verdict": "PASS_X_M1_OUTER_COLLAR_V7_SEQUENTIAL_STATIC_CORE_CLEARANCE"
+}

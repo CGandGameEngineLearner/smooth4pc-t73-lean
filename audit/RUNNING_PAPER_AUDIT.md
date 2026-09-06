@@ -5336,6 +5336,30 @@ Topology-source checks completed 2026-09-04:
   tetrahedral ambient extension is yet constructed, so the relative map stays
   `CANDIDATE_UNVERIFIED`.
 
+### F-599BK — Every ordered final/source static core mixture is clear
+
+- Severity: **Sequential global clearance / first positive mixed-state gate**
+- Status: **ORDERED MIXED STATIC CORE PASS; PUSH/RIBBON/MOVING OPEN**
+- Evidence: `audit/t73_x_m1_outer_collar_v7_sequential_static_core_clearance.json`,
+  its builder, independent verifier and regression test, bound to the V7 final
+  core clearance and F-599BJ sequential trace verification.
+- Schedule semantics: at every slot boundary, collar `i` is final while collar
+  `j` is still source only when `i<j`. The verifier therefore enumerates the
+  complete ordered cross inventory rather than all directionless pairs.
+- Exact result: 18,156 final core segments against 3,026 source segments give
+  only 3,022 outward-rounded AABB candidates: four retained-germ/source and
+  3,018 start-skew/source. Independent Fraction equations separate all 3,018
+  start-skew candidates. The four exact hits are `(3018,3021)`, `(3019,3020)`,
+  `(3022,3025)` and `(3023,3024)`; each has the same dual-passage owner, one
+  shared endpoint, no segment overlap, collinear outgoing directions and
+  negative direction dot product. They are precisely permitted opposite-germ
+  stars. Forbidden intersections are zero. Verdict:
+  `PASS_X_M1_OUTER_COLLAR_V7_SEQUENTIAL_STATIC_CORE_CLEARANCE_INDEPENDENT`.
+- Boundary: this proves only the core of every stationary source/final mixture.
+  Ordered push/push, core/push and ribbon stars/nonincident pairs remain to be
+  checked, followed by each active moving sheet against its contemporaneous
+  static mixture and the retained/replacement framed union.
+
 ### F-599C — Monolithic linear projections of the affine framed link are computationally unsuitable
 
 - Severity: **complete PD / projection selection**

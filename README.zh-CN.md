@@ -661,6 +661,21 @@ python3 scripts/build_t73_x_m1_outer_collar_v7_sequential_isotopy_trace_verifica
 python3 -m unittest tests.test_t73_x_m1_outer_collar_v7_sequential_isotopy_trace
 ```
 
+第一个全局 sequential 门禁保存在
+[`audit/t73_x_m1_outer_collar_v7_sequential_static_core_clearance.json`](audit/t73_x_m1_outer_collar_v7_sequential_static_core_clearance.json)。
+在时间槽边界只会出现 `final_interface < source_interface` 的混合 pair。
+18,156 个 final 与 3,026 个 source core segments 经向外舍入的三维 AABB
+枚举后仅剩 3,022 个有序候选。独立精确有理线段方程分离其中 3,018 个；其余
+4 个只在唯一的 dual-germ 公共端点相交，且两条离开方向共线反向。因此有序混合
+静态 core 的禁止交点为 0。push、ribbon 和 active-moving-sheet clearance
+仍为 OPEN。重建和独立检查命令：
+
+```bash
+python3 scripts/build_t73_x_m1_outer_collar_v7_sequential_static_core_clearance.py --write --check
+python3 scripts/verify_t73_x_m1_outer_collar_v7_sequential_static_core_clearance.py
+python3 -m unittest tests.test_t73_x_m1_outer_collar_v7_sequential_static_core_clearance
+```
+
 第一个跨系统门禁找到并修复了真实碰撞，没有提前升级该 assembly。流式 Rust
 1.98.1 checker 位于
 [`rust/t73_exact_cross_clearance`](rust/t73_exact_cross_clearance)，使用
