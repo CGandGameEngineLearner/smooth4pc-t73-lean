@@ -390,8 +390,13 @@ ribbon triangles。6,052 个 endpoint-normal matches、12,104 个法向横截检
 relative twist 总和 0 及完整缓存 SHA 已在
 [`audit/t73_post_x_connector_stub_framing_transitions_verification.json`](audit/t73_post_x_connector_stub_framing_transitions_verification.json)
 中重放。verdict 为
-`PASS_POST_X_CONNECTOR_STUB_FRAMING_TRANSITIONS_FULL_LOCAL`；transition ribbons
-的全局 clearance 仍为 OPEN。
+`PASS_POST_X_CONNECTOR_STUB_FRAMING_TRANSITIONS_FULL_LOCAL`。全局验收记录于
+[`audit/t73_post_x_connector_stub_framing_transition_global_clearance.json`](audit/t73_post_x_connector_stub_framing_transition_global_clearance.json)：
+精确替换 3,026 条旧 product segments 后，12,104 个新 triangles 对 8,164 个
+保留 product-ribbon triangles 和 20,268 条 corrected framed segments 完成
+检查；每个阶段约 1,700 万宽候选最终缩为 4,527 个精确有理相交判定，全部无交。
+verdict 为
+`PASS_POST_X_CONNECTOR_STUB_FRAMING_TRANSITION_GLOBAL_CLEARANCE`。
 
 全局线性投影探测记录于
 [`audit/t73_affine_s3_projection_probe.json`](audit/t73_affine_s3_projection_probe.json)。

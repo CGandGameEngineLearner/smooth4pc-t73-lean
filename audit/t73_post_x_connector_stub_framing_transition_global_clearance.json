@@ -1,0 +1,31 @@
+{
+  "construction_receipt_sha256": "DB0DC747CBE44D09F7BC963AFCA8D1262096F89A33BE06107776BD1C551657F0",
+  "full_result": {
+    "base_product_segments": 7108,
+    "corrected_framed_segments": 20268,
+    "exact_segment_triangle_checks": 4527,
+    "exact_triangle_triangle_checks": 4527,
+    "globally_embedded_corrected_product_ribbons": true,
+    "replaced_base_product_segments": 3026,
+    "retained_product_ribbon_triangles": 8164,
+    "segment_broad_candidates": 17055870,
+    "segment_exact_bounds_rejects": 4527,
+    "segment_float_axis_interval_rejects": 15669866,
+    "segment_float_separation_rejects": 1325508,
+    "segment_incidence_skips": 51442,
+    "transition_ribbon_triangles": 12104,
+    "triangle_broad_candidates": 17025574,
+    "triangle_exact_bounds_rejects": 1509,
+    "triangle_float_axis_interval_rejects": 15669834,
+    "triangle_float_separation_rejects": 1325508,
+    "triangle_incidence_skips": 24196,
+    "verdict": "PASS_POST_X_CONNECTOR_STUB_FRAMING_TRANSITION_GLOBAL_CLEARANCE"
+  },
+  "local_verification_sha256": "EEE5DE037B2A8F162710E4784C813A9A2D068EB7381F946EEE6F6BFF4F7307A7",
+  "schema": "t73_post_x_connector_stub_framing_transition_global_clearance/v1",
+  "sha256": "716423A5EB4688A8650F823E18BAA999DC2439A2CF2EE86D108D3BCD6917A563",
+  "transition_cache_sha256": "BB378F39F16342E4B4A50D147329954B193C4CB03EA652177DB96773A2A5B7AA",
+  "verdict": "PASS_POST_X_CONNECTOR_STUB_FRAMING_TRANSITION_GLOBAL_CLEARANCE",
+  "verifier_path": "scripts/verify_t73_post_x_connector_stub_framing_transition_global_clearance.py",
+  "verifier_sha256": "064A778F4ED61E544686C73FA08AB63DBDC22874A4D125FE4D02D89847F5CCB8"
+}

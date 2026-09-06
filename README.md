@@ -451,7 +451,13 @@ ruled ribbon triangles. All 6,052 endpoint-normal matches, 12,104 transverse
 normal tests, zero total relative twist and the full cache SHA replay in
 [`audit/t73_post_x_connector_stub_framing_transitions_verification.json`](audit/t73_post_x_connector_stub_framing_transitions_verification.json).
 Verdict: `PASS_POST_X_CONNECTOR_STUB_FRAMING_TRANSITIONS_FULL_LOCAL`; global
-transition-ribbon clearance is still open.
+transition-ribbon clearance is recorded in
+[`audit/t73_post_x_connector_stub_framing_transition_global_clearance.json`](audit/t73_post_x_connector_stub_framing_transition_global_clearance.json).
+After replacing exactly 3,026 old product segments, the verifier checks 12,104
+new triangles against 8,164 retained product-ribbon triangles and 20,268
+corrected framed segments. It reduces about 17 million broad candidates in
+each phase to 4,527 exact rational intersection tests; all are disjoint.
+Verdict: `PASS_POST_X_CONNECTOR_STUB_FRAMING_TRANSITION_GLOBAL_CLEARANCE`.
 
 Global linear projection probes are recorded in
 [`audit/t73_affine_s3_projection_probe.json`](audit/t73_affine_s3_projection_probe.json).

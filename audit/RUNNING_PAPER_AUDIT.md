@@ -3904,7 +3904,7 @@ Topology-source checks completed 2026-09-04:
 ### F-599J — All 3026 connector-to-stub framing discontinuities have explicit local collars
 
 - Severity: **Critical correction and repair / framed-cycle continuity**
-- Status: **LOCAL FRAMING CONTINUITY PASS; GLOBAL COLLAR CLEARANCE OPEN**
+- Status: **LOCAL FRAMING CONTINUITY AND GLOBAL COLLAR CLEARANCE PASS**
 - Evidence: `audit/t73_post_x_connector_stub_framing_gap.json`, its
   independent full-cache verifier/test, the transition cache and construction
   receipt, `audit/t73_post_x_connector_stub_framing_transitions_verification.json`,
@@ -3926,9 +3926,19 @@ Topology-source checks completed 2026-09-04:
   tangent/normal cross products, triangle templates, stream SHA and full
   cache SHA pass. Verdict:
   `PASS_POST_X_CONNECTOR_STUB_FRAMING_TRANSITIONS_FULL_LOCAL`.
-- Boundary: the collars have not yet been checked against all nonincident
-  source core/push/ribbon cells. Until that incremental global clearance runs,
-  this proves local framed continuity but not an embedded complete push cycle.
+- Global clearance: after deleting exactly the 3026 replaced base product
+  segments, the corrected comparison complex has 8164 retained ribbon
+  triangles, 12,104 transition triangles and 20,268 core/push segments.
+  NumPy/Shapely screens 17,025,574 triangle and 17,055,870 segment broad
+  candidates; both phases reach 4527 exact rational intersection tests and no
+  nonincident intersection. The receipt binds the verifier and transition
+  cache SHAs. Verdict:
+  `PASS_POST_X_CONNECTOR_STUB_FRAMING_TRANSITION_GLOBAL_CLEARANCE`.
+- Boundary: this closes the connector/dual-to-stub framing continuity and
+  embedding defect relative to the currently surviving source product
+  ribbons. The band lanes, splice stubs and overlap tracks still need their
+  common R3 collar realization before these corrections can join the F-599I
+  middle ribbons into complete post-x R3 cycles.
 
 ### F-599C — Monolithic linear projections of the affine framed link are computationally unsuitable
 
