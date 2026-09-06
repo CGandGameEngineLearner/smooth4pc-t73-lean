@@ -671,6 +671,19 @@ system. Verdict:
 paths and framing ribbons remain open and are not inferred from this core
 result.
 
+Framing reconstruction has now begun from the complete v3 core. The cache
+`C:\Users\Administrator\.cache\t73_x_band_global_r3_push_disks.jsonl.gz`
+and receipt
+[`audit/t73_x_band_global_r3_push_disks_receipt.json`](audit/t73_x_band_global_r3_push_disks_receipt.json)
+give every global band strip a constant rational product displacement in
+direction `(1,1,2)` at scale `band_width/1000`. This direction is transverse
+to all 15,130 strip triangles. The 1,513 records contain 15,130 core and push
+triangles, 30,260 lane framing-ribbon triangles, and 45,390 nondegenerate
+surface-product tetrahedra; every source relative twist is zero. Independent
+full replay checks all cells and the 9,616,648-byte cache SHA. Verdict:
+`PASS_X_BAND_GLOBAL_R3_PUSH_DISKS_FULL_LOCAL_PRODUCT`. Global push-disk
+clearance and gluing these push ports to stub/transition pushes remain open.
+
 Global linear projection probes are recorded in
 [`audit/t73_affine_s3_projection_probe.json`](audit/t73_affine_s3_projection_probe.json).
 xz/yz collapse dotted edges; three regular tilts produce at least 258,453,247

@@ -578,6 +578,18 @@ verifier 均在 6,052×6,052 段之间得到 conservative xy candidates 0，见
 `PASS_X_M1_COMPLETE_GLOBAL_R3_REPLACEMENT_CORE_EMBEDDING_V3`。完整 push paths
 与 framing ribbons 仍为 OPEN，不从 core 结果推断。
 
+framing 重建现从完整 v3 core 开始。缓存
+`C:\Users\Administrator\.cache\t73_x_band_global_r3_push_disks.jsonl.gz`
+及收据
+[`audit/t73_x_band_global_r3_push_disks_receipt.json`](audit/t73_x_band_global_r3_push_disks_receipt.json)
+为每个 global band strip 指定方向 `(1,1,2)`、尺度 `band_width/1000` 的常量有理
+product displacement；该方向对全部 15,130 个 strip triangles 横截。1,513 条
+records 含 15,130 个 core 与 push triangles、30,260 个 lane framing-ribbon
+triangles、45,390 个非退化 surface-product tetrahedra；所有 source relative
+twist 均为 0。独立全量重放检查全部单元及 9,616,648-byte cache SHA。verdict
+为 `PASS_X_BAND_GLOBAL_R3_PUSH_DISKS_FULL_LOCAL_PRODUCT`。全局 push-disk
+clearance 以及把这些 push ports 粘到 stub/transition pushes 仍为 OPEN。
+
 全局线性投影探测记录于
 [`audit/t73_affine_s3_projection_probe.json`](audit/t73_affine_s3_projection_probe.json)。
 xz/yz 会压扁 dotted edges；三个 regular tilts 至少产生258,453,247个 broad

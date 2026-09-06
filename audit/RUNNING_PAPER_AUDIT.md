@@ -4337,6 +4337,34 @@ Topology-source checks completed 2026-09-04:
   transition needs a compatible global R3 push path/ribbon, followed by
   integration with unchanged Johnson/dual cores and the y/z dotted conversion.
 
+### F-599X — All global x-band strips have explicit zero-twist R3 push disks
+
+- Severity: **Major positive construction / framing reconstruction**
+- Status: **ALL BAND PRODUCT CELLS PASS; GLOBAL PUSH CLEARANCE AND PORT GLUE OPEN**
+- Evidence: the cache and
+  `audit/t73_x_band_global_r3_push_disks_receipt.json`, its builder,
+  independent full verifier and test, bound to F-599P/Q source cells and
+  global core-strip clearance.
+- Construction: choose the integer direction `(1,1,2)`; exhaustive exact
+  search shows it is outside the plane of every one of 15,130 global strip
+  triangles. Scale it by `band_width/1000`, far below the existing exact
+  support, routing-functional and height clearances. Translate the complete
+  band disk by this vector.
+- Cells: each band stores its 12 core and 12 push vertices, ten core and ten
+  push triangles, twenty boundary-lane framing triangles, and thirty
+  tetrahedra triangulating surface times push interval. Across 1513 bands this
+  gives 15,130 core triangles, 15,130 push triangles, 30,260 lane framing
+  triangles and 45,390 product tetrahedra. All source relative twists are zero.
+- Independent replay: every push vertex is recomputed as core plus the bound
+  displacement; all ribbon and staircase-product indices are rebuilt; all
+  45,390 exact tetrahedral determinants are nonzero. Decompressed stream SHA
+  and full 9,616,648-byte cache SHA pass. Verdict:
+  `PASS_X_BAND_GLOBAL_R3_PUSH_DISKS_FULL_LOCAL_PRODUCT`.
+- Boundary: this is the complete band-disk product neighborhood but not yet a
+  globally embedded framing system. Nonincident push-disk/ribbon clearance
+  must be checked, and each lane push endpoint must be joined to source-stub
+  and target-transition/middle push data without adding relative twist.
+
 ### F-599C — Monolithic linear projections of the affine framed link are computationally unsuitable
 
 - Severity: **complete PD / projection selection**
