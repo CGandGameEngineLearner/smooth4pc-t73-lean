@@ -1,6 +1,8 @@
 # Exact and broad-phase geometry dependencies used by the T73 reconstruction.
-numpy>=1.26,<2
+numpy>=1.26,<3
 scipy>=1.11,<2
 sympy>=1.14,<2
 shapely>=2.0,<3
 ijson>=3.5,<4
+rtree>=1.4,<2
+gmpy2>=2.2,<3

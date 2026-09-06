@@ -218,8 +218,29 @@ python3 scripts/build_t73_x_m1_negative_transition_push_paths_v3_verification.py
 ```
 
 Verdict: `PASS_X_M1_NEGATIVE_TRANSITION_PUSH_PATHS_V3_FULL_LOCAL`. Global
-clearance of the new transition ribbons remains open and is not inferred from
-the already-complete core embedding.
+clearance is independently closed in
+[`audit/t73_x_m1_transition_ribbon_global_clearance.json`](audit/t73_x_m1_transition_ribbon_global_clearance.json).
+The proof splits by the actual geometry: 5,865,390 transition/transition and
+2,287,656 transition/stub common-displacement rectangles are solved exactly
+with GMP rational arithmetic; 88 variable transition/transition triangles
+receive general exact 3D checks; transition/band has zero expanded 3D-AABB
+candidates. Every transition/middle candidate comes from a terminal triangle:
+its non-port vertices are strictly below `z=0`, while every middle ribbon lies
+in `z=0`. The verifier reduces these to 3,026 framing-port edges and performs
+193,664 exact segment/triangle tests, obtaining exactly the 6,052 prescribed
+incidences and no others. Persistent broad/exact candidate stream locations
+and SHAs are recorded by the six `t73_x_m1_transition_ribbon_*candidates.json`
+audits. Install the maintained geometry dependencies with
+`python3 -m pip install -r requirements-topology.txt`, then rebuild the full
+receipts with:
+
+```bash
+python3 scripts/build_t73_x_m1_transition_transition_ribbon_clearance_verification.py --write
+python3 scripts/build_t73_x_m1_transition_stub_ribbon_clearance_verification.py --write
+python3 scripts/build_t73_x_m1_transition_ribbon_global_clearance.py --write
+```
+
+Verdict: `PASS_X_M1_TRANSITION_RIBBON_GLOBAL_CLEARANCE`.
 The graph map extends over all five framed regular neighborhoods in
 [`geometry/t73_hybrid_to_railroad_tubular_map.json`](geometry/t73_hybrid_to_railroad_tubular_map.json).
 Its five solid-torus templates contain 5385 tetrahedra and 10770 boundary

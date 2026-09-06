@@ -1,0 +1,22 @@
+{
+  "broad_audit_content_sha256": "C3A15D4A48C142F02D83A204616280A772688101488684AE646B6242A3065BD3",
+  "broad_candidate_stream_sha256": "2B3F627631D42FAA0206E90C36873B41FC6474724D13C9C20B4D6113DD7CBD5D",
+  "candidate_builder_path": "scripts/build_t73_x_m1_transition_stub_ribbon_exact_candidates.py",
+  "candidate_builder_sha256": "FB7E85D547BFD77CEE61536252727DD4B6B3D82B85A09ACE4D7CA516406B3151",
+  "exact_candidate_partition_sha256": "F17EFA7166AB123AA7AC80E23300D7FDC0E90C162D7965D8A7B5E4536D62CBDB",
+  "exact_candidate_stream_sha256": "4112AC38D9ADCE2C0A67D0374834C874FC0DFC67350C0514F88D71283941730A",
+  "full_result": {
+    "exact_rectangle_checks": 2287656,
+    "intersections": 0,
+    "permitted_port_triangle_pairs": 2,
+    "verdict": "PASS_TRANSITION_STUB_RIBBON_EXACT_CLEARANCE"
+  },
+  "gmp_verifier_path": "scripts/verify_t73_x_m1_transition_stub_ribbon_clearance_gmp.py",
+  "gmp_verifier_sha256": "28AF100936CEF0081EC2D60BF2E8AB7A9574DFABBCD0CD3050417E96BC3B1CEF",
+  "schema": "t73_x_m1_transition_stub_ribbon_clearance_verification/v1",
+  "sha256": "6FDC3A569BBE317845C41EEF1FAECBA75B6F70A2A139101ACF22E3986090064A",
+  "status": "PASS_FULL_GMP_EXACT_VERIFICATION",
+  "stub_push_receipt_sha256": "DEC508ECF0C68AFC388131F166F9E05AB225AED3D0149A7BD4B38C8B79EC3682",
+  "transition_push_receipt_sha256": "8B54E36C1421F623331186E33742F7D480423BC15A790F194BB5CAEE3797123D",
+  "verdict": "PASS_TRANSITION_STUB_RIBBON_EXACT_CLEARANCE"
+}

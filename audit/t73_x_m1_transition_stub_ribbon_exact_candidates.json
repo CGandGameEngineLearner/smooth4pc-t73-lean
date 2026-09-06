@@ -1,0 +1,13 @@
+{
+  "candidate_path": "C:\\Users\\Administrator\\.cache\\t73_x_m1_transition_stub_rectangle_candidates.csv.gz",
+  "candidate_sha256": "4112AC38D9ADCE2C0A67D0374834C874FC0DFC67350C0514F88D71283941730A",
+  "candidate_size": 5117432,
+  "exact_rectangle_pair_count": 2287656,
+  "permitted_port_triangle_pair_count": 2,
+  "schema": "t73_x_m1_transition_stub_ribbon_exact_candidates/v1",
+  "sha256": "F17EFA7166AB123AA7AC80E23300D7FDC0E90C162D7965D8A7B5E4536D62CBDB",
+  "source_candidate_stream_sha256": "2B3F627631D42FAA0206E90C36873B41FC6474724D13C9C20B4D6113DD7CBD5D",
+  "source_triangle_pair_count": 6869015,
+  "status": "CANDIDATES_ONLY_NO_CLEARANCE_CLAIM",
+  "stub_rectangle_count": 10582
+}

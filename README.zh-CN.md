@@ -676,7 +676,27 @@ python3 scripts/build_t73_x_m1_negative_transition_push_paths_v3_verification.py
 ```
 
 verdict 为 `PASS_X_M1_NEGATIVE_TRANSITION_PUSH_PATHS_V3_FULL_LOCAL`。新 transition
-ribbons 的全局 clearance 仍为 OPEN，不能由已经闭合的 core embedding 自动推出。
+ribbons 的全局 clearance 现已独立闭合于
+[`audit/t73_x_m1_transition_ribbon_global_clearance.json`](audit/t73_x_m1_transition_ribbon_global_clearance.json)。
+证明按真实几何分解：用 GMP 有理算术精确求解 5,865,390 个
+transition/transition 与 2,287,656 个 transition/stub 公共位移矩形；对 88 个
+含变化法向的 transition/transition triangles 作一般三维精确检查；
+transition/band 的扩张三维 AABB 候选为 0。所有 transition/middle 候选均来自
+terminal triangle：非端口顶点严格位于 `z<0`，middle ribbons 全在 `z=0`。
+verifier 因而将问题归约到 3,026 条 framing-port edges，执行 193,664 次精确
+segment/triangle 检查，恰得 6,052 个规定 incidence、无额外交。六个
+`t73_x_m1_transition_ribbon_*candidates.json` audit 记录持久 broad/exact
+候选流的位置与 SHA。先用
+`python3 -m pip install -r requirements-topology.txt` 安装维护中的几何依赖，
+再用以下命令重建完整收据：
+
+```bash
+python3 scripts/build_t73_x_m1_transition_transition_ribbon_clearance_verification.py --write
+python3 scripts/build_t73_x_m1_transition_stub_ribbon_clearance_verification.py --write
+python3 scripts/build_t73_x_m1_transition_ribbon_global_clearance.py --write
+```
+
+verdict 为 `PASS_X_M1_TRANSITION_RIBBON_GLOBAL_CLEARANCE`。
 
 全局线性投影探测记录于
 [`audit/t73_affine_s3_projection_probe.json`](audit/t73_affine_s3_projection_probe.json)。

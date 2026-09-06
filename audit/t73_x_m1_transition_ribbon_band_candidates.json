@@ -1,0 +1,15 @@
+{
+  "broad_candidates": 0,
+  "candidate_path": "C:\\Users\\Administrator\\.cache\\t73_x_m1_transition_band_ribbon_candidates.csv.gz",
+  "candidate_sha256": "B868DCBF7AFDA56CFB07B40A3F545BE3857DFBE618D19BBA072E932A72D7D103",
+  "candidate_size": 61,
+  "comparison": "band",
+  "comparison_triangle_count": 30260,
+  "exact_bounds_rejects": 0,
+  "exact_integer_functional_interval_rejects": 0,
+  "exact_triangle_checks": 0,
+  "intersections": 0,
+  "permitted_incidences": 0,
+  "transition_triangle_count": 36312,
+  "verdict": "EXACT_CANDIDATES_EXPORTED"
+}

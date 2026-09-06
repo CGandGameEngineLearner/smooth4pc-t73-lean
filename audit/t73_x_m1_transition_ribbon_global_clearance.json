@@ -1,0 +1,23 @@
+{
+  "completion_status": "ALL_V3_TRANSITION_RIBBONS_GLOBALLY_CLEAR_AGAINST_TRANSITION_STUB_BAND_MIDDLE_SYSTEMS",
+  "global_transition_ribbon_clearance": true,
+  "intersection_count": 0,
+  "middle_paths_verification_sha256": "BD41650EA7A3ADCE43D018C284002C5EEE033E447A26464B36B39A2B8B308A72",
+  "middle_port_permitted_triangle_incidences": 6052,
+  "middle_port_segment_triangle_checks": 193664,
+  "schema": "t73_x_m1_transition_ribbon_global_clearance/v1",
+  "sha256": "0AACC1C164D213E04A2380AA2BA075A7FBDCF0C4D952D263491179ED722609AB",
+  "transition_band_candidate_audit_content_sha256": "50689941CCDB752A96070C4AE29974537967995C6961309872C856AE1E927516",
+  "transition_band_expanded_3d_aabb_candidates": 0,
+  "transition_middle_broad_candidates": 10220750,
+  "transition_middle_candidate_audit_content_sha256": "A17062C4A9D9DAAF5138008D2FAE6FB87ADC6438B794E6A7342511B48A885097",
+  "transition_middle_z_pattern_checks": 6052,
+  "transition_push_receipt_sha256": "8B54E36C1421F623331186E33742F7D480423BC15A790F194BB5CAEE3797123D",
+  "transition_stub_rectangle_checks": 2287656,
+  "transition_stub_verification_sha256": "6FDC3A569BBE317845C41EEF1FAECBA75B6F70A2A139101ACF22E3986090064A",
+  "transition_transition_constant_rectangle_checks": 5865390,
+  "transition_transition_variable_triangle_checks": 88,
+  "transition_transition_verification_sha256": "56C2AEDAF23416D94C58011B0733B4D7D7D7B509235E80678DA20A366FF052D7",
+  "transition_triangle_count": 36312,
+  "verdict": "PASS_X_M1_TRANSITION_RIBBON_GLOBAL_CLEARANCE"
+}

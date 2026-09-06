@@ -1,0 +1,15 @@
+{
+  "broad_candidates": 108138912,
+  "candidate_path": "C:\\Users\\Administrator\\.cache\\t73_x_m1_transition_transition_ribbon_candidates.csv.gz",
+  "candidate_sha256": "B168523BF548E70AF0AC109342604AF5E014536B487D48CFBAB39CD08CD27211",
+  "candidate_size": 55970385,
+  "comparison": "transition",
+  "comparison_triangle_count": 36312,
+  "exact_bounds_rejects": 23878678,
+  "exact_integer_functional_interval_rejects": 62307028,
+  "exact_triangle_checks": 21889660,
+  "intersections": 0,
+  "permitted_incidences": 63546,
+  "transition_triangle_count": 36312,
+  "verdict": "EXACT_CANDIDATES_EXPORTED"
+}

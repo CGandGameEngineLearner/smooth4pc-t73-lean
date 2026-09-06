@@ -1,0 +1,25 @@
+{
+  "broad_candidate_audit_content_sha256": "2196ACC0713A380091A29832C89F4366DEB29FCA76AB96F725F2342EDF9D5764",
+  "broad_candidate_stream_sha256": "B168523BF548E70AF0AC109342604AF5E014536B487D48CFBAB39CD08CD27211",
+  "broad_phase_builder_path": "scripts/probe_t73_x_m1_transition_ribbon_global_clearance.py",
+  "broad_phase_builder_sha256": "B3404D732B232F90830FEEF0A131F0EC4B4743A201A921BE20B279FAB00BCBDE",
+  "constant_candidate_stream_sha256": "D06107892EF44EA287936064C7868642E07F2B48E9A23785E669F26AB53D1710",
+  "exact_candidate_partition_sha256": "15A694C8A38A31F0D25CBDDC64C9E8F081DECC8E296974075569B325F955B340",
+  "full_result": {
+    "constant_rectangle_checks": 5865390,
+    "intersections": 0,
+    "variable_triangle_checks": 88,
+    "verdict": "PASS_TRANSITION_TRANSITION_RIBBON_EXACT_CLEARANCE"
+  },
+  "gmp_verifier_path": "scripts/verify_t73_x_m1_transition_transition_ribbon_clearance_gmp.py",
+  "gmp_verifier_sha256": "0B9B43E3AFF2D45BE5896BA0286A24868CA4467577A9F95B8797864E81ED47E2",
+  "partition_builder_path": "scripts/build_t73_x_m1_transition_ribbon_exact_candidate_partition.py",
+  "partition_builder_sha256": "1FD6E902C555CBD93B9AC05B6B25F5CE421926E19541AAC098E13F25F531E8A4",
+  "schema": "t73_x_m1_transition_transition_ribbon_clearance_verification/v1",
+  "sha256": "56C2AEDAF23416D94C58011B0733B4D7D7D7B509235E80678DA20A366FF052D7",
+  "status": "PASS_FULL_GMP_EXACT_VERIFICATION",
+  "transition_push_cache_sha256": "1AC6EAA1367B7915654C046D0068A81A0570E826F9B457226BC4D970578066DD",
+  "transition_push_receipt_sha256": "8B54E36C1421F623331186E33742F7D480423BC15A790F194BB5CAEE3797123D",
+  "variable_candidate_stream_sha256": "C2CC77C9DE8BF280225A2F6FAB2C0EC2BC81795A19877FD246E033154019A075",
+  "verdict": "PASS_TRANSITION_TRANSITION_RIBBON_EXACT_CLEARANCE"
+}

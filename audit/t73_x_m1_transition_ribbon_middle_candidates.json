@@ -1,0 +1,15 @@
+{
+  "broad_candidates": 16843090,
+  "candidate_path": "C:\\Users\\Administrator\\.cache\\t73_x_m1_transition_middle_ribbon_candidates.csv.gz",
+  "candidate_sha256": "D9955FB6BF058269C866AF9C0627BC262CA686D29867F27D3419FB8A9BA53AAC",
+  "candidate_size": 27516134,
+  "comparison": "middle",
+  "comparison_triangle_count": 96832,
+  "exact_bounds_rejects": 0,
+  "exact_integer_functional_interval_rejects": 6613262,
+  "exact_triangle_checks": 10220750,
+  "intersections": 0,
+  "permitted_incidences": 9078,
+  "transition_triangle_count": 36312,
+  "verdict": "EXACT_CANDIDATES_EXPORTED"
+}

@@ -1,0 +1,18 @@
+{
+  "adjacent_rectangle_triangle_incidences_removed": 7567,
+  "constant_candidate_path": "C:\\Users\\Administrator\\.cache\\t73_x_m1_transition_constant_rectangle_candidates.csv.gz",
+  "constant_candidate_sha256": "D06107892EF44EA287936064C7868642E07F2B48E9A23785E669F26AB53D1710",
+  "constant_candidate_size": 13223343,
+  "constant_constant_triangle_pair_count": 21882005,
+  "constant_rectangle_pair_count": 5865390,
+  "schema": "t73_x_m1_transition_ribbon_exact_candidate_partition/v1",
+  "sha256": "15A694C8A38A31F0D25CBDDC64C9E8F081DECC8E296974075569B325F955B340",
+  "source_candidate_audit_sha256": "B168523BF548E70AF0AC109342604AF5E014536B487D48CFBAB39CD08CD27211",
+  "source_triangle_pair_count": 21889660,
+  "status": "CANDIDATES_ONLY_NO_CLEARANCE_CLAIM",
+  "variable_candidate_path": "C:\\Users\\Administrator\\.cache\\t73_x_m1_transition_variable_triangle_candidates.csv.gz",
+  "variable_candidate_sha256": "C2CC77C9DE8BF280225A2F6FAB2C0EC2BC81795A19877FD246E033154019A075",
+  "variable_candidate_size": 376,
+  "variable_triangle_pair_count": 88,
+  "variable_variable_triangle_pair_count": 0
+}

@@ -4562,7 +4562,50 @@ Topology-source checks completed 2026-09-04:
   Verdict: `PASS_X_M1_NEGATIVE_TRANSITION_PUSH_PATHS_V3_FULL_LOCAL`.
 - Boundary: this is a verified local framed extension and does not claim the
   36,312 transition ribbon triangles are globally clear of one another or of
-  stub, band and middle ribbons. That exact global clearance is next.
+  stub, band and middle ribbons. F-599AF closes that exact global clearance.
+
+### F-599AF — All v3 transition framing ribbons are globally clear
+
+- Severity: **Positive framing clearance / complete transition subsystem**
+- Status: **RESOLVED; GMP FULL-REPLAY RECEIPTS SAVED**
+- Evidence: `audit/t73_x_m1_transition_ribbon_global_clearance.json`, the
+  transition/transition and transition/stub GMP verification receipts, four
+  broad candidate audits, two exact candidate partitions, builders,
+  verifiers, tests, and their persistent caches. `requirements-topology.txt`
+  now declares Rtree 1.4+ and gmpy2 2.2+; NumPy 2 is permitted.
+- Complete broad phase: Rtree 1.4.1 indexes outward-rounded exact 3D rational
+  AABBs. Twenty-one fixed integer functionals have extrema computed first in
+  exact arithmetic and only then rounded outward. Thus their interval rejects
+  are rigorous and do not rely on the unusable binary64 image of the
+  approximately `10^-390` common displacement.
+- Transition/transition: 108,138,912 raw AABB pairs reduce to 21,889,660
+  triangle candidates. Removing all combinatorial adjacent-rectangle
+  incidences and deduplicating the two-triangle subdivision leaves 5,865,390
+  constant-normal rectangle pairs and 88 variable-triangle pairs. GMP solves
+  every common-displacement quotient/lift equation and every general 3D
+  triangle equation exactly. Intersections are zero. Verdict:
+  `PASS_TRANSITION_TRANSITION_RIBBON_EXACT_CLEARANCE`.
+- Transition/stub: 18,313,352 raw pairs reduce to 6,869,015 triangle
+  candidates and then 2,287,656 nonincident common-displacement rectangles.
+  All exact GMP quotient/lift equations are disjoint. Verdict:
+  `PASS_TRANSITION_STUB_RIBBON_EXACT_CLEARANCE`.
+- Transition/band: the complete 36,312-by-30,260 comparison has zero
+  outward-rounded 3D AABB candidates, so no exact intersection candidate
+  exists.
+- Transition/middle: all 10,220,750 surviving broad candidates involve the
+  unique terminal normal-homotopy triangle of a transition. Exact signs show
+  all its non-port vertices have `z<0`, whereas all 96,832 middle triangles
+  have `z=0`; its intersection with that plane is exactly the declared
+  core-to-push port edge (or its endpoint). The verifier checks each of 3,026
+  port edges against all 64 triangles of its middle strip: 193,664 exact
+  segment/triangle tests give precisely 6,052 expected endpoint incidences.
+  Other strips are excluded by the independently replayed 1,512 strict radial
+  interval separations in F-599I.
+- Result/boundary: all 36,312 transition ribbon triangles are globally clear
+  against transition, stub, band and middle systems. Verdict:
+  `PASS_X_M1_TRANSITION_RIBBON_GLOBAL_CLEARANCE`. The remaining framed-x
+  aggregate must still explicitly bind stub/band, stub/middle and band/middle
+  cross-ribbon clearance before claiming the complete 1,513-cycle framing.
 
 ### F-599C — Monolithic linear projections of the affine framed link are computationally unsuitable
 
