@@ -1,0 +1,100 @@
+{
+  "candidate_count_by_final_rectangle_type": {
+    "retained_source_germ": 4,
+    "start_skew_lift": 4
+  },
+  "classification": "PARTIAL_GLOBAL_REVERSE_SEQUENTIAL_CLEARANCE",
+  "exact_triangle_pair_check_count": 16,
+  "final_ribbon_rectangle_count": 18156,
+  "nonincident_rectangle_candidate_count": 4,
+  "nonpermitted_intersection_count": 0,
+  "nonpermitted_intersections": [],
+  "outer_collars_v7_receipt_sha256": "A980996F434705BA700FEE1B9D42701D33C1D74A47ACAF7EBB1309C031D7288E",
+  "outward_float_aabb_candidate_count": 8,
+  "permitted_local_star_count": 4,
+  "permitted_local_star_relation_counts": {
+    "COPLANAR_OPPOSITE_SIDES": 4
+  },
+  "permitted_local_stars": [
+    {
+      "final_interface": 3020,
+      "neighbor_id": "r_xy:y:edge:4",
+      "relation": "COPLANAR_OPPOSITE_SIDES",
+      "shared_edge": [
+        [
+          "3",
+          "2",
+          "0"
+        ],
+        [
+          "3",
+          "2",
+          "1/1000"
+        ]
+      ],
+      "source_interface": 3019
+    },
+    {
+      "final_interface": 3021,
+      "neighbor_id": "r_xy:y:edge:0",
+      "relation": "COPLANAR_OPPOSITE_SIDES",
+      "shared_edge": [
+        [
+          "1",
+          "2",
+          "0"
+        ],
+        [
+          "1",
+          "2",
+          "1/1000"
+        ]
+      ],
+      "source_interface": 3018
+    },
+    {
+      "final_interface": 3024,
+      "neighbor_id": "r_zx:z:edge:4",
+      "relation": "COPLANAR_OPPOSITE_SIDES",
+      "shared_edge": [
+        [
+          "3",
+          "0",
+          "2"
+        ],
+        [
+          "3",
+          "3/1000",
+          "2"
+        ]
+      ],
+      "source_interface": 3023
+    },
+    {
+      "final_interface": 3025,
+      "neighbor_id": "r_zx:z:edge:0",
+      "relation": "COPLANAR_OPPOSITE_SIDES",
+      "shared_edge": [
+        [
+          "1",
+          "0",
+          "2"
+        ],
+        [
+          "1",
+          "3/1000",
+          "2"
+        ]
+      ],
+      "source_interface": 3022
+    }
+  ],
+  "reverse_dynamic_status": "OPEN",
+  "reverse_mixed_static_ribbon_clearance": true,
+  "reverse_static_one_skeleton_clearance_sha256": "F13981E8004B0FC19C85CFB8D9F5EA4138ABFA25B7D478AC3050E3E804B491A7",
+  "schedule_order_rule": "final_interface > source_interface",
+  "schema": "t73_x_m1_outer_collar_v7_reverse_static_ribbon_clearance/v1",
+  "sha256": "3DA51A54F465E44BD8BD4B12C637CB02D958CD398B2A5C6FB1B700F3A475CDA3",
+  "source_ribbon_rectangle_count": 3026,
+  "verdict": "PASS_X_M1_OUTER_COLLAR_V7_REVERSE_STATIC_RIBBON_CLEARANCE"
+}

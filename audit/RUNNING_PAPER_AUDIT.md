@@ -5507,6 +5507,32 @@ Topology-source checks completed 2026-09-04:
   ribbons must be checked independently before the reverse stationary mixture
   is complete. Full-time moving clearance remains open.
 
+### F-599BR — Every reverse-ordered stationary framed mixture is embedded
+
+- Severity: **Reverse sequential global clearance / complete stationary union**
+- Status: **REVERSE STATIC ONE-SKELETON AND RIBBON PASS; DYNAMIC OPEN**
+- Evidence:
+  `audit/t73_x_m1_outer_collar_v7_reverse_static_one_skeleton_clearance.json`,
+  `audit/t73_x_m1_outer_collar_v7_reverse_static_ribbon_clearance.json`, their
+  GMP builders, independent Fraction/barycentric verifiers and regression
+  tests, bound to F-599BQ.
+- One-skeleton: final-push/source-push has eight candidates, four exact
+  separations and four permitted opposite germs. Final-core/source-push has
+  four candidates, all separated. Final-push/source-core has none. Across all
+  three directed matrices, 12 exact segment equations give eight separations,
+  four permitted incidences and zero forbidden intersections. Verdict:
+  `PASS_X_M1_OUTER_COLLAR_V7_REVERSE_STATIC_ONE_SKELETON_CLEARANCE_INDEPENDENT`.
+- Ribbons: reverse ordering leaves eight rectangle candidates. Four shared
+  dual framing edges independently have relation `COPLANAR_OPPOSITE_SIDES`.
+  The other four rectangles receive all 16 triangle-pair checks under both the
+  GMP and lifted-R4 barycentric implementations; intersections are zero.
+  Verdict:
+  `PASS_X_M1_OUTER_COLLAR_V7_REVERSE_STATIC_RIBBON_CLEARANCE_INDEPENDENT`.
+- Consequence/boundary: every stationary source/final framed mixture occurring
+  in F-599BP is embedded. The remaining question is the full-time moving
+  core/push/ribbon volume against those mixtures and the retained/replacement
+  framed union; midpoint core success alone is not promoted.
+
 ### F-599C — Monolithic linear projections of the affine framed link are computationally unsuitable
 
 - Severity: **complete PD / projection selection**

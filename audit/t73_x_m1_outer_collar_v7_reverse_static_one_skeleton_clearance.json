@@ -1,0 +1,104 @@
+{
+  "classification": "PARTIAL_GLOBAL_REVERSE_SEQUENTIAL_CLEARANCE",
+  "outer_collars_v7_receipt_sha256": "A980996F434705BA700FEE1B9D42701D33C1D74A47ACAF7EBB1309C031D7288E",
+  "remaining_directed_matrices": [
+    {
+      "candidate_count_by_final_segment_type": {
+        "retained_source_germ": 4,
+        "start_skew_lift": 4
+      },
+      "exact_segment_check_count": 8,
+      "exact_separated_pair_count": 4,
+      "matrix": "push_push",
+      "nonpermitted_intersection_count": 0,
+      "outward_float_aabb_candidate_count": 8,
+      "permitted_opposite_germ_incidence_count": 4,
+      "permitted_opposite_germ_incidences": [
+        {
+          "final_interface": 3020,
+          "neighbor_id": "r_xy:y:edge:4",
+          "relation": "COLLINEAR_OPPOSITE_GERMS",
+          "shared_endpoint": [
+            "3",
+            "2",
+            "1/1000"
+          ],
+          "source_interface": 3019
+        },
+        {
+          "final_interface": 3021,
+          "neighbor_id": "r_xy:y:edge:0",
+          "relation": "COLLINEAR_OPPOSITE_GERMS",
+          "shared_endpoint": [
+            "1",
+            "2",
+            "1/1000"
+          ],
+          "source_interface": 3018
+        },
+        {
+          "final_interface": 3024,
+          "neighbor_id": "r_zx:z:edge:4",
+          "relation": "COLLINEAR_OPPOSITE_GERMS",
+          "shared_endpoint": [
+            "3",
+            "3/1000",
+            "2"
+          ],
+          "source_interface": 3023
+        },
+        {
+          "final_interface": 3025,
+          "neighbor_id": "r_zx:z:edge:0",
+          "relation": "COLLINEAR_OPPOSITE_GERMS",
+          "shared_endpoint": [
+            "1",
+            "3/1000",
+            "2"
+          ],
+          "source_interface": 3022
+        }
+      ],
+      "schedule_order_rule": "final_interface > source_interface",
+      "status": "PASS"
+    },
+    {
+      "candidate_count_by_final_segment_type": {
+        "start_skew_lift": 4
+      },
+      "exact_segment_check_count": 4,
+      "exact_separated_pair_count": 4,
+      "matrix": "core_push",
+      "nonpermitted_intersection_count": 0,
+      "outward_float_aabb_candidate_count": 4,
+      "permitted_opposite_germ_incidence_count": 0,
+      "permitted_opposite_germ_incidences": [],
+      "schedule_order_rule": "final_interface > source_interface",
+      "status": "PASS"
+    },
+    {
+      "candidate_count_by_final_segment_type": {},
+      "exact_segment_check_count": 0,
+      "exact_separated_pair_count": 0,
+      "matrix": "push_core",
+      "nonpermitted_intersection_count": 0,
+      "outward_float_aabb_candidate_count": 0,
+      "permitted_opposite_germ_incidence_count": 0,
+      "permitted_opposite_germ_incidences": [],
+      "schedule_order_rule": "final_interface > source_interface",
+      "status": "PASS"
+    }
+  ],
+  "remaining_exact_segment_check_count": 12,
+  "remaining_exact_separated_pair_count": 8,
+  "remaining_nonpermitted_intersection_count": 0,
+  "remaining_outward_float_aabb_candidate_count": 12,
+  "remaining_permitted_opposite_germ_incidence_count": 4,
+  "reverse_dynamic_status": "OPEN",
+  "reverse_mixed_static_one_skeleton_clearance": true,
+  "reverse_static_core_clearance_sha256": "72A4102EB1B80C49FAABEB48157F30B975394301753F632601D1D0BA78D92379",
+  "ribbon_status": "OPEN",
+  "schema": "t73_x_m1_outer_collar_v7_reverse_static_one_skeleton_clearance/v1",
+  "sha256": "F13981E8004B0FC19C85CFB8D9F5EA4138ABFA25B7D478AC3050E3E804B491A7",
+  "verdict": "PASS_X_M1_OUTER_COLLAR_V7_REVERSE_STATIC_ONE_SKELETON_CLEARANCE"
+}

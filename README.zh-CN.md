@@ -767,6 +767,24 @@ python3 scripts/verify_t73_x_m1_outer_collar_v7_reverse_static_core_clearance.py
 python3 -m unittest tests.test_t73_x_m1_outer_collar_v7_reverse_static_core_clearance
 ```
 
+其余 reverse one-skeleton 与 ribbon 门禁分别为
+[`audit/t73_x_m1_outer_collar_v7_reverse_static_one_skeleton_clearance.json`](audit/t73_x_m1_outer_collar_v7_reverse_static_one_skeleton_clearance.json)
+和
+[`audit/t73_x_m1_outer_collar_v7_reverse_static_ribbon_clearance.json`](audit/t73_x_m1_outer_collar_v7_reverse_static_ribbon_clearance.json)。
+三个 directed one-skeleton 矩阵只需 12 次精确线段检查：8 个分离、4 个允许的
+反向 push germs、禁止交点为 0。ribbon 矩阵有 8 个候选：4 个允许的
+`COPLANAR_OPPOSITE_SIDES` 星形和 4 个非邻接 pairs，经 16 次精确 triangle
+检查全部分离。因此每个逆序静态 framed mixture 均已嵌入；全时域 moving
+clearance 仍为 OPEN。
+
+```bash
+python3 scripts/build_t73_x_m1_outer_collar_v7_reverse_static_one_skeleton_clearance.py --write --check
+python3 scripts/verify_t73_x_m1_outer_collar_v7_reverse_static_one_skeleton_clearance.py
+python3 scripts/build_t73_x_m1_outer_collar_v7_reverse_static_ribbon_clearance.py --write --check
+python3 scripts/verify_t73_x_m1_outer_collar_v7_reverse_static_ribbon_clearance.py
+python3 -m unittest tests.test_t73_x_m1_outer_collar_v7_reverse_static_one_skeleton_clearance tests.test_t73_x_m1_outer_collar_v7_reverse_static_ribbon_clearance
+```
+
 第一个跨系统门禁找到并修复了真实碰撞，没有提前升级该 assembly。流式 Rust
 1.98.1 checker 位于
 [`rust/t73_exact_cross_clearance`](rust/t73_exact_cross_clearance)，使用

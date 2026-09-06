@@ -682,6 +682,25 @@ python3 scripts/build_t73_x_m1_outer_collar_v7_reverse_static_core_clearance.py 
 python3 scripts/verify_t73_x_m1_outer_collar_v7_reverse_static_core_clearance.py
 python3 -m unittest tests.test_t73_x_m1_outer_collar_v7_reverse_static_core_clearance
 ```
+
+The remaining reverse one-skeleton and ribbon gates are
+[`audit/t73_x_m1_outer_collar_v7_reverse_static_one_skeleton_clearance.json`](audit/t73_x_m1_outer_collar_v7_reverse_static_one_skeleton_clearance.json)
+and
+[`audit/t73_x_m1_outer_collar_v7_reverse_static_ribbon_clearance.json`](audit/t73_x_m1_outer_collar_v7_reverse_static_ribbon_clearance.json).
+The three directed one-skeleton matrices require only 12 exact segment checks:
+eight separations, four permitted opposite push germs and zero forbidden
+intersections. The ribbon matrix has eight candidates: four permitted
+`COPLANAR_OPPOSITE_SIDES` stars and four nonincident pairs, cleared by 16
+exact triangle checks. Thus every reverse-order stationary framed mixture is
+embedded; full-time moving clearance remains open.
+
+```bash
+python3 scripts/build_t73_x_m1_outer_collar_v7_reverse_static_one_skeleton_clearance.py --write --check
+python3 scripts/verify_t73_x_m1_outer_collar_v7_reverse_static_one_skeleton_clearance.py
+python3 scripts/build_t73_x_m1_outer_collar_v7_reverse_static_ribbon_clearance.py --write --check
+python3 scripts/verify_t73_x_m1_outer_collar_v7_reverse_static_ribbon_clearance.py
+python3 -m unittest tests.test_t73_x_m1_outer_collar_v7_reverse_static_one_skeleton_clearance tests.test_t73_x_m1_outer_collar_v7_reverse_static_ribbon_clearance
+```
 The graph map extends over all five framed regular neighborhoods in
 [`geometry/t73_hybrid_to_railroad_tubular_map.json`](geometry/t73_hybrid_to_railroad_tubular_map.json).
 Its five solid-torus templates contain 5385 tetrahedra and 10770 boundary
