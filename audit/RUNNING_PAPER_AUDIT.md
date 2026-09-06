@@ -4919,6 +4919,30 @@ Topology-source checks completed 2026-09-04:
   the end-exterior height by an exact half-layer, then rerun all core, push,
   mutual and ribbon checks from the new coordinates.
 
+### F-599AS — V4 staggers every end-exterior waypoint by an exact half-layer
+
+- Severity: **Constructive local repair / next global candidate**
+- Status: **LOCAL FULL REPLAY PASS; ALL V4 GLOBAL CHECKS OPEN**
+- Evidence: `audit/t73_x_m1_framed_outer_interface_collars_v4_receipt.json`,
+  `audit/t73_x_m1_framed_outer_interface_collars_v4_verification.json`, their
+  builder, independent verifier, regression test and named persistent cache.
+- Transform: from every F-599AL v3 record, change only end-exterior vertex 4.
+  Its height becomes `H+1/2`; x stays fixed; y is recomputed uniquely so its
+  F-value equals the target-side F. The source germ, start lift, first ray,
+  base height, exterior x slot, end high point, target endpoints and normal
+  field remain unchanged.
+- Data: the 9,339,105-byte cache contains 3,026 records, 18,156 core segments,
+  18,156 push segments and 36,312 ribbon triangles. All 3,026 transformed
+  vertices and 18,156 all-parameter normal transversality equations replay.
+- Targeted repair: the independent verifier reconstructs the exact F-599AR
+  pair—core last exterior ray versus translated push height bridge of
+  interface 3022—and proves the two new rational segments are disjoint.
+  Verdict: `PASS_X_M1_FRAMED_OUTER_INTERFACE_COLLARS_V4_FULL_LOCAL_CANDIDATE`.
+- Boundary: V4 remains `CANDIDATE_UNVERIFIED`. Removing the known collision is
+  not a global proof. Core, push, mutual and ribbon candidate matrices and
+  exact clearance must all be regenerated from V4 before building its
+  isotopy trace or tetrahedral ambient support.
+
 ### F-599C — Monolithic linear projections of the affine framed link are computationally unsuitable
 
 - Severity: **complete PD / projection selection**

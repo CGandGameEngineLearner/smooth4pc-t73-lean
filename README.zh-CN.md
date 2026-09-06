@@ -826,6 +826,15 @@ mutual clearance PASS。
 有效，但二者并集不嵌入。V4 必须偏移 end-exterior waypoint 的高度，使该
 r_zx y-normal 拐角成为三维局部星。
 
+V4 现对每条 collar 应用该精确修复：把 end-exterior 顶点从 `H` 提高到
+`H+1/2`，并重新计算 y 以保持 target-side F。9,339,105-byte cache
+`C:\Users\Administrator\.cache\t73_x_m1_framed_outer_interface_collars_v4.jsonl.gz`
+包含 3,026 条 collars、core/push 各 18,156 个 segments 和 36,312 个 ribbon
+triangles。独立重放检查全部 3,026 个改变的顶点、18,156 个 normal
+transversality 方程，并直接确认 interface 3022 的 v3 原碰撞已消失。见
+[`audit/t73_x_m1_framed_outer_interface_collars_v4_verification.json`](audit/t73_x_m1_framed_outer_interface_collars_v4_verification.json)。
+在重新构造全局矩阵并完成 clearance 前，V4 仍为 `CANDIDATE_UNVERIFIED`。
+
 全局线性投影探测记录于
 [`audit/t73_affine_s3_projection_probe.json`](audit/t73_affine_s3_projection_probe.json)。
 xz/yz 会压扁 dotted edges；三个 regular tilts 至少产生258,453,247个 broad

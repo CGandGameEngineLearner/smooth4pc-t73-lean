@@ -383,6 +383,17 @@ intersect at height 13022, with both exact segment parameters strictly
 interior. The separate core and push PASS results remain valid, but their
 mutual union is not embedded. V4 must offset the end-exterior waypoint height
 so this r_zx y-normal corner becomes a three-dimensional local star.
+
+V4 now applies that exact repair to every collar: the end-exterior vertex is
+raised from `H` to `H+1/2`, with y recomputed to preserve the target-side F.
+The 9,339,105-byte cache
+`C:\Users\Administrator\.cache\t73_x_m1_framed_outer_interface_collars_v4.jsonl.gz`
+contains 3,026 collars, 18,156 core/push segments each and 36,312 ribbon
+triangles. Independent replay checks all 3,026 changed vertices, all 18,156
+normal transversality equations, and directly confirms the interface-3022 v3
+collision is gone. See
+[`audit/t73_x_m1_framed_outer_interface_collars_v4_verification.json`](audit/t73_x_m1_framed_outer_interface_collars_v4_verification.json).
+V4 remains `CANDIDATE_UNVERIFIED` pending fresh global matrices and clearance.
 The graph map extends over all five framed regular neighborhoods in
 [`geometry/t73_hybrid_to_railroad_tubular_map.json`](geometry/t73_hybrid_to_railroad_tubular_map.json).
 Its five solid-torus templates contain 5385 tetrahedra and 10770 boundary

@@ -1,0 +1,25 @@
+{
+  "builder_path": "scripts/build_t73_x_m1_framed_outer_interface_collars_v4.py",
+  "builder_sha256": "F4C12F6427B557B5C23D44E1DC1889F0DD8F6D051B14E95D931511589B981AF4",
+  "cache_sha256": "6E2F80CE93EB324194CF9C3430B235C98D11C7B4E8AAF5A1AEF9DD49C8971B73",
+  "construction_receipt_sha256": "53E03F1E43275970D5601184D9A40ADD2D4BE4352CFA0D259FA59C24ED2C9117",
+  "full_result": {
+    "ambient_support": "OPEN",
+    "cache_sha_checked": true,
+    "changed_end_exterior_vertices": 3026,
+    "classification": "CANDIDATE_UNVERIFIED",
+    "collars_reconstructed": 3026,
+    "core_push_segments_each": 18156,
+    "end_exterior_height_offset": "1/2",
+    "former_v3_collision_exact_rechecks": 1,
+    "global_clearance": "OPEN",
+    "normal_transversality_checks": 18156,
+    "ribbon_triangles_reconstructed": 36312,
+    "verdict": "PASS_X_M1_FRAMED_OUTER_INTERFACE_COLLARS_V4_FULL_LOCAL_CANDIDATE"
+  },
+  "schema": "t73_x_m1_framed_outer_interface_collars_v4_verification/v1",
+  "sha256": "7AAF8EB6BAF4C9E76F7E43B20EC163CE39F554813EFB8F796BCBF9B4A98271FE",
+  "verdict": "PASS_X_M1_FRAMED_OUTER_INTERFACE_COLLARS_V4_FULL_LOCAL_CANDIDATE",
+  "verifier_path": "scripts/verify_t73_x_m1_framed_outer_interface_collars_v4.py",
+  "verifier_sha256": "A39D56C1C21E283D13EF93A10DAA4E96D2E86B70D243FBC1C3033290E54CC5C1"
+}
