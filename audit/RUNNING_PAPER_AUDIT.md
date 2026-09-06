@@ -5779,6 +5779,29 @@ Topology-source checks completed 2026-09-04:
   prisms, then rerun the exact nonincident tetrahedron predicate from the first
   pair. Static ribbon-volume clearance follows only after self-clearance.
 
+### F-599CC — Exact R4 simplex feasibility and a four-transition repair plan are explicit
+
+- Severity: **Repair infrastructure / exact convex predicate**
+- Status: **PREDICATE VERIFIED; V2 REPAIR INPUTS FOUND, V2 NOT YET BUILT**
+- Evidence: `scripts/t73_exact_simplex.py` and its regression test, exercised
+  against F-599CB's saved witness and a disjoint time-translated synthetic pair.
+- Predicate: exact RREF parameterizes the six barycentric edge variables under
+  four coordinate equations. The remaining dimension is two for affine rank 4
+  and three for rank 3. Eight nonnegativity/sum constraints define a bounded
+  rational polytope; enumerating `C(8,2)` or `C(8,3)` active sets is therefore
+  a complete exact feasibility test. No binary floating-point decision enters.
+- Complete v1 scan: among 5,628 nonincident pairs, 4,939 have affine rank 4
+  and 689 rank 3. The first intersection remains F-599CB.
+- Repair search: replacing a failed transition by two subtransitions through
+  the linear midpoint with its changed core/push vertex perturbed by
+  `(-1/1000000,-1/1000000,-1/1000000)` repairs transitions 7, 8, 11 and 12.
+  All other original transition volumes pass the same exact predicate. The
+  exploratory search used 7,682 exact pair checks.
+- Boundary: these four midpoint records are inputs for a 25-volume v2 complex,
+  not yet an artifact. V2 must rebuild state/trace boundaries, rerun 6,700
+  nonincident tetrahedron checks, and recheck moving core/push against the
+  static one-skeleton before any PASS is issued.
+
 ### F-599C — Monolithic linear projections of the affine framed link are computationally unsuitable
 
 - Severity: **complete PD / projection selection**

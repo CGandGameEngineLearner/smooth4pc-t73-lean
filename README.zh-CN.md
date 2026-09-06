@@ -923,6 +923,19 @@ python3 scripts/verify_t73_x_m1_outer_collar_v7_ribbon_volume_obstruction_3017.p
 python3 -m unittest tests.test_t73_x_m1_outer_collar_v7_ribbon_volume_obstruction_3017
 ```
 
+可复用精确 predicate 位于
+[`scripts/t73_exact_simplex.py`](scripts/t73_exact_simplex.py)。它把两个 R4
+tetrahedra 化为精确 affine parameterization，并枚举所得二维或三维重心可行
+多面体的顶点。测试既复现 transition-7 witness，也拒绝沿时间方向平移后的
+disjoint pair。repair 搜索确定原 transitions 7、8、11、12 需要细分；四者均可
+在 changed vertex 的线性中点加入
+`(-1/1000000,-1/1000000,-1/1000000)` 扰动，使两个替代 subvolumes 通过。
+这些只是 v2 的构造输入，尚未冒充已提交 v2 volume。
+
+```bash
+python3 -m unittest tests.test_t73_exact_simplex
+```
+
 第一个跨系统门禁找到并修复了真实碰撞，没有提前升级该 assembly。流式 Rust
 1.98.1 checker 位于
 [`rust/t73_exact_cross_clearance`](rust/t73_exact_cross_clearance)，使用

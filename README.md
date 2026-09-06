@@ -848,6 +848,20 @@ python3 scripts/build_t73_x_m1_outer_collar_v7_ribbon_volume_obstruction_3017.py
 python3 scripts/verify_t73_x_m1_outer_collar_v7_ribbon_volume_obstruction_3017.py
 python3 -m unittest tests.test_t73_x_m1_outer_collar_v7_ribbon_volume_obstruction_3017
 ```
+
+The reusable exact predicate is
+[`scripts/t73_exact_simplex.py`](scripts/t73_exact_simplex.py). It reduces two
+R4 tetrahedra to an exact affine parameterization and enumerates vertices of
+the resulting two- or three-dimensional barycentric feasibility polytope. Its
+tests reproduce the saved transition-7 witness and reject a time-translated
+disjoint pair. A repair search identifies original transitions 7, 8, 11 and 12
+as requiring subdivision; in each case perturbing the changed vertex at its
+linear midpoint by `(-1/1000000,-1/1000000,-1/1000000)` clears both replacement
+subvolumes. These are repair inputs, not yet a committed v2 volume.
+
+```bash
+python3 -m unittest tests.test_t73_exact_simplex
+```
 The graph map extends over all five framed regular neighborhoods in
 [`geometry/t73_hybrid_to_railroad_tubular_map.json`](geometry/t73_hybrid_to_railroad_tubular_map.json).
 Its five solid-torus templates contain 5385 tetrahedra and 10770 boundary
