@@ -4792,6 +4792,32 @@ Topology-source checks completed 2026-09-04:
   link. Its move trace and fixed-boundary tetrahedral ambient extension also
   remain to be built and checked.
 
+### F-599AM — The complete v3 core candidate matrix has an exact reduction plan
+
+- Severity: **Verification decomposition / fail-closed global workload**
+- Status: **ALL BROAD TYPES ENUMERATED; CLEARANCE STILL OPEN**
+- Evidence: `audit/t73_x_m1_outer_collar_v3_core_candidate_matrix.json`, its
+  builder and regression test, bound to the F-599AL cache/full replay.
+- Inventory: the 18,156 core segments split uniformly into 3,026 instances of
+  retained source germ, start skew lift, first exterior ray, height bridge,
+  last exterior ray and end skew lift. An outward-rounded exact-coordinate 3D
+  Rtree enumerates 14,254,960 AABB candidate pairs across exactly eleven
+  nonempty semantic type pairs; the full matrix is stored in the artifact.
+- Exact reductions: start/end skew lifts and the corresponding exterior rays
+  have constant `F=y-1000033*x+2*z`; all 6,052 endpoint F values are already
+  proved distinct. First/last rays and height bridges have constant unique
+  height. These hashes cover the multi-million candidate classes without
+  converting the approximately `10^-390` framing widths to binary64.
+- Direct remainder: retained-germ/germ and germ/start-lift contain only 4 and
+  9,074 AABB candidates. First-ray/last-ray contains exactly 3,026 same-height
+  candidates. These are the bounded families requiring direct GMP segment
+  equations after declared incidence classification.
+- Boundary: verdict
+  `PASS_X_M1_OUTER_COLLAR_V3_CORE_CANDIDATE_MATRIX_ONLY` certifies inventory
+  and reduction completeness, not disjointness. The next verifier must apply
+  every declared hash, solve all survivors, then repeat the decomposition for
+  push and ribbon geometry before any v3 upgrade.
+
 ### F-599C — Monolithic linear projections of the affine framed link are computationally unsuitable
 
 - Severity: **complete PD / projection selection**

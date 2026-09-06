@@ -1,0 +1,67 @@
+{
+  "clearance_status": "OPEN_APPLY_EXACT_HASH_REDUCTIONS_AND_GMP_SURVIVORS",
+  "constant_functional_segment_types": [
+    "start_skew_lift",
+    "first_exterior_ray",
+    "last_exterior_ray",
+    "end_skew_lift"
+  ],
+  "constant_height_segment_types": [
+    "first_exterior_ray",
+    "height_bridge",
+    "last_exterior_ray"
+  ],
+  "expanded_3d_aabb_candidate_count": 14254960,
+  "expanded_3d_aabb_candidate_matrix": {
+    "end_skew_lift/end_skew_lift": 232,
+    "first_exterior_ray/end_skew_lift": 4567750,
+    "first_exterior_ray/height_bridge": 3026,
+    "first_exterior_ray/last_exterior_ray": 3026,
+    "height_bridge/last_exterior_ray": 3026,
+    "last_exterior_ray/end_skew_lift": 3934557,
+    "retained_source_germ/retained_source_germ": 4,
+    "retained_source_germ/start_skew_lift": 9074,
+    "start_skew_lift/first_exterior_ray": 3440548,
+    "start_skew_lift/last_exterior_ray": 12097,
+    "start_skew_lift/start_skew_lift": 2281620
+  },
+  "heavy_pair_reduction_plan": {
+    "direct_gmp": [
+      "retained_source_germ/retained_source_germ",
+      "retained_source_germ/start_skew_lift"
+    ],
+    "functional_hash": [
+      "start_skew_lift/start_skew_lift",
+      "start_skew_lift/first_exterior_ray",
+      "start_skew_lift/last_exterior_ray",
+      "first_exterior_ray/end_skew_lift",
+      "last_exterior_ray/end_skew_lift",
+      "end_skew_lift/end_skew_lift"
+    ],
+    "height_hash": [
+      "first_exterior_ray/height_bridge",
+      "first_exterior_ray/last_exterior_ray",
+      "height_bridge/last_exterior_ray"
+    ]
+  },
+  "outer_collars_v3_local_verification_sha256": "C47D7EBC5CD8C06A2D427F4B53B0F0C71A186D3B2C0489B314A0144776BC1D58",
+  "outer_collars_v3_receipt_sha256": "A002628084D4099B3D53CD79B7531E66CA5BDCEB4DE09D4AA8FD6462AC366A3B",
+  "routing_functional": [
+    "-1000033",
+    "1",
+    "2"
+  ],
+  "schema": "t73_x_m1_outer_collar_v3_core_candidate_matrix/v1",
+  "segment_count": 18156,
+  "segment_count_per_type": 3026,
+  "segment_type_names": [
+    "retained_source_germ",
+    "start_skew_lift",
+    "first_exterior_ray",
+    "height_bridge",
+    "last_exterior_ray",
+    "end_skew_lift"
+  ],
+  "sha256": "5A7A0BE1DABEBB2824620827A3BCAF8E635288C1EFF70F5FAC89C07572E02C3D",
+  "verdict": "PASS_X_M1_OUTER_COLLAR_V3_CORE_CANDIDATE_MATRIX_ONLY"
+}

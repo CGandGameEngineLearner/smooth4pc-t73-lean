@@ -785,6 +785,15 @@ python3 scripts/build_t73_x_m1_framed_outer_interface_collars_v3.py
 python3 scripts/build_t73_x_m1_framed_outer_interface_collars_v3_verification.py --write
 ```
 
+v3 第一层全局审计是严格 fail-closed 的语义候选矩阵
+[`audit/t73_x_m1_outer_collar_v3_core_candidate_matrix.json`](audit/t73_x_m1_outer_collar_v3_core_candidate_matrix.json)。
+向外舍入的三维 R-tree 找到 14,254,960 个 core AABB pairs，并记录六种路由
+segments 中全部 11 个非零 type pairs。高负载族现已分配精确降维规则：skew
+lifts/rays 使用 constant-F 哈希，exterior pieces 使用唯一高度哈希，只有 source
+germs 与 3,026 个同高度 first/last-ray pairs 进入直接 GMP。该 artifact 是完整
+工作量证明，不是 clearance PASS。重建命令：
+`python3 scripts/build_t73_x_m1_outer_collar_v3_core_candidate_matrix.py --write`。
+
 全局线性投影探测记录于
 [`audit/t73_affine_s3_projection_probe.json`](audit/t73_affine_s3_projection_probe.json)。
 xz/yz 会压扁 dotted edges；三个 regular tilts 至少产生258,453,247个 broad

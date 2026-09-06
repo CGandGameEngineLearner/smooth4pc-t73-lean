@@ -336,6 +336,16 @@ support checks pass. Rebuild with:
 python3 scripts/build_t73_x_m1_framed_outer_interface_collars_v3.py
 python3 scripts/build_t73_x_m1_framed_outer_interface_collars_v3_verification.py --write
 ```
+
+The first v3 global audit is the fail-closed semantic candidate matrix
+[`audit/t73_x_m1_outer_collar_v3_core_candidate_matrix.json`](audit/t73_x_m1_outer_collar_v3_core_candidate_matrix.json).
+Its outward-rounded 3D R-tree finds 14,254,960 core AABB pairs and records all
+eleven nonzero type pairs among the six route segments. The heavy families are
+now assigned exact reductions: constant-F hashes for skew lifts/rays, unique
+height hashes for exterior pieces, and direct GMP only for source germs and
+the 3,026 same-height first/last-ray pairs. This artifact is a workload proof,
+not a clearance PASS. Rebuild with
+`python3 scripts/build_t73_x_m1_outer_collar_v3_core_candidate_matrix.py --write`.
 The graph map extends over all five framed regular neighborhoods in
 [`geometry/t73_hybrid_to_railroad_tubular_map.json`](geometry/t73_hybrid_to_railroad_tubular_map.json).
 Its five solid-torus templates contain 5385 tetrahedra and 10770 boundary
