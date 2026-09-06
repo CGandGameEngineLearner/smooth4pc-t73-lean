@@ -980,6 +980,21 @@ python3 scripts/verify_t73_x_m1_outer_collar_v7_retained_germ_boundary_obstructi
 python3 -m unittest tests.test_t73_x_m1_outer_collar_v7_retained_germ_boundary_obstruction_3017
 ```
 
+fixed-boundary 修复位于
+[`geometry/t73_x_m1_outer_collar_v7_relative_framed_movie_3017.json`](geometry/t73_x_m1_outer_collar_v7_relative_framed_movie_3017.json)。
+联合 exact DP 在每个 transition 同时选择 normal 和两种 core diagonals 之一；
+push diagonals 取 ribbon-compatible 互补。结果在全部 22 个 states 中固定 germ
+core/push edge，并直接返回精确 source normal，无需 terminal contraction。独立
+重放检查 420 个 triangle ranks、504 个 core-self、504 个 push-self、2,100 个
+core/push、776 个 moving-core/static 和 784 个 moving-push/static pairs；禁止
+交点为 0。ribbon volumes 必须按新 core modes 重建。
+
+```bash
+python3 scripts/build_t73_x_m1_outer_collar_v7_relative_framed_movie_3017.py --write --check
+python3 scripts/verify_t73_x_m1_outer_collar_v7_relative_framed_movie_3017.py
+python3 -m unittest tests.test_t73_x_m1_outer_collar_v7_relative_framed_movie_3017
+```
+
 第一个跨系统门禁找到并修复了真实碰撞，没有提前升级该 assembly。流式 Rust
 1.98.1 checker 位于
 [`rust/t73_exact_cross_clearance`](rust/t73_exact_cross_clearance)，使用

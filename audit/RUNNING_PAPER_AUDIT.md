@@ -5884,6 +5884,33 @@ Topology-source checks completed 2026-09-04:
   proof of impossibility. The next construction must add a compensating twist
   or alter the core detour while preserving the fixed germ edge.
 
+### F-599CG — Joint normal/diagonal transport fixes the interface-3017 germ boundary
+
+- Severity: **Relative framed repair / positive fixed-boundary one-skeleton**
+- Status: **RELATIVE FRAMED ONE-SKELETON PASS; RIBBON VOLUME REBUILD OPEN**
+- Evidence: `geometry/t73_x_m1_outer_collar_v7_relative_framed_movie_3017.json`,
+  its deterministic builder, independent verifier and regression test, bound
+  to F-599CF and the reverse static one-skeleton inventory.
+- Repair mechanism: every one of the 21 core transitions admits both diagonal
+  triangulations as an embedded core trace. A joint layered exact DP selects a
+  normal from the source plus `{-1,0,1}^3/500` alphabet and a core diagonal;
+  the push uses the complementary diagonal forced by a ribbon-prism boundary.
+  The selected normal indices are
+  `0,16,2,2,2,2,11,0,0,0,0,2,2,3,19,0,0,0,0,0,0,0`.
+  It starts and ends at source normal. Vertex-0 always uses source normal,
+  independently of the other five vertices, so the type-0 germ bridge target
+  framing edge is fixed in every state.
+- Exact replay: 22 states and 21 transitions pass 110 transversality, 550
+  state core/push, 132 push-state self, 420 rank, 504 core-self, 504 push-self
+  and 2,100 core/push trace checks. Against the full scheduled static
+  one-skeleton, the new modes give 776 moving-core and 784 moving-push exact
+  checks; all intersections are zero. Verdict:
+  `PASS_X_M1_OUTER_COLLAR_V7_RELATIVE_FRAMED_MOVIE_3017_INDEPENDENT`.
+- Consequence/boundary: this resolves F-599CF at the framed one-skeleton level.
+  The previously built ribbon volumes use different core modes and are not
+  evidence for this repaired movie. A new fixed-boundary ribbon 3-volume,
+  self-clearance and external retained/replacement clearance remain required.
+
 ### F-599C — Monolithic linear projections of the affine framed link are computationally unsuitable
 
 - Severity: **complete PD / projection selection**

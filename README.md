@@ -909,6 +909,22 @@ python3 scripts/build_t73_x_m1_outer_collar_v7_retained_germ_boundary_obstructio
 python3 scripts/verify_t73_x_m1_outer_collar_v7_retained_germ_boundary_obstruction_3017.py
 python3 -m unittest tests.test_t73_x_m1_outer_collar_v7_retained_germ_boundary_obstruction_3017
 ```
+
+The fixed-boundary repair is
+[`geometry/t73_x_m1_outer_collar_v7_relative_framed_movie_3017.json`](geometry/t73_x_m1_outer_collar_v7_relative_framed_movie_3017.json).
+A joint exact DP chooses both a normal and one of the two core diagonals at
+each transition. Push diagonals are the ribbon-compatible complements. The
+result fixes the germ core/push edge in all 22 states and returns to the exact
+source normal without a terminal contraction. Independent replay checks 420
+triangle ranks, 504 core-self, 504 push-self, 2,100 core/push, 776
+moving-core/static and 784 moving-push/static pairs; forbidden intersections
+are zero. Ribbon volumes must be rebuilt using the new core modes.
+
+```bash
+python3 scripts/build_t73_x_m1_outer_collar_v7_relative_framed_movie_3017.py --write --check
+python3 scripts/verify_t73_x_m1_outer_collar_v7_relative_framed_movie_3017.py
+python3 -m unittest tests.test_t73_x_m1_outer_collar_v7_relative_framed_movie_3017
+```
 The graph map extends over all five framed regular neighborhoods in
 [`geometry/t73_hybrid_to_railroad_tubular_map.json`](geometry/t73_hybrid_to_railroad_tubular_map.json).
 Its five solid-torus templates contain 5385 tetrahedra and 10770 boundary
