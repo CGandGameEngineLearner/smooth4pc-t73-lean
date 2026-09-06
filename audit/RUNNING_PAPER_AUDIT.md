@@ -4980,6 +4980,33 @@ Topology-source checks completed 2026-09-04:
   ribbon result follows. Those matrices remain open and must use the
   staggered coordinates.
 
+### F-599AV — The complete V4 collar one-skeleton is globally embedded
+
+- Severity: **Positive mutual clearance / complete one-skeleton**
+- Status: **CORE, PUSH AND DIRECTED MUTUAL PASS; RIBBON/AMBIENT OPEN**
+- Evidence: `audit/t73_x_m1_outer_collar_v4_push_clearance.json`,
+  `audit/t73_x_m1_outer_collar_v4_core_push_clearance.json`, their builders
+  and regression tests, together with F-599AU core clearance and F-599AT
+  complete matrices.
+- Push: all eleven unordered type pairs and 14,254,960 broad candidates are
+  consumed by F hashes, same-interface staggered corners, Johnson end-lift F
+  intervals and eight dual direct families. There are 75,618 exact segment
+  equations, 15,134 declared incidences and zero intersections. Verdict:
+  `PASS_X_M1_OUTER_COLLAR_V4_PUSH_CLEARANCE`.
+- Mutual: all 22 directed type pairs and 28,528,020 broad candidates are
+  consumed. Exact F buckets handle constant families; all bridge/last-ray
+  staggered combinations use same-interface GMP; changing-normal push end
+  lifts use Johnson intervals plus eight dual direct families. There are
+  93,818 exact segment equations and zero intersections.
+- Repair validation: the exact semantic family containing F-599AR's core
+  last-ray/push bridge collision is included in the mutual same-interface
+  checks and now passes. It is not omitted as a known special case. Verdict:
+  `PASS_X_M1_OUTER_COLLAR_V4_CORE_PUSH_CLEARANCE`.
+- Boundary: the complete V4 core/push one-skeleton is embedded, but this does
+  not prove its 36,312 ruled-ribbon triangles embedded or clear of the
+  retained/replacement framed link. Ribbon matrices and exact checks remain
+  mandatory before upgrading V4 or building ambient isotopy support.
+
 ### F-599C — Monolithic linear projections of the affine framed link are computationally unsuitable
 
 - Severity: **complete PD / projection selection**

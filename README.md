@@ -410,6 +410,15 @@ same-interface buckets instead of the invalid v3 height argument. The
 incidences and 9,074 GMP equations. Intersections are zero. Verdict:
 `PASS_X_M1_OUTER_COLLAR_V4_CORE_CLEARANCE`. V4 push, mutual and ribbon
 clearance remain open.
+
+V4 push and directed mutual clearance are now complete in
+[`audit/t73_x_m1_outer_collar_v4_push_clearance.json`](audit/t73_x_m1_outer_collar_v4_push_clearance.json)
+and
+[`audit/t73_x_m1_outer_collar_v4_core_push_clearance.json`](audit/t73_x_m1_outer_collar_v4_core_push_clearance.json).
+Push uses 75,618 exact equations; directed core/push uses 93,818 across all 22
+type pairs. Both have zero intersections. The former v3 collision pair is
+included in the staggered same-interface GMP family. Thus the complete V4
+one-skeleton is embedded; ribbon and ambient-support clearance remain open.
 The graph map extends over all five framed regular neighborhoods in
 [`geometry/t73_hybrid_to_railroad_tubular_map.json`](geometry/t73_hybrid_to_railroad_tubular_map.json).
 Its five solid-torus templates contain 5385 tetrahedra and 10770 boundary

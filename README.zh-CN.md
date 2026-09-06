@@ -849,6 +849,15 @@ same-interface 桶，不再使用无效的 v3 height 论证。14,254,960 个 bro
 交点为 0。verdict 为 `PASS_X_M1_OUTER_COLLAR_V4_CORE_CLEARANCE`。V4 push、
 mutual 与 ribbon clearance 仍为 OPEN。
 
+V4 push 与有向 mutual clearance 现已闭合于
+[`audit/t73_x_m1_outer_collar_v4_push_clearance.json`](audit/t73_x_m1_outer_collar_v4_push_clearance.json)
+和
+[`audit/t73_x_m1_outer_collar_v4_core_push_clearance.json`](audit/t73_x_m1_outer_collar_v4_core_push_clearance.json)。
+push 使用 75,618 个精确方程；有向 core/push 覆盖全部 22 类并使用 93,818 个
+精确方程，交点均为 0。原 v3 冲突对包含在 staggered same-interface GMP family
+中。至此 V4 完整 one-skeleton 已嵌入；ribbon 与 ambient-support clearance 仍为
+OPEN。
+
 全局线性投影探测记录于
 [`audit/t73_affine_s3_projection_probe.json`](audit/t73_affine_s3_projection_probe.json)。
 xz/yz 会压扁 dotted edges；三个 regular tilts 至少产生258,453,247个 broad
