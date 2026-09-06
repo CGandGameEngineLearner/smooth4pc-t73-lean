@@ -1,0 +1,20 @@
+{
+  "builder_sha256": "001779526445A82CFAA7FF3239EB8AA38BB812A8EF4C07A0956D9B6C4FFAF4FA",
+  "cache_path": "C:\\Users\\Administrator\\.cache\\t73_x_m1_complete_global_r3_replacement_cores_v3.jsonl.gz",
+  "cache_sha256": "9DCF5E82985B9BF091C81D95A130A997DAB1ACAB4F1049B8BB1B9514B76D10A8",
+  "cache_size": 8247241,
+  "complete_core_embedding_status": "OPEN_AGGREGATE_ALL_CLEARANCE_CERTIFICATES",
+  "complete_push_paths_status": "OPEN",
+  "complete_v2_assembly_receipt_sha256": "DA336648613333A29B63D2B81D7DFCDAB9214468FCCEB00EE5470AB8AA01D2CB",
+  "completion_status": "ALL_POST_X_REPLACEMENT_CORES_REASSEMBLED_WITH_NEGATIVE_V3_TRANSITIONS",
+  "core_segment_count": 92284,
+  "cross_piece_boundary_match_count": 12104,
+  "negative_transition_band_clearance_sha256": "38A474BB0BC29352F66763DC0864D7EA68FF2FFADA917801E524B3F6AFBD4F5E",
+  "negative_v3_transition_receipt_sha256": "082DFEE028D3912E8814A883314B2293815F4243790F78C76448A7631A235572",
+  "piece_count_per_record": 9,
+  "record_count": 1513,
+  "record_stream_sha256": "F067FDDEFCA9CD77EC8D6DABA73A8FB68E466FDCE291B8F810EEF1615708A185",
+  "schema": "t73_x_m1_complete_global_r3_replacement_cores_receipt/v3",
+  "sha256": "6EFC45B1BF70EC451F69AC125B16B5328D79258CDA10CCF73734DB1F12A155A2",
+  "verdict": "PASS_X_M1_COMPLETE_GLOBAL_R3_REPLACEMENT_CORE_V3_ASSEMBLY"
+}

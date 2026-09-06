@@ -563,6 +563,21 @@ transitions 各自只有声明的 middle endpoint 位于该平面，其余顶点
 因此恰有 3,026 个端点接触、额外 0。v2 core 唯一剩余跨系统检查是 repaired
 transition non-shell segments 对 band strips。
 
+最后一项 core cross-check 现由 negative-height v3 routes 闭合。v3 transition
+cache 使用高度 `-3000-j`；全部 non-shell transition segments 满足 `z<=0`，
+而 band horizontals 的 z 严格接近或高于 100。对唯一剩余的 shell escape/skew
+对 band-column 情形，Shapely outward-rounded-box builder 与独立 NumPy interval
+verifier 均在 6,052×6,052 段之间得到 conservative xy candidates 0，见
+[`audit/t73_x_m1_negative_transition_band_clearance.json`](audit/t73_x_m1_negative_transition_band_clearance.json)。
+最终 v3 路径缓存于
+`C:\Users\Administrator\.cache\t73_x_m1_complete_global_r3_replacement_cores_v3.jsonl.gz`。
+汇总证书
+[`audit/t73_x_m1_complete_global_r3_replacement_core_embedding_v3.json`](audit/t73_x_m1_complete_global_r3_replacement_core_embedding_v3.json)
+逐项列出并验证全部 10 个无序 subsystem pairs，认证 1,513 条 paths、全部
+92,284 个 core segments 构成一个全局嵌入 R3 replacement system。verdict 为
+`PASS_X_M1_COMPLETE_GLOBAL_R3_REPLACEMENT_CORE_EMBEDDING_V3`。完整 push paths
+与 framing ribbons 仍为 OPEN，不从 core 结果推断。
+
 全局线性投影探测记录于
 [`audit/t73_affine_s3_projection_probe.json`](audit/t73_affine_s3_projection_probe.json)。
 xz/yz 会压扁 dotted edges；三个 regular tilts 至少产生258,453,247个 broad

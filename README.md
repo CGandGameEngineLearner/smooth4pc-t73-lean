@@ -653,6 +653,24 @@ and every other vertex in `z>0`. Thus exactly 3,026 endpoint contacts and no
 extras occur. The sole remaining v2 core cross-check is repaired transition
 non-shell segments versus band strips.
 
+That final core cross-check is now closed by the negative-height v3 routes.
+The v3 transition cache uses heights `-3000-j`; all non-shell transition
+segments have `z<=0`, whereas band horizontals have z strictly near or above
+100. For the only remaining shell escape/skew versus band-column case, both a
+Shapely outward-rounded-box builder and an independent NumPy interval verifier
+find zero conservative xy candidates among 6,052 by 6,052 segments. See
+[`audit/t73_x_m1_negative_transition_band_clearance.json`](audit/t73_x_m1_negative_transition_band_clearance.json).
+The resulting v3 paths are cached at
+`C:\Users\Administrator\.cache\t73_x_m1_complete_global_r3_replacement_cores_v3.jsonl.gz`.
+The aggregate
+[`audit/t73_x_m1_complete_global_r3_replacement_core_embedding_v3.json`](audit/t73_x_m1_complete_global_r3_replacement_core_embedding_v3.json)
+enumerates and verifies all ten unordered subsystem pairs. It certifies 1,513
+paths and all 92,284 core segments as one globally embedded R3 replacement
+system. Verdict:
+`PASS_X_M1_COMPLETE_GLOBAL_R3_REPLACEMENT_CORE_EMBEDDING_V3`. Complete push
+paths and framing ribbons remain open and are not inferred from this core
+result.
+
 Global linear projection probes are recorded in
 [`audit/t73_affine_s3_projection_probe.json`](audit/t73_affine_s3_projection_probe.json).
 xz/yz collapse dotted edges; three regular tilts produce at least 258,453,247

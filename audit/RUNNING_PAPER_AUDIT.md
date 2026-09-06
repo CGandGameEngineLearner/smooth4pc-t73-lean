@@ -4299,6 +4299,44 @@ Topology-source checks completed 2026-09-04:
   non-shell segments versus F-599Q band strips remains. Complete push paths
   remain a separate later layer.
 
+### F-599W — Negative-height v3 closes the complete replacement-core embedding
+
+- Severity: **Critical positive completion / all post-x replacement cores**
+- Status: **ALL 92,284 CORE SEGMENTS GLOBALLY EMBEDDED; PUSH PATHS OPEN**
+- Evidence: v3 negative transition cache/receipt and verifier;
+  `audit/t73_x_m1_negative_transition_band_clearance.json` with independent
+  NumPy verifier; v3 complete assembly cache/receipt and verifier; aggregate
+  `audit/t73_x_m1_complete_global_r3_replacement_core_embedding_v3.json`, its
+  builder, independent verifier and tests.
+- v3 routing: keep the exact F-599T port-local escape germs, but replace the
+  positive routing height by `-3000-transition_index`. The 3026 paths still
+  have 18,156 segments and the same 6052 injective routing-functional values.
+  Stub clearance is inherited because escape germs and infinite skew-lift
+  lines are unchanged; the exact Rust receipt checked those lines, not merely
+  their old finite positive subsegments.
+- Transition/band: 6052 shell escape/skew segments and 6052 band columns have
+  zero intersecting conservative xy boxes. Bounds are nearest-float values
+  expanded one `nextafter` step outward, so zero float candidates proves zero
+  exact box candidates. An independent NumPy interval implementation repeats
+  zero. All 12,104 remaining transition segments have maximum z=0, while all
+  9078 band horizontal segments have minimum z strictly near 100. Verdict:
+  `PASS_X_M1_NEGATIVE_TRANSITION_BAND_CORE_CLEARANCE`.
+- v3 assembly: replacing the two v2 transition pieces per record preserves all
+  nine semantic pieces, 1513 paths, 92,284 segments and 12,104 exact joins.
+  Cache and decompressed stream SHAs pass under independent reconstruction.
+- Complete pair coverage: the aggregate explicitly enumerates the four
+  self-pairs stub/stub, band/band, transition/transition, middle/middle and all
+  six cross-pairs. Stub/middle and band/middle have disjoint exact x intervals;
+  transition/middle uses shell-side x separation, negative-z horizontal
+  separation and only the 3026 declared z=0 endpoints. The other pairs bind
+  F-599Q, F-599T, F-599V and the v3 band receipt. All ten have positive finite
+  evidence. Verdict:
+  `PASS_X_M1_COMPLETE_GLOBAL_R3_REPLACEMENT_CORE_EMBEDDING_V3`.
+- Boundary: the x/m1 replacement **core** geometry is now complete and globally
+  embedded. This does not yet close the framed link: each stub, band and
+  transition needs a compatible global R3 push path/ribbon, followed by
+  integration with unchanged Johnson/dual cores and the y/z dotted conversion.
+
 ### F-599C — Monolithic linear projections of the affine framed link are computationally unsuitable
 
 - Severity: **complete PD / projection selection**
