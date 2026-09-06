@@ -4702,6 +4702,40 @@ Topology-source checks completed 2026-09-04:
   themselves and the retained/replacement link, and a tetrahedral ambient
   isotopy support with fixed outer boundary must be constructed.
 
+### F-599AJ — Straight collar ribbons are refuted; source-germ collars v2 are locally valid
+
+- Severity: **Critical correction plus repaired candidate construction**
+- Status: **V1 RIBBON REFUTED; V2 LOCAL FULL REPLAY PASS; V2 GLOBAL OPEN**
+- Evidence: `audit/t73_x_m1_outer_collar_ribbon_self_clearance.json`,
+  `audit/t73_x_m1_framed_outer_interface_collars_v2_receipt.json`,
+  `audit/t73_x_m1_framed_outer_interface_collars_v2_verification.json`, their
+  builders/verifier and regression tests.
+- V1 obstruction: rectangle-level Rtree enumerates the straight-collar
+  candidates. Exact skew axes reject every nonadjacent pair reached before the
+  dual local stars. At interfaces 3024/3023 sharing `r_zx:z:edge:4`, the two
+  second ribbon triangles are coplanar on the same side of the allowed inner
+  framing edge. The artifact gives a rational point at cross-section parameter
+  `1/10^4`, proves it belongs to both triangles, and proves it is off the
+  shared edge. Verdict: `REFUTED_X_M1_OUTER_COLLAR_RIBBON_SELF_CLEARANCE`.
+- Scope of refutation: F-599AI's v1 core/core, push/push and core/push
+  one-skeleton clearance remains true. Only the claim that those paths bound
+  an embedded simultaneous framing ribbon is false; no v1 ambient extension
+  may be inferred.
+- V2 repair: retain the initial `10^-6` source germ of every old terminal
+  segment, then move the remaining endpoint to the R3 target. Phase one now
+  pivots at the germ; phase two applies the same endpoint-normal homotopy.
+  Shared dual collars therefore leave their inner vertex along the original
+  opposite source directions rather than folding immediately to one side.
+- V2 local data: 3,026 records contain 6,052 core segments, 6,052 push
+  segments, 12,104 explicit ribbon triangles, 3,026 core/push isotopy-trace
+  pairs and zero total relative twist. Independent replay checks 9,078
+  phase-one and 3,026 phase-two all-parameter equations. Verdict:
+  `PASS_X_M1_FRAMED_OUTER_INTERFACE_COLLARS_V2_FULL_LOCAL_CANDIDATE`.
+- Boundary: v2 is still `CANDIDATE_UNVERIFIED`. Its full core/push and ribbon
+  systems must be globally checked against themselves, F-599AG replacement
+  framing and retained Johnson/dual ribbons; then its traces require a
+  tetrahedral ambient support before it can close the five framed components.
+
 ### F-599C — Monolithic linear projections of the affine framed link are computationally unsuitable
 
 - Severity: **complete PD / projection selection**

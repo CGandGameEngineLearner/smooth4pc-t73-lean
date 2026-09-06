@@ -290,8 +290,27 @@ All 3,026 core and push paths also pass pairwise GMP clearance: 2,235,099
 core/core, 2,231,193 push/push and 4,469,079 core/push exact checks, with only
 four declared dual-passage inner incidences. See
 [`audit/t73_x_m1_outer_collar_core_push_clearance_verification.json`](audit/t73_x_m1_outer_collar_core_push_clearance_verification.json).
-The collars remain `CANDIDATE_UNVERIFIED` until their 6,052 ribbon triangles,
-isotopy traces and tetrahedral ambient supports pass global clearance.
+That straight v1 model is now refuted at the ribbon level. The exact artifact
+[`audit/t73_x_m1_outer_collar_ribbon_self_clearance.json`](audit/t73_x_m1_outer_collar_ribbon_self_clearance.json)
+contains an interior rational point shared by the second triangles of
+interfaces 3024 and 3023 (`r_zx:z:edge:4`); it is explicitly off their allowed
+common inner edge. The valid v1 core/push result is retained, but its ribbon
+cannot be used.
+
+The repaired v2 cache
+`C:\Users\Administrator\.cache\t73_x_m1_framed_outer_interface_collars_v2.jsonl.gz`
+retains the first `10^-6` of every old terminal segment before routing to the
+R3 port. This restores the original opposite-side germs at shared dual
+vertices. It contains 3,026 candidates, 6,052 core/push segments each and
+12,104 ribbon triangles. Independent local replay is saved in
+[`audit/t73_x_m1_framed_outer_interface_collars_v2_verification.json`](audit/t73_x_m1_framed_outer_interface_collars_v2_verification.json).
+The v2 system remains `CANDIDATE_UNVERIFIED` pending new global
+core/push/ribbon, isotopy-trace and ambient-support checks. Rebuild with:
+
+```bash
+python3 scripts/build_t73_x_m1_framed_outer_interface_collars_v2.py
+python3 scripts/build_t73_x_m1_framed_outer_interface_collars_v2_verification.py --write
+```
 The graph map extends over all five framed regular neighborhoods in
 [`geometry/t73_hybrid_to_railroad_tubular_map.json`](geometry/t73_hybrid_to_railroad_tubular_map.json).
 Its five solid-torus templates contain 5385 tetrahedra and 10770 boundary

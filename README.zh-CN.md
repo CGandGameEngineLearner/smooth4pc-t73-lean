@@ -742,8 +742,25 @@ normal 线性同伦到 target normal。局部构造与完整重放收据为
 core/core、2,231,193 个 push/push、4,469,079 个 core/push 精确检查，仅保留
 4 个规定 dual-passage inner incidences。见
 [`audit/t73_x_m1_outer_collar_core_push_clearance_verification.json`](audit/t73_x_m1_outer_collar_core_push_clearance_verification.json)。
-在 6,052 个 ribbon triangles、isotopy traces 与 tetrahedral ambient supports
-通过全局 clearance 前，collars 仍标为 `CANDIDATE_UNVERIFIED`。
+该直线 v1 模型现已在 ribbon 层被否证。精确 artifact
+[`audit/t73_x_m1_outer_collar_ribbon_self_clearance.json`](audit/t73_x_m1_outer_collar_ribbon_self_clearance.json)
+保存 interfaces 3024/3023（`r_zx:z:edge:4`）两张第二三角形共同包含的内部
+有理点；该点明确不在允许的公共 inner edge 上。v1 的 core/push 结论继续保留，
+但它的 ribbon 不可使用。
+
+修复后的 v2 cache
+`C:\Users\Administrator\.cache\t73_x_m1_framed_outer_interface_collars_v2.jsonl.gz`
+先保留每条旧 terminal segment 的前 `10^-6`，再路由到 R3 port，从而恢复共享
+dual 顶点处原有的反向 germs。它包含 3,026 个候选、core/push 各 6,052 个
+segments 与 12,104 个 ribbon triangles。独立局部重放保存于
+[`audit/t73_x_m1_framed_outer_interface_collars_v2_verification.json`](audit/t73_x_m1_framed_outer_interface_collars_v2_verification.json)。
+v2 在新的全局 core/push/ribbon、isotopy-trace 与 ambient-support 检查完成前仍为
+`CANDIDATE_UNVERIFIED`。重建命令：
+
+```bash
+python3 scripts/build_t73_x_m1_framed_outer_interface_collars_v2.py
+python3 scripts/build_t73_x_m1_framed_outer_interface_collars_v2_verification.py --write
+```
 
 全局线性投影探测记录于
 [`audit/t73_affine_s3_projection_probe.json`](audit/t73_affine_s3_projection_probe.json)。
