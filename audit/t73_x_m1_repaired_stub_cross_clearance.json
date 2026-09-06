@@ -1,0 +1,59 @@
+{
+  "global_band_port_strips_receipt_sha256": "409C8F2DC1854825FECA536418EE53DAE2477638CB08249E75AD9DBDE65A8DB8",
+  "old_collision_repaired": true,
+  "prior_collision_obstruction_sha256": "4ACF04BA5B4D91FFF5B5ABF834301E5D70B62400B72C1B0E49617B49389A99B7",
+  "remaining_cross_system_checks": [
+    "band strips versus repaired transition non-shell segments",
+    "translated middle cores versus repaired transitions",
+    "stub subsystem inherited embeddedness transfer"
+  ],
+  "repaired_middle_transition_cores_receipt_sha256": "3DC0016984447027BA550864C84517EDE7CBD17237794385949B87FF70460451",
+  "rust_lock_sha256": "3FBA25FA728EDEBCF35CBFED12DF81596B0FC8E13B1E0E4BE0FA214511828693",
+  "rust_manifest_sha256": "BEDB98F38519BAA419DE4C4380E05DDFFDA128DF60112E85948B9B32159FA92E",
+  "rust_result": {
+    "schema": "t73_exact_cross_clearance_rust/v1",
+    "stub_band_columns": {
+      "columns": 6052,
+      "exact_line_candidates": 9750,
+      "expected_endpoint_incidences": 6052,
+      "extra_examples": [],
+      "extra_intersections": 0
+    },
+    "stub_segments": 10582,
+    "stub_transition_escape_germs": {
+      "applicable": true,
+      "escape_germs": 3026,
+      "exact_collinear_candidates": 3630,
+      "expected_endpoint_incidences": 3026,
+      "extra_examples": [],
+      "extra_intersections": 0
+    },
+    "stub_transition_lifts": {
+      "approximate_bounds_survivors": 0,
+      "exact_line_candidates": 0,
+      "expected_endpoint_incidences": 0,
+      "extra_intersections_at_least": 0,
+      "first_extra_intersection": null,
+      "modular_pairs": 32021132,
+      "modular_primes": [
+        1000000007,
+        1000000009,
+        998244353
+      ],
+      "modular_survivors": 0,
+      "shell_lifts": 3026
+    },
+    "verdict": "PASS_EXACT_STUB_CROSS_SYSTEM_CORE_CLEARANCE",
+    "xy_direction_classes": 2,
+    "xy_line_keys": 8469
+  },
+  "rust_source_sha256": "5685B7FBE7A0EBC26D00B835713D4BD8B4F4B69A411BBA7D597D493061264D4F",
+  "rust_toolchain": "rustc 1.98.1",
+  "schema": "t73_x_m1_repaired_stub_cross_clearance/v1",
+  "sha256": "0AE25C822DC47DD82D5A8886E24D216E7680A92261423865408625D1108E9568",
+  "splice_stub_cores_r3_receipt_sha256": "A97422397ECE3B90995ABF1499189E86E27898A0BBD098069914D9BBEA6AEE62",
+  "stub_band_clearance": "PASS_EXACT",
+  "stub_escape_germ_clearance": "PASS_EXACT",
+  "stub_skew_lift_clearance": "PASS_THREE_PRIME_FILTER_WITH_ZERO_SURVIVORS",
+  "verdict": "PASS_X_M1_REPAIRED_STUB_CROSS_CLEARANCE"
+}

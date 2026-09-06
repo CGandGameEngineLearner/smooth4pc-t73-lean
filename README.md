@@ -608,6 +608,24 @@ endpoint equalities and checks the 6,807,692-byte cache SHA. Verdict:
 coordinate/continuity result; the single all-segment embedding-clearance gate
 and complete push paths remain open.
 
+The first cross-system gate found and repaired a real collision instead of
+promoting that assembly prematurely. A streaming Rust 1.98.1 checker using
+`num-bigint`/`num-rational` is in
+[`rust/t73_exact_cross_clearance`](rust/t73_exact_cross_clearance). The v1
+route intersects band-1 `target_complement_first` segment 1 at transition 0;
+the exact obstruction is
+[`audit/t73_x_m1_cross_system_core_clearance_obstruction.json`](audit/t73_x_m1_cross_system_core_clearance_obstruction.json).
+The v2 builder inserts a `1/1000000` continuation germ along each incident
+stub before applying the skew lift. Its cache is
+`C:\Users\Administrator\.cache\t73_x_m1_repaired_global_r3_middle_transition_cores.jsonl.gz`.
+The exact repaired receipt
+[`audit/t73_x_m1_repaired_stub_cross_clearance.json`](audit/t73_x_m1_repaired_stub_cross_clearance.json)
+checks 3,026 escape germs: 3,630 exact collinear candidates give exactly 3,026
+expected endpoint incidences and no extras. Three-prime screening of all
+32,021,132 repaired skew-lift/stub pairs leaves zero survivors. Verdict:
+`PASS_X_M1_REPAIRED_STUB_CROSS_CLEARANCE`. The old v1 cache and obstruction
+remain preserved for replay.
+
 Global linear projection probes are recorded in
 [`audit/t73_affine_s3_projection_probe.json`](audit/t73_affine_s3_projection_probe.json).
 xz/yz collapse dotted edges; three regular tilts produce at least 258,453,247

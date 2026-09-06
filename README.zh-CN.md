@@ -525,6 +525,22 @@ verdict 为 `PASS_X_M1_COMPLETE_GLOBAL_R3_REPLACEMENT_CORES_FULL`。这是完整
 与连续性结果；统一 all-segment embedding-clearance 门禁及完整 push paths 仍为
 OPEN。
 
+第一个跨系统门禁找到并修复了真实碰撞，没有提前升级该 assembly。流式 Rust
+1.98.1 checker 位于
+[`rust/t73_exact_cross_clearance`](rust/t73_exact_cross_clearance)，使用
+`num-bigint`/`num-rational`。v1 route 的 transition 0 与 band 1
+`target_complement_first` segment 1 精确相交；反证保存在
+[`audit/t73_x_m1_cross_system_core_clearance_obstruction.json`](audit/t73_x_m1_cross_system_core_clearance_obstruction.json)。
+v2 builder 在 skew lift 前沿 incident stub 的延长方向插入 `1/1000000` continuation
+germ，缓存为
+`C:\Users\Administrator\.cache\t73_x_m1_repaired_global_r3_middle_transition_cores.jsonl.gz`。
+精确修复收据
+[`audit/t73_x_m1_repaired_stub_cross_clearance.json`](audit/t73_x_m1_repaired_stub_cross_clearance.json)
+检查 3,026 个 escape germs：3,630 个精确同线候选恰给出 3,026 个预期端点接触、
+额外 0。全部 32,021,132 个 repaired skew-lift/stub 对经三素数筛选后 survivor
+为 0。verdict 为 `PASS_X_M1_REPAIRED_STUB_CROSS_CLEARANCE`。旧 v1 cache 与
+obstruction 保留，可继续重放。
+
 全局线性投影探测记录于
 [`audit/t73_affine_s3_projection_probe.json`](audit/t73_affine_s3_projection_probe.json)。
 xz/yz 会压扁 dotted edges；三个 regular tilts 至少产生258,453,247个 broad

@@ -4204,6 +4204,46 @@ Topology-source checks completed 2026-09-04:
   verifier, then be joined to the unchanged connector/dual core pieces. Push
   paths and framing ribbons are separately still open.
 
+### F-599T — Exact Rust clearance refutes v1 shell lifts and verifies port-local v2 repairs
+
+- Severity: **Critical cross-system correction and repair**
+- Status: **STUB/BAND AND REPAIRED STUB/TRANSITION PASS; OTHER CROSS PAIRS OPEN**
+- Evidence: Rust crate `rust/t73_exact_cross_clearance` with locked
+  `num-bigint`, `num-rational`, `flate2` and `serde_json` dependencies; v1
+  obstruction receipt; v2 repaired transition cache/receipt; exact repaired
+  clearance receipt; Python builders/verifiers and three tests.
+- v1 refutation: float projections collapse the approximately 10^-384 band
+  widths and create 13,741,460 apparent point/line hits, so they are not used
+  as proof. The Rust checker instead finds two exact xy stub direction classes
+  and 8469 line keys. Stub/band checking has 9750 exact line candidates,
+  exactly 6052 expected port incidences and no extras. For v1 shell lifts,
+  three-prime modular screening precedes BigRational resolution. The first
+  extra is transition 0, band 0, first side against band-1
+  `target_complement_first` segment 1. Verdict:
+  `PASS_EXACT_CROSS_SYSTEM_COLLISION_OBSTRUCTION`; complete embedding remains
+  false for v1.
+- v2 construction: at each shell port, extend the incident mapped stub tangent
+  by exactly `1/1000000`, then begin the old `(0,-1,1)` skew lift at this
+  escape point. All 3026 germs are nonzero; the 6052 escape/middle routing
+  endpoints remain injective under `L=y-1000033*x+z`. The new cache contains
+  3026 six-segment transitions, 18,156 segments total, with full byte and
+  source replay. Verdict:
+  `PASS_X_M1_REPAIRED_GLOBAL_R3_MIDDLE_TRANSITION_CORES_FULL`.
+- v2 exact clearance: 3630 escape-germ/stub collinear candidates yield exactly
+  3026 endpoint incidences and zero extras. For the 32,021,132 skew-lift/stub
+  pairs, the streaming three-prime filter has zero survivors, hence no
+  BigRational intersection candidate. Stub/band remains 6052/0. Verdict:
+  `PASS_X_M1_REPAIRED_STUB_CROSS_CLEARANCE`.
+- Engineering: three earlier BigRational-index attempts exceeded WSL memory.
+  The final Rust algorithm streams gzip data, releases the exact xy index
+  between phases, stores only modular coordinates, and reparses BigRational
+  values solely for modular survivors. The old cache and obstruction are
+  preserved; no failed result is overwritten.
+- Boundary: rebuild F-599S with v2 transitions. Then check repaired transition
+  non-shell segments against band strips and translated middle cores, and bind
+  the inherited F-563 stub embeddedness transfer. Push transitions remain
+  open independently.
+
 ### F-599C — Monolithic linear projections of the affine framed link are computationally unsuitable
 
 - Severity: **complete PD / projection selection**

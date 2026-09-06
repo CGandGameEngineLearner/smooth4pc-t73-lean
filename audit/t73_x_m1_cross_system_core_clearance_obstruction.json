@@ -1,0 +1,64 @@
+{
+  "complete_global_r3_replacement_cores_receipt_sha256": "D21FF5AE982A1AB24C115A29A58C0B07B289D720BAFFBC4AFBFC97062C5471A0",
+  "complete_replacement_core_embedding_status": "OPEN_REPAIR_TRANSITION_SHELL_ESCAPE_GERMS",
+  "completion_status": "FIRST_EXACT_STUB_TRANSITION_COLLISION_PERSISTED",
+  "global_band_port_strips_receipt_sha256": "409C8F2DC1854825FECA536418EE53DAE2477638CB08249E75AD9DBDE65A8DB8",
+  "global_middle_transition_cores_receipt_sha256": "19232AEB50BB3FC92A12126406A38B826EF2F6B50A6F14B6788426D3EE6930B5",
+  "preserved_results": [
+    "all 89258 R3 core coordinates and 12104 cross-piece endpoint matches",
+    "internal band-strip clearance",
+    "internal middle-transition-family centerline clearance",
+    "stub-to-band expected endpoint incidences with no extras"
+  ],
+  "required_repair": "replace the common skew shell lift by port-local escape germs that are exactly clear of every nonincident stub segment, then rerun this cross-system verifier",
+  "rust_lock_sha256": "3FBA25FA728EDEBCF35CBFED12DF81596B0FC8E13B1E0E4BE0FA214511828693",
+  "rust_manifest_sha256": "BEDB98F38519BAA419DE4C4380E05DDFFDA128DF60112E85948B9B32159FA92E",
+  "rust_result": {
+    "schema": "t73_exact_cross_clearance_rust/v1",
+    "stub_band_columns": {
+      "columns": 6052,
+      "exact_line_candidates": 9750,
+      "expected_endpoint_incidences": 6052,
+      "extra_examples": [],
+      "extra_intersections": 0
+    },
+    "stub_segments": 10582,
+    "stub_transition_escape_germs": {
+      "applicable": false,
+      "escape_germs": 0
+    },
+    "stub_transition_lifts": {
+      "approximate_bounds_survivors": 6867507,
+      "exact_line_candidates": 2,
+      "expected_endpoint_incidences": 1,
+      "extra_intersections_at_least": 1,
+      "first_extra_intersection": {
+        "stub_band": 1,
+        "stub_piece": "target_complement_first",
+        "stub_segment": 1,
+        "transition": 0,
+        "transition_band": 0,
+        "transition_side": "first"
+      },
+      "modular_pairs": 32021132,
+      "modular_primes": [
+        1000000007,
+        1000000009,
+        998244353
+      ],
+      "modular_survivors": 2290682,
+      "shell_lifts": 3026
+    },
+    "verdict": "FAIL_EXACT_STUB_TRANSITION_CROSS_SYSTEM_COLLISION",
+    "xy_direction_classes": 2,
+    "xy_line_keys": 8469
+  },
+  "rust_source_sha256": "5685B7FBE7A0EBC26D00B835713D4BD8B4F4B69A411BBA7D597D493061264D4F",
+  "rust_toolchain": "rustc 1.98.1",
+  "schema": "t73_x_m1_cross_system_core_clearance_obstruction/v1",
+  "sha256": "4ACF04BA5B4D91FFF5B5ABF834301E5D70B62400B72C1B0E49617B49389A99B7",
+  "splice_stub_cores_r3_receipt_sha256": "A97422397ECE3B90995ABF1499189E86E27898A0BBD098069914D9BBEA6AEE62",
+  "stub_band_clearance_status": "PASS_EXACT",
+  "stub_transition_clearance_status": "REFUTED_BY_EXACT_INTERSECTION",
+  "verdict": "PASS_EXACT_CROSS_SYSTEM_COLLISION_OBSTRUCTION"
+}
