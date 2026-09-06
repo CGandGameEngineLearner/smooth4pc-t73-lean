@@ -701,6 +701,23 @@ python3 scripts/build_t73_x_m1_outer_collar_v7_reverse_static_ribbon_clearance.p
 python3 scripts/verify_t73_x_m1_outer_collar_v7_reverse_static_ribbon_clearance.py
 python3 -m unittest tests.test_t73_x_m1_outer_collar_v7_reverse_static_one_skeleton_clearance tests.test_t73_x_m1_outer_collar_v7_reverse_static_ribbon_clearance
 ```
+
+The complete reverse framed world-volume is the 45,569,633-byte cache
+`/home/lifesize/.cache/t73_x_m1_outer_collar_v7_reverse_sequential_framed_isotopy_volume.jsonl.gz`.
+Its construction and independent verification receipts are
+[`audit/t73_x_m1_outer_collar_v7_reverse_sequential_framed_isotopy_volume_receipt.json`](audit/t73_x_m1_outer_collar_v7_reverse_sequential_framed_isotopy_volume_receipt.json)
+and
+[`audit/t73_x_m1_outer_collar_v7_reverse_sequential_framed_isotopy_volume_verification.json`](audit/t73_x_m1_outer_collar_v7_reverse_sequential_framed_isotopy_volume_verification.json).
+Independent replay reconstructs 121,020 triangular prisms and 363,060
+rank-three R4 tetrahedra with the reverse time assignment, full prism boundary
+and 15,130 phase matches. Moving-volume interiors for distinct collars are
+time-disjoint. Full moving-versus-static clearance is still required.
+
+```bash
+python3 scripts/build_t73_x_m1_outer_collar_v7_reverse_sequential_framed_isotopy_volume.py
+python3 scripts/build_t73_x_m1_outer_collar_v7_reverse_sequential_framed_isotopy_volume_verification.py --write --check-files
+python3 -m unittest tests.test_t73_x_m1_outer_collar_v7_reverse_sequential_framed_isotopy_volume
+```
 The graph map extends over all five framed regular neighborhoods in
 [`geometry/t73_hybrid_to_railroad_tubular_map.json`](geometry/t73_hybrid_to_railroad_tubular_map.json).
 Its five solid-torus templates contain 5385 tetrahedra and 10770 boundary

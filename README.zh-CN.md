@@ -785,6 +785,23 @@ python3 scripts/verify_t73_x_m1_outer_collar_v7_reverse_static_ribbon_clearance.
 python3 -m unittest tests.test_t73_x_m1_outer_collar_v7_reverse_static_one_skeleton_clearance tests.test_t73_x_m1_outer_collar_v7_reverse_static_ribbon_clearance
 ```
 
+完整 reverse framed world-volume 是 45,569,633-byte cache
+`/home/lifesize/.cache/t73_x_m1_outer_collar_v7_reverse_sequential_framed_isotopy_volume.jsonl.gz`。
+其构造与独立验证收据为
+[`audit/t73_x_m1_outer_collar_v7_reverse_sequential_framed_isotopy_volume_receipt.json`](audit/t73_x_m1_outer_collar_v7_reverse_sequential_framed_isotopy_volume_receipt.json)
+和
+[`audit/t73_x_m1_outer_collar_v7_reverse_sequential_framed_isotopy_volume_verification.json`](audit/t73_x_m1_outer_collar_v7_reverse_sequential_framed_isotopy_volume_verification.json)。
+独立重放按逆序时间赋值重建 121,020 个 triangular prisms 和 363,060 个
+rank-three R4 tetrahedra，并检查完整 prism 边界及 15,130 个阶段匹配。
+不同 collars 的 moving-volume interiors 由时间分离。仍需完整
+moving-versus-static clearance。
+
+```bash
+python3 scripts/build_t73_x_m1_outer_collar_v7_reverse_sequential_framed_isotopy_volume.py
+python3 scripts/build_t73_x_m1_outer_collar_v7_reverse_sequential_framed_isotopy_volume_verification.py --write --check-files
+python3 -m unittest tests.test_t73_x_m1_outer_collar_v7_reverse_sequential_framed_isotopy_volume
+```
+
 第一个跨系统门禁找到并修复了真实碰撞，没有提前升级该 assembly。流式 Rust
 1.98.1 checker 位于
 [`rust/t73_exact_cross_clearance`](rust/t73_exact_cross_clearance)，使用

@@ -1,0 +1,26 @@
+{
+  "builder_path": "scripts/build_t73_x_m1_outer_collar_v7_reverse_sequential_framed_isotopy_volume.py",
+  "builder_sha256": "9E08072059D34F748DF6A252D8904360718688AEB327DA0520F685EDC44C993A",
+  "cache_sha256": "100794706F24B68F2B363D95F36E6C51822EAC70D1488CB5083BA576ABB0CA04",
+  "construction_receipt_sha256": "15CAEA831B5FB21BBA32733A5DFD7C68F8A95563BA134ABD82B1CE47AD93DD91",
+  "full_result": {
+    "ambient_support": "OPEN",
+    "boundary_matches": 15130,
+    "cache_sha_checked": true,
+    "classification": "CANDIDATE_UNVERIFIED",
+    "moving_volume_interiors_pairwise_time_disjoint": true,
+    "r4_rank_checks": 363060,
+    "r4_tetrahedra": 363060,
+    "reverse_moving_static_volume_clearance": "OPEN",
+    "schedule_first_interface": 3025,
+    "schedule_last_interface": 0,
+    "traces_reconstructed": 3026,
+    "triangular_prisms_reconstructed": 121020,
+    "verdict": "PASS_X_M1_OUTER_COLLAR_V7_REVERSE_SEQUENTIAL_FRAMED_ISOTOPY_VOLUME_FULL_LOCAL_CANDIDATE"
+  },
+  "schema": "t73_x_m1_outer_collar_v7_reverse_sequential_framed_isotopy_volume_verification/v1",
+  "sha256": "093E0ACB41BE1FD021347E5FF7E6BFA20DD101CD30AA863121A9B73289BB3559",
+  "verdict": "PASS_X_M1_OUTER_COLLAR_V7_REVERSE_SEQUENTIAL_FRAMED_ISOTOPY_VOLUME_FULL_LOCAL_CANDIDATE",
+  "verifier_path": "scripts/verify_t73_x_m1_outer_collar_v7_reverse_sequential_framed_isotopy_volume.py",
+  "verifier_sha256": "CCF076AA39BD37610A629B32CD468FFFEF8B99ACBE2DA6DC3D35BD884C077737"
+}

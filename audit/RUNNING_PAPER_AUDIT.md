@@ -5533,6 +5533,29 @@ Topology-source checks completed 2026-09-04:
   core/push/ribbon volume against those mixtures and the retained/replacement
   framed union; midpoint core success alone is not promoted.
 
+### F-599BT — The reverse sequential framed world-volume is complete locally
+
+- Severity: **Dynamic framed candidate / reverse volume reconstruction**
+- Status: **REVERSE LOCAL RIBBON VOLUME PASS; DYNAMIC/AMBIENT OPEN**
+- Evidence:
+  `audit/t73_x_m1_outer_collar_v7_reverse_sequential_framed_isotopy_volume_receipt.json`,
+  its independent verification, builder, verifier, regression test and named
+  persistent cache, bound to F-599BP and F-599BR.
+- Construction/replay: source ribbons are stationary before their reverse
+  slot; ten phase-one ribbon triangles move to the constant-normal final
+  route; eight phase-two prefix triangles remain stationary while two terminal
+  triangles move; final ribbons remain stationary afterward. The 45,569,633
+  byte cache contains 3,026 records, 121,020 canonical triangular prisms and
+  363,060 R4 tetrahedra. Independent replay reconstructs every reverse time
+  coordinate and cell, verifies the prism boundary, all 363,060 rank-three
+  tests, 15,130 phase matches, cache/stream hashes and exact slot coverage.
+  Verdict:
+  `PASS_X_M1_OUTER_COLLAR_V7_REVERSE_SEQUENTIAL_FRAMED_ISOTOPY_VOLUME_FULL_LOCAL_CANDIDATE`.
+- Boundary: distinct moving-volume interiors are time-disjoint and all
+  stationary mixtures pass F-599BR. The active volume has not yet been proved
+  disjoint from its contemporaneous stationary mixture, retained source and
+  replacement framing. The reverse candidate remains `CANDIDATE_UNVERIFIED`.
+
 ### F-599C — Monolithic linear projections of the affine framed link are computationally unsuitable
 
 - Severity: **complete PD / projection selection**
