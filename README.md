@@ -505,6 +505,18 @@ through V7's already-verified internal germ stars. The 1,651,086 nonincident
 AABB candidates reduce to 825,896 AABB/F survivors, all separated by exact
 skew axes. Intersections are zero. Only the relative isotopy trace and
 tetrahedral ambient support now prevent upgrading the collars to an actual map.
+
+The two-phase trace is now explicit in the 22,041,553-byte cache
+`C:\Users\Administrator\.cache\t73_x_m1_outer_collar_v7_isotopy_trace.jsonl.gz`.
+Each old germ-to-port segment is subdivided into five edges and linearly sent
+to the five-edge V7 route in phase one with constant source normal; phase two
+fixes the core and changes only the terminal push normal. The cache contains
+30,260 core trace triangles, 30,260 translated push trace triangles and 6,052
+phase-two push triangles in R3xI. Independent replay checks 15,130 all-time
+edge noncollapse equations and every R4 triangle rank. See
+[`audit/t73_x_m1_outer_collar_v7_isotopy_trace_verification.json`](audit/t73_x_m1_outer_collar_v7_isotopy_trace_verification.json).
+It remains a local candidate until spacetime global embeddedness and a
+fixed-boundary tetrahedral ambient extension pass.
 The graph map extends over all five framed regular neighborhoods in
 [`geometry/t73_hybrid_to_railroad_tubular_map.json`](geometry/t73_hybrid_to_railroad_tubular_map.json).
 Its five solid-torus templates contain 5385 tetrahedra and 10770 boundary

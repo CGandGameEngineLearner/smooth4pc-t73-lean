@@ -602,6 +602,17 @@ arcs、24 bottom-closure、8 dual。3,018 个 retained source-edge stars 全部�
 skew axes 分离，交点为 0。现在只有 relative isotopy trace 与 tetrahedral
 ambient support 阻止 collars 升级为 actual map。
 
+两阶段 trace 现已显式保存于 22,041,553-byte cache
+`C:\Users\Administrator\.cache\t73_x_m1_outer_collar_v7_isotopy_trace.jsonl.gz`。
+每条旧 germ-to-port segment 先等分为五段，在 phase 1 以 constant source normal
+线性送到五段 V7 route；phase 2 固定 core，仅改变 terminal push normal。cache
+在 R3xI 中包含 30,260 个 core trace triangles、30,260 个 translated push trace
+triangles 和 6,052 个 phase-two push triangles。独立重放检查 15,130 个全时间
+edge noncollapse 方程及每个 R4 triangle rank。见
+[`audit/t73_x_m1_outer_collar_v7_isotopy_trace_verification.json`](audit/t73_x_m1_outer_collar_v7_isotopy_trace_verification.json)。
+spacetime 全局嵌入和 fixed-boundary tetrahedral ambient extension 通过前，它仍是
+局部候选。
+
 第一个跨系统门禁找到并修复了真实碰撞，没有提前升级该 assembly。流式 Rust
 1.98.1 checker 位于
 [`rust/t73_exact_cross_clearance`](rust/t73_exact_cross_clearance)，使用

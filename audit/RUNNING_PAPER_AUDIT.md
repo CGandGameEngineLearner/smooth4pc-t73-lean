@@ -5253,6 +5253,33 @@ Topology-source checks completed 2026-09-04:
   the two-phase isotopy trace and a fixed-boundary tetrahedral ambient support,
   then verify it against the complete static framed union.
 
+### F-599BH — Every V7 collar has an explicit two-phase simplicial isotopy trace
+
+- Severity: **Dynamic relative-map construction / local spacetime cells**
+- Status: **ALL LOCAL TRACES FULLY REPLAYED; SPACETIME GLOBAL/AMBIENT OPEN**
+- Evidence: `audit/t73_x_m1_outer_collar_v7_isotopy_trace_receipt.json`,
+  `audit/t73_x_m1_outer_collar_v7_isotopy_trace_verification.json`, builder,
+  independent verifier, regression test and named persistent cache, bound to
+  F-599BD/BF/BG static clearances.
+- Phase one: retain the source germ and subdivide the old germ-to-port segment
+  into five equal rational edges. Pair its six vertices with the six V7 route
+  vertices and linearly track them in R3xI. The source normal is constant, so
+  the push trace is the exact spatial translate of the core trace.
+- Phase two: fix the final core route and all earlier push vertices; linearly
+  move only the terminal push endpoint from source-normal to target-normal.
+  The two triangles of this final trace are explicit.
+- Data/replay: the 22,041,553-byte cache contains 3,026 records, 30,260 core
+  trace triangles, 30,260 phase-one push trace triangles and 6,052 phase-two
+  push triangles. All 15,130 edge-vector affine zero equations have no time in
+  [0,1], and every trace triangle has exact rank two in R4. Cache and
+  decompressed-stream SHAs replay. Verdict:
+  `PASS_X_M1_OUTER_COLLAR_V7_ISOTOPY_TRACE_FULL_LOCAL_CANDIDATE`.
+- Boundary: edgewise noncollapse and local simplex rank do not prove each
+  intermediate path or the union of traces globally embedded. The R4 trace
+  surfaces require complete self/cross clearance, followed by a tetrahedral
+  regular-neighborhood ambient extension fixed on its outer boundary. Until
+  then the relative map remains `CANDIDATE_UNVERIFIED`.
+
 ### F-599C — Monolithic linear projections of the affine framed link are computationally unsuitable
 
 - Severity: **complete PD / projection selection**
