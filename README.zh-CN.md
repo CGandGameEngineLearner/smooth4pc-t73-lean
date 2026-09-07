@@ -1012,6 +1012,21 @@ python3 scripts/verify_t73_x_m1_outer_collar_v7_relative_ribbon_volume_3017.py
 python3 -m unittest tests.test_t73_x_m1_outer_collar_v7_relative_ribbon_volume_3017
 ```
 
+replacement-volume 集成已被
+[`audit/t73_x_m1_outer_collar_v7_relative_volume_replacement_obstruction_3017.json`](audit/t73_x_m1_outer_collar_v7_relative_volume_replacement_obstruction_3017.json)
+反证。transition 11 的 moving tetrahedron 26 与 replacement rectangle
+67225、static tetrahedron 5 相交；该 rectangle 是 band 1102、segment 4、
+`negative_band_lane`。两个 tetrahedra 非 incidence、affine rank 4；artifact
+保存两组非负重心向量及共同 R4 点，并由独立 verifier 重放。retained-side
+probe 的 592 个候选无交，但明确尚未生成收据。在修复 replacement collision
+之前，两侧都不能升级。
+
+```bash
+python3 scripts/build_t73_x_m1_outer_collar_v7_relative_volume_replacement_obstruction_3017.py --write --check
+python3 scripts/verify_t73_x_m1_outer_collar_v7_relative_volume_replacement_obstruction_3017.py
+python3 -m unittest tests.test_t73_x_m1_outer_collar_v7_relative_volume_replacement_obstruction_3017
+```
+
 第一个跨系统门禁找到并修复了真实碰撞，没有提前升级该 assembly。流式 Rust
 1.98.1 checker 位于
 [`rust/t73_exact_cross_clearance`](rust/t73_exact_cross_clearance)，使用

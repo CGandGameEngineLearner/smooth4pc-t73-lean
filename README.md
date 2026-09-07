@@ -942,6 +942,22 @@ python3 scripts/build_t73_x_m1_outer_collar_v7_relative_ribbon_volume_3017.py --
 python3 scripts/verify_t73_x_m1_outer_collar_v7_relative_ribbon_volume_3017.py
 python3 -m unittest tests.test_t73_x_m1_outer_collar_v7_relative_ribbon_volume_3017
 ```
+
+Replacement-volume integration is refuted by
+[`audit/t73_x_m1_outer_collar_v7_relative_volume_replacement_obstruction_3017.json`](audit/t73_x_m1_outer_collar_v7_relative_volume_replacement_obstruction_3017.json).
+At transition 11, moving tetrahedron 26 meets replacement rectangle 67225,
+static tetrahedron 5. The rectangle is band 1102, segment 4,
+`negative_band_lane`. The tetrahedra are nonincident and have affine rank 4;
+the artifact stores two nonnegative barycentric vectors and their common R4
+point, independently replayed. A retained-side probe checked 592 candidates
+with no intersection, but remains explicitly unreceipted. The replacement
+collision must be repaired before either external side is promoted.
+
+```bash
+python3 scripts/build_t73_x_m1_outer_collar_v7_relative_volume_replacement_obstruction_3017.py --write --check
+python3 scripts/verify_t73_x_m1_outer_collar_v7_relative_volume_replacement_obstruction_3017.py
+python3 -m unittest tests.test_t73_x_m1_outer_collar_v7_relative_volume_replacement_obstruction_3017
+```
 The graph map extends over all five framed regular neighborhoods in
 [`geometry/t73_hybrid_to_railroad_tubular_map.json`](geometry/t73_hybrid_to_railroad_tubular_map.json).
 Its five solid-torus templates contain 5385 tetrahedra and 10770 boundary

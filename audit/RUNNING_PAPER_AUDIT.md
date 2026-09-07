@@ -5938,6 +5938,33 @@ Topology-source checks completed 2026-09-04:
   against the 4,630 retained and 92,284 replacement ribbon volumes. No ambient
   extension is claimed.
 
+### F-599CI — The fixed-germ volume intersects replacement band 1102
+
+- Severity: **Exact external-volume obstruction / replacement integration**
+- Status: **REPLACEMENT VOLUME REFUTED; RETAINED PROBE POSITIVE BUT UNRECEIPTED**
+- Evidence:
+  `audit/t73_x_m1_outer_collar_v7_relative_volume_replacement_obstruction_3017.json`,
+  its builder, independent verifier and regression test, bound to F-599CH and
+  the independently verified complete replacement framing inventory.
+- Exact obstruction: transition 11 moving tetrahedron 26, with local vertex
+  indices `[4,16,17,23]`, intersects static tetrahedron 5 of replacement
+  rectangle 67225. Its provenance is band 1102, segment 4,
+  `negative_band_lane` in the band subsystem. The tetrahedra share no vertex
+  and their affine-difference rank is four. Exact active-set RREF produces two
+  nonnegative barycentric vectors summing to one and the same saved R4 point;
+  the independent verifier recomputes both convex combinations. Verdict:
+  `REFUTED_X_M1_OUTER_COLLAR_V7_RELATIVE_VOLUME_REPLACEMENT_3017_INDEPENDENT`.
+- Search scope: intended target-adjacent replacement rectangle 92047 was
+  excluded from the nonincident scan and remains a separate boundary star gate.
+  The first forbidden hit appeared after 146,155 exact candidate visits. A
+  retained-side run built 27,780 static tetrahedra and found no intersection
+  among 592 candidates, all central connectors, but that result is deliberately
+  labelled `PROBE_PASS_592_EXACT_CANDIDATES_NOT_RECEIPTED`.
+- Consequence/boundary: F-599CH's self-clear fixed-germ volume remains valid,
+  but it is not externally embedded. Transition 11 must change normal/mode or
+  acquire a replacement-avoiding midpoint; then both external scans and the
+  active germ/target boundary stars must be independently receipted.
+
 ### F-599C — Monolithic linear projections of the affine framed link are computationally unsuitable
 
 - Severity: **complete PD / projection selection**
