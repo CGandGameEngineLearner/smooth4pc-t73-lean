@@ -5911,6 +5911,33 @@ Topology-source checks completed 2026-09-04:
   evidence for this repaired movie. A new fixed-boundary ribbon 3-volume,
   self-clearance and external retained/replacement clearance remain required.
 
+### F-599CH — A volume-aware DP gives a self-clear fixed-germ ribbon volume
+
+- Severity: **Relative framed 3-volume repair / positive internal volume**
+- Status: **FIXED-GERM VOLUME SELF-CLEAR; EXTERNAL RIBBON VOLUMES OPEN**
+- Evidence: `geometry/t73_x_m1_outer_collar_v7_relative_ribbon_volume_3017.json`,
+  its builder, independent verifier and regression test, bound to F-599CG and
+  F-599CF.
+- Search: every DP edge jointly selects one of 27 exact normals and one of two
+  core diagonals, assigns the complementary push diagonal, checks core/push
+  traces and all 268 nonincident tetrahedron pairs, and if necessary tests one
+  standard perturbed midpoint. Among 4,223 examined edges, 319 base and 38
+  midpoint edges pass. The selected path has normal indices
+  `0,16,2,2,2,2,11,0,0,0,2,9,9,9,12,12,0,0,0,0,0,0` and core modes
+  `C,C,C,C,C,R,R,C,C,C,C,C,C,C,R,R,C,C,C,C,C`. Only transition 15 uses a
+  midpoint, at changed vertex 5 with perturbation
+  `(-1/1000000,-1/1000000,-1/1000000)`.
+- Exact replay: 23 states and 22 global intervals preserve the fixed germ
+  framing edge. All 660 tetrahedra have rank three and all 5,896 nonincident
+  pairs are disjoint. The independent verifier also checks 440 trace ranks,
+  2,200 core/push trace pairs, 718 moving-core/static and 550
+  moving-push/static pairs. Forbidden intersections are zero. Verdict:
+  `PASS_X_M1_OUTER_COLLAR_V7_RELATIVE_RIBBON_VOLUME_3017_SELF_CLEAR_INDEPENDENT`.
+- Boundary: this closes the complete relative ribbon volume against itself and
+  the scheduled source/final collar one-skeleton. It has not yet been checked
+  against the 4,630 retained and 92,284 replacement ribbon volumes. No ambient
+  extension is claimed.
+
 ### F-599C — Monolithic linear projections of the affine framed link are computationally unsuitable
 
 - Severity: **complete PD / projection selection**

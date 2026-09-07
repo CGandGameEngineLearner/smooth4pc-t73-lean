@@ -925,6 +925,23 @@ python3 scripts/build_t73_x_m1_outer_collar_v7_relative_framed_movie_3017.py --w
 python3 scripts/verify_t73_x_m1_outer_collar_v7_relative_framed_movie_3017.py
 python3 -m unittest tests.test_t73_x_m1_outer_collar_v7_relative_framed_movie_3017
 ```
+
+The volume-aware fixed-boundary filling is
+[`geometry/t73_x_m1_outer_collar_v7_relative_ribbon_volume_3017.json`](geometry/t73_x_m1_outer_collar_v7_relative_ribbon_volume_3017.json).
+A joint exact DP includes tetrahedron self-clearance in every normal/mode edge.
+It selects 21 core modes and a fixed-germ normal path, with only transition 15
+split through a vertex-5 midpoint perturbed by
+`(-1/1000000,-1/1000000,-1/1000000)`. Independent replay verifies 23 states,
+22 globally timed transitions, 660 rank-three tetrahedra, all 5,896
+nonincident tetrahedron pairs, 2,200 core/push pairs and 1,268 scheduled-static
+one-skeleton pairs. Forbidden intersections are zero. External retained and
+replacement ribbon-volume clearance remains open.
+
+```bash
+python3 scripts/build_t73_x_m1_outer_collar_v7_relative_ribbon_volume_3017.py --write --check
+python3 scripts/verify_t73_x_m1_outer_collar_v7_relative_ribbon_volume_3017.py
+python3 -m unittest tests.test_t73_x_m1_outer_collar_v7_relative_ribbon_volume_3017
+```
 The graph map extends over all five framed regular neighborhoods in
 [`geometry/t73_hybrid_to_railroad_tubular_map.json`](geometry/t73_hybrid_to_railroad_tubular_map.json).
 Its five solid-torus templates contain 5385 tetrahedra and 10770 boundary

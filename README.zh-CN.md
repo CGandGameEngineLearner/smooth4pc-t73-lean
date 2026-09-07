@@ -995,6 +995,23 @@ python3 scripts/verify_t73_x_m1_outer_collar_v7_relative_framed_movie_3017.py
 python3 -m unittest tests.test_t73_x_m1_outer_collar_v7_relative_framed_movie_3017
 ```
 
+volume-aware fixed-boundary filling 位于
+[`geometry/t73_x_m1_outer_collar_v7_relative_ribbon_volume_3017.json`](geometry/t73_x_m1_outer_collar_v7_relative_ribbon_volume_3017.json)。
+联合 exact DP 在每个 normal/mode edge 中直接加入 tetrahedron self-clearance。
+它选择 21 个 core modes 和 fixed-germ normal path，仅 transition 15 通过
+vertex-5 中点拆分并加入
+`(-1/1000000,-1/1000000,-1/1000000)` 扰动。独立重放验证 23 个 states、
+22 个全局赋时 transitions、660 个 rank-three tetrahedra、全部 5,896 个
+非邻接 tetrahedron pairs、2,200 个 core/push pairs 和 1,268 个
+scheduled-static one-skeleton pairs。禁止交点为 0。外部 retained 与
+replacement ribbon-volume clearance 仍为 OPEN。
+
+```bash
+python3 scripts/build_t73_x_m1_outer_collar_v7_relative_ribbon_volume_3017.py --write --check
+python3 scripts/verify_t73_x_m1_outer_collar_v7_relative_ribbon_volume_3017.py
+python3 -m unittest tests.test_t73_x_m1_outer_collar_v7_relative_ribbon_volume_3017
+```
+
 第一个跨系统门禁找到并修复了真实碰撞，没有提前升级该 assembly。流式 Rust
 1.98.1 checker 位于
 [`rust/t73_exact_cross_clearance`](rust/t73_exact_cross_clearance)，使用
