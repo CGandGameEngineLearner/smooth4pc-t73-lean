@@ -969,6 +969,49 @@ found no valid repair. The later `(-2,0,1)` directional search was interrupted
 without saved output and has no verdict. The next required result is a
 multi-vertex or multi-waypoint detour followed by independent receipts for both
 external scans and a local 3-volume boundary-star proof.
+
+### Remaining distance to the complete goal
+
+The repository has a large verified finite-data foundation, but it is not yet
+close to an unconditional closure of all claims in `main.tex`. One repaired
+interface is only a test case for the global Kirby/PL movie, and the
+candidate-specific chain maps required by C and S remain load-bearing. There
+are at least six major sequential gates:
+
+1. **Restore status-check consistency.** `check_t73_claim_boundary.py` and
+   `audit_t73_premises.py --check` currently stop because their required
+   `main.tex` text markers no longer match the paper. Reconcile the checker and
+   paper claims without promoting any mathematical status.
+2. **Close interface 3017.** Replace the exact transition-11 collision by a
+   multi-vertex or multi-waypoint detour; independently receipt retained and
+   replacement volume clearance; prove the active type-0 germ local
+   3-volume boundary star.
+3. **Build the complete relative Kirby/PL movie.** Apply the successful local
+   construction to every interface, check global R4 self/static clearance,
+   inverse moves, framing and common boundaries, and construct the ambient
+   isotopy extension. A pass for interface 3017 is not an all-interface pass.
+4. **Bind the actual AR source to the canonical Kirby source.** Complete the
+   lane/foot identifications, foot reflections, band splices, dotted circles,
+   crossings and integer framings, then prove relative equivalence to the
+   Johnson/AR and cancellation data.
+5. **Close C at chain level.** Construct the 1084 Z-endpoint coend gluing
+   cells, resolve the eight wrong-side pivotal choices, map all 630 source
+   intervals to the 86 through arcs, one cup and closed components, and verify
+   the foam chain maps, shifts, naturality homotopies and full grading ledger.
+6. **Close S and assemble the theorem.** Construct the actual W2 boundary and
+   sphere/hemisphere movies with statewise MWW maps and beta/psi compatibility;
+   independently receipt the combined bundle, inhabit Lean
+   `ExternalGeometry`/`CSExternalGeometry`, compile the focused modules and
+   make every claim-boundary check pass.
+
+Distance assessment: gate 2 has one localized exact obstruction and is the
+immediate engineering target; gates 3 and 4 are still substantial global
+geometry; gates 5 and 6 contain the main unresolved mathematical/categorical
+work. Completion must be measured by artifacts plus independent verifiers,
+mutation tests and receipts—not by elapsed search time or the number of JSON
+files. The complete goal is reached only when all six gates pass and no
+load-bearing `OPEN` remains in the paper, manifest, audit or Lean interfaces.
+
 The graph map extends over all five framed regular neighborhoods in
 [`geometry/t73_hybrid_to_railroad_tubular_map.json`](geometry/t73_hybrid_to_railroad_tubular_map.json).
 Its five solid-torus templates contain 5385 tetrahedra and 10770 boundary

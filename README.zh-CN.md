@@ -1037,6 +1037,39 @@ transition 11 与 replacement rectangle 67225 存在精确碰撞。已测试的 
 无结论。下一步是构造多顶点或多路点 detour，再分别生成两侧外部扫描的独立
 收据，并完成 active germ 的局部三维星形证明。
 
+### 距离完整目标还有多远
+
+仓库已经积累了大量通过独立校验的有限数据，但距离无条件闭合 `main.tex` 的全部
+命题仍有明显距离。一个 interface 的修复只是全局 Kirby/PL movie 的试验点；C、S
+所需的候选专用链映射仍是承重前提。至少还剩六个顺序门禁：
+
+1. **恢复状态检查一致性。** `check_t73_claim_boundary.py` 与
+   `audit_t73_premises.py --check` 当前会因所要求的 `main.tex` 文本标记已变化而
+   中止。应先对齐检查器与论文声称，且不得借此提升任何数学状态。
+2. **闭合 interface 3017。** 用多顶点或多路点 detour 消除 transition 11 的精确
+   碰撞；为 retained/replacement 两侧体积扫描生成独立收据；证明 active type-0
+   germ 的局部三维 boundary star。
+3. **构造完整 relative Kirby/PL movie。** 把局部成功方案扩展到每一个 interface，
+   检查全局 R4 自交/静态相交、逆 move、framing 与公共边界，并构造 ambient
+   isotopy extension。3017 的 PASS 不能代替 all-interface PASS。
+4. **把 actual AR source 绑定到 canonical Kirby source。** 补齐 lane/foot
+   identification、foot reflection、band splice、dotted circles、crossings 和整数
+   framings，再证明它与 Johnson/AR core 及 cancellation data 相对等价。
+5. **在链层闭合 C。** 构造 1084 个 Z 端点的 coend gluing cells，处理 8 条
+   wrong-side pivotal choices，把 630 条源区间逐条映到 86 条贯穿弧、一个 cup 和
+   内部闭分量，并验证 foam chain maps、次数平移、自然性 homotopies 与完整 grading
+   ledger。
+6. **闭合 S 并装配最终定理。** 构造 actual W2 boundary、sphere/hemisphere movies、
+   statewise MWW maps 及 beta/psi compatibility；为总 bundle 生成独立收据，实例化
+   Lean `ExternalGeometry`/`CSExternalGeometry`，编译 focused modules，并让全部
+   claim-boundary 检查通过。
+
+距离判断：第 2 门目前只有一个已定位的精确阻碍，是近期工程目标；第 3、4 门仍是
+大规模全局几何工作；第 5、6 门包含主要未解的数学/范畴链映射工作。因此不能用
+运行时间或 JSON 文件数量估算完成度。每一门都必须同时具备数据、独立 verifier、
+mutation tests 与收据；只有六门全部 PASS，且论文、manifest、audit 和 Lean 接口中
+不再有承重 `OPEN`，才算完成总目标。
+
 第一个跨系统门禁找到并修复了真实碰撞，没有提前升级该 assembly。流式 Rust
 1.98.1 checker 位于
 [`rust/t73_exact_cross_clearance`](rust/t73_exact_cross_clearance)，使用

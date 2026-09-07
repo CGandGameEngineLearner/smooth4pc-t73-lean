@@ -5990,6 +5990,27 @@ Topology-source checks completed 2026-09-04:
   boundary star. Until all three pass, interface 3017 is not a complete
   relative ambient extension and none of C/S/P0 is promoted by this checkpoint.
 
+### F-599CK — The completion roadmap has six remaining load-bearing gates
+
+- Severity: **Planning / claim-boundary integrity**
+- Status: **GLOBAL GOAL REMAINS OPEN; ROADMAP RECORDED IN BOTH READMES**
+- Immediate consistency finding: on 2026-09-07,
+  `scripts/check_t73_claim_boundary.py` stopped because its expected
+  `thm:joined` theorem text was absent from the current `main.tex`, and
+  `scripts/audit_t73_premises.py --check` stopped because its expected Johnson
+  `Open` marker was absent. These are paper/checker drift, not mathematical
+  passes or refutations.
+- Remaining gates: restore those status checks; close interface 3017; expand
+  to a globally clear relative Kirby/PL movie; bind the actual AR source to the
+  canonical Kirby source; construct the candidate-specific C coend/currying
+  chain maps; construct the actual W2/MWW sphere and hemisphere maps and then
+  inhabit the Lean external-geometry interfaces.
+- Distance assessment: the interface-3017 problem is localized, while the
+  all-interface geometry and the C/S chain-level maps remain substantial. No
+  percentage or time estimate is evidence. Completion requires independently
+  receipted artifacts and no load-bearing `OPEN` in the paper, manifests,
+  audit, or Lean interfaces.
+
 ### F-599C — Monolithic linear projections of the affine framed link are computationally unsuitable
 
 - Severity: **complete PD / projection selection**
