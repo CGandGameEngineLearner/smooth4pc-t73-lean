@@ -5965,6 +5965,31 @@ Topology-source checks completed 2026-09-04:
   acquire a replacement-avoiding midpoint; then both external scans and the
   active germ/target boundary stars must be independently receipted.
 
+### F-599CJ — Interface 3017 reconstruction checkpoint preserves the exact open boundary
+
+- Severity: **Progress checkpoint / no theorem promotion**
+- Status: **TRANSITION-11 REPLACEMENT REPAIR OPEN**
+- Machine-readable record:
+  `audit/t73_x_m1_outer_collar_v7_interface3017_progress_checkpoint.json`.
+  It binds the current core detour, fixed-germ framed movie, self-clear relative
+  ribbon volume and exact replacement obstruction by file SHA-256. The base
+  state is commit `f63d869`.
+- Retained and germ probes: the retained scan has zero hits among 592 exact
+  candidates over 27,780 tetrahedra, but is deliberately not receipted. The
+  active type-0 germ bridge has 506 incidences (318 sharing one vertex, 154
+  sharing two and 34 sharing three); these are not classified as forbidden and
+  still require a local 3-volume boundary-star proof.
+- Repair search ledger: 234 single-midpoint candidates, 1,152 local
+  normal/mode edges and 260 two-waypoint axis-grid candidates did not jointly
+  satisfy self-clearance and avoidance of replacement rectangle 67225. A final
+  two-waypoint search in the approximate replacement-normal direction
+  `(-2,0,1)` was interrupted without recorded output and therefore has no
+  verdict.
+- Next gate: build a multi-vertex or multi-waypoint transition-11 detour,
+  independently receipt both external scans, and prove the active germ
+  boundary star. Until all three pass, interface 3017 is not a complete
+  relative ambient extension and none of C/S/P0 is promoted by this checkpoint.
+
 ### F-599C — Monolithic linear projections of the affine framed link are computationally unsuitable
 
 - Severity: **complete PD / projection selection**

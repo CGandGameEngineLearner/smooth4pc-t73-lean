@@ -1,0 +1,90 @@
+{
+  "schema": "t73_x_m1_outer_collar_v7_interface3017_progress_checkpoint/v1",
+  "recorded_at": "2026-09-07",
+  "classification": "PROGRESS_CHECKPOINT_ONLY",
+  "base_commit": "f63d869",
+  "interface_index": 3017,
+  "verified_artifacts": {
+    "explicit_core_detour": {
+      "path": "geometry/t73_x_m1_outer_collar_v7_explicit_core_detour_3017.json",
+      "file_sha256": "437430951D285340153D156BBC81BCEBF433FC3C7BCC310ECF7052788DA7E0C0",
+      "states": 22,
+      "transitions": 21,
+      "status": "PASS_EXACT_CORE_CLEARANCE"
+    },
+    "relative_framed_movie": {
+      "path": "geometry/t73_x_m1_outer_collar_v7_relative_framed_movie_3017.json",
+      "file_sha256": "84ECB6672950B491B480048D4E0558E6BB19C325E4AA18292F11F9BB58064431",
+      "states": 22,
+      "fixed_germ_states": 22,
+      "status": "PASS_INDEPENDENT"
+    },
+    "relative_ribbon_volume": {
+      "path": "geometry/t73_x_m1_outer_collar_v7_relative_ribbon_volume_3017.json",
+      "file_sha256": "9971FCC670626C3B0CADE9B7D9B1501AD41012AF0A6A91C4CF3156F99D4B6E99",
+      "states": 23,
+      "transitions": 22,
+      "tetrahedra": 660,
+      "nonincident_self_checks": 5896,
+      "status": "PASS_SELF_CLEAR_INDEPENDENT_EXTERNAL_OPEN"
+    }
+  },
+  "external_clearance": {
+    "retained_volume": {
+      "static_rectangles": 4630,
+      "static_tetrahedra": 27780,
+      "exact_candidates": 592,
+      "intersections": 0,
+      "status": "PROBE_PASS_592_EXACT_CANDIDATES_NOT_RECEIPTED"
+    },
+    "active_type0_germ_bridge": {
+      "tetrahedron_pair_hits": 506,
+      "shared_vertex_histogram": {
+        "1": 318,
+        "2": 154,
+        "3": 34
+      },
+      "status": "OPEN_EXPECTED_BOUNDARY_INCIDENCES_REQUIRE_LOCAL_3_VOLUME_STAR_PROOF"
+    },
+    "replacement_volume": {
+      "obstruction_path": "audit/t73_x_m1_outer_collar_v7_relative_volume_replacement_obstruction_3017.json",
+      "obstruction_file_sha256": "86A38A8B5D6809CD205E7545270340FA3432E13BC3C7F9248167AC64848B467A",
+      "transition": 11,
+      "moving_tetrahedron": 26,
+      "replacement_rectangle": 67225,
+      "replacement_band": 1102,
+      "replacement_segment": 4,
+      "replacement_piece": "negative_band_lane",
+      "static_tetrahedron": 5,
+      "status": "REFUTED_BY_EXACT_AFFINE_RANK_4_BARYCENTRIC_WITNESS"
+    }
+  },
+  "repair_searches": [
+    {
+      "method": "single_midpoint_changed_vertex_4",
+      "candidates_tested": 234,
+      "result": "NO_SELF_CLEAR_AND_TARGET_CLEAR_CANDIDATE"
+    },
+    {
+      "method": "local_normal_mode_edge",
+      "candidates_tested": 1152,
+      "result": "NO_SELF_CLEAR_AND_TARGET_CLEAR_CANDIDATE"
+    },
+    {
+      "method": "two_waypoint_axis_grid_changed_vertex_4",
+      "candidates_tested": 260,
+      "result": "NO_SELF_CLEAR_AND_TARGET_CLEAR_CANDIDATE"
+    },
+    {
+      "method": "two_waypoint_replacement_normal_direction_approx_minus2_0_1",
+      "result": "INTERRUPTED_NO_RECORDED_OUTPUT_NO_VERDICT"
+    }
+  ],
+  "next_steps": [
+    "construct a multi-vertex or multi-waypoint transition-11 detour and replay exact self-clearance",
+    "rerun and independently receipt retained and replacement external-volume scans",
+    "prove the active type-0 germ bridge local 3-volume boundary-star condition",
+    "only then promote interface 3017 to a complete relative ambient extension input"
+  ],
+  "overall_status": "TRANSITION_11_REPLACEMENT_REPAIR_OPEN"
+}

@@ -958,6 +958,17 @@ python3 scripts/build_t73_x_m1_outer_collar_v7_relative_volume_replacement_obstr
 python3 scripts/verify_t73_x_m1_outer_collar_v7_relative_volume_replacement_obstruction_3017.py
 python3 -m unittest tests.test_t73_x_m1_outer_collar_v7_relative_volume_replacement_obstruction_3017
 ```
+
+The exact current checkpoint is saved in
+[`audit/t73_x_m1_outer_collar_v7_interface3017_progress_checkpoint.json`](audit/t73_x_m1_outer_collar_v7_interface3017_progress_checkpoint.json).
+It records the SHA-bound verified artifacts, the unreceipted retained-volume
+probe, 506 active type-0 germ-bridge boundary incidences, the exact transition-11
+replacement collision, and all attempted repairs. Searches of 234 single
+midpoints, 1,152 local normal/mode edges and 260 axis-grid two-waypoint detours
+found no valid repair. The later `(-2,0,1)` directional search was interrupted
+without saved output and has no verdict. The next required result is a
+multi-vertex or multi-waypoint detour followed by independent receipts for both
+external scans and a local 3-volume boundary-star proof.
 The graph map extends over all five framed regular neighborhoods in
 [`geometry/t73_hybrid_to_railroad_tubular_map.json`](geometry/t73_hybrid_to_railroad_tubular_map.json).
 Its five solid-torus templates contain 5385 tetrahedra and 10770 boundary

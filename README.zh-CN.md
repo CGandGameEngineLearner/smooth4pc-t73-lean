@@ -1027,6 +1027,16 @@ python3 scripts/verify_t73_x_m1_outer_collar_v7_relative_volume_replacement_obst
 python3 -m unittest tests.test_t73_x_m1_outer_collar_v7_relative_volume_replacement_obstruction_3017
 ```
 
+当前精确进展已保存到
+[`audit/t73_x_m1_outer_collar_v7_interface3017_progress_checkpoint.json`](audit/t73_x_m1_outer_collar_v7_interface3017_progress_checkpoint.json)。
+它用 SHA 绑定已验证构件，并记录：retained-volume 探测尚无独立收据；active
+type-0 germ bridge 有 506 个待作局部三维 boundary-star 证明的边界关联；
+transition 11 与 replacement rectangle 67225 存在精确碰撞。已测试的 234 个
+单中点、1,152 个局部 normal/mode edge 和 260 个轴向双路点候选都未同时满足
+自无交与避障。随后沿近似法向 `(-2,0,1)` 的搜索没有保存输出便被中断，故记为
+无结论。下一步是构造多顶点或多路点 detour，再分别生成两侧外部扫描的独立
+收据，并完成 active germ 的局部三维星形证明。
+
 第一个跨系统门禁找到并修复了真实碰撞，没有提前升级该 assembly。流式 Rust
 1.98.1 checker 位于
 [`rust/t73_exact_cross_clearance`](rust/t73_exact_cross_clearance)，使用
